@@ -9,6 +9,9 @@ dependencies = [
   "matplotlib", "seaborn", "nbformat", "nbclient", "ipykernel", "pyarrow",
 ]
 
+[project.optional-dependencies]
+train = ["peft", "accelerate", "bitsandbytes", "safetensors"]
+
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"

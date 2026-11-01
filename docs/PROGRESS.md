@@ -1,4 +1,17 @@
-# Project memory — attempt 001
+# Project memory
+
+## Active work — attempt 002
+
+The user authorized joint preference fine-tuning. See [ATTEMPT_002.md](ATTEMPT_002.md).
+Two Kaggle Tesla T4 GPUs passed an environment/backward probe. A Qwen3-8B QLoRA
+pilot is running at `arseniytrushin/llm-preference-qwen3-8b-pilot-002` (version 1).
+The new split has 45,985 train / 5,746 development / 5,746 confirmation rows, fixed
+by explicit IDs under `~/database/llm_classification_finetuning/runs/attempt_002`.
+The structural-tree development baseline is 1.03375 log loss. All eight local tests
+passed, including adapter and classification-head training/reloading. No attempt-002
+model score has been claimed yet. Select the full run using measured pilot throughput.
+
+## Frozen work — attempt 001
 
 ## Completed work
 

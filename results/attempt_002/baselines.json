@@ -1,0 +1,35 @@
+{
+  "classes": [
+    "winner_model_a",
+    "winner_model_b",
+    "winner_tie"
+  ],
+  "prior": [
+    0.3490703490268566,
+    0.3419158421224312,
+    0.30901380885071217
+  ],
+  "majority_class": "winner_model_a",
+  "prior_development": {
+    "log_loss": 1.0972160902484214,
+    "accuracy": 0.34911242603550297,
+    "balanced_accuracy": 0.3333333333333333,
+    "macro_f1": 0.17251461988304095,
+    "brier": 0.6657465171102929
+  },
+  "majority_development": {
+    "log_loss": 23.46036611125968,
+    "accuracy": 0.34911242603550297,
+    "balanced_accuracy": 0.3333333333333333,
+    "macro_f1": 0.17251461988304095,
+    "brier": 1.301775147928994
+  },
+  "confirmation_evaluated": false,
+  "structural_gbdt_development": {
+    "log_loss": 1.0337499755840185,
+    "accuracy": 0.47354681517577446,
+    "balanced_accuracy": 0.4679237548080412,
+    "macro_f1": 0.4635916690988635,
+    "brier": 0.6206918363596057
+  }
+}

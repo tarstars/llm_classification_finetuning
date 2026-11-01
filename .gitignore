@@ -10,6 +10,9 @@ artifacts/
 *.npy
 *.npz
 *.pt
+*.safetensors
+*.bin
+*.arrow
 *.joblib
 .cache/
 catboost_info/

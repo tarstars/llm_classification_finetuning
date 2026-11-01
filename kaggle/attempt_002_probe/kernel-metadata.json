@@ -1,0 +1,16 @@
+{
+  "id": "arseniytrushin/llm-preference-gpu-probe-002",
+  "title": "LLM Preference GPU Probe 002",
+  "code_file": "gpu_probe.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "competition_sources": [
+    "llm-classification-finetuning"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

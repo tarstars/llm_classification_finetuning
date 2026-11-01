@@ -1,0 +1,28 @@
+{
+  "seed": 20261102,
+  "rows": 57477,
+  "split_counts": {
+    "train": 45985,
+    "dev": 5746,
+    "confirmation": 5746
+  },
+  "class_counts": {
+    "train": {
+      "winner_model_a": 16052,
+      "winner_model_b": 15723,
+      "winner_tie": 14210
+    },
+    "dev": {
+      "winner_model_a": 2006,
+      "winner_model_b": 1965,
+      "winner_tie": 1775
+    },
+    "confirmation": {
+      "winner_model_a": 2006,
+      "winner_model_b": 1964,
+      "winner_tie": 1776
+    }
+  },
+  "split_ids_sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1",
+  "note": "New split for attempt 002; previous project results have been examined, so this is not an entirely unseen project-wide test set."
+}

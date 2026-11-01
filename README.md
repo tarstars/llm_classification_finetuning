@@ -11,6 +11,9 @@ gives **34.91% accuracy**. See [full results](RESULTS.md) for all metrics and ba
 The submitted offline ensemble scored **1.00897** on Kaggle's public leaderboard;
 its local holdout estimate was **1.00956**.
 
+Attempt 002 is testing a joint Qwen3-8B preference classifier with QLoRA on Kaggle
+GPUs. See the [training plan and run instructions](docs/ATTEMPT_002.md).
+
 - [Problem and data](notebooks/01_problem_and_data.ipynb)
 - [Vectorizers and classifiers](notebooks/02_vectorizers_and_classifiers.ipynb)
 - [Results and next experiments](notebooks/03_results_and_next_experiments.ipynb)

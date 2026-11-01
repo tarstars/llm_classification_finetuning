@@ -1,0 +1,18 @@
+{
+  "id": "arseniytrushin/llm-preference-qwen3-8b-pilot-002",
+  "title": "LLM Preference Qwen3 8B Pilot 002",
+  "code_file": "joint_training.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "competition_sources": [
+    "llm-classification-finetuning"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "model_sources": [
+    "qwen-lm/qwen-3/transformers/8b/1"
+  ]
+}
