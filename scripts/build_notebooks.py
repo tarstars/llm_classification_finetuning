@@ -1,11 +1,15 @@
 """Build and execute lightweight notebooks from recorded experiment artifacts."""
 from pathlib import Path
+import argparse
 import nbformat as nbf
 from nbclient import NotebookClient
 
 REPO=Path(__file__).resolve().parents[1]
 DEST=REPO/'notebooks'
 DEST.mkdir(exist_ok=True)
+parser=argparse.ArgumentParser()
+parser.add_argument('--data-only',action='store_true')
+args=parser.parse_args()
 
 SETUP='''from pathlib import Path
 import json, sys
@@ -13,15 +17,17 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import display, Markdown
-REPO = Path.cwd()
-if REPO.name == 'notebooks': REPO = REPO.parent
+candidates = [Path.cwd().resolve(), Path.cwd().resolve().parent, Path.home()/'prj/llm_classification_finetuning']
+REPO = next(p for p in candidates if (p/'src/arena').is_dir() and (p/'results/attempt_001').is_dir())
 sys.path.insert(0, str(REPO / 'src'))
 from arena.data import ROOT, CLASSES, TEXT_COLUMNS
 RESULTS = REPO / 'results/attempt_001'
 ARTIFACTS = ROOT / 'runs/attempt_001'
+FIGURES = ROOT / 'reports/attempt_001'
+FIGURES.mkdir(parents=True, exist_ok=True)
 summary = json.loads((RESULTS / 'data_summary.json').read_text())
-evaluation = json.loads((RESULTS / 'metrics.json').read_text())
-comparison = pd.read_json(RESULTS / 'comparison.json').sort_values('dev_log_loss')
+evaluation = json.loads((RESULTS / 'metrics.json').read_text()) if (RESULTS/'metrics.json').exists() else None
+comparison = pd.read_json(RESULTS / 'comparison.json').sort_values('dev_log_loss') if (RESULTS/'comparison.json').exists() else None
 plt.rcParams.update({'figure.figsize': (10, 4), 'axes.spines.top': False, 'axes.spines.right': False})
 '''
 
@@ -61,7 +67,7 @@ CSV text fields are JSON lists of turns. We parse them with `json.loads`, retain
 boundaries, and preserve empty responses. Model identity columns occur only in training
 and cannot be used for test prediction. IDs are excluded as features.
 '''),
-code("counts = pd.Series(summary['counts'])\nax = counts.plot.bar(color=['#2962A3','#2B9979','#C7953B'], rot=0)\nax.set(ylabel='Training comparisons', title='Target counts'); plt.show()\ndisplay(pd.DataFrame(summary['text_lengths']).round(1))"),
+code("counts = pd.Series(summary['counts'])\nax = counts.plot.bar(color=['#2962A3','#2B9979','#C7953B'], rot=0)\nax.set(ylabel='Training comparisons', title='Target counts'); plt.tight_layout(); plt.savefig(FIGURES/'target_counts.svg'); plt.show()\ndisplay(pd.DataFrame(summary['text_lengths']).round(1))"),
 md('''## Leakage control
 
 Normalize prompt whitespace and case, then group identical prompts. Split into 8 training
@@ -80,6 +86,9 @@ Heavy files and split manifests remain under `~/database/llm_classification_fine
 This notebook uses the committed aggregate audit so the results remain readable without
 copying raw competition text into GitHub.
 ''')])
+
+if args.data_only:
+    raise SystemExit(0)
 
 write('02_vectorizers_and_classifiers.ipynb',[
 md('''# Vectorizers × classifiers
@@ -104,8 +113,8 @@ The curve below distinguishes learning on training data from generalization.
 These results establish the quality achieved by this attempt; they do not imply
 that a small GRU matches a pretrained language model's understanding.
 '''),
-code("history = pd.read_json(RESULTS/'rnn_history.json')\nax = history.plot(x='epoch', y=['train_loss','dev_log_loss'], marker='o')\nax.set(ylabel='Cross entropy / log loss', title='GRU learning curve')\nplt.show()\ndisplay(history.round(5))"),
-code("long_history_path = ARTIFACTS/'rnn_long/rnn_history.json'\nif long_history_path.exists():\n    long_history = pd.read_json(long_history_path)\n    ax = history.plot(x='epoch', y='dev_log_loss', marker='o', label='128 tokens')\n    long_history.plot(x='epoch', y='dev_log_loss', marker='o', label='256 tokens', ax=ax)\n    ax.set(ylabel='Development log loss', title='Recurrent context-length comparison')\n    plt.show()\n    display(long_history.round(5))"),
+code("history = pd.read_json(RESULTS/'rnn_history.json')\nax = history.plot(x='epoch', y=['train_loss','dev_log_loss'], marker='o')\nax.set(ylabel='Cross entropy / log loss', title='GRU learning curve')\nplt.tight_layout(); plt.savefig(FIGURES/'rnn_learning.svg'); plt.show()\ndisplay(history.round(5))"),
+code("long_history_path = RESULTS/'rnn_long_history.json'\nif long_history_path.exists():\n    long_history = pd.read_json(long_history_path)\n    ax = history.plot(x='epoch', y='dev_log_loss', marker='o', label='128 tokens')\n    long_history.plot(x='epoch', y='dev_log_loss', marker='o', label='256 tokens', ax=ax)\n    ax.set(ylabel='Development log loss', title='Recurrent context-length comparison')\n    plt.tight_layout(); plt.savefig(FIGURES/'rnn_context_comparison.svg'); plt.show()\n    display(long_history.round(5))"),
 md('''## Development comparison
 
 For the dense TF-IDF comparison, SVD is fitted only on training texts. We also retain
@@ -115,7 +124,7 @@ stopping. All models augment response swaps and average both orientations at inf
 The direct recurrent head is an extra baseline, separate from classifiers on frozen
 recurrent vectors.
 '''),
-code("rows = evaluation['models']\ntable = pd.DataFrame([{'representation':r['representation'], 'classifier':r['classifier'], 'dev_log_loss':r['dev']['log_loss']} for r in rows])\nmatrix = table[table.representation.isin(['tfidf_svd','rnn','qwen3_256']) & table.classifier.isin(['logistic','gbdt','neural'])].pivot(index='representation', columns='classifier', values='dev_log_loss')\ndisplay(matrix.round(5))\nimport seaborn as sns\nsns.heatmap(matrix, annot=True, fmt='.4f', cmap='viridis_r', cbar_kws={'label':'Development log loss'})\nplt.title('Same split, three vectorizers, three classifiers'); plt.show()"),
+code("rows = evaluation['models']\ntable = pd.DataFrame([{'representation':r['representation'], 'classifier':r['classifier'], 'dev_log_loss':r['dev']['log_loss']} for r in rows])\nmatrix = table[table.representation.isin(['tfidf_svd','rnn','qwen3_256']) & table.classifier.isin(['logistic','gbdt','neural'])].pivot(index='representation', columns='classifier', values='dev_log_loss')\ndisplay(matrix.round(5))\nimport seaborn as sns\nsns.heatmap(matrix, annot=True, fmt='.4f', cmap='viridis_r', cbar_kws={'label':'Development log loss'})\nplt.title('Same split, three vectorizers, three classifiers'); plt.tight_layout(); plt.savefig(FIGURES/'vectorizers_classifiers.svg'); plt.show()"),
 md('''## API extraction and context limits
 
 The Eliza integration follows the earlier local session's embedding route and reads
@@ -135,7 +144,7 @@ or the command line. Enable the switch below only when intentionally rerunning t
 experiment. Running remote extraction sends the full dataset text to Eliza and requires
 an appropriate local credential.
 '''),
-code("RUN_TRAINING = False\nif RUN_TRAINING:\n    import subprocess\n    for stage in ['structural','tfidf','rnn']:\n        subprocess.run([sys.executable, str(REPO/'scripts/run_experiments.py'), stage], check=True, cwd=REPO)\n    # Remote extraction, approved for this project:\n    # subprocess.run([sys.executable, str(REPO/'scripts/embed.py')], check=True, cwd=REPO)\n    # Then run stages 'qwen' and 'hybrid'.")])
+code("RUN_TRAINING = False\nif RUN_TRAINING:\n    import subprocess\n    for stage in ['structural','tfidf','rnn','rnn_long']:\n        subprocess.run([sys.executable, str(REPO/'scripts/run_experiments.py'), stage], check=True, cwd=REPO)\n    subprocess.run([sys.executable, str(REPO/'scripts/refine_tfidf.py')], check=True, cwd=REPO)\n    # Remote extraction, approved for this project:\n    # subprocess.run([sys.executable, str(REPO/'scripts/embed.py')], check=True, cwd=REPO)\n    # Then run stages 'qwen' and 'hybrid'.")])
 
 write('03_results_and_next_experiments.ipynb',[
 md('''# Results, uncertainty, and next experiments
@@ -150,6 +159,8 @@ md('''## Constant majority baseline
 The most-frequent-class model chooses the most frequent original training label and
 always predicts it. It uses no development or holdout labels to choose the class.
 Its accuracy, balanced accuracy, macro F1 and Brier score are included in the table.
+The multiclass Brier score sums squared probability errors across all three classes
+and ranges from 0 to 2.
 Its hard one-hot probability output incurs a very large log loss on every other class;
 sklearn clips zero probabilities at float64 machine epsilon. The separate training-prior
 baseline predicts class-frequency probabilities and is a more useful log-loss reference.

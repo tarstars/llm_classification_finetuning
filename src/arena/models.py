@@ -107,7 +107,7 @@ def fit_classifiers(name,x,xswap,y,parts,out,kinds=("logistic","gbdt","neural"))
                 min_child_samples=100,colsample_bytree=.8,subsample=.8,subsample_freq=1,
                 reg_lambda=5.,verbosity=-1,n_jobs=4,random_state=SEED,deterministic=True,force_col_wise=True)
             model.fit(xx,yy,eval_set=[(x[dev],y[dev]),(xswap[dev],np.array([1,0,2])[y[dev]])],
-                callbacks=[lgb.early_stopping(60,verbose=False)])
+                callbacks=[lgb.early_stopping(60,verbose=False),lgb.log_evaluation(100)])
             settings={"best_iteration":model.best_iteration_,"num_leaves":15}
         elif kind=="neural":
             model=NeuralClassifier(x.shape[1]).fit(xx,yy,x[dev],xswap[dev],y[dev])

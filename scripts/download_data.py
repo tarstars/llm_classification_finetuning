@@ -2,11 +2,12 @@
 from pathlib import Path
 import base64
 import json
+import os
 import shutil
 import urllib.request
 import zipfile
 
-ROOT = Path.home() / "database/llm_classification_finetuning"
+ROOT = Path(os.environ.get("ARENA_DATA_DIR", Path.home() / "database/llm_classification_finetuning"))
 
 
 def main():

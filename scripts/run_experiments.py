@@ -12,7 +12,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
 import numpy as np
 import pandas as pd
 from scipy import sparse
-from arena.data import ROOT,CLASSES,TEXT_COLUMNS,load_data,split_data,structural_features,swapped,dense_pair_features,swapped_pair_features,json_write
+from arena.data import ROOT,CLASSES,TEXT_COLUMNS,load_data,split_data,prompt_groups,structural_features,swapped,dense_pair_features,swapped_pair_features,json_write
 from arena.models import fit_classifiers,scores
 
 parser=argparse.ArgumentParser()
@@ -20,13 +20,23 @@ parser.add_argument("stage",choices=["prepare","tfidf","rnn","rnn_long","qwen","
 args=parser.parse_args()
 out=ROOT/"runs/attempt_001"
 out.mkdir(parents=True,exist_ok=True)
+if (out/'final_evaluation.json').exists():
+    raise SystemExit('Attempt 001 is frozen. Use a fresh ARENA_DATA_DIR to reproduce or start another experiment.')
 train,test=load_data()
 frame=pd.concat([train,test],ignore_index=True)
-y,parts,fold=split_data(train)
+if args.stage!='prepare' and (out/'split_manifest.parquet').exists():
+    manifest=pd.read_parquet(out/'split_manifest.parquet')
+    assert np.array_equal(manifest.id.to_numpy(),train.id.to_numpy())
+    assert np.array_equal(manifest.prompt_group.to_numpy(),prompt_groups(train).to_numpy())
+    y=np.load(out/'labels.npy');fold=np.load(out/'fold.npy')
+    assert np.array_equal(y,train[CLASSES].values.argmax(1))
+    parts={k:np.load(out/f'{k}_idx.npy') for k in ['train','dev','holdout']}
+else:
+    y,parts,fold=split_data(train)
+    np.save(out/"labels.npy",y)
+    np.save(out/"fold.npy",fold)
+    for name,idx in parts.items():np.save(out/f"{name}_idx.npy",idx)
 stats=structural_features(frame)
-np.save(out/"labels.npy",y)
-np.save(out/"fold.npy",fold)
-for name,idx in parts.items():np.save(out/f"{name}_idx.npy",idx)
 
 if args.stage=="prepare":
     from arena.data import prompt_groups

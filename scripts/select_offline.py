@@ -7,6 +7,8 @@ from scipy.optimize import minimize,minimize_scalar
 from arena.data import ROOT,json_write
 
 out=ROOT/'runs/attempt_001'
+if (out/'final_evaluation.json').exists():
+    raise SystemExit('Attempt 001 is frozen; its deployment settings are already saved.')
 names=sorted(['structural__gbdt','tfidf_sparse__logistic','tfidf_svd__gbdt','rnn__end_to_end','rnn__gbdt'])
 rows={n:json.loads((out/f'{n}.json').read_text()) for n in names}
 stack=np.stack([np.load(out/f'{n}_predictions.npy') for n in names])

@@ -26,6 +26,8 @@ majority baseline deliberately keeps its constant original label without swap av
 - Freeze all candidates and ensemble choices before reading holdout metrics.
   Evaluate the frozen comparison once; subsequent research needs a new confirmation
   set or nested cross-validation.
+  Scripts refuse to overwrite the frozen attempt. Reproduction uses a fresh
+  `ARENA_DATA_DIR` with a `raw/` link or copy of the original files.
 - Augment training by swapping responses and exchanging A/B labels. Average original
   and swapped predictions at inference. Ties stay ties. This enforces response-order
   consistency.
@@ -90,6 +92,8 @@ uv run python scripts/run_experiments.py prepare
 uv run python scripts/run_experiments.py structural
 uv run python scripts/run_experiments.py tfidf
 uv run python scripts/run_experiments.py rnn
+uv run python scripts/run_experiments.py rnn_long
+uv run python scripts/refine_tfidf.py
 uv run python scripts/embed.py
 uv run python scripts/run_experiments.py qwen
 uv run python scripts/run_experiments.py hybrid

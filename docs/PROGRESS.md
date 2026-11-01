@@ -70,6 +70,7 @@ The offline notebook refits lexical, structural and GRU models on all training l
 and produces `submission.csv`. No network or pretrained downloads inside the notebook.
 Private Kaggle notebook version 1 was launched successfully:
 [offline attempt 001](https://www.kaggle.com/code/arseniytrushin/llm-preference-offline-attempt-001).
-This is a running notebook, not yet a scored competition submission.
+Kaggle accepted code submission **57866428** using version 1. Scoring is pending;
+no leaderboard score has been claimed.
 Four invariant tests cover JSON parsing, prompt-group isolation, feature swapping and
 probability symmetry. Jupyter kernel registered as `arena-llm`.

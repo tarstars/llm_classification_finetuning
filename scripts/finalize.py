@@ -18,6 +18,9 @@ report_dir.mkdir(parents=True,exist_ok=True)
 if (out/"final_evaluation.json").exists():
     raise SystemExit("Final holdout was already evaluated. Use the saved results; do not retune on it.")
 required={f'{representation}__{head}' for representation in ['tfidf_svd','rnn','qwen3_256'] for head in ['logistic','gbdt','neural']}
+required.update(['tfidf_sparse__logistic','tfidf_sparse_scaled__logistic','rnn__end_to_end','hybrid__gbdt'])
+required.update(f'structural__{head}' for head in ['logistic','gbdt','neural'])
+required.update(f'rnn_long__{head}' for head in ['logistic','gbdt','neural','end_to_end'])
 rows=[];predictions={}
 for path in sorted(out.glob('*.json')):
     row=json.loads(path.read_text())
@@ -110,7 +113,7 @@ confirmation={'selected_model':selected,'holdout_log_loss':scores(y[hold],chosen
 evaluation={'selection':selection,'confirmation':confirmation,'models':rows,
     'limitations':['One fixed prompt-grouped split; no repeated-seed or full cross-validation evidence.',
         'Visible test has three examples; submission CSV is a format check, not a leaderboard score.',
-        'The sparse TF-IDF logistic solver reached its 250-iteration cap; treat it as an optimization-limited baseline.',
+        'The original sparse TF-IDF logistic fit reached its 250-iteration cap; the separately scaled follow-up converged in 79 iterations.',
         'Qwen features require an external service and are unsuitable for internet-disabled Kaggle inference without a local model.',
         'The from-scratch GRU has limited context and cannot be assumed to match pretrained language-model quality.']}
 json_write(out/'final_evaluation.json',evaluation)
@@ -118,7 +121,20 @@ json_write(report_dir/'metrics.json',evaluation)
 json_write(report_dir/'data_summary.json',json.loads((out/'data_summary.json').read_text()))
 for name in ['rnn_history.json','rnn_metadata.json','tfidf_metadata.json']:
     json_write(report_dir/name,json.loads((out/name).read_text()))
-json_write(report_dir/'qwen_metadata.json',json.loads((ROOT/'embeddings/qwen3_256.json').read_text()))
+qwen_metadata=json.loads((ROOT/'embeddings/qwen3_256.json').read_text())
+cache=ROOT/'embeddings'/qwen_metadata['sha256'][:16]
+usage=[json.loads(p.read_text()).get('usage') or {} for p in cache.glob('batch_*.json')]
+qwen_metadata['completed_batches']=len(usage)
+qwen_metadata['api_reported_prompt_tokens']=sum(u.get('prompt_tokens',0) for u in usage)
+qwen_metadata['api_reported_cost']=sum(u.get('cost',0) for u in usage)
+json_write(report_dir/'qwen_metadata.json',qwen_metadata)
+for name in ['rnn_history.json','rnn_metadata.json']:
+    json_write(report_dir/('rnn_long_'+name.removeprefix('rnn_')),json.loads((out/'rnn_long'/name).read_text()))
+import platform,torch,sklearn,lightgbm
+from datetime import datetime,timezone
+json_write(report_dir/'environment.json',{'python':platform.python_version(),'torch':torch.__version__,
+    'scikit_learn':sklearn.__version__,'lightgbm':lightgbm.__version__,'numpy':np.__version__,
+    'evaluation_utc':datetime.now(timezone.utc).isoformat(),'device':'cpu'})
 np.save(out/'calibrated_ensemble_predictions.npy',ensemble)
 np.save(out/'offline_ensemble_predictions.npy',predictions['offline_ensemble'])
 submission=pd.DataFrame(predictions[selected][len(train):],columns=CLASSES)
