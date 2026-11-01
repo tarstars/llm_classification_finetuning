@@ -1,0 +1,107 @@
+{
+  "model_id": "Qwen/Qwen3-4B",
+  "model_path": "/kaggle/input/models/qwen-lm/qwen-3/transformers/4b/1",
+  "pilot": false,
+  "config": {
+    "attempt": "002",
+    "model_id": "Qwen/Qwen3-4B",
+    "model_source": "qwen-lm/qwen-3/transformers/4b/1",
+    "max_length": 1024,
+    "seed": 20261102,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "epochs": 1,
+    "train_batch_size": 4,
+    "eval_batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "group_training_by_length": true,
+    "eval_steps": 200,
+    "selection_dev_rows": 1024,
+    "max_train_seconds": 21600,
+    "preprocessing_sha256": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "split_ids_sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1"
+  },
+  "dtype": "torch.float16",
+  "world_size": 2,
+  "train_rows": 45985,
+  "selection_dev_rows": 1024,
+  "final_dev_rows": 5746,
+  "confirmation_evaluated": false,
+  "global_steps": 877,
+  "epochs_completed": 0.6101930770568794,
+  "stopped_for_budget": true,
+  "adapter_sha256": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+  "best_selection_dev_log_loss": 0.9787039158366522,
+  "best_checkpoint": "/kaggle/working/joint_run/checkpoints/checkpoint-800",
+  "training_seconds": 21964.302612041,
+  "seconds_per_optimizer_step": 25.044814836990877,
+  "development_prediction_seconds": 3748.656282191998,
+  "train_result": {
+    "train_runtime": 21961.8336,
+    "train_samples_per_second": 1.277,
+    "train_steps_per_second": 0.04,
+    "train_loss": 1.0786520954956351,
+    "epoch": 0.6101930770568794
+  },
+  "development": {
+    "log_loss": 0.9773837072913087,
+    "accuracy": 0.5273233553776541,
+    "balanced_accuracy": 0.5247367963128498,
+    "macro_f1": 0.5246110105826401,
+    "brier": 0.5831936008352668
+  },
+  "temperature": 0.7220597450036835,
+  "calibrated_development": {
+    "log_loss": 0.9688254519759955,
+    "accuracy": 0.5273233553776541,
+    "balanced_accuracy": 0.5247367963128498,
+    "macro_f1": 0.5246110105826401,
+    "brier": 0.5776749160955102
+  },
+  "trainable_parameters": 11804160,
+  "total_parameters": 4034279936,
+  "peak_gpu_bytes": 7792116736,
+  "diagnostics": {
+    "train": {
+      "prompt": {
+        "mean_tokens": 83.00741546156355,
+        "max_tokens": 10429
+      },
+      "response_a": {
+        "mean_tokens": 291.08248341850606,
+        "max_tokens": 11812
+      },
+      "response_b": {
+        "mean_tokens": 292.2253560943786,
+        "max_tokens": 9019
+      }
+    },
+    "development": {
+      "prompt": {
+        "mean_tokens": 82.61328125,
+        "max_tokens": 3086
+      },
+      "response_a": {
+        "mean_tokens": 294.9443359375,
+        "max_tokens": 2806
+      },
+      "response_b": {
+        "mean_tokens": 294.0556640625,
+        "max_tokens": 2194
+      }
+    }
+  },
+  "software": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128"
+  }
+}

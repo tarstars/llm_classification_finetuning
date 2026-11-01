@@ -1,8 +1,6 @@
 {
-  "stage": "waiting_for_kernel",
-  "utc": "2026-11-01T17:54:33.540089+00:00",
+  "stage": "confirmation_complete",
+  "utc": "2026-11-01T21:05:51.432228+00:00",
   "pid": 3923947,
-  "training_job": "qwen4b1024",
-  "job": "qwen4b1024",
-  "status": "RUNNING"
+  "training_job": "qwen4b1024"
 }

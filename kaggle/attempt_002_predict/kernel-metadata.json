@@ -1,0 +1,20 @@
+{
+  "id": "arseniytrushin/llm-preference-qwen3-4b-predict-002",
+  "title": "LLM Preference Qwen3-4B Predict 002",
+  "code_file": "joint_inference.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "competition_sources": [
+    "llm-classification-finetuning"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [
+    "arseniytrushin/llm-preference-qwen3-4b-train-002/1"
+  ],
+  "model_sources": [
+    "qwen-lm/qwen-3/transformers/4b/1"
+  ]
+}

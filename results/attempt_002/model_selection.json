@@ -1,0 +1,52 @@
+{
+  "job": "qwen4b1024",
+  "kernel": "arseniytrushin/llm-preference-qwen3-4b-train-002",
+  "version_number": 1,
+  "adapter_sha256": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+  "temperature": 0.7220597450036835,
+  "config": {
+    "attempt": "002",
+    "model_id": "Qwen/Qwen3-4B",
+    "model_source": "qwen-lm/qwen-3/transformers/4b/1",
+    "max_length": 1024,
+    "seed": 20261102,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "epochs": 1,
+    "train_batch_size": 4,
+    "eval_batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "group_training_by_length": true,
+    "eval_steps": 200,
+    "selection_dev_rows": 1024,
+    "max_train_seconds": 21600,
+    "preprocessing_sha256": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "split_ids_sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1"
+  },
+  "development": {
+    "log_loss": 0.9773837072913087,
+    "accuracy": 0.5273233553776541,
+    "balanced_accuracy": 0.5247367963128498,
+    "macro_f1": 0.5246110105826401,
+    "brier": 0.5831936008352668
+  },
+  "calibrated_development": {
+    "log_loss": 0.9688254519759955,
+    "accuracy": 0.5273233553776541,
+    "balanced_accuracy": 0.5247367963128498,
+    "macro_f1": 0.5246110105826401,
+    "brier": 0.5776749160955102
+  },
+  "epochs_completed": 0.6101930770568794,
+  "stopped_for_budget": true,
+  "confirmation_used_for_selection": false
+}

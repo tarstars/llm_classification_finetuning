@@ -1,0 +1,47 @@
+{
+  "confirmation": {
+    "log_loss": 0.9623631122994142,
+    "accuracy": 0.5306300034806822,
+    "balanced_accuracy": 0.5288258459363778,
+    "macro_f1": 0.5288948998043094,
+    "brier": 0.5731824155937163
+  },
+  "uncalibrated_confirmation": {
+    "log_loss": 0.9725344083712714,
+    "accuracy": 0.5306300034806822,
+    "balanced_accuracy": 0.5288258459363778,
+    "macro_f1": 0.5288948998043094,
+    "brier": 0.5797547999456586
+  },
+  "training_prior_confirmation": {
+    "log_loss": 1.0972336987876452,
+    "accuracy": 0.34911242603550297,
+    "balanced_accuracy": 0.3333333333333333,
+    "macro_f1": 0.17251461988304095,
+    "brier": 0.6657579692624933
+  },
+  "majority_confirmation": {
+    "log_loss": 23.46036611125968,
+    "accuracy": 0.34911242603550297,
+    "balanced_accuracy": 0.3333333333333333,
+    "macro_f1": 0.17251461988304095,
+    "brier": 1.301775147928994
+  },
+  "rows": 5746,
+  "temperature": 0.7220597450036835,
+  "model_choices_frozen_before_confirmation": true,
+  "diagnostics": {
+    "prompt": {
+      "mean_tokens": 85.23877479986078,
+      "max_tokens": 3512
+    },
+    "response_a": {
+      "mean_tokens": 291.94622345979815,
+      "max_tokens": 5599
+    },
+    "response_b": {
+      "mean_tokens": 291.2307692307692,
+      "max_tokens": 4052
+    }
+  }
+}
