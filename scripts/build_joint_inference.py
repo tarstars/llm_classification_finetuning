@@ -8,10 +8,16 @@ from arena.data import ROOT
 
 parser=argparse.ArgumentParser()
 parser.add_argument('mode',choices=['confirm','predict'])
+parser.add_argument('--selection',type=Path,default=ROOT/'runs/attempt_002/model_selection.json')
+parser.add_argument('--output-dir',type=Path)
 args=parser.parse_args()
-selection=json.loads((ROOT/'runs/attempt_002/model_selection.json').read_text())
+selection=json.loads(args.selection.read_text())
 parent=selection['kernel'];owner,slug=parent.split('/')
-dest=REPO/f'kaggle/attempt_002_{args.mode}'
+model_name=selection['config']['model_id'].split('/')[-1]
+source=selection['config']['model_source']
+model_candidates=[f"Path('/kaggle/input/{'/'.join(source.split('/')[1:])}')",
+                  f"Path('/kaggle/input/models/{source}')","TRAIN/'base_model'"]
+dest=args.output_dir or REPO/f'kaggle/attempt_002_{args.mode}'
 dest.mkdir(parents=True,exist_ok=True)
 cells=[nbf.v4.new_markdown_cell(f'''# Attempt 002: frozen joint preference model — {args.mode}
 
@@ -45,8 +51,7 @@ cells.append(nbf.v4.new_code_cell(f'''import torch
 assert torch.cuda.is_available()
 RAW=next(p for p in [Path('/kaggle/input/llm-classification-finetuning'),
     Path('/kaggle/input/competitions/llm-classification-finetuning')] if (p/'test.csv').exists())
-candidates=[Path('/kaggle/input/qwen-3/transformers/8b/1'),
-    Path('/kaggle/input/models/qwen-lm/qwen-3/transformers/8b/1'),TRAIN/'base_model']
+candidates=[{','.join(model_candidates)}]
 MODEL=next(p for p in candidates if (p/'config.json').exists())
 environment=os.environ.copy();environment['PYTHONPATH']=str(MODULES);environment['PYTHONUNBUFFERED']='1'
 command=[sys.executable,'-m','torch.distributed.run','--standalone',f'--nproc_per_node={{torch.cuda.device_count()}}',
@@ -63,8 +68,8 @@ if code:raise RuntimeError(f'Inference failed with exit code {{code}}')
 '''))
 notebook=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'name':'python3','display_name':'Python 3','language':'python'}})
 nbf.write(notebook,dest/'joint_inference.ipynb')
-metadata={'id':f'{owner}/llm-preference-qwen3-8b-{args.mode}-002',
-    'title':f'LLM Preference Qwen3 8B {args.mode.title()} 002','code_file':'joint_inference.ipynb',
+metadata={'id':f'{owner}/llm-preference-{model_name.lower()}-{args.mode}-002',
+    'title':f'LLM Preference {model_name} {args.mode.title()} 002','code_file':'joint_inference.ipynb',
     'language':'python','kernel_type':'notebook','is_private':True,'enable_gpu':True,'enable_internet':False,
     'competition_sources':['llm-classification-finetuning'],'dataset_sources':[],
     'kernel_sources':[f"{parent}/{selection['version_number']}"],'model_sources':[selection['config']['model_source']]}

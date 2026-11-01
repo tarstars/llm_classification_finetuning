@@ -97,18 +97,24 @@ class JointTokenizer:
         return sequence
 
     def encode_frame(self, frame):
-        fields = []
-        diagnostics = {}
-        for name in TEXT_COLUMNS:
-            tokens = self.tokenizer(frame[name].tolist(), add_special_tokens=False,
-                                    truncation=False, padding=False)["input_ids"]
-            fields.append(tokens)
-            diagnostics[name] = {"mean_tokens": float(np.mean([len(x) for x in tokens])),
-                                 "max_tokens": max(map(len, tokens), default=0)}
         original, swapped = [], []
-        for p, a, b in zip(*fields):
-            original.append(self.combine(p, a, b))
-            swapped.append(self.combine(p, b, a))
+        totals = {name: 0 for name in TEXT_COLUMNS}
+        maxima = {name: 0 for name in TEXT_COLUMNS}
+        # Avoid retaining the entire untruncated corpus on each distributed rank.
+        for start in range(0,len(frame),256):
+            fields = []
+            for name in TEXT_COLUMNS:
+                tokens = self.tokenizer(frame[name].iloc[start:start+256].tolist(),
+                    add_special_tokens=False,truncation=False,padding=False)['input_ids']
+                fields.append(tokens)
+                lengths = list(map(len,tokens))
+                totals[name] += sum(lengths)
+                maxima[name] = max(maxima[name],max(lengths,default=0))
+            for p,a,b in zip(*fields):
+                original.append(self.combine(p,a,b))
+                swapped.append(self.combine(p,b,a))
+        diagnostics = {name:{'mean_tokens':totals[name]/max(len(frame),1),
+                            'max_tokens':maxima[name]} for name in TEXT_COLUMNS}
         return original, swapped, diagnostics
 
 

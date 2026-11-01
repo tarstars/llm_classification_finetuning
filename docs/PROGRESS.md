@@ -6,14 +6,23 @@ The user authorized joint preference fine-tuning. See [ATTEMPT_002.md](ATTEMPT_0
 Two Kaggle Tesla T4 GPUs passed an environment/backward probe. The initial Qwen3-8B
 QLoRA pilot completed: 7.68 GB allocated memory/GPU, 45.64 seconds/optimizer step.
 It exposed loss scaling errors under accumulation/DDP; explicit mean cross entropy
-fixes them. A corrected batch-four pilot is running at
+fixes them. A corrected batch-four pilot completed at
 `arseniytrushin/llm-preference-qwen3-8b-pilot-002-batch4` (version 1).
 The new split has 45,985 train / 5,746 development / 5,746 confirmation rows, fixed
 by explicit IDs under `~/database/llm_classification_finetuning/runs/attempt_002`.
-The structural-tree development baseline is 1.03375 log loss. All nine local tests
+The structural-tree development baseline is 1.03375 log loss. All ten local tests
 passed, including accumulated/full-batch update equivalence and adapter/head reloading.
 Notebook 04 is executed with current aggregate evidence. No attempt-002
-model score has been claimed yet. Select the full run using measured pilot throughput.
+model quality score has been claimed yet. Corrected GPU loss scaling passed; training
+steps excluding evaluation took 45.74 seconds, about 18.3 hours/epoch for 8B before
+length grouping. The selected long run is Qwen3-4B, 1,024 tokens, global batch 32,
+one epoch or six training hours, with train-only length grouping. The resumable
+pipeline freezes choices, evaluates confirmation, runs offline prediction, submits
+to Kaggle and publishes generated aggregate results. Its state/log are under
+`~/database/llm_classification_finetuning/runs/attempt_002/pipeline_state.json` and
+`pipeline.log`. No paid GPU service is enabled.
+The numeric quota API confirms about 29.5 free GPU hours remaining; the SDK's
+formatted duration drops whole days, so use `total_seconds()` for quota calculations.
 
 ## Frozen work — attempt 001
 

@@ -50,10 +50,22 @@ class PreferenceTrainer(Trainer):
     num_items_in_batch to its loss. Trainer otherwise assumes that loss was
     normalized over the accumulated global batch and scales it incorrectly.
     """
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, group_training_by_length=False, **kwargs):
+        self.group_training_by_length = group_training_by_length
         super().__init__(*args, **kwargs)
         self.model_accepts_loss_kwargs = False
         self.loss_is_scaled_for_ga = False
+
+    def _get_train_sampler(self, train_dataset=None):
+        if not self.group_training_by_length:
+            return super()._get_train_sampler(train_dataset)
+        from transformers.trainer_pt_utils import LengthGroupedSampler
+        dataset = self.train_dataset if train_dataset is None else train_dataset
+        lengths = [max(len(a),len(b)) for a,b in zip(dataset.original,dataset.swapped)]
+        # Group only training batches. Prediction ordering must stay sequential
+        # so original/swapped probabilities match the external row IDs and labels.
+        return LengthGroupedSampler(self.args.train_batch_size*self.args.gradient_accumulation_steps,
+                                    lengths=lengths)
 
     def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
         labels = inputs['labels']
@@ -163,6 +175,7 @@ def make_trainer(model, tokenizer, train_dataset, dev_dataset, config, out, pilo
     if not pilot_steps:
         callbacks.append(EarlyStoppingCallback(early_stopping_patience=3))
     return PreferenceTrainer(model=model, args=arguments, train_dataset=train_dataset, eval_dataset=dev_dataset,
+        group_training_by_length=config.get('group_training_by_length',False),
         processing_class=tokenizer, data_collator=PreferenceCollator(tokenizer),
         compute_metrics=compute_metrics, callbacks=callbacks)
 
@@ -220,7 +233,9 @@ def run_training(raw, model_path, split_path, config, out, pilot_steps=0, resume
     val_frame=frame.iloc[final_idx]
     val_orig,val_swap,_=encoder.encode_frame(val_frame)
     val_y=val_frame[CLASSES].values.argmax(1)
+    prediction_started=time.monotonic()
     p=predict_swapped(trainer,val_orig,val_swap,val_y)
+    prediction_seconds=time.monotonic()-prediction_started
     if trainer.is_world_process_zero():
         temperature=minimize_scalar(lambda t: metrics(val_y,temper(p,t))["log_loss"],bounds=(.5,3.),method="bounded").x
         np.savez_compressed(out/"dev_predictions.npz",ids=val_frame.id.to_numpy(),labels=val_y,probabilities=p)
@@ -235,6 +250,7 @@ def run_training(raw, model_path, split_path, config, out, pilot_steps=0, resume
             "best_selection_dev_log_loss":trainer.state.best_metric,
             "best_checkpoint":trainer.state.best_model_checkpoint,
             "training_seconds":train_seconds,"seconds_per_optimizer_step":train_seconds/max(trainer.state.global_step,1),
+            "development_prediction_seconds":prediction_seconds,
             "train_result":result.metrics,"development":metrics(val_y,p),
             "temperature":float(temperature),"calibrated_development":metrics(val_y,temper(p,temperature)),
             "trainable_parameters":model.get_nb_trainable_parameters()[0],

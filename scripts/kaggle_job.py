@@ -10,7 +10,7 @@ sys.path.insert(0, str(REPO / "src"))
 from arena.data import ROOT, json_write
 
 parser = argparse.ArgumentParser()
-parser.add_argument("action", choices=["push", "status", "output", "submit", "submissions"])
+parser.add_argument("action", choices=["push", "status", "output", "submit", "submissions", "quota"])
 parser.add_argument("--folder", type=Path, required=True)
 parser.add_argument("--job", required=True)
 parser.add_argument("--pattern", default=r"(?:summary|gpu_probe|training_config|confirmation|prediction_summary|runtime_requirements)\.json$|training_progress\.jsonl$|\.csv$|\.log$|\.ipynb$")
@@ -64,3 +64,14 @@ elif args.action == 'submissions':
     result = [fields(x) for x in api.competition_submissions('llm-classification-finetuning') or []]
     json_write(out/'submissions.json',result)
     print(json.dumps(result,default=str,indent=2))
+elif args.action == 'quota':
+    quota=api.quota_view()
+    gpu=quota.gpu_quota
+    result={'refresh_time':str(quota.quota_refresh_time),
+            'used_seconds':gpu.time_used.total_seconds(),
+            'reserved_seconds':gpu.time_reserved.total_seconds(),
+            'allowed_seconds':gpu.total_time_allowed.total_seconds(),
+            'pay_to_scale_enabled':gpu.is_pay_to_scale_enabled}
+    result['remaining_seconds']=result['allowed_seconds']-result['used_seconds']-result['reserved_seconds']
+    json_write(out/'quota.json',result)
+    print(json.dumps(result,indent=2))

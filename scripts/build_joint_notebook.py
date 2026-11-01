@@ -14,6 +14,7 @@ from arena.data import ROOT
 
 parser=argparse.ArgumentParser()
 parser.add_argument('stage',choices=['pilot','train'])
+parser.add_argument('--config',type=Path,default=REPO/'configs/attempt_002.json')
 parser.add_argument('--pilot-steps',type=int,default=20)
 parser.add_argument('--max-length',type=int)
 parser.add_argument('--train-batch-size',type=int)
@@ -21,7 +22,13 @@ parser.add_argument('--gradient-accumulation-steps',type=int)
 parser.add_argument('--tag',default='',help='Separate folder and kernel for a controlled variant')
 parser.add_argument('--epochs',type=float)
 args=parser.parse_args()
-config=json.loads((REPO/'configs/attempt_002.json').read_text())
+config=json.loads(args.config.read_text())
+model_name=config['model_id'].split('/')[-1]
+model_slug=model_name.lower()
+source=config['model_source']
+source_parts=source.split('/')
+model_candidates=[f"Path('/kaggle/input/{'/'.join(source_parts[1:])}')",
+                  f"Path('/kaggle/input/models/{source}')"]
 for key in ['max_length','train_batch_size','gradient_accumulation_steps','epochs']:
     value=getattr(args,key)
     if value is not None:config[key]=value
@@ -33,11 +40,11 @@ split_encoded=base64.b64encode(zlib.compress(split_bytes,9)).decode()
 suffix=f'-{args.tag}' if args.tag else ''
 dest=REPO/f'kaggle/attempt_002_{args.stage}{suffix}'
 dest.mkdir(parents=True,exist_ok=True)
-cells=[nbf.v4.new_markdown_cell(f'''# Attempt 002: Qwen3-8B joint preference classifier ({args.stage})
+cells=[nbf.v4.new_markdown_cell(f'''# Attempt 002: {model_name} joint preference classifier ({args.stage})
 
 Read the question and both responses jointly, train a three-class head and LoRA adapters,
 and compare with training-prior and majority baselines. The base model is the general
-Qwen3-8B checkpoint, not a model fine-tuned on this competition. Gemma is not required.
+{model_name} checkpoint, not a model fine-tuned on this competition. Gemma is not required.
 
 All split assignments are fixed by explicit IDs from a separate prompt-grouped partition.
 Training augments response swaps; evaluation averages both orientations. Model selection
@@ -77,8 +84,7 @@ for name in ['data','joint_data','joint_train']:
 cells.append(nbf.v4.new_code_cell(f"CONFIG={config!r}\nSPLIT_BYTES=zlib.decompress(base64.b64decode({split_encoded!r}))\nassert hashlib.sha256(SPLIT_BYTES).hexdigest()=={hashlib.sha256(split_bytes).hexdigest()!r}\n(WORK/'split_ids.json').write_bytes(SPLIT_BYTES)\n(WORK/'training_config.json').write_text(json.dumps(CONFIG,indent=2))\nprint(CONFIG)"))
 cells.append(nbf.v4.new_code_cell('''RAW=next(p for p in [Path('/kaggle/input/llm-classification-finetuning'),
     Path('/kaggle/input/competitions/llm-classification-finetuning')] if (p/'train.csv').exists())
-MODEL_CANDIDATES=[Path('/kaggle/input/qwen-3/transformers/8b/1'),
-    Path('/kaggle/input/models/qwen-lm/qwen-3/transformers/8b/1')]
+MODEL_CANDIDATES=SOURCE_CANDIDATES
 MODEL=next((p for p in MODEL_CANDIDATES if (p/'config.json').exists()),None)
 if MODEL is None:
     from huggingface_hub import HfApi, snapshot_download
@@ -90,7 +96,7 @@ if MODEL is None:
     (WORK/'training_config.json').write_text(json.dumps(CONFIG,indent=2))
 print('Pinned base model:', MODEL)
 assert json.loads((MODEL/'config.json').read_text())['model_type']=='qwen3'
-'''))
+'''.replace('SOURCE_CANDIDATES','['+','.join(model_candidates)+']')))
 cells.append(nbf.v4.new_code_cell(f'''environment=os.environ.copy()
 environment['PYTHONPATH']=str(MODULES)
 environment['PYTHONUNBUFFERED']='1'
@@ -113,8 +119,8 @@ summary
 notebook=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'name':'python3','display_name':'Python 3','language':'python'}})
 nbf.write(notebook,dest/'joint_training.ipynb')
 owner=json.loads((REPO/'kaggle/kernel-metadata.json').read_text())['id'].split('/')[0]
-metadata={'id':f'{owner}/llm-preference-qwen3-8b-{args.stage}-002{suffix}',
-    'title':f'LLM Preference Qwen3 8B {args.stage.title()} 002 {args.tag}'.strip(),'code_file':'joint_training.ipynb',
+metadata={'id':f'{owner}/llm-preference-{model_slug}-{args.stage}-002{suffix}',
+    'title':f'LLM Preference {model_name} {args.stage.title()} 002 {args.tag}'.strip(),'code_file':'joint_training.ipynb',
     'language':'python','kernel_type':'notebook','is_private':True,'enable_gpu':True,'enable_internet':True,
     'competition_sources':['llm-classification-finetuning'],'dataset_sources':[],
     'kernel_sources':[],'model_sources':[config['model_source']]}

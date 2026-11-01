@@ -5,6 +5,7 @@ failed GPU execution or overwrites a recorded model selection. Network reads ret
 briefly; expensive stages are submitted once and identified by their saved version.
 """
 import argparse
+import fcntl
 import json
 import os
 import subprocess
@@ -21,10 +22,14 @@ from arena.data import ROOT,json_write
 parser=argparse.ArgumentParser()
 parser.add_argument('--train-folder',type=Path,required=True)
 parser.add_argument('--job',required=True)
+parser.add_argument('--pilot-job',required=True)
 parser.add_argument('--publish-results',action='store_true',help='Commit/push generated aggregate results and notebooks')
 args=parser.parse_args()
 ARTIFACTS=ROOT/'runs/attempt_002'
 STATE=ARTIFACTS/'pipeline_state.json'
+ARTIFACTS.mkdir(parents=True,exist_ok=True)
+lock=(ARTIFACTS/'pipeline.lock').open('a')
+fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
 
 
 def state(stage,**details):
@@ -93,6 +98,7 @@ def refresh():
 
 try:
     state('started')
+    run('scripts/check_joint_pilot.py','--job',args.pilot_job)
     finish_kernel(args.train_folder,args.job)
     state('freezing_model')
     run('scripts/freeze_joint.py','--folder',args.train_folder,'--job',args.job)

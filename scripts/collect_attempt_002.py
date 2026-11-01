@@ -24,7 +24,7 @@ index=[]
 for job in sorted((source/'jobs').iterdir()):
     if not job.is_dir():continue
     row={'job':job.name}
-    for name in ['push.json','status.json','submission.json','submissions.json']:
+    for name in ['push.json','status.json','submission.json','submissions.json','quota.json','pilot_checks.json']:
         path=job/name
         if path.exists():
             json_write(dest/job.name/name,json.loads(path.read_text()))
@@ -43,7 +43,7 @@ if (source/'pipeline_state.json').exists():
 
 baseline=json.loads((dest/'baselines.json').read_text())
 report=['# Attempt 002: joint preference fine-tuning','',
-    'Attempt 001 scored **1.00897** on Kaggle. This experiment trains a Qwen3-8B',
+    'Attempt 001 scored **1.00897** on Kaggle. This experiment trains a Qwen3',
     'joint preference classifier using QLoRA on two Kaggle T4 GPUs.',
     'See the [executed notebook](notebooks/04_joint_preference_finetuning.ipynb) and',
     '[evaluation protocol](docs/ATTEMPT_002.md).','',
@@ -110,7 +110,7 @@ Attempt 001 scored **1.00897** on Kaggle. This attempt tests whether adapting a
 pretrained language model to read the question and both responses jointly improves
 preference prediction. Lower multiclass log loss is better.
 
-Qwen3-8B is the general language-model checkpoint; it is distinct from attempt 001's
+Qwen3 is the general language-model checkpoint family; it is distinct from attempt 001's
 frozen embedding model. NF4 QLoRA updates attention adapters and a three-class head.
 The training notebook runs on two Kaggle T4 GPUs. Source and aggregate results are
 stored here; model weights and data remain outside GitHub.
@@ -139,7 +139,7 @@ for entry in index['jobs']:
     if path.exists():
         s=json.loads(path.read_text())
         runs.append((entry['job'],s))
-display(pd.DataFrame([{'job':j,'pilot':s['pilot'],'steps':s['global_steps'],
+display(pd.DataFrame([{'job':j,'model':s['model_id'],'pilot':s['pilot'],'steps':s['global_steps'],
     'batch_per_gpu':s['config']['train_batch_size'],'accumulation':s['config']['gradient_accumulation_steps'],
     'seconds_per_step':s['seconds_per_optimizer_step'],'peak_GPU_GB':s['peak_gpu_bytes']/1e9,
     'epochs_completed':s.get('epochs_completed'),'budget_stopped':s.get('stopped_for_budget'),

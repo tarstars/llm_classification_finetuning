@@ -1,6 +1,6 @@
 # Attempt 002: joint preference fine-tuning
 
-Attempt 001 scored **1.00897** on Kaggle. This experiment trains a Qwen3-8B
+Attempt 001 scored **1.00897** on Kaggle. This experiment trains a Qwen3
 joint preference classifier using QLoRA on two Kaggle T4 GPUs.
 See the [executed notebook](notebooks/04_joint_preference_finetuning.ipynb) and
 [evaluation protocol](docs/ATTEMPT_002.md).
@@ -23,6 +23,7 @@ explicit mean cross entropy and corrected gradient accumulation.
 | Run | Pilot | Steps | Batch/GPU | Seconds/step | Peak GB/GPU |
 |---|---|---:|---:|---:|---:|
 | pilot1024 | True | 20 | 1 | 45.64 | 7.68 |
+| pilot1024_batch4 | True | 10 | 4 | 57.64 | 10.61 |
 
 ## Confirmation and official submission
 

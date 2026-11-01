@@ -1,0 +1,25 @@
+{
+  "attempt": "002",
+  "model_id": "Qwen/Qwen3-8B",
+  "model_source": "qwen-lm/qwen-3/transformers/8b/1",
+  "max_length": 1024,
+  "seed": 20261102,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "learning_rate": 5e-05,
+  "weight_decay": 0.01,
+  "epochs": 1,
+  "train_batch_size": 4,
+  "eval_batch_size": 4,
+  "gradient_accumulation_steps": 4,
+  "eval_steps": 200,
+  "selection_dev_rows": 1024,
+  "max_train_seconds": 1800
+}

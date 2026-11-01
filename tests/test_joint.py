@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 import numpy as np
+import pandas as pd
 import torch
 from arena.joint_data import JointTokenizer,PreferenceDataset,PreferenceCollator
 
@@ -29,6 +30,16 @@ class JointContracts(unittest.TestCase):
         self.assertLessEqual(len(ids),512)
         for marker in ['[USER REQUEST]','[ANSWER A]','[ANSWER B]','[DECISION]','A_END','B_END']:
             self.assertIn(marker,text)
+
+    def test_batched_encoding_preserves_rows_and_diagnostics(self):
+        encoder=JointTokenizer(CharacterTokenizer(),max_length=512)
+        frame=pd.DataFrame({'prompt':['p']*259,'response_a':['a'*i for i in range(259)],
+                            'response_b':['b'*5]*259})
+        original,swapped,diagnostics=encoder.encode_frame(frame)
+        expected=[encoder.combine(list(b'p'),list(b'a'*i),list(b'b'*5)) for i in range(259)]
+        self.assertEqual(original,expected)
+        self.assertEqual(swapped[-1],encoder.combine(list(b'p'),list(b'b'*5),list(b'a'*258)))
+        self.assertEqual(diagnostics['response_a'],{'mean_tokens':129.,'max_tokens':258})
 
     def test_swapping_keeps_ties_and_exchanges_winner(self):
         ds=PreferenceDataset([[4],[5],[6]],[[14],[15],[16]],np.array([0,1,2]),force_swap=True)
@@ -112,6 +123,10 @@ class JointContracts(unittest.TestCase):
             data=PreferenceDataset(original,swapped,np.arange(12)%3)
             out=Path(tmp)/'run';out.mkdir()
             trainer=make_trainer(model,tokenizer,data,data,cfg,out,pilot_steps=3)
+            trainer.group_training_by_length=True
+            sampled=list(trainer._get_train_sampler())
+            self.assertEqual(sorted(sampled),list(range(len(data))))
+            self.assertEqual(list(trainer._get_eval_sampler(data)),list(range(len(data))))
             trainer.args.load_best_model_at_end=False
             trainer.train()
             self.assertFalse(torch.equal(before,dict(model.named_parameters())[head_name]))
@@ -120,6 +135,9 @@ class JointContracts(unittest.TestCase):
             inputs=PreferenceCollator(tokenizer)([data[0],data[1]])
             inputs.pop('labels')
             with torch.no_grad():expected=model(**inputs).logits
+            prediction=trainer.predict(data)
+            np.testing.assert_array_equal(prediction.label_ids,np.arange(12)%3)
+            np.testing.assert_allclose(prediction.predictions[:2],expected.numpy(),atol=1e-6)
             model.save_pretrained(out/'adapter')
             restored=load_inference_model(base,out/'adapter',cfg)
             with torch.no_grad():actual=restored(**inputs).logits

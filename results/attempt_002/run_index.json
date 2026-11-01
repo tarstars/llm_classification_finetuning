@@ -1,5 +1,5 @@
 {
-  "collected_utc": "2026-11-01T12:28:09.198635+00:00",
+  "collected_utc": "2026-11-01T12:40:14.726532+00:00",
   "jobs": [
     {
       "job": "gpu_probe",
@@ -48,8 +48,34 @@
         "invalidDatasetSources": []
       },
       "status": {
-        "status": "KernelWorkerStatus.RUNNING",
+        "status": "KernelWorkerStatus.COMPLETE",
         "failure_message": ""
+      },
+      "quota": {
+        "refresh_time": "2026-11-07 00:00:00",
+        "used_seconds": 1819.551096,
+        "reserved_seconds": 0.0,
+        "allowed_seconds": 108000.0,
+        "pay_to_scale_enabled": false,
+        "remaining_seconds": 106180.448904
+      },
+      "pilot_checks": {
+        "passed": true,
+        "pilot_job": "pilot1024_batch4",
+        "global_steps": 10,
+        "loss_to_independent_log_loss_ratios": [
+          1.0000000652272694,
+          1.0000000596563
+        ],
+        "late_gradient_norms": [
+          108.486083984375,
+          50.01068115234375
+        ],
+        "peak_gpu_bytes": 10607268864,
+        "train_seconds_per_step_excluding_evaluation": 45.739742139099995,
+        "evaluation_rows_per_second_both_GPUs": 2.151,
+        "estimated_hidden_25k_swap_inference_seconds": 23245.002324500234,
+        "note": "Speed estimates use a small pilot; long-run timing and quality must be measured."
       }
     }
   ]
