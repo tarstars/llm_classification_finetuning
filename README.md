@@ -17,6 +17,7 @@ GPUs. See the [training plan and run instructions](docs/ATTEMPT_002.md).
 - [Problem and data](notebooks/01_problem_and_data.ipynb)
 - [Vectorizers and classifiers](notebooks/02_vectorizers_and_classifiers.ipynb)
 - [Results and next experiments](notebooks/03_results_and_next_experiments.ipynb)
+- [Joint preference fine-tuning and GPU diagnostics](notebooks/04_joint_preference_finetuning.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary

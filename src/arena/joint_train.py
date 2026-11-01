@@ -1,6 +1,7 @@
 """QLoRA joint preference classification, with resumable checkpoints and swap evaluation."""
 from __future__ import annotations
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -42,10 +43,30 @@ def temper(p, temperature):
     return probabilities(np.log(np.clip(p, 1e-12, 1)) / temperature)
 
 
+class PreferenceTrainer(Trainer):
+    """Mean example loss, with accumulation/DDP scaling owned by Trainer.
+
+    Qwen's generic classification forward accepts **kwargs but does not pass
+    num_items_in_batch to its loss. Trainer otherwise assumes that loss was
+    normalized over the accumulated global batch and scales it incorrectly.
+    """
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.model_accepts_loss_kwargs = False
+        self.loss_is_scaled_for_ga = False
+
+    def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
+        labels = inputs['labels']
+        outputs = model(**{k: v for k, v in inputs.items() if k != 'labels'})
+        loss = torch.nn.functional.cross_entropy(outputs.logits.float(), labels)
+        return (loss, outputs) if return_outputs else loss
+
+
 class Journal(TrainerCallback):
     def __init__(self, path, max_seconds):
         self.path, self.max_seconds = Path(path), max_seconds
         self.started = None
+        self.stopped_for_budget = False
 
     def on_train_begin(self, args, state, control, **kwargs):
         self.started = time.monotonic()
@@ -68,6 +89,7 @@ class Journal(TrainerCallback):
             torch.distributed.all_reduce(flag,op=torch.distributed.ReduceOp.MAX)
             stop = bool(flag.item())
         if stop:
+            self.stopped_for_budget = True
             control.should_training_stop = True
             control.should_save = True
             control.should_evaluate = True
@@ -140,7 +162,7 @@ def make_trainer(model, tokenizer, train_dataset, dev_dataset, config, out, pilo
     callbacks = [Journal(out/"training_progress.jsonl", config["max_train_seconds"])]
     if not pilot_steps:
         callbacks.append(EarlyStoppingCallback(early_stopping_patience=3))
-    return Trainer(model=model, args=arguments, train_dataset=train_dataset, eval_dataset=dev_dataset,
+    return PreferenceTrainer(model=model, args=arguments, train_dataset=train_dataset, eval_dataset=dev_dataset,
         processing_class=tokenizer, data_collator=PreferenceCollator(tokenizer),
         compute_metrics=compute_metrics, callbacks=callbacks)
 
@@ -158,6 +180,10 @@ def run_training(raw, model_path, split_path, config, out, pilot_steps=0, resume
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
     if (out/"summary.json").exists():
         raise RuntimeError("This training result already exists; use a separate job directory")
+    if config.get('preprocessing_sha256'):
+        assert hashlib.sha256(Path(__file__).with_name('joint_data.py').read_bytes()).hexdigest()==config['preprocessing_sha256']
+    if config.get('split_ids_sha256'):
+        assert hashlib.sha256(Path(split_path).read_bytes()).hexdigest()==config['split_ids_sha256']
     set_seed(config["seed"])
     tokenizer=AutoTokenizer.from_pretrained(str(model_path),local_files_only=True,padding_side="right")
     if tokenizer.pad_token_id is None:
@@ -203,6 +229,9 @@ def run_training(raw, model_path, split_path, config, out, pilot_steps=0, resume
             "config":config,"dtype":str(dtype),"world_size":world,"train_rows":len(train_idx),
             "selection_dev_rows":len(selection_idx),"final_dev_rows":len(final_idx),
             "confirmation_evaluated":False,"global_steps":trainer.state.global_step,
+            "epochs_completed":float(trainer.state.epoch),
+            "stopped_for_budget":any(getattr(c,'stopped_for_budget',False) for c in trainer.callback_handler.callbacks),
+            "adapter_sha256":hashlib.sha256((out/'adapter/adapter_model.safetensors').read_bytes()).hexdigest(),
             "best_selection_dev_log_loss":trainer.state.best_metric,
             "best_checkpoint":trainer.state.best_model_checkpoint,
             "training_seconds":train_seconds,"seconds_per_optimizer_step":train_seconds/max(trainer.state.global_step,1),

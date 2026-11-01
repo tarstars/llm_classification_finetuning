@@ -1,16 +1,17 @@
 """Frozen adapter evaluation and internet-disabled competition prediction."""
 from __future__ import annotations
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import numpy as np
 import pandas as pd
 import torch
 from peft import PeftModel
-from transformers import AutoTokenizer,Trainer,TrainingArguments
+from transformers import AutoTokenizer,TrainingArguments
 from .data import CLASSES,TEXT_COLUMNS,parse_turns,json_write
 from .joint_data import JointTokenizer,PreferenceCollator,read_competition,split_from_ids
-from .joint_train import load_base_model,predict_swapped,metrics,temper
+from .joint_train import load_base_model,predict_swapped,metrics,temper,PreferenceTrainer
 
 
 def load_inference_model(model_path,adapter_path,config):
@@ -18,8 +19,13 @@ def load_inference_model(model_path,adapter_path,config):
     return PeftModel.from_pretrained(model,str(adapter_path),is_trainable=False).eval()
 
 
-def run(raw,model_path,adapter,config,training_summary,out,mode,split_path=None):
+def run(raw,model_path,adapter,config,training_summary,out,mode,selection,split_path=None):
     out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    assert hashlib.sha256((Path(adapter)/'adapter_model.safetensors').read_bytes()).hexdigest()==selection['adapter_sha256']
+    assert training_summary['temperature']==selection['temperature']
+    assert not selection['confirmation_used_for_selection']
+    if config.get('preprocessing_sha256'):
+        assert hashlib.sha256(Path(__file__).with_name('joint_data.py').read_bytes()).hexdigest()==config['preprocessing_sha256']
     tokenizer=AutoTokenizer.from_pretrained(str(adapter),local_files_only=True,padding_side='right')
     if tokenizer.pad_token_id is None:tokenizer.pad_token=tokenizer.eos_token
     if mode=='confirm':
@@ -42,7 +48,7 @@ def run(raw,model_path,adapter,config,training_summary,out,mode,split_path=None)
     args=TrainingArguments(output_dir=str(out/'evaluation_tmp'),per_device_eval_batch_size=config['eval_batch_size'],
         fp16=cuda and not bf16,bf16=bf16,report_to='none',remove_unused_columns=False,
         dataloader_num_workers=0,dataloader_pin_memory=cuda,disable_tqdm=True)
-    trainer=Trainer(model=model,args=args,processing_class=tokenizer,data_collator=PreferenceCollator(tokenizer))
+    trainer=PreferenceTrainer(model=model,args=args,processing_class=tokenizer,data_collator=PreferenceCollator(tokenizer))
     p=predict_swapped(trainer,original,swapped,labels)
     calibrated=temper(p,training_summary['temperature'])
     if trainer.is_world_process_zero():
@@ -70,12 +76,12 @@ def run(raw,model_path,adapter,config,training_summary,out,mode,split_path=None)
 
 def main():
     parser=argparse.ArgumentParser()
-    for name in ['raw','model','adapter','config','summary','out']:
+    for name in ['raw','model','adapter','config','summary','out','selection']:
         parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--split',type=Path)
     parser.add_argument('--mode',choices=['confirm','predict'],required=True)
     args=parser.parse_args()
-    run(args.raw,args.model,args.adapter,json.loads(args.config.read_text()),json.loads(args.summary.read_text()),args.out,args.mode,args.split)
+    run(args.raw,args.model,args.adapter,json.loads(args.config.read_text()),json.loads(args.summary.read_text()),args.out,args.mode,json.loads(args.selection.read_text()),args.split)
 
 
 if __name__=='__main__':main()

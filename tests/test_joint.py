@@ -46,6 +46,41 @@ class JointContracts(unittest.TestCase):
         self.assertEqual(batch['attention_mask'][0].tolist(),[1,1,0,0,0,0,0,0])
         self.assertEqual(batch['labels'].tolist(),[1,2])
 
+    @unittest.skipUnless(importlib.util.find_spec('peft'), 'Install the train extra for trainer checks')
+    def test_gradient_accumulation_matches_full_batch(self):
+        from transformers import TrainingArguments
+        from transformers.modeling_outputs import SequenceClassifierOutput
+        from arena.joint_train import PreferenceTrainer
+        class ToyClassifier(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.score=torch.nn.Linear(2,3)
+            def forward(self,input_ids,labels=None,**kwargs):
+                return SequenceClassifierOutput(logits=self.score(input_ids.float()))
+        data=[{'input_ids':torch.tensor([i,1]),'labels':i%3} for i in range(4)]
+        def collate(rows):
+            return {'input_ids':torch.stack([r['input_ids'] for r in rows]),
+                    'labels':torch.tensor([r['labels'] for r in rows])}
+        states=[]
+        with tempfile.TemporaryDirectory() as tmp:
+            for batch,accumulation in [(4,1),(1,4)]:
+                torch.manual_seed(11)
+                model=ToyClassifier()
+                args=TrainingArguments(output_dir=f'{tmp}/{batch}',use_cpu=True,
+                    per_device_train_batch_size=batch,gradient_accumulation_steps=accumulation,
+                    max_steps=1,learning_rate=.01,optim='sgd',max_grad_norm=0,
+                    save_strategy='no',report_to='none',disable_tqdm=True,seed=11)
+                trainer=PreferenceTrainer(model=model,args=args,train_dataset=data,data_collator=collate)
+                inputs=collate(data)
+                expected=torch.nn.functional.cross_entropy(model(**inputs).logits,inputs['labels'])
+                actual=trainer.compute_loss(model,inputs,num_items_in_batch=100)
+                torch.testing.assert_close(actual,expected)
+                self.assertFalse(trainer.model_accepts_loss_kwargs)
+                trainer.train()
+                states.append({k:v.detach().clone() for k,v in model.state_dict().items()})
+        for name in states[0]:
+            torch.testing.assert_close(states[0][name],states[1][name],atol=1e-7,rtol=1e-6)
+
     @unittest.skipUnless(importlib.util.find_spec('peft'), 'Install the train extra to test adapter training')
     def test_adapter_and_classification_head_train_and_reload(self):
         from transformers import Qwen3Config,AutoModelForSequenceClassification,AutoTokenizer

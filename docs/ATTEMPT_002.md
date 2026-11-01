@@ -51,6 +51,28 @@ Wall-time limits and checkpoints bound compute use. No paid GPU service is used.
 Teacher distillation and external preference data are later experiments, not part
 of this initial controlled fine-tuning run.
 
+## Pilot findings
+
+The first 20-step pilot completed on both T4s. Peak allocated memory was 7.68 GB
+per GPU; optimizer steps averaged 45.64 seconds with one example per GPU and 16
+accumulation steps. This configuration would need roughly 18 hours per epoch.
+Its 128-row development score is a diagnostic, not a model-quality estimate.
+
+The pilot also exposed a Transformers sequence-classification loss normalization
+problem: the model accepts arbitrary keyword arguments but does not forward the
+global item count into its loss. Trainer then incorrectly assumes globally
+normalized loss. Evaluation loss was exactly twice the independently computed
+log loss, and accumulated training gradients were oversized. `PreferenceTrainer`
+computes mean example cross entropy explicitly and delegates accumulation scaling
+to Trainer. A CPU regression test verifies equivalent updates for a full batch
+and four accumulated microbatches.
+
+A separate corrected pilot uses batch size four per GPU and four accumulation
+steps, preserving the global batch of 32. Its private notebook is
+`arseniytrushin/llm-preference-qwen3-8b-pilot-002-batch4`.
+The executed [results notebook](../notebooks/04_joint_preference_finetuning.ipynb)
+records completed pilots, baselines and subsequent frozen-model evaluation.
+
 ## Programs and storage
 
 `scripts/prepare_attempt_002.py`, `scripts/build_joint_notebook.py`, and
@@ -58,6 +80,11 @@ of this initial controlled fine-tuning run.
 `src/arena/joint_train.py` implement tokenization and fine-tuning. Heavy artifacts
 remain in `~/database/llm_classification_finetuning/runs/attempt_002` and the private
 Kaggle job outputs. Source, aggregate results, and notebook programs are committed.
+
+`scripts/freeze_joint.py` records the chosen adapter and calibration before
+confirmation. `scripts/build_joint_inference.py` builds the offline confirmation
+and submission notebooks with pinned training-output versions and exported wheels.
+`scripts/collect_attempt_002.py` refreshes aggregate evidence and notebook 04.
 
 ```bash
 uv sync --extra train

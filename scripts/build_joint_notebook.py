@@ -17,16 +17,21 @@ parser.add_argument('stage',choices=['pilot','train'])
 parser.add_argument('--pilot-steps',type=int,default=20)
 parser.add_argument('--max-length',type=int)
 parser.add_argument('--train-batch-size',type=int)
+parser.add_argument('--gradient-accumulation-steps',type=int)
+parser.add_argument('--tag',default='',help='Separate folder and kernel for a controlled variant')
 parser.add_argument('--epochs',type=float)
 args=parser.parse_args()
 config=json.loads((REPO/'configs/attempt_002.json').read_text())
-for key in ['max_length','train_batch_size','epochs']:
+for key in ['max_length','train_batch_size','gradient_accumulation_steps','epochs']:
     value=getattr(args,key)
     if value is not None:config[key]=value
 if args.stage=='pilot':config['max_train_seconds']=1800
 split_bytes=(ROOT/'runs/attempt_002/split_ids.json').read_bytes()
+config['preprocessing_sha256']=hashlib.sha256((REPO/'src/arena/joint_data.py').read_bytes()).hexdigest()
+config['split_ids_sha256']=hashlib.sha256(split_bytes).hexdigest()
 split_encoded=base64.b64encode(zlib.compress(split_bytes,9)).decode()
-dest=REPO/f'kaggle/attempt_002_{args.stage}'
+suffix=f'-{args.tag}' if args.tag else ''
+dest=REPO/f'kaggle/attempt_002_{args.stage}{suffix}'
 dest.mkdir(parents=True,exist_ok=True)
 cells=[nbf.v4.new_markdown_cell(f'''# Attempt 002: Qwen3-8B joint preference classifier ({args.stage})
 
@@ -108,8 +113,8 @@ summary
 notebook=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'name':'python3','display_name':'Python 3','language':'python'}})
 nbf.write(notebook,dest/'joint_training.ipynb')
 owner=json.loads((REPO/'kaggle/kernel-metadata.json').read_text())['id'].split('/')[0]
-metadata={'id':f'{owner}/llm-preference-qwen3-8b-{args.stage}-002',
-    'title':f'LLM Preference Qwen3 8B {args.stage.title()} 002','code_file':'joint_training.ipynb',
+metadata={'id':f'{owner}/llm-preference-qwen3-8b-{args.stage}-002{suffix}',
+    'title':f'LLM Preference Qwen3 8B {args.stage.title()} 002 {args.tag}'.strip(),'code_file':'joint_training.ipynb',
     'language':'python','kernel_type':'notebook','is_private':True,'enable_gpu':True,'enable_internet':True,
     'competition_sources':['llm-classification-finetuning'],'dataset_sources':[],
     'kernel_sources':[],'model_sources':[config['model_source']]}

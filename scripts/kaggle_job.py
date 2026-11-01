@@ -10,10 +10,10 @@ sys.path.insert(0, str(REPO / "src"))
 from arena.data import ROOT, json_write
 
 parser = argparse.ArgumentParser()
-parser.add_argument("action", choices=["push", "status", "output", "submit"])
+parser.add_argument("action", choices=["push", "status", "output", "submit", "submissions"])
 parser.add_argument("--folder", type=Path, required=True)
 parser.add_argument("--job", required=True)
-parser.add_argument("--pattern", default=r"(?:summary|gpu_probe|training_config|confirmation|prediction_summary|runtime_requirements)\.json$|\.csv$|\.log$|\.ipynb$")
+parser.add_argument("--pattern", default=r"(?:summary|gpu_probe|training_config|confirmation|prediction_summary|runtime_requirements)\.json$|training_progress\.jsonl$|\.csv$|\.log$|\.ipynb$")
 parser.add_argument("--accelerator")
 parser.add_argument("--timeout", type=int, default=32400)
 args = parser.parse_args()
@@ -27,12 +27,15 @@ if token.exists():
 from kaggle.api.kaggle_api_extended import KaggleApi
 api = KaggleApi()
 api.authenticate()
+reference = metadata['id']
+if args.action in ['status', 'output'] and (out/'push.json').exists():
+    reference += '/' + str(json.loads((out/'push.json').read_text())['version_number'])
 
 
 def fields(obj):
     names = ["url", "version_number", "error", "message", "status", "ref", "id",
              "failure_message", "invalid_model_sources", "invalid_dataset_sources",
-             "invalidModelSources", "invalidDatasetSources"]
+             "invalidModelSources", "invalidDatasetSources", "public_score", "private_score", "description", "date"]
     return {k: getattr(obj, k) for k in names if hasattr(obj, k)}
 
 
@@ -43,11 +46,11 @@ if args.action == "push":
     if result.get("error"):
         raise SystemExit(1)
 elif args.action == "status":
-    result = fields(api.kernels_status(metadata["id"]))
+    result = fields(api.kernels_status(reference))
     json_write(out / "status.json", result)
     print(json.dumps(result, default=str, indent=2))
 elif args.action == "output":
-    paths, status = api.kernels_output(metadata["id"], path=str(out / "output"),
+    paths, status = api.kernels_output(reference, path=str(out / "output"),
         file_pattern=args.pattern, force=True, quiet=True, page_size=100)
     print(json.dumps({"files": paths, "status": status}, indent=2))
 elif args.action == "submit":
@@ -57,3 +60,7 @@ elif args.action == "submit":
         competition="llm-classification-finetuning", kernel=metadata["id"], kernel_version=version))
     json_write(out / "submission.json", result)
     print(json.dumps(result, default=str, indent=2))
+elif args.action == 'submissions':
+    result = [fields(x) for x in api.competition_submissions('llm-classification-finetuning') or []]
+    json_write(out/'submissions.json',result)
+    print(json.dumps(result,default=str,indent=2))
