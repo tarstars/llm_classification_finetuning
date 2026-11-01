@@ -1,5 +1,5 @@
 {
-  "collected_utc": "2026-11-01T12:42:25.427998+00:00",
+  "collected_utc": "2026-11-01T15:35:10.583180+00:00",
   "jobs": [
     {
       "job": "gpu_probe",
@@ -93,6 +93,14 @@
       "status": {
         "status": "KernelWorkerStatus.RUNNING",
         "failure_message": ""
+      },
+      "quota": {
+        "refresh_time": "2026-11-07 00:00:00",
+        "used_seconds": 3173.504845,
+        "reserved_seconds": 0.0,
+        "allowed_seconds": 108000.0,
+        "pay_to_scale_enabled": false,
+        "remaining_seconds": 104826.495155
       }
     }
   ]

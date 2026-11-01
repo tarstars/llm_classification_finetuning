@@ -25,6 +25,14 @@ The background controller started at 2026-11-01 12:41 UTC. Kaggle accepted train
 job `qwen4b1024`, version 1, with no invalid sources; its status is RUNNING:
 `arseniytrushin/llm-preference-qwen3-4b-train-002`. Resume a stopped controller with
 the command in ATTEMPT_002.md; saved version IDs prevent duplicate training.
+Live metrics can be retrieved with `scripts/training_stats.py` using Kaggle's
+streaming log API. Ordinary output downloads do not expose the running journal.
+The 2026-11-01 15:30 UTC snapshot reached step 400, 0.278 epochs, recent training loss
+1.04867 (initial 1.76403). First raw selection checkpoint at step 200: log loss
+1.14052, accuracy 43.85% on 1,024 rows; prior log loss on those same rows is 1.09709.
+These are provisional, one-orientation, uncalibrated metrics; confirmation is unused.
+At 15:34 UTC, the step-400 selection result arrived: log loss improved to 1.11537,
+accuracy 41.21%. It remains worse than the same-subset class-prior log loss.
 The numeric quota API confirms about 29.5 free GPU hours remaining; the SDK's
 formatted duration drops whole days, so use `total_seconds()` for quota calculations.
 

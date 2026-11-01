@@ -29,6 +29,12 @@ for job in sorted((source/'jobs').iterdir()):
         if path.exists():
             json_write(dest/job.name/name,json.loads(path.read_text()))
             row[name.removesuffix('.json')]=json.loads(path.read_text())
+    for name in ['training_live.json','training_live_progress.jsonl']:
+        path=job/name
+        if path.exists():
+            target=dest/job.name/name
+            target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(path,target)
     for relative in ['joint_run/summary.json','joint_run/training_progress.jsonl',
                      'gpu_probe.json','confirmation.json','prediction_summary.json']:
         path=job/'output'/relative
@@ -57,6 +63,21 @@ for key,label in [('majority_development','Always A'),('prior_development','Trai
                   ('structural_gbdt_development','Structural boosted trees')]:
     m=baseline[key]
     report.append(f"| {label} | {m['log_loss']:.5f} | {m['accuracy']:.2%} | {m['macro_f1']:.5f} | {m['brier']:.5f} |")
+for entry in index:
+    path=dest/entry['job']/'training_live.json'
+    if not path.exists() or (dest/entry['job']/'summary.json').exists():continue
+    live=json.loads(path.read_text());latest=live['latest']
+    report+=['','## Provisional training snapshot','',
+        f"Job {entry['job']}; snapshot UTC {live['snapshot_utc']}.",
+        f"Latest recorded step: **{latest['step']}**; completed epochs: **{latest['epoch']:.3f}**.",
+        f"Recent training loss: **{live['recent_training'][-1]['loss']:.5f}**.",'']
+    for v in live['validation']:
+        report.append(f"Step {v['step']}: selection-development log loss **{v['eval_log_loss']:.5f}**, accuracy **{v['eval_accuracy']:.2%}**.")
+    if 'selection_prior_log_loss' in live:
+        report+=['',f"Training-prior log loss on these same {live['selection_rows']} examples: **{live['selection_prior_log_loss']:.5f}**."]
+    report+=['','These are partial training statistics with one answer orientation and no',
+        'temperature calibration. Final development, confirmation and Kaggle scores',
+        'are separate measurements.']
 report+=['','## Completed GPU runs','',
     'Pilot development scores use 128 examples and are diagnostics. They are not',
     'comparable quality estimates against the 5,746-row baseline above.',
@@ -165,6 +186,32 @@ if curves:
     fig,ax=plt.subplots(figsize=(10,4))
     for job,curve in curves:ax.plot(curve.step,curve.eval_log_loss,marker='o',label=job)
     ax.set(xlabel='Optimizer steps',ylabel='Selection-development log loss',title='Training diagnostics')
+    ax.legend();fig.tight_layout();plt.show()
+'''),md('''## Live training statistics
+
+The Kaggle SDK provides a live log streaming endpoint. These snapshots show
+optimizer progress and development checkpoints before the full run finishes.
+Training loss is noisy across batches. Selection metrics use one orientation and
+no temperature calibration; final development/confirmation uses both orientations.
+'''),code('''for entry in index['jobs']:
+    live_path=RESULTS/entry['job']/'training_live.json'
+    if not live_path.exists():continue
+    live=json.loads(live_path.read_text())
+    print(entry['job'],'snapshot UTC:',live['snapshot_utc'])
+    display(pd.Series(live['latest'],name='Latest progress'))
+    display(pd.DataFrame(live['validation']).round(5))
+    if 'selection_prior_log_loss' in live:
+        print('Training-prior log loss on the SAME selection subset:',live['selection_prior_log_loss'])
+    progress=pd.read_json(RESULTS/entry['job']/'training_live_progress.jsonl',lines=True)
+    fig,ax=plt.subplots(figsize=(10,4))
+    training=progress.dropna(subset=['loss'])
+    ax.plot(training.step,training.loss,label='Training batch loss',alpha=.7)
+    if 'eval_log_loss' in progress:
+        val=progress.dropna(subset=['eval_log_loss'])
+        ax.plot(val.step,val.eval_log_loss,marker='o',label='Selection development')
+    if 'selection_prior_log_loss' in live:
+        ax.axhline(live['selection_prior_log_loss'],ls='--',color='gray',label='Training-prior baseline')
+    ax.set(xlabel='Optimizer steps',ylabel='Cross entropy / log loss',title=entry['job']+' — provisional learning curve')
     ax.legend();fig.tight_layout();plt.show()
 '''),md('''## Frozen model and independent confirmation
 

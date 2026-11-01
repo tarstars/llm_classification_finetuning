@@ -15,6 +15,21 @@ Current workflow stage: **waiting_for_kernel**; training job: **qwen4b1024**.
 | Training class frequencies | 1.09722 | 34.91% | 0.17251 | 0.66575 |
 | Structural boosted trees | 1.03375 | 47.35% | 0.46359 | 0.62069 |
 
+## Provisional training snapshot
+
+Job qwen4b1024; snapshot UTC 2026-11-01T15:34:30.380468+00:00.
+Latest recorded step: **400**; completed epochs: **0.278**.
+Recent training loss: **1.04867**.
+
+Step 200: selection-development log loss **1.14052**, accuracy **43.85%**.
+Step 400: selection-development log loss **1.11537**, accuracy **41.21%**.
+
+Training-prior log loss on these same 1024 examples: **1.09709**.
+
+These are partial training statistics with one answer orientation and no
+temperature calibration. Final development, confirmation and Kaggle scores
+are separate measurements.
+
 ## Completed GPU runs
 
 Pilot development scores use 128 examples and are diagnostics. They are not

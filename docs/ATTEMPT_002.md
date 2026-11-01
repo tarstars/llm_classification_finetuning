@@ -112,6 +112,20 @@ and submission notebooks with pinned training-output versions and exported wheel
 submit workflow from saved job versions. It stops on failed GPU executions rather
 than starting duplicate jobs, and can publish generated results after each major stage.
 
+Live loss and development statistics are available through the installed Kaggle
+SDK's `kernels_logs_stream` endpoint, even while ordinary notebook output downloads
+are empty. Snapshot them without interrupting training:
+
+```bash
+uv run python scripts/training_stats.py --folder kaggle/attempt_002_train \
+    --job qwen4b1024 --seconds 30
+uv run python scripts/collect_attempt_002.py
+```
+
+Snapshots use a bounded SSE connection and keep raw logs under the database
+directory. Only aggregate metrics/journals enter GitHub. The script also calculates
+the training-prior baseline on the exact fixed 1,024-row selection subset.
+
 ```bash
 uv sync --extra train
 uv run python -m unittest discover -s tests -p test_joint.py -v
