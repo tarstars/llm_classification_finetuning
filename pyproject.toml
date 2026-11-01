@@ -1,0 +1,18 @@
+[project]
+name = "llm-classification-finetuning"
+version = "0.1.0"
+description = "Reproducible Chatbot Arena human preference experiments"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy", "pandas", "scipy", "scikit-learn", "lightgbm",
+  "torch", "sentence-transformers", "requests", "kaggle", "six",
+  "matplotlib", "seaborn", "nbformat", "nbclient", "ipykernel", "pyarrow",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }

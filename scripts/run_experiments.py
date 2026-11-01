@@ -1,0 +1,75 @@
+"""Run independent stages; final comparison reads holdout only after model selection."""
+import argparse
+import hashlib
+import os
+import sys
+from pathlib import Path
+
+os.environ.setdefault("OMP_NUM_THREADS","4")
+os.environ.setdefault("OPENBLAS_NUM_THREADS","4")
+os.environ.setdefault("MKL_NUM_THREADS","4")
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
+import numpy as np
+import pandas as pd
+from scipy import sparse
+from arena.data import ROOT,CLASSES,TEXT_COLUMNS,load_data,split_data,structural_features,swapped,dense_pair_features,swapped_pair_features,json_write
+from arena.models import fit_classifiers,scores
+
+parser=argparse.ArgumentParser()
+parser.add_argument("stage",choices=["prepare","tfidf","rnn","qwen","structural","hybrid"])
+args=parser.parse_args()
+out=ROOT/"runs/attempt_001"
+out.mkdir(parents=True,exist_ok=True)
+train,test=load_data()
+frame=pd.concat([train,test],ignore_index=True)
+y,parts,fold=split_data(train)
+stats=structural_features(frame)
+np.save(out/"labels.npy",y)
+np.save(out/"fold.npy",fold)
+for name,idx in parts.items():np.save(out/f"{name}_idx.npy",idx)
+
+if args.stage=="prepare":
+    from arena.data import prompt_groups
+    group=prompt_groups(train)
+    summary={"train_rows":len(train),"visible_test_rows":len(test),"classes":CLASSES,
+        "counts":train[CLASSES].sum().to_dict(),"unique_prompt_groups":group.nunique(),
+        "split_counts":{k:len(v) for k,v in parts.items()},"seed":20261101,
+        "split":"StratifiedGroupKFold(10): folds 2..9 train; 1 dev; 0 holdout",
+        "class_proportions_by_split":{k:np.bincount(y[v],minlength=3).tolist() for k,v in parts.items()},
+        "text_lengths":{c:train[c].str.len().describe(percentiles=[.5,.9,.95,.99]).to_dict() for c in TEXT_COLUMNS},
+        "raw_sha256":{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/"raw").glob("*.csv")},
+        "excluded_features":["id","model_a","model_b"],"prompt_overlap_across_splits":0}
+    json_write(out/"data_summary.json",summary)
+    train[["id"]].assign(fold=fold,prompt_group=group).to_parquet(out/"split_manifest.parquet",index=False)
+    print(summary,flush=True)
+elif args.stage=="structural":
+    fit_classifiers("structural",stats,structural_features(swapped(frame)),y,parts,out)
+elif args.stage=="tfidf":
+    from arena.vectorizers import tfidf_features
+    embeddings,pair,pairswap=tfidf_features(frame,parts["train"],out)
+    # Append unscaled structural features; sparse classifier scales on training rows.
+    pair=sparse.hstack([pair,sparse.csr_matrix(stats)],format="csr")
+    pairswap=sparse.hstack([pairswap,sparse.csr_matrix(structural_features(swapped(frame)))],format="csr")
+    fit_classifiers("tfidf_sparse",pair,pairswap,y,parts,out,kinds=("logistic",))
+    del pair,pairswap
+    np.savez(out/"tfidf_embeddings.npz",**dict(zip(TEXT_COLUMNS,embeddings)))
+    fit_classifiers("tfidf_svd",dense_pair_features(embeddings,stats),swapped_pair_features(embeddings,stats),y,parts,out)
+elif args.stage=="rnn":
+    from arena.rnn import train_rnn
+    embeddings,p=train_rnn(frame,y,parts,stats,out)
+    np.save(out/"rnn__end_to_end_predictions.npy",p)
+    json_write(out/"rnn__end_to_end.json",{"model":"rnn__end_to_end","representation":"rnn",
+        "classifier":"end_to_end","dev":scores(y[parts["dev"]],p[parts["dev"]])})
+    np.savez(out/"rnn_embeddings.npz",**dict(zip(TEXT_COLUMNS,embeddings)))
+    fit_classifiers("rnn",dense_pair_features(embeddings,stats),swapped_pair_features(embeddings,stats),y,parts,out)
+elif args.stage=="qwen":
+    with np.load(ROOT/"embeddings/qwen3_256.npz") as f:embeddings=tuple(f[c] for c in TEXT_COLUMNS)
+    fit_classifiers("qwen3_256",dense_pair_features(embeddings,stats),swapped_pair_features(embeddings,stats),y,parts,out)
+elif args.stage=="hybrid":
+    features=[];swaps=[]
+    for path in [out/"tfidf_embeddings.npz",out/"rnn_embeddings.npz",ROOT/"embeddings/qwen3_256.npz"]:
+        with np.load(path) as f:embeddings=tuple(f[c] for c in TEXT_COLUMNS)
+        features.append(dense_pair_features(embeddings,stats)[:,:-stats.shape[1]])
+        swaps.append(swapped_pair_features(embeddings,stats)[:,:-stats.shape[1]])
+    features.append(stats);swaps.append(structural_features(swapped(frame)))
+    fit_classifiers("hybrid",np.column_stack(features),np.column_stack(swaps),y,parts,out,kinds=("gbdt",))

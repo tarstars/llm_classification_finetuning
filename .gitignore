@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+data/
+artifacts/
+*.csv
+*.parquet
+*.npy
+*.npz
+*.pt
+*.joblib
+.cache/
+catboost_info/
