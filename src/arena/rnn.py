@@ -68,23 +68,6 @@ class PreferenceRNN(nn.Module):
         return self.head(features)
 
 
-def swap_tensors(seq,stats):
-    sp,sa,sb,delta,absolute=stats.chunk(5,dim=1)
-    return seq[:,[0,2,1]],torch.cat([sp,sb,sa,-delta,absolute],dim=1)
-
-
-@torch.inference_mode()
-def rnn_predict(model,seq,stats,batch_size=256):
-    model.eval()
-    result=[]
-    for start in range(0,len(seq),batch_size):
-        x=torch.as_tensor(seq[start:start+batch_size],dtype=torch.long)
-        s=torch.as_tensor(stats[start:start+batch_size],dtype=torch.float32)
-        sx,ss=swap_tensors(x,s)
-        result.append(((model(x,s).softmax(1)+model(sx,ss).softmax(1)[:,[1,0,2]])*.5).numpy())
-    return np.concatenate(result)
-
-
 def train_rnn(frame,labels,parts,stats,out,epochs=12,max_tokens=128,hidden=48):
     torch.manual_seed(SEED)
     np.random.seed(SEED)
@@ -93,8 +76,7 @@ def train_rnn(frame,labels,parts,stats,out,epochs=12,max_tokens=128,hidden=48):
     seq,vocab,diagnostics=make_sequences(frame,parts["train"],max_tokens=max_tokens)
     scaler=StandardScaler().fit(stats[parts["train"]])
     scaled=scaler.transform(stats).astype(np.float32)
-    # Use an equally scaled original/swap representation for training and inference.
-    # swap_tensors acts on raw features; standardize after swapping instead.
+    # Standardize after swapping raw structural features.
     swapped_stats=np.concatenate([stats[:,:9],stats[:,18:27],stats[:,9:18],-stats[:,27:36],stats[:,36:45]],axis=1)
     scaled_swap=scaler.transform(swapped_stats).astype(np.float32)
     model=PreferenceRNN(len(vocab)+2,stats.shape[1],hidden=hidden)

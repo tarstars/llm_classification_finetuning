@@ -16,7 +16,7 @@ from arena.data import ROOT,CLASSES,TEXT_COLUMNS,load_data,split_data,structural
 from arena.models import fit_classifiers,scores
 
 parser=argparse.ArgumentParser()
-parser.add_argument("stage",choices=["prepare","tfidf","rnn","qwen","structural","hybrid"])
+parser.add_argument("stage",choices=["prepare","tfidf","rnn","rnn_long","qwen","structural","hybrid"])
 args=parser.parse_args()
 out=ROOT/"runs/attempt_001"
 out.mkdir(parents=True,exist_ok=True)
@@ -54,14 +54,16 @@ elif args.stage=="tfidf":
     del pair,pairswap
     np.savez(out/"tfidf_embeddings.npz",**dict(zip(TEXT_COLUMNS,embeddings)))
     fit_classifiers("tfidf_svd",dense_pair_features(embeddings,stats),swapped_pair_features(embeddings,stats),y,parts,out)
-elif args.stage=="rnn":
+elif args.stage in ("rnn","rnn_long"):
     from arena.rnn import train_rnn
-    embeddings,p=train_rnn(frame,y,parts,stats,out)
-    np.save(out/"rnn__end_to_end_predictions.npy",p)
-    json_write(out/"rnn__end_to_end.json",{"model":"rnn__end_to_end","representation":"rnn",
+    representation=args.stage
+    rnn_out=out if representation=='rnn' else out/'rnn_long'
+    embeddings,p=train_rnn(frame,y,parts,stats,rnn_out,max_tokens=128 if representation=='rnn' else 256)
+    np.save(out/f"{representation}__end_to_end_predictions.npy",p)
+    json_write(out/f"{representation}__end_to_end.json",{"model":f"{representation}__end_to_end","representation":representation,
         "classifier":"end_to_end","dev":scores(y[parts["dev"]],p[parts["dev"]])})
-    np.savez(out/"rnn_embeddings.npz",**dict(zip(TEXT_COLUMNS,embeddings)))
-    fit_classifiers("rnn",dense_pair_features(embeddings,stats),swapped_pair_features(embeddings,stats),y,parts,out)
+    np.savez(out/f"{representation}_embeddings.npz",**dict(zip(TEXT_COLUMNS,embeddings)))
+    fit_classifiers(representation,dense_pair_features(embeddings,stats),swapped_pair_features(embeddings,stats),y,parts,out)
 elif args.stage=="qwen":
     with np.load(ROOT/"embeddings/qwen3_256.npz") as f:embeddings=tuple(f[c] for c in TEXT_COLUMNS)
     fit_classifiers("qwen3_256",dense_pair_features(embeddings,stats),swapped_pair_features(embeddings,stats),y,parts,out)

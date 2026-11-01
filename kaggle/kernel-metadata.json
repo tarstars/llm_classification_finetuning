@@ -1,0 +1,15 @@
+{
+  "id": "arseniytrushin/llm-preference-offline-attempt-001",
+  "title": "LLM Preference Offline Attempt 001",
+  "code_file": "offline_submission.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "competition_sources": [
+    "llm-classification-finetuning"
+  ],
+  "kernel_sources": []
+}

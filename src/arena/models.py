@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from scipy import sparse
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, log_loss
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, log_loss
 from sklearn.preprocessing import StandardScaler
 from torch import nn
 
@@ -21,6 +21,8 @@ def scores(y,p):
     assert np.all(p>=0) and np.allclose(p.sum(1),1,atol=1e-5)
     return {"log_loss":float(log_loss(y,p,labels=[0,1,2])),
             "accuracy":float(accuracy_score(y,p.argmax(1))),
+            "balanced_accuracy":float(balanced_accuracy_score(y,p.argmax(1))),
+            "macro_f1":float(f1_score(y,p.argmax(1),average="macro",zero_division=0)),
             "brier":float(np.mean(np.sum((p-np.eye(3)[y])**2,axis=1)))}
 
 

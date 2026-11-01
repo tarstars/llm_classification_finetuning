@@ -56,7 +56,7 @@ def clip_text(text, max_chars=6000):
 
 
 def eliza_embeddings(frame, model="qwen/qwen3-embedding-8b", dimensions=256,
-                     batch_size=32, workers=4):
+                     batch_size=32, workers=16):
     url = os.environ.get("ELIZA_EMBEDDING_URL", "https://api.eliza.yandex.net/raw/openrouter/v1/embeddings")
     token_path = Path(os.environ.get("ELIZA_TOKEN_PATH", Path.home()/".soy/token"))
     token = os.environ.get("ELIZA_TOKEN") or token_path.read_text().strip()
@@ -104,12 +104,19 @@ def eliza_embeddings(frame, model="qwen/qwen3-embedding-8b", dimensions=256,
 
     done=0
     print(f"Embedding {len(unique)} unique texts in {len(batches)} batches; cache {out}",flush=True)
-    with ThreadPoolExecutor(max_workers=workers) as pool:
+    pool=ThreadPoolExecutor(max_workers=workers)
+    try:
         futures = [pool.submit(encode,b) for b in batches]
         for future in as_completed(futures):
             future.result()
             done+=1
             if done%25==0 or done==len(batches):print(f"Embeddings {done}/{len(batches)} batches",flush=True)
+    except BaseException:
+        for future in futures:future.cancel()
+        pool.shutdown(wait=False,cancel_futures=True)
+        raise
+    else:
+        pool.shutdown(wait=True)
     matrix=np.concatenate([np.load(out/f"batch_{i:07d}.npy") for i,_ in batches])
     arrays=[matrix[[text_to_idx[clip_text(t)] for t in frame[col]]] for col in TEXT_COLUMNS]
     return tuple(arrays), manifest

@@ -8,6 +8,14 @@ as secondary measures. Official source: [Kaggle competition](https://www.kaggle.
 Download the original files rather than a repackaged dataset. Parse JSON turn lists
 without `eval`. Neither `model_a` / `model_b` nor the row ID is a feature.
 
+Include the user's **most-frequent-class baseline**: choose the most frequent original
+training label and always predict it. Report accuracy, balanced accuracy, macro F1,
+Brier score and log loss. Its one-hot probability output has zero probability for
+other classes; log loss uses sklearn's float64 machine-epsilon clipping and is
+therefore very large. Also retain a separate training-class-frequency probability
+baseline, which is better suited to the competition's probabilistic metric. The hard
+majority baseline deliberately keeps its constant original label without swap averaging.
+
 ## Evaluation contract
 
 - Seed 20261101. Normalize whitespace and case in prompts; hash normalized prompts
