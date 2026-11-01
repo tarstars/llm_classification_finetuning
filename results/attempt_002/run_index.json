@@ -1,5 +1,5 @@
 {
-  "collected_utc": "2026-11-01T12:40:14.726532+00:00",
+  "collected_utc": "2026-11-01T12:42:25.427998+00:00",
   "jobs": [
     {
       "job": "gpu_probe",
@@ -76,6 +76,23 @@
         "evaluation_rows_per_second_both_GPUs": 2.151,
         "estimated_hidden_25k_swap_inference_seconds": 23245.002324500234,
         "note": "Speed estimates use a small pilot; long-run timing and quality must be measured."
+      }
+    },
+    {
+      "job": "qwen4b1024",
+      "push": {
+        "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-qwen3-4b-train-002",
+        "version_number": 1,
+        "error": "",
+        "ref": "/code/arseniytrushin/llm-preference-qwen3-4b-train-002",
+        "invalid_model_sources": [],
+        "invalid_dataset_sources": [],
+        "invalidModelSources": [],
+        "invalidDatasetSources": []
+      },
+      "status": {
+        "status": "KernelWorkerStatus.RUNNING",
+        "failure_message": ""
       }
     }
   ]

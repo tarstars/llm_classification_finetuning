@@ -5,6 +5,8 @@ joint preference classifier using QLoRA on two Kaggle T4 GPUs.
 See the [executed notebook](notebooks/04_joint_preference_finetuning.ipynb) and
 [evaluation protocol](docs/ATTEMPT_002.md).
 
+Current workflow stage: **waiting_for_kernel**; training job: **qwen4b1024**.
+
 ## Baselines on the new development partition
 
 | Model | Log loss ↓ | Accuracy | Macro F1 | Brier ↓ |

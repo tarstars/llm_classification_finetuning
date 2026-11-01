@@ -50,6 +50,9 @@ report=['# Attempt 002: joint preference fine-tuning','',
     '## Baselines on the new development partition','',
     '| Model | Log loss ↓ | Accuracy | Macro F1 | Brier ↓ |',
     '|---|---:|---:|---:|---:|']
+if (dest/'pipeline_state.json').exists():
+    pipeline=json.loads((dest/'pipeline_state.json').read_text())
+    report[7:7]=[f"Current workflow stage: **{pipeline['stage']}**; training job: **{pipeline['training_job']}**.",'']
 for key,label in [('majority_development','Always A'),('prior_development','Training class frequencies'),
                   ('structural_gbdt_development','Structural boosted trees')]:
     m=baseline[key]
@@ -101,6 +104,8 @@ index=json.loads((RESULTS/'run_index.json').read_text())
 display(pd.Series(split['split_counts'],name='Rows'))
 print('Fixed split digest:',split['split_ids_sha256'])
 print('Collected UTC:',index['collected_utc'])
+if (RESULTS/'pipeline_state.json').exists():
+    display(pd.Series(json.loads((RESULTS/'pipeline_state.json').read_text()),name='Workflow state'))
 '''
 md=nbf.v4.new_markdown_cell
 code=nbf.v4.new_code_cell

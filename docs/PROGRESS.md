@@ -21,6 +21,10 @@ pipeline freezes choices, evaluates confirmation, runs offline prediction, submi
 to Kaggle and publishes generated aggregate results. Its state/log are under
 `~/database/llm_classification_finetuning/runs/attempt_002/pipeline_state.json` and
 `pipeline.log`. No paid GPU service is enabled.
+The background controller started at 2026-11-01 12:41 UTC. Kaggle accepted training
+job `qwen4b1024`, version 1, with no invalid sources; its status is RUNNING:
+`arseniytrushin/llm-preference-qwen3-4b-train-002`. Resume a stopped controller with
+the command in ATTEMPT_002.md; saved version IDs prevent duplicate training.
 The numeric quota API confirms about 29.5 free GPU hours remaining; the SDK's
 formatted duration drops whole days, so use `total_seconds()` for quota calculations.
 
