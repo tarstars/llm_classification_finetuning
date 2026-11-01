@@ -1,0 +1,15 @@
+{
+  "model": "qwen/qwen3-embedding-8b",
+  "dimensions": 256,
+  "unique_texts": 164416,
+  "total_texts": 172440,
+  "sha256": "fc6f2aff22503d53e37c8b9eed842721e707c4c5992d3832ef3f99e444f2b07a",
+  "batch_size": 32,
+  "max_chars": 6000,
+  "truncated_occurrences": 1971,
+  "endpoint": "https://api.eliza.yandex.net/raw/openrouter/v1/embeddings",
+  "created_with": "clip-head-tail-v1",
+  "completed_batches": 5138,
+  "api_reported_prompt_tokens": 36532532,
+  "api_reported_cost": 0.4020451400000002
+}

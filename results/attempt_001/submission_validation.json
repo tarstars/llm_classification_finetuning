@@ -1,0 +1,14 @@
+{
+  "local_execution": "complete",
+  "kaggle_execution": "complete",
+  "visible_test_rows": 3,
+  "columns": [
+    "id",
+    "winner_model_a",
+    "winner_model_b",
+    "winner_tie"
+  ],
+  "probabilities_valid": true,
+  "max_absolute_probability_difference_local_vs_kaggle": 0.012332202584246887,
+  "kaggle_note": "Different preinstalled runtime versions; this validates execution and format, not leaderboard quality."
+}

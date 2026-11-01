@@ -4,6 +4,15 @@ Reproducible experiments for [LLM Classification Finetuning on Kaggle](https://w
 Predict whether a human prefers response A, response B, or a tie. The primary metric
 is multiclass log loss (lower is better).
 
+Attempt 001 achieved **1.00194 holdout log loss** and **49.63% accuracy** with a
+development-selected ensemble. Always predicting the most frequent training class
+gives **34.91% accuracy**. See [full results](RESULTS.md) for all metrics and baselines.
+
+- [Problem and data](notebooks/01_problem_and_data.ipynb)
+- [Vectorizers and classifiers](notebooks/02_vectorizers_and_classifiers.ipynb)
+- [Results and next experiments](notebooks/03_results_and_next_experiments.ipynb)
+- [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
+
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary
 Qwen3 embeddings with logistic regression, LightGBM, and neural classifiers.
 Additional experiments use response structure, combined representations, and

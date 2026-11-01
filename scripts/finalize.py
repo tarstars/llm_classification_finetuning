@@ -83,6 +83,13 @@ rows.append({'model':'offline_ensemble','representation':'offline_ensemble','cla
 offline_config={'weights':dict(zip(offline_names,ow.tolist())),'temperature':ot,
     'settings':{r['model']:r.get('settings',{}) for r in rows if r['model'] in offline_names},
     'rnn_best_epoch':int(min(json.loads((out/'rnn_history.json').read_text()),key=lambda r:r['dev_log_loss'])['epoch'])}
+if (out/'offline_config.json').exists():
+    # Preserve the exact configuration already deployed to Kaggle.
+    offline_config=json.loads((out/'offline_config.json').read_text())
+    ow=np.array([offline_config['weights'][n] for n in offline_names])
+    ot=offline_config['temperature']
+    predictions['offline_ensemble']=temper(np.tensordot(ow,offline_stack,axes=1),ot)
+    rows[-1]['dev']=scores(y[dev],predictions['offline_ensemble'][dev])
 json_write(out/'offline_config.json',offline_config)
 json_write(report_dir/'offline_config.json',offline_config)
 best_single=min((r for r in rows if r['classifier']!='calibrated_blend'),key=lambda r:r['dev']['log_loss'])['model']

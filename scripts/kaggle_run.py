@@ -27,7 +27,9 @@ if args.action=='push':
     print(json.dumps(result,default=str,indent=2))
 elif args.action=='status':
     response=api.kernels_status(kernel)
-    print(json.dumps(public_fields(response),default=str,indent=2))
+    result=public_fields(response)
+    json_write(out/'status.json',result)
+    print(json.dumps(result,default=str,indent=2))
 elif args.action=='submit':
     pushed=json.loads((out/'push.json').read_text())
     response=api.competition_submit_code(file_name='submission.csv',

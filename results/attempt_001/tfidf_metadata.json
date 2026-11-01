@@ -1,0 +1,10 @@
+{
+  "vocabulary": 40000,
+  "dimensions": 96,
+  "explained_variance": 0.1110844835639,
+  "fit_partition": "train",
+  "ngram_range": [
+    1,
+    2
+  ]
+}

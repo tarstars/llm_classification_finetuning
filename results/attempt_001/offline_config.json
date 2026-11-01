@@ -1,0 +1,43 @@
+{
+  "weights": {
+    "rnn__end_to_end": 0.24792174697553704,
+    "rnn__gbdt": 0.047036949900340845,
+    "structural__gbdt": 0.04500826161363299,
+    "tfidf_sparse__logistic": 0.31729192958648683,
+    "tfidf_svd__gbdt": 0.3427411119240024
+  },
+  "temperature": 0.9049598603951539,
+  "settings": {
+    "rnn__end_to_end": {},
+    "rnn__gbdt": {
+      "best_iteration": 105,
+      "num_leaves": 15
+    },
+    "structural__gbdt": {
+      "best_iteration": 510,
+      "num_leaves": 15
+    },
+    "tfidf_sparse__logistic": {
+      "C": 0.1,
+      "trials": [
+        {
+          "C": 0.1,
+          "dev_log_loss": 1.034084677696228
+        },
+        {
+          "C": 1.0,
+          "dev_log_loss": 1.1258330345153809
+        },
+        {
+          "C": 3.0,
+          "dev_log_loss": 1.0748569965362549
+        }
+      ]
+    },
+    "tfidf_svd__gbdt": {
+      "best_iteration": 422,
+      "num_leaves": 15
+    }
+  },
+  "rnn_best_epoch": 3
+}

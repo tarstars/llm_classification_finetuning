@@ -1,0 +1,24 @@
+{
+  "vocabulary_size": 30000,
+  "max_tokens": 256,
+  "hidden": 48,
+  "embedding_dimension": 96,
+  "best_dev_log_loss": 1.0279796123504639,
+  "diagnostics": {
+    "prompt": {
+      "truncation_rate": 0.06207376478775226,
+      "unknown_token_rate": 0.03321469570792875
+    },
+    "response_a": {
+      "truncation_rate": 0.42701809324982604,
+      "unknown_token_rate": 0.026532764247041433
+    },
+    "response_b": {
+      "truncation_rate": 0.42835768963117604,
+      "unknown_token_rate": 0.026635311847360975
+    }
+  },
+  "epochs_run": 6,
+  "fit_partition": "train",
+  "early_stopping_partition": "dev"
+}

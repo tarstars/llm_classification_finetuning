@@ -208,4 +208,5 @@ md('''## Submission status
 and validates file shape only. The separate offline Kaggle notebook trains deployable
 local models and produces `submission.csv` for whichever test set Kaggle provides.
 A leaderboard score is evidence only after Kaggle has rerun and scored that notebook.
-''')])
+'''),
+code("kaggle_status = RESULTS/'kaggle_submission.json'\nif kaggle_status.exists():\n    display(pd.Series(json.loads(kaggle_status.read_text()), name='Recorded Kaggle submission'))")])

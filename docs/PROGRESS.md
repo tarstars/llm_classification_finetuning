@@ -1,76 +1,75 @@
-# Project memory
+# Project memory — attempt 001
 
-## Active attempt: 001, 2026-11-01
+## Completed work
 
-The repository is the project's source and notebook home. Heavy files are in
-`~/database/llm_classification_finetuning`; notebooks are linked from
-`~/notebooks/llm_classification_finetuning`. Never recursively search `~/prj`,
-the user's home directory, or Arc/FUSE checkouts.
+All 20 trained candidates and three constant baselines have been evaluated on one
+frozen prompt-grouped split. Two calibrated ensembles are also reported. See
+[RESULTS.md](../RESULTS.md), [metrics](../results/attempt_001/metrics.json), and the
+three executed [analysis notebooks](../notebooks/).
 
-Original data downloaded and SHA-256 recorded. Verified official task, rules and
-code requirements through the Kaggle API; see [COMPETITION.md](COMPETITION.md).
-This is an ongoing getting-started competition, distinct from the earlier prize
-competition. A local 3-row CSV is a format check; real scoring requires notebook
-submission and hidden-test rerun on Kaggle.
+Development-selected research model: **calibrated_ensemble**. Holdout log loss
+**1.00194**, accuracy **49.63%**.
+Majority baseline always predicts A: holdout accuracy **34.91%**,
+balanced accuracy **33.33%**, macro F1
+**0.17251**, Brier **1.30179**,
+one-hot log loss **23.46066**. Class-frequency probability
+and uniform baselines are separate rows.
 
-Evaluation uses one fixed prompt-grouped split: 45,980 training rows, 5,748
-development rows, 5,749 final holdout rows. Zero normalized prompt-group overlap.
-No model identity or ID features. Holdout is reserved until all candidates and
-ensemble settings are frozen.
+Required matrix: TF-IDF/SVD, trained GRU vectors, and Qwen3-Embedding-8B vectors ×
+logistic regression, LightGBM, and a neural classifier. Extras: structural models,
+sparse TF-IDF, feature-scaled sparse TF-IDF, direct GRU head, a 256-token GRU and its
+three heads, combined representations, and probability ensembles. GRU trained from
+random weights on competition training rows; best epoch 3. Longer context did not
+improve development quality. Original sparse logistic fit hit its iteration cap;
+the scaled follow-up's selected fit converged in 79 iterations.
 
-### Development results so far
+## Evaluation contract
 
-| Model | Log loss |
-| --- | ---: |
-| Constant training-majority label (A), one-hot | 23.45847 |
-| Structural logistic regression | 1.05008 |
-| Structural boosted trees | 1.03622 |
-| Direct sparse TF-IDF logistic regression | 1.03408 |
-| TF-IDF SVD + logistic regression | 1.03817 |
-| TF-IDF SVD + boosted trees | 1.02263 |
-| TF-IDF SVD + neural classifier | 1.02791 |
-| GRU direct head, best epoch 3 | 1.02781 |
-| GRU vectors + logistic regression | 1.05701 |
-| GRU vectors + boosted trees | 1.02945 |
-| GRU vectors + neural classifier | 1.04322 |
-| Dev-selected offline ensemble | 1.01402 |
+45,980 train / 5,748 development / 5,749 holdout; seed 20261101. Normalize prompt
+whitespace and case before grouping. Zero prompt-group overlap. No model identity or
+ID features. Fit vocabulary, IDF, SVD, scalers, GRU and heads on training rows only;
+development chooses settings and stopping points. Model choices were frozen before
+holdout evaluation. Never retune on this holdout and call the result fresh confirmation.
+Scripts refuse to overwrite the frozen attempt. Reproduction uses a fresh
+`ARENA_DATA_DIR` with the original `raw/` files linked or copied in.
 
-The user explicitly added the constant majority baseline. It chooses the label from
-the original training partition, without swap averaging. Development accuracy
-34.9165%, balanced accuracy 33.3333%, macro F1 0.172534, Brier 1.30167. Its high log
-loss reflects zero probability on all non-A outcomes; sklearn clips at float64
-machine epsilon. Keep the separate class-frequency probability baseline as well.
+## Kaggle
 
-GRU starts from scratch: 30K vocabulary, 64-dimensional trainable token embeddings,
-48-unit shared GRU, mean and final-state pooling, 128 tokens per field, head/tail
-truncation. Overfitting after epoch 3; restored checkpoint. Around 65% of responses
-are truncated at this context length, motivating a longer-context follow-up.
-The learned vectors are useful but do not establish competitive language understanding.
+The [private offline notebook](https://www.kaggle.com/code/arseniytrushin/llm-preference-offline-attempt-001)
+completed successfully locally and on Kaggle. It refits all labeled rows, uses no
+network, and writes `submission.csv`. The local and Kaggle three-example predictions
+were checked for IDs, columns, finite nonnegative probabilities and unit row sums.
+The research Qwen feature service is excluded from this offline deployment.
 
-Sparse TF-IDF logistic regression reached its 250-iteration optimizer cap; log the
-convergence limitation. It is retained as a measured baseline. SVD uses 96 dimensions
-and training-only fitting. Dense classifiers include shared structural features.
+Accepted submission: **57866428**, notebook version 1 (script version 364480845).
+Last recorded state: **SubmissionStatus.PENDING; public score: pending**. Do not interpret three visible examples as a
+leaderboard score. To refresh status without retraining:
 
-Eliza Qwen3-Embedding-8B extraction was explicitly approved by the user after an
-automatic approval review requested consent for the full text transfer. The working
-route and local token path are documented without credentials. 164,416 unique texts,
-256 dimensions, 6K-character head/tail limit, resumable batches. Do not put raw text
-or tokens into GitHub. API features cannot be used live in offline Kaggle inference.
+```bash
+uv run python scripts/kaggle_run.py submissions
+uv run python scripts/build_report.py
+uv run python scripts/build_notebooks.py
+```
 
-### Programs and remaining workflow
+## Storage and authentication
 
-`scripts/run_experiments.py`: preparation, structural, TF-IDF, recurrent and Qwen
-comparisons. `scripts/embed.py`: resumable Eliza extraction. `scripts/select_offline.py`:
-development-only deployment selection. `scripts/build_kaggle_notebook.py` bundles
-source and frozen settings into a standalone notebook. `scripts/finalize.py` freezes
-research choices and evaluates holdout once. `scripts/build_notebooks.py` creates and
-executes the three analysis notebooks from aggregate results.
+- Repository: source, Markdown memory, executed notebooks and aggregate metrics.
+- Heavy data, embeddings, weights, splits and predictions:
+  `~/database/llm_classification_finetuning`.
+- Notebook link: `~/notebooks/llm_classification_finetuning`; kernel `arena-llm`.
+- Kaggle access token works; legacy key returned 401. Never print credentials.
+- Eliza extraction of the full dataset was explicitly approved by the user.
+  Working route: `/raw/openrouter/v1/embeddings`; model `qwen/qwen3-embedding-8b`;
+  OAuth credential read from `~/.soy/token`. 164,416 unique texts, 256 dimensions,
+  6K-character head/tail context, resumable batches. No tokens or raw text in GitHub.
+- Never recursively walk the user's home, `~/prj`, or Arc/FUSE checkouts.
 
-The offline notebook refits lexical, structural and GRU models on all training labels
-and produces `submission.csv`. No network or pretrained downloads inside the notebook.
-Private Kaggle notebook version 1 was launched successfully:
-[offline attempt 001](https://www.kaggle.com/code/arseniytrushin/llm-preference-offline-attempt-001).
-Kaggle accepted code submission **57866428** using version 1. Scoring is pending;
-no leaderboard score has been claimed.
-Four invariant tests cover JSON parsing, prompt-group isolation, feature swapping and
-probability symmetry. Jupyter kernel registered as `arena-llm`.
+Four invariant tests passed. Analysis notebooks executed without errors. The uv lock
+records the local CPU environment; Kaggle uses its own installed runtime, so its
+predictions need not be bitwise identical.
+
+## Next research
+
+Proposals are recorded in RESULTS.md: joint cross-encoder, LoRA preference model,
+shared response utility with a tie head, better recurrent feature training, and
+multi-fold/seed confirmation. These are not claimed as completed experiments.

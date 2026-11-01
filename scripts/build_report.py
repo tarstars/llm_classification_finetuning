@@ -48,7 +48,13 @@ if submissions.exists():
     entries=json.loads(submissions.read_text())
     matching=[x for x in entries if 'Attempt 001' in str(x.get('description',''))]
     if matching:
-        lines+=['', 'Latest recorded Kaggle submission: `'+json.dumps(matching[0],default=str)+'`.']
+        entry=matching[0]
+        (results/'kaggle_submission.json').write_text(json.dumps(entry,indent=2)+'\n')
+        lines+=['', f"Recorded Kaggle submission **{entry.get('ref')}**: `{entry.get('status')}`."]
+        if 'COMPLETE' in str(entry.get('status','')).upper() and entry.get('public_score'):
+            lines+=['',f"Kaggle public leaderboard log loss: **{entry['public_score']}**."]
+        else:
+            lines+=['','The hidden-test score is pending; the local three-row preview is not a leaderboard result.']
 lines+=['','## Next experiments','',
     '1. Train a joint transformer cross-encoder over prompt and both answers, so it can model correctness and instruction-following interactions lost by independent text vectors.',
     '2. Fine-tune a multilingual instruction model with a three-class preference head and LoRA on a GPU; budget context across all turns and investigate teacher distillation.',
@@ -65,4 +71,85 @@ lines+=['','## Next experiments','',
     '- Heavy artifacts: `~/database/llm_classification_finetuning`.',
     '- Notebook link: `~/notebooks/llm_classification_finetuning`.','']
 (repo/'RESULTS.md').write_text('\n'.join(lines))
+status='not recorded'
+if submissions.exists():
+    matched=[x for x in json.loads(submissions.read_text()) if 'Attempt 001' in str(x.get('description',''))]
+    if matched:status=f"{matched[0].get('status')}; public score: {matched[0].get('public_score') or 'pending'}"
+memory=f'''# Project memory — attempt 001
+
+## Completed work
+
+All 20 trained candidates and three constant baselines have been evaluated on one
+frozen prompt-grouped split. Two calibrated ensembles are also reported. See
+[RESULTS.md](../RESULTS.md), [metrics](../results/attempt_001/metrics.json), and the
+three executed [analysis notebooks](../notebooks/).
+
+Development-selected research model: **{chosen['model']}**. Holdout log loss
+**{chosen['holdout']['log_loss']:.5f}**, accuracy **{chosen['holdout']['accuracy']:.2%}**.
+Majority baseline always predicts A: holdout accuracy **{majority['holdout']['accuracy']:.2%}**,
+balanced accuracy **{majority['holdout']['balanced_accuracy']:.2%}**, macro F1
+**{majority['holdout']['macro_f1']:.5f}**, Brier **{majority['holdout']['brier']:.5f}**,
+one-hot log loss **{majority['holdout']['log_loss']:.5f}**. Class-frequency probability
+and uniform baselines are separate rows.
+
+Required matrix: TF-IDF/SVD, trained GRU vectors, and Qwen3-Embedding-8B vectors ×
+logistic regression, LightGBM, and a neural classifier. Extras: structural models,
+sparse TF-IDF, feature-scaled sparse TF-IDF, direct GRU head, a 256-token GRU and its
+three heads, combined representations, and probability ensembles. GRU trained from
+random weights on competition training rows; best epoch 3. Longer context did not
+improve development quality. Original sparse logistic fit hit its iteration cap;
+the scaled follow-up's selected fit converged in 79 iterations.
+
+## Evaluation contract
+
+45,980 train / 5,748 development / 5,749 holdout; seed 20261101. Normalize prompt
+whitespace and case before grouping. Zero prompt-group overlap. No model identity or
+ID features. Fit vocabulary, IDF, SVD, scalers, GRU and heads on training rows only;
+development chooses settings and stopping points. Model choices were frozen before
+holdout evaluation. Never retune on this holdout and call the result fresh confirmation.
+Scripts refuse to overwrite the frozen attempt. Reproduction uses a fresh
+`ARENA_DATA_DIR` with the original `raw/` files linked or copied in.
+
+## Kaggle
+
+The [private offline notebook](https://www.kaggle.com/code/arseniytrushin/llm-preference-offline-attempt-001)
+completed successfully locally and on Kaggle. It refits all labeled rows, uses no
+network, and writes `submission.csv`. The local and Kaggle three-example predictions
+were checked for IDs, columns, finite nonnegative probabilities and unit row sums.
+The research Qwen feature service is excluded from this offline deployment.
+
+Accepted submission: **57866428**, notebook version 1 (script version 364480845).
+Last recorded state: **{status}**. Do not interpret three visible examples as a
+leaderboard score. To refresh status without retraining:
+
+```bash
+uv run python scripts/kaggle_run.py submissions
+uv run python scripts/build_report.py
+uv run python scripts/build_notebooks.py
+```
+
+## Storage and authentication
+
+- Repository: source, Markdown memory, executed notebooks and aggregate metrics.
+- Heavy data, embeddings, weights, splits and predictions:
+  `~/database/llm_classification_finetuning`.
+- Notebook link: `~/notebooks/llm_classification_finetuning`; kernel `arena-llm`.
+- Kaggle access token works; legacy key returned 401. Never print credentials.
+- Eliza extraction of the full dataset was explicitly approved by the user.
+  Working route: `/raw/openrouter/v1/embeddings`; model `qwen/qwen3-embedding-8b`;
+  OAuth credential read from `~/.soy/token`. 164,416 unique texts, 256 dimensions,
+  6K-character head/tail context, resumable batches. No tokens or raw text in GitHub.
+- Never recursively walk the user's home, `~/prj`, or Arc/FUSE checkouts.
+
+Four invariant tests passed. Analysis notebooks executed without errors. The uv lock
+records the local CPU environment; Kaggle uses its own installed runtime, so its
+predictions need not be bitwise identical.
+
+## Next research
+
+Proposals are recorded in RESULTS.md: joint cross-encoder, LoRA preference model,
+shared response utility with a tie head, better recurrent feature training, and
+multi-fold/seed confirmation. These are not claimed as completed experiments.
+'''
+(repo/'docs/PROGRESS.md').write_text(memory)
 print('Wrote',repo/'RESULTS.md')

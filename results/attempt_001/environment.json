@@ -1,0 +1,9 @@
+{
+  "python": "3.11.15",
+  "torch": "2.15.0+cpu",
+  "scikit_learn": "1.9.1",
+  "lightgbm": "4.7.0",
+  "numpy": "2.4.6",
+  "evaluation_utc": "2026-11-01T09:04:39.717109+00:00",
+  "device": "cpu"
+}
