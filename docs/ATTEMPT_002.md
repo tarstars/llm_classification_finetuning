@@ -85,6 +85,9 @@ Kaggle job outputs. Source, aggregate results, and notebook programs are committ
 confirmation. `scripts/build_joint_inference.py` builds the offline confirmation
 and submission notebooks with pinned training-output versions and exported wheels.
 `scripts/collect_attempt_002.py` refreshes aggregate evidence and notebook 04.
+`scripts/run_joint_pipeline.py` resumes the bounded train/freeze/confirm/predict/
+submit workflow from saved job versions. It stops on failed GPU executions rather
+than starting duplicate jobs, and can publish generated results after each major stage.
 
 ```bash
 uv sync --extra train

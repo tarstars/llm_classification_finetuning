@@ -38,6 +38,54 @@ for job in sorted((source/'jobs').iterdir()):
             shutil.copyfile(path,target)
     index.append(row)
 json_write(dest/'run_index.json',{'collected_utc':datetime.now(timezone.utc).isoformat(),'jobs':index})
+if (source/'pipeline_state.json').exists():
+    json_write(dest/'pipeline_state.json',json.loads((source/'pipeline_state.json').read_text()))
+
+baseline=json.loads((dest/'baselines.json').read_text())
+report=['# Attempt 002: joint preference fine-tuning','',
+    'Attempt 001 scored **1.00897** on Kaggle. This experiment trains a Qwen3-8B',
+    'joint preference classifier using QLoRA on two Kaggle T4 GPUs.',
+    'See the [executed notebook](notebooks/04_joint_preference_finetuning.ipynb) and',
+    '[evaluation protocol](docs/ATTEMPT_002.md).','',
+    '## Baselines on the new development partition','',
+    '| Model | Log loss ↓ | Accuracy | Macro F1 | Brier ↓ |',
+    '|---|---:|---:|---:|---:|']
+for key,label in [('majority_development','Always A'),('prior_development','Training class frequencies'),
+                  ('structural_gbdt_development','Structural boosted trees')]:
+    m=baseline[key]
+    report.append(f"| {label} | {m['log_loss']:.5f} | {m['accuracy']:.2%} | {m['macro_f1']:.5f} | {m['brier']:.5f} |")
+report+=['','## Completed GPU runs','',
+    'Pilot development scores use 128 examples and are diagnostics. They are not',
+    'comparable quality estimates against the 5,746-row baseline above.',
+    'The initial batch-one pilot exposed a loss scaling error; subsequent runs use',
+    'explicit mean cross entropy and corrected gradient accumulation.','',
+    '| Run | Pilot | Steps | Batch/GPU | Seconds/step | Peak GB/GPU |',
+    '|---|---|---:|---:|---:|---:|']
+for entry in index:
+    p=dest/entry['job']/'summary.json'
+    if not p.exists():continue
+    s=json.loads(p.read_text())
+    report.append(f"| {entry['job']} | {s['pilot']} | {s['global_steps']} | {s['config']['train_batch_size']} | {s['seconds_per_optimizer_step']:.2f} | {s['peak_gpu_bytes']/1e9:.2f} |")
+    if not s['pilot']:
+        report+=['',f"Full-run development log loss: **{s['calibrated_development']['log_loss']:.5f}**.",
+            f"Completed epochs: {s['epochs_completed']:.3f}; stopped for wall-time budget: {s['stopped_for_budget']}.",
+            f"Temperature selected on development: {s['temperature']:.5f}.",'']
+confirm=dest/'confirmation/confirmation.json'
+report+=['','## Confirmation and official submission','']
+if confirm.exists():
+    c=json.loads(confirm.read_text());m=c['confirmation']
+    report+=[f"Frozen-model confirmation log loss: **{m['log_loss']:.5f}**; accuracy **{m['accuracy']:.2%}**.",
+        'Model choices and temperature were fixed before this evaluation.','']
+else:report+=['No frozen-model confirmation result is available yet.','']
+submitted=dest/'prediction/submissions.json'
+own_submission=dest/'prediction/submission.json'
+if submitted.exists() and own_submission.exists():
+    reference=json.loads(own_submission.read_text()).get('ref')
+    current=next((s for s in json.loads(submitted.read_text()) if str(s.get('ref'))==str(reference)),None)
+    if current:
+        report+=[f"Submission **{reference}**: {current.get('status')}; official public score: **{current.get('public_score') or 'pending'}**."]
+else:report+=['No official attempt-002 score is available yet.']
+(REPO/'ATTEMPT_002_RESULTS.md').write_text('\n'.join(report)+'\n')
 
 setup='''from pathlib import Path
 import json
