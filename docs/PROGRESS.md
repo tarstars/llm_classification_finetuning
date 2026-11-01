@@ -33,6 +33,12 @@ The 2026-11-01 15:30 UTC snapshot reached step 400, 0.278 epochs, recent trainin
 These are provisional, one-orientation, uncalibrated metrics; confirmation is unused.
 At 15:34 UTC, the step-400 selection result arrived: log loss improved to 1.11537,
 accuracy 41.21%. It remains worse than the same-subset class-prior log loss.
+At 17:54 UTC, the latest live snapshot reached step 750 / 0.522 epochs. The step-600
+selection checkpoint improved to **0.98399 log loss**, **50.39% accuracy**, beating
+the same-subset prior (1.09709). This is the current provisional score proxy on
+1,024 development examples, before swap averaging/calibration; confirmation and
+an official LoRA submission score are still pending. Recent training loss is
+0.85915 and should not be used as the competition-score estimate.
 The numeric quota API confirms about 29.5 free GPU hours remaining; the SDK's
 formatted duration drops whole days, so use `total_seconds()` for quota calculations.
 

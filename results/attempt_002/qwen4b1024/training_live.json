@@ -1,23 +1,17 @@
 {
-  "snapshot_utc": "2026-11-01T15:34:30.380468+00:00",
-  "processed_utc": "2026-11-01T15:34:57.980174+00:00",
+  "snapshot_utc": "2026-11-01T17:53:55.617750+00:00",
+  "processed_utc": "2026-11-01T17:54:18.186449+00:00",
   "kernel": "arseniytrushin/llm-preference-qwen3-4b-train-002/1",
   "job": "qwen4b1024",
   "provisional": true,
-  "records": 83,
+  "records": 154,
   "latest": {
-    "step": 400,
-    "elapsed_seconds": 9899.608539412,
-    "eval_loss": 1.1153653860092163,
-    "eval_log_loss": 1.115365338368813,
-    "eval_accuracy": 0.412109375,
-    "eval_balanced_accuracy": 0.42710590807581705,
-    "eval_macro_f1": 0.3839861565137628,
-    "eval_brier": 0.6762733632342395,
-    "eval_runtime": 334.6469,
-    "eval_samples_per_second": 3.06,
-    "eval_steps_per_second": 0.382,
-    "epoch": 0.27830927117759613
+    "step": 750,
+    "elapsed_seconds": 18304.366630499997,
+    "loss": 0.859149169921875,
+    "grad_norm": 16.559335708618164,
+    "learning_rate": 2.5545771017965114e-05,
+    "epoch": 0.5218298834579927
   },
   "first_training": {
     "step": 1,
@@ -29,44 +23,44 @@
   },
   "recent_training": [
     {
-      "step": 380,
-      "elapsed_seconds": 9237.208002351,
-      "loss": 1.0771677017211914,
-      "grad_norm": 27.368247985839844,
-      "learning_rate": 4.41429017336111e-05,
-      "epoch": 0.2643938076187163
+      "step": 730,
+      "elapsed_seconds": 17973.439301795,
+      "loss": 1.1234285354614257,
+      "grad_norm": 25.129657745361328,
+      "learning_rate": 2.6693599207322378e-05,
+      "epoch": 0.5079144198991129
     },
     {
-      "step": 385,
-      "elapsed_seconds": 9379.918991255001,
-      "loss": 1.127357292175293,
-      "grad_norm": 20.69913673400879,
-      "learning_rate": 4.395687558193312e-05,
-      "epoch": 0.26787267350843624
+      "step": 735,
+      "elapsed_seconds": 18114.57042384,
+      "loss": 0.9922456741333008,
+      "grad_norm": 6.851141452789307,
+      "learning_rate": 2.6406882915588494e-05,
+      "epoch": 0.5113932857888328
     },
     {
-      "step": 390,
-      "elapsed_seconds": 9472.747457938,
-      "loss": 0.9925351142883301,
-      "grad_norm": 12.842510223388672,
-      "learning_rate": 4.37683464080293e-05,
-      "epoch": 0.2713515393981562
+      "step": 740,
+      "elapsed_seconds": 18210.980884236,
+      "loss": 0.9630535125732422,
+      "grad_norm": 6.998663902282715,
+      "learning_rate": 2.6119980862272126e-05,
+      "epoch": 0.5148721516785528
     },
     {
-      "step": 395,
-      "elapsed_seconds": 9534.702045355001,
-      "loss": 0.9710433959960938,
-      "grad_norm": 30.612442016601562,
-      "learning_rate": 4.357733910485791e-05,
-      "epoch": 0.27483040528787617
+      "step": 745,
+      "elapsed_seconds": 18273.123474596,
+      "loss": 0.9424711227416992,
+      "grad_norm": 5.801247596740723,
+      "learning_rate": 2.5832930929260148e-05,
+      "epoch": 0.5183510175682727
     },
     {
-      "step": 400,
-      "elapsed_seconds": 9564.95638584,
-      "loss": 1.0486727714538575,
-      "grad_norm": 13.534753799438477,
-      "learning_rate": 4.338387889258365e-05,
-      "epoch": 0.27830927117759613
+      "step": 750,
+      "elapsed_seconds": 18304.366630499997,
+      "loss": 0.859149169921875,
+      "grad_norm": 16.559335708618164,
+      "learning_rate": 2.5545771017965114e-05,
+      "epoch": 0.5218298834579927
     }
   ],
   "validation": [
@@ -97,6 +91,20 @@
       "eval_samples_per_second": 3.06,
       "eval_steps_per_second": 0.382,
       "epoch": 0.27830927117759613
+    },
+    {
+      "step": 600,
+      "elapsed_seconds": 14840.844769786001,
+      "eval_loss": 0.9839904308319092,
+      "eval_log_loss": 0.9839904269931383,
+      "eval_accuracy": 0.50390625,
+      "eval_balanced_accuracy": 0.49629051629383514,
+      "eval_macro_f1": 0.4883800313478668,
+      "eval_brier": 0.5861210264424388,
+      "eval_runtime": 335.2588,
+      "eval_samples_per_second": 3.054,
+      "eval_steps_per_second": 0.382,
+      "epoch": 0.41746390676639417
     }
   ],
   "stream_error": null,

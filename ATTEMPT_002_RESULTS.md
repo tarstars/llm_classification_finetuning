@@ -17,12 +17,13 @@ Current workflow stage: **waiting_for_kernel**; training job: **qwen4b1024**.
 
 ## Provisional training snapshot
 
-Job qwen4b1024; snapshot UTC 2026-11-01T15:34:30.380468+00:00.
-Latest recorded step: **400**; completed epochs: **0.278**.
-Recent training loss: **1.04867**.
+Job qwen4b1024; snapshot UTC 2026-11-01T17:53:55.617750+00:00.
+Latest recorded step: **750**; completed epochs: **0.522**.
+Recent training loss: **0.85915**.
 
 Step 200: selection-development log loss **1.14052**, accuracy **43.85%**.
 Step 400: selection-development log loss **1.11537**, accuracy **41.21%**.
+Step 600: selection-development log loss **0.98399**, accuracy **50.39%**.
 
 Training-prior log loss on these same 1024 examples: **1.09709**.
 
