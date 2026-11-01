@@ -8,6 +8,9 @@ Attempt 001 achieved **1.00194 holdout log loss** and **49.63% accuracy** with a
 development-selected ensemble. Always predicting the most frequent training class
 gives **34.91% accuracy**. See [full results](RESULTS.md) for all metrics and baselines.
 
+The submitted offline ensemble scored **1.00897** on Kaggle's public leaderboard;
+its local holdout estimate was **1.00956**.
+
 - [Problem and data](notebooks/01_problem_and_data.ipynb)
 - [Vectorizers and classifiers](notebooks/02_vectorizers_and_classifiers.ipynb)
 - [Results and next experiments](notebooks/03_results_and_next_experiments.ipynb)

@@ -67,9 +67,9 @@ Offline blend temperature: 0.90496. Nonzero weights: rnn__end_to_end=0.248, rnn_
 
 A local three-row submission only verifies format. A leaderboard score requires Kaggle to rerun the notebook on its hidden test set.
 
-Recorded Kaggle submission **57866428**: `SubmissionStatus.PENDING`.
+Recorded Kaggle submission **57866428**: `SubmissionStatus.COMPLETE`.
 
-The hidden-test score is pending; the local three-row preview is not a leaderboard result.
+Kaggle public leaderboard log loss: **1.00897**.
 
 ## Next experiments
 

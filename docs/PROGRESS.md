@@ -42,7 +42,7 @@ were checked for IDs, columns, finite nonnegative probabilities and unit row sum
 The research Qwen feature service is excluded from this offline deployment.
 
 Accepted submission: **57866428**, notebook version 1 (script version 364480845).
-Last recorded state: **SubmissionStatus.PENDING; public score: pending**. Do not interpret three visible examples as a
+Last recorded state: **SubmissionStatus.COMPLETE; public score: 1.00897**. Do not interpret three visible examples as a
 leaderboard score. To refresh status without retraining:
 
 ```bash

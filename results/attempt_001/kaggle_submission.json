@@ -1,8 +1,8 @@
 {
   "url": "/code/arseniytrushin/llm-preference-offline-attempt-001?scriptVersionId=364480845",
-  "status": "SubmissionStatus.PENDING",
+  "status": "SubmissionStatus.COMPLETE",
   "ref": 57866428,
-  "public_score": "",
+  "public_score": "1.00897",
   "private_score": "",
   "description": "Attempt 001: offline TF-IDF, GRU and structural preference ensemble; grouped development selection",
   "date": "2026-11-01 08:55:33.660000"
