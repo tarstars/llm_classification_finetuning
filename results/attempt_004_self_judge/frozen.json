@@ -1,0 +1,16 @@
+{
+  "rows": 300,
+  "judgments_sha256": "ce046e96eb320cb2075980a28cabb6d3d46f14af7e3365e9ca925c34ed56f98c",
+  "frozen_utc": "2026-11-02T15:27:12.891910+00:00",
+  "labeling_source_sha256": "23891eb1724c2dc54019d614910f5eb3d27eeeae44e4bea0f1afc79be4ae2018",
+  "inputs_sha256": "8dc11810f85c2bc47ef3760bee23917caca20e63492f94174cca2ee1351a613c",
+  "mapping_sha256": "0c6862c6962d7fa6666d8cce175d42041e0ec9ff5b6300dbf3f34647a917a3ca",
+  "targets_loaded": false,
+  "confidence_mapping": {
+    "low": 0.4,
+    "medium": 0.5,
+    "good": 0.6,
+    "high": 0.7,
+    "very_high": 0.8
+  }
+}

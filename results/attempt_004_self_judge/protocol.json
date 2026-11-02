@@ -1,0 +1,26 @@
+{
+  "attempt": "004_self_judge",
+  "rows": 300,
+  "seed": 20261116,
+  "eligible_rows_after_exclusions": 496,
+  "sample_source": "Unique prompt groups in existing fixed 512-row Gemma development sample; exclude poster/manual-review IDs",
+  "confidence_mapping": {
+    "low": 0.4,
+    "medium": 0.5,
+    "good": 0.6,
+    "high": 0.7,
+    "very_high": 0.8
+  },
+  "probability_rule": "Chosen class gets confidence; each other class gets (1-confidence)/2",
+  "judge": "Current Codex assistant itself; no other models, subagents, web lookup or winner feedback",
+  "input": "Complete conversations, randomized answer order, hidden row IDs and model identities",
+  "inputs_sha256": "8dc11810f85c2bc47ef3760bee23917caca20e63492f94174cca2ee1351a613c",
+  "mapping_sha256": "0c6862c6962d7fa6666d8cce175d42041e0ec9ff5b6300dbf3f34647a917a3ca",
+  "targets_loaded": false,
+  "limitations": [
+    "Not a clean pretraining-contamination benchmark: the public dataset may have been in model training.",
+    "Full context and deliberation differ from quantized Gemma non-thinking 1024/2048-token inference.",
+    "Excluding previously inspected cases changes sample distribution; paired comparison only.",
+    "Judge identity is current assistant; exact underlying checkpoint is not established by this script."
+  ]
+}
