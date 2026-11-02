@@ -55,6 +55,8 @@ for model_key in config['models']:
     data = np.load(predictions)
     summary = json.loads((predictions.parent / 'judge_summary.json').read_text())
     assert summary['mode'] == 'dev' and summary['config_sha256'] == config_hash
+    assert summary['judge_source_sha256'] == hashlib.sha256((REPO/'src/arena/judge.py').read_bytes()).hexdigest()
+    assert summary['runtime_source_sha256'] == hashlib.sha256((REPO/'src/arena/judge_runtime.py').read_bytes()).hexdigest()
     ids, y = data['ids'], data['labels']
     constant_baselines = {
         'uniform': metrics(y, np.full((len(y), 3), 1/3)),

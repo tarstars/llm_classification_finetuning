@@ -210,6 +210,8 @@ def run(config, executable, raw, out, model_key, mode, sample=None, selection=No
                    'packed_tokens_mean': float(np.mean([r['original_info']['tokens'] for r in results])),
                    'projected_25000_seconds': seconds / max(len(frame), 1) * config['profile_test_rows_assumption'],
                    'weights_trained': False, 'blended_with_classifier': False}
+        summary['judge_source_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+        summary['runtime_source_sha256'] = hashlib.sha256(Path(__file__).with_name('judge_runtime.py').read_bytes()).hexdigest()
         if labels is not None:
             summary.update(original=metrics(labels, original), swap_average=metrics(labels, average),
                 order_flip_fraction=float((original.argmax(1) != swapped.argmax(1)).mean()))

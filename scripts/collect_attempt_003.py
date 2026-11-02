@@ -129,7 +129,7 @@ if selection:
 else:print('Selection not frozen yet.')
 official=status.get('official_submission')
 if official:display(official)
-''')], metadata={'kernelspec': {'name': 'arena-llm', 'display_name': 'Python (arena-llm)', 'language': 'python'}})
+''')], metadata={'kernelspec': {'name': 'arena-llm', 'display_name': 'Arena LLM (uv)', 'language': 'python'}})
 NotebookClient(nb, timeout=120, kernel_name='arena-llm', resources={'metadata': {'path': str(REPO)}}).execute()
 nbf.write(nb, REPO / 'notebooks/08_prompted_judge.ipynb')
 print('Updated attempt 003 report and executed notebook')

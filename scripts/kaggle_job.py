@@ -40,7 +40,7 @@ if args.action in ['status', 'output'] and saved_push:
 
 def fields(obj):
     names = ["url", "version_number", "error", "message", "status", "ref", "id",
-             "failure_message", "invalid_model_sources", "invalid_dataset_sources",
+             "failure_message", "error_description", "invalid_model_sources", "invalid_dataset_sources",
              "invalidModelSources", "invalidDatasetSources", "public_score", "private_score", "description", "date"]
     return {k: getattr(obj, k) for k in names if hasattr(obj, k)}
 
