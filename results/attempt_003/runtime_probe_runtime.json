@@ -1,0 +1,10 @@
+{
+  "revision": "59695669f1924c81f421f2044c690ed6373bec79",
+  "source_sha256": "a7f9a1c399f772b72fbc6d4656ad24750e0e9dad608ba945c68acea607c05570",
+  "build_seconds": 1629.864646033,
+  "cuda_architectures": [
+    75
+  ],
+  "cuda_driver_library": "/usr/local/nvidia/lib64/libcuda.so.580.178.04",
+  "version": "version: 0.8.0-dev (build 0, commit unknown)\nbuilt with GNU 13.3.0 for Linux x86_64"
+}

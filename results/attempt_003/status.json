@@ -1,11 +1,10 @@
 {
   "attempt": "003",
   "state": {
-    "stage": "waiting_for_kernel",
-    "utc": "2026-11-02T11:07:09.434550+00:00",
+    "stage": "failed",
+    "utc": "2026-11-02T11:40:27.349162+00:00",
     "pid": 1693511,
-    "job": "runtime_probe",
-    "status": "RUNNING"
+    "error": "The server did not return all three label scores: [{'id': 236776, 'token': 'A', 'bytes': [65], 'prob': 0.9998927116394043}, {'id': 715, 'token': '//', 'bytes': [47, 47], 'prob': 2.1292027668096125e-05}, {'id': 236820, 'token': '<', 'bytes': [60], 'prob': 1.4869759979774244e-05}]"
   },
   "selection": null,
   "official_submission": null,
@@ -32,6 +31,22 @@
         "version_number": 2,
         "error": "",
         "ref": "/code/arseniytrushin/llm-preference-judge-probe-003",
+        "invalid_model_sources": [],
+        "invalid_dataset_sources": [],
+        "invalidModelSources": [],
+        "invalidDatasetSources": []
+      },
+      "status": {
+        "status": "KernelWorkerStatus.COMPLETE",
+        "failure_message": ""
+      }
+    },
+    "runtime_binary": {
+      "push": {
+        "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-judge-binary-probe-003",
+        "version_number": 1,
+        "error": "",
+        "ref": "/code/arseniytrushin/llm-preference-judge-binary-probe-003",
         "invalid_model_sources": [],
         "invalid_dataset_sources": [],
         "invalidModelSources": [],
