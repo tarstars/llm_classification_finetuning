@@ -1,12 +1,10 @@
 {
   "attempt": "003",
   "state": {
-    "stage": "runtime_verified",
-    "utc": "2026-11-02T12:23:47.843200+00:00",
+    "stage": "development_estimate_available",
+    "utc": "2026-11-02T12:32:03.944839+00:00",
     "pid": 1813129,
-    "models": [
-      "gemma26"
-    ]
+    "max_length": 2048
   },
   "selection": null,
   "official_submission": null,
@@ -87,7 +85,7 @@
         "invalidDatasetSources": []
       },
       "status": {
-        "status": "KernelWorkerStatus.RUNNING",
+        "status": "KernelWorkerStatus.COMPLETE",
         "failure_message": ""
       }
     },
