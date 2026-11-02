@@ -1,46 +1,50 @@
 # Project memory
 
-## Active work — attempt 002
+## Completed work — attempt 002
 
-The user authorized joint preference fine-tuning. See [ATTEMPT_002.md](ATTEMPT_002.md).
-Two Kaggle Tesla T4 GPUs passed an environment/backward probe. The initial Qwen3-8B
-QLoRA pilot completed: 7.68 GB allocated memory/GPU, 45.64 seconds/optimizer step.
-It exposed loss scaling errors under accumulation/DDP; explicit mean cross entropy
-fixes them. A corrected batch-four pilot completed at
-`arseniytrushin/llm-preference-qwen3-8b-pilot-002-batch4` (version 1).
-The new split has 45,985 train / 5,746 development / 5,746 confirmation rows, fixed
-by explicit IDs under `~/database/llm_classification_finetuning/runs/attempt_002`.
-The structural-tree development baseline is 1.03375 log loss. All ten local tests
-passed, including accumulated/full-batch update equivalence and adapter/head reloading.
-Notebook 04 is executed with current aggregate evidence. No attempt-002
-model quality score has been claimed yet. Corrected GPU loss scaling passed; training
-steps excluding evaluation took 45.74 seconds, about 18.3 hours/epoch for 8B before
-length grouping. The selected long run is Qwen3-4B, 1,024 tokens, global batch 32,
-one epoch or six training hours, with train-only length grouping. The resumable
-pipeline freezes choices, evaluates confirmation, runs offline prediction, submits
-to Kaggle and publishes generated aggregate results. Its state/log are under
-`~/database/llm_classification_finetuning/runs/attempt_002/pipeline_state.json` and
-`pipeline.log`. No paid GPU service is enabled.
-The background controller started at 2026-11-01 12:41 UTC. Kaggle accepted training
-job `qwen4b1024`, version 1, with no invalid sources; its status is RUNNING:
-`arseniytrushin/llm-preference-qwen3-4b-train-002`. Resume a stopped controller with
-the command in ATTEMPT_002.md; saved version IDs prevent duplicate training.
-Live metrics can be retrieved with `scripts/training_stats.py` using Kaggle's
-streaming log API. Ordinary output downloads do not expose the running journal.
-The 2026-11-01 15:30 UTC snapshot reached step 400, 0.278 epochs, recent training loss
-1.04867 (initial 1.76403). First raw selection checkpoint at step 200: log loss
-1.14052, accuracy 43.85% on 1,024 rows; prior log loss on those same rows is 1.09709.
-These are provisional, one-orientation, uncalibrated metrics; confirmation is unused.
-At 15:34 UTC, the step-400 selection result arrived: log loss improved to 1.11537,
-accuracy 41.21%. It remains worse than the same-subset class-prior log loss.
-At 17:54 UTC, the latest live snapshot reached step 750 / 0.522 epochs. The step-600
-selection checkpoint improved to **0.98399 log loss**, **50.39% accuracy**, beating
-the same-subset prior (1.09709). This is the current provisional score proxy on
-1,024 development examples, before swap averaging/calibration; confirmation and
-an official LoRA submission score are still pending. Recent training loss is
-0.85915 and should not be used as the competition-score estimate.
-The numeric quota API confirms about 29.5 free GPU hours remaining; the SDK's
-formatted duration drops whole days, so use `total_seconds()` for quota calculations.
+The full Qwen3-4B QLoRA workflow completed successfully on 2026-11-02 at 01:03 UTC.
+Official Kaggle submission **57883867** scored **0.97025**, improving the previous
+**1.00897** by **0.03872** (3.84% lower log loss). Training, freezing, independent
+confirmation, internet-disabled prediction, submission, notebook execution, commit
+and push all succeeded. See [results](../ATTEMPT_002_RESULTS.md),
+[protocol](ATTEMPT_002.md), and [notebook 04](../notebooks/04_joint_preference_finetuning.ipynb).
+
+- General base model: Qwen/Qwen3-4B; NF4 QLoRA on attention projections and a
+  trainable three-class head. Sequence budget 1,024 tokens; global batch 32.
+- Prompt-grouped split: 45,985 train / 5,746 development / 5,746 confirmation;
+  seed 20261102 and explicit IDs. Previous project results had been examined.
+- Training stopped for the six-hour budget after **877 steps / 0.610 epochs**.
+  Selected checkpoint: **800**, chosen on the fixed 1,024-row development subset.
+  Runtime including final training-stage evaluation/checkpoint handling: 21,964 s.
+- Both-orientation development log loss: 0.97738; calibrated: **0.96883**.
+  Temperature **0.72206** was frozen before confirmation.
+- Confirmation: **0.96236 log loss**, **53.06% accuracy**, macro F1 0.52889,
+  Brier 0.57318, on 5,746 examples. Training-prior baseline: 1.09723 / 34.91%.
+- Private inference kernel: `arseniytrushin/llm-preference-qwen3-4b-predict-002`,
+  version 1, script version 364669818. Training kernel:
+  `arseniytrushin/llm-preference-qwen3-4b-train-002`, version 1.
+- Final generated evidence was automatically committed and pushed as **54d6aaa**.
+  No further GPU experiment is currently running in this workflow.
+
+The installed Kaggle SDK supports live logs through `kernels_logs_stream`;
+`scripts/training_stats.py` snapshots metrics without restarting the job. GPU pilots
+caught and fixed Trainer's accumulation/DDP loss scaling. Ten local tests passed,
+including accumulated/full-batch update equivalence, preprocessing, and adapter/head
+persistence. All result notebooks executed successfully.
+
+Heavy artifacts, checkpoint provenance and controller logs remain under
+`~/database/llm_classification_finetuning/runs/attempt_002`. Source and aggregate
+results are in GitHub. The confirmation partition is now evaluated and must not
+be presented as untouched in a follow-up experiment.
+
+At 2026-11-02 04:13 UTC, the numeric quota API reported **21 hours remaining**
+(75,636 seconds), no reserved compute, and pay-to-scale disabled. Refresh:
+2026-11-07 00:00 UTC. Use `total_seconds()` for quota durations; the SDK's string
+representation drops whole days.
+
+The next research question is whether additional training beyond 0.61 epochs and
+more retained context improve development quality. These are proposed experiments;
+0.8 remains an unachieved target, with no guarantee from the current results.
 
 ## Frozen work — attempt 001
 

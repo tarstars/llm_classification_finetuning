@@ -4,6 +4,24 @@ The user authorized a controlled GPU experiment after attempt 001 scored 1.00897
 on Kaggle. The leaderboard was 0.82732 when checked on 2026-11-01. This phase aims
 to improve the preference model itself; no score improvement is assumed in advance.
 
+## Completed result — 2026-11-02
+
+The complete train/freeze/confirm/offline-predict/submit workflow succeeded.
+Submission **57883867** scored **0.97025** on Kaggle, improving attempt 001's
+1.00897 by 0.03872 (3.84% lower log loss). The Kaggle prediction notebook is
+`arseniytrushin/llm-preference-qwen3-4b-predict-002`, version 1.
+
+Qwen3-4B trained for 877 optimizer steps, reaching 0.610 epochs before the wall-time
+budget stopped training. The selected checkpoint was step 800. Original/swapped
+averaging and development-selected temperature 0.72206 gave development log loss
+0.96883 on 5,746 rows. Independent frozen-model confirmation on 5,746 rows gave
+**0.96236 log loss**, **53.06% accuracy**, macro F1 0.52889 and Brier 0.57318.
+See [aggregate results](../ATTEMPT_002_RESULTS.md) and
+[executed notebook](../notebooks/04_joint_preference_finetuning.ipynb).
+
+All artifacts and model choices are frozen. Further tuning requires a separately
+declared experiment and must not describe this confirmation partition as unseen.
+
 ## Model and access
 
 Hardware pilots used the general **Qwen/Qwen3-8B** checkpoint. Their measured speed

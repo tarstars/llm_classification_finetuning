@@ -1,5 +1,5 @@
 {
-  "collected_utc": "2026-11-02T01:03:59.727704+00:00",
+  "collected_utc": "2026-11-02T04:14:46.488570+00:00",
   "jobs": [
     {
       "job": "confirmation",
@@ -154,11 +154,11 @@
       },
       "quota": {
         "refresh_time": "2026-11-07 00:00:00",
-        "used_seconds": 3173.504845,
+        "used_seconds": 32363.824,
         "reserved_seconds": 0.0,
         "allowed_seconds": 108000.0,
         "pay_to_scale_enabled": false,
-        "remaining_seconds": 104826.495155
+        "remaining_seconds": 75636.176
       }
     }
   ]

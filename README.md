@@ -4,15 +4,17 @@ Reproducible experiments for [LLM Classification Finetuning on Kaggle](https://w
 Predict whether a human prefers response A, response B, or a tie. The primary metric
 is multiclass log loss (lower is better).
 
-Attempt 001 achieved **1.00194 holdout log loss** and **49.63% accuracy** with a
-development-selected ensemble. Always predicting the most frequent training class
-gives **34.91% accuracy**. See [full results](RESULTS.md) for all metrics and baselines.
+Our best official Kaggle score is **0.97025**, achieved by the Qwen3-4B QLoRA
+preference classifier in attempt 002. Frozen-model confirmation gave **0.96236 log
+loss** and **53.06% accuracy** on 5,746 examples. Training stopped at its six-hour
+budget after 0.61 epochs; checkpoint 800 was selected on development data.
+See [attempt 002 results](ATTEMPT_002_RESULTS.md) and the [protocol](docs/ATTEMPT_002.md).
 
-The submitted offline ensemble scored **1.00897** on Kaggle's public leaderboard;
-its local holdout estimate was **1.00956**.
-
-Attempt 002 is training a joint Qwen3-4B preference classifier with QLoRA on Kaggle
-GPUs. See the [training plan](docs/ATTEMPT_002.md) and [current evidence](ATTEMPT_002_RESULTS.md).
+Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
+of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
+**49.63% accuracy**. Always predicting the most frequent training class gives
+**34.91% accuracy**. See [attempt 001 results](RESULTS.md) for the vectorizer and
+classifier comparison and all baselines.
 
 - [Problem and data](notebooks/01_problem_and_data.ipynb)
 - [Vectorizers and classifiers](notebooks/02_vectorizers_and_classifiers.ipynb)
