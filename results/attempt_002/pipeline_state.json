@@ -1,6 +1,15 @@
 {
-  "stage": "confirmation_complete",
-  "utc": "2026-11-01T21:05:51.432228+00:00",
+  "stage": "complete",
+  "utc": "2026-11-02T01:03:58.869761+00:00",
   "pid": 3923947,
-  "training_job": "qwen4b1024"
+  "training_job": "qwen4b1024",
+  "submission": {
+    "url": "/code/arseniytrushin/llm-preference-qwen3-4b-predict-002?scriptVersionId=364669818",
+    "status": "SubmissionStatus.COMPLETE",
+    "ref": 57883867,
+    "public_score": "0.97025",
+    "private_score": "",
+    "description": "Attempt 002: joint preference classifier (prediction)",
+    "date": "2026-11-01 21:08:39.737000"
+  }
 }

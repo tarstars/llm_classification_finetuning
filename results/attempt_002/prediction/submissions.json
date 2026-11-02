@@ -1,0 +1,20 @@
+[
+  {
+    "url": "/code/arseniytrushin/llm-preference-qwen3-4b-predict-002?scriptVersionId=364669818",
+    "status": "SubmissionStatus.COMPLETE",
+    "ref": 57883867,
+    "public_score": "0.97025",
+    "private_score": "",
+    "description": "Attempt 002: joint preference classifier (prediction)",
+    "date": "2026-11-01 21:08:39.737000"
+  },
+  {
+    "url": "/code/arseniytrushin/llm-preference-offline-attempt-001?scriptVersionId=364480845",
+    "status": "SubmissionStatus.COMPLETE",
+    "ref": 57866428,
+    "public_score": "1.00897",
+    "private_score": "",
+    "description": "Attempt 001: offline TF-IDF, GRU and structural preference ensemble; grouped development selection",
+    "date": "2026-11-01 08:55:33.660000"
+  }
+]

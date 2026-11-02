@@ -1,5 +1,5 @@
 {
-  "collected_utc": "2026-11-01T21:05:52.244355+00:00",
+  "collected_utc": "2026-11-02T01:03:59.727704+00:00",
   "jobs": [
     {
       "job": "confirmation",
@@ -94,6 +94,47 @@
         "estimated_hidden_25k_swap_inference_seconds": 23245.002324500234,
         "note": "Speed estimates use a small pilot; long-run timing and quality must be measured."
       }
+    },
+    {
+      "job": "prediction",
+      "push": {
+        "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-qwen3-4b-predict-002",
+        "version_number": 1,
+        "error": "",
+        "ref": "/code/arseniytrushin/llm-preference-qwen3-4b-predict-002",
+        "invalid_model_sources": [],
+        "invalid_dataset_sources": [],
+        "invalidModelSources": [],
+        "invalidDatasetSources": []
+      },
+      "status": {
+        "status": "KernelWorkerStatus.COMPLETE",
+        "failure_message": ""
+      },
+      "submission": {
+        "message": "",
+        "ref": 57883867
+      },
+      "submissions": [
+        {
+          "url": "/code/arseniytrushin/llm-preference-qwen3-4b-predict-002?scriptVersionId=364669818",
+          "status": "SubmissionStatus.COMPLETE",
+          "ref": 57883867,
+          "public_score": "0.97025",
+          "private_score": "",
+          "description": "Attempt 002: joint preference classifier (prediction)",
+          "date": "2026-11-01 21:08:39.737000"
+        },
+        {
+          "url": "/code/arseniytrushin/llm-preference-offline-attempt-001?scriptVersionId=364480845",
+          "status": "SubmissionStatus.COMPLETE",
+          "ref": 57866428,
+          "public_score": "1.00897",
+          "private_score": "",
+          "description": "Attempt 001: offline TF-IDF, GRU and structural preference ensemble; grouped development selection",
+          "date": "2026-11-01 08:55:33.660000"
+        }
+      ]
     },
     {
       "job": "qwen4b1024",

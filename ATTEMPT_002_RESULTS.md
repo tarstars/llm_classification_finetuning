@@ -5,7 +5,7 @@ joint preference classifier using QLoRA on two Kaggle T4 GPUs.
 See the [executed notebook](notebooks/04_joint_preference_finetuning.ipynb) and
 [evaluation protocol](docs/ATTEMPT_002.md).
 
-Current workflow stage: **confirmation_complete**; training job: **qwen4b1024**.
+Current workflow stage: **complete**; training job: **qwen4b1024**.
 
 ## Baselines on the new development partition
 
@@ -38,4 +38,4 @@ Temperature selected on development: 0.72206.
 Frozen-model confirmation log loss: **0.96236**; accuracy **53.06%**.
 Model choices and temperature were fixed before this evaluation.
 
-No official attempt-002 score is available yet.
+Submission **57883867**: SubmissionStatus.COMPLETE; official public score: **0.97025**.
