@@ -13,13 +13,15 @@ parser = argparse.ArgumentParser()
 parser.add_argument("action", choices=["push", "status", "output", "submit", "submissions", "quota"])
 parser.add_argument("--folder", type=Path, required=True)
 parser.add_argument("--job", required=True)
+parser.add_argument("--attempt", default="002")
+parser.add_argument("--message")
 parser.add_argument("--pattern", default=r"(?:summary|gpu_probe|training_config|confirmation|prediction_summary|runtime_requirements)\.json$|training_progress\.jsonl$|\.csv$|\.log$|\.ipynb$")
 parser.add_argument("--accelerator")
 parser.add_argument("--timeout", type=int, default=32400)
 args = parser.parse_args()
 folder = args.folder.resolve()
 metadata = json.loads((folder / "kernel-metadata.json").read_text())
-out = ROOT / "runs/attempt_002/jobs" / args.job
+out = ROOT / f"runs/attempt_{args.attempt}/jobs" / args.job
 out.mkdir(parents=True, exist_ok=True)
 token = Path.home() / ".kaggle/access_token"
 if token.exists():
@@ -60,7 +62,7 @@ elif args.action == "output":
 elif args.action == "submit":
     version = json.loads((out / "push.json").read_text())["version_number"]
     result = fields(api.competition_submit_code(file_name="submission.csv",
-        message=f"Attempt 002: joint preference classifier ({args.job})",
+        message=args.message or f"Attempt {args.attempt}: preference classifier ({args.job})",
         competition="llm-classification-finetuning", kernel=submission_kernel, kernel_version=version))
     json_write(out / "submission.json", result)
     print(json.dumps(result, default=str, indent=2))

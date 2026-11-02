@@ -1,0 +1,56 @@
+{
+  "attempt": "003",
+  "state": {
+    "stage": "waiting_for_kernel",
+    "utc": "2026-11-02T11:07:09.434550+00:00",
+    "pid": 1693511,
+    "job": "runtime_probe",
+    "status": "RUNNING"
+  },
+  "selection": null,
+  "official_submission": null,
+  "jobs": {
+    "runtime_probe_failed_1": {
+      "push": {
+        "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-judge-probe-003",
+        "version_number": 1,
+        "error": "",
+        "ref": "/code/arseniytrushin/llm-preference-judge-probe-003",
+        "invalid_model_sources": [],
+        "invalid_dataset_sources": [],
+        "invalidModelSources": [],
+        "invalidDatasetSources": []
+      },
+      "status": {
+        "status": "KernelWorkerStatus.ERROR",
+        "failure_message": ""
+      }
+    },
+    "runtime_probe": {
+      "push": {
+        "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-judge-probe-003",
+        "version_number": 2,
+        "error": "",
+        "ref": "/code/arseniytrushin/llm-preference-judge-probe-003",
+        "invalid_model_sources": [],
+        "invalid_dataset_sources": [],
+        "invalidModelSources": [],
+        "invalidDatasetSources": []
+      },
+      "status": {
+        "status": "KernelWorkerStatus.RUNNING",
+        "failure_message": ""
+      }
+    },
+    "development": {
+      "push": null,
+      "status": null
+    },
+    "prediction": {
+      "push": null,
+      "status": null
+    }
+  },
+  "weights_trained": false,
+  "blended_with_classifier": false
+}

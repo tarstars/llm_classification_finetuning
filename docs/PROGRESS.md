@@ -1,5 +1,27 @@
 # Project memory
 
+## Prompted-judge experiment in progress — 2026-11-02
+
+The user authorized attempt 003: prompt a stronger public model and test an actual
+Kaggle submission, with no model fine-tuning and no classifier blend. Primary model
+is official 4-bit Gemma 4 31B-IT; Gemma 4 26B-A4B-IT is a measured runtime fallback.
+See [protocol](ATTEMPT_003.md), [live result report](../ATTEMPT_003_RESULTS.md), and
+[executed notebook 08](../notebooks/08_prompted_judge.ipynb).
+
+A pinned llama.cpp runtime is compiled for T4 capability 7.5 and reused offline.
+Probe version 1 failed CMake CUDA-driver-library discovery, producing no judge
+quality measurements; logs are archived as `runtime_probe_failed_1`. Version 2
+supplies the actual installed driver library and is running. Twenty local tests
+pass, including complete label-score extraction, A/B-equivariant calibration and
+field-budget checks. The report is explicitly pending, not a claimed new score.
+
+The resumable controller `scripts/run_judge_pipeline.py --publish-results` waits
+for setup, runs a fixed 512-row development comparison, freezes a runtime-feasible
+judge and probability calibration, verifies an offline prediction notebook, submits
+once, monitors the score, and commits/pushes generated evidence. State and logs:
+`~/database/llm_classification_finetuning/runs/attempt_003/`. Expensive failures stop
+for diagnosis; an unresolved push/submission request is not blindly retried.
+
 ## Completed error poster — 2026-11-02
 
 Browse **http://127.0.0.1:8765/**. Restart with
