@@ -30,6 +30,9 @@ uncertain difference. See the [audit and results](ATTEMPT_004_RESULTS.md).
 The [target-association audit](TARGET_AUDIT.md) tests IDs, model identities, answer
 length, refusals, duplicates and target-derived EDA metadata for leakage.
 
+The [40-hypothesis research register](docs/HYPOTHESES_0_8.md) records distinct
+experiments toward 0.8, their first tests, effort, priorities and evaluation limits.
+
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
 **49.63% accuracy**. Always predicting the most frequent training class gives
