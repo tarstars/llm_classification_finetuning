@@ -1,10 +1,19 @@
 # Attempt 003: prompted judge
 
-Pipeline stage: **failed**.
+Pipeline stage: **runtime_verified**.
 
 This experiment prompts frozen Gemma 4 weights to score A/B/tie. It does not fine-tune the model or blend in our classifier.
 
 [Protocol](docs/ATTEMPT_003.md) · [Executed result notebook](notebooks/08_prompted_judge.ipynb) · [Aggregate evidence](results/attempt_003/)
+
+Selected model: **gemma26** (`google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2`).
+Maximum packed length: **1024 tokens**.
+Both answer orders: **False**; calibration: **temperature_tie**.
+Temperature 3.585565; tie intercept 0.244154.
+
+Selection runtime budget: **8.50 hours**, applied to the projection including its 20% plus 600-second margin.
+
+The original eight-hour selection guard was revised to 8.5 hours after the 1,024-token timing measurement. The inference configuration and saved development predictions are unchanged; Kaggle still has a nine-hour limit.
 
 The initial 2,048-token comparison exceeded the runtime margin. Its separate results are preserved in `results/attempt_003/development_2048.json`; the current table is the 1,024-token fallback.
 
@@ -25,7 +34,5 @@ Runtime projections assume 25,000 hidden rows, add 20% plus 600 seconds, and are
 Constant baseline uniform: log loss 1.09861, accuracy 34.96%.
 Constant baseline training_prior: log loss 1.09777, accuracy 34.96%.
 Constant baseline majority_class: log loss 23.44245, accuracy 34.96%.
-
-Execution issue: Command failed: ('scripts/analyze_judge.py', '--job', 'development_ctx1024', '--folder', 'kaggle/attempt_003_dev-ctx1024', '--config', PosixPath('/home/tarstars/database/llm_classification_finetuning/runs/attempt_003/context1024_config.json'), '--freeze')
 
 Full text, row predictions, native binaries and detailed logs remain under `~/database/llm_classification_finetuning/runs/attempt_003`.
