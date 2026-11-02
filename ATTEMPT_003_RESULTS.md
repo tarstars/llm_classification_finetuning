@@ -1,19 +1,21 @@
 # Attempt 003: prompted judge
 
-Pipeline stage: **development_estimate_available**.
+Pipeline stage: **failed**.
 
 This experiment prompts frozen Gemma 4 weights to score A/B/tie. It does not fine-tune the model or blend in our classifier.
 
 [Protocol](docs/ATTEMPT_003.md) · [Executed result notebook](notebooks/08_prompted_judge.ipynb) · [Aggregate evidence](results/attempt_003/)
 
+The initial 2,048-token comparison exceeded the runtime margin. Its separate results are preserved in `results/attempt_003/development_2048.json`; the current table is the 1,024-token fallback.
+
 | Model | View | Calibration | Cross-fitted log loss | Accuracy | Projected hours with margin |
 | --- | --- | --- | ---: | ---: | ---: |
-| gemma26 | original | raw | 1.42159 | 53.71% | 9.35 |
-| gemma26 | original | temperature | 0.98966 | 53.71% | 9.35 |
-| gemma26 | original | temperature_tie | 0.98076 | 51.56% | 9.35 |
-| gemma26 | average | raw | 1.36525 | 50.98% | 18.54 |
-| gemma26 | average | temperature | 0.99949 | 50.98% | 18.54 |
-| gemma26 | average | temperature_tie | 0.98910 | 52.93% | 18.54 |
+| gemma26 | original | raw | 1.43034 | 51.56% | 8.28 |
+| gemma26 | original | temperature | 1.00721 | 51.56% | 8.28 |
+| gemma26 | original | temperature_tie | 1.00245 | 50.78% | 8.28 |
+| gemma26 | average | raw | 1.35379 | 50.20% | 16.38 |
+| gemma26 | average | temperature | 1.00762 | 50.20% | 16.38 |
+| gemma26 | average | temperature_tie | 1.00130 | 49.41% | 16.38 |
 
 Frozen Qwen3-4B baseline on the same rows: **0.99241** log loss, **51.56%** accuracy.
 Raw rows use no learned probability adjustment. Other rows cross-fit calibration by prompt group; language-model weights stay frozen.
@@ -23,5 +25,7 @@ Runtime projections assume 25,000 hidden rows, add 20% plus 600 seconds, and are
 Constant baseline uniform: log loss 1.09861, accuracy 34.96%.
 Constant baseline training_prior: log loss 1.09777, accuracy 34.96%.
 Constant baseline majority_class: log loss 23.44245, accuracy 34.96%.
+
+Execution issue: Command failed: ('scripts/analyze_judge.py', '--job', 'development_ctx1024', '--folder', 'kaggle/attempt_003_dev-ctx1024', '--config', PosixPath('/home/tarstars/database/llm_classification_finetuning/runs/attempt_003/context1024_config.json'), '--freeze')
 
 Full text, row predictions, native binaries and detailed logs remain under `~/database/llm_classification_finetuning/runs/attempt_003`.

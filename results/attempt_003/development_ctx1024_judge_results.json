@@ -1,0 +1,71 @@
+[
+  {
+    "mode": "dev",
+    "model_key": "gemma26",
+    "model_source": "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2",
+    "rows": 512,
+    "both_orders": true,
+    "seconds": 996.440536721,
+    "config_sha256": "082cf3bd9586667a143f8b2815ed6b1fb8b2db7e13456975017b62b29cad787d",
+    "label_tokens": [
+      236776,
+      236799,
+      236780
+    ],
+    "prompt_overhead": 239,
+    "truncated_rows": 180,
+    "packed_tokens_mean": 756.03125,
+    "projected_25000_seconds": 48654.323082080075,
+    "weights_trained": false,
+    "blended_with_classifier": false,
+    "judge_source_sha256": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b",
+    "runtime_source_sha256": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+    "original": {
+      "rows": 512,
+      "log_loss": 1.4303383398059721,
+      "accuracy": 0.515625,
+      "macro_f1": 0.48549380033436823,
+      "confusion_matrix": [
+        [
+          124,
+          41,
+          14
+        ],
+        [
+          48,
+          105,
+          19
+        ],
+        [
+          72,
+          54,
+          35
+        ]
+      ]
+    },
+    "swap_average": {
+      "rows": 512,
+      "log_loss": 1.353791936425575,
+      "accuracy": 0.501953125,
+      "macro_f1": 0.46668423862722436,
+      "confusion_matrix": [
+        [
+          125,
+          40,
+          14
+        ],
+        [
+          53,
+          102,
+          17
+        ],
+        [
+          73,
+          58,
+          30
+        ]
+      ]
+    },
+    "order_flip_fraction": 0.201171875
+  }
+]

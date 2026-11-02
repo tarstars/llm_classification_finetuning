@@ -1,10 +1,10 @@
 {
   "attempt": "003",
   "state": {
-    "stage": "development_estimate_available",
-    "utc": "2026-11-02T12:32:03.944839+00:00",
+    "stage": "failed",
+    "utc": "2026-11-02T12:53:52.224278+00:00",
     "pid": 1813129,
-    "max_length": 2048
+    "error": "Command failed: ('scripts/analyze_judge.py', '--job', 'development_ctx1024', '--folder', 'kaggle/attempt_003_dev-ctx1024', '--config', PosixPath('/home/tarstars/database/llm_classification_finetuning/runs/attempt_003/context1024_config.json'), '--freeze')"
   },
   "selection": null,
   "official_submission": null,
@@ -90,8 +90,20 @@
       }
     },
     "development_ctx1024": {
-      "push": null,
-      "status": null
+      "push": {
+        "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-judge-dev-003-ctx1024",
+        "version_number": 1,
+        "error": "",
+        "ref": "/code/arseniytrushin/llm-preference-judge-dev-003-ctx1024",
+        "invalid_model_sources": [],
+        "invalid_dataset_sources": [],
+        "invalidModelSources": [],
+        "invalidDatasetSources": []
+      },
+      "status": {
+        "status": "KernelWorkerStatus.COMPLETE",
+        "failure_message": ""
+      }
     },
     "prediction": {
       "push": null,

@@ -7,60 +7,60 @@
       "calibration": "raw",
       "metrics": {
         "rows": 512,
-        "log_loss": 1.421589232056697,
-        "accuracy": 0.537109375,
-        "macro_f1": 0.5006036636767374,
+        "log_loss": 1.4303383398059721,
+        "accuracy": 0.515625,
+        "macro_f1": 0.48549380033436823,
         "confusion_matrix": [
           [
-            131,
-            39,
-            9
+            124,
+            41,
+            14
           ],
           [
-            50,
-            111,
-            11
+            48,
+            105,
+            19
           ],
           [
-            69,
-            59,
-            33
+            72,
+            54,
+            35
           ]
         ]
       },
       "raw_metrics": {
         "rows": 512,
-        "log_loss": 1.421589232056697,
-        "accuracy": 0.537109375,
-        "macro_f1": 0.5006036636767374,
+        "log_loss": 1.4303383398059721,
+        "accuracy": 0.515625,
+        "macro_f1": 0.48549380033436823,
         "confusion_matrix": [
           [
-            131,
-            39,
-            9
+            124,
+            41,
+            14
           ],
           [
-            50,
-            111,
-            11
+            48,
+            105,
+            19
           ],
           [
-            69,
-            59,
-            33
+            72,
+            54,
+            35
           ]
         ]
       },
       "temperature_fit_all_dev": 1.0,
       "tie_bias_fit_all_dev": 0.0,
-      "paired_gain_vs_lora": -0.4291813578535076,
+      "paired_gain_vs_lora": -0.4379304656027828,
       "paired_gain_interval": [
-        -0.5677034301807314,
-        -0.2860791367169008
+        -0.5725307372696719,
+        -0.30290086148285633
       ],
       "log_loss_interval": [
-        1.2728331294318331,
-        1.567372847123724
+        1.2902391699327518,
+        1.5730058631330726
       ],
       "baseline_same_rows": {
         "rows": 512,
@@ -85,8 +85,8 @@
           ]
         ]
       },
-      "projected_25000_seconds": 27556.116526953123,
-      "projected_with_margin_seconds": 33667.33983234374,
+      "projected_25000_seconds": 24327.161541040037,
+      "projected_with_margin_seconds": 29792.593849248045,
       "projection_note": "25,000 rows assumed. Single-order timing is half the measured paired pass when both were scored. 20% margin plus 600 s for loading/finalization.",
       "sample_rows": 512,
       "model_weights_trained": false,
@@ -98,60 +98,60 @@
       "calibration": "temperature",
       "metrics": {
         "rows": 512,
-        "log_loss": 0.9896592279200702,
-        "accuracy": 0.537109375,
-        "macro_f1": 0.5006036636767374,
+        "log_loss": 1.0072071004452283,
+        "accuracy": 0.515625,
+        "macro_f1": 0.48549380033436823,
         "confusion_matrix": [
           [
-            131,
-            39,
-            9
+            124,
+            41,
+            14
           ],
           [
-            50,
-            111,
-            11
+            48,
+            105,
+            19
           ],
           [
-            69,
-            59,
-            33
+            72,
+            54,
+            35
           ]
         ]
       },
       "raw_metrics": {
         "rows": 512,
-        "log_loss": 1.421589232056697,
-        "accuracy": 0.537109375,
-        "macro_f1": 0.5006036636767374,
+        "log_loss": 1.4303383398059721,
+        "accuracy": 0.515625,
+        "macro_f1": 0.48549380033436823,
         "confusion_matrix": [
           [
-            131,
-            39,
-            9
+            124,
+            41,
+            14
           ],
           [
-            50,
-            111,
-            11
+            48,
+            105,
+            19
           ],
           [
-            69,
-            59,
-            33
+            72,
+            54,
+            35
           ]
         ]
       },
-      "temperature_fit_all_dev": 3.759994403513703,
+      "temperature_fit_all_dev": 3.9228612108333425,
       "tie_bias_fit_all_dev": 0.0,
-      "paired_gain_vs_lora": 0.0027486462831191934,
+      "paired_gain_vs_lora": -0.014799226242039071,
       "paired_gain_interval": [
-        -0.045461161086878595,
-        0.04700168639573402
+        -0.05891086607497286,
+        0.02893554482720162
       ],
       "log_loss_interval": [
-        0.9469966883802808,
-        1.0290303933676725
+        0.9674835186494732,
+        1.0439737125996036
       ],
       "baseline_same_rows": {
         "rows": 512,
@@ -176,8 +176,8 @@
           ]
         ]
       },
-      "projected_25000_seconds": 27556.116526953123,
-      "projected_with_margin_seconds": 33667.33983234374,
+      "projected_25000_seconds": 24327.161541040037,
+      "projected_with_margin_seconds": 29792.593849248045,
       "projection_note": "25,000 rows assumed. Single-order timing is half the measured paired pass when both were scored. 20% margin plus 600 s for loading/finalization.",
       "sample_rows": 512,
       "model_weights_trained": false,
@@ -189,60 +189,60 @@
       "calibration": "temperature_tie",
       "metrics": {
         "rows": 512,
-        "log_loss": 0.9807648384581674,
-        "accuracy": 0.515625,
-        "macro_f1": 0.5045295818611452,
+        "log_loss": 1.0024521643090047,
+        "accuracy": 0.5078125,
+        "macro_f1": 0.4981417584546311,
         "confusion_matrix": [
           [
-            115,
-            29,
-            35
-          ],
-          [
-            41,
-            95,
+            111,
+            32,
             36
           ],
           [
-            58,
+            42,
+            94,
+            36
+          ],
+          [
+            57,
             49,
-            54
+            55
           ]
         ]
       },
       "raw_metrics": {
         "rows": 512,
-        "log_loss": 1.421589232056697,
-        "accuracy": 0.537109375,
-        "macro_f1": 0.5006036636767374,
+        "log_loss": 1.4303383398059721,
+        "accuracy": 0.515625,
+        "macro_f1": 0.48549380033436823,
         "confusion_matrix": [
           [
-            131,
-            39,
-            9
+            124,
+            41,
+            14
           ],
           [
-            50,
-            111,
-            11
+            48,
+            105,
+            19
           ],
           [
-            69,
-            59,
-            33
+            72,
+            54,
+            35
           ]
         ]
       },
-      "temperature_fit_all_dev": 3.2994541524289343,
-      "tie_bias_fit_all_dev": 0.34848280886791577,
-      "paired_gain_vs_lora": 0.011643035745021908,
+      "temperature_fit_all_dev": 3.585564619091312,
+      "tie_bias_fit_all_dev": 0.2441541405378688,
+      "paired_gain_vs_lora": -0.010044290105815189,
       "paired_gain_interval": [
-        -0.034559938291729854,
-        0.05510060853123365
+        -0.0533697206009411,
+        0.03268157832973684
       ],
       "log_loss_interval": [
-        0.9351108501808031,
-        1.022214412835712
+        0.9629472786709273,
+        1.0418859365069995
       ],
       "baseline_same_rows": {
         "rows": 512,
@@ -267,8 +267,8 @@
           ]
         ]
       },
-      "projected_25000_seconds": 27556.116526953123,
-      "projected_with_margin_seconds": 33667.33983234374,
+      "projected_25000_seconds": 24327.161541040037,
+      "projected_with_margin_seconds": 29792.593849248045,
       "projection_note": "25,000 rows assumed. Single-order timing is half the measured paired pass when both were scored. 20% margin plus 600 s for loading/finalization.",
       "sample_rows": 512,
       "model_weights_trained": false,
@@ -280,60 +280,60 @@
       "calibration": "raw",
       "metrics": {
         "rows": 512,
-        "log_loss": 1.3652515588081222,
-        "accuracy": 0.509765625,
-        "macro_f1": 0.4737520237330957,
+        "log_loss": 1.353791936425575,
+        "accuracy": 0.501953125,
+        "macro_f1": 0.46668423862722436,
         "confusion_matrix": [
           [
-            121,
-            44,
+            125,
+            40,
             14
           ],
           [
-            48,
-            110,
-            14
+            53,
+            102,
+            17
           ],
           [
-            68,
-            63,
+            73,
+            58,
             30
           ]
         ]
       },
       "raw_metrics": {
         "rows": 512,
-        "log_loss": 1.3652515588081222,
-        "accuracy": 0.509765625,
-        "macro_f1": 0.4737520237330957,
+        "log_loss": 1.353791936425575,
+        "accuracy": 0.501953125,
+        "macro_f1": 0.46668423862722436,
         "confusion_matrix": [
           [
-            121,
-            44,
+            125,
+            40,
             14
           ],
           [
-            48,
-            110,
-            14
+            53,
+            102,
+            17
           ],
           [
-            68,
-            63,
+            73,
+            58,
             30
           ]
         ]
       },
       "temperature_fit_all_dev": 1.0,
       "tie_bias_fit_all_dev": 0.0,
-      "paired_gain_vs_lora": -0.37284368460493295,
+      "paired_gain_vs_lora": -0.3613840622223857,
       "paired_gain_interval": [
-        -0.5018795218633187,
-        -0.24810498960889787
+        -0.4858544882124546,
+        -0.24378097500150248
       ],
       "log_loss_interval": [
-        1.232026693660332,
-        1.5070683787934898
+        1.2275851787576857,
+        1.4863193628713682
       ],
       "baseline_same_rows": {
         "rows": 512,
@@ -358,8 +358,8 @@
           ]
         ]
       },
-      "projected_25000_seconds": 55112.233053906246,
-      "projected_with_margin_seconds": 66734.67966468749,
+      "projected_25000_seconds": 48654.323082080075,
+      "projected_with_margin_seconds": 58985.18769849609,
       "projection_note": "25,000 rows assumed. Single-order timing is half the measured paired pass when both were scored. 20% margin plus 600 s for loading/finalization.",
       "sample_rows": 512,
       "model_weights_trained": false,
@@ -371,60 +371,60 @@
       "calibration": "temperature",
       "metrics": {
         "rows": 512,
-        "log_loss": 0.9994870468189145,
-        "accuracy": 0.509765625,
-        "macro_f1": 0.4737520237330957,
+        "log_loss": 1.0076244865335513,
+        "accuracy": 0.501953125,
+        "macro_f1": 0.46668423862722436,
         "confusion_matrix": [
           [
-            121,
-            44,
+            125,
+            40,
             14
           ],
           [
-            48,
-            110,
-            14
+            53,
+            102,
+            17
           ],
           [
-            68,
-            63,
+            73,
+            58,
             30
           ]
         ]
       },
       "raw_metrics": {
         "rows": 512,
-        "log_loss": 1.3652515588081222,
-        "accuracy": 0.509765625,
-        "macro_f1": 0.4737520237330957,
+        "log_loss": 1.353791936425575,
+        "accuracy": 0.501953125,
+        "macro_f1": 0.46668423862722436,
         "confusion_matrix": [
           [
-            121,
-            44,
+            125,
+            40,
             14
           ],
           [
-            48,
-            110,
-            14
+            53,
+            102,
+            17
           ],
           [
-            68,
-            63,
+            73,
+            58,
             30
           ]
         ]
       },
-      "temperature_fit_all_dev": 3.6218208132609946,
+      "temperature_fit_all_dev": 3.629736165808291,
       "tie_bias_fit_all_dev": 0.0,
-      "paired_gain_vs_lora": -0.007079172615725262,
+      "paired_gain_vs_lora": -0.015216612330361852,
       "paired_gain_interval": [
-        -0.05342408205745202,
-        0.03654695685464332
+        -0.058658331962867016,
+        0.0276037248890784
       ],
       "log_loss_interval": [
-        0.9604237800198367,
-        1.0382460581948016
+        0.9701176738415423,
+        1.0443104298102253
       ],
       "baseline_same_rows": {
         "rows": 512,
@@ -449,8 +449,8 @@
           ]
         ]
       },
-      "projected_25000_seconds": 55112.233053906246,
-      "projected_with_margin_seconds": 66734.67966468749,
+      "projected_25000_seconds": 48654.323082080075,
+      "projected_with_margin_seconds": 58985.18769849609,
       "projection_note": "25,000 rows assumed. Single-order timing is half the measured paired pass when both were scored. 20% margin plus 600 s for loading/finalization.",
       "sample_rows": 512,
       "model_weights_trained": false,
@@ -462,60 +462,60 @@
       "calibration": "temperature_tie",
       "metrics": {
         "rows": 512,
-        "log_loss": 0.9890988661425104,
-        "accuracy": 0.529296875,
-        "macro_f1": 0.5222777066653945,
+        "log_loss": 1.0012959535968864,
+        "accuracy": 0.494140625,
+        "macro_f1": 0.4823913714765036,
         "confusion_matrix": [
           [
-            113,
-            31,
+            111,
+            33,
             35
           ],
           [
-            31,
-            96,
-            45
+            43,
+            92,
+            37
           ],
           [
-            51,
-            48,
-            62
+            62,
+            49,
+            50
           ]
         ]
       },
       "raw_metrics": {
         "rows": 512,
-        "log_loss": 1.3652515588081222,
-        "accuracy": 0.509765625,
-        "macro_f1": 0.4737520237330957,
+        "log_loss": 1.353791936425575,
+        "accuracy": 0.501953125,
+        "macro_f1": 0.46668423862722436,
         "confusion_matrix": [
           [
-            121,
-            44,
+            125,
+            40,
             14
           ],
           [
-            48,
-            110,
-            14
+            53,
+            102,
+            17
           ],
           [
-            68,
-            63,
+            73,
+            58,
             30
           ]
         ]
       },
-      "temperature_fit_all_dev": 3.10395993068878,
-      "tie_bias_fit_all_dev": 0.3774511460938776,
-      "paired_gain_vs_lora": 0.0033090080606789996,
+      "temperature_fit_all_dev": 3.246000065291982,
+      "tie_bias_fit_all_dev": 0.2828302753967951,
+      "paired_gain_vs_lora": -0.00888807939369704,
       "paired_gain_interval": [
-        -0.0419313410700041,
-        0.04433938543950635
+        -0.05256051128476595,
+        0.03165732363478256
       ],
       "log_loss_interval": [
-        0.9480494372070081,
-        1.030609201620314
+        0.96125644386732,
+        1.0394531806257858
       ],
       "baseline_same_rows": {
         "rows": 512,
@@ -540,15 +540,15 @@
           ]
         ]
       },
-      "projected_25000_seconds": 55112.233053906246,
-      "projected_with_margin_seconds": 66734.67966468749,
+      "projected_25000_seconds": 48654.323082080075,
+      "projected_with_margin_seconds": 58985.18769849609,
       "projection_note": "25,000 rows assumed. Single-order timing is half the measured paired pass when both were scored. 20% margin plus 600 s for loading/finalization.",
       "sample_rows": 512,
       "model_weights_trained": false,
       "runtime_feasible": false
     }
   ],
-  "config_sha256": "00004b12fd0975f6e340ed40dc8a8ad6d672844c063aec707a4003d65a69a485",
+  "config_sha256": "082cf3bd9586667a143f8b2815ed6b1fb8b2db7e13456975017b62b29cad787d",
   "constant_baselines": {
     "uniform": {
       "rows": 512,
