@@ -1,0 +1,66 @@
+[
+  {
+    "priority": 1,
+    "hypothesis": "Comparison features depend too much on answer position",
+    "evidence": "Raw winner flips in 38.1% of 512 paired-order comparisons; second-position probability advantage 8.3 points. Swap averaging already helps and is deployed.",
+    "confidence": "High for instability; moderate for its explanation",
+    "test": "Compare random swapping with paired-order CE plus consistency regularization, or a shared utility + tie architecture, at matched compute.",
+    "success": "Lower paired-order disagreement AND lower full-development log loss."
+  },
+  {
+    "priority": 2,
+    "hypothesis": "Subtle correctness, instruction following and ties exceed current learned discrimination",
+    "evidence": "Tie recall 45.4% vs about 56% for A/B; tie AUC 0.668. Similar-answer slice loss 1.021. Reviewed untruncated failures include verified false facts and missed constraints.",
+    "confidence": "Moderate; selected examples do not establish frequency or a model-size cause",
+    "test": "Review a stratified random error sample; test teacher soft labels, broader LoRA targets, or a stronger preference backbone on the same protocol.",
+    "success": "Lower tie/near-similar-pair loss without worsening other classes; measured overall gain."
+  },
+  {
+    "priority": 3,
+    "hypothesis": "Lost context and conversation layout contribute to difficult slices",
+    "evidence": "20.0% truncated; loss 1.027 vs 0.954. Multi-turn loss 1.019. 2048-token pilot gain 0.0046, interval -0.0011 to 0.0107.",
+    "confidence": "High for association; inconclusive for the size of causal gain",
+    "test": "A larger paired context ablation; test 2048 tokens with question cap 512 and round-aware packing separately.",
+    "success": "Paired gain interval positive on full development, acceptable runtime, and evidence by changed-input slice."
+  },
+  {
+    "priority": 4,
+    "hypothesis": "The six-hour stop left useful training unfinished",
+    "evidence": "Only 0.61 epochs completed, but late selection losses 0.984 / 0.979 / 0.982 were fairly flat.",
+    "confidence": "Unresolved",
+    "test": "Exact full-checkpoint continuation to one epoch at 1024 tokens, preserving optimizer/scheduler and split.",
+    "success": "Improvement beyond the fixed step-800 baseline after equivalent postprocessing."
+  },
+  {
+    "priority": 5,
+    "hypothesis": "Tie probabilities need an additional class-specific adjustment",
+    "evidence": "Mean tie probability 0.335 vs prevalence 0.309. Cross-fitted tie adjustment gains 0.0017, interval -0.0002 to 0.0033.",
+    "confidence": "Weak remaining gain; global temperature calibration already works",
+    "test": "Predeclare temperature + tie intercept and evaluate independently; preserve A/B symmetry.",
+    "success": "Repeated paired gain, not just in-sample fitted calibration."
+  },
+  {
+    "priority": 6,
+    "hypothesis": "Structural features complement LoRA enough for a useful ensemble",
+    "evidence": "Cross-fitted postprocessor gain 0.0007, interval -0.0005 to 0.0020.",
+    "confidence": "Weak",
+    "test": "Only consider a predeclared simple blend if a subsequent independent check supports the small gain.",
+    "success": "Gain remains after evaluation costs and independent confirmation."
+  },
+  {
+    "priority": 7,
+    "hypothesis": "Class imbalance or a few corrupted rows explain the main gap",
+    "evidence": "Labels about 35/34/31%; no turn-count mismatches; only 15 rows in conflicting canonical repeats in train + dev. Confident wrong rows contribute 2.3% of loss.",
+    "confidence": "Not supported as a main explanation",
+    "test": "Manual quality checks and invariants; do not automatically relabel model disagreements.",
+    "success": "An identified, reproducible data defect with material measured impact."
+  },
+  {
+    "priority": 8,
+    "hypothesis": "Non-English data is the main weakness",
+    "evidence": "Language estimates leave many short/code-heavy prompts unknown; identified non-English slices are small and uncertain.",
+    "confidence": "Insufficient evidence",
+    "test": "Annotate a representative language sample and use script/task/length-matched comparisons.",
+    "success": "Reliable language labels and a reproducible conditional performance gap."
+  }
+]

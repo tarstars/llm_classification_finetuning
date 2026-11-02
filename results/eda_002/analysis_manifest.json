@@ -1,0 +1,19 @@
+{
+  "frozen_model_hash": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+  "feature_fingerprint": {
+    "raw_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+    "tokenizer_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "preprocessing_sha256": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "feature_program_sha256": "a73deb6ea4d583d6147ed8db22f100ab0c63eb814d3edce200db5900e418fc4f",
+    "lingua_version": "2.1.1"
+  },
+  "analysis_program_sha256": "ae715adf56569bf988b2cd8203985da238dcb2dc47922b46f934b3f1e5588222",
+  "development_rows": 5746,
+  "diagnostic_rows": 512,
+  "confirmation_used_for_new_model_diagnostics": false,
+  "private_gallery": "/home/tarstars/database/llm_classification_finetuning/eda/attempt_002/private_error_gallery.html",
+  "notebooks": [
+    "05_dataset_eda.ipynb",
+    "06_model_eda_and_hypotheses.ipynb"
+  ]
+}

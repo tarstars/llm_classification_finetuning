@@ -1,0 +1,443 @@
+{
+  "rows": 57477,
+  "split_counts": {
+    "train": 45985,
+    "dev": 5746,
+    "confirmation": 5746
+  },
+  "global_class_counts": {
+    "winner_model_a": 20064,
+    "winner_model_b": 19652,
+    "winner_tie": 17761
+  },
+  "class_proportions_by_split": {
+    "confirmation": {
+      "0": 0.34911242603550297,
+      "1": 0.3418029933867038,
+      "2": 0.30908458057779326
+    },
+    "dev": {
+      "0": 0.34911242603550297,
+      "1": 0.3419770274973895,
+      "2": 0.3089105464671075
+    },
+    "train": {
+      "0": 0.3490703490268566,
+      "1": 0.3419158421224312,
+      "2": 0.30901380885071217
+    }
+  },
+  "numeric_quantiles": {
+    "prompt_tokens": {
+      "0.0": 1.0,
+      "0.01": 3.0,
+      "0.05": 5.0,
+      "0.25": 11.0,
+      "0.5": 22.0,
+      "0.75": 56.0,
+      "0.9": 176.0,
+      "0.95": 327.0,
+      "0.99": 1101.0,
+      "1.0": 10429.0
+    },
+    "response_a_tokens": {
+      "0.0": 0.0,
+      "0.01": 3.0,
+      "0.05": 16.0,
+      "0.25": 89.0,
+      "0.5": 233.0,
+      "0.75": 396.0,
+      "0.9": 579.4000000000015,
+      "0.95": 792.0,
+      "0.99": 1446.239999999998,
+      "1.0": 11812.0
+    },
+    "response_b_tokens": {
+      "0.0": 0.0,
+      "0.01": 4.0,
+      "0.05": 16.0,
+      "0.25": 90.0,
+      "0.5": 235.0,
+      "0.75": 399.0,
+      "0.9": 578.0,
+      "0.95": 789.0,
+      "0.99": 1472.239999999998,
+      "1.0": 10510.0
+    },
+    "total_content_tokens": {
+      "0.0": 4.0,
+      "0.01": 31.0,
+      "0.05": 74.0,
+      "0.25": 269.0,
+      "0.5": 527.0,
+      "0.75": 835.0,
+      "0.9": 1276.0,
+      "0.95": 1740.0,
+      "0.99": 3368.239999999998,
+      "1.0": 16241.0
+    },
+    "prompt_turns": {
+      "0.0": 1.0,
+      "0.01": 1.0,
+      "0.05": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 1.0,
+      "0.9": 2.0,
+      "0.95": 2.0,
+      "0.99": 5.0,
+      "1.0": 36.0
+    },
+    "answer_word_jaccard": {
+      "0.0": 0.0,
+      "0.01": 0.0,
+      "0.05": 0.045454545454545456,
+      "0.25": 0.16666666666666666,
+      "0.5": 0.23673469387755103,
+      "0.75": 0.30569948186528495,
+      "0.9": 0.38461538461538464,
+      "0.95": 0.4559058823529408,
+      "0.99": 0.7777777777777778,
+      "1.0": 1.0
+    },
+    "answer_length_ratio": {
+      "0.0": 1.0,
+      "0.01": 1.0026794422560732,
+      "0.05": 1.0320552531020726,
+      "0.25": 1.213526570048309,
+      "0.5": 1.5924170616113744,
+      "0.75": 2.610271903323263,
+      "0.9": 5.429987943091394,
+      "0.95": 9.925412778176586,
+      "0.99": 39.53899999999967,
+      "1.0": 4825.0
+    }
+  },
+  "unique_prompt_groups": 51213,
+  "prompt_group_size_distribution": {
+    "1": 47927,
+    "2": 2194,
+    "3": 562,
+    "4": 262,
+    "5": 106,
+    "6": 50,
+    "7": 28,
+    "8": 19,
+    "9": 13,
+    "10": 12,
+    "11": 7,
+    "12": 4,
+    "13": 2,
+    "14": 1,
+    "15": 1,
+    "16": 5,
+    "17": 2,
+    "18": 1,
+    "19": 2,
+    "23": 2,
+    "25": 1,
+    "26": 1,
+    "28": 1,
+    "29": 1,
+    "35": 1,
+    "41": 2,
+    "49": 1,
+    "51": 1,
+    "56": 1,
+    "62": 1,
+    "67": 1,
+    "107": 1
+  },
+  "prompt_groups_crossing_splits": 0,
+  "structural_counts": {
+    "multi_turn": 7539,
+    "turn_mismatch": 0,
+    "answer_equal_exact": 275,
+    "answer_equal_whitespace": 282,
+    "one_answer_empty": 25,
+    "both_answers_empty": 19,
+    "one_refusal": 6075,
+    "both_refusals": 1667,
+    "any_code_answer": 12502,
+    "wrapper_marker_in_content": 3
+  },
+  "null_turn_counts": {
+    "prompt": 0,
+    "response_a": 120,
+    "response_b": 126
+  },
+  "nonstring_turn_counts": {
+    "prompt": 0,
+    "response_a": 0,
+    "response_b": 0
+  },
+  "language_counts_estimated": {
+    "ENGLISH": 36170,
+    "UNKNOWN_SHORT_OR_CODE": 20397,
+    "UNKNOWN_LOW_CONFIDENCE": 411,
+    "CHINESE": 86,
+    "GERMAN": 71,
+    "SPANISH": 58,
+    "FRENCH": 43,
+    "TAGALOG": 32,
+    "PORTUGUESE": 28,
+    "ITALIAN": 28,
+    "YORUBA": 25,
+    "ESPERANTO": 14,
+    "INDONESIAN": 14,
+    "RUSSIAN": 11,
+    "JAPANESE": 11,
+    "TURKISH": 10,
+    "WELSH": 8,
+    "DUTCH": 8,
+    "NYNORSK": 6,
+    "DANISH": 6,
+    "SWAHILI": 6,
+    "POLISH": 5,
+    "FINNISH": 5,
+    "CZECH": 5,
+    "SOTHO": 4,
+    "VIETNAMESE": 2,
+    "MAORI": 2,
+    "SLOVAK": 2,
+    "CATALAN": 1,
+    "BOKMAL": 1,
+    "ALBANIAN": 1,
+    "ROMANIAN": 1,
+    "GANDA": 1,
+    "SWEDISH": 1,
+    "HUNGARIAN": 1,
+    "XHOSA": 1,
+    "ARABIC": 1
+  },
+  "language_group_by_split": {
+    "confirmation": {
+      "ENGLISH": 0.6395753567699269,
+      "OTHER_IDENTIFIED": 0.008353637312913331,
+      "UNKNOWN": 0.3520710059171598
+    },
+    "dev": {
+      "ENGLISH": 0.6350504698920989,
+      "OTHER_IDENTIFIED": 0.010790114862513052,
+      "UNKNOWN": 0.3541594152453881
+    },
+    "train": {
+      "ENGLISH": 0.6272915081004675,
+      "OTHER_IDENTIFIED": 0.008459280200065238,
+      "UNKNOWN": 0.3642492116994672
+    }
+  },
+  "prompt_clusters": [
+    {
+      "cluster": 0,
+      "train_rows": 6307,
+      "keywords": [
+        "hello",
+        "turn",
+        "tell",
+        "hi",
+        "hey",
+        "best",
+        "life",
+        "know",
+        "today",
+        "does"
+      ]
+    },
+    {
+      "cluster": 1,
+      "train_rows": 4234,
+      "keywords": [
+        "write",
+        "joke",
+        "tell",
+        "poem",
+        "turn",
+        "tell joke",
+        "story",
+        "word",
+        "write poem",
+        "make"
+      ]
+    },
+    {
+      "cluster": 2,
+      "train_rows": 4225,
+      "keywords": [
+        "write",
+        "turn",
+        "code",
+        "data",
+        "create",
+        "company",
+        "use",
+        "file",
+        "using",
+        "want"
+      ]
+    },
+    {
+      "cluster": 3,
+      "train_rows": 4046,
+      "keywords": [
+        "apples",
+        "sisters",
+        "number",
+        "10",
+        "step",
+        "brothers",
+        "solve",
+        "does",
+        "turn",
+        "numbers"
+      ]
+    },
+    {
+      "cluster": 4,
+      "train_rows": 4635,
+      "keywords": [
+        "python",
+        "code",
+        "write",
+        "turn",
+        "hello",
+        "make",
+        "test",
+        "string",
+        "create",
+        "text"
+      ]
+    },
+    {
+      "cluster": 5,
+      "train_rows": 2811,
+      "keywords": [
+        "story",
+        "write",
+        "character",
+        "girl",
+        "enable",
+        "turn",
+        "man",
+        "don",
+        "write story",
+        "want"
+      ]
+    },
+    {
+      "cluster": 6,
+      "train_rows": 3131,
+      "keywords": [
+        "turn",
+        "does",
+        "day",
+        "eat",
+        "old",
+        "cup",
+        "best",
+        "room",
+        "time",
+        "year"
+      ]
+    },
+    {
+      "cluster": 7,
+      "train_rows": 3296,
+      "keywords": [
+        "turn",
+        "write",
+        "best",
+        "good",
+        "work",
+        "life",
+        "like",
+        "make",
+        "way",
+        "better"
+      ]
+    },
+    {
+      "cluster": 8,
+      "train_rows": 2809,
+      "keywords": [
+        "turn",
+        "write",
+        "did",
+        "war",
+        "people",
+        "world",
+        "history",
+        "tell",
+        "like",
+        "capital"
+      ]
+    },
+    {
+      "cluster": 9,
+      "train_rows": 3333,
+      "keywords": [
+        "explain",
+        "turn",
+        "does",
+        "like",
+        "game",
+        "theory",
+        "list",
+        "tell",
+        "world",
+        "human"
+      ]
+    },
+    {
+      "cluster": 10,
+      "train_rows": 2979,
+      "keywords": [
+        "ai",
+        "model",
+        "llm",
+        "data",
+        "learning",
+        "models",
+        "explain",
+        "python",
+        "use",
+        "turn"
+      ]
+    },
+    {
+      "cluster": 11,
+      "train_rows": 4179,
+      "keywords": [
+        "turn",
+        "difference",
+        "explain",
+        "does",
+        "use",
+        "make",
+        "tell",
+        "best",
+        "used",
+        "using"
+      ]
+    }
+  ],
+  "target_association_partition": "train and development; excludes confirmation",
+  "comparison_duplicates_train_dev": {
+    "comparison_hash": {
+      "distinct": 51680,
+      "repeated_groups": 27,
+      "rows_in_repeated_groups": 78,
+      "conflicting_groups": 4,
+      "rows_in_conflicting_groups": 11,
+      "note": "Repeated identical inputs with observed different labels; not an estimate of global irreducible noise."
+    },
+    "canonical_comparison_hash": {
+      "distinct": 51667,
+      "repeated_groups": 37,
+      "rows_in_repeated_groups": 101,
+      "conflicting_groups": 6,
+      "rows_in_conflicting_groups": 15,
+      "note": "Repeated identical inputs with observed different labels; not an estimate of global irreducible noise."
+    }
+  }
+}

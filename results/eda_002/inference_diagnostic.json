@@ -1,0 +1,114 @@
+{
+  "sample": {
+    "seed": 20261107,
+    "sampling": "Uniform random development rows, selected without looking at outcomes"
+  },
+  "rows": 512,
+  "context_changed_rows": 107,
+  "temperature_frozen": 0.7220597450036835,
+  "model_hash": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+  "confirmation_used": false,
+  "baseline_reload_max_absolute_probability_difference": 0.0014562161526444073,
+  "baseline_reload_mean_absolute_probability_difference": 0.00027960319439955273,
+  "raw_original": {
+    "log_loss": 0.9746481168015868,
+    "accuracy": 0.525390625,
+    "balanced_accuracy": 0.530237556941301,
+    "macro_f1": 0.522687336462368,
+    "brier": 0.581409780984053
+  },
+  "raw_swap_average": {
+    "log_loss": 0.951737030911008,
+    "accuracy": 0.5625,
+    "balanced_accuracy": 0.5609462754345235,
+    "macro_f1": 0.559714437851818,
+    "brier": 0.5659624341609646
+  },
+  "calibrated_original": {
+    "log_loss": 0.972229290963577,
+    "accuracy": 0.525390625,
+    "balanced_accuracy": 0.530237556941301,
+    "macro_f1": 0.522687336462368,
+    "brier": 0.5782550128526147
+  },
+  "calibrated_swap_average": {
+    "log_loss": 0.9340965957393512,
+    "accuracy": 0.5625,
+    "balanced_accuracy": 0.5609462754345235,
+    "macro_f1": 0.559714437851818,
+    "brier": 0.5544086407084523
+  },
+  "calibrated_2048": {
+    "log_loss": 0.9294559792425758,
+    "accuracy": 0.548828125,
+    "balanced_accuracy": 0.5476863274870426,
+    "macro_f1": 0.5456606303777113,
+    "brier": 0.5519511631577473
+  },
+  "order_argmax_disagreement_fraction": 0.380859375,
+  "order_mean_l1_probability_difference": 0.2523420991477788,
+  "order_mean_original_minus_aligned_swap_probabilities": [
+    -0.08291653657684454,
+    0.0836659029432045,
+    -0.000749366366359963
+  ],
+  "inference_seconds": 504.48994235399994,
+  "peak_gpu_bytes": 6526629376,
+  "caveat": "Random development pilot; fixed existing temperature; no retraining or official submission. Longer-context effect requires paired uncertainty and confirmation.",
+  "groups": 501,
+  "bootstrap_repeats": 2000,
+  "order_flip_fraction_95_group_bootstrap": [
+    0.3391347401093301,
+    0.4254546975572308
+  ],
+  "raw_swap_averaging_gain": 0.022911085890578733,
+  "raw_swap_averaging_gain_95_group_bootstrap": [
+    0.008260138479480619,
+    0.03811121403261383
+  ],
+  "calibrated_swap_averaging_gain": 0.03813269522422591,
+  "calibrated_swap_averaging_gain_95_group_bootstrap": [
+    0.01814009124623044,
+    0.059007578417957215
+  ],
+  "second_position_mean_probability_advantage": 0.08329121976002453,
+  "second_position_advantage_95_group_bootstrap": [
+    0.07505045916448405,
+    0.09141025318033562
+  ],
+  "original_vs_aligned_swapped_argmax_confusion": [
+    [
+      122,
+      5,
+      13
+    ],
+    [
+      84,
+      105,
+      39
+    ],
+    [
+      39,
+      15,
+      90
+    ]
+  ],
+  "context_2048_gain": 0.0046406164967752244,
+  "context_2048_gain_95_group_bootstrap": [
+    -0.0011387117218342555,
+    0.010717619584855767
+  ],
+  "context_changed_only_gain": 0.022205566788307613,
+  "context_changed_only_gain_95_group_bootstrap": [
+    -0.005575381898006204,
+    0.050786539031445393
+  ],
+  "context_2048_accuracy_change": -0.013671875,
+  "context_accuracy_change_95_group_bootstrap": [
+    -0.030710172744721688,
+    0.0019724840377014284
+  ],
+  "paired_context_rows_improved": 54,
+  "paired_context_rows_worsened": 53,
+  "important": "Subset scores are not full-development or Kaggle estimates. Existing deployed model already uses swap averaging. Fixed-temperature 2048 result is a diagnostic, not a new submission."
+}

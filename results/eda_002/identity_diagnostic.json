@@ -1,0 +1,15 @@
+{
+  "diagnostic_only_not_deployable": true,
+  "metrics": {
+    "rows": 5746,
+    "log_loss": 1.053534261789858,
+    "accuracy": 0.43508527671423597,
+    "balanced_accuracy": 0.42685967042427175,
+    "macro_f1": 0.41432404959277686,
+    "brier": 0.6347407079912207
+  },
+  "training_model_count": 64,
+  "training_pair_count": 1263,
+  "development_rows_unseen_pair": 10,
+  "note": "Model identity exists only in the labeled CSV; it is excluded from actual models. Frequencies mix task difficulty and model strength."
+}

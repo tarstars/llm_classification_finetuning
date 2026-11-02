@@ -1,0 +1,168 @@
+[
+  {
+    "feature": "answer_length_ratio",
+    "bin": "(0.999, 1.25]",
+    "rows": 1634,
+    "human_longer_win_rate": 0.3237454100367197,
+    "model_mean_longer_win_probability": 0.3184414213305885,
+    "prediction_minus_observed": -0.0053039887061312185,
+    "gap_95_group_bootstrap": [
+      -0.02601307531809092,
+      0.01633871153082568
+    ],
+    "human_tie_rate": 0.37576499388004897,
+    "model_mean_tie_probability": 0.3843548244997279
+  },
+  {
+    "feature": "answer_length_ratio",
+    "bin": "(1.25, 2.0]",
+    "rows": 2118,
+    "human_longer_win_rate": 0.43578847969782813,
+    "model_mean_longer_win_probability": 0.39002546950215705,
+    "prediction_minus_observed": -0.04576301019567105,
+    "gap_95_group_bootstrap": [
+      -0.06507534147788997,
+      -0.023777093626662582
+    ],
+    "human_tie_rate": 0.29603399433427763,
+    "model_mean_tie_probability": 0.3443703507623951
+  },
+  {
+    "feature": "answer_length_ratio",
+    "bin": "(2.0, 4.0]",
+    "rows": 1203,
+    "human_longer_win_rate": 0.4937655860349127,
+    "model_mean_longer_win_probability": 0.4776772444984804,
+    "prediction_minus_observed": -0.0160883415364323,
+    "gap_95_group_bootstrap": [
+      -0.04066748045567893,
+      0.01219270121468761
+    ],
+    "human_tie_rate": 0.27597672485453034,
+    "model_mean_tie_probability": 0.3034384032308486
+  },
+  {
+    "feature": "answer_length_ratio",
+    "bin": "(4.0, 10.0]",
+    "rows": 520,
+    "human_longer_win_rate": 0.5192307692307693,
+    "model_mean_longer_win_probability": 0.558493184891383,
+    "prediction_minus_observed": 0.03926241566061373,
+    "gap_95_group_bootstrap": [
+      0.00138886273119192,
+      0.07713830266560848
+    ],
+    "human_tie_rate": 0.2519230769230769,
+    "model_mean_tie_probability": 0.2549683756649387
+  },
+  {
+    "feature": "answer_length_ratio",
+    "bin": "(10.0, inf]",
+    "rows": 271,
+    "human_longer_win_rate": 0.4944649446494465,
+    "model_mean_longer_win_probability": 0.5064396477235968,
+    "prediction_minus_observed": 0.011974703074150345,
+    "gap_95_group_bootstrap": [
+      -0.0561595649045697,
+      0.07254458695874993
+    ],
+    "human_tie_rate": 0.26199261992619927,
+    "model_mean_tie_probability": 0.26254601183355136
+  },
+  {
+    "feature": "answer_word_jaccard",
+    "bin": "(-0.001, 0.1]",
+    "rows": 660,
+    "human_longer_win_rate": 0.45454545454545453,
+    "model_mean_longer_win_probability": 0.4785257074145235,
+    "prediction_minus_observed": 0.02398025286906892,
+    "gap_95_group_bootstrap": [
+      -0.013947124731582775,
+      0.06047944470997666
+    ],
+    "human_tie_rate": 0.3106060606060606,
+    "model_mean_tie_probability": 0.28173173554436165
+  },
+  {
+    "feature": "answer_word_jaccard",
+    "bin": "(0.1, 0.3]",
+    "rows": 3584,
+    "human_longer_win_rate": 0.45145089285714285,
+    "model_mean_longer_win_probability": 0.4308195294138531,
+    "prediction_minus_observed": -0.02063136344328979,
+    "gap_95_group_bootstrap": [
+      -0.03516919319017,
+      -0.004841076369139246
+    ],
+    "human_tie_rate": 0.27511160714285715,
+    "model_mean_tie_probability": 0.31038520922904106
+  },
+  {
+    "feature": "answer_word_jaccard",
+    "bin": "(0.3, 0.5]",
+    "rows": 1323,
+    "human_longer_win_rate": 0.3711262282690854,
+    "model_mean_longer_win_probability": 0.33757567967822805,
+    "prediction_minus_observed": -0.03355054859085738,
+    "gap_95_group_bootstrap": [
+      -0.060730558256885864,
+      -0.008941639053282132
+    ],
+    "human_tie_rate": 0.3673469387755102,
+    "model_mean_tie_probability": 0.39935431467302585
+  },
+  {
+    "feature": "answer_word_jaccard",
+    "bin": "(0.5, 0.7]",
+    "rows": 116,
+    "human_longer_win_rate": 0.25862068965517243,
+    "model_mean_longer_win_probability": 0.26464441145189127,
+    "prediction_minus_observed": 0.006023721796718897,
+    "gap_95_group_bootstrap": [
+      -0.07499559539363469,
+      0.06894454416919621
+    ],
+    "human_tie_rate": 0.5086206896551724,
+    "model_mean_tie_probability": 0.5131288753088448
+  },
+  {
+    "feature": "answer_word_jaccard",
+    "bin": "(0.7, 0.9]",
+    "rows": 24,
+    "human_longer_win_rate": 0.2916666666666667,
+    "model_mean_longer_win_probability": 0.23000022744311777,
+    "prediction_minus_observed": -0.06166643922354889,
+    "gap_95_group_bootstrap": [
+      -0.23774821893034417,
+      0.08367771802886927
+    ],
+    "human_tie_rate": 0.4166666666666667,
+    "model_mean_tie_probability": 0.5423550230272944
+  },
+  {
+    "feature": "answer_word_jaccard",
+    "bin": "(0.9, 1.0]",
+    "rows": 39,
+    "human_longer_win_rate": 0.10256410256410256,
+    "model_mean_longer_win_probability": 0.15382079368849644,
+    "prediction_minus_observed": 0.05125669112439386,
+    "gap_95_group_bootstrap": [
+      -0.029682300310635686,
+      0.137780998013973
+    ],
+    "human_tie_rate": 0.7435897435897436,
+    "model_mean_tie_probability": 0.6905986166570109
+  },
+  {
+    "feature": "one_refusal",
+    "bin": "refusal-like phrases",
+    "rows": 608,
+    "human_refusal_side_win_rate": 0.19572368421052633,
+    "model_mean_refusal_side_probability": 0.21170789179506685,
+    "prediction_minus_observed": 0.01598420758454059,
+    "gap_95_group_bootstrap": [
+      -0.012589736378481325,
+      0.04808344448081732
+    ]
+  }
+]

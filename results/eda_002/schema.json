@@ -1,0 +1,81 @@
+{
+  "rows": 57477,
+  "columns": [
+    "id",
+    "model_a",
+    "model_b",
+    "prompt",
+    "response_a",
+    "response_b",
+    "winner_model_a",
+    "winner_model_b",
+    "winner_tie"
+  ],
+  "dtypes": {
+    "id": "int64",
+    "model_a": "str",
+    "model_b": "str",
+    "prompt": "str",
+    "response_a": "str",
+    "response_b": "str",
+    "winner_model_a": "int64",
+    "winner_model_b": "int64",
+    "winner_tie": "int64"
+  },
+  "missing_cells": {
+    "id": 0,
+    "model_a": 0,
+    "model_b": 0,
+    "prompt": 0,
+    "response_a": 0,
+    "response_b": 0,
+    "winner_model_a": 0,
+    "winner_model_b": 0,
+    "winner_tie": 0
+  },
+  "duplicate_ids": 0,
+  "invalid_target_rows": 0,
+  "visible_test_rows": 3,
+  "test_columns": [
+    "id",
+    "prompt",
+    "response_a",
+    "response_b"
+  ],
+  "raw_turn_element_types": {
+    "prompt": {
+      "str": 57477
+    },
+    "response_a": {
+      "str": 57366,
+      "NoneType,str": 92,
+      "NoneType": 19
+    },
+    "response_b": {
+      "str": 57357,
+      "NoneType,str": 101,
+      "NoneType": 19
+    }
+  },
+  "feature_notes": {
+    "language": "Lingua high-accuracy mode, minimum relative distance 0.15, 50+ alphabetic prompt characters after fenced-code removal; estimates, not verified labels.",
+    "tasks": "Overlapping English regex tags; code/math tags also inspect explicit syntax. Not comprehensive semantic labels.",
+    "duplicate": "Exact parsed-text triples; canonical comparison sorts answer texts and remaps A/B labels. No automatic deduplication.",
+    "model_names": "Diagnostic metadata only, unavailable in test and excluded from deployed features."
+  },
+  "task_patterns": {
+    "code": "```|\\b(?:python|javascript|typescript|java|c\\+\\+|sql|debug|programming|algorithm|function|code|html|css|rust|pandas)\\b",
+    "math": "\\\\(?:frac|sqrt|sum|int|begin)|\\b(?:calculate|equation|algebra|integral|derivative|theorem|probability|mathematics|geometry)\\b",
+    "creative": "\\b(?:poem|poetry|story|fiction|lyrics|creative|character|screenplay)\\b",
+    "transformation": "\\b(?:translate|translation|summarize|summary|rewrite|rephrase|proofread|extract|classify)\\b",
+    "explanation": "\\b(?:explain|describe|why|what is|what are|how does|difference between)\\b"
+  },
+  "refusal_pattern": "\\b(?:as an ai|i (?:cannot|can't|am unable to) (?:help|assist|provide|fulfil|fulfill)|i'?m sorry|i apologize|unable to (?:assist|help))\\b",
+  "fingerprint": {
+    "raw_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+    "tokenizer_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "preprocessing_sha256": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "feature_program_sha256": "a73deb6ea4d583d6147ed8db22f100ab0c63eb814d3edce200db5900e418fc4f",
+    "lingua_version": "2.1.1"
+  }
+}

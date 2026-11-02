@@ -1,0 +1,87 @@
+{
+  "folds": [
+    {
+      "fold": 0,
+      "calibration_temperature": 0.7354806721667816,
+      "lora_weight": 0.9,
+      "blend_temperature": 0.6976111747170037,
+      "tie_temperature": 0.7380830394710665,
+      "tie_logit_bias": -0.1339481012573092
+    },
+    {
+      "fold": 1,
+      "calibration_temperature": 0.7002123515172558,
+      "lora_weight": 0.9,
+      "blend_temperature": 0.6640061970985216,
+      "tie_temperature": 0.7023744579375841,
+      "tie_logit_bias": -0.13897392321819396
+    },
+    {
+      "fold": 2,
+      "calibration_temperature": 0.7119977169202701,
+      "lora_weight": 0.9,
+      "blend_temperature": 0.675677263825938,
+      "tie_temperature": 0.7153726468820228,
+      "tie_logit_bias": -0.12033744026958908
+    },
+    {
+      "fold": 3,
+      "calibration_temperature": 0.7469751111208294,
+      "lora_weight": 0.8,
+      "blend_temperature": 0.6751677731176738,
+      "tie_temperature": 0.7496227409671039,
+      "tie_logit_bias": -0.13534351907394854
+    },
+    {
+      "fold": 4,
+      "calibration_temperature": 0.7166815659031889,
+      "lora_weight": 0.9,
+      "blend_temperature": 0.6805368551589105,
+      "tie_temperature": 0.7193745088013499,
+      "tie_logit_bias": -0.13261619599287183
+    }
+  ],
+  "calibration_oof": {
+    "rows": 5746,
+    "log_loss": 0.9693198253606359,
+    "accuracy": 0.5273233553776541,
+    "balanced_accuracy": 0.5247367963128498,
+    "macro_f1": 0.5246110105826401,
+    "brier": 0.5779570380577976
+  },
+  "structural_blend_oof": {
+    "rows": 5746,
+    "log_loss": 0.9685916899958321,
+    "accuracy": 0.5262791507135398,
+    "balanced_accuracy": 0.5233237951152694,
+    "macro_f1": 0.522936408635152,
+    "brier": 0.5773385939990037
+  },
+  "blend_gain": 0.0007281353648039766,
+  "blend_gain_95_group_bootstrap": [
+    -0.000537273356802964,
+    0.0019911261647043753
+  ],
+  "tie_calibration_oof": {
+    "rows": 5746,
+    "log_loss": 0.9676241577357402,
+    "accuracy": 0.5316742081447964,
+    "balanced_accuracy": 0.5260759572219322,
+    "macro_f1": 0.5226166652861385,
+    "brier": 0.5766825730986386
+  },
+  "tie_calibration_gain": 0.0016956676248957355,
+  "tie_calibration_gain_95_group_bootstrap": [
+    -0.00016675082233185798,
+    0.0033182991526886385
+  ],
+  "limitation": "Cross-fitting postprocessors only; base checkpoint was already selected on development. This is exploratory, not fresh confirmation.",
+  "structural_base": {
+    "rows": 5746,
+    "log_loss": 1.0337499755840185,
+    "accuracy": 0.47354681517577446,
+    "balanced_accuracy": 0.4679237548080412,
+    "macro_f1": 0.4635916690988635,
+    "brier": 0.6206918363596057
+  }
+}

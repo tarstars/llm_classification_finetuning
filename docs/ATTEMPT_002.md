@@ -24,6 +24,12 @@ declared experiment and must not describe this confirmation partition as unseen.
 
 ## Post-freeze diagnostics and proposed follow-up
 
+The subsequent full [EDA](../EDA_REPORT.md) includes an actual 512-row frozen-model
+order/context pilot and revises the preliminary context-first recommendation below.
+Its 2048-token paired gain is 0.00464 with interval [-0.00114,0.01072]; raw response
+order disagreement is 38.1%. Use the EDA report for the current hypothesis ranking.
+The following retention audit motivated that experiment; it is not its quality result.
+
 `scripts/audit_joint_errors.py` compares frozen development predictions with exact
 token-retention flags using the tokenizer saved by the training job. It reproduces
 the calibrated development loss (0.96883) before deriving conditional metrics.

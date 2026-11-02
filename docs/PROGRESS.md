@@ -1,5 +1,39 @@
 # Project memory
 
+## Completed EDA — 2026-11-02
+
+See [EDA_REPORT.md](../EDA_REPORT.md), [dataset notebook 05](../notebooks/05_dataset_eda.ipynb)
+and [model notebook 06](../notebooks/06_model_eda_and_hypotheses.ipynb). Programs are
+`scripts/run_eda.py`, `scripts/build_eda_notebooks.py`, and `src/arena/eda_*.py`.
+All new model diagnostics use development only. Schema/structure cover all supplied
+rows; target associations and duplicate-conflict checks exclude confirmation.
+Raw examples, per-row features and exported SVGs remain under `~/database`.
+
+- Labels are balanced; no turn-count mismatch or cross-split prompt group exists.
+  Only 15 train/dev rows belong to conflicting exact canonical comparison repeats.
+- Calibration already helps: log-loss gain 0.00856, ECE 0.0537 -> 0.0107. Most
+  remaining error is broad; 51 confident wrong examples contribute only 2.30% of loss.
+- Tie recall 45.4% / AUC 0.668, versus about 56% recall / 0.73 AUC for A/B.
+- The frozen model was run on a preselected uniform 512-row development sample,
+  seed 20261107. Raw order-aligned argmax flips: 38.1% [33.9%,42.5%]; mean second-position
+  probability advantage: 8.33 points [7.51,9.14]. Swap averaging is already deployed.
+- The 2048-token pilot changed 107 inputs. Paired loss gain 0.00464 with interval
+  [-0.00114,0.01072], at the existing frozen temperature. It is not a new full-dev
+  or Kaggle score. The easier sample's baseline is 0.93410 and candidate 0.92946.
+- Cross-fitted postprocessors have small uncertain gains: tie intercept 0.00170
+  [-0.00017,0.00332], structural blend 0.00073 [-0.00054,0.00199]. Base model selection
+  already used development; this is not out-of-fold language-model validation.
+- Qualitative review found specific factual and instruction-following errors,
+  with primary-source fact checks for two cases. Selected examples do not estimate
+  their prevalence and are not automatically relabeled.
+
+The evidence revises the earlier context-first recommendation: paired-order training
+or a shared utility/tie architecture and better fine-grained preference supervision
+are now stronger research priorities. Context/round-aware packing and completing an
+epoch remain controlled experiments, with no guaranteed gain. No preference model
+was retrained or submitted during EDA. The inference-only job completed successfully.
+Thirteen local tests pass and both EDA notebooks executed without errors.
+
 ## Completed work — attempt 002
 
 The full Qwen3-4B QLoRA workflow completed successfully on 2026-11-02 at 01:03 UTC.
