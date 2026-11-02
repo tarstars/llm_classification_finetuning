@@ -1,6 +1,6 @@
 # Attempt 003: prompted judge
 
-Pipeline stage: **runtime_verified**.
+Pipeline stage: **judge_frozen**.
 
 This experiment prompts frozen Gemma 4 weights to score A/B/tie. It does not fine-tune the model or blend in our classifier.
 

@@ -1,12 +1,12 @@
 {
   "attempt": "003",
   "state": {
-    "stage": "runtime_verified",
-    "utc": "2026-11-02T13:00:43.839732+00:00",
+    "stage": "judge_frozen",
+    "utc": "2026-11-02T13:00:50.039466+00:00",
     "pid": 1874997,
-    "models": [
-      "gemma26"
-    ]
+    "model": "gemma26",
+    "both_orders": false,
+    "development_log_loss": 1.0024521643090047
   },
   "selection": {
     "attempt": "003",
