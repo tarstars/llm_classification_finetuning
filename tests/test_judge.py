@@ -1,11 +1,15 @@
 import sys
+import json
+import tempfile
+import time
 import unittest
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
-from arena.judge import calibrate, field_budgets, head_tail, label_probabilities
+from arena.judge import calibrate, field_budgets, head_tail, label_probabilities, score_frame
 
 
 class PromptJudgeContracts(unittest.TestCase):
@@ -20,6 +24,18 @@ class PromptJudgeContracts(unittest.TestCase):
         response = {'completion_probabilities': [{'top_logprobs': [
             {'id': i, 'logprob': float(np.log(p))} for i, p in zip([5, 7, 9], [.2, .7, .1])]}]}
         np.testing.assert_allclose(label_probabilities(response, [5, 7, 9]), [.2, .7, .1])
+
+    def test_conditioning_cancels_equal_label_logit_shift(self):
+        logits=np.array([-3.,1.,-.5,2.])
+        def full_softmax(z):
+            e=np.exp(z-z.max());return e/e.sum()
+        original=full_softmax(logits)
+        shifted=logits.copy();shifted[:3]+=100
+        shifted=full_softmax(shifted)
+        def response(p):
+            return {'probs':[{'top_probs':[{'id':i,'prob':float(v)} for i,v in enumerate(p[:3])]}]}
+        np.testing.assert_allclose(label_probabilities(response(original),[0,1,2]),
+                                   label_probabilities(response(shifted),[0,1,2]))
 
     def test_fields_survive_and_unused_budget_is_reallocated(self):
         for lengths in [[1000, 2000, 2000], [1, 3, 4000], [10, 4000, 3], [0, 0, 0]]:
@@ -39,6 +55,25 @@ class PromptJudgeContracts(unittest.TestCase):
         np.testing.assert_allclose(calibrate(p, .8, .4).sum(1), 1)
         np.testing.assert_allclose(calibrate(p[:, [1, 0, 2]], .8, .4)[:, [1, 0, 2]], calibrate(p, .8, .4))
         np.testing.assert_allclose(calibrate(p), p)
+
+    def test_concurrent_scores_keep_frame_order_and_resume_without_rescoring(self):
+        class FakeJudge:
+            config={'slots':2}
+            def row(self,row,both):
+                if row['id']==3:time.sleep(.03)
+                return {'id':row['id'],'value':row['id']*2}
+        frame=pd.DataFrame({'id':[3,1,2]})
+        with tempfile.TemporaryDirectory() as directory:
+            results,_=score_frame(frame,FakeJudge(),directory)
+            self.assertEqual([row['id'] for row in results],[3,1,2])
+            self.assertEqual([row['value'] for row in results],[6,2,4])
+            class CachedOnly(FakeJudge):
+                def row(self,*unused):raise AssertionError('Completed rows must not be rescored')
+            cached,_=score_frame(frame,CachedOnly(),directory)
+            self.assertEqual(cached,results)
+            lines=(Path(directory)/'scored_rows.jsonl').read_text().splitlines()
+            self.assertEqual(len(lines),3)
+            self.assertEqual({json.loads(line)['id'] for line in lines},{1,2,3})
 
 
 if __name__ == '__main__': unittest.main()

@@ -14,13 +14,14 @@ from arena.data import ROOT
 
 p = argparse.ArgumentParser()
 p.add_argument('mode', choices=['profile', 'dev', 'predict'])
-p.add_argument('--models', nargs='+', default=['gemma31', 'gemma26'])
+p.add_argument('--models', nargs='+')
 p.add_argument('--config', type=Path, default=REPO / 'configs/attempt_003_judge.json')
 p.add_argument('--selection', type=Path, default=ROOT / 'runs/attempt_003/judge_selection.json')
 p.add_argument('--tag', default='')
 p.add_argument('--single-order', action='store_true')
 a = p.parse_args()
-config = json.loads(a.config.read_text())
+selection = json.loads(a.selection.read_text()) if a.mode == 'predict' else None
+config = selection['config'] if selection else json.loads(a.config.read_text())
 root = ROOT / 'runs/attempt_003'
 root.mkdir(parents=True, exist_ok=True)
 ids = np.load(ROOT / 'runs/attempt_002/jobs/qwen4b1024/output/joint_run/dev_predictions.npz')['ids']
@@ -32,16 +33,17 @@ sample = {'seed': config['seed'], 'population_rows': len(ids), 'rows': len(chose
 sample_path = root / 'dev_sample.json'
 if sample_path.exists(): assert json.loads(sample_path.read_text()) == sample
 else: sample_path.write_text(json.dumps(sample, indent=2) + '\n')
-push = json.loads((root / 'jobs/runtime_probe/push.json').read_text())
+runtime_job = config.get('runtime_job', 'runtime_probe')
+push = json.loads((root / 'jobs' / runtime_job / 'push.json').read_text())
 runtime_ref = push['ref'].removeprefix('/code/')
 owner, runtime_slug = runtime_ref.split('/')
-selection = json.loads(a.selection.read_text()) if a.mode == 'predict' else None
-models = [selection['model_key']] if selection else a.models
+models = [selection['model_key']] if selection else (a.models or config.get('evaluate_models',list(config['models'])))
 both_orders = selection['both_orders'] if selection else not a.single_order
 if selection:
     assert hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest() == selection['config_sha256']
     assert hashlib.sha256((REPO/'src/arena/judge.py').read_bytes()).hexdigest() == selection['judge_source_sha256']
     assert hashlib.sha256((REPO/'src/arena/judge_runtime.py').read_bytes()).hexdigest() == selection['runtime_source_sha256']
+    assert f"{runtime_ref}/{push['version_number']}" == selection['runtime_kernel']
 suffix = ('-' + a.tag) if a.tag else ''
 dest = REPO / f'kaggle/attempt_003_{a.mode}{suffix}'
 dest.mkdir(parents=True, exist_ok=True)

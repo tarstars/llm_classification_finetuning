@@ -19,6 +19,39 @@ def write_json(path, value):
     Path(path).write_text(json.dumps(value, indent=2) + '\n')
 
 
+def runtime_environment(executable):
+    environment = os.environ.copy()
+    paths = [str(Path(executable).parent), '/usr/local/cuda/lib64', '/usr/local/cuda/targets/x86_64-linux/lib']
+    environment['LD_LIBRARY_PATH'] = ':'.join(paths) + ':' + environment.get('LD_LIBRARY_PATH', '')
+    return environment
+
+
+def install_runtime(distribution, out):
+    """Install an official release asset only after checking its published digest."""
+    out = Path(out)
+    out.mkdir(parents=True, exist_ok=True)
+    root = Path('/tmp/arena_llama_binary')
+    root.mkdir(exist_ok=True)
+    archive = root / 'runtime.tar.gz'
+    print('RUNTIME_BINARY', json.dumps(distribution), flush=True)
+    with urllib.request.urlopen(distribution['url'], timeout=120) as response:
+        with archive.open('wb') as stream: shutil.copyfileobj(response, stream)
+    assert hashlib.sha256(archive.read_bytes()).hexdigest() == distribution['sha256'], 'Release digest mismatch'
+    with tarfile.open(archive) as tar: tar.extractall(root, filter='data')
+    executable = next(root.rglob('llama-server'))
+    binary = out / 'bin'
+    binary.mkdir(exist_ok=True)
+    for path in executable.parent.iterdir():
+        if path.name == 'llama-server' or '.so' in path.name:
+            shutil.copy2(path, binary / path.name, follow_symlinks=True)
+    executable = binary / 'llama-server'
+    executable.chmod(0o755)
+    info = {**distribution, 'version': subprocess.check_output([str(executable), '--version'],
+        stderr=subprocess.STDOUT, text=True, env=runtime_environment(executable)).strip()}
+    write_json(out / 'runtime.json', info)
+    return executable
+
+
 def build_runtime(revision, out):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
@@ -83,16 +116,17 @@ def model_file(source):
     raise FileNotFoundError('Attached GGUF model not found: ' + source)
 
 
-def start_server(executable, model, out, *, slots=4, context=2048, port=8080):
+def start_server(executable, model, out, *, slots=4, context=2048, port=8080,
+                 batch_size=2048, ubatch_size=256, http_threads=32):
     out = Path(out)
     log = (out / 'server.log').open('w')
     command = [str(executable), '-m', str(model), '--host', '127.0.0.1', '--port', str(port),
                '-ngl', 'all', '--split-mode', 'layer', '--tensor-split', '1,1',
                '--ctx-size', str(slots * context), '--parallel', str(slots),
-               '--batch-size', '2048', '--ubatch-size', '256', '--flash-attn', 'on',
+               '--batch-size', str(batch_size), '--ubatch-size', str(ubatch_size), '--flash-attn', 'on',
+               '--threads-http', str(http_threads),
                '--threads', '4', '--threads-batch', '4', '--jinja']
-    environment = os.environ.copy()
-    environment['LD_LIBRARY_PATH'] = str(Path(executable).parent) + ':' + environment.get('LD_LIBRARY_PATH', '')
+    environment = runtime_environment(executable)
     process = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT, env=environment)
     url = f'http://127.0.0.1:{port}'
     started = time.monotonic()

@@ -127,6 +127,7 @@ if a.freeze:
                  'temperature': best['temperature_fit_all_dev'], 'tie_bias': best['tie_bias_fit_all_dev'],
                  'development': best, 'config_sha256': config_hash, 'config': config,
                  'development_job': a.job, 'weights_trained': False, 'blended_with_classifier': False,
+                 'runtime_kernel': json.loads((a.folder/'kernel-metadata.json').read_text())['kernel_sources'][0],
                  'judge_source_sha256': hashlib.sha256((REPO/'src/arena/judge.py').read_bytes()).hexdigest(),
                  'runtime_source_sha256': hashlib.sha256((REPO/'src/arena/judge_runtime.py').read_bytes()).hexdigest(),
                  'confirmation_used_for_selection': False, 'hidden_test_used_for_selection': False}

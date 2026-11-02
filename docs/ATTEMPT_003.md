@@ -5,28 +5,45 @@ without fine-tuning or blending with our Qwen3-4B classifier. This is an inferen
 experiment. Model weights remain unchanged. Small probability calibration is reported
 separately from raw zero-shot quality.
 
-Primary candidate: official Gemma 4 31B-IT, QAT Q4_0 GGUF, Kaggle model version 2.
-Runtime fallback: official Gemma 4 26B-A4B-IT in the same format/version, if the dense
-model cannot meet the competition's nine-hour inference limit. The project has two
+The initial primary candidate was official Gemma 4 31B-IT, QAT Q4_0 GGUF, Kaggle
+model version 2. Measured throughput ruled it out for the nine-hour limit. The main
+candidate is official Gemma 4 26B-A4B-IT in the same format/version. The project has two
 T4 GPUs. We must verify fit and throughput, not infer them solely from checkpoint size.
 
-Use pinned llama.cpp revision `59695669f1924c81f421f2044c690ed6373bec79`, compiled for
-CUDA architecture 75. A setup-only private kernel may download source. The compiled
-binary/shared libraries become an attached artifact for internet-disabled evaluation
+Use official llama.cpp CUDA 12.8 release `b11960`, revision
+`8642541b255bfb5dc39cd351a178be09013a55d6`, checked against its published SHA-256.
+A setup-only private kernel downloads it and verifies both models on T4s. The binary
+and shared libraries become attached artifacts for internet-disabled evaluation
 and submission notebooks. Model files are explicitly versioned Kaggle inputs.
 
 The initial setup probe (kernel version 1, archived job `runtime_probe_failed_1`)
 failed during CMake generation because Kaggle exposed `libcuda.so.1` without the
 unversioned developer library expected by FindCUDAToolkit. The corrected probe
 supplies the actual installed library found through `ldconfig` and named driver
-directories. This failure produced no judge quality measurements.
+directories. This failure produced no judge quality measurements. Version 2 built
+successfully in 1,629.9 seconds and loaded both official models. An additional
+checksum-verified official CUDA 12.8 binary (`b11960`) also loaded both models, and
+is preserved as a faster setup alternative; the current profile uses compiled
+runtime version 2. The main evaluation uses the official binary to avoid recompilation.
+
+The first raw smoke-test response exposed that post-sampling top-N vocabulary scores
+need not contain every label; the pipeline stopped before development evaluation.
+The corrected scorer uses the common-label logit offset and conditional normalization
+described below. Profile version 1 was prepared before explicit beginning-token
+handling was corrected and is diagnostic only; its quality scores do not enter model
+selection. The full development run repeats every sampled row with corrected encoding
+and a synthetic preflight before real data.
 
 The initial prompt is fixed in `configs/attempt_003_judge.json`. It asks for a human
 preference judgment using correctness, instructions, relevance and groundedness, and
 warns against position/verbosity shortcuts. It contains no demonstrations or selected
 poster answers. Use Gemma's official non-thinking chat template, including its empty
 thought-channel prefix. Score three single-token labels A/B/C with a restricted
-grammar and unfiltered, temperature-one label probabilities. Do not treat a generated
+grammar and temperature-one label probabilities conditioned on A/B/C. The server's
+top-token list can contain non-label tokens despite the grammar, so all three label
+logits receive an identical positive offset before retrieving their scores. Conditional
+normalization cancels that common offset exactly; a regression test verifies the
+identity. Missing label scores or invalid probabilities abort scoring. Do not treat a generated
 JSON confidence estimate as a model likelihood. C maps to the competition's tie class.
 
 Select a uniform, fixed 512-row development sample using seed 20261113, without
@@ -39,7 +56,10 @@ hidden-test inference.
 Inputs preserve all three fields with explicit separators and conversation boundaries.
 Use a 2,048-token total budget, a 384-token question cap, balanced answer allocation
 with unused-budget redistribution, and head/tail truncation. Record retention and exact
-packed lengths. Compare original-order and aligned swap-average predictions on the
+packed lengths. Include the model's required beginning token exactly once, then send
+the exact token-ID sequence. The server's formatted chat text can omit this token;
+token-ID requests do not auto-insert it. A synthetic arithmetic/order preflight checks
+the complete scoring path before real rows are evaluated. Compare original-order and aligned swap-average predictions on the
 same rows. A hardware profile determines whether both views fit the runtime budget.
 
 Measure multiclass log loss, accuracy, per-class behavior, probability calibration,
@@ -54,6 +74,15 @@ assumption. Allow a margin below nine hours. The submitted notebook reads the ac
 test rows and produces a valid `submission.csv` for every one, using the frozen judge
 configuration. Do not silently substitute another classifier or fill unfinished rows
 with priors. Record and investigate failures before relaunching jobs.
+
+The initial four-slot timing diagnostic projected about 66 hours for 31B and 21 hours
+for 26B with both orientations over 25,000 rows. The main evaluation therefore focuses
+on 26B, with 16 concurrent slots, 4,096 logical batch tokens, 1,024 physical microbatch
+tokens and sufficient HTTP workers. Prompt wording and the 2,048-token input limit
+are unchanged. If no configuration meets the runtime margin, repeat the same fixed
+512 rows at 1,024 tokens. Preserve the original report separately. This fallback is
+triggered by runtime, not by inspecting hidden-test results. Deployment must consume
+the resulting frozen configuration rather than the initial defaults.
 
 Programs, executed result notebooks, aggregate evidence and project memory belong in
 Git. Runtime binaries, model files, raw prompts, per-row predictions and logs belong

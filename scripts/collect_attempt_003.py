@@ -27,7 +27,7 @@ submission = read(prediction / 'submission.json')
 submissions = read(prediction / 'submissions.json', [])
 official = next((s for s in submissions if submission and str(s.get('ref')) == str(submission.get('ref'))), None)
 jobs = {}
-for job in ['runtime_probe_failed_1', 'runtime_probe', 'development', 'prediction']:
+for job in ['runtime_probe_failed_1', 'runtime_probe', 'runtime_binary', 'profile32', 'development', 'development_ctx1024', 'prediction']:
     folder = root / 'jobs' / job
     jobs[job] = {'push': read(folder / 'push.json'), 'status': read(folder / 'status.json')}
     if folder.exists():
@@ -47,9 +47,12 @@ if official:
     lines += [f"Kaggle submission **{official.get('ref')}**: **{official.get('status')}**, public log loss **{official.get('public_score')}**.", '']
 if selection:
     lines += [f"Selected model: **{selection['model_key']}** (`{selection['model_source']}`).",
+              f"Maximum packed length: **{selection['config']['max_length']} tokens**.",
               f"Both answer orders: **{selection['both_orders']}**; calibration: **{selection['calibration']}**.",
               f"Temperature {selection['temperature']:.6f}; tie intercept {selection['tie_bias']:.6f}.", '']
 if development:
+    if (dest/'development_2048.json').exists():
+        lines += ['The initial 2,048-token comparison exceeded the runtime margin. Its separate results are preserved in `results/attempt_003/development_2048.json`; the current table is the 1,024-token fallback.', '']
     lines += ['| Model | View | Calibration | Cross-fitted log loss | Accuracy | Projected hours with margin |',
               '| --- | --- | --- | ---: | ---: | ---: |']
     for row in development['rows']:
@@ -84,6 +87,7 @@ if repo.name=='notebooks':repo=repo.parent
 directory=repo/'results/attempt_003'
 status=json.loads((directory/'status.json').read_text())
 print('Pipeline:',status['state']['stage'])
+print('Snapshot UTC:',status['state'].get('utc'))
 print('Model weights trained:',status['weights_trained'])
 print('Blended with classifier:',status['blended_with_classifier'])
 display(status.get('official_submission'))

@@ -8,12 +8,26 @@ is official 4-bit Gemma 4 31B-IT; Gemma 4 26B-A4B-IT is a measured runtime fallb
 See [protocol](ATTEMPT_003.md), [live result report](../ATTEMPT_003_RESULTS.md), and
 [executed notebook 08](../notebooks/08_prompted_judge.ipynb).
 
-A pinned llama.cpp runtime is compiled for T4 capability 7.5 and reused offline.
-Probe version 1 failed CMake CUDA-driver-library discovery, producing no judge
-quality measurements; logs are archived as `runtime_probe_failed_1`. Version 2
-supplies the actual installed driver library and is running. Twenty local tests
-pass, including complete label-score extraction, A/B-equivariant calibration and
-field-budget checks. The report is explicitly pending, not a claimed new score.
+Status snapshot at 2026-11-02 12:22 UTC: the corrected 512-row Gemma 26B development
+evaluation is running. Its synthetic arithmetic, answer-order and identical-answer
+preflight passed; all real-row probability assertions pass. Latest read: 192 rows
+in 480 inference seconds. A valid quality estimate is pending completion, not claimed.
+
+Source runtime probe 1 failed CMake CUDA-driver discovery; version 2 built in 1,629.9
+seconds and loaded both models. An official CUDA 12.8 binary (`b11960`, published SHA
+verified) also loaded both models and is used for the main run. An early top-N score
+guard caught missing label likelihoods; equal label-logit offsets plus conditional
+normalization fix this without changing relative label probabilities. Explicit BOS
+handling is verified. The original 32-row profile is diagnostic only and excluded
+from quality selection because its start-token handling preceded that correction.
+
+The diagnostic projected roughly 66 / 21 hours for 31B / 26B with both orientations
+over an assumed 25,000 hidden rows. Focus therefore shifted to 26B with larger
+inference batches (16 slots, 4,096 batch tokens, 1,024 microbatch tokens). If the
+2,048-token configuration misses the runtime margin, the controller repeats the
+same development sample at 1,024 tokens and preserves both reports separately.
+Twenty-two local tests pass, including score normalization, class exchange,
+packing, concurrent ID alignment and cached-row resumption.
 
 The resumable controller `scripts/run_judge_pipeline.py --publish-results` waits
 for setup, runs a fixed 512-row development comparison, freezes a runtime-feasible

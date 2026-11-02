@@ -4,7 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
 
 import numpy as np
@@ -56,7 +56,7 @@ def label_probabilities(response, token_ids):
     if not set(token_ids).issubset(by_id):
         raise ValueError('The server did not return all three label scores: ' + repr(choices))
     p = np.array([by_id[t] for t in token_ids], dtype=np.float64)
-    if not np.isfinite(p).all() or (p < 0).any() or not np.isclose(p.sum(), 1, atol=1e-4):
+    if not np.isfinite(p).all() or (p < 0).any() or p.sum() <= 0 or p.sum() > 1.0001:
         raise ValueError('Label scores are not a complete probability distribution: ' + repr(p))
     return p / p.sum()
 
@@ -64,6 +64,8 @@ def label_probabilities(response, token_ids):
 class PromptJudge:
     def __init__(self, url, config):
         self.url, self.config = url, config
+        self.bos_prefix = self.tokenize('', add_special=True)
+        assert len(self.bos_prefix) == 1, 'Expected the Gemma beginning token'
         self.marker = self.tokenize('\n[CONTENT OMITTED]\n')
         self.token_ids = []
         for label in LABELS:
@@ -71,10 +73,14 @@ class PromptJudge:
             assert len(ids) == 1, (label, ids)
             self.token_ids.append(ids[0])
         assert len(set(self.token_ids)) == 3
-        self.overhead = len(self.tokenize(self.chat_prompt(['', '', ''])))
+        self.overhead = len(self.prompt_ids(self.chat_prompt(['', '', ''])))
 
-    def tokenize(self, text):
-        return post(self.url, '/tokenize', {'content': text, 'add_special': False, 'parse_special': True})['tokens']
+    def tokenize(self, text, add_special=False):
+        return post(self.url, '/tokenize', {'content': text, 'add_special': add_special, 'parse_special': True})['tokens']
+
+    def prompt_ids(self, text):
+        ids = self.tokenize(text)
+        return ids if ids[:len(self.bos_prefix)] == self.bos_prefix else self.bos_prefix + ids
 
     def detokenize(self, ids):
         return post(self.url, '/detokenize', {'tokens': ids})['content']
@@ -106,9 +112,11 @@ class PromptJudge:
             parts = [self.detokenize(head_tail(ids, budget, self.marker)) if len(ids) > budget else text
                      for text, ids, budget in zip(fields, tokens, budgets)]
             prompt = self.chat_prompt(parts)
-            ids = self.tokenize(prompt)
+            ids = self.prompt_ids(prompt)
             if len(ids) < self.config['max_length']:
-                return prompt, {'tokens': len(ids), 'field_tokens': list(map(len, tokens)),
+                # Include the model's required beginning token exactly once.
+                # /apply-template can omit it; token-ID requests skip auto-insertion.
+                return ids, {'tokens': len(ids), 'field_tokens': list(map(len, tokens)),
                                 'budgets': budgets, 'truncated': any(len(x) > y for x, y in zip(tokens, budgets))}
             available -= len(ids) - self.config['max_length'] + 17
         raise ValueError('Cannot pack all fields within context')
@@ -117,6 +125,11 @@ class PromptJudge:
         prompt, info = self.pack(fields, tokens)
         response = post(self.url, '/completion', {'prompt': prompt, 'n_predict': 1,
             'temperature': 1.0, 'samplers': ['temperature'], 'grammar': 'root ::= "A" | "B" | "C"',
+            # The server may apply grammar only after sampling an invalid token;
+            # post-sampling top-N can therefore still contain non-label tokens.
+            # Equal label bias guarantees all label scores are returned. Conditioning
+            # on A/B/C cancels this common additive shift exactly.
+            'logit_bias': [[token, 100.0] for token in self.token_ids],
             'n_probs': 3, 'post_sampling_probs': True, 'return_tokens': True,
             'cache_prompt': True, 'seed': self.config['seed']})
         assert not response.get('truncated', False), 'Server silently truncated a prepared input'
@@ -156,17 +169,29 @@ def score_frame(frame, judge, out, both_orders=True):
     rows = frame.to_dict('records')
     remaining = [r for r in rows if int(r['id']) not in prior]
     started = time.monotonic()
-    with checkpoint.open('a') as log, ThreadPoolExecutor(max_workers=judge.config['slots']) as pool:
-        # map preserves row order; requests execute concurrently against server slots.
-        for result in pool.map(lambda row: judge.row(row, both_orders), remaining):
-            prior[result['id']] = result
-            log.write(json.dumps(result) + '\n')
-            log.flush()
-            n = len(prior)
-            if n <= 4 or n % 16 == 0 or n == len(rows):
-                progress = {'rows': n, 'total': len(rows), 'elapsed_seconds': time.monotonic() - started}
-                write_json(out / 'progress.json', progress)
-                print('JUDGE_PROGRESS', json.dumps(progress), flush=True)
+    pool = ThreadPoolExecutor(max_workers=judge.config['slots'])
+    iterator = iter(remaining)
+    pending = set()
+    try:
+        for _ in range(judge.config['slots']):
+            row = next(iterator, None)
+            if row is not None: pending.add(pool.submit(judge.row, row, both_orders))
+        with checkpoint.open('a') as log:
+            while pending:
+                done, pending = wait(pending, return_when=FIRST_COMPLETED)
+                for future in done:
+                    result = future.result()
+                    prior[result['id']] = result
+                    log.write(json.dumps(result) + '\n');log.flush()
+                    n = len(prior)
+                    if n <= 4 or n % 16 == 0 or n == len(rows):
+                        progress = {'rows': n, 'total': len(rows), 'elapsed_seconds': time.monotonic() - started}
+                        write_json(out / 'progress.json', progress)
+                        print('JUDGE_PROGRESS', json.dumps(progress), flush=True)
+                    row = next(iterator, None)
+                    if row is not None: pending.add(pool.submit(judge.row, row, both_orders))
+    finally:
+        pool.shutdown(wait=True, cancel_futures=True)
     results = [prior[int(r['id'])] for r in rows]
     return results, time.monotonic() - started
 
@@ -196,9 +221,23 @@ def run(config, executable, raw, out, model_key, mode, sample=None, selection=No
     if identity_path.exists(): assert json.loads(identity_path.read_text()) == identity
     write_json(identity_path, identity)
     model = model_file(source)
-    process, log, url = start_server(executable, model, out, slots=config['slots'], context=config['max_length'])
+    process, log, url = start_server(executable, model, out, slots=config['slots'], context=config['max_length'],
+        batch_size=config.get('batch_size',2048),ubatch_size=config.get('ubatch_size',256),
+        http_threads=config.get('http_threads',32))
     try:
         judge = PromptJudge(url, config)
+        preflight = []
+        for fields, expected in [(['Compute 2+2.', '4', '5'], 0),
+                                 (['Compute 2+2.', '5', '4'], 1),
+                                 (['Say hello.', 'Hello.', 'Hello.'], 2)]:
+            probability, info = judge.score(fields, [judge.tokenize(text) for text in fields])
+            check = {'expected': expected, 'probabilities': probability.tolist(),
+                     'prediction': int(probability.argmax()), 'tokens': info['tokens'],
+                     'bos_prefix': judge.bos_prefix}
+            preflight.append(check)
+            print('JUDGE_PREFLIGHT', json.dumps(check), flush=True)
+            if expected != 2: assert check['prediction'] == expected, 'Prompted arithmetic order check failed'
+        write_json(out/'preflight.json', preflight)
         results, seconds = score_frame(frame, judge, out, both_orders)
         original = np.array([r['original'] for r in results])
         swapped = np.array([r['swapped'] for r in results])

@@ -7,6 +7,7 @@ import argparse
 import fcntl
 import json
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -17,13 +18,15 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / 'src'))
 from arena.data import ROOT
-from arena.judge import label_probabilities
 
 p = argparse.ArgumentParser()
 p.add_argument('--publish-results', action='store_true')
 a = p.parse_args()
 root = ROOT / 'runs/attempt_003'
 root.mkdir(parents=True, exist_ok=True)
+config = json.loads((REPO/'configs/attempt_003_judge.json').read_text())
+runtime_job = config.get('runtime_job', 'runtime_probe')
+runtime_folder = config.get('runtime_folder', 'kaggle/attempt_003_probe')
 lock = (root / 'pipeline.lock').open('a')
 fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
 state_path = root / 'pipeline_state.json'
@@ -84,7 +87,7 @@ def refresh():
     branch = subprocess.check_output(['git', 'branch', '--show-current'], cwd=REPO, text=True).strip()
     assert branch == 'main', 'Automatic publication requires main'
     paths = ['results/attempt_003', 'notebooks/08_prompted_judge.ipynb', 'ATTEMPT_003_RESULTS.md']
-    for path in ['kaggle/attempt_003_dev', 'kaggle/attempt_003_predict']:
+    for path in ['kaggle/attempt_003_dev', 'kaggle/attempt_003_dev-ctx1024', 'kaggle/attempt_003_predict']:
         if (REPO / path).exists(): paths.append(path)
     subprocess.run(['git', 'add', '--', *paths], cwd=REPO, check=True)
     if subprocess.run(['git', 'diff', '--cached', '--quiet', '--', *paths], cwd=REPO).returncode:
@@ -94,23 +97,45 @@ def refresh():
 
 try:
     state('started')
-    finish('kaggle/attempt_003_probe', 'runtime_probe', 3600)
-    probes = json.loads((root / 'jobs/runtime_probe/output/probe_summary.json').read_text())
+    finish(runtime_folder, runtime_job, 1800 if runtime_job == 'runtime_binary' else 3600)
+    probes = json.loads((root / 'jobs' / runtime_job / 'output/probe_summary.json').read_text())
     available = []
     for probe in probes:
         if 'response' not in probe: continue
         ids = [probe['label_tokens'][label]['tokens'][0] for label in ['A', 'B', 'C']]
-        probabilities = label_probabilities(probe['response'], ids)
-        if probabilities.argmax() != 0:
+        assert len(set(ids)) == 3
+        if probe['response']['content'].strip() != 'A':
             raise RuntimeError('Arithmetic smoke test preferred the wrong answer; inspect template/probability handling')
         available.append('gemma31' if '31b' in probe['model_source'] else 'gemma26')
     assert available, 'No model passed the loading/probability probe'
+    available=[key for key in available if key in config.get('evaluate_models',available)]
+    assert available, 'No configured evaluation model passed setup'
     state('runtime_verified', models=available)
     refresh()
-    command('scripts/build_judge_notebook.py', 'dev', '--models', *available)
-    finish('kaggle/attempt_003_dev', 'development', 10800)
-    state('analyzing_development')
-    command('scripts/analyze_judge.py', '--freeze')
+    if not (root/'judge_selection.json').exists():
+        command('scripts/build_judge_notebook.py', 'dev', '--models', *available)
+        finish('kaggle/attempt_003_dev', 'development', 10800)
+        state('analyzing_development')
+        command('scripts/analyze_judge.py')
+        state('development_estimate_available',max_length=config['max_length'])
+        refresh()
+        development=json.loads((root/'development.json').read_text())
+        if any(row['runtime_feasible'] for row in development['rows']):
+            command('scripts/analyze_judge.py','--freeze')
+        else:
+            # Predeclared, runtime-triggered fallback. Never overwrite the original
+            # comparison or silently reuse probabilities from different packing.
+            state('shorter_context_for_runtime',max_length=1024)
+            for directory in [root,REPO/'results/attempt_003']:
+                shutil.copy2(directory/'development.json',directory/'development_2048.json')
+            fallback={**config,'max_length':1024}
+            path=root/'context1024_config.json'
+            path.write_text(json.dumps(fallback,indent=2)+'\n')
+            command('scripts/build_judge_notebook.py','dev','--models',*available,
+                    '--config',path,'--tag','ctx1024')
+            finish('kaggle/attempt_003_dev-ctx1024','development_ctx1024',10800)
+            command('scripts/analyze_judge.py','--job','development_ctx1024',
+                    '--folder','kaggle/attempt_003_dev-ctx1024','--config',path,'--freeze')
     selection = json.loads((root / 'judge_selection.json').read_text())
     state('judge_frozen', model=selection['model_key'], both_orders=selection['both_orders'],
           development_log_loss=selection['development']['metrics']['log_loss'])
