@@ -1,0 +1,301 @@
+[
+  {
+    "model_source": "google/gemma-4/gguf/gemma-4-31b-it-qat-q4_0-gguf/2",
+    "model_filename": "gemma-4-31B_q4_0-it.gguf",
+    "model_bytes": 17650999456,
+    "label_tokens": {
+      "A": {
+        "tokens": [
+          236776
+        ]
+      },
+      "B": {
+        "tokens": [
+          236799
+        ]
+      },
+      "C": {
+        "tokens": [
+          236780
+        ]
+      }
+    },
+    "template": {
+      "prompt": "<|turn>system\nJudge two answers. Output A if answer A is better, B if answer B is better, C if tied. Output only one letter.<turn|>\n<|turn>user\nQuestion: What is 2+2?\nAnswer A: 4\nAnswer B: 5<turn|>\n<|turn>model\n<|channel>thought\n<channel|>"
+    },
+    "response": {
+      "index": 0,
+      "content": "A",
+      "tokens": [
+        236776
+      ],
+      "id_slot": 0,
+      "stop": true,
+      "model": "/kaggle/input/models/google/gemma-4/gguf/gemma-4-31b-it-qat-q4_0-gguf/2/gemma-4-31B_q4_0-it.gguf",
+      "tokens_predicted": 1,
+      "tokens_evaluated": 67,
+      "generation_settings": {
+        "seed": 20261102,
+        "temperature": 1.0,
+        "dynatemp_range": 0.0,
+        "dynatemp_exponent": 1.0,
+        "top_k": 64,
+        "top_p": 0.949999988079071,
+        "min_p": 0.05000000074505806,
+        "top_n_sigma": -1.0,
+        "xtc_probability": 0.0,
+        "xtc_threshold": 0.10000000149011612,
+        "typical_p": 1.0,
+        "repeat_last_n": 64,
+        "repeat_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "dry_multiplier": 0.0,
+        "dry_base": 1.75,
+        "dry_allowed_length": 2,
+        "dry_penalty_last_n": 64,
+        "dry_sequence_breakers": [
+          "\n",
+          ":",
+          "\"",
+          "*"
+        ],
+        "mirostat": 0,
+        "mirostat_tau": 5.0,
+        "mirostat_eta": 0.10000000149011612,
+        "adaptive_target": -1.0,
+        "adaptive_decay": 0.8999999761581421,
+        "stop": [],
+        "max_tokens": 1,
+        "n_predict": 1,
+        "n_keep": 0,
+        "n_discard": 0,
+        "ignore_eos": false,
+        "stream": false,
+        "logit_bias": [],
+        "n_probs": 3,
+        "min_keep": 0,
+        "grammar": "root ::= \"A\" | \"B\" | \"C\"",
+        "grammar_lazy": false,
+        "grammar_triggers": [],
+        "preserved_tokens": [],
+        "chat_format": "Content-only",
+        "reasoning_format": "deepseek",
+        "reasoning_in_content": false,
+        "generation_prompt": "",
+        "samplers": [
+          "temperature"
+        ],
+        "speculative.types": "none",
+        "timings_per_token": false,
+        "post_sampling_probs": true,
+        "backend_sampling": false,
+        "lora": []
+      },
+      "prompt": "<bos><|turn>system\nJudge two answers. Output A if answer A is better, B if answer B is better, C if tied. Output only one letter.<turn|>\n<|turn>user\nQuestion: What is 2+2?\nAnswer A: 4\nAnswer B: 5<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+      "has_new_line": false,
+      "truncated": false,
+      "stop_type": "limit",
+      "stopping_word": "",
+      "tokens_cached": 67,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 67,
+        "prompt_ms": 33180.618,
+        "prompt_per_token_ms": 495.23310447761196,
+        "prompt_per_second": 2.019251118228117,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "completion_probabilities": [
+        {
+          "id": 236776,
+          "token": "A",
+          "bytes": [
+            65
+          ],
+          "prob": 0.9998927116394043,
+          "top_probs": [
+            {
+              "id": 236776,
+              "token": "A",
+              "bytes": [
+                65
+              ],
+              "prob": 0.9998927116394043
+            },
+            {
+              "id": 715,
+              "token": "//",
+              "bytes": [
+                47,
+                47
+              ],
+              "prob": 2.1292027668096125e-05
+            },
+            {
+              "id": 236820,
+              "token": "<",
+              "bytes": [
+                60
+              ],
+              "prob": 1.4869759979774244e-05
+            }
+          ]
+        }
+      ]
+    },
+    "gpu": "Mon Nov  2 11:41:47 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n| N/A   63C    P0             30W /   70W |   10793MiB /  15360MiB |      5%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n| N/A   63C    P0             32W /   70W |   11181MiB /  15360MiB |     61%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A              49      C   ...king/runtime/bin/llama-server      10790MiB |\n|    1   N/A  N/A              49      C   ...king/runtime/bin/llama-server      11178MiB |\n+-----------------------------------------------------------------------------------------+\n"
+  },
+  {
+    "model_source": "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2",
+    "model_filename": "gemma-4-26B_q4_0-it.gguf",
+    "model_bytes": 14439361440,
+    "label_tokens": {
+      "A": {
+        "tokens": [
+          236776
+        ]
+      },
+      "B": {
+        "tokens": [
+          236799
+        ]
+      },
+      "C": {
+        "tokens": [
+          236780
+        ]
+      }
+    },
+    "template": {
+      "prompt": "<|turn>system\nJudge two answers. Output A if answer A is better, B if answer B is better, C if tied. Output only one letter.<turn|>\n<|turn>user\nQuestion: What is 2+2?\nAnswer A: 4\nAnswer B: 5<turn|>\n<|turn>model\n<|channel>thought\n<channel|>"
+    },
+    "response": {
+      "index": 0,
+      "content": "A",
+      "tokens": [
+        236776
+      ],
+      "id_slot": 0,
+      "stop": true,
+      "model": "/kaggle/input/models/google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2/gemma-4-26B_q4_0-it.gguf",
+      "tokens_predicted": 1,
+      "tokens_evaluated": 67,
+      "generation_settings": {
+        "seed": 20261102,
+        "temperature": 1.0,
+        "dynatemp_range": 0.0,
+        "dynatemp_exponent": 1.0,
+        "top_k": 64,
+        "top_p": 0.949999988079071,
+        "min_p": 0.05000000074505806,
+        "top_n_sigma": -1.0,
+        "xtc_probability": 0.0,
+        "xtc_threshold": 0.10000000149011612,
+        "typical_p": 1.0,
+        "repeat_last_n": 64,
+        "repeat_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "dry_multiplier": 0.0,
+        "dry_base": 1.75,
+        "dry_allowed_length": 2,
+        "dry_penalty_last_n": 64,
+        "dry_sequence_breakers": [
+          "\n",
+          ":",
+          "\"",
+          "*"
+        ],
+        "mirostat": 0,
+        "mirostat_tau": 5.0,
+        "mirostat_eta": 0.10000000149011612,
+        "adaptive_target": -1.0,
+        "adaptive_decay": 0.8999999761581421,
+        "stop": [],
+        "max_tokens": 1,
+        "n_predict": 1,
+        "n_keep": 0,
+        "n_discard": 0,
+        "ignore_eos": false,
+        "stream": false,
+        "logit_bias": [],
+        "n_probs": 3,
+        "min_keep": 0,
+        "grammar": "root ::= \"A\" | \"B\" | \"C\"",
+        "grammar_lazy": false,
+        "grammar_triggers": [],
+        "preserved_tokens": [],
+        "chat_format": "Content-only",
+        "reasoning_format": "deepseek",
+        "reasoning_in_content": false,
+        "generation_prompt": "",
+        "samplers": [
+          "temperature"
+        ],
+        "speculative.types": "none",
+        "timings_per_token": false,
+        "post_sampling_probs": true,
+        "backend_sampling": false,
+        "lora": []
+      },
+      "prompt": "<bos><|turn>system\nJudge two answers. Output A if answer A is better, B if answer B is better, C if tied. Output only one letter.<turn|>\n<|turn>user\nQuestion: What is 2+2?\nAnswer A: 4\nAnswer B: 5<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+      "has_new_line": false,
+      "truncated": false,
+      "stop_type": "limit",
+      "stopping_word": "",
+      "tokens_cached": 67,
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 67,
+        "prompt_ms": 899.608,
+        "prompt_per_token_ms": 13.426985074626865,
+        "prompt_per_second": 74.47688326471086,
+        "predicted_n": 1,
+        "predicted_ms": 0.001,
+        "predicted_per_token_ms": 0.0,
+        "predicted_per_second": 0.0
+      },
+      "completion_probabilities": [
+        {
+          "id": 236776,
+          "token": "A",
+          "bytes": [
+            65
+          ],
+          "prob": 0.9998030066490173,
+          "top_probs": [
+            {
+              "id": 236776,
+              "token": "A",
+              "bytes": [
+                65
+              ],
+              "prob": 0.9998030066490173
+            },
+            {
+              "id": 236780,
+              "token": "C",
+              "bytes": [
+                67
+              ],
+              "prob": 0.00016574887558817863
+            },
+            {
+              "id": 236799,
+              "token": "B",
+              "bytes": [
+                66
+              ],
+              "prob": 1.9582686945796013e-05
+            }
+          ]
+        }
+      ]
+    },
+    "gpu": "Mon Nov  2 11:44:48 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n| N/A   64C    P0             28W /   70W |    7891MiB /  15360MiB |     41%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n| N/A   65C    P0             32W /   70W |    7493MiB /  15360MiB |     68%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A              69      C   ...king/runtime/bin/llama-server       7888MiB |\n|    1   N/A  N/A              69      C   ...king/runtime/bin/llama-server       7490MiB |\n+-----------------------------------------------------------------------------------------+\n"
+  }
+]
