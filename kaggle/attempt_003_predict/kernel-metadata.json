@@ -1,0 +1,20 @@
+{
+  "id": "arseniytrushin/llm-preference-judge-predict-003",
+  "title": "LLM Preference Judge Predict 003",
+  "code_file": "prompted_judge.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "competition_sources": [
+    "llm-classification-finetuning"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [
+    "arseniytrushin/llm-preference-judge-binary-probe-003/1"
+  ],
+  "model_sources": [
+    "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2"
+  ]
+}

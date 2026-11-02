@@ -1,12 +1,9 @@
 {
   "attempt": "003",
   "state": {
-    "stage": "judge_frozen",
-    "utc": "2026-11-02T13:00:50.039466+00:00",
-    "pid": 1874997,
-    "model": "gemma26",
-    "both_orders": false,
-    "development_log_loss": 1.0024521643090047
+    "stage": "submission_file_verified",
+    "utc": "2026-11-02T13:06:41.675047+00:00",
+    "pid": 1874997
   },
   "selection": {
     "attempt": "003",
@@ -252,8 +249,20 @@
       }
     },
     "prediction": {
-      "push": null,
-      "status": null
+      "push": {
+        "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-judge-predict-003",
+        "version_number": 1,
+        "error": "",
+        "ref": "/code/arseniytrushin/llm-preference-judge-predict-003",
+        "invalid_model_sources": [],
+        "invalid_dataset_sources": [],
+        "invalidModelSources": [],
+        "invalidDatasetSources": []
+      },
+      "status": {
+        "status": "KernelWorkerStatus.COMPLETE",
+        "failure_message": ""
+      }
     }
   },
   "weights_trained": false,
