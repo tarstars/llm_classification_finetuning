@@ -37,6 +37,7 @@ classifier comparison and all baselines.
 - [Model EDA and improvement hypotheses](notebooks/06_model_eda_and_hypotheses.ipynb)
 - [Error poster and training/held-out diagnostics](notebooks/07_error_poster.ipynb)
 - [Prompted general-model judge](notebooks/08_prompted_judge.ipynb)
+- [Fixed confidence for a hard judge prediction](notebooks/09_fixed_judge_confidence.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary
