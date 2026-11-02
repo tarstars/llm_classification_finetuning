@@ -1,0 +1,25 @@
+{
+  "partition": "train",
+  "sample": {
+    "partition": "train",
+    "seed": 20261111,
+    "population_rows": 45985,
+    "rows": 2048,
+    "sampling": "Uniform random training-partition rows, chosen without inspecting losses"
+  },
+  "rows": 2048,
+  "model_hash": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+  "temperature": 0.7220597450036835,
+  "metrics": {
+    "log_loss": 0.9656561998713992,
+    "accuracy": 0.552734375,
+    "balanced_accuracy": 0.5509334201882127,
+    "macro_f1": 0.5508251748261176,
+    "brier": 0.5730841063429251
+  },
+  "inference_seconds": 1267.5182861460003,
+  "note": "Training partition, not a held-out estimate. Only 0.61 epochs were completed; per-row exposure was not logged. Highest-loss examples are relative to this scored cohort.",
+  "kernel": "arseniytrushin/llm-preference-training-error-poster-002",
+  "version": 1,
+  "status": "COMPLETE"
+}

@@ -14,6 +14,9 @@ train = ["peft", "accelerate", "bitsandbytes", "safetensors"]
 eda = [
     "lingua-language-detector>=2.1.1",
 ]
+qa = [
+    "playwright>=1.64.1",
+]
 
 [[tool.uv.index]]
 name = "pytorch-cpu"

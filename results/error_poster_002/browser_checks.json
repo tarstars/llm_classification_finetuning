@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "initial rendering and descending calibrated loss",
+    "complete training sample and paired-order diagnostics",
+    "cohort/category filters, confirmation calibration and omission toggle",
+    "wrong-only, alternate sort and pagination",
+    "search, full text, exact input, saved notes and JSON export",
+    "valid and invalid example deep links",
+    "390px mobile layout without horizontal overflow"
+  ],
+  "javascript_errors": [],
+  "browser": "/usr/bin/google-chrome",
+  "private_screenshots": "/home/tarstars/database/llm_classification_finetuning/eda/attempt_002/poster/qa"
+}

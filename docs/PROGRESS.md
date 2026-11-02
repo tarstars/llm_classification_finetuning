@@ -1,5 +1,49 @@
 # Project memory
 
+## Completed error poster — 2026-11-02
+
+Browse **http://127.0.0.1:8765/**. Restart with
+`uv run python scripts/serve_error_poster.py` if needed. See the
+[browsing guide](ERROR_POSTER.md), [executed notebook 07](../notebooks/07_error_poster.ipynb),
+and [aggregate summary](../results/error_poster_002/summary.json).
+The standalone full-text HTML is under
+`~/database/llm_classification_finetuning/eda/attempt_002/poster/site/index.html`.
+
+- Frozen inference completed on a uniform sample of **2,048 / 45,985 training
+  rows**, seed 20261111, selected before scoring. Both answer orders and the
+  existing temperature were used. **Log loss 0.96566; accuracy 55.27%**.
+  Inference took 1,267.5 s; setup/finalization brought the job to about 26 minutes.
+  Kernel `arseniytrushin/llm-preference-training-error-poster-002`, version 1,
+  status COMPLETE. No new model training or competition submission occurred.
+- The gallery contains **427 unique cases**: a union of up to 12 highest-loss
+  cases per category and scored cohort, across 20 overlapping categories.
+  Development and local confirmation each cover all 5,746 rows. Kaggle hidden
+  labels are unavailable. Highest-loss train cases are within the scored sample;
+  0.61 epochs does not establish whether any particular row saw an optimizer step.
+- Loss is computed from deployed calibrated probabilities, without applying the
+  temperature twice. Development remains 0.96883, confirmation 0.96236 and the
+  official Kaggle score 0.97025. The sample shows no large training-loss advantage;
+  small mean differences alone do not diagnose underfitting or overfitting.
+- Cards expose full question/A/B, observed vote, probabilities, loss rank/share,
+  omitted passages, exact decoded packed inputs and aligned conversation turns.
+  Raw order diagnostics cover all 2,048 training sample rows and the 512-row dev
+  pilot; longer-context diagnostics cover that pilot only. Missing coverage is
+  explicit. Category summaries use every scored row, not only selected cards.
+- New reviewed examples distinguish missing-input relevance failures from
+  subjective style/refusal/tie preferences. An invented program before its source
+  scripts arrive parallels a held-out invented rewrite without source text.
+  Notes remain hypotheses, not automatic relabeling. Individual browser review
+  notes persist locally and export as JSON.
+- All **16 local tests passed**. Chrome checks passed for ranking, filters,
+  calibration, training/order diagnostics, omissions, pagination, deep links,
+  saved notes/export and a 390px mobile layout. Notebook 07 executed successfully.
+  Screenshots and full competition text remain outside Git under `~/database`.
+
+Confirmation text is now inspected and must not be described as untouched in a
+future experiment. At 06:53 UTC, numeric Kaggle quota reported **20.43 hours
+remaining**, no reserved compute, and pay-to-scale disabled. The inference job has
+finished. The localhost server remains running for browsing.
+
 ## Completed EDA — 2026-11-02
 
 See [EDA_REPORT.md](../EDA_REPORT.md), [dataset notebook 05](../notebooks/05_dataset_eda.ipynb)

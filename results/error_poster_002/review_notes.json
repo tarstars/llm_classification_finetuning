@@ -1,0 +1,51 @@
+[
+  {
+    "id": 171385530,
+    "theme": "Training example: premature solution before source scripts arrive",
+    "observation": "The user plans to send two MATLAB scripts for merging, but neither script is present in the supplied conversation. A invents a combined program; B asks for the scripts. The vote is B, while the model gives A about 88.6% probability.",
+    "interpretation": "A visible missing-input issue also appears in the held-out rewrite example. The classifier rewards a substantial-looking artifact over a relevant request for the absent material. No MATLAB execution was performed.",
+    "next_test": "Build a development diagnostic for requests requiring absent attachments or source text. Train a grounded instruction-compliance signal only if its incremental benefit survives a controlled comparison."
+  },
+  {
+    "id": 1614422858,
+    "theme": "Training example: human prefers refusal to a completed story",
+    "observation": "A supplies a story in response to a historically charged creative request, while B refuses. The vote favors B, but the model gives B about 2.9% probability.",
+    "interpretation": "Completion and fluency are insufficient to predict every human preference. Sensitivity to the framing, refusal preferences, and individual taste are possible explanations; this selected vote does not identify the annotator's reason.",
+    "next_test": "Review refusal-versus-completion comparisons by task and framing, retaining observed votes and uncertainty. Compare targeted supervision on full development loss rather than assuming every refusal should win."
+  },
+  {
+    "id": 4046915852,
+    "theme": "Training example: tie vote despite strongly contrasting answers",
+    "observation": "A gives a detailed response to a socially charged question; B declines to express a view. The observed label is tie, but the model assigns A about 95.1% and tie about 3.8%.",
+    "interpretation": "The tie class does not come with a reason for the vote. It cannot be inferred from this row whether the human saw equal quality, disliked both, or had another preference. Strong confidence in the detailed answer is expensive under log loss.",
+    "next_test": "Inspect high-confidence tie misses across many development rows, and test a separate ambiguity/tie representation with controlled calibration. Do not relabel a subjective vote simply because the model disagrees."
+  },
+  {
+    "id": 1012843597,
+    "theme": "Ambiguous request: detailed completion versus clarification",
+    "observation": "The question has no referent. A chooses a particular song interpretation and supplies a detailed explanation; B requests clarification. The observed vote is B, but the model gives B about 3.1% probability.",
+    "interpretation": "This example is consistent with rewarding a fluent, specific completion despite missing evidence that it answers the intended question. The annotator's actual intent is unavailable.",
+    "next_test": "Evaluate a development set of ambiguous requests with plausible completions and clarification responses. Separate groundedness from verbosity before considering additional preference training."
+  },
+  {
+    "id": 2313946712,
+    "theme": "Missing source text: invented rewrite preferred by the model",
+    "observation": "The user asks for a concise humorous rewrite but supplies no text. A asks for that text; B invents a billing-apology letter. The observed vote is A, while the model gives B about 83.4% probability.",
+    "interpretation": "The visible input supports a concrete relevance failure: the classifier favors a polished artifact that cannot be a rewrite of the absent source. This input is untruncated, so the missing source was not caused by our token budget.",
+    "next_test": "Test grounded instruction-compliance features and targeted preference examples for missing inputs, with a controlled development comparison against the same frozen baseline."
+  },
+  {
+    "id": 714853521,
+    "theme": "Both answers plausible: strong preference may be unjustified",
+    "observation": "Both answers discuss support for software-development activities. A gives a longer organized explanation; B gives a shorter overview. The human prefers B, but the model assigns A about 86.6% probability.",
+    "interpretation": "Possible verbosity/style overconfidence, rather than an obvious objectively wrong answer. No source-code execution or factual check was performed; one observed vote cannot establish a universal preference.",
+    "next_test": "Measure confidence on similar-quality answer pairs and review verbosity preference across multiple examples. A tie/ambiguity head is a hypothesis, not a conclusion from this one case."
+  },
+  {
+    "id": 726880185,
+    "theme": "Subjective prioritization: label is a vote, not a factual verdict",
+    "observation": "One answer declines to prioritize between two research goals; the other gives a detailed conditional comparison. The vote favors the concise neutral answer, but the model favors the longer answer at about 85.6%.",
+    "interpretation": "The preferred style is debatable. This case illustrates the distinction between matching an individual's choice and judging general answer quality; it does not prove a bad label.",
+    "next_test": "Audit preference uncertainty and confidence by task type; compare improvements on full development loss rather than relabeling inconvenient selected errors."
+  }
+]

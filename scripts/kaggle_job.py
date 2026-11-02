@@ -28,8 +28,12 @@ from kaggle.api.kaggle_api_extended import KaggleApi
 api = KaggleApi()
 api.authenticate()
 reference = metadata['id']
-if args.action in ['status', 'output'] and (out/'push.json').exists():
-    reference += '/' + str(json.loads((out/'push.json').read_text())['version_number'])
+saved_push = json.loads((out/'push.json').read_text()) if (out/'push.json').exists() else None
+if saved_push and saved_push.get('ref','').startswith('/code/'):
+    reference=saved_push['ref'].removeprefix('/code/')
+submission_kernel=reference
+if args.action in ['status', 'output'] and saved_push:
+    reference += '/' + str(saved_push['version_number'])
 
 
 def fields(obj):
@@ -57,7 +61,7 @@ elif args.action == "submit":
     version = json.loads((out / "push.json").read_text())["version_number"]
     result = fields(api.competition_submit_code(file_name="submission.csv",
         message=f"Attempt 002: joint preference classifier ({args.job})",
-        competition="llm-classification-finetuning", kernel=metadata["id"], kernel_version=version))
+        competition="llm-classification-finetuning", kernel=submission_kernel, kernel_version=version))
     json_write(out / "submission.json", result)
     print(json.dumps(result, default=str, indent=2))
 elif args.action == 'submissions':

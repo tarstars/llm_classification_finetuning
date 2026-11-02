@@ -1,0 +1,647 @@
+{
+  "model": "Qwen/Qwen3-4B",
+  "model_hash": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+  "temperature": 0.7220597450036835,
+  "official_score": 0.97025,
+  "max_length": 1024,
+  "cohorts": [
+    {
+      "key": "train",
+      "title": "Training sample",
+      "rows": 2048,
+      "scope": "Fixed uniform sample of 2,048 out of 45,985 training-partition rows, seed 20261111. Highest losses are within this sample. Only 0.61 epochs were completed; per-row exposure was not logged.",
+      "source": "Frozen model; both answer orders; saved calibrated probabilities, temperature applied once.",
+      "metrics": {
+        "rows": 2048,
+        "log_loss": 0.9656561998713992,
+        "accuracy": 0.552734375,
+        "balanced_accuracy": 0.5509334201882127,
+        "macro_f1": 0.5508251748261176,
+        "brier": 0.5730841063429251
+      },
+      "total_loss": 1977.6638973366255,
+      "model_hash": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+      "order_diagnostic_rows": 2048,
+      "context_diagnostic_rows": 0
+    },
+    {
+      "key": "dev",
+      "title": "Development",
+      "rows": 5746,
+      "scope": "All 5,746 development rows. Used for checkpoint selection/calibration and subsequent EDA.",
+      "source": "Saved raw swap-average probabilities, then frozen temperature applied once.",
+      "metrics": {
+        "rows": 5746,
+        "log_loss": 0.9688254519759955,
+        "accuracy": 0.5273233553776541,
+        "balanced_accuracy": 0.5247367963128498,
+        "macro_f1": 0.5246110105826401,
+        "brier": 0.5776749160955102
+      },
+      "total_loss": 5566.87104705407,
+      "model_hash": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+      "order_diagnostic_rows": 512,
+      "context_diagnostic_rows": 512
+    },
+    {
+      "key": "test",
+      "title": "Held-out test (local)",
+      "rows": 5746,
+      "scope": "All 5,746 local confirmation rows. This is not Kaggle hidden test data. Inspection now makes these examples available for future qualitative decisions.",
+      "source": "Saved confirmation probabilities already calibrated; no second temperature application.",
+      "metrics": {
+        "rows": 5746,
+        "log_loss": 0.9623631122994142,
+        "accuracy": 0.5306300034806822,
+        "balanced_accuracy": 0.5288258459363778,
+        "macro_f1": 0.5288948998043094,
+        "brier": 0.5731824155937163
+      },
+      "total_loss": 5529.738443272434,
+      "model_hash": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+      "order_diagnostic_rows": 0,
+      "context_diagnostic_rows": 0
+    }
+  ],
+  "categories": [
+    {
+      "key": "all",
+      "title": "All examples",
+      "description": "Highest log loss within each scored cohort.",
+      "cohort_counts": {
+        "train": 2048,
+        "dev": 5746,
+        "test": 5746
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 2048,
+          "log_loss": 0.9656561998713992,
+          "loss_share_percent": 100.0,
+          "accuracy": 0.552734375
+        },
+        "dev": {
+          "rows": 5746,
+          "log_loss": 0.9688254519759955,
+          "loss_share_percent": 100.00000000000001,
+          "accuracy": 0.5273233553776541
+        },
+        "test": {
+          "rows": 5746,
+          "log_loss": 0.9623631122994142,
+          "loss_share_percent": 100.0,
+          "accuracy": 0.5306300034806822
+        }
+      }
+    },
+    {
+      "key": "confident_wrong",
+      "title": "Confident wrong",
+      "description": "Incorrect argmax with at least 80% predicted probability.",
+      "cohort_counts": {
+        "train": 22,
+        "dev": 51,
+        "test": 49
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 22,
+          "log_loss": 2.5190928401264405,
+          "loss_share_percent": 2.8022983358000007,
+          "accuracy": 0.0
+        },
+        "dev": {
+          "rows": 51,
+          "log_loss": 2.5117920419819173,
+          "loss_share_percent": 2.301138162862021,
+          "accuracy": 0.0
+        },
+        "test": {
+          "rows": 49,
+          "log_loss": 2.4261378368513236,
+          "loss_share_percent": 2.149844069936925,
+          "accuracy": 0.0
+        }
+      }
+    },
+    {
+      "key": "true_tie",
+      "title": "Human chose tie",
+      "description": "Cases where the human label is tie.",
+      "cohort_counts": {
+        "train": 635,
+        "dev": 1775,
+        "test": 1776
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 635,
+          "log_loss": 1.0092638522511703,
+          "loss_share_percent": 32.40603962294035,
+          "accuracy": 0.49763779527559054
+        },
+        "dev": {
+          "rows": 1775,
+          "log_loss": 1.0012428905773634,
+          "loss_share_percent": 31.924686520541893,
+          "accuracy": 0.4540845070422535
+        },
+        "test": {
+          "rows": 1776,
+          "log_loss": 0.990444635318896,
+          "loss_share_percent": 31.81035939351566,
+          "accuracy": 0.4786036036036036
+        }
+      }
+    },
+    {
+      "key": "predicted_tie",
+      "title": "Model chose tie",
+      "description": "The model predicts tie but the human chose A or B.",
+      "cohort_counts": {
+        "train": 305,
+        "dev": 939,
+        "test": 966
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 305,
+          "log_loss": 1.2986046327218543,
+          "loss_share_percent": 20.027387541106954,
+          "accuracy": 0.0
+        },
+        "dev": {
+          "rows": 939,
+          "log_loss": 1.300594044599735,
+          "loss_share_percent": 21.937957562811306,
+          "accuracy": 0.0
+        },
+        "test": {
+          "rows": 966,
+          "log_loss": 1.2935228129660366,
+          "loss_share_percent": 22.59678373839553,
+          "accuracy": 0.0
+        }
+      }
+    },
+    {
+      "key": "similar_answers",
+      "title": "Similar answers",
+      "description": "Answer embedding cosine above 0.9; an exploratory similarity cue.",
+      "cohort_counts": {
+        "train": 411,
+        "dev": 1201,
+        "test": 1209
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 411,
+          "log_loss": 0.9652146230788925,
+          "loss_share_percent": 20.05918248392338,
+          "accuracy": 0.5401459854014599
+        },
+        "dev": {
+          "rows": 1201,
+          "log_loss": 0.9918296945378958,
+          "loss_share_percent": 21.39779156139025,
+          "accuracy": 0.49375520399666945
+        },
+        "test": {
+          "rows": 1209,
+          "log_loss": 0.9855798264201905,
+          "loss_share_percent": 21.548324977136815,
+          "accuracy": 0.49958643507030603
+        }
+      }
+    },
+    {
+      "key": "truncated",
+      "title": "Any content omitted",
+      "description": "At least one field loses content under the 1,024-token budget.",
+      "cohort_counts": {
+        "train": 413,
+        "dev": 1152,
+        "test": 1173
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 413,
+          "log_loss": 0.9969146876660527,
+          "loss_share_percent": 20.81879365652385,
+          "accuracy": 0.5399515738498789
+        },
+        "dev": {
+          "rows": 1152,
+          "log_loss": 1.0268266408213609,
+          "loss_share_percent": 21.24899751094806,
+          "accuracy": 0.4878472222222222
+        },
+        "test": {
+          "rows": 1173,
+          "log_loss": 1.0056935266975262,
+          "loss_share_percent": 21.333350915564793,
+          "accuracy": 0.4919011082693947
+        }
+      }
+    },
+    {
+      "key": "prompt_cut",
+      "title": "Question omitted",
+      "description": "The question itself exceeds its allocated budget.",
+      "cohort_counts": {
+        "train": 163,
+        "dev": 418,
+        "test": 463
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 163,
+          "log_loss": 0.981207511786136,
+          "loss_share_percent": 8.087159028211593,
+          "accuracy": 0.5398773006134969
+        },
+        "dev": {
+          "rows": 418,
+          "log_loss": 1.0409902056648395,
+          "loss_share_percent": 7.816489771182525,
+          "accuracy": 0.47129186602870815
+        },
+        "test": {
+          "rows": 463,
+          "log_loss": 1.0118273052781246,
+          "loss_share_percent": 8.471938540126196,
+          "accuracy": 0.468682505399568
+        }
+      }
+    },
+    {
+      "key": "multi_turn",
+      "title": "Multiple turns",
+      "description": "A conversation with more than one question/answer turn.",
+      "cohort_counts": {
+        "train": 260,
+        "dev": 809,
+        "test": 767
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 260,
+          "log_loss": 0.9934576959993215,
+          "loss_share_percent": 13.060813887925143,
+          "accuracy": 0.5230769230769231
+        },
+        "dev": {
+          "rows": 809,
+          "log_loss": 1.018939388210915,
+          "loss_share_percent": 14.807635350182087,
+          "accuracy": 0.49443757725587145
+        },
+        "test": {
+          "rows": 767,
+          "log_loss": 1.0051646747358869,
+          "loss_share_percent": 13.94209352632924,
+          "accuracy": 0.4941329856584094
+        }
+      }
+    },
+    {
+      "key": "code",
+      "title": "Code-like wording",
+      "description": "Lexical/syntax cue, not verified task annotation; false positives are possible.",
+      "cohort_counts": {
+        "train": 195,
+        "dev": 549,
+        "test": 559
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 195,
+          "log_loss": 0.9953657266788738,
+          "loss_share_percent": 9.814423824178379,
+          "accuracy": 0.5230769230769231
+        },
+        "dev": {
+          "rows": 549,
+          "log_loss": 1.018118692727298,
+          "loss_share_percent": 10.040598346589608,
+          "accuracy": 0.5045537340619308
+        },
+        "test": {
+          "rows": 559,
+          "log_loss": 1.0106217569323352,
+          "loss_share_percent": 10.216352326980081,
+          "accuracy": 0.47584973166368516
+        }
+      }
+    },
+    {
+      "key": "math",
+      "title": "Math-like wording",
+      "description": "English mathematical keywords or explicit mathematical syntax.",
+      "cohort_counts": {
+        "train": 31,
+        "dev": 95,
+        "test": 130
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 31,
+          "log_loss": 0.9012144580625048,
+          "loss_share_percent": 1.4126590588806343,
+          "accuracy": 0.6451612903225806
+        },
+        "dev": {
+          "rows": 95,
+          "log_loss": 1.0371082933608713,
+          "loss_share_percent": 1.7698503708186544,
+          "accuracy": 0.5052631578947369
+        },
+        "test": {
+          "rows": 130,
+          "log_loss": 0.9257406507364556,
+          "loss_share_percent": 2.1763467807804617,
+          "accuracy": 0.5615384615384615
+        }
+      }
+    },
+    {
+      "key": "creative",
+      "title": "Creative writing",
+      "description": "English creative-writing keywords; not a comprehensive topic label.",
+      "cohort_counts": {
+        "train": 132,
+        "dev": 419,
+        "test": 428
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 132,
+          "log_loss": 1.0406548443052597,
+          "loss_share_percent": 6.945894073977355,
+          "accuracy": 0.5
+        },
+        "dev": {
+          "rows": 419,
+          "log_loss": 0.963515702840155,
+          "loss_share_percent": 7.252064509445853,
+          "accuracy": 0.5322195704057279
+        },
+        "test": {
+          "rows": 428,
+          "log_loss": 0.8809525371112583,
+          "loss_share_percent": 6.818544669908224,
+          "accuracy": 0.6004672897196262
+        }
+      }
+    },
+    {
+      "key": "transformation",
+      "title": "Text transformation",
+      "description": "Translation, summary, rewrite or extraction keywords.",
+      "cohort_counts": {
+        "train": 94,
+        "dev": 246,
+        "test": 263
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 94,
+          "log_loss": 0.9266681126307502,
+          "loss_share_percent": 4.40453014815104,
+          "accuracy": 0.574468085106383
+        },
+        "dev": {
+          "rows": 246,
+          "log_loss": 0.9903633674810558,
+          "loss_share_percent": 4.376415159270949,
+          "accuracy": 0.491869918699187
+        },
+        "test": {
+          "rows": 263,
+          "log_loss": 1.0547008132873992,
+          "loss_share_percent": 5.016264634217167,
+          "accuracy": 0.44866920152091255
+        }
+      }
+    },
+    {
+      "key": "refusal",
+      "title": "Refusal-like answer",
+      "description": "At least one answer contains a refusal-like phrase.",
+      "cohort_counts": {
+        "train": 257,
+        "dev": 786,
+        "test": 802
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 257,
+          "log_loss": 0.8566367420770498,
+          "loss_share_percent": 11.132106067683768,
+          "accuracy": 0.6614785992217899
+        },
+        "dev": {
+          "rows": 786,
+          "log_loss": 0.8899617319053564,
+          "loss_share_percent": 12.565585144060117,
+          "accuracy": 0.5877862595419847
+        },
+        "test": {
+          "rows": 802,
+          "log_loss": 0.8540874775861423,
+          "loss_share_percent": 12.387171003674528,
+          "accuracy": 0.6134663341645885
+        }
+      }
+    },
+    {
+      "key": "length_gap",
+      "title": "Large length difference",
+      "description": "One answer is more than four times as long as the other.",
+      "cohort_counts": {
+        "train": 322,
+        "dev": 791,
+        "test": 840
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 322,
+          "log_loss": 0.9144437165643708,
+          "loss_share_percent": 14.888822975950186,
+          "accuracy": 0.5993788819875776
+        },
+        "dev": {
+          "rows": 791,
+          "log_loss": 0.8781790380374599,
+          "loss_share_percent": 12.478097897655214,
+          "accuracy": 0.606826801517067
+        },
+        "test": {
+          "rows": 840,
+          "log_loss": 0.8567139323949856,
+          "loss_share_percent": 13.01399172120542,
+          "accuracy": 0.6261904761904762
+        }
+      }
+    },
+    {
+      "key": "nonascii",
+      "title": "Non-ASCII question",
+      "description": "More than 10% of question characters are non-ASCII; not a language label.",
+      "cohort_counts": {
+        "train": 14,
+        "dev": 32,
+        "test": 31
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 14,
+          "log_loss": 1.1868762706601685,
+          "loss_share_percent": 0.8401967498936471,
+          "accuracy": 0.35714285714285715
+        },
+        "dev": {
+          "rows": 32,
+          "log_loss": 0.9768287802397899,
+          "loss_share_percent": 0.5615097009336144,
+          "accuracy": 0.5
+        },
+        "test": {
+          "rows": 31,
+          "log_loss": 1.0251869833769613,
+          "loss_share_percent": 0.574725130505057,
+          "accuracy": 0.3548387096774194
+        }
+      }
+    },
+    {
+      "key": "identical",
+      "title": "Identical answers",
+      "description": "The two parsed answer texts are identical.",
+      "cohort_counts": {
+        "train": 10,
+        "dev": 53,
+        "test": 39
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 10,
+          "log_loss": 0.4789422900927865,
+          "loss_share_percent": 0.24217577655019706,
+          "accuracy": 0.9
+        },
+        "dev": {
+          "rows": 53,
+          "log_loss": 0.3511984742233428,
+          "loss_share_percent": 0.3343623190928277,
+          "accuracy": 0.9433962264150944
+        },
+        "test": {
+          "rows": 39,
+          "log_loss": 0.31218141130763016,
+          "loss_share_percent": 0.22017451938997157,
+          "accuracy": 0.9743589743589743
+        }
+      }
+    },
+    {
+      "key": "order_sensitive",
+      "title": "Order-sensitive",
+      "description": "The raw winner changes after answer-order alignment; available for the training sample and development pilot.",
+      "cohort_counts": {
+        "train": 710,
+        "dev": 195,
+        "test": 0
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 710,
+          "log_loss": 1.0533521791548057,
+          "loss_share_percent": 37.816337154513604,
+          "accuracy": 0.4422535211267606
+        },
+        "dev": {
+          "rows": 195,
+          "log_loss": 1.0276148677146704,
+          "loss_share_percent": 3.5995965688912865,
+          "accuracy": 0.4666666666666667
+        }
+      }
+    },
+    {
+      "key": "context_hurts",
+      "title": "More context hurt",
+      "description": "The paired 2,048-token diagnostic increases loss; available only on pilot rows.",
+      "cohort_counts": {
+        "train": 0,
+        "dev": 48,
+        "test": 0
+      },
+      "cohort_metrics": {
+        "dev": {
+          "rows": 48,
+          "log_loss": 0.9781854567533106,
+          "loss_share_percent": 0.8434343373016677,
+          "accuracy": 0.5416666666666666
+        }
+      }
+    },
+    {
+      "key": "context_helps",
+      "title": "More context helped",
+      "description": "The paired diagnostic reduces loss; examples are still ranked by baseline loss.",
+      "cohort_counts": {
+        "train": 0,
+        "dev": 50,
+        "test": 0
+      },
+      "cohort_metrics": {
+        "dev": {
+          "rows": 50,
+          "log_loss": 1.046201139676263,
+          "loss_share_percent": 0.939667122548044,
+          "accuracy": 0.52
+        }
+      }
+    },
+    {
+      "key": "reviewed",
+      "title": "Reviewed examples",
+      "description": "Cases with existing analyst notes; selected reviews do not establish prevalence.",
+      "cohort_counts": {
+        "train": 3,
+        "dev": 8,
+        "test": 4
+      },
+      "cohort_metrics": {
+        "train": {
+          "rows": 3,
+          "log_loss": 3.3556329542975436,
+          "loss_share_percent": 0.5090298142394166,
+          "accuracy": 0.0
+        },
+        "dev": {
+          "rows": 8,
+          "log_loss": 2.91196545981492,
+          "loss_share_percent": 0.41847068993716335,
+          "accuracy": 0.0
+        },
+        "test": {
+          "rows": 4,
+          "log_loss": 3.184696144794064,
+          "loss_share_percent": 0.230368664085269,
+          "accuracy": 0.0
+        }
+      }
+    }
+  ],
+  "top_per_category": 12,
+  "preview": false,
+  "hidden_test_note": "Kaggle hidden examples/labels are unavailable. Local held-out test means the confirmation fold.",
+  "metric_note": "Loss is -ln(probability assigned to the observed human label), after swap averaging and the frozen calibration. Human labels are observed votes, not a claim of objective truth.",
+  "gallery_scope": "Union of the top examples per category and cohort. Search and filters operate on this selected gallery; cohort summaries use every scored row.",
+  "gallery_cases": 427,
+  "html_bytes": 6317029,
+  "html_sha256": "c9e538cd3d6ca8bdd96d98844a3da0d37683dfa44dea14d77d7f7b03afa19b04",
+  "path": "/home/tarstars/database/llm_classification_finetuning/eda/attempt_002/poster/site/index.html"
+}

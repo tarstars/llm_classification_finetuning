@@ -15,6 +15,11 @@ weak tie discrimination, and difficult correctness/constraint comparisons. A sma
 longer-context inference pilot shows an uncertain gain. See the executed EDA notebooks
 for evidence, uncertainty and ranked follow-up experiments.
 
+The [interactive error poster](docs/ERROR_POSTER.md) shows the highest-loss training,
+development and local held-out examples, full text, truncation and answer-order
+diagnostics. Browse it locally at **http://127.0.0.1:8765/**; full-text artifacts stay
+under `~/database`, with aggregate results and reproducible source in this repository.
+
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
 **49.63% accuracy**. Always predicting the most frequent training class gives
@@ -27,6 +32,7 @@ classifier comparison and all baselines.
 - [Joint preference fine-tuning and GPU diagnostics](notebooks/04_joint_preference_finetuning.ipynb)
 - [Dataset EDA](notebooks/05_dataset_eda.ipynb)
 - [Model EDA and improvement hypotheses](notebooks/06_model_eda_and_hypotheses.ipynb)
+- [Error poster and training/held-out diagnostics](notebooks/07_error_poster.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary
