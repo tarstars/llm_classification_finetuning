@@ -84,6 +84,16 @@ are unchanged. If no configuration meets the runtime margin, repeat the same fix
 triggered by runtime, not by inspecting hidden-test results. Deployment must consume
 the resulting frozen configuration rather than the initial defaults.
 
+Both development runs completed. The 1,024-token, single-order projection is
+8.28 hours **including** a 20% margin and 600 seconds for loading/finalization.
+The initial eight-hour selection guard stopped the controller, despite this fitting
+the competition's nine-hour limit. Revise the selection guard to 8.5 hours using
+the analyzer's explicit `--runtime-budget-seconds 30600` option. This changes only
+the runtime decision, without changing the frozen prompt, packing, model or saved
+predictions. Preserve the override in the report and selection; do not claim it
+was predeclared. Both-order inference remains infeasible. No hidden-test results
+have entered this decision.
+
 Programs, executed result notebooks, aggregate evidence and project memory belong in
 Git. Runtime binaries, model files, raw prompts, per-row predictions and logs belong
 under `~/database/llm_classification_finetuning/runs/attempt_003` or private Kaggle

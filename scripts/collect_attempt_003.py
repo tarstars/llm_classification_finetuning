@@ -51,6 +51,11 @@ if selection:
               f"Both answer orders: **{selection['both_orders']}**; calibration: **{selection['calibration']}**.",
               f"Temperature {selection['temperature']:.6f}; tie intercept {selection['tie_bias']:.6f}.", '']
 if development:
+    budget = development.get('runtime_budget_seconds')
+    if budget:
+        lines += [f'Selection runtime budget: **{budget/3600:.2f} hours**, applied to the projection including its 20% plus 600-second margin.', '']
+    if development.get('runtime_budget_override_seconds'):
+        lines += ['The original eight-hour selection guard was revised to 8.5 hours after the 1,024-token timing measurement. The inference configuration and saved development predictions are unchanged; Kaggle still has a nine-hour limit.', '']
     if (dest/'development_2048.json').exists():
         lines += ['The initial 2,048-token comparison exceeded the runtime margin. Its separate results are preserved in `results/attempt_003/development_2048.json`; the current table is the 1,024-token fallback.', '']
     lines += ['| Model | View | Calibration | Cross-fitted log loss | Accuracy | Projected hours with margin |',

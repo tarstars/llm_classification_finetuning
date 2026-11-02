@@ -21,11 +21,15 @@ p.add_argument('--job', default='development')
 p.add_argument('--folder', type=Path, default=REPO / 'kaggle/attempt_003_dev')
 p.add_argument('--config', type=Path, default=REPO / 'configs/attempt_003_judge.json')
 p.add_argument('--freeze', action='store_true')
+p.add_argument('--runtime-budget-seconds', type=int,
+               help='Explicit selection-policy override; inference configuration stays unchanged')
 a = p.parse_args()
 root = ROOT / 'runs/attempt_003'
 output = root / 'jobs' / a.job / 'output'
 config = json.loads(a.config.read_text())
 config_hash = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
+runtime_budget = a.runtime_budget_seconds or config['max_projected_submission_seconds']
+assert 0 < runtime_budget <= 32400, 'Selection budget must fit the competition nine-hour limit'
 features = pd.read_parquet(ROOT / 'eda/attempt_002/features.parquet').set_index('id')
 reference = np.load(ROOT / 'runs/attempt_002/jobs/qwen4b1024/output/joint_run/dev_predictions.npz')
 ref_selection = json.loads((ROOT / 'runs/attempt_002/model_selection.json').read_text())
@@ -103,7 +107,7 @@ for model_key in config['models']:
                       'projected_with_margin_seconds': projected * 1.2 + 600,
                       'projection_note': '25,000 rows assumed. Single-order timing is half the measured paired pass when both were scored. 20% margin plus 600 s for loading/finalization.',
                       'sample_rows': len(y), 'model_weights_trained': False}
-            result['runtime_feasible'] = result['projected_with_margin_seconds'] <= config['max_projected_submission_seconds']
+            result['runtime_feasible'] = result['projected_with_margin_seconds'] <= runtime_budget
             rows.append(result)
             if result['runtime_feasible']: candidates.append(result)
     per_row = pd.DataFrame({'id': ids, 'label': y, 'prompt_group': groups,
@@ -113,6 +117,8 @@ for model_key in config['models']:
 
 assert rows, 'No completed development predictions available'
 report = {'attempt': '003', 'rows': rows, 'config_sha256': config_hash,
+          'runtime_budget_seconds': runtime_budget,
+          'runtime_budget_override_seconds': a.runtime_budget_seconds,
           'constant_baselines': constant_baselines,
           'note': 'Exploratory development sample. Calibration is cross-fitted by prompt group; base classifier selection previously used development. No untouched confirmation claim.'}
 results_dir = REPO / 'results/attempt_003'
@@ -127,6 +133,8 @@ if a.freeze:
                  'temperature': best['temperature_fit_all_dev'], 'tie_bias': best['tie_bias_fit_all_dev'],
                  'development': best, 'config_sha256': config_hash, 'config': config,
                  'development_job': a.job, 'weights_trained': False, 'blended_with_classifier': False,
+                 'runtime_budget_seconds': runtime_budget,
+                 'runtime_budget_override_seconds': a.runtime_budget_seconds,
                  'runtime_kernel': json.loads((a.folder/'kernel-metadata.json').read_text())['kernel_sources'][0],
                  'judge_source_sha256': hashlib.sha256((REPO/'src/arena/judge.py').read_bytes()).hexdigest(),
                  'runtime_source_sha256': hashlib.sha256((REPO/'src/arena/judge_runtime.py').read_bytes()).hexdigest(),
