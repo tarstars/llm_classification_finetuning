@@ -39,3 +39,11 @@ Frozen-model confirmation log loss: **0.96236**; accuracy **53.06%**.
 Model choices and temperature were fixed before this evaluation.
 
 Submission **57883867**: SubmissionStatus.COMPLETE; official public score: **0.97025**.
+
+## Development error audit after model freezing
+
+At 1,024 tokens, 20.05% of development examples lose content.
+Their calibrated log loss is 1.02683, versus 0.95428 for uncut examples.
+A 2,048-token budget would reduce the truncation fraction to 8.95% under the same packing rules.
+These groups differ in difficulty. This is an observational diagnostic,
+not a measured quality gain from longer context. Confirmation was not used.

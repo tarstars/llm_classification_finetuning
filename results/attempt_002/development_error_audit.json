@@ -1,0 +1,99 @@
+{
+  "model_job": "qwen4b1024",
+  "partition": "development",
+  "confirmation_used": false,
+  "preprocessing_sha256": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+  "tokenizer_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+  "rows": 5746,
+  "temperature": 0.7220597450036835,
+  "overall": {
+    "rows": 5746,
+    "fraction": 1.0,
+    "log_loss": 0.9688254519759955,
+    "accuracy": 0.5273233553776541
+  },
+  "by_truncation": {
+    "no_field_truncated": {
+      "rows": 4594,
+      "fraction": 0.79951270449008,
+      "log_loss": 0.9542809657875189,
+      "accuracy": 0.5372224640835873
+    },
+    "any_field_truncated": {
+      "rows": 1152,
+      "fraction": 0.20048729550991995,
+      "log_loss": 1.0268266408213609,
+      "accuracy": 0.4878472222222222
+    },
+    "answer_truncated": {
+      "rows": 952,
+      "fraction": 0.16568047337278108,
+      "log_loss": 1.0234515701144058,
+      "accuracy": 0.4852941176470588
+    },
+    "prompt_truncated": {
+      "rows": 418,
+      "fraction": 0.07274625826662026,
+      "log_loss": 1.0409902056648395,
+      "accuracy": 0.47129186602870815
+    }
+  },
+  "prospective_retention_only": {
+    "1024": {
+      "any_field_truncated_fraction": 0.20048729550991995,
+      "answer_truncated_fraction": 0.16568047337278108,
+      "prompt_truncated_fraction": 0.07274625826662026
+    },
+    "2048": {
+      "any_field_truncated_fraction": 0.08945353289244692,
+      "answer_truncated_fraction": 0.027845457709711103,
+      "prompt_truncated_fraction": 0.06874347372084928
+    },
+    "4096": {
+      "any_field_truncated_fraction": 0.07170205360250609,
+      "answer_truncated_fraction": 0.00435085276714236,
+      "prompt_truncated_fraction": 0.06874347372084928
+    }
+  },
+  "by_true_class": {
+    "winner_model_a": {
+      "rows": 2006,
+      "fraction": 0.34911242603550297,
+      "log_loss": 0.9483985971476837,
+      "accuracy": 0.5598205383848455,
+      "prediction_fraction": 0.3482422554820745
+    },
+    "winner_model_b": {
+      "rows": 1965,
+      "fraction": 0.3419770274973895,
+      "log_loss": 0.9603955879903291,
+      "accuracy": 0.5603053435114503,
+      "prediction_fraction": 0.3480682213713888
+    },
+    "winner_tie": {
+      "rows": 1775,
+      "fraction": 0.3089105464671075,
+      "log_loss": 1.0012428905773634,
+      "accuracy": 0.4540845070422535,
+      "prediction_fraction": 0.30368952314653674
+    }
+  },
+  "confusion_matrix_true_rows_predicted_columns": [
+    [
+      1123,
+      412,
+      471
+    ],
+    [
+      396,
+      1101,
+      468
+    ],
+    [
+      482,
+      487,
+      806
+    ]
+  ],
+  "caveat": "Length groups differ in difficulty; this is observational, not evidence that longer context improves quality. Larger-context quality has not been evaluated."
+}

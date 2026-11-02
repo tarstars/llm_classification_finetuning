@@ -46,6 +46,24 @@ The next research question is whether additional training beyond 0.61 epochs and
 more retained context improve development quality. These are proposed experiments;
 0.8 remains an unachieved target, with no guarantee from the current results.
 
+Post-freeze development audit (2026-11-02): exact saved tokenizer, calibrated frozen
+predictions, and all 5,746 development rows; confirmation was not used. At 1,024
+tokens, 1,152 examples (20.05%) lose content; log loss 1.02683, versus 0.95428 for
+the 4,594 uncut examples. Under the same packing policy, 2,048 tokens reduces any
+truncation to 8.95%, and answer truncation from 16.57% to 2.78%. The prompt cap of
+256 tokens remains, so some long questions still lose content. The groups differ
+in difficulty, so this does not prove a quality gain from longer context.
+
+Recommended first follow-up: evaluate the SAME frozen LoRA at 2,048 tokens on
+development, starting with examples whose packed inputs change. Existing saved
+predictions can be reused where token IDs are unchanged. Compare paired losses
+and calibration on the same rows, and record runtime/memory. This needs inference
+compute rather than new training. If useful, test matched longer-context training.
+Also consider a separate exact continuation of the 1,024-token run to one full
+epoch; roughly four more training hours plus evaluation at measured throughput.
+Late raw selection losses were 0.98399 (600), 0.97870 (800), 0.98186 (877), so extra
+training may give only modest gains. No new GPU experiment has been launched.
+
 ## Frozen work — attempt 001
 
 ## Completed work

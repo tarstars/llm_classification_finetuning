@@ -22,6 +22,32 @@ See [aggregate results](../ATTEMPT_002_RESULTS.md) and
 All artifacts and model choices are frozen. Further tuning requires a separately
 declared experiment and must not describe this confirmation partition as unseen.
 
+## Post-freeze diagnostics and proposed follow-up
+
+`scripts/audit_joint_errors.py` compares frozen development predictions with exact
+token-retention flags using the tokenizer saved by the training job. It reproduces
+the calibrated development loss (0.96883) before deriving conditional metrics.
+At 1,024 tokens, 20.05% of development comparisons lose content; their log loss is
+1.02683, versus 0.95428 for uncut comparisons. A 2,048-token budget would reduce any
+truncation to 8.95% and answer truncation from 16.57% to 2.78%. Some prompt truncation
+remains because the packing policy caps questions at 256 tokens. These groups have
+different difficulty; longer-context model quality has not yet been evaluated.
+
+The first proposed follow-up is a separate 2,048-token inference ablation with the
+same frozen adapter, restricted to development. Reuse saved probabilities only for
+inputs with identical token IDs; evaluate both orientations for changed inputs.
+Compare paired development losses before and after equivalent calibration. This
+can test retained context without training a new model. Keep it separate from the
+frozen attempt-002 result and do not reuse confirmation as an unseen selection set.
+
+A second controlled experiment could finish one training epoch at 1,024 tokens.
+The extra 561 steps imply about four training hours plus evaluation, based on the
+observed 25-second average step. Resume a full checkpoint with optimizer/scheduler
+state rather than treating the final adapter as exact continuation. See the
+[Trainer resume API](https://huggingface.co/docs/transformers/main_classes/trainer#transformers.Trainer.train).
+The small improvement from selection step 600 to 800, followed by a slight worsening
+at 877, means that more training is not an established large source of gains.
+
 ## Model and access
 
 Hardware pilots used the general **Qwen/Qwen3-8B** checkpoint. Their measured speed

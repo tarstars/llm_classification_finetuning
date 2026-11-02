@@ -109,6 +109,17 @@ if submitted.exists() and own_submission.exists():
     if current:
         report+=[f"Submission **{reference}**: {current.get('status')}; official public score: **{current.get('public_score') or 'pending'}**."]
 else:report+=['No official attempt-002 score is available yet.']
+audit_path=dest/'development_error_audit.json'
+if audit_path.exists():
+    audit=json.loads(audit_path.read_text())
+    cut=audit['by_truncation']['any_field_truncated']
+    uncut=audit['by_truncation']['no_field_truncated']
+    report+=['','## Development error audit after model freezing','',
+        f"At 1,024 tokens, {cut['fraction']:.2%} of development examples lose content.",
+        f"Their calibrated log loss is {cut['log_loss']:.5f}, versus {uncut['log_loss']:.5f} for uncut examples.",
+        f"A 2,048-token budget would reduce the truncation fraction to {audit['prospective_retention_only']['2048']['any_field_truncated_fraction']:.2%} under the same packing rules.",
+        'These groups differ in difficulty. This is an observational diagnostic,',
+        'not a measured quality gain from longer context. Confirmation was not used.']
 (REPO/'ATTEMPT_002_RESULTS.md').write_text('\n'.join(report)+'\n')
 
 setup='''from pathlib import Path
@@ -229,6 +240,21 @@ for entry in index['jobs']:
             print(entry['job'],name);display(json.loads(path.read_text()))
     scores=RESULTS/entry['job']/'submissions.json'
     if scores.exists():display(pd.DataFrame(json.loads(scores.read_text())))
+'''),md('''## Development error audit after model freezing
+
+This audit uses the frozen model's saved development probabilities and its exact
+training tokenizer. It does not use confirmation examples. Group differences can
+reflect difficulty as well as missing content; they do not establish that longer
+context improves predictions. The 2,048/4,096 rows describe prospective retention,
+not model quality measured at those lengths.
+'''),code('''audit_path=RESULTS/'development_error_audit.json'
+if audit_path.exists():
+    audit=json.loads(audit_path.read_text())
+    display(pd.DataFrame(audit['by_truncation']).T.round(5))
+    display(pd.DataFrame(audit['prospective_retention_only']).T.round(5))
+    display(pd.DataFrame(audit['by_true_class']).T.round(5))
+    print(audit['caveat'])
+else:print('Development error audit has not been run.')
 ''')]
 notebook=nbf.v4.new_notebook(cells=cells,metadata={
     'kernelspec':{'name':'arena-llm','display_name':'Arena LLM (uv)','language':'python'}})
