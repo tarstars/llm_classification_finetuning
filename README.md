@@ -27,6 +27,9 @@ Attempt 004 compares **300 blind judgments by the current Codex assistant** with
 our saved models on the same examples: **56.33%** versus Gemma's **53.33%**, an
 uncertain difference. See the [audit and results](ATTEMPT_004_RESULTS.md).
 
+The [target-association audit](TARGET_AUDIT.md) tests IDs, model identities, answer
+length, refusals, duplicates and target-derived EDA metadata for leakage.
+
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
 **49.63% accuracy**. Always predicting the most frequent training class gives
@@ -43,6 +46,7 @@ classifier comparison and all baselines.
 - [Prompted general-model judge](notebooks/08_prompted_judge.ipynb)
 - [Fixed confidence for a hard judge prediction](notebooks/09_fixed_judge_confidence.ipynb)
 - [300 blind judgments by the current assistant](notebooks/10_blind_self_judge.ipynb)
+- [Target associations and leakage audit](notebooks/11_target_associations_and_leakage.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary

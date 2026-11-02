@@ -1,0 +1,7081 @@
+{
+  "attempt": "005_target_audit",
+  "rows": 57477,
+  "class_names": [
+    "winner_model_a",
+    "winner_model_b",
+    "winner_tie"
+  ],
+  "splits": {
+    "train": 45985,
+    "dev": 5746,
+    "confirmation": 5746
+  },
+  "models": [
+    {
+      "model": "training_prior",
+      "features": [],
+      "note": "Train-partition frequencies only",
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876452,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "model": "id_and_position_only",
+      "features": [
+        "id",
+        "row_position",
+        "id_mod_2",
+        "row_mod_2",
+        "id_mod_4",
+        "row_mod_4",
+        "id_mod_8",
+        "row_mod_8",
+        "id_mod_10",
+        "row_mod_10",
+        "id_mod_16",
+        "row_mod_16",
+        "id_mod_32",
+        "row_mod_32",
+        "id_mod_100",
+        "row_mod_100",
+        "id_mod_256",
+        "row_mod_256"
+      ],
+      "note": "Negative-control metadata; no text or model identity",
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.1005414987609865,
+          "accuracy": 0.3409328228332753,
+          "macro_f1": 0.30777392816743415,
+          "confusion_matrix": [
+            [
+              966,
+              864,
+              176
+            ],
+            [
+              943,
+              828,
+              194
+            ],
+            [
+              903,
+              707,
+              165
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.1030241314868892,
+          "accuracy": 0.3320570831883049,
+          "macro_f1": 0.30011347078134215,
+          "confusion_matrix": [
+            [
+              975,
+              802,
+              229
+            ],
+            [
+              999,
+              769,
+              196
+            ],
+            [
+              859,
+              753,
+              164
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "model": "length_only",
+      "features": [
+        "prompt_chars",
+        "response_a_chars",
+        "response_b_chars",
+        "response_word_difference",
+        "log_answer_word_ratio",
+        "answer_length_ratio"
+      ],
+      "note": "Legitimate but shallow answer-length information; no identities",
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0489344859148775,
+          "accuracy": 0.4526627218934911,
+          "macro_f1": 0.44748746268341816,
+          "confusion_matrix": [
+            [
+              1059,
+              502,
+              445
+            ],
+            [
+              620,
+              917,
+              428
+            ],
+            [
+              618,
+              532,
+              625
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0493794641701195,
+          "accuracy": 0.45231465367211976,
+          "macro_f1": 0.4468357550139537,
+          "confusion_matrix": [
+            [
+              1050,
+              550,
+              406
+            ],
+            [
+              590,
+              935,
+              439
+            ],
+            [
+              646,
+              516,
+              614
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "model": "input_structure",
+      "features": [
+        "prompt_chars",
+        "prompt_words",
+        "prompt_turns",
+        "prompt_null_turns",
+        "prompt_non_string_turns",
+        "prompt_empty",
+        "prompt_nonascii_fraction",
+        "prompt_code",
+        "prompt_refusal",
+        "prompt_list_count",
+        "prompt_heading_count",
+        "response_a_chars",
+        "response_a_words",
+        "response_a_turns",
+        "response_a_null_turns",
+        "response_a_non_string_turns",
+        "response_a_empty",
+        "response_a_nonascii_fraction",
+        "response_a_code",
+        "response_a_refusal",
+        "response_a_list_count",
+        "response_a_heading_count",
+        "response_b_chars",
+        "response_b_words",
+        "response_b_turns",
+        "response_b_null_turns",
+        "response_b_non_string_turns",
+        "response_b_empty",
+        "response_b_nonascii_fraction",
+        "response_b_code",
+        "response_b_refusal",
+        "response_b_list_count",
+        "response_b_heading_count",
+        "turn_mismatch",
+        "multi_turn",
+        "answer_equal_exact",
+        "answer_equal_whitespace",
+        "one_answer_empty",
+        "both_answers_empty",
+        "one_refusal",
+        "both_refusals",
+        "one_code_answer",
+        "any_code_answer",
+        "wrapper_marker_in_content",
+        "task_code",
+        "task_math",
+        "task_creative",
+        "task_transformation",
+        "task_explanation",
+        "task_tag_count",
+        "answer_length_ratio",
+        "longer_side",
+        "refusal_side",
+        "list_difference",
+        "answer_word_jaccard",
+        "prompt_tokens",
+        "response_a_tokens",
+        "response_b_tokens",
+        "total_content_tokens",
+        "cut_1024_cap256",
+        "prompt_cut_1024_cap256",
+        "answer_cut_1024_cap256",
+        "retained_fraction_1024_cap256",
+        "cut_2048_cap256",
+        "prompt_cut_2048_cap256",
+        "answer_cut_2048_cap256",
+        "retained_fraction_2048_cap256",
+        "cut_2048_cap512",
+        "prompt_cut_2048_cap512",
+        "answer_cut_2048_cap512",
+        "retained_fraction_2048_cap512",
+        "cut_4096_cap256",
+        "prompt_cut_4096_cap256",
+        "answer_cut_4096_cap256",
+        "retained_fraction_4096_cap256",
+        "cut_4096_cap1024",
+        "prompt_cut_4096_cap1024",
+        "answer_cut_4096_cap1024",
+        "retained_fraction_4096_cap1024",
+        "log_answer_word_ratio",
+        "response_word_difference",
+        "refusal_difference",
+        "empty_difference"
+      ],
+      "note": "Explicit allowlist excludes all label-derived and identity fields",
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0369963550720165,
+          "accuracy": 0.46206056387051864,
+          "macro_f1": 0.4538928936638369,
+          "confusion_matrix": [
+            [
+              1060,
+              571,
+              375
+            ],
+            [
+              607,
+              1025,
+              333
+            ],
+            [
+              619,
+              586,
+              570
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.03059146827419,
+          "accuracy": 0.47058823529411764,
+          "macro_f1": 0.4638805338637628,
+          "confusion_matrix": [
+            [
+              1107,
+              554,
+              345
+            ],
+            [
+              603,
+              981,
+              380
+            ],
+            [
+              626,
+              534,
+              616
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "model": "model_identity_only",
+      "features": [
+        "model_a",
+        "model_b"
+      ],
+      "note": "DIAGNOSTIC ONLY: names absent from test; no answer text or target-derived inputs",
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.042011453875924,
+          "accuracy": 0.4457013574660634,
+          "macro_f1": 0.394590138518504,
+          "confusion_matrix": [
+            [
+              1221,
+              637,
+              148
+            ],
+            [
+              649,
+              1173,
+              143
+            ],
+            [
+              836,
+              772,
+              167
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.041853470428062,
+          "accuracy": 0.4514444831186913,
+          "macro_f1": 0.4000277766368712,
+          "confusion_matrix": [
+            [
+              1246,
+              609,
+              151
+            ],
+            [
+              632,
+              1178,
+              154
+            ],
+            [
+              788,
+              818,
+              170
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "model": "model_pair_frequency",
+      "features": [
+        "model_a",
+        "model_b"
+      ],
+      "note": "DIAGNOSTIC ONLY: train-only smoothed pair counts; names absent from test",
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0548943926726844,
+          "accuracy": 0.4352593108249217,
+          "macro_f1": 0.41079092013173485,
+          "confusion_matrix": [
+            [
+              1123,
+              576,
+              307
+            ],
+            [
+              621,
+              1047,
+              297
+            ],
+            [
+              732,
+              712,
+              331
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0532801441234632,
+          "accuracy": 0.43578141315697877,
+          "macro_f1": 0.4110233301479478,
+          "confusion_matrix": [
+            [
+              1104,
+              579,
+              323
+            ],
+            [
+              599,
+              1073,
+              292
+            ],
+            [
+              731,
+              718,
+              327
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "model": "identity_plus_structure",
+      "features": [
+        "prompt_chars",
+        "prompt_words",
+        "prompt_turns",
+        "prompt_null_turns",
+        "prompt_non_string_turns",
+        "prompt_empty",
+        "prompt_nonascii_fraction",
+        "prompt_code",
+        "prompt_refusal",
+        "prompt_list_count",
+        "prompt_heading_count",
+        "response_a_chars",
+        "response_a_words",
+        "response_a_turns",
+        "response_a_null_turns",
+        "response_a_non_string_turns",
+        "response_a_empty",
+        "response_a_nonascii_fraction",
+        "response_a_code",
+        "response_a_refusal",
+        "response_a_list_count",
+        "response_a_heading_count",
+        "response_b_chars",
+        "response_b_words",
+        "response_b_turns",
+        "response_b_null_turns",
+        "response_b_non_string_turns",
+        "response_b_empty",
+        "response_b_nonascii_fraction",
+        "response_b_code",
+        "response_b_refusal",
+        "response_b_list_count",
+        "response_b_heading_count",
+        "turn_mismatch",
+        "multi_turn",
+        "answer_equal_exact",
+        "answer_equal_whitespace",
+        "one_answer_empty",
+        "both_answers_empty",
+        "one_refusal",
+        "both_refusals",
+        "one_code_answer",
+        "any_code_answer",
+        "wrapper_marker_in_content",
+        "task_code",
+        "task_math",
+        "task_creative",
+        "task_transformation",
+        "task_explanation",
+        "task_tag_count",
+        "answer_length_ratio",
+        "longer_side",
+        "refusal_side",
+        "list_difference",
+        "answer_word_jaccard",
+        "prompt_tokens",
+        "response_a_tokens",
+        "response_b_tokens",
+        "total_content_tokens",
+        "cut_1024_cap256",
+        "prompt_cut_1024_cap256",
+        "answer_cut_1024_cap256",
+        "retained_fraction_1024_cap256",
+        "cut_2048_cap256",
+        "prompt_cut_2048_cap256",
+        "answer_cut_2048_cap256",
+        "retained_fraction_2048_cap256",
+        "cut_2048_cap512",
+        "prompt_cut_2048_cap512",
+        "answer_cut_2048_cap512",
+        "retained_fraction_2048_cap512",
+        "cut_4096_cap256",
+        "prompt_cut_4096_cap256",
+        "answer_cut_4096_cap256",
+        "retained_fraction_4096_cap256",
+        "cut_4096_cap1024",
+        "prompt_cut_4096_cap1024",
+        "answer_cut_4096_cap1024",
+        "retained_fraction_4096_cap1024",
+        "log_answer_word_ratio",
+        "response_word_difference",
+        "refusal_difference",
+        "empty_difference",
+        "model_a",
+        "model_b"
+      ],
+      "note": "DIAGNOSTIC ONLY: unavailable model names plus legitimate shape descriptors",
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.003388792954438,
+          "accuracy": 0.49512704490080056,
+          "macro_f1": 0.48346685813460377,
+          "confusion_matrix": [
+            [
+              1154,
+              467,
+              385
+            ],
+            [
+              496,
+              1129,
+              340
+            ],
+            [
+              618,
+              595,
+              562
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 0.9919579107354772,
+          "accuracy": 0.5080055690915419,
+          "macro_f1": 0.4963296013022423,
+          "confusion_matrix": [
+            [
+              1199,
+              451,
+              356
+            ],
+            [
+              465,
+              1138,
+              361
+            ],
+            [
+              616,
+              578,
+              582
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "model": "structure_shuffled_training_targets",
+      "features": [
+        "prompt_chars",
+        "prompt_words",
+        "prompt_turns",
+        "prompt_null_turns",
+        "prompt_non_string_turns",
+        "prompt_empty",
+        "prompt_nonascii_fraction",
+        "prompt_code",
+        "prompt_refusal",
+        "prompt_list_count",
+        "prompt_heading_count",
+        "response_a_chars",
+        "response_a_words",
+        "response_a_turns",
+        "response_a_null_turns",
+        "response_a_non_string_turns",
+        "response_a_empty",
+        "response_a_nonascii_fraction",
+        "response_a_code",
+        "response_a_refusal",
+        "response_a_list_count",
+        "response_a_heading_count",
+        "response_b_chars",
+        "response_b_words",
+        "response_b_turns",
+        "response_b_null_turns",
+        "response_b_non_string_turns",
+        "response_b_empty",
+        "response_b_nonascii_fraction",
+        "response_b_code",
+        "response_b_refusal",
+        "response_b_list_count",
+        "response_b_heading_count",
+        "turn_mismatch",
+        "multi_turn",
+        "answer_equal_exact",
+        "answer_equal_whitespace",
+        "one_answer_empty",
+        "both_answers_empty",
+        "one_refusal",
+        "both_refusals",
+        "one_code_answer",
+        "any_code_answer",
+        "wrapper_marker_in_content",
+        "task_code",
+        "task_math",
+        "task_creative",
+        "task_transformation",
+        "task_explanation",
+        "task_tag_count",
+        "answer_length_ratio",
+        "longer_side",
+        "refusal_side",
+        "list_difference",
+        "answer_word_jaccard",
+        "prompt_tokens",
+        "response_a_tokens",
+        "response_b_tokens",
+        "total_content_tokens",
+        "cut_1024_cap256",
+        "prompt_cut_1024_cap256",
+        "answer_cut_1024_cap256",
+        "retained_fraction_1024_cap256",
+        "cut_2048_cap256",
+        "prompt_cut_2048_cap256",
+        "answer_cut_2048_cap256",
+        "retained_fraction_2048_cap256",
+        "cut_2048_cap512",
+        "prompt_cut_2048_cap512",
+        "answer_cut_2048_cap512",
+        "retained_fraction_2048_cap512",
+        "cut_4096_cap256",
+        "prompt_cut_4096_cap256",
+        "answer_cut_4096_cap256",
+        "retained_fraction_4096_cap256",
+        "cut_4096_cap1024",
+        "prompt_cut_4096_cap1024",
+        "answer_cut_4096_cap1024",
+        "retained_fraction_4096_cap1024",
+        "log_answer_word_ratio",
+        "response_word_difference",
+        "refusal_difference",
+        "empty_difference"
+      ],
+      "note": "Negative control; evaluated against actual labels",
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.1030232962887807,
+          "accuracy": 0.3440654368256178,
+          "macro_f1": 0.31486732361475084,
+          "confusion_matrix": [
+            [
+              1054,
+              784,
+              168
+            ],
+            [
+              1058,
+              713,
+              194
+            ],
+            [
+              870,
+              695,
+              210
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.1002964028323452,
+          "accuracy": 0.35276714235990253,
+          "macro_f1": 0.3180692580049238,
+          "confusion_matrix": [
+            [
+              1078,
+              743,
+              185
+            ],
+            [
+              1013,
+              771,
+              180
+            ],
+            [
+              857,
+              741,
+              178
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "univariate_factors": [
+    {
+      "factor": "response_word_difference",
+      "categories": 10,
+      "mutual_information_nats_training": 0.03414060622191413,
+      "cramers_v_all_rows": 0.19092612341842105,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0590392450729844,
+          "accuracy": 0.4467455621301775,
+          "macro_f1": 0.43449715894121316,
+          "confusion_matrix": [
+            [
+              1057,
+              599,
+              350
+            ],
+            [
+              600,
+              1026,
+              339
+            ],
+            [
+              641,
+              650,
+              484
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0600456479553286,
+          "accuracy": 0.447615732683606,
+          "macro_f1": 0.4355830172796901,
+          "confusion_matrix": [
+            [
+              1052,
+              607,
+              347
+            ],
+            [
+              612,
+              1032,
+              320
+            ],
+            [
+              665,
+              623,
+              488
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "ordered_model_pair",
+      "categories": 2409,
+      "mutual_information_nats_training": 0.11762568127947558,
+      "cramers_v_all_rows": 0.3152580572992585,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.062159279940888,
+          "accuracy": 0.4282979463974939,
+          "macro_f1": 0.4026251784069778,
+          "confusion_matrix": [
+            [
+              1177,
+              531,
+              298
+            ],
+            [
+              682,
+              968,
+              315
+            ],
+            [
+              796,
+              663,
+              316
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0600859639556246,
+          "accuracy": 0.4378698224852071,
+          "macro_f1": 0.41221130424482144,
+          "confusion_matrix": [
+            [
+              1171,
+              539,
+              296
+            ],
+            [
+              660,
+              1019,
+              285
+            ],
+            [
+              807,
+              643,
+              326
+            ]
+          ]
+        }
+      },
+      "interpretation": "Unavailable in test"
+    },
+    {
+      "factor": "log_answer_word_ratio",
+      "categories": 10,
+      "mutual_information_nats_training": 0.026387982637475396,
+      "cramers_v_all_rows": 0.16576220845930922,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0689347942583847,
+          "accuracy": 0.43612948137835017,
+          "macro_f1": 0.4219163545479971,
+          "confusion_matrix": [
+            [
+              1025,
+              609,
+              372
+            ],
+            [
+              582,
+              1040,
+              343
+            ],
+            [
+              651,
+              683,
+              441
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0689556447049926,
+          "accuracy": 0.43612948137835017,
+          "macro_f1": 0.42202703332461217,
+          "confusion_matrix": [
+            [
+              1045,
+              601,
+              360
+            ],
+            [
+              579,
+              1019,
+              366
+            ],
+            [
+              683,
+              651,
+              442
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "model_a",
+      "categories": 64,
+      "mutual_information_nats_training": 0.0244407374674894,
+      "cramers_v_all_rows": 0.15548151206839747,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0742825226401467,
+          "accuracy": 0.406021580229725,
+          "macro_f1": 0.3411391894250742,
+          "confusion_matrix": [
+            [
+              1133,
+              800,
+              73
+            ],
+            [
+              768,
+              1129,
+              68
+            ],
+            [
+              878,
+              826,
+              71
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0739435326066125,
+          "accuracy": 0.41855203619909503,
+          "macro_f1": 0.35730685578320914,
+          "confusion_matrix": [
+            [
+              1201,
+              738,
+              67
+            ],
+            [
+              784,
+              1104,
+              76
+            ],
+            [
+              843,
+              833,
+              100
+            ]
+          ]
+        }
+      },
+      "interpretation": "Unavailable in test"
+    },
+    {
+      "factor": "model_b",
+      "categories": 64,
+      "mutual_information_nats_training": 0.023413593571347008,
+      "cramers_v_all_rows": 0.15157627045246425,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0749064204492245,
+          "accuracy": 0.4197702749738949,
+          "macro_f1": 0.3645730873276334,
+          "confusion_matrix": [
+            [
+              1252,
+              629,
+              125
+            ],
+            [
+              837,
+              1033,
+              95
+            ],
+            [
+              950,
+              698,
+              127
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0757103285237615,
+          "accuracy": 0.4067177166724678,
+          "macro_f1": 0.34900225199754403,
+          "confusion_matrix": [
+            [
+              1228,
+              650,
+              128
+            ],
+            [
+              846,
+              1009,
+              109
+            ],
+            [
+              957,
+              719,
+              100
+            ]
+          ]
+        }
+      },
+      "interpretation": "Unavailable in test"
+    },
+    {
+      "factor": "longer_side",
+      "categories": 2,
+      "mutual_information_nats_training": 0.018807134952709775,
+      "cramers_v_all_rows": 0.1933171537901991,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.078169256380912,
+          "accuracy": 0.4263835711799513,
+          "macro_f1": 0.3361682967409698,
+          "confusion_matrix": [
+            [
+              1240,
+              766,
+              0
+            ],
+            [
+              755,
+              1210,
+              0
+            ],
+            [
+              892,
+              883,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.078177745672316,
+          "accuracy": 0.4260355029585799,
+          "macro_f1": 0.3359414236179809,
+          "confusion_matrix": [
+            [
+              1244,
+              762,
+              0
+            ],
+            [
+              760,
+              1204,
+              0
+            ],
+            [
+              928,
+              848,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "list_difference",
+      "categories": 6,
+      "mutual_information_nats_training": 0.012412362493388347,
+      "cramers_v_all_rows": 0.11485547462959653,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0852512339088505,
+          "accuracy": 0.3884441350504699,
+          "macro_f1": 0.2869587918144159,
+          "confusion_matrix": [
+            [
+              1677,
+              329,
+              0
+            ],
+            [
+              1410,
+              555,
+              0
+            ],
+            [
+              1401,
+              374,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0813238075438067,
+          "accuracy": 0.3908806126000696,
+          "macro_f1": 0.29164073922883776,
+          "confusion_matrix": [
+            [
+              1660,
+              346,
+              0
+            ],
+            [
+              1378,
+              586,
+              0
+            ],
+            [
+              1448,
+              328,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_chars",
+      "categories": 10,
+      "mutual_information_nats_training": 0.007684218873060797,
+      "cramers_v_all_rows": 0.09268784381017997,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.08564667371146,
+          "accuracy": 0.40428123912286806,
+          "macro_f1": 0.3735226582555533,
+          "confusion_matrix": [
+            [
+              1194,
+              670,
+              142
+            ],
+            [
+              924,
+              863,
+              178
+            ],
+            [
+              822,
+              687,
+              266
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0854254338820308,
+          "accuracy": 0.4006265227984685,
+          "macro_f1": 0.36757345769007443,
+          "confusion_matrix": [
+            [
+              1187,
+              681,
+              138
+            ],
+            [
+              913,
+              871,
+              180
+            ],
+            [
+              791,
+              741,
+              244
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_words",
+      "categories": 10,
+      "mutual_information_nats_training": 0.007418810278028903,
+      "cramers_v_all_rows": 0.09088126979059137,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0868344849714928,
+          "accuracy": 0.4002784545770971,
+          "macro_f1": 0.3690216833992161,
+          "confusion_matrix": [
+            [
+              1182,
+              684,
+              140
+            ],
+            [
+              928,
+              861,
+              176
+            ],
+            [
+              828,
+              690,
+              257
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0855616642514196,
+          "accuracy": 0.4004524886877828,
+          "macro_f1": 0.36787425620097564,
+          "confusion_matrix": [
+            [
+              1189,
+              684,
+              133
+            ],
+            [
+              920,
+              864,
+              180
+            ],
+            [
+              795,
+              733,
+              248
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_tokens",
+      "categories": 10,
+      "mutual_information_nats_training": 0.007725319011687826,
+      "cramers_v_all_rows": 0.09207455133395273,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0874227978043498,
+          "accuracy": 0.4001044204664114,
+          "macro_f1": 0.36917354639883415,
+          "confusion_matrix": [
+            [
+              1180,
+              692,
+              134
+            ],
+            [
+              922,
+              860,
+              183
+            ],
+            [
+              851,
+              665,
+              259
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0847978881055702,
+          "accuracy": 0.39853811347024015,
+          "macro_f1": 0.36603776906235885,
+          "confusion_matrix": [
+            [
+              1181,
+              701,
+              124
+            ],
+            [
+              919,
+              863,
+              182
+            ],
+            [
+              814,
+              716,
+              246
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_tokens",
+      "categories": 10,
+      "mutual_information_nats_training": 0.007877565059968991,
+      "cramers_v_all_rows": 0.09066583612066434,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0885847567149687,
+          "accuracy": 0.39314305603898364,
+          "macro_f1": 0.3635882221512942,
+          "confusion_matrix": [
+            [
+              1048,
+              764,
+              194
+            ],
+            [
+              867,
+              964,
+              134
+            ],
+            [
+              865,
+              663,
+              247
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0873515389203094,
+          "accuracy": 0.3901844761573268,
+          "macro_f1": 0.36259420336245385,
+          "confusion_matrix": [
+            [
+              1036,
+              779,
+              191
+            ],
+            [
+              885,
+              949,
+              130
+            ],
+            [
+              893,
+              626,
+              257
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_chars",
+      "categories": 10,
+      "mutual_information_nats_training": 0.008251891199074601,
+      "cramers_v_all_rows": 0.09320536426788727,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0886243677817877,
+          "accuracy": 0.3914027149321267,
+          "macro_f1": 0.362783769946114,
+          "confusion_matrix": [
+            [
+              1034,
+              776,
+              196
+            ],
+            [
+              863,
+              964,
+              138
+            ],
+            [
+              876,
+              648,
+              251
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0863579674256472,
+          "accuracy": 0.3967977723633832,
+          "macro_f1": 0.3687790182996105,
+          "confusion_matrix": [
+            [
+              1066,
+              764,
+              176
+            ],
+            [
+              878,
+              952,
+              134
+            ],
+            [
+              913,
+              601,
+              262
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "refusal_difference",
+      "categories": 3,
+      "mutual_information_nats_training": 0.008465540548632036,
+      "cramers_v_all_rows": 0.09407765186779599,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.088787994196445,
+          "accuracy": 0.36808214410024365,
+          "macro_f1": 0.22243083003952568,
+          "confusion_matrix": [
+            [
+              1953,
+              53,
+              0
+            ],
+            [
+              1803,
+              162,
+              0
+            ],
+            [
+              1678,
+              97,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.085796302722413,
+          "accuracy": 0.3696484510964149,
+          "macro_f1": 0.22590305200190466,
+          "confusion_matrix": [
+            [
+              1949,
+              57,
+              0
+            ],
+            [
+              1789,
+              175,
+              0
+            ],
+            [
+              1694,
+              82,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_equal_whitespace",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0029201813330017607,
+      "cramers_v_all_rows": 0.09045745375218624,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0895446185934268,
+          "accuracy": 0.3574660633484163,
+          "macro_f1": 0.19176389480612113,
+          "confusion_matrix": [
+            [
+              2004,
+              0,
+              2
+            ],
+            [
+              1964,
+              0,
+              1
+            ],
+            [
+              1725,
+              0,
+              50
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0909406955768055,
+          "accuracy": 0.355899756352245,
+          "macro_f1": 0.1877265858726184,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1963,
+              0,
+              1
+            ],
+            [
+              1737,
+              0,
+              39
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_words",
+      "categories": 10,
+      "mutual_information_nats_training": 0.007881126017281359,
+      "cramers_v_all_rows": 0.09055942243297357,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.089584519778767,
+          "accuracy": 0.3901844761573268,
+          "macro_f1": 0.3620782248315695,
+          "confusion_matrix": [
+            [
+              1037,
+              774,
+              195
+            ],
+            [
+              868,
+              951,
+              146
+            ],
+            [
+              864,
+              657,
+              254
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0870505310729048,
+          "accuracy": 0.39383919248172644,
+          "macro_f1": 0.366089731696502,
+          "confusion_matrix": [
+            [
+              1048,
+              776,
+              182
+            ],
+            [
+              873,
+              955,
+              136
+            ],
+            [
+              907,
+              609,
+              260
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_equal_exact",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0027832005123717743,
+      "cramers_v_all_rows": 0.08895683409759378,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0895930552594382,
+          "accuracy": 0.3574660633484163,
+          "macro_f1": 0.19176389480612113,
+          "confusion_matrix": [
+            [
+              2004,
+              0,
+              2
+            ],
+            [
+              1964,
+              0,
+              1
+            ],
+            [
+              1725,
+              0,
+              50
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0911503683383517,
+          "accuracy": 0.35572572224155935,
+          "macro_f1": 0.1873446819240815,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1963,
+              0,
+              1
+            ],
+            [
+              1738,
+              0,
+              38
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "total_content_tokens",
+      "categories": 10,
+      "mutual_information_nats_training": 0.003970247936579033,
+      "cramers_v_all_rows": 0.07017985452147177,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.089959386568838,
+          "accuracy": 0.3717368604246432,
+          "macro_f1": 0.32092996038705773,
+          "confusion_matrix": [
+            [
+              1472,
+              205,
+              329
+            ],
+            [
+              1435,
+              195,
+              335
+            ],
+            [
+              1152,
+              154,
+              469
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.089492178676472,
+          "accuracy": 0.3729550991994431,
+          "macro_f1": 0.3234196514069138,
+          "confusion_matrix": [
+            [
+              1468,
+              222,
+              316
+            ],
+            [
+              1440,
+              199,
+              325
+            ],
+            [
+              1149,
+              151,
+              476
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_word_jaccard",
+      "categories": 10,
+      "mutual_information_nats_training": 0.009025761847122532,
+      "cramers_v_all_rows": 0.09316609693060393,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0913082207165135,
+          "accuracy": 0.3651235642185868,
+          "macro_f1": 0.3425551760362995,
+          "confusion_matrix": [
+            [
+              1231,
+              436,
+              339
+            ],
+            [
+              1219,
+              418,
+              328
+            ],
+            [
+              983,
+              343,
+              449
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0923281087908085,
+          "accuracy": 0.3597285067873303,
+          "macro_f1": 0.3358718413698789,
+          "confusion_matrix": [
+            [
+              1230,
+              429,
+              347
+            ],
+            [
+              1239,
+              382,
+              343
+            ],
+            [
+              1003,
+              318,
+              455
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_length_ratio",
+      "categories": 10,
+      "mutual_information_nats_training": 0.0037766544719004397,
+      "cramers_v_all_rows": 0.0640440133265737,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0925310280720097,
+          "accuracy": 0.3632091890010442,
+          "macro_f1": 0.33550266295677394,
+          "confusion_matrix": [
+            [
+              1029,
+              207,
+              770
+            ],
+            [
+              1034,
+              221,
+              710
+            ],
+            [
+              794,
+              144,
+              837
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0916157319415671,
+          "accuracy": 0.3675600417681866,
+          "macro_f1": 0.33997271652473354,
+          "confusion_matrix": [
+            [
+              1051,
+              232,
+              723
+            ],
+            [
+              1022,
+              227,
+              715
+            ],
+            [
+              798,
+              144,
+              834
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_refusal",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0034972216819045415,
+      "cramers_v_all_rows": 0.0836051624664657,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.093810339920021,
+          "accuracy": 0.36494953010790115,
+          "macro_f1": 0.22845946583158563,
+          "confusion_matrix": [
+            [
+              1897,
+              109,
+              0
+            ],
+            [
+              1765,
+              200,
+              0
+            ],
+            [
+              1594,
+              181,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0914041393470129,
+          "accuracy": 0.3727810650887574,
+          "macro_f1": 0.23782427112217128,
+          "confusion_matrix": [
+            [
+              1913,
+              93,
+              0
+            ],
+            [
+              1735,
+              229,
+              0
+            ],
+            [
+              1604,
+              172,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "refusal_side",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0034972216819045415,
+      "cramers_v_all_rows": 0.0836051624664657,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.093810339920021,
+          "accuracy": 0.36494953010790115,
+          "macro_f1": 0.22845946583158563,
+          "confusion_matrix": [
+            [
+              1897,
+              109,
+              0
+            ],
+            [
+              1765,
+              200,
+              0
+            ],
+            [
+              1594,
+              181,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0914041393470129,
+          "accuracy": 0.3727810650887574,
+          "macro_f1": 0.23782427112217128,
+          "confusion_matrix": [
+            [
+              1913,
+              93,
+              0
+            ],
+            [
+              1735,
+              229,
+              0
+            ],
+            [
+              1604,
+              172,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_refusal",
+      "categories": 2,
+      "mutual_information_nats_training": 0.003492213546249512,
+      "cramers_v_all_rows": 0.0804810708225616,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0938130366775298,
+          "accuracy": 0.3609467455621302,
+          "macro_f1": 0.22869189989911462,
+          "confusion_matrix": [
+            [
+              213,
+              1793,
+              0
+            ],
+            [
+              104,
+              1861,
+              0
+            ],
+            [
+              157,
+              1618,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0939982521830562,
+          "accuracy": 0.35920640445527324,
+          "macro_f1": 0.22692845548785376,
+          "confusion_matrix": [
+            [
+              208,
+              1798,
+              0
+            ],
+            [
+              108,
+              1856,
+              0
+            ],
+            [
+              172,
+              1604,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_list_count",
+      "categories": 4,
+      "mutual_information_nats_training": 0.0025760066526254594,
+      "cramers_v_all_rows": 0.05270559387694602,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0941091282484907,
+          "accuracy": 0.3705186216498434,
+          "macro_f1": 0.2865869656318994,
+          "confusion_matrix": [
+            [
+              750,
+              1256,
+              0
+            ],
+            [
+              586,
+              1379,
+              0
+            ],
+            [
+              505,
+              1270,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.093709830827645,
+          "accuracy": 0.37399930386355723,
+          "macro_f1": 0.28983147908069745,
+          "confusion_matrix": [
+            [
+              771,
+              1235,
+              0
+            ],
+            [
+              586,
+              1378,
+              0
+            ],
+            [
+              525,
+              1251,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_list_count",
+      "categories": 4,
+      "mutual_information_nats_training": 0.002912657180941053,
+      "cramers_v_all_rows": 0.054223794544665395,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.094211463930242,
+          "accuracy": 0.3726070309780717,
+          "macro_f1": 0.2876242777946168,
+          "confusion_matrix": [
+            [
+              1398,
+              608,
+              0
+            ],
+            [
+              1222,
+              743,
+              0
+            ],
+            [
+              1258,
+              517,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0946563487361263,
+          "accuracy": 0.37121475809258614,
+          "macro_f1": 0.2864284183015288,
+          "confusion_matrix": [
+            [
+              1395,
+              611,
+              0
+            ],
+            [
+              1226,
+              738,
+              0
+            ],
+            [
+              1254,
+              522,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "both_refusals",
+      "categories": 2,
+      "mutual_information_nats_training": 0.002096236926562259,
+      "cramers_v_all_rows": 0.06750861104372888,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0953471773009806,
+          "accuracy": 0.3539853811347024,
+          "macro_f1": 0.20031365556378974,
+          "confusion_matrix": [
+            [
+              1950,
+              0,
+              56
+            ],
+            [
+              1927,
+              0,
+              38
+            ],
+            [
+              1691,
+              0,
+              84
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0947222184429217,
+          "accuracy": 0.35851026801253044,
+          "macro_f1": 0.20412087585626523,
+          "confusion_matrix": [
+            [
+              1970,
+              0,
+              36
+            ],
+            [
+              1910,
+              0,
+              54
+            ],
+            [
+              1686,
+              0,
+              90
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "task_tag_count",
+      "categories": 6,
+      "mutual_information_nats_training": 0.00047021243932322257,
+      "cramers_v_all_rows": 0.022738516300838937,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.096528366871908,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0967038276229977,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "task_explanation",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0003183785170805531,
+      "cramers_v_all_rows": 0.02758932644252032,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.09658095939242,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0966101122385719,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "task_creative",
+      "categories": 2,
+      "mutual_information_nats_training": 0.00015623187908467284,
+      "cramers_v_all_rows": 0.019271358946168327,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0967928605230606,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0970966874134143,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "task_math",
+      "categories": 2,
+      "mutual_information_nats_training": 0.00011752371028165079,
+      "cramers_v_all_rows": 0.018250741108842252,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.096921562808197,
+          "accuracy": 0.3512008353637313,
+          "macro_f1": 0.1862079529711608,
+          "confusion_matrix": [
+            [
+              1979,
+              0,
+              27
+            ],
+            [
+              1936,
+              0,
+              29
+            ],
+            [
+              1736,
+              0,
+              39
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0969195807532013,
+          "accuracy": 0.3501566306996171,
+          "macro_f1": 0.189621747176327,
+          "confusion_matrix": [
+            [
+              1960,
+              0,
+              46
+            ],
+            [
+              1932,
+              0,
+              32
+            ],
+            [
+              1724,
+              0,
+              52
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "one_refusal",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0003084881970047276,
+      "cramers_v_all_rows": 0.02546501349560874,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0969538715658962,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0966765213692837,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_cut_2048_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0001524288774605309,
+      "cramers_v_all_rows": 0.019328565715162976,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0970550575603595,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0967960565912453,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_cut_4096_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0001524288774605309,
+      "cramers_v_all_rows": 0.019328565715162976,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0970550575603595,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0967960565912453,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "empty_difference",
+      "categories": 3,
+      "mutual_information_nats_training": 0.00024036548681332653,
+      "cramers_v_all_rows": 0.014428735503580188,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0970682435325745,
+          "accuracy": 0.34946049425687437,
+          "macro_f1": 0.17323699099660528,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1963,
+              2,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972583130571705,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_empty",
+      "categories": 2,
+      "mutual_information_nats_training": 4.371096741456054e-05,
+      "cramers_v_all_rows": 0.01041725130285745,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0970923581067615,
+          "accuracy": 0.34963452836756004,
+          "macro_f1": 0.17366296190187622,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1962,
+              3,
+              0
+            ],
+            [
+              1772,
+              3,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972337076152985,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "both_answers_empty",
+      "categories": 2,
+      "mutual_information_nats_training": 5.8568091033078156e-05,
+      "cramers_v_all_rows": 0.012754011068575901,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0970993155131143,
+          "accuracy": 0.34963452836756004,
+          "macro_f1": 0.17372790976466976,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              1
+            ],
+            [
+              1772,
+              0,
+              3
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972337510227246,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "cut_4096_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 0.00012515007518187904,
+      "cramers_v_all_rows": 0.01748236729886459,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971010238569274,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.096872703075483,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_code",
+      "categories": 2,
+      "mutual_information_nats_training": 0.00022589566513420145,
+      "cramers_v_all_rows": 0.023216788937946996,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971115057762315,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0964966741483704,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "cut_2048_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 3.42800518240427e-05,
+      "cramers_v_all_rows": 0.010527761587835374,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.097113336586938,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0971327675646951,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_null_turns",
+      "categories": 3,
+      "mutual_information_nats_training": 9.335555528809018e-05,
+      "cramers_v_all_rows": 0.007938603213503944,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971406676928488,
+          "accuracy": 0.34963452836756004,
+          "macro_f1": 0.17408090903535992,
+          "confusion_matrix": [
+            [
+              2005,
+              0,
+              1
+            ],
+            [
+              1963,
+              0,
+              2
+            ],
+            [
+              1771,
+              0,
+              4
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0973546594439156,
+          "accuracy": 0.34841628959276016,
+          "macro_f1": 0.17234848484848486,
+          "confusion_matrix": [
+            [
+              2002,
+              0,
+              4
+            ],
+            [
+              1960,
+              0,
+              4
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_cut_1024_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0001456474194043017,
+      "cramers_v_all_rows": 0.01740360507341835,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971753994435842,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0969494199576704,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id_mod_4",
+      "categories": 4,
+      "mutual_information_nats_training": 6.44403406002414e-05,
+      "cramers_v_all_rows": 0.005411289561161543,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971789786302788,
+          "accuracy": 0.3485903237034459,
+          "macro_f1": 0.2555897344900387,
+          "confusion_matrix": [
+            [
+              1515,
+              491,
+              0
+            ],
+            [
+              1477,
+              488,
+              0
+            ],
+            [
+              1325,
+              450,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0976977348315344,
+          "accuracy": 0.33919248172641836,
+          "macro_f1": 0.24742537034290832,
+          "confusion_matrix": [
+            [
+              1489,
+              517,
+              0
+            ],
+            [
+              1504,
+              460,
+              0
+            ],
+            [
+              1348,
+              428,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_empty",
+      "categories": 2,
+      "mutual_information_nats_training": 8.374929616730372e-05,
+      "cramers_v_all_rows": 0.011424158069723725,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971809815695397,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972093260827696,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_refusal",
+      "categories": 2,
+      "mutual_information_nats_training": 1.372643732753219e-05,
+      "cramers_v_all_rows": 0.006944215665978237,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.097181736194068,
+          "accuracy": 0.34946049425687437,
+          "macro_f1": 0.17387224081575092,
+          "confusion_matrix": [
+            [
+              2004,
+              2,
+              0
+            ],
+            [
+              1961,
+              4,
+              0
+            ],
+            [
+              1773,
+              2,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0971819346677443,
+          "accuracy": 0.34963452836756004,
+          "macro_f1": 0.1736417067707681,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1961,
+              3,
+              0
+            ],
+            [
+              1774,
+              2,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "cut_1024_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 8.318604633170135e-05,
+      "cramers_v_all_rows": 0.011934368212252796,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971836875474634,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972610421545244,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "one_answer_empty",
+      "categories": 2,
+      "mutual_information_nats_training": 4.2898255694834536e-05,
+      "cramers_v_all_rows": 0.007283580562597925,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971871075383193,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972773081980418,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "cut_2048_cap512",
+      "categories": 2,
+      "mutual_information_nats_training": 1.678894710012424e-05,
+      "cramers_v_all_rows": 0.0058851888279795785,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971878554552634,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972262578010403,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_null_turns",
+      "categories": 3,
+      "mutual_information_nats_training": 8.821701953625654e-06,
+      "cramers_v_all_rows": 0.003807209025389675,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971912187344637,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972142095371509,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_mod_8",
+      "categories": 8,
+      "mutual_information_nats_training": 0.00012070135298600237,
+      "cramers_v_all_rows": 0.011026198096732298,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0971941124867068,
+          "accuracy": 0.34580577793247474,
+          "macro_f1": 0.25118842193606933,
+          "confusion_matrix": [
+            [
+              1530,
+              476,
+              0
+            ],
+            [
+              1508,
+              457,
+              0
+            ],
+            [
+              1342,
+              433,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0970824412303435,
+          "accuracy": 0.3505046989209885,
+          "macro_f1": 0.2566901668003299,
+          "confusion_matrix": [
+            [
+              1528,
+              478,
+              0
+            ],
+            [
+              1478,
+              486,
+              0
+            ],
+            [
+              1342,
+              434,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "one_code_answer",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0001941095582110447,
+      "cramers_v_all_rows": 0.019558232706132887,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972050387906194,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0969519738143365,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_null_turns",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_non_string_turns",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_empty",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_nonascii_fraction",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_list_count",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_heading_count",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_non_string_turns",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_heading_count",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_non_string_turns",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_heading_count",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "turn_mismatch",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "retained_fraction_2048_cap256",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "retained_fraction_2048_cap512",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "retained_fraction_4096_cap256",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "retained_fraction_4096_cap1024",
+      "categories": 1,
+      "mutual_information_nats_training": 0.0,
+      "cramers_v_all_rows": 0.0,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972160902484214,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336987876448,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "wrapper_marker_in_content",
+      "categories": 2,
+      "mutual_information_nats_training": 2.7588785305426828e-05,
+      "cramers_v_all_rows": 0.005587723556543096,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972161006484347,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972336981257635,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_cut_2048_cap512",
+      "categories": 2,
+      "mutual_information_nats_training": 9.576294617624076e-05,
+      "cramers_v_all_rows": 0.013167670271517965,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.097216481128386,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0971373380606695,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id_mod_2",
+      "categories": 2,
+      "mutual_information_nats_training": 5.837975788569594e-06,
+      "cramers_v_all_rows": 0.0018331857167784384,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972273568111512,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0973005624305283,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id_mod_8",
+      "categories": 8,
+      "mutual_information_nats_training": 0.00010092328925380423,
+      "cramers_v_all_rows": 0.007662979839139698,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972343544068313,
+          "accuracy": 0.3501566306996171,
+          "macro_f1": 0.22818770859299653,
+          "confusion_matrix": [
+            [
+              1768,
+              238,
+              0
+            ],
+            [
+              1721,
+              244,
+              0
+            ],
+            [
+              1546,
+              229,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097725079390912,
+          "accuracy": 0.3442394709363035,
+          "macro_f1": 0.2246978879997602,
+          "confusion_matrix": [
+            [
+              1736,
+              270,
+              0
+            ],
+            [
+              1722,
+              242,
+              0
+            ],
+            [
+              1561,
+              215,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "retained_fraction_1024_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 1.037117016587652e-05,
+      "cramers_v_all_rows": 0.004594436654515416,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972359234949591,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0971940956021868,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_cut_4096_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 3.0855229539806205e-05,
+      "cramers_v_all_rows": 0.006790954372866114,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972484201950508,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972212426543788,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_cut_4096_cap1024",
+      "categories": 2,
+      "mutual_information_nats_training": 1.1861063196392727e-05,
+      "cramers_v_all_rows": 0.003683183093616921,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.097254149820868,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972237179132238,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_mod_10",
+      "categories": 10,
+      "mutual_information_nats_training": 0.00022644288383413813,
+      "cramers_v_all_rows": 0.014834273999281233,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972600340828702,
+          "accuracy": 0.34528367560041767,
+          "macro_f1": 0.26941450218128216,
+          "confusion_matrix": [
+            [
+              1198,
+              808,
+              0
+            ],
+            [
+              1179,
+              786,
+              0
+            ],
+            [
+              1097,
+              678,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972433463759448,
+          "accuracy": 0.3485903237034459,
+          "macro_f1": 0.272070973289864,
+          "confusion_matrix": [
+            [
+              1207,
+              799,
+              0
+            ],
+            [
+              1168,
+              796,
+              0
+            ],
+            [
+              1083,
+              693,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_code",
+      "categories": 2,
+      "mutual_information_nats_training": 0.00021534766442804498,
+      "cramers_v_all_rows": 0.017147439861475062,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972632554582253,
+          "accuracy": 0.351374869474417,
+          "macro_f1": 0.2462802450522805,
+          "confusion_matrix": [
+            [
+              1645,
+              361,
+              0
+            ],
+            [
+              1591,
+              374,
+              0
+            ],
+            [
+              1442,
+              333,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0975168882187143,
+          "accuracy": 0.3447615732683606,
+          "macro_f1": 0.23921075303703895,
+          "confusion_matrix": [
+            [
+              1635,
+              371,
+              0
+            ],
+            [
+              1618,
+              346,
+              0
+            ],
+            [
+              1471,
+              305,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_cut_1024_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 0.00014846619836908492,
+      "cramers_v_all_rows": 0.015674896356679676,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0972752161442358,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097204633580054,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "any_code_answer",
+      "categories": 2,
+      "mutual_information_nats_training": 0.00013223491470953919,
+      "cramers_v_all_rows": 0.016127295449077282,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.09730475275963,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0969033297175788,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_cut_4096_cap1024",
+      "categories": 2,
+      "mutual_information_nats_training": 1.6024097288170475e-05,
+      "cramers_v_all_rows": 0.0043404627876704556,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.097310831471215,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0971891120401063,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_mod_2",
+      "categories": 2,
+      "mutual_information_nats_training": 1.594386965569905e-05,
+      "cramers_v_all_rows": 0.005296248562709256,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973241301252221,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097114930827957,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "cut_4096_cap1024",
+      "categories": 2,
+      "mutual_information_nats_training": 2.33142474773268e-05,
+      "cramers_v_all_rows": 0.005473120114289285,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973259522998118,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097185598744335,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "task_transformation",
+      "categories": 2,
+      "mutual_information_nats_training": 4.3925516131311515e-05,
+      "cramers_v_all_rows": 0.009657918336247802,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973335187824538,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097005278992679,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_mod_4",
+      "categories": 4,
+      "mutual_information_nats_training": 2.892374577145862e-05,
+      "cramers_v_all_rows": 0.00465272855905242,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973350838269336,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0971436119200577,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_cut_2048_cap512",
+      "categories": 2,
+      "mutual_information_nats_training": 2.8172582072667762e-05,
+      "cramers_v_all_rows": 0.004478167111060347,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973621082330185,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972608787693447,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "answer_cut_2048_cap256",
+      "categories": 2,
+      "mutual_information_nats_training": 3.904095380537209e-05,
+      "cramers_v_all_rows": 0.005753301885063173,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973640744393254,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972744006930464,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_code",
+      "categories": 2,
+      "mutual_information_nats_training": 2.7588919112364607e-05,
+      "cramers_v_all_rows": 0.002229946644875797,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973866958844742,
+          "accuracy": 0.34371736860424645,
+          "macro_f1": 0.21283141217456572,
+          "confusion_matrix": [
+            [
+              1801,
+              205,
+              0
+            ],
+            [
+              1791,
+              174,
+              0
+            ],
+            [
+              1605,
+              170,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0974176526194808,
+          "accuracy": 0.34302123216150365,
+          "macro_f1": 0.2132140367748279,
+          "confusion_matrix": [
+            [
+              1793,
+              213,
+              0
+            ],
+            [
+              1786,
+              178,
+              0
+            ],
+            [
+              1608,
+              168,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "task_code",
+      "categories": 2,
+      "mutual_information_nats_training": 2.7588919112364607e-05,
+      "cramers_v_all_rows": 0.002229946644875797,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973866958844742,
+          "accuracy": 0.34371736860424645,
+          "macro_f1": 0.21283141217456572,
+          "confusion_matrix": [
+            [
+              1801,
+              205,
+              0
+            ],
+            [
+              1791,
+              174,
+              0
+            ],
+            [
+              1605,
+              170,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0974176526194808,
+          "accuracy": 0.34302123216150365,
+          "macro_f1": 0.2132140367748279,
+          "confusion_matrix": [
+            [
+              1793,
+              213,
+              0
+            ],
+            [
+              1786,
+              178,
+              0
+            ],
+            [
+              1608,
+              168,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_nonascii_fraction",
+      "categories": 2,
+      "mutual_information_nats_training": 0.00020678787450559288,
+      "cramers_v_all_rows": 0.01838564246945692,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0973924748300592,
+          "accuracy": 0.351374869474417,
+          "macro_f1": 0.2214678462514265,
+          "confusion_matrix": [
+            [
+              1819,
+              187,
+              0
+            ],
+            [
+              1765,
+              200,
+              0
+            ],
+            [
+              1584,
+              191,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0970827361841229,
+          "accuracy": 0.35224504002784546,
+          "macro_f1": 0.22168445432437486,
+          "confusion_matrix": [
+            [
+              1825,
+              181,
+              0
+            ],
+            [
+              1765,
+              199,
+              0
+            ],
+            [
+              1615,
+              161,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_nonascii_fraction",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0001885198866055926,
+      "cramers_v_all_rows": 0.018092879471343595,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.097421310238456,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0969100005158807,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_chars",
+      "categories": 10,
+      "mutual_information_nats_training": 0.0006696623700122029,
+      "cramers_v_all_rows": 0.023776905609814075,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0974769652009941,
+          "accuracy": 0.34302123216150365,
+          "macro_f1": 0.260664402049337,
+          "confusion_matrix": [
+            [
+              1359,
+              647,
+              0
+            ],
+            [
+              1353,
+              612,
+              0
+            ],
+            [
+              1257,
+              518,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097209910978378,
+          "accuracy": 0.34719805081796035,
+          "macro_f1": 0.2620350526782966,
+          "confusion_matrix": [
+            [
+              1405,
+              601,
+              0
+            ],
+            [
+              1374,
+              590,
+              0
+            ],
+            [
+              1242,
+              534,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id",
+      "categories": 10,
+      "mutual_information_nats_training": 0.0001349567073064828,
+      "cramers_v_all_rows": 0.009837649836845715,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0975347116277923,
+          "accuracy": 0.3438914027149321,
+          "macro_f1": 0.2583045870936809,
+          "confusion_matrix": [
+            [
+              1410,
+              596,
+              0
+            ],
+            [
+              1399,
+              566,
+              0
+            ],
+            [
+              1248,
+              527,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097428387278148,
+          "accuracy": 0.34615384615384615,
+          "macro_f1": 0.2602556551476785,
+          "confusion_matrix": [
+            [
+              1416,
+              590,
+              0
+            ],
+            [
+              1391,
+              573,
+              0
+            ],
+            [
+              1245,
+              531,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_position",
+      "categories": 10,
+      "mutual_information_nats_training": 0.0001349567073064828,
+      "cramers_v_all_rows": 0.009839634952520333,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0975349947345125,
+          "accuracy": 0.3438914027149321,
+          "macro_f1": 0.2583045870936809,
+          "confusion_matrix": [
+            [
+              1410,
+              596,
+              0
+            ],
+            [
+              1399,
+              566,
+              0
+            ],
+            [
+              1248,
+              527,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097428387278148,
+          "accuracy": 0.34615384615384615,
+          "macro_f1": 0.2602556551476785,
+          "confusion_matrix": [
+            [
+              1416,
+              590,
+              0
+            ],
+            [
+              1391,
+              573,
+              0
+            ],
+            [
+              1245,
+              531,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_tokens",
+      "categories": 10,
+      "mutual_information_nats_training": 0.0009900385272419016,
+      "cramers_v_all_rows": 0.028374482046642287,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0975697245375784,
+          "accuracy": 0.345109641489732,
+          "macro_f1": 0.24830798712931265,
+          "confusion_matrix": [
+            [
+              1555,
+              451,
+              0
+            ],
+            [
+              1537,
+              428,
+              0
+            ],
+            [
+              1438,
+              337,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0972067578857687,
+          "accuracy": 0.351374869474417,
+          "macro_f1": 0.24845817512341103,
+          "confusion_matrix": [
+            [
+              1625,
+              381,
+              0
+            ],
+            [
+              1570,
+              394,
+              0
+            ],
+            [
+              1408,
+              368,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id_mod_10",
+      "categories": 10,
+      "mutual_information_nats_training": 0.00032624174503180503,
+      "cramers_v_all_rows": 0.013715320013505188,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0975824565277696,
+          "accuracy": 0.34371736860424645,
+          "macro_f1": 0.2452163617448233,
+          "confusion_matrix": [
+            [
+              1569,
+              437,
+              0
+            ],
+            [
+              1559,
+              406,
+              0
+            ],
+            [
+              1436,
+              339,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0983021216546864,
+          "accuracy": 0.3381482770623042,
+          "macro_f1": 0.23791410314028752,
+          "confusion_matrix": [
+            [
+              1574,
+              432,
+              0
+            ],
+            [
+              1595,
+              369,
+              0
+            ],
+            [
+              1401,
+              375,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id_mod_32",
+      "categories": 32,
+      "mutual_information_nats_training": 0.0006964224961941989,
+      "cramers_v_all_rows": 0.022904487794178294,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0976079737754352,
+          "accuracy": 0.35381134702401673,
+          "macro_f1": 0.2949157019889466,
+          "confusion_matrix": [
+            [
+              1133,
+              799,
+              74
+            ],
+            [
+              1075,
+              840,
+              50
+            ],
+            [
+              986,
+              729,
+              60
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0982810526175946,
+          "accuracy": 0.33954054994778976,
+          "macro_f1": 0.28040858655654444,
+          "confusion_matrix": [
+            [
+              1119,
+              828,
+              59
+            ],
+            [
+              1117,
+              783,
+              64
+            ],
+            [
+              987,
+              740,
+              49
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_mod_16",
+      "categories": 16,
+      "mutual_information_nats_training": 0.0004114875277662078,
+      "cramers_v_all_rows": 0.01711606220644688,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.097620080238234,
+          "accuracy": 0.342847198050818,
+          "macro_f1": 0.2662424298398402,
+          "confusion_matrix": [
+            [
+              1230,
+              776,
+              0
+            ],
+            [
+              1225,
+              740,
+              0
+            ],
+            [
+              1134,
+              641,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0976565239954434,
+          "accuracy": 0.3405847546119039,
+          "macro_f1": 0.2635960809131986,
+          "confusion_matrix": [
+            [
+              1243,
+              763,
+              0
+            ],
+            [
+              1250,
+              714,
+              0
+            ],
+            [
+              1083,
+              693,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id_mod_16",
+      "categories": 16,
+      "mutual_information_nats_training": 0.0001934386287709422,
+      "cramers_v_all_rows": 0.011573234700676205,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0976273140060449,
+          "accuracy": 0.3397145840584755,
+          "macro_f1": 0.25668938842574657,
+          "confusion_matrix": [
+            [
+              1368,
+              638,
+              0
+            ],
+            [
+              1381,
+              584,
+              0
+            ],
+            [
+              1224,
+              551,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0976370994991014,
+          "accuracy": 0.3438914027149321,
+          "macro_f1": 0.25969128428548005,
+          "confusion_matrix": [
+            [
+              1388,
+              618,
+              0
+            ],
+            [
+              1376,
+              588,
+              0
+            ],
+            [
+              1222,
+              554,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_mod_32",
+      "categories": 32,
+      "mutual_information_nats_training": 0.0006369991002653508,
+      "cramers_v_all_rows": 0.022151673314510775,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0976325417228836,
+          "accuracy": 0.3393665158371041,
+          "macro_f1": 0.26386527310039315,
+          "confusion_matrix": [
+            [
+              1207,
+              799,
+              0
+            ],
+            [
+              1222,
+              743,
+              0
+            ],
+            [
+              1119,
+              656,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0978251375982486,
+          "accuracy": 0.3478941872607031,
+          "macro_f1": 0.2693950437317784,
+          "confusion_matrix": [
+            [
+              1267,
+              739,
+              0
+            ],
+            [
+              1232,
+              732,
+              0
+            ],
+            [
+              1095,
+              681,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_words",
+      "categories": 10,
+      "mutual_information_nats_training": 0.0008813677704747752,
+      "cramers_v_all_rows": 0.025650455912669647,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0976896300101755,
+          "accuracy": 0.3456317438217891,
+          "macro_f1": 0.25428086607665795,
+          "confusion_matrix": [
+            [
+              1491,
+              515,
+              0
+            ],
+            [
+              1470,
+              495,
+              0
+            ],
+            [
+              1308,
+              467,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.097955863913886,
+          "accuracy": 0.3475461190393317,
+          "macro_f1": 0.2582182799048989,
+          "confusion_matrix": [
+            [
+              1469,
+              537,
+              0
+            ],
+            [
+              1436,
+              528,
+              0
+            ],
+            [
+              1331,
+              445,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "prompt_turns",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0003878068812373653,
+      "cramers_v_all_rows": 0.02344885050325128,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0978008502660725,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0970599218032269,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_a_turns",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0003878068812373653,
+      "cramers_v_all_rows": 0.02344885050325128,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0978008502660725,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0970599218032269,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "response_b_turns",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0003878068812373653,
+      "cramers_v_all_rows": 0.02344885050325128,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0978008502660725,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0970599218032269,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "multi_turn",
+      "categories": 2,
+      "mutual_information_nats_training": 0.0003878068812373653,
+      "cramers_v_all_rows": 0.02344885050325128,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0978008502660725,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1965,
+              0,
+              0
+            ],
+            [
+              1775,
+              0,
+              0
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0970599218032269,
+          "accuracy": 0.34911242603550297,
+          "macro_f1": 0.17251461988304095,
+          "confusion_matrix": [
+            [
+              2006,
+              0,
+              0
+            ],
+            [
+              1964,
+              0,
+              0
+            ],
+            [
+              1776,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_mod_100",
+      "categories": 100,
+      "mutual_information_nats_training": 0.0022716079391809484,
+      "cramers_v_all_rows": 0.04240854819616836,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.0992595348103327,
+          "accuracy": 0.34336930038287505,
+          "macro_f1": 0.3067402318042123,
+          "confusion_matrix": [
+            [
+              1067,
+              768,
+              171
+            ],
+            [
+              1026,
+              750,
+              189
+            ],
+            [
+              975,
+              644,
+              156
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.0992844331717364,
+          "accuracy": 0.3506787330316742,
+          "macro_f1": 0.3153021126750694,
+          "confusion_matrix": [
+            [
+              1089,
+              733,
+              184
+            ],
+            [
+              1064,
+              751,
+              149
+            ],
+            [
+              937,
+              664,
+              175
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id_mod_100",
+      "categories": 100,
+      "mutual_information_nats_training": 0.002238868060765828,
+      "cramers_v_all_rows": 0.04277277817538323,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.099343988589639,
+          "accuracy": 0.3442394709363035,
+          "macro_f1": 0.3009736225221447,
+          "confusion_matrix": [
+            [
+              1098,
+              771,
+              137
+            ],
+            [
+              1084,
+              756,
+              125
+            ],
+            [
+              987,
+              664,
+              124
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.098555133744012,
+          "accuracy": 0.34684998259658895,
+          "macro_f1": 0.2981081125831811,
+          "confusion_matrix": [
+            [
+              1141,
+              753,
+              112
+            ],
+            [
+              1121,
+              748,
+              95
+            ],
+            [
+              965,
+              707,
+              104
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "row_mod_256",
+      "categories": 256,
+      "mutual_information_nats_training": 0.005063100903311879,
+      "cramers_v_all_rows": 0.06360243498200494,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.1014307014594553,
+          "accuracy": 0.34528367560041767,
+          "macro_f1": 0.3127095005159781,
+          "confusion_matrix": [
+            [
+              983,
+              843,
+              180
+            ],
+            [
+              936,
+              827,
+              202
+            ],
+            [
+              854,
+              747,
+              174
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.1010991705669144,
+          "accuracy": 0.3508527671423599,
+          "macro_f1": 0.31417558065800427,
+          "confusion_matrix": [
+            [
+              989,
+              828,
+              189
+            ],
+            [
+              907,
+              875,
+              182
+            ],
+            [
+              827,
+              797,
+              152
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    },
+    {
+      "factor": "id_mod_256",
+      "categories": 256,
+      "mutual_information_nats_training": 0.005935725495103414,
+      "cramers_v_all_rows": 0.06846844132803595,
+      "metrics": {
+        "dev": {
+          "rows": 5746,
+          "log_loss": 1.102496604436726,
+          "accuracy": 0.3475461190393317,
+          "macro_f1": 0.3171043864298682,
+          "confusion_matrix": [
+            [
+              1026,
+              780,
+              200
+            ],
+            [
+              993,
+              775,
+              197
+            ],
+            [
+              896,
+              683,
+              196
+            ]
+          ]
+        },
+        "confirmation": {
+          "rows": 5746,
+          "log_loss": 1.1000632251193954,
+          "accuracy": 0.34371736860424645,
+          "macro_f1": 0.3119396254638336,
+          "confusion_matrix": [
+            [
+              1039,
+              752,
+              215
+            ],
+            [
+              1010,
+              752,
+              202
+            ],
+            [
+              927,
+              665,
+              184
+            ]
+          ]
+        }
+      },
+      "interpretation": "Test-computable descriptor"
+    }
+  ],
+  "structure_feature_importance": [
+    {
+      "feature": "response_word_difference",
+      "gain": 27609.561315059662
+    },
+    {
+      "feature": "answer_word_jaccard",
+      "gain": 13263.772846460342
+    },
+    {
+      "feature": "answer_length_ratio",
+      "gain": 4475.991842806339
+    },
+    {
+      "feature": "prompt_tokens",
+      "gain": 4471.513288855553
+    },
+    {
+      "feature": "response_a_chars",
+      "gain": 3154.9944685697556
+    },
+    {
+      "feature": "response_a_refusal",
+      "gain": 3122.7235392928123
+    },
+    {
+      "feature": "prompt_chars",
+      "gain": 2994.917303621769
+    },
+    {
+      "feature": "response_b_chars",
+      "gain": 2977.5836184620857
+    },
+    {
+      "feature": "response_b_tokens",
+      "gain": 2973.135472178459
+    },
+    {
+      "feature": "total_content_tokens",
+      "gain": 2918.100264251232
+    },
+    {
+      "feature": "list_difference",
+      "gain": 2701.630675792694
+    },
+    {
+      "feature": "response_b_refusal",
+      "gain": 2691.1989057064056
+    },
+    {
+      "feature": "response_a_tokens",
+      "gain": 2493.2560555934906
+    },
+    {
+      "feature": "log_answer_word_ratio",
+      "gain": 1978.9477090835571
+    },
+    {
+      "feature": "response_b_words",
+      "gain": 1864.338436305523
+    },
+    {
+      "feature": "prompt_words",
+      "gain": 1759.0864115953445
+    },
+    {
+      "feature": "refusal_difference",
+      "gain": 1556.7699221372604
+    },
+    {
+      "feature": "longer_side",
+      "gain": 1535.1467893123627
+    },
+    {
+      "feature": "response_a_words",
+      "gain": 1497.5936905741692
+    },
+    {
+      "feature": "response_b_nonascii_fraction",
+      "gain": 1118.9308656454086
+    },
+    {
+      "feature": "both_refusals",
+      "gain": 1090.0977149009705
+    },
+    {
+      "feature": "response_a_nonascii_fraction",
+      "gain": 1075.4916888475418
+    },
+    {
+      "feature": "prompt_turns",
+      "gain": 978.5240547060966
+    },
+    {
+      "feature": "prompt_nonascii_fraction",
+      "gain": 936.7182130813599
+    },
+    {
+      "feature": "response_b_list_count",
+      "gain": 919.8550342917442
+    },
+    {
+      "feature": "response_a_list_count",
+      "gain": 801.2283078432083
+    },
+    {
+      "feature": "prompt_list_count",
+      "gain": 531.1373693943024
+    },
+    {
+      "feature": "task_tag_count",
+      "gain": 508.7425243258476
+    },
+    {
+      "feature": "retained_fraction_1024_cap256",
+      "gain": 462.1393004655838
+    },
+    {
+      "feature": "retained_fraction_4096_cap256",
+      "gain": 460.70684719085693
+    },
+    {
+      "feature": "answer_equal_whitespace",
+      "gain": 375.5964107513428
+    },
+    {
+      "feature": "task_transformation",
+      "gain": 335.9165008068085
+    },
+    {
+      "feature": "task_explanation",
+      "gain": 309.2213109731674
+    },
+    {
+      "feature": "retained_fraction_2048_cap256",
+      "gain": 283.64489871263504
+    },
+    {
+      "feature": "response_b_heading_count",
+      "gain": 246.03246700763702
+    },
+    {
+      "feature": "response_a_code",
+      "gain": 237.9954413175583
+    },
+    {
+      "feature": "prompt_code",
+      "gain": 147.34260141849518
+    },
+    {
+      "feature": "retained_fraction_2048_cap512",
+      "gain": 132.40156018733978
+    },
+    {
+      "feature": "response_a_heading_count",
+      "gain": 120.85813891887665
+    },
+    {
+      "feature": "response_b_code",
+      "gain": 99.362380027771
+    },
+    {
+      "feature": "one_refusal",
+      "gain": 94.13499927520752
+    },
+    {
+      "feature": "task_math",
+      "gain": 83.64481323957443
+    },
+    {
+      "feature": "one_code_answer",
+      "gain": 53.25822639465332
+    },
+    {
+      "feature": "task_creative",
+      "gain": 39.84197849035263
+    },
+    {
+      "feature": "prompt_heading_count",
+      "gain": 22.90857356786728
+    },
+    {
+      "feature": "any_code_answer",
+      "gain": 15.441390037536621
+    },
+    {
+      "feature": "cut_4096_cap1024",
+      "gain": 14.245820045471191
+    },
+    {
+      "feature": "retained_fraction_4096_cap1024",
+      "gain": 8.99276202917099
+    },
+    {
+      "feature": "prompt_cut_2048_cap512",
+      "gain": 3.727020025253296
+    },
+    {
+      "feature": "prompt_null_turns",
+      "gain": 0.0
+    },
+    {
+      "feature": "prompt_refusal",
+      "gain": 0.0
+    },
+    {
+      "feature": "response_a_non_string_turns",
+      "gain": 0.0
+    },
+    {
+      "feature": "response_a_empty",
+      "gain": 0.0
+    },
+    {
+      "feature": "response_a_turns",
+      "gain": 0.0
+    },
+    {
+      "feature": "response_a_null_turns",
+      "gain": 0.0
+    },
+    {
+      "feature": "prompt_empty",
+      "gain": 0.0
+    },
+    {
+      "feature": "prompt_non_string_turns",
+      "gain": 0.0
+    },
+    {
+      "feature": "answer_equal_exact",
+      "gain": 0.0
+    },
+    {
+      "feature": "wrapper_marker_in_content",
+      "gain": 0.0
+    },
+    {
+      "feature": "response_b_non_string_turns",
+      "gain": 0.0
+    },
+    {
+      "feature": "response_b_null_turns",
+      "gain": 0.0
+    },
+    {
+      "feature": "response_b_turns",
+      "gain": 0.0
+    },
+    {
+      "feature": "one_answer_empty",
+      "gain": 0.0
+    },
+    {
+      "feature": "both_answers_empty",
+      "gain": 0.0
+    },
+    {
+      "feature": "response_b_empty",
+      "gain": 0.0
+    },
+    {
+      "feature": "turn_mismatch",
+      "gain": 0.0
+    },
+    {
+      "feature": "multi_turn",
+      "gain": 0.0
+    },
+    {
+      "feature": "task_code",
+      "gain": 0.0
+    },
+    {
+      "feature": "answer_cut_2048_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "cut_2048_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "prompt_cut_2048_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "cut_1024_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "prompt_cut_1024_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "refusal_side",
+      "gain": 0.0
+    },
+    {
+      "feature": "answer_cut_1024_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "answer_cut_4096_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "prompt_cut_4096_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "cut_4096_cap256",
+      "gain": 0.0
+    },
+    {
+      "feature": "answer_cut_2048_cap512",
+      "gain": 0.0
+    },
+    {
+      "feature": "cut_2048_cap512",
+      "gain": 0.0
+    },
+    {
+      "feature": "prompt_cut_4096_cap1024",
+      "gain": 0.0
+    },
+    {
+      "feature": "answer_cut_4096_cap1024",
+      "gain": 0.0
+    },
+    {
+      "feature": "empty_difference",
+      "gain": 0.0
+    }
+  ],
+  "conditional_associations": [
+    {
+      "factor": "answer_equal_exact",
+      "value": "False",
+      "rows": 57202,
+      "winner_model_a": 0.35054718366490684,
+      "winner_model_b": 0.343292192580679,
+      "winner_tie": 0.30616062375441416
+    },
+    {
+      "factor": "answer_equal_exact",
+      "value": "True",
+      "rows": 275,
+      "winner_model_a": 0.04363636363636364,
+      "winner_model_b": 0.05454545454545454,
+      "winner_tie": 0.9018181818181819
+    },
+    {
+      "factor": "answer_equal_whitespace",
+      "value": "False",
+      "rows": 57195,
+      "winner_model_a": 0.35059008654602675,
+      "winner_model_b": 0.34333420753562377,
+      "winner_tie": 0.3060757059183495
+    },
+    {
+      "factor": "answer_equal_whitespace",
+      "value": "True",
+      "rows": 282,
+      "winner_model_a": 0.0425531914893617,
+      "winner_model_b": 0.05319148936170213,
+      "winner_tie": 0.9042553191489362
+    },
+    {
+      "factor": "both_answers_empty",
+      "value": "False",
+      "rows": 57458,
+      "winner_model_a": 0.3491419819694385,
+      "winner_model_b": 0.34195412301159106,
+      "winner_tie": 0.30890389501897036
+    },
+    {
+      "factor": "both_answers_empty",
+      "value": "True",
+      "rows": 19,
+      "winner_model_a": 0.15789473684210525,
+      "winner_model_b": 0.21052631578947367,
+      "winner_tie": 0.631578947368421
+    },
+    {
+      "factor": "one_answer_empty",
+      "value": "False",
+      "rows": 57452,
+      "winner_model_a": 0.3490217921047135,
+      "winner_model_b": 0.341902805820511,
+      "winner_tie": 0.30907540207477546
+    },
+    {
+      "factor": "one_answer_empty",
+      "value": "True",
+      "rows": 25,
+      "winner_model_a": 0.48,
+      "winner_model_b": 0.36,
+      "winner_tie": 0.16
+    },
+    {
+      "factor": "both_refusals",
+      "value": "False",
+      "rows": 55810,
+      "winner_model_a": 0.35176491668159826,
+      "winner_model_b": 0.3446156602759362,
+      "winner_tie": 0.30361942304246553
+    },
+    {
+      "factor": "both_refusals",
+      "value": "True",
+      "rows": 1667,
+      "winner_model_a": 0.2591481703659268,
+      "winner_model_b": 0.2513497300539892,
+      "winner_tie": 0.489502099580084
+    },
+    {
+      "factor": "one_refusal",
+      "value": "False",
+      "rows": 51402,
+      "winner_model_a": 0.34751566086922686,
+      "winner_model_b": 0.3394614995525466,
+      "winner_tie": 0.3130228395782265
+    },
+    {
+      "factor": "one_refusal",
+      "value": "True",
+      "rows": 6075,
+      "winner_model_a": 0.3623045267489712,
+      "winner_model_b": 0.36263374485596706,
+      "winner_tie": 0.2750617283950617
+    },
+    {
+      "factor": "refusal_difference",
+      "value": "-1",
+      "rows": 3072,
+      "winner_model_a": 0.5266927083333334,
+      "winner_model_b": 0.19694010416666666,
+      "winner_tie": 0.2763671875
+    },
+    {
+      "factor": "refusal_difference",
+      "value": "0",
+      "rows": 51402,
+      "winner_model_a": 0.34751566086922686,
+      "winner_model_b": 0.3394614995525466,
+      "winner_tie": 0.3130228395782265
+    },
+    {
+      "factor": "refusal_difference",
+      "value": "1",
+      "rows": 3003,
+      "winner_model_a": 0.19413919413919414,
+      "winner_model_b": 0.5321345321345321,
+      "winner_tie": 0.27372627372627373
+    },
+    {
+      "factor": "longer_side",
+      "value": "0",
+      "rows": 28971,
+      "winner_model_a": 0.4267715991853923,
+      "winner_model_b": 0.2603983293638466,
+      "winner_tie": 0.3128300714507611
+    },
+    {
+      "factor": "longer_side",
+      "value": "1",
+      "rows": 28506,
+      "winner_model_a": 0.270118571528801,
+      "winner_model_b": 0.4247526836455483,
+      "winner_tie": 0.3051287448256507
+    }
+  ],
+  "strong_model_pairs": [
+    {
+      "pair": "gpt-3.5-turbo-1106 | gpt-4-1106-preview",
+      "train_rows": 464,
+      "largest_class_fraction": 0.6379310344827587,
+      "class_counts": [
+        47,
+        296,
+        121
+      ]
+    },
+    {
+      "pair": "gpt-4-1106-preview | openchat-3.5",
+      "train_rows": 100,
+      "largest_class_fraction": 0.61,
+      "class_counts": [
+        61,
+        20,
+        19
+      ]
+    },
+    {
+      "pair": "gpt-3.5-turbo-0613 | gpt-4-1106-preview",
+      "train_rows": 585,
+      "largest_class_fraction": 0.6068376068376068,
+      "class_counts": [
+        80,
+        355,
+        150
+      ]
+    },
+    {
+      "pair": "alpaca-13b | vicuna-13b",
+      "train_rows": 107,
+      "largest_class_fraction": 0.5887850467289719,
+      "class_counts": [
+        19,
+        63,
+        25
+      ]
+    },
+    {
+      "pair": "oasst-pythia-12b | vicuna-13b",
+      "train_rows": 132,
+      "largest_class_fraction": 0.5833333333333334,
+      "class_counts": [
+        19,
+        77,
+        36
+      ]
+    },
+    {
+      "pair": "claude-instant-1 | vicuna-7b",
+      "train_rows": 128,
+      "largest_class_fraction": 0.578125,
+      "class_counts": [
+        74,
+        20,
+        34
+      ]
+    },
+    {
+      "pair": "gpt-3.5-turbo-0613 | palm-2",
+      "train_rows": 108,
+      "largest_class_fraction": 0.5740740740740741,
+      "class_counts": [
+        62,
+        22,
+        24
+      ]
+    },
+    {
+      "pair": "claude-2.1 | gpt-4-0125-preview",
+      "train_rows": 100,
+      "largest_class_fraction": 0.57,
+      "class_counts": [
+        19,
+        57,
+        24
+      ]
+    },
+    {
+      "pair": "claude-2.1 | gpt-4-1106-preview",
+      "train_rows": 869,
+      "largest_class_fraction": 0.5650172612197929,
+      "class_counts": [
+        165,
+        491,
+        213
+      ]
+    },
+    {
+      "pair": "gpt-4-1106-preview | mixtral-8x7b-instruct-v0.1",
+      "train_rows": 293,
+      "largest_class_fraction": 0.5392491467576792,
+      "class_counts": [
+        158,
+        44,
+        91
+      ]
+    },
+    {
+      "pair": "claude-2.0 | gpt-4-1106-preview",
+      "train_rows": 205,
+      "largest_class_fraction": 0.5365853658536586,
+      "class_counts": [
+        37,
+        110,
+        58
+      ]
+    },
+    {
+      "pair": "gemini-pro-dev-api | gpt-4-1106-preview",
+      "train_rows": 231,
+      "largest_class_fraction": 0.5281385281385281,
+      "class_counts": [
+        51,
+        122,
+        58
+      ]
+    }
+  ],
+  "duplicate_audit": {
+    "prompt_group": {
+      "duplicate_groups": 3286,
+      "rows_in_duplicate_groups": 9550,
+      "cross_partition_groups": 0
+    },
+    "comparison_hash": {
+      "duplicate_groups": 29,
+      "rows_in_duplicate_groups": 100,
+      "cross_partition_groups": 0
+    },
+    "canonical_comparison_hash": {
+      "duplicate_groups": 39,
+      "rows_in_duplicate_groups": 123,
+      "cross_partition_groups": 0
+    }
+  },
+  "target_derived_positive_control": {
+    "field": "canonical_label",
+    "purpose": "Canonicalized human vote for duplicate-consistency EDA",
+    "reconstruction": "Swap A/B in canonical_label when parsed response_a > parsed response_b lexicographically",
+    "reconstructed_accuracy": 1.0,
+    "deployed_input": false,
+    "warning": "This is actual target-derived metadata. Feeding it to a model would leak the answer; it is excluded from every predictive experiment above."
+  },
+  "protocol": {
+    "train_partition_only_for_fitting": true,
+    "prompt_overlap_between_partitions": false,
+    "categorical_smoothing_pseudocount": 30,
+    "numeric_factor_bins": "Train-only decile edges",
+    "gbdt": "250 trees, 15 leaves, min child 150, learning rate 0.05, lambda 5, no validation tuning",
+    "confirmation": "Previously inspected confirmation; exploratory replication, not an untouched evaluation",
+    "test_unavailable_fields": [
+      "model_a",
+      "model_b"
+    ],
+    "public_visible_test_rows": 3,
+    "scope": "No new model training on GPU, external APIs or competition submission"
+  }
+}
