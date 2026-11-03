@@ -6,7 +6,7 @@ Version **1**, active; **41** tasks. Focus for this span: E00, H01, H09, H04, H1
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **28**, ready **1**, running **2**, done **1**, rejected **0**, deferred **8**.
+Hypothesis status: planned **28**, ready **0**, running **3**, done **1**, rejected **0**, deferred **8**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -59,7 +59,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [E00](#e00) | P0 / done | Freeze the evaluation and resource contract | — | low | 4…8 | 0…0 | 0…0 | — |
 | 2 | [H01](#h01) | P1 / done | Preference-trained backbone | -0.015…+0.04 | high | 6…16 | 0.5…2 | 4…12 | E00 |
-| 3 | [H09](#h09) | P1 / ready | Explicit swap consistency | -0.01…+0.02 | medium | 6…14 | 1…3 | 12…24 | E00 |
+| 3 | [H09](#h09) | P1 / running | Explicit swap consistency | -0.01…+0.02 | medium | 6…14 | 1…3 | 12…24 | E00 |
 | 4 | [H04](#h04) | P1 / running | Broader adapter coverage | -0.01…+0.025 | medium | 4…10 | 1…2 | 10…20 | E00 |
 | 5 | [H11](#h11) | P1 / running | Learned symmetric tie model | -0.01…+0.015 | medium | 6…14 | 0.5…2 | 8…18 | E00 |
 | 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
@@ -189,7 +189,7 @@ A preference-trained reward backbone may encode useful human-preference distinct
 
 ### H09
 
-**Explicit swap consistency** — P1, ready, risk medium.
+**Explicit swap consistency** — P1, running, risk medium.
 
 Paired-view consistency regularization may reduce harmful position dependence beyond existing random swapping and inference averaging.
 
@@ -216,6 +216,7 @@ Paired-view consistency regularization may reduce harmful position dependence be
 **References:** [EDA_REPORT.md](EDA_REPORT.md); [results/eda_002/hypotheses.json](results/eda_002/hypotheses.json)
 
 - 2026-11-03T10:58:07+00:00 — ready: Paired CE and paired CE+0.1 symmetric KL controls packaged at matched view/token accounting and fixed updates; waiting for its stage in the shared joint kernel. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+- 2026-11-03T13:17:15+00:00 — running: Pinned joint version 1 completed both random-view stages and has entered paired_attention. This begins the predeclared paired CE versus paired CE plus 0.1 symmetric-KL pilot; the consistency arm follows in the same kernel. Updates, exposure, order behavior and calibrated development loss will be compared after collection. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 
 ### H04
 
@@ -249,6 +250,7 @@ Adapting feed-forward layers as well as attention may improve preference represe
 - 2026-11-03T11:46:41+00:00 — running: Pinned joint job completed frozen feature extraction successfully in 2659.99 seconds and entered the random_attention training control; the random_all_linear comparison follows in the same kernel. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 - 2026-11-03T12:26:49+00:00 — running: Pinned joint version 1 completed the random_attention control, including development prediction generation, with exit code 0 in 2547.83 seconds. Training reached 64 nominal cycles; the pinned scheduler audit indicates 61 accepted updates. The random_all_linear stage has begun; quality artifacts remain unavailable until kernel completion. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 - 2026-11-03T13:03:29+00:00 — running: Both pinned H04 arms reached 64 nominal training cycles and 1186094 non-padding tokens. Their final pre-scheduler LR and finite gradient norms reconstruct 61 accepted updates each (three AMP skips). Training took 1739.09 seconds for attention-only and 2061.34 seconds for broader coverage. Broader-arm development prediction generation is pending; final comparability still requires finite exported weights and artifact validation. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+- 2026-11-03T13:17:15+00:00 — running: Both H04 GPU stages completed successfully in pinned joint version 1: random_attention 2547.83 seconds and random_all_linear 2980.08 seconds, including two-order development prediction generation. Final quality and finite-weight/comparability checks await artifact collection after the shared kernel ends. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 
 ### H11
 

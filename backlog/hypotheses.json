@@ -325,6 +325,15 @@
             "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-03T13:17:15+00:00",
+          "status": "running",
+          "note": "Both H04 GPU stages completed successfully in pinned joint version 1: random_attention 2547.83 seconds and random_all_linear 2980.08 seconds, including two-order development prediction generation. Final quality and finite-weight/comparability checks await artifact collection after the shared kernel ends.",
+          "evidence": [
+            "results/span_001/live_progress_joint.json",
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
         }
       ],
       "introduced_in": 1,
@@ -536,7 +545,7 @@
       "title": "Explicit swap consistency",
       "priority": "P1",
       "rank": 3,
-      "status": "ready",
+      "status": "running",
       "gain": [
         -0.01,
         0.02
@@ -581,6 +590,15 @@
           "status": "ready",
           "note": "Paired CE and paired CE+0.1 symmetric KL controls packaged at matched view/token accounting and fixed updates; waiting for its stage in the shared joint kernel.",
           "evidence": [
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-03T13:17:15+00:00",
+          "status": "running",
+          "note": "Pinned joint version 1 completed both random-view stages and has entered paired_attention. This begins the predeclared paired CE versus paired CE plus 0.1 symmetric-KL pilot; the consistency arm follows in the same kernel. Updates, exposure, order behavior and calibrated development loss will be compared after collection.",
+          "evidence": [
+            "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
         }

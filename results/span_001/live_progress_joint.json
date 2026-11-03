@@ -3,9 +3,9 @@
   "version": 1,
   "kernel": "arseniytrushin/llm-preference-span-001-joint-pilots",
   "status": "KernelWorkerStatus.RUNNING",
-  "status_observed_at": "2026-11-03T13:01:27.511343+00:00",
+  "status_observed_at": "2026-11-03T13:17:40.096669+00:00",
   "log_reader_exit_code": 0,
-  "log_snapshot_mtime": "2026-11-03T13:01:37.500323+00:00",
+  "log_snapshot_mtime": "2026-11-03T13:17:54.097769+00:00",
   "feature_ranks": {
     "0": {
       "rank": 0,
@@ -22,7 +22,7 @@
       "elapsed_seconds": 2279.359809691
     }
   },
-  "active_stage_from_log": "random_all_linear",
+  "active_stage_from_log": "paired_attention",
   "stages": {
     "features": {
       "stage": "features",
@@ -34,6 +34,12 @@
       "stage": "random_attention",
       "exit_code": 0,
       "elapsed_seconds": 2547.8273758888245,
+      "complete": true
+    },
+    "random_all_linear": {
+      "stage": "random_all_linear",
+      "exit_code": 0,
+      "elapsed_seconds": 2980.08140873909,
       "complete": true
     }
   },
@@ -67,6 +73,18 @@
       "train_steps_per_second": 0.031,
       "total_flos": 2.6198903489560576e+16,
       "train_loss": 0.9871666114777327
+    },
+    "paired_attention": {
+      "step": 1,
+      "elapsed_seconds": 59.785789874998954,
+      "loss": 1.0138458013534546,
+      "grad_norm": null,
+      "learning_rate": 0.0,
+      "epoch": 0.0078125,
+      "num_input_tokens_seen": 32768,
+      "train_runtime": 60.0758,
+      "train_tokens_per_second": 545.444,
+      "grad_norm_nonfinite": "nan"
     }
   }
 }
