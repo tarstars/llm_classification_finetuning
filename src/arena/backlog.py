@@ -151,7 +151,9 @@ def render(data):
              "", "Hypothesis status: " + ", ".join(f"{s} **{counts[s]}**" for s in STATUSES) + ".", ""]
     for paragraph in data["framing"]:
         lines += [paragraph, ""]
-    lines += ["## Browse and update", "", "```bash",
+    lines += ["## Browse and update", "",
+        "Follow the [project policy](PROJECT_POLICY.md) for selecting work, preparing experiments, recording evidence and publishing results.",
+        "", "```bash",
         "uv run python scripts/backlog.py list --priority P1",
         "uv run python scripts/backlog.py list --actionable",
         "uv run python scripts/backlog.py list --max-engineering-hours 8 --sort effort",

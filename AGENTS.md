@@ -1,0 +1,10 @@
+# Project instructions
+
+Read and follow [PROJECT_POLICY.md](PROJECT_POLICY.md) when selecting, executing,
+reporting or tracking experiments. Use the backlog CLI to record status and evidence,
+and keep its generated Markdown synchronized. Explicit user instructions take
+precedence over the project policy.
+
+Scope file searches to this project. Never recursively walk `$HOME`, `~/prj`,
+Arcadia/Arc FUSE mounts or
+`/media/tarstars/medium_data/database/troll_farm`.

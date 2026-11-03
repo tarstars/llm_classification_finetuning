@@ -1,0 +1,142 @@
+# Project policy: research backlog
+
+This policy governs experiment selection, execution, reporting and project memory
+for contributors and coding agents. Explicit user instructions take precedence.
+
+Use the backlog to distinguish intended work, completed experiments and supported
+conclusions. [backlog/hypotheses.json](backlog/hypotheses.json) is the source of
+truth; [BACKLOG.md](BACKLOG.md) is generated. Use
+[scripts/backlog.py](scripts/backlog.py) for status changes and history. Edit the
+JSON for estimates, priorities, dependencies and experiment design, then regenerate
+the Markdown. Preserve stable hypothesis IDs and previous outcomes.
+
+| Status | Meaning |
+| --- | --- |
+| `planned` | Recorded, awaiting preparation or prerequisites |
+| `ready` | Dependencies completed; test and resource budget prepared |
+| `running` | Work is underway, including an active remote job |
+| `done` | Experiment finished, including negative or inconclusive results |
+| `deferred` | Waiting for resources or stronger evidence |
+| `rejected` | Ruled out, with a recorded reason and supporting evidence |
+
+1. **Choose actionable work.** Check the backlog before beginning an experiment.
+   Complete prerequisites first, then weigh priority, plausible gain, risk and
+   engineering/compute cost together. Sorting by gain uses the optimistic endpoint,
+   not expected return. A high priority is not an instruction to run every item.
+
+   ```bash
+   uv run python scripts/backlog.py list --actionable
+   uv run python scripts/backlog.py list --priority P1
+   uv run python scripts/backlog.py show H09
+   ```
+
+   E00 establishes the evaluation and resource contract. Dependencies must be
+   `done` before dependent work becomes `ready`, starts or is marked `done`.
+   A rejected dependency does not unblock its dependents: reconsider their design,
+   revise dependencies with an explanation, or defer/reject the dependent work.
+
+2. **Prepare a bounded experiment before spending compute.** Record the baseline,
+   exact split/sample IDs, grouping, seed, primary change, metric, maximum variants,
+   training exposure, calibration, resource budget and advancement/stopping rules.
+   Make one main change per initial ablation. Record source/configuration/checkpoint
+   hashes and the locations of inputs and outputs.
+
+   Verify current Kaggle quota, active jobs, model availability, memory fit and
+   submission runtime before launching GPU work. Distinguish engineering person-hours,
+   CPU elapsed hours and elapsed two-T4 session hours. Count pilot and follow-up
+   separately, plus controls, OOF prediction generation and retries when required.
+   Jobs exceeding a session limit need a tested resume path and sufficient quota.
+
+   Gain ranges are subjective planning estimates, not measurements, confidence
+   intervals or guarantees. Positive gain means lower log loss; regressions are
+   possible. Overlapping gains cannot be added.
+
+3. **Record work as it happens.** Update status when preparation completes, work
+   starts, a meaningful milestone occurs, or work stops. Every update needs an
+   informative note. Moving directly from `planned` to `running` is allowed when
+   dependencies are satisfied and the experiment is prepared. For example, after
+   E00 is completed:
+
+   ```bash
+   uv run python scripts/backlog.py update H09 --status running \
+     --note "Starting the predeclared paired-order pilot"
+   ```
+
+   The CLI appends dated history and regenerates the Markdown. It updates tracking;
+   experiment programs launch and monitor jobs separately. Include the run ID or
+   artifact location in progress notes. Serialize backlog edits to preserve history.
+   When reopening a hypothesis, explain the new attempt and retain earlier results.
+
+4. **Evaluate and close with evidence.** Compare candidates on identical rows with
+   matched controls. Report overall multiclass log loss, paired uncertainty, class
+   behavior and relevant retention/order/runtime diagnostics. Use group-aware
+   evaluation and paired group-resampled intervals where applicable. Treat pilot
+   advancement as an information decision; a small inconclusive pilot does not
+   establish either success or failure. Follow the predeclared budget and stop rule.
+
+   Existing development and confirmation partitions have been inspected and must
+   be described as exploratory. Use grouped inner/nested selection to limit further
+   selection bias and independent data when available. Fit calibrators, gates,
+   retrieval examples and other learned components within the appropriate folds.
+   In-sample training predictions are not OOF predictions. Keep target-derived
+   fields and unavailable model identities out of deployed inputs. Preserve original
+   evaluation votes, and freeze a candidate before a competition submission.
+
+   Save a report containing configuration, comparator, results, uncertainty, actual
+   resource use and the decision. Link the executed notebook and aggregate metrics.
+   Only after the report exists, close the item with its actual path; for example:
+
+   ```bash
+   uv run python scripts/backlog.py update H09 --status done \
+     --note "Pilot completed; report contains the measured outcome" \
+     --evidence docs/H09_RESULTS.md
+   ```
+
+   `done` means the experiment finished; it does not mean the hypothesis improved
+   the score. Keep negative and inconclusive findings. Use `rejected` for an idea
+   ruled out by evidence or a documented validity/feasibility problem, and `deferred`
+   for work that may become worthwhile later. Record the reason in either case.
+   Closing as `done` or `rejected` requires a result/decision reference.
+
+5. **Revise the backlog when evidence changes.** Update estimates, priorities,
+   risks, dependencies and test design in the JSON, explaining the revision in the
+   item. Keep forecasts separate from measurements in linked reports. Preserve
+   H01–H40 identifiers rather than deleting or repurposing them. Git history retains
+   earlier wording and estimates; status history retains decisions and outcomes.
+
+   ```bash
+   uv run python scripts/backlog.py render
+   uv run python scripts/backlog.py check
+   ```
+
+   The current validator requires the registered forty hypotheses. Extending the
+   hypothesis set requires updating that validation contract and its tests while
+   retaining existing IDs.
+
+6. **Validate and publish important milestones.** Run `check` after updates. Run
+   focused tests when changing tooling or experiment code; for backlog tooling:
+
+   ```bash
+   uv run python -m unittest discover -s tests -p test_backlog.py -v
+   git diff --check
+   ```
+
+   Review the diff and commit/push the relevant JSON, generated Markdown, source,
+   reports, aggregate results and notebooks together. Stage explicit paths and
+   preserve unrelated user changes. Report the outcome, remaining uncertainty and
+   commit when handing work back to the user.
+
+   Store datasets, model weights, cached vectors, per-row predictions and heavy
+   intermediate files under `~/database/llm_classification_finetuning`. Keep programs,
+   Markdown project memory, aggregate metrics and notebooks in Git. Notebook files
+   remain in the project's `notebooks/`, linked from
+   `~/notebooks/llm_classification_finetuning`. Keep credentials out of source,
+   notebook output, logs and commits.
+
+The CLI validates record structure, IDs, dependency cycles, dependency status gates,
+closure references and Markdown consistency. Contributors must review scientific
+validity, actual evidence contents, artifact provenance and available resources.
+
+Scope file searches to this named project. Never recursively walk `$HOME`, `~/prj`,
+the Arcadia/Arc FUSE checkouts, or
+`/media/tarstars/medium_data/database/troll_farm`.

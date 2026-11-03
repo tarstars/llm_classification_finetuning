@@ -18,6 +18,8 @@ Follow-ups above nine hours require multiple resumable jobs and enough verified 
 
 ## Browse and update
 
+Follow the [project policy](PROJECT_POLICY.md) for selecting work, preparing experiments, recording evidence and publishing results.
+
 ```bash
 uv run python scripts/backlog.py list --priority P1
 uv run python scripts/backlog.py list --actionable

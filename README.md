@@ -4,6 +4,9 @@ Reproducible experiments for [LLM Classification Finetuning on Kaggle](https://w
 Predict whether a human prefers response A, response B, or a tie. The primary metric
 is multiclass log loss (lower is better).
 
+Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
+budgets, status updates, evidence, validation and committing results.
+
 Our best official Kaggle score is **0.97025**, achieved by the Qwen3-4B QLoRA
 preference classifier in attempt 002. Frozen-model confirmation gave **0.96236 log
 loss** and **53.06% accuracy** on 5,746 examples. Training stopped at its six-hour
