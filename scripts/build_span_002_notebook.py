@@ -148,6 +148,7 @@ development loss have different data/postprocessing and must not be conflated.
                          for family,row in training['cohorts'].items() for name,m in row['models'].items()]))
     display(pd.DataFrame(training['exposure']['rank_summaries']))
     print('Coverage:',training['exposure']['coverage'])
+    print('Actual resume-state check and logical update counts:',training['exposure']['resume_state_guard'])
     print('Training result:',{k:training['summary'][k] for k in ['initial_step','final_step','epochs_completed',
                               'training_seconds','development_prediction_seconds','stopped_for_time','stopped_for_plateau']})
     print('Identity guards:',training['starting_identity'])

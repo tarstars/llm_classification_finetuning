@@ -263,6 +263,14 @@
             "results/span_002/live_progress_exposure.json",
             "results/span_002/packing_diagnostics.json"
           ]
+        },
+        {
+          "at": "2026-11-03T22:20:36+00:00",
+          "status": "running",
+          "note": "Immutable parent scheduler/scaler states recovered: scheduler position796 and AMPscale4096 at nominal800. Added final first-cycle checks on both ranks and file hashes. Parent796 accepted updates are reconstructed under pinned semantics; new counts remain directly logged and historical row/token exposure is unknown.",
+          "evidence": [
+            "docs/SPAN_002_RESULTS.md"
+          ]
         }
       ],
       "introduced_in": 1,

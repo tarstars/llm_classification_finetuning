@@ -125,6 +125,14 @@ improvement without changing the fixed endpoint or selecting a new checkpoint.
 Final full-dev predictions, matched calibration and exposure reconciliation remain
 required before accepting a candidate.
 
+The immutable parent scheduler/scaler files were also downloaded and checked.
+At nominal checkpoint 800, scheduler position is **796** and AMP scale **4096**.
+Under the pinned accepted-only LambdaLR semantics, this reconstructs 796 accepted
+updates before continuation; historical row/token exposure remains unlogged.
+Final analysis requires both ranks' first new cycle to start at that saved
+scheduler position and scale. New accepted updates are directly measured and are
+logical optimizer updates, not a sum over DDP ranks.
+
 [Verified descriptors](../results/span_002/packing_diagnostics.json) reuse the exact
 parent checkpoint tokenizer and unchanged packing source. Full-dev clipping is
 20.05% of rows; mean row content retention is 93.51%, but corpus-token retention

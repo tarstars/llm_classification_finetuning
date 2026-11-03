@@ -244,12 +244,21 @@ def main():
             assert state['counts']['accepted_updates']+state['counts']['skipped_updates']==state['counts']['cycles']
         vectors=[]
         audits=[]
+        import torch
+        parent=root/'baseline_resume/joint_run/checkpoints/checkpoint-800'
+        for filename in ['scheduler.pt','scaler.pt']:
+            assert digest(parent/filename)==summary['resume_source']['file_sha256'][filename]
+            report['input_sha256']['parent_'+filename]=digest(parent/filename)
+        parent_scheduler=torch.load(parent/'scheduler.pt',map_location='cpu',weights_only=True)
+        parent_scaler=torch.load(parent/'scaler.pt',map_location='cpu',weights_only=True)
         training_ids=set(map(int,frame.id))-set(split['dev'])-set(split['confirmation'])
         train_order=sorted(training_ids)
         training_labels=dict(zip(frame.loc[train_order].id,frame.loc[train_order,CLASSES].values.argmax(1)))
         for rank in (0,1):
             events=[json.loads(line) for line in (job/f'exposure_rank{rank}.jsonl').read_text().splitlines()]
             audits.append(validate_exposure(events,states[rank],800,summary['final_step'],training_labels,config['max_length']))
+            assert events[0]['scheduler_before']==parent_scheduler['last_epoch'], 'Scheduler did not resume from the parent position'
+            assert events[0]['scale_before']==parent_scaler['scale'], 'AMP scaler did not resume from the parent scale'
             vectors.append([event['skipped'] for event in events])
             report['input_sha256'][f'audit_state_rank{rank}']=digest(job/f'audit_state_rank{rank}.json')
             report['input_sha256'][f'cycle_records_rank{rank}']=digest(job/f'exposure_rank{rank}.jsonl')
@@ -263,6 +272,13 @@ def main():
             coverage[kind]={'unique_rows':len(counts),'unique_groups':int(all_groups.loc[list(counts)].nunique()),
                 'total_visits':sum(counts.values()),'maximum_visits':max(counts.values(),default=0)}
         report['exposure']={'totals':totals,'coverage':coverage,
+            'resume_state_guard':{'verified':True,'parent_nominal_step':800,
+                'parent_scheduler_position':parent_scheduler['last_epoch'],
+                'parent_amp_scale':parent_scaler['scale'],
+                'new_accepted_updates_global':audits[0]['accepted_updates'],
+                'parent_accepted_updates_inferred':parent_scheduler['last_epoch'],
+                'combined_accepted_updates_inferred':parent_scheduler['last_epoch']+audits[0]['accepted_updates'],
+                'note':'Parent accepted count is reconstructed under pinned accepted-only LambdaLR semantics; new counts use direct skip flags. Historical row/token exposure was not logged. DDP ranks are not summed for logical optimizer updates.'},
             'accepted_tokens_per_training_second':totals['accepted_tokens']/summary['training_seconds'],
             'processed_tokens_per_training_second':totals['processed_tokens']/summary['training_seconds'],
             'cycle_audits':[{key:value for key,value in row.items() if key!='skip_vector'} for row in audits],

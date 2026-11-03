@@ -130,6 +130,16 @@ The final analyzer now reports matched order, historical calibration separately,
 retention and observational clipped/unclipped slices in addition to primary gates.
 Its final-output branch is still awaiting actual H03 data.
 
+Parent `scheduler.pt` and `scaler.pt` are now downloaded locally alongside the
+checkpoint-800 Trainer state/tokenizer. Their hashes are respectively
+`9eb8788f7cb7bd093b5c2c850b25091b223d32c67b84483f0ffb06df392a8173` and
+`772aa6b2dd93d9f0b35dd643493c79d957bf35f47b86c5360ed6b09915e7abc0`.
+Saved scheduler position is 796, AMP scale 4096. The latest analyzer now requires
+the first cycle on each rank to match those states and the remote summary hashes.
+Parent accepted updates can be reconstructed as 796 under pinned accepted-only
+LambdaLR semantics; historical row/token exposure remains unknown. Logical update
+counts must not sum DDP ranks. This extra check awaits actual final cycle records.
+
 `decide_span_002.py` currently records H03 pending. After final valid exposure
 analysis, run it again to record all decisions and, only if the declared quality
 and runtime gates pass, freeze `research_candidate.json` with its temperature and
