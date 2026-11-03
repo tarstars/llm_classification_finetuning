@@ -1,5 +1,15 @@
 # Project memory
 
+## Current handoff — 2026-11-03
+
+Start with [CONTEXT_HANDOFF.md](CONTEXT_HANDOFF.md). The `GOAL.md` span is complete:
+v1 is sealed; v2 has 39 tasks with an empty execution focus; v3 is an empty draft.
+No pilot justified promotion, and the official best remains 0.97025. See
+[span results](SPAN_001_RESULTS.md) and [notebook 12](../notebooks/12_backlog_v1_span.ipynb).
+All span GPU jobs are terminal. The older prompted-judge pipeline is also complete,
+with official loss 0.98653; see [its final results](../ATTEMPT_003_RESULTS.md).
+Entries below are dated historical snapshots, including old “in progress” wording.
+
 ## Prompted-judge experiment in progress — 2026-11-02
 
 The user authorized attempt 003: prompt a stronger public model and test an actual

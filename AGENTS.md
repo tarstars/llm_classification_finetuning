@@ -7,6 +7,10 @@ resource caps. Queue discoveries for the next backlog version; preserve historic
 snapshots and carry unfinished work forward at span closure. Explicit user instructions take
 precedence over the project policy.
 
+For a fresh or compacted context, read [docs/CONTEXT_HANDOFF.md](docs/CONTEXT_HANDOFF.md).
+It is a dated orientation snapshot; verify current files and live service state
+before acting.
+
 Scope file searches to this project. Never recursively walk `$HOME`, `~/prj`,
 Arcadia/Arc FUSE mounts or
 `/media/tarstars/medium_data/database/troll_farm`.

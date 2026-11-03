@@ -6,6 +6,7 @@ is multiclass log loss (lower is better).
 
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
+For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 The completed [first-span goal](GOAL.md) selected E00 and four pilots and produced
 backlog v2. Reusing that file verifies the closed handoff; a later goal must select
 v2's execution focus and resource budget.
