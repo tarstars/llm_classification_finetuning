@@ -271,6 +271,14 @@
           "evidence": [
             "docs/SPAN_002_RESULTS.md"
           ]
+        },
+        {
+          "at": "2026-11-03T22:49:27+00:00",
+          "status": "running",
+          "note": "Third fixed selection validation at nominal step1400: raw original-order loss0.94940205, accuracy54.88% on original1024 rows, versus0.95332397 at1200 and0.97870392 at parent800. Fixed1438 endpoint unchanged; final full-dev scoring and exposure/state audit remain pending.",
+          "evidence": [
+            "results/span_002/live_progress_exposure.json"
+          ]
         }
       ],
       "introduced_in": 1,

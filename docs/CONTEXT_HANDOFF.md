@@ -130,6 +130,10 @@ The final analyzer now reports matched order, historical calibration separately,
 retention and observational clipped/unclipped slices in addition to primary gates.
 Its final-output branch is still awaiting actual H03 data.
 
+Third selection validation, step 1400 (22:47 UTC read): **0.94940205**, accuracy
+**54.88%**. The fixed final endpoint remains 1438; checkpoint 1400 is an intermediate
+diagnostic. Full 5,746-row scoring is still pending.
+
 Parent `scheduler.pt` and `scaler.pt` are now downloaded locally alongside the
 checkpoint-800 Trainer state/tokenizer. Their hashes are respectively
 `9eb8788f7cb7bd093b5c2c850b25091b223d32c67b84483f0ffb06df392a8173` and

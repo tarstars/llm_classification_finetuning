@@ -125,6 +125,10 @@ improvement without changing the fixed endpoint or selecting a new checkpoint.
 Final full-dev predictions, matched calibration and exposure reconciliation remain
 required before accepting a candidate.
 
+At step **1400**, that fixed selection loss improved further to **0.9494021**;
+accuracy was **54.88%**. This intermediate result does not replace the fixed
+step-1438 endpoint or the required full-development comparison.
+
 The immutable parent scheduler/scaler files were also downloaded and checked.
 At nominal checkpoint 800, scheduler position is **796** and AMP scale **4096**.
 Under the pinned accepted-only LambdaLR semantics, this reconstructs 796 accepted
