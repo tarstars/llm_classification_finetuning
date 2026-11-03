@@ -30,12 +30,17 @@ if previous.get('version')!=push['version_number']:
 progress={**previous,'job':args.job,'kernel':push['ref'].removeprefix('/code/'),
     'version':push['version_number'],'status':current['status'],
     'status_observed_at':datetime.now(timezone.utc).isoformat()}
+log_started=datetime.now(timezone.utc).timestamp()
 reader=subprocess.run([sys.executable,'scripts/kaggle_job.py','logs',*common,'--seconds',str(args.seconds)],
     cwd=REPO,capture_output=True,text=True,timeout=60)
 progress['log_reader_exit_code']=reader.returncode
+progress['new_log_events_received']=False
+progress['log_reader_notice']=next((line[:240] for line in reader.stdout.splitlines()
+    if line.startswith(('ConnectionError:','TimeoutError:','ReadTimeout:'))),None)
 events=directory/'live_events.jsonl'
 if events.exists():
     progress['log_snapshot_mtime']=datetime.fromtimestamp(events.stat().st_mtime,timezone.utc).isoformat()
+    progress['new_log_events_received']=events.stat().st_mtime>=log_started
     content=''.join(x.get('data','') for line in events.read_text().splitlines()
                   if isinstance((x:=json.loads(line)).get('data'),str))
     for match in re.finditer(r'(JOINT_PROGRESS|JUDGE_PROGRESS)\s+(\{[^\n]+\})',content):

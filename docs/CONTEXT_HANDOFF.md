@@ -83,6 +83,15 @@ receipt/archived unaccepted intent before proceeding. The absence audit checks a
 complete owned inventory, exact-version HTTP result and independent authenticated
 status. Never overwrite accepted push/version state to retry.
 
+Further update: the first upload was proven unaccepted (all 42 owned notebooks
+listed, exact version inaccessible, independent H03 auth/status valid). Its intent
+was archived; the one explicit upload retry then disconnected without a response.
+The retry's acceptance is still unproven: current `push_intent.json` exists but
+`push.json` does not. Reconcile exact service state again before any action; do not
+blindly retry. H03 was freshly verified RUNNING at 19:28 UTC; the most recent
+numerical log snapshot is older (19:11, step 830). A stale log snapshot is not
+evidence that training stopped.
+
 Branch is `main`, origin `git@github.com:tarstars/llm_classification_finetuning.git`.
 The research closing commit `13e7adb` was pushed and matched remote `main`; this
 handoff may have a newer publishing commit. Preserve the unrelated dirty file
