@@ -1,0 +1,18 @@
+{
+  "model_id": "Skywork/Skywork-Reward-V2-Qwen3-4B",
+  "revision": "fd958fef475f323f4e6b195930e3dd918485c668",
+  "gated": false,
+  "license": "apache-2.0",
+  "public_card": "https://huggingface.co/Skywork/Skywork-Reward-V2-Qwen3-4B",
+  "pretraining_overlap": "Unknown; no clean-benchmark claim",
+  "weights": [
+    "model-00001-of-00002.safetensors",
+    "model-00002-of-00002.safetensors"
+  ],
+  "config.json_sha256": "e017d6f50c3ed8e455883af28361d3ca3166e0f42c26af770b75511cd6297703",
+  "tokenizer_config.json_sha256": "d3e08cbc53421cc90a07d40da21fbac9a912f5ffa3f08263afd04f06105b0e6f",
+  "architecture": [
+    "Qwen3ForSequenceClassification"
+  ],
+  "num_labels": 1
+}

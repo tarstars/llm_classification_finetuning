@@ -1,0 +1,88 @@
+{
+  "observed_at": "2026-11-03T10:28:37.402932+00:00",
+  "quota": {
+    "used_seconds": 40562.245,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 67437.755
+  },
+  "recent_jobs": [
+    {
+      "ref": "arseniytrushin/llm-preference-judge-predict-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-dev-003-ctx1024",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-dev-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-profile-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-binary-probe-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-probe-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-training-error-poster-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-4b-eda-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-4b-predict-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-4b-confirm-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-4b-train-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-8b-pilot-002-batch4",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-8b-pilot-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-gpu-probe-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-offline-attempt-001",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-03T10:38:10.613514+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-001-frozen-reward-pilot",
+  "max_session_seconds": 10800,
+  "span_budget_remaining_before_reservation": 43029.170000000006,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 40733.075,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 67266.925
+  },
+  "recovery_note": "First job ERROR from BatchEncoding token-container mismatch; fixed and verified locally on all 5120 rows, no quality predictions obtained. Same data, checkpoint and content policy.",
+  "notebook_sha256": "b7e8dc93429004bc06bf7ca3f81effe04b1c6db17e92d82080b001a50281b423"
+}

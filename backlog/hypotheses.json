@@ -8,7 +8,7 @@
       "title": "Freeze the evaluation and resource contract",
       "priority": "P0",
       "rank": 1,
-      "status": "ready",
+      "status": "done",
       "gain": null,
       "estimate_confidence": "low",
       "engineering_hours": [
@@ -44,7 +44,24 @@
         "EDA_REPORT.md",
         "TARGET_AUDIT.md"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T10:09:18+00:00",
+          "status": "running",
+          "note": "Starting span 001: inventory current quota/jobs and frozen artifacts before predeclaring matched pilots.",
+          "evidence": []
+        },
+        {
+          "at": "2026-11-03T10:29:50+00:00",
+          "status": "done",
+          "note": "Protocol and immutable clock/budget recorded; live quota/jobs checked; exact sample groups and baseline hashes verified; four CPU packing/adapter/loss contracts and launch admission passed.",
+          "evidence": [
+            "docs/SPAN_001_PROTOCOL.md",
+            "results/span_001/artifact_inventory.json",
+            "results/span_001/resource_inventory_initial.json"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -55,7 +72,7 @@
       "title": "Preference-trained backbone",
       "priority": "P1",
       "rank": 2,
-      "status": "planned",
+      "status": "running",
       "gain": [
         -0.015,
         0.04
@@ -95,7 +112,25 @@
         "TARGET_AUDIT.md",
         "[Skywork reward models](https://github.com/SkyworkAI/Skywork-Reward)"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T10:29:50+00:00",
+          "status": "running",
+          "note": "Launching pinned Skywork reward-model frozen inference on the fixed training-feature and development IDs; head fitting follows within the predeclared protocol.",
+          "evidence": [
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-03T10:38:00+00:00",
+          "status": "running",
+          "note": "Initial GPU job is authoritatively ERROR after 170.830 quota seconds: chat-template BatchEncoding interface mismatch. Corrected code passed all 5,120 real-tokenizer rows (max 988 tokens) plus regression tests; launching a separately recorded tokenfix recovery.",
+          "evidence": [
+            "results/span_001/preflight.json",
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []

@@ -1,0 +1,14 @@
+{
+  "official_tokenizer_revision": "fd958fef475f323f4e6b195930e3dd918485c668",
+  "local_real_tokenizer_rows_verified": 5120,
+  "max_packed_length": 988,
+  "span_pack_sha256": "36be0e80d52dd6d4f47b9895b91527d0321fee06a1735e6bcf9a62af30710d34",
+  "first_gpu_job": {
+    "job": "reward",
+    "version": 1,
+    "status": "ERROR",
+    "quota_seconds": 170.83,
+    "cause": "Chat-template BatchEncoding return was passed as a token list"
+  },
+  "recovery": "Explicit flat-token extraction; same fixed rows/content policy; regression test and real tokenizer verification before retry"
+}

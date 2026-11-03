@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-03T10:29:58.358358+00:00",
+  "kernel": "arseniytrushin/llm-preference-span001-reward",
+  "max_session_seconds": 10800,
+  "span_budget_remaining_before_reservation": 43200.0,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 40562.245,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 67437.755
+  },
+  "recovery_note": "",
+  "notebook_sha256": "f203547b05d43dfa2d329a8703bbb9f845e886b1c0f3aa96c03a9ec59c4f711f"
+}

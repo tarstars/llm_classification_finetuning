@@ -14,6 +14,7 @@ parser.add_argument("action", choices=["push", "status", "output", "submit", "su
 parser.add_argument("--folder", type=Path, required=True)
 parser.add_argument("--job", required=True)
 parser.add_argument("--attempt", default="002")
+parser.add_argument("--run-directory", type=Path, help="Explicit heavy-artifact run directory; defaults to runs/attempt_ATTEMPT")
 parser.add_argument("--message")
 parser.add_argument("--pattern", default=r"(?:summary|gpu_probe|training_config|confirmation|prediction_summary|runtime_requirements)\.json$|training_progress\.jsonl$|\.csv$|\.log$|\.ipynb$")
 parser.add_argument("--accelerator")
@@ -22,7 +23,8 @@ parser.add_argument("--seconds", type=int, default=20, help="Bound live-log snap
 args = parser.parse_args()
 folder = args.folder.resolve()
 metadata = json.loads((folder / "kernel-metadata.json").read_text())
-out = ROOT / f"runs/attempt_{args.attempt}/jobs" / args.job
+run_directory = args.run_directory or ROOT / f"runs/attempt_{args.attempt}"
+out = run_directory / 'jobs' / args.job
 out.mkdir(parents=True, exist_ok=True)
 token = Path.home() / ".kaggle/access_token"
 if token.exists():

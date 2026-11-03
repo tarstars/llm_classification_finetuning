@@ -6,7 +6,7 @@ Version **1**, active; **41** tasks. Focus for this span: E00, H01, H09, H04, H1
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **33**, ready **0**, running **0**, done **0**, rejected **0**, deferred **7**.
+Hypothesis status: planned **32**, ready **0**, running **1**, done **0**, rejected **0**, deferred **7**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -57,8 +57,8 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | [E00](#e00) | P0 / ready | Freeze the evaluation and resource contract | — | low | 4…8 | 0…0 | 0…0 | — |
-| 2 | [H01](#h01) | P1 / planned | Preference-trained backbone | -0.015…+0.04 | high | 6…16 | 0.5…2 | 4…12 | E00 |
+| 1 | [E00](#e00) | P0 / done | Freeze the evaluation and resource contract | — | low | 4…8 | 0…0 | 0…0 | — |
+| 2 | [H01](#h01) | P1 / running | Preference-trained backbone | -0.015…+0.04 | high | 6…16 | 0.5…2 | 4…12 | E00 |
 | 3 | [H09](#h09) | P1 / planned | Explicit swap consistency | -0.01…+0.02 | medium | 6…14 | 1…3 | 12…24 | E00 |
 | 4 | [H04](#h04) | P1 / planned | Broader adapter coverage | -0.01…+0.025 | medium | 4…10 | 1…2 | 10…20 | E00 |
 | 5 | [H11](#h11) | P1 / planned | Learned symmetric tie model | -0.01…+0.015 | medium | 6…14 | 0.5…2 | 8…18 | E00 |
@@ -126,7 +126,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 ### E00
 
-**Freeze the evaluation and resource contract** — P0, ready, risk low.
+**Freeze the evaluation and resource contract** — P0, done, risk low.
 
 Make comparable pilot measurements possible before spending another training budget.
 
@@ -152,9 +152,12 @@ Make comparable pilot measurements possible before spending another training bud
 
 **References:** [docs/ATTEMPT_002.md](docs/ATTEMPT_002.md); [docs/ATTEMPT_003.md](docs/ATTEMPT_003.md); [EDA_REPORT.md](EDA_REPORT.md); [TARGET_AUDIT.md](TARGET_AUDIT.md)
 
+- 2026-11-03T10:09:18+00:00 — running: Starting span 001: inventory current quota/jobs and frozen artifacts before predeclaring matched pilots.
+- 2026-11-03T10:29:50+00:00 — done: Protocol and immutable clock/budget recorded; live quota/jobs checked; exact sample groups and baseline hashes verified; four CPU packing/adapter/loss contracts and launch admission passed. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md); [results/span_001/artifact_inventory.json](results/span_001/artifact_inventory.json); [results/span_001/resource_inventory_initial.json](results/span_001/resource_inventory_initial.json)
+
 ### H01
 
-**Preference-trained backbone** — P1, planned, risk high.
+**Preference-trained backbone** — P1, running, risk high.
 
 A preference-trained reward backbone may encode useful human-preference distinctions beyond the chat classifier.
 
@@ -174,11 +177,14 @@ A preference-trained reward backbone may encode useful human-preference distinct
 
 **Revision:** Reward models are not ready-made three-class classifiers, and checkpoint availability is not proof of clean evaluation.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
 **References:** [ATTEMPT_003_RESULTS.md](ATTEMPT_003_RESULTS.md); [TARGET_AUDIT.md](TARGET_AUDIT.md); [Skywork reward models](https://github.com/SkyworkAI/Skywork-Reward)
+
+- 2026-11-03T10:29:50+00:00 — running: Launching pinned Skywork reward-model frozen inference on the fixed training-feature and development IDs; head fitting follows within the predeclared protocol. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+- 2026-11-03T10:38:00+00:00 — running: Initial GPU job is authoritatively ERROR after 170.830 quota seconds: chat-template BatchEncoding interface mismatch. Corrected code passed all 5,120 real-tokenizer rows (max 988 tokens) plus regression tests; launching a separately recorded tokenfix recovery. Evidence: [results/span_001/preflight.json](results/span_001/preflight.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 
 ### H09
 
@@ -202,7 +208,7 @@ Paired-view consistency regularization may reduce harmful position dependence be
 
 **Revision:** The baseline already includes swapping and averaging; estimate only their incremental training-time extension.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -230,7 +236,7 @@ Adapting feed-forward layers as well as attention may improve preference represe
 
 **Revision:** Broader coverage is not automatically better; isolate coverage from total adaptation capacity.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -258,7 +264,7 @@ A learned tie representation constrained to be symmetric may improve tie discrim
 
 **Revision:** Rewritten: a two-stage probability formula alone cannot improve the model.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -286,7 +292,7 @@ An 8–9B supervised preference classifier may learn distinctions missed by Qwen
 
 **Revision:** Model level and model size are not interchangeable; compare training objective and exposure as well as parameters.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -314,7 +320,7 @@ The remaining exposure to one epoch may still help, despite the late plateau.
 
 **Revision:** Incomplete exposure is a hypothesis, not evidence that more epochs will improve loss.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -342,7 +348,7 @@ Learning-rate, warmup or batch choices may have limited the current classifier.
 
 **Revision:** The plateau does not specifically diagnose the learning rate.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -370,7 +376,7 @@ Separate learned pooling over each answer may expose comparison features more di
 
 **Revision:** Final-token pooling may be suboptimal, but it does see both answers.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -398,7 +404,7 @@ Shared question-answer scoring may enforce useful A/B symmetry, at the cost of s
 
 **Revision:** Shared utilities are not guaranteed to dominate a cross-encoder; direct interaction is a real tradeoff.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -426,7 +432,7 @@ Clean, compatible additional comparisons may improve coverage beyond the 46K tra
 
 **Revision:** Extra data is not automatically clean or useful; provenance and overlap audit precede training.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -454,7 +460,7 @@ A demonstrated stronger preference teacher may provide useful soft labels for a 
 
 **Revision:** Do not use the present Gemma or assistant as a proven teacher. The existing Eliza embedding authorization is not blanket authorization for other external APIs.
 
-**Depends on:** E00, H01. Currently unmet: E00, H01.
+**Depends on:** E00, H01. Currently unmet: H01.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -482,7 +488,7 @@ A second preference model may improve the classifier if its errors are genuinely
 
 **Revision:** Compute estimate assumes components/predictions already exist; training a missing second model adds its own full budget.
 
-**Depends on:** E00, H01. Currently unmet: E00, H01.
+**Depends on:** E00, H01. Currently unmet: H01.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -510,7 +516,7 @@ Some question constraints may survive better with adaptive allocation than the f
 
 **Revision:** A fixed cap is not evidence of a large recoverable score gap.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -538,7 +544,7 @@ Preserving chronological request-response alignment may improve multi-turn compa
 
 **Revision:** Demoted from first wave; the aggregate multi-turn association does not prove a layout defect.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -566,7 +572,7 @@ Training and inference with more retained context may improve truncated comparis
 
 **Revision:** Inference-only context results do not estimate a trained long-context model; gain is uncertain and compute-heavy.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -594,7 +600,7 @@ Capping each repeated training prompt contribution might improve generalization 
 
 **Revision:** Distinguished repeated prompts from the tiny set of conflicting repeated comparisons in H12.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -622,7 +628,7 @@ A low-capacity symmetric extension to temperature scaling may recover a small re
 
 **Revision:** Temperature scaling is already deployed; forecast only incremental gain beyond it.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -650,7 +656,7 @@ A small fold-local residual model may add limited structure information beyond t
 
 **Revision:** This extends an already tested small/uncertain blend, not a new likely breakthrough.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -678,7 +684,7 @@ The prompted judge may benefit from a rubric better aligned with voter choices.
 
 **Revision:** Replaced the unsupported claim that our judge definitely overweights factual correctness.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -706,7 +712,7 @@ Request-conditioned refusal features may improve applicable cases beyond a gener
 
 **Revision:** Refusal association is not a deterministic target rule or evidence of leakage.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -734,7 +740,7 @@ Verified minimal instruction violations may teach useful distinctions absent fro
 
 **Revision:** Synthetic constraint truth does not prove the preferred class for an original ambiguous comparison.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -762,7 +768,7 @@ Reliable criterion annotations may help learn instruction compliance and factual
 
 **Revision:** Criterion correctness is an auxiliary signal, not an interchangeable replacement for the competition target.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -790,7 +796,7 @@ Independently verified factual mutations may improve discrimination between flue
 
 **Revision:** Factual correctness alone is not the human preference label.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -818,7 +824,7 @@ Training examples persistently difficult out of fold may deserve modest addition
 
 **Revision:** Existing sampled training predictions are in-sample, not eligible OOF mining scores.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -846,7 +852,7 @@ A robust objective may reduce sensitivity to inconsistent training votes, but co
 
 **Revision:** Replaced the assumption that difficult or idiosyncratic votes are necessarily incorrect.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -874,7 +880,7 @@ A carefully limited sampling change may help underlearned domains if reliable do
 
 **Revision:** Replaced the unsupported assertion that frequent domains crowd out the others.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -902,7 +908,7 @@ A label-free extractive policy may preserve decisive middle spans better than he
 
 **Revision:** Retention policies must be label-independent; selected worst cases cannot define the test set.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -930,7 +936,7 @@ A few related training-only preference examples may clarify the judge decision b
 
 **Revision:** Similar examples are useful only if they are legitimate fold-local training evidence.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -958,7 +964,7 @@ A short comparison step may improve judgments over immediate class-token scoring
 
 **Revision:** A critique can be wrong and may be deployable only on a small subset.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -986,7 +992,7 @@ A costly judge may help selected rows if a gate can predict its incremental bene
 
 **Revision:** A confidence heuristic does not establish that a cascade will help.
 
-**Depends on:** E00, H01. Currently unmet: E00, H01.
+**Depends on:** E00, H01. Currently unmet: H01.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1014,7 +1020,7 @@ Constrained arithmetic/symbolic checks may help a subset of math comparisons.
 
 **Revision:** A calculator is reliable only for a correctly extracted, well-specified claim.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1042,7 +1048,7 @@ Isolated execution/static evidence may help a subset of coding comparisons.
 
 **Revision:** A timeout or failed dependency is not proof the answer is bad; execution is gated on isolation.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1070,7 +1076,7 @@ Chunk encoding plus learned aggregation may retain evidence beyond one truncated
 
 **Revision:** Long-text coverage alone does not justify a new multi-stage architecture.
 
-**Depends on:** E00, H23. Currently unmet: E00, H23.
+**Depends on:** E00, H23. Currently unmet: H23.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1098,7 +1104,7 @@ Inference precision may account for a small part of preference error.
 
 **Revision:** Narrowed to inference sensitivity; it does not estimate the benefit of full-precision training.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1126,7 +1132,7 @@ Training-only equivalent comparisons can share a vote distribution, with very li
 
 **Revision:** Demoted substantially: repeated conflicting comparisons are rare. GPU estimate covers only the CPU-first scope; any later retrain needs a new budget.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1154,7 +1160,7 @@ Changing the attention mask might improve within-answer representations for comp
 
 **Revision:** Corrected: causal attention is not a missing-context bug in our final-token classifier.
 
-**Depends on:** E00. Currently unmet: E00.
+**Depends on:** E00. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1182,7 +1188,7 @@ A faithful compression stage might improve usable evidence per context token.
 
 **Revision:** A shorter representation is not necessarily a faithful or sufficient one.
 
-**Depends on:** E00, H27. Currently unmet: E00, H27.
+**Depends on:** E00, H27. Currently unmet: H27.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1210,7 +1216,7 @@ Solving a question before seeing candidate answers may reduce anchoring on fluen
 
 **Revision:** Reference generation is an uncertain evidence source, not an oracle.
 
-**Depends on:** E00, H31. Currently unmet: E00, H31.
+**Depends on:** E00, H31. Currently unmet: H31.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1238,7 +1244,7 @@ Trusted offline evidence may help factual-question comparisons within its covera
 
 **Revision:** Offline retrieval is possible in principle, but not a general factuality or preference solution.
 
-**Depends on:** E00, H29. Currently unmet: E00, H29.
+**Depends on:** E00, H29. Currently unmet: H29.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -1266,7 +1272,7 @@ Specialized models with a learned soft gate might help domains only if a global 
 
 **Revision:** Do not infer specialist need merely from heterogeneous question types.
 
-**Depends on:** E00, H37. Currently unmet: E00, H37.
+**Depends on:** E00, H37. Currently unmet: H37.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 

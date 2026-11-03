@@ -1,0 +1,36 @@
+{
+  "split_ids_sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1",
+  "sample_ids_sha256": "716c065f583d45ef6028034e77349cf245b849abbf3f6d58a533c3867ae37203",
+  "selection_sha256": "68a097c19cabe454c99925cc41153fd9cfb4b5a35bc3f656b361b21706bd7ca8",
+  "baseline_predictions_sha256": "5b2522d2be7fed1d490ebe6135afe97fe3863339d8c34a971027ce861f051de2",
+  "baseline_adapter_expected_sha256": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+  "baseline_adapter_local_present": true,
+  "baseline_adapter_local_sha256": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d",
+  "baseline_kernel": "arseniytrushin/llm-preference-qwen3-4b-train-002",
+  "baseline_kernel_version": 1,
+  "baseline_temperature": 0.7220597450036835,
+  "baseline_prediction_rows": 5746,
+  "sample_counts": {
+    "dev": 1024,
+    "feature_fit": 4096,
+    "training_pilot": 2048
+  },
+  "split_counts": {
+    "dev": 5746,
+    "confirmation": 5746,
+    "train": 45985
+  },
+  "source_sha256": {
+    "src/arena/joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "src/arena/joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+    "src/arena/joint_infer.py": "740bb4f3219a26dd2583607ced241c6dffcc00db9133bc271add0c0586d74eea"
+  },
+  "software": {
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.1",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "bitsandbytes": "0.50.2",
+    "kaggle": "2.2.5"
+  }
+}

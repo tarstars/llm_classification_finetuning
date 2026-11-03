@@ -1,0 +1,21 @@
+{
+  "span": 1,
+  "started_at": "2026-11-03T10:06:28+00:00",
+  "deadline": "2026-11-05T10:06:28+00:00",
+  "gpu_session_seconds_cap": 43200,
+  "quota_used_at_start": 40562.245,
+  "quota_reserved_at_start": 0.0,
+  "focus": [
+    "E00",
+    "H01",
+    "H09",
+    "H04",
+    "H11"
+  ],
+  "seed": 20261118,
+  "dev_rows": 1024,
+  "feature_fit_rows": 4096,
+  "training_pilot_rows": 2048,
+  "quota_accounting": "Elapsed notebook session time; two T4s do not double quota consumption.",
+  "quota_accounting_source": "https://www.kaggle.com/discussions/product-feedback/361104"
+}

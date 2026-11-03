@@ -1,0 +1,16 @@
+{
+  "id": "arseniytrushin/llm-preference-span-001-frozen-reward-pilot",
+  "title": "LLM Preference Span 001 Frozen Reward Pilot",
+  "code_file": "reward_pilot.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "competition_sources": [
+    "llm-classification-finetuning"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
