@@ -1,0 +1,211 @@
+{
+  "method": "CPU reconstruction on fixed IDs: baseline original orientation, reward common content; marker tokens excluded",
+  "sample_ids_sha256": "716c065f583d45ef6028034e77349cf245b849abbf3f6d58a533c3867ae37203",
+  "max_length": 1024,
+  "tokenizers": {
+    "baseline": {
+      "samples": {
+        "dev": {
+          "rows": 1024,
+          "packed_length_quantiles": [
+            51.0,
+            608.0,
+            1024.0,
+            1024.0,
+            1024.0
+          ],
+          "any_field_clipped_fraction": 0.1962890625,
+          "field_clipped_fraction": {
+            "prompt": 0.06640625,
+            "response_a": 0.130859375,
+            "response_b": 0.1416015625
+          },
+          "corpus_content_retained_fraction": {
+            "prompt": 0.6655922749039626,
+            "response_a": 0.8389811657763597,
+            "response_b": 0.838261492583556
+          },
+          "raw_tokens": {
+            "prompt": 76012,
+            "response_a": 301207,
+            "response_b": 309852
+          },
+          "retained_content_tokens": {
+            "prompt": 50593,
+            "response_a": 252707,
+            "response_b": 259737
+          }
+        },
+        "feature_fit": {
+          "rows": 4096,
+          "packed_length_quantiles": [
+            51.0,
+            569.0,
+            1024.0,
+            1024.0,
+            1024.0
+          ],
+          "any_field_clipped_fraction": 0.196044921875,
+          "field_clipped_fraction": {
+            "prompt": 0.067626953125,
+            "response_a": 0.130126953125,
+            "response_b": 0.13037109375
+          },
+          "corpus_content_retained_fraction": {
+            "prompt": 0.6254939931645308,
+            "response_a": 0.8238659202500065,
+            "response_b": 0.8169887833567573
+          },
+          "raw_tokens": {
+            "prompt": 329458,
+            "response_a": 1191649,
+            "response_b": 1228799
+          },
+          "retained_content_tokens": {
+            "prompt": 206074,
+            "response_a": 981759,
+            "response_b": 1003915
+          }
+        },
+        "training_pilot": {
+          "rows": 2048,
+          "packed_length_quantiles": [
+            59.0,
+            568.5,
+            1024.0,
+            1024.0,
+            1024.0
+          ],
+          "any_field_clipped_fraction": 0.19580078125,
+          "field_clipped_fraction": {
+            "prompt": 0.076171875,
+            "response_a": 0.13037109375,
+            "response_b": 0.1298828125
+          },
+          "corpus_content_retained_fraction": {
+            "prompt": 0.6013531196926246,
+            "response_a": 0.8131771887337027,
+            "response_b": 0.8251402443323161
+          },
+          "raw_tokens": {
+            "prompt": 179585,
+            "response_a": 602860,
+            "response_b": 595746
+          },
+          "retained_content_tokens": {
+            "prompt": 107994,
+            "response_a": 490232,
+            "response_b": 491574
+          }
+        }
+      },
+      "additional_template_clipped_rows": 0,
+      "tokenizer_json_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "tokenizer_config_sha256": "790f7ad384092fdf91d43d84dc6eaa33c2a66ee964d39aa2060c2afa815fa708"
+    },
+    "reward": {
+      "samples": {
+        "dev": {
+          "rows": 1024,
+          "packed_length_quantiles": [
+            19.0,
+            307.0,
+            557.0,
+            695.5899999999999,
+            970.0
+          ],
+          "any_field_clipped_fraction": 0.1962890625,
+          "field_clipped_fraction": {
+            "prompt": 0.06640625,
+            "response_a": 0.130859375,
+            "response_b": 0.1416015625
+          },
+          "corpus_content_retained_fraction": {
+            "prompt": 0.6655922749039626,
+            "response_a": 0.838762047362777,
+            "response_b": 0.838261492583556
+          },
+          "raw_tokens": {
+            "prompt": 76012,
+            "response_a": 301207,
+            "response_b": 309852
+          },
+          "retained_content_tokens": {
+            "prompt": 50593,
+            "response_a": 252641,
+            "response_b": 259737
+          }
+        },
+        "feature_fit": {
+          "rows": 4096,
+          "packed_length_quantiles": [
+            17.0,
+            293.0,
+            559.0,
+            715.1800000000003,
+            988.0
+          ],
+          "any_field_clipped_fraction": 0.196044921875,
+          "field_clipped_fraction": {
+            "prompt": 0.067626953125,
+            "response_a": 0.130126953125,
+            "response_b": 0.13037109375
+          },
+          "corpus_content_retained_fraction": {
+            "prompt": 0.6254939931645308,
+            "response_a": 0.8236494135437532,
+            "response_b": 0.8169887833567573
+          },
+          "raw_tokens": {
+            "prompt": 329458,
+            "response_a": 1191649,
+            "response_b": 1228799
+          },
+          "retained_content_tokens": {
+            "prompt": 206074,
+            "response_a": 981501,
+            "response_b": 1003915
+          }
+        },
+        "training_pilot": {
+          "rows": 2048,
+          "packed_length_quantiles": [
+            19.0,
+            295.0,
+            562.0,
+            710.3500000000013,
+            967.0
+          ],
+          "any_field_clipped_fraction": 0.19580078125,
+          "field_clipped_fraction": {
+            "prompt": 0.076171875,
+            "response_a": 0.13037109375,
+            "response_b": 0.1298828125
+          },
+          "corpus_content_retained_fraction": {
+            "prompt": 0.6013531196926246,
+            "response_a": 0.8129549149056166,
+            "response_b": 0.8251402443323161
+          },
+          "raw_tokens": {
+            "prompt": 179585,
+            "response_a": 602860,
+            "response_b": 595746
+          },
+          "retained_content_tokens": {
+            "prompt": 107994,
+            "response_a": 490098,
+            "response_b": 491574
+          }
+        }
+      },
+      "additional_template_clipped_rows": 0,
+      "tokenizer_json_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config_sha256": "d3e08cbc53421cc90a07d40da21fbac9a912f5ffa3f08263afd04f06105b0e6f"
+    }
+  },
+  "reward_executed_length_reproduction": {
+    "rows": 5120,
+    "exact_match": true
+  }
+}

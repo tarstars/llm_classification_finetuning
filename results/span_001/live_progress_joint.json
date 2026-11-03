@@ -1,0 +1,47 @@
+{
+  "job": "joint",
+  "version": 1,
+  "kernel": "arseniytrushin/llm-preference-span-001-joint-pilots",
+  "status": "KernelWorkerStatus.RUNNING",
+  "status_observed_at": "2026-11-03T12:11:00.749803+00:00",
+  "log_reader_exit_code": 0,
+  "log_snapshot_mtime": "2026-11-03T12:11:10.695260+00:00",
+  "feature_ranks": {
+    "0": {
+      "rank": 0,
+      "view": 1,
+      "rows_in_view": 2308,
+      "total_rows": 2560,
+      "elapsed_seconds": 2217.491240491
+    },
+    "1": {
+      "rank": 1,
+      "view": 1,
+      "rows_in_view": 2308,
+      "total_rows": 2560,
+      "elapsed_seconds": 2279.359809691
+    }
+  },
+  "active_stage_from_log": "random_attention",
+  "stages": {
+    "features": {
+      "stage": "features",
+      "exit_code": 0,
+      "elapsed_seconds": 2659.9924421310425,
+      "complete": true
+    }
+  },
+  "training": {
+    "random_attention": {
+      "step": 48,
+      "elapsed_seconds": 1309.8375915339998,
+      "loss": 0.9603821039199829,
+      "grad_norm": 6.405911922454834,
+      "learning_rate": 5.000000000000003e-06,
+      "epoch": 0.75,
+      "num_input_tokens_seen": 893118,
+      "train_runtime": 1310.0919,
+      "train_tokens_per_second": 681.722
+    }
+  }
+}

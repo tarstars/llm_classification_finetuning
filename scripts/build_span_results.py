@@ -83,13 +83,51 @@ if decision_path.exists():
         lines += [f"**{key} decision:** {value['interpretation']} Coverage: {value['coverage']}. "
                   f"{value.get('followup','')}",'']
 if 'joint' in reports:
-    lines+=['| Controlled comparison | Loss reduction (95% group interval) |',
-            '| --- | --- |']
+    lines+=['| Controlled comparison | Loss reduction (95% group interval) | Training match |',
+            '| --- | --- | --- |']
     for name,row in reports['joint'].get('primary_comparisons',{}).items():
-        lo,hi=row['interval_95'];lines.append(f"| {name} | {row['gain']:+.5f} [{lo:+.5f}, {hi:+.5f}] |")
+        match=row.get('training_comparability')
+        label=('verified' if match['matched'] is True else 'unmatched' if match['matched'] is False
+               else 'uncertain') if match else 'frozen-head comparison'
+        lo,hi=row['interval_95'];lines.append(f"| {name} | {row['gain']:+.5f} [{lo:+.5f}, {hi:+.5f}] | {label} |")
     lines+=['','H04 compares the random-view arms at near matched adapter capacity. H09 '
-            'compares paired CE with paired CE plus consistency at matched exposure. '
+            'compares paired CE with paired CE plus consistency. Exposure and accepted AMP '
+            'updates must match before attributing a contrast to the intervention. '
             'H11 separates extra-feature and factorized-head effects; it is a frozen-feature pilot.','']
+    for row in reports['joint']['models']:
+        audit=row['details'].get('numerical_audit')
+        if audit:
+            lines += [f"{row['name']}: {audit['nominal_steps']} nominal cycles; "
+                      f"{audit['accepted_optimizer_steps_range']} reconstructed accepted updates; "
+                      f"{audit['skipped_optimizer_steps_range']} skipped updates. Exported weights finite: "
+                      f"{row['details']['adapter_weight_audit']['all_finite']}.",'']
+retention_path=directory/'retention.json'
+if retention_path.exists():
+    retention=json.loads(retention_path.read_text())['tokenizers']['baseline']['samples']['dev']
+    kept=retention['corpus_content_retained_fraction']
+    lines += [f"Token retention on the fixed development pilot: "
+              f"**{retention['any_field_clipped_fraction']:.1%}** of rows lose content in at least one field. "
+              f"Across all source tokens, retained question content is **{kept['prompt']:.1%}**, "
+              f"answer A **{kept['response_a']:.1%}**, and answer B **{kept['response_b']:.1%}**. "
+              'These token-weighted fractions emphasize long examples; truncation markers do not count as retained source content. '
+              'The reward template needs no additional clipping after common content selection. '
+              'See `results/span_001/retention.json` for each sample and tokenizer.','']
+if 'reward' in reports:
+    runtime=reports['reward'].get('reward_runtime',[])
+    if runtime:
+        lines += [f"H01 completed **{sum(x['total_sequences'] for x in runtime):,}** answer-sequence scores "
+                  f"across two T4s; the slower rank took **{max(x['seconds_since_model_load'] for x in runtime):.1f} s** "
+                  f"including its model load. Peak allocated GPU memory was "
+                  f"**{max(x['peak_gpu_bytes'] for x in runtime)/2**30:.2f} GiB per rank**.",'']
+charges=[]
+for name,push,state in job_rows:
+    path=directory/'jobs'/name/'quota.json'
+    if path.exists():charges.append(json.loads(path.read_text())['used_seconds'])
+if charges:
+    spent=max(charges)-plan['quota_used_at_start']
+    lines += [f"Posted quota increase at the latest collected snapshot: **{spent:.3f} s "
+              f"({spent/3600:.3f} two-T4 session-hours)** of the 12-hour span cap. "
+              'While a job is running, its unposted use is additional; final closure requires terminal jobs and a fresh quota snapshot.','']
 lines+=['The initial H01 implementation failed at its first batch due to the tokenizer '
         'return container and consumed **170.830 quota seconds**. The failed job is preserved; '
         'recovery passed a real-tokenizer check on all 5,120 rows before its GPU retry. '
@@ -168,10 +206,21 @@ else:print('Model quality measurements are not available yet; preparation and li
     for model in reports['joint']['models']:
         if model.get('raw_order'):
             print(model['name'],model['raw_order'])
+        if model['details'].get('numerical_audit'):
+            print(model['name'],'numerical / exposure audit:')
+            display(pd.Series({key:model['details'][key] for key in ('steps','canonical_exposures',
+                'non_padding_tokens_seen','training_seconds','peak_gpu_bytes','numerical_audit',
+                'adapter_weight_audit')}).to_frame())
     print('Frozen baseline reproduction:',reports['joint'].get('frozen_baseline_reproduction'))
 if (directory/'reward_diagnostics.json').exists():
     print('H01 descriptive winner/tie decomposition; no hybrid was evaluated:')
     display(pd.Series(json.loads((directory/'reward_diagnostics.json').read_text())).to_frame())
+if (directory/'retention.json').exists():
+    retention=json.loads((directory/'retention.json').read_text())
+    display(pd.DataFrame([{'tokenizer':name,'sample':split,
+        'rows':values['rows'],'any_field_clipped_fraction':values['any_field_clipped_fraction'],
+        **{'retained_'+key:value for key,value in values['corpus_content_retained_fraction'].items()}}
+        for name,entry in retention['tokenizers'].items() for split,values in entry['samples'].items()]))
 '''),md('''Head regularization and representation fitting use training-only grouped inner
 folds. New probability calibration is cross-fitted by development prompt group.
 The JSON records a matched cross-fitted baseline as well as the historically fitted
@@ -196,6 +245,16 @@ if jobs:
     charges=[x['quota_used_snapshot'] for x in jobs if x['quota_used_snapshot'] is not None]
     if charges:print('Charged quota increase at latest snapshot:',max(charges)-plan['quota_used_at_start'],'seconds; unfinished use may not be posted yet.')
 display(json.loads((directory/'preflight.json').read_text()))
+progress_path=directory/'live_progress_joint.json'
+if progress_path.exists():
+    progress=json.loads(progress_path.read_text())
+    print('Pinned joint version:',progress['version'],'status observed at:',progress['status_observed_at'])
+    print('Observed phase:',progress.get('active_stage_from_log'))
+    if progress.get('feature_ranks'):
+        display(pd.DataFrame(progress['feature_ranks']).T)
+    if progress.get('training'):
+        print('Training objective observations; these are not held-out evaluation losses:')
+        display(pd.DataFrame(progress['training']).T)
 '''),md('''A finished pilot can have a negative or inconclusive result. Completing this
 span requires evidence for every focus decision, executed results, a preserved v1
 final snapshot and a v2 handoff. Newly discovered tasks enter v2; unfinished tasks

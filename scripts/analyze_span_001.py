@@ -17,7 +17,8 @@ sys.path.insert(0,str(REPO/'src'))
 from arena.data import ROOT, CLASSES, json_write, prompt_groups
 from arena.joint_data import read_competition
 from arena.span_heads import (metrics,normalize,temperature,crossfit_temperature,paired_group_gain,
-                              order_diagnostics,fit_with_inner_selection)
+                              order_diagnostics,fit_with_inner_selection,paired_group_difference)
+from arena.span_audit import training_audit, matched_training
 
 
 def merge(files, expected_ids):
@@ -61,7 +62,7 @@ def main():
     shared={'rows':len(dev_ids),'evaluation':'Exploratory fixed development pilot; confirmation unused',
             'executed_config':config,'job':job,
             'analysis_source_sha256':{name:hashlib.sha256((REPO/name).read_bytes()).hexdigest()
-                for name in ['scripts/analyze_span_001.py','src/arena/span_heads.py']},
+                for name in ['scripts/analyze_span_001.py','src/arena/span_heads.py','src/arena/span_audit.py']},
             'analysis_software':{name:importlib.metadata.version(name) for name in ['numpy','scipy','scikit-learn']},
             'baseline_deployed':metrics(y,baseline_deployed),'baseline_crossfit_temperature':metrics(y,baseline_crossfit),
             'baseline_fold_temperatures':baseline_temperatures,'models':[]}
@@ -76,6 +77,10 @@ def main():
                'details':details or {}}
         if original is not None:
             entry['raw_order']=order_diagnostics(original,swapped)
+            saved[name+'_order_disagreement']=(original.argmax(1)!=swapped.argmax(1)).astype(float)
+            if 'frozen_order_disagreement' in saved:
+                entry['order_disagreement_reduction_vs_frozen']=paired_group_difference(
+                    saved['frozen_order_disagreement']-saved[name+'_order_disagreement'],groups,config)
         saved[name+'_raw']=p;saved[name+'_calibrated']=calibrated
         shared['models'].append(entry)
         return entry
@@ -109,6 +114,9 @@ def main():
             shared['frozen_baseline_reproduction']={'mean_absolute_probability_error':float(drift.mean()),
                                                     'max_absolute_probability_error':float(drift.max())}
             assert drift.mean()<.002 and drift.max()<.03,'Fresh frozen inference differs materially from baseline'
+            shared['frozen_raw_order']=order_diagnostics(data['original'][eval_idx],data['aligned_swap'][eval_idx])
+            saved['frozen_order_disagreement']=(data['original'][eval_idx].argmax(1)!=
+                                                data['aligned_swap'][eval_idx].argmax(1)).astype(float)
             for feature_kind,head_kind in [('probability','coupled'),('rich','coupled'),('rich','factorized')]:
                 p,details,head=fit_with_inner_selection(data,labels,all_groups,fit,eval_idx,feature_kind,head_kind,config)
                 name=f'tie_{feature_kind}_{head_kind}'
@@ -122,6 +130,17 @@ def main():
             predictions=merge([directory/'predictions.npz'],samples['dev'])
             indices=np.array([int(np.flatnonzero(predictions['ids']==key)[0]) for key in dev_ids])
             summary=json.loads((directory/'summary.json').read_text())
+            progress=[json.loads(line) for line in (directory/'training_progress.jsonl').read_text().splitlines()]
+            summary['numerical_audit']=training_audit(progress,config,summary)
+            from safetensors import safe_open
+            weights=sorted((directory/'adapter').glob('**/adapter_model.safetensors'))
+            assert len(weights)==1,'Expected exactly one exported fresh adapter'
+            with safe_open(weights[0],framework='numpy') as state:
+                keys=list(state.keys())
+                all_finite=all(np.isfinite(state.get_tensor(key)).all() for key in keys)
+            summary['adapter_weight_audit']={'all_finite':all_finite,'tensors':len(keys),
+                'sha256':hashlib.sha256(weights[0].read_bytes()).hexdigest()}
+            assert all_finite,'Nonfinite exported adapter weights invalidate this training arm'
             evaluate(arm,predictions['probabilities'][indices],summary,
                      predictions['original'][indices],predictions['aligned_swap'][indices])
         comparisons=[('random_attention','random_all_linear','H04'),
@@ -132,8 +151,14 @@ def main():
         shared['primary_comparisons']={}
         for baseline_name,candidate,name in comparisons:
             if baseline_name+'_calibrated' in saved and candidate+'_calibrated' in saved:
-                shared['primary_comparisons'][name]=paired_group_gain(y,saved[baseline_name+'_calibrated'],
+                contrast=paired_group_gain(y,saved[baseline_name+'_calibrated'],
                     saved[candidate+'_calibrated'],groups,config)
+                if name in ('H04','H09'):
+                    details={row['name']:row['details'] for row in shared['models']}
+                    contrast['training_comparability']=matched_training(details[baseline_name],details[candidate])
+                    contrast['order_disagreement_reduction']=paired_group_difference(
+                        saved[baseline_name+'_order_disagreement']-saved[candidate+'_order_disagreement'],groups,config)
+                shared['primary_comparisons'][name]=contrast
     assert shared['models'],'No valid experiment completed'
     np.savez_compressed(root/(args.stage+'_evaluated_predictions.npz'),**saved)
     json_write(root/(args.stage+'_results.json'),shared)

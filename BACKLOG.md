@@ -6,7 +6,7 @@ Version **1**, active; **41** tasks. Focus for this span: E00, H01, H09, H04, H1
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **28**, ready **2**, running **1**, done **1**, rejected **0**, deferred **8**.
+Hypothesis status: planned **28**, ready **1**, running **2**, done **1**, rejected **0**, deferred **8**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -60,7 +60,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 1 | [E00](#e00) | P0 / done | Freeze the evaluation and resource contract | — | low | 4…8 | 0…0 | 0…0 | — |
 | 2 | [H01](#h01) | P1 / done | Preference-trained backbone | -0.015…+0.04 | high | 6…16 | 0.5…2 | 4…12 | E00 |
 | 3 | [H09](#h09) | P1 / ready | Explicit swap consistency | -0.01…+0.02 | medium | 6…14 | 1…3 | 12…24 | E00 |
-| 4 | [H04](#h04) | P1 / ready | Broader adapter coverage | -0.01…+0.025 | medium | 4…10 | 1…2 | 10…20 | E00 |
+| 4 | [H04](#h04) | P1 / running | Broader adapter coverage | -0.01…+0.025 | medium | 4…10 | 1…2 | 10…20 | E00 |
 | 5 | [H11](#h11) | P1 / running | Learned symmetric tie model | -0.01…+0.015 | medium | 6…14 | 0.5…2 | 8…18 | E00 |
 | 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 7 | [H03](#h03) | P2 / planned | Complete training exposure | -0.01…+0.01 | medium | 2…6 | 0.25…1 | 4…8 | E00 |
@@ -219,7 +219,7 @@ Paired-view consistency regularization may reduce harmful position dependence be
 
 ### H04
 
-**Broader adapter coverage** — P1, ready, risk medium.
+**Broader adapter coverage** — P1, running, risk medium.
 
 Adapting feed-forward layers as well as attention may improve preference representations.
 
@@ -246,6 +246,7 @@ Adapting feed-forward layers as well as attention may improve preference represe
 **References:** [ATTEMPT_002_RESULTS.md](ATTEMPT_002_RESULTS.md); [src/arena/joint_train.py](src/arena/joint_train.py)
 
 - 2026-11-03T10:58:06+00:00 — ready: Offline pilot packaged: matched initial weights, near-matched LoRA parameter budget, fixed 64-step random-view controls; waiting for its stage in the shared joint kernel. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+- 2026-11-03T11:46:41+00:00 — running: Pinned joint job completed frozen feature extraction successfully in 2659.99 seconds and entered the random_attention training control; the random_all_linear comparison follows in the same kernel. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 
 ### H11
 

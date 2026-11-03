@@ -181,6 +181,13 @@ def crossfit_temperature(y, p, groups, config):
 
 def paired_group_gain(y, baseline, candidate, groups, config):
     values = loss_rows(y,baseline)-loss_rows(y,candidate)
+    return paired_group_difference(values, groups, config)
+
+
+def paired_group_difference(values, groups, config):
+    """Bootstrap paired row differences by prompt group; positive means reduction."""
+    values = np.asarray(values, dtype=float)
+    assert len(values) == len(groups) and np.isfinite(values).all()
     _, inverse = np.unique(groups,return_inverse=True)
     totals = np.bincount(inverse,weights=values)
     counts = np.bincount(inverse)
@@ -188,7 +195,7 @@ def paired_group_gain(y, baseline, candidate, groups, config):
     samples = rng.integers(0,len(totals),size=(config['bootstrap_group_replicates'],len(totals)))
     draws = totals[samples].sum(1)/counts[samples].sum(1)
     return {'gain':float(values.mean()),'interval_95':np.quantile(draws,[.025,.975]).tolist(),
-            'groups':len(totals),'rows':len(y),'replicates':config['bootstrap_group_replicates']}
+            'groups':len(totals),'rows':len(values),'replicates':config['bootstrap_group_replicates']}
 
 
 def order_diagnostics(original, aligned_swap):

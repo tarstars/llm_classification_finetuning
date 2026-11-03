@@ -251,7 +251,7 @@
       "title": "Broader adapter coverage",
       "priority": "P1",
       "rank": 4,
-      "status": "ready",
+      "status": "running",
       "gain": [
         -0.01,
         0.025
@@ -296,6 +296,15 @@
           "status": "ready",
           "note": "Offline pilot packaged: matched initial weights, near-matched LoRA parameter budget, fixed 64-step random-view controls; waiting for its stage in the shared joint kernel.",
           "evidence": [
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-03T11:46:41+00:00",
+          "status": "running",
+          "note": "Pinned joint job completed frozen feature extraction successfully in 2659.99 seconds and entered the random_attention training control; the random_all_linear comparison follows in the same kernel.",
+          "evidence": [
+            "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
         }
@@ -2136,7 +2145,7 @@
       "title": "Recover reward-backbone tie information from pooled pair features",
       "priority": "P3",
       "gain": [
-        -0.02,
+        -0.05,
         0.01
       ],
       "estimate_confidence": "low",
@@ -2164,8 +2173,8 @@
       "stop": "Stop if richer representations leave the reward system materially worse than LoRA, if tie gains merely move a probability intercept, or if renewed data/runtime cost exceeds the declared pilot budget.",
       "risk_reason": "The reward representation itself may lack human-vote signal; the current scalar system is already worse. Reused inspected development data can overstate a selected feature-head gain.",
       "mitigation": "Keep this low priority; wait for H11 controls, cap the feature and head search, use training-only PCA/head selection and grouped exploratory evaluation. Preserve the scalar baseline and report unknown pretraining overlap.",
-      "rationale": "A bounded follow-up distinguishes discarded tie information from generally weak transfer before more expensive reward fine-tuning or distillation.",
-      "revision": "New task discovered during v1 from measured H01 tie failures; it is a reward-specific frozen-feature diagnostic, distinct from the LoRA-backed H11 pilot.",
+      "rationale": "A bounded follow-up distinguishes discarded tie information from generally weak transfer before expensive reward fine-tuning or distillation. The scalar reward system is already 0.039 worse than LoRA, so recovering that gap is a prerequisite for a deployed-baseline gain.",
+      "revision": "New task discovered during v1 from measured H01 tie failures; it is a reward-specific frozen-feature diagnostic, distinct from the LoRA-backed H11 pilot. Planning range corrected to include the measured 0.039 baseline deficit; the range is relative to LoRA, not relative to the scalar reward head.",
       "depends_on": [
         "E00",
         "H01",

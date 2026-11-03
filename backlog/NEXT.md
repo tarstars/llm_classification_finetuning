@@ -55,7 +55,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 42 | [H41](#h41) | P3 / planned | Recover reward-backbone tie information from pooled pair features | -0.02…+0.01 | medium | 6…12 | 0.5…1.5 | 1…4 | E00, H01, H11 |
+| 42 | [H41](#h41) | P3 / planned | Recover reward-backbone tie information from pooled pair features | -0.05…+0.01 | medium | 6…12 | 0.5…1.5 | 1…4 | E00, H01, H11 |
 
 ## Revisions to the original list
 
@@ -88,11 +88,11 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 The scalar reward bottleneck may discard pairwise tie information that frozen answer representations retain.
 
-**Why this rank:** A bounded follow-up distinguishes discarded tie information from generally weak transfer before more expensive reward fine-tuning or distillation.
+**Why this rank:** A bounded follow-up distinguishes discarded tie information from generally weak transfer before expensive reward fine-tuning or distillation. The scalar reward system is already 0.039 worse than LoRA, so recovering that gap is a prerequisite for a deployed-baseline gain.
 
 **Evidence:** Span-001 H01 calibrated loss is 1.01557 vs LoRA 0.97635; tie AUC is 0.593 vs 0.660 and tie recall 35.6% vs 44.0%. Forced winner accuracy on 701 human-decisive rows is nearly equal (69.6% vs 69.8%). This is a diagnostic hypothesis, not evidence the richer reward model will beat LoRA.
 
-**Planning estimate:** loss reduction -0.02…+0.01; confidence low. Engineering 6…12 person-hours; CPU 0.25…1 elapsed hours; two-T4 pilot 0.5…1.5 hours; additional follow-up 1…4 hours.
+**Planning estimate:** loss reduction -0.05…+0.01; confidence low. Engineering 6…12 person-hours; CPU 0.25…1 elapsed hours; two-T4 pilot 0.5…1.5 hours; additional follow-up 1…4 hours.
 
 **First test:** Reuse the pinned reward checkpoint and fixed sample IDs; extract frozen per-answer hidden representations. Fit the same fold-local symmetric and coupled heads used in H11. Compare against the existing scalar-reward map and the frozen LoRA reference with identical packing/calibration.
 
@@ -102,7 +102,7 @@ The scalar reward bottleneck may discard pairwise tie information that frozen an
 
 **Risk and mitigation:** The reward representation itself may lack human-vote signal; the current scalar system is already worse. Reused inspected development data can overstate a selected feature-head gain. Keep this low priority; wait for H11 controls, cap the feature and head search, use training-only PCA/head selection and grouped exploratory evaluation. Preserve the scalar baseline and report unknown pretraining overlap.
 
-**Revision:** New task discovered during v1 from measured H01 tie failures; it is a reward-specific frozen-feature diagnostic, distinct from the LoRA-backed H11 pilot.
+**Revision:** New task discovered during v1 from measured H01 tie failures; it is a reward-specific frozen-feature diagnostic, distinct from the LoRA-backed H11 pilot. Planning range corrected to include the measured 0.039 baseline deficit; the range is relative to LoRA, not relative to the scalar reward head.
 
 **Depends on:** E00, H01, H11. Currently unmet: H11.
 

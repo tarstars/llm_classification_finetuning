@@ -176,3 +176,23 @@ tokenizer processed all **5,120** planned rows (maximum packed length **988**) a
 confirmed the official template exists. A regression test covers the container
 change. Recovery uses a separately recorded job/version, preserves the failed run,
 and counts its quota within the original cap; sample/content policy is unchanged.
+
+Numerical implementation audit, **2026-11-03 12:06 UTC**, before any training-arm
+quality evaluation: the first random-attention gradient norm was NaN, followed by
+finite logged norms and losses. The pinned Transformers **5.22.1** advances
+`global_step` on an AMP-skipped update, but advances its native cosine scheduler
+only after an accepted optimizer step. It logs the learning rate before that
+scheduler advance. PyTorch GradScaler skips an optimizer update when it detects
+nonfinite gradients. Thus the original "64 optimizer updates" plan is implemented
+as **64 nominal Trainer cycles**, potentially fewer accepted updates. The source
+audit and scheduler reconstruction are implemented in `src/arena/span_audit.py`.
+
+Keep this deviation visible rather than relabeling all cycles as successful
+updates. Reconstruct accepted-update counts from the logged scheduler state and
+gradient norms, preserve uncertainty when the last cycle was not logged, and
+verify every exported adapter tensor is finite. H04/H09 contrasts require equal
+nominal cycles, canonical exposures, retained-token counts and verified accepted
+updates to be described as matched. An unequal or uncertain count gives only a
+descriptive contrast and requires a justified recovery or an explicitly incomplete
+conclusion. A skipped AMP overflow is not an accepted nonfinite weight update;
+nonfinite losses, predictions or exported weights still invalidate the arm.

@@ -60,6 +60,10 @@ The frozen reward-model pilot scored **1.01557** calibrated log loss versus
 **0.97635** for LoRA on the same 1,024 exploratory development rows; it was not
 promoted. The remaining joint-training and tie-head pilots are in progress.
 
+Read a fresh pinned-job status and numerical progress snapshot with
+`uv run python scripts/span_progress.py --job joint`. It records dated observations
+under `results/span_001/` and omits raw log text.
+
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
 **49.63% accuracy**. Always predicting the most frequent training class gives

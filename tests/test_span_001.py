@@ -12,6 +12,7 @@ from arena.joint_data import JointTokenizer
 from arena.span_pack import SpanTokenizer
 from arena.span_adapters import add_span_adapter, paired_objective
 from arena.span_heads import (SymmetricHead, fit_with_inner_selection, loss_rows, paired_group_gain)
+from arena.span_audit import scheduled_lr, training_audit, matched_training
 
 
 class Tokens:
@@ -27,6 +28,33 @@ class Tokens:
 
 
 class SpanContracts(unittest.TestCase):
+    def test_amp_audit_uses_lr_before_scheduler_and_counts_skips(self):
+        config={'training_steps':64,'warmup_steps':4,'learning_rate':2e-5}
+        records=[{'step':1,'learning_rate':0.,'grad_norm':float('nan')},
+                 {'step':16,'learning_rate':scheduled_lr(12,config),'grad_norm':6.2},
+                 {'step':24,'learning_rate':scheduled_lr(20,config),'grad_norm':9.3},
+                 {'step':64,'learning_rate':scheduled_lr(60,config),'grad_norm':4.}]
+        audit=training_audit(records,config,{'steps':64})
+        self.assertEqual(audit['accepted_optimizer_steps_range'],[61,61])
+        self.assertEqual(audit['skipped_optimizer_steps_range'],[3,3])
+        partial=training_audit(records[:3],config,{'steps':26})
+        self.assertEqual(partial['accepted_optimizer_steps_range'],[21,23])
+        with self.assertRaises(ValueError):
+            training_audit([{'step':1,'learning_rate':123,'grad_norm':1.}],config,{'steps':1})
+
+    def test_training_contrast_requires_equal_exposure_and_verified_update_counts(self):
+        summary=dict(steps=64,canonical_rows=2048,development_rows=1024,world_size=2,
+            views_per_update=32,canonical_exposures=2048,non_padding_tokens_seen=1000,
+            numerical_audit={'accepted_optimizer_steps_range':[61,61]},
+            adapter_weight_audit={'all_finite':True})
+        self.assertTrue(matched_training(summary,summary)['matched'])
+        other=deepcopy(summary);other['numerical_audit']['accepted_optimizer_steps_range']=[60,60]
+        self.assertFalse(matched_training(summary,other)['matched'])
+        other=deepcopy(summary);other['numerical_audit']['accepted_optimizer_steps_range']=[60,61]
+        self.assertIsNone(matched_training(summary,other)['matched'])
+        other=deepcopy(summary);other['non_padding_tokens_seen']=999
+        self.assertFalse(matched_training(summary,other)['matched'])
+
     def test_symmetric_head_gradients_and_predictions(self):
         rng = np.random.default_rng(18)
         d, s = rng.normal(size=(40,2)), np.column_stack([rng.normal(size=(40,2)),np.ones(40)])
@@ -195,6 +223,14 @@ class SpanContracts(unittest.TestCase):
             result=trainer.predict(PreferenceDataset(ds.original,ds.swapped,ds.labels))
             self.assertEqual(result.predictions.shape,(4,3))
             self.assertTrue(np.isfinite(result.predictions).all())
+            model.save_pretrained(Path(directory)/'adapter',selected_adapters=['span'])
+            exported=Path(directory)/'adapter/span/adapter_model.safetensors'
+            self.assertTrue(exported.exists())
+            from safetensors.torch import load_file
+            state=load_file(exported)
+            self.assertTrue(any('lora_B' in name for name in state))
+            self.assertTrue(any('score' in name for name in state))
+            self.assertFalse(any('.frozen.' in name for name in state))
             for name,p in model.named_parameters():
                 if name in old:torch.testing.assert_close(p,old[name])
 
