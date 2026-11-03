@@ -251,7 +251,7 @@
       "title": "Broader adapter coverage",
       "priority": "P1",
       "rank": 4,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.01,
         0.025
@@ -333,6 +333,15 @@
           "evidence": [
             "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-03T15:26:25+00:00",
+          "status": "done",
+          "note": "Completed the predeclared matched short coverage pilot: calibrated loss 0.97666 versus attention control 0.97609; reduction -0.000573, 95% group interval [-0.001623,+0.000478]. Accepted-update counts, processed tokens, capacity guard and finite exported weights passed. Broader training cost 18.5% more time; no promotion or full-training claim.",
+          "evidence": [
+            "docs/SPAN_001_RESULTS.md",
+            "results/span_001/joint_results.json"
           ]
         }
       ],
@@ -545,7 +554,7 @@
       "title": "Explicit swap consistency",
       "priority": "P1",
       "rank": 3,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.01,
         0.02
@@ -628,6 +637,16 @@
             "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-03T15:26:25+00:00",
+          "status": "done",
+          "note": "Completed the matched paired CE versus CE+0.1 KL pilot: reduction -0.000755, interval [-0.001716,+0.000186], with 61 accepted updates and 1296288 processed tokens each. Order bias fell versus the frozen baseline, but tie loss rose and no useful averaged/calibrated quality gain was established. E01/H42 are queued for v2; H40 remains an unexecuted carryover control.",
+          "evidence": [
+            "docs/SPAN_001_RESULTS.md",
+            "results/span_001/joint_results.json",
+            "results/span_001/joint_diagnostics.json"
+          ]
         }
       ],
       "introduced_in": 1,
@@ -689,7 +708,7 @@
       "title": "Learned symmetric tie model",
       "priority": "P1",
       "rank": 5,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.01,
         0.015
@@ -744,6 +763,15 @@
           "evidence": [
             "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-03T15:26:25+00:00",
+          "status": "done",
+          "note": "Completed all frozen-feature head controls on 4096 fit / 1024 development rows after passing cached-baseline reproduction. The matched 69-parameter factorized head gained 0.000680 over coupled (interval [-0.000913,+0.002187]) but lost against the four-parameter probability control and deployed LoRA. No useful tie-AUC gain; this was not end-to-end head training. H41 is deferred in v2.",
+          "evidence": [
+            "docs/SPAN_001_RESULTS.md",
+            "results/span_001/joint_results.json"
           ]
         }
       ],
@@ -2166,7 +2194,7 @@
       "id": "H40",
       "kind": "hypothesis",
       "title": "Constrained probability calibration",
-      "priority": "P3",
+      "priority": "P2",
       "rank": 18,
       "status": "planned",
       "gain": [
@@ -2192,22 +2220,32 @@
       ],
       "risk": "low",
       "claim": "A low-capacity symmetric extension to temperature scaling may recover a small remaining calibration error.",
-      "basis": "Temperature already improved loss by 0.00856; the extra tie-intercept pilot gained only 0.00170 with interval [-0.00017,0.00332].",
+      "basis": "Temperature already improved loss by 0.00856; the extra tie-intercept pilot gained only 0.00170 with interval [-0.00017,0.00332]. Span 001 additionally found paired-model mean tie probability 0.286 versus prevalence 0.315, stable tie AUC, and a class-loss tradeoff that erased order-bias gains.",
       "first_test": "Predeclare temperature-plus-tie or an A/B-symmetric vector calibration, cross-fit within the cached held-out rows and compare against deployed temperature scaling.",
       "acceptance": "Positive paired overall gain after nested calibration selection, stable A/B symmetry and normalized probabilities.",
       "stop": "Stop if gains appear only when fitting and evaluating the same rows, or a richer map is unstable.",
       "risk_reason": "A flexible calibrator can overfit repeatedly inspected dev examples and reintroduce order bias.",
       "mitigation": "Keep very few parameters, enforce swap symmetry and publish cross-fitted rather than in-sample metrics.",
       "rationale": "Very cheap measured-adjacent polish, but not a plausible route to most of the 0.17 gap.",
-      "revision": "Temperature scaling is already deployed; forecast only incremental gain beyond it.",
+      "revision": "Temperature scaling is already deployed; forecast only incremental gain beyond it. Reprioritized as a zero-GPU v2 control after span-001 tie drift; this is planning only and was not executed in v1.",
       "depends_on": [
         "E00"
       ],
       "evidence": [
         "EDA_REPORT.md",
-        "results/eda_002/hypotheses.json"
+        "results/eda_002/hypotheses.json",
+        "results/span_001/joint_diagnostics.json"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T15:15:26+00:00",
+          "status": "planned",
+          "note": "Planning revision for v2 carryover only: prioritize the cached calibration control before new GPU work, given paired-model tie-probability drift with nearly unchanged tie AUC. H40 was not executed during v1.",
+          "evidence": [
+            "results/span_001/joint_diagnostics.json"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -2215,7 +2253,7 @@
     {
       "kind": "hypothesis",
       "title": "Recover reward-backbone tie information from pooled pair features",
-      "priority": "P3",
+      "priority": "P4",
       "gain": [
         -0.05,
         0.01
@@ -2239,14 +2277,14 @@
       ],
       "risk": "medium",
       "claim": "The scalar reward bottleneck may discard pairwise tie information that frozen answer representations retain.",
-      "basis": "Span-001 H01 calibrated loss is 1.01557 vs LoRA 0.97635; tie AUC is 0.593 vs 0.660 and tie recall 35.6% vs 44.0%. Forced winner accuracy on 701 human-decisive rows is nearly equal (69.6% vs 69.8%). This is a diagnostic hypothesis, not evidence the richer reward model will beat LoRA.",
+      "basis": "Span-001 H01 calibrated loss is 1.01557 vs LoRA 0.97635; tie AUC is 0.593 vs 0.660 and tie recall 35.6% vs 44.0%. Forced winner accuracy on 701 human-decisive rows is nearly equal (69.6% vs 69.8%). This is a diagnostic hypothesis, not evidence the richer reward model will beat LoRA. H11 subsequently found that the 69-parameter rich factorized head lost 0.00579 against its probability-only control and did not improve tie AUC on the LoRA backbone.",
       "first_test": "Reuse the pinned reward checkpoint and fixed sample IDs; extract frozen per-answer hidden representations. Fit the same fold-local symmetric and coupled heads used in H11. Compare against the existing scalar-reward map and the frozen LoRA reference with identical packing/calibration.",
       "acceptance": "Promote only if richer features improve reward-relative overall loss and provide credible overall benefit or complementarity against LoRA, with paired group intervals and tie/winner decomposition. Report matched head parameter counts.",
       "stop": "Stop if richer representations leave the reward system materially worse than LoRA, if tie gains merely move a probability intercept, or if renewed data/runtime cost exceeds the declared pilot budget.",
       "risk_reason": "The reward representation itself may lack human-vote signal; the current scalar system is already worse. Reused inspected development data can overstate a selected feature-head gain.",
-      "mitigation": "Keep this low priority; wait for H11 controls, cap the feature and head search, use training-only PCA/head selection and grouped exploratory evaluation. Preserve the scalar baseline and report unknown pretraining overlap.",
+      "mitigation": "Keep this low priority; wait for H11 controls, cap the feature and head search, use training-only PCA/head selection and grouped exploratory evaluation. Preserve the scalar baseline and report unknown pretraining overlap. Do not copy the fixed-PCA recipe unchanged after this negative H11 result; require a better representation/head diagnostic before renewing extraction.",
       "rationale": "A bounded follow-up distinguishes discarded tie information from generally weak transfer before expensive reward fine-tuning or distillation. The scalar reward system is already 0.039 worse than LoRA, so recovering that gap is a prerequisite for a deployed-baseline gain.",
-      "revision": "New task discovered during v1 from measured H01 tie failures; it is a reward-specific frozen-feature diagnostic, distinct from the LoRA-backed H11 pilot. Planning range corrected to include the measured 0.039 baseline deficit; the range is relative to LoRA, not relative to the scalar reward head.",
+      "revision": "New task discovered during v1 from measured H01 tie failures; it is a reward-specific frozen-feature diagnostic, distinct from the LoRA-backed H11 pilot. Planning range corrected to include the measured 0.039 baseline deficit; the range is relative to LoRA, not relative to the scalar reward head. Deprioritized after negative H11 controls; retain as a deferred conditional diagnostic, not a supported promotion path.",
       "depends_on": [
         "E00",
         "H01",
@@ -2254,11 +2292,13 @@
       ],
       "evidence": [
         "results/span_001/reward_results.json",
-        "results/span_001/reward_diagnostics.json"
+        "results/span_001/reward_diagnostics.json",
+        "results/span_001/joint_results.json",
+        "results/span_001/joint_diagnostics.json"
       ],
       "id": "H41",
       "rank": 42,
-      "status": "planned",
+      "status": "deferred",
       "introduced_in": 2,
       "discovered_during": 1,
       "derived_from": [
@@ -2272,6 +2312,139 @@
           "evidence": [
             "results/span_001/reward_results.json",
             "results/span_001/reward_diagnostics.json"
+          ]
+        },
+        {
+          "at": "2026-11-03T15:15:26+00:00",
+          "status": "deferred",
+          "note": "H11 did not validate the proposed rich fixed-PCA head recipe, while the scalar reward system remains 0.039 worse than LoRA. Retain this v2 diagnostic at P4 and require a better representation/head justification before renewed GPU extraction; no v2 experiment was executed.",
+          "evidence": [
+            "results/span_001/joint_results.json",
+            "results/span_001/reward_results.json"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Instrument accepted optimizer updates and training exposure",
+      "priority": "P1",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0.25
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "low",
+      "claim": "Direct per-cycle logging can make future optimizer and data-exposure comparisons auditable instead of relying only on nominal Trainer steps.",
+      "basis": "Every span-001 arm reached 64 nominal cycles but only 61 accepted updates reconstructed from the pinned scheduler. Processed-token totals include skipped cycles; individual skipped-cycle identities and accepted-token/row exposure were not instrumented.",
+      "first_test": "Record nominal cycle, optimizer-step skip flag, accepted-update counter, GradScaler scale, scheduler position, processed tokens and private sampled-row identities. Verify a tiny forced-overflow probe against actual parameter changes; publish aggregates only. Pin the Trainer/Accelerate versions and include counters in resume state.",
+      "acceptance": "Skipped cycles leave parameters unchanged; accepted counters and scheduler state agree; processed versus accepted exposure and class/group coverage are distinct and reproducible. A short resume preserves these counters.",
+      "stop": "Do not repeat v1 training merely to add retrospective logging. Limit GPU verification to fifteen minutes; withhold long comparisons if the instrumentation cannot identify valid updates.",
+      "risk_reason": "Callback timing or framework wrappers can report stale flags; public row-level logs would expose unnecessary data.",
+      "mitigation": "Use pinned public optimizer/scaler signals, a forced-overflow check and private row artifacts; keep only aggregate counters in Git.",
+      "rationale": "The observed three startup skips are material in a 64-cycle pilot. This is a measurement prerequisite, with no direct score-gain claim.",
+      "revision": "Discovered during v1 from actual AMP skips and the limits of scheduler-based reconstruction.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "results/span_001/joint_results.json",
+        "docs/SPAN_001_PROTOCOL.md",
+        "docs/SPAN_001_RESULTS.md"
+      ],
+      "id": "E01",
+      "rank": 43,
+      "status": "planned",
+      "introduced_in": 2,
+      "discovered_during": 1,
+      "derived_from": [
+        "H09"
+      ],
+      "history": [
+        {
+          "at": "2026-11-03T15:15:26+00:00",
+          "status": "planned",
+          "note": "Four real pilots had 64 nominal cycles but 61 accepted updates; preserve the measurement gap as a v2 prerequisite rather than repeating v1.",
+          "evidence": [
+            "results/span_001/joint_results.json"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Preserve tie information during paired-order adaptation",
+      "priority": "P3",
+      "gain": [
+        -0.02,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        14
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        6,
+        12
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "risk": "high",
+      "claim": "Tie-preserving adaptation may retain reduced position bias without the current loss regression, if simple calibration cannot already explain the tradeoff.",
+      "basis": "Paired CE+KL reduced raw second-position advantage from +0.08829 to -0.00293 and order disagreement from 35.45% to 26.17%. Tie AUC stayed near 0.659, but mean tie probability fell from 0.330 to 0.286 against prevalence 0.315; tie loss rose from 1.028 to 1.175 and overall loss worsened by 0.00285.",
+      "first_test": "Run H40 on cached frozen and paired predictions first. Stop if calibration alone explains the deficit. Otherwise predeclare two matched arms: paired CE+0.1 KL versus the same objective plus a Bernoulli tie-probability anchor to symmetric, frozen, uncalibrated teacher predictions on training rows (default anchor weight 1.0, frozen in the next protocol). Use E01 to match actual accepted updates, tokens and row/class exposure. Do not feed a dev-fitted calibrator into training.",
+      "acceptance": "After the same calibration control, obtain at least 0.005 overall loss reduction with positive paired group evidence while retaining low order bias and improved tie loss/discrimination. Report gains against both the paired recipe and deployed LoRA; adoption still needs a larger prespecified comparison.",
+      "stop": "Stop without GPU training if H40 already resolves the tradeoff. Stop if anchoring only preserves teacher errors, only shifts a class intercept, or fails overall loss; cap the pilot at two training variants.",
+      "risk_reason": "The teacher may be wrong, anchoring can suppress learning, and repeatedly inspected development rows can favor a chosen correction. The current paired system is already worse than LoRA.",
+      "mitigation": "Gate on H40, use only training-row teacher outputs without a dev-fitted component, instrument exposure through E01, predeclare one anchor weight and use grouped exploratory evaluation with no claim of untouched generalization.",
+      "rationale": "The observed A/B-versus-tie cancellation motivates a distinct training-objective test; this is not another execution of generic calibration H40 or the original KL-only contrast. Forecasts are relative to deployed LoRA and are not additive with calibration gains.",
+      "revision": "New v2 follow-up from measured v1 order and tie behavior; no execution during v1.",
+      "depends_on": [
+        "E00",
+        "H09",
+        "H40",
+        "E01"
+      ],
+      "evidence": [
+        "results/span_001/joint_results.json",
+        "results/span_001/joint_diagnostics.json",
+        "docs/SPAN_001_RESULTS.md"
+      ],
+      "id": "H42",
+      "rank": 44,
+      "status": "planned",
+      "introduced_in": 2,
+      "discovered_during": 1,
+      "derived_from": [
+        "H09"
+      ],
+      "history": [
+        {
+          "at": "2026-11-03T15:15:26+00:00",
+          "status": "planned",
+          "note": "Measured removal of order bias was canceled by worse tie loss; test calibration first, with any tie-preserving training conditional and outside v1.",
+          "evidence": [
+            "results/span_001/joint_diagnostics.json"
           ]
         }
       ]
@@ -2312,11 +2485,11 @@
     "[First-place author, related 2024 LMSYS competition](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629) reported 0.876 public versus 0.96898 private. [Kaggle staff](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/524376) described rerunning on a new private set. That is a different competition and does not establish a clean 0.8 target here.",
     "[Skywork reward-model repository](https://github.com/SkyworkAI/Skywork-Reward), [Skywork Reward V2 paper](https://arxiv.org/abs/2507.01352), and [second-place LMSYS write-up](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527685) supply technical precedents, not measured local gains or verified deployment feasibility."
   ],
-  "active_version": 1,
+  "active_version": 2,
   "versions": [
     {
       "number": 1,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "E00",
         "H01",
@@ -2370,14 +2543,71 @@
       "history": [],
       "start_sha256": "0184479f9c5cd767531411490f21fc38fb89cc5fdd343b89d2d7254bd0baef5e",
       "start_markdown_sha256": "9d62a7657c069b40023e178c7f1004f55419ef41f583d8264e5509b57272e0fd",
-      "start_sealed_at": "2026-11-03T08:47:56+00:00"
+      "start_sealed_at": "2026-11-03T08:47:56+00:00",
+      "final_sha256": "a3b0967e5285242bb356c5dc4e1ca33c2bd41cd58a24d84794153d8b840f6138",
+      "final_markdown_sha256": "9462b9a7f33cd4e9d8e3948a1e2f1ef971411af242100f35b8cbb25a9f2a5ea7",
+      "final_sealed_at": "2026-11-03T15:27:59+00:00",
+      "closed_at": "2026-11-03T15:27:59+00:00",
+      "closing_note": "Completed E00 and all four declared pilots with measured negative or inconclusive findings; no candidate justified promotion. All GPU stages and recorded jobs are terminal; charged use is 4.154 two-T4 session-hours. Seal v1, carry unfinished work, and hand off three evidence-grounded discoveries without executing v2.",
+      "closing_evidence": [
+        "docs/SPAN_001_RESULTS.md"
+      ]
     },
     {
       "number": 2,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
-        "H41"
+        "H02",
+        "H03",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H36",
+        "H37",
+        "H38",
+        "H39",
+        "H40",
+        "H41",
+        "E01",
+        "H42"
       ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 1,
+      "start_sha256": "e83cec43f76ea1fdd348b213aaafdc0290c8fd84735ce295f5216593a1146ec7",
+      "start_markdown_sha256": "554cbbfb85fe5e0f5303abeeea19244c5c0406f2c118c0f7483561e55f922a21",
+      "start_sealed_at": "2026-11-03T15:27:59+00:00"
+    },
+    {
+      "number": 3,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }

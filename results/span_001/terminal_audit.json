@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-11-03T15:08:29.751368+00:00",
+  "all_recorded_jobs_terminal": true,
+  "jobs": [
+    {
+      "job": "reward",
+      "kernel": "arseniytrushin/llm-preference-span-001-frozen-reward-pilot",
+      "version": 1,
+      "status": "ERROR",
+      "observed_at": "2026-11-03T14:56:03.674309+00:00"
+    },
+    {
+      "job": "reward-tokenfix",
+      "kernel": "arseniytrushin/llm-preference-span-001-frozen-reward-pilot",
+      "version": 2,
+      "status": "COMPLETE",
+      "observed_at": "2026-11-03T14:56:03.856310+00:00"
+    },
+    {
+      "job": "joint",
+      "kernel": "arseniytrushin/llm-preference-span-001-joint-pilots",
+      "version": 1,
+      "status": "COMPLETE",
+      "observed_at": "2026-11-03T14:56:04.056311+00:00"
+    }
+  ],
+  "quota": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 55516.404,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 52483.596
+  },
+  "span_gpu_session_seconds": 14954.159,
+  "span_gpu_session_hours": 4.153933055555555,
+  "gpu_session_seconds_cap": 43200,
+  "charged_seconds_by_run": {
+    "reward": 170.82999999999447,
+    "reward-tokenfix": 988.3840000000055,
+    "joint": 13794.945
+  },
+  "within_original_compute_cap": true,
+  "within_original_deadline": true,
+  "elapsed_wall_seconds_at_check": 18121.751368,
+  "original_started_at": "2026-11-03T10:06:28+00:00",
+  "original_deadline": "2026-11-05T10:06:28+00:00",
+  "no_quota_refresh_used": true
+}

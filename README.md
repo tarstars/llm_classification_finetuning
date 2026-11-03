@@ -6,8 +6,9 @@ is multiclass log loss (lower is better).
 
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
-The ready-to-use [first-span goal](GOAL.md) selects E00 and four P1 pilots, then
-produces backlog v2. It specifies editable compute/time caps and a version boundary.
+The completed [first-span goal](GOAL.md) selected E00 and four pilots and produced
+backlog v2. Reusing that file verifies the closed handoff; a later goal must select
+v2's execution focus and resource budget.
 
 Our best official Kaggle score is **0.97025**, achieved by the Qwen3-4B QLoRA
 preference classifier in attempt 002. Frozen-model confirmation gave **0.96236 log
@@ -37,10 +38,11 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The initial version is **v1**; discoveries are queued in the
-[next-version draft](backlog/NEXT.md).
-Each completed span preserves snapshots and carries unfinished work into the next
-version. See the [initial v1 snapshot](backlog/versions/v1.start.md).
+The active version is **v2**, with **39 tasks**: three discoveries and 36 unfinished
+carryovers. Its focus is empty; v3 is the empty [next-version draft](backlog/NEXT.md).
+Each completed span preserves snapshots and carries unfinished work forward.
+See the [initial v1 snapshot](backlog/versions/v1.start.md),
+[v1 final history](backlog/versions/v1.final.md) and [v2 start](backlog/versions/v2.start.md).
 [Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
 The JSON-backed CLI browses work, records status/evidence and regenerates the page:
 
@@ -49,16 +51,22 @@ uv run python scripts/backlog.py list --priority P1
 uv run python scripts/backlog.py list --actionable
 uv run python scripts/backlog.py list --actionable --focus
 uv run python scripts/backlog.py versions
+uv run python scripts/backlog.py list --version 2 --new
+uv run python scripts/backlog.py list --version 2 --carried
 uv run python scripts/backlog.py list --version next
 uv run python scripts/backlog.py show H09
 uv run python scripts/backlog.py check
 ```
 
 The [first-span report](docs/SPAN_001_RESULTS.md) and
-[executed notebook](notebooks/12_backlog_v1_span.ipynb) track the current pilots.
-The frozen reward-model pilot scored **1.01557** calibrated log loss versus
-**0.97635** for LoRA on the same 1,024 exploratory development rows; it was not
-promoted. The remaining joint-training and tie-head pilots are in progress.
+[executed notebook](notebooks/12_backlog_v1_span.ipynb) contain the completed pilots.
+None justified promotion. The best new point estimate was **0.97609** versus
+**0.97635** for frozen LoRA on the same 1,024 exploratory development rows, with
+uncertainty including no improvement. Paired training reduced order bias but raised
+tie losses. Total compute was **4.154 two-T4 session-hours**, including a failed probe.
+V2 adds optimizer/exposure instrumentation (E01), a conditional tie-preserving
+follow-up (H42), and a deferred reward-feature diagnostic (H41). A later goal can
+start with E01 and cached calibration H40 before more training; v2 has not been executed.
 
 Read a fresh pinned-job status and numerical progress snapshot with
 `uv run python scripts/span_progress.py --job joint`. It records dated observations

@@ -4,6 +4,92 @@
     "coverage": "4096 training feature rows / 1024 development rows; frozen reward weights",
     "promoted": false,
     "interpretation": "Selected 4B reward scoring recipe is worse; no blanket conclusion about every preference backbone.",
-    "followup": "Reward-specific pooled features to diagnose the tie bottleneck, queued for v2; not executed in v1."
+    "followup": "H41 is retained as a deferred v2 diagnostic: H11 did not validate the proposed pooled-feature head recipe. Teacher distillation H15 remains deferred."
+  },
+  "H04": {
+    "interpretation": "Broader coverage did not improve the matched short pilot: loss reduction -0.000573, 95% group interval [-0.001623, +0.000478]. Training took 18.5% longer. This bounds the tested fresh-adapter recipe, not full-training coverage in general.",
+    "coverage": "2048 training rows and 1024 development rows; 64 nominal cycles / 61 reconstructed accepted updates; identical 1186094 processed tokens, identical initial logits, and 1.25% fewer fresh LoRA parameters in the broader arm",
+    "promote": false,
+    "primary_comparison": {
+      "gain": -0.0005725309872096368,
+      "interval_95": [
+        -0.0016226154500251055,
+        0.0004775506900948657
+      ],
+      "groups": 990,
+      "rows": 1024,
+      "replicates": 2000,
+      "training_comparability": {
+        "matched": true,
+        "mismatches": [],
+        "unverified": [],
+        "interpretation": "Descriptive exploratory contrast; infer the isolated intervention only when matched."
+      },
+      "order_disagreement_reduction": {
+        "gain": -0.001953125,
+        "interval_95": [
+          -0.013387225247118564,
+          0.008937882583112242
+        ],
+        "groups": 990,
+        "rows": 1024,
+        "replicates": 2000
+      }
+    },
+    "followup": "No larger coverage run is supported by this pilot. Prefer E01 exposure logging and the carried H03 training-exposure task before reconsidering coverage."
+  },
+  "H09": {
+    "interpretation": "Adding 0.1 symmetric KL to paired CE did not give useful incremental loss reduction: -0.000755, interval [-0.001716, +0.000186]. Paired adaptation greatly reduced position bias relative to the frozen model, but tie losses rose and canceled A/B gains. The KL-only order-disagreement reduction is uncertain.",
+    "coverage": "Two paired arms, each with 1024 canonical-row visits / 2048 views, 1296288 processed tokens, 64 nominal cycles and 61 reconstructed accepted updates; 1024 development rows. Random arms saw 2048 canonical rows and fewer tokens, so that cross-regime comparison is descriptive. Equal-wall training was not tested.",
+    "promote": false,
+    "primary_comparison": {
+      "gain": -0.0007554972963597253,
+      "interval_95": [
+        -0.001716496117281935,
+        0.00018556613671269622
+      ],
+      "groups": 990,
+      "rows": 1024,
+      "replicates": 2000,
+      "training_comparability": {
+        "matched": true,
+        "mismatches": [],
+        "unverified": [],
+        "interpretation": "Descriptive exploratory contrast; infer the isolated intervention only when matched."
+      },
+      "order_disagreement_reduction": {
+        "gain": 0.00390625,
+        "interval_95": [
+          -0.004892367906066536,
+          0.012821782178217814
+        ],
+        "groups": 990,
+        "rows": 1024,
+        "replicates": 2000
+      }
+    },
+    "followup": "H40 cached calibration is the cheap next control. H42 conditionally tests preserving tie probabilities only if calibration leaves a real residual tradeoff; E01 adds direct optimizer/exposure instrumentation."
+  },
+  "H11": {
+    "interpretation": "The matched 69-parameter factorized head gained only 0.000680 over the coupled head (interval [-0.000913, +0.002187]). Its overall loss 0.98353 was worse than the four-parameter probability control 0.97774 and deployed LoRA 0.97635. Rich features did not improve tie AUC. Frozen-baseline reproduction and exact head symmetry passed.",
+    "coverage": "4096 training-feature rows / 1024 development rows; fixed 16-component training-only PCA; three grouped inner folds and three regularization values; matched 69-parameter heads plus a four-parameter probability control. This is a frozen-feature pilot, with backbone in-sample training features, not end-to-end tie-head training.",
+    "promote": false,
+    "primary_comparison": {
+      "gain": 0.0006801471081023685,
+      "interval_95": [
+        -0.0009127096081700586,
+        0.0021871991138143485
+      ],
+      "groups": 990,
+      "rows": 1024,
+      "replicates": 2000
+    },
+    "followup": "Defer H41 rather than copying the unsuccessful fixed-PCA recipe onto the weaker reward system. A later goal may reconsider task-trained representations with new evidence."
+  },
+  "Span": {
+    "interpretation": "None of the predeclared pilots justified promotion. The best new point estimate was random_attention at 0.97609 versus deployed LoRA 0.97635; gain 0.000258, interval [-0.003574, +0.004205], below the predeclared 0.005 useful-gain threshold. Our official Kaggle score remains 0.97025; this span made no submission.",
+    "coverage": "One bounded research span: frozen reward scoring, four fresh-adapter arms, and three symmetric-head controls on the same 1024 exploratory development rows. Confirmation was not evaluated. All GPU stages completed; total charged compute was 4.154 two-T4 session-hours including the failed probe.",
+    "promote": false,
+    "followup": "Handoff v2 with unfinished work and evidence-grounded discoveries. Recommend E01 instrumentation, H40 cheap calibration, then H03 training exposure. H42 remains conditional and H41 deferred. Stop before executing v2."
   }
 }

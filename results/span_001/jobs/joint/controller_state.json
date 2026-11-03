@@ -1,8 +1,7 @@
 {
-  "stage": "waiting_for_kernel",
-  "utc": "2026-11-03T14:42:39.369464+00:00",
+  "stage": "complete",
+  "utc": "2026-11-03T14:49:57.590486+00:00",
   "pid": 3698367,
   "job": "joint",
-  "status": "RUNNING",
   "version": 1
 }

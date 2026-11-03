@@ -1,0 +1,28 @@
+# Span 001 verification record
+
+This records the local completion checks for [GOAL.md](../GOAL.md). The experiments
+produced negative or inconclusive findings; completion does not mean a score gain.
+The [results](SPAN_001_RESULTS.md) and [executed notebook](../notebooks/12_backlog_v1_span.ipynb)
+contain the measured outcomes and interpretation limits.
+
+| Goal requirement | Inspected evidence and result |
+| --- | --- |
+| Preserve scope and original limits | E00/H01/H04/H09/H11 were the five focus items. The original start remains 2026-11-03 10:06:28 UTC, deadline November 5 at the same time, and cap 43,200 session-seconds. [Plan](../results/span_001/span_plan.json), [protocol](SPAN_001_PROTOCOL.md) and [provenance check](../results/span_001/provenance_check.json). |
+| Verify resources and include failures | API observations show reward v1 ERROR, reward v2 COMPLETE and joint v1 COMPLETE; reserved GPU time is zero. Charges are 170.830 + 988.384 + 13,794.945 = 14,954.159 seconds, or 4.154 two-T4 session-hours. No quota refresh or paid scaling was used. [Terminal audit](../results/span_001/terminal_audit.json). |
+| Preserve fixed inputs and checkpoint identity | Current split/sample, baseline predictions/weights, baseline source files and pushed notebook hashes match recorded values. Parsed pushed configuration matches the frozen local configuration. Local CSV checksums are explicitly supplemental, not claimed as GPU-measured input hashes. [Inventory](../results/span_001/artifact_inventory.json), [provenance](../results/span_001/provenance_check.json). |
+| Keep evaluation separate and grouped | Direct checks confirmed 4,096 feature-fit and 2,048 training-pilot rows belong to training; the 1,024 evaluation IDs belong to development and exclude confirmation. Prompt groups do not cross fit/evaluation. Saved labels match source labels. |
+| Execute meaningful bounded pilots | H01 scored all 5,120 planned pairs; H04/H09 completed all four arms and both prediction orientations; H11 fitted its three declared head controls. Every focus item is `done` with result references. [V1 final history](../backlog/versions/v1.final.md). |
+| Match controls and disclose deviations | H04/H09 passed the declared capacity/exposure/count gates. Every arm had 64 nominal cycles and 61 reconstructed accepted updates; all four exported adapters are finite and their current byte hashes match the analysis. Individual skipped-cycle identities were not logged. Random/paired coverage and token differences are disclosed. [Joint results](../results/span_001/joint_results.json). |
+| Fit and calibrate under the declared protocol | Head selection used three grouped training folds, three fixed regularization values and training-only PCA. New probability calibration used five grouped development folds; loss differences used 2,000 paired group-bootstrap draws over 990 groups. Development was already inspected; no untouched-generalization or multiple-comparison guarantee is claimed. |
+| Validate predictions and inference identity | All 16 saved three-class probability arrays are finite, normalized and cover the same 1,024 IDs. Frozen-baseline reproduction errors are 0.000240 mean and 0.004873 maximum, within the predeclared guards. Symmetric heads pass the swap check. |
+| Report quality, class/order behavior and cost | The report/notebook include every variant, raw and calibrated loss, paired intervals, tie/class metrics, order diagnostics, processed exposure, throughput, allocated memory, retention and actual quota use. Class-weighted loss contributions were checked to sum to overall gains. [Diagnostics](../results/span_001/joint_diagnostics.json). |
+| Preserve failed and negative findings | The initial tokenizer-container failure and its measured cost remain recorded. No pilot was promoted, no new submission was made, and no full-training gain is asserted. [Decisions](../results/span_001/decisions.json), [preflight](../results/span_001/preflight.json). |
+| Queue complete, grounded follow-ups | E01 addresses observed optimizer/exposure logging limits. H42 conditionally addresses the observed tie/order tradeoff after H40 calibration. H41 is deferred after negative feature-head controls. Their claims, risks, estimates, dependencies, criteria and provenance are recorded; none was executed in v1. [V2 start](../backlog/versions/v2.start.md). |
+| Preserve history and carry unfinished work | `advance` sealed v1, activated v2 with 3 discoveries plus 36 unfinished carryovers, and opened empty v3. V2 focus is empty. Snapshot hashes and historical views pass `backlog.py check`; the original v1 start files remain unchanged. |
+| Validate tooling and results | All 18 backlog workflow tests passed after advancement, including actual generated views/snapshot hashes and temporary multi-span lifecycle tests. The 12 scientific-contract tests passed at `ec8e654`; their covered source/test files are unchanged since that commit. The new diagnostic arithmetic and closed-span notebook were checked on the actual artifacts. |
+| Keep artifacts in their intended locations | Raw text, vectors, predictions, heads, weights and standalone figures remain under `~/database/llm_classification_finetuning`. The repository contains programs, Markdown, aggregate JSON and the executed notebook. `~/notebooks/llm_classification_finetuning` resolves to this project's notebooks directory. |
+
+Commands used for the version handoff were `backlog.py advance`, `versions`,
+`list --version 2 --new`, `list --version 2 --carried` and `check`. The report
+builder executed the notebook after v1 closed. The final publication is checked
+against the remote `main` hash after the closing commit; no v2 task is started.
