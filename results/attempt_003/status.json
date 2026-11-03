@@ -1,9 +1,19 @@
 {
   "attempt": "003",
   "state": {
-    "stage": "submission_file_verified",
-    "utc": "2026-11-02T13:06:41.675047+00:00",
-    "pid": 1874997
+    "stage": "complete",
+    "utc": "2026-11-03T11:16:08.195042+00:00",
+    "pid": 1874997,
+    "submission": {
+      "url": "/code/arseniytrushin/llm-preference-judge-predict-003?scriptVersionId=364884263",
+      "status": "SubmissionStatus.COMPLETE",
+      "ref": 57909397,
+      "error_description": "",
+      "public_score": "0.98653",
+      "private_score": "",
+      "description": "Attempt 003: frozen prompted Gemma judge, no fine-tuning or classifier blend",
+      "date": "2026-11-02 13:06:49.887000"
+    }
   },
   "selection": {
     "attempt": "003",
@@ -150,7 +160,16 @@
     "confirmation_used_for_selection": false,
     "hidden_test_used_for_selection": false
   },
-  "official_submission": null,
+  "official_submission": {
+    "url": "/code/arseniytrushin/llm-preference-judge-predict-003?scriptVersionId=364884263",
+    "status": "SubmissionStatus.COMPLETE",
+    "ref": 57909397,
+    "error_description": "",
+    "public_score": "0.98653",
+    "private_score": "",
+    "description": "Attempt 003: frozen prompted Gemma judge, no fine-tuning or classifier blend",
+    "date": "2026-11-02 13:06:49.887000"
+  },
   "jobs": {
     "runtime_probe_failed_1": {
       "push": {

@@ -1,10 +1,12 @@
 # Attempt 003: prompted judge
 
-Pipeline stage: **submission_file_verified**.
+Pipeline stage: **complete**.
 
 This experiment prompts frozen Gemma 4 weights to score A/B/tie. It does not fine-tune the model or blend in our classifier.
 
 [Protocol](docs/ATTEMPT_003.md) · [Executed result notebook](notebooks/08_prompted_judge.ipynb) · [Aggregate evidence](results/attempt_003/)
+
+Kaggle submission **57909397**: **SubmissionStatus.COMPLETE**, public log loss **0.98653**.
 
 Selected model: **gemma26** (`google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2`).
 Maximum packed length: **1024 tokens**.
