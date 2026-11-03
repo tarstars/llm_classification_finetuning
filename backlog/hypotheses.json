@@ -316,6 +316,15 @@
             "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-03T13:03:29+00:00",
+          "status": "running",
+          "note": "Both pinned H04 arms reached 64 nominal training cycles and 1186094 non-padding tokens. Their final pre-scheduler LR and finite gradient norms reconstruct 61 accepted updates each (three AMP skips). Training took 1739.09 seconds for attention-only and 2061.34 seconds for broader coverage. Broader-arm development prediction generation is pending; final comparability still requires finite exported weights and artifact validation.",
+          "evidence": [
+            "results/span_001/live_progress_joint.json",
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
         }
       ],
       "introduced_in": 1,
