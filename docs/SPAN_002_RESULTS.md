@@ -116,8 +116,26 @@ log loss **0.9599414**, accuracy **54.59%** on the original fixed 1,024 rows. Or
 checkpoint 800's same selection metric was **0.9787039**. This 0.0187625 reduction
 is encouraging but is not the final swap-averaged/calibrated full-dev comparison
 or an official score. The starting-inference guard passed before updates. The
-current notebook executes all six code cells with three figures and explicitly
+current notebook executes all six code cells with four figures and explicitly
 marks final evaluation as pending.
+
+The next fixed selection validation, at step **1200**, gives raw original-order
+loss **0.9533240**, accuracy **55.08%** on those same 1,024 rows. This continues the
+improvement without changing the fixed endpoint or selecting a new checkpoint.
+Final full-dev predictions, matched calibration and exposure reconciliation remain
+required before accepting a candidate.
+
+[Verified descriptors](../results/span_002/packing_diagnostics.json) reuse the exact
+parent checkpoint tokenizer and unchanged packing source. Full-dev clipping is
+20.05% of rows; mean row content retention is 93.51%, but corpus-token retention
+is 79.72%. No confirmation quality was evaluated. A frozen 1,024-row raw-order
+reference is retained privately for the final matched comparison. The notebook
+shows both retention definitions and the judge's measurement limitations.
+
+The [decision artifact](../results/span_002/decisions.json) explicitly leaves H03
+unfinished. Its builder requires practical positive paired evidence, valid accepted
+exposure and a feasible runtime projection before freezing a research candidate;
+offline export validation and an official score remain separate from local quality.
 
 Two discoveries are queued in the v3 draft and have not been executed: H43 tests
 conditional blending against matched full-vector/calibration controls, while E02

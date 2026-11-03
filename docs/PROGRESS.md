@@ -13,7 +13,9 @@ H39 is reprioritized for a v3 cache-only cascade pilot; H43 expectations are red
 because binary tie loss improves despite worse human-tie class loss.
 Stateful checkpoint-800 continuation's first selection validation at step
 1000 improved raw original-order loss from 0.97870 to 0.95994 on the same 1,024 rows;
-final full-dev/calibrated quality remains pending.
+final full-dev/calibrated quality remains pending. Step 1200 improved the same
+selection metric further to 0.953324, accuracy 55.08%. Verified packing descriptors
+and a matched 1,024-row frozen raw-order reference now support the final analysis.
 H43 and E02 are queued in the v3 draft; neither has run. See [v2 report](SPAN_002_RESULTS.md),
 [protocol](SPAN_002_PROTOCOL.md) and dated files under `results/span_002/`.
 The goal remains active; no v2 model is promoted and no new submission occurred.

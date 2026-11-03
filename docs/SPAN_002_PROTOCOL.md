@@ -199,3 +199,15 @@ in [the runtime amendment](SPAN_002_RUNTIME.md) freezes the recipe locally on th
 ceiling from previously unallocated time; total executable ceilings are 40,380
 seconds, leaving 2,820 within the unchanged span cap. No extra labels informed
 this repair or altered the declared recipe families, sample or evaluation.
+
+Before final H03 probabilities are available, complete diagnostic coverage using
+the verified EDA descriptor cache and the existing 1,024-row frozen raw-order
+reference. Require matching raw-data, tokenizer and packing-source hashes. Report
+raw order on identical rows and observational clipped/unclipped slices of the
+globally cross-fitted primary predictions. These diagnostics do not select a new
+endpoint, model, calibrator family or training variant. The primary comparison
+remains matched temperature-only calibration; nested calibration is secondary.
+Any qualifying research candidate uses the fixed final weights, full-development
+temperature fit after that cross-fitted comparison, exact artifact identity and
+the original practical-gain/positive-interval/runtime gates. It is distinct from
+offline export validation and an official competition score.

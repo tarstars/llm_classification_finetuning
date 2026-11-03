@@ -16,7 +16,7 @@ sys.path.insert(0,str(REPO/'src'))
 from arena.data import ROOT, CLASSES, json_write, prompt_groups
 from arena.joint_data import read_competition
 from arena.span_calibration import crossfit_calibration, crossfit_blend, SymmetricCalibration, grouped_folds
-from arena.span_heads import metrics, normalize, paired_group_gain, order_diagnostics, temperature, loss_rows
+from arena.span_heads import metrics, normalize, paired_group_gain, paired_group_difference, order_diagnostics, temperature, loss_rows
 from arena.exposure_validation import validate_exposure
 from arena.preference_diagnostics import loss_decomposition
 
@@ -197,6 +197,36 @@ def main():
         report['calibration_folds']={'classifier':control_details,'continued':candidate_details}
         report['candidate_raw']=metrics(y,data['probabilities'])
         report['candidate_order']=order_diagnostics(data['original'],data['aligned_swap'])
+        descriptors=json.loads((root/'packing_diagnostics.json').read_text())
+        reference_path=root/'frozen_order_reference.npz'
+        assert digest(reference_path)==descriptors['input_sha256']['frozen_order_reference']
+        reference=np.load(reference_path)
+        np.testing.assert_array_equal(reference['labels'],frame.loc[reference['ids'],CLASSES].values.argmax(1))
+        current_lookup={int(rid):i for i,rid in enumerate(ids)}
+        common=[current_lookup[int(rid)] for rid in reference['ids']]
+        before=reference['original'].argmax(1)!=reference['aligned_swap'].argmax(1)
+        after=data['original'][common].argmax(1)!=data['aligned_swap'][common].argmax(1)
+        report['matched_order']={'rows':len(common),
+            'classifier':order_diagnostics(reference['original'],reference['aligned_swap']),
+            'continued':order_diagnostics(data['original'][common],data['aligned_swap'][common]),
+            'disagreement_reduction':paired_group_difference(before.astype(float)-after.astype(float),groups[common],config),
+            'note':'Uncalibrated raw views on the same 1,024 rows; verified frozen-weight source from span 001.'}
+        cache_path=ROOT/'eda/attempt_002/features.parquet'
+        assert digest(cache_path)==descriptors['input_sha256']['features']
+        import pandas as pd
+        cached=pd.read_parquet(cache_path,columns=['id','label','cut_1024_cap256']).set_index('id').loc[ids]
+        np.testing.assert_array_equal(cached.label,y)
+        cut=cached.cut_1024_cap256.to_numpy(bool)
+        report['retention']=descriptors['cohorts']
+        report['retention_slices']={name:compare(y[mask],groups[mask],
+            {'classifier':controls['temperature'][mask],'continued':candidate['temperature'][mask]})
+            for name,mask in [('unclipped',~cut),('any_field_clipped',cut)]}
+        assert digest(inventory['selection']['path'])==inventory['selection']['sha256']
+        deployed_selection=json.loads(Path(inventory['selection']['path']).read_text())
+        report['historical_deployed_reference']=metrics(y,temperature(raw,deployed_selection['temperature']))
+        report['input_sha256'].update(packing_diagnostics=digest(root/'packing_diagnostics.json'),
+            feature_cache=digest(cache_path),frozen_order_reference=digest(root/'frozen_order_reference.npz'),
+            original_selection=digest(inventory['selection']['path']))
         report['summary']=summary
         reference_path=root/'baseline_resume/joint_run/checkpoints/checkpoint-800/trainer_state.json'
         assert digest(reference_path)==summary['resume_source']['file_sha256']['trainer_state.json']

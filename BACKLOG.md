@@ -242,6 +242,7 @@ The remaining exposure to one epoch may still help, despite the late plateau.
 
 - 2026-11-03T18:37:18+00:00 — running: Immutable original output confirms complete state files at checkpoints 800 and 877. Preparing continuation from selected 800, subject to E01 CUDA verification; resume inventory results/span_002/resume_inventory.json.
 - 2026-11-03T20:39:35+00:00 — running: First resumed validation at nominal1000: raw original-order log loss0.9599414, accuracy54.59% on original1024 selection rows vs checkpoint800 loss0.9787039; final calibrated/swap-averaged full-dev comparison pending. Exact live exposure/1 retained. Evidence: [results/span_002/live_progress_exposure.json](results/span_002/live_progress_exposure.json)
+- 2026-11-03T21:48:36+00:00 — running: Step1200 raw original-order selection loss0.95332397, accuracy55.08%, improving on step1000 loss0.95994142 and checkpoint800 loss0.97870392 on identical1024 rows. Fixed final endpoint unchanged. Verified parent-tokenizer/cache hashes and prepared matched order and retention diagnostics; full-dev predictions and actual exposure audit still pending. Evidence: [results/span_002/live_progress_exposure.json](results/span_002/live_progress_exposure.json); [results/span_002/packing_diagnostics.json](results/span_002/packing_diagnostics.json)
 
 ### H05
 

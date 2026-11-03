@@ -3,17 +3,17 @@
   "kernel": "arseniytrushin/llm-preference-span-002-exposure",
   "version": 1,
   "status": "KernelWorkerStatus.RUNNING",
-  "status_observed_at": "2026-11-03T21:19:47.860789+00:00",
+  "status_observed_at": "2026-11-03T22:00:15.435290+00:00",
   "log_reader_exit_code": 0,
-  "log_snapshot_mtime": "2026-11-03T21:20:06.264051+00:00",
+  "log_snapshot_mtime": "2026-11-03T22:00:33.900520+00:00",
   "last_snapshot_phase": "training_logs_available",
   "JOINT_PROGRESS": {
-    "step": 1175,
-    "elapsed_seconds": 8289.912517543,
-    "loss": 0.9685312271118164,
-    "grad_norm": 4.3861589431762695,
-    "learning_rate": 4.593775489590208e-06,
-    "epoch": 0.8175334840841886
+    "step": 1275,
+    "elapsed_seconds": 10756.47488213,
+    "loss": 0.887023639678955,
+    "grad_norm": 10.22076416015625,
+    "learning_rate": 1.8403043952916226e-06,
+    "epoch": 0.8871108018785876
   },
   "new_log_events_received": true,
   "log_reader_notice": "ConnectionError: HTTPSConnectionPool(host='api.kaggle.com', port=443): Read timed out.",
@@ -37,20 +37,34 @@
       "eval_samples_per_second": 3.311,
       "eval_steps_per_second": 0.414,
       "epoch": 0.6957731779439903
+    },
+    "1200": {
+      "step": 1200,
+      "elapsed_seconds": 9127.474615785999,
+      "eval_loss": 0.9533239603042603,
+      "eval_log_loss": 0.9533239745462843,
+      "eval_accuracy": 0.55078125,
+      "eval_balanced_accuracy": 0.5425300231863365,
+      "eval_macro_f1": 0.5350218069836009,
+      "eval_brier": 0.565257766770911,
+      "eval_runtime": 309.2463,
+      "eval_samples_per_second": 3.311,
+      "eval_steps_per_second": 0.414,
+      "epoch": 0.8349278135327883
     }
   },
   "last_validation": {
-    "step": 1000,
-    "elapsed_seconds": 4566.096514966,
-    "eval_loss": 0.9599414467811584,
-    "eval_log_loss": 0.9599414209618994,
-    "eval_accuracy": 0.5458984375,
-    "eval_balanced_accuracy": 0.5370539406059495,
-    "eval_macro_f1": 0.5267080293298885,
-    "eval_brier": 0.5691949142340418,
-    "eval_runtime": 309.2743,
+    "step": 1200,
+    "elapsed_seconds": 9127.474615785999,
+    "eval_loss": 0.9533239603042603,
+    "eval_log_loss": 0.9533239745462843,
+    "eval_accuracy": 0.55078125,
+    "eval_balanced_accuracy": 0.5425300231863365,
+    "eval_macro_f1": 0.5350218069836009,
+    "eval_brier": 0.565257766770911,
+    "eval_runtime": 309.2463,
     "eval_samples_per_second": 3.311,
     "eval_steps_per_second": 0.414,
-    "epoch": 0.6957731779439903
+    "epoch": 0.8349278135327883
   }
 }

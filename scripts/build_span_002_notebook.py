@@ -152,8 +152,17 @@ development loss have different data/postprocessing and must not be conflated.
                               'training_seconds','development_prediction_seconds','stopped_for_time','stopped_for_plateau']})
     print('Identity guards:',training['starting_identity'])
     print('Finite exported weights:',training['weight_audit'])
-    print('Training retention:',training['summary']['train_diagnostics'])
-    print('Final development retention:',training['summary']['final_diagnostics'])
+    print('Raw field token lengths (training):',training['summary']['train_diagnostics'])
+    print('Raw field token lengths (development):',training['summary']['final_diagnostics'])
+    print('Historical deployed calibration reference:',training['historical_deployed_reference'])
+    display(pd.DataFrame({key:training['matched_order'][key] for key in ['classifier','continued']}))
+    print('Matched raw-order disagreement reduction:',training['matched_order']['disagreement_reduction'])
+    print('Original-order packing slices (observational, global OOF calibration):')
+    display(pd.DataFrame([{'slice':name,'rows':row['rows'],
+                          'classifier_loss':row['models']['classifier']['log_loss'],
+                          'continued_loss':row['models']['continued']['log_loss'],
+                          'gain':row['contrasts']['continued']['gain']}
+                         for name,row in training['retention_slices'].items()]))
     print('Peak allocated GPU bytes (rank 0):',training['summary']['peak_gpu_bytes'])
     primary=training['cohorts']['temperature']
     display(pd.DataFrame([{'system':name,'class':label,'loss':m['class_loss'][index],
@@ -176,6 +185,19 @@ else:
     snapshot=RESULTS/'live_progress_exposure.json'
     print('Final H03 quality is pending.')
     if snapshot.exists():display(json.loads(snapshot.read_text()))
+if (RESULTS/'packing_diagnostics.json').exists():
+    packing=read('packing_diagnostics.json')
+    table=pd.DataFrame(packing['cohorts']).T
+    display(table)
+    show=table.loc[['training_partition','full_development'],
+                   ['mean_row_content_retained_fraction','corpus_content_retained_fraction']]
+    ax=show.plot.bar(figsize=(8,3.2),rot=0,ylim=(0,1))
+    ax.set_ylabel('Fraction of original content tokens retained')
+    ax.legend(['Mean across rows','Weighted by content tokens'])
+    save(ax.figure,'content_retention')
+    print(packing['method'])
+    print('Packing/tokenizer are unchanged during continuation; these descriptors are shared by both classifiers.')
+    print('Native judge retention/order/memory coverage:',packing['native_judge'])
 '''),nbf.v4.new_markdown_cell('''## Resources and versioned handoff
 
 Completion requires actual finished/stopped jobs, final evidence, this executed

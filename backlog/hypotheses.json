@@ -174,7 +174,7 @@
         1
       ],
       "risk": "high",
-      "claim": "An 8\u20139B supervised preference classifier may learn distinctions missed by Qwen3-4B.",
+      "claim": "An 8–9B supervised preference classifier may learn distinctions missed by Qwen3-4B.",
       "basis": "Capacity is plausible but the blind assistant comparison was inconclusive; size alone has not been isolated.",
       "first_test": "Fit/profile one larger candidate, then compare short training curves at matched examples/tokens and packing. Report a separate equal-wall-budget comparison.",
       "acceptance": "A larger matched-exposure evaluation improves overall loss and has a feasible quantized submission path.",
@@ -253,6 +253,15 @@
           "note": "First resumed validation at nominal1000: raw original-order log loss0.9599414, accuracy54.59% on original1024 selection rows vs checkpoint800 loss0.9787039; final calibrated/swap-averaged full-dev comparison pending. Exact live exposure/1 retained.",
           "evidence": [
             "results/span_002/live_progress_exposure.json"
+          ]
+        },
+        {
+          "at": "2026-11-03T21:48:36+00:00",
+          "status": "running",
+          "note": "Step1200 raw original-order selection loss0.95332397, accuracy55.08%, improving on step1000 loss0.95994142 and checkpoint800 loss0.97870392 on identical1024 rows. Fixed final endpoint unchanged. Verified parent-tokenizer/cache hashes and prepared matched order and retention diagnostics; full-dev predictions and actual exposure audit still pending.",
+          "evidence": [
+            "results/span_002/live_progress_exposure.json",
+            "results/span_002/packing_diagnostics.json"
           ]
         }
       ],
@@ -2687,7 +2696,7 @@
     "Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.",
     "**All gain ranges are subjective planning ranges, not measured gains, expected values, confidence intervals or guarantees.** They allow regression. They describe incremental overall loss reduction against a matched, calibrated, swap-averaged attempt-002 comparator on identical evaluation rows. For judge-only changes, also report the judge-relative change; it is not automatically a gain over LoRA. Related changes overlap, so their ranges cannot be added.",
     "Priority combines measured evidence, plausible upside and the cost of getting an informative answer. P1 is the first model-pilot wave after E00; cheap calibration/coverage audits can run on CPU in parallel with that work. Low gain confidence applies to every estimate; qualitative risk describes execution, validity and deployment hazards, not a numeric probability of failure.",
-    "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6\u201312 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
+    "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
     "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.",
     "Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots."
   ],
@@ -2698,8 +2707,8 @@
     "**H12/H13:** conflicting repeated comparisons are rare. They cannot plausibly explain the whole gap. Disagreement with objective factuality is not automatically a wrong human-preference label.",
     "**H08:** higher-precision export cannot undo four-bit training. Changing from the quantized base to the original base changes effective model weights; precision comparisons must say exactly what changes.",
     "**H24/H25/H23:** packing/context defects are plausible but not established causes. Measure affected coverage, distinguish changed content from serialization, count retraining and throughput, and demote H24/H25 from the first wave.",
-    "**H14\u2013H19/H21/H29:** annotation, synthetic correctness, domain balance and factuality-rubric mismatch remain hypotheses. Preserve human vote targets and require gains on the original evaluation mixture. H18/H19 may share annotation tooling with H14 but do not require its full auxiliary-training experiment first.",
-    "**H15/H37\u2013H39:** our general judge is not yet a demonstrated teacher or useful ensemble component. Prove complementarity before full distillation, specialists or cascade engineering.",
+    "**H14–H19/H21/H29:** annotation, synthetic correctness, domain balance and factuality-rubric mismatch remain hypotheses. Preserve human vote targets and require gains on the original evaluation mixture. H18/H19 may share annotation tooling with H14 but do not require its full auxiliary-training experiment first.",
+    "**H15/H37–H39:** our general judge is not yet a demonstrated teacher or useful ensemble component. Prove complementarity before full distillation, specialists or cascade engineering.",
     "**H36/H40:** related blends/calibrators already showed small uncertain gains. These are low-cost extensions, not untouched breakthrough ideas.",
     "Retained all forty IDs for traceability. H12, H36 and H40 have deliberately bounded CPU-first scopes; deeper training/OOF work requires a separately recorded budget. Added E00 outside the count to make dependencies and evaluation prerequisites explicit."
   ],

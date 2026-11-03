@@ -1,0 +1,66 @@
+{
+  "span": 2,
+  "generated_at": "2026-11-03T21:38:24.097119+00:00",
+  "all_focus_measurements_complete": false,
+  "tasks": {
+    "H40": {
+      "experiment_complete": true,
+      "contrast": {
+        "gain": 0.001132495700997212,
+        "interval_95": [
+          -0.0005643220873635243,
+          0.0029542135675369556
+        ],
+        "groups": 5211,
+        "rows": 5746,
+        "replicates": 2000,
+        "weighted_class_contributions": [
+          0.013293043928159543,
+          0.013026247452813422,
+          -0.025186795679975754
+        ]
+      },
+      "adopted": false,
+      "reason": "Primary nested estimate is uncertain; the best individual family is not the selected-procedure estimate."
+    },
+    "E01": {
+      "experiment_complete": true,
+      "passed": true,
+      "reason": "Actual two-rank CUDA overflow, parameter-change and resume checks passed."
+    },
+    "H42": {
+      "experiment_complete": true,
+      "gpu_anchor_training_executed": false,
+      "gate": {
+        "overall_loss_gap": -0.00015099503594040442,
+        "tie_class_loss_gap": 0.0015366018961533445,
+        "calibration_resolves_deficit": true,
+        "interpretation": "Predeclared practical stopping rule, not an equivalence test."
+      },
+      "reason": "Stopped at the declared practical calibration gate; no equivalence proof."
+    },
+    "H37": {
+      "experiment_complete": true,
+      "complementarity_supported": true,
+      "runtime_guard_passed": false,
+      "adopted": false,
+      "projected_seconds_with_margin": 49446.13620428893,
+      "projection_rows_assumption": 25000,
+      "reason": "Both larger quality checks pass; full sequential deployment fails the seven-hour guard."
+    },
+    "H03": {
+      "experiment_complete": false,
+      "reason": "Final full-development probabilities and accepted-exposure audit pending."
+    }
+  },
+  "best_recorded_official_loss_before_span": 0.97025,
+  "new_competition_submission_made": false,
+  "selection_limits": "Previously inspected development; confirmation unused; intervals condition on fitted OOF predictions.",
+  "thresholds": {
+    "cheap_log_loss_gain": 0.001,
+    "training_log_loss_gain": 0.005,
+    "positive_group_interval_required": true,
+    "individual_job_guard_seconds": 25200
+  },
+  "source_sha256": "5b0ec3677f29335243f1ea28f1f6bd26bfce7a67fc30bbca704254f11cffee24"
+}

@@ -109,16 +109,33 @@ limits and final measurements. Its progress audit preserved three unrelated old
 are hashed. These are not current project jobs. Per-job quota attribution is
 unavailable for overlapping runs; the account-level delta includes every charge.
 
-Notebook 13 has an executed partial-state snapshot (six code cells, three figures),
+Notebook 13 has an executed partial-state snapshot (six code cells, four figures),
 including the completed H37 intervals and class contributions.
 Rebuild and re-execute it after final outputs; its current existence does not
-fulfill the final-deliverable audit. H03 reached nominal step 1175 at 21:19 UTC;
+fulfill the final-deliverable audit. H03 reached nominal step 1235 at 21:45 UTC;
 its step-1000 validation, read at 20:19 UTC,
 gave original-order raw selection loss 0.9599414 versus checkpoint-800's 0.9787039
 on the same 1,024 rows, accuracy 54.59%. Final full-dev quality is pending. The starting
 identity guard passed. Numerical progress preserves validation history separately
 from later minibatch logs; these are original-order selection metrics, not final
 swap-averaged calibrated dev quality.
+
+Its second selection validation at step 1200 is **0.95332397**, accuracy **55.08%**,
+on the same 1,024 rows (versus 0.95994142 at 1000 / 0.97870392 at original 800).
+`prepare_span_002_descriptors.py` verified all EDA cache/raw/source/tokenizer hashes,
+including a fresh download of the immutable checkpoint-800 tokenizer. Private
+`frozen_order_reference.npz` reconstructs the matched 1,024 frozen orientations;
+packing diagnostics are public aggregates. No confirmation metric was calculated.
+The final analyzer now reports matched order, historical calibration separately,
+retention and observational clipped/unclipped slices in addition to primary gates.
+Its final-output branch is still awaiting actual H03 data.
+
+`decide_span_002.py` currently records H03 pending. After final valid exposure
+analysis, run it again to record all decisions and, only if the declared quality
+and runtime gates pass, freeze `research_candidate.json` with its temperature and
+exact kernel/adapter identity. This does not submit or alter original attempt-002
+selection. The terminal audit independently recomputes saved probability losses
+and verifies H40 source at `618e4a5`, H37 source at `4653463`, and current H03 source.
 
 Upload failures are reconciled. Recovery's two uncertain execution pushes and
 uniform scoring's first uncertain Quick Save were proven unaccepted using a

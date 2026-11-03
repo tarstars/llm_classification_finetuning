@@ -5,7 +5,11 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import subprocess
 import sys
+
+import numpy as np
+import nbformat
 
 REPO=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(REPO/'src'))
@@ -47,6 +51,19 @@ def main():
             'max_session_seconds':config['job_seconds_caps'][role.replace('-','_')]})
         source=root/'notebooks'/role/'job.ipynb'
         assert digest(source)==jobs[-1]['notebook_sha256'], 'Do not replace launched sources with later fixes'
+        if args.final:
+            remote=root/'audited_sources'/role
+            remote.mkdir(parents=True,exist_ok=True)
+            api.kernels_pull(exact,path=str(remote),metadata=True,quiet=True)
+            notebooks=list(remote.glob('*.ipynb'))
+            assert len(notebooks)==1, 'Expected one immutable notebook source'
+            actual=nbformat.read(notebooks[0],as_version=4)
+            intended=nbformat.read(source,as_version=4)
+            cells=lambda nb:[(cell.cell_type,cell.source) for cell in nb.cells]
+            assert cells(actual)==cells(intended), 'Remote source differs: '+exact
+            jobs[-1]['remote_source_matches']=True
+            jobs[-1]['remote_cell_sources_sha256']=hashlib.sha256(
+                json.dumps(cells(actual),ensure_ascii=False).encode()).hexdigest()
         if (directory/'draft_push.json').exists():
             draft=json.loads((directory/'draft_push.json').read_text())
             assert draft['execution_requested'] is False
@@ -109,8 +126,43 @@ def main():
         assert all(result[key] for key in ['within_original_compute_cap','within_original_deadline',
                                           'no_quota_refresh_used','no_paid_scaling'])
         for filename in ['calibration_results.json','instrumentation_results.json',
-                         'expanded_results.json','exposure_results.json']:
+                         'expanded_results.json','exposure_results.json','packing_diagnostics.json','decisions.json']:
             assert (aggregate/filename).exists(), 'Final evaluation missing: '+filename
+        decisions=json.loads((aggregate/'decisions.json').read_text())
+        assert decisions['all_focus_measurements_complete']
+        assert all(row['experiment_complete'] for row in decisions['tasks'].values())
+        result['verified_analysis_history']={}
+        for name,revision in [('calibration_results.json','618e4a5'),('expanded_results.json','4653463')]:
+            report=json.loads((aggregate/name).read_text())
+            for path,expected in report['source_sha256'].items():
+                blob=subprocess.check_output(['git','show',revision+':'+path],cwd=REPO)
+                assert hashlib.sha256(blob).hexdigest()==expected, (name,path)
+            result['verified_analysis_history'][name]=revision
+        training=json.loads((aggregate/'exposure_results.json').read_text())
+        for path,expected in training['source_sha256'].items():
+            assert digest(REPO/path)==expected, 'Latest analysis source changed: '+path
+        result['verified_private_predictions']={}
+        for stage in ['exposure','expanded']:
+            report=json.loads((aggregate/(stage+'_results.json')).read_text())
+            path=root/(stage+'_evaluated_predictions.npz')
+            assert digest(path)==report['private_predictions_sha256']
+            data=np.load(path);labels=data['labels']
+            if stage=='exposure':
+                assert set(map(int,data['ids']))==set(json.loads(Path(inventory['split']['path']).read_text())['dev'])
+                checks=[(family,system,family+'_'+system,None)
+                        for family in ['temperature','nested_selected'] for system in ['classifier','continued']]
+            else:
+                checks=[('combined_nested',system,system,None) for system in ['classifier','judge','blend']]
+                checks += [('frozen_new_groups',system,'new_group_'+system,data['new_group_mask'])
+                           for system in ['classifier','judge','blend']]
+            for cohort,system,key,mask in checks:
+                p=data[key];y=labels if mask is None else labels[mask]
+                assert p.shape==(len(y),3) and np.isfinite(p).all() and (p>=0).all()
+                np.testing.assert_allclose(p.sum(1),1,atol=1e-8)
+                value=float(-np.log(p[np.arange(len(y)),y]).mean())
+                assert abs(value-report['cohorts'][cohort]['models'][system]['log_loss'])<1e-10
+            result['verified_private_predictions'][stage]={'rows':len(labels),'sha256':digest(path),
+                                                         'independently_recomputed_loss_arrays':len(checks)}
         filename='terminal_audit.json'
     else:filename='resource_audit_progress.json'
     for directory in [root,aggregate]:json_write(directory/filename,result)

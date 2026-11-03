@@ -1,0 +1,90 @@
+{
+  "checked_at": "2026-11-03T21:40:34.121991+00:00",
+  "confirmation_evaluated": false,
+  "method": "Reuse EDA content-token accounting under unchanged original-order 1024-token packing; marker tokens excluded. Cached labels checked for row alignment only.",
+  "max_length": 1024,
+  "cohorts": {
+    "training_partition": {
+      "rows": 45985,
+      "any_field_cut_fraction": 0.1964553658801783,
+      "prompt_cut_fraction": 0.07154506904425356,
+      "answer_cut_fraction": 0.15829074698271176,
+      "mean_row_content_retained_fraction": 0.9373496378915455,
+      "corpus_content_retained_fraction": 0.8008962775974954,
+      "raw_content_tokens": 30640507,
+      "retained_content_tokens": 24539868
+    },
+    "full_development": {
+      "rows": 5746,
+      "any_field_cut_fraction": 0.20048729550991995,
+      "prompt_cut_fraction": 0.07274625826662026,
+      "answer_cut_fraction": 0.16568047337278108,
+      "mean_row_content_retained_fraction": 0.9350759069406824,
+      "corpus_content_retained_fraction": 0.7972207727543547,
+      "raw_content_tokens": 3892233,
+      "retained_content_tokens": 3102969
+    },
+    "order_reference": {
+      "rows": 1024,
+      "any_field_cut_fraction": 0.1962890625,
+      "prompt_cut_fraction": 0.06640625,
+      "answer_cut_fraction": 0.1650390625,
+      "mean_row_content_retained_fraction": 0.9370901346293671,
+      "corpus_content_retained_fraction": 0.8194742610297917,
+      "raw_content_tokens": 687071,
+      "retained_content_tokens": 563037
+    },
+    "ensemble_combined": {
+      "rows": 2048,
+      "any_field_cut_fraction": 0.19970703125,
+      "prompt_cut_fraction": 0.0732421875,
+      "answer_cut_fraction": 0.16650390625,
+      "mean_row_content_retained_fraction": 0.9339165876151628,
+      "corpus_content_retained_fraction": 0.8000175828197268,
+      "raw_content_tokens": 1399093,
+      "retained_content_tokens": 1119299
+    }
+  },
+  "frozen_order_reference": {
+    "rows": 1024,
+    "diagnostics": {
+      "decision_disagreement": 0.3544921875,
+      "mean_probability_l1": 0.2529733856935745,
+      "second_position_advantage": 0.08829009731948925
+    },
+    "reload_mean_probability_difference": 0.00024002480673323526,
+    "reload_max_probability_difference": 0.004872723018787384,
+    "note": "Coverage: original raw orientations of 1,024 development rows from span-001 frozen-weight extraction."
+  },
+  "native_judge": {
+    "rows": 2048,
+    "truncated_rows": 697,
+    "truncated_fraction": 0.34033203125,
+    "mean_packed_tokens": 745.3369140625,
+    "prompt_overhead_tokens": 239,
+    "both_orders_measured": false,
+    "order_disagreement": null,
+    "order_note": "The single-order source summary uses zero as an order-flip placeholder; it is not measured invariance.",
+    "gpu_count": 2,
+    "physical_memory_MiB_per_gpu": 15360,
+    "peak_allocated_bytes": null,
+    "memory_note": "Two-T4 execution succeeded; peak native GPU allocation was not captured. Capacity is not peak usage."
+  },
+  "input_sha256": {
+    "features": "c32276c3afd1d8c24f262ddb09d614218dd647a2b3f53233292454b5feeaddb7",
+    "feature_fingerprint": "cfe8e20bcc34f37b8a0ec10ffca53d8ad91f4748572f1b7157650a4ad1e23e08",
+    "raw_data": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+    "tokenizer": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "parent_checkpoint_tokenizer": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "preprocessing": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "feature_program": "a73deb6ea4d583d6147ed8db22f100ab0c63eb814d3edce200db5900e418fc4f",
+    "frozen_rank0": "2788f93a23b6eeeb543b469ee3d9f12a35a3eef9abdd93818be56f71ffc84ab2",
+    "frozen_rank1": "fd990e6a547cdb8a81f24ecfc17ecd7bfae8c3b8a93a16e44d442ca7cfd7bbb6",
+    "frozen_order_reference": "7fb5d75d195a1fc69b9edb3ad9c3e4ea8dc1e81669cf27d5966abcf5201a2cfa",
+    "baseline": "5b2522d2be7fed1d490ebe6135afe97fe3863339d8c34a971027ce861f051de2",
+    "current_judge_cached_summary": "858d9397626cc0da718e242026af3a1b17b5844d2754a8f83c72425c81f97c08",
+    "current_judge_extra_summary": "77364b42d33f7b85f6dc2129e9f898ec7c9ae06be22183c3e4e6c3388e2acfc3",
+    "joint": "d1c60c29aa03f373ac7e237d734358abf2e0f0af7d3c188769c931054aa4b7ea",
+    "source": "e3c619934b3240788563a76a71c34e5bf33de9071a57e9a35814639d469c7394"
+  }
+}
