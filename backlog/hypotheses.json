@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "estimated_on": "2026-11-03",
   "items": [
     {
@@ -44,7 +44,10 @@
         "EDA_REPORT.md",
         "TARGET_AUDIT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H01",
@@ -92,7 +95,10 @@
         "TARGET_AUDIT.md",
         "[Skywork reward models](https://github.com/SkyworkAI/Skywork-Reward)"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H02",
@@ -139,7 +145,10 @@
         "ATTEMPT_002_RESULTS.md",
         "ATTEMPT_004_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H03",
@@ -186,7 +195,10 @@
         "ATTEMPT_002_RESULTS.md",
         "docs/ATTEMPT_002.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H04",
@@ -233,7 +245,10 @@
         "ATTEMPT_002_RESULTS.md",
         "src/arena/joint_train.py"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H05",
@@ -279,7 +294,10 @@
       "evidence": [
         "ATTEMPT_002_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H06",
@@ -326,7 +344,10 @@
         "src/arena/joint_data.py",
         "src/arena/joint_train.py"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H07",
@@ -373,7 +394,10 @@
         "src/arena/joint_data.py",
         "src/arena/joint_train.py"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H08",
@@ -420,7 +444,10 @@
         "docs/ATTEMPT_002.md",
         "src/arena/joint_infer.py"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H09",
@@ -467,7 +494,10 @@
         "EDA_REPORT.md",
         "results/eda_002/hypotheses.json"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H10",
@@ -513,7 +543,10 @@
       "evidence": [
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H11",
@@ -560,7 +593,10 @@
         "EDA_REPORT.md",
         "results/eda_002/hypotheses.json"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H12",
@@ -606,7 +642,10 @@
       "evidence": [
         "TARGET_AUDIT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H13",
@@ -653,7 +692,10 @@
         "TARGET_AUDIT.md",
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H14",
@@ -700,7 +742,10 @@
         "EDA_REPORT.md",
         "ATTEMPT_004_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H15",
@@ -749,7 +794,10 @@
         "ATTEMPT_004_RESULTS.md",
         "[Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H16",
@@ -795,7 +843,10 @@
       "evidence": [
         "TARGET_AUDIT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H17",
@@ -842,7 +893,10 @@
         "TARGET_AUDIT.md",
         "[Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H18",
@@ -889,7 +943,10 @@
         "docs/ERROR_POSTER.md",
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H19",
@@ -936,7 +993,10 @@
         "ATTEMPT_004_RESULTS.md",
         "docs/ERROR_POSTER.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H20",
@@ -983,7 +1043,10 @@
         "docs/ERROR_POSTER.md",
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H21",
@@ -1029,7 +1092,10 @@
       "evidence": [
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H22",
@@ -1075,7 +1141,10 @@
       "evidence": [
         "TARGET_AUDIT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H23",
@@ -1122,7 +1191,10 @@
         "EDA_REPORT.md",
         "results/eda_002/hypotheses.json"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H24",
@@ -1169,7 +1241,10 @@
         "src/arena/joint_data.py",
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H25",
@@ -1217,7 +1292,10 @@
         "src/arena/joint_data.py",
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H26",
@@ -1264,7 +1342,10 @@
       "evidence": [
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H27",
@@ -1311,7 +1392,10 @@
         "docs/ERROR_POSTER.md",
         "src/arena/joint_data.py"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H28",
@@ -1358,7 +1442,10 @@
       "evidence": [
         "EDA_REPORT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H29",
@@ -1405,7 +1492,10 @@
         "ATTEMPT_003_RESULTS.md",
         "ATTEMPT_004_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H30",
@@ -1452,7 +1542,10 @@
         "docs/ATTEMPT_003.md",
         "TARGET_AUDIT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H31",
@@ -1498,7 +1591,10 @@
       "evidence": [
         "ATTEMPT_003_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H32",
@@ -1546,7 +1642,10 @@
         "ATTEMPT_004_RESULTS.md",
         "ATTEMPT_003_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H33",
@@ -1594,7 +1693,10 @@
         "docs/ERROR_POSTER.md",
         "docs/ATTEMPT_003.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H34",
@@ -1640,7 +1742,10 @@
       "evidence": [
         "docs/ERROR_POSTER.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H35",
@@ -1686,7 +1791,10 @@
       "evidence": [
         "docs/ERROR_POSTER.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H36",
@@ -1733,7 +1841,10 @@
         "EDA_REPORT.md",
         "TARGET_AUDIT.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H37",
@@ -1781,7 +1892,10 @@
         "ATTEMPT_003_RESULTS.md",
         "ATTEMPT_004_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H38",
@@ -1829,7 +1943,10 @@
         "EDA_REPORT.md",
         "ATTEMPT_003_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H39",
@@ -1877,7 +1994,10 @@
         "ATTEMPT_003_RESULTS.md",
         "ATTEMPT_004_RESULTS.md"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     },
     {
       "id": "H40",
@@ -1924,7 +2044,10 @@
         "EDA_REPORT.md",
         "results/eda_002/hypotheses.json"
       ],
-      "history": []
+      "history": [],
+      "introduced_in": 1,
+      "discovered_during": null,
+      "derived_from": []
     }
   ],
   "framing": [
@@ -1932,7 +2055,8 @@
     "**All gain ranges are subjective planning ranges, not measured gains, expected values, confidence intervals or guarantees.** They allow regression. They describe incremental overall loss reduction against a matched, calibrated, swap-averaged attempt-002 comparator on identical evaluation rows. For judge-only changes, also report the judge-relative change; it is not automatically a gain over LoRA. Related changes overlap, so their ranges cannot be added.",
     "Priority combines measured evidence, plausible upside and the cost of getting an informative answer. P1 is the first model-pilot wave after E00; cheap calibration/coverage audits can run on CPU in parallel with that work. Low gain confidence applies to every estimate; qualitative risk describes execution, validity and deployment hazards, not a numeric probability of failure.",
     "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
-    "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git."
+    "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.",
+    "Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots."
   ],
   "revisions": [
     "**H07/H06:** the final causal classification token already sees both retained answers. Bidirectional masking is an architectural experiment, not a fix for missing access to answer B; H07 moves to P4.",
@@ -1960,5 +2084,73 @@
     "[Original 40-item register and historical context](docs/HYPOTHESES_0_8.md); Git history preserves the original wording.",
     "[First-place author, related 2024 LMSYS competition](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629) reported 0.876 public versus 0.96898 private. [Kaggle staff](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/524376) described rerunning on a new private set. That is a different competition and does not establish a clean 0.8 target here.",
     "[Skywork reward-model repository](https://github.com/SkyworkAI/Skywork-Reward), [Skywork Reward V2 paper](https://arxiv.org/abs/2507.01352), and [second-place LMSYS write-up](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527685) supply technical precedents, not measured local gains or verified deployment feasibility."
+  ],
+  "active_version": 1,
+  "versions": [
+    {
+      "number": 1,
+      "state": "active",
+      "item_ids": [
+        "E00",
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H09",
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H36",
+        "H37",
+        "H38",
+        "H39",
+        "H40"
+      ],
+      "focus_ids": [
+        "E00",
+        "H01",
+        "H09",
+        "H04",
+        "H11"
+      ],
+      "history": [],
+      "start_sha256": "0184479f9c5cd767531411490f21fc38fb89cc5fdd343b89d2d7254bd0baef5e",
+      "start_markdown_sha256": "9d62a7657c069b40023e178c7f1004f55419ef41f583d8264e5509b57272e0fd",
+      "start_sealed_at": "2026-11-03T08:47:56+00:00"
+    },
+    {
+      "number": 2,
+      "state": "draft",
+      "item_ids": [],
+      "focus_ids": [],
+      "history": []
+    }
   ]
 }

@@ -8,7 +8,9 @@ conclusions. [backlog/hypotheses.json](backlog/hypotheses.json) is the source of
 truth; [BACKLOG.md](BACKLOG.md) is generated. Use
 [scripts/backlog.py](scripts/backlog.py) for status changes and history. Edit the
 JSON for estimates, priorities, dependencies and experiment design, then regenerate
-the Markdown. Preserve stable hypothesis IDs and previous outcomes.
+the Markdown. Preserve stable hypothesis IDs and previous outcomes. A backlog
+version defines a research span; its `focus_ids` define that span's bounded
+execution scope. [GOAL.md](GOAL.md) describes the first span and its limits.
 
 | Status | Meaning |
 | --- | --- |
@@ -26,6 +28,8 @@ the Markdown. Preserve stable hypothesis IDs and previous outcomes.
 
    ```bash
    uv run python scripts/backlog.py list --actionable
+   uv run python scripts/backlog.py list --actionable --focus
+   uv run python scripts/backlog.py versions
    uv run python scripts/backlog.py list --priority P1
    uv run python scripts/backlog.py show H09
    ```
@@ -65,7 +69,9 @@ the Markdown. Preserve stable hypothesis IDs and previous outcomes.
    The CLI appends dated history and regenerates the Markdown. It updates tracking;
    experiment programs launch and monitor jobs separately. Include the run ID or
    artifact location in progress notes. Serialize backlog edits to preserve history.
-   When reopening a hypothesis, explain the new attempt and retain earlier results.
+   Within the active span, explain any reopened attempt and retain earlier results.
+   After a span closes, create a new follow-up for further work on a completed task;
+   the historical task and its snapshots remain preserved.
 
 4. **Evaluate and close with evidence.** Compare candidates on identical rows with
    matched controls. Report overall multiclass log loss, paired uncertainty, class
@@ -98,20 +104,67 @@ the Markdown. Preserve stable hypothesis IDs and previous outcomes.
    for work that may become worthwhile later. Record the reason in either case.
    Closing as `done` or `rejected` requires a result/decision reference.
 
-5. **Revise the backlog when evidence changes.** Update estimates, priorities,
+5. **Revise and version the backlog when evidence changes.** Update estimates, priorities,
    risks, dependencies and test design in the JSON, explaining the revision in the
    item. Keep forecasts separate from measurements in linked reports. Preserve
-   H01–H40 identifiers rather than deleting or repurposing them. Git history retains
+   existing identifiers rather than deleting or repurposing them. Git history retains
    earlier wording and estimates; status history retains decisions and outcomes.
+
+   The active version has a fixed task membership and a selected focus. Keep new
+   discoveries in the next-version draft so research cannot silently expand the
+   current goal. Create a complete proposal from the CLI template, then queue it
+   with its originating task and actual supporting observation/report:
+
+   ```bash
+   uv run python scripts/backlog.py template > /tmp/arena_followup.json
+   # Fill the template with a complete, evidence-grounded proposal.
+   uv run python scripts/backlog.py queue --item-file /tmp/arena_followup.json \
+     --from H09 --note "State the actual discovery" --evidence docs/ACTUAL_REPORT.md
+   uv run python scripts/backlog.py list --version next
+   ```
+
+   IDs continue as H41, H42, and so on for hypotheses, or E01 onward for
+   prerequisites. `introduced_in`, `discovered_during` and `derived_from` preserve
+   provenance. Draft tasks cannot become ready, run or be marked done before their
+   version activates. Both [BACKLOG.md](BACKLOG.md) and the live
+   [next-version view](backlog/NEXT.md) are generated from the registry.
+
+   Before closing a span, resolve every focus item as `done`, `rejected` or
+   justifiably `deferred`, with actual evidence; a focus deferral needs a linked
+   decision. Finish or stop every running job/task. Produce the span report, then:
+
+   ```bash
+   uv run python scripts/backlog.py advance \
+     --note "Describe the actual outcome" --evidence docs/ACTUAL_SPAN_REPORT.md
+   uv run python scripts/backlog.py list --version 1
+   uv run python scripts/backlog.py list --new
+   uv run python scripts/backlog.py list --carried
+   ```
+
+   `advance` preserves final JSON/Markdown snapshots, activates the next version
+   with new discoveries plus unfinished carried work, and opens another draft.
+   Completed/rejected tasks remain in the registry as dependencies and evidence.
+   Never discard unfinished work merely because it was not selected for the span.
+   Do not run the next span automatically when a goal ends at the version boundary.
+
+   Start and final snapshots live under `backlog/versions/vN.start.*` and
+   `vN.final.*`; hashes protect their recorded contents. Historical CLI reads use
+   final snapshots, so later carried-task updates do not rewrite earlier results.
+   Preserve snapshot files. A later span's goal selects its focus before execution;
+   changing focus requires an explained decision and no running tasks:
+
+   ```bash
+   # Example after v2 activates, using task IDs actually present there:
+   # uv run python scripts/backlog.py focus H41 H23 --note "Explain this span's selection"
+   ```
 
    ```bash
    uv run python scripts/backlog.py render
    uv run python scripts/backlog.py check
    ```
 
-   The current validator requires the registered forty hypotheses. Extending the
-   hypothesis set requires updating that validation contract and its tests while
-   retaining existing IDs.
+   Keep the original H01–H40 records for traceability. New IDs are supported by
+   the tooling without changing the validation contract for each follow-up.
 
 6. **Validate and publish important milestones.** Run `check` after updates. Run
    focused tests when changing tooling or experiment code; for backlog tooling:
@@ -133,9 +186,10 @@ the Markdown. Preserve stable hypothesis IDs and previous outcomes.
    `~/notebooks/llm_classification_finetuning`. Keep credentials out of source,
    notebook output, logs and commits.
 
-The CLI validates record structure, IDs, dependency cycles, dependency status gates,
-closure references and Markdown consistency. Contributors must review scientific
-validity, actual evidence contents, artifact provenance and available resources.
+The CLI validates record structure, IDs, dependency cycles, execution-version and
+dependency gates, closure references, span focus resolution, snapshot hashes and
+both generated Markdown views. Contributors must review scientific validity,
+actual evidence contents, artifact provenance and available resources.
 
 Scope file searches to this named project. Never recursively walk `$HOME`, `~/prj`,
 the Arcadia/Arc FUSE checkouts, or

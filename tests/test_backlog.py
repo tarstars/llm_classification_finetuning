@@ -29,6 +29,12 @@ class BacklogWorkflow(unittest.TestCase):
                         depends_on=[] if key == 'E00' else ['E00'])
             work.append(item)
         self.data['items'] = work
+        self.data['active_version'] = 1
+        self.data['versions'] = [
+            {'number': 1, 'state': 'active', 'item_ids': [x['id'] for x in work],
+             'focus_ids': ['E00', 'H09'], 'history': []},
+            {'number': 2, 'state': 'draft', 'item_ids': [], 'focus_ids': [], 'history': []},
+        ]
         by_id = {x['id']: x for x in work}
         by_id['H07']['status'] = 'deferred'
         by_id['H15']['depends_on'] = ['E00', 'H01']
@@ -44,10 +50,13 @@ class BacklogWorkflow(unittest.TestCase):
 
     def test_forty_stable_ids_and_current_generated_page(self):
         actual = backlog.read()
-        hypotheses = backlog.select(actual, kind="hypothesis")
-        self.assertEqual(len(hypotheses), 40)
-        self.assertEqual({x['id'] for x in hypotheses}, {f'H{i:02}' for i in range(1, 41)})
+        hypotheses = [x for x in actual['items'] if x['kind'] == 'hypothesis']
+        self.assertGreaterEqual(len(hypotheses), 40)
+        self.assertTrue({f'H{i:02}' for i in range(1, 41)} <= {x['id'] for x in hypotheses})
         self.assertEqual(backlog.DEFAULT_VIEW.read_text(), backlog.render(actual))
+        self.assertEqual((backlog.DEFAULT_DATA.parent / 'NEXT.md').read_text(),
+                         backlog.render(actual, version=actual['active_version'] + 1, link_prefix='..'))
+        backlog.check_snapshots(actual, backlog.DEFAULT_DATA)
 
     def test_dependency_gates_ready_and_running_without_mutating_input(self):
         original = deepcopy(self.data)
@@ -155,6 +164,165 @@ class BacklogWorkflow(unittest.TestCase):
             self.assertEqual(stale.exception.code, 2)
             run('render')
             self.assertEqual(view.read_text(), backlog.render(backlog.read(source)))
+
+    def finished_focus(self):
+        data = self.finish_prerequisite()
+        return backlog.update(data, 'H09', 'done', 'Pilot finished', ['docs/pilot.md'])
+
+    def proposal(self, kind='hypothesis'):
+        item = deepcopy(next(x for x in self.data['items'] if x['id'] == 'H01'))
+        item.update(kind=kind, title='A follow-up grounded in the pilot',
+                    gain=None if kind == 'prerequisite' else [-.01, .02], depends_on=['H09'])
+        return item
+
+    def test_discoveries_are_queued_with_provenance_and_isolated_from_active_work(self):
+        original = deepcopy(self.data)
+        data, key = backlog.queue(self.finished_focus(), self.proposal(), ['H09'],
+                                  'The pilot suggests this test', ['docs/pilot.md'])
+        self.assertEqual(key, 'H41')
+        item = next(x for x in data['items'] if x['id'] == key)
+        self.assertEqual((item['introduced_in'], item['discovered_during'], item['derived_from']),
+                         (2, 1, ['H09']))
+        self.assertNotIn(key, {x['id'] for x in backlog.select(data)})
+        self.assertEqual([x['id'] for x in backlog.select(data, version=2)], [key])
+        self.assertEqual(backlog.select(data, version=2, actionable=True), [])
+        for status in ('ready', 'running', 'done'):
+            with self.assertRaisesRegex(backlog.BacklogError, 'next-version'):
+                backlog.update(data, key, status, 'Too early', ['docs/pilot.md'])
+        data, second = backlog.queue(data, self.proposal(), ['H09'], 'Another independent test')
+        self.assertEqual(second, 'H42')
+        data, setup = backlog.queue(data, self.proposal('prerequisite'), ['H09'], 'Need setup first')
+        self.assertEqual(setup, 'E01')
+        self.assertEqual(self.data, original)
+
+    def test_incomplete_proposals_and_unknown_parents_rejected_without_mutation(self):
+        original = deepcopy(self.data)
+        with self.assertRaises(backlog.BacklogError):
+            backlog.queue(self.data, backlog.task_template(), ['H09'], 'Incomplete')
+        with self.assertRaisesRegex(backlog.BacklogError, 'parents must exist'):
+            backlog.queue(self.data, self.proposal(), ['H99'], 'Invalid source')
+        self.assertEqual(self.data, original)
+
+    def test_advance_requires_resolved_focus_and_no_running_tasks(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'backlog.json'
+            with self.assertRaisesRegex(backlog.BacklogError, 'not been resolved'):
+                backlog.advance(self.data, source, 'Premature', ['docs/span.md'])
+            running = backlog.update(self.finished_focus(), 'H04', 'running', 'Other work')
+            with self.assertRaisesRegex(backlog.BacklogError, 'task is running'):
+                backlog.advance(running, source, 'Orphan job', ['docs/span.md'])
+            deferred = backlog.update(self.data, 'E00', 'deferred', 'Quota unavailable')
+            deferred['versions'][0]['focus_ids'] = ['E00']
+            with self.assertRaisesRegex(backlog.BacklogError, 'deferral needs a decision'):
+                backlog.advance(deferred, source, 'No quota', ['docs/span.md'])
+
+    def test_advance_freezes_history_carries_open_work_and_can_retry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'backlog.json'
+            initial = deepcopy(self.data)
+            initial['versions'][0].update(backlog.seal_snapshot(initial, source, 'start', 'Initial'))
+            data = backlog.update(initial, 'E00', 'done', 'Protocol', ['docs/protocol.md'])
+            data = backlog.update(data, 'H09', 'done', 'Pilot', ['docs/pilot.md'])
+            data, key = backlog.queue(data, self.proposal(), ['H09'], 'Observed opportunity')
+            next_data = backlog.advance(data, source, 'First span finished', ['docs/span.md'])
+            self.assertEqual(next_data['active_version'], 2)
+            self.assertEqual([x['state'] for x in next_data['versions']], ['closed', 'active', 'draft'])
+            members = backlog.version_record(next_data)['item_ids']
+            self.assertIn(key, members)
+            self.assertIn('H07', members)  # justified later work is retained
+            self.assertNotIn('H09', members)
+            self.assertNotIn('E00', members)
+            self.assertEqual([x['id'] for x in backlog.select(next_data, cohort='new')], [key])
+            carried = {x['id'] for x in backlog.select(next_data, cohort='carried')}
+            self.assertIn('H07', carried)
+            self.assertNotIn(key, carried)
+            self.assertEqual(next_data, backlog.advance(data, source, 'First span finished', ['docs/span.md']))
+            backlog.check_snapshots(next_data, source)
+            historical = backlog.load_version(next_data, source, 1)
+            archived = next(x for x in historical['items'] if x['id'] == 'H07')
+            self.assertEqual(archived['status'], 'deferred')
+            newer = backlog.update(next_data, 'H07', 'ready', 'New resources')
+            self.assertEqual(next(x for x in historical['items'] if x['id'] == 'H07')['status'], 'deferred')
+            self.assertEqual(next(x for x in newer['items'] if x['id'] == 'H07')['status'], 'ready')
+            with self.assertRaisesRegex(backlog.BacklogError, 'historical task is closed'):
+                backlog.update(newer, 'H09', 'running', 'Rewrite the past')
+            with self.assertRaisesRegex(backlog.BacklogError, 'read-only'):
+                backlog.update(historical, 'H09', 'planned', 'Edit archive')
+            self.assertEqual(backlog.select(historical, actionable=True), [])
+
+    def test_snapshot_tampering_and_scope_changes_are_detected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'backlog.json'
+            data = deepcopy(self.data)
+            data['versions'][0].update(backlog.seal_snapshot(data, source, 'start', 'Initial'))
+            path, _ = backlog.snapshot_paths(source, 1, 'start')
+            original = path.read_bytes()
+            with self.assertRaisesRegex(backlog.BacklogError, 'cannot be overwritten'):
+                backlog.seal_snapshot(data, source, 'start', 'Changed snapshot')
+            self.assertEqual(path.read_bytes(), original)
+            scope_change = deepcopy(data)
+            scope_change['versions'][0]['item_ids'].remove('H40')
+            with self.assertRaisesRegex(backlog.BacklogError, 'membership changed'):
+                backlog.check_snapshots(scope_change, source)
+            path.write_bytes(original + b'\n')
+            with self.assertRaisesRegex(backlog.BacklogError, 'hash mismatch'):
+                backlog.check_snapshots(data, source)
+
+    def test_focus_is_explicit_and_draft_scope_is_not_active_scope(self):
+        data = backlog.set_focus(self.data, 1, ['E00', 'H04'], 'Choose cheaper pilot')
+        self.assertEqual([x['id'] for x in backlog.select(data, focus=True)], ['E00', 'H04'])
+        with self.assertRaisesRegex(backlog.BacklogError, 'distinct tasks'):
+            backlog.set_focus(data, 1, ['H41'], 'Not in this version')
+        running = backlog.update(self.finish_prerequisite(), 'H09', 'running', 'Working')
+        with self.assertRaisesRegex(backlog.BacklogError, 'running work'):
+            backlog.set_focus(running, 1, ['H04'], 'Change mid-run')
+
+    def test_cli_queue_advance_and_historical_views(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'backlog.json'
+            proposal = Path(directory) / 'proposal.json'
+            proposal.write_text(json.dumps(self.proposal()))
+            backlog.save(self.data, source, source.with_suffix('.md'))
+            def run(*args):
+                with contextlib.redirect_stdout(io.StringIO()) as out:
+                    backlog.main(['--file', str(source), *args])
+                return out.getvalue()
+            self.assertIn('Queued H41', run('queue', '--item-file', str(proposal), '--from', 'H09',
+                                           '--note', 'Pilot discovery'))
+            self.assertEqual([x['id'] for x in json.loads(run('list', '--version', 'next', '--json'))], ['H41'])
+            for key in ('E00', 'H09'):
+                run('update', key, '--status', 'done', '--note', 'Finished', '--evidence', 'docs/report.md')
+            self.assertIn('active backlog is now v2', run('advance', '--note', 'Finished span',
+                                                        '--evidence', 'docs/span.md'))
+            self.assertIn('v2', run('versions'))
+            old_ids = {x['id'] for x in json.loads(run('list', '--version', '1', '--json'))}
+            new_ids = {x['id'] for x in json.loads(run('list', '--json'))}
+            self.assertIn('H09', old_ids)
+            self.assertNotIn('H41', old_ids)
+            self.assertIn('H41', new_ids)
+            self.assertNotIn('H09', new_ids)
+            self.assertIn('OK:', run('check'))
+
+    def test_repeated_spans_keep_old_views_and_allocate_new_ids(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'backlog.json'
+            data, first = backlog.queue(self.finished_focus(), self.proposal(), ['H09'], 'First discovery')
+            data = backlog.advance(data, source, 'First span', ['docs/span1.md'])
+            data = backlog.set_focus(data, 2, [first], 'Follow the first discovery')
+            data = backlog.update(data, first, 'done', 'Second pilot finished', ['docs/pilot2.md'])
+            data, second = backlog.queue(data, self.proposal(), [first], 'Second discovery')
+            self.assertEqual(second, 'H42')
+            data = backlog.advance(data, source, 'Second span', ['docs/span2.md'])
+            self.assertEqual(data['active_version'], 3)
+            self.assertEqual([x['id'] for x in backlog.select(data, cohort='new')], [second])
+            self.assertNotIn(first, {x['id'] for x in backlog.select(data)})
+            self.assertIn('H02', {x['id'] for x in backlog.select(data, cohort='carried')})
+            backlog.check_snapshots(data, source)
+            v1 = backlog.load_version(data, source, 1)
+            v2 = backlog.load_version(data, source, 2)
+            self.assertNotIn(first, {x['id'] for x in backlog.select(v1)})
+            self.assertIn(first, {x['id'] for x in backlog.select(v2)})
+            self.assertNotIn(second, {x['id'] for x in backlog.select(v2)})
 
 
 if __name__ == '__main__':

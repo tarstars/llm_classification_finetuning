@@ -6,6 +6,8 @@ is multiclass log loss (lower is better).
 
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
+The ready-to-use [first-span goal](GOAL.md) selects E00 and four P1 pilots, then
+produces backlog v2. It specifies editable compute/time caps and a version boundary.
 
 Our best official Kaggle score is **0.97025**, achieved by the Qwen3-4B QLoRA
 preference classifier in attempt 002. Frozen-model confirmation gave **0.96236 log
@@ -33,14 +35,21 @@ uncertain difference. See the [audit and results](ATTEMPT_004_RESULTS.md).
 The [target-association audit](TARGET_AUDIT.md) tests IDs, model identities, answer
 length, refusals, duplicates and target-derived EDA metadata for leakage.
 
-The [research backlog](BACKLOG.md) ranks all 40 hypotheses with estimated log-loss
+The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
+The initial version is **v1**; discoveries are queued in the
+[next-version draft](backlog/NEXT.md).
+Each completed span preserves snapshots and carries unfinished work into the next
+version. See the [initial v1 snapshot](backlog/versions/v1.start.md).
 [Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
 The JSON-backed CLI browses work, records status/evidence and regenerates the page:
 
 ```bash
 uv run python scripts/backlog.py list --priority P1
 uv run python scripts/backlog.py list --actionable
+uv run python scripts/backlog.py list --actionable --focus
+uv run python scripts/backlog.py versions
+uv run python scripts/backlog.py list --version next
 uv run python scripts/backlog.py show H09
 uv run python scripts/backlog.py check
 ```
