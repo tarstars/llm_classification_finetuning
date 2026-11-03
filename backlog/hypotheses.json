@@ -2043,7 +2043,7 @@
       "title": "Diverse preference-model ensemble",
       "priority": "P2",
       "rank": 13,
-      "status": "planned",
+      "status": "running",
       "gain": [
         -0.005,
         0.025
@@ -2083,7 +2083,14 @@
         "ATTEMPT_003_RESULTS.md",
         "ATTEMPT_004_RESULTS.md"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T18:32:39+00:00",
+          "status": "running",
+          "note": "Starting the predeclared one-weight cached Gemma/classifier blend on 512 matched rows; inner component calibration and weight selection, outer grouped evaluation; docs/SPAN_002_PROTOCOL.md.",
+          "evidence": []
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -2196,7 +2203,7 @@
       "title": "Constrained probability calibration",
       "priority": "P2",
       "rank": 18,
-      "status": "planned",
+      "status": "running",
       "gain": [
         -0.002,
         0.004
@@ -2244,6 +2251,12 @@
           "evidence": [
             "results/span_001/joint_diagnostics.json"
           ]
+        },
+        {
+          "at": "2026-11-03T18:32:39+00:00",
+          "status": "running",
+          "note": "Starting predeclared nested grouped calibration on cached 5746-row baseline and fixed 1024-row paired cohort; protocol docs/SPAN_002_PROTOCOL.md, seed 20261119, no GPU.",
+          "evidence": []
         }
       ],
       "introduced_in": 1,

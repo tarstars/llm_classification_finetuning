@@ -6,7 +6,7 @@ Version **2**, active; **39** tasks. Focus for this span: H40, E01, H03, H37, H4
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **29**, ready **0**, running **0**, done **0**, rejected **0**, deferred **9**.
+Hypothesis status: planned **27**, ready **0**, running **2**, done **0**, rejected **0**, deferred **9**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -65,11 +65,11 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 10 | [H10](#h10) | P2 / planned | Shared response utilities | -0.02…+0.02 | high | 10…24 | 1…3 | 12…28 | E00 |
 | 11 | [H17](#h17) | P2 / planned | Additional public preference data | -0.02…+0.04 | high | 16…40 | 1…3 | 16…40 | E00 |
 | 12 | [H15](#h15) | P2 / deferred | Preference-teacher distillation | -0.02…+0.05 | high | 20…50 | 2…6 | 24…80 | E00, H01 |
-| 13 | [H37](#h37) | P2 / planned | Diverse preference-model ensemble | -0.005…+0.025 | high | 6…16 | 0…1 | 4…16 | E00, H01 |
+| 13 | [H37](#h37) | P2 / running | Diverse preference-model ensemble | -0.005…+0.025 | high | 6…16 | 0…1 | 4…16 | E00, H01 |
 | 14 | [H24](#h24) | P2 / planned | Adaptive question budget | -0.008…+0.01 | medium | 6…14 | 0.5…2 | 10…22 | E00 |
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
-| 18 | [H40](#h40) | P2 / planned | Constrained probability calibration | -0.002…+0.004 | low | 2…6 | 0…0 | 0…0 | E00 |
+| 18 | [H40](#h40) | P2 / running | Constrained probability calibration | -0.002…+0.004 | low | 2…6 | 0…0 | 0…0 | E00 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 19 | [H36](#h36) | P3 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
 | 20 | [H29](#h29) | P3 / planned | Human-preference prompt rubric | -0.015…+0.01 | low | 3…8 | 0.5…2 | 2…6 | E00 |
@@ -352,7 +352,7 @@ A demonstrated stronger preference teacher may provide useful soft labels for a 
 
 ### H37
 
-**Diverse preference-model ensemble** — P2, planned, risk high.
+**Diverse preference-model ensemble** — P2, running, risk high.
 
 A second preference model may improve the classifier if its errors are genuinely complementary.
 
@@ -377,6 +377,8 @@ A second preference model may improve the classifier if its errors are genuinely
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
 **References:** [ATTEMPT_003_RESULTS.md](ATTEMPT_003_RESULTS.md); [ATTEMPT_004_RESULTS.md](ATTEMPT_004_RESULTS.md)
+
+- 2026-11-03T18:32:39+00:00 — running: Starting the predeclared one-weight cached Gemma/classifier blend on 512 matched rows; inner component calibration and weight selection, outer grouped evaluation; docs/SPAN_002_PROTOCOL.md.
 
 ### H24
 
@@ -464,7 +466,7 @@ Training and inference with more retained context may improve truncated comparis
 
 ### H40
 
-**Constrained probability calibration** — P2, planned, risk low.
+**Constrained probability calibration** — P2, running, risk low.
 
 A low-capacity symmetric extension to temperature scaling may recover a small remaining calibration error.
 
@@ -491,6 +493,7 @@ A low-capacity symmetric extension to temperature scaling may recover a small re
 **References:** [EDA_REPORT.md](EDA_REPORT.md); [results/eda_002/hypotheses.json](results/eda_002/hypotheses.json); [results/span_001/joint_diagnostics.json](results/span_001/joint_diagnostics.json)
 
 - 2026-11-03T15:15:26+00:00 — planned: Planning revision for v2 carryover only: prioritize the cached calibration control before new GPU work, given paired-model tie-probability drift with nearly unchanged tie AUC. H40 was not executed during v1. Evidence: [results/span_001/joint_diagnostics.json](results/span_001/joint_diagnostics.json)
+- 2026-11-03T18:32:39+00:00 — running: Starting predeclared nested grouped calibration on cached 5746-row baseline and fixed 1024-row paired cohort; protocol docs/SPAN_002_PROTOCOL.md, seed 20261119, no GPU.
 
 ### H22
 

@@ -1,0 +1,19 @@
+{
+  "span": 2,
+  "started_at": "2026-11-03T18:23:46+00:00",
+  "deadline": "2026-11-05T18:23:46+00:00",
+  "gpu_session_seconds_cap": 43200,
+  "quota_used_at_start": 55516.404,
+  "quota_reserved_at_start": 0.0,
+  "seed": 20261119,
+  "focus": [
+    "H40",
+    "E01",
+    "H03",
+    "H37",
+    "H42"
+  ],
+  "clock_note": "First v2 activation; re-setting the same GOAL.md does not extend the span.",
+  "per_job_seconds_cap": 25200,
+  "confirmation_used": false
+}

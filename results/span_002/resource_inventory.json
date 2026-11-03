@@ -1,0 +1,319 @@
+{
+  "observed_at": "2026-11-03T18:28:33.220858+00:00",
+  "quota": {
+    "used_seconds": 55516.404,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 52483.596
+  },
+  "recent_jobs": [
+    {
+      "ref": "arseniytrushin/llm-preference-span-001-joint-pilots",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-span-001-frozen-reward-pilot",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-predict-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-dev-003-ctx1024",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-dev-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-profile-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-binary-probe-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-judge-probe-003",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-training-error-poster-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-4b-eda-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-4b-predict-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-4b-confirm-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-4b-train-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-8b-pilot-002-batch4",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-qwen3-8b-pilot-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-gpu-probe-002",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    },
+    {
+      "ref": "arseniytrushin/llm-preference-offline-attempt-001",
+      "status": "KernelWorkerStatus.COMPLETE",
+      "failure_message": ""
+    }
+  ],
+  "baseline_output": {
+    "kernel": "arseniytrushin/llm-preference-qwen3-4b-train-002/1",
+    "files": [
+      {
+        "name": "__init__.py",
+        "size": 899
+      },
+      {
+        "name": "__init__.cpython-313.pyc",
+        "size": 966
+      },
+      {
+        "name": "data.cpython-313.pyc",
+        "size": 954
+      },
+      {
+        "name": "joint_data.cpython-313.pyc",
+        "size": 972
+      },
+      {
+        "name": "joint_train.cpython-313.pyc",
+        "size": 976
+      },
+      {
+        "name": "data.py",
+        "size": 890
+      },
+      {
+        "name": "joint_data.py",
+        "size": 908
+      },
+      {
+        "name": "joint_train.py",
+        "size": 911
+      },
+      {
+        "name": "README.md",
+        "size": 894
+      },
+      {
+        "name": "adapter_config.json",
+        "size": 926
+      },
+      {
+        "name": "adapter_model.safetensors",
+        "size": 953
+      },
+      {
+        "name": "chat_template.jinja",
+        "size": 927
+      },
+      {
+        "name": "tokenizer.json",
+        "size": 913
+      },
+      {
+        "name": "tokenizer_config.json",
+        "size": 932
+      },
+      {
+        "name": "training_args.bin",
+        "size": 919
+      },
+      {
+        "name": "README.md",
+        "size": 932
+      },
+      {
+        "name": "adapter_config.json",
+        "size": 964
+      },
+      {
+        "name": "adapter_model.safetensors",
+        "size": 991
+      },
+      {
+        "name": "chat_template.jinja",
+        "size": 965
+      },
+      {
+        "name": "optimizer.pt",
+        "size": 943
+      },
+      {
+        "name": "rng_state_0.pth",
+        "size": 951
+      },
+      {
+        "name": "rng_state_1.pth",
+        "size": 951
+      },
+      {
+        "name": "scaler.pt",
+        "size": 932
+      },
+      {
+        "name": "scheduler.pt",
+        "size": 941
+      },
+      {
+        "name": "tokenizer.json",
+        "size": 951
+      },
+      {
+        "name": "tokenizer_config.json",
+        "size": 970
+      },
+      {
+        "name": "trainer_state.json",
+        "size": 962
+      },
+      {
+        "name": "training_args.bin",
+        "size": 957
+      },
+      {
+        "name": "README.md",
+        "size": 932
+      },
+      {
+        "name": "adapter_config.json",
+        "size": 964
+      },
+      {
+        "name": "adapter_model.safetensors",
+        "size": 991
+      },
+      {
+        "name": "chat_template.jinja",
+        "size": 965
+      },
+      {
+        "name": "optimizer.pt",
+        "size": 943
+      },
+      {
+        "name": "rng_state_0.pth",
+        "size": 951
+      },
+      {
+        "name": "rng_state_1.pth",
+        "size": 951
+      },
+      {
+        "name": "scaler.pt",
+        "size": 932
+      },
+      {
+        "name": "scheduler.pt",
+        "size": 941
+      },
+      {
+        "name": "tokenizer.json",
+        "size": 951
+      },
+      {
+        "name": "tokenizer_config.json",
+        "size": 970
+      },
+      {
+        "name": "trainer_state.json",
+        "size": 962
+      },
+      {
+        "name": "training_args.bin",
+        "size": 957
+      },
+      {
+        "name": "dev_predictions.npz",
+        "size": 910
+      },
+      {
+        "name": "summary.json",
+        "size": 889
+      },
+      {
+        "name": "training_config.json",
+        "size": 913
+      },
+      {
+        "name": "training_progress.jsonl",
+        "size": 924
+      },
+      {
+        "name": "runtime_requirements.json",
+        "size": 907
+      },
+      {
+        "name": "accelerate-1.15.0-py3-none-any.whl",
+        "size": 965
+      },
+      {
+        "name": "bitsandbytes-0.50.2-py3-none-manylinux_2_24_x86_64.whl",
+        "size": 1026
+      },
+      {
+        "name": "huggingface_hub-1.33.0-py3-none-any.whl",
+        "size": 980
+      },
+      {
+        "name": "peft-0.21.2-py3-none-any.whl",
+        "size": 947
+      },
+      {
+        "name": "transformers-5.22.1-py3-none-any.whl",
+        "size": 972
+      },
+      {
+        "name": "split_ids.json",
+        "size": 876
+      },
+      {
+        "name": "training_config.json",
+        "size": 893
+      },
+      {
+        "name": "training_console.log",
+        "size": 893
+      }
+    ]
+  }
+}

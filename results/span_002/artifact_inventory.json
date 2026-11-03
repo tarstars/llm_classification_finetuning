@@ -1,0 +1,47 @@
+{
+  "baseline": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/jobs/qwen4b1024/output/joint_run/dev_predictions.npz",
+    "sha256": "5b2522d2be7fed1d490ebe6135afe97fe3863339d8c34a971027ce861f051de2",
+    "rows": 5746,
+    "groups": 5211
+  },
+  "joint": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_001/joint_evaluated_predictions.npz",
+    "sha256": "d1c60c29aa03f373ac7e237d734358abf2e0f0af7d3c188769c931054aa4b7ea",
+    "rows": 1024,
+    "groups": 990
+  },
+  "judge": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_003/jobs/development_ctx1024/output/gemma26/judge_predictions.npz",
+    "sha256": "8b819775e18099c69fbe03001ec4d92df757fe1b395e22e5f624fb015e43ae31",
+    "rows": 512,
+    "groups": 497
+  },
+  "split": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/split_ids.json",
+    "sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1"
+  },
+  "sample_v1": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_001/sample_ids.json",
+    "sha256": "716c065f583d45ef6028034e77349cf245b849abbf3f6d58a533c3867ae37203"
+  },
+  "selection": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/model_selection.json",
+    "sha256": "68a097c19cabe454c99925cc41153fd9cfb4b5a35bc3f656b361b21706bd7ca8"
+  },
+  "adapter": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/jobs/qwen4b1024/output/joint_run/adapter/adapter_model.safetensors",
+    "sha256": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d"
+  },
+  "software": {
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.1",
+    "accelerate": "1.15.0",
+    "peft": "0.21.2",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "kaggle": "2.2.5"
+  },
+  "evaluation_ids_sha256": "11c243ea128bcc72587039f02bb9c35b6522a26e3746f4ecbb6ae92bfc9f7154"
+}
