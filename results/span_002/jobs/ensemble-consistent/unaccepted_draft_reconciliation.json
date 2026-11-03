@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-11-03T20:05:40.552471+00:00",
+  "ref": "arseniytrushin/llm-preference-span-002-judge-consistent",
+  "version": 1,
+  "exact_version_http_status": 403,
+  "owned_notebook_count": 43,
+  "matching_owned_notebooks": 0,
+  "independent_owned_status_probe": "KernelWorkerStatus.RUNNING",
+  "intent_sha256": "f64e5e401afde510b08b18fbd5a2382dc224f5bbebb2e516220fbcbdf3217e2b",
+  "decision": "No accepted notebook/version found; archive the intent before one explicit upload retry.",
+  "next_action_reason": "Quick Save response was not JSON; verify absence before one diagnosed save-only retry with HTTP status capture."
+}

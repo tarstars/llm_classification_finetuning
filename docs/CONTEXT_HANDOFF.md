@@ -28,7 +28,7 @@ their controllers exited. There is no unfinished span-001 execution to resume.
 - **V1:** closed, 41 historical members; original start and final snapshots preserved.
 - **V2:** active, **39 members = 3 discoveries + 36 unfinished carryovers**;
   focus **H40, E01, H03, H37, H42**.
-- **V3:** empty draft so far; discoveries/carryovers still need final review.
+- **V3:** draft with **H43 and E02**; neither has run. Carryovers still need final review.
 
 `GOAL.md` now describes the authorized v2 span: **12 two-T4 session-hours and 48
 elapsed wall-clock hours** from its original activation, further bounded by
@@ -51,11 +51,22 @@ row logs. H03 must preserve the runtime-change disclosure and starting identity 
 H37 cached blend loss is 0.972668 versus matched classifier 0.991976 on 512 rows;
 gain 0.019308, interval [-0.000202,+0.039046]. The extra 1,536 rows are fixed under
 the heavy run directory; the cached recipe was frozen before extra inference.
-Initial expansion failed after one row / 600-second server timeout. One gated
-recovery uses the original 75-minute reserve, not new allowance. It proves CUDA
-availability, repairs CUDA-12 libraries only if needed, then checks cached-row
-identity and throughput before full scoring. Do not infer the hardware cause
-until its diagnostic artifact exists.
+Initial expansion failed after one row / 600-second server timeout. Recovery
+`judge-recovery/2` is COMPLETE: actual native discovery found zero GPUs because
+CUDA-12 libraries were missing. Pinned packages restored both T4s; a 32-row GPU
+profile took 38.65 seconds. Runtime passed, but mean/max raw probability differences
+0.021964 / 0.168023 failed the old-cache identity guard. It stopped with no extras.
+See `runtime_diagnostic_results.json` and [the redesign](SPAN_002_RUNTIME.md).
+
+A uniform **2,048-row** current-runtime comparison completed its 512 controls in
+`judge-consistent/2` (509.057 seconds), then failed on an omitted `hashlib` import
+during recipe export. No extras were requested. Its valid predictions are reused;
+`freeze_span_002_consistent.py` fitted/froze the recipe locally before extra
+inference. `/judge-extra/2` now scores only the same remaining 1,536. All views are
+single-order with unchanged model/prompt/packing/IDs. Never pool historical judge
+probabilities. The extra continuation adds a 3,480-second ceiling from previously
+unallocated time; total cap/deadline remain unchanged. Conservative role ceilings
+sum to 40,380 seconds, leaving 2,820 unallocated. H42 will not train.
 
 Recorded job handles (always inspect their current receipts and service state):
 
@@ -63,34 +74,45 @@ Recorded job handles (always inspect their current receipts and service state):
 - Initial judge expansion: `arseniytrushin/llm-preference-span-002-judge-expansion/1`, ERROR.
 - H03: `arseniytrushin/llm-preference-span-002-exposure/1`, last observed RUNNING.
   Kaggle changed the requested slug; use returned `push.json`, not the build's intended ID.
-- Judge recovery: receipt under `<heavy root>/runs/span_002/jobs/ensemble-recovery/`;
-  reconcile immutable ref/version before acting. Never overwrite the failed job.
+- Judge recovery: `arseniytrushin/llm-preference-span-002-judge-recovery/2`, COMPLETE
+  at failed identity gate. Its version 1 was Quick Save only, without execution.
+- Uniform judge controls: `arseniytrushin/llm-preference-span-002-judge-consistent/2`,
+  ERROR after all 512 predictions, before recipe export/extra inference.
+- Judge extras: `arseniytrushin/llm-preference-span-002-judge-extra/2`, RUNNING;
+  version 1 was Quick Save only. Controller PID 387507, log
+  `/tmp/arena_span002_extra_controller.log`; verify actual API liveness.
 
 Controllers are `scripts/run_span_002_job.py`; numerical status reader is
 `scripts/span_002_progress.py JOB --seconds 20`. Generated execution notebooks and
 all private artifacts live under `<heavy root>/runs/span_002/`; source builders
-are in Git. `analyze_span_002_followups.py expanded --job ensemble-recovery` and
+are in Git. `analyze_span_002_followups.py expanded --job ensemble-extra` and
 `... exposure` require complete, valid outputs and do not fill missing predictions.
 H03's controller reserves 4,500 seconds inside its six-hour cap for final full-dev
 inference. Source/report/notebook completion and sealing v2 remain outstanding.
 
 Notebook 13 has an executed partial-state snapshot (six code cells, two figures).
 Rebuild and re-execute it after final outputs; its current existence does not
-fulfill the final-deliverable audit. H03's 19:11 UTC numerical read reached nominal
-step 830 with finite loss/gradients and had passed its starting-prediction guard.
-The judge recovery's first upload returned a non-JSON response; reconcile its
-receipt/archived unaccepted intent before proceeding. The absence audit checks a
-complete owned inventory, exact-version HTTP result and independent authenticated
-status. Never overwrite accepted push/version state to retry.
+fulfill the final-deliverable audit. H03's step-1000 validation, read at 20:19 UTC,
+gave original-order raw selection loss 0.9599414 versus checkpoint-800's 0.9787039
+on the same 1,024 rows, accuracy 54.59%. Final full-dev quality is pending. The starting
+identity guard passed. Numerical progress preserves validation history separately
+from later minibatch logs; these are original-order selection metrics, not final
+swap-averaged calibrated dev quality.
 
-Further update: the first upload was proven unaccepted (all 42 owned notebooks
-listed, exact version inaccessible, independent H03 auth/status valid). Its intent
-was archived; the one explicit upload retry then disconnected without a response.
-The retry's acceptance is still unproven: current `push_intent.json` exists but
-`push.json` does not. Reconcile exact service state again before any action; do not
-blindly retry. H03 was freshly verified RUNNING at 19:28 UTC; the most recent
-numerical log snapshot is older (19:11, step 830). A stale log snapshot is not
-evidence that training stopped.
+Upload failures are reconciled. Recovery's two uncertain execution pushes and
+uniform scoring's first uncertain Quick Save were proven unaccepted using a
+complete owned inventory, exact-version response and independent H03 auth proof;
+their intents remain archived. Save-only requests then succeeded, their source and
+non-active state were verified, and execution version 2 receipts were obtained.
+No duplicate GPU job was launched. Use returned receipts, not guessed slugs.
+
+Eight v2 validity tests pass, including reconstruction of actual exposure counters
+from cycle records, training IDs/classes, skipped flags and token lengths. That
+audit must still run against final H03 outputs. V3 H43 tests winner-only blending
+with tie mass preserved; E02 packages offline native CUDA verification. They remain
+draft work and must not run under this goal. The new generated extra notebook
+passed compile and Ruff F821 across its combined namespace before upload. This
+guard would have caught the missing import; original failed sources stay intact.
 
 Branch is `main`, origin `git@github.com:tarstars/llm_classification_finetuning.git`.
 The research closing commit `13e7adb` was pushed and matched remote `main`; this

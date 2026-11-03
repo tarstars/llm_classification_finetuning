@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-11-03T20:08:36.636964+00:00",
+  "draft_version": 1,
+  "draft_status": "KernelWorkerStatus.COMPLETE",
+  "source_matches": true,
+  "notebook_sha256": "65cdeaefa15b27c3d57514e92c0bce025b4f10ad2a2f6cadaa0223d8d310e22a",
+  "next_execution_version": 2,
+  "execution_requested_for_draft": false
+}

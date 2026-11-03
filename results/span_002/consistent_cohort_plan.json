@@ -1,0 +1,29 @@
+{
+  "cohort_rows": 2048,
+  "recomputed_cached_rows": 512,
+  "extra_rows": 1536,
+  "old_judge_cache_pooled": false,
+  "maximum_session_seconds": 4500,
+  "funded_from": "Unused H42 allocation; original total/deadline unchanged.",
+  "reason": "Recovery GPU speed passed but raw identity to old cache failed; use uniform current-runtime predictions.",
+  "prior_failed_identity_gate": {
+    "profile_rows": 32,
+    "profile_seconds": 38.65186396199999,
+    "mean_probability_difference": 0.021964193310207335,
+    "max_probability_difference": 0.16802273048218563,
+    "mean_limit": 0.01,
+    "max_limit": 0.1,
+    "projected_extra_seconds_with_margin": 2826.3473642111994,
+    "remaining_session_seconds": 4201.758108139038,
+    "identity_passed": false,
+    "throughput_passed": true
+  },
+  "sample_ids_unchanged": true,
+  "extra_sample_sha256": "f335a487865faa052dd366d838dc9d48bfdc61c6c383dd86e1dace298e628585",
+  "notebook_sha256": "65cdeaefa15b27c3d57514e92c0bce025b4f10ad2a2f6cadaa0223d8d310e22a",
+  "source_sha256": {
+    "src/arena/span_heads.py": "51804cf906c433e0c0609f989020a5750130d6f5c91c79130a617aca4c32b8dc",
+    "src/arena/span_calibration.py": "e18a3507e91900b84a5edf1d383ac9556a71456d7b425e2c087565677e8a00bc"
+  },
+  "protocol": "docs/SPAN_002_RUNTIME.md"
+}

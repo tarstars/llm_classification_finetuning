@@ -47,7 +47,15 @@ the completed first-span goal is preserved at [docs/GOAL_V1.md](docs/GOAL_V1.md)
    hashes and the locations of inputs and outputs.
 
    Verify current Kaggle quota, active jobs, model availability, memory fit and
-   submission runtime before launching GPU work. Distinguish engineering person-hours,
+   submission runtime before launching GPU work.
+   For a native inference server, check that the backend itself detects the requested
+   GPUs and resolves its shared libraries: the span-002 native backend could not
+   load CUDA despite allocated GPUs. `nvidia-smi` or PyTorch availability alone
+   does not establish native-backend execution. Run a bounded real
+   profile before large scoring. Preserve failed numerical-identity checks; if the
+   numerical recipe changes, re-evaluate matched cohorts consistently rather than
+   pooling incompatible cached outputs.
+   Distinguish engineering person-hours,
    CPU elapsed hours and elapsed two-T4 session hours. Count pilot and follow-up
    separately, plus controls, OOF prediction generation and retries when required.
    Jobs exceeding a session limit need a tested resume path and sufficient quota.

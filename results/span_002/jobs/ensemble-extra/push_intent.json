@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-03T20:37:55.910203+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-002-judge-extra",
+  "max_session_seconds": 3480,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 63841.132905,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 44158.867095
+  },
+  "span_remaining_before_reservation": 34875.271095000004,
+  "notebook_sha256": "c42789c3ef0a50d4bd51fe80d3b9d6654fc980301caf0f198599df1b14b8bf17",
+  "expected_execution_version": 2,
+  "prior_quick_save_version": 1
+}

@@ -1,0 +1,10 @@
+{
+  "job": "ensemble-extra",
+  "kernel": "arseniytrushin/llm-preference-span-002-judge-extra",
+  "version": 2,
+  "status": "KernelWorkerStatus.RUNNING",
+  "status_observed_at": "2026-11-03T20:40:13.942462+00:00",
+  "log_reader_exit_code": 0,
+  "new_log_events_received": false,
+  "log_reader_notice": "ReadTimeout: HTTPSConnectionPool(host='api.kaggle.com', port=443): Read timed out. (read timeout=15)"
+}

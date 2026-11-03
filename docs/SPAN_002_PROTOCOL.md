@@ -182,3 +182,20 @@ Internet access in this recovery is for those packages; no dataset text is sent
 to package services. An ambiguous push response must be reconciled by exact remote
 version/source, or complete owned-inventory absence plus independent auth proof,
 before any new upload. This is a diagnosed recovery, not automatic execution retry.
+
+Recovery outcome: required CUDA-12 libraries were missing and were repaired, but
+the old-cache numerical gate failed (mean 0.021964 / maximum 0.168023); the run
+stopped without extras. The separately predeclared
+[uniform-cohort comparison](SPAN_002_RUNTIME.md) re-scores all same 2,048 IDs under
+the current runtime, freezes on the re-scored 512 before extra scoring and never
+pools historical judge probabilities. Its 4,500-second allocation comes from
+closed H42's unused time; original total cap/deadline remain unchanged. Preserve
+the failed identity result, even if the new consistent comparison is useful.
+
+The uniform stage completed its 512 predictions, then failed during recipe export
+on a missing import. Preserve its outputs and source. The bounded continuation
+in [the runtime amendment](SPAN_002_RUNTIME.md) freezes the recipe locally on those
+512 predictions before scoring only the same remaining 1,536. It adds a 3,480-second
+ceiling from previously unallocated time; total executable ceilings are 40,380
+seconds, leaving 2,820 within the unchanged span cap. No extra labels informed
+this repair or altered the declared recipe families, sample or evaluation.

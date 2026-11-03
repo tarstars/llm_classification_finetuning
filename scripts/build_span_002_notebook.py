@@ -17,7 +17,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import display
 
-REPO=Path.cwd()
+REPO=Path.cwd().resolve()
+if not (REPO/'GOAL.md').exists(): REPO=REPO.parent
 assert (REPO/'GOAL.md').exists()
 RESULTS=REPO/'results/span_002'
 HEAVY=Path.home()/'database/llm_classification_finetuning/runs/span_002'
@@ -86,7 +87,7 @@ if (RESULTS/'expanded_results.json').exists():
         points.append((cohort+' / '+str(row['rows'])+' rows',row['contrasts']['blend']))
     print('Runtime assessment:',expanded['runtime'])
 else:
-    print('Expanded valid predictions pending. The first expansion failed; partial rows are not a quality estimate.')
+    print('Uniform current-runtime validation is pending; historical judge outputs will not be pooled with new outputs.')
 fig,ax=plt.subplots(figsize=(8,max(2.4,.8*len(points))))
 for index,(label,result) in enumerate(points):
     lo,hi=result['interval_95']
@@ -96,6 +97,12 @@ ax.set_yticks(range(len(points)),[label for label,_ in points])
 ax.axvline(0,color='black',linewidth=.8);ax.grid(axis='x',alpha=.25)
 ax.set_xlabel('Blend loss reduction vs its matched classifier (95% group interval)')
 save(fig,'ensemble_gains')
+if (RESULTS/'runtime_diagnostic_results.json').exists():
+    runtime=read('runtime_diagnostic_results.json')
+    print('Native CUDA devices before repair:',runtime['hardware']['devices_before'])
+    print('Native CUDA devices after repair:',runtime['hardware']['devices_after'])
+    print('Historical-cache identity/runtime gate:',runtime['gate'])
+    print('The failed identity gate stopped scoring; the separate full cohort is re-scored uniformly.')
 '''),nbf.v4.new_markdown_cell('''## E01 and H42: verified measurement and a stopped conditional experiment
 
 The actual CUDA probe compares parameter changes with optimizer skip flags and

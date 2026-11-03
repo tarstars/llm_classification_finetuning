@@ -1,0 +1,9 @@
+{
+  "http_status": 200,
+  "content_type": "application/json",
+  "response_bytes": 192,
+  "body_sha256": "34dc2f3a18ed3c8005afcbb76d5d5d85778db7dc430ab2ebc93b9f4561dbdf74",
+  "server": null,
+  "html_title": null,
+  "note": "Response body retained privately; authentication/request headers are never logged."
+}

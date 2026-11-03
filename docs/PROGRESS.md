@@ -4,9 +4,15 @@
 
 V2 execution update: H40, E01 and the conditional H42 stopping gate are **done**.
 H03 and H37 remain **running**. The cached ensemble gains 0.01931 on 512 rows, with
-an interval still including no gain; its larger validation hit a server timeout
-and has one diagnosed, gated recovery. Stateful checkpoint-800 continuation is in
-a separate live kernel. See [v2 report](SPAN_002_RESULTS.md),
+an interval still including no gain. Missing native CUDA-12 libraries were repaired,
+but the recovery stopped at a failed raw-identity gate. A uniform current-runtime
+2,048-row comparison scored its 512 controls, then failed during recipe export on
+a missing import. Valid outputs are reused, the recipe is frozen locally, and only
+the remaining 1,536 are running in `/judge-extra/2`. Historical judge outputs remain
+separate. Stateful checkpoint-800 continuation's first selection validation at step
+1000 improved raw original-order loss from 0.97870 to 0.95994 on the same 1,024 rows;
+final full-dev/calibrated quality remains pending.
+H43 and E02 are queued in the v3 draft; neither has run. See [v2 report](SPAN_002_RESULTS.md),
 [protocol](SPAN_002_PROTOCOL.md) and dated files under `results/span_002/`.
 The goal remains active; no v2 model is promoted and no new submission occurred.
 
@@ -15,7 +21,7 @@ Start with [CONTEXT_HANDOFF.md](CONTEXT_HANDOFF.md). The user authorized the cur
 seal v2 and form v3. Limits remain 12 two-T4 session-hours and 48 elapsed hours,
 subject to verified quota. Focus and original clock are recorded in span-002 files.
 V1 is sealed; its [completed goal](GOAL_V1.md) is archived. V2 has 39 tasks and v3
-is an empty draft. No v1 pilot justified promotion, and the official best remains
+has two draft discoveries. No v1 pilot justified promotion, and the official best remains
 0.97025. See
 [span results](SPAN_001_RESULTS.md) and [notebook 12](../notebooks/12_backlog_v1_span.ipynb).
 All v1 GPU jobs are terminal. The older prompted-judge pipeline is also complete,

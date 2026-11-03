@@ -17,8 +17,8 @@ with no reserved time; refresh is not used to extend this span.
 | H40 calibration | done | Full-dev nested gain 0.0011325; 95% interval [-0.0005643, +0.0029542] |
 | E01 exposure instrumentation | done | Both real CUDA ranks passed overflow, parameter-change and resume checks |
 | H42 tie anchoring | done at gate | Calibration meets stopping tolerances; no anchor training performed |
-| H37 ensemble | running | Cached 512-row result promising; larger scoring failed, diagnosed recovery in progress |
-| H03 exposure | running | Stateful continuation from checkpoint 800; no new quality result yet |
+| H37 ensemble | running | Current 512 rows scored; remaining 1,536 running under frozen recipe |
+| H03 exposure | running | First matched selection loss 0.95994 vs original 0.97870; final evaluation pending |
 
 ## Completed calibration and measurement
 
@@ -61,13 +61,28 @@ ended **ERROR** after one completed row and a 600-second local-server completion
 timeout. All partial artifacts and server logs are retained. Its first row took
 350.60 seconds, invalidating the historical runtime projection for that execution.
 
-One recovery is budgeted from the original 4,500-second reserve. It checks actual
-CUDA devices and linked libraries, repairs pinned CUDA-12 libraries only if device
-discovery fails, checks numerical identity on 32 cached rows, and continues the
-fixed extra sample only if measured throughput fits the remaining ceiling. A CUDA
-backend problem is a diagnosis hypothesis until the hardware log proves it.
-See [recovery decision](../results/span_002/recovery_decision.json). No prompt,
-model, packing or extra-sample selection is changed.
+Recovery `/llm-preference-span-002-judge-recovery/2` completed its stopping screen.
+The native backend initially detected no GPU because `libcudart.so.12` and
+`libcublas.so.12` were missing; pinned libraries restored both allocated T4s.
+The 32-row GPU profile took 38.65 seconds and passed its runtime screen, but raw
+probability drift from the historical cache was mean 0.021964 / max 0.168023,
+above the declared 0.01 / 0.1 limits. It correctly stopped without scoring extras.
+[Actual runtime evidence](../results/span_002/runtime_diagnostic_results.json)
+preserves that failed guard; its numerical cause is not isolated.
+
+A [separately declared comparison](SPAN_002_RUNTIME.md) now re-scores all fixed
+2,048 IDs under one current runtime, without pooling historical judge outputs.
+It scores the 512 fit rows first, freezes the recipe, checks measured remaining
+runtime, then scores the original extra 1,536. Kernel
+`arseniytrushin/llm-preference-span-002-judge-consistent/2` completed its 512 rows in
+509.057 seconds, then failed on an omitted `hashlib` import during recipe export.
+No extra inference had started. Valid predictions are retained; the recipe was
+fitted/frozen locally before `/judge-extra/2` launched for only the remaining
+1,536. Model, prompt, packing, sources and IDs are unchanged. The new continuation's
+3,480-second ceiling comes from previously unallocated time; all conservative role
+ceilings sum to 40,380 seconds within the unchanged 43,200 cap. Version-1 saves
+requested no execution; version-2 receipts identify actual GPU runs. The historical
+identity failure remains a separate negative finding.
 
 ## H03 and remaining deliverables
 
@@ -79,11 +94,18 @@ and a final full-dev scoring reserve. The primary endpoint is fixed, not selecte
 as the best new checkpoint. This is not a bitwise-equivalence claim across CUDA
 builds. Actual prediction and exposure results are pending.
 
-Dated progress at **19:11 UTC**: step **830**, training loss **1.03657**, gradient
-norm **2.76886**, LR **2.0967e-5**, epoch **0.57749**. The starting-inference guard
-passed before these updates. These minibatch values do not estimate final
-calibrated development quality. The current notebook executes all six code cells
-with two figures and explicitly marks unfinished validation.
+Dated first validation at **20:19 UTC**: step **1000**, raw original-order selection
+log loss **0.9599414**, accuracy **54.59%** on the original fixed 1,024 rows. Original
+checkpoint 800's same selection metric was **0.9787039**. This 0.0187625 reduction
+is encouraging but is not the final swap-averaged/calibrated full-dev comparison
+or an official score. The starting-inference guard passed before updates. The
+current notebook executes all six code cells with two figures and explicitly
+marks final evaluation as pending.
+
+Two discoveries are queued in the v3 draft and have not been executed: H43 tests
+winner-only blending with the classifier's tie channel preserved, while E02
+packages a verified native CUDA runtime for offline use. Remaining v2 work will
+be carried forward when the span closes.
 
 Still required: finish/stop every job, evaluate expanded/final predictions if valid,
 write final outcomes and resource audit, execute notebook 13, record justified v3

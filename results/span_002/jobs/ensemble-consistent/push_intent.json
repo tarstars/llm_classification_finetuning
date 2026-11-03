@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-03T20:11:35.526906+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-002-judge-consistent",
+  "max_session_seconds": 4500,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 61470.150477,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 46529.849523
+  },
+  "span_remaining_before_reservation": 37246.253523,
+  "notebook_sha256": "65cdeaefa15b27c3d57514e92c0bce025b4f10ad2a2f6cadaa0223d8d310e22a",
+  "expected_execution_version": 2,
+  "prior_quick_save_version": 1
+}

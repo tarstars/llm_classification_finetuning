@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from copy import deepcopy
 
 import numpy as np
 
@@ -12,6 +13,19 @@ from arena.span_calibration import (SymmetricCalibration, grouped_folds, fit_ble
 
 
 class CalibrationContracts(unittest.TestCase):
+    def test_loss_channels_recover_analytic_uniform_prior_without_oracle_routing(self):
+        from arena.preference_diagnostics import loss_decomposition
+        y=np.array([0,1,2]*20)
+        p=np.full((len(y),3),1/3)
+        result=loss_decomposition(y,p)
+        self.assertAlmostEqual(result['binary_tie_log_loss'],-(np.log(1/3)+2*np.log(2/3))/3)
+        self.assertAlmostEqual(result['conditional_winner_contribution'],2*np.log(2)/3)
+        self.assertAlmostEqual(result['sum_multiclass_loss'],np.log(3))
+        self.assertEqual(result['decisive_rows'],40)
+        ties=loss_decomposition(np.array([2,2]),np.array([[.2,.3,.5],[.1,.1,.8]]))
+        self.assertIsNone(ties['conditional_winner_log_loss'])
+        self.assertEqual(ties['conditional_winner_contribution'],0.)
+
     def test_analytic_gradient_and_swap_equivariance(self):
         rng = np.random.default_rng(28)
         p = rng.dirichlet([2, 2, 2], 60)
@@ -97,6 +111,29 @@ class CalibrationContracts(unittest.TestCase):
             ledger.add([10],[0],[5])
             with self.assertRaises(AssertionError):
                 ledger.finish(1,True,65536,32768,0,1)
+
+    def test_actual_exposure_audit_rejects_missing_cycles_wrong_labels_and_token_corruption(self):
+        from arena.training_exposure import ExposureLedger
+        from arena.exposure_validation import validate_exposure
+        import json
+        with tempfile.TemporaryDirectory() as directory:
+            ledger=ExposureLedger(directory)
+            ledger.add([10,11],[0,2],[5,7]);ledger.finish(801,False,65536,65536,800,801)
+            ledger.add([12],[1],[9]);ledger.finish(802,True,65536,32768,801,801)
+            events=[json.loads(line) for line in (Path(directory)/'exposure_rank0.jsonl').read_text().splitlines()]
+            truth={10:0,11:2,12:1}
+            result=validate_exposure(events,ledger.state(),800,802,truth,1024)
+            self.assertTrue(result['verified'])
+            self.assertEqual(result['accepted_updates'],1)
+            corruptions=[]
+            changed=deepcopy(events);changed[0]['canonical_labels'][0]=1;corruptions.append(changed)
+            changed=deepcopy(events);changed[0]['token_lengths'][0]+=1;corruptions.append(changed)
+            changed=deepcopy(events);changed[1]['scheduler_after']+=1;corruptions.append(changed)
+            for changed in [events[:1],*corruptions]:
+                with self.assertRaises(AssertionError):
+                    validate_exposure(changed,ledger.state(),800,802,truth,1024)
+            with self.assertRaises(AssertionError):
+                validate_exposure(events,ledger.state(),800,802,{10:0,11:2},1024)
 
 
 if __name__ == '__main__':

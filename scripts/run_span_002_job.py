@@ -16,7 +16,7 @@ from arena.data import ROOT, json_write
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('job', choices=['instrumentation','exposure','ensemble-expansion','ensemble-recovery'])
+    parser.add_argument('job', choices=['instrumentation','exposure','ensemble-expansion','ensemble-recovery','ensemble-consistent','ensemble-extra'])
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
     root = ROOT / 'runs/span_002'
@@ -66,6 +66,11 @@ def main():
         intent = {'utc':datetime.now(timezone.utc).isoformat(),'kernel':metadata['id'],
             'max_session_seconds':cap,'quota_before':quota,'span_remaining_before_reservation':remaining,
             'notebook_sha256':hashlib.sha256((folder/metadata['code_file']).read_bytes()).hexdigest()}
+        if (directory/'draft_push.json').exists():
+            verification=json.loads((directory/'draft_verification.json').read_text())
+            assert verification['source_matches'] and verification['notebook_sha256']==intent['notebook_sha256']
+            intent['expected_execution_version']=verification['next_execution_version']
+            intent['prior_quick_save_version']=verification['draft_version']
         if args.dry_run:
             print(json.dumps({'admissible':True,'intent':intent},indent=2))
             return

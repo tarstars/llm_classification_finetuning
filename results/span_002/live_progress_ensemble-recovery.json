@@ -1,0 +1,43 @@
+{
+  "job": "ensemble-recovery",
+  "kernel": "arseniytrushin/llm-preference-span-002-judge-recovery",
+  "version": 2,
+  "status": "KernelWorkerStatus.COMPLETE",
+  "status_observed_at": "2026-11-03T19:50:16.143638+00:00",
+  "log_reader_exit_code": 0,
+  "new_log_events_received": true,
+  "log_reader_notice": null,
+  "log_snapshot_mtime": "2026-11-03T19:50:24.058445+00:00",
+  "last_snapshot_phase": "judge_scoring_logs_available",
+  "HARDWARE_DIAGNOSTIC": {
+    "nvidia_smi": "name, memory.total [MiB], driver_version\nTesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04\n",
+    "devices_before": "Available devices:\n  (none)\n",
+    "devices_after": "Available devices:\n  CUDA0: Tesla T4 (14911 MiB, 14806 MiB free)\n  CUDA1: Tesla T4 (14911 MiB, 14806 MiB free)\n",
+    "cuda12_repair": true,
+    "repair_packages": [
+      "nvidia-cublas-cu12==12.8.4.1",
+      "nvidia-cuda-runtime-cu12==12.8.90"
+    ],
+    "missing_libraries": [
+      "libcudart.so.12",
+      "libcublas.so.12"
+    ]
+  },
+  "JUDGE_PROGRESS": {
+    "rows": 32,
+    "total": 32,
+    "elapsed_seconds": 38.649151491
+  },
+  "RECOVERY_GATE": {
+    "profile_rows": 32,
+    "profile_seconds": 38.65186396199999,
+    "mean_probability_difference": 0.021964193310207335,
+    "max_probability_difference": 0.16802273048218563,
+    "mean_limit": 0.01,
+    "max_limit": 0.1,
+    "projected_extra_seconds_with_margin": 2826.3473642111994,
+    "remaining_session_seconds": 4201.758108139038,
+    "identity_passed": false,
+    "throughput_passed": true
+  }
+}

@@ -211,6 +211,7 @@ The remaining exposure to one epoch may still help, despite the late plateau.
 **References:** [ATTEMPT_002_RESULTS.md](ATTEMPT_002_RESULTS.md); [docs/ATTEMPT_002.md](docs/ATTEMPT_002.md)
 
 - 2026-11-03T18:37:18+00:00 — running: Immutable original output confirms complete state files at checkpoints 800 and 877. Preparing continuation from selected 800, subject to E01 CUDA verification; resume inventory results/span_002/resume_inventory.json.
+- 2026-11-03T20:39:35+00:00 — running: First resumed validation at nominal1000: raw original-order log loss0.9599414, accuracy54.59% on original1024 selection rows vs checkpoint800 loss0.9787039; final calibrated/swap-averaged full-dev comparison pending. Exact live exposure/1 retained. Evidence: [results/span_002/live_progress_exposure.json](results/span_002/live_progress_exposure.json)
 
 ### H05
 
@@ -383,6 +384,8 @@ A second preference model may improve the classifier if its errors are genuinely
 **References:** [ATTEMPT_003_RESULTS.md](ATTEMPT_003_RESULTS.md); [ATTEMPT_004_RESULTS.md](ATTEMPT_004_RESULTS.md)
 
 - 2026-11-03T18:32:39+00:00 — running: Starting the predeclared one-weight cached Gemma/classifier blend on 512 matched rows; inner component calibration and weight selection, outer grouped evaluation; docs/SPAN_002_PROTOCOL.md.
+- 2026-11-03T19:59:08+00:00 — running: Repaired native CUDA-12 backend detects both T4s; recovery v2 completed its 32-row screen but failed historical raw-probability identity (mean 0.021964/max 0.168023), so extra scoring correctly stopped. Preparing a separate uniformly re-scored fixed 2048-row comparison, funded by 4500 unused H42 seconds; no pooling with old judge outputs. Evidence: [docs/SPAN_002_RUNTIME.md](docs/SPAN_002_RUNTIME.md)
+- 2026-11-03T20:39:35+00:00 — running: Uniform current-runtime stage scored 512 rows in 509.057s, then failed on omitted hashlib import at recipe export before extras. Retained valid outputs; fitted/froze recipe locally before launching judge-extra/2 for original fixed 1536 only, cap3480s from unallocated reserve. Historical identity failure retained; conservative role ceilings40380s within43200s. Evidence: [docs/SPAN_002_RUNTIME.md](docs/SPAN_002_RUNTIME.md)
 
 ### H24
 

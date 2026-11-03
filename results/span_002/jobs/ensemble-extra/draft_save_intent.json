@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-03T20:37:00.178630+00:00",
+  "execution_requested": false,
+  "type": "QUICK_SAVE",
+  "notebook_sha256": "c42789c3ef0a50d4bd51fe80d3b9d6654fc980301caf0f198599df1b14b8bf17",
+  "reason": "Separate notebook upload from execution scheduling; never duplicate an unresolved execution."
+}

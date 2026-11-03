@@ -1,15 +1,17 @@
 {
-  "utc": "2026-11-03T19:24:59.666408+00:00",
+  "utc": "2026-11-03T19:42:07.705302+00:00",
   "kernel": "arseniytrushin/llm-preference-span-002-judge-recovery",
   "max_session_seconds": 4500,
   "quota_before": {
     "refresh_time": "2026-11-07 00:00:00",
-    "used_seconds": 58360.039249,
+    "used_seconds": 59388.65991,
     "reserved_seconds": 0.0,
     "allowed_seconds": 108000.0,
     "pay_to_scale_enabled": false,
-    "remaining_seconds": 49639.960751
+    "remaining_seconds": 48611.34009
   },
-  "span_remaining_before_reservation": 40356.364751,
-  "notebook_sha256": "54bafcf93684c09132c406af7ac1ed800c4965c8a97a78f2756ebe5c7202f6e8"
+  "span_remaining_before_reservation": 39327.74409,
+  "notebook_sha256": "54bafcf93684c09132c406af7ac1ed800c4965c8a97a78f2756ebe5c7202f6e8",
+  "expected_execution_version": 2,
+  "prior_quick_save_version": 1
 }

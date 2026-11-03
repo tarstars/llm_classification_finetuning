@@ -1,11 +1,12 @@
 {
-  "observed_at": "2026-11-03T19:22:45.075018+00:00",
+  "observed_at": "2026-11-03T19:35:59.887749+00:00",
   "ref": "arseniytrushin/llm-preference-span-002-judge-recovery",
   "version": 1,
   "exact_version_http_status": 403,
   "owned_notebook_count": 42,
   "matching_owned_notebooks": 0,
   "independent_owned_status_probe": "KernelWorkerStatus.RUNNING",
-  "intent_sha256": "4e00a9813c22173f512f6fd33ab11521f86204cfb1e14a3e3f5158eb0e26331f",
-  "decision": "No accepted notebook/version found; archive the intent before one explicit upload retry."
+  "intent_sha256": "fc852399827d7179af8e61ddf1b04c89354d3147e9bb34d288773229b62506d9",
+  "decision": "No accepted notebook/version found; archive the intent before one explicit upload retry.",
+  "next_action_reason": "Second upload also disconnected. Reconcile before a single Quick Save (no execution) to distinguish request/upload failure from execution scheduling; no blind GPU retry."
 }

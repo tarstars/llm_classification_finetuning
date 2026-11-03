@@ -1,0 +1,13 @@
+{
+  "reason": "Completed 512-row scoring retained; NameError at export due missing hashlib import; no extra rows had been requested.",
+  "source_kernel": "arseniytrushin/llm-preference-span-002-judge-consistent/2",
+  "reused_cached_rows": 512,
+  "remaining_rows": 1536,
+  "remaining_sample_unchanged": true,
+  "cached_predictions_sha256": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d",
+  "frozen_recipe_sha256": "9c981792fea1da76dbcc627916fc438038530129248b6db66739b50a467f46ee",
+  "max_session_seconds": 3480,
+  "projected_seconds_with_margin": 2432.6054459484003,
+  "funding": "3480 of previously unallocated 6300 seconds; conservative role ceilings sum 40380 <= 43200.",
+  "notebook_sha256": "c42789c3ef0a50d4bd51fe80d3b9d6654fc980301caf0f198599df1b14b8bf17"
+}

@@ -41,8 +41,9 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
 The active version is **v2**, with **39 tasks**: three discoveries and 36 unfinished
-carryovers. Its focus is H40, E01, H03, H37 and H42; v3 is the initially empty
-[next-version draft](backlog/NEXT.md).
+carryovers. Its focus is H40, E01, H03, H37 and H42; v3 is the
+[next-version draft](backlog/NEXT.md), now containing H43 (winner-only blending)
+and E02 (offline native CUDA verification).
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),
 [v1 final history](backlog/versions/v1.final.md) and [v2 start](backlog/versions/v2.start.md).

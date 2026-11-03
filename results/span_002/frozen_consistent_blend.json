@@ -1,0 +1,24 @@
+{
+  "classifier_family": "temperature",
+  "judge_family": "temperature_tie",
+  "classifier_theta": [
+    1.214021592836944
+  ],
+  "judge_theta": [
+    0.282722556422696,
+    0.24333221847914577
+  ],
+  "judge_weight": 0.4552854936808535,
+  "fit_rows": 512,
+  "fit_groups": 497,
+  "frozen_at_unix": 1793737879.949382,
+  "current_judge_predictions_sha256": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d",
+  "fit_location": "Local CPU after completed 512-row inference; before extra-row launch",
+  "software": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1"
+  },
+  "source_kernel": "arseniytrushin/llm-preference-span-002-judge-consistent/2",
+  "evaluation": "Failed notebook stopped at export after all 512 rows; reuse valid predictions, fit/freeze locally, then score only remaining fixed 1536."
+}

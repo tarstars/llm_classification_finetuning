@@ -1,0 +1,38 @@
+{
+  "kernel": "arseniytrushin/llm-preference-span-002-judge-recovery/2",
+  "status": "COMPLETE",
+  "hardware": {
+    "nvidia_smi": "name, memory.total [MiB], driver_version\nTesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04\n",
+    "ldd_before": "\tlinux-vdso.so.1 (0x000078250180a000)\n\tlibggml-base.so.0 => /kaggle/working/runtime_bin/libggml-base.so.0 (0x0000782501731000)\n\tlibcudart.so.12 => not found\n\tlibcublas.so.12 => not found\n\tlibcuda.so.1 => /usr/local/nvidia/lib64/libcuda.so.1 (0x00007824f0c00000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007824f0982000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007824f6917000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007825016f0000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007824f076f000)\n\t/lib64/ld-linux-x86-64.so.2 (0x000078250180c000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x00007824f68c1000)\n\tlibdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007825016eb000)\n\tlibpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007825016e4000)\n\tlibrt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007825016df000)\n",
+    "devices_before": "Available devices:\n  (none)\n",
+    "cuda12_repair": true,
+    "repair_packages": [
+      "nvidia-cublas-cu12==12.8.4.1",
+      "nvidia-cuda-runtime-cu12==12.8.90"
+    ],
+    "devices_after": "Available devices:\n  CUDA0: Tesla T4 (14911 MiB, 14806 MiB free)\n  CUDA1: Tesla T4 (14911 MiB, 14806 MiB free)\n"
+  },
+  "gate": {
+    "profile_rows": 32,
+    "profile_seconds": 38.65186396199999,
+    "mean_probability_difference": 0.021964193310207335,
+    "max_probability_difference": 0.16802273048218563,
+    "mean_limit": 0.01,
+    "max_limit": 0.1,
+    "projected_extra_seconds_with_margin": 2826.3473642111994,
+    "remaining_session_seconds": 4201.758108139038,
+    "identity_passed": false,
+    "throughput_passed": true
+  },
+  "session": {
+    "session_seconds": 298.2432608604431,
+    "expanded": false,
+    "reason": "Predeclared numerical/runtime screen failed; no full scoring"
+  },
+  "artifact_sha256": {
+    "hardware_diagnostic.json": "eb1afe631a34d1815d377e6ed25fbf1ce1ac4978260a903b49c6a5a862b869fe",
+    "recovery_gate.json": "76002e8f26e791336839ff12d3969c35a8afc796403da1918f7061a739763551",
+    "session_summary.json": "9d1aea2acd2aea47915291aa20d0354529c6312eb0db3d8899b4fc866eeb2025"
+  },
+  "decision": "GPU repaired, historical raw identity failed; no extra scoring in this run. Re-score the fixed full cohort uniformly under a separately recorded allocation."
+}
