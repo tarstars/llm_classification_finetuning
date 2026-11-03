@@ -56,7 +56,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 46 | [E02](#e02) | P1 / planned | Package an offline native CUDA runtime and verify backend execution | — | medium | 2…6 | 0.1…0.5 | 0…0 | E00, E01 |
-| 45 | [H43](#h43) | P3 / planned | Blend conditional winner preferences while preserving the tie channel | -0.015…+0.025 | high | 2…6 | 0…0 | 0…0 | E00, H37, H40 |
+| 45 | [H43](#h43) | P3 / planned | Blend conditional winner preferences while preserving the tie channel | -0.015…+0.01 | high | 2…6 | 0…0 | 0…0 | E00, H37, H40 |
 
 ## Revisions to the original list
 
@@ -117,15 +117,15 @@ Vendoring the required native CUDA libraries and checking the serving backend it
 
 **Blend conditional winner preferences while preserving the tie channel** — P3, planned, risk high.
 
-The judge may contribute useful conditional A/B evidence while transferring worse tie probabilities; a winner-only blend can test those channels separately.
+A conditional-winner blend with a fixed classifier tie channel may differ from full-vector blending, but worse human-tie class loss alone does not imply its aggregate tie channel is worse.
 
-**Why this rank:** A zero-GPU follow-up addresses a measured channel-specific cost of an otherwise promising blend. Its forecast is relative to matched LoRA, is not an increment to the 0.0193 pilot result, and is not additive with H40/H37 forecasts.
+**Why this rank:** A zero-GPU diagnostic, after the runtime/cascade question and latest-classifier complementarity check. Aggregate tie BCE already improves, so preserving tie mass is not an obvious fix. Forecast is relative to the matched calibrated full-vector control; it is not additive with H40/H37 gains.
 
-**Evidence:** H37 cached nested evaluation on 512 rows gained 0.019308 overall versus calibrated LoRA, with 95% group interval [-0.000202,0.039046]. Weighted A/B contributions were +0.018071 and +0.013744, while ties contributed -0.012507. The expanded estimate remains pending; this is an exploratory pilot observation, not a proven effect.
+**Evidence:** H37 uniform 2048-row nested blend gains 0.025007 (95% groupCI[0.015015,0.035853]); frozen new-group 1486-row gain 0.021022 [0.009262,0.032468]. Weighted tie-class contribution is-0.009224, but aggregate binary tie BCE improves 0.571343 to 0.567460; winner contribution improves 0.403236 to 0.382111. Thus fixing tie mass could discard useful aggregate evidence. This revises the original 512-row-only rationale.
 
-**Planning estimate:** loss reduction -0.015…+0.025; confidence low. Engineering 2…6 person-hours; CPU 0.1…1 elapsed hours; two-T4 pilot 0…0 hours; additional follow-up 0…0 hours.
+**Planning estimate:** loss reduction -0.015…+0.01; confidence low. Engineering 2…6 person-hours; CPU 0.1…1 elapsed hours; two-T4 pilot 0…0 hours; additional follow-up 0…0 hours.
 
-**First test:** Using only valid matched cached H37 component predictions, compare at most three predeclared families: the existing full-vector scalar blend; q(A|not tie)=(1-w)*q_LoRA+w*q_judge with p(tie) fixed to the calibrated LoRA channel for every row; and the full-vector blend with a low-capacity symmetric temperature/tie correction. Fit component calibrators, weight and any family selection within grouped inner folds, evaluate outer groups, and preserve both single-model controls. Do not use observed human labels to route rows. If extra coverage is unavailable, label 512-row evidence and do not generate GPU predictions under this cache-only task.
+**First test:** Using the valid 2048-row current-runtime H37 cohort, first recheck complementarity with the latest accepted classifier, then compare at most three predeclared families: the existing full-vector scalar blend; q(A|not tie)=(1-w)*q_LoRA+w*q_judge with p(tie) fixed to the calibrated LoRA channel for every row; and the full-vector blend with a low-capacity symmetric temperature/tie correction. Fit component calibrators, weight and any family selection within grouped inner folds, evaluate outer groups, and preserve both single-model controls. Do not use observed human labels to route rows. Use nested grouped evaluation on these inspected rows; new inference or independent validation belongs to a separately budgeted task. Do not execute this draft during v 2.
 
 **Advance/adopt:** At least 0.001 lower overall log loss than the matched calibrated full-vector control with positive paired group evidence on a larger prespecified cohort, without merely changing a tie intercept. Report class contributions, tie discrimination and A/B behavior; deployment additionally needs a measured offline runtime path.
 
@@ -133,15 +133,16 @@ The judge may contribute useful conditional A/B evidence while transferring wors
 
 **Risk and mitigation:** The cached class tradeoff may be sampling noise; fixing the tie channel can discard useful judge tie evidence. Reusing inspected dev data and selecting a new formula after seeing its errors can overstate gain. Full judge inference may remain too expensive. Nest all learned components and selection by prompt group, predeclare only three families, use probability channels on every row rather than target-based routing, report both the matched scalar blend and calibration control, and keep a larger frozen-recipe check separate. Reuse caches; new inference belongs to a separately budgeted coverage/runtime task.
 
-**Revision:** New v3 follow-up from actual v2 H37 class contributions. Unlike H11 it uses complementary judge predictions rather than algebraically refactoring one model; unlike H40 it changes how two models contribute to winner and tie channels; unlike H37 it does not mix all three probabilities with a common weight. H39 remains the separate runtime/cascade prerequisite for any costly deployment.
+**Revision:** New v 3 follow-up from actual v 2 H37 class contributions. Unlike H11 it uses complementary judge predictions rather than algebraically refactoring one model; unlike H40 it changes how two models contribute to winner and tie channels; unlike H37 it does not mix all three probabilities with a common weight. H39 remains the separate runtime/cascade prerequisite for any costly deployment. Expanded evidence weakens the simple tie-preservation rationale; reduced the optimistic gain from 0.025 to 0.010. Distinguish tie-class loss from binary tie BCE before choosing a formulation.
 
-**Depends on:** E00, H37, H40. Currently unmet: H37.
+**Depends on:** E00, H37, H40. Currently unmet: none.
 
 **Origin:** introduced in v3; discovered during v2; derived from H37, H40.
 
-**References:** [results/span_002/blend_results.json](../results/span_002/blend_results.json); [docs/SPAN_002_H40.md](../docs/SPAN_002_H40.md)
+**References:** [results/span_002/blend_results.json](../results/span_002/blend_results.json); [docs/SPAN_002_H40.md](../docs/SPAN_002_H40.md); [docs/SPAN_002_H37.md](../docs/SPAN_002_H37.md); [results/span_002/expanded_results.json](../results/span_002/expanded_results.json)
 
 - 2026-11-03T19:39:21+00:00 — planned: Cached blend gains on decisive classes were partly canceled by worse tie loss; propose a grouped, cache-only winner-channel comparison with a calibration control for v3, without executing it in v2. Evidence: [results/span_002/blend_results.json](../results/span_002/blend_results.json)
+- 2026-11-03T21:19:04+00:00 — planned: Expanded H37 confirms blend gain, but binary tie BCE improves despite worse human-tie class loss. Reduce optimistic gain to0.010 and correct tie-preservation rationale; retain a cache-only v3 diagnostic with matched calibration controls, not executed. Evidence: [docs/SPAN_002_H37.md](../docs/SPAN_002_H37.md)
 
 ## Sources and provenance
 

@@ -174,7 +174,7 @@
         1
       ],
       "risk": "high",
-      "claim": "An 8–9B supervised preference classifier may learn distinctions missed by Qwen3-4B.",
+      "claim": "An 8\u20139B supervised preference classifier may learn distinctions missed by Qwen3-4B.",
       "basis": "Capacity is plausible but the blind assistant comparison was inconclusive; size alone has not been isolated.",
       "first_test": "Fit/profile one larger candidate, then compare short training curves at matched examples/tokens and packing. Report a separate equal-wall-budget comparison.",
       "acceptance": "A larger matched-exposure evaluation improves overall loss and has a feasible quantized submission path.",
@@ -2058,7 +2058,7 @@
       "title": "Diverse preference-model ensemble",
       "priority": "P2",
       "rank": 13,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.005,
         0.025
@@ -2119,6 +2119,15 @@
           "note": "Uniform current-runtime stage scored 512 rows in 509.057s, then failed on omitted hashlib import at recipe export before extras. Retained valid outputs; fitted/froze recipe locally before launching judge-extra/2 for original fixed 1536 only, cap3480s from unallocated reserve. Historical identity failure retained; conservative role ceilings40380s within43200s.",
           "evidence": [
             "docs/SPAN_002_RUNTIME.md"
+          ]
+        },
+        {
+          "at": "2026-11-03T21:17:45+00:00",
+          "status": "done",
+          "note": "Uniform 2048-row nested blend loss0.949572 vs matched classifier0.974579; gain0.025007 CI[0.015015,0.035853]. Frozen new-group1486-row gain0.021022 CI[0.009262,0.032468], better than both components. Sequential25k-row projection13.74h fails7h guard: complementarity validated, full ensemble not adopted; all judge stages terminal.",
+          "evidence": [
+            "docs/SPAN_002_H37.md",
+            "results/span_002/expanded_results.json"
           ]
         }
       ],
@@ -2181,7 +2190,7 @@
       "id": "H39",
       "kind": "hypothesis",
       "title": "Budgeted strong-judge cascade",
-      "priority": "P3",
+      "priority": "P1",
       "rank": 31,
       "status": "planned",
       "gain": [
@@ -2190,16 +2199,16 @@
       ],
       "estimate_confidence": "low",
       "engineering_hours": [
-        10,
-        24
+        2,
+        6
       ],
       "pilot_gpu_wall_hours": [
-        0.5,
-        2
+        0,
+        0
       ],
       "followup_gpu_wall_hours": [
-        4,
-        16
+        2,
+        8
       ],
       "cpu_wall_hours": [
         0.1,
@@ -2207,23 +2216,34 @@
       ],
       "risk": "high",
       "claim": "A costly judge may help selected rows if a gate can predict its incremental benefit.",
-      "basis": "General judge superiority is unproven and its current full-dataset inference is near the runtime limit.",
-      "first_test": "On fold-safe paired predictions, learn benefit-versus-cost gating and compare with uncertainty-only routing, random routing and the fixed ensemble at equal budget.",
-      "acceptance": "Overall loss improves within an explicit routing fraction and measured full-test runtime.",
-      "stop": "Stop if uncertainty is not predictive of judge benefit or the useful routed fraction violates the budget.",
+      "basis": "H37 current-runtime 2048-row nested blend reduces loss by 0.025007 with positive paired evidence; frozen new-group 1486-row gain 0.021022 CI[0.009262,0.032468]. Full sequential 25 k-row projection 49,446 s/13.74 h fails the declared 7 h guard. Complementarity exists against checkpoint 800, while deployability and complementarity against a better H03 classifier remain unproven.",
+      "first_test": "Cache-only first: align the 2048 current-runtime judge rows with the latest accepted classifier, retain both component and full-blend controls, and verify that complementarity persists. Predeclare only two entropy-based routes, highest 10% and 20%, with thresholds learned on training groups; compare deterministic random routing at the same fractions. Fit calibration/weights and choose the route within grouped inner folds; evaluate outer groups with paired group intervals. Routing uses classifier outputs available before any judge request, never labels or cached judge disagreement. Freeze a recipe before any further inference. Only a passing cached result justifies an offline bounded runtime profile using E02.",
+      "acceptance": "At least 0.001 overall log-loss reduction versus the matched classifier with positive paired group evidence on a prespecified larger cohort, within an explicit routed fraction and measured offline full-test runtime including setup, switching and calibration. Reconfirm with the latest classifier before deployment.",
+      "stop": "Stop without GPU work if cheap routing does not predict useful incremental judge evidence, complementarity disappears with the latest classifier, or the useful routed fraction violates the runtime budget. An oracle loss-based route is diagnostic only and cannot support adoption.",
       "risk_reason": "The hard rows for the classifier may be hard for the judge too; using actual per-row losses to route test rows would be an oracle.",
       "mitigation": "Fit gates on training folds only; test routing without labels and include model switching/loading overhead.",
-      "rationale": "A deployment follow-up only after complementary judge evidence.",
-      "revision": "A confidence heuristic does not establish that a cascade will help.",
+      "rationale": "Prioritize the zero-GPU cached pilot: a statistically supported complementary component is already available, but the full ensemble is too slow. Runtime packing E02 is required before a real offline deployment profile, not before this cached test.",
+      "revision": "Reprioritized after measured H37 complementarity and runtime failure. Replace the vague expensive initial gate with two bounded cached entropy routes and matched random controls; model training is not part of this pilot. H37 replaces the unrelated H01 dependency. Do not assume an updated H03 classifier retains checkpoint 800 ensemble gains.",
       "depends_on": [
         "E00",
-        "H01"
+        "H37"
       ],
       "evidence": [
         "ATTEMPT_003_RESULTS.md",
-        "ATTEMPT_004_RESULTS.md"
+        "ATTEMPT_004_RESULTS.md",
+        "docs/SPAN_002_H37.md",
+        "results/span_002/expanded_results.json"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T21:19:04+00:00",
+          "status": "planned",
+          "note": "H37 complementarity is supported but full sequential deployment projects13.74h. Prioritize a v3 cache-only10%/20% entropy-routing pilot with nested selection and random controls, latest-classifier recheck and measured runtime gate; no cascade experiment executed during v2.",
+          "evidence": [
+            "docs/SPAN_002_H37.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -2535,7 +2555,7 @@
       "priority": "P3",
       "gain": [
         -0.015,
-        0.025
+        0.01
       ],
       "estimate_confidence": "low",
       "engineering_hours": [
@@ -2555,15 +2575,15 @@
         1.0
       ],
       "risk": "high",
-      "claim": "The judge may contribute useful conditional A/B evidence while transferring worse tie probabilities; a winner-only blend can test those channels separately.",
-      "basis": "H37 cached nested evaluation on 512 rows gained 0.019308 overall versus calibrated LoRA, with 95% group interval [-0.000202,0.039046]. Weighted A/B contributions were +0.018071 and +0.013744, while ties contributed -0.012507. The expanded estimate remains pending; this is an exploratory pilot observation, not a proven effect.",
-      "first_test": "Using only valid matched cached H37 component predictions, compare at most three predeclared families: the existing full-vector scalar blend; q(A|not tie)=(1-w)*q_LoRA+w*q_judge with p(tie) fixed to the calibrated LoRA channel for every row; and the full-vector blend with a low-capacity symmetric temperature/tie correction. Fit component calibrators, weight and any family selection within grouped inner folds, evaluate outer groups, and preserve both single-model controls. Do not use observed human labels to route rows. If extra coverage is unavailable, label 512-row evidence and do not generate GPU predictions under this cache-only task.",
+      "claim": "A conditional-winner blend with a fixed classifier tie channel may differ from full-vector blending, but worse human-tie class loss alone does not imply its aggregate tie channel is worse.",
+      "basis": "H37 uniform 2048-row nested blend gains 0.025007 (95% groupCI[0.015015,0.035853]); frozen new-group 1486-row gain 0.021022 [0.009262,0.032468]. Weighted tie-class contribution is-0.009224, but aggregate binary tie BCE improves 0.571343 to 0.567460; winner contribution improves 0.403236 to 0.382111. Thus fixing tie mass could discard useful aggregate evidence. This revises the original 512-row-only rationale.",
+      "first_test": "Using the valid 2048-row current-runtime H37 cohort, first recheck complementarity with the latest accepted classifier, then compare at most three predeclared families: the existing full-vector scalar blend; q(A|not tie)=(1-w)*q_LoRA+w*q_judge with p(tie) fixed to the calibrated LoRA channel for every row; and the full-vector blend with a low-capacity symmetric temperature/tie correction. Fit component calibrators, weight and any family selection within grouped inner folds, evaluate outer groups, and preserve both single-model controls. Do not use observed human labels to route rows. Use nested grouped evaluation on these inspected rows; new inference or independent validation belongs to a separately budgeted task. Do not execute this draft during v 2.",
       "acceptance": "At least 0.001 lower overall log loss than the matched calibrated full-vector control with positive paired group evidence on a larger prespecified cohort, without merely changing a tie intercept. Report class contributions, tie discrimination and A/B behavior; deployment additionally needs a measured offline runtime path.",
       "stop": "Stop if the gain disappears against the temperature-plus-tie control, changes only an intercept, worsens overall loss, or depends on fitting/evaluating the same rows. No deployment claim from the inspected 512-row pilot or without runtime feasibility.",
       "risk_reason": "The cached class tradeoff may be sampling noise; fixing the tie channel can discard useful judge tie evidence. Reusing inspected dev data and selecting a new formula after seeing its errors can overstate gain. Full judge inference may remain too expensive.",
       "mitigation": "Nest all learned components and selection by prompt group, predeclare only three families, use probability channels on every row rather than target-based routing, report both the matched scalar blend and calibration control, and keep a larger frozen-recipe check separate. Reuse caches; new inference belongs to a separately budgeted coverage/runtime task.",
-      "rationale": "A zero-GPU follow-up addresses a measured channel-specific cost of an otherwise promising blend. Its forecast is relative to matched LoRA, is not an increment to the 0.0193 pilot result, and is not additive with H40/H37 forecasts.",
-      "revision": "New v3 follow-up from actual v2 H37 class contributions. Unlike H11 it uses complementary judge predictions rather than algebraically refactoring one model; unlike H40 it changes how two models contribute to winner and tie channels; unlike H37 it does not mix all three probabilities with a common weight. H39 remains the separate runtime/cascade prerequisite for any costly deployment.",
+      "rationale": "A zero-GPU diagnostic, after the runtime/cascade question and latest-classifier complementarity check. Aggregate tie BCE already improves, so preserving tie mass is not an obvious fix. Forecast is relative to the matched calibrated full-vector control; it is not additive with H40/H37 gains.",
+      "revision": "New v 3 follow-up from actual v 2 H37 class contributions. Unlike H11 it uses complementary judge predictions rather than algebraically refactoring one model; unlike H40 it changes how two models contribute to winner and tie channels; unlike H37 it does not mix all three probabilities with a common weight. H39 remains the separate runtime/cascade prerequisite for any costly deployment. Expanded evidence weakens the simple tie-preservation rationale; reduced the optimistic gain from 0.025 to 0.010. Distinguish tie-class loss from binary tie BCE before choosing a formulation.",
       "depends_on": [
         "E00",
         "H37",
@@ -2571,7 +2591,9 @@
       ],
       "evidence": [
         "results/span_002/blend_results.json",
-        "docs/SPAN_002_H40.md"
+        "docs/SPAN_002_H40.md",
+        "docs/SPAN_002_H37.md",
+        "results/span_002/expanded_results.json"
       ],
       "id": "H43",
       "rank": 45,
@@ -2589,6 +2611,14 @@
           "note": "Cached blend gains on decisive classes were partly canceled by worse tie loss; propose a grouped, cache-only winner-channel comparison with a calibration control for v3, without executing it in v2.",
           "evidence": [
             "results/span_002/blend_results.json"
+          ]
+        },
+        {
+          "at": "2026-11-03T21:19:04+00:00",
+          "status": "planned",
+          "note": "Expanded H37 confirms blend gain, but binary tie BCE improves despite worse human-tie class loss. Reduce optimistic gain to0.010 and correct tie-preservation rationale; retain a cache-only v3 diagnostic with matched calibration controls, not executed.",
+          "evidence": [
+            "docs/SPAN_002_H37.md"
           ]
         }
       ]
@@ -2657,7 +2687,7 @@
     "Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.",
     "**All gain ranges are subjective planning ranges, not measured gains, expected values, confidence intervals or guarantees.** They allow regression. They describe incremental overall loss reduction against a matched, calibrated, swap-averaged attempt-002 comparator on identical evaluation rows. For judge-only changes, also report the judge-relative change; it is not automatically a gain over LoRA. Related changes overlap, so their ranges cannot be added.",
     "Priority combines measured evidence, plausible upside and the cost of getting an informative answer. P1 is the first model-pilot wave after E00; cheap calibration/coverage audits can run on CPU in parallel with that work. Low gain confidence applies to every estimate; qualitative risk describes execution, validity and deployment hazards, not a numeric probability of failure.",
-    "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
+    "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6\u201312 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
     "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.",
     "Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots."
   ],
@@ -2668,8 +2698,8 @@
     "**H12/H13:** conflicting repeated comparisons are rare. They cannot plausibly explain the whole gap. Disagreement with objective factuality is not automatically a wrong human-preference label.",
     "**H08:** higher-precision export cannot undo four-bit training. Changing from the quantized base to the original base changes effective model weights; precision comparisons must say exactly what changes.",
     "**H24/H25/H23:** packing/context defects are plausible but not established causes. Measure affected coverage, distinguish changed content from serialization, count retraining and throughput, and demote H24/H25 from the first wave.",
-    "**H14–H19/H21/H29:** annotation, synthetic correctness, domain balance and factuality-rubric mismatch remain hypotheses. Preserve human vote targets and require gains on the original evaluation mixture. H18/H19 may share annotation tooling with H14 but do not require its full auxiliary-training experiment first.",
-    "**H15/H37–H39:** our general judge is not yet a demonstrated teacher or useful ensemble component. Prove complementarity before full distillation, specialists or cascade engineering.",
+    "**H14\u2013H19/H21/H29:** annotation, synthetic correctness, domain balance and factuality-rubric mismatch remain hypotheses. Preserve human vote targets and require gains on the original evaluation mixture. H18/H19 may share annotation tooling with H14 but do not require its full auxiliary-training experiment first.",
+    "**H15/H37\u2013H39:** our general judge is not yet a demonstrated teacher or useful ensemble component. Prove complementarity before full distillation, specialists or cascade engineering.",
     "**H36/H40:** related blends/calibrators already showed small uncertain gains. These are low-cost extensions, not untouched breakthrough ideas.",
     "Retained all forty IDs for traceability. H12, H36 and H40 have deliberately bounded CPU-first scopes; deeper training/OOF work requires a separately recorded budget. Added E00 outside the count to make dependencies and evaluation prerequisites explicit."
   ],

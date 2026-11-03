@@ -3,13 +3,15 @@
 ## Current handoff — 2026-11-03
 
 V2 execution update: H40, E01 and the conditional H42 stopping gate are **done**.
-H03 and H37 remain **running**. The cached ensemble gains 0.01931 on 512 rows, with
-an interval still including no gain. Missing native CUDA-12 libraries were repaired,
-but the recovery stopped at a failed raw-identity gate. A uniform current-runtime
-2,048-row comparison scored its 512 controls, then failed during recipe export on
-a missing import. Valid outputs are reused, the recipe is frozen locally, and only
-the remaining 1,536 are running in `/judge-extra/2`. Historical judge outputs remain
-separate. Stateful checkpoint-800 continuation's first selection validation at step
+H37 is also **done**; H03 remains **running**. The current-runtime 2,048-row nested
+ensemble gains 0.025007, interval [0.015015,0.035853]; the frozen 1,486-row new-group
+check gains 0.021022, interval [0.009262,0.032468]. Full sequential deployment
+projects to 13.74 hours and fails the seven-hour guard, so it is not adopted.
+Native CUDA repair, failed historical identity and the missing-import failure are
+preserved; valid control predictions were reused. All judge jobs are terminal.
+H39 is reprioritized for a v3 cache-only cascade pilot; H43 expectations are reduced
+because binary tie loss improves despite worse human-tie class loss.
+Stateful checkpoint-800 continuation's first selection validation at step
 1000 improved raw original-order loss from 0.97870 to 0.95994 on the same 1,024 rows;
 final full-dev/calibrated quality remains pending.
 H43 and E02 are queued in the v3 draft; neither has run. See [v2 report](SPAN_002_RESULTS.md),

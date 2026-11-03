@@ -6,7 +6,7 @@ Version **2**, active; **39** tasks. Focus for this span: H40, E01, H03, H37, H4
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **25**, ready **0**, running **2**, done **2**, rejected **0**, deferred **9**.
+Hypothesis status: planned **25**, ready **0**, running **1**, done **3**, rejected **0**, deferred **9**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -57,6 +57,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 31 | [H39](#h39) | P1 / planned | Budgeted strong-judge cascade | -0.01…+0.015 | high | 2…6 | 0…0 | 2…8 | E00, H37 |
 | 43 | [E01](#e01) | P1 / done | Instrument accepted optimizer updates and training exposure | — | low | 2…4 | 0…0.25 | 0…0 | E00 |
 | 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 7 | [H03](#h03) | P2 / running | Complete training exposure | -0.01…+0.01 | medium | 2…6 | 0.25…1 | 4…8 | E00 |
@@ -65,7 +66,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 10 | [H10](#h10) | P2 / planned | Shared response utilities | -0.02…+0.02 | high | 10…24 | 1…3 | 12…28 | E00 |
 | 11 | [H17](#h17) | P2 / planned | Additional public preference data | -0.02…+0.04 | high | 16…40 | 1…3 | 16…40 | E00 |
 | 12 | [H15](#h15) | P2 / deferred | Preference-teacher distillation | -0.02…+0.05 | high | 20…50 | 2…6 | 24…80 | E00, H01 |
-| 13 | [H37](#h37) | P2 / running | Diverse preference-model ensemble | -0.005…+0.025 | high | 6…16 | 0…1 | 4…16 | E00, H01 |
+| 13 | [H37](#h37) | P2 / done | Diverse preference-model ensemble | -0.005…+0.025 | high | 6…16 | 0…1 | 4…16 | E00, H01 |
 | 14 | [H24](#h24) | P2 / planned | Adaptive question budget | -0.008…+0.01 | medium | 6…14 | 0.5…2 | 10…22 | E00 |
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
@@ -83,7 +84,6 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 28 | [H27](#h27) | P3 / planned | Salient extractive retention | -0.01…+0.01 | medium | 10…24 | 0.5…2 | 10…24 | E00 |
 | 29 | [H30](#h30) | P3 / planned | Retrieved training demonstrations | -0.02…+0.015 | high | 8…20 | 1…3 | 8…20 | E00 |
 | 30 | [H31](#h31) | P3 / planned | Bounded critique before verdict | -0.02…+0.02 | high | 6…16 | 1…3 | 12…36 | E00 |
-| 31 | [H39](#h39) | P3 / planned | Budgeted strong-judge cascade | -0.01…+0.015 | high | 10…24 | 0.5…2 | 4…16 | E00, H01 |
 | 32 | [H35](#h35) | P3 / planned | Symbolic math verification | -0.008…+0.008 | medium | 12…28 | 0.25…1 | 4…12 | E00 |
 | 33 | [H34](#h34) | P3 / planned | Executable code evidence | -0.008…+0.01 | high | 20…50 | 0.25…1 | 6…18 | E00 |
 | 34 | [H26](#h26) | P3 / planned | Hierarchical long-text comparison | -0.02…+0.02 | high | 24…60 | 2…6 | 24…60 | E00, H23 |
@@ -121,6 +121,36 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 - Keep negative outcomes and source/config/checkpoint hashes. A finished experiment is done even if its hypothesis failed; rejected/deferred items must explain why. Freeze a candidate before submission rather than tuning repeatedly on leaderboard feedback.
 
 ## Work item details
+
+### H39
+
+**Budgeted strong-judge cascade** — P1, planned, risk high.
+
+A costly judge may help selected rows if a gate can predict its incremental benefit.
+
+**Why this rank:** Prioritize the zero-GPU cached pilot: a statistically supported complementary component is already available, but the full ensemble is too slow. Runtime packing E02 is required before a real offline deployment profile, not before this cached test.
+
+**Evidence:** H37 current-runtime 2048-row nested blend reduces loss by 0.025007 with positive paired evidence; frozen new-group 1486-row gain 0.021022 CI[0.009262,0.032468]. Full sequential 25 k-row projection 49,446 s/13.74 h fails the declared 7 h guard. Complementarity exists against checkpoint 800, while deployability and complementarity against a better H03 classifier remain unproven.
+
+**Planning estimate:** loss reduction -0.01…+0.015; confidence low. Engineering 2…6 person-hours; CPU 0.1…1 elapsed hours; two-T4 pilot 0…0 hours; additional follow-up 2…8 hours.
+
+**First test:** Cache-only first: align the 2048 current-runtime judge rows with the latest accepted classifier, retain both component and full-blend controls, and verify that complementarity persists. Predeclare only two entropy-based routes, highest 10% and 20%, with thresholds learned on training groups; compare deterministic random routing at the same fractions. Fit calibration/weights and choose the route within grouped inner folds; evaluate outer groups with paired group intervals. Routing uses classifier outputs available before any judge request, never labels or cached judge disagreement. Freeze a recipe before any further inference. Only a passing cached result justifies an offline bounded runtime profile using E02.
+
+**Advance/adopt:** At least 0.001 overall log-loss reduction versus the matched classifier with positive paired group evidence on a prespecified larger cohort, within an explicit routed fraction and measured offline full-test runtime including setup, switching and calibration. Reconfirm with the latest classifier before deployment.
+
+**Stop/defer:** Stop without GPU work if cheap routing does not predict useful incremental judge evidence, complementarity disappears with the latest classifier, or the useful routed fraction violates the runtime budget. An oracle loss-based route is diagnostic only and cannot support adoption.
+
+**Risk and mitigation:** The hard rows for the classifier may be hard for the judge too; using actual per-row losses to route test rows would be an oracle. Fit gates on training folds only; test routing without labels and include model switching/loading overhead.
+
+**Revision:** Reprioritized after measured H37 complementarity and runtime failure. Replace the vague expensive initial gate with two bounded cached entropy routes and matched random controls; model training is not part of this pilot. H37 replaces the unrelated H01 dependency. Do not assume an updated H03 classifier retains checkpoint 800 ensemble gains.
+
+**Depends on:** E00, H37. Currently unmet: none.
+
+**Origin:** introduced in v1; discovered during initial planning; derived from none.
+
+**References:** [ATTEMPT_003_RESULTS.md](ATTEMPT_003_RESULTS.md); [ATTEMPT_004_RESULTS.md](ATTEMPT_004_RESULTS.md); [docs/SPAN_002_H37.md](docs/SPAN_002_H37.md); [results/span_002/expanded_results.json](results/span_002/expanded_results.json)
+
+- 2026-11-03T21:19:04+00:00 — planned: H37 complementarity is supported but full sequential deployment projects13.74h. Prioritize a v3 cache-only10%/20% entropy-routing pilot with nested selection and random controls, latest-classifier recheck and measured runtime gate; no cascade experiment executed during v2. Evidence: [docs/SPAN_002_H37.md](docs/SPAN_002_H37.md)
 
 ### E01
 
@@ -357,7 +387,7 @@ A demonstrated stronger preference teacher may provide useful soft labels for a 
 
 ### H37
 
-**Diverse preference-model ensemble** — P2, running, risk high.
+**Diverse preference-model ensemble** — P2, done, risk high.
 
 A second preference model may improve the classifier if its errors are genuinely complementary.
 
@@ -386,6 +416,7 @@ A second preference model may improve the classifier if its errors are genuinely
 - 2026-11-03T18:32:39+00:00 — running: Starting the predeclared one-weight cached Gemma/classifier blend on 512 matched rows; inner component calibration and weight selection, outer grouped evaluation; docs/SPAN_002_PROTOCOL.md.
 - 2026-11-03T19:59:08+00:00 — running: Repaired native CUDA-12 backend detects both T4s; recovery v2 completed its 32-row screen but failed historical raw-probability identity (mean 0.021964/max 0.168023), so extra scoring correctly stopped. Preparing a separate uniformly re-scored fixed 2048-row comparison, funded by 4500 unused H42 seconds; no pooling with old judge outputs. Evidence: [docs/SPAN_002_RUNTIME.md](docs/SPAN_002_RUNTIME.md)
 - 2026-11-03T20:39:35+00:00 — running: Uniform current-runtime stage scored 512 rows in 509.057s, then failed on omitted hashlib import at recipe export before extras. Retained valid outputs; fitted/froze recipe locally before launching judge-extra/2 for original fixed 1536 only, cap3480s from unallocated reserve. Historical identity failure retained; conservative role ceilings40380s within43200s. Evidence: [docs/SPAN_002_RUNTIME.md](docs/SPAN_002_RUNTIME.md)
+- 2026-11-03T21:17:45+00:00 — done: Uniform 2048-row nested blend loss0.949572 vs matched classifier0.974579; gain0.025007 CI[0.015015,0.035853]. Frozen new-group1486-row gain0.021022 CI[0.009262,0.032468], better than both components. Sequential25k-row projection13.74h fails7h guard: complementarity validated, full ensemble not adopted; all judge stages terminal. Evidence: [docs/SPAN_002_H37.md](docs/SPAN_002_H37.md); [results/span_002/expanded_results.json](results/span_002/expanded_results.json)
 
 ### H24
 
@@ -867,34 +898,6 @@ A short comparison step may improve judgments over immediate class-token scoring
 
 **References:** [ATTEMPT_003_RESULTS.md](ATTEMPT_003_RESULTS.md)
 
-### H39
-
-**Budgeted strong-judge cascade** — P3, planned, risk high.
-
-A costly judge may help selected rows if a gate can predict its incremental benefit.
-
-**Why this rank:** A deployment follow-up only after complementary judge evidence.
-
-**Evidence:** General judge superiority is unproven and its current full-dataset inference is near the runtime limit.
-
-**Planning estimate:** loss reduction -0.01…+0.015; confidence low. Engineering 10…24 person-hours; CPU 0.1…1 elapsed hours; two-T4 pilot 0.5…2 hours; additional follow-up 4…16 hours.
-
-**First test:** On fold-safe paired predictions, learn benefit-versus-cost gating and compare with uncertainty-only routing, random routing and the fixed ensemble at equal budget.
-
-**Advance/adopt:** Overall loss improves within an explicit routing fraction and measured full-test runtime.
-
-**Stop/defer:** Stop if uncertainty is not predictive of judge benefit or the useful routed fraction violates the budget.
-
-**Risk and mitigation:** The hard rows for the classifier may be hard for the judge too; using actual per-row losses to route test rows would be an oracle. Fit gates on training folds only; test routing without labels and include model switching/loading overhead.
-
-**Revision:** A confidence heuristic does not establish that a cascade will help.
-
-**Depends on:** E00, H01. Currently unmet: none.
-
-**Origin:** introduced in v1; discovered during initial planning; derived from none.
-
-**References:** [ATTEMPT_003_RESULTS.md](ATTEMPT_003_RESULTS.md); [ATTEMPT_004_RESULTS.md](ATTEMPT_004_RESULTS.md)
-
 ### H35
 
 **Symbolic math verification** — P3, planned, risk medium.
@@ -1201,7 +1204,7 @@ Specialized models with a learned soft gate might help domains only if a global 
 
 **Revision:** Do not infer specialist need merely from heterogeneous question types.
 
-**Depends on:** E00, H37. Currently unmet: H37.
+**Depends on:** E00, H37. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 

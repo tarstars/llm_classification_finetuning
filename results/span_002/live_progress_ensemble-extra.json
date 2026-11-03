@@ -3,8 +3,38 @@
   "kernel": "arseniytrushin/llm-preference-span-002-judge-extra",
   "version": 2,
   "status": "KernelWorkerStatus.RUNNING",
-  "status_observed_at": "2026-11-03T20:40:13.942462+00:00",
+  "status_observed_at": "2026-11-03T21:10:53.651300+00:00",
   "log_reader_exit_code": 0,
-  "new_log_events_received": false,
-  "log_reader_notice": "ReadTimeout: HTTPSConnectionPool(host='api.kaggle.com', port=443): Read timed out. (read timeout=15)"
+  "new_log_events_received": true,
+  "log_reader_notice": null,
+  "log_snapshot_mtime": "2026-11-03T21:10:59.067372+00:00",
+  "HARDWARE_DIAGNOSTIC": {
+    "nvidia_smi": "name, memory.total [MiB], driver_version\nTesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04\n",
+    "devices_before": "Available devices:\n  (none)\n",
+    "devices_after": "Available devices:\n  CUDA0: Tesla T4 (14911 MiB, 14806 MiB free)\n  CUDA1: Tesla T4 (14911 MiB, 14806 MiB free)\n",
+    "cuda12_repair": true,
+    "repair_packages": [
+      "nvidia-cublas-cu12==12.8.4.1",
+      "nvidia-cuda-runtime-cu12==12.8.90"
+    ],
+    "missing_libraries": [
+      "libcudart.so.12",
+      "libcublas.so.12"
+    ]
+  },
+  "CONSISTENT_GATE": {
+    "reused_cached_rows": 512,
+    "remaining_rows": 1536,
+    "projected_extra_seconds_with_margin": 2432.6054459484003,
+    "remaining_session_seconds": 3459.984439611435,
+    "old_cache_pooled": false,
+    "frozen_recipe_at_unix": 1793737879.949382,
+    "throughput_passed": true
+  },
+  "last_snapshot_phase": "judge_scoring_logs_available",
+  "JUDGE_PROGRESS": {
+    "rows": 1536,
+    "total": 1536,
+    "elapsed_seconds": 1498.841280911
+  }
 }

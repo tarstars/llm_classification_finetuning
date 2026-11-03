@@ -63,6 +63,8 @@ def main():
             contrast['weighted_class_contributions']=[float(differences[y==i].sum()/len(y)) for i in range(3)]
             assert np.isclose(sum(contrast['weighted_class_contributions']),contrast['gain'])
             contrasts[key]=contrast
+        if 'blend' in outputs and 'judge' in outputs:
+            contrasts['blend_vs_judge']=paired_group_gain(y,outputs['judge'],outputs['blend'],groups,config)
         return {'rows':len(y),'groups':len(set(groups)),
             'models':{key:{**metrics(y,p),'loss_decomposition':loss_decomposition(y,p)} for key,p in outputs.items()},
             'contrasts':contrasts}
@@ -115,6 +117,15 @@ def main():
                     'push':json.loads((cached_directory/'push.json').read_text()),
                     'status':source_status,
                     'reason':'All 512 predictions completed before NameError during recipe export; valid outputs retained.'}
+                hardware=[json.loads((folder/'output/hardware_diagnostic.json').read_text())
+                          for folder in [cached_directory,directory]]
+                assert hardware[0]['repair_packages']==hardware[1]['repair_packages']
+                assert hardware[0]['nvidia_smi']==hardware[1]['nvidia_smi']
+                assert all('CUDA0: Tesla T4' in h['devices_after'] and 'CUDA1: Tesla T4' in h['devices_after']
+                           for h in hardware)
+                report['cached_prediction_source']['matched_gpu_runtime']={
+                    'repair_packages':hardware[0]['repair_packages'],
+                    'nvidia_smi':hardware[0]['nvidia_smi'],'native_devices_both_stages':2}
             current_summary=json.loads((cached_directory/'output/cached_current/judge_summary.json').read_text())
             assert not current_summary['both_orders'] and current_summary['config_sha256']==summary['config_sha256']
             assert current_summary['judge_source_sha256']==summary['judge_source_sha256']
@@ -168,6 +179,9 @@ def main():
         assert summary['complete'] and summary['initial_step']==800 and summary['final_step']<=1438
         raw,groups=inputs(data['ids'],data['labels'])
         ids,y=data['ids'],data['labels']
+        split=json.loads(Path(inventory['split']['path']).read_text())
+        assert len(ids)==config['baseline_full_dev_rows']==summary['final_dev_rows']
+        assert set(map(int,ids))==set(map(int,split['dev'])), 'Incomplete final development coverage'
         report['input_sha256']={'raw_predictions':digest(job/'dev_predictions.npz'),
                                'summary':digest(job/'summary.json')}
         json_write(root/'exposure_outer_folds.json',[
@@ -184,6 +198,14 @@ def main():
         report['candidate_raw']=metrics(y,data['probabilities'])
         report['candidate_order']=order_diagnostics(data['original'],data['aligned_swap'])
         report['summary']=summary
+        reference_path=root/'baseline_resume/joint_run/checkpoints/checkpoint-800/trainer_state.json'
+        assert digest(reference_path)==summary['resume_source']['file_sha256']['trainer_state.json']
+        reference_state=json.loads(reference_path.read_text())
+        report['selection_reference']={'step':800,'rows':summary['selection_rows'],
+            'raw_original_order_log_loss':reference_state['best_metric'],
+            'note':'Original fixed selection cohort; not final swap-averaged/calibrated loss.'}
+        progress=[json.loads(line) for line in (job/'training_progress.jsonl').read_text().splitlines()]
+        report['selection_curve']=[event for event in progress if 'eval_log_loss' in event]
         states=[json.loads((job/f'audit_state_rank{rank}.json').read_text()) for rank in (0,1)]
         totals={key:sum(state['counts'][key] for state in states)
                 for key in ('processed_tokens','accepted_tokens','processed_rows','accepted_rows')}
@@ -192,7 +214,6 @@ def main():
             assert state['counts']['accepted_updates']+state['counts']['skipped_updates']==state['counts']['cycles']
         vectors=[]
         audits=[]
-        split=json.loads(Path(inventory['split']['path']).read_text())
         training_ids=set(map(int,frame.id))-set(split['dev'])-set(split['confirmation'])
         train_order=sorted(training_ids)
         training_labels=dict(zip(frame.loc[train_order].id,frame.loc[train_order,CLASSES].values.argmax(1)))
@@ -212,6 +233,8 @@ def main():
             coverage[kind]={'unique_rows':len(counts),'unique_groups':int(all_groups.loc[list(counts)].nunique()),
                 'total_visits':sum(counts.values()),'maximum_visits':max(counts.values(),default=0)}
         report['exposure']={'totals':totals,'coverage':coverage,
+            'accepted_tokens_per_training_second':totals['accepted_tokens']/summary['training_seconds'],
+            'processed_tokens_per_training_second':totals['processed_tokens']/summary['training_seconds'],
             'cycle_audits':[{key:value for key,value in row.items() if key!='skip_vector'} for row in audits],
             'rank_summaries':[json.loads((job/f'exposure_summary_rank{rank}.json').read_text()) for rank in (0,1)]}
         report['starting_identity']=[json.loads((job/f'starting_identity_rank{rank}.json').read_text()) for rank in (0,1)]

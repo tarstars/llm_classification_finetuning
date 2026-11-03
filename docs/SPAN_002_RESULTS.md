@@ -1,7 +1,8 @@
 # Span 002: work in progress
 
 The v2 goal is **active**, not complete. H40, E01 and the conditional H42 gate are
-finished; H03 and H37 remain in progress. No candidate is promoted and the best
+finished, and H37's larger comparison is complete; H03 remains in progress.
+No candidate is promoted and the best
 official Kaggle loss remains **0.97025**. This report will be completed after the
 recorded jobs and evaluations finish.
 
@@ -17,7 +18,7 @@ with no reserved time; refresh is not used to extend this span.
 | H40 calibration | done | Full-dev nested gain 0.0011325; 95% interval [-0.0005643, +0.0029542] |
 | E01 exposure instrumentation | done | Both real CUDA ranks passed overflow, parameter-change and resume checks |
 | H42 tie anchoring | done at gate | Calibration meets stopping tolerances; no anchor training performed |
-| H37 ensemble | running | Current 512 rows scored; remaining 1,536 running under frozen recipe |
+| H37 ensemble | done | Nested gain 0.025007; frozen new-group gain 0.021022; full deployment fails runtime guard |
 | H03 exposure | running | First matched selection loss 0.95994 vs original 0.97870; final evaluation pending |
 
 ## Completed calibration and measurement
@@ -84,6 +85,22 @@ ceilings sum to 40,380 seconds within the unchanged 43,200 cap. Version-1 saves
 requested no execution; version-2 receipts identify actual GPU runs. The historical
 identity failure remains a separate negative finding.
 
+The continuation is now **COMPLETE**. [H37's final report](SPAN_002_H37.md) gives
+current-runtime nested loss **0.949572 versus 0.974579** for its matched classifier
+on 2,048 rows / 1,953 groups: gain **0.025007**, 95% group interval
+**[0.015015, 0.035853]**. The separately frozen recipe gains **0.021022**, interval
+**[0.009262, 0.032468]**, on 1,486 new-group rows after excluding 50 overlapping
+rows from the 1,536 extras. Both checks beat both components. This supports
+complementarity against checkpoint 800, not automatic complementarity against
+any improved H03 model.
+
+Deployment is gated out: the sequential 25,000-row projection with margin is
+**49,446 seconds / 13.74 hours**, above the declared seven-hour guard. H37 closes
+as a completed positive-quality experiment with a runtime constraint. No full
+ensemble is submitted. H39 is reprioritized for a bounded cached cascade test in
+v3. H43's rationale is corrected: tie-class loss worsens, but overall binary tie
+loss improves, so preserving tie mass is not an obvious improvement.
+
 ## H03 and remaining deliverables
 
 Immutable original training output contains adapter, optimizer, scheduler, scaler,
@@ -99,11 +116,11 @@ log loss **0.9599414**, accuracy **54.59%** on the original fixed 1,024 rows. Or
 checkpoint 800's same selection metric was **0.9787039**. This 0.0187625 reduction
 is encouraging but is not the final swap-averaged/calibrated full-dev comparison
 or an official score. The starting-inference guard passed before updates. The
-current notebook executes all six code cells with two figures and explicitly
+current notebook executes all six code cells with three figures and explicitly
 marks final evaluation as pending.
 
 Two discoveries are queued in the v3 draft and have not been executed: H43 tests
-winner-only blending with the classifier's tie channel preserved, while E02
+conditional blending against matched full-vector/calibration controls, while E02
 packages a verified native CUDA runtime for offline use. Remaining v2 work will
 be carried forward when the span closes.
 

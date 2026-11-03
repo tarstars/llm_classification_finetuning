@@ -1,0 +1,155 @@
+{
+  "checked_at": "2026-11-03T20:49:47.712890+00:00",
+  "all_recorded_jobs_terminal": false,
+  "jobs": [
+    {
+      "job": "instrumentation",
+      "kernel": "arseniytrushin/llm-preference-span-002-exposure-probe",
+      "version": 1,
+      "status": "COMPLETE",
+      "observed_at": "2026-11-03T20:48:38.826042+00:00",
+      "notebook_sha256": "72f4d0e2edb740a36162992423375d188efc01a43fbca6abfb223dac7d584c8d",
+      "max_session_seconds": 900
+    },
+    {
+      "job": "exposure",
+      "kernel": "arseniytrushin/llm-preference-span-002-exposure",
+      "version": 1,
+      "status": "RUNNING",
+      "observed_at": "2026-11-03T20:48:39.997872+00:00",
+      "notebook_sha256": "c51fefdf96de06bdc414e964ff6628e1b98c801c6ad7f530063c29c6fd0279e2",
+      "max_session_seconds": 21600
+    },
+    {
+      "job": "ensemble-expansion",
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-expansion",
+      "version": 1,
+      "status": "ERROR",
+      "observed_at": "2026-11-03T20:48:40.661297+00:00",
+      "notebook_sha256": "2fdd7c9c7d2078f8a1bdf9e448dfc0b219734b9e1cf8467320092c16a4adc0ae",
+      "max_session_seconds": 5400
+    },
+    {
+      "job": "ensemble-recovery",
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-recovery",
+      "version": 2,
+      "status": "COMPLETE",
+      "observed_at": "2026-11-03T20:48:41.757569+00:00",
+      "notebook_sha256": "54bafcf93684c09132c406af7ac1ed800c4965c8a97a78f2756ebe5c7202f6e8",
+      "max_session_seconds": 4500
+    },
+    {
+      "job": "ensemble-consistent",
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-consistent",
+      "version": 2,
+      "status": "ERROR",
+      "observed_at": "2026-11-03T20:48:42.753544+00:00",
+      "notebook_sha256": "65cdeaefa15b27c3d57514e92c0bce025b4f10ad2a2f6cadaa0223d8d310e22a",
+      "max_session_seconds": 4500
+    },
+    {
+      "job": "ensemble-extra",
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-extra",
+      "version": 2,
+      "status": "RUNNING",
+      "observed_at": "2026-11-03T20:48:43.830423+00:00",
+      "notebook_sha256": "c42789c3ef0a50d4bd51fe80d3b9d6654fc980301caf0f198599df1b14b8bf17",
+      "max_session_seconds": 3480
+    }
+  ],
+  "quick_saves_without_execution": [
+    {
+      "job": "ensemble-recovery",
+      "version": 1,
+      "execution_requested": false,
+      "source_verified": true
+    },
+    {
+      "job": "ensemble-consistent",
+      "version": 1,
+      "execution_requested": false,
+      "source_verified": true
+    },
+    {
+      "job": "ensemble-extra",
+      "version": 1,
+      "execution_requested": false,
+      "source_verified": true
+    }
+  ],
+  "owned_notebook_count": 45,
+  "nonterminal_owned_notebooks": [
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-extra",
+      "status": "RUNNING"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-exposure",
+      "status": "RUNNING"
+    }
+  ],
+  "quota": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 65255.722894,
+    "reserved_seconds": 42497.385052,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 246.89205400000355
+  },
+  "unobserved_owned_notebooks": [
+    {
+      "http_status": null,
+      "last_run_time": "2026-11-02 11:47:13.900000",
+      "error_type": "ConnectionError",
+      "kernel_sha256": "083488c4a00d0940baa62d61926fd23851e093ec42593d8329cb6b37c403e1fe"
+    },
+    {
+      "http_status": 404,
+      "last_run_time": "2025-12-17 11:20:26.657000",
+      "error_type": "HTTPError",
+      "kernel_sha256": "1be3866170da769ae28a502772222b186570c2d8dfb4f499e2e012c6433a8d35"
+    },
+    {
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:52:45.893000",
+      "error_type": "HTTPError",
+      "kernel_sha256": "dd8b751a3d26416f67f344973a27e1b84ee9f8935088d4f2f4393df7e438b540"
+    },
+    {
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:24:42.037000",
+      "error_type": "HTTPError",
+      "kernel_sha256": "69e91610ce0dfb93b7d44619ee6995b228e83dc71446d5384e0a7b2b44861f55"
+    }
+  ],
+  "span_gpu_session_seconds": 9739.318893999996,
+  "span_gpu_session_hours": 2.7053663594444433,
+  "gpu_session_seconds_cap": 43200,
+  "within_original_compute_cap": true,
+  "within_original_deadline": true,
+  "elapsed_wall_seconds_at_check": 8761.712889909744,
+  "original_started_at": "2026-11-03T18:23:46+00:00",
+  "original_deadline": "2026-11-05T18:23:46+00:00",
+  "no_quota_refresh_used": true,
+  "no_paid_scaling": true,
+  "accounting": "Account-level quota delta, including setup, scoring and failed runs. Concurrent runs prevent per-job attribution; no overlapping quota delta is charged twice.",
+  "role_seconds_caps": {
+    "instrumentation": 900,
+    "exposure": 21600,
+    "tie_anchor": 0,
+    "ensemble_expansion": 5400,
+    "ensemble_recovery": 4500,
+    "ensemble_consistent": 4500,
+    "ensemble_extra": 3480
+  },
+  "unallocated_span_seconds": 2820,
+  "preserved_input_hashes": {
+    "baseline": "5b2522d2be7fed1d490ebe6135afe97fe3863339d8c34a971027ce861f051de2",
+    "joint": "d1c60c29aa03f373ac7e237d734358abf2e0f0af7d3c188769c931054aa4b7ea",
+    "judge": "8b819775e18099c69fbe03001ec4d92df757fe1b395e22e5f624fb015e43ae31",
+    "split": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1",
+    "sample_v1": "716c065f583d45ef6028034e77349cf245b849abbf3f6d58a533c3867ae37203",
+    "selection": "68a097c19cabe454c99925cc41153fd9cfb4b5a35bc3f656b361b21706bd7ca8",
+    "adapter": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d"
+  }
+}

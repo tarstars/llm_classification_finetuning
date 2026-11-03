@@ -86,6 +86,24 @@ if (RESULTS/'expanded_results.json').exists():
                              for name,m in row['models'].items()]))
         points.append((cohort+' / '+str(row['rows'])+' rows',row['contrasts']['blend']))
     print('Runtime assessment:',expanded['runtime'])
+    channel_rows=[]
+    for cohort,row in expanded['cohorts'].items():
+        for name,m in row['models'].items():
+            d=m['loss_decomposition']
+            channel_rows.append({'cohort':cohort,'system':name,
+                'binary_tie_loss':d['binary_tie_log_loss'],
+                'conditional_winner_contribution':d['conditional_winner_contribution'],
+                'conditional_winner_accuracy':d['conditional_winner_accuracy']})
+    display(pd.DataFrame(channel_rows))
+    print('Conditional winner accuracy describes human-decisive rows only; no deployed routing uses labels.')
+    fig,ax=plt.subplots(figsize=(8,3))
+    x=np.arange(3);width=.35
+    for index,(cohort,row) in enumerate(expanded['cohorts'].items()):
+        contributions=row['contrasts']['blend']['weighted_class_contributions']
+        ax.bar(x+(index-.5)*width,contributions,width,label=cohort)
+    ax.set_xticks(x,['Human prefers A','Human prefers B','Human tie'])
+    ax.axhline(0,color='black',linewidth=.8);ax.set_ylabel('Contribution to overall loss reduction')
+    ax.legend();save(fig,'ensemble_class_contributions')
 else:
     print('Uniform current-runtime validation is pending; historical judge outputs will not be pooled with new outputs.')
 fig,ax=plt.subplots(figsize=(8,max(2.4,.8*len(points))))
@@ -134,6 +152,15 @@ development loss have different data/postprocessing and must not be conflated.
                               'training_seconds','development_prediction_seconds','stopped_for_time','stopped_for_plateau']})
     print('Identity guards:',training['starting_identity'])
     print('Finite exported weights:',training['weight_audit'])
+    print('Training retention:',training['summary']['train_diagnostics'])
+    print('Final development retention:',training['summary']['final_diagnostics'])
+    print('Peak allocated GPU bytes (rank 0):',training['summary']['peak_gpu_bytes'])
+    primary=training['cohorts']['temperature']
+    display(pd.DataFrame([{'system':name,'class':label,'loss':m['class_loss'][index],
+                          'recall':m['class_recall'][index]}
+                         for name,m in primary['models'].items()
+                         for index,label in enumerate(['A','B','Tie'])]))
+    print('Primary matched gain and group interval:',primary['contrasts']['continued'])
     progress_path=HEAVY/'jobs/exposure/output/exposure/training_progress.jsonl'
     progress=[json.loads(line) for line in progress_path.read_text().splitlines()]
     train=[x for x in progress if 'loss' in x];validation=[x for x in progress if 'eval_log_loss' in x]
@@ -141,6 +168,8 @@ development loss have different data/postprocessing and must not be conflated.
     ax.plot([x['step'] for x in train],[x['loss'] for x in train],alpha=.6,label='Training minibatch CE')
     if validation:
         ax.plot([x['step'] for x in validation],[x['eval_log_loss'] for x in validation],'o-',label='Original-order selection loss')
+    ax.axhline(training['selection_reference']['raw_original_order_log_loss'],
+               color='black',linestyle='--',linewidth=1,label='Checkpoint 800 selection reference')
     ax.set_xlabel('Nominal Trainer step (not accepted-update count)');ax.set_ylabel('Uncalibrated log loss')
     ax.legend();ax.grid(alpha=.25);save(fig,'training_curve')
 else:

@@ -1,8 +1,8 @@
 {
-  "stage": "waiting_for_kernel",
-  "utc": "2026-11-03T20:41:29.848105+00:00",
+  "stage": "complete",
+  "utc": "2026-11-03T21:14:06.467227+00:00",
   "pid": 387507,
   "job": "ensemble-extra",
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "version": 2
 }

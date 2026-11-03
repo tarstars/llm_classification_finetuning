@@ -72,7 +72,9 @@ V2 adds optimizer/exposure instrumentation (E01), a conditional tie-preserving
 follow-up (H42), and a deferred reward-feature diagnostic (H41). The current v2
 goal starts with cached calibration H40 and instrumentation E01 before more
 training. V2 is now underway: H40/E01 and the H42 stopping gate are complete;
-H03 continuation and H37 ensemble validation remain in progress. See the
+H37 now shows a 0.0250 nested gain on 2,048 rows, confirmed by a frozen-recipe
+new-group check, but its full sequential deployment fails the runtime guard.
+H03 continuation remains in progress. See the
 [v2 report](docs/SPAN_002_RESULTS.md) and [protocol](docs/SPAN_002_PROTOCOL.md).
 
 Read a fresh pinned-job status and numerical progress snapshot with

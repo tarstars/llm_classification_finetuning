@@ -3,7 +3,7 @@
 V1 results were verified at research closing commit `13e7adb`; its goal completed.
 The user subsequently authorized a **new v2 goal**, now in `GOAL.md`, to execute a
 bounded span and form v3. V2 is **underway**: H40, E01 and H42's stopping gate are
-done; H03 and H37 remain running. The
+done, as is H37's larger comparison; H03 remains running. The
 completed goal is archived at `docs/GOAL_V1.md`. This is a dated orientation record;
 verify current files and service state before acting.
 
@@ -62,11 +62,22 @@ A uniform **2,048-row** current-runtime comparison completed its 512 controls in
 `judge-consistent/2` (509.057 seconds), then failed on an omitted `hashlib` import
 during recipe export. No extras were requested. Its valid predictions are reused;
 `freeze_span_002_consistent.py` fitted/froze the recipe locally before extra
-inference. `/judge-extra/2` now scores only the same remaining 1,536. All views are
+inference. `/judge-extra/2` completed the same remaining 1,536. All views are
 single-order with unchanged model/prompt/packing/IDs. Never pool historical judge
 probabilities. The extra continuation adds a 3,480-second ceiling from previously
 unallocated time; total cap/deadline remain unchanged. Conservative role ceilings
 sum to 40,380 seconds, leaving 2,820 unallocated. H42 will not train.
+
+**H37 is now done:** nested 2,048-row loss 0.949572 versus matched classifier
+0.974579; gain 0.025007, interval [0.015015,0.035853]. Frozen recipe on 1,486
+new-group rows (50 overlapping extra rows excluded) gains 0.021022, interval
+[0.009262,0.032468]. See [H37 report](SPAN_002_H37.md) and `expanded_results.json`.
+All current judge predictions use matching repaired native runtime; no old raw
+judge cache is pooled. Sequential 25k projection is 49,446 seconds / 13.74h, so
+the full ensemble fails the seven-hour runtime guard and is not submitted.
+H39 is reprioritized to a v3 cache-only cascade pilot. H43's prior is reduced:
+binary tie BCE improves even though human-tie class loss worsens. Neither future
+test has run. A better H03 classifier requires a fresh complementarity check.
 
 Recorded job handles (always inspect their current receipts and service state):
 
@@ -78,9 +89,8 @@ Recorded job handles (always inspect their current receipts and service state):
   at failed identity gate. Its version 1 was Quick Save only, without execution.
 - Uniform judge controls: `arseniytrushin/llm-preference-span-002-judge-consistent/2`,
   ERROR after all 512 predictions, before recipe export/extra inference.
-- Judge extras: `arseniytrushin/llm-preference-span-002-judge-extra/2`, RUNNING;
-  version 1 was Quick Save only. Controller PID 387507, log
-  `/tmp/arena_span002_extra_controller.log`; verify actual API liveness.
+- Judge extras: `arseniytrushin/llm-preference-span-002-judge-extra/2`, COMPLETE;
+  version 1 was Quick Save only. Outputs and analysis are collected.
 
 Controllers are `scripts/run_span_002_job.py`; numerical status reader is
 `scripts/span_002_progress.py JOB --seconds 20`. Generated execution notebooks and
@@ -89,10 +99,21 @@ are in Git. `analyze_span_002_followups.py expanded --job ensemble-extra` and
 `... exposure` require complete, valid outputs and do not fill missing predictions.
 H03's controller reserves 4,500 seconds inside its six-hour cap for final full-dev
 inference. Source/report/notebook completion and sealing v2 remain outstanding.
+The CPU-only `collect_span_002_measurements.py` is running (PTY 33418), log
+`/tmp/arena_span002_measurements.log`; it finished expanded analysis and waits for
+H03's existing controller, then runs exposure analysis without launching GPUs.
+Do not duplicate this collector while it is active. The new `audit_span_002.py
+--final` requires all six execution versions terminal, zero reservations, original
+limits and final measurements. Its progress audit preserved three unrelated old
+404 session observations (last-run dates predate this span); public references
+are hashed. These are not current project jobs. Per-job quota attribution is
+unavailable for overlapping runs; the account-level delta includes every charge.
 
-Notebook 13 has an executed partial-state snapshot (six code cells, two figures).
+Notebook 13 has an executed partial-state snapshot (six code cells, three figures),
+including the completed H37 intervals and class contributions.
 Rebuild and re-execute it after final outputs; its current existence does not
-fulfill the final-deliverable audit. H03's step-1000 validation, read at 20:19 UTC,
+fulfill the final-deliverable audit. H03 reached nominal step 1175 at 21:19 UTC;
+its step-1000 validation, read at 20:19 UTC,
 gave original-order raw selection loss 0.9599414 versus checkpoint-800's 0.9787039
 on the same 1,024 rows, accuracy 54.59%. Final full-dev quality is pending. The starting
 identity guard passed. Numerical progress preserves validation history separately

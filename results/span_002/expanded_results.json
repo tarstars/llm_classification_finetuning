@@ -1,0 +1,802 @@
+{
+  "span": 2,
+  "stage": "expanded",
+  "config": {
+    "span": 2,
+    "seed": 20261119,
+    "outer_group_folds": 5,
+    "inner_group_folds": 3,
+    "classifier_temperature_bounds": [
+      0.5,
+      3.0
+    ],
+    "judge_temperature_bounds": [
+      0.25,
+      8.0
+    ],
+    "tie_intercept_bounds": [
+      -1.0,
+      1.0
+    ],
+    "calibration_families": [
+      "temperature",
+      "temperature_tie",
+      "symmetric_vector"
+    ],
+    "bootstrap_group_replicates": 2000,
+    "cheap_useful_gain": 0.001,
+    "training_useful_gain": 0.005,
+    "tie_deficit_loss_tolerance": 0.001,
+    "tie_deficit_class_loss_tolerance": 0.02,
+    "gpu_session_seconds_cap": 43200,
+    "job_seconds_caps": {
+      "instrumentation": 900,
+      "exposure": 21600,
+      "tie_anchor": 0,
+      "ensemble_expansion": 5400,
+      "ensemble_recovery": 4500,
+      "ensemble_consistent": 4500,
+      "ensemble_extra": 3480
+    },
+    "recovery_reserve_seconds": 0,
+    "recovery_allocated_seconds": 4500,
+    "h42_unused_reallocated_seconds": 4500,
+    "extra_continuation_allocated_seconds": 3480,
+    "unallocated_span_seconds": 2820,
+    "baseline_full_dev_rows": 5746,
+    "paired_dev_rows": 1024,
+    "ensemble_cached_rows": 512,
+    "ensemble_expanded_rows": 2048,
+    "max_length": 1024,
+    "h03_max_added_cycles": 638,
+    "h03_intermediate_added_cycles": [
+      200,
+      400
+    ],
+    "h03_warm_start_learning_rate": 1e-05,
+    "h03_warm_start_warmup_cycles": 16,
+    "h42_accepted_updates": 64,
+    "h42_max_nominal_cycles": 80,
+    "h42_learning_rate": 2e-05,
+    "h42_consistency_weight": 0.1,
+    "h42_anchor_weight": 1.0,
+    "confirmation_used": false
+  },
+  "cohorts": {
+    "combined_nested": {
+      "rows": 2048,
+      "groups": 1953,
+      "models": {
+        "classifier": {
+          "rows": 2048,
+          "log_loss": 0.9745788527142489,
+          "accuracy": 0.51904296875,
+          "macro_f1": 0.517073591300027,
+          "brier": 0.5822956845440865,
+          "class_counts": [
+            693,
+            720,
+            635
+          ],
+          "class_loss": [
+            0.9591753579414408,
+            0.9792950160475454,
+            0.9860418200805208
+          ],
+          "class_recall": [
+            0.5512265512265512,
+            0.5388888888888889,
+            0.46141732283464565
+          ],
+          "tie_precision": 0.4643423137876387,
+          "mean_predictive_entropy": 0.9739602303898631,
+          "mean_class_probability": [
+            0.3287888070686914,
+            0.33368332791101063,
+            0.3375278650202976
+          ],
+          "predicted_class_fraction": [
+            0.3466796875,
+            0.34521484375,
+            0.30810546875
+          ],
+          "tie_auc": 0.6780268708449659,
+          "confusion_matrix": [
+            [
+              382,
+              152,
+              159
+            ],
+            [
+              153,
+              388,
+              179
+            ],
+            [
+              175,
+              167,
+              293
+            ]
+          ],
+          "loss_decomposition": {
+            "binary_tie_log_loss": 0.5713427707053061,
+            "conditional_winner_contribution": 0.4032360820089428,
+            "sum_multiclass_loss": 0.9745788527142489,
+            "decisive_rows": 1413,
+            "tie_rows": 635,
+            "conditional_winner_log_loss": 0.5844497494368824,
+            "conditional_winner_accuracy": 0.6886058032554848,
+            "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+          }
+        },
+        "judge": {
+          "rows": 2048,
+          "log_loss": 0.9864134185657569,
+          "accuracy": 0.5078125,
+          "macro_f1": 0.4988711751309623,
+          "brier": 0.588434463803087,
+          "class_counts": [
+            693,
+            720,
+            635
+          ],
+          "class_loss": [
+            0.9360559188122489,
+            0.9337910633560997,
+            1.1010367934951022
+          ],
+          "class_recall": [
+            0.5757575757575758,
+            0.5805555555555556,
+            0.35118110236220473
+          ],
+          "tie_precision": 0.45233265720081134,
+          "mean_predictive_entropy": 0.986121874723827,
+          "mean_class_probability": [
+            0.34286226430728106,
+            0.3470837967325946,
+            0.3100539389601239
+          ],
+          "predicted_class_fraction": [
+            0.3896484375,
+            0.36962890625,
+            0.24072265625
+          ],
+          "tie_auc": 0.6455857030610027,
+          "confusion_matrix": [
+            [
+              399,
+              152,
+              142
+            ],
+            [
+              174,
+              418,
+              128
+            ],
+            [
+              225,
+              187,
+              223
+            ]
+          ],
+          "loss_decomposition": {
+            "binary_tie_log_loss": 0.5854265148833707,
+            "conditional_winner_contribution": 0.4009869036823862,
+            "sum_multiclass_loss": 0.9864134185657569,
+            "decisive_rows": 1413,
+            "tie_rows": 635,
+            "conditional_winner_log_loss": 0.5811897938722766,
+            "conditional_winner_accuracy": 0.6815286624203821,
+            "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+          }
+        },
+        "blend": {
+          "rows": 2048,
+          "log_loss": 0.9495718245598311,
+          "accuracy": 0.56005859375,
+          "macro_f1": 0.5548385531354961,
+          "brier": 0.565152452969294,
+          "class_counts": [
+            693,
+            720,
+            635
+          ],
+          "class_loss": [
+            0.914388071317248,
+            0.9250338242228632,
+            1.0157918265121573
+          ],
+          "class_recall": [
+            0.6204906204906205,
+            0.6041666666666666,
+            0.4440944881889764
+          ],
+          "tie_precision": 0.5193370165745856,
+          "mean_predictive_entropy": 1.0094387789323602,
+          "mean_class_probability": [
+            0.3349819700519891,
+            0.33957138659545,
+            0.3254466433525599
+          ],
+          "predicted_class_fraction": [
+            0.37060546875,
+            0.3642578125,
+            0.26513671875
+          ],
+          "tie_auc": 0.6953463619595321,
+          "confusion_matrix": [
+            [
+              430,
+              128,
+              135
+            ],
+            [
+              159,
+              435,
+              126
+            ],
+            [
+              170,
+              183,
+              282
+            ]
+          ],
+          "loss_decomposition": {
+            "binary_tie_log_loss": 0.567460411356896,
+            "conditional_winner_contribution": 0.38211141320293507,
+            "sum_multiclass_loss": 0.949571824559831,
+            "decisive_rows": 1413,
+            "tie_rows": 635,
+            "conditional_winner_log_loss": 0.5538316873599511,
+            "conditional_winner_accuracy": 0.7169143665958952,
+            "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+          }
+        }
+      },
+      "contrasts": {
+        "judge": {
+          "gain": -0.011834565851507923,
+          "interval_95": [
+            -0.033792597522679726,
+            0.01006609698815649
+          ],
+          "groups": 1953,
+          "rows": 2048,
+          "replicates": 2000,
+          "weighted_class_contributions": [
+            0.007823130525649416,
+            0.015997483368086422,
+            -0.03565517974524376
+          ]
+        },
+        "blend": {
+          "gain": 0.025007028154417868,
+          "interval_95": [
+            0.015014688122256203,
+            0.035852703054389756
+          ],
+          "groups": 1953,
+          "rows": 2048,
+          "replicates": 2000,
+          "weighted_class_contributions": [
+            0.015155073061799655,
+            0.019076200250864872,
+            -0.009224245158246658
+          ]
+        },
+        "blend_vs_judge": {
+          "gain": 0.03684159400592579,
+          "interval_95": [
+            0.024615511208620513,
+            0.04895459960556992
+          ],
+          "groups": 1953,
+          "rows": 2048,
+          "replicates": 2000
+        }
+      },
+      "folds": [
+        {
+          "judge_weight": 0.4286516271249811,
+          "component_theta": [
+            [
+              1.3697972054654193
+            ],
+            [
+              0.2994072757842535,
+              0.27295528536445635
+            ]
+          ],
+          "train_rows": 1639,
+          "validation_rows": 409
+        },
+        {
+          "judge_weight": 0.4604752910814463,
+          "component_theta": [
+            [
+              1.325021400658024
+            ],
+            [
+              0.29308774820498396,
+              0.2574152482757833
+            ]
+          ],
+          "train_rows": 1637,
+          "validation_rows": 411
+        },
+        {
+          "judge_weight": 0.392613955783859,
+          "component_theta": [
+            [
+              1.408136845603225
+            ],
+            [
+              0.29100481819694796,
+              0.2530053300556579
+            ]
+          ],
+          "train_rows": 1636,
+          "validation_rows": 412
+        },
+        {
+          "judge_weight": 0.4598263713813505,
+          "component_theta": [
+            [
+              1.3342286727968782
+            ],
+            [
+              0.29962748921307275,
+              0.25935574268830014
+            ]
+          ],
+          "train_rows": 1640,
+          "validation_rows": 408
+        },
+        {
+          "judge_weight": 0.4584448388541524,
+          "component_theta": [
+            [
+              1.3003087429689728
+            ],
+            [
+              0.2896326891352256,
+              0.2480910918706038
+            ]
+          ],
+          "train_rows": 1640,
+          "validation_rows": 408
+        }
+      ]
+    },
+    "frozen_new_groups": {
+      "rows": 1486,
+      "groups": 1456,
+      "models": {
+        "classifier": {
+          "rows": 1486,
+          "log_loss": 0.9743440516994899,
+          "accuracy": 0.5174966352624495,
+          "macro_f1": 0.5145615080014662,
+          "brier": 0.5816343840248821,
+          "class_counts": [
+            503,
+            532,
+            451
+          ],
+          "class_loss": [
+            0.9656341061458413,
+            0.969989214616078,
+            0.9891952178676947
+          ],
+          "class_recall": [
+            0.5506958250497018,
+            0.543233082706767,
+            0.4501108647450111
+          ],
+          "tie_precision": 0.453125,
+          "mean_predictive_entropy": 0.9956332933848612,
+          "mean_class_probability": [
+            0.327838631956723,
+            0.33623263906817663,
+            0.33592872897510073
+          ],
+          "predicted_class_fraction": [
+            0.3465679676985195,
+            0.35195154777927323,
+            0.30148048452220727
+          ],
+          "tie_auc": 0.6810523045941921,
+          "confusion_matrix": [
+            [
+              277,
+              111,
+              115
+            ],
+            [
+              113,
+              289,
+              130
+            ],
+            [
+              125,
+              123,
+              203
+            ]
+          ],
+          "loss_decomposition": {
+            "binary_tie_log_loss": 0.5676592533535436,
+            "conditional_winner_contribution": 0.4066847983459464,
+            "sum_multiclass_loss": 0.97434405169949,
+            "decisive_rows": 1035,
+            "tie_rows": 451,
+            "conditional_winner_log_loss": 0.5838972080599771,
+            "conditional_winner_accuracy": 0.6898550724637681,
+            "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+          }
+        },
+        "judge": {
+          "rows": 1486,
+          "log_loss": 0.9878997535653314,
+          "accuracy": 0.5067294751009421,
+          "macro_f1": 0.4966050197973517,
+          "brier": 0.5891310412378821,
+          "class_counts": [
+            503,
+            532,
+            451
+          ],
+          "class_loss": [
+            0.9529410243829062,
+            0.9266061209389064,
+            1.0991912243769006
+          ],
+          "class_recall": [
+            0.5666003976143141,
+            0.5845864661654135,
+            0.34811529933481156
+          ],
+          "tie_precision": 0.4435028248587571,
+          "mean_predictive_entropy": 0.9965404972507169,
+          "mean_class_probability": [
+            0.3413145148042774,
+            0.35041487851579145,
+            0.3082706066799319
+          ],
+          "predicted_class_fraction": [
+            0.382907133243607,
+            0.37886944818304175,
+            0.23822341857335128
+          ],
+          "tie_auc": 0.6557515772786188,
+          "confusion_matrix": [
+            [
+              285,
+              117,
+              101
+            ],
+            [
+              125,
+              311,
+              96
+            ],
+            [
+              159,
+              135,
+              157
+            ]
+          ],
+          "loss_decomposition": {
+            "binary_tie_log_loss": 0.579026985926636,
+            "conditional_winner_contribution": 0.4088727676386952,
+            "sum_multiclass_loss": 0.9878997535653312,
+            "decisive_rows": 1035,
+            "tie_rows": 451,
+            "conditional_winner_log_loss": 0.5870385823295661,
+            "conditional_winner_accuracy": 0.6782608695652174,
+            "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+          }
+        },
+        "blend": {
+          "rows": 1486,
+          "log_loss": 0.9533220620029668,
+          "accuracy": 0.5585464333781965,
+          "macro_f1": 0.5517006221703746,
+          "brier": 0.5666932431413033,
+          "class_counts": [
+            503,
+            532,
+            451
+          ],
+          "class_loss": [
+            0.9284823613611809,
+            0.9207214129952334,
+            1.0194815180892915
+          ],
+          "class_recall": [
+            0.6182902584493042,
+            0.6109022556390977,
+            0.43015521064301554
+          ],
+          "tie_precision": 0.5187165775401069,
+          "mean_predictive_entropy": 1.022975026013571,
+          "mean_class_probability": [
+            0.3339740059317571,
+            0.3426896069565837,
+            0.32333638711165913
+          ],
+          "predicted_class_fraction": [
+            0.3721399730820996,
+            0.37617765814266485,
+            0.25168236877523553
+          ],
+          "tie_auc": 0.7044913611191449,
+          "confusion_matrix": [
+            [
+              311,
+              101,
+              91
+            ],
+            [
+              118,
+              325,
+              89
+            ],
+            [
+              124,
+              133,
+              194
+            ]
+          ],
+          "loss_decomposition": {
+            "binary_tie_log_loss": 0.5635305202487378,
+            "conditional_winner_contribution": 0.389791541754229,
+            "sum_multiclass_loss": 0.9533220620029668,
+            "decisive_rows": 1035,
+            "tie_rows": 451,
+            "conditional_winner_log_loss": 0.5596427353109027,
+            "conditional_winner_accuracy": 0.7120772946859903,
+            "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+          }
+        }
+      },
+      "contrasts": {
+        "judge": {
+          "gain": -0.013555701865841376,
+          "interval_95": [
+            -0.03800238291528745,
+            0.011218716622830712
+          ],
+          "groups": 1456,
+          "rows": 1486,
+          "replicates": 2000,
+          "weighted_class_contributions": [
+            0.004296514217198077,
+            0.015531497870965855,
+            -0.03338371395400531
+          ]
+        },
+        "blend": {
+          "gain": 0.021021989696523077,
+          "interval_95": [
+            0.009261605856055972,
+            0.032468132109126996
+          ],
+          "groups": 1456,
+          "rows": 1486,
+          "replicates": 2000,
+          "weighted_class_contributions": [
+            0.012575590596691902,
+            0.01763827083599551,
+            -0.009191871736164333
+          ]
+        },
+        "blend_vs_judge": {
+          "gain": 0.034577691562364454,
+          "interval_95": [
+            0.021263047571728574,
+            0.048086128591475125
+          ],
+          "groups": 1456,
+          "rows": 1486,
+          "replicates": 2000
+        }
+      },
+      "excluded_overlapping_group_rows": 50,
+      "frozen_recipe": {
+        "classifier_family": "temperature",
+        "judge_family": "temperature_tie",
+        "classifier_theta": [
+          1.214021592836944
+        ],
+        "judge_theta": [
+          0.282722556422696,
+          0.24333221847914577
+        ],
+        "judge_weight": 0.4552854936808535,
+        "fit_rows": 512,
+        "fit_groups": 497,
+        "frozen_at_unix": 1793737879.949382,
+        "current_judge_predictions_sha256": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d",
+        "fit_location": "Local CPU after completed 512-row inference; before extra-row launch",
+        "software": {
+          "numpy": "2.4.6",
+          "scipy": "1.17.1",
+          "scikit-learn": "1.9.1"
+        },
+        "source_kernel": "arseniytrushin/llm-preference-span-002-judge-consistent/2",
+        "evaluation": "Failed notebook stopped at export after all 512 rows; reuse valid predictions, fit/freeze locally, then score only remaining fixed 1536."
+      }
+    }
+  },
+  "evaluation": "Exploratory inspected dev; confirmation unused; conditional group-bootstrap intervals.",
+  "source_sha256": {
+    "scripts/analyze_span_002_followups.py": "cb56ce210ab2cccce64ec2709fe2e4fc52779806a6085387ffd3431e81537148",
+    "src/arena/span_calibration.py": "e18a3507e91900b84a5edf1d383ac9556a71456d7b425e2c087565677e8a00bc",
+    "src/arena/exposure_validation.py": "6533c3df332275d6289c8045e0725dbb21ca14afbbf24e57d9e32d5ec3bbd7c5",
+    "src/arena/preference_diagnostics.py": "d0d60f72c65ac3554b6d87e0e3dee8540f4566d4c088bb4c6ffdbc233e1eaf4f",
+    "configs/span_002.json": "64f74b7fbc987f537d92306529836637c63666da1997ebc4babfba6024a561ea",
+    "docs/SPAN_002_PROTOCOL.md": "6cfafa3784a056e3af0ad9f0776ed0c6ef85fbae577c41499e06f6d92f43039d"
+  },
+  "cached_prediction_source": {
+    "push": {
+      "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-span-002-judge-consistent",
+      "version_number": 2,
+      "error": "",
+      "ref": "/code/arseniytrushin/llm-preference-span-002-judge-consistent",
+      "invalid_model_sources": [],
+      "invalid_dataset_sources": [],
+      "invalidModelSources": [],
+      "invalidDatasetSources": []
+    },
+    "status": {
+      "status": "KernelWorkerStatus.ERROR",
+      "failure_message": ""
+    },
+    "reason": "All 512 predictions completed before NameError during recipe export; valid outputs retained.",
+    "matched_gpu_runtime": {
+      "repair_packages": [
+        "nvidia-cublas-cu12==12.8.4.1",
+        "nvidia-cuda-runtime-cu12==12.8.90"
+      ],
+      "nvidia_smi": "name, memory.total [MiB], driver_version\nTesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04\n",
+      "native_devices_both_stages": 2
+    }
+  },
+  "uniform_cohort": {
+    "all_judge_rows_current_runtime": true,
+    "historical_judge_cache_pooled": false,
+    "cached_rows_rescored": 512,
+    "mean_raw_probability_difference_vs_historical": 0.02328536980554612,
+    "max_raw_probability_difference_vs_historical": 0.30430808391961395,
+    "frozen_before_extra_scoring": true,
+    "note": "Separate current-runtime evaluation after failed historical-cache identity; same model/prompt/packing, all views single-order."
+  },
+  "consistent_gate": {
+    "reused_cached_rows": 512,
+    "remaining_rows": 1536,
+    "projected_extra_seconds_with_margin": 2432.6054459484003,
+    "remaining_session_seconds": 3459.984439611435,
+    "old_cache_pooled": false,
+    "frozen_recipe_at_unix": 1793737879.949382,
+    "throughput_passed": true
+  },
+  "session_summary": {
+    "session_seconds": 1718.4030866622925,
+    "expanded": true,
+    "cached_rows": 512,
+    "extra_rows": 1536,
+    "extra_scoring_started_at_unix": 1793738530.491461
+  },
+  "runtime": {
+    "judge_extra_rows": 1536,
+    "judge_extra_seconds": 1498.844893909,
+    "judge_seconds_per_row": 0.9758104778053385,
+    "classifier_seconds_per_row": 0.6523940623376258,
+    "projection_rows_assumption": 25000,
+    "note": "Sequential old two-order classifier + unchanged single-order judge, 20% plus 600s margin; not measured hidden runtime.",
+    "sequential_projected_seconds_with_margin": 49446.13620428893
+  },
+  "judge_summary": {
+    "mode": "dev",
+    "model_key": "gemma26",
+    "model_source": "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2",
+    "rows": 1536,
+    "both_orders": false,
+    "seconds": 1498.844893909,
+    "config_sha256": "082cf3bd9586667a143f8b2815ed6b1fb8b2db7e13456975017b62b29cad787d",
+    "label_tokens": [
+      236776,
+      236799,
+      236780
+    ],
+    "prompt_overhead": 239,
+    "truncated_rows": 517,
+    "packed_tokens_mean": 741.7721354166666,
+    "projected_25000_seconds": 24395.26194513346,
+    "weights_trained": false,
+    "blended_with_classifier": false,
+    "judge_source_sha256": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b",
+    "runtime_source_sha256": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+    "original": {
+      "rows": 1536,
+      "log_loss": 1.3921478385490087,
+      "accuracy": 0.5065104166666666,
+      "macro_f1": 0.4783261694654373,
+      "confusion_matrix": [
+        [
+          321,
+          145,
+          48
+        ],
+        [
+          147,
+          351,
+          50
+        ],
+        [
+          196,
+          172,
+          106
+        ]
+      ]
+    },
+    "swap_average": {
+      "rows": 1536,
+      "log_loss": 1.3921478385490087,
+      "accuracy": 0.5065104166666666,
+      "macro_f1": 0.4783261694654373,
+      "confusion_matrix": [
+        [
+          321,
+          145,
+          48
+        ],
+        [
+          147,
+          351,
+          50
+        ],
+        [
+          196,
+          172,
+          106
+        ]
+      ]
+    },
+    "order_flip_fraction": 0.0
+  },
+  "input_sha256": {
+    "new_judge_predictions": "e8e169ee44aafa68fc2ce5481728f7a1c107e596015792a9bcc9a4c6be30dc20",
+    "cached_judge_predictions": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d",
+    "historical_cached_ids_reference": "8b819775e18099c69fbe03001ec4d92df757fe1b395e22e5f624fb015e43ae31",
+    "new_judge_summary": "77364b42d33f7b85f6dc2129e9f898ec7c9ae06be22183c3e4e6c3388e2acfc3",
+    "frozen_cached_recipe": "9c981792fea1da76dbcc627916fc438038530129248b6db66739b50a467f46ee",
+    "expansion_sample": "f335a487865faa052dd366d838dc9d48bfdc61c6c383dd86e1dace298e628585",
+    "baseline_predictions": "5b2522d2be7fed1d490ebe6135afe97fe3863339d8c34a971027ce861f051de2",
+    "input_inventory": "cdb46bdc4ebe548f86f7103897d860ed8a457076769e46f7cef210f3edaedd98"
+  },
+  "job": "ensemble-extra",
+  "push": {
+    "url": "https://www.kaggle.com/code/arseniytrushin/llm-preference-span-002-judge-extra",
+    "version_number": 2,
+    "error": "",
+    "ref": "/code/arseniytrushin/llm-preference-span-002-judge-extra",
+    "invalid_model_sources": [],
+    "invalid_dataset_sources": [],
+    "invalidModelSources": [],
+    "invalidDatasetSources": []
+  },
+  "hardware_diagnostic": {
+    "nvidia_smi": "name, memory.total [MiB], driver_version\nTesla T4, 15360 MiB, 580.178.04\nTesla T4, 15360 MiB, 580.178.04\n",
+    "ldd_before": "\tlinux-vdso.so.1 (0x00007c579ec9f000)\n\tlibggml-base.so.0 => /kaggle/working/runtime_bin/libggml-base.so.0 (0x00007c579ebc6000)\n\tlibcudart.so.12 => not found\n\tlibcublas.so.12 => not found\n\tlibcuda.so.1 => /usr/local/nvidia/lib64/libcuda.so.1 (0x00007c578e000000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007c578dd82000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007c579eaca000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007c5793dd2000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007c578db6f000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007c579eca1000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x00007c5793d7c000)\n\tlibdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007c579eac5000)\n\tlibpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007c579eabe000)\n\tlibrt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007c579eab9000)\n",
+    "devices_before": "Available devices:\n  (none)\n",
+    "cuda12_repair": true,
+    "repair_packages": [
+      "nvidia-cublas-cu12==12.8.4.1",
+      "nvidia-cuda-runtime-cu12==12.8.90"
+    ],
+    "devices_after": "Available devices:\n  CUDA0: Tesla T4 (14911 MiB, 14806 MiB free)\n  CUDA1: Tesla T4 (14911 MiB, 14806 MiB free)\n"
+  },
+  "private_predictions_sha256": "8eab55542258667e5602f158d960866096cee6d8e2c5524a10b7df76de8b081b"
+}

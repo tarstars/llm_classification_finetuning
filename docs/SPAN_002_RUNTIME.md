@@ -83,3 +83,11 @@ All role ceilings now total **40,380 seconds**, with **2,820 seconds unallocated
 inside the unchanged 43,200-second cap. Actual resource accounting includes both
 stages and all failed work. No recipe/prompt selection uses extra labels; the
 new-group frozen comparison and the full nested comparison remain unchanged.
+
+## Completed comparison
+
+The extra stage completed all 1,536 rows and the larger comparison is analyzed.
+[H37's report](SPAN_002_H37.md) records nested gain 0.025007 and frozen new-group
+gain 0.021022 with positive paired intervals. The full sequential ensemble's
+13.74-hour projection fails the declared seven-hour guard; quality complementarity
+is supported, deployment is not adopted. All judge executions are terminal.
