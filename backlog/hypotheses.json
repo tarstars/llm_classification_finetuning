@@ -601,6 +601,15 @@
             "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-03T13:51:49+00:00",
+          "status": "running",
+          "note": "The paired_attention control reached 64 nominal cycles (half an epoch), with finite final gradients and 61 accepted updates reconstructed from the pinned scheduler. Training took 1969.19 seconds and consumed 1296288 non-padding tokens. It has 1024 canonical-row visits with two views each; random-view controls had 2048 visits and 1186094 tokens. Random/paired comparisons therefore describe an exposure tradeoff; the primary consistency contrast remains paired CE versus paired CE+KL. Prediction generation and the consistency arm are pending.",
+          "evidence": [
+            "results/span_001/live_progress_joint.json",
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
         }
       ],
       "introduced_in": 1,
