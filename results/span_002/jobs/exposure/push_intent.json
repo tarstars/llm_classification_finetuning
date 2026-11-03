@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-03T18:53:33.962312+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-002-training-exposure",
+  "max_session_seconds": 21600,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 56068.951884,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 51931.048116
+  },
+  "span_remaining_before_reservation": 42647.452116,
+  "notebook_sha256": "c51fefdf96de06bdc414e964ff6628e1b98c801c6ad7f530063c29c6fd0279e2"
+}

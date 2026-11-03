@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-03T18:43:23.403361+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-002-exposure-probe",
+  "max_session_seconds": 900,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 55516.404,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 52483.596
+  },
+  "span_remaining_before_reservation": 43200.0,
+  "notebook_sha256": "72f4d0e2edb740a36162992423375d188efc01a43fbca6abfb223dac7d584c8d"
+}

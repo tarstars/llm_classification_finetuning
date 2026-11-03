@@ -70,7 +70,9 @@ tie losses. Total compute was **4.154 two-T4 session-hours**, including a failed
 V2 adds optimizer/exposure instrumentation (E01), a conditional tie-preserving
 follow-up (H42), and a deferred reward-feature diagnostic (H41). The current v2
 goal starts with cached calibration H40 and instrumentation E01 before more
-training. Its focus has been selected; no v2 experiment has yet run.
+training. V2 is now underway: H40/E01 and the H42 stopping gate are complete;
+H03 continuation and H37 ensemble validation remain in progress. See the
+[v2 report](docs/SPAN_002_RESULTS.md) and [protocol](docs/SPAN_002_PROTOCOL.md).
 
 Read a fresh pinned-job status and numerical progress snapshot with
 `uv run python scripts/span_progress.py --job joint`. It records dated observations

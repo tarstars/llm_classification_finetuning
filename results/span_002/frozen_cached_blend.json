@@ -1,0 +1,17 @@
+{
+  "classifier_family": "temperature",
+  "judge_family": "temperature_tie",
+  "classifier_theta": [
+    1.214021592836944
+  ],
+  "judge_theta": [
+    0.2788487290385548,
+    0.24412992771510816
+  ],
+  "judge_weight": 0.44038825611610677,
+  "fit_rows": 512,
+  "fit_groups": 497,
+  "cached_judge_sha256": "8b819775e18099c69fbe03001ec4d92df757fe1b395e22e5f624fb015e43ae31",
+  "protocol_sha256": "2f7d73562a9bf3fd415b77464abcd8d66e52dd42df21f6fcb8ce6f05ea6fc335",
+  "evaluation": "New extra rows excluding cached-fit prompt groups; recipe frozen before extra inference."
+}

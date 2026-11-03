@@ -90,6 +90,15 @@ only if point gain over the classifier is at least 0.001, its interval still all
 useful benefit, and a runtime projection fits its 1.5-hour allocation. A successful
 cached blend does not establish a feasible full hidden-test ensemble.
 
+Before launching extra judge scoring, also freeze a single recipe fitted only on
+the original 512 cached rows: inner-OOF scalar weight followed by component refits
+on those rows. Save its parameters before any extra outputs. Evaluate it on extra
+rows whose prompt groups are absent from the cached fit set, retaining both frozen
+component controls. Report this new-group-only estimate alongside nested grouped
+evaluation on the combined 2,048 rows. The larger data remains exploratory; removing
+known fit-group overlap does not undo earlier development inspection. This additional
+verification was declared after the cached result, before extra-row inference.
+
 Use 2,000 paired prompt-group bootstrap draws for overall gains; report class
 contributions and intervals where supported. Intervals condition on fitted OOF
 predictions. Publish all declared results. Training useful-gain threshold is 0.005;
@@ -111,7 +120,14 @@ scheduler, Trainer and per-rank RNG state. Exact continuation requires all neces
 state and configuration at the intended checkpoint, preferably selected step 800;
 step 877 weights cannot substitute for step 800. Preserve original schedule/sampler
 semantics if continuing exactly. Toward the original one-epoch endpoint, add at most
-638 nominal cycles from step 800; endpoints at +200, +400 and the final endpoint.
+638 nominal cycles from step 800. Preserve original evaluation cadence at steps
+1000, 1200 and 1400, then evaluate the final endpoint 1438. Preserve original
+training seed 20261102 and its original 1,024-row selection sample for this stateful
+continuation; the span-001 1,024-row sample belongs to the separate paired-model
+calibration comparison. Original step-800 selection loss is 0.9787039158366522
+on its single-order selection sample. Keep original optimizer/scheduler/RNG state;
+disable loading a selected best model at the end so the fixed endpoint is primary.
+The extra stop callback compares that same single-order metric.
 Never mix a checkpoint's optimizer state with another checkpoint's adapter.
 
 If exact state is absent, label the one allowed alternative a fresh warm start:
@@ -122,7 +138,11 @@ coverage. Report accepted exposure and data overlap. Use the fixed 1,024-row pil
 for intermediate plateau checks and all 5,746 dev rows for the fixed final candidate.
 Stop after two prespecified evaluations both worse than the starting comparator by
 0.005 or more; do not start a second epoch. The final endpoint is primary; any
-intermediate best-checkpoint result is explicitly selected/exploratory.
+intermediate best-checkpoint result is explicitly selected/exploratory. Reserve
+4,500 seconds inside the H03 session for final full-dev inference and export; the
+training callback must stop early enough to leave that reserve intact. Instrumented
+continuation preserves optimizer/scheduler/RNG state and the data/schedule recipe;
+it is not a claim of bitwise reproducibility across GPU kernels or runtime versions.
 
 **H42, only if gated in:** keep the frozen selected adapter and add a fresh attention
 adapter, using the span-001 composition and packing. Predeclare two arms, paired CE
@@ -148,3 +168,17 @@ After resolving the focus and stopping/finishing all jobs, verify artifacts and
 checks, seal v2 through `advance`, verify v3 and an empty v4 draft, commit/push and
 stop before executing v3. Optional submission requires a frozen passing candidate,
 verified runtime and remaining budget; no submission is needed to close this span.
+
+Implementation event after cached quality measurements: the first H37 expansion
+reached terminal ERROR after one row and a 600-second completion timeout. Preserve
+it. Allocate the original **4,500-second recovery reserve** to one separately
+recorded judge recovery; do not enlarge the original total ceiling. Require actual
+CUDA-device discovery, check linked backend libraries, repair missing CUDA-12
+dependencies only if discovery fails, then require cached-row identity (mean raw
+probability difference <0.01, max <0.1) and a measured 32-row throughput projection
+inside the remaining recovery time before continuing the unchanged fixed sample.
+The exact pinned NVIDIA package releases were verified against PyPI metadata.
+Internet access in this recovery is for those packages; no dataset text is sent
+to package services. An ambiguous push response must be reconciled by exact remote
+version/source, or complete owned-inventory absence plus independent auth proof,
+before any new upload. This is a diagnosed recovery, not automatic execution retry.

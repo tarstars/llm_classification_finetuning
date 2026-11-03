@@ -6,7 +6,7 @@ Version **2**, active; **39** tasks. Focus for this span: H40, E01, H03, H37, H4
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **27**, ready **0**, running **2**, done **0**, rejected **0**, deferred **9**.
+Hypothesis status: planned **25**, ready **0**, running **2**, done **2**, rejected **0**, deferred **9**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -57,9 +57,9 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 43 | [E01](#e01) | P1 / planned | Instrument accepted optimizer updates and training exposure | — | low | 2…4 | 0…0.25 | 0…0 | E00 |
+| 43 | [E01](#e01) | P1 / done | Instrument accepted optimizer updates and training exposure | — | low | 2…4 | 0…0.25 | 0…0 | E00 |
 | 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
-| 7 | [H03](#h03) | P2 / planned | Complete training exposure | -0.01…+0.01 | medium | 2…6 | 0.25…1 | 4…8 | E00 |
+| 7 | [H03](#h03) | P2 / running | Complete training exposure | -0.01…+0.01 | medium | 2…6 | 0.25…1 | 4…8 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
 | 10 | [H10](#h10) | P2 / planned | Shared response utilities | -0.02…+0.02 | high | 10…24 | 1…3 | 12…28 | E00 |
@@ -69,7 +69,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 14 | [H24](#h24) | P2 / planned | Adaptive question budget | -0.008…+0.01 | medium | 6…14 | 0.5…2 | 10…22 | E00 |
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
-| 18 | [H40](#h40) | P2 / running | Constrained probability calibration | -0.002…+0.004 | low | 2…6 | 0…0 | 0…0 | E00 |
+| 18 | [H40](#h40) | P2 / done | Constrained probability calibration | -0.002…+0.004 | low | 2…6 | 0…0 | 0…0 | E00 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 19 | [H36](#h36) | P3 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
 | 20 | [H29](#h29) | P3 / planned | Human-preference prompt rubric | -0.015…+0.01 | low | 3…8 | 0.5…2 | 2…6 | E00 |
@@ -87,7 +87,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 32 | [H35](#h35) | P3 / planned | Symbolic math verification | -0.008…+0.008 | medium | 12…28 | 0.25…1 | 4…12 | E00 |
 | 33 | [H34](#h34) | P3 / planned | Executable code evidence | -0.008…+0.01 | high | 20…50 | 0.25…1 | 6…18 | E00 |
 | 34 | [H26](#h26) | P3 / planned | Hierarchical long-text comparison | -0.02…+0.02 | high | 24…60 | 2…6 | 24…60 | E00, H23 |
-| 44 | [H42](#h42) | P3 / planned | Preserve tie information during paired-order adaptation | -0.02…+0.01 | high | 6…14 | 0…3 | 6…12 | E00, H09, H40, E01 |
+| 44 | [H42](#h42) | P3 / done | Preserve tie information during paired-order adaptation | -0.02…+0.01 | high | 6…14 | 0…3 | 6…12 | E00, H09, H40, E01 |
 | 35 | [H08](#h08) | P4 / deferred | Inference quantization sensitivity | -0.005…+0.005 | medium | 4…10 | 0.5…2 | 1…4 | E00 |
 | 36 | [H12](#h12) | P4 / deferred | Soft targets for repeated votes | -0.001…+0.001 | low | 2…5 | 0…0 | 0…0 | E00 |
 | 37 | [H07](#h07) | P4 / deferred | Bidirectional comparison attention | -0.03…+0.015 | high | 16…40 | 2…6 | 12…30 | E00 |
@@ -124,7 +124,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 ### E01
 
-**Instrument accepted optimizer updates and training exposure** — P1, planned, risk low.
+**Instrument accepted optimizer updates and training exposure** — P1, done, risk low.
 
 Direct per-cycle logging can make future optimizer and data-exposure comparisons auditable instead of relying only on nominal Trainer steps.
 
@@ -151,6 +151,8 @@ Direct per-cycle logging can make future optimizer and data-exposure comparisons
 **References:** [results/span_001/joint_results.json](results/span_001/joint_results.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md); [docs/SPAN_001_RESULTS.md](docs/SPAN_001_RESULTS.md)
 
 - 2026-11-03T15:15:26+00:00 — planned: Four real pilots had 64 nominal cycles but 61 accepted updates; preserve the measurement gap as a v2 prerequisite rather than repeating v1. Evidence: [results/span_001/joint_results.json](results/span_001/joint_results.json)
+- 2026-11-03T18:37:17+00:00 — running: Preparing direct per-rank accepted/skipped-step and exposure logging with a real CUDA forced-overflow/resume probe; capped at 900 session seconds; docs/SPAN_002_PROTOCOL.md.
+- 2026-11-03T18:48:34+00:00 — done: Actual two-rank CUDA forced-overflow/resume probe passed: 5 nominal cycles, 4 accepted, 1 skipped; parameter changes, scaler/scheduler and private exposure counters verified. Torch CUDA build changed cu128 to cu130; disclose in continuation. Evidence: [docs/SPAN_002_E01.md](docs/SPAN_002_E01.md)
 
 ### H02
 
@@ -182,7 +184,7 @@ An 8–9B supervised preference classifier may learn distinctions missed by Qwen
 
 ### H03
 
-**Complete training exposure** — P2, planned, risk medium.
+**Complete training exposure** — P2, running, risk medium.
 
 The remaining exposure to one epoch may still help, despite the late plateau.
 
@@ -207,6 +209,8 @@ The remaining exposure to one epoch may still help, despite the late plateau.
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
 **References:** [ATTEMPT_002_RESULTS.md](ATTEMPT_002_RESULTS.md); [docs/ATTEMPT_002.md](docs/ATTEMPT_002.md)
+
+- 2026-11-03T18:37:18+00:00 — running: Immutable original output confirms complete state files at checkpoints 800 and 877. Preparing continuation from selected 800, subject to E01 CUDA verification; resume inventory results/span_002/resume_inventory.json.
 
 ### H05
 
@@ -466,7 +470,7 @@ Training and inference with more retained context may improve truncated comparis
 
 ### H40
 
-**Constrained probability calibration** — P2, running, risk low.
+**Constrained probability calibration** — P2, done, risk low.
 
 A low-capacity symmetric extension to temperature scaling may recover a small remaining calibration error.
 
@@ -494,6 +498,7 @@ A low-capacity symmetric extension to temperature scaling may recover a small re
 
 - 2026-11-03T15:15:26+00:00 — planned: Planning revision for v2 carryover only: prioritize the cached calibration control before new GPU work, given paired-model tie-probability drift with nearly unchanged tie AUC. H40 was not executed during v1. Evidence: [results/span_001/joint_diagnostics.json](results/span_001/joint_diagnostics.json)
 - 2026-11-03T18:32:39+00:00 — running: Starting predeclared nested grouped calibration on cached 5746-row baseline and fixed 1024-row paired cohort; protocol docs/SPAN_002_PROTOCOL.md, seed 20261119, no GPU.
+- 2026-11-03T18:43:17+00:00 — done: Nested grouped calibration completed: full-dev gain 0.0011325, 95% group interval [-0.0005643,0.0029542]. Paired tie/overall gaps pass the predeclared H42 practical stopping gate; no GPU, no promotion. Evidence: [docs/SPAN_002_H40.md](docs/SPAN_002_H40.md)
 
 ### H22
 
@@ -973,7 +978,7 @@ Chunk encoding plus learned aggregation may retain evidence beyond one truncated
 
 ### H42
 
-**Preserve tie information during paired-order adaptation** — P3, planned, risk high.
+**Preserve tie information during paired-order adaptation** — P3, done, risk high.
 
 Tie-preserving adaptation may retain reduced position bias without the current loss regression, if simple calibration cannot already explain the tradeoff.
 
@@ -993,13 +998,15 @@ Tie-preserving adaptation may retain reduced position bias without the current l
 
 **Revision:** New v2 follow-up from measured v1 order and tie behavior; no execution during v1.
 
-**Depends on:** E00, H09, H40, E01. Currently unmet: H40, E01.
+**Depends on:** E00, H09, H40, E01. Currently unmet: none.
 
 **Origin:** introduced in v2; discovered during v1; derived from H09.
 
 **References:** [results/span_001/joint_results.json](results/span_001/joint_results.json); [results/span_001/joint_diagnostics.json](results/span_001/joint_diagnostics.json); [docs/SPAN_001_RESULTS.md](docs/SPAN_001_RESULTS.md)
 
 - 2026-11-03T15:15:26+00:00 — planned: Measured removal of order bias was canceled by worse tie loss; test calibration first, with any tie-preserving training conditional and outside v1. Evidence: [results/span_001/joint_diagnostics.json](results/span_001/joint_diagnostics.json)
+- 2026-11-03T18:48:34+00:00 — running: Inspecting the predeclared cached calibration stopping gate after H40 and E01 completed; no GPU launch.
+- 2026-11-03T18:48:34+00:00 — done: Stopped at the declared calibration gate: paired KL minus matched frozen loss -0.000151 and tie-class gap +0.001537, both within tolerance. No tie-anchor training performed or GPU used. Evidence: [docs/SPAN_002_H42.md](docs/SPAN_002_H42.md)
 
 ### H08
 

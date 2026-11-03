@@ -1,0 +1,15 @@
+{
+  "job": "ensemble-expansion",
+  "kernel": "arseniytrushin/llm-preference-span-002-judge-expansion",
+  "version": 1,
+  "status": "KernelWorkerStatus.ERROR",
+  "status_observed_at": "2026-11-03T19:01:36.516654+00:00",
+  "log_reader_exit_code": 0,
+  "log_snapshot_mtime": "2026-11-03T19:01:41.219659+00:00",
+  "JUDGE_PROGRESS": {
+    "rows": 1,
+    "total": 1536,
+    "elapsed_seconds": 350.603803143
+  },
+  "last_snapshot_phase": "judge_scoring_logs_available"
+}

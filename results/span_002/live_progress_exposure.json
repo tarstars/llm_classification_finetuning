@@ -1,0 +1,18 @@
+{
+  "job": "exposure",
+  "kernel": "arseniytrushin/llm-preference-span-002-exposure",
+  "version": 1,
+  "status": "KernelWorkerStatus.RUNNING",
+  "status_observed_at": "2026-11-03T19:11:29.447388+00:00",
+  "log_reader_exit_code": 0,
+  "log_snapshot_mtime": "2026-11-03T19:11:55.695200+00:00",
+  "last_snapshot_phase": "training_logs_available",
+  "JOINT_PROGRESS": {
+    "step": 830,
+    "elapsed_seconds": 753.7846530979999,
+    "loss": 1.0365699768066405,
+    "grad_norm": 2.7688581943511963,
+    "learning_rate": 2.0967181013467617e-05,
+    "epoch": 0.5774917376935119
+  }
+}

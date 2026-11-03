@@ -1,0 +1,1934 @@
+{
+  "span": 2,
+  "stage": "calibration",
+  "observed_at": "2026-11-03T18:33:14.669474+00:00",
+  "evaluation": "Exploratory development; confirmation unused; intervals conditional on fitted OOF predictions.",
+  "config": {
+    "span": 2,
+    "seed": 20261119,
+    "outer_group_folds": 5,
+    "inner_group_folds": 3,
+    "classifier_temperature_bounds": [
+      0.5,
+      3.0
+    ],
+    "judge_temperature_bounds": [
+      0.25,
+      8.0
+    ],
+    "tie_intercept_bounds": [
+      -1.0,
+      1.0
+    ],
+    "calibration_families": [
+      "temperature",
+      "temperature_tie",
+      "symmetric_vector"
+    ],
+    "bootstrap_group_replicates": 2000,
+    "cheap_useful_gain": 0.001,
+    "training_useful_gain": 0.005,
+    "tie_deficit_loss_tolerance": 0.001,
+    "tie_deficit_class_loss_tolerance": 0.02,
+    "gpu_session_seconds_cap": 43200,
+    "job_seconds_caps": {
+      "instrumentation": 900,
+      "exposure": 21600,
+      "tie_anchor": 10800,
+      "ensemble_expansion": 5400
+    },
+    "recovery_reserve_seconds": 4500,
+    "baseline_full_dev_rows": 5746,
+    "paired_dev_rows": 1024,
+    "ensemble_cached_rows": 512,
+    "ensemble_expanded_rows": 2048,
+    "max_length": 1024,
+    "h03_max_added_cycles": 638,
+    "h03_intermediate_added_cycles": [
+      200,
+      400
+    ],
+    "h03_warm_start_learning_rate": 1e-05,
+    "h03_warm_start_warmup_cycles": 16,
+    "h42_accepted_updates": 64,
+    "h42_max_nominal_cycles": 80,
+    "h42_learning_rate": 2e-05,
+    "h42_consistency_weight": 0.1,
+    "h42_anchor_weight": 1.0,
+    "confirmation_used": false
+  },
+  "source_sha256": {
+    "configs/span_002.json": "ecf40fdf50166c78a7791fca4d06274a7bb01382fd054b74957a6080b408acad",
+    "docs/SPAN_002_PROTOCOL.md": "0dd4bc483f1da72571a848fbb63fca0993650ee4e91e0c60a81c4bb347636b68",
+    "scripts/analyze_span_002.py": "aca072218f0cfbefff2df457f6fcf46d43cf8e7c2d60100e8f4d00c0b6195471",
+    "src/arena/span_calibration.py": "e18a3507e91900b84a5edf1d383ac9556a71456d7b425e2c087565677e8a00bc"
+  },
+  "cohorts": {
+    "full_baseline": {
+      "rows": 5746,
+      "groups": 5211,
+      "models": {
+        "frozen": {
+          "raw": {
+            "rows": 5746,
+            "log_loss": 0.9773837072913087,
+            "accuracy": 0.5273233553776541,
+            "macro_f1": 0.5246110105826401,
+            "brier": 0.5831936008352668,
+            "class_counts": [
+              2006,
+              1965,
+              1775
+            ],
+            "class_loss": [
+              0.9630662560447812,
+              0.9692196217961039,
+              1.0026024313468647
+            ],
+            "class_recall": [
+              0.5598205383848455,
+              0.5603053435114503,
+              0.4540845070422535
+            ],
+            "tie_precision": 0.46189111747851,
+            "mean_predictive_entropy": 1.0235091632125364,
+            "mean_class_probability": [
+              0.3313706044370482,
+              0.3314486625085659,
+              0.33718073305438595
+            ],
+            "predicted_class_fraction": [
+              0.3482422554820745,
+              0.3480682213713888,
+              0.30368952314653674
+            ],
+            "tie_auc": 0.6679208770629317,
+            "confusion_matrix": [
+              [
+                1123,
+                412,
+                471
+              ],
+              [
+                396,
+                1101,
+                468
+              ],
+              [
+                482,
+                487,
+                806
+              ]
+            ]
+          },
+          "folds": [
+            {
+              "families": {
+                "temperature": [
+                  1.3738460657445983
+                ],
+                "temperature_tie": [
+                  1.3682495676473898,
+                  -0.1286501186111861
+                ],
+                "symmetric_vector": [
+                  1.3293515719261497,
+                  1.4539743875324478,
+                  -0.1451810561682178
+                ]
+              },
+              "selection": {
+                "chosen": "symmetric_vector",
+                "inner_loss": {
+                  "temperature": 0.970447097575939,
+                  "temperature_tie": 0.9688209058389553,
+                  "symmetric_vector": 0.9687810794201872
+                },
+                "theta": [
+                  1.3293515719261497,
+                  1.4539743875324478,
+                  -0.1451810561682178
+                ]
+              },
+              "train_rows": 4596,
+              "validation_rows": 1150
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.378487731390037
+                ],
+                "temperature_tie": [
+                  1.3735188278917143,
+                  -0.13435094732394667
+                ],
+                "symmetric_vector": [
+                  1.3557226459577933,
+                  1.4109892518936105,
+                  -0.141836038535647
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9689038738414074,
+                  "temperature_tie": 0.9671249212197195,
+                  "symmetric_vector": 0.967191797612859
+                },
+                "theta": [
+                  1.3735188278917143,
+                  -0.13435094732394667
+                ]
+              },
+              "train_rows": 4599,
+              "validation_rows": 1147
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.396361350222602
+                ],
+                "temperature_tie": [
+                  1.3901580571534617,
+                  -0.12205891273980796
+                ],
+                "symmetric_vector": [
+                  1.3143649663906936,
+                  1.5630980854871788,
+                  -0.15418935713905432
+                ]
+              },
+              "selection": {
+                "chosen": "symmetric_vector",
+                "inner_loss": {
+                  "temperature": 0.9695261394715048,
+                  "temperature_tie": 0.968108340782052,
+                  "symmetric_vector": 0.9676332357137996
+                },
+                "theta": [
+                  1.3143649663906936,
+                  1.5630980854871788,
+                  -0.15418935713905432
+                ]
+              },
+              "train_rows": 4596,
+              "validation_rows": 1150
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.378878150035294
+                ],
+                "temperature_tie": [
+                  1.3742273466425454,
+                  -0.13628086769848352
+                ],
+                "symmetric_vector": [
+                  1.3128698162415402,
+                  1.5066421506990804,
+                  -0.16265890401432645
+                ]
+              },
+              "selection": {
+                "chosen": "symmetric_vector",
+                "inner_loss": {
+                  "temperature": 0.9687713197384676,
+                  "temperature_tie": 0.9669594166568012,
+                  "symmetric_vector": 0.966716491827192
+                },
+                "theta": [
+                  1.3128698162415402,
+                  1.5066421506990804,
+                  -0.16265890401432645
+                ]
+              },
+              "train_rows": 4597,
+              "validation_rows": 1149
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.3974862485940238
+                ],
+                "temperature_tie": [
+                  1.3931053181730424,
+                  -0.13994519700705874
+                ],
+                "symmetric_vector": [
+                  1.384452455872892,
+                  1.4111731378205763,
+                  -0.14363688255704868
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9672961327187394,
+                  "temperature_tie": 0.9653736413643184,
+                  "symmetric_vector": 0.9654866379498682
+                },
+                "theta": [
+                  1.3931053181730424,
+                  -0.13994519700705874
+                ]
+              },
+              "train_rows": 4596,
+              "validation_rows": 1150
+            }
+          ],
+          "families": {
+            "temperature": {
+              "rows": 5746,
+              "log_loss": 0.9688724657954526,
+              "accuracy": 0.5273233553776541,
+              "macro_f1": 0.5246110105826401,
+              "brier": 0.5776929990780658,
+              "class_counts": [
+                2006,
+                1965,
+                1775
+              ],
+              "class_loss": [
+                0.9483955311895782,
+                0.9604968452889769,
+                1.001286451775514
+              ],
+              "class_recall": [
+                0.5598205383848455,
+                0.5603053435114503,
+                0.4540845070422535
+              ],
+              "tie_precision": 0.46189111747851,
+              "mean_predictive_entropy": 0.9687795324838744,
+              "mean_class_probability": [
+                0.33260657890694717,
+                0.3321738794426529,
+                0.33521954165040047
+              ],
+              "predicted_class_fraction": [
+                0.3482422554820745,
+                0.3480682213713888,
+                0.30368952314653674
+              ],
+              "tie_auc": 0.6675775428192423,
+              "confusion_matrix": [
+                [
+                  1123,
+                  412,
+                  471
+                ],
+                [
+                  396,
+                  1101,
+                  468
+                ],
+                [
+                  482,
+                  487,
+                  806
+                ]
+              ]
+            },
+            "temperature_tie": {
+              "rows": 5746,
+              "log_loss": 0.9671787589334625,
+              "accuracy": 0.5316742081447964,
+              "macro_f1": 0.5226713640735965,
+              "brier": 0.5764225610093535,
+              "class_counts": [
+                2006,
+                1965,
+                1775
+              ],
+              "class_loss": [
+                0.9094389158347703,
+                0.9218161509905908,
+                1.0826512377299242
+              ],
+              "class_recall": [
+                0.6031904287138584,
+                0.6010178117048346,
+                0.37408450704225354
+              ],
+              "tie_precision": 0.5018896447467877,
+              "mean_predictive_entropy": 0.9670213204474987,
+              "mean_class_probability": [
+                0.3458023218530699,
+                0.3452883249082866,
+                0.3089093532386437
+              ],
+              "predicted_class_fraction": [
+                0.38391924817264184,
+                0.38583362339018445,
+                0.23024712843717368
+              ],
+              "tie_auc": 0.6675971213835519,
+              "confusion_matrix": [
+                [
+                  1210,
+                  475,
+                  321
+                ],
+                [
+                  446,
+                  1181,
+                  338
+                ],
+                [
+                  550,
+                  561,
+                  664
+                ]
+              ]
+            },
+            "symmetric_vector": {
+              "rows": 5746,
+              "log_loss": 0.9676065340851825,
+              "accuracy": 0.5321963104768535,
+              "macro_f1": 0.5238412385184589,
+              "brier": 0.5766514468117322,
+              "class_counts": [
+                2006,
+                1965,
+                1775
+              ],
+              "class_loss": [
+                0.9102320710481834,
+                0.9221658656693158,
+                1.0827524981918861
+              ],
+              "class_recall": [
+                0.6006979062811565,
+                0.5984732824427481,
+                0.38140845070422535
+              ],
+              "tie_precision": 0.5011102886750555,
+              "mean_predictive_entropy": 0.9666620275077471,
+              "mean_class_probability": [
+                0.3456812612897866,
+                0.34526883871298386,
+                0.3090498999972301
+              ],
+              "predicted_class_fraction": [
+                0.3814827706230421,
+                0.38339714584058476,
+                0.23512008353637312
+              ],
+              "tie_auc": 0.6675068897393427,
+              "confusion_matrix": [
+                [
+                  1205,
+                  473,
+                  328
+                ],
+                [
+                  443,
+                  1176,
+                  346
+                ],
+                [
+                  544,
+                  554,
+                  677
+                ]
+              ]
+            },
+            "nested_selected": {
+              "rows": 5746,
+              "log_loss": 0.9677399700944553,
+              "accuracy": 0.5320222763661677,
+              "macro_f1": 0.5236295782999058,
+              "brier": 0.5767143072640754,
+              "class_counts": [
+                2006,
+                1965,
+                1775
+              ],
+              "class_loss": [
+                0.9103188460394263,
+                0.9224058438315389,
+                1.08282072105841
+              ],
+              "class_recall": [
+                0.6006979062811565,
+                0.5984732824427481,
+                0.38084507042253524
+              ],
+              "tie_precision": 0.5011119347664937,
+              "mean_predictive_entropy": 0.9666349483058023,
+              "mean_class_probability": [
+                0.34567171799410623,
+                0.34525425244360397,
+                0.3090740295622898
+              ],
+              "predicted_class_fraction": [
+                0.3816568047337278,
+                0.38357117995127044,
+                0.23477201531500175
+              ],
+              "tie_auc": 0.6674132531274273,
+              "confusion_matrix": [
+                [
+                  1205,
+                  474,
+                  327
+                ],
+                [
+                  443,
+                  1176,
+                  346
+                ],
+                [
+                  545,
+                  554,
+                  676
+                ]
+              ]
+            }
+          },
+          "nested_gain_vs_temperature": {
+            "gain": 0.001132495700997212,
+            "interval_95": [
+              -0.0005643220873635243,
+              0.0029542135675369556
+            ],
+            "groups": 5211,
+            "rows": 5746,
+            "replicates": 2000,
+            "weighted_class_contributions": [
+              0.013293043928159543,
+              0.013026247452813422,
+              -0.025186795679975754
+            ]
+          }
+        }
+      },
+      "historically_calibrated_deployed": {
+        "rows": 5746,
+        "log_loss": 0.9688254519759955,
+        "accuracy": 0.5273233553776541,
+        "macro_f1": 0.5246110105826401,
+        "brier": 0.5776749160955102,
+        "class_counts": [
+          2006,
+          1965,
+          1775
+        ],
+        "class_loss": [
+          0.9483985971476837,
+          0.9603955879903291,
+          1.0012428905773634
+        ],
+        "class_recall": [
+          0.5598205383848455,
+          0.5603053435114503,
+          0.4540845070422535
+        ],
+        "tie_precision": 0.46189111747851,
+        "mean_predictive_entropy": 0.9688255326958165,
+        "mean_class_probability": [
+          0.33259733124241636,
+          0.33218127826216454,
+          0.33522139049541905
+        ],
+        "predicted_class_fraction": [
+          0.3482422554820745,
+          0.3480682213713888,
+          0.30368952314653674
+        ],
+        "tie_auc": 0.6676184024317143,
+        "confusion_matrix": [
+          [
+            1123,
+            412,
+            471
+          ],
+          [
+            396,
+            1101,
+            468
+          ],
+          [
+            482,
+            487,
+            806
+          ]
+        ]
+      }
+    },
+    "paired_pilot": {
+      "rows": 1024,
+      "groups": 990,
+      "models": {
+        "frozen": {
+          "raw": {
+            "rows": 1024,
+            "log_loss": 0.9823993526305312,
+            "accuracy": 0.5224609375,
+            "macro_f1": 0.5197929772875352,
+            "brier": 0.5863246954219944,
+            "class_counts": [
+              340,
+              361,
+              323
+            ],
+            "class_loss": [
+              0.9603257263320496,
+              0.9656862107361389,
+              1.0243141426161642
+            ],
+            "class_recall": [
+              0.5705882352941176,
+              0.5512465373961218,
+              0.43962848297213625
+            ],
+            "tie_precision": 0.4797297297297297,
+            "mean_predictive_entropy": 1.0222666646772296,
+            "mean_class_probability": [
+              0.3307038589207208,
+              0.3357845395281465,
+              0.33351160155113285
+            ],
+            "predicted_class_fraction": [
+              0.345703125,
+              0.365234375,
+              0.2890625
+            ],
+            "tie_auc": 0.6596105519315617,
+            "confusion_matrix": [
+              [
+                194,
+                79,
+                67
+              ],
+              [
+                75,
+                199,
+                87
+              ],
+              [
+                85,
+                96,
+                142
+              ]
+            ]
+          },
+          "folds": [
+            {
+              "families": {
+                "temperature": [
+                  1.3980675817607446
+                ],
+                "temperature_tie": [
+                  1.3929663631453144,
+                  -0.058426154434912766
+                ],
+                "symmetric_vector": [
+                  1.4003033443546993,
+                  1.3743179583366791,
+                  -0.05529097051219301
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9689842083029644,
+                  "temperature_tie": 0.968862113695706,
+                  "symmetric_vector": 0.9740644512519182
+                },
+                "theta": [
+                  1.3929663631453144,
+                  -0.058426154434912766
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.3702616033870494
+                ],
+                "temperature_tie": [
+                  1.3645405526978998,
+                  -0.0720701935283851
+                ],
+                "symmetric_vector": [
+                  1.3942397364128418,
+                  1.2955270479084597,
+                  -0.059517242952310395
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9648220584208606,
+                  "temperature_tie": 0.9644877188775676,
+                  "symmetric_vector": 0.9656538682522624
+                },
+                "theta": [
+                  1.3645405526978998,
+                  -0.0720701935283851
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.257948415379204
+                ],
+                "temperature_tie": [
+                  1.2525022145418327,
+                  -0.08192628123305984
+                ],
+                "symmetric_vector": [
+                  1.2356487649099517,
+                  1.294386490245416,
+                  -0.08914347143821735
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9857579248869487,
+                  "temperature_tie": 0.9851191263037379,
+                  "symmetric_vector": 0.9877915083396391
+                },
+                "theta": [
+                  1.2525022145418327,
+                  -0.08192628123305984
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.2939065030147112
+                ],
+                "temperature_tie": [
+                  1.2887082976483255,
+                  -0.09186764492293231
+                ],
+                "symmetric_vector": [
+                  1.2832666348937394,
+                  1.301381697587069,
+                  -0.0941610942447206
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9823230901586772,
+                  "temperature_tie": 0.9815898359786359,
+                  "symmetric_vector": 0.9817915248389921
+                },
+                "theta": [
+                  1.2887082976483255,
+                  -0.09186764492293231
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.3028862864971409
+                ],
+                "temperature_tie": [
+                  1.2976465750844144,
+                  -0.0740112870331835
+                ],
+                "symmetric_vector": [
+                  1.2769520904690193,
+                  1.3492621298829193,
+                  -0.08273814760474182
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9815708040368488,
+                  "temperature_tie": 0.9812324133407357,
+                  "symmetric_vector": 0.9813789335102436
+                },
+                "theta": [
+                  1.2976465750844144,
+                  -0.0740112870331835
+                ]
+              },
+              "train_rows": 820,
+              "validation_rows": 204
+            }
+          ],
+          "families": {
+            "temperature": {
+              "rows": 1024,
+              "log_loss": 0.977479259287123,
+              "accuracy": 0.5224609375,
+              "macro_f1": 0.5197929772875352,
+              "brier": 0.5827718488350715,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.951138566386229,
+                0.958065091148947,
+                1.0269044923650967
+              ],
+              "class_recall": [
+                0.5705882352941176,
+                0.5512465373961218,
+                0.43962848297213625
+              ],
+              "tie_precision": 0.4797297297297297,
+              "mean_predictive_entropy": 0.9759515691398615,
+              "mean_class_probability": [
+                0.3313413024641177,
+                0.3378215390557342,
+                0.3308371584801486
+              ],
+              "predicted_class_fraction": [
+                0.345703125,
+                0.365234375,
+                0.2890625
+              ],
+              "tie_auc": 0.6591026529990327,
+              "confusion_matrix": [
+                [
+                  194,
+                  79,
+                  67
+                ],
+                [
+                  75,
+                  199,
+                  87
+                ],
+                [
+                  85,
+                  96,
+                  142
+                ]
+              ]
+            },
+            "temperature_tie": {
+              "rows": 1024,
+              "log_loss": 0.9769864316850738,
+              "accuracy": 0.51953125,
+              "macro_f1": 0.5137747652472148,
+              "brier": 0.5823808555096406,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.9287526179740501,
+                0.935440947962035,
+                1.0741920548608168
+              ],
+              "class_recall": [
+                0.5882352941176471,
+                0.5706371191135734,
+                0.39009287925696595
+              ],
+              "tie_precision": 0.490272373540856,
+              "mean_predictive_entropy": 0.9752979743999568,
+              "mean_class_probability": [
+                0.33899710343730255,
+                0.3454307892860117,
+                0.31557210727668533
+              ],
+              "predicted_class_fraction": [
+                0.3623046875,
+                0.38671875,
+                0.2509765625
+              ],
+              "tie_auc": 0.659040821824638,
+              "confusion_matrix": [
+                [
+                  200,
+                  84,
+                  56
+                ],
+                [
+                  80,
+                  206,
+                  75
+                ],
+                [
+                  91,
+                  106,
+                  126
+                ]
+              ]
+            },
+            "symmetric_vector": {
+              "rows": 1024,
+              "log_loss": 0.9772970230727533,
+              "accuracy": 0.5185546875,
+              "macro_f1": 0.5128746508991999,
+              "brier": 0.5824065708720234,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.9295586855674615,
+                0.9357630939817047,
+                1.0739681783472663
+              ],
+              "class_recall": [
+                0.5882352941176471,
+                0.5678670360110804,
+                0.39009287925696595
+              ],
+              "tie_precision": 0.4864864864864865,
+              "mean_predictive_entropy": 0.9753286266404426,
+              "mean_class_probability": [
+                0.33889707174453354,
+                0.3455049805869834,
+                0.3155979476684823
+              ],
+              "predicted_class_fraction": [
+                0.3623046875,
+                0.384765625,
+                0.2529296875
+              ],
+              "tie_auc": 0.659663550081043,
+              "confusion_matrix": [
+                [
+                  200,
+                  83,
+                  57
+                ],
+                [
+                  80,
+                  205,
+                  76
+                ],
+                [
+                  91,
+                  106,
+                  126
+                ]
+              ]
+            },
+            "nested_selected": {
+              "rows": 1024,
+              "log_loss": 0.9769864316850738,
+              "accuracy": 0.51953125,
+              "macro_f1": 0.5137747652472148,
+              "brier": 0.5823808555096406,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.9287526179740501,
+                0.935440947962035,
+                1.0741920548608168
+              ],
+              "class_recall": [
+                0.5882352941176471,
+                0.5706371191135734,
+                0.39009287925696595
+              ],
+              "tie_precision": 0.490272373540856,
+              "mean_predictive_entropy": 0.9752979743999568,
+              "mean_class_probability": [
+                0.33899710343730255,
+                0.3454307892860117,
+                0.31557210727668533
+              ],
+              "predicted_class_fraction": [
+                0.3623046875,
+                0.38671875,
+                0.2509765625
+              ],
+              "tie_auc": 0.659040821824638,
+              "confusion_matrix": [
+                [
+                  200,
+                  84,
+                  56
+                ],
+                [
+                  80,
+                  206,
+                  75
+                ],
+                [
+                  91,
+                  106,
+                  126
+                ]
+              ]
+            }
+          },
+          "nested_gain_vs_temperature": {
+            "gain": 0.0004928276020492229,
+            "interval_95": [
+              -0.0016012464873876925,
+              0.0025642786295050064
+            ],
+            "groups": 990,
+            "rows": 1024,
+            "replicates": 2000,
+            "weighted_class_contributions": [
+              0.007432834433731244,
+              0.007975894228979711,
+              -0.014915901060661731
+            ]
+          }
+        },
+        "paired_ce": {
+          "raw": {
+            "rows": 1024,
+            "log_loss": 0.9796002814589742,
+            "accuracy": 0.515625,
+            "macro_f1": 0.5016920610996056,
+            "brier": 0.5841925137554977,
+            "class_counts": [
+              340,
+              361,
+              323
+            ],
+            "class_loss": [
+              0.9079740467265146,
+              0.9127199179640386,
+              1.1297449595726212
+            ],
+            "class_recall": [
+              0.6147058823529412,
+              0.6066481994459834,
+              0.30959752321981426
+            ],
+            "tie_precision": 0.5076142131979695,
+            "mean_predictive_entropy": 1.008392726360141,
+            "mean_class_probability": [
+              0.3476204789914701,
+              0.35305876483918835,
+              0.299320756169342
+            ],
+            "predicted_class_fraction": [
+              0.3955078125,
+              0.412109375,
+              0.1923828125
+            ],
+            "tie_auc": 0.6584225100806896,
+            "confusion_matrix": [
+              [
+                209,
+                86,
+                45
+              ],
+              [
+                90,
+                219,
+                52
+              ],
+              [
+                106,
+                117,
+                100
+              ]
+            ]
+          },
+          "folds": [
+            {
+              "families": {
+                "temperature": [
+                  1.255178629148238
+                ],
+                "temperature_tie": [
+                  1.3006599797178326,
+                  0.1541286472722581
+                ],
+                "symmetric_vector": [
+                  1.3451934370208434,
+                  1.201639359677812,
+                  0.15649929901949847
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9700487616912327,
+                  "temperature_tie": 0.9678936412551913,
+                  "symmetric_vector": 0.9724233240070993
+                },
+                "theta": [
+                  1.3006599797178326,
+                  0.1541286472722581
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.232031457434805
+                ],
+                "temperature_tie": [
+                  1.2690765417708412,
+                  0.13646605860867989
+                ],
+                "symmetric_vector": [
+                  1.3398317034199059,
+                  1.1247655918154147,
+                  0.141952176200805
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9656396884495905,
+                  "temperature_tie": 0.9642003111519247,
+                  "symmetric_vector": 0.9650174134444355
+                },
+                "theta": [
+                  1.2690765417708412,
+                  0.13646605860867989
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.1338393440212964
+                ],
+                "temperature_tie": [
+                  1.1619714564964678,
+                  0.10832981094071424
+                ],
+                "symmetric_vector": [
+                  1.19379679987837,
+                  1.092878160420257,
+                  0.11025015662312464
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9865998885663886,
+                  "temperature_tie": 0.985701552861894,
+                  "symmetric_vector": 0.9879396796383113
+                },
+                "theta": [
+                  1.1619714564964678,
+                  0.10832981094071424
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.1717590813026888
+                ],
+                "temperature_tie": [
+                  1.1986176861975566,
+                  0.10462134887972253
+                ],
+                "symmetric_vector": [
+                  1.2419332600279105,
+                  1.1109153308020425,
+                  0.1079079824592774
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9824104544268847,
+                  "temperature_tie": 0.9814963273678684,
+                  "symmetric_vector": 0.9815934596646906
+                },
+                "theta": [
+                  1.1986176861975566,
+                  0.10462134887972253
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.1739071032451427
+                ],
+                "temperature_tie": [
+                  1.2072262082420562,
+                  0.12375082968343783
+                ],
+                "symmetric_vector": [
+                  1.2346800804930096,
+                  1.1476326408887154,
+                  0.12518239794965294
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9823138085339377,
+                  "temperature_tie": 0.9814146591964493,
+                  "symmetric_vector": 0.9814358717929622
+                },
+                "theta": [
+                  1.2072262082420562,
+                  0.12375082968343783
+                ]
+              },
+              "train_rows": 820,
+              "validation_rows": 204
+            }
+          ],
+          "families": {
+            "temperature": {
+              "rows": 1024,
+              "log_loss": 0.978104823494105,
+              "accuracy": 0.515625,
+              "macro_f1": 0.5016920610996056,
+              "brier": 0.5831980040786182,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.8953289544786123,
+                0.9002589972208487,
+                1.152241475970616
+              ],
+              "class_recall": [
+                0.6147058823529412,
+                0.6066481994459834,
+                0.30959752321981426
+              ],
+              "tie_precision": 0.5076142131979695,
+              "mean_predictive_entropy": 0.9767209983195949,
+              "mean_class_probability": [
+                0.35054135742940723,
+                0.3570606581989621,
+                0.2923979843716303
+              ],
+              "predicted_class_fraction": [
+                0.3955078125,
+                0.412109375,
+                0.1923828125
+              ],
+              "tie_auc": 0.6581310202585426,
+              "confusion_matrix": [
+                [
+                  209,
+                  86,
+                  45
+                ],
+                [
+                  90,
+                  219,
+                  52
+                ],
+                [
+                  106,
+                  117,
+                  100
+                ]
+              ]
+            },
+            "temperature_tie": {
+              "rows": 1024,
+              "log_loss": 0.9769843130341751,
+              "accuracy": 0.517578125,
+              "macro_f1": 0.5113473484416359,
+              "brier": 0.5826821934157407,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.9286988848248316,
+                0.9338440725038942,
+                1.0760266425159342
+              ],
+              "class_recall": [
+                0.5852941176470589,
+                0.5734072022160664,
+                0.38390092879256965
+              ],
+              "tie_precision": 0.4940239043824701,
+              "mean_predictive_entropy": 0.9751352883053048,
+              "mean_class_probability": [
+                0.3388680722839273,
+                0.3455584024823346,
+                0.3155735252337384
+              ],
+              "predicted_class_fraction": [
+                0.3681640625,
+                0.38671875,
+                0.2451171875
+              ],
+              "tie_auc": 0.6579234441730742,
+              "confusion_matrix": [
+                [
+                  199,
+                  86,
+                  55
+                ],
+                [
+                  82,
+                  207,
+                  72
+                ],
+                [
+                  96,
+                  103,
+                  124
+                ]
+              ]
+            },
+            "symmetric_vector": {
+              "rows": 1024,
+              "log_loss": 0.9769427147108986,
+              "accuracy": 0.5205078125,
+              "macro_f1": 0.5140957285640818,
+              "brier": 0.5824265205668201,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.929344081633795,
+                0.9340441875747876,
+                1.0749919516841226
+              ],
+              "class_recall": [
+                0.5911764705882353,
+                0.5761772853185596,
+                0.38390092879256965
+              ],
+              "tie_precision": 0.5020242914979757,
+              "mean_predictive_entropy": 0.9749110577009248,
+              "mean_class_probability": [
+                0.33881370426795254,
+                0.34556353813741714,
+                0.3156227575946298
+              ],
+              "predicted_class_fraction": [
+                0.3701171875,
+                0.388671875,
+                0.2412109375
+              ],
+              "tie_auc": 0.6584445926429736,
+              "confusion_matrix": [
+                [
+                  201,
+                  86,
+                  53
+                ],
+                [
+                  83,
+                  208,
+                  70
+                ],
+                [
+                  95,
+                  104,
+                  124
+                ]
+              ]
+            },
+            "nested_selected": {
+              "rows": 1024,
+              "log_loss": 0.9769843130341751,
+              "accuracy": 0.517578125,
+              "macro_f1": 0.5113473484416359,
+              "brier": 0.5826821934157407,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.9286988848248316,
+                0.9338440725038942,
+                1.0760266425159342
+              ],
+              "class_recall": [
+                0.5852941176470589,
+                0.5734072022160664,
+                0.38390092879256965
+              ],
+              "tie_precision": 0.4940239043824701,
+              "mean_predictive_entropy": 0.9751352883053048,
+              "mean_class_probability": [
+                0.3388680722839273,
+                0.3455584024823346,
+                0.3155735252337384
+              ],
+              "predicted_class_fraction": [
+                0.3681640625,
+                0.38671875,
+                0.2451171875
+              ],
+              "tie_auc": 0.6579234441730742,
+              "confusion_matrix": [
+                [
+                  199,
+                  86,
+                  55
+                ],
+                [
+                  82,
+                  207,
+                  72
+                ],
+                [
+                  96,
+                  103,
+                  124
+                ]
+              ]
+            }
+          },
+          "nested_gain_vs_temperature": {
+            "gain": 0.0011205104599299504,
+            "interval_95": [
+              -0.002382633758208352,
+              0.004576394024589721
+            ],
+            "groups": 990,
+            "rows": 1024,
+            "replicates": 2000,
+            "weighted_class_contributions": [
+              -0.011079859685268128,
+              -0.011840050954276822,
+              0.0240404210994749
+            ]
+          }
+        },
+        "paired_kl": {
+          "raw": {
+            "rows": 1024,
+            "log_loss": 0.980402461349005,
+            "accuracy": 0.5205078125,
+            "macro_f1": 0.5051940153050489,
+            "brier": 0.5846271528825772,
+            "class_counts": [
+              340,
+              361,
+              323
+            ],
+            "class_loss": [
+              0.9014478866827316,
+              0.9059633388660715,
+              1.146709206249537
+            ],
+            "class_recall": [
+              0.6205882352941177,
+              0.6204986149584487,
+              0.30340557275541796
+            ],
+            "tie_precision": 0.5297297297297298,
+            "mean_predictive_entropy": 1.0093953432482419,
+            "mean_class_probability": [
+              0.35015480277382655,
+              0.3555887135834465,
+              0.29425648364272616
+            ],
+            "predicted_class_fraction": [
+              0.400390625,
+              0.4189453125,
+              0.1806640625
+            ],
+            "tie_auc": 0.6587051668779231,
+            "confusion_matrix": [
+              [
+                211,
+                86,
+                43
+              ],
+              [
+                93,
+                224,
+                44
+              ],
+              [
+                106,
+                119,
+                98
+              ]
+            ]
+          },
+          "folds": [
+            {
+              "families": {
+                "temperature": [
+                  1.255661411288168
+                ],
+                "temperature_tie": [
+                  1.3187739847593443,
+                  0.19128214642006397
+                ],
+                "symmetric_vector": [
+                  1.3655303373954855,
+                  1.215327368597408,
+                  0.19082424419158378
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9710942990245799,
+                  "temperature_tie": 0.9678117082946694,
+                  "symmetric_vector": 0.9723899536934087
+                },
+                "theta": [
+                  1.3187739847593443,
+                  0.19128214642006397
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.2345017266748868
+                ],
+                "temperature_tie": [
+                  1.2869506380913642,
+                  0.1726124279181138
+                ],
+                "symmetric_vector": [
+                  1.3604718655293906,
+                  1.1378052252522335,
+                  0.1740349773529529
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.966463591135932,
+                  "temperature_tie": 0.9640676711458943,
+                  "symmetric_vector": 0.9648259513470971
+                },
+                "theta": [
+                  1.2869506380913642,
+                  0.1726124279181138
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.1374087908662647
+                ],
+                "temperature_tie": [
+                  1.1788496494052287,
+                  0.1416510417417739
+                ],
+                "symmetric_vector": [
+                  1.2120732668954628,
+                  1.1071446132023133,
+                  0.14160836418744804
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9871116017343627,
+                  "temperature_tie": 0.9855055786576309,
+                  "symmetric_vector": 0.9878226462485293
+                },
+                "theta": [
+                  1.1788496494052287,
+                  0.1416510417417739
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.1750099636640696
+                ],
+                "temperature_tie": [
+                  1.2154009375195942,
+                  0.1389856906308711
+                ],
+                "symmetric_vector": [
+                  1.2601764356151504,
+                  1.125261074630299,
+                  0.1397749562570714
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.983069238392247,
+                  "temperature_tie": 0.9813950105406747,
+                  "symmetric_vector": 0.9814833314202672
+                },
+                "theta": [
+                  1.2154009375195942,
+                  0.1389856906308711
+                ]
+              },
+              "train_rows": 819,
+              "validation_rows": 205
+            },
+            {
+              "families": {
+                "temperature": [
+                  1.1763879726970587
+                ],
+                "temperature_tie": [
+                  1.224411230288042,
+                  0.15846056906132874
+                ],
+                "symmetric_vector": [
+                  1.2520345128075636,
+                  1.1647055138720608,
+                  0.15818888166296077
+                ]
+              },
+              "selection": {
+                "chosen": "temperature_tie",
+                "inner_loss": {
+                  "temperature": 0.9829429641189813,
+                  "temperature_tie": 0.9811944038931881,
+                  "symmetric_vector": 0.981239094312865
+                },
+                "theta": [
+                  1.224411230288042,
+                  0.15846056906132874
+                ]
+              },
+              "train_rows": 820,
+              "validation_rows": 204
+            }
+          ],
+          "families": {
+            "temperature": {
+              "rows": 1024,
+              "log_loss": 0.9787950911590384,
+              "accuracy": 0.5205078125,
+              "macro_f1": 0.5051940153050489,
+              "brier": 0.5835770424987827,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.887174504644883,
+                0.8918458227577746,
+                1.172416407901048
+              ],
+              "class_recall": [
+                0.6205882352941177,
+                0.6204986149584487,
+                0.30340557275541796
+              ],
+              "tie_precision": 0.5297297297297298,
+              "mean_predictive_entropy": 0.9774824142062332,
+              "mean_class_probability": [
+                0.353503317351945,
+                0.36002056642578256,
+                0.2864761162222734
+              ],
+              "predicted_class_fraction": [
+                0.400390625,
+                0.4189453125,
+                0.1806640625
+              ],
+              "tie_auc": 0.6584490091554304,
+              "confusion_matrix": [
+                [
+                  211,
+                  86,
+                  43
+                ],
+                [
+                  93,
+                  224,
+                  44
+                ],
+                [
+                  106,
+                  119,
+                  98
+                ]
+              ]
+            },
+            "temperature_tie": {
+              "rows": 1024,
+              "log_loss": 0.9768354366491334,
+              "accuracy": 0.5166015625,
+              "macro_f1": 0.5104175483486558,
+              "brier": 0.5825953838496976,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.9286908212040808,
+                0.9336959883291519,
+                1.0757286567569702
+              ],
+              "class_recall": [
+                0.5823529411764706,
+                0.5734072022160664,
+                0.38390092879256965
+              ],
+              "tie_precision": 0.4940239043824701,
+              "mean_predictive_entropy": 0.9749967828593423,
+              "mean_class_probability": [
+                0.3388427390527576,
+                0.34558839854018053,
+                0.31556886240706133
+              ],
+              "predicted_class_fraction": [
+                0.3681640625,
+                0.38671875,
+                0.2451171875
+              ],
+              "tie_auc": 0.6584843412550845,
+              "confusion_matrix": [
+                [
+                  198,
+                  86,
+                  56
+                ],
+                [
+                  83,
+                  207,
+                  71
+                ],
+                [
+                  96,
+                  103,
+                  124
+                ]
+              ]
+            },
+            "symmetric_vector": {
+              "rows": 1024,
+              "log_loss": 0.9767988772460067,
+              "accuracy": 0.5185546875,
+              "macro_f1": 0.5118079034011521,
+              "brier": 0.5823352977582266,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.9293651541417621,
+                0.9339093745971614,
+                1.0746644385824655
+              ],
+              "class_recall": [
+                0.5911764705882353,
+                0.5761772853185596,
+                0.37770897832817335
+              ],
+              "tie_precision": 0.4959349593495935,
+              "mean_predictive_entropy": 0.9747672137527872,
+              "mean_class_probability": [
+                0.33878363376039106,
+                0.34559558172210947,
+                0.31562078451749964
+              ],
+              "predicted_class_fraction": [
+                0.3681640625,
+                0.3916015625,
+                0.240234375
+              ],
+              "tie_auc": 0.6591379850986869,
+              "confusion_matrix": [
+                [
+                  201,
+                  86,
+                  53
+                ],
+                [
+                  82,
+                  208,
+                  71
+                ],
+                [
+                  94,
+                  107,
+                  122
+                ]
+              ]
+            },
+            "nested_selected": {
+              "rows": 1024,
+              "log_loss": 0.9768354366491334,
+              "accuracy": 0.5166015625,
+              "macro_f1": 0.5104175483486558,
+              "brier": 0.5825953838496976,
+              "class_counts": [
+                340,
+                361,
+                323
+              ],
+              "class_loss": [
+                0.9286908212040808,
+                0.9336959883291519,
+                1.0757286567569702
+              ],
+              "class_recall": [
+                0.5823529411764706,
+                0.5734072022160664,
+                0.38390092879256965
+              ],
+              "tie_precision": 0.4940239043824701,
+              "mean_predictive_entropy": 0.9749967828593423,
+              "mean_class_probability": [
+                0.3388427390527576,
+                0.34558839854018053,
+                0.31556886240706133
+              ],
+              "predicted_class_fraction": [
+                0.3681640625,
+                0.38671875,
+                0.2451171875
+              ],
+              "tie_auc": 0.6584843412550845,
+              "confusion_matrix": [
+                [
+                  198,
+                  86,
+                  56
+                ],
+                [
+                  83,
+                  207,
+                  71
+                ],
+                [
+                  96,
+                  103,
+                  124
+                ]
+              ]
+            }
+          },
+          "nested_gain_vs_temperature": {
+            "gain": 0.00195965450990502,
+            "interval_95": [
+              -0.0024758892663393367,
+              0.006373625317386968
+            ],
+            "groups": 990,
+            "rows": 1024,
+            "replicates": 2000,
+            "weighted_class_contributions": [
+              -0.013784714482546149,
+              -0.0147538181360031,
+              0.030498187128454268
+            ]
+          }
+        }
+      },
+      "historically_calibrated_deployed": {
+        "rows": 1024,
+        "log_loss": 0.9763498351539839,
+        "accuracy": 0.5224609375,
+        "macro_f1": 0.5197929772875352,
+        "brier": 0.5820665993044829,
+        "class_counts": [
+          340,
+          361,
+          323
+        ],
+        "class_loss": [
+          0.947979827100181,
+          0.9569269612899501,
+          1.0279209193744456
+        ],
+        "class_recall": [
+          0.5705882352941176,
+          0.5512465373961218,
+          0.43962848297213625
+        ],
+        "tie_precision": 0.4797297297297297,
+        "mean_predictive_entropy": 0.9670421526194493,
+        "mean_class_probability": [
+          0.3318249638020179,
+          0.33799918218002417,
+          0.3301758540179579
+        ],
+        "predicted_class_fraction": [
+          0.345703125,
+          0.365234375,
+          0.2890625
+        ],
+        "tie_auc": 0.659566386806994,
+        "confusion_matrix": [
+          [
+            194,
+            79,
+            67
+          ],
+          [
+            75,
+            199,
+            87
+          ],
+          [
+            85,
+            96,
+            142
+          ]
+        ]
+      },
+      "paired_kl_vs_matched_frozen": {
+        "gain": 0.0001509950359403845,
+        "interval_95": [
+          -0.002160027838981945,
+          0.0024173936750205216
+        ],
+        "groups": 990,
+        "rows": 1024,
+        "replicates": 2000,
+        "weighted_class_contributions": [
+          2.051845877888593e-05,
+          0.0006151664330769947,
+          -0.00048468985591549615
+        ]
+      },
+      "h42_gate": {
+        "overall_loss_gap": -0.00015099503594040442,
+        "tie_class_loss_gap": 0.0015366018961533445,
+        "calibration_resolves_deficit": true,
+        "interpretation": "Predeclared practical stopping rule, not an equivalence test."
+      }
+    }
+  },
+  "cpu_elapsed_seconds": 13.602457800065167,
+  "private_predictions_sha256": "7fbb2c7d7df1ab97ff9d9c363bb3a5fd080f7718b2d37a269702f3330974a719"
+}

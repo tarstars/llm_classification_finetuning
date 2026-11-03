@@ -1,0 +1,12 @@
+{
+  "notebook_sha256": "c51fefdf96de06bdc414e964ff6628e1b98c801c6ad7f530063c29c6fd0279e2",
+  "source_sha256": {
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "src/arena/joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+    "src/arena/training_exposure.py": "81a405f90ed999d6834265e8b31fe39dd296eef831d5b7ab17a179f4a62d0633",
+    "src/arena/exposure_train.py": "85f9b9ed19a95e7a9fcd2ca4f6a45cb6e69889fa61a51a1f22529ce9435fd024"
+  },
+  "parent_kernel": "arseniytrushin/llm-preference-qwen3-4b-train-002/1",
+  "cap_seconds": 21600
+}

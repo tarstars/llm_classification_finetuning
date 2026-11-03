@@ -1,0 +1,18 @@
+{
+  "initial_protocol_and_config_git_commit": "618e4a5",
+  "snapshots": {
+    "calibration_protocol_618e4a5.md": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/contract_snapshots/calibration_protocol_618e4a5.md",
+      "sha256": "0dd4bc483f1da72571a848fbb63fca0993650ee4e91e0c60a81c4bb347636b68"
+    },
+    "calibration_config_618e4a5.json": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/contract_snapshots/calibration_config_618e4a5.json",
+      "sha256": "ecf40fdf50166c78a7791fca4d06274a7bb01382fd054b74957a6080b408acad"
+    },
+    "frozen_cached_blend_protocol.md": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/contract_snapshots/frozen_cached_blend_protocol.md",
+      "sha256": "2f7d73562a9bf3fd415b77464abcd8d66e52dd42df21f6fcb8ce6f05ea6fc335"
+    }
+  },
+  "note": "Cached-blend contract is the committed initial protocol plus the pre-inference frozen-recipe verification paragraph; exact recorded hash verified."
+}

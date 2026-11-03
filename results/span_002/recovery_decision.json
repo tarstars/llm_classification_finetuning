@@ -1,0 +1,14 @@
+{
+  "failed_job": "arseniytrushin/llm-preference-span-002-judge-expansion/1",
+  "terminal_status": "ERROR",
+  "completed_rows": 1,
+  "failure": "600-second local completion timeout",
+  "hypothesis": "CUDA-12 native backend may be unavailable in the new CUDA-13 runtime; unproven until ldd/device diagnostics.",
+  "maximum_new_session_seconds": 4500,
+  "allocation": "Original 75-minute recovery reserve; no increase in total cap.",
+  "model_prompt_packing_changed": false,
+  "sample_changed": false,
+  "gates": "Require two actual CUDA devices, cached-row numerical identity, and measured projection fitting remaining ceiling.",
+  "notebook_sha256": "54bafcf93684c09132c406af7ac1ed800c4965c8a97a78f2756ebe5c7202f6e8",
+  "internet_use": "Pinned NVIDIA CUDA-12 runtime packages only if device discovery proves unavailable; no dataset text sent to package services."
+}

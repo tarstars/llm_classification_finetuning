@@ -2,15 +2,23 @@
 
 ## Current handoff — 2026-11-03
 
+V2 execution update: H40, E01 and the conditional H42 stopping gate are **done**.
+H03 and H37 remain **running**. The cached ensemble gains 0.01931 on 512 rows, with
+an interval still including no gain; its larger validation hit a server timeout
+and has one diagnosed, gated recovery. Stateful checkpoint-800 continuation is in
+a separate live kernel. See [v2 report](SPAN_002_RESULTS.md),
+[protocol](SPAN_002_PROTOCOL.md) and dated files under `results/span_002/`.
+The goal remains active; no v2 model is promoted and no new submission occurred.
+
 Start with [CONTEXT_HANDOFF.md](CONTEXT_HANDOFF.md). The user authorized the current
 [v2 goal](../GOAL.md): execute focus H40, E01, H03, H37 and conditional H42, then
 seal v2 and form v3. Limits remain 12 two-T4 session-hours and 48 elapsed hours,
-subject to verified quota. Focus is configured; no v2 experiment has yet run.
+subject to verified quota. Focus and original clock are recorded in span-002 files.
 V1 is sealed; its [completed goal](GOAL_V1.md) is archived. V2 has 39 tasks and v3
 is an empty draft. No v1 pilot justified promotion, and the official best remains
 0.97025. See
 [span results](SPAN_001_RESULTS.md) and [notebook 12](../notebooks/12_backlog_v1_span.ipynb).
-All span GPU jobs are terminal. The older prompted-judge pipeline is also complete,
+All v1 GPU jobs are terminal. The older prompted-judge pipeline is also complete,
 with official loss 0.98653; see [its final results](../ATTEMPT_003_RESULTS.md).
 Entries below are dated historical snapshots, including old “in progress” wording.
 

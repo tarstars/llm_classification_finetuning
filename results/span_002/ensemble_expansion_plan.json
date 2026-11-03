@@ -1,0 +1,11 @@
+{
+  "additional_rows": 1536,
+  "total_rows": 2048,
+  "sample_sha256": "f335a487865faa052dd366d838dc9d48bfdc61c6c383dd86e1dace298e628585",
+  "notebook_sha256": "2fdd7c9c7d2078f8a1bdf9e448dfc0b219734b9e1cf8467320092c16a4adc0ae",
+  "model_source": "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2",
+  "config_sha256": "082cf3bd9586667a143f8b2815ed6b1fb8b2db7e13456975017b62b29cad787d",
+  "projected_seconds_with_margin": 2393.5929660978,
+  "cap_seconds": 5400,
+  "timing_note": "Half the historical two-order measured pass for single-order scoring, plus 20% and 600 seconds; projection only."
+}

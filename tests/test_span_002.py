@@ -1,6 +1,7 @@
 """Validity contracts for v2 calibration, grouped selection and blend endpoints."""
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 import numpy as np
@@ -68,6 +69,34 @@ class CalibrationContracts(unittest.TestCase):
         self.assertEqual(weight_a, weight_b)
         for a, b in zip(fits_a, fits_b):
             np.testing.assert_array_equal(a.theta, b.theta)
+
+    def test_exposure_resume_separates_skipped_rows_and_tokens(self):
+        from arena.training_exposure import ExposureLedger
+        with tempfile.TemporaryDirectory() as directory:
+            ledger = ExposureLedger(directory)
+            ledger.add([10,11],[0,2],[5,7])
+            ledger.finish(801,True,65536,32768,800,800)
+            ledger.add([11,12],[2,1],[7,9])
+            ledger.finish(802,False,32768,32768,800,801)
+            ledger.save(directory)
+            resumed = ExposureLedger(directory, resume=Path(directory)/'audit_state_rank0.json')
+            self.assertEqual(ledger.state(), resumed.state())
+            self.assertEqual(resumed.counts['processed_tokens'],28)
+            self.assertEqual(resumed.counts['accepted_tokens'],16)
+            self.assertEqual(resumed.summary()['processed_unique_rows'],3)
+            self.assertEqual(resumed.summary()['accepted_unique_rows'],2)
+            self.assertEqual(resumed.summary()['accepted_class_counts'],[0,1,1])
+            resumed.add([13],[0],[3])
+            resumed.finish(803,False,32768,32768,801,802)
+            self.assertEqual(resumed.counts['accepted_updates'],2)
+
+    def test_exposure_rejects_scheduler_skip_mismatch(self):
+        from arena.training_exposure import ExposureLedger
+        with tempfile.TemporaryDirectory() as directory:
+            ledger = ExposureLedger(directory)
+            ledger.add([10],[0],[5])
+            with self.assertRaises(AssertionError):
+                ledger.finish(1,True,65536,32768,0,1)
 
 
 if __name__ == '__main__':

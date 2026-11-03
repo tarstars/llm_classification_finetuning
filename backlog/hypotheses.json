@@ -201,7 +201,7 @@
       "title": "Complete training exposure",
       "priority": "P2",
       "rank": 7,
-      "status": "planned",
+      "status": "running",
       "gain": [
         -0.01,
         0.01
@@ -240,7 +240,14 @@
         "ATTEMPT_002_RESULTS.md",
         "docs/ATTEMPT_002.md"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T18:37:18+00:00",
+          "status": "running",
+          "note": "Immutable original output confirms complete state files at checkpoints 800 and 877. Preparing continuation from selected 800, subject to E01 CUDA verification; resume inventory results/span_002/resume_inventory.json.",
+          "evidence": []
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -2203,7 +2210,7 @@
       "title": "Constrained probability calibration",
       "priority": "P2",
       "rank": 18,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.002,
         0.004
@@ -2257,6 +2264,14 @@
           "status": "running",
           "note": "Starting predeclared nested grouped calibration on cached 5746-row baseline and fixed 1024-row paired cohort; protocol docs/SPAN_002_PROTOCOL.md, seed 20261119, no GPU.",
           "evidence": []
+        },
+        {
+          "at": "2026-11-03T18:43:17+00:00",
+          "status": "done",
+          "note": "Nested grouped calibration completed: full-dev gain 0.0011325, 95% group interval [-0.0005643,0.0029542]. Paired tie/overall gaps pass the predeclared H42 practical stopping gate; no GPU, no promotion.",
+          "evidence": [
+            "docs/SPAN_002_H40.md"
+          ]
         }
       ],
       "introduced_in": 1,
@@ -2380,7 +2395,7 @@
       ],
       "id": "E01",
       "rank": 43,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 2,
       "discovered_during": 1,
       "derived_from": [
@@ -2393,6 +2408,20 @@
           "note": "Four real pilots had 64 nominal cycles but 61 accepted updates; preserve the measurement gap as a v2 prerequisite rather than repeating v1.",
           "evidence": [
             "results/span_001/joint_results.json"
+          ]
+        },
+        {
+          "at": "2026-11-03T18:37:17+00:00",
+          "status": "running",
+          "note": "Preparing direct per-rank accepted/skipped-step and exposure logging with a real CUDA forced-overflow/resume probe; capped at 900 session seconds; docs/SPAN_002_PROTOCOL.md.",
+          "evidence": []
+        },
+        {
+          "at": "2026-11-03T18:48:34+00:00",
+          "status": "done",
+          "note": "Actual two-rank CUDA forced-overflow/resume probe passed: 5 nominal cycles, 4 accepted, 1 skipped; parameter changes, scaler/scheduler and private exposure counters verified. Torch CUDA build changed cu128 to cu130; disclose in continuation.",
+          "evidence": [
+            "docs/SPAN_002_E01.md"
           ]
         }
       ]
@@ -2445,7 +2474,7 @@
       ],
       "id": "H42",
       "rank": 44,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 2,
       "discovered_during": 1,
       "derived_from": [
@@ -2458,6 +2487,20 @@
           "note": "Measured removal of order bias was canceled by worse tie loss; test calibration first, with any tie-preserving training conditional and outside v1.",
           "evidence": [
             "results/span_001/joint_diagnostics.json"
+          ]
+        },
+        {
+          "at": "2026-11-03T18:48:34+00:00",
+          "status": "running",
+          "note": "Inspecting the predeclared cached calibration stopping gate after H40 and E01 completed; no GPU launch.",
+          "evidence": []
+        },
+        {
+          "at": "2026-11-03T18:48:34+00:00",
+          "status": "done",
+          "note": "Stopped at the declared calibration gate: paired KL minus matched frozen loss -0.000151 and tie-class gap +0.001537, both within tolerance. No tie-anchor training performed or GPU used.",
+          "evidence": [
+            "docs/SPAN_002_H42.md"
           ]
         }
       ]

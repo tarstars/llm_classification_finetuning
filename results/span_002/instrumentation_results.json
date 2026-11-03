@@ -1,0 +1,331 @@
+{
+  "passed": true,
+  "kernel": "arseniytrushin/llm-preference-span-002-exposure-probe/1",
+  "ranks": [
+    {
+      "passed": true,
+      "rank": 0,
+      "torch": "2.11.0+cu130",
+      "cuda_device": "Tesla T4",
+      "runs": [
+        {
+          "name": "continuous",
+          "counts": {
+            "rank": 0,
+            "cycles": 5,
+            "accepted_updates": 4,
+            "skipped_updates": 1,
+            "processed_tokens": 80,
+            "accepted_tokens": 64,
+            "processed_rows": 20,
+            "accepted_rows": 16,
+            "processed_unique_rows": 20,
+            "accepted_unique_rows": 16,
+            "processed_class_counts": [
+              8,
+              8,
+              4
+            ],
+            "accepted_class_counts": [
+              7,
+              6,
+              3
+            ],
+            "last_global_step": 5
+          },
+          "parameter_checks": [
+            {
+              "step": 1,
+              "parameters_changed": true,
+              "skipped": false
+            },
+            {
+              "step": 2,
+              "parameters_changed": false,
+              "skipped": true
+            },
+            {
+              "step": 3,
+              "parameters_changed": true,
+              "skipped": false
+            },
+            {
+              "step": 4,
+              "parameters_changed": true,
+              "skipped": false
+            },
+            {
+              "step": 5,
+              "parameters_changed": true,
+              "skipped": false
+            }
+          ],
+          "scaler": {
+            "scale": 32768.0,
+            "growth_factor": 2.0,
+            "backoff_factor": 0.5,
+            "growth_interval": 2000,
+            "_growth_tracker": 3
+          },
+          "scheduler": {
+            "base_lrs": [
+              0.01,
+              0.01
+            ],
+            "last_epoch": 4,
+            "_step_count": 5,
+            "_is_initial": false,
+            "_get_lr_called_within_step": false,
+            "_last_lr": [
+              0.0009549150281252633,
+              0.0009549150281252633
+            ],
+            "lr_lambdas": [
+              {},
+              {}
+            ]
+          }
+        },
+        {
+          "name": "resumed",
+          "counts": {
+            "rank": 0,
+            "cycles": 5,
+            "accepted_updates": 4,
+            "skipped_updates": 1,
+            "processed_tokens": 80,
+            "accepted_tokens": 64,
+            "processed_rows": 20,
+            "accepted_rows": 16,
+            "processed_unique_rows": 20,
+            "accepted_unique_rows": 16,
+            "processed_class_counts": [
+              8,
+              8,
+              4
+            ],
+            "accepted_class_counts": [
+              7,
+              6,
+              3
+            ],
+            "last_global_step": 5
+          },
+          "parameter_checks": [
+            {
+              "step": 4,
+              "parameters_changed": true,
+              "skipped": false
+            },
+            {
+              "step": 5,
+              "parameters_changed": true,
+              "skipped": false
+            }
+          ],
+          "scaler": {
+            "scale": 32768.0,
+            "growth_factor": 2.0,
+            "backoff_factor": 0.5,
+            "growth_interval": 2000,
+            "_growth_tracker": 3
+          },
+          "scheduler": {
+            "base_lrs": [
+              0.01,
+              0.01
+            ],
+            "last_epoch": 4,
+            "_step_count": 5,
+            "_is_initial": false,
+            "_get_lr_called_within_step": false,
+            "_last_lr": [
+              0.0009549150281252633,
+              0.0009549150281252633
+            ],
+            "lr_lambdas": [
+              {},
+              {}
+            ]
+          }
+        }
+      ],
+      "checks": [
+        "forced overflow skips actual parameter update",
+        "finite accepted parameters",
+        "scheduler counts accepted updates",
+        "checkpoint resumes counters and parameters"
+      ]
+    },
+    {
+      "passed": true,
+      "rank": 1,
+      "torch": "2.11.0+cu130",
+      "cuda_device": "Tesla T4",
+      "runs": [
+        {
+          "name": "continuous",
+          "counts": {
+            "rank": 1,
+            "cycles": 5,
+            "accepted_updates": 4,
+            "skipped_updates": 1,
+            "processed_tokens": 80,
+            "accepted_tokens": 64,
+            "processed_rows": 20,
+            "accepted_rows": 16,
+            "processed_unique_rows": 20,
+            "accepted_unique_rows": 16,
+            "processed_class_counts": [
+              6,
+              6,
+              8
+            ],
+            "accepted_class_counts": [
+              5,
+              5,
+              6
+            ],
+            "last_global_step": 5
+          },
+          "parameter_checks": [
+            {
+              "step": 1,
+              "parameters_changed": true,
+              "skipped": false
+            },
+            {
+              "step": 2,
+              "parameters_changed": false,
+              "skipped": true
+            },
+            {
+              "step": 3,
+              "parameters_changed": true,
+              "skipped": false
+            },
+            {
+              "step": 4,
+              "parameters_changed": true,
+              "skipped": false
+            },
+            {
+              "step": 5,
+              "parameters_changed": true,
+              "skipped": false
+            }
+          ],
+          "scaler": {
+            "scale": 32768.0,
+            "growth_factor": 2.0,
+            "backoff_factor": 0.5,
+            "growth_interval": 2000,
+            "_growth_tracker": 3
+          },
+          "scheduler": {
+            "base_lrs": [
+              0.01,
+              0.01
+            ],
+            "last_epoch": 4,
+            "_step_count": 5,
+            "_is_initial": false,
+            "_get_lr_called_within_step": false,
+            "_last_lr": [
+              0.0009549150281252633,
+              0.0009549150281252633
+            ],
+            "lr_lambdas": [
+              {},
+              {}
+            ]
+          }
+        },
+        {
+          "name": "resumed",
+          "counts": {
+            "rank": 1,
+            "cycles": 5,
+            "accepted_updates": 4,
+            "skipped_updates": 1,
+            "processed_tokens": 80,
+            "accepted_tokens": 64,
+            "processed_rows": 20,
+            "accepted_rows": 16,
+            "processed_unique_rows": 20,
+            "accepted_unique_rows": 16,
+            "processed_class_counts": [
+              6,
+              6,
+              8
+            ],
+            "accepted_class_counts": [
+              5,
+              5,
+              6
+            ],
+            "last_global_step": 5
+          },
+          "parameter_checks": [
+            {
+              "step": 4,
+              "parameters_changed": true,
+              "skipped": false
+            },
+            {
+              "step": 5,
+              "parameters_changed": true,
+              "skipped": false
+            }
+          ],
+          "scaler": {
+            "scale": 32768.0,
+            "growth_factor": 2.0,
+            "backoff_factor": 0.5,
+            "growth_interval": 2000,
+            "_growth_tracker": 3
+          },
+          "scheduler": {
+            "base_lrs": [
+              0.01,
+              0.01
+            ],
+            "last_epoch": 4,
+            "_step_count": 5,
+            "_is_initial": false,
+            "_get_lr_called_within_step": false,
+            "_last_lr": [
+              0.0009549150281252633,
+              0.0009549150281252633
+            ],
+            "lr_lambdas": [
+              {},
+              {}
+            ]
+          }
+        }
+      ],
+      "checks": [
+        "forced overflow skips actual parameter update",
+        "finite accepted parameters",
+        "scheduler counts accepted updates",
+        "checkpoint resumes counters and parameters"
+      ]
+    }
+  ],
+  "session_summary": {
+    "exit_code": 0,
+    "session_seconds": 55.01853656768799
+  },
+  "software": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.22.1",
+    "accelerate": "1.15.0",
+    "peft": "0.21.2"
+  },
+  "artifact_sha256": {
+    "probe/probe_rank0.json": "fe5c6c61fb10e056c6c86fb20faf59499144db8a53d815cc27fa4188cb4f1ce4",
+    "probe/probe_rank1.json": "9b19324a33657b65d08fee668ffff9e057ce6b400218001737d95feb08dbf52f",
+    "session_summary.json": "410d6dc908115b5cf4e3266e9037cf613236e95112abf8ba0e94feca030e9b12"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-03T18:45:23.618868+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-002-judge-expansion",
+  "max_session_seconds": 5400,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 55586.39,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 52413.61
+  },
+  "span_remaining_before_reservation": 43130.014,
+  "notebook_sha256": "2fdd7c9c7d2078f8a1bdf9e448dfc0b219734b9e1cf8467320092c16a4adc0ae"
+}

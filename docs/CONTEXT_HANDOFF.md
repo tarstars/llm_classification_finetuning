@@ -2,7 +2,8 @@
 
 V1 results were verified at research closing commit `13e7adb`; its goal completed.
 The user subsequently authorized a **new v2 goal**, now in `GOAL.md`, to execute a
-bounded span and form v3. Focus is configured; no v2 experiment has yet run. The
+bounded span and form v3. V2 is **underway**: H40, E01 and H42's stopping gate are
+done; H03 and H37 remain running. The
 completed goal is archived at `docs/GOAL_V1.md`. This is a dated orientation record;
 verify current files and service state before acting.
 
@@ -10,6 +11,8 @@ verify current files and service state before acting.
 
 - [Current goal](../GOAL.md) and [project policy](../PROJECT_POLICY.md): scope,
   resource limits, workflow, experiment gates and versioning.
+- [V2 report](SPAN_002_RESULTS.md) and [protocol](SPAN_002_PROTOCOL.md): current
+  execution, results, recovery and remaining deliverables.
 - [Span 001 results](SPAN_001_RESULTS.md), [completion checks](SPAN_001_COMPLETION.md),
   and [executed notebook 12](../notebooks/12_backlog_v1_span.ipynb).
 - [Active backlog](../BACKLOG.md); canonical data is [backlog/hypotheses.json](../backlog/hypotheses.json).
@@ -25,13 +28,60 @@ their controllers exited. There is no unfinished span-001 execution to resume.
 - **V1:** closed, 41 historical members; original start and final snapshots preserved.
 - **V2:** active, **39 members = 3 discoveries + 36 unfinished carryovers**;
   focus **H40, E01, H03, H37, H42**.
-- **V3:** empty draft. No v2 experiment has been executed.
+- **V3:** empty draft so far; discoveries/carryovers still need final review.
 
 `GOAL.md` now describes the authorized v2 span: **12 two-T4 session-hours and 48
 elapsed wall-clock hours** from its original activation, further bounded by
 verified quota. Record its original clock/deadline and contract in span-002 paths;
 do not reuse v1's start time or mutate its artifacts. Finish v2, form v3 and stop
 before executing v3. Do not repeat the completed v1 goal.
+
+V2's original clock is **November 3 18:23:46 UTC**, deadline **November 5 at the
+same time**. It precedes the user's re-setting the identical goal to `GOAL.md`;
+that did not reset the clock. Plan, input hashes and live observations are in
+`results/span_002/` and the heavy run's matching directory.
+
+H40 nested calibration on all 5,746 dev rows gains 0.0011325, interval
+[-0.0005643,+0.0029542]. On the common 1,024 rows, calibrated paired/frozen loss
+gap -0.000151 and tie-class gap +0.001537 meet H42's practical stopping rule: no
+anchor training. E01's actual two-T4 overflow/resume probe passed; GPU runtime is
+Torch 2.11.0+cu130 versus historical cu128. E01 public aggregates contain no private
+row logs. H03 must preserve the runtime-change disclosure and starting identity guard.
+
+H37 cached blend loss is 0.972668 versus matched classifier 0.991976 on 512 rows;
+gain 0.019308, interval [-0.000202,+0.039046]. The extra 1,536 rows are fixed under
+the heavy run directory; the cached recipe was frozen before extra inference.
+Initial expansion failed after one row / 600-second server timeout. One gated
+recovery uses the original 75-minute reserve, not new allowance. It proves CUDA
+availability, repairs CUDA-12 libraries only if needed, then checks cached-row
+identity and throughput before full scoring. Do not infer the hardware cause
+until its diagnostic artifact exists.
+
+Recorded job handles (always inspect their current receipts and service state):
+
+- E01: `arseniytrushin/llm-preference-span-002-exposure-probe/1`, COMPLETE.
+- Initial judge expansion: `arseniytrushin/llm-preference-span-002-judge-expansion/1`, ERROR.
+- H03: `arseniytrushin/llm-preference-span-002-exposure/1`, last observed RUNNING.
+  Kaggle changed the requested slug; use returned `push.json`, not the build's intended ID.
+- Judge recovery: receipt under `<heavy root>/runs/span_002/jobs/ensemble-recovery/`;
+  reconcile immutable ref/version before acting. Never overwrite the failed job.
+
+Controllers are `scripts/run_span_002_job.py`; numerical status reader is
+`scripts/span_002_progress.py JOB --seconds 20`. Generated execution notebooks and
+all private artifacts live under `<heavy root>/runs/span_002/`; source builders
+are in Git. `analyze_span_002_followups.py expanded --job ensemble-recovery` and
+`... exposure` require complete, valid outputs and do not fill missing predictions.
+H03's controller reserves 4,500 seconds inside its six-hour cap for final full-dev
+inference. Source/report/notebook completion and sealing v2 remain outstanding.
+
+Notebook 13 has an executed partial-state snapshot (six code cells, two figures).
+Rebuild and re-execute it after final outputs; its current existence does not
+fulfill the final-deliverable audit. H03's 19:11 UTC numerical read reached nominal
+step 830 with finite loss/gradients and had passed its starting-prediction guard.
+The judge recovery's first upload returned a non-JSON response; reconcile its
+receipt/archived unaccepted intent before proceeding. The absence audit checks a
+complete owned inventory, exact-version HTTP result and independent authenticated
+status. Never overwrite accepted push/version state to retry.
 
 Branch is `main`, origin `git@github.com:tarstars/llm_classification_finetuning.git`.
 The research closing commit `13e7adb` was pushed and matched remote `main`; this
