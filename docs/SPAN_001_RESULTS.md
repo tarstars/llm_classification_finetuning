@@ -16,13 +16,13 @@ Original start **2026-11-03T10:06:28+00:00**; deadline **2026-11-05T10:06:28+00:
 
 | Run | Notebook | Version | Last observed stage | Observation UTC |
 | --- | --- | --- | --- | --- |
-| joint | [Kaggle](https://www.kaggle.com/code/arseniytrushin/llm-preference-span-001-joint-pilots) | 1 | waiting_for_kernel RUNNING | 2026-11-03T13:51:12.862494+00:00 |
+| joint | [Kaggle](https://www.kaggle.com/code/arseniytrushin/llm-preference-span-001-joint-pilots) | 1 | waiting_for_kernel RUNNING | 2026-11-03T14:06:15.525659+00:00 |
 | reward | [Kaggle](https://www.kaggle.com/code/arseniytrushin/llm-preference-span-001-frozen-reward-pilot) | 1 | failed ERROR | 2026-11-03T10:33:21.796755+00:00 |
 | reward-tokenfix | [Kaggle](https://www.kaggle.com/code/arseniytrushin/llm-preference-span-001-frozen-reward-pilot) | 2 | complete  | 2026-11-03T10:54:59.794731+00:00 |
 
 These are dated controller/API observations; the notebook links open the run history.
 
-Pinned joint version 1 at **2026-11-03T13:49:02.967572+00:00**: active stage `paired_attention`; completed stages: features, random_attention, random_all_linear. Prediction generation and artifact validation are separate gates.
+Pinned joint version 1 at **2026-11-03T14:04:38.119052+00:00**: active stage `paired_consistency`; completed stages: features, random_attention, random_all_linear, paired_attention. Prediction generation and artifact validation are separate gates.
 
 Initial frozen deployed baseline on the fixed 1,024 development rows: **0.97635 log loss**, **52.25% accuracy**. Development and confirmation were previously inspected; this span uses development only and is exploratory.
 
