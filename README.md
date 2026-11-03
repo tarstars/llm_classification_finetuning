@@ -54,6 +54,12 @@ uv run python scripts/backlog.py show H09
 uv run python scripts/backlog.py check
 ```
 
+The [first-span report](docs/SPAN_001_RESULTS.md) and
+[executed notebook](notebooks/12_backlog_v1_span.ipynb) track the current pilots.
+The frozen reward-model pilot scored **1.01557** calibrated log loss versus
+**0.97635** for LoRA on the same 1,024 exploratory development rows; it was not
+promoted. The remaining joint-training and tie-head pilots are in progress.
+
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
 **49.63% accuracy**. Always predicting the most frequent training class gives
@@ -71,6 +77,7 @@ classifier comparison and all baselines.
 - [Fixed confidence for a hard judge prediction](notebooks/09_fixed_judge_confidence.ipynb)
 - [300 blind judgments by the current assistant](notebooks/10_blind_self_judge.ipynb)
 - [Target associations and leakage audit](notebooks/11_target_associations_and_leakage.ipynb)
+- [Backlog v1 span: controlled pilots and evidence](notebooks/12_backlog_v1_span.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary

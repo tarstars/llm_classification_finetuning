@@ -1,0 +1,9 @@
+{
+  "H01": {
+    "outcome": "done",
+    "coverage": "4096 training feature rows / 1024 development rows; frozen reward weights",
+    "promoted": false,
+    "interpretation": "Selected 4B reward scoring recipe is worse; no blanket conclusion about every preference backbone.",
+    "followup": "Reward-specific pooled features to diagnose the tie bottleneck, queued for v2; not executed in v1."
+  }
+}

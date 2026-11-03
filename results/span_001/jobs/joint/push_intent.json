@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-03T10:58:18.742205+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-001-joint-pilots",
+  "max_session_seconds": 25200,
+  "span_budget_remaining_before_reservation": 42040.786,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 41721.459,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 66278.541
+  },
+  "recovery_note": "",
+  "notebook_sha256": "828b3b70a8468de9b2b403f17cd70838675ea551d5118a9b97b0930db1427fab"
+}

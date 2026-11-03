@@ -10,7 +10,13 @@ The original goal start is **2026-11-03 10:06:28 UTC**; deadline is
 evaluation and retries. Initial Kaggle quota: used **40,562.245 s**, reserved
 **0 s**, allowed **108,000 s**, remaining **67,437.755 s**; refresh November 7.
 Paid scaling is disabled. Fifteen recent project kernels were queried through
-the authenticated API and all were COMPLETE; the old controller PID was absent.
+the authenticated API and all were COMPLETE. A sandbox-local PID check did not
+see the old controller, but a later host-namespace check found its status monitor
+still alive with a stale PENDING observation. This was not an active GPU execution;
+the server submission state and zero reserved GPU quota are authoritative.
+The verified stale status-reader child was interrupted after server completion,
+allowing its existing monitor retry to finish normally and publish the official
+result at **2026-11-03 11:16:08 UTC**; no GPU execution was restarted or stopped.
 
 The previous prompted-judge submission 57909397 is now verified COMPLETE with
 official loss **0.98653**; the supervised classifier remains **0.97025**. This
@@ -144,6 +150,10 @@ IDs and detailed artifacts are in the heavy run directory. Configuration:
    16-component representation reduction. Compare a factorized learned tie/winner
    head against a coupled three-class head using the same features/capacity, plus
    a probability-only calibration control. Enforce/check swap equivariance.
+   Before fitting heads, compare freshly extracted frozen probabilities with the
+   cached baseline: require mean absolute error below **0.002** and maximum below
+   **0.03**, otherwise investigate inference identity before interpreting results.
+   These numerical guards were recorded before H11 outputs were collected.
 
    This is a frozen-feature architecture pilot, not an end-to-end tie-head fine-tune.
    A benefit of extra features does not establish that factorization helps: report

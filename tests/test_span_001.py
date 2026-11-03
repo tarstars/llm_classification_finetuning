@@ -137,6 +137,11 @@ class SpanContracts(unittest.TestCase):
         ids = torch.tensor([[3,5,7],[4,6,0]])
         mask = ids.ne(0).long()
         expected = model(input_ids=ids,attention_mask=mask).logits.detach().clone()
+        raw=model.get_base_model()
+        hidden=raw.model(input_ids=ids,attention_mask=mask,use_cache=False).last_hidden_state
+        token_logits=raw.score(hidden)
+        pooled=token_logits[torch.arange(len(ids)),mask.sum(1)-1]
+        torch.testing.assert_close(pooled,expected)
         parameters = deepcopy(model.state_dict())
         plan = {'attention_rank':2,'all_linear_mlp_rank':2,'all_linear_attention_rank':1,'lora_dropout':0.}
         counts = add_span_adapter(model, plan, broad=True)
@@ -154,6 +159,44 @@ class SpanContracts(unittest.TestCase):
                 self.assertFalse(parameter.requires_grad)
                 self.assertIsNone(parameter.grad)
                 torch.testing.assert_close(parameter,parameters[name])
+
+    def test_paired_trainer_runs_and_evaluates_with_ordinary_collator(self):
+        import tempfile
+        from transformers import Qwen3Config,Qwen3ForSequenceClassification,TrainingArguments
+        from peft import LoraConfig,TaskType,get_peft_model
+        from arena.span_joint import PairDataset,PairCollator,SpanTrainer
+        from arena.joint_data import PreferenceCollator,PreferenceDataset
+        class PadTokens(Tokens):
+            def pad(self, rows, **kwargs):
+                width=max(len(x['input_ids']) for x in rows)
+                return {key:torch.tensor([row[key]+[0]*(width-len(row[key])) for row in rows])
+                        for key in ('input_ids','attention_mask')}
+        torch.set_num_threads(2);torch.manual_seed(20)
+        model=get_peft_model(Qwen3ForSequenceClassification(Qwen3Config(vocab_size=40,
+            hidden_size=32,intermediate_size=64,num_hidden_layers=1,num_attention_heads=4,
+            num_key_value_heads=2,head_dim=8,num_labels=3,pad_token_id=0)),
+            LoraConfig(task_type=TaskType.SEQ_CLS,r=2,lora_alpha=4,lora_dropout=0.,
+                target_modules=['q_proj','k_proj','v_proj','o_proj'],modules_to_save=['score']),
+            adapter_name='frozen')
+        add_span_adapter(model,{'attention_rank':2,'lora_dropout':0.},broad=False)
+        old={n:p.detach().clone() for n,p in model.named_parameters() if '.frozen.' in n}
+        ds=PairDataset([[3,4],[5,6],[7,8],[9,10]],[[4,3],[6,5],[8,7],[10,9]],np.array([0,1,2,0]))
+        tok=PadTokens()
+        with tempfile.TemporaryDirectory() as directory:
+            args=TrainingArguments(output_dir=directory,use_cpu=True,max_steps=2,
+                per_device_train_batch_size=1,gradient_accumulation_steps=2,
+                per_device_eval_batch_size=2,learning_rate=.001,save_strategy='no',
+                gradient_checkpointing=True,gradient_checkpointing_kwargs={'use_reentrant':False},
+                report_to='none',remove_unused_columns=False,disable_tqdm=True,dataloader_pin_memory=False)
+            trainer=SpanTrainer(model=model,args=args,train_dataset=ds,data_collator=PairCollator(tok),
+                                consistency_weight=.1)
+            trainer.train()
+            trainer.data_collator=PreferenceCollator(tok)
+            result=trainer.predict(PreferenceDataset(ds.original,ds.swapped,ds.labels))
+            self.assertEqual(result.predictions.shape,(4,3))
+            self.assertTrue(np.isfinite(result.predictions).all())
+            for name,p in model.named_parameters():
+                if name in old:torch.testing.assert_close(p,old[name])
 
 
 if __name__ == '__main__':

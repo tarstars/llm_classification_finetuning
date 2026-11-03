@@ -72,7 +72,7 @@
       "title": "Preference-trained backbone",
       "priority": "P1",
       "rank": 2,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.015,
         0.04
@@ -128,6 +128,16 @@
           "evidence": [
             "results/span_001/preflight.json",
             "docs/SPAN_001_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-03T11:05:03+00:00",
+          "status": "done",
+          "note": "Completed the pinned frozen-reward pilot: train-fit mapping raw loss 1.01125, grouped-calibrated loss 1.01557 vs deployed 0.97635; gain -0.03922 with 95% interval [-0.06821,-0.01143]. Positive direction coefficient, exact swap symmetry and finite outputs verified. This candidate is not promoted; ties are the main loss gap.",
+          "evidence": [
+            "results/span_001/reward_results.json",
+            "results/span_001/reward_diagnostics.json",
+            "docs/SPAN_001_RESULTS.md"
           ]
         }
       ],
@@ -241,7 +251,7 @@
       "title": "Broader adapter coverage",
       "priority": "P1",
       "rank": 4,
-      "status": "planned",
+      "status": "ready",
       "gain": [
         -0.01,
         0.025
@@ -280,7 +290,16 @@
         "ATTEMPT_002_RESULTS.md",
         "src/arena/joint_train.py"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T10:58:06+00:00",
+          "status": "ready",
+          "note": "Offline pilot packaged: matched initial weights, near-matched LoRA parameter budget, fixed 64-step random-view controls; waiting for its stage in the shared joint kernel.",
+          "evidence": [
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -490,7 +509,7 @@
       "title": "Explicit swap consistency",
       "priority": "P1",
       "rank": 3,
-      "status": "planned",
+      "status": "ready",
       "gain": [
         -0.01,
         0.02
@@ -529,7 +548,16 @@
         "EDA_REPORT.md",
         "results/eda_002/hypotheses.json"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T10:58:07+00:00",
+          "status": "ready",
+          "note": "Paired CE and paired CE+0.1 symmetric KL controls packaged at matched view/token accounting and fixed updates; waiting for its stage in the shared joint kernel.",
+          "evidence": [
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -589,7 +617,7 @@
       "title": "Learned symmetric tie model",
       "priority": "P1",
       "rank": 5,
-      "status": "planned",
+      "status": "running",
       "gain": [
         -0.01,
         0.015
@@ -628,7 +656,16 @@
         "EDA_REPORT.md",
         "results/eda_002/hypotheses.json"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T10:58:06+00:00",
+          "status": "running",
+          "note": "Starting frozen pooled-feature extraction and the predeclared matched-capacity tie-head pilot in the shared offline joint kernel; paired trainer and frozen-weight contracts passed.",
+          "evidence": [
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -788,7 +825,7 @@
       "title": "Preference-teacher distillation",
       "priority": "P2",
       "rank": 12,
-      "status": "planned",
+      "status": "deferred",
       "gain": [
         -0.02,
         0.05
@@ -829,7 +866,17 @@
         "ATTEMPT_004_RESULTS.md",
         "[Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-03T11:05:03+00:00",
+          "status": "deferred",
+          "note": "No demonstrated teacher advantage from the current candidates: the H01 reward pilot is worse than LoRA, and the prior general judge official score is also worse. Revisit after a stronger teacher is measured, before full distillation cost.",
+          "evidence": [
+            "results/span_001/reward_results.json",
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -2083,6 +2130,70 @@
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Recover reward-backbone tie information from pooled pair features",
+      "priority": "P3",
+      "gain": [
+        -0.02,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        12
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        1.5
+      ],
+      "followup_gpu_wall_hours": [
+        1,
+        4
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "risk": "medium",
+      "claim": "The scalar reward bottleneck may discard pairwise tie information that frozen answer representations retain.",
+      "basis": "Span-001 H01 calibrated loss is 1.01557 vs LoRA 0.97635; tie AUC is 0.593 vs 0.660 and tie recall 35.6% vs 44.0%. Forced winner accuracy on 701 human-decisive rows is nearly equal (69.6% vs 69.8%). This is a diagnostic hypothesis, not evidence the richer reward model will beat LoRA.",
+      "first_test": "Reuse the pinned reward checkpoint and fixed sample IDs; extract frozen per-answer hidden representations. Fit the same fold-local symmetric and coupled heads used in H11. Compare against the existing scalar-reward map and the frozen LoRA reference with identical packing/calibration.",
+      "acceptance": "Promote only if richer features improve reward-relative overall loss and provide credible overall benefit or complementarity against LoRA, with paired group intervals and tie/winner decomposition. Report matched head parameter counts.",
+      "stop": "Stop if richer representations leave the reward system materially worse than LoRA, if tie gains merely move a probability intercept, or if renewed data/runtime cost exceeds the declared pilot budget.",
+      "risk_reason": "The reward representation itself may lack human-vote signal; the current scalar system is already worse. Reused inspected development data can overstate a selected feature-head gain.",
+      "mitigation": "Keep this low priority; wait for H11 controls, cap the feature and head search, use training-only PCA/head selection and grouped exploratory evaluation. Preserve the scalar baseline and report unknown pretraining overlap.",
+      "rationale": "A bounded follow-up distinguishes discarded tie information from generally weak transfer before more expensive reward fine-tuning or distillation.",
+      "revision": "New task discovered during v1 from measured H01 tie failures; it is a reward-specific frozen-feature diagnostic, distinct from the LoRA-backed H11 pilot.",
+      "depends_on": [
+        "E00",
+        "H01",
+        "H11"
+      ],
+      "evidence": [
+        "results/span_001/reward_results.json",
+        "results/span_001/reward_diagnostics.json"
+      ],
+      "id": "H41",
+      "rank": 42,
+      "status": "planned",
+      "introduced_in": 2,
+      "discovered_during": 1,
+      "derived_from": [
+        "H01"
+      ],
+      "history": [
+        {
+          "at": "2026-11-03T11:05:04+00:00",
+          "status": "planned",
+          "note": "Measured reward utility transfers winner ranking about as well as LoRA but has substantially weaker tie discrimination; test the representation/scalar bottleneck before expensive teacher work.",
+          "evidence": [
+            "results/span_001/reward_results.json",
+            "results/span_001/reward_diagnostics.json"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -2183,7 +2294,9 @@
     {
       "number": 2,
       "state": "draft",
-      "item_ids": [],
+      "item_ids": [
+        "H41"
+      ],
       "focus_ids": [],
       "history": []
     }

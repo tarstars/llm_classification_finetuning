@@ -1,8 +1,7 @@
 {
-  "stage": "waiting_for_kernel",
-  "utc": "2026-11-03T10:39:04.094039+00:00",
+  "stage": "complete",
+  "utc": "2026-11-03T10:54:59.794731+00:00",
   "pid": 3658809,
   "job": "reward-tokenfix",
-  "status": "RUNNING",
   "version": 2
 }

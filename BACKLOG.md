@@ -6,7 +6,7 @@ Version **1**, active; **41** tasks. Focus for this span: E00, H01, H09, H04, H1
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **32**, ready **0**, running **1**, done **0**, rejected **0**, deferred **7**.
+Hypothesis status: planned **28**, ready **2**, running **1**, done **1**, rejected **0**, deferred **8**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -58,17 +58,17 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [E00](#e00) | P0 / done | Freeze the evaluation and resource contract | — | low | 4…8 | 0…0 | 0…0 | — |
-| 2 | [H01](#h01) | P1 / running | Preference-trained backbone | -0.015…+0.04 | high | 6…16 | 0.5…2 | 4…12 | E00 |
-| 3 | [H09](#h09) | P1 / planned | Explicit swap consistency | -0.01…+0.02 | medium | 6…14 | 1…3 | 12…24 | E00 |
-| 4 | [H04](#h04) | P1 / planned | Broader adapter coverage | -0.01…+0.025 | medium | 4…10 | 1…2 | 10…20 | E00 |
-| 5 | [H11](#h11) | P1 / planned | Learned symmetric tie model | -0.01…+0.015 | medium | 6…14 | 0.5…2 | 8…18 | E00 |
+| 2 | [H01](#h01) | P1 / done | Preference-trained backbone | -0.015…+0.04 | high | 6…16 | 0.5…2 | 4…12 | E00 |
+| 3 | [H09](#h09) | P1 / ready | Explicit swap consistency | -0.01…+0.02 | medium | 6…14 | 1…3 | 12…24 | E00 |
+| 4 | [H04](#h04) | P1 / ready | Broader adapter coverage | -0.01…+0.025 | medium | 4…10 | 1…2 | 10…20 | E00 |
+| 5 | [H11](#h11) | P1 / running | Learned symmetric tie model | -0.01…+0.015 | medium | 6…14 | 0.5…2 | 8…18 | E00 |
 | 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 7 | [H03](#h03) | P2 / planned | Complete training exposure | -0.01…+0.01 | medium | 2…6 | 0.25…1 | 4…8 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
 | 10 | [H10](#h10) | P2 / planned | Shared response utilities | -0.02…+0.02 | high | 10…24 | 1…3 | 12…28 | E00 |
 | 11 | [H17](#h17) | P2 / planned | Additional public preference data | -0.02…+0.04 | high | 16…40 | 1…3 | 16…40 | E00 |
-| 12 | [H15](#h15) | P2 / planned | Preference-teacher distillation | -0.02…+0.05 | high | 20…50 | 2…6 | 24…80 | E00, H01 |
+| 12 | [H15](#h15) | P2 / deferred | Preference-teacher distillation | -0.02…+0.05 | high | 20…50 | 2…6 | 24…80 | E00, H01 |
 | 13 | [H37](#h37) | P2 / planned | Diverse preference-model ensemble | -0.005…+0.025 | high | 6…16 | 0…1 | 4…16 | E00, H01 |
 | 14 | [H24](#h24) | P2 / planned | Adaptive question budget | -0.008…+0.01 | medium | 6…14 | 0.5…2 | 10…22 | E00 |
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
@@ -157,7 +157,7 @@ Make comparable pilot measurements possible before spending another training bud
 
 ### H01
 
-**Preference-trained backbone** — P1, running, risk high.
+**Preference-trained backbone** — P1, done, risk high.
 
 A preference-trained reward backbone may encode useful human-preference distinctions beyond the chat classifier.
 
@@ -185,10 +185,11 @@ A preference-trained reward backbone may encode useful human-preference distinct
 
 - 2026-11-03T10:29:50+00:00 — running: Launching pinned Skywork reward-model frozen inference on the fixed training-feature and development IDs; head fitting follows within the predeclared protocol. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 - 2026-11-03T10:38:00+00:00 — running: Initial GPU job is authoritatively ERROR after 170.830 quota seconds: chat-template BatchEncoding interface mismatch. Corrected code passed all 5,120 real-tokenizer rows (max 988 tokens) plus regression tests; launching a separately recorded tokenfix recovery. Evidence: [results/span_001/preflight.json](results/span_001/preflight.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+- 2026-11-03T11:05:03+00:00 — done: Completed the pinned frozen-reward pilot: train-fit mapping raw loss 1.01125, grouped-calibrated loss 1.01557 vs deployed 0.97635; gain -0.03922 with 95% interval [-0.06821,-0.01143]. Positive direction coefficient, exact swap symmetry and finite outputs verified. This candidate is not promoted; ties are the main loss gap. Evidence: [results/span_001/reward_results.json](results/span_001/reward_results.json); [results/span_001/reward_diagnostics.json](results/span_001/reward_diagnostics.json); [docs/SPAN_001_RESULTS.md](docs/SPAN_001_RESULTS.md)
 
 ### H09
 
-**Explicit swap consistency** — P1, planned, risk medium.
+**Explicit swap consistency** — P1, ready, risk medium.
 
 Paired-view consistency regularization may reduce harmful position dependence beyond existing random swapping and inference averaging.
 
@@ -214,9 +215,11 @@ Paired-view consistency regularization may reduce harmful position dependence be
 
 **References:** [EDA_REPORT.md](EDA_REPORT.md); [results/eda_002/hypotheses.json](results/eda_002/hypotheses.json)
 
+- 2026-11-03T10:58:07+00:00 — ready: Paired CE and paired CE+0.1 symmetric KL controls packaged at matched view/token accounting and fixed updates; waiting for its stage in the shared joint kernel. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+
 ### H04
 
-**Broader adapter coverage** — P1, planned, risk medium.
+**Broader adapter coverage** — P1, ready, risk medium.
 
 Adapting feed-forward layers as well as attention may improve preference representations.
 
@@ -242,9 +245,11 @@ Adapting feed-forward layers as well as attention may improve preference represe
 
 **References:** [ATTEMPT_002_RESULTS.md](ATTEMPT_002_RESULTS.md); [src/arena/joint_train.py](src/arena/joint_train.py)
 
+- 2026-11-03T10:58:06+00:00 — ready: Offline pilot packaged: matched initial weights, near-matched LoRA parameter budget, fixed 64-step random-view controls; waiting for its stage in the shared joint kernel. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+
 ### H11
 
-**Learned symmetric tie model** — P1, planned, risk medium.
+**Learned symmetric tie model** — P1, running, risk medium.
 
 A learned tie representation constrained to be symmetric may improve tie discrimination.
 
@@ -269,6 +274,8 @@ A learned tie representation constrained to be symmetric may improve tie discrim
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
 **References:** [EDA_REPORT.md](EDA_REPORT.md); [results/eda_002/hypotheses.json](results/eda_002/hypotheses.json)
+
+- 2026-11-03T10:58:06+00:00 — running: Starting frozen pooled-feature extraction and the predeclared matched-capacity tie-head pilot in the shared offline joint kernel; paired trainer and frozen-weight contracts passed. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 
 ### H02
 
@@ -440,7 +447,7 @@ Clean, compatible additional comparisons may improve coverage beyond the 46K tra
 
 ### H15
 
-**Preference-teacher distillation** — P2, planned, risk high.
+**Preference-teacher distillation** — P2, deferred, risk high.
 
 A demonstrated stronger preference teacher may provide useful soft labels for a compact student.
 
@@ -460,11 +467,13 @@ A demonstrated stronger preference teacher may provide useful soft labels for a 
 
 **Revision:** Do not use the present Gemma or assistant as a proven teacher. The existing Eliza embedding authorization is not blanket authorization for other external APIs.
 
-**Depends on:** E00, H01. Currently unmet: H01.
+**Depends on:** E00, H01. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
 **References:** [ATTEMPT_003_RESULTS.md](ATTEMPT_003_RESULTS.md); [ATTEMPT_004_RESULTS.md](ATTEMPT_004_RESULTS.md); [Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)
+
+- 2026-11-03T11:05:03+00:00 — deferred: No demonstrated teacher advantage from the current candidates: the H01 reward pilot is worse than LoRA, and the prior general judge official score is also worse. Revisit after a stronger teacher is measured, before full distillation cost. Evidence: [results/span_001/reward_results.json](results/span_001/reward_results.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 
 ### H37
 
@@ -488,7 +497,7 @@ A second preference model may improve the classifier if its errors are genuinely
 
 **Revision:** Compute estimate assumes components/predictions already exist; training a missing second model adds its own full budget.
 
-**Depends on:** E00, H01. Currently unmet: H01.
+**Depends on:** E00, H01. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
@@ -992,7 +1001,7 @@ A costly judge may help selected rows if a gate can predict its incremental bene
 
 **Revision:** A confidence heuristic does not establish that a cascade will help.
 
-**Depends on:** E00, H01. Currently unmet: H01.
+**Depends on:** E00, H01. Currently unmet: none.
 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 

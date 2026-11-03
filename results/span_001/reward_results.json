@@ -1,0 +1,331 @@
+{
+  "rows": 1024,
+  "evaluation": "Exploratory fixed development pilot; confirmation unused",
+  "executed_config": {
+    "span": 1,
+    "seed": 20261118,
+    "max_length": 1024,
+    "reward_model": "Skywork/Skywork-Reward-V2-Qwen3-4B",
+    "reward_revision": "fd958fef475f323f4e6b195930e3dd918485c668",
+    "reward_max_session_seconds": 10800,
+    "training_max_session_seconds": 25200,
+    "training_steps": 64,
+    "training_max_seconds_per_arm": 2700,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_steps": 4,
+    "gradient_accumulation_steps": 8,
+    "random_train_batch_size": 2,
+    "paired_train_batch_size": 1,
+    "eval_batch_size": 4,
+    "attention_rank": 16,
+    "all_linear_attention_rank": 5,
+    "all_linear_mlp_rank": 6,
+    "lora_dropout": 0.05,
+    "consistency_weight": 0.1,
+    "head_pca_components": 16,
+    "head_regularization_grid": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "head_inner_group_folds": 3,
+    "calibration_group_folds": 5,
+    "temperature_bounds": [
+      0.5,
+      3.0
+    ],
+    "bootstrap_group_replicates": 2000,
+    "pilot_useful_gain": 0.005,
+    "arms": [
+      "random_attention",
+      "random_all_linear",
+      "paired_attention",
+      "paired_consistency"
+    ]
+  },
+  "job": "reward-tokenfix",
+  "analysis_source_sha256": {
+    "scripts/analyze_span_001.py": "84401a7c44f60120432e5c39f1e937e2745068ca938268cc069e24e1a6c8bc3e",
+    "src/arena/span_heads.py": "40a147f34c3e282dc1db6a15dbe0f895dae021e17f19dfb66097bd2be03e8d4e"
+  },
+  "analysis_software": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1"
+  },
+  "baseline_deployed": {
+    "rows": 1024,
+    "log_loss": 0.9763498351539839,
+    "accuracy": 0.5224609375,
+    "macro_f1": 0.5197929772875352,
+    "brier": 0.5820665993044829,
+    "class_counts": [
+      340,
+      361,
+      323
+    ],
+    "class_loss": [
+      0.947979827100181,
+      0.9569269612899501,
+      1.0279209193744456
+    ],
+    "class_recall": [
+      0.5705882352941176,
+      0.5512465373961218,
+      0.43962848297213625
+    ],
+    "tie_precision": 0.4797297297297297,
+    "tie_auc": 0.659566386806994,
+    "confusion_matrix": [
+      [
+        194,
+        79,
+        67
+      ],
+      [
+        75,
+        199,
+        87
+      ],
+      [
+        85,
+        96,
+        142
+      ]
+    ]
+  },
+  "baseline_crossfit_temperature": {
+    "rows": 1024,
+    "log_loss": 0.9775208511482048,
+    "accuracy": 0.5224609375,
+    "macro_f1": 0.5197929772875352,
+    "brier": 0.5828911912558787,
+    "class_counts": [
+      340,
+      361,
+      323
+    ],
+    "class_loss": [
+      0.9489562079469652,
+      0.9585539583848566,
+      1.0287871885351707
+    ],
+    "class_recall": [
+      0.5705882352941176,
+      0.5512465373961218,
+      0.43962848297213625
+    ],
+    "tie_precision": 0.4797297297297297,
+    "tie_auc": 0.6592439813976495,
+    "confusion_matrix": [
+      [
+        194,
+        79,
+        67
+      ],
+      [
+        75,
+        199,
+        87
+      ],
+      [
+        85,
+        96,
+        142
+      ]
+    ]
+  },
+  "baseline_fold_temperatures": [
+    0.7730227391315645,
+    0.7244367989657852,
+    0.7814788105970876,
+    0.7169687372749798,
+    0.7858619771861115
+  ],
+  "models": [
+    {
+      "name": "reward_coupled",
+      "raw": {
+        "rows": 1024,
+        "log_loss": 1.0112456957679365,
+        "accuracy": 0.5068359375,
+        "macro_f1": 0.4995249173659863,
+        "brier": 0.6073041476855904,
+        "class_counts": [
+          340,
+          361,
+          323
+        ],
+        "class_loss": [
+          0.9199053088101179,
+          0.9894233962296377,
+          1.1317831004087544
+        ],
+        "class_recall": [
+          0.5941176470588235,
+          0.5595567867036011,
+          0.3560371517027864
+        ],
+        "tie_precision": 0.42592592592592593,
+        "tie_auc": 0.5950146407387942,
+        "confusion_matrix": [
+          [
+            202,
+            62,
+            76
+          ],
+          [
+            80,
+            202,
+            79
+          ],
+          [
+            111,
+            97,
+            115
+          ]
+        ]
+      },
+      "crossfit_temperature": {
+        "rows": 1024,
+        "log_loss": 1.015571306671741,
+        "accuracy": 0.5068359375,
+        "macro_f1": 0.4995249173659863,
+        "brier": 0.6097541019506627,
+        "class_counts": [
+          340,
+          361,
+          323
+        ],
+        "class_loss": [
+          0.9263446889859621,
+          0.9928605356788752,
+          1.1348766885342465
+        ],
+        "class_recall": [
+          0.5941176470588235,
+          0.5595567867036011,
+          0.3560371517027864
+        ],
+        "tie_precision": 0.42592592592592593,
+        "tie_auc": 0.5930227936207894,
+        "confusion_matrix": [
+          [
+            202,
+            62,
+            76
+          ],
+          [
+            80,
+            202,
+            79
+          ],
+          [
+            111,
+            97,
+            115
+          ]
+        ]
+      },
+      "fold_temperatures": [
+        1.0420938647312759,
+        0.8694090104205564,
+        1.0616233085523505,
+        1.032676427286247,
+        1.087594649406702
+      ],
+      "gain_vs_deployed": {
+        "gain": -0.03922147151775701,
+        "interval_95": [
+          -0.06821173404368325,
+          -0.011427281767811395
+        ],
+        "groups": 990,
+        "rows": 1024,
+        "replicates": 2000
+      },
+      "gain_vs_crossfit_baseline": {
+        "gain": -0.03805045552353618,
+        "interval_95": [
+          -0.06631774575264228,
+          -0.011178053737378521
+        ],
+        "groups": 990,
+        "rows": 1024,
+        "replicates": 2000
+      },
+      "details": {
+        "feature_kind": "reward",
+        "head_kind": "coupled",
+        "inner_selection": [
+          {
+            "regularization": 0.01,
+            "inner_log_loss": 1.0010508251932557
+          },
+          {
+            "regularization": 0.1,
+            "inner_log_loss": 1.016184744346576
+          },
+          {
+            "regularization": 1.0,
+            "inner_log_loss": 1.0716837160674006
+          }
+        ],
+        "chosen_regularization": 0.01,
+        "fit_rows": 4096,
+        "max_swap_probability_error": 0.0,
+        "kind": "coupled",
+        "regularization": 0.01,
+        "parameters": 4,
+        "iterations": 8,
+        "objective": 1.0061484986327043,
+        "gradient_norm": 1.0833481358837304e-08
+      }
+    }
+  ],
+  "reward_runtime": [
+    {
+      "rank": 0,
+      "rows": 2560,
+      "completed_sequences": 5120,
+      "total_sequences": 5120,
+      "complete": true,
+      "seconds_since_model_load": 854.4037696989999,
+      "peak_gpu_bytes": 8761026048,
+      "dtype": "float16",
+      "gpu": "Tesla T4",
+      "max_packed_length": 971
+    },
+    {
+      "rank": 1,
+      "rows": 2560,
+      "completed_sequences": 5120,
+      "total_sequences": 5120,
+      "complete": true,
+      "seconds_since_model_load": 816.1631901249999,
+      "peak_gpu_bytes": 8760534528,
+      "dtype": "float16",
+      "gpu": "Tesla T4",
+      "max_packed_length": 988
+    }
+  ],
+  "candidate": {
+    "model_id": "Skywork/Skywork-Reward-V2-Qwen3-4B",
+    "revision": "fd958fef475f323f4e6b195930e3dd918485c668",
+    "gated": false,
+    "license": "apache-2.0",
+    "public_card": "https://huggingface.co/Skywork/Skywork-Reward-V2-Qwen3-4B",
+    "pretraining_overlap": "Unknown; no clean-benchmark claim",
+    "weights": [
+      "model-00001-of-00002.safetensors",
+      "model-00002-of-00002.safetensors"
+    ],
+    "config.json_sha256": "e017d6f50c3ed8e455883af28361d3ca3166e0f42c26af770b75511cd6297703",
+    "tokenizer_config.json_sha256": "d3e08cbc53421cc90a07d40da21fbac9a912f5ffa3f08263afd04f06105b0e6f",
+    "architecture": [
+      "Qwen3ForSequenceClassification"
+    ],
+    "num_labels": 1
+  }
+}

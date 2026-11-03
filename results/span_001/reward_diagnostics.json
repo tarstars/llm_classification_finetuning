@@ -1,0 +1,17 @@
+{
+  "decisive_rows": 701,
+  "baseline_conditional_winner_accuracy": 0.6975748930099858,
+  "reward_conditional_winner_accuracy": 0.6961483594864479,
+  "conditional_winner_gain": {
+    "gain": -0.012320358743885767,
+    "interval_95": [
+      -0.04399488939240711,
+      0.01880647326933266
+    ],
+    "groups": 689,
+    "rows": 701,
+    "replicates": 2000
+  },
+  "interpretation": "Descriptive decomposition of the declared H01 result; no hybrid model was fitted or evaluated.",
+  "head_direction_weight": 1.045112138709011
+}
