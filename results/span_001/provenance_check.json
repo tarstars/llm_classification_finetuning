@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-03T14:31:21.615667+00:00",
+  "frozen_manifests_match_current_files": true,
+  "verified_sha256": {
+    "split_ids_sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1",
+    "sample_ids_sha256": "716c065f583d45ef6028034e77349cf245b849abbf3f6d58a533c3867ae37203",
+    "selection_sha256": "68a097c19cabe454c99925cc41153fd9cfb4b5a35bc3f656b361b21706bd7ca8",
+    "baseline_predictions_sha256": "5b2522d2be7fed1d490ebe6135afe97fe3863339d8c34a971027ce861f051de2",
+    "baseline_adapter_expected_sha256": "8afc09d728698c7bcd02e47f9d427166b4b07b3644c848052cc66c9b4f08e39d"
+  },
+  "frozen_baseline_sources_match": true,
+  "joint_notebook_snapshot_sha256": "828b3b70a8468de9b2b403f17cd70838675ea551d5118a9b97b0930db1427fab",
+  "current_joint_config_matches_pushed_snapshot": true,
+  "original_clock_and_budget_preserved": true,
+  "notebooks_symlink_valid": true,
+  "local_raw_csv_sha256_current": {
+    "train.csv": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+    "test.csv": "4d6a47208951532a0b6bf862a75531806270f4782afc342125fd399682d09957"
+  },
+  "raw_checksum_scope": "Supplemental local-file hashes recorded now; these are not claimed as remotely measured GPU-input hashes.",
+  "pending_gates_at_check": [
+    "Final GPU stage and predictions",
+    "Downloaded-artifact and baseline-reproduction checks",
+    "H04/H09/H11 quality and decisions",
+    "Final quota and terminal-job audit",
+    "v1 final snapshot and v2 handoff",
+    "Final executed notebook and remote publication"
+  ]
+}

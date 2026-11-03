@@ -619,6 +619,15 @@
             "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-03T14:39:55+00:00",
+          "status": "running",
+          "note": "All four training arms have now reached 64 nominal cycles with finite final gradients. Paired CE and paired CE+KL each consumed 1296288 non-padding tokens and reconstruct 61 accepted updates; training took 1969.19 and 1975.41 seconds respectively. Thus their logged exposure/scheduler comparison is matched; finite exported weights and prediction identity remain to verify. The final consistency-arm prediction pass is pending before artifact collection and quality analysis.",
+          "evidence": [
+            "results/span_001/live_progress_joint.json",
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
         }
       ],
       "introduced_in": 1,

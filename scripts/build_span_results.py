@@ -53,6 +53,14 @@ if progress_path.exists() and not closed:
     lines+=['',f"Pinned joint version {progress['version']} at **{progress['status_observed_at']}**: "
             f"active stage `{progress.get('active_stage_from_log','unknown')}`; "
             f"completed stages: {finished}. Prediction generation and artifact validation are separate gates."]
+provenance_path=directory/'provenance_check.json'
+if provenance_path.exists():
+    provenance=json.loads(provenance_path.read_text())
+    lines+=['',f"Supplemental input audit at **{provenance['checked_at']}** verified the recorded "
+            'split/sample, baseline artifact and source hashes, the pushed notebook configuration, '
+            'the original clock/budget and the notebook symlink. '
+            '[Audit details](../results/span_001/provenance_check.json) distinguish local CSV hashes '
+            'from remotely measured GPU-input checksums and record the gates still pending at that time.']
 lines+=['','Initial frozen deployed baseline on the fixed 1,024 development rows: '
         '**0.97635 log loss**, **52.25% accuracy**. Development and confirmation were '
         'previously inspected; this span uses development only and is exploratory.','']
