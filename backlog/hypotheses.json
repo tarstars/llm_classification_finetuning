@@ -1,0 +1,1964 @@
+{
+  "schema_version": 1,
+  "estimated_on": "2026-11-03",
+  "items": [
+    {
+      "id": "E00",
+      "kind": "prerequisite",
+      "title": "Freeze the evaluation and resource contract",
+      "priority": "P0",
+      "rank": 1,
+      "status": "ready",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        4,
+        8
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "risk": "low",
+      "claim": "Make comparable pilot measurements possible before spending another training budget.",
+      "basis": "Both dev and confirmation have been inspected; many saved predictions exist but are not training out-of-fold predictions. Attempt 002 is the frozen reference.",
+      "first_test": "Inventory exact split IDs, checkpoint/config hashes and cached predictions; specify grouped inner folds within the training partition, a matched baseline, selection rules, paired group bootstrap and a fixed pilot. Refresh Kaggle quota/job status and profile candidate fit before any GPU launch.",
+      "acceptance": "Commit a protocol with artifact paths, baseline metrics on identical rows, a small predeclared search budget, nested grouped selection and per-job runtime caps. Count baseline retraining and OOF generation explicitly when needed. No GPU launch is needed just to write the protocol.",
+      "stop": "Do not start downstream pilots if split/provenance, remaining quota, checkpoint availability or a feasible runtime budget is unresolved.",
+      "risk_reason": "Reusing inspected folds can create optimistic selection; stale quota and hidden-row assumptions can invalidate a runtime plan.",
+      "mitigation": "Label existing folds exploratory; use nested grouped selection and new independent data if available. Verify current quota and test-row count assumptions at launch.",
+      "rationale": "Prevents spending compute on incomparable changes or promoting validation overfit.",
+      "revision": "Added a prerequisite outside the forty hypotheses; this is evaluation work, not a forecast of score gain.",
+      "depends_on": [],
+      "evidence": [
+        "docs/ATTEMPT_002.md",
+        "docs/ATTEMPT_003.md",
+        "EDA_REPORT.md",
+        "TARGET_AUDIT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H01",
+      "kind": "hypothesis",
+      "title": "Preference-trained backbone",
+      "priority": "P1",
+      "rank": 2,
+      "status": "planned",
+      "gain": [
+        -0.015,
+        0.04
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        16
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        4,
+        12
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "A preference-trained reward backbone may encode useful human-preference distinctions beyond the chat classifier.",
+      "basis": "Historical preference-model recipes motivate this; our general prompted judge did not establish an advantage. No selected reward checkpoint has been tested locally.",
+      "first_test": "Verify a public Skywork/ArmoRM candidate license, provenance, input template, Kaggle attachment and memory. Score both answers on a training-only mapping set and a fixed pilot; cross-fit a symmetric three-class head rather than treating one reward scalar as class probabilities.",
+      "acceptance": "Advance only if mapped probabilities beat the matched frozen classifier on the pilot and runtime/provenance pass. Adopt after larger paired evaluation under E00.",
+      "stop": "Defer the checkpoint if it cannot fit/run offline, known evaluation overlap is unresolved, or the mapping adds no signal over the baseline.",
+      "risk_reason": "Public reward training can overlap this public benchmark; scalar rewards omit tie probabilities, and an 8B model may exceed runtime.",
+      "mitigation": "Audit known training data and unknown exposure separately; fit the tie/winner mapping only within folds; profile two-answer inference before scaling.",
+      "rationale": "A relatively cheap frozen-model pilot tests a different training objective before another full fine-tune.",
+      "revision": "Reward models are not ready-made three-class classifiers, and checkpoint availability is not proof of clean evaluation.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "ATTEMPT_003_RESULTS.md",
+        "TARGET_AUDIT.md",
+        "[Skywork reward models](https://github.com/SkyworkAI/Skywork-Reward)"
+      ],
+      "history": []
+    },
+    {
+      "id": "H02",
+      "kind": "hypothesis",
+      "title": "Larger supervised classifier",
+      "priority": "P2",
+      "rank": 6,
+      "status": "planned",
+      "gain": [
+        -0.015,
+        0.035
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        16
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        16,
+        36
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "An 8–9B supervised preference classifier may learn distinctions missed by Qwen3-4B.",
+      "basis": "Capacity is plausible but the blind assistant comparison was inconclusive; size alone has not been isolated.",
+      "first_test": "Fit/profile one larger candidate, then compare short training curves at matched examples/tokens and packing. Report a separate equal-wall-budget comparison.",
+      "acceptance": "A larger matched-exposure evaluation improves overall loss and has a feasible quantized submission path.",
+      "stop": "Stop if memory/throughput prevents useful exposure, or pilot loss does not improve enough to justify the cost.",
+      "risk_reason": "A larger model can see fewer examples within quota and require multiple nine-hour jobs; teacher/data exposure may differ.",
+      "mitigation": "Separate model size from data, packing and token exposure; use exact resumable checkpoints and record provenance.",
+      "rationale": "Potentially material but more expensive and less directly supported than first-wave changes.",
+      "revision": "Model level and model size are not interchangeable; compare training objective and exposure as well as parameters.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "ATTEMPT_002_RESULTS.md",
+        "ATTEMPT_004_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H03",
+      "kind": "hypothesis",
+      "title": "Complete training exposure",
+      "priority": "P2",
+      "rank": 7,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        6
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        4,
+        8
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "The remaining exposure to one epoch may still help, despite the late plateau.",
+      "basis": "Only 0.61 epochs completed, but raw dev losses at steps 600/800/877 were 0.98399/0.97870/0.98186.",
+      "first_test": "First check whether an optimizer/scheduler/RNG checkpoint exists. If it does, resume on a fixed schedule to one epoch with intermediate evaluations. If only adapters exist, label a fresh warm-start schedule as a different experiment.",
+      "acceptance": "The resumed candidate beats selected step 800 using the same swap averaging and separately cross-fitted calibration.",
+      "stop": "Stop on predeclared plateau/overfit; do not run a second epoch just because the first epoch was incomplete.",
+      "risk_reason": "More steps can overfit, and adapter-only restart does not preserve the original optimization trajectory.",
+      "mitigation": "Inventory checkpoints before GPU use; keep step 800; predeclare endpoints and match postprocessing.",
+      "rationale": "Checkpoint inspection is cheap; the expected remaining gain is modest, not a reason to reserve another six hours automatically.",
+      "revision": "Incomplete exposure is a hypothesis, not evidence that more epochs will improve loss.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "ATTEMPT_002_RESULTS.md",
+        "docs/ATTEMPT_002.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H04",
+      "kind": "hypothesis",
+      "title": "Broader adapter coverage",
+      "priority": "P1",
+      "rank": 4,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.025
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        4,
+        10
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        20
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Adapting feed-forward layers as well as attention may improve preference representations.",
+      "basis": "Attempt 002 adapts q/k/v/o projections only; no controlled target-module ablation exists.",
+      "first_test": "Compare attention-only and attention-plus-MLP LoRA at matched trainable-parameter budget, data, exposure and schedule. If all-linear coverage needs a different rank, record that explicitly.",
+      "acceptance": "Overall paired loss improves after matching exposure/calibration; memory and inference artifacts remain valid.",
+      "stop": "Stop if added optimizer memory prevents useful batches or gains disappear when adapter parameter count is controlled.",
+      "risk_reason": "Changing both coverage and parameter budget confounds the result; extra optimizer state reduces throughput.",
+      "mitigation": "Measure trainable parameters and tokens/second; use a matched-rank-budget ablation before a full run.",
+      "rationale": "A contained training change with useful precedent and less deployment complexity than a new architecture.",
+      "revision": "Broader coverage is not automatically better; isolate coverage from total adaptation capacity.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "ATTEMPT_002_RESULTS.md",
+        "src/arena/joint_train.py"
+      ],
+      "history": []
+    },
+    {
+      "id": "H05",
+      "kind": "hypothesis",
+      "title": "Better optimization",
+      "priority": "P2",
+      "rank": 8,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        4,
+        10
+      ],
+      "pilot_gpu_wall_hours": [
+        2,
+        6
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        20
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Learning-rate, warmup or batch choices may have limited the current classifier.",
+      "basis": "The late learning curve plateau is observed; its cause has not been identified.",
+      "first_test": "Predeclare at most three schedules on the same training-only pilot; compare matched tokens and one selected full run, counting the whole search cost.",
+      "acceptance": "A selected schedule improves a larger evaluation rather than only the best noisy pilot checkpoint.",
+      "stop": "Stop the grid if training is already stable and no schedule improves the predeclared learning-curve criterion.",
+      "risk_reason": "Searching many schedules or checkpoints overfits dev and silently multiplies GPU cost.",
+      "mitigation": "Cap the grid, use inner folds for selection and report all curves including failed runs.",
+      "rationale": "Useful only with a small disciplined search; do not use an open-ended hyperparameter sweep.",
+      "revision": "The plateau does not specifically diagnose the learning rate.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "ATTEMPT_002_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H06",
+      "kind": "hypothesis",
+      "title": "Response-aware pooling",
+      "priority": "P2",
+      "rank": 9,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        8,
+        18
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        20
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Separate learned pooling over each answer may expose comparison features more directly than the current final-token head.",
+      "basis": "The deployed model pools a final token. That token already has causal access to both answers; no information-access defect is established.",
+      "first_test": "Add masked A/B pooled representations and a small comparison head while retaining the same causal backbone and packing.",
+      "acceptance": "Matched-exposure overall loss improves; answer-swap equivariance and padding/masking invariants pass.",
+      "stop": "Stop if feature pooling adds no discrimination or only reduces training loss.",
+      "risk_reason": "Incorrect token spans/padding can leak position or mix question and answer evidence.",
+      "mitigation": "Test token-span masks, swapped examples and short/long inputs before training.",
+      "rationale": "A controlled architecture ablation, after cheaper training changes.",
+      "revision": "Final-token pooling may be suboptimal, but it does see both answers.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "src/arena/joint_data.py",
+        "src/arena/joint_train.py"
+      ],
+      "history": []
+    },
+    {
+      "id": "H07",
+      "kind": "hypothesis",
+      "title": "Bidirectional comparison attention",
+      "priority": "P4",
+      "rank": 37,
+      "status": "deferred",
+      "gain": [
+        -0.03,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        16,
+        40
+      ],
+      "pilot_gpu_wall_hours": [
+        2,
+        6
+      ],
+      "followup_gpu_wall_hours": [
+        12,
+        30
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Changing the attention mask might improve within-answer representations for comparison.",
+      "basis": "The final classification token can already attend to the entire retained question and both answers. A causal model is not missing answer B at classification time.",
+      "first_test": "Only after simpler alternatives, verify mask/kernel support and compare a bidirectional fine-tune with the causal model at matched exposure.",
+      "acceptance": "An end-to-end classifier improves overall loss and retains a compatible offline inference implementation.",
+      "stop": "Defer if custom attention breaks optimized kernels or early validation regresses.",
+      "risk_reason": "Changing the pretrained attention regime may damage representations and remove fast kernels.",
+      "mitigation": "Keep the causal baseline; run a small compatibility/quality probe before any full training.",
+      "rationale": "The original motivation overstated a limitation; high engineering risk and weak local evidence.",
+      "revision": "Corrected: causal attention is not a missing-context bug in our final-token classifier.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "src/arena/joint_data.py",
+        "src/arena/joint_train.py"
+      ],
+      "history": []
+    },
+    {
+      "id": "H08",
+      "kind": "hypothesis",
+      "title": "Inference quantization sensitivity",
+      "priority": "P4",
+      "rank": 35,
+      "status": "deferred",
+      "gain": [
+        -0.005,
+        0.005
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        4,
+        10
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        1,
+        4
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Inference precision may account for a small part of preference error.",
+      "basis": "The classifier was trained with a four-bit base. No matched-weight precision ablation has been run.",
+      "first_test": "Compare the same effective trained weights at feasible precisions on fixed rows; explicitly distinguish dequantizing an NF4-trained base from replacing it with the original full-precision base.",
+      "acceptance": "A real paired quality gain survives memory/runtime checks and unchanged calibration protocol.",
+      "stop": "Stop if higher precision cannot fit, or the candidate changes base weights and can no longer isolate inference quantization.",
+      "risk_reason": "Merging adapters onto original BF16 weights changes the effective model; BF16 export does not undo QLoRA training quantization.",
+      "mitigation": "Document exact base/adapter/merge operations and hashes; do not describe a different base as the same-weight precision test.",
+      "rationale": "Likely a small effect, with memory cost and a subtle comparability problem.",
+      "revision": "Narrowed to inference sensitivity; it does not estimate the benefit of full-precision training.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/ATTEMPT_002.md",
+        "src/arena/joint_infer.py"
+      ],
+      "history": []
+    },
+    {
+      "id": "H09",
+      "kind": "hypothesis",
+      "title": "Explicit swap consistency",
+      "priority": "P1",
+      "rank": 3,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        14
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        12,
+        24
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Paired-view consistency regularization may reduce harmful position dependence beyond existing random swapping and inference averaging.",
+      "basis": "38.1% raw decision flips and an 8.3-point second-position advantage were measured on the pilot; swap averaging is already deployed.",
+      "first_test": "Compare paired CE alone with paired CE plus symmetric KL on aligned A/B probabilities; preserve ties. Include a matched-token and an equal-wall-budget comparison with random augmentation.",
+      "acceptance": "Lower overall loss after the same swap averaging/calibration, with reduced raw order disagreement and no class collapse.",
+      "stop": "Stop if the regularizer only makes predictions equally uncertain or duplicates the benefit already obtained by averaging.",
+      "risk_reason": "Two views increase compute; excessive consistency can suppress useful discrimination.",
+      "mitigation": "Cap the penalty search, monitor per-class entropy and raw versus averaged metrics, and count both forward passes.",
+      "rationale": "Directly targets the strongest measured model defect with a falsifiable change.",
+      "revision": "The baseline already includes swapping and averaging; estimate only their incremental training-time extension.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "EDA_REPORT.md",
+        "results/eda_002/hypotheses.json"
+      ],
+      "history": []
+    },
+    {
+      "id": "H10",
+      "kind": "hypothesis",
+      "title": "Shared response utilities",
+      "priority": "P2",
+      "rank": 10,
+      "status": "planned",
+      "gain": [
+        -0.02,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        10,
+        24
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        12,
+        28
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Shared question-answer scoring may enforce useful A/B symmetry, at the cost of some direct pair interaction.",
+      "basis": "Position instability is measured, but it does not prove independent utility scoring is the best remedy.",
+      "first_test": "Score (question,A) and (question,B) with shared weights; use their difference plus symmetric tie features. Compare with the joint cross-encoder under matched exposure.",
+      "acceptance": "Overall loss and raw order stability improve without a disproportionate failure on subtle pairwise comparisons.",
+      "stop": "Stop if loss of direct cross-answer interaction outweighs improved symmetry.",
+      "risk_reason": "An answer can be useful only relative to its competitor; independent scores can miss these interactions and repeat question processing.",
+      "mitigation": "Keep a joint baseline and measure equal-budget throughput; add only a small symmetric comparison head.",
+      "rationale": "Potentially useful, but a larger architectural change than H09/H11.",
+      "revision": "Shared utilities are not guaranteed to dominate a cross-encoder; direct interaction is a real tradeoff.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H11",
+      "kind": "hypothesis",
+      "title": "Learned symmetric tie model",
+      "priority": "P1",
+      "rank": 5,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        14
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        8,
+        18
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "A learned tie representation constrained to be symmetric may improve tie discrimination.",
+      "basis": "Tie recall is 45.4% and tie AUC 0.668; simple tie-intercept calibration already showed only a small uncertain gain.",
+      "first_test": "Learn p(tie) from symmetric pair features and conditional A/B preference from antisymmetric features. Compare with a three-logit head at matched capacity and supervision.",
+      "acceptance": "Overall paired loss and tie discrimination improve, rather than tie recall increasing through an indiscriminate tie bias.",
+      "stop": "Stop if the only change is algebraically rewriting the same logits, or gains vanish against class-specific calibration.",
+      "risk_reason": "Factorizing a distribution alone adds no information; a separate head can inflate tie predictions.",
+      "mitigation": "Require changed learned features/objective, keep a matched-head control, and report tie AUC, precision/recall and class losses.",
+      "rationale": "Targets a measured weakness with limited inference overhead, while acknowledging an existing calibration control.",
+      "revision": "Rewritten: a two-stage probability formula alone cannot improve the model.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "EDA_REPORT.md",
+        "results/eda_002/hypotheses.json"
+      ],
+      "history": []
+    },
+    {
+      "id": "H12",
+      "kind": "hypothesis",
+      "title": "Soft targets for repeated votes",
+      "priority": "P4",
+      "rank": 36,
+      "status": "deferred",
+      "gain": [
+        -0.001,
+        0.001
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "risk": "low",
+      "claim": "Training-only equivalent comparisons can share a vote distribution, with very limited expected global impact.",
+      "basis": "The entire audit found only 39 canonical repeated-comparison groups covering 123 rows; the conflicting training subset is smaller.",
+      "first_test": "Count usable within-training-fold conflicting groups and compute an optimistic coverage bound before considering any retrain.",
+      "acceptance": "Proceed beyond the CPU audit only if coverage and a plausible effect justify the cost; otherwise retain the result as a negative finding.",
+      "stop": "Do not train a model solely for a signal affecting a tiny fraction of rows without stronger evidence.",
+      "risk_reason": "Tiny counts make empirical soft labels unstable, and cross-fold aggregation would leak targets.",
+      "mitigation": "Aggregate only inside each training fold, align swapped labels, smooth counts and never alter evaluation targets.",
+      "rationale": "Low-cost coverage audit, but not a credible explanation for a 0.17 loss gap.",
+      "revision": "Demoted substantially: repeated conflicting comparisons are rare. GPU estimate covers only the CPU-first scope; any later retrain needs a new budget.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "TARGET_AUDIT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H13",
+      "kind": "hypothesis",
+      "title": "Noise-robust training loss",
+      "priority": "P3",
+      "rank": 26,
+      "status": "planned",
+      "gain": [
+        -0.02,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        4,
+        10
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        20
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "A robust objective may reduce sensitivity to inconsistent training votes, but could also suppress valid minority preferences.",
+      "basis": "Some identical-answer votes are inconsistent; disagreement with objective correctness is not itself label noise. Extreme wrong cases are not most of the loss.",
+      "first_test": "Predeclare one bounded or bootstrapped objective against CE on identical folds and exposure; evaluate original votes.",
+      "acceptance": "Overall multiclass log loss improves, including minority and tie slices, after identical postprocessing.",
+      "stop": "Stop if the objective improves training stability but worsens calibrated CE or drops unusual valid preferences.",
+      "risk_reason": "The official metric rewards human vote probabilities, not an automatically corrected notion of factual truth.",
+      "mitigation": "Never relabel evaluation data or remove examples just because a model disagrees; keep ordinary CE as control.",
+      "rationale": "Worth a controlled test only after higher-evidence changes.",
+      "revision": "Replaced the assumption that difficult or idiosyncratic votes are necessarily incorrect.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "TARGET_AUDIT.md",
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H14",
+      "kind": "hypothesis",
+      "title": "Criterion-level auxiliary supervision",
+      "priority": "P3",
+      "rank": 23,
+      "status": "planned",
+      "gain": [
+        -0.015,
+        0.025
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        20,
+        50
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        12,
+        28
+      ],
+      "cpu_wall_hours": [
+        1,
+        6
+      ],
+      "risk": "high",
+      "claim": "Reliable criterion annotations may help learn instruction compliance and factual consistency while retaining human preference as the primary target.",
+      "basis": "Reviewed failures show such mistakes, but selected error cases do not establish their population frequency or causal importance.",
+      "first_test": "Create a train-only representative annotation pilot with criterion definitions, independent checks and a CE-plus-auxiliary ablation.",
+      "acceptance": "Human-vote loss improves overall; criterion accuracy alone is insufficient.",
+      "stop": "Stop if annotations are unreliable or auxiliary gains fail to transfer to preference predictions.",
+      "risk_reason": "Annotation is expensive and may encode the annotator/teacher rubric rather than voter preference.",
+      "mitigation": "Audit annotation reliability; cap auxiliary weights and preserve the original winner target.",
+      "rationale": "A common annotation foundation for H18/H19, but expensive and unproven.",
+      "revision": "Criterion correctness is an auxiliary signal, not an interchangeable replacement for the competition target.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "EDA_REPORT.md",
+        "ATTEMPT_004_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H15",
+      "kind": "hypothesis",
+      "title": "Preference-teacher distillation",
+      "priority": "P2",
+      "rank": 12,
+      "status": "planned",
+      "gain": [
+        -0.02,
+        0.05
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        20,
+        50
+      ],
+      "pilot_gpu_wall_hours": [
+        2,
+        6
+      ],
+      "followup_gpu_wall_hours": [
+        24,
+        80
+      ],
+      "cpu_wall_hours": [
+        1,
+        4
+      ],
+      "risk": "high",
+      "claim": "A demonstrated stronger preference teacher may provide useful soft labels for a compact student.",
+      "basis": "Historical solutions used distillation; our current general judge has not demonstrated a reliable improvement over LoRA.",
+      "first_test": "First establish teacher advantage and calibration on the same pilot. Distill a training-only small soft-label set into the student before generating full-dataset teacher predictions.",
+      "acceptance": "The student improves human-vote loss and submission throughput. Report teacher, student and ordinary-supervision controls.",
+      "stop": "Stop if the teacher is no better, only transfers its own bias, or full label generation has no feasible approved compute path.",
+      "risk_reason": "Teacher contamination, uncertain teacher advantage and labeling cost can dominate the experiment.",
+      "mitigation": "Use held-out-group teacher evaluation and provenance checks. Budget assumes a teacher up to roughly 9B fitting two T4s; larger teachers need a separate resource estimate and authorization for any external text service.",
+      "rationale": "One of the larger upside hypotheses, gated on a real teacher advantage instead of model reputation.",
+      "revision": "Do not use the present Gemma or assistant as a proven teacher. The existing Eliza embedding authorization is not blanket authorization for other external APIs.",
+      "depends_on": [
+        "E00",
+        "H01"
+      ],
+      "evidence": [
+        "ATTEMPT_003_RESULTS.md",
+        "ATTEMPT_004_RESULTS.md",
+        "[Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)"
+      ],
+      "history": []
+    },
+    {
+      "id": "H16",
+      "kind": "hypothesis",
+      "title": "Refusal appropriateness",
+      "priority": "P3",
+      "rank": 21,
+      "status": "planned",
+      "gain": [
+        -0.005,
+        0.008
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        14
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        8,
+        18
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Request-conditioned refusal features may improve applicable cases beyond a generic refusal penalty.",
+      "basis": "One-sided refusal occurs in 6,075 rows; the non-refusing answer wins about 53%, far from a deterministic rule.",
+      "first_test": "Audit a train-only stratified sample for warranted/unwarranted refusal, then test a request-conditioned auxiliary feature/head.",
+      "acceptance": "Improve refusal-slice and overall loss without penalizing appropriate restraint.",
+      "stop": "Stop if the detector adds no signal beyond current text embeddings or only raises non-refusal bias.",
+      "risk_reason": "A refusal regex is an imperfect English descriptor; treating every refusal as bad gives wrong preferences.",
+      "mitigation": "Manually audit the detector and distinguish the request context; keep this a conditional feature.",
+      "rationale": "There is measurable coverage but weak evidence for a large global gain.",
+      "revision": "Refusal association is not a deterministic target rule or evidence of leakage.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "TARGET_AUDIT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H17",
+      "kind": "hypothesis",
+      "title": "Additional public preference data",
+      "priority": "P2",
+      "rank": 11,
+      "status": "planned",
+      "gain": [
+        -0.02,
+        0.04
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        16,
+        40
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        16,
+        40
+      ],
+      "cpu_wall_hours": [
+        1,
+        8
+      ],
+      "risk": "high",
+      "claim": "Clean, compatible additional comparisons may improve coverage beyond the 46K training partition.",
+      "basis": "The historical recipe used external data; our current data coverage is limited, but compatible uncontaminated additions have not been established.",
+      "first_test": "Audit one candidate dataset license/source/target semantics, remove known exact and semantic overlaps, then compare a small mixed-data pilot with original-only training.",
+      "acceptance": "Improve loss on original human-vote data with stable class/domain behavior; document every added source and mixing ratio.",
+      "stop": "Exclude sources with unresolved provenance/overlap or mismatched preference semantics; stop if mixing hurts the original distribution.",
+      "risk_reason": "Public preference sets may reproduce evaluation examples or teach a different label convention.",
+      "mitigation": "Deduplicate against all known partitions without using their labels; record remaining unknown exposure and avoid claiming fully clean pretraining.",
+      "rationale": "Potentially broader improvement than handcrafted rules, with substantial data-validity risk.",
+      "revision": "Extra data is not automatically clean or useful; provenance and overlap audit precede training.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "TARGET_AUDIT.md",
+        "[Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)"
+      ],
+      "history": []
+    },
+    {
+      "id": "H18",
+      "kind": "hypothesis",
+      "title": "Controlled instruction counterexamples",
+      "priority": "P3",
+      "rank": 22,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        10,
+        24
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        22
+      ],
+      "cpu_wall_hours": [
+        0.5,
+        3
+      ],
+      "risk": "medium",
+      "claim": "Verified minimal instruction violations may teach useful distinctions absent from sparse winner labels.",
+      "basis": "The poster contains missed constraints, but their full-dataset frequency is not measured.",
+      "first_test": "Build train-only matched pairs for checkable constraints and compare a small synthetic mixing ratio with original data only.",
+      "acceptance": "Improve human-vote loss on both representative rows and constraint slices without a format-only shortcut.",
+      "stop": "Stop if gains occur only on the synthetic generation template.",
+      "risk_reason": "Synthetic preference labels can impose ideal compliance when real voters prefer other qualities.",
+      "mitigation": "Verify constraints automatically, diversify templates and retain original preference supervision as the main objective.",
+      "rationale": "Cheaper to verify than arbitrary factual claims, after establishing an annotation contract. Annotation tooling can be shared with H14 without waiting for that full experiment.",
+      "revision": "Synthetic constraint truth does not prove the preferred class for an original ambiguous comparison.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/ERROR_POSTER.md",
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H19",
+      "kind": "hypothesis",
+      "title": "Verified factual counterexamples",
+      "priority": "P3",
+      "rank": 24,
+      "status": "planned",
+      "gain": [
+        -0.015,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        20,
+        50
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        12,
+        28
+      ],
+      "cpu_wall_hours": [
+        1,
+        6
+      ],
+      "risk": "high",
+      "claim": "Independently verified factual mutations may improve discrimination between fluent truth and invention.",
+      "basis": "Factual errors appear in reviewed cases, but a stronger blind judge still makes many preference errors.",
+      "first_test": "Create a small train-only set of matched factual mutations, independently verify both versions, and test a low mixing ratio.",
+      "acceptance": "Human-vote loss improves beyond the mutation templates, with no tie/creative-task regression.",
+      "stop": "Stop if fact checking is unreliable, text artifacts reveal the synthetic winner, or only factual auxiliary accuracy improves.",
+      "risk_reason": "Synthetic artifacts and factuality/preference mismatch can create a misleading benchmark.",
+      "mitigation": "Blind verification, balanced surface edits and separate factuality versus preference metrics.",
+      "rationale": "Potential knowledge benefit, but high annotation cost and uncertain target transfer. Annotation tooling can be shared with H14 without waiting for that full experiment.",
+      "revision": "Factual correctness alone is not the human preference label.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "ATTEMPT_004_RESULTS.md",
+        "docs/ERROR_POSTER.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H20",
+      "kind": "hypothesis",
+      "title": "Out-of-fold hard-example sampling",
+      "priority": "P3",
+      "rank": 25,
+      "status": "planned",
+      "gain": [
+        -0.015,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        16
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        20,
+        50
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Training examples persistently difficult out of fold may deserve modest additional exposure.",
+      "basis": "Current high-loss poster cases include ambiguous or inconsistent votes, so training residuals are not automatically learnable mistakes.",
+      "first_test": "Generate genuinely OOF training predictions, inspect coverage, then compare capped sampling weights with uniform training.",
+      "acceptance": "Improve overall loss without worsening calibration or minority/tie preferences.",
+      "stop": "Stop if high-loss rows are mostly unstable labels or the gain disappears after OOF selection.",
+      "risk_reason": "Mining in-sample or evaluation errors leaks selection information; hard sampling can amplify noise.",
+      "mitigation": "Generate predictions from models excluding each training group; cap weights and report the original-distribution metric.",
+      "rationale": "Requires expensive OOF generation and has a weak causal basis so far.",
+      "revision": "Existing sampled training predictions are in-sample, not eligible OOF mining scores.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/ERROR_POSTER.md",
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H21",
+      "kind": "hypothesis",
+      "title": "Domain-aware sampling",
+      "priority": "P3",
+      "rank": 27,
+      "status": "planned",
+      "gain": [
+        -0.015,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        8,
+        18
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        24
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "A carefully limited sampling change may help underlearned domains if reliable domain gaps are found.",
+      "basis": "Code/math/language slices have uncertain labels and different difficulty; underrepresentation has not been established as the cause.",
+      "first_test": "Audit train-only domain labels and counts, then compare capped reweighting with the natural mixture at identical exposure.",
+      "acceptance": "Improve original-distribution overall loss as well as the targeted slices.",
+      "stop": "Stop if only a balanced-domain macro metric improves while the competition mixture worsens.",
+      "risk_reason": "Equalizing domains changes the learning distribution away from the evaluation distribution.",
+      "mitigation": "Use mild capped weights, retain natural-mixture validation and audit detector errors.",
+      "rationale": "Conditional on evidence of underlearning; balancing is not a default fix.",
+      "revision": "Replaced the unsupported assertion that frequent domains crowd out the others.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H22",
+      "kind": "hypothesis",
+      "title": "Repeated-prompt reweighting",
+      "priority": "P3",
+      "rank": 17,
+      "status": "planned",
+      "gain": [
+        -0.008,
+        0.005
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        8,
+        18
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "low",
+      "claim": "Capping each repeated training prompt contribution might improve generalization to new prompt groups.",
+      "basis": "There are 3,286 repeated-prompt groups covering 9,550 rows; this is broader than repeated exact comparisons.",
+      "first_test": "Calculate training-group exposure weights and compare capped weights with natural-frequency training on the same grouped split.",
+      "acceptance": "Overall natural-mixture loss improves, not only unweighted group-average loss.",
+      "stop": "Stop if repeated prompts contain useful diverse comparisons and downweighting reduces performance.",
+      "risk_reason": "The evaluation distribution may legitimately include frequent prompt types.",
+      "mitigation": "Cap rather than eliminate repeats; report row-weighted and group-weighted metrics.",
+      "rationale": "Cheap data/weight audit; likely a small effect and still needs a training run.",
+      "revision": "Distinguished repeated prompts from the tiny set of conflicting repeated comparisons in H12.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "TARGET_AUDIT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H23",
+      "kind": "hypothesis",
+      "title": "Longer-context training",
+      "priority": "P2",
+      "rank": 16,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        16
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        20,
+        48
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Training and inference with more retained context may improve truncated comparisons.",
+      "basis": "20.05% of dev inputs truncate. The existing 2,048-token inference pilot gained 0.00464 with interval [-0.00114,0.01072]; that is inconclusive.",
+      "first_test": "Expand the fixed inference pilot first, then compare 1,024 versus 2,048 training at matched exposure; try 4,096 only if 2,048 warrants it.",
+      "acceptance": "Overall paired loss gain survives longer-context training and full-test throughput profiling.",
+      "stop": "Stop if gains are confined to a few rows, intervals remain uninformative after the capped pilot, or runtime prevents deployment.",
+      "risk_reason": "Longer inputs reduce training exposure per hour and may exceed inference limits.",
+      "mitigation": "Report changed-input slice and overall loss, equal-token/equal-wall comparisons and actual packed-length timing.",
+      "rationale": "Measured truncation motivates a test, but current evidence does not support treating this as the main cure.",
+      "revision": "Inference-only context results do not estimate a trained long-context model; gain is uncertain and compute-heavy.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "EDA_REPORT.md",
+        "results/eda_002/hypotheses.json"
+      ],
+      "history": []
+    },
+    {
+      "id": "H24",
+      "kind": "hypothesis",
+      "title": "Adaptive question budget",
+      "priority": "P2",
+      "rank": 14,
+      "status": "planned",
+      "gain": [
+        -0.008,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        14
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        22
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Some question constraints may survive better with adaptive allocation than the fixed 256-token cap.",
+      "basis": "The cap is real in JointTokenizer, but lost-question coverage and recoverable target signal have not been quantified.",
+      "first_test": "Measure which rows and constraints change without labels, then test capped adaptive allocation at the same total context budget. A frozen-model pilot screens for harm; a matched retrain tests the final claim.",
+      "acceptance": "Improve overall loss and the changed-question slice without harming rows whose answers lose budget.",
+      "stop": "Stop if few inputs change or additional question tokens remove more useful answer evidence.",
+      "risk_reason": "More question tokens mean fewer answer tokens at fixed context; inference-only packing creates distribution shift.",
+      "mitigation": "Hold total budget constant, record field retention, and compare packing with matched retraining.",
+      "rationale": "Useful packing ablation, demoted from the original first wave until affected coverage is known.",
+      "revision": "A fixed cap is not evidence of a large recoverable score gap.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "src/arena/joint_data.py",
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H25",
+      "kind": "hypothesis",
+      "title": "Turn-aligned serialization",
+      "priority": "P2",
+      "rank": 15,
+      "status": "planned",
+      "gain": [
+        -0.008,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        8,
+        18
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        22
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Preserving chronological request-response alignment may improve multi-turn comparison.",
+      "basis": "Multi-turn cases have higher observed loss, but constitute a minority and are inherently different tasks.",
+      "first_test": "Preserve original turn arrays before flattening, serialize both candidates in aligned chronology, and compare at identical token budgets/exposure.",
+      "acceptance": "Improve overall and multi-turn loss with explicit retention and order-symmetry checks.",
+      "stop": "Stop if gains disappear when retained content is matched or single-turn regressions offset them.",
+      "risk_reason": "An apparent serialization gain may actually be changed truncation; existing flattened caches may have lost turn boundaries.",
+      "mitigation": "Use original parsed turns, test alignment invariants and include content-matched controls.",
+      "rationale": "A sensible representation test, but limited coverage and no direct causal result yet.",
+      "revision": "Demoted from first wave; the aggregate multi-turn association does not prove a layout defect.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "src/arena/data.py",
+        "src/arena/joint_data.py",
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H26",
+      "kind": "hypothesis",
+      "title": "Hierarchical long-text comparison",
+      "priority": "P3",
+      "rank": 34,
+      "status": "planned",
+      "gain": [
+        -0.02,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        24,
+        60
+      ],
+      "pilot_gpu_wall_hours": [
+        2,
+        6
+      ],
+      "followup_gpu_wall_hours": [
+        24,
+        60
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Chunk encoding plus learned aggregation may retain evidence beyond one truncated context.",
+      "basis": "Truncation is measured, but cheap longer-context approaches have not yet shown a reliable gain.",
+      "first_test": "Only after H23, encode chunks with position/turn metadata and compare a small trainable aggregator with equal-budget long-context inference.",
+      "acceptance": "Improve overall loss with acceptable per-row chunk counts and full-test runtime.",
+      "stop": "Stop if chunk independence loses cross-answer relationships or its cost exceeds a larger single pass.",
+      "risk_reason": "Chunking can hide contradictions across boundaries and multiply compute.",
+      "mitigation": "Preserve chunk provenance and cross-answer aggregation; cap chunks and profile realistic long rows.",
+      "rationale": "Complex fallback after simpler context/packing tests.",
+      "revision": "Long-text coverage alone does not justify a new multi-stage architecture.",
+      "depends_on": [
+        "E00",
+        "H23"
+      ],
+      "evidence": [
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H27",
+      "kind": "hypothesis",
+      "title": "Salient extractive retention",
+      "priority": "P3",
+      "rank": 28,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        10,
+        24
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        10,
+        24
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        2
+      ],
+      "risk": "medium",
+      "claim": "A label-free extractive policy may preserve decisive middle spans better than head/tail truncation.",
+      "basis": "Some reviewed errors omit middle content; population benefit is unmeasured.",
+      "first_test": "Freeze a deterministic request/claim/code-span selector using training data only and compare retained content plus matched packing/training.",
+      "acceptance": "Improve overall and changed-input loss without excessive preprocessing or shorter-input regressions.",
+      "stop": "Stop if selection systematically omits counterevidence, definitions or caveats.",
+      "risk_reason": "A heuristic can preferentially retain persuasive claims and discard evidence against them.",
+      "mitigation": "Audit retained/dropped spans on a representative train sample and keep both candidate budgets symmetric.",
+      "rationale": "Cheaper and more auditable than generated compression, but still speculative.",
+      "revision": "Retention policies must be label-independent; selected worst cases cannot define the test set.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/ERROR_POSTER.md",
+        "src/arena/joint_data.py"
+      ],
+      "history": []
+    },
+    {
+      "id": "H28",
+      "kind": "hypothesis",
+      "title": "Task-aware generated compression",
+      "priority": "P4",
+      "rank": 38,
+      "status": "deferred",
+      "gain": [
+        -0.025,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        20,
+        50
+      ],
+      "pilot_gpu_wall_hours": [
+        2,
+        6
+      ],
+      "followup_gpu_wall_hours": [
+        30,
+        80
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "A faithful compression stage might improve usable evidence per context token.",
+      "basis": "No compression fidelity or preference benefit has been measured.",
+      "first_test": "After the extractive control, generate train-only summaries without winner labels; independently audit preservation of constraints, facts and competing evidence before a small classifier test.",
+      "acceptance": "Improve human-vote loss beyond extraction, including all compression runtime.",
+      "stop": "Stop on factual hallucination, omitted decisive evidence or an infeasible two-stage submission budget.",
+      "risk_reason": "Summaries can erase exactly the differences being judged, invent facts or introduce teacher preference bias.",
+      "mitigation": "Never expose target labels to compression; retain provenance and original-text fallbacks in the experiment.",
+      "rationale": "High complexity and information-loss risk; cheaper retention comes first.",
+      "revision": "A shorter representation is not necessarily a faithful or sufficient one.",
+      "depends_on": [
+        "E00",
+        "H27"
+      ],
+      "evidence": [
+        "EDA_REPORT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H29",
+      "kind": "hypothesis",
+      "title": "Human-preference prompt rubric",
+      "priority": "P3",
+      "rank": 20,
+      "status": "planned",
+      "gain": [
+        -0.015,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        3,
+        8
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        2,
+        6
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "low",
+      "claim": "The prompted judge may benefit from a rubric better aligned with voter choices.",
+      "basis": "The blind review did not prove that factuality is overweighted. General judge quality is currently no better than LoRA with confidence.",
+      "first_test": "Predeclare at most two wording changes, score the same fixed pilot without label-bearing examples, and cross-fit calibration separately. Compare both to the original Gemma prompt and the deployed classifier.",
+      "acceptance": "Improve calibrated loss with uncertainty reported; judge-relative gain must also translate to a useful classifier/cascade result.",
+      "stop": "Stop if gains depend on wording selected from inspected error labels or vanish after calibration.",
+      "risk_reason": "Prompt fishing can overfit 512 inspected rows; subjective rubric changes may worsen factual preferences.",
+      "mitigation": "Cap variants, use inner selection and fixed candidate reporting; no leaderboard prompt search.",
+      "rationale": "A cheap information-gathering pilot, with limited expected overall gain.",
+      "revision": "Replaced the unsupported claim that our judge definitely overweights factual correctness.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "ATTEMPT_003_RESULTS.md",
+        "ATTEMPT_004_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H30",
+      "kind": "hypothesis",
+      "title": "Retrieved training demonstrations",
+      "priority": "P3",
+      "rank": 29,
+      "status": "planned",
+      "gain": [
+        -0.02,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        8,
+        20
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        8,
+        20
+      ],
+      "cpu_wall_hours": [
+        0.5,
+        3
+      ],
+      "risk": "high",
+      "claim": "A few related training-only preference examples may clarify the judge decision boundary.",
+      "basis": "Not tested; prompts can be ambiguous, but demonstrations consume scarce context.",
+      "first_test": "Retrieve a small fixed number from training groups only, exclude near-duplicate evaluation conversations, and compare at a matched total context budget.",
+      "acceptance": "Cross-fitted judge loss improves enough to compete with the classifier while retention/runtime remain viable.",
+      "stop": "Stop if candidate answers lose decisive tokens or gains rely on near-duplicate vote retrieval.",
+      "risk_reason": "Leaky demonstrations can retrieve the answer label; context consumption and class-order bias can dominate.",
+      "mitigation": "Fold-aware retrieval with overlap auditing, balanced labels and separately logged candidate retention.",
+      "rationale": "Potential rubric assistance, but strong leakage and runtime concerns.",
+      "revision": "Similar examples are useful only if they are legitimate fold-local training evidence.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/ATTEMPT_003.md",
+        "TARGET_AUDIT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H31",
+      "kind": "hypothesis",
+      "title": "Bounded critique before verdict",
+      "priority": "P3",
+      "rank": 30,
+      "status": "planned",
+      "gain": [
+        -0.02,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        16
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        3
+      ],
+      "followup_gpu_wall_hours": [
+        12,
+        36
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "A short comparison step may improve judgments over immediate class-token scoring.",
+      "basis": "The deployed Gemma experiment uses immediate restricted labels; richer reasoning is untested and the current full-test runtime is already tight.",
+      "first_test": "Use a fixed small output-token cap on a representative pilot, then request the class with the same probability extraction/calibration protocol.",
+      "acceptance": "Gain remains after runtime and truncation costs; a restricted cascade is acceptable only if separately validated.",
+      "stop": "Stop if output generation breaks throughput limits, produces unsupported rationales or adds no calibrated gain.",
+      "risk_reason": "Generated critiques may amplify mistaken reasoning, anchoring and latency.",
+      "mitigation": "Bound output, log failures, compare with the same judge/model/template and measure actual token throughput.",
+      "rationale": "Worth a bounded pilot, not an assumed benefit of reasoning.",
+      "revision": "A critique can be wrong and may be deployable only on a small subset.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "ATTEMPT_003_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H32",
+      "kind": "hypothesis",
+      "title": "Independent reference answer",
+      "priority": "P4",
+      "rank": 39,
+      "status": "deferred",
+      "gain": [
+        -0.03,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        10,
+        24
+      ],
+      "pilot_gpu_wall_hours": [
+        2,
+        5
+      ],
+      "followup_gpu_wall_hours": [
+        20,
+        60
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Solving a question before seeing candidate answers may reduce anchoring on fluent false claims.",
+      "basis": "No reference-answer benefit has been measured; some tasks are subjective or underdetermined.",
+      "first_test": "On applicable train/pilot tasks, generate a bounded reference from the question alone and judge using it; compare with H31 and direct judgment.",
+      "acceptance": "Improve overall vote loss after accounting for coverage, incorrect references and total inference cost.",
+      "stop": "Stop if references are often wrong, inapplicable or too expensive.",
+      "risk_reason": "An incorrect reference can make both comparisons confidently wrong; objective reference agreement is not the target.",
+      "mitigation": "Audit reference reliability, allow abstention and retain direct-judge controls.",
+      "rationale": "Expensive and target-mismatched without evidence from a simpler critique.",
+      "revision": "Reference generation is an uncertain evidence source, not an oracle.",
+      "depends_on": [
+        "E00",
+        "H31"
+      ],
+      "evidence": [
+        "ATTEMPT_004_RESULTS.md",
+        "ATTEMPT_003_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H33",
+      "kind": "hypothesis",
+      "title": "Offline factual retrieval",
+      "priority": "P4",
+      "rank": 40,
+      "status": "deferred",
+      "gain": [
+        -0.015,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        24,
+        60
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        8,
+        24
+      ],
+      "cpu_wall_hours": [
+        2,
+        12
+      ],
+      "risk": "high",
+      "claim": "Trusted offline evidence may help factual-question comparisons within its coverage.",
+      "basis": "Factual mistakes are visible, but their frequency, retrieval coverage and relation to votes are unmeasured.",
+      "first_test": "Build a small licensed offline reference index unrelated to competition votes; measure evidence relevance and judge improvement on a representative sample.",
+      "acceptance": "Improve overall vote loss including non-factual rows, with a feasible offline corpus and inference budget.",
+      "stop": "Stop if the corpus has weak coverage, retrieves public competition answers or cannot fit Kaggle storage/runtime.",
+      "risk_reason": "Retrieval can leak benchmark text or attach irrelevant/outdated facts, and corpus preparation is costly.",
+      "mitigation": "Audit provenance, exclude vote datasets, record source dates and allow no-evidence fallback.",
+      "rationale": "A large infrastructure project for a narrow uncertain slice.",
+      "revision": "Offline retrieval is possible in principle, but not a general factuality or preference solution.",
+      "depends_on": [
+        "E00",
+        "H29"
+      ],
+      "evidence": [
+        "docs/ERROR_POSTER.md",
+        "docs/ATTEMPT_003.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H34",
+      "kind": "hypothesis",
+      "title": "Executable code evidence",
+      "priority": "P3",
+      "rank": 33,
+      "status": "planned",
+      "gain": [
+        -0.008,
+        0.01
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        20,
+        50
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        6,
+        18
+      ],
+      "cpu_wall_hours": [
+        1,
+        6
+      ],
+      "risk": "high",
+      "claim": "Isolated execution/static evidence may help a subset of coding comparisons.",
+      "basis": "Some code errors are checkable, but arbitrary responses rarely include sufficient trustworthy tests or environments.",
+      "first_test": "Start with static/parse checks and a tiny applicable subset. Execute only in a real isolated environment with no credentials/network and strict resource limits; derive tests from the request, not the preferred answer.",
+      "acceptance": "Improve applicable-slice and overall preference loss after coverage, false failures and runtime are counted.",
+      "stop": "Do not run arbitrary snippets on the host or in an inadequately isolated Kaggle notebook. Stop if safe execution or useful test coverage is unavailable.",
+      "risk_reason": "Untrusted code execution, missing dependencies and generated wrong tests can produce harmful or misleading evidence.",
+      "mitigation": "Require proven isolation, time/memory/output caps and an abstain path; static analysis remains the first-stage scope.",
+      "rationale": "Potentially objective evidence, but expensive engineering and narrow coverage.",
+      "revision": "A timeout or failed dependency is not proof the answer is bad; execution is gated on isolation.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/ERROR_POSTER.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H35",
+      "kind": "hypothesis",
+      "title": "Symbolic math verification",
+      "priority": "P3",
+      "rank": 32,
+      "status": "planned",
+      "gain": [
+        -0.008,
+        0.008
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        12,
+        28
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        4,
+        12
+      ],
+      "cpu_wall_hours": [
+        0.5,
+        3
+      ],
+      "risk": "medium",
+      "claim": "Constrained arithmetic/symbolic checks may help a subset of math comparisons.",
+      "basis": "Some math claims are mechanically checkable; broad extraction and equivalence reliability have not been measured.",
+      "first_test": "Use a constrained parser for explicit expressions and request conditions; audit extraction and check reliability before adding features.",
+      "acceptance": "Improve covered and overall vote loss without turning parser failures into confident negative judgments.",
+      "stop": "Stop if false extractions, hidden assumptions or unsupported proofs dominate useful checks.",
+      "risk_reason": "Symbolic equivalence depends on domains/assumptions, and unrestricted expression evaluation is unsafe.",
+      "mitigation": "Use allowlisted parsing, explicit assumptions, time limits and abstention on unsupported claims.",
+      "rationale": "Smaller scope than code execution, but a low-coverage auxiliary signal.",
+      "revision": "A calculator is reliable only for a correctly extracted, well-specified claim.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/ERROR_POSTER.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H36",
+      "kind": "hypothesis",
+      "title": "Structural residual correction",
+      "priority": "P3",
+      "rank": 19,
+      "status": "planned",
+      "gain": [
+        -0.003,
+        0.003
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        3,
+        8
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        2
+      ],
+      "risk": "low",
+      "claim": "A small fold-local residual model may add limited structure information beyond the existing classifier.",
+      "basis": "A prior cross-fitted structural blend gained 0.00073 with interval [-0.00054,0.00199]. Structure-only confirmation loss was 1.03059.",
+      "first_test": "Use existing held-out predictions for a fixed low-capacity nested calibration/residual test. A deployed training-data stack requires true OOF inputs; in-sample training predictions are forbidden.",
+      "acceptance": "A repeatable positive paired overall gain beyond the existing blend, with explicit selection cost and feature exclusions.",
+      "stop": "Stop after the predeclared test if the interval remains compatible with no benefit; do not grow a large feature search.",
+      "risk_reason": "Target-derived EDA fields or in-sample base predictions can create artificial stacking gains.",
+      "mitigation": "Allowlist test-computable text descriptors; exclude canonical_label, IDs, model identities and all winner metadata.",
+      "rationale": "Cheap polish with weak measured upside; no GPU retraining is budgeted for this cache-only scope.",
+      "revision": "This extends an already tested small/uncertain blend, not a new likely breakthrough.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "EDA_REPORT.md",
+        "TARGET_AUDIT.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H37",
+      "kind": "hypothesis",
+      "title": "Diverse preference-model ensemble",
+      "priority": "P2",
+      "rank": 13,
+      "status": "planned",
+      "gain": [
+        -0.005,
+        0.025
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        6,
+        16
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        4,
+        16
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "A second preference model may improve the classifier if its errors are genuinely complementary.",
+      "basis": "We have not established that Gemma improves a calibrated blend. Diversity in names or architectures is not sufficient evidence.",
+      "first_test": "First cross-fit one nonnegative blend weight using cached matched-row probabilities; promote only with full fold-safe predictions. Profile sequential loading and total inference cost.",
+      "acceptance": "A frozen ensemble improves overall loss beyond both components after weight selection, under the actual submission budget.",
+      "stop": "Stop if the fitted second weight is zero, complementarity disappears out of fold, or full-test inference exceeds limits.",
+      "risk_reason": "Correlated errors and tuned weights can produce tiny spurious gains; multiple models consume runtime/storage.",
+      "mitigation": "Fit low-capacity weights within folds, keep both single-model controls and count sequential model loading.",
+      "rationale": "A promising follow-up after one genuinely useful alternative model exists.",
+      "revision": "Compute estimate assumes components/predictions already exist; training a missing second model adds its own full budget.",
+      "depends_on": [
+        "E00",
+        "H01"
+      ],
+      "evidence": [
+        "ATTEMPT_003_RESULTS.md",
+        "ATTEMPT_004_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H38",
+      "kind": "hypothesis",
+      "title": "Domain-specific experts",
+      "priority": "P4",
+      "rank": 41,
+      "status": "deferred",
+      "gain": [
+        -0.02,
+        0.02
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        30,
+        70
+      ],
+      "pilot_gpu_wall_hours": [
+        2,
+        6
+      ],
+      "followup_gpu_wall_hours": [
+        40,
+        120
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Specialized models with a learned soft gate might help domains only if a global ensemble is insufficient.",
+      "basis": "No reliable specialist advantage or gate benefit has been demonstrated.",
+      "first_test": "Use fold-safe component predictions to test a small soft gate before training any additional specialist.",
+      "acceptance": "Overall loss improves beyond a constant-weight ensemble with stable domain/small-slice behavior and feasible runtime.",
+      "stop": "Stop if a constant blend works equally well or the gate overfits small domains.",
+      "risk_reason": "Multiple training runs, sparse specialist data and routing errors can outweigh benefits.",
+      "mitigation": "Require H37 evidence first, strongly regularize the gate and cap the number of specialists.",
+      "rationale": "Highest complexity with weak local evidence and many cheaper alternatives.",
+      "revision": "Do not infer specialist need merely from heterogeneous question types.",
+      "depends_on": [
+        "E00",
+        "H37"
+      ],
+      "evidence": [
+        "EDA_REPORT.md",
+        "ATTEMPT_003_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H39",
+      "kind": "hypothesis",
+      "title": "Budgeted strong-judge cascade",
+      "priority": "P3",
+      "rank": 31,
+      "status": "planned",
+      "gain": [
+        -0.01,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        10,
+        24
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        4,
+        16
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "A costly judge may help selected rows if a gate can predict its incremental benefit.",
+      "basis": "General judge superiority is unproven and its current full-dataset inference is near the runtime limit.",
+      "first_test": "On fold-safe paired predictions, learn benefit-versus-cost gating and compare with uncertainty-only routing, random routing and the fixed ensemble at equal budget.",
+      "acceptance": "Overall loss improves within an explicit routing fraction and measured full-test runtime.",
+      "stop": "Stop if uncertainty is not predictive of judge benefit or the useful routed fraction violates the budget.",
+      "risk_reason": "The hard rows for the classifier may be hard for the judge too; using actual per-row losses to route test rows would be an oracle.",
+      "mitigation": "Fit gates on training folds only; test routing without labels and include model switching/loading overhead.",
+      "rationale": "A deployment follow-up only after complementary judge evidence.",
+      "revision": "A confidence heuristic does not establish that a cascade will help.",
+      "depends_on": [
+        "E00",
+        "H01"
+      ],
+      "evidence": [
+        "ATTEMPT_003_RESULTS.md",
+        "ATTEMPT_004_RESULTS.md"
+      ],
+      "history": []
+    },
+    {
+      "id": "H40",
+      "kind": "hypothesis",
+      "title": "Constrained probability calibration",
+      "priority": "P3",
+      "rank": 18,
+      "status": "planned",
+      "gain": [
+        -0.002,
+        0.004
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        6
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "low",
+      "claim": "A low-capacity symmetric extension to temperature scaling may recover a small remaining calibration error.",
+      "basis": "Temperature already improved loss by 0.00856; the extra tie-intercept pilot gained only 0.00170 with interval [-0.00017,0.00332].",
+      "first_test": "Predeclare temperature-plus-tie or an A/B-symmetric vector calibration, cross-fit within the cached held-out rows and compare against deployed temperature scaling.",
+      "acceptance": "Positive paired overall gain after nested calibration selection, stable A/B symmetry and normalized probabilities.",
+      "stop": "Stop if gains appear only when fitting and evaluating the same rows, or a richer map is unstable.",
+      "risk_reason": "A flexible calibrator can overfit repeatedly inspected dev examples and reintroduce order bias.",
+      "mitigation": "Keep very few parameters, enforce swap symmetry and publish cross-fitted rather than in-sample metrics.",
+      "rationale": "Very cheap measured-adjacent polish, but not a plausible route to most of the 0.17 gap.",
+      "revision": "Temperature scaling is already deployed; forecast only incremental gain beyond it.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "EDA_REPORT.md",
+        "results/eda_002/hypotheses.json"
+      ],
+      "history": []
+    }
+  ],
+  "framing": [
+    "Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.",
+    "**All gain ranges are subjective planning ranges, not measured gains, expected values, confidence intervals or guarantees.** They allow regression. They describe incremental overall loss reduction against a matched, calibrated, swap-averaged attempt-002 comparator on identical evaluation rows. For judge-only changes, also report the judge-relative change; it is not automatically a gain over LoRA. Related changes overlap, so their ranges cannot be added.",
+    "Priority combines measured evidence, plausible upside and the cost of getting an informative answer. P1 is the first model-pilot wave after E00; cheap calibration/coverage audits can run on CPU in parallel with that work. Low gain confidence applies to every estimate; qualitative risk describes execution, validity and deployment hazards, not a numeric probability of failure.",
+    "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
+    "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git."
+  ],
+  "revisions": [
+    "**H07/H06:** the final causal classification token already sees both retained answers. Bidirectional masking is an architectural experiment, not a fix for missing access to answer B; H07 moves to P4.",
+    "**H11/H10:** tie factorization alone cannot add information. H11 now requires learned symmetric tie features; shared utility scoring may lose direct cross-answer interaction and is moved behind simpler controls.",
+    "**H03:** 0.61 epochs does not imply undertraining. Late losses plateaued, and exact continuation requires optimizer/scheduler state. The possible gain is modest and includes regression.",
+    "**H12/H13:** conflicting repeated comparisons are rare. They cannot plausibly explain the whole gap. Disagreement with objective factuality is not automatically a wrong human-preference label.",
+    "**H08:** higher-precision export cannot undo four-bit training. Changing from the quantized base to the original base changes effective model weights; precision comparisons must say exactly what changes.",
+    "**H24/H25/H23:** packing/context defects are plausible but not established causes. Measure affected coverage, distinguish changed content from serialization, count retraining and throughput, and demote H24/H25 from the first wave.",
+    "**H14–H19/H21/H29:** annotation, synthetic correctness, domain balance and factuality-rubric mismatch remain hypotheses. Preserve human vote targets and require gains on the original evaluation mixture. H18/H19 may share annotation tooling with H14 but do not require its full auxiliary-training experiment first.",
+    "**H15/H37–H39:** our general judge is not yet a demonstrated teacher or useful ensemble component. Prove complementarity before full distillation, specialists or cascade engineering.",
+    "**H36/H40:** related blends/calibrators already showed small uncertain gains. These are low-cost extensions, not untouched breakthrough ideas.",
+    "Retained all forty IDs for traceability. H12, H36 and H40 have deliberately bounded CPU-first scopes; deeper training/OOF work requires a separately recorded budget. Added E00 outside the count to make dependencies and evaluation prerequisites explicit."
+  ],
+  "evaluation": [
+    "Keep the exact prompt-grouped split IDs and frozen attempt-002 reference. Existing dev and confirmation were inspected and are exploratory. New grouped inner validation must retrain models without its held-out groups; cached in-sample training predictions cannot stand in for OOF predictions. Nested selection reduces additional tuning bias but cannot retroactively make inspected data untouched.",
+    "Before a pilot, record the primary change, controls, sample IDs/selection method, seed, maximum variants, training exposure, calibration and compute/stop budget. Separate equal-exposure and equal-wall-budget comparisons. Do not combine H04/H09/H11 in the first ablation and assign the whole gain to each.",
+    "Pilot advancement is an information decision: require a plausible positive effect, an interval that does not rule out the predeclared useful gain, and a feasible follow-up. Lack of significance on a small pilot is not proof of no effect. At adoption, require positive paired overall log-loss evidence on a larger fixed evaluation with group-resampled 95% intervals; label it exploratory if it uses inspected folds. Disclose selection across variants and use new independent data if it becomes available.",
+    "Report overall loss, accuracy, A/B/tie loss and recall, swap stability, truncation/retention, subgroup coverage, throughput and peak memory. Domain/slice improvement alone does not justify a worse overall score. E00 should set practical minimum gain per compute budget before seeing new results.",
+    "Fit calibrators, stackers, gates, sampling weights, retrieval demonstrations and soft labels within the appropriate training folds. Exclude winner columns, canonical_label, split/ID/order controls and unavailable model identities from deployed inputs. Audit known checkpoint/external-data overlap and report unknown pretraining exposure honestly.",
+    "Preserve normalized three-class probabilities and original human evaluation labels. The 71.2% accuracy requirement for 0.8 applies only to the fixed-alpha/equal-alternatives rule, not general probabilistic classifiers.",
+    "Keep negative outcomes and source/config/checkpoint hashes. A finished experiment is done even if its hypothesis failed; rejected/deferred items must explain why. Freeze a candidate before submission rather than tuning repeatedly on leaderboard feedback."
+  ],
+  "references": [
+    "[Attempt 002](ATTEMPT_002_RESULTS.md), [EDA](EDA_REPORT.md), [300 blind judgments](ATTEMPT_004_RESULTS.md) and [target audit](TARGET_AUDIT.md) are the local measured evidence. Forecasts above are judgments made on 2026-11-03, not extrapolated confidence bounds.",
+    "[Original 40-item register and historical context](docs/HYPOTHESES_0_8.md); Git history preserves the original wording.",
+    "[First-place author, related 2024 LMSYS competition](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629) reported 0.876 public versus 0.96898 private. [Kaggle staff](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/524376) described rerunning on a new private set. That is a different competition and does not establish a clean 0.8 target here.",
+    "[Skywork reward-model repository](https://github.com/SkyworkAI/Skywork-Reward), [Skywork Reward V2 paper](https://arxiv.org/abs/2507.01352), and [second-place LMSYS write-up](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527685) supply technical precedents, not measured local gains or verified deployment feasibility."
+  ]
+}

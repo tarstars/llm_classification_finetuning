@@ -30,8 +30,17 @@ uncertain difference. See the [audit and results](ATTEMPT_004_RESULTS.md).
 The [target-association audit](TARGET_AUDIT.md) tests IDs, model identities, answer
 length, refusals, duplicates and target-derived EDA metadata for leakage.
 
-The [40-hypothesis research register](docs/HYPOTHESES_0_8.md) records distinct
-experiments toward 0.8, their first tests, effort, priorities and evaluation limits.
+The [research backlog](BACKLOG.md) ranks all 40 hypotheses with estimated log-loss
+gains, risks, engineering/compute budgets, dependencies and test/stop rules.
+[Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
+The JSON-backed CLI browses work, records status/evidence and regenerates the page:
+
+```bash
+uv run python scripts/backlog.py list --priority P1
+uv run python scripts/backlog.py list --actionable
+uv run python scripts/backlog.py show H09
+uv run python scripts/backlog.py check
+```
 
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
