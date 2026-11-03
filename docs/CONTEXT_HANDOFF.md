@@ -1,12 +1,15 @@
 # Context handoff — 2026-11-03
 
-Verified against the repository at research closing commit `13e7adb` and the goal
-service (goal `GOAL.md`: **complete**). This is a dated orientation record; use
-current files and service observations as authority if later work changes state.
+V1 results were verified at research closing commit `13e7adb`; its goal completed.
+The user subsequently authorized a **new v2 goal**, now in `GOAL.md`, to execute a
+bounded span and form v3. Focus is configured; no v2 experiment has yet run. The
+completed goal is archived at `docs/GOAL_V1.md`. This is a dated orientation record;
+verify current files and service state before acting.
 
 ## Read first
 
-- [Project policy](../PROJECT_POLICY.md): required workflow, experiment gates and versioning.
+- [Current goal](../GOAL.md) and [project policy](../PROJECT_POLICY.md): scope,
+  resource limits, workflow, experiment gates and versioning.
 - [Span 001 results](SPAN_001_RESULTS.md), [completion checks](SPAN_001_COMPLETION.md),
   and [executed notebook 12](../notebooks/12_backlog_v1_span.ipynb).
 - [Active backlog](../BACKLOG.md); canonical data is [backlog/hypotheses.json](../backlog/hypotheses.json).
@@ -20,13 +23,15 @@ The first research span is finished and published. E00, H01, H04, H09 and H11 ar
 their controllers exited. There is no unfinished span-001 execution to resume.
 
 - **V1:** closed, 41 historical members; original start and final snapshots preserved.
-- **V2:** active, **39 members = 3 discoveries + 36 unfinished carryovers**; focus empty.
+- **V2:** active, **39 members = 3 discoveries + 36 unfinished carryovers**;
+  focus **H40, E01, H03, H37, H42**.
 - **V3:** empty draft. No v2 experiment has been executed.
 
-`GOAL.md` describes the completed v1 span. Its resume rule verifies the closed
-handoff rather than repeating experiments. A new v2 execution goal must select
-focus and fresh resource limits. The latest request was preparation for a context
-flush, not authorization to start v2.
+`GOAL.md` now describes the authorized v2 span: **12 two-T4 session-hours and 48
+elapsed wall-clock hours** from its original activation, further bounded by
+verified quota. Record its original clock/deadline and contract in span-002 paths;
+do not reuse v1's start time or mutate its artifacts. Finish v2, form v3 and stop
+before executing v3. Do not repeat the completed v1 goal.
 
 Branch is `main`, origin `git@github.com:tarstars/llm_classification_finetuning.git`.
 The research closing commit `13e7adb` was pushed and matched remote `main`; this
@@ -137,7 +142,7 @@ The deployed baseline selected checkpoint 800; its original run ended at step 87
 (0.61 epochs). Match optimizer/scheduler state to the intended checkpoint before
 calling a later run an exact continuation.
 
-## Proposed next work, awaiting a new goal
+## Selected v2 work
 
 - **E01 (new, P1):** log actual accepted/skipped updates, scale, scheduler and private
   sampled-row exposure; verify a tiny forced-overflow/resume probe before long runs.
@@ -148,7 +153,9 @@ calling a later run an exact continuation.
   not exact optimizer continuation.
 - **H42 (new, P3):** conditional tie-preserving paired adaptation, gated on E01/H40.
   Stop without GPU training if calibration already explains the deficit.
-- **H41 (new, P4, deferred):** reward hidden-feature diagnostic; H11 did not validate
+- **H37 (carried, P2):** cross-fit a scalar blend of the cached deployed classifier
+  and existing Gemma judge; retain both single-model controls before expanding coverage.
+- **H41 (new, P4, deferred, outside focus):** reward hidden-feature diagnostic; H11 did not validate
   the proposed PCA-head recipe. Require better justification before extraction.
 
 Read full records with `show`; forecasts are subjective, allow regression and are

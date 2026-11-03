@@ -7,9 +7,10 @@ is multiclass log loss (lower is better).
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
-The completed [first-span goal](GOAL.md) selected E00 and four pilots and produced
-backlog v2. Reusing that file verifies the closed handoff; a later goal must select
-v2's execution focus and resource budget.
+The current [goal](GOAL.md) executes a bounded v2 span and forms backlog v3, with
+focus H40, E01, H03, H37 and H42. Limits are 12 two-T4 session-hours and 48 elapsed
+hours, further constrained by verified available quota. The completed
+[first-span goal](docs/GOAL_V1.md) is preserved for history.
 
 Our best official Kaggle score is **0.97025**, achieved by the Qwen3-4B QLoRA
 preference classifier in attempt 002. Frozen-model confirmation gave **0.96236 log
@@ -40,7 +41,8 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
 The active version is **v2**, with **39 tasks**: three discoveries and 36 unfinished
-carryovers. Its focus is empty; v3 is the empty [next-version draft](backlog/NEXT.md).
+carryovers. Its focus is H40, E01, H03, H37 and H42; v3 is the initially empty
+[next-version draft](backlog/NEXT.md).
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),
 [v1 final history](backlog/versions/v1.final.md) and [v2 start](backlog/versions/v2.start.md).
@@ -66,8 +68,9 @@ None justified promotion. The best new point estimate was **0.97609** versus
 uncertainty including no improvement. Paired training reduced order bias but raised
 tie losses. Total compute was **4.154 two-T4 session-hours**, including a failed probe.
 V2 adds optimizer/exposure instrumentation (E01), a conditional tie-preserving
-follow-up (H42), and a deferred reward-feature diagnostic (H41). A later goal can
-start with E01 and cached calibration H40 before more training; v2 has not been executed.
+follow-up (H42), and a deferred reward-feature diagnostic (H41). The current v2
+goal starts with cached calibration H40 and instrumentation E01 before more
+training. Its focus has been selected; no v2 experiment has yet run.
 
 Read a fresh pinned-job status and numerical progress snapshot with
 `uv run python scripts/span_progress.py --job joint`. It records dated observations

@@ -2597,8 +2597,26 @@
         "E01",
         "H42"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H40",
+        "E01",
+        "H03",
+        "H37",
+        "H42"
+      ],
+      "history": [
+        {
+          "at": "2026-11-03T18:22:02+00:00",
+          "note": "User authorized a v2 execution goal and v3 handoff. Select cached calibration and ensemble tests, accepted-update instrumentation, bounded training exposure, and conditional tie-preserving adaptation under GOAL.md; preserve other tasks for carryover.",
+          "focus_ids": [
+            "H40",
+            "E01",
+            "H03",
+            "H37",
+            "H42"
+          ]
+        }
+      ],
       "carried_from": 1,
       "start_sha256": "e83cec43f76ea1fdd348b213aaafdc0290c8fd84735ce295f5216593a1146ec7",
       "start_markdown_sha256": "554cbbfb85fe5e0f5303abeeea19244c5c0406f2c118c0f7483561e55f922a21",

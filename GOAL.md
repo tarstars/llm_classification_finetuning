@@ -1,120 +1,159 @@
-# Goal: execute the first v1 research span and prepare backlog v2
+# Goal: execute a bounded backlog-v2 span and form backlog v3
 
 Work in `/home/tarstars/prj/llm_classification_finetuning`. Follow `AGENTS.md` and
-`PROJECT_POLICY.md`. Improve our understanding of how to reduce human-preference
-classification log loss through controlled experiments and reproducible evidence.
-Act autonomously within the stated scope and resource limits.
+`PROJECT_POLICY.md`. Act autonomously to test useful improvements to human-preference
+classification, record honest outcomes and prepare the next version of the backlog.
+The user authorized this goal on 2026-11-03. The completed first-span goal is
+archived at `docs/GOAL_V1.md`; do not repeat its experiments.
 
-This goal covers **one execution span**. Its selected tasks are **E00, H01, H09,
-H04 and H11** from backlog v1: the evaluation/resource contract followed by pilots
-of a preference-trained backbone, swap consistency, broader LoRA coverage and a
-learned symmetric tie head. The remaining v1 tasks stay available for later spans.
-Discoveries made during this span belong to backlog v2 and do not expand this goal.
+This goal covers **one v2 execution span**, with focus **H40, E01, H03, H37 and
+H42**. Prioritize cached calibration, valid training measurements and training
+exposure; test a cached ensemble and pursue tie-preserving adaptation only when
+its prerequisites and evidence justify it. Other v2 tasks remain available for
+carryover. Discoveries enter v3 and do not expand the current span.
 
-The default limits for this goal are **12 elapsed two-T4 session-hours** in total
-and **48 elapsed wall-clock hours**, beginning when execution of the goal starts.
-Use whichever GPU allowance is smaller: that cap or the verified currently available
-Kaggle quota after accounting for existing jobs. Count controls, probes, failures,
-retries and evaluation; two T4s running for one hour consume one session-hour in
-this budget. Verify how Kaggle's reported quota units map to that allowance.
-Use currently authorized resources; do not wait for a later quota refresh to extend
-the span. These caps can be edited by the user before setting the goal.
+Use the previous span's default limits: **12 elapsed two-T4 session-hours total**
+and **48 elapsed wall-clock hours**, starting at this goal's original activation.
+Record that original time and fixed deadline on the first execution pass, using
+the goal service's creation time when available. Preserve them on resumption.
+Use the smaller of the GPU cap and verified available Kaggle quota after accounting
+for existing jobs. Count setup, controls, probes, evaluation, failures, retries and
+any submission execution. Two T4s for one hour count as one session-hour. Do not
+use paid scaling or a later quota refresh to enlarge this span. Check current
+runtime rules and quota before launch; individual jobs must fit the verified
+session limit and a conservative seven-hour job cap.
 
-1. **Resume safely and establish the contract.** Read the policy, backlog, version
-   metadata, recent experiment reports and active job state. Check whether work for
-   this span already exists before launching anything. If v1 has already closed,
-   verify its final snapshot, report and v2 handoff rather than repeating the runs.
+1. **Resume safely and freeze the contract.** Read the policy, v1 report, backlog,
+   goal state and existing span-002 artifacts. If v2 has already closed, verify its
+   report, final snapshot and v3 handoff instead of rerunning it. Reconcile exact
+   remote job/version state before retries; never duplicate a live job or reset
+   the clock because an agent restarted.
 
    ```bash
    uv run python scripts/backlog.py check
    uv run python scripts/backlog.py versions
-   uv run python scripts/backlog.py list --version 1 --focus
+   uv run python scripts/backlog.py list --version 2 --focus
    uv run python scripts/backlog.py list --actionable --focus
    ```
 
-   Start with E00. Write `docs/SPAN_001_PROTOCOL.md` with the original start time,
-   deadline, quota snapshot, remaining budget, selected task IDs, exact grouped
-   evaluation protocol, matched controls, artifact locations, maximum variants,
-   practical gain thresholds and stopping rules. Reuse these recorded limits on
-   resumption; restarting the agent must not reset the clock or compute allowance.
-   Inventory exact checkpoint/configuration hashes and prediction coverage. Existing
-   development and confirmation data are inspected and exploratory.
+   Before new measurements, write `docs/SPAN_002_PROTOCOL.md` and an aggregate plan
+   under `results/span_002/`: original start/deadline, current quota and jobs, exact
+   split/sample/group IDs and hashes, baseline/checkpoint identity, pinned code and
+   configuration, maximum variants, controls, exposure, budget and stopping rules.
+   Verify cached prediction IDs, labels and coverage before joining them. Reuse
+   the attempt-002 split and frozen deployed classifier on common evaluation rows.
 
-2. **Execute the bounded research loop.** Repeatedly select the highest-value
-   actionable task from the declared focus. Read its complete record. Prepare a
-   falsifiable pilot, change its status with a useful note, execute and monitor it,
-   evaluate against a matched comparator, and record the outcome before moving on.
-   Do not launch duplicate jobs. Respect dependencies and include control costs.
-   Start another task when independent useful work can proceed.
+   Existing development and confirmation partitions are exploratory, not untouched.
+   Keep confirmation out of this span. Use grouped inner/nested selection for
+   calibrators and ensemble weights, with a cross-fitted temperature-only control.
+   Report the historically calibrated deployment reference separately. In-sample
+   training predictions are not OOF predictions. Predeclare any larger development
+   evaluation before selecting a candidate.
 
-   Prioritize informative pilots over full follow-up training. A larger run is
-   appropriate only when pilot evidence supports it and the remaining scope/budget
-   permits it. Otherwise create a v2 follow-up. Report calibrated overall log loss,
-   paired uncertainty, class/tie and order behavior, throughput, memory, retention
-   and actual compute use. Separate model-relative improvements from improvements
-   over our deployed classifier. Preserve failed and inconclusive findings.
+2. **Execute a bounded research loop.** Read each selected task's full record,
+   prepare a falsifiable experiment, update status through the CLI, execute and
+   monitor it, and write results/evidence before moving on. Independent CPU work
+   can proceed while remote jobs run. Initial tests are:
 
-   Use `done` when the declared experiment finishes, including a negative result.
-   Use `rejected` for an evidenced validity/feasibility failure. Use `deferred` when
-   worthwhile work must carry forward because of a documented constraint. Give
-   every focus-item decision a real evidence reference. Label pilot coverage
-   explicitly; completion of a pilot does not establish a full-training gain.
+   - **H40:** on cached frozen and paired-model predictions, compare temperature
+     alone with at most two low-capacity A/B-symmetric calibration extensions,
+     including a tie intercept. Fit/select within grouped folds and report
+     out-of-fold probabilities. Determine whether calibration explains the paired
+     model's tie deficit. No GPU training is needed.
+   - **E01:** directly log nominal cycles, accepted/skipped updates, scaler and
+     scheduler state, processed versus accepted tokens and private row/class/group
+     exposure. Verify a tiny forced-overflow and resume probe against actual
+     parameter changes. GPU verification is capped at 15 minutes. Finish this
+     prerequisite before longer training comparisons; do not rerun v1 for logging.
+   - **H03:** inventory optimizer/scheduler/RNG checkpoints first. Preserve selected
+     checkpoint 800 and distinguish it from final step 877. If exact state exists,
+     test continuation toward one epoch with a fixed schedule and endpoints.
+     Otherwise test at most one explicitly labeled fresh warm-start schedule if a
+     useful controlled comparison fits the budget. Retain the original baseline
+     and measure accepted exposure through E01. The previous 0.61 epochs does not
+     prove undertraining; stop at a predeclared plateau/overfit rule.
+   - **H37:** first cross-fit one nonnegative scalar blend of the frozen classifier
+     and existing prompted-Gemma judge on matched cached rows, retaining both
+     single-model controls. Do not train a new component under this task. Expand
+     prediction coverage only after a promising result and verified runtime/quota.
+   - **H42:** run only after H40 and E01. If calibration resolves the measured
+     tradeoff, document that decision and stop without this GPU experiment.
+     Otherwise compare at most two matched arms: paired CE + 0.1 symmetric KL,
+     versus the same objective with a Bernoulli tie-probability anchor to the
+     frozen, symmetric, uncalibrated teacher on training rows, default weight 1.0.
+     Never feed a dev-fitted calibrator into training. Require benefit against
+     both the paired control and deployed classifier; count teacher/control costs.
 
-3. **Queue discoveries for v2.** Turn observations into concrete follow-up tasks
-   only when they justify a useful next test. Include the claim, evidence, gain
-   range, risks/mitigation, engineering and compute estimates, dependencies,
-   acceptance/stopping criteria and a link to the originating task/report.
+   Freeze task allocations before GPU launch and keep recovery inside the total
+   cap. Prioritize informative pilots. Default useful-gain thresholds are 0.001
+   absolute log loss for cheap postprocessing and 0.005 for training pilots;
+   record any justified change before seeing new results. Report paired
+   group-bootstrap uncertainty, overall/class/tie loss and recall, tie discrimination,
+   order behavior, retention, accepted exposure, throughput, memory and charged
+   compute. An inconclusive pilot does not prove success or failure. Adoption
+   requires a larger prespecified comparison with positive paired evidence,
+   practical gain and feasible deployment.
+
+   Preserve negative results and failures. `done` means the declared experiment
+   finished, including a negative outcome. `rejected` requires an evidenced
+   validity/feasibility reason; `deferred` requires a concrete constraint and
+   carryover recommendation. Link real evidence for every focus-item outcome.
+   Optional competition submission is limited to one frozen candidate that passes
+   adoption/runtime gates and fits the budget; submission is not required.
+
+3. **Form the v3 draft from evidence.** Check existing tasks before adding a
+   discovery. Queue only useful new tests with the observation/report, originating
+   task, claim, gain estimate, risks, costs, dependencies and acceptance/stop rules.
+   Use the CLI to preserve stable IDs and provenance:
 
    ```bash
-   uv run python scripts/backlog.py template > /tmp/arena_followup.json
-   # Fill the template with the actual proposal and estimates before queueing it.
-   uv run python scripts/backlog.py queue --item-file /tmp/arena_followup.json \
-     --from H09 --note "Describe the actual observation motivating this follow-up" \
-     --evidence docs/SPAN_001_RESULTS.md
+   uv run python scripts/backlog.py template > /tmp/arena_v3_proposal.json
+   # Fill in the actual evidence-grounded proposal before queueing it.
+   uv run python scripts/backlog.py queue --item-file /tmp/arena_v3_proposal.json \
+     --from H40 --note "Describe the actual discovery" \
+     --evidence docs/SPAN_002_RESULTS.md
    uv run python scripts/backlog.py list --version next
    ```
 
-   Review the draft before adding a proposal to avoid duplicating existing work.
-   The CLI assigns stable new IDs, records discovery during v1 and introduction in
-   v2, and leaves the current span unchanged. Queue only real findings; do not create
-   filler tasks to make v2 appear productive. Do not execute v2 tasks under this goal.
+   Do not create filler tasks or execute draft v3 work. Existing unfinished v2 work
+   carries forward automatically when the span closes.
 
-4. **Publish reproducible results.** Write `docs/SPAN_001_RESULTS.md`, per-task
-   details as needed, aggregate machine-readable metrics and an executed notebook
-   at `notebooks/12_backlog_v1_span.ipynb`. Include the baseline, exact tested
-   variants, sample/exposure coverage, measured gains/uncertainty, actual resource
-   use, negative findings and recommendations. Put raw text, predictions, datasets,
-   weights and heavy intermediate files under
-   `~/database/llm_classification_finetuning/runs/span_001` or their existing heavy
-   artifact locations. Keep programs, reports, aggregate results and notebooks in Git.
+4. **Publish reproducible outcomes.** Produce `docs/SPAN_002_RESULTS.md`, aggregate
+   metrics/decisions under `results/span_002/`, and executed notebook
+   `notebooks/13_backlog_v2_span.ipynb`. Include exact variants/coverage, comparators,
+   uncertainty, selection limitations, actual resource use, negative findings,
+   adoption decisions and next steps. Keep text, per-row predictions, datasets,
+   vectors, weights and heavy intermediates under
+   `~/database/llm_classification_finetuning/runs/span_002` or existing heavy paths.
+   Preserve the notebook link under `~/notebooks`.
 
-   Update the backlog through its CLI, validate it, run focused checks appropriate
-   to code changes, and commit/push important milestones. Preserve unrelated user
-   changes. Do not describe an exploratory estimate as an official Kaggle score or
-   assume that 0.8 is attainable from these pilots.
+   Update backlog history and generated views through the tooling, validate them
+   and run checks appropriate to changes. Commit/push important milestones. Preserve
+   unrelated user changes, including the kernel display-name edit in
+   `notebooks/07_error_poster.ipynb`. Refresh project memory and context handoff.
+   Distinguish local estimates from official scores; neither a gain nor 0.8 is
+   guaranteed.
 
-5. **Close the span and hand off v2.** When the focus items have evidenced outcomes
-   and all jobs are finished or stopped, write the span's decision and next-version
-   recommendations. Then seal v1 and create the v2 handoff:
+5. **Seal v2 and hand off v3.** Resolve every focus item with an evidenced outcome
+   or justified deferral; finish or stop all jobs. Write the final report,
+   recommendations and resource audit before advancing:
 
    ```bash
    uv run python scripts/backlog.py advance \
-     --note "Summarize the actual span outcome and the reason for closure" \
-     --evidence docs/SPAN_001_RESULTS.md
-   uv run python scripts/backlog.py list --version 2 --new
-   uv run python scripts/backlog.py list --version 2 --carried
+     --note "Summarize the measured v2 outcome and reason for closure" \
+     --evidence docs/SPAN_002_RESULTS.md
+   uv run python scripts/backlog.py list --version 3 --new
+   uv run python scripts/backlog.py list --version 3 --carried
    uv run python scripts/backlog.py check
    ```
 
-   `advance` preserves v1's final JSON/Markdown snapshots, activates v2 with queued
-   discoveries and unfinished carried tasks, and opens an empty v3 draft. Completed
-   tasks remain available as dependency/evidence records. Commit and push the handoff.
-   **Stop after producing v2; a later goal selects its execution focus and budget.**
+   Verify sealed v2 start/final snapshots, v3 discoveries plus unfinished carryovers,
+   and the new empty v4 draft. Keep historical records and original v1 snapshots
+   intact. Commit/push the handoff and **stop before executing v3**.
 
-The finished deliverable is an honestly evaluated first span, preserved v1 history,
-executed results and a justified v2 backlog. Positive model improvement is not
-required for a useful research outcome. Budget-limited work must be identified as
-unfinished and carried forward. If access/resources prevent meaningful progress,
-record the blocker and remaining work, continue independent useful preparation,
-and report the goal as unfinished rather than declaring success by deferring
-everything. Do not erase outcomes or mark unexecuted experiments done.
+Success means a substantive, honestly evaluated v2 span with reproducible results
+and a justified versioned v3 backlog. Positive score improvement is not required.
+Identify budget-limited work as unfinished and carry it forward. If access or
+resources prevent meaningful execution, record the blocker, complete independent
+useful work and leave the goal unfinished rather than claiming success by
+deferring everything. Do not erase outcomes or mark unexecuted experiments done.

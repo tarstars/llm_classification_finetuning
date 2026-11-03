@@ -10,7 +10,8 @@ truth; [BACKLOG.md](BACKLOG.md) is generated. Use
 JSON for estimates, priorities, dependencies and experiment design, then regenerate
 the Markdown. Preserve stable hypothesis IDs and previous outcomes. A backlog
 version defines a research span; its `focus_ids` define that span's bounded
-execution scope. [GOAL.md](GOAL.md) describes the first span and its limits.
+execution scope. [GOAL.md](GOAL.md) describes the current span and its limits;
+the completed first-span goal is preserved at [docs/GOAL_V1.md](docs/GOAL_V1.md).
 
 | Status | Meaning |
 | --- | --- |
