@@ -2,6 +2,7 @@
 import argparse
 from datetime import datetime, timezone
 import json
+import math
 from pathlib import Path
 import re
 import subprocess
@@ -66,14 +67,25 @@ def main():
                     continue
                 saved=progress.setdefault('training',{})
                 old=saved.get(active,{})
-                if value.get('step',0)>=old.get('step',0):saved[active]=value
+                if value.get('step',0)>=old.get('step',0):
+                    # Trainer emits a final runtime record at the same step as
+                    # its loss/gradient record; preserve both sets of metrics.
+                    saved[active]=({**old,**value} if value.get('step')==old.get('step') else value)
         # A bounded log read can end before newer events; never move the phase
         # backwards just because that snapshot contains only an older prefix.
         finished=[i for i,name in enumerate(stages) if name in progress.get('stages',{})]
         next_index=max(finished,default=-1)+1
         progress['active_stage_from_log']=(stages[next_index] if next_index<len(stages) else 'finishing') if stage=='joint' else 'reward'
+    # Private Trainer logs preserve the raw NaN/Inf values. Public snapshots use
+    # standard JSON null plus an explicit flag, so strict JSON readers work too.
+    for record in [*progress.get('training',{}).values(),progress.get('unattributed_training',{})]:
+        for key,value in list(record.items()):
+            if isinstance(value,float) and not math.isfinite(value):
+                record[key]=None
+                record[key+'_nonfinite']=str(value)
+    rendered=json.dumps(progress,indent=2,allow_nan=False)
     json_write(destination,progress)
-    print(json.dumps(progress,indent=2))
+    print(rendered)
 
 
 if __name__=='__main__':main()

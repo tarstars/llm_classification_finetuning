@@ -45,6 +45,14 @@ if job_rows:
         lines.append(f"| {name} | [Kaggle]({push['url']}) | {push['version_number']} | "
                      f"{state['stage']} {state.get('status','')} | {state['utc']} |")
     lines+=['','These are dated controller/API observations; the notebook links open the run history.']
+progress_path=directory/'live_progress_joint.json'
+if progress_path.exists() and not closed:
+    progress=json.loads(progress_path.read_text())
+    stages=progress.get('stages',{})
+    finished=', '.join(name for name,value in stages.items() if value.get('complete')) or 'none'
+    lines+=['',f"Pinned joint version {progress['version']} at **{progress['status_observed_at']}**: "
+            f"active stage `{progress.get('active_stage_from_log','unknown')}`; "
+            f"completed stages: {finished}. Prediction generation and artifact validation are separate gates."]
 lines+=['','Initial frozen deployed baseline on the fixed 1,024 development rows: '
         '**0.97635 log loss**, **52.25% accuracy**. Development and confirmation were '
         'previously inspected; this span uses development only and is exploratory.','']
@@ -186,6 +194,15 @@ for stage,report in reports.items():
 table=pd.DataFrame(rows)
 if len(table):display(table.round(6))
 else:print('Model quality measurements are not available yet; preparation and live observations follow.')
+class_rows=[]
+for report in reports.values():
+    for item in report['models']:
+        values=item['crossfit_temperature']
+        class_rows.append({'model':item['name'],'tie_precision':values['tie_precision'],
+            'mean_entropy':values.get('mean_predictive_entropy',np.nan),
+            **{f'loss_{name}':values['class_loss'][i] for i,name in enumerate(['A','B','tie'])},
+            **{f'recall_{name}':values['class_recall'][i] for i,name in enumerate(['A','B','tie'])}})
+if class_rows:display(pd.DataFrame(class_rows).round(6))
 '''),code('''if len(table):
     fig,ax=plt.subplots(figsize=(9,max(3,len(table)*.45)))
     positions=np.arange(len(table))
@@ -203,14 +220,20 @@ else:print('Model quality measurements are not available yet; preparation and li
     plt.show()
 '''),code('''if 'joint' in reports:
     display(pd.DataFrame(reports['joint'].get('primary_comparisons',{})).T)
+    order_rows=[]
     for model in reports['joint']['models']:
         if model.get('raw_order'):
-            print(model['name'],model['raw_order'])
+            order_rows.append({'model':model['name'],**model['raw_order'],
+                'single_original_raw_loss':model['original_order_uncalibrated']['log_loss'],
+                'single_swapped_raw_loss':model['aligned_swapped_order_uncalibrated']['log_loss'],
+                'swap_averaged_raw_loss':model['raw']['log_loss'],
+                'order_disagreement_reduction_vs_frozen':model.get('order_disagreement_reduction_vs_frozen')})
         if model['details'].get('numerical_audit'):
             print(model['name'],'numerical / exposure audit:')
             display(pd.Series({key:model['details'][key] for key in ('steps','canonical_exposures',
                 'non_padding_tokens_seen','training_seconds','peak_gpu_bytes','numerical_audit',
                 'adapter_weight_audit')}).to_frame())
+    if order_rows:display(pd.DataFrame(order_rows))
     print('Frozen baseline reproduction:',reports['joint'].get('frozen_baseline_reproduction'))
 if (directory/'reward_diagnostics.json').exists():
     print('H01 descriptive winner/tie decomposition; no hybrid was evaluated:')

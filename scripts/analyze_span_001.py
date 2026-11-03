@@ -77,6 +77,8 @@ def main():
                'details':details or {}}
         if original is not None:
             entry['raw_order']=order_diagnostics(original,swapped)
+            entry['original_order_uncalibrated']=metrics(y,original)
+            entry['aligned_swapped_order_uncalibrated']=metrics(y,swapped)
             saved[name+'_order_disagreement']=(original.argmax(1)!=swapped.argmax(1)).astype(float)
             if 'frozen_order_disagreement' in saved:
                 entry['order_disagreement_reduction_vs_frozen']=paired_group_difference(
@@ -115,6 +117,8 @@ def main():
                                                     'max_absolute_probability_error':float(drift.max())}
             assert drift.mean()<.002 and drift.max()<.03,'Fresh frozen inference differs materially from baseline'
             shared['frozen_raw_order']=order_diagnostics(data['original'][eval_idx],data['aligned_swap'][eval_idx])
+            shared['frozen_original_order_uncalibrated']=metrics(y,data['original'][eval_idx])
+            shared['frozen_aligned_swapped_order_uncalibrated']=metrics(y,data['aligned_swap'][eval_idx])
             saved['frozen_order_disagreement']=(data['original'][eval_idx].argmax(1)!=
                                                 data['aligned_swap'][eval_idx].argmax(1)).astype(float)
             for feature_kind,head_kind in [('probability','coupled'),('rich','coupled'),('rich','factorized')]:
@@ -129,6 +133,7 @@ def main():
                 continue
             predictions=merge([directory/'predictions.npz'],samples['dev'])
             indices=np.array([int(np.flatnonzero(predictions['ids']==key)[0]) for key in dev_ids])
+            np.testing.assert_array_equal(predictions['labels'][indices],y)
             summary=json.loads((directory/'summary.json').read_text())
             progress=[json.loads(line) for line in (directory/'training_progress.jsonl').read_text().splitlines()]
             summary['numerical_audit']=training_audit(progress,config,summary)

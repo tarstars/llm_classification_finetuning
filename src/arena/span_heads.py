@@ -12,6 +12,7 @@ from sklearn.model_selection import StratifiedGroupKFold
 def normalize(p):
     p = np.asarray(p, dtype=np.float64)
     assert p.ndim == 2 and p.shape[1] == 3 and np.isfinite(p).all() and np.all(p >= 0)
+    assert np.all(p <= 1+1e-6) and np.allclose(p.sum(1),1,atol=1e-6), 'Invalid probability rows; no prior fill or repair permitted'
     p = np.clip(p, 1e-12, 1)
     return p / p.sum(1, keepdims=True)
 
@@ -33,6 +34,9 @@ def metrics(y, p):
             'class_loss': [float(loss_rows(y,p)[y==i].mean()) if (y==i).any() else None for i in range(3)],
             'class_recall': (np.diag(matrix)/np.maximum(matrix.sum(1),1)).tolist(),
             'tie_precision': float(matrix[2,2]/max(matrix[:,2].sum(),1)),
+            'mean_predictive_entropy': float(-(p*np.log(p)).sum(1).mean()),
+            'mean_class_probability': p.mean(0).tolist(),
+            'predicted_class_fraction': (np.bincount(guess,minlength=3)/len(y)).tolist(),
             'tie_auc': float(roc_auc_score(y==2,p[:,2])) if len(np.unique(y==2)) == 2 else None,
             'confusion_matrix': matrix.tolist()}
 

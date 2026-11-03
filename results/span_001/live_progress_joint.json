@@ -3,9 +3,9 @@
   "version": 1,
   "kernel": "arseniytrushin/llm-preference-span-001-joint-pilots",
   "status": "KernelWorkerStatus.RUNNING",
-  "status_observed_at": "2026-11-03T12:11:00.749803+00:00",
+  "status_observed_at": "2026-11-03T12:37:06.578068+00:00",
   "log_reader_exit_code": 0,
-  "log_snapshot_mtime": "2026-11-03T12:11:10.695260+00:00",
+  "log_snapshot_mtime": "2026-11-03T12:37:14.342280+00:00",
   "feature_ranks": {
     "0": {
       "rank": 0,
@@ -22,26 +22,47 @@
       "elapsed_seconds": 2279.359809691
     }
   },
-  "active_stage_from_log": "random_attention",
+  "active_stage_from_log": "random_all_linear",
   "stages": {
     "features": {
       "stage": "features",
       "exit_code": 0,
       "elapsed_seconds": 2659.9924421310425,
       "complete": true
+    },
+    "random_attention": {
+      "stage": "random_attention",
+      "exit_code": 0,
+      "elapsed_seconds": 2547.8273758888245,
+      "complete": true
     }
   },
   "training": {
     "random_attention": {
-      "step": 48,
-      "elapsed_seconds": 1309.8375915339998,
-      "loss": 0.9603821039199829,
-      "grad_norm": 6.405911922454834,
-      "learning_rate": 5.000000000000003e-06,
-      "epoch": 0.75,
-      "num_input_tokens_seen": 893118,
-      "train_runtime": 1310.0919,
-      "train_tokens_per_second": 681.722
+      "step": 64,
+      "elapsed_seconds": 1739.088307816,
+      "train_runtime": 1739.3419,
+      "train_samples_per_second": 1.177,
+      "train_steps_per_second": 0.037,
+      "total_flos": 2.61999615279104e+16,
+      "train_loss": 0.9871862735599279,
+      "epoch": 1.0,
+      "num_input_tokens_seen": 1186094,
+      "loss": 1.0120856761932373,
+      "grad_norm": 31.74941062927246,
+      "learning_rate": 2.1852399266194312e-07,
+      "train_tokens_per_second": 681.921
+    },
+    "random_all_linear": {
+      "step": 16,
+      "elapsed_seconds": 509.2277480320008,
+      "loss": 1.003143548965454,
+      "grad_norm": 6.115009784698486,
+      "learning_rate": 1.913545457642601e-05,
+      "epoch": 0.25,
+      "num_input_tokens_seen": 297052,
+      "train_runtime": 509.3401,
+      "train_tokens_per_second": 583.21
     }
   }
 }

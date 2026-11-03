@@ -307,6 +307,15 @@
             "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-03T12:26:49+00:00",
+          "status": "running",
+          "note": "Pinned joint version 1 completed the random_attention control, including development prediction generation, with exit code 0 in 2547.83 seconds. Training reached 64 nominal cycles; the pinned scheduler audit indicates 61 accepted updates. The random_all_linear stage has begun; quality artifacts remain unavailable until kernel completion.",
+          "evidence": [
+            "results/span_001/live_progress_joint.json",
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
         }
       ],
       "introduced_in": 1,
@@ -671,6 +680,15 @@
           "status": "running",
           "note": "Starting frozen pooled-feature extraction and the predeclared matched-capacity tie-head pilot in the shared offline joint kernel; paired trainer and frozen-weight contracts passed.",
           "evidence": [
+            "docs/SPAN_001_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-03T12:34:18+00:00",
+          "status": "running",
+          "note": "The pinned joint kernel completed frozen-feature extraction with exit code 0 in 2659.99 seconds. Its fixed 4096 fit rows and 1024 development rows will be checked against cached baseline probabilities before fitting the coupled/factorized heads; Kaggle exposes the artifacts after the shared kernel finishes.",
+          "evidence": [
+            "results/span_001/live_progress_joint.json",
             "docs/SPAN_001_PROTOCOL.md"
           ]
         }

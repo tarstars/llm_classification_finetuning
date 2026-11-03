@@ -247,6 +247,7 @@ Adapting feed-forward layers as well as attention may improve preference represe
 
 - 2026-11-03T10:58:06+00:00 — ready: Offline pilot packaged: matched initial weights, near-matched LoRA parameter budget, fixed 64-step random-view controls; waiting for its stage in the shared joint kernel. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 - 2026-11-03T11:46:41+00:00 — running: Pinned joint job completed frozen feature extraction successfully in 2659.99 seconds and entered the random_attention training control; the random_all_linear comparison follows in the same kernel. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+- 2026-11-03T12:26:49+00:00 — running: Pinned joint version 1 completed the random_attention control, including development prediction generation, with exit code 0 in 2547.83 seconds. Training reached 64 nominal cycles; the pinned scheduler audit indicates 61 accepted updates. The random_all_linear stage has begun; quality artifacts remain unavailable until kernel completion. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 
 ### H11
 
@@ -277,6 +278,7 @@ A learned tie representation constrained to be symmetric may improve tie discrim
 **References:** [EDA_REPORT.md](EDA_REPORT.md); [results/eda_002/hypotheses.json](results/eda_002/hypotheses.json)
 
 - 2026-11-03T10:58:06+00:00 — running: Starting frozen pooled-feature extraction and the predeclared matched-capacity tie-head pilot in the shared offline joint kernel; paired trainer and frozen-weight contracts passed. Evidence: [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+- 2026-11-03T12:34:18+00:00 — running: The pinned joint kernel completed frozen-feature extraction with exit code 0 in 2659.99 seconds. Its fixed 4096 fit rows and 1024 development rows will be checked against cached baseline probabilities before fitting the coupled/factorized heads; Kaggle exposes the artifacts after the shared kernel finishes. Evidence: [results/span_001/live_progress_joint.json](results/span_001/live_progress_joint.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
 
 ### H02
 

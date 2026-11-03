@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from arena.joint_data import JointTokenizer
 from arena.span_pack import SpanTokenizer
 from arena.span_adapters import add_span_adapter, paired_objective
-from arena.span_heads import (SymmetricHead, fit_with_inner_selection, loss_rows, paired_group_gain)
+from arena.span_heads import (SymmetricHead, fit_with_inner_selection, loss_rows, paired_group_gain, normalize)
 from arena.span_audit import scheduled_lr, training_audit, matched_training
 
 
@@ -28,6 +28,11 @@ class Tokens:
 
 
 class SpanContracts(unittest.TestCase):
+    def test_invalid_probability_artifacts_are_rejected_without_prior_fill(self):
+        for p in ([[0,0,0]], [[2,2,2]], [[.2,.3,.4]], [[-.1,.5,.6]], [[float('nan'),.5,.5]]):
+            with self.assertRaises(AssertionError):normalize(p)
+        np.testing.assert_allclose(normalize([[0.,.4,.6]]).sum(1),1.)
+
     def test_amp_audit_uses_lr_before_scheduler_and_counts_skips(self):
         config={'training_steps':64,'warmup_steps':4,'learning_rate':2e-5}
         records=[{'step':1,'learning_rate':0.,'grad_norm':float('nan')},

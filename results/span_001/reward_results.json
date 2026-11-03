@@ -46,8 +46,9 @@
   },
   "job": "reward-tokenfix",
   "analysis_source_sha256": {
-    "scripts/analyze_span_001.py": "84401a7c44f60120432e5c39f1e937e2745068ca938268cc069e24e1a6c8bc3e",
-    "src/arena/span_heads.py": "40a147f34c3e282dc1db6a15dbe0f895dae021e17f19dfb66097bd2be03e8d4e"
+    "scripts/analyze_span_001.py": "5a048c4131134820bbc1e7230981b2bdd8dae1e6fd85b17164b527984462834f",
+    "src/arena/span_heads.py": "51804cf906c433e0c0609f989020a5750130d6f5c91c79130a617aca4c32b8dc",
+    "src/arena/span_audit.py": "0cda731917d88dd638bb2ca8bae537e3beac3578b3c4b67b8c14c65673698a33"
   },
   "analysis_software": {
     "numpy": "2.4.6",
@@ -76,6 +77,17 @@
       0.43962848297213625
     ],
     "tie_precision": 0.4797297297297297,
+    "mean_predictive_entropy": 0.9670421526194493,
+    "mean_class_probability": [
+      0.3318249638020179,
+      0.33799918218002417,
+      0.3301758540179579
+    ],
+    "predicted_class_fraction": [
+      0.345703125,
+      0.365234375,
+      0.2890625
+    ],
     "tie_auc": 0.659566386806994,
     "confusion_matrix": [
       [
@@ -117,6 +129,17 @@
       0.43962848297213625
     ],
     "tie_precision": 0.4797297297297297,
+    "mean_predictive_entropy": 0.9762947298967738,
+    "mean_class_probability": [
+      0.3317007937769408,
+      0.3377880777644983,
+      0.33051112845856095
+    ],
+    "predicted_class_fraction": [
+      0.345703125,
+      0.365234375,
+      0.2890625
+    ],
     "tie_auc": 0.6592439813976495,
     "confusion_matrix": [
       [
@@ -168,6 +191,17 @@
           0.3560371517027864
         ],
         "tie_precision": 0.42592592592592593,
+        "mean_predictive_entropy": 1.0090235548860635,
+        "mean_class_probability": [
+          0.3526414013482131,
+          0.33326531783001107,
+          0.3140932808217766
+        ],
+        "predicted_class_fraction": [
+          0.3837890625,
+          0.3525390625,
+          0.263671875
+        ],
         "tie_auc": 0.5950146407387942,
         "confusion_matrix": [
           [
@@ -209,6 +243,17 @@
           0.3560371517027864
         ],
         "tie_precision": 0.42592592592592593,
+        "mean_predictive_entropy": 1.0102487017289499,
+        "mean_class_probability": [
+          0.35222753422647135,
+          0.33353808978068616,
+          0.31423437599284126
+        ],
+        "predicted_class_fraction": [
+          0.3837890625,
+          0.3525390625,
+          0.263671875
+        ],
         "tie_auc": 0.5930227936207894,
         "confusion_matrix": [
           [
