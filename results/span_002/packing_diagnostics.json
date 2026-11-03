@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-03T21:40:34.121991+00:00",
+  "checked_at": "2026-11-03T23:22:35.101247+00:00",
   "confirmation_evaluated": false,
   "method": "Reuse EDA content-token accounting under unchanged original-order 1024-token packing; marker tokens excluded. Cached labels checked for row alignment only.",
   "max_length": 1024,
@@ -56,6 +56,181 @@
     "reload_max_probability_difference": 0.004872723018787384,
     "note": "Coverage: original raw orientations of 1,024 development rows from span-001 frozen-weight extraction."
   },
+  "constant_baselines": {
+    "fit_partition": "Original 45,985-row training partition only",
+    "evaluation_rows": 5746,
+    "training_class_counts": [
+      16052,
+      15723,
+      14210
+    ],
+    "majority_class_index": 0,
+    "training_prior": [
+      0.3490703490268566,
+      0.3419158421224312,
+      0.30901380885071217
+    ],
+    "models": {
+      "uniform": {
+        "rows": 5746,
+        "log_loss": 1.0986122886681096,
+        "accuracy": 0.34911242603550297,
+        "macro_f1": 0.17251461988304095,
+        "brier": 0.6666666666666669,
+        "class_counts": [
+          2006,
+          1965,
+          1775
+        ],
+        "class_loss": [
+          1.0986122886681096,
+          1.0986122886681098,
+          1.0986122886681096
+        ],
+        "class_recall": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "tie_precision": 0.0,
+        "mean_predictive_entropy": 1.0986122886681093,
+        "mean_class_probability": [
+          0.3333333333333061,
+          0.3333333333333061,
+          0.3333333333333061
+        ],
+        "predicted_class_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "tie_auc": 0.5,
+        "confusion_matrix": [
+          [
+            2006,
+            0,
+            0
+          ],
+          [
+            1965,
+            0,
+            0
+          ],
+          [
+            1775,
+            0,
+            0
+          ]
+        ]
+      },
+      "training_prior": {
+        "rows": 5746,
+        "log_loss": 1.0972160902484214,
+        "accuracy": 0.34911242603550297,
+        "macro_f1": 0.17251461988304095,
+        "brier": 0.6657465171102929,
+        "class_counts": [
+          2006,
+          1965,
+          1775
+        ],
+        "class_loss": [
+          1.052481803949991,
+          1.073190647866522,
+          1.1743693142456517
+        ],
+        "class_recall": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "tie_precision": 0.0,
+        "mean_predictive_entropy": 1.0972274095648862,
+        "mean_class_probability": [
+          0.34907034902681583,
+          0.3419158421224448,
+          0.309013808850737
+        ],
+        "predicted_class_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "tie_auc": 0.5,
+        "confusion_matrix": [
+          [
+            2006,
+            0,
+            0
+          ],
+          [
+            1965,
+            0,
+            0
+          ],
+          [
+            1775,
+            0,
+            0
+          ]
+        ]
+      },
+      "hard_majority": {
+        "rows": 5746,
+        "log_loss": 17.98468830030922,
+        "accuracy": 0.34911242603550297,
+        "macro_f1": 0.17251461988304095,
+        "brier": 1.3017751479250885,
+        "class_counts": [
+          2006,
+          1965,
+          1775
+        ],
+        "class_loss": [
+          1.999955756561757e-12,
+          27.631021115928547,
+          27.631021115928547
+        ],
+        "class_recall": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "tie_precision": 0.0,
+        "mean_predictive_entropy": 5.7262220032913245e-11,
+        "mean_class_probability": [
+          0.9999999999981047,
+          9.999999999978892e-13,
+          9.999999999978892e-13
+        ],
+        "predicted_class_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "tie_auc": 0.5,
+        "confusion_matrix": [
+          [
+            2006,
+            0,
+            0
+          ],
+          [
+            1965,
+            0,
+            0
+          ],
+          [
+            1775,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "prediction_rule": "Accuracy uses argmax; equal maxima choose the first class A, then B, then tie.",
+    "hard_majority_note": "Exact unsmoothed log loss is infinite on any wrong hard prediction. The finite diagnostic uses the common 1e-12 clipping convention; training-prior probabilities give the same constant class prediction with meaningful finite log loss."
+  },
   "native_judge": {
     "rows": 2048,
     "truncated_rows": 697,
@@ -85,6 +260,6 @@
     "current_judge_cached_summary": "858d9397626cc0da718e242026af3a1b17b5844d2754a8f83c72425c81f97c08",
     "current_judge_extra_summary": "77364b42d33f7b85f6dc2129e9f898ec7c9ae06be22183c3e4e6c3388e2acfc3",
     "joint": "d1c60c29aa03f373ac7e237d734358abf2e0f0af7d3c188769c931054aa4b7ea",
-    "source": "e3c619934b3240788563a76a71c34e5bf33de9071a57e9a35814639d469c7394"
+    "source": "802287ae026e031fe111f7600a0f8bb405b7ca8e8d949935a55045c352a999f5"
   }
 }

@@ -9,7 +9,7 @@ import numpy as np
 
 REPO=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(REPO/'src'))
-from arena.data import ROOT,json_write
+from arena.data import ROOT,CLASSES,json_write
 from arena.span_calibration import SymmetricCalibration
 
 root=ROOT/'runs/span_002'
@@ -84,6 +84,7 @@ if (aggregate/'exposure_results.json').exists():
             'adapter_sha256':summary['adapter_sha256'],'initial_step':summary['initial_step'],
             'final_step':summary['final_step'],'epochs_completed':summary['epochs_completed'],
             'temperature':float(1/calibrator.theta[0]),'calibration_family':'temperature',
+            'class_order':CLASSES,
             'calibration_fit_rows':len(data['ids']),
             'calibration_note':'Full exploratory development fit after the cross-fitted model comparison; no confirmation labels used.',
             'prediction_recipe':'Average aligned original/swapped raw probabilities, then apply the frozen temperature.',

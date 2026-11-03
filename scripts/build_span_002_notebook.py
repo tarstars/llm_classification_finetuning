@@ -188,6 +188,12 @@ else:
     if snapshot.exists():display(json.loads(snapshot.read_text()))
 if (RESULTS/'packing_diagnostics.json').exists():
     packing=read('packing_diagnostics.json')
+    print('Constant baselines, fit using training labels only:')
+    display(pd.DataFrame([{'baseline':name,'rows':m['rows'],'log_loss':m['log_loss'],
+                          'accuracy':m['accuracy'],'macro_f1':m['macro_f1']}
+                         for name,m in packing['constant_baselines']['models'].items()]))
+    print(packing['constant_baselines']['hard_majority_note'])
+    print(packing['constant_baselines']['prediction_rule'])
     table=pd.DataFrame(packing['cohorts']).T
     display(table)
     show=table.loc[['training_partition','full_development'],

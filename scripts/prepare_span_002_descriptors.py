@@ -10,8 +10,8 @@ import pandas as pd
 
 REPO=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(REPO/'src'))
-from arena.data import ROOT,json_write
-from arena.span_heads import order_diagnostics,normalize
+from arena.data import ROOT,CLASSES,json_write
+from arena.span_heads import order_diagnostics,normalize,metrics
 
 
 def digest(path):
@@ -36,6 +36,9 @@ features=pd.read_parquet(feature_path,columns=['id','label','split','total_conte
     'cut_1024_cap256','prompt_cut_1024_cap256','answer_cut_1024_cap256','retained_fraction_1024_cap256'])
 assert features.id.is_unique
 features=features.set_index('id')
+truth=pd.read_csv(ROOT/'raw/train.csv',usecols=['id',*CLASSES]).set_index('id')
+assert set(features.index)==set(truth.index) and set(features.split)=={'train','dev','confirmation'}
+np.testing.assert_array_equal(features.label,truth.loc[features.index,CLASSES].values.argmax(1))
 split=json.loads(Path(inventory['split']['path']).read_text())
 assert set(features.index[features.split=='dev'])==set(split['dev'])
 assert set(features.index[features.split=='confirmation'])==set(split['confirmation'])
@@ -84,6 +87,14 @@ else:
     np.savez_compressed(destination,ids=ids,labels=joint['labels'],original=original,aligned_swap=swapped)
 cohorts={'training_partition':retention(features.index[features.split=='train']),
          'full_development':retention(baseline['ids']),'order_reference':retention(ids)}
+train_counts=np.bincount(features.loc[features.split=='train','label'],minlength=3)
+prior=train_counts/train_counts.sum()
+majority=int(prior.argmax())
+constant={name:metrics(baseline['labels'],np.tile(p,(len(baseline['ids']),1)))
+          for name,p in [('uniform',np.full(3,1/3)),('training_prior',prior),
+                         ('hard_majority',np.eye(3)[majority])]}
+assert np.isclose(constant['uniform']['log_loss'],np.log(3))
+assert constant['hard_majority']['accuracy']==float((baseline['labels']==majority).mean())
 expanded=root/'expanded_evaluated_predictions.npz'
 if expanded.exists():cohorts['ensemble_combined']=retention(np.load(expanded)['ids'])
 judge_paths=[root/'jobs/ensemble-consistent/output/cached_current/judge_summary.json',
@@ -99,6 +110,11 @@ result={'checked_at':datetime.now(timezone.utc).isoformat(),'confirmation_evalua
         'reload_mean_probability_difference':float(drift.mean()),
         'reload_max_probability_difference':float(drift.max()),
         'note':'Coverage: original raw orientations of 1,024 development rows from span-001 frozen-weight extraction.'},
+    'constant_baselines':{'fit_partition':'Original 45,985-row training partition only',
+        'evaluation_rows':len(baseline['ids']),'training_class_counts':train_counts.tolist(),
+        'majority_class_index':majority,'training_prior':prior.tolist(),'models':constant,
+        'prediction_rule':'Accuracy uses argmax; equal maxima choose the first class A, then B, then tie.',
+        'hard_majority_note':'Exact unsmoothed log loss is infinite on any wrong hard prediction. The finite diagnostic uses the common 1e-12 clipping convention; training-prior probabilities give the same constant class prediction with meaningful finite log loss.'},
     'native_judge':{'rows':judge_rows,'truncated_rows':judge_cut,
         'truncated_fraction':judge_cut/judge_rows,
         'mean_packed_tokens':sum(s['rows']*s['packed_tokens_mean'] for s in judge_summaries)/judge_rows,

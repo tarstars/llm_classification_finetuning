@@ -78,6 +78,15 @@ for marker in ('JOINT_PROGRESS','JUDGE_PROGRESS'):
             progress[marker][key+'_nonfinite']=str(value)
 json.dumps(progress,allow_nan=False)
 if args.job=='exposure':
+    latest=progress.get('JOINT_PROGRESS',{})
+    if 'train_runtime' in latest:
+        progress['training_complete']=True
+        progress['training_end_step']=latest['step']
+        progress['training_loop_seconds']=latest['train_runtime']
+        if current['status'].endswith('RUNNING'):
+            progress['last_snapshot_phase']='training_complete_final_outputs_pending'
+        elif current['status'].endswith('COMPLETE'):
+            progress['last_snapshot_phase']='execution_complete'
     reference=root/'baseline_resume/joint_run/checkpoints/checkpoint-800/trainer_state.json'
     if reference.exists():
         progress['original_selection_reference']={

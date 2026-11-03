@@ -23,6 +23,14 @@ with no reserved time; refresh is not used to extend this span.
 
 ## Completed calibration and measurement
 
+On the same 5,746 development rows, always predicting the most frequent training
+class (**A**) gives **34.91% accuracy**. Training-prior probabilities give
+**1.097216 log loss**, versus 1.098612 for uniform probabilities. The unsmoothed
+hard majority rule has infinite exact log loss on any error; its finite diagnostic
+is 17.984688 under the common 1e-12 clipping convention. These controls use only
+the original 45,985 training labels. [Baseline metrics](../results/span_002/packing_diagnostics.json)
+also record the deterministic argmax tie rule and class-level metrics.
+
 [H40 report](SPAN_002_H40.md): on all 5,746 exploratory development rows, matched
 cross-fitted temperature loss is **0.968872**, versus **0.967740** for nested grouped
 calibration selection. Temperature-plus-tie alone gives 0.967179, a separately
@@ -128,6 +136,11 @@ required before accepting a candidate.
 At step **1400**, that fixed selection loss improved further to **0.9494021**;
 accuracy was **54.88%**. This intermediate result does not replace the fixed
 step-1438 endpoint or the required full-development comparison.
+
+Training has now finished at **1438 / one nominal epoch**. Final selection loss
+is **0.9494095**, accuracy **54.79%**; loop time is **14,805.754 seconds**, including
+its selection evaluations. Full-development prediction outputs remain pending.
+The final endpoint is retained despite the negligible difference from step 1400.
 
 The immutable parent scheduler/scaler files were also downloaded and checked.
 At nominal checkpoint 800, scheduler position is **796** and AMP scale **4096**.

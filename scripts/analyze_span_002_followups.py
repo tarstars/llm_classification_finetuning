@@ -218,6 +218,7 @@ def main():
         np.testing.assert_array_equal(cached.label,y)
         cut=cached.cut_1024_cap256.to_numpy(bool)
         report['retention']=descriptors['cohorts']
+        report['constant_baselines']=descriptors['constant_baselines']
         report['retention_slices']={name:compare(y[mask],groups[mask],
             {'classifier':controls['temperature'][mask],'continued':candidate['temperature'][mask]})
             for name,mask in [('unclipped',~cut),('any_field_clipped',cut)]}

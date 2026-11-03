@@ -279,6 +279,14 @@
           "evidence": [
             "results/span_002/live_progress_exposure.json"
           ]
+        },
+        {
+          "at": "2026-11-03T23:16:31+00:00",
+          "status": "running",
+          "note": "Fixed training endpoint reached: nominal1438, epoch1.0, loop14805.754s including selection evaluations. Final selection loss0.94940948, accuracy54.79%. Same exposure/1 job remains live for full5746-row outputs; accepted-exposure and restored-state checks remain pending. No new training or checkpoint selection.",
+          "evidence": [
+            "results/span_002/live_progress_exposure.json"
+          ]
         }
       ],
       "introduced_in": 1,

@@ -134,6 +134,22 @@ Third selection validation, step 1400 (22:47 UTC read): **0.94940205**, accuracy
 **54.88%**. The fixed final endpoint remains 1438; checkpoint 1400 is an intermediate
 diagnostic. Full 5,746-row scoring is still pending.
 
+**Training is now complete at step 1438, epoch 1.0** (23:10 UTC read).
+Final selection loss 0.94940948, accuracy 54.79%; training-loop time 14,805.754s.
+The same `/exposure/1` remains RUNNING for final outputs. No new training should
+be launched. Numerical progress now labels this phase explicitly; last training
+step remaining unchanged during scoring is expected. Final full-dev results,
+accepted-exposure audit, candidate decision and version closure remain outstanding.
+
+The descriptor audit also now verifies all cached labels against raw truth and
+includes training-only constant baselines: majority A accuracy 34.91%, soft prior
+loss 1.097216, uniform loss 1.098612 on all 5,746 dev rows. Hard-majority exact loss is
+infinite; the finite table explicitly labels its 1e-12 clipping convention.
+Notebook 13 includes these controls. `span_002_progress.py` uses the actual final
+`train_runtime` event to label training-complete/final-outputs-pending, so no new
+step logs are expected during scoring. The frozen research-candidate manifest
+will include explicit A/B/tie class order if the model qualifies.
+
 Parent `scheduler.pt` and `scaler.pt` are now downloaded locally alongside the
 checkpoint-800 Trainer state/tokenizer. Their hashes are respectively
 `9eb8788f7cb7bd093b5c2c850b25091b223d32c67b84483f0ffb06df392a8173` and
