@@ -2253,7 +2253,7 @@
       "title": "Budgeted strong-judge cascade",
       "priority": "P1",
       "rank": 31,
-      "status": "planned",
+      "status": "running",
       "gain": [
         -0.01,
         0.015
@@ -2313,6 +2313,22 @@
           "note": "Final v2 handoff explicitly requires the accepted H03 step1438 comparator before cached cascade selection; prior checkpoint800 ensemble gain is not additive. No v3 experiment executed.",
           "evidence": [
             "docs/SPAN_002_H03.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T08:03:30+00:00",
+          "status": "running",
+          "note": "Frozen3cd8407 protocol/resource contract. Starting the predeclared nested2048-row latest-classifier cascade comparison, only10%/20% entropy routes plus matched random/full-blend/component controls; no new inference.",
+          "evidence": [
+            "docs/SPAN_003_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T08:24:23+00:00",
+          "status": "running",
+          "note": "Cached20% entropy route passes primary gate: loss0.959997 to0.955138, gain0.004859 CI[0.000245,0.009314], but superiority over random is unproven. Full-blend complementarity persists; full-data recipe frozen before possible1024-new-group follow-up. E02/runtime gate pending.",
+          "evidence": [
+            "docs/SPAN_003_H39.md"
           ]
         }
       ],
@@ -2672,7 +2688,7 @@
       ],
       "id": "H43",
       "rank": 45,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 3,
       "discovered_during": 2,
       "derived_from": [
@@ -2702,6 +2718,22 @@
           "note": "Final H03 result changes the classifier reference; require latest-model matched cache comparison before conditional blending. Binary tie versus tie-class distinction retained; no draft experiment executed.",
           "evidence": [
             "docs/SPAN_002_H03.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T08:03:30+00:00",
+          "status": "running",
+          "note": "Starting the predeclared CPU-only nested comparison of vector, conditional-tie-preserving and vector-plus-tie-calibration families, using latest H03 classifier and uniformly re-scored judge caches.",
+          "evidence": [
+            "docs/SPAN_003_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T08:24:22+00:00",
+          "status": "done",
+          "note": "Completed predeclared nested2048-row CPU comparison. Conditional blend0.945236 loses to vector+calibration0.931579; selectedfamily gains0.010102 CI[0.004034,0.015725] vs plainvector. No tie-preservation adoption or deployability claim. Shared9.09s CPU, no new inference.",
+          "evidence": [
+            "docs/SPAN_003_H43.md"
           ]
         }
       ]
@@ -2748,7 +2780,7 @@
       ],
       "id": "E02",
       "rank": 46,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 3,
       "discovered_during": 2,
       "derived_from": [
@@ -2761,6 +2793,14 @@
           "note": "Actual native backend saw zero devices despite two T4 allocations until missing CUDA-12 libraries were installed; queue an offline packaging/backend verification prerequisite for v3. Preserve the failed old-cache identity gate and require consistent numerical comparisons.",
           "evidence": [
             "docs/SPAN_002_RUNTIME.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T08:18:24+00:00",
+          "status": "running",
+          "note": "Built portable offline native runtime from immutable binary and completed CUDA12 recovery output, including pinned package metadata/licenses and SHA manifest. Launch64-row reference/device/memory profile under1800s ceiling; preserve unchanged judge source/config.",
+          "evidence": [
+            "docs/SPAN_003_PROTOCOL.md"
           ]
         }
       ]
@@ -2809,7 +2849,7 @@
       ],
       "id": "E03",
       "rank": 47,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 3,
       "discovered_during": 2,
       "derived_from": [
@@ -2823,6 +2863,14 @@
           "note": "H03 has a supported local gain and finite frozen export; queue offline reload/runtime QA and one frozen official verification for v3, without starting it in v2.",
           "evidence": [
             "docs/SPAN_002_H03.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T08:10:42+00:00",
+          "status": "running",
+          "note": "Freshquota/protocol3cd8407 frozen. Built Internet-disabled64-row export identity and visible-CSV smoke from immutable H03 adapter/base/runtime. Starting bounded900s two-T4 verification; no hidden submission yet.",
+          "evidence": [
+            "docs/SPAN_003_PROTOCOL.md"
           ]
         }
       ]

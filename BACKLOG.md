@@ -6,7 +6,7 @@ Version **3**, active; **37** tasks. Focus for this span: E03, H39, E02, H43.
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **26**, ready **0**, running **0**, done **0**, rejected **0**, deferred **9**.
+Hypothesis status: planned **24**, ready **0**, running **1**, done **1**, rejected **0**, deferred **9**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -59,9 +59,9 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 31 | [H39](#h39) | P1 / planned | Budgeted strong-judge cascade | -0.01…+0.015 | high | 2…6 | 0…0 | 2…8 | E00, H37, H03 |
-| 46 | [E02](#e02) | P1 / planned | Package an offline native CUDA runtime and verify backend execution | — | medium | 2…6 | 0.1…0.5 | 0…0 | E00, E01 |
-| 47 | [E03](#e03) | P1 / planned | Verify the continued classifier export offline and obtain one frozen official score | — | medium | 2…4 | 0.1…0.25 | 4…6 | E00, E01, H03 |
+| 31 | [H39](#h39) | P1 / running | Budgeted strong-judge cascade | -0.01…+0.015 | high | 2…6 | 0…0 | 2…8 | E00, H37, H03 |
+| 46 | [E02](#e02) | P1 / running | Package an offline native CUDA runtime and verify backend execution | — | medium | 2…6 | 0.1…0.5 | 0…0 | E00, E01 |
+| 47 | [E03](#e03) | P1 / running | Verify the continued classifier export offline and obtain one frozen official score | — | medium | 2…4 | 0.1…0.25 | 4…6 | E00, E01, H03 |
 | 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
@@ -87,7 +87,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 32 | [H35](#h35) | P3 / planned | Symbolic math verification | -0.008…+0.008 | medium | 12…28 | 0.25…1 | 4…12 | E00 |
 | 33 | [H34](#h34) | P3 / planned | Executable code evidence | -0.008…+0.01 | high | 20…50 | 0.25…1 | 6…18 | E00 |
 | 34 | [H26](#h26) | P3 / planned | Hierarchical long-text comparison | -0.02…+0.02 | high | 24…60 | 2…6 | 24…60 | E00, H23 |
-| 45 | [H43](#h43) | P3 / planned | Blend conditional winner preferences while preserving the tie channel | -0.015…+0.01 | high | 2…6 | 0…0 | 0…0 | E00, H37, H40, H03 |
+| 45 | [H43](#h43) | P3 / done | Blend conditional winner preferences while preserving the tie channel | -0.015…+0.01 | high | 2…6 | 0…0 | 0…0 | E00, H37, H40, H03 |
 | 35 | [H08](#h08) | P4 / deferred | Inference quantization sensitivity | -0.005…+0.005 | medium | 4…10 | 0.5…2 | 1…4 | E00 |
 | 36 | [H12](#h12) | P4 / deferred | Soft targets for repeated votes | -0.001…+0.001 | low | 2…5 | 0…0 | 0…0 | E00 |
 | 37 | [H07](#h07) | P4 / deferred | Bidirectional comparison attention | -0.03…+0.015 | high | 16…40 | 2…6 | 12…30 | E00 |
@@ -124,7 +124,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 ### H39
 
-**Budgeted strong-judge cascade** — P1, planned, risk high.
+**Budgeted strong-judge cascade** — P1, running, risk high.
 
 A costly judge may help selected rows if a gate can predict its incremental benefit.
 
@@ -152,10 +152,12 @@ A costly judge may help selected rows if a gate can predict its incremental bene
 
 - 2026-11-03T21:19:04+00:00 — planned: H37 complementarity is supported but full sequential deployment projects13.74h. Prioritize a v3 cache-only10%/20% entropy-routing pilot with nested selection and random controls, latest-classifier recheck and measured runtime gate; no cascade experiment executed during v2. Evidence: [docs/SPAN_002_H37.md](docs/SPAN_002_H37.md)
 - 2026-11-04T04:19:43+00:00 — planned: Final v2 handoff explicitly requires the accepted H03 step1438 comparator before cached cascade selection; prior checkpoint800 ensemble gain is not additive. No v3 experiment executed. Evidence: [docs/SPAN_002_H03.md](docs/SPAN_002_H03.md)
+- 2026-11-04T08:03:30+00:00 — running: Frozen3cd8407 protocol/resource contract. Starting the predeclared nested2048-row latest-classifier cascade comparison, only10%/20% entropy routes plus matched random/full-blend/component controls; no new inference. Evidence: [docs/SPAN_003_PROTOCOL.md](docs/SPAN_003_PROTOCOL.md)
+- 2026-11-04T08:24:23+00:00 — running: Cached20% entropy route passes primary gate: loss0.959997 to0.955138, gain0.004859 CI[0.000245,0.009314], but superiority over random is unproven. Full-blend complementarity persists; full-data recipe frozen before possible1024-new-group follow-up. E02/runtime gate pending. Evidence: [docs/SPAN_003_H39.md](docs/SPAN_003_H39.md)
 
 ### E02
 
-**Package an offline native CUDA runtime and verify backend execution** — P1, planned, risk medium.
+**Package an offline native CUDA runtime and verify backend execution** — P1, running, risk medium.
 
 Vendoring the required native CUDA libraries and checking the serving backend itself can make offline judge execution reliable on the current Kaggle image.
 
@@ -182,10 +184,11 @@ Vendoring the required native CUDA libraries and checking the serving backend it
 **References:** [docs/SPAN_002_RUNTIME.md](docs/SPAN_002_RUNTIME.md); [results/span_002/live_progress_ensemble-recovery.json](results/span_002/live_progress_ensemble-recovery.json)
 
 - 2026-11-03T20:03:58+00:00 — planned: Actual native backend saw zero devices despite two T4 allocations until missing CUDA-12 libraries were installed; queue an offline packaging/backend verification prerequisite for v3. Preserve the failed old-cache identity gate and require consistent numerical comparisons. Evidence: [docs/SPAN_002_RUNTIME.md](docs/SPAN_002_RUNTIME.md)
+- 2026-11-04T08:18:24+00:00 — running: Built portable offline native runtime from immutable binary and completed CUDA12 recovery output, including pinned package metadata/licenses and SHA manifest. Launch64-row reference/device/memory profile under1800s ceiling; preserve unchanged judge source/config. Evidence: [docs/SPAN_003_PROTOCOL.md](docs/SPAN_003_PROTOCOL.md)
 
 ### E03
 
-**Verify the continued classifier export offline and obtain one frozen official score** — P1, planned, risk medium.
+**Verify the continued classifier export offline and obtain one frozen official score** — P1, running, risk medium.
 
 The accepted H03 research reference can be reproduced from its exported adapter in an Internet-disabled Kaggle notebook and evaluated once without changing the frozen recipe.
 
@@ -212,6 +215,7 @@ The accepted H03 research reference can be reproduced from its exported adapter 
 **References:** [docs/SPAN_002_H03.md](docs/SPAN_002_H03.md); [results/span_002/exposure_results.json](results/span_002/exposure_results.json); [results/span_002/research_candidate.json](results/span_002/research_candidate.json)
 
 - 2026-11-04T04:19:13+00:00 — planned: H03 has a supported local gain and finite frozen export; queue offline reload/runtime QA and one frozen official verification for v3, without starting it in v2. Evidence: [docs/SPAN_002_H03.md](docs/SPAN_002_H03.md)
+- 2026-11-04T08:10:42+00:00 — running: Freshquota/protocol3cd8407 frozen. Built Internet-disabled64-row export identity and visible-CSV smoke from immutable H03 adapter/base/runtime. Starting bounded900s two-T4 verification; no hidden submission yet. Evidence: [docs/SPAN_003_PROTOCOL.md](docs/SPAN_003_PROTOCOL.md)
 
 ### H02
 
@@ -921,7 +925,7 @@ Chunk encoding plus learned aggregation may retain evidence beyond one truncated
 
 ### H43
 
-**Blend conditional winner preferences while preserving the tie channel** — P3, planned, risk high.
+**Blend conditional winner preferences while preserving the tie channel** — P3, done, risk high.
 
 A conditional-winner blend with a fixed classifier tie channel may differ from full-vector blending, but worse human-tie class loss alone does not imply its aggregate tie channel is worse.
 
@@ -950,6 +954,8 @@ A conditional-winner blend with a fixed classifier tie channel may differ from f
 - 2026-11-03T19:39:21+00:00 — planned: Cached blend gains on decisive classes were partly canceled by worse tie loss; propose a grouped, cache-only winner-channel comparison with a calibration control for v3, without executing it in v2. Evidence: [results/span_002/blend_results.json](results/span_002/blend_results.json)
 - 2026-11-03T21:19:04+00:00 — planned: Expanded H37 confirms blend gain, but binary tie BCE improves despite worse human-tie class loss. Reduce optimistic gain to0.010 and correct tie-preservation rationale; retain a cache-only v3 diagnostic with matched calibration controls, not executed. Evidence: [docs/SPAN_002_H37.md](docs/SPAN_002_H37.md)
 - 2026-11-04T04:19:43+00:00 — planned: Final H03 result changes the classifier reference; require latest-model matched cache comparison before conditional blending. Binary tie versus tie-class distinction retained; no draft experiment executed. Evidence: [docs/SPAN_002_H03.md](docs/SPAN_002_H03.md)
+- 2026-11-04T08:03:30+00:00 — running: Starting the predeclared CPU-only nested comparison of vector, conditional-tie-preserving and vector-plus-tie-calibration families, using latest H03 classifier and uniformly re-scored judge caches. Evidence: [docs/SPAN_003_PROTOCOL.md](docs/SPAN_003_PROTOCOL.md)
+- 2026-11-04T08:24:22+00:00 — done: Completed predeclared nested2048-row CPU comparison. Conditional blend0.945236 loses to vector+calibration0.931579; selectedfamily gains0.010102 CI[0.004034,0.015725] vs plainvector. No tie-preservation adoption or deployability claim. Shared9.09s CPU, no new inference. Evidence: [docs/SPAN_003_H43.md](docs/SPAN_003_H43.md)
 
 ### H08
 

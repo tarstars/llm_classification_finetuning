@@ -1,0 +1,91 @@
+{
+  "span": 3,
+  "identity": {
+    "mode": "smoke",
+    "rows": 64,
+    "prediction_seconds": 37.879190918000006,
+    "seconds_per_row": 0.5918623580937501,
+    "diagnostics": {
+      "prompt": {
+        "mean_tokens": 64.984375,
+        "max_tokens": 684
+      },
+      "response_a": {
+        "mean_tokens": 245.0625,
+        "max_tokens": 1068
+      },
+      "response_b": {
+        "mean_tokens": 276.5,
+        "max_tokens": 2009
+      }
+    },
+    "program_seconds": 97.36421409000002,
+    "adapter_sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b",
+    "temperature": 0.9441963863130951,
+    "tokenizer_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "class_order": [
+      "winner_model_a",
+      "winner_model_b",
+      "winner_tie"
+    ],
+    "base_config_sha256": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+    "peak_gpu_bytes_rank0": 4234590208,
+    "software": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.22.1",
+      "peft": "0.21.2",
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2"
+    },
+    "identity": {
+      "original": {
+        "mean": 0.0002940132624139652,
+        "maximum": 0.003541968167794063
+      },
+      "aligned_swap": {
+        "mean": 0.00026074048215040155,
+        "maximum": 0.0022678328307462192
+      },
+      "average": {
+        "mean": 0.0002120285287312635,
+        "maximum": 0.0021797327120208765
+      },
+      "calibrated": {
+        "mean": 0.00022095535655632754,
+        "maximum": 0.0022866681438576952
+      }
+    },
+    "passed": true
+  },
+  "independently_validated_previews": {
+    "classifier_smoke": {
+      "csv_sha256": "b7e5bc4fe7b7e37d9c266d47d203ea07f04b717a0e4d73527a00d5a0d4b45eb3",
+      "rows": 3,
+      "valid": true,
+      "session": {
+        "seconds": 184.8633496761322,
+        "smoke_passed": true,
+        "visible_rows": 3,
+        "visible_probabilities_valid": true
+      },
+      "kernel": "/code/arseniytrushin/llm-preference-span-003-classifier-smoke",
+      "version": 1
+    },
+    "classifier_predict": {
+      "csv_sha256": "b7e5bc4fe7b7e37d9c266d47d203ea07f04b717a0e4d73527a00d5a0d4b45eb3",
+      "rows": 3,
+      "valid": true,
+      "session": {
+        "seconds": 109.62726378440857,
+        "prediction_complete": true
+      },
+      "kernel": "/code/arseniytrushin/llm-preference-span-003-classifier-predict",
+      "version": 1
+    }
+  },
+  "official_submission_made": false,
+  "confirmation_used": false,
+  "charged_smoke_seconds": 200.632,
+  "charged_prediction_preview_seconds": 124.745,
+  "source_manifest_sha256": "2091f699df6f3b17a79f2d23f22827013598748ffe8599f9cafc61b0052fd56c"
+}

@@ -10,12 +10,67 @@ Do not reuse v2's clock or quota baseline, reset this clock, repeat completed
 jobs, or start v4 work. The old v3 boundary is superseded only by this new user
 authorization; the new goal stops after sealing v3 and forming v4.
 
-Preparation has begun; no v3 GPU job has launched and quota has not yet been
-refreshed for this span. First freeze the actual protocol/plan, resource inventory,
-artifact/sample hashes and allocations in span_003 paths before measurements or
-launches. Then work autonomously through the four focus tasks and publish the
-results notebook14, task/span reports, audits and versioned v4 handoff. Read the
-full [current goal](../GOAL.md). Completed contracts are archived at
+V3 is executing. The frozen premeasurement contract/resource/input commit is
+`3cd8407`, with effective cap **30076.296 seconds / 8.35453 session-hours**
+(initial used77923.704,0reserved, refreshNov7). Protocol/config under span_003.
+No official v3 submission yet. Check [live report](SPAN_003_RESULTS.md),
+[H39](SPAN_003_H39.md), [H43](SPAN_003_H43.md), current job receipts and service
+state; do not infer liveness from a lock or status file alone.
+
+Concrete progress:
+- H43 is done: nested2048-row conditional loss0.945236 loses to vector+calibration
+  0.931579. Plainvector0.941681, latestclassifier0.959997. Selectedfamily gain
+  0.010102 [0.004034,0.015725] versus vector; no deployability claim.
+- H39 running: entropy20% loss0.955138, gain0.004859 [0.000245,0.009314], actual
+  routed19.92%. Random20%0.956761; superiority of entropy over random unproven.
+  Full-blend complementarity survives latestclassifier. The full2k recipe is
+  frozen before any1024-new-group follow-up; E02/runtime gates still required.
+- E03 running: `classifier-smoke/1` COMPLETE, actual source prefix
+  `arseniytrushin/llm-preference-span-003-`. Offline64-row identity mean0.000212,
+  max0.002180 passes0.002/0.03; visible3-row CSV validated by notebook.
+  Charge200.632s, session184.86s, profile0.591862s/row. Controller handle24300
+  exited0. Prediction preview classifier-predict/1 is also COMPLETE; controller97129
+  exited0, session109.63s/charge124.745s. Both CSVs are now independently checked
+  against actual raw IDs/schema, with finite/unit-sum probabilities. No submit.
+- E02 running: `native-profile/1` terminalERROR before inference at our
+  file-size>1MiB heuristic, charge39.515s. Preserve the pushed source/intent and
+  outputs. Never rebuild its launched folder. The official pinned runtime wheel proves libcudart.so.12 is a valid728800-byte
+  ELF. Its PyPI SHA and library SHA are in heavy native_parent_inspect/
+  official_runtime_inspection.json. This is our invalid minimum-size heuristic,
+  not numerical drift. Large parent-library CPU download55228 ended with a
+  ChunkedEncodingError; its partial CUBLAS file is NOT a valid artifact. Do not
+  use that partial file or restart the large download. Replace the heuristic
+  with ELF/checksum verification, preserve failed source, and budget any new
+  GPU retry explicitly. No numerical guard was evaluated.
+
+New programs: prepare_span_003.py; analyze_span_003_cached.py with
+arena/span_cascade.py; build_span_003_classifier.py with arena/span_export.py;
+build_span_003_native.py; run_span_003_job.py. Three new probability/roundtrip/
+label-exclusion tests passed. All generated execution notebooks require the
+F821 source checker. It caught a missing zlib import before native launch and
+was fixed; that was not a GPU failure. The native failed library heuristic still
+needs diagnosis. Controller output collection now includes CSVs (the old copied pattern
+omitted them); smoke CSVs were re-collected and independently validated locally.
+
+The cached report/source/config/protocol hashes must retain their lineage if a
+later allocation/configuration changes; do not retroactively rewrite measured
+history. CPU analysis shared by H39/H43 took9.09s. Per-row arrays and sample IDs
+remain private. No v4 experiment or new training has started.
+
+Before an official submission: all other GPU jobs should be terminal so hidden
+execution accounting is isolated; refresh quota, freeze an explicit preview/
+hidden execution ledger and count the preview charge. Reserve the hidden ceiling
+within the remaining original cap. Code-competition rerun quota charging may not
+be fully exposed: report measured weekly charges separately from a conservative
+hidden-execution bound, without double counting. One frozen classifier submission
+only. The current profile projection is18775.95s before measured setup, below the
+21600s role ceiling. Stop if a guard/access/runtime gate fails; preserve receipts
+and reconcile ambiguous uploads before retries.
+
+Still required: E02 diagnosis/offline verification; classifier preview/official
+receipt if admitted; H39 new-group/runtime check if admitted; reports/notebook14,
+final resource/provenance audit, v3 sealing/v4 formation/emptyv5, publication.
+Stop before executing v4. Full [goal](../GOAL.md); prior contracts
 [GOAL_V1](GOAL_V1.md) and [GOAL_V2](GOAL_V2.md).
 
 V2 is complete: all five focus items have reports, all six GPU execution versions

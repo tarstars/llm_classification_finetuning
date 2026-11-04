@@ -1,0 +1,19 @@
+{
+  "notebook_sha256": "d138502e1273b2f8906ffad08779b453c84bef13298b3aa71b42cf0e4a8387ed",
+  "source_sha256": {
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "src/arena/joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+    "src/arena/joint_infer.py": "740bb4f3219a26dd2583607ced241c6dffcc00db9133bc271add0c0586d74eea",
+    "src/arena/span_export.py": "c9ed1fdf69f4bc5f7eb68320b24c1fffc091dce2c20cf487d5ad2ae87c332769"
+  },
+  "maximum_session_seconds": 900,
+  "profile_rate": 0.0,
+  "adapter_sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b",
+  "tokenizer_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+  "parent_kernels": [
+    "arseniytrushin/llm-preference-qwen3-4b-train-002/1",
+    "arseniytrushin/llm-preference-span-002-exposure/1"
+  ],
+  "internet_enabled": false
+}

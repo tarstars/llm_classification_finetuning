@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-04T08:10:51.160601+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-003-classifier-smoke",
+  "max_session_seconds": 900,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 77923.704,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 30076.296000000002
+  },
+  "span_remaining_before_reservation": 30076.296000000002,
+  "notebook_sha256": "d138502e1273b2f8906ffad08779b453c84bef13298b3aa71b42cf0e4a8387ed"
+}

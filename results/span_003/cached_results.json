@@ -1,0 +1,1725 @@
+{
+  "span": 3,
+  "stage": "cached",
+  "rows": 2048,
+  "groups": 1953,
+  "config": {
+    "span": 3,
+    "seed": 20261120,
+    "outer_group_folds": 5,
+    "inner_group_folds": 3,
+    "classifier_temperature_bounds": [
+      0.5,
+      3.0
+    ],
+    "judge_temperature_bounds": [
+      0.25,
+      8.0
+    ],
+    "tie_intercept_bounds": [
+      -1.0,
+      1.0
+    ],
+    "bootstrap_group_replicates": 2000,
+    "cheap_useful_gain": 0.001,
+    "confirmation_used": false,
+    "route_fractions": [
+      0.1,
+      0.2
+    ],
+    "blend_families": [
+      "vector",
+      "conditional",
+      "vector_tie"
+    ],
+    "native_profile_rows": 64,
+    "classifier_smoke_rows": 64,
+    "cascade_followup_rows": 1024,
+    "classifier_identity_limits": {
+      "mean": 0.002,
+      "maximum": 0.03
+    },
+    "native_identity_limits": {
+      "mean": 0.01,
+      "maximum": 0.1
+    },
+    "projection_hidden_rows_assumption": 25000,
+    "projection_multiplier": 1.2,
+    "projection_reserve_seconds": 600,
+    "per_job_seconds_cap": 25200,
+    "job_seconds_caps": {
+      "classifier_smoke": 900,
+      "classifier_predict": 21600,
+      "native_profile": 1800,
+      "cascade_followup": 1800
+    },
+    "gpu_session_seconds_cap": 30076.296000000002,
+    "recovery_reserve_seconds": 3976.296000000002,
+    "maximum_official_submissions": 1
+  },
+  "models": {
+    "classifier": {
+      "rows": 2048,
+      "log_loss": 0.9599970350577326,
+      "accuracy": 0.52001953125,
+      "macro_f1": 0.5127556487571644,
+      "brier": 0.5733328654384815,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.9144678419850263,
+        0.929366733612344,
+        1.0444152206326385
+      ],
+      "class_recall": [
+        0.5829725829725829,
+        0.5819444444444445,
+        0.38110236220472443
+      ],
+      "tie_precision": 0.5010351966873706,
+      "mean_predictive_entropy": 0.9599546165347204,
+      "mean_class_probability": [
+        0.3406599228853946,
+        0.34496532792370627,
+        0.31437474919089897
+      ],
+      "predicted_class_fraction": [
+        0.380859375,
+        0.38330078125,
+        0.23583984375
+      ],
+      "tie_auc": 0.6876172325593058,
+      "confusion_matrix": [
+        [
+          404,
+          174,
+          115
+        ],
+        [
+          175,
+          419,
+          126
+        ],
+        [
+          201,
+          192,
+          242
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.5628990407534464,
+        "conditional_winner_contribution": 0.3970979943042862,
+        "sum_multiclass_loss": 0.9599970350577327,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5755532146745777,
+        "conditional_winner_accuracy": 0.6878980891719745,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "judge": {
+      "rows": 2048,
+      "log_loss": 0.9867476564402975,
+      "accuracy": 0.5078125,
+      "macro_f1": 0.4987149818878345,
+      "brier": 0.5886372018312772,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.936917324840475,
+        0.9337311438484541,
+        1.1012426310305405
+      ],
+      "class_recall": [
+        0.5800865800865801,
+        0.5777777777777777,
+        0.34960629921259845
+      ],
+      "tie_precision": 0.4530612244897959,
+      "mean_predictive_entropy": 0.9862269506399828,
+      "mean_class_probability": [
+        0.34277715583346297,
+        0.34714647764993106,
+        0.3100763665166067
+      ],
+      "predicted_class_fraction": [
+        0.3916015625,
+        0.369140625,
+        0.2392578125
+      ],
+      "tie_auc": 0.6454475037754038,
+      "confusion_matrix": [
+        [
+          402,
+          152,
+          139
+        ],
+        [
+          175,
+          416,
+          129
+        ],
+        [
+          225,
+          188,
+          222
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.5854843185831726,
+        "conditional_winner_contribution": 0.401263337857125,
+        "sum_multiclass_loss": 0.9867476564402976,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5815904571347431,
+        "conditional_winner_accuracy": 0.6815286624203821,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "vector": {
+      "rows": 2048,
+      "log_loss": 0.9416809614988191,
+      "accuracy": 0.5634765625,
+      "macro_f1": 0.5558982096014217,
+      "brier": 0.5597912949293914,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.8917221431524663,
+        0.899285755734872,
+        1.0442731020721487
+      ],
+      "class_recall": [
+        0.6406926406926406,
+        0.6208333333333333,
+        0.4141732283464567
+      ],
+      "tie_precision": 0.563169164882227,
+      "mean_predictive_entropy": 0.9987819799604736,
+      "mean_class_probability": [
+        0.34131868683906286,
+        0.3459563644898024,
+        0.3127249486711352
+      ],
+      "predicted_class_fraction": [
+        0.39013671875,
+        0.3818359375,
+        0.22802734375
+      ],
+      "tie_auc": 0.6989607190820892,
+      "confusion_matrix": [
+        [
+          444,
+          150,
+          99
+        ],
+        [
+          168,
+          447,
+          105
+        ],
+        [
+          187,
+          185,
+          263
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.5606190379144016,
+        "conditional_winner_contribution": 0.3810619235844175,
+        "sum_multiclass_loss": 0.9416809614988191,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5523105587408966,
+        "conditional_winner_accuracy": 0.7254069355980184,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "conditional": {
+      "rows": 2048,
+      "log_loss": 0.9452362404933604,
+      "accuracy": 0.54833984375,
+      "macro_f1": 0.5413521055799405,
+      "brier": 0.5627447189938165,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.9006240426032881,
+        0.9007051304230528,
+        1.0444152206326385
+      ],
+      "class_recall": [
+        0.6233766233766234,
+        0.5986111111111111,
+        0.4094488188976378
+      ],
+      "tie_precision": 0.5241935483870968,
+      "mean_predictive_entropy": 0.9824202686515497,
+      "mean_class_probability": [
+        0.33912154077896606,
+        0.3465037100301354,
+        0.31437474919089897
+      ],
+      "predicted_class_fraction": [
+        0.3818359375,
+        0.3759765625,
+        0.2421875
+      ],
+      "tie_auc": 0.6876172325593058,
+      "confusion_matrix": [
+        [
+          432,
+          152,
+          109
+        ],
+        [
+          162,
+          431,
+          127
+        ],
+        [
+          188,
+          187,
+          260
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.5628990407534464,
+        "conditional_winner_contribution": 0.38233719973991404,
+        "sum_multiclass_loss": 0.9452362404933605,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5541589420151054,
+        "conditional_winner_accuracy": 0.7169143665958952,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "vector_tie": {
+      "rows": 2048,
+      "log_loss": 0.9315788653912184,
+      "accuracy": 0.56396484375,
+      "macro_f1": 0.5576627448558101,
+      "brier": 0.554560427827353,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.8702276884535981,
+        0.8878759785106211,
+        1.0480866514885427
+      ],
+      "class_recall": [
+        0.6305916305916306,
+        0.6166666666666667,
+        0.431496062992126
+      ],
+      "tie_precision": 0.5502008032128514,
+      "mean_predictive_entropy": 0.9314977048665696,
+      "mean_class_probability": [
+        0.3427235899023181,
+        0.3472163242279364,
+        0.3100600858697452
+      ],
+      "predicted_class_fraction": [
+        0.3818359375,
+        0.375,
+        0.2431640625
+      ],
+      "tie_auc": 0.6979910950621618,
+      "confusion_matrix": [
+        [
+          437,
+          142,
+          114
+        ],
+        [
+          166,
+          444,
+          110
+        ],
+        [
+          179,
+          182,
+          274
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.557648292787123,
+        "conditional_winner_contribution": 0.37393057260409535,
+        "sum_multiclass_loss": 0.9315788653912184,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5419743897333243,
+        "conditional_winner_accuracy": 0.7254069355980184,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "entropy_10": {
+      "rows": 2048,
+      "log_loss": 0.9575871247374863,
+      "accuracy": 0.53369140625,
+      "macro_f1": 0.5264495363714451,
+      "brier": 0.5716911371113678,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.9098159501424911,
+        0.9262101295071727,
+        1.0452987161708052
+      ],
+      "class_recall": [
+        0.5959595959595959,
+        0.5972222222222222,
+        0.3937007874015748
+      ],
+      "tie_precision": 0.5133470225872689,
+      "mean_predictive_entropy": 0.9571209384517132,
+      "mean_class_probability": [
+        0.3408062104533699,
+        0.3450292086408339,
+        0.3141645809057965
+      ],
+      "predicted_class_fraction": [
+        0.3818359375,
+        0.38037109375,
+        0.23779296875
+      ],
+      "tie_auc": 0.6871959476403029,
+      "confusion_matrix": [
+        [
+          413,
+          161,
+          119
+        ],
+        [
+          172,
+          430,
+          118
+        ],
+        [
+          197,
+          188,
+          250
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.5628663249618334,
+        "conditional_winner_contribution": 0.3947207997756529,
+        "sum_multiclass_loss": 0.9575871247374863,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5721077126259994,
+        "conditional_winner_accuracy": 0.7020523708421798,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "entropy_20": {
+      "rows": 2048,
+      "log_loss": 0.9551381177338417,
+      "accuracy": 0.5341796875,
+      "macro_f1": 0.5272855395470795,
+      "brier": 0.5699795347208614,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.9089106204493096,
+        0.9228505706645866,
+        1.0421974712898172
+      ],
+      "class_recall": [
+        0.5901875901875901,
+        0.6,
+        0.3984251968503937
+      ],
+      "tie_precision": 0.5163265306122449,
+      "mean_predictive_entropy": 0.9567671515513283,
+      "mean_class_probability": [
+        0.3406392037163319,
+        0.3451603673558055,
+        0.31420042892786254
+      ],
+      "predicted_class_fraction": [
+        0.37939453125,
+        0.38134765625,
+        0.2392578125
+      ],
+      "tie_auc": 0.690197324060607,
+      "confusion_matrix": [
+        [
+          409,
+          161,
+          123
+        ],
+        [
+          174,
+          432,
+          114
+        ],
+        [
+          194,
+          188,
+          253
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.5614927194778951,
+        "conditional_winner_contribution": 0.39364539825594663,
+        "sum_multiclass_loss": 0.9551381177338418,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5705490273377061,
+        "conditional_winner_accuracy": 0.7048832271762208,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "random_10": {
+      "rows": 2048,
+      "log_loss": 0.9587358692709794,
+      "accuracy": 0.52587890625,
+      "macro_f1": 0.5187052080235397,
+      "brier": 0.5721063754052212,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.9108241587845658,
+        0.9287865809992384,
+        1.044982015606
+      ],
+      "class_recall": [
+        0.5887445887445888,
+        0.5875,
+        0.38740157480314963
+      ],
+      "tie_precision": 0.5061728395061729,
+      "mean_predictive_entropy": 0.9643355640725628,
+      "mean_class_probability": [
+        0.3417304490364973,
+        0.3441756097719423,
+        0.31409394119156026
+      ],
+      "predicted_class_fraction": [
+        0.38232421875,
+        0.38037109375,
+        0.2373046875
+      ],
+      "tie_auc": 0.6876985918161503,
+      "confusion_matrix": [
+        [
+          408,
+          170,
+          115
+        ],
+        [
+          172,
+          423,
+          125
+        ],
+        [
+          203,
+          186,
+          246
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.5629060210126586,
+        "conditional_winner_contribution": 0.3958298482583208,
+        "sum_multiclass_loss": 0.9587358692709794,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5737151657700219,
+        "conditional_winner_accuracy": 0.6900212314225053,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "random_20": {
+      "rows": 2048,
+      "log_loss": 0.9567613867663329,
+      "accuracy": 0.52783203125,
+      "macro_f1": 0.5206662713304525,
+      "brier": 0.5706296787922777,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.9068941105526276,
+        0.9300010158775166,
+        1.041525937090814
+      ],
+      "class_recall": [
+        0.5930735930735931,
+        0.5875,
+        0.3889763779527559
+      ],
+      "tie_precision": 0.5103305785123967,
+      "mean_predictive_entropy": 0.9682570607542267,
+      "mean_class_probability": [
+        0.3418587367525972,
+        0.34363137184635584,
+        0.3145098914010464
+      ],
+      "predicted_class_fraction": [
+        0.38330078125,
+        0.38037109375,
+        0.236328125
+      ],
+      "tie_auc": 0.6900490941816986,
+      "confusion_matrix": [
+        [
+          411,
+          169,
+          113
+        ],
+        [
+          173,
+          423,
+          124
+        ],
+        [
+          201,
+          187,
+          247
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.562472607806078,
+        "conditional_winner_contribution": 0.39428877896025494,
+        "sum_multiclass_loss": 0.9567613867663329,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5714815423288054,
+        "conditional_winner_accuracy": 0.6935598018400566,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "selected_blend": {
+      "rows": 2048,
+      "log_loss": 0.9315788653912184,
+      "accuracy": 0.56396484375,
+      "macro_f1": 0.5576627448558101,
+      "brier": 0.554560427827353,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.8702276884535981,
+        0.8878759785106211,
+        1.0480866514885427
+      ],
+      "class_recall": [
+        0.6305916305916306,
+        0.6166666666666667,
+        0.431496062992126
+      ],
+      "tie_precision": 0.5502008032128514,
+      "mean_predictive_entropy": 0.9314977048665696,
+      "mean_class_probability": [
+        0.3427235899023181,
+        0.3472163242279364,
+        0.3100600858697452
+      ],
+      "predicted_class_fraction": [
+        0.3818359375,
+        0.375,
+        0.2431640625
+      ],
+      "tie_auc": 0.6979910950621618,
+      "confusion_matrix": [
+        [
+          437,
+          142,
+          114
+        ],
+        [
+          166,
+          444,
+          110
+        ],
+        [
+          179,
+          182,
+          274
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.557648292787123,
+        "conditional_winner_contribution": 0.37393057260409535,
+        "sum_multiclass_loss": 0.9315788653912184,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5419743897333243,
+        "conditional_winner_accuracy": 0.7254069355980184,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "selected_entropy": {
+      "rows": 2048,
+      "log_loss": 0.9551381177338417,
+      "accuracy": 0.5341796875,
+      "macro_f1": 0.5272855395470795,
+      "brier": 0.5699795347208614,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.9089106204493096,
+        0.9228505706645866,
+        1.0421974712898172
+      ],
+      "class_recall": [
+        0.5901875901875901,
+        0.6,
+        0.3984251968503937
+      ],
+      "tie_precision": 0.5163265306122449,
+      "mean_predictive_entropy": 0.9567671515513283,
+      "mean_class_probability": [
+        0.3406392037163319,
+        0.3451603673558055,
+        0.31420042892786254
+      ],
+      "predicted_class_fraction": [
+        0.37939453125,
+        0.38134765625,
+        0.2392578125
+      ],
+      "tie_auc": 0.690197324060607,
+      "confusion_matrix": [
+        [
+          409,
+          161,
+          123
+        ],
+        [
+          174,
+          432,
+          114
+        ],
+        [
+          194,
+          188,
+          253
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.5614927194778951,
+        "conditional_winner_contribution": 0.39364539825594663,
+        "sum_multiclass_loss": 0.9551381177338418,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5705490273377061,
+        "conditional_winner_accuracy": 0.7048832271762208,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    },
+    "selected_random": {
+      "rows": 2048,
+      "log_loss": 0.9567613867663329,
+      "accuracy": 0.52783203125,
+      "macro_f1": 0.5206662713304525,
+      "brier": 0.5706296787922777,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        0.9068941105526276,
+        0.9300010158775166,
+        1.041525937090814
+      ],
+      "class_recall": [
+        0.5930735930735931,
+        0.5875,
+        0.3889763779527559
+      ],
+      "tie_precision": 0.5103305785123967,
+      "mean_predictive_entropy": 0.9682570607542267,
+      "mean_class_probability": [
+        0.3418587367525972,
+        0.34363137184635584,
+        0.3145098914010464
+      ],
+      "predicted_class_fraction": [
+        0.38330078125,
+        0.38037109375,
+        0.236328125
+      ],
+      "tie_auc": 0.6900490941816986,
+      "confusion_matrix": [
+        [
+          411,
+          169,
+          113
+        ],
+        [
+          173,
+          423,
+          124
+        ],
+        [
+          201,
+          187,
+          247
+        ]
+      ],
+      "loss_decomposition": {
+        "binary_tie_log_loss": 0.562472607806078,
+        "conditional_winner_contribution": 0.39428877896025494,
+        "sum_multiclass_loss": 0.9567613867663329,
+        "decisive_rows": 1413,
+        "tie_rows": 635,
+        "conditional_winner_log_loss": 0.5714815423288054,
+        "conditional_winner_accuracy": 0.6935598018400566,
+        "note": "Decomposition uses observed votes for descriptive slices only; conditional accuracy is not three-class accuracy."
+      }
+    }
+  },
+  "contrasts": {
+    "judge_vs_classifier": {
+      "gain": -0.026750621382564933,
+      "interval_95": [
+        -0.04868079406881815,
+        -0.0051678251422116106
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        -0.007596431454504823,
+        -0.0015343629736324798,
+        -0.017619826954427625
+      ]
+    },
+    "vector_vs_classifier": {
+      "gain": 0.01831607355891348,
+      "interval_95": [
+        0.009811894444084673,
+        0.02694721194382858
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.007696664692853567,
+        0.01057534378504877,
+        4.406508101114292e-05
+      ],
+      "passes_practical_positive_gate": true
+    },
+    "conditional_vs_classifier": {
+      "gain": 0.014760794564372204,
+      "interval_95": [
+        0.006880481626867255,
+        0.02270892108842321
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.004684449693137016,
+        0.010076344871235187,
+        2.6020852139652106e-18
+      ]
+    },
+    "vector_tie_vs_classifier": {
+      "gain": 0.028418169666514254,
+      "interval_95": [
+        0.01865494978318068,
+        0.03741867876587312
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.014969934764296818,
+        0.01458659359044953,
+        -0.0011383586882320893
+      ]
+    },
+    "entropy_10_vs_classifier": {
+      "gain": 0.0024099103202463285,
+      "interval_95": [
+        -0.0011309905775652588,
+        0.005870871215362374
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.0015741020736704035,
+        0.0011097436307243112,
+        -0.0002739353841483864
+      ]
+    },
+    "entropy_20_vs_classifier": {
+      "gain": 0.00485891732389086,
+      "interval_95": [
+        0.0002454277496625618,
+        0.009313982935750502
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.0018804465450447912,
+        0.002290838536320971,
+        0.0006876322425250976
+      ]
+    },
+    "random_10_vs_classifier": {
+      "gain": 0.0012611657867531625,
+      "interval_95": [
+        -0.0017618780308406128,
+        0.0042771952091112345
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.0012329455360933447,
+        0.00020395990304491665,
+        -0.00017573965238509918
+      ]
+    },
+    "random_20_vs_classifier": {
+      "gain": 0.003235648291399618,
+      "interval_95": [
+        -0.0012966008964381112,
+        0.007550285173082139
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.002562790958326343,
+        -0.0002229898588497064,
+        0.0008958471919229805
+      ]
+    },
+    "selected_blend_vs_classifier": {
+      "gain": 0.028418169666514254,
+      "interval_95": [
+        0.01865494978318068,
+        0.03741867876587312
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.014969934764296818,
+        0.01458659359044953,
+        -0.0011383586882320893
+      ]
+    },
+    "selected_entropy_vs_classifier": {
+      "gain": 0.00485891732389086,
+      "interval_95": [
+        0.0002454277496625618,
+        0.009313982935750502
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.0018804465450447912,
+        0.002290838536320971,
+        0.0006876322425250976
+      ],
+      "passes_practical_positive_gate": true
+    },
+    "selected_random_vs_classifier": {
+      "gain": 0.003235648291399618,
+      "interval_95": [
+        -0.0012966008964381112,
+        0.007550285173082139
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.002562790958326343,
+        -0.0002229898588497064,
+        0.0008958471919229805
+      ]
+    },
+    "selected_entropy_vs_selected_random": {
+      "gain": 0.0016232690324912427,
+      "interval_95": [
+        -0.004237811551675588,
+        0.0072168163565367
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        -0.000682344413281552,
+        0.0025138283951706766,
+        -0.00020821494939788244
+      ]
+    },
+    "selected_entropy_vs_vector": {
+      "gain": -0.013457156235022619,
+      "interval_95": [
+        -0.022102705939245026,
+        -0.005291514308585484
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        -0.005816218147808775,
+        -0.008284505248727798,
+        0.000643567161513955
+      ]
+    },
+    "selected_blend_vs_vector": {
+      "gain": 0.010102096107600775,
+      "interval_95": [
+        0.00403380788710039,
+        0.01572535501515091
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.007273270071443248,
+        0.00401124980540076,
+        -0.0011824237692432324
+      ],
+      "passes_practical_positive_gate": true
+    },
+    "conditional_vs_vector_tie": {
+      "gain": -0.013657375102142051,
+      "interval_95": [
+        -0.020402844222249195,
+        -0.00638320560637388
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        -0.0102854850711598,
+        -0.004510248719214342,
+        0.0011383586882320923
+      ],
+      "passes_practical_positive_gate": false
+    },
+    "vector_vs_judge": {
+      "gain": 0.045066694941478413,
+      "interval_95": [
+        0.03183811517752749,
+        0.059368462397530616
+      ],
+      "groups": 1953,
+      "rows": 2048,
+      "replicates": 2000,
+      "weighted_class_contributions": [
+        0.015293096147358392,
+        0.012109706758681251,
+        0.01766389203543877
+      ]
+    }
+  },
+  "routing": {
+    "entropy_10": {
+      "rows": 207,
+      "fraction": 0.10107421875,
+      "human_class_counts": [
+        65,
+        67,
+        75
+      ]
+    },
+    "entropy_20": {
+      "rows": 408,
+      "fraction": 0.19921875,
+      "human_class_counts": [
+        135,
+        131,
+        142
+      ]
+    },
+    "random_10": {
+      "rows": 208,
+      "fraction": 0.1015625,
+      "human_class_counts": [
+        71,
+        64,
+        73
+      ]
+    },
+    "random_20": {
+      "rows": 408,
+      "fraction": 0.19921875,
+      "human_class_counts": [
+        136,
+        131,
+        141
+      ]
+    },
+    "selected_entropy": {
+      "rows": 408,
+      "fraction": 0.19921875,
+      "human_class_counts": [
+        135,
+        131,
+        142
+      ]
+    },
+    "selected_random": {
+      "rows": 408,
+      "fraction": 0.19921875,
+      "human_class_counts": [
+        136,
+        131,
+        141
+      ]
+    }
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "train_rows": 1639,
+      "validation_rows": 409,
+      "selected": {
+        "selected_blend": "vector_tie",
+        "selected_entropy": "entropy_20",
+        "selected_random": "random_20"
+      },
+      "inner_log_loss": {
+        "classifier": 0.9611786297171272,
+        "judge": 0.9864142248366237,
+        "vector": 0.9417637699571381,
+        "conditional": 0.9424206073563866,
+        "vector_tie": 0.9319223452155485,
+        "entropy_10": 0.9588477632089157,
+        "entropy_20": 0.9537322540409297,
+        "random_10": 0.9601035523166405,
+        "random_20": 0.9574432246747143
+      },
+      "component_theta": [
+        [
+          1.0339589289931377
+        ],
+        [
+          0.30337377359926565,
+          0.28097391379198056
+        ]
+      ],
+      "recipes": {
+        "vector": {
+          "weight": 0.3921482670710604
+        },
+        "conditional": {
+          "weight": 0.5067155196631488,
+          "conditional": true
+        },
+        "vector_tie": {
+          "weight": 0.3921482670710604,
+          "post_theta": [
+            1.4024844158403378,
+            0.04557476720818037
+          ]
+        },
+        "entropy_10": {
+          "kind": "entropy",
+          "fraction": 0.1,
+          "threshold": 1.089372220933787,
+          "weight": 0.6047390572120194,
+          "training_routed_fraction": 0.10006101281269067
+        },
+        "entropy_20": {
+          "kind": "entropy",
+          "fraction": 0.2,
+          "threshold": 1.0785936432763013,
+          "weight": 0.6460198841918331,
+          "training_routed_fraction": 0.20012202562538134
+        },
+        "random_10": {
+          "kind": "random",
+          "fraction": 0.1,
+          "threshold": 0.8805052225889032,
+          "weight": 0.41753173788108583,
+          "training_routed_fraction": 0.10006101281269067
+        },
+        "random_20": {
+          "kind": "random",
+          "fraction": 0.2,
+          "threshold": 0.7770603058625527,
+          "weight": 0.41709464587481515,
+          "training_routed_fraction": 0.20012202562538134
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "train_rows": 1639,
+      "validation_rows": 409,
+      "selected": {
+        "selected_blend": "vector_tie",
+        "selected_entropy": "entropy_20",
+        "selected_random": "random_20"
+      },
+      "inner_log_loss": {
+        "classifier": 0.9601866531072317,
+        "judge": 0.9903412774247266,
+        "vector": 0.9439372696958561,
+        "conditional": 0.949220033428633,
+        "vector_tie": 0.9349606062483753,
+        "entropy_10": 0.958885174937747,
+        "entropy_20": 0.9585086421823957,
+        "random_10": 0.9579798420136068,
+        "random_20": 0.9547133138665148
+      },
+      "component_theta": [
+        [
+          1.0254683797198207
+        ],
+        [
+          0.2887273014776924,
+          0.25094489641571044
+        ]
+      ],
+      "recipes": {
+        "vector": {
+          "weight": 0.359284663156092
+        },
+        "conditional": {
+          "weight": 0.4029092651090019,
+          "conditional": true
+        },
+        "vector_tie": {
+          "weight": 0.359284663156092,
+          "post_theta": [
+            1.3620697468649685,
+            0.03580881586425086
+          ]
+        },
+        "entropy_10": {
+          "kind": "entropy",
+          "fraction": 0.1,
+          "threshold": 1.0891683722206822,
+          "weight": 0.500156571647878,
+          "training_routed_fraction": 0.10006101281269067
+        },
+        "entropy_20": {
+          "kind": "entropy",
+          "fraction": 0.2,
+          "threshold": 1.0788614641160217,
+          "weight": 0.40758268339711173,
+          "training_routed_fraction": 0.20012202562538134
+        },
+        "random_10": {
+          "kind": "random",
+          "fraction": 0.1,
+          "threshold": 0.8805052225889032,
+          "weight": 0.533360292123477,
+          "training_routed_fraction": 0.10006101281269067
+        },
+        "random_20": {
+          "kind": "random",
+          "fraction": 0.2,
+          "threshold": 0.7827315210263368,
+          "weight": 0.48477904226321306,
+          "training_routed_fraction": 0.20012202562538134
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "train_rows": 1637,
+      "validation_rows": 411,
+      "selected": {
+        "selected_blend": "vector_tie",
+        "selected_entropy": "entropy_20",
+        "selected_random": "random_20"
+      },
+      "inner_log_loss": {
+        "classifier": 0.9581192936781321,
+        "judge": 0.9884207682736982,
+        "vector": 0.9413875427998553,
+        "conditional": 0.9434765758685981,
+        "vector_tie": 0.9330538120662311,
+        "entropy_10": 0.9549267749407985,
+        "entropy_20": 0.9537697403737385,
+        "random_10": 0.9572560906699691,
+        "random_20": 0.954715883108613
+      },
+      "component_theta": [
+        [
+          1.0230785800522086
+        ],
+        [
+          0.29221896158152616,
+          0.2490096282874418
+        ]
+      ],
+      "recipes": {
+        "vector": {
+          "weight": 0.36629034657660225
+        },
+        "conditional": {
+          "weight": 0.4642394994533137,
+          "conditional": true
+        },
+        "vector_tie": {
+          "weight": 0.36629034657660225,
+          "post_theta": [
+            1.3643104683326504,
+            0.03994875664257903
+          ]
+        },
+        "entropy_10": {
+          "kind": "entropy",
+          "fraction": 0.1,
+          "threshold": 1.0895811803213353,
+          "weight": 0.6628261345557848,
+          "training_routed_fraction": 0.1001832620647526
+        },
+        "entropy_20": {
+          "kind": "entropy",
+          "fraction": 0.2,
+          "threshold": 1.078135825078142,
+          "weight": 0.5802044292761255,
+          "training_routed_fraction": 0.2003665241295052
+        },
+        "random_10": {
+          "kind": "random",
+          "fraction": 0.1,
+          "threshold": 0.885306044029618,
+          "weight": 0.2705765413345959,
+          "training_routed_fraction": 0.1001832620647526
+        },
+        "random_20": {
+          "kind": "random",
+          "fraction": 0.2,
+          "threshold": 0.7834878473724466,
+          "weight": 0.38127986761523847,
+          "training_routed_fraction": 0.2003665241295052
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "train_rows": 1637,
+      "validation_rows": 411,
+      "selected": {
+        "selected_blend": "vector_tie",
+        "selected_entropy": "entropy_20",
+        "selected_random": "random_20"
+      },
+      "inner_log_loss": {
+        "classifier": 0.9641491876626567,
+        "judge": 0.9922687071144469,
+        "vector": 0.9480058305484679,
+        "conditional": 0.9503848210687922,
+        "vector_tie": 0.9389524198899704,
+        "entropy_10": 0.9608001754876216,
+        "entropy_20": 0.9591456341935217,
+        "random_10": 0.9629807897739228,
+        "random_20": 0.9591881231608442
+      },
+      "component_theta": [
+        [
+          1.0269699099085228
+        ],
+        [
+          0.28588038355186024,
+          0.24568185545746227
+        ]
+      ],
+      "recipes": {
+        "vector": {
+          "weight": 0.3654677121172606
+        },
+        "conditional": {
+          "weight": 0.4520361570076791,
+          "conditional": true
+        },
+        "vector_tie": {
+          "weight": 0.3654677121172606,
+          "post_theta": [
+            1.3660239554798583,
+            0.03435559270577757
+          ]
+        },
+        "entropy_10": {
+          "kind": "entropy",
+          "fraction": 0.1,
+          "threshold": 1.0897882059323436,
+          "weight": 0.742163189062537,
+          "training_routed_fraction": 0.1001832620647526
+        },
+        "entropy_20": {
+          "kind": "entropy",
+          "fraction": 0.2,
+          "threshold": 1.0789614360417439,
+          "weight": 0.5454847820972369,
+          "training_routed_fraction": 0.2003665241295052
+        },
+        "random_10": {
+          "kind": "random",
+          "fraction": 0.1,
+          "threshold": 0.8789138124130854,
+          "weight": 0.3455243211802268,
+          "training_routed_fraction": 0.1001832620647526
+        },
+        "random_20": {
+          "kind": "random",
+          "fraction": 0.2,
+          "threshold": 0.7891836125919321,
+          "weight": 0.44400759573978943,
+          "training_routed_fraction": 0.2003665241295052
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "train_rows": 1640,
+      "validation_rows": 408,
+      "selected": {
+        "selected_blend": "vector_tie",
+        "selected_entropy": "entropy_20",
+        "selected_random": "random_20"
+      },
+      "inner_log_loss": {
+        "classifier": 0.9589860822359972,
+        "judge": 0.9779807214798577,
+        "vector": 0.9368759360264168,
+        "conditional": 0.9423709187945714,
+        "vector_tie": 0.9258986090030827,
+        "entropy_10": 0.9546927155069281,
+        "entropy_20": 0.9524016645313761,
+        "random_10": 0.9579455408194736,
+        "random_20": 0.9515951546543815
+      },
+      "component_theta": [
+        [
+          1.0267183670517874
+        ],
+        [
+          0.3025308646530106,
+          0.26432414483826844
+        ]
+      ],
+      "recipes": {
+        "vector": {
+          "weight": 0.4144648130917679
+        },
+        "conditional": {
+          "weight": 0.49465220856469777,
+          "conditional": true
+        },
+        "vector_tie": {
+          "weight": 0.4144648130917679,
+          "post_theta": [
+            1.3963539436537695,
+            0.04552338191512948
+          ]
+        },
+        "entropy_10": {
+          "kind": "entropy",
+          "fraction": 0.1,
+          "threshold": 1.0884333078794595,
+          "weight": 0.7872856944422744,
+          "training_routed_fraction": 0.1
+        },
+        "entropy_20": {
+          "kind": "entropy",
+          "fraction": 0.2,
+          "threshold": 1.0781042132448295,
+          "weight": 0.5797810979438465,
+          "training_routed_fraction": 0.2
+        },
+        "random_10": {
+          "kind": "random",
+          "fraction": 0.1,
+          "threshold": 0.8807559117076047,
+          "weight": 0.5286338517808604,
+          "training_routed_fraction": 0.1
+        },
+        "random_20": {
+          "kind": "random",
+          "fraction": 0.2,
+          "threshold": 0.7861068116271523,
+          "weight": 0.5737206527932941,
+          "training_routed_fraction": 0.2
+        }
+      }
+    }
+  ],
+  "constant_controls": {
+    "training_prior": {
+      "rows": 2048,
+      "log_loss": 1.0975545269273574,
+      "accuracy": 0.33837890625,
+      "macro_f1": 0.1685516234950748,
+      "brier": 0.6659756493729196,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        1.0524818039499906,
+        1.0731906478665216,
+        1.174369314245652
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 1.0972274095648866,
+      "mean_class_probability": [
+        0.34907034902686646,
+        0.3419158421224171,
+        0.30901380885071333
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          693,
+          0,
+          0
+        ],
+        [
+          720,
+          0,
+          0
+        ],
+        [
+          635,
+          0,
+          0
+        ]
+      ]
+    },
+    "majority_clipped_1e-12": {
+      "rows": 2048,
+      "log_loss": 18.281266412150664,
+      "accuracy": 0.33837890625,
+      "macro_f1": 0.1685516234950748,
+      "brier": 1.32324218749603,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        1.999955756561757e-12,
+        27.631021115928544,
+        27.631021115928544
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 5.7262220032913245e-11,
+      "mean_class_probability": [
+        0.9999999999979671,
+        9.999999999980043e-13,
+        9.999999999980043e-13
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          693,
+          0,
+          0
+        ],
+        [
+          720,
+          0,
+          0
+        ],
+        [
+          635,
+          0,
+          0
+        ]
+      ]
+    },
+    "uniform": {
+      "rows": 2048,
+      "log_loss": 1.0986122886681096,
+      "accuracy": 0.33837890625,
+      "macro_f1": 0.1685516234950748,
+      "brier": 0.6666666666666666,
+      "class_counts": [
+        693,
+        720,
+        635
+      ],
+      "class_loss": [
+        1.0986122886681098,
+        1.0986122886681096,
+        1.0986122886681096
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 1.0986122886681093,
+      "mean_class_probability": [
+        0.3333333333333371,
+        0.3333333333333371,
+        0.3333333333333371
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          693,
+          0,
+          0
+        ],
+        [
+          720,
+          0,
+          0
+        ],
+        [
+          635,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "historical_full_dev_fitted_temperature_reference": {
+    "rows": 2048,
+    "log_loss": 0.9600911826607752,
+    "accuracy": 0.52001953125,
+    "macro_f1": 0.5127556487571644,
+    "brier": 0.5734958538712254,
+    "class_counts": [
+      693,
+      720,
+      635
+    ],
+    "class_loss": [
+      0.9128023011634173,
+      0.9286980541789831,
+      1.0472947218490576
+    ],
+    "class_recall": [
+      0.5829725829725829,
+      0.5819444444444445,
+      0.38110236220472443
+    ],
+    "tie_precision": 0.5010351966873706,
+    "mean_predictive_entropy": 0.9530360584240383,
+    "mean_class_probability": [
+      0.34107124670254346,
+      0.34538024285807967,
+      0.3135485104393776
+    ],
+    "predicted_class_fraction": [
+      0.380859375,
+      0.38330078125,
+      0.23583984375
+    ],
+    "tie_auc": 0.6876138890282026,
+    "confusion_matrix": [
+      [
+        404,
+        174,
+        115
+      ],
+      [
+        175,
+        419,
+        126
+      ],
+      [
+        201,
+        192,
+        242
+      ]
+    ]
+  },
+  "classifier_raw_order": {
+    "decision_disagreement": 0.263671875,
+    "mean_probability_l1": 0.22392356990630194,
+    "second_position_advantage": -0.012215710294192012
+  },
+  "retention": {
+    "rows": 2048,
+    "any_field_cut_fraction": 0.19970703125,
+    "prompt_cut_fraction": 0.0732421875,
+    "answer_cut_fraction": 0.16650390625,
+    "mean_row_content_retained_fraction": 0.9339165876151628,
+    "corpus_content_retained_fraction": 0.8000175828197268,
+    "raw_content_tokens": 1399093,
+    "retained_content_tokens": 1119299
+  },
+  "selection_limits": "Previously inspected development; nested grouped selection; conditional bootstrap intervals; confirmation unused.",
+  "native_order_limit": "Judge is single-order; no native both-order invariance measured.",
+  "hard_majority_note": "Exact hard-majority loss is infinite on errors. Finite diagnostic uses1e-12 clipping; deterministic argmax ties choose A.",
+  "source_sha256": {
+    "scripts/analyze_span_003_cached.py": "7a907cf4abc49bf195309ed7268e2fc5e4a88468ebf8ff979d8c9b3c527c4fc4",
+    "src/arena/span_cascade.py": "dd596f9ff0f9c1c6ea20b998b74c7cc9eea0f9fcb4a34e315d4f8da4a7f1b409",
+    "src/arena/span_calibration.py": "e18a3507e91900b84a5edf1d383ac9556a71456d7b425e2c087565677e8a00bc",
+    "src/arena/span_heads.py": "51804cf906c433e0c0609f989020a5750130d6f5c91c79130a617aca4c32b8dc",
+    "src/arena/preference_diagnostics.py": "d0d60f72c65ac3554b6d87e0e3dee8540f4566d4c088bb4c6ffdbc233e1eaf4f",
+    "configs/span_003.json": "bc5696f402e5c4a7f9f793a038dc1c0a6a215896c281e4e14c27530a03ce3671",
+    "docs/SPAN_003_PROTOCOL.md": "2ac3b6d35727a1d6e09f556b040ee81e3758a8a1c0c1d6c80384ffe136a98d51"
+  },
+  "input_sha256": {
+    "classifier": "51fabd9e17111d44e0176569a10c816d7cc3c0e3de5534da93d9645e08ae8dae",
+    "judge_fit": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d",
+    "judge_extra": "e8e169ee44aafa68fc2ce5481728f7a1c107e596015792a9bcc9a4c6be30dc20"
+  },
+  "cpu_elapsed_seconds": 9.085397250950336,
+  "frozen_recipe_sha256": "8f0420d33116a7893c859cb9b5213d823d18143a4a21efed6bde95472dba1cda",
+  "private_predictions_sha256": "8d932bbb58ae5426c72af07faf39ad73054433aa6dd7724949727f146dc7f723"
+}

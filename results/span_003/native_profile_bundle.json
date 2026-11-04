@@ -1,0 +1,15 @@
+{
+  "notebook_sha256": "038cc0c8d24f7448d4958792efeba7f164e0113276d20438874a8ae24e8d9942",
+  "parent_source_notebook_sha256": "c42789c3ef0a50d4bd51fe80d3b9d6654fc980301caf0f198599df1b14b8bf17",
+  "maximum_session_seconds": 1800,
+  "profile_rows": 64,
+  "internet_enabled": false,
+  "native_source_sha256": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+  "judge_source_sha256": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b",
+  "license_sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+  "source_revision": "8642541b255bfb5dc39cd351a178be09013a55d6",
+  "parent_kernels": [
+    "arseniytrushin/llm-preference-judge-binary-probe-003/1",
+    "arseniytrushin/llm-preference-span-002-judge-recovery/2"
+  ]
+}

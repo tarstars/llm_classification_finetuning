@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-04T08:27:36.984393+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-003-classifier-predict",
+  "max_session_seconds": 21600,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 78163.851,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 29836.149000000005
+  },
+  "span_remaining_before_reservation": 29836.149000000005,
+  "notebook_sha256": "73457410843da9f15417e4bbc4b85969eae4860b1fdcf189be12a6ff5fd9e0e4"
+}

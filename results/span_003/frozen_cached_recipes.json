@@ -1,0 +1,135 @@
+{
+  "frozen_at": "2026-11-04T08:03:42.248139+00:00",
+  "config": {
+    "span": 3,
+    "seed": 20261120,
+    "outer_group_folds": 5,
+    "inner_group_folds": 3,
+    "classifier_temperature_bounds": [
+      0.5,
+      3.0
+    ],
+    "judge_temperature_bounds": [
+      0.25,
+      8.0
+    ],
+    "tie_intercept_bounds": [
+      -1.0,
+      1.0
+    ],
+    "bootstrap_group_replicates": 2000,
+    "cheap_useful_gain": 0.001,
+    "confirmation_used": false,
+    "route_fractions": [
+      0.1,
+      0.2
+    ],
+    "blend_families": [
+      "vector",
+      "conditional",
+      "vector_tie"
+    ],
+    "native_profile_rows": 64,
+    "classifier_smoke_rows": 64,
+    "cascade_followup_rows": 1024,
+    "classifier_identity_limits": {
+      "mean": 0.002,
+      "maximum": 0.03
+    },
+    "native_identity_limits": {
+      "mean": 0.01,
+      "maximum": 0.1
+    },
+    "projection_hidden_rows_assumption": 25000,
+    "projection_multiplier": 1.2,
+    "projection_reserve_seconds": 600,
+    "per_job_seconds_cap": 25200,
+    "job_seconds_caps": {
+      "classifier_smoke": 900,
+      "classifier_predict": 21600,
+      "native_profile": 1800,
+      "cascade_followup": 1800
+    },
+    "gpu_session_seconds_cap": 30076.296000000002,
+    "recovery_reserve_seconds": 3976.296000000002,
+    "maximum_official_submissions": 1
+  },
+  "fit_rows": 2048,
+  "fit_groups": 1953,
+  "selected": {
+    "selected_blend": "vector_tie",
+    "selected_entropy": "entropy_20",
+    "selected_random": "random_20"
+  },
+  "inner_log_loss": {
+    "classifier": 0.960532834881998,
+    "judge": 0.9866488938372475,
+    "vector": 0.9418696246588095,
+    "conditional": 0.9448407550792393,
+    "vector_tie": 0.931852722816549,
+    "entropy_10": 0.9577902890115414,
+    "entropy_20": 0.9562562624920826,
+    "random_10": 0.9596661518771159,
+    "random_20": 0.9567678464741636
+  },
+  "parameters": {
+    "component_theta": [
+      [
+        1.0272073453249002
+      ],
+      [
+        0.29450640549772106,
+        0.2581054785462145
+      ]
+    ],
+    "recipes": {
+      "vector": {
+        "weight": 0.3809702082350527
+      },
+      "conditional": {
+        "weight": 0.46589638446609277,
+        "conditional": true
+      },
+      "vector_tie": {
+        "weight": 0.3809702082350527,
+        "post_theta": [
+          1.3815813832348216,
+          0.04059097679350701
+        ]
+      },
+      "entropy_10": {
+        "kind": "entropy",
+        "fraction": 0.1,
+        "threshold": 1.0893569733313042,
+        "weight": 0.6484019597480991,
+        "training_routed_fraction": 0.10009765625
+      },
+      "entropy_20": {
+        "kind": "entropy",
+        "fraction": 0.2,
+        "threshold": 1.0785498978075883,
+        "weight": 0.5465716644606351,
+        "training_routed_fraction": 0.2001953125
+      },
+      "random_10": {
+        "kind": "random",
+        "fraction": 0.1,
+        "threshold": 0.8808371150439774,
+        "weight": 0.4375059378902099,
+        "training_routed_fraction": 0.10009765625
+      },
+      "random_20": {
+        "kind": "random",
+        "fraction": 0.2,
+        "threshold": 0.7833034823541448,
+        "weight": 0.46369390943329775,
+        "training_routed_fraction": 0.2001953125
+      }
+    }
+  },
+  "input_sha256": {
+    "classifier": "51fabd9e17111d44e0176569a10c816d7cc3c0e3de5534da93d9645e08ae8dae",
+    "judge_fit": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d",
+    "judge_extra": "e8e169ee44aafa68fc2ce5481728f7a1c107e596015792a9bcc9a4c6be30dc20"
+  }
+}
