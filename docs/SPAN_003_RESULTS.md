@@ -32,7 +32,20 @@ and recipe selection exclude evaluation prompt groups. Keep exact matched rows
 and distinguish class loss, binary tie BCE and calibration. No v4 work executed.
 
 V4 draft contains H44 routed-mixture calibration and E04 native numerical
-repeatability, both unexecuted. Still required: terminal E03 official result; final reports,
+repeatability, both unexecuted. H44 now requires an E04-verified compatible recipe
+before fitting deployable calibration; a completed prerequisite alone is not a
+passing compatibility gate.
+
+Independent local audit reconstructs all 60 outer-fold prediction arrays,
+recomputes 12 model metrics and 16 paired comparisons (including 2,000-draw group
+intervals), and verifies original splits, unused confirmation, input/source hashes,
+both visible CSVs, fixed export identity, portable runtime provenance and charges.
+The 64-row native loss-drift diagnostic uses the frozen calibrator without new
+fits; it is not independent validation. See
+[local audit](../results/span_003/local_audit.json) and
+[decisions](../results/span_003/decisions.json).
+
+Still required: terminal E03 official result; final reports,
 final notebook14 refresh, resource/provenance audit, v3 sealing/v4 formation and
 publication. [Executed notebook14](../notebooks/14_backlog_v3_span.ipynb) currently
 shows the accepted/pending receipt and the completed other experiments.

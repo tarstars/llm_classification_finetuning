@@ -1,0 +1,110 @@
+{
+  "checked_at": "2026-11-04T10:40:15.383551+00:00",
+  "passed": true,
+  "scope": "Local artifacts only; official terminal and fresh remote checks are separate.",
+  "original_start": "2026-11-04T07:42:17+00:00",
+  "original_deadline": "2026-11-06T07:42:17+00:00",
+  "input_sha256_verified": {
+    "candidate": "2091f699df6f3b17a79f2d23f22827013598748ffe8599f9cafc61b0052fd56c",
+    "classifier": "51fabd9e17111d44e0176569a10c816d7cc3c0e3de5534da93d9645e08ae8dae",
+    "judge_fit": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d",
+    "judge_extra": "e8e169ee44aafa68fc2ce5481728f7a1c107e596015792a9bcc9a4c6be30dc20",
+    "adapter": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b",
+    "split": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1",
+    "raw_train": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2"
+  },
+  "cached_source_revision": "2536daf",
+  "cached_rows": 2048,
+  "cached_groups": 1953,
+  "reconstructed_fold_predictions": 60,
+  "training_only_constant_baselines_recomputed": [
+    "training_prior",
+    "majority_clipped_1e-12",
+    "uniform"
+  ],
+  "unchanged_verified_packing_cohort_rows": 2048,
+  "embedded_execution_modules": {
+    "classifier_smoke": {
+      "notebook_sha256": "d138502e1273b2f8906ffad08779b453c84bef13298b3aa71b42cf0e4a8387ed",
+      "modules": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+        "joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+        "joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+        "joint_infer.py": "740bb4f3219a26dd2583607ced241c6dffcc00db9133bc271add0c0586d74eea",
+        "span_export.py": "c9ed1fdf69f4bc5f7eb68320b24c1fffc091dce2c20cf487d5ad2ae87c332769"
+      }
+    },
+    "native_profile": {
+      "notebook_sha256": "038cc0c8d24f7448d4958792efeba7f164e0113276d20438874a8ae24e8d9942",
+      "modules": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+        "judge_runtime.py": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+        "judge.py": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b"
+      }
+    },
+    "classifier_predict": {
+      "notebook_sha256": "73457410843da9f15417e4bbc4b85969eae4860b1fdcf189be12a6ff5fd9e0e4",
+      "modules": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+        "joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+        "joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+        "joint_infer.py": "740bb4f3219a26dd2583607ced241c6dffcc00db9133bc271add0c0586d74eea",
+        "span_export.py": "c9ed1fdf69f4bc5f7eb68320b24c1fffc091dce2c20cf487d5ad2ae87c332769"
+      }
+    },
+    "native_profile_retry": {
+      "notebook_sha256": "8e5cab3b3a158d80d4e107196a472f18fa81f1dd027b3a1346930ab590ff2df2",
+      "modules": {
+        "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+        "judge_runtime.py": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+        "judge.py": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b"
+      }
+    }
+  },
+  "independently_recomputed_models": 12,
+  "independently_recomputed_contrasts": 16,
+  "unused_new_group_rows": 1024,
+  "confirmation_used": false,
+  "classifier_identity_passed": true,
+  "visible_csvs_independently_verified": 2,
+  "native_hardware_passed": true,
+  "native_identity_passed": false,
+  "native_manifest_files": 175,
+  "native_runtime_matches_published_wheel": true,
+  "native_fixed_calibration_loss_diagnostic_recomputed": true,
+  "completed_job_charges": [
+    {
+      "role": "classifier_smoke",
+      "seconds": 200.6319999999978
+    },
+    {
+      "role": "native_profile",
+      "seconds": 39.51499999999942
+    },
+    {
+      "role": "classifier_predict",
+      "seconds": 124.7450000000099
+    },
+    {
+      "role": "native_profile_retry",
+      "seconds": 373.40499999999884
+    }
+  ],
+  "completed_gpu_session_seconds": 738.2970000000059,
+  "accepted_submission": 57979825,
+  "controller_source_matches_intent": true,
+  "audit_program_sha256": "97678b4d0f73d1153817eb3a8d08b51f0d940512aca5bb6d73946e8819b14270",
+  "audit_software": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "nbformat": "5.11.1",
+    "kaggle": "2.2.5",
+    "requests": "2.34.2"
+  },
+  "private_probability_sha256": "8d932bbb58ae5426c72af07faf39ad73054433aa6dd7724949727f146dc7f723"
+}

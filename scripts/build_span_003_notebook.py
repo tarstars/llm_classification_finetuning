@@ -105,6 +105,12 @@ optional new-row expansion. Hardware success is not cache-recipe compatibility.
 print('Native gate:',native['gate'])
 print('Decision:',native['decision'])
 print('Numerical cause:',native['numerical_cause'])
+diagnostic=native['loss_diagnostic']
+display(pd.DataFrame([{'view':name,'log_loss':diagnostic[name]['log_loss'],
+                      'accuracy':diagnostic[name]['accuracy']}
+                     for name in ['old_raw','current_raw','old_fixed_calibration','current_fixed_calibration']]))
+print('Frozen-calibration drift diagnostic:',diagnostic['fixed_calibration_loss_effect'])
+print(diagnostic['calibrator_source'])
 display(pd.DataFrame([{'route':name,**{k:v for k,v in value.items() if k!='gain'}}
                      for name,value in native['routes'].items()]))
 fig,ax=plt.subplots(figsize=(7,3))
@@ -125,6 +131,16 @@ separately. The goal finishes only after reports, terminal audits, notebook,
 sealed-v3/v4 handoff and publication, stopping before v4 execution.
 '''), nbf.v4.new_code_cell('''print('Original resource plan:',plan)
 print('Charged seconds at native completion:',native['span_charged_seconds_so_far'])
+if (RESULTS/'local_audit.json').exists():
+    audit=read('local_audit.json')
+    print('Independent local verification:',{key:audit.get(key) for key in
+          ['passed','cached_rows','cached_groups','reconstructed_fold_predictions',
+           'independently_recomputed_models','independently_recomputed_contrasts']})
+if (RESULTS/'decisions.json').exists():
+    decisions=read('decisions.json')
+    display(pd.DataFrame([{'task':name,'experiment_complete':value['experiment_complete'],
+                          'decision':value['reason']} for name,value in decisions['tasks'].items()]))
+    print('Best recorded official:',decisions['best_recorded_official_now'])
 for filename in ['submission_intent.json','terminal_audit.json','closure_audit.json']:
     if (RESULTS/filename).exists():print(filename,read(filename))
 display(pd.DataFrame([{'version':v['number'],'state':v['state'],'tasks':len(v['item_ids']),

@@ -22,7 +22,7 @@ See [attempt 002 results](ATTEMPT_002_RESULTS.md) and the [protocol](docs/ATTEMP
 Our new **local research reference** continues that checkpoint to one epoch:
 matched full-development loss improves **0.968872 → 0.954069**, gain **0.014803**
 with 95% group interval **[0.010945, 0.018368]**, accuracy **53.79%**. It has no new
-official score; offline export verification is queued for v3. See the
+official score yet; its v3 submission is pending after offline verification. See the
 [v2 results](docs/SPAN_002_RESULTS.md) and [frozen manifest](results/span_002/research_candidate.json).
 
 V3 is underway: on the same 2,048 cached dev rows, the latest classifier gives
@@ -59,8 +59,8 @@ The active version is **v3**, with **37 tasks**: three discoveries and 34 unfini
 carryovers. New tasks are E02 (offline native CUDA verification), E03 (continued
 classifier export and one frozen official verification), and H43 (conditional
 blending). H39 prioritizes a cached judge-cascade pilot using the improved
-classifier. V3 focus is E03/H39/E02/H43; the goal is active and execution
-preparation has begun. V4 is the empty
+classifier. V3 focus is E03/H39/E02/H43; three tasks are complete and E03 awaits
+the official result. V4 contains two unexecuted discoveries, H44 and E04, in the
 [next-version draft](backlog/NEXT.md).
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),
@@ -93,7 +93,8 @@ H40/E01/H03/H37/H42: calibration alone was inconclusive, the H42 gate stopped
 without training, and H03 improved the classifier. H37 shows a 0.0250 nested gain
 on 2,048 rows against the old classifier, confirmed by a frozen new-group check,
 but its full sequential deployment fails the runtime guard. Its complementarity
-with improved H03 remains untested; gains cannot be added. See the
+with improved H03 was confirmed locally in v3, although current native numerical
+compatibility and runtime gates fail; gains cannot be added. See the
 [v2 report](docs/SPAN_002_RESULTS.md) and [protocol](docs/SPAN_002_PROTOCOL.md).
 
 The [completion record](docs/SPAN_002_COMPLETION.md) links resource, provenance,
@@ -120,6 +121,7 @@ classifier comparison and all baselines.
 - [Target associations and leakage audit](notebooks/11_target_associations_and_leakage.ipynb)
 - [Backlog v1 span: controlled pilots and evidence](notebooks/12_backlog_v1_span.ipynb)
 - [Backlog v2 span: calibration, accepted exposure and judge ensemble](notebooks/13_backlog_v2_span.ipynb)
+- [Backlog v3 span: affordable judge use and frozen classifier verification](notebooks/14_backlog_v3_span.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary

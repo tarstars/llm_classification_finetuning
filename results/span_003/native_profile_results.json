@@ -81,5 +81,249 @@
   "numerical_cause": "Not isolated; no claim that packaging, batching or a particular kernel caused the drift.",
   "portable_artifact_kernel": "arseniytrushin/llm-preference-span-003-native-profile-retry/1",
   "portable_artifact_path": "offline_native_runtime",
-  "private_raw_profile_sha256": "0008beea994d0f68fdc3a45d4a621511c16d70c63691df48b5527ea228285cd0"
+  "private_raw_profile_sha256": "0008beea994d0f68fdc3a45d4a621511c16d70c63691df48b5527ea228285cd0",
+  "loss_diagnostic": {
+    "rows": 64,
+    "groups": 64,
+    "new_parameters_fitted": false,
+    "calibrator_source": "Frozen 2048-row v3 fitting recipe; includes these64 known rows, not independent validation.",
+    "old_raw": {
+      "rows": 64,
+      "log_loss": 1.4054404487169987,
+      "accuracy": 0.46875,
+      "macro_f1": 0.39387315780758403,
+      "brier": 0.7311330072709564,
+      "class_counts": [
+        26,
+        21,
+        17
+      ],
+      "class_loss": [
+        0.8011706295798445,
+        1.2232850430898474,
+        2.5546333202308924
+      ],
+      "class_recall": [
+        0.6538461538461539,
+        0.5714285714285714,
+        0.058823529411764705
+      ],
+      "tie_precision": 0.2,
+      "mean_predictive_entropy": 0.5010444988173506,
+      "mean_class_probability": [
+        0.5012375907225668,
+        0.3596222183610874,
+        0.1391401909163459
+      ],
+      "predicted_class_fraction": [
+        0.546875,
+        0.375,
+        0.078125
+      ],
+      "tie_auc": 0.6245306633291614,
+      "confusion_matrix": [
+        [
+          17,
+          7,
+          2
+        ],
+        [
+          7,
+          12,
+          2
+        ],
+        [
+          11,
+          5,
+          1
+        ]
+      ]
+    },
+    "current_raw": {
+      "rows": 64,
+      "log_loss": 1.4411823582587864,
+      "accuracy": 0.484375,
+      "macro_f1": 0.40752500053996843,
+      "brier": 0.7432201276712328,
+      "class_counts": [
+        26,
+        21,
+        17
+      ],
+      "class_loss": [
+        0.855319101716372,
+        1.2290523629734105,
+        2.599251450676178
+      ],
+      "class_recall": [
+        0.6923076923076923,
+        0.5714285714285714,
+        0.058823529411764705
+      ],
+      "tie_precision": 0.16666666666666666,
+      "mean_predictive_entropy": 0.49720327050888763,
+      "mean_class_probability": [
+        0.4988624793198266,
+        0.36224245585718995,
+        0.1388950648229832
+      ],
+      "predicted_class_fraction": [
+        0.546875,
+        0.359375,
+        0.09375
+      ],
+      "tie_auc": 0.6157697121401752,
+      "confusion_matrix": [
+        [
+          18,
+          6,
+          2
+        ],
+        [
+          6,
+          12,
+          3
+        ],
+        [
+          11,
+          5,
+          1
+        ]
+      ]
+    },
+    "old_fixed_calibration": {
+      "rows": 64,
+      "log_loss": 0.9720243795186901,
+      "accuracy": 0.484375,
+      "macro_f1": 0.4689715584024527,
+      "brier": 0.5770054330994966,
+      "class_counts": [
+        26,
+        21,
+        17
+      ],
+      "class_loss": [
+        0.8644309061265264,
+        0.920958335123685,
+        1.1996606877828886
+      ],
+      "class_recall": [
+        0.5384615384615384,
+        0.5714285714285714,
+        0.29411764705882354
+      ],
+      "tie_precision": 0.3125,
+      "mean_predictive_entropy": 0.9756088274631576,
+      "mean_class_probability": [
+        0.3809699523508258,
+        0.33360136054110395,
+        0.28542868710807034
+      ],
+      "predicted_class_fraction": [
+        0.4375,
+        0.3125,
+        0.25
+      ],
+      "tie_auc": 0.6182728410513141,
+      "confusion_matrix": [
+        [
+          14,
+          5,
+          7
+        ],
+        [
+          5,
+          12,
+          4
+        ],
+        [
+          9,
+          3,
+          5
+        ]
+      ]
+    },
+    "current_fixed_calibration": {
+      "rows": 64,
+      "log_loss": 0.9807416823107893,
+      "accuracy": 0.46875,
+      "macro_f1": 0.42358770489441994,
+      "brier": 0.5833320853351875,
+      "class_counts": [
+        26,
+        21,
+        17
+      ],
+      "class_loss": [
+        0.8766954344994174,
+        0.9262892818579419,
+        1.2071359677581692
+      ],
+      "class_recall": [
+        0.6153846153846154,
+        0.5714285714285714,
+        0.11764705882352941
+      ],
+      "tie_precision": 0.16666666666666666,
+      "mean_predictive_entropy": 0.9728179711580595,
+      "mean_class_probability": [
+        0.3792895402225243,
+        0.33401992181254103,
+        0.2866905379649348
+      ],
+      "predicted_class_fraction": [
+        0.484375,
+        0.328125,
+        0.1875
+      ],
+      "tie_auc": 0.6095118898623278,
+      "confusion_matrix": [
+        [
+          16,
+          4,
+          6
+        ],
+        [
+          5,
+          12,
+          4
+        ],
+        [
+          10,
+          5,
+          2
+        ]
+      ]
+    },
+    "raw_loss_effect": {
+      "gain": -0.035741909541787506,
+      "interval_95": [
+        -0.09331624090210586,
+        0.019858966181210504
+      ],
+      "groups": 64,
+      "rows": 64,
+      "replicates": 2000
+    },
+    "fixed_calibration_loss_effect": {
+      "gain": -0.008717302792099096,
+      "interval_95": [
+        -0.023044969915802915,
+        0.004657565777953408
+      ],
+      "groups": 64,
+      "rows": 64,
+      "replicates": 2000
+    },
+    "argmax_disagreement": 0.03125,
+    "packing": {
+      "packed_tokens_mean": 705.453125,
+      "prompt_overhead": 239,
+      "truncated_rows": 13,
+      "both_orders": false,
+      "clipped_fraction": 0.203125
+    },
+    "note": "Positive effect means old minus current loss on the same64 known rows. Diagnostic only; do not choose backend settings from labels or waive the failed numerical guard.",
+    "source_sha256": "1ed1a86cf3d2e96473e411ebf2bb4dc35b582581b2ba806e719a145ad17c2460"
+  }
 }

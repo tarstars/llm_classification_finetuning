@@ -57,7 +57,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 48 | [H44](#h44) | P1 / planned | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43 |
+| 48 | [H44](#h44) | P1 / planned | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43, E04 |
 | 49 | [E04](#e04) | P2 / planned | Establish a reproducible native judge scoring recipe | — | high | 2…6 | 0.15…0.5 | 0.5…2 | E00, E02 |
 
 ## Revisions to the original list
@@ -93,11 +93,11 @@ Postcalibration may recover miscalibration introduced by an affordable routed mi
 
 **Why this rank:** A cheap new test of affordable mixture calibration, distinct from completed H40 single-model calibration, H43 full-vector/conditional blending and H39 route selection. Its planning gain is relative to the matched routed model and is not additive with previous gains.
 
-**Evidence:** V3 H39 selected20% entropy cascade has cached loss0.955138 versus matched classifier0.959997, gain0.004859 CI[0.000245,0.009314]. H43 calibrated full-vector mixture improves0.941681 to0.931579, gain0.010102 CI[0.004034,0.015725], while preserving tie probability is worse. These observations motivate a route-calibration test; they do not measure its gain.
+**Evidence:** V3 H39 selected20% entropy cascade has cached loss0.955138 versus matched classifier0.959997, gain0.004859 CI[0.000245,0.009314]. H43 calibrated full-vector mixture improves0.941681 to0.931579, gain0.010102 CI[0.004034,0.015725], while preserving tie probability is worse. These observations motivate a route-calibration test; they do not measure its gain. Final E02 verification then failed raw-cache identity0.020895mean/0.188726max, and the20% current runtime projection misses7h. Existing cached calibration gains remain exploratory evidence for their recorded recipe, not a current deployable gain.
 
 **Planning estimate:** loss reduction -0.01…+0.01; confidence low. Engineering 2…6 person-hours; CPU 0.1…1 elapsed hours; two-T4 pilot 0…0 hours; additional follow-up 2…6 hours.
 
-**First test:** CPU caches only, using all available uniformly scored matched latest-classifier/judge rows with explicit coverage. Lock the existing20% entropy route type before this experiment. Compare exactly three families: original routed mixture, global symmetric temperature/tie calibration after routing, and low-capacity route-specific symmetric temperature/tie calibration. Refit the complete component-calibration/weight/threshold/postcalibration chain inside grouped training folds and select families only inside inner validation. Do not reuse full-cache fitted gate or calibrator parameters on outer-held labels. Retain classifier, random-routing and matched global-calibration controls; no new inference in the initial pilot.
+**First test:** Require an E04-verified stable or consistently re-evaluated native numerical recipe before using its caches; a done status alone is not a passing compatibility gate. CPU caches only, using all available uniformly scored matched latest-classifier/judge rows with explicit coverage. Lock the existing20% entropy route type before this experiment. Compare exactly three families: original routed mixture, global symmetric temperature/tie calibration after routing, and low-capacity route-specific symmetric temperature/tie calibration. Refit the complete component-calibration/weight/threshold/postcalibration chain inside grouped training folds and select families only inside inner validation. Do not reuse full-cache fitted gate or calibrator parameters on outer-held labels. Retain classifier, random-routing and matched global-calibration controls; no new inference in the initial pilot.
 
 **Advance/adopt:** At least0.001 lower overall log loss with positive paired group evidence against the matched original cascade, and route-specific benefit must also survive the global postcalibration control. Report actual routed fraction, class/tie channels and clipping/order coverage; require an offline runtime path before deployment.
 
@@ -105,15 +105,16 @@ Postcalibration may recover miscalibration introduced by an affordable routed mi
 
 **Risk and mitigation:** A new formula chosen after seeing these dev results can overfit. Full-cache fitted routing parameters leak evaluation labels into a naive postcalibration CV. Route-specific fits use fewer examples and can be unstable. Predeclare only three families, nest every fitted stage by prompt group, keep parameter counts small and preserve common controls. Use paired group intervals conditional on fitted OOF predictions and seek a separately frozen new-group check if further inference is funded.
 
-**Revision:** New v4 proposal from actual v3 matched cached findings. Do not execute during v3 or silently add a third H39 routing variant.
+**Revision:** New v4 proposal from actual v3 matched cached findings. Do not execute during v3 or silently add a third H39 routing variant. After the final E02 compatibility failure, add E04 explicitly; do not optimize a deployable calibrator against a stale incompatible cache. Use the historical result as motivation only.
 
-**Depends on:** E00, H39, H43. Currently unmet: none.
+**Depends on:** E00, H39, H43, E04. Currently unmet: E04.
 
 **Origin:** introduced in v4; discovered during v3; derived from H39, H43.
 
-**References:** [docs/SPAN_003_H39.md](../docs/SPAN_003_H39.md); [docs/SPAN_003_H43.md](../docs/SPAN_003_H43.md); [results/span_003/cached_results.json](../results/span_003/cached_results.json)
+**References:** [docs/SPAN_003_H39.md](../docs/SPAN_003_H39.md); [docs/SPAN_003_H43.md](../docs/SPAN_003_H43.md); [results/span_003/cached_results.json](../results/span_003/cached_results.json); [docs/SPAN_003_E02.md](../docs/SPAN_003_E02.md); [results/span_003/native_profile_results.json](../results/span_003/native_profile_results.json)
 
 - 2026-11-04T08:44:28+00:00 — planned: V3 shows a positive cheap cascade and a0.0101 gain from postcalibrating the full mixture. Queue a bounded route-calibration comparison for v4; its gain is unmeasured and the entire fitted chain must stay inside grouped folds. No v4 execution. Evidence: [docs/SPAN_003_H43.md](../docs/SPAN_003_H43.md)
+- 2026-11-04T10:23:50+00:00 — planned: Final E02 numerical compatibility failure changes the prerequisite: require E04 stable/consistent native scores before a deployable route-calibration comparison. Historical cached gain remains motivation only; no v4 task executed. Evidence: [docs/SPAN_003_E02.md](../docs/SPAN_003_E02.md)
 
 ### E04
 

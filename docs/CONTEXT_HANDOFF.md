@@ -103,6 +103,34 @@ after the result and again after version closure. Builder
 Three new probability/roundtrip/label-exclusion tests pass. Undefined-name checks
 caught a missing zlib before GPU launch. Final tests/audit still required.
 
+Independent `scripts/audit_span_003.py` local mode now passes: it reconstructs
+60 outer-fold prediction arrays, recomputes 12 model metrics and 16 paired group
+contrasts, checks frozen source/input identities, unused partitions, both CSVs,
+native runtime/licensing and completed charges. The 64-row native loss diagnostic
+is derived by `scripts/diagnose_span_003_native.py` without new inference/fits;
+raw loss rises 0.035742 and frozen-calibrated loss rises 0.008717, with intervals
+including zero. Those rows were in the frozen calibrator's fit cohort, so this
+does not establish independent quality. The failed raw guard stays in force.
+Notebook14 has been re-executed with these diagnostics and the audit summary.
+The three span003 tests, all 18 backlog tests and notebook source checks pass.
+
+`scripts/decide_span_003.py` currently records pending E03 and stopped judge
+deployment. On COMPLETE it creates a new span003 verified-candidate manifest;
+never rewrite the historical span002 research manifest or attempt002 selection.
+H44 now explicitly depends on a genuinely compatible E04 recipe.
+
+After receipt terminal and observer44399 exits, run
+`OPENBLAS_NUM_THREADS=2 OMP_NUM_THREADS=2 .venv/bin/python scripts/audit_span_003.py --final`
+with database/network access, then run `scripts/decide_span_003.py`. Final mode
+refreshes local proof and exact remote sources, all recorded/owned job statuses,
+receipt/score and quota. Do not rerun local mode after final without refreshing
+final proof, because their hashes are linked. Complete reports/status and advance,
+rebuild/execute notebook14 for closed-v3 state, then
+`scripts/check_span_003_closure.py` verifies the actual version boundary and
+artifact hashes. It requires `docs/SPAN_003_COMPLETION.md`, not yet written.
+Run closure only after final reports/notebook/registry are stable, then publish
+explicit paths and verify remote HEAD. Check actual live job exit as well as files.
+
 ## Remaining work and version boundary
 
 V3 active37members, focus4. V4 draft has **H44** (routed-mixture calibration) and
