@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "fresh_requests_reconstructed": 512,
+  "passes_by_case": {
+    "cache_on": 4,
+    "cache_off": 4
+  },
+  "all_prepared_tokens_identical": true,
+  "fixed_calibration_effect_intervals_recomputed": 16,
+  "old_snapshot_sha256": {
+    "backlog/versions/v1.final.json": "a3b0967e5285242bb356c5dc4e1ca33c2bd41cd58a24d84794153d8b840f6138",
+    "backlog/versions/v1.final.md": "9462b9a7f33cd4e9d8e3948a1e2f1ef971411af242100f35b8cbb25a9f2a5ea7",
+    "backlog/versions/v1.start.json": "0184479f9c5cd767531411490f21fc38fb89cc5fdd343b89d2d7254bd0baef5e",
+    "backlog/versions/v1.start.md": "9d62a7657c069b40023e178c7f1004f55419ef41f583d8264e5509b57272e0fd",
+    "backlog/versions/v2.final.json": "66606162be35a509e9ae56493293d7924f7f01983b0b31b1d3b8ab5298291001",
+    "backlog/versions/v2.final.md": "e8278377328a0ffbd68f94f9da5a7db8a90a38aa47c392100ba47e063ea5adf0",
+    "backlog/versions/v2.start.json": "e83cec43f76ea1fdd348b213aaafdc0290c8fd84735ce295f5216593a1146ec7",
+    "backlog/versions/v2.start.md": "554cbbfb85fe5e0f5303abeeea19244c5c0406f2c118c0f7483561e55f922a21",
+    "backlog/versions/v3.final.json": "519b836c95d22323a7cf9ae584df312be3887bc040f0da473e1ce08aeda659a2",
+    "backlog/versions/v3.final.md": "1bc8afb394ce7450aecab09dc6b169bddd4f1fdb12723f206d961924dd7df8aa",
+    "backlog/versions/v3.start.json": "126241dd30b8f1117ad2a332e936072a5e49b4fcfff482f207f8e47403462490",
+    "backlog/versions/v3.start.md": "3f2a382fadb41c0e9940c54cece092e87df761cc9fdad6f7a641088f355db73d",
+    "backlog/versions/v4.start.json": "33d49170b1ca4c95d573761a6119589d15e29faf94ef8a836d8c44088f06c148",
+    "backlog/versions/v4.start.md": "81407a66c1db9dd0e1769b0236c6fdbaf30a098ad98db3c6aed4080488b262a1"
+  },
+  "preserved_snapshot_count": 14,
+  "source_recipe_unchanged": true,
+  "hardware_and_175_file_manifest_verified": true,
+  "charges_seconds": [
+    37.40299999999115,
+    801.8500000000058
+  ],
+  "total_charged_seconds": 839.252999999997,
+  "no_optional_inference": true,
+  "confirmation_used": false,
+  "checked_at": "2026-11-04T16:28:21.525653+00:00",
+  "jobs": [
+    {
+      "role": "repeatability",
+      "kernel_version": "arseniytrushin/llm-preference-span-004-native-repeatability/1",
+      "status": "ERROR",
+      "source_matches": true,
+      "internet_disabled": true,
+      "notebook_sha256": "90c040400d36230ea69b63e06bf3d2d2ed91385911aebf679c7aef022c5f1944"
+    },
+    {
+      "role": "repeatability_retry",
+      "kernel_version": "arseniytrushin/llm-preference-span-004-native-repeatability-retry/1",
+      "status": "COMPLETE",
+      "source_matches": true,
+      "internet_disabled": true,
+      "notebook_sha256": "a7bf853df608520308bfbb94f0baab4278612cd2377f91e79307e02920377e88"
+    }
+  ],
+  "owned_notebooks": 51,
+  "unobserved_old_notebooks": [
+    {
+      "kernel_sha256": "1be3866170da769ae28a502772222b186570c2d8dfb4f499e2e012c6433a8d35",
+      "http_status": 404,
+      "last_run_time": "2025-12-17 11:20:26.657000"
+    },
+    {
+      "kernel_sha256": "dd8b751a3d26416f67f344973a27e1b84ee9f8935088d4f2f4393df7e438b540",
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:52:45.893000"
+    },
+    {
+      "kernel_sha256": "69e91610ce0dfb93b7d44619ee6995b228e83dc71446d5384e0a7b2b44861f55",
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:24:42.037000"
+    }
+  ],
+  "no_nonterminal_owned_notebooks": true,
+  "quota": {
+    "used_seconds": 79501.254,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 28498.746
+  },
+  "original_start": "2026-11-04T14:29:32+00:00",
+  "original_deadline": "2026-11-06T14:29:32+00:00",
+  "within_original_caps": true,
+  "official_score": 0.95481,
+  "new_official_submissions": [],
+  "audit_program_sha256": "6ddbcb81748ea99dfe21e872c94590dcaf475ef01ceed448732044a270be2811",
+  "repeatability_results_sha256": "4fe3db62d698c33a5f212ecbe1ee2067a3cff5577b1ba9b34cf776e51dfaaa56"
+}

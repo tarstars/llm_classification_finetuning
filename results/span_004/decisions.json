@@ -1,0 +1,32 @@
+{
+  "span": 4,
+  "generated_at": "2026-11-04T16:31:25.980919+00:00",
+  "E04": {
+    "status": "done",
+    "outcome": "negative numerical qualification",
+    "diagnostic_completed": true,
+    "native_hardware_passed": true,
+    "passing_recipes": []
+  },
+  "H44": {
+    "status": "deferred",
+    "model_comparison_executed": false,
+    "reason": "Neither fixed native recipe passes repeatability. Runtime alone is insufficient; require E05 qualification and a consistent cache before fitting."
+  },
+  "uniform_fitting_rescore_executed": false,
+  "new_group_check_executed": false,
+  "joint_profile_executed": false,
+  "new_official_submissions": 0,
+  "best_official_score": 0.95481,
+  "queued_followup": "E05",
+  "serving_settings_selected_by_human_label_loss": false,
+  "confirmation_used": false,
+  "total_charged_seconds": 839.252999999997,
+  "within_original_caps": true,
+  "source_sha256": "5291280a7495623ae32811503c8dd4bd922b584628ffdc427c76eeebd6c1b9f7",
+  "input_sha256": {
+    "repeatability_results.json": "4fe3db62d698c33a5f212ecbe1ee2067a3cff5577b1ba9b34cf776e51dfaaa56",
+    "diagnostic_controls.json": "3240f66d12798bd2ccb365f719c0481932481b0841d5fa333a6a1d55270118d8",
+    "terminal_audit.json": "e73fbd196a66cdb263e771a0f6b89ce7cda7fd4b259bbb8414ca94bd8194b4ab"
+  }
+}

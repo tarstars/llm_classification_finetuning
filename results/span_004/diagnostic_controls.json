@@ -1,0 +1,249 @@
+{
+  "rows": 64,
+  "class_counts": [
+    26,
+    21,
+    17
+  ],
+  "training_rows": 45985,
+  "training_prior": [
+    0.3490703490268566,
+    0.3419158421224312,
+    0.30901380885071217
+  ],
+  "classifier_temperature": 0.9441963863130951,
+  "controls": {
+    "classifier_frozen_temperature": {
+      "rows": 64,
+      "log_loss": 0.9578228199691283,
+      "accuracy": 0.484375,
+      "macro_f1": 0.46375643866363553,
+      "brier": 0.5669644416619903,
+      "class_counts": [
+        26,
+        21,
+        17
+      ],
+      "class_loss": [
+        0.8013747551467881,
+        1.0586012331153716,
+        1.0726053499285242
+      ],
+      "class_recall": [
+        0.6153846153846154,
+        0.47619047619047616,
+        0.29411764705882354
+      ],
+      "tie_precision": 0.35714285714285715,
+      "mean_predictive_entropy": 0.9579224768999934,
+      "mean_class_probability": [
+        0.39590678450619105,
+        0.30141902517533475,
+        0.3026741903184743
+      ],
+      "predicted_class_fraction": [
+        0.515625,
+        0.265625,
+        0.21875
+      ],
+      "tie_auc": 0.6983729662077597,
+      "confusion_matrix": [
+        [
+          16,
+          4,
+          6
+        ],
+        [
+          8,
+          10,
+          3
+        ],
+        [
+          9,
+          3,
+          5
+        ]
+      ],
+      "loss_channels": {
+        "binary_tie_log_loss": 0.5438149309782883,
+        "conditional_winner_contribution": 0.41400788899084007,
+        "sum_multiclass_loss": 0.9578228199691283
+      }
+    },
+    "training_prior": {
+      "rows": 64,
+      "log_loss": 1.0916532632823874,
+      "accuracy": 0.40625,
+      "macro_f1": 0.19259259259259257,
+      "brier": 0.66208056979534,
+      "class_counts": [
+        26,
+        21,
+        17
+      ],
+      "class_loss": [
+        1.0524818039499908,
+        1.073190647866522,
+        1.1743693142456517
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 1.0972274095648862,
+      "mean_class_probability": [
+        0.3490703490268566,
+        0.34191584212243137,
+        0.30901380885071217
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          26,
+          0,
+          0
+        ],
+        [
+          21,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          0
+        ]
+      ],
+      "loss_channels": {
+        "binary_tie_log_loss": 0.583392874817122,
+        "conditional_winner_contribution": 0.5082603884652654,
+        "sum_multiclass_loss": 1.0916532632823874
+      }
+    },
+    "majority_clipped_1e-12": {
+      "rows": 64,
+      "log_loss": 16.40591878758339,
+      "accuracy": 0.40625,
+      "macro_f1": 0.19259259259259257,
+      "brier": 1.1874999999964375,
+      "class_counts": [
+        26,
+        21,
+        17
+      ],
+      "class_loss": [
+        1.9999557565617575e-12,
+        27.631021115928547,
+        27.631021115928547
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 5.7262220032913245e-11,
+      "mean_class_probability": [
+        0.999999999997998,
+        9.999999999980003e-13,
+        9.999999999980003e-13
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          26,
+          0,
+          0
+        ],
+        [
+          21,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          0
+        ]
+      ],
+      "loss_channels": {
+        "binary_tie_log_loss": 7.339489983919786,
+        "conditional_winner_contribution": 9.066428803664788,
+        "sum_multiclass_loss": 16.405918787584575
+      }
+    },
+    "uniform": {
+      "rows": 64,
+      "log_loss": 1.0986122886681098,
+      "accuracy": 0.40625,
+      "macro_f1": 0.19259259259259257,
+      "brier": 0.6666666666666669,
+      "class_counts": [
+        26,
+        21,
+        17
+      ],
+      "class_loss": [
+        1.0986122886681098,
+        1.09861228866811,
+        1.0986122886681098
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 1.0986122886681093,
+      "mean_class_probability": [
+        0.3333333333333332,
+        0.3333333333333332,
+        0.3333333333333332
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          26,
+          0,
+          0
+        ],
+        [
+          21,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          0
+        ]
+      ],
+      "loss_channels": {
+        "binary_tie_log_loss": 0.5895823279444,
+        "conditional_winner_contribution": 0.5090299607237099,
+        "sum_multiclass_loss": 1.0986122886681098
+      }
+    }
+  },
+  "classifier_raw_order_disagreement": 0.21875,
+  "hard_majority_note": "Exact one-hot loss is infinite on errors; the table explicitly clips at1e-12. Uniform argmax ties resolve to A.",
+  "scope": "Same64known dev rows. Descriptive controls only; no new fit, recipe selection or independent-validation claim.",
+  "source_sha256": "fe736dbdf6ccf61cc672c23d4d0c8de0e778ba46cd7c5deb4db0dd79d2cb42f5"
+}

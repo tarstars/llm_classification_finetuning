@@ -7,12 +7,13 @@ is multiclass log loss (lower is better).
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
-The active [v4 goal](GOAL.md) focuses on **E04 then H44**: verify native judge
-repeatability, then test routed-mixture calibration if its prerequisite passes.
-It starts November 4 at 14:29:32 UTC, with a fixed 48-hour deadline and at most
-12 elapsed two-T4 session-hours, reduced by fresh quota. It ends by forming v5;
-no official submission or classifier retraining is included. No v4 GPU job has
-started during activation.
+The completed [v4 goal](docs/GOAL_V4.md) tested **E04**, native judge repeatability.
+Both cache settings failed the fixed probability guards on 512 fresh requests;
+**H44** calibration was not run and remains deferred. V4 used **839.253 seconds**
+of Kaggle session time, including its failed setup attempt, and made no submission.
+See the [results](docs/SPAN_004_RESULTS.md) and [executed notebook15](notebooks/15_backlog_v4_span.ipynb).
+Backlog v5 is active with no selected focus or execution; its new E05 task tests
+request concurrency before further judge rescoring.
 The completed [v1](docs/GOAL_V1.md), [v2](docs/GOAL_V2.md) and
 [v3](docs/GOAL_V3.md) goals are archived. V3's conservative whole-span compute
 bound was 6.20508 hours against its original 8.35453-hour quota cap.
@@ -65,16 +66,16 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v4**, with **35 tasks**: 33 unfinished carryovers and two
-new discoveries, H44 (routed-mixture calibration) and E04 (native numerical
-repeatability). H44 requires a genuinely compatible E04 recipe. V3 is sealed
-with all four focus experiments done, including negative deployment findings.
-V4 focus is E04/H44; activation has not launched an experiment.
-[V5 is an empty draft](backlog/NEXT.md).
+The active version is **v5**, with **35 tasks**: 34 unfinished carryovers and
+new E05 (native judge request-concurrency sensitivity). H44 now depends on E05
+providing an actually stable, feasible recipe and consistent scores. E04 is done
+with negative evidence; H44 was deferred without fitting. No v5 task has started.
+[V6 is an empty draft](backlog/NEXT.md).
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),
 [v1 final history](backlog/versions/v1.final.md), [v2 final history](backlog/versions/v2.final.md)
-and [v3 final history](backlog/versions/v3.final.md).
+and [v3 final history](backlog/versions/v3.final.md),
+[v4 final history](backlog/versions/v4.final.md).
 [Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
 The JSON-backed CLI browses work, records status/evidence and regenerates the page:
 
@@ -83,8 +84,8 @@ uv run python scripts/backlog.py list --priority P1
 uv run python scripts/backlog.py list --actionable
 uv run python scripts/backlog.py list --actionable --focus
 uv run python scripts/backlog.py versions
-uv run python scripts/backlog.py list --version 4 --new
-uv run python scripts/backlog.py list --version 4 --carried
+uv run python scripts/backlog.py list --version 5 --new
+uv run python scripts/backlog.py list --version 5 --carried
 uv run python scripts/backlog.py list --version next
 uv run python scripts/backlog.py show H09
 uv run python scripts/backlog.py check
@@ -106,9 +107,10 @@ with improved H03 was confirmed locally in v3, although current native numerical
 compatibility and runtime gates fail; gains cannot be added. See the
 [v2 report](docs/SPAN_002_RESULTS.md) and [protocol](docs/SPAN_002_PROTOCOL.md).
 
-The [v2 completion record](docs/SPAN_002_COMPLETION.md) and
-[v3 completion record](docs/SPAN_003_COMPLETION.md) link resource, provenance,
-notebook and version checks. The v3 goal stops at the v4 boundary.
+The [v2 completion record](docs/SPAN_002_COMPLETION.md),
+[v3 completion record](docs/SPAN_003_COMPLETION.md) and
+[v4 completion record](docs/SPAN_004_COMPLETION.md) link resource, provenance,
+notebook and version checks. V4 stops at the v5 boundary.
 
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
@@ -130,6 +132,7 @@ classifier comparison and all baselines.
 - [Backlog v1 span: controlled pilots and evidence](notebooks/12_backlog_v1_span.ipynb)
 - [Backlog v2 span: calibration, accepted exposure and judge ensemble](notebooks/13_backlog_v2_span.ipynb)
 - [Backlog v3 span: affordable judge use and frozen classifier verification](notebooks/14_backlog_v3_span.ipynb)
+- [Backlog v4 span: native repeatability and calibration stopping decision](notebooks/15_backlog_v4_span.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary

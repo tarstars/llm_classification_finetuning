@@ -1,0 +1,1462 @@
+{
+  "span": 4,
+  "job": "repeatability_retry",
+  "checked_at": "2026-11-04T16:11:20.225236+00:00",
+  "diagnostic_complete": true,
+  "rows": 64,
+  "groups": 64,
+  "competition_scoring_requests": 512,
+  "server_starts": 2,
+  "cases": {
+    "cache_on": {
+      "cache_prompt": true,
+      "passes": {
+        "initial": {
+          "seconds": 76.33859574399992,
+          "seconds_per_row": 1.1927905584999987,
+          "raw_metrics": {
+            "rows": 64,
+            "log_loss": 1.402617580031005,
+            "accuracy": 0.46875,
+            "macro_f1": 0.39565217391304347,
+            "brier": 0.7316857352828169,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8320547189236593,
+              1.207929664750937,
+              2.5157399688352644
+            ],
+            "class_recall": [
+              0.6538461538461539,
+              0.5714285714285714,
+              0.058823529411764705
+            ],
+            "tie_precision": 0.16666666666666666,
+            "mean_predictive_entropy": 0.5031337344029579,
+            "mean_class_probability": [
+              0.5024945977202888,
+              0.35942834978437754,
+              0.13807705249533392
+            ],
+            "predicted_class_fraction": [
+              0.53125,
+              0.375,
+              0.09375
+            ],
+            "tie_auc": 0.6295369211514393,
+            "confusion_matrix": [
+              [
+                17,
+                7,
+                2
+              ],
+              [
+                6,
+                12,
+                3
+              ],
+              [
+                11,
+                5,
+                1
+              ]
+            ]
+          },
+          "fixed_calibration_metrics": {
+            "rows": 64,
+            "log_loss": 0.9747778264554712,
+            "accuracy": 0.515625,
+            "macro_f1": 0.48429118773946356,
+            "brier": 0.5795534985706873,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8736418414918012,
+              0.9259692216238513,
+              1.189749374133085
+            ],
+            "class_recall": [
+              0.6538461538461539,
+              0.5714285714285714,
+              0.23529411764705882
+            ],
+            "tie_precision": 0.3076923076923077,
+            "mean_predictive_entropy": 0.9781997440239019,
+            "mean_class_probability": [
+              0.3795875901358231,
+              0.3326687348486886,
+              0.2877436750154882
+            ],
+            "predicted_class_fraction": [
+              0.5,
+              0.296875,
+              0.203125
+            ],
+            "tie_auc": 0.6182728410513141,
+            "confusion_matrix": [
+              [
+                17,
+                4,
+                5
+              ],
+              [
+                5,
+                12,
+                4
+              ],
+              [
+                10,
+                3,
+                4
+              ]
+            ]
+          },
+          "historical_h37_identity": {
+            "rows": 64,
+            "mean_probability_difference": 0.019071097690949904,
+            "max_probability_difference": 0.14581953726983865,
+            "argmax_disagreement": 0.015625,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "v3_native_difference": {
+            "rows": 64,
+            "mean_probability_difference": 0.01729762729757887,
+            "max_probability_difference": 0.13423195887193395,
+            "argmax_disagreement": 0.015625,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "raw_loss_effect": {
+            "gain": 0.002822868685993723,
+            "interval_95": [
+              -0.032925994374281745,
+              0.03733433656611869
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "fixed_calibration_loss_effect": {
+            "gain": -0.002753446936780974,
+            "interval_95": [
+              -0.012476255029515824,
+              0.006737754312873441
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "mean_tokens": 705.453125,
+          "truncated_rows": 13
+        },
+        "repeat": {
+          "seconds": 70.934853686,
+          "seconds_per_row": 1.10835708884375,
+          "raw_metrics": {
+            "rows": 64,
+            "log_loss": 1.3982815406384226,
+            "accuracy": 0.46875,
+            "macro_f1": 0.39565217391304347,
+            "brier": 0.7301178381247819,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8429892160593359,
+              1.152658716609946,
+              2.5509685843827903
+            ],
+            "class_recall": [
+              0.6538461538461539,
+              0.5714285714285714,
+              0.058823529411764705
+            ],
+            "tie_precision": 0.16666666666666666,
+            "mean_predictive_entropy": 0.5033227971956896,
+            "mean_class_probability": [
+              0.5024985385834663,
+              0.3608807536251987,
+              0.13662070779133503
+            ],
+            "predicted_class_fraction": [
+              0.53125,
+              0.375,
+              0.09375
+            ],
+            "tie_auc": 0.6082603254067585,
+            "confusion_matrix": [
+              [
+                17,
+                7,
+                2
+              ],
+              [
+                6,
+                12,
+                3
+              ],
+              [
+                11,
+                5,
+                1
+              ]
+            ]
+          },
+          "fixed_calibration_metrics": {
+            "rows": 64,
+            "log_loss": 0.9729344832046702,
+            "accuracy": 0.46875,
+            "macro_f1": 0.4357142857142857,
+            "brier": 0.5798093636310484,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8782335829974485,
+              0.9085362961524552,
+              1.1973218557625693
+            ],
+            "class_recall": [
+              0.5769230769230769,
+              0.5714285714285714,
+              0.17647058823529413
+            ],
+            "tie_precision": 0.23076923076923078,
+            "mean_predictive_entropy": 0.9784262582550859,
+            "mean_class_probability": [
+              0.3789288528194718,
+              0.3336375074801112,
+              0.287433639700417
+            ],
+            "predicted_class_fraction": [
+              0.46875,
+              0.328125,
+              0.203125
+            ],
+            "tie_auc": 0.6020025031289111,
+            "confusion_matrix": [
+              [
+                15,
+                5,
+                6
+              ],
+              [
+                5,
+                12,
+                4
+              ],
+              [
+                10,
+                4,
+                3
+              ]
+            ]
+          },
+          "historical_h37_identity": {
+            "rows": 64,
+            "mean_probability_difference": 0.020203101446996555,
+            "max_probability_difference": 0.1683308457086854,
+            "argmax_disagreement": 0.015625,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "v3_native_difference": {
+            "rows": 64,
+            "mean_probability_difference": 0.02034832621805065,
+            "max_probability_difference": 0.1276196837425232,
+            "argmax_disagreement": 0.015625,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "raw_loss_effect": {
+            "gain": 0.0071589080785762985,
+            "interval_95": [
+              -0.05541867953344691,
+              0.06872634072685943
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "fixed_calibration_loss_effect": {
+            "gain": -0.0009101036859800885,
+            "interval_95": [
+              -0.01617542140644722,
+              0.014331433742456942
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "mean_tokens": 705.453125,
+          "truncated_rows": 13
+        },
+        "permuted": {
+          "seconds": 59.868197494000015,
+          "seconds_per_row": 0.9354405858437502,
+          "raw_metrics": {
+            "rows": 64,
+            "log_loss": 1.4135626251838183,
+            "accuracy": 0.46875,
+            "macro_f1": 0.3923195084485407,
+            "brier": 0.7355951825413409,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8463493354479066,
+              1.1362795754916282,
+              2.623591423811448
+            ],
+            "class_recall": [
+              0.6538461538461539,
+              0.5714285714285714,
+              0.058823529411764705
+            ],
+            "tie_precision": 0.25,
+            "mean_predictive_entropy": 0.5004726521534402,
+            "mean_class_probability": [
+              0.5014956895858262,
+              0.36435658636002977,
+              0.1341477240541439
+            ],
+            "predicted_class_fraction": [
+              0.5625,
+              0.375,
+              0.0625
+            ],
+            "tie_auc": 0.6032540675844805,
+            "confusion_matrix": [
+              [
+                17,
+                7,
+                2
+              ],
+              [
+                8,
+                12,
+                1
+              ],
+              [
+                11,
+                5,
+                1
+              ]
+            ]
+          },
+          "fixed_calibration_metrics": {
+            "rows": 64,
+            "log_loss": 0.9761265350328652,
+            "accuracy": 0.484375,
+            "macro_f1": 0.46027346637102734,
+            "brier": 0.5801818587850248,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8771977281537107,
+              0.9036874011656816,
+              1.21691305209574
+            ],
+            "class_recall": [
+              0.5769230769230769,
+              0.5714285714285714,
+              0.23529411764705882
+            ],
+            "tie_precision": 0.26666666666666666,
+            "mean_predictive_entropy": 0.9789373437167341,
+            "mean_class_probability": [
+              0.37908837466461337,
+              0.33528038308835,
+              0.2856312422470367
+            ],
+            "predicted_class_fraction": [
+              0.453125,
+              0.3125,
+              0.234375
+            ],
+            "tie_auc": 0.5957446808510638,
+            "confusion_matrix": [
+              [
+                15,
+                5,
+                6
+              ],
+              [
+                4,
+                12,
+                5
+              ],
+              [
+                10,
+                3,
+                4
+              ]
+            ]
+          },
+          "historical_h37_identity": {
+            "rows": 64,
+            "mean_probability_difference": 0.018482752039159885,
+            "max_probability_difference": 0.14308712313187588,
+            "argmax_disagreement": 0.015625,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "v3_native_difference": {
+            "rows": 64,
+            "mean_probability_difference": 0.021275314506275015,
+            "max_probability_difference": 0.20236398125502536,
+            "argmax_disagreement": 0.046875,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "raw_loss_effect": {
+            "gain": -0.008122176466819668,
+            "interval_95": [
+              -0.059574107980280275,
+              0.043496700659771285
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "fixed_calibration_loss_effect": {
+            "gain": -0.004102155514174962,
+            "interval_95": [
+              -0.017570362486027877,
+              0.009729339748836606
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "mean_tokens": 705.453125,
+          "truncated_rows": 13
+        },
+        "restart": {
+          "seconds": 53.99250905400004,
+          "seconds_per_row": 0.8436329539687506,
+          "raw_metrics": {
+            "rows": 64,
+            "log_loss": 1.412903241040223,
+            "accuracy": 0.5,
+            "macro_f1": 0.4226765156914836,
+            "brier": 0.7329440006579682,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.876569528640126,
+              1.133171386539081,
+              2.5787294449770752
+            ],
+            "class_recall": [
+              0.6923076923076923,
+              0.6190476190476191,
+              0.058823529411764705
+            ],
+            "tie_precision": 0.16666666666666666,
+            "mean_predictive_entropy": 0.5041295882006189,
+            "mean_class_probability": [
+              0.5009439521878373,
+              0.36130238815421506,
+              0.13775365965794814
+            ],
+            "predicted_class_fraction": [
+              0.546875,
+              0.359375,
+              0.09375
+            ],
+            "tie_auc": 0.6070087609511889,
+            "confusion_matrix": [
+              [
+                18,
+                6,
+                2
+              ],
+              [
+                5,
+                13,
+                3
+              ],
+              [
+                12,
+                4,
+                1
+              ]
+            ]
+          },
+          "fixed_calibration_metrics": {
+            "rows": 64,
+            "log_loss": 0.9784150362330482,
+            "accuracy": 0.46875,
+            "macro_f1": 0.449985257260799,
+            "brier": 0.5820036145676221,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8860526510064758,
+              0.9091948219000688,
+              1.2051824784026626
+            ],
+            "class_recall": [
+              0.5769230769230769,
+              0.5238095238095238,
+              0.23529411764705882
+            ],
+            "tie_precision": 0.23529411764705882,
+            "mean_predictive_entropy": 0.9793962758200195,
+            "mean_class_probability": [
+              0.37822556536980917,
+              0.3336984713578756,
+              0.2880759632723151
+            ],
+            "predicted_class_fraction": [
+              0.46875,
+              0.265625,
+              0.265625
+            ],
+            "tie_auc": 0.6057571964956195,
+            "confusion_matrix": [
+              [
+                15,
+                4,
+                7
+              ],
+              [
+                4,
+                11,
+                6
+              ],
+              [
+                11,
+                2,
+                4
+              ]
+            ]
+          },
+          "historical_h37_identity": {
+            "rows": 64,
+            "mean_probability_difference": 0.02427929349569195,
+            "max_probability_difference": 0.18233845390104453,
+            "argmax_disagreement": 0.0625,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "v3_native_difference": {
+            "rows": 64,
+            "mean_probability_difference": 0.024329470510500172,
+            "max_probability_difference": 0.3281579911708832,
+            "argmax_disagreement": 0.03125,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "raw_loss_effect": {
+            "gain": -0.007462792323223999,
+            "interval_95": [
+              -0.0664468358900246,
+              0.04491099107029341
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "fixed_calibration_loss_effect": {
+            "gain": -0.0063906567143579155,
+            "interval_95": [
+              -0.021271151796492978,
+              0.007531864765190893
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "mean_tokens": 705.453125,
+          "truncated_rows": 13
+        }
+      },
+      "comparisons": {
+        "repeat": {
+          "rows": 64,
+          "mean_probability_difference": 0.018796199064836438,
+          "max_probability_difference": 0.1707899549322639,
+          "argmax_disagreement": 0.0,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false
+        },
+        "permuted": {
+          "rows": 64,
+          "mean_probability_difference": 0.021524402906425554,
+          "max_probability_difference": 0.20236398125502536,
+          "argmax_disagreement": 0.03125,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false
+        },
+        "restart": {
+          "rows": 64,
+          "mean_probability_difference": 0.02322066232917139,
+          "max_probability_difference": 0.3281579911708832,
+          "argmax_disagreement": 0.046875,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false
+        }
+      },
+      "prepared_tokens_identical_across_every_case_and_pass": true,
+      "repeatability_passed": false,
+      "historical_cache_identity_passed": false,
+      "conservative_judge_seconds_per_row": 1.1927905584999987,
+      "projected_cascade_seconds": 26328.597068840598,
+      "runtime_guard_passed": false,
+      "qualifies_for_consistent_fitting_cache": false,
+      "sampled_device_used_peak_mib": [
+        9551,
+        8833
+      ],
+      "server_load_seconds": [
+        94.12098777199998,
+        6.243342857000016
+      ]
+    },
+    "cache_off": {
+      "cache_prompt": false,
+      "passes": {
+        "initial": {
+          "seconds": 52.330507496999985,
+          "seconds_per_row": 0.8176641796406248,
+          "raw_metrics": {
+            "rows": 64,
+            "log_loss": 1.380545504623099,
+            "accuracy": 0.46875,
+            "macro_f1": 0.39565217391304347,
+            "brier": 0.7231251091266865,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8630693718300348,
+              1.1475364449214769,
+              2.4598143108792
+            ],
+            "class_recall": [
+              0.6538461538461539,
+              0.5714285714285714,
+              0.058823529411764705
+            ],
+            "tie_precision": 0.16666666666666666,
+            "mean_predictive_entropy": 0.5067651946440158,
+            "mean_class_probability": [
+              0.4878415876527083,
+              0.3686079606887168,
+              0.14355045165857488
+            ],
+            "predicted_class_fraction": [
+              0.53125,
+              0.375,
+              0.09375
+            ],
+            "tie_auc": 0.6245306633291614,
+            "confusion_matrix": [
+              [
+                17,
+                7,
+                2
+              ],
+              [
+                6,
+                12,
+                3
+              ],
+              [
+                11,
+                5,
+                1
+              ]
+            ]
+          },
+          "fixed_calibration_metrics": {
+            "rows": 64,
+            "log_loss": 0.9712553565411093,
+            "accuracy": 0.46875,
+            "macro_f1": 0.43681050132663035,
+            "brier": 0.5768727422527081,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8876120427042231,
+              0.9102531047631259,
+              1.1745361475467968
+            ],
+            "class_recall": [
+              0.5769230769230769,
+              0.5714285714285714,
+              0.17647058823529413
+            ],
+            "tie_precision": 0.21428571428571427,
+            "mean_predictive_entropy": 0.9798732810084751,
+            "mean_class_probability": [
+              0.3732921187475273,
+              0.3349389742287962,
+              0.2917689070236766
+            ],
+            "predicted_class_fraction": [
+              0.453125,
+              0.328125,
+              0.21875
+            ],
+            "tie_auc": 0.6220275344180225,
+            "confusion_matrix": [
+              [
+                15,
+                5,
+                6
+              ],
+              [
+                4,
+                12,
+                5
+              ],
+              [
+                10,
+                4,
+                3
+              ]
+            ]
+          },
+          "historical_h37_identity": {
+            "rows": 64,
+            "mean_probability_difference": 0.022340561912960383,
+            "max_probability_difference": 0.14200097856011296,
+            "argmax_disagreement": 0.015625,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "v3_native_difference": {
+            "rows": 64,
+            "mean_probability_difference": 0.024613321361306072,
+            "max_probability_difference": 0.25378959779671717,
+            "argmax_disagreement": 0.046875,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "raw_loss_effect": {
+            "gain": 0.024894944093900022,
+            "interval_95": [
+              -0.0293467929220548,
+              0.07828808810661841
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "fixed_calibration_loss_effect": {
+            "gain": 0.0007690229775809162,
+            "interval_95": [
+              -0.013656712079820181,
+              0.014777770540932584
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "mean_tokens": 705.453125,
+          "truncated_rows": 13
+        },
+        "repeat": {
+          "seconds": 61.340238536000015,
+          "seconds_per_row": 0.9584412271250002,
+          "raw_metrics": {
+            "rows": 64,
+            "log_loss": 1.401614054218533,
+            "accuracy": 0.46875,
+            "macro_f1": 0.39565217391304347,
+            "brier": 0.7386543289416914,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8286051166223197,
+              1.1457190796303025,
+              2.5940862215040847
+            ],
+            "class_recall": [
+              0.6538461538461539,
+              0.5714285714285714,
+              0.058823529411764705
+            ],
+            "tie_precision": 0.16666666666666666,
+            "mean_predictive_entropy": 0.49786272191915093,
+            "mean_class_probability": [
+              0.5058429790965027,
+              0.36511507572163865,
+              0.12904194518185874
+            ],
+            "predicted_class_fraction": [
+              0.53125,
+              0.375,
+              0.09375
+            ],
+            "tie_auc": 0.6132665832290363,
+            "confusion_matrix": [
+              [
+                17,
+                7,
+                2
+              ],
+              [
+                6,
+                12,
+                3
+              ],
+              [
+                11,
+                5,
+                1
+              ]
+            ]
+          },
+          "fixed_calibration_metrics": {
+            "rows": 64,
+            "log_loss": 0.9718057571528038,
+            "accuracy": 0.484375,
+            "macro_f1": 0.44892312081015545,
+            "brier": 0.5799501228728989,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.869180194898575,
+              0.9094445959234101,
+              1.2057968750602868
+            ],
+            "class_recall": [
+              0.6153846153846154,
+              0.5714285714285714,
+              0.17647058823529413
+            ],
+            "tie_precision": 0.23076923076923078,
+            "mean_predictive_entropy": 0.9788641761993275,
+            "mean_class_probability": [
+              0.3816562174028733,
+              0.3348708334610486,
+              0.2834729491360781
+            ],
+            "predicted_class_fraction": [
+              0.484375,
+              0.3125,
+              0.203125
+            ],
+            "tie_auc": 0.60450563204005,
+            "confusion_matrix": [
+              [
+                16,
+                4,
+                6
+              ],
+              [
+                5,
+                12,
+                4
+              ],
+              [
+                10,
+                4,
+                3
+              ]
+            ]
+          },
+          "historical_h37_identity": {
+            "rows": 64,
+            "mean_probability_difference": 0.021616682535074355,
+            "max_probability_difference": 0.16575474766817933,
+            "argmax_disagreement": 0.046875,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "v3_native_difference": {
+            "rows": 64,
+            "mean_probability_difference": 0.02017320165986693,
+            "max_probability_difference": 0.19195025307028069,
+            "argmax_disagreement": 0.046875,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "raw_loss_effect": {
+            "gain": 0.003826394498465855,
+            "interval_95": [
+              -0.05039906832789301,
+              0.059945534624142316
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "fixed_calibration_loss_effect": {
+            "gain": 0.00021862236588635238,
+            "interval_95": [
+              -0.013703023784551733,
+              0.014876573319460552
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "mean_tokens": 705.453125,
+          "truncated_rows": 13
+        },
+        "permuted": {
+          "seconds": 56.59693993899998,
+          "seconds_per_row": 0.8843271865468747,
+          "raw_metrics": {
+            "rows": 64,
+            "log_loss": 1.412154449780274,
+            "accuracy": 0.46875,
+            "macro_f1": 0.3923195084485407,
+            "brier": 0.7321241580613542,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8290038046017165,
+              1.2075163716785953,
+              2.556820121237788
+            ],
+            "class_recall": [
+              0.6538461538461539,
+              0.5714285714285714,
+              0.058823529411764705
+            ],
+            "tie_precision": 0.25,
+            "mean_predictive_entropy": 0.5061955760230795,
+            "mean_class_probability": [
+              0.5092177440761233,
+              0.3601561347243846,
+              0.13062612119949238
+            ],
+            "predicted_class_fraction": [
+              0.5625,
+              0.375,
+              0.0625
+            ],
+            "tie_auc": 0.6307884856070087,
+            "confusion_matrix": [
+              [
+                17,
+                7,
+                2
+              ],
+              [
+                8,
+                12,
+                1
+              ],
+              [
+                11,
+                5,
+                1
+              ]
+            ]
+          },
+          "fixed_calibration_metrics": {
+            "rows": 64,
+            "log_loss": 0.977027510529022,
+            "accuracy": 0.453125,
+            "macro_f1": 0.4209374854536145,
+            "brier": 0.5809658643066442,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.870217508639513,
+              0.9282282754685062,
+              1.2006653920230266
+            ],
+            "class_recall": [
+              0.5769230769230769,
+              0.5238095238095238,
+              0.17647058823529413
+            ],
+            "tie_precision": 0.21428571428571427,
+            "mean_predictive_entropy": 0.9786013991162263,
+            "mean_class_probability": [
+              0.3826001069072218,
+              0.33203515923506655,
+              0.2853647338577116
+            ],
+            "predicted_class_fraction": [
+              0.453125,
+              0.328125,
+              0.21875
+            ],
+            "tie_auc": 0.6220275344180225,
+            "confusion_matrix": [
+              [
+                15,
+                6,
+                5
+              ],
+              [
+                4,
+                11,
+                6
+              ],
+              [
+                10,
+                4,
+                3
+              ]
+            ]
+          },
+          "historical_h37_identity": {
+            "rows": 64,
+            "mean_probability_difference": 0.021881715478632657,
+            "max_probability_difference": 0.1763645980303794,
+            "argmax_disagreement": 0.015625,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "v3_native_difference": {
+            "rows": 64,
+            "mean_probability_difference": 0.02200530163490677,
+            "max_probability_difference": 0.18526703419397594,
+            "argmax_disagreement": 0.046875,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "raw_loss_effect": {
+            "gain": -0.00671400106327508,
+            "interval_95": [
+              -0.047577619367684586,
+              0.035566962394352225
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "fixed_calibration_loss_effect": {
+            "gain": -0.00500313101033189,
+            "interval_95": [
+              -0.016487885204913472,
+              0.00710767752680503
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "mean_tokens": 705.453125,
+          "truncated_rows": 13
+        },
+        "restart": {
+          "seconds": 53.26378607899983,
+          "seconds_per_row": 0.8322466574843723,
+          "raw_metrics": {
+            "rows": 64,
+            "log_loss": 1.4266761448724181,
+            "accuracy": 0.484375,
+            "macro_f1": 0.40566959921798623,
+            "brier": 0.7371469173692318,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8270606666594583,
+              1.2263165475625109,
+              2.5912381435221237
+            ],
+            "class_recall": [
+              0.6923076923076923,
+              0.5714285714285714,
+              0.058823529411764705
+            ],
+            "tie_precision": 0.2,
+            "mean_predictive_entropy": 0.5055758870694443,
+            "mean_class_probability": [
+              0.5033352343255942,
+              0.3629708461656042,
+              0.1336939195088015
+            ],
+            "predicted_class_fraction": [
+              0.5625,
+              0.359375,
+              0.078125
+            ],
+            "tie_auc": 0.6220275344180225,
+            "confusion_matrix": [
+              [
+                18,
+                6,
+                2
+              ],
+              [
+                7,
+                12,
+                2
+              ],
+              [
+                11,
+                5,
+                1
+              ]
+            ]
+          },
+          "fixed_calibration_metrics": {
+            "rows": 64,
+            "log_loss": 0.980638792774308,
+            "accuracy": 0.515625,
+            "macro_f1": 0.4828412494651262,
+            "brier": 0.5837690032994948,
+            "class_counts": [
+              26,
+              21,
+              17
+            ],
+            "class_loss": [
+              0.8726665532257859,
+              0.9299290266719406,
+              1.2084142819749717
+            ],
+            "class_recall": [
+              0.6538461538461539,
+              0.5714285714285714,
+              0.23529411764705882
+            ],
+            "tie_precision": 0.3076923076923077,
+            "mean_predictive_entropy": 0.9768615580327749,
+            "mean_class_probability": [
+              0.38127625904861984,
+              0.332564980230322,
+              0.2861587607210583
+            ],
+            "predicted_class_fraction": [
+              0.484375,
+              0.3125,
+              0.203125
+            ],
+            "tie_auc": 0.6107634543178974,
+            "confusion_matrix": [
+              [
+                17,
+                4,
+                5
+              ],
+              [
+                5,
+                12,
+                4
+              ],
+              [
+                9,
+                4,
+                4
+              ]
+            ]
+          },
+          "historical_h37_identity": {
+            "rows": 64,
+            "mean_probability_difference": 0.021188102693906818,
+            "max_probability_difference": 0.13040055683200136,
+            "argmax_disagreement": 0.046875,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "v3_native_difference": {
+            "rows": 64,
+            "mean_probability_difference": 0.023965225167599604,
+            "max_probability_difference": 0.1962340989742717,
+            "argmax_disagreement": 0.078125,
+            "limits": {
+              "mean": 0.01,
+              "maximum": 0.1
+            },
+            "passed": false
+          },
+          "raw_loss_effect": {
+            "gain": -0.021235696155419263,
+            "interval_95": [
+              -0.07120597256163026,
+              0.02728702909501332
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "fixed_calibration_loss_effect": {
+            "gain": -0.00861441325561777,
+            "interval_95": [
+              -0.021276924438743548,
+              0.0043997338080132556
+            ],
+            "groups": 64,
+            "rows": 64,
+            "replicates": 2000
+          },
+          "mean_tokens": 705.453125,
+          "truncated_rows": 13
+        }
+      },
+      "comparisons": {
+        "repeat": {
+          "rows": 64,
+          "mean_probability_difference": 0.0208132374385855,
+          "max_probability_difference": 0.2439509080644071,
+          "argmax_disagreement": 0.03125,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false
+        },
+        "permuted": {
+          "rows": 64,
+          "mean_probability_difference": 0.02795054630439557,
+          "max_probability_difference": 0.23726768918810237,
+          "argmax_disagreement": 0.03125,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false
+        },
+        "restart": {
+          "rows": 64,
+          "mean_probability_difference": 0.02548657702539382,
+          "max_probability_difference": 0.20859671722822914,
+          "argmax_disagreement": 0.03125,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false
+        }
+      },
+      "prepared_tokens_identical_across_every_case_and_pass": true,
+      "repeatability_passed": false,
+      "historical_cache_identity_passed": false,
+      "conservative_judge_seconds_per_row": 0.8843271865468747,
+      "projected_cascade_seconds": 24477.816837121856,
+      "runtime_guard_passed": true,
+      "qualifies_for_consistent_fitting_cache": false,
+      "sampled_device_used_peak_mib": [
+        9551,
+        8833
+      ],
+      "server_load_seconds": [
+        94.12098777199998,
+        6.243342857000016
+      ]
+    }
+  },
+  "selected_recipe": null,
+  "new_uniform_cache_admitted": false,
+  "historical_h37_raw_metrics": {
+    "rows": 64,
+    "log_loss": 1.4054404487169987,
+    "accuracy": 0.46875,
+    "macro_f1": 0.39387315780758403,
+    "brier": 0.7311330072709564,
+    "class_counts": [
+      26,
+      21,
+      17
+    ],
+    "class_loss": [
+      0.8011706295798445,
+      1.2232850430898474,
+      2.5546333202308924
+    ],
+    "class_recall": [
+      0.6538461538461539,
+      0.5714285714285714,
+      0.058823529411764705
+    ],
+    "tie_precision": 0.2,
+    "mean_predictive_entropy": 0.5010444988173506,
+    "mean_class_probability": [
+      0.5012375907225668,
+      0.3596222183610874,
+      0.1391401909163459
+    ],
+    "predicted_class_fraction": [
+      0.546875,
+      0.375,
+      0.078125
+    ],
+    "tie_auc": 0.6245306633291614,
+    "confusion_matrix": [
+      [
+        17,
+        7,
+        2
+      ],
+      [
+        7,
+        12,
+        2
+      ],
+      [
+        11,
+        5,
+        1
+      ]
+    ]
+  },
+  "historical_h37_fixed_calibration_metrics": {
+    "rows": 64,
+    "log_loss": 0.9720243795186901,
+    "accuracy": 0.484375,
+    "macro_f1": 0.4689715584024527,
+    "brier": 0.5770054330994966,
+    "class_counts": [
+      26,
+      21,
+      17
+    ],
+    "class_loss": [
+      0.8644309061265264,
+      0.920958335123685,
+      1.1996606877828886
+    ],
+    "class_recall": [
+      0.5384615384615384,
+      0.5714285714285714,
+      0.29411764705882354
+    ],
+    "tie_precision": 0.3125,
+    "mean_predictive_entropy": 0.9756088274631576,
+    "mean_class_probability": [
+      0.3809699523508258,
+      0.33360136054110395,
+      0.28542868710807034
+    ],
+    "predicted_class_fraction": [
+      0.4375,
+      0.3125,
+      0.25
+    ],
+    "tie_auc": 0.6182728410513141,
+    "confusion_matrix": [
+      [
+        14,
+        5,
+        7
+      ],
+      [
+        5,
+        12,
+        4
+      ],
+      [
+        9,
+        3,
+        5
+      ]
+    ]
+  },
+  "fixed_calibrator_sha256": "8f0420d33116a7893c859cb9b5213d823d18143a4a21efed6bde95472dba1cda",
+  "calibration_diagnostic_limit": "These64known rows were in the frozen2048-row calibrator fitting cohort. Diagnostic only, not independent quality validation; no parameters fitted here.",
+  "model_identity": {
+    "source": "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2",
+    "filename": "gemma-4-26B_q4_0-it.gguf",
+    "bytes": 14439361440,
+    "sha256": "4c856523d61d77922dbc0b26753a6bf6208e5d69d80db0c04dcd776832d054c5"
+  },
+  "native_hardware_verified": true,
+  "classifier_profile_seconds_per_row": 0.6058648357892445,
+  "joint_setup_allowance_seconds": 395.90864416327304,
+  "session_seconds": 783.7562580108643,
+  "charged_seconds": 801.8500000000058,
+  "span_charged_seconds": 839.252999999997,
+  "memory_note": "Sampled total device-used MiB including runtime/driver, not allocator peak.",
+  "official_score_unchanged": 0.95481,
+  "source_sha256": "e865f04e5d17ad167a4a72fb365a26cdbee9f55bf60618b2916a31b3e8e02b6c",
+  "private_summary_sha256": "e1ea5c543ab477428471cb730054dfcdab1054fabf8c3367e739e631c515cf4f"
+}

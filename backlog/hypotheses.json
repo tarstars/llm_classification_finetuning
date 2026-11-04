@@ -2934,30 +2934,34 @@
       ],
       "risk": "high",
       "claim": "Postcalibration may recover miscalibration introduced by an affordable routed mixture, after component calibration and routing are already accounted for.",
-      "basis": "V3 H39 selected20% entropy cascade has cached loss0.955138 versus matched classifier0.959997, gain0.004859 CI[0.000245,0.009314]. H43 calibrated full-vector mixture improves0.941681 to0.931579, gain0.010102 CI[0.004034,0.015725], while preserving tie probability is worse. These observations motivate a route-calibration test; they do not measure its gain. Final E02 verification then failed raw-cache identity0.020895mean/0.188726max, and the20% current runtime projection misses7h. Existing cached calibration gains remain exploratory evidence for their recorded recipe, not a current deployable gain.",
-      "first_test": "Require an E04-verified stable or consistently re-evaluated native numerical recipe before using its caches; a done status alone is not a passing compatibility gate. CPU caches only, using all available uniformly scored matched latest-classifier/judge rows with explicit coverage. Lock the existing20% entropy route type before this experiment. Compare exactly three families: original routed mixture, global symmetric temperature/tie calibration after routing, and low-capacity route-specific symmetric temperature/tie calibration. Refit the complete component-calibration/weight/threshold/postcalibration chain inside grouped training folds and select families only inside inner validation. Do not reuse full-cache fitted gate or calibrator parameters on outer-held labels. Retain classifier, random-routing and matched global-calibration controls; no new inference in the initial pilot.",
+      "basis": "V3 H39 selected20% entropy cascade has cached loss0.955138 versus matched classifier0.959997, gain0.004859 CI[0.000245,0.009314]. H43 calibrated full-vector mixture improves0.941681 to0.931579, gain0.010102 CI[0.004034,0.015725], while preserving tie probability is worse. These observations motivate a route-calibration test; they do not measure its gain. Final E02 verification then failed raw-cache identity0.020895mean/0.188726max, and the20% current runtime projection misses7h. Existing cached calibration gains remain exploratory evidence for their recorded recipe, not a current deployable gain. V4 E04 then found both cache modes unstable for identical token inputs; cache_off passes only the conditional runtime projection. No H44 fit or uniform rescore was run.",
+      "first_test": "Require an actually stable and feasible recipe from E04/E05, not merely a done status. If E05 yields only a slow diagnostic control, keep this task deferred. Require an E04-verified stable or consistently re-evaluated native numerical recipe before using its caches; a done status alone is not a passing compatibility gate. CPU caches only, using all available uniformly scored matched latest-classifier/judge rows with explicit coverage. Lock the existing20% entropy route type before this experiment. Compare exactly three families: original routed mixture, global symmetric temperature/tie calibration after routing, and low-capacity route-specific symmetric temperature/tie calibration. Refit the complete component-calibration/weight/threshold/postcalibration chain inside grouped training folds and select families only inside inner validation. Do not reuse full-cache fitted gate or calibrator parameters on outer-held labels. Retain classifier, random-routing and matched global-calibration controls; no new inference in the initial pilot.",
       "acceptance": "At least0.001 lower overall log loss with positive paired group evidence against the matched original cascade, and route-specific benefit must also survive the global postcalibration control. Report actual routed fraction, class/tie channels and clipping/order coverage; require an offline runtime path before deployment.",
       "stop": "Stop if the apparent gain is explained by global calibration, vanishes under properly nested fitting, materially worsens overall loss, needs target-based routing or cannot fit the deployment budget. No untouched-data claim from inspected caches.",
       "risk_reason": "A new formula chosen after seeing these dev results can overfit. Full-cache fitted routing parameters leak evaluation labels into a naive postcalibration CV. Route-specific fits use fewer examples and can be unstable.",
       "mitigation": "Predeclare only three families, nest every fitted stage by prompt group, keep parameter counts small and preserve common controls. Use paired group intervals conditional on fitted OOF predictions and seek a separately frozen new-group check if further inference is funded.",
       "rationale": "A cheap new test of affordable mixture calibration, distinct from completed H40 single-model calibration, H43 full-vector/conditional blending and H39 route selection. Its planning gain is relative to the matched routed model and is not additive with previous gains.",
-      "revision": "New v4 proposal from actual v3 matched cached findings. Do not execute during v3 or silently add a third H39 routing variant. After the final E02 compatibility failure, add E04 explicitly; do not optimize a deployable calibrator against a stale incompatible cache. Use the historical result as motivation only.",
+      "revision": "New v4 proposal from actual v3 matched cached findings. Do not execute during v3 or silently add a third H39 routing variant. After the final E02 compatibility failure, add E04 explicitly; do not optimize a deployable calibrator against a stale incompatible cache. Use the historical result as motivation only. Deferred in v4 after real E04 failure; add E05 client-concurrency qualification as an explicit prerequisite. Original gain range remains an unmeasured forecast, not a v4 measurement.",
       "depends_on": [
         "E00",
         "H39",
         "H43",
-        "E04"
+        "E04",
+        "E05"
       ],
       "evidence": [
         "docs/SPAN_003_H39.md",
         "docs/SPAN_003_H43.md",
         "results/span_003/cached_results.json",
         "docs/SPAN_003_E02.md",
-        "results/span_003/native_profile_results.json"
+        "results/span_003/native_profile_results.json",
+        "docs/SPAN_004_E04.md",
+        "docs/SPAN_004_H44.md",
+        "results/span_004/repeatability_results.json"
       ],
       "id": "H44",
       "rank": 48,
-      "status": "planned",
+      "status": "deferred",
       "introduced_in": 4,
       "discovered_during": 3,
       "derived_from": [
@@ -2979,6 +2983,14 @@
           "note": "Final E02 numerical compatibility failure changes the prerequisite: require E04 stable/consistent native scores before a deployable route-calibration comparison. Historical cached gain remains motivation only; no v4 task executed.",
           "evidence": [
             "docs/SPAN_003_E02.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T16:20:37+00:00",
+          "status": "deferred",
+          "note": "Unexecuted in v4: E04 completed with negative stability findings for both cache settings. Do not fit against incompatible caches or count old v3 blend gain as a new result. E05 now explicitly gates resumption; require a genuinely stable feasible recipe and consistent fitting cache, not a completed prerequisite status.",
+          "evidence": [
+            "docs/SPAN_004_H44.md"
           ]
         }
       ]
@@ -3026,7 +3038,7 @@
       ],
       "id": "E04",
       "rank": 49,
-      "status": "running",
+      "status": "done",
       "introduced_in": 4,
       "discovered_during": 3,
       "derived_from": [
@@ -3057,18 +3069,86 @@
           "evidence": [
             "results/span_004/manifest_guard_recovery.json"
           ]
+        },
+        {
+          "at": "2026-11-04T16:20:37+00:00",
+          "status": "done",
+          "note": "Completed all eight64-row passes/512 fresh requests and verified identical token inputs/raw responses. cache_on and cache_off both fail fixed0.001/0.01 replay/order/restart guards; cache_off runtime alone passes. No serving recipe qualifies, no uniform rescore or H44 fit. Total839.253s charged includes failed pre-inference guard. Cause unisolated; E05 queued for v5.",
+          "evidence": [
+            "docs/SPAN_004_E04.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Test native judge sensitivity to request concurrency",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        1.5
+      ],
+      "followup_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "A controlled client-concurrency ablation can test whether concurrent execution contributes to raw probability drift that persists with prompt reuse disabled. It does not promise stable or fast serving.",
+      "basis": "V4 E04 scored512 fresh requests on64 fixed rows with identical prepared token IDs. cache_on repeat/order/restart mean drift0.0188-0.0232 and maxima0.1708-0.3282; cache_off mean0.0208-0.0280 and maxima0.2086-0.2440. Both fail fixed0.001/0.01 guards. cache_off runtime projection24477.82s fits7h conditionally, but numerical stability still fails. Cache reuse alone is not a sufficient explanation.",
+      "first_test": "Freeze the existing64-row sentinel, permutation, model/runtime SHA, prompt/token IDs, label mapping and cache_prompt=false. Compare at most two client request-concurrency levels,1 and16, while keeping the16-slot server and all model/context/batch settings unchanged. Replay identical order, fixed permutation and a clean restart; verify request/response and token hashes. Use no competition labels to choose settings. Count cold setup, all passes and failed work; stop the bounded pilot if the serial condition cannot fit its frozen allowance.",
+      "acceptance": "A passing recipe meets the unchanged mean0.001/max0.01 repeatability guards for every declared comparison, with verified identical inputs and measured native devices/runtime. A concurrency explanation requires the matched comparison, not merely a single stable run. Only a stable, feasible recipe can justify consistent fitting-cache rescoring and H44; diagnostic serial stability alone is not deployment acceptance.",
+      "stop": "Stop if both conditions remain unstable, if changed tokenization/model weights confound the comparison, or if stability requires an infeasible route. Do not add precision/kernel/configuration searches or relax thresholds after seeing results. Preserve all old caches and defer H44 when no practical recipe is established.",
+      "risk_reason": "Batch composition and backend numerics are unisolated. Serial execution may establish a diagnostic control while being much too slow. Existing dev rows are inspected, and tuning toward a particular historical cache could hide a different recipe.",
+      "mitigation": "Change only client concurrency, retain fixed server/model/cache settings and raw traces, predeclare tolerances/budgets, avoid target-based serving selection and keep historical equivalence separate from within-recipe repeatability. A uniform new cache must be scored consistently after qualification.",
+      "rationale": "Specific follow-up to a completed two-cache-setting diagnostic. Different from classifier inference-precision H08 and completed native packaging E02; it isolates a previously untested execution factor before further calibration expense.",
+      "revision": "New v5 proposal from v4 E04 failure. No v5 execution in the v4 goal. Planning cost includes deliberately slower serial controls; benefit is methodological qualification rather than a direct log-loss forecast.",
+      "depends_on": [
+        "E00",
+        "E04"
+      ],
+      "evidence": [
+        "docs/SPAN_004_E04.md",
+        "results/span_004/repeatability_results.json",
+        "docs/SPAN_004_H44.md"
+      ],
+      "id": "E05",
+      "rank": 50,
+      "status": "planned",
+      "introduced_in": 5,
+      "discovered_during": 4,
+      "derived_from": [
+        "E04"
+      ],
+      "history": [
+        {
+          "at": "2026-11-04T16:20:37+00:00",
+          "status": "planned",
+          "note": "Both fixed cache settings fail replay/order/restart stability despite identical token inputs; cache reuse alone is insufficient. Queue one bounded client-concurrency ablation with unchanged16-slot server and cache disabled. Cause remains unisolated; no v5 execution.",
+          "evidence": [
+            "docs/SPAN_004_E04.md"
+          ]
         }
       ]
     }
   ],
   "framing": [
     "Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.",
-    "**All gain ranges are subjective planning ranges, not measured gains, expected values, confidence intervals or guarantees.** They allow regression. They describe incremental overall loss reduction against a matched, calibrated, swap-averaged attempt-002 comparator on identical evaluation rows. For judge-only changes, also report the judge-relative change; it is not automatically a gain over LoRA. Related changes overlap, so their ranges cannot be added. Original November3 ranges were not remeasured for every carryover in v3. New work must reassess them against the latest frozen H03 reference and retain historical checkpoint800 controls separately; do not mechanically add or subtract gains across cohorts.",
+    "**All gain ranges are subjective planning ranges, not measured gains, expected values, confidence intervals or guarantees.** They allow regression. They describe incremental overall loss reduction against a matched, calibrated, swap-averaged attempt-002 comparator on identical evaluation rows. For judge-only changes, also report the judge-relative change; it is not automatically a gain over LoRA. Related changes overlap, so their ranges cannot be added. Original November3 ranges were not remeasured for every carryover in completed spans. New work must reassess them against the latest frozen H03 reference and retain historical checkpoint800 controls separately; do not mechanically add or subtract gains across cohorts.",
     "Priority combines measured evidence, plausible upside and the cost of getting an informative answer. P1 is the first model-pilot wave after E00; cheap calibration/coverage audits can run on CPU in parallel with that work. Low gain confidence applies to every estimate; qualitative risk describes execution, validity and deployment hazards, not a numeric probability of failure.",
     "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
     "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.",
     "Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots.",
-    "V3 completed E03/H39/E02/H43 and verified the frozen H03 step1438 classifier at official log loss0.95481 (local full-dev0.954069). Matched2,048-row judge complementarity survives against this latest classifier, but native numerical identity and selected-route runtime gates fail; its local blend gains are not deployed or additive. V3 is sealed; v4 has35tasks (33unfinished carryovers plus H44/E04), focus E04/H44 under the newly activated v4 goal; no experiment has launched during activation. V5 is empty draft. Before any GPU launch, refresh actual resources and freeze the v4 protocol and budgets."
+    "V3 verified H03 step1438 at official loss0.95481. V4 completed E04:512 fresh native requests on64rows show substantial drift for identical token inputs with either cache setting. H44 was not fitted and is deferred; E05 request-concurrency diagnosis is queued for v5. Old cached blend gains remain exploratory, conditional on their recorded predictions, not verified deployment gains. Best official score is unchanged. A new span needs a selected focus and fresh resources."
   ],
   "revisions": [
     "**H07/H06:** the final causal classification token already sees both retained answers. Bidirectional masking is an architectural experiment, not a fix for missing access to answer B; H07 moves to P4.",
@@ -3081,7 +3161,9 @@
     "**H15/H37–H39:** the original teacher/complementarity claim was unproven. V2/v3 now establish matched local judge complementarity, including against improved H03, while current numerical identity/runtime gates still fail. This is not evidence that distillation, specialists or deployment improve quality; those require their own bounded tests and a compatible recipe.",
     "**H36/H40:** related blends/calibrators already showed small uncertain gains. These are low-cost extensions, not untouched breakthrough ideas.",
     "Retained all forty IDs for traceability. H12, H36 and H40 have deliberately bounded CPU-first scopes; deeper training/OOF work requires a separately recorded budget. Added E00 outside the count to make dependencies and evaluation prerequisites explicit.",
-    "V3 closing update2026-11-04: refresh current global framing to verified official0.95481 and latest matched controls; retain original subjective forecasts unless task evidence warrants a revision. This administrative refresh followed v3-final/v4-start sealing: their old0.97025 introductory framing is preserved as a documented erratum, while their E03 task record already contains0.95481. Do not rewrite sealed snapshot bytes. See docs/SPAN_003_COMPLETION.md."
+    "V3 closing update2026-11-04: refresh current global framing to verified official0.95481 and latest matched controls; retain original subjective forecasts unless task evidence warrants a revision. This administrative refresh followed v3-final/v4-start sealing: their old0.97025 introductory framing is preserved as a documented erratum, while their E03 task record already contains0.95481. Do not rewrite sealed snapshot bytes. See docs/SPAN_003_COMPLETION.md.",
+    "V4 E04: disabling prompt reuse alone does not establish stable probabilities; batch/concurrency sensitivity remains untested. H44 is explicitly deferred behind new E05 and a genuinely stable feasible recipe. No v4 blend gain or new official score is claimed; unchanged forecast ranges remain subjective plans.",
+    "V4 closure bibliography erratum: one v3 source-list sentence in sealed v4-final/v5-start still says no v4 experiment has run. It was inherited from the activation record; their task outcomes and main framing correctly record completed E04 and deferred H44. Correct the current bibliography, preserve sealed snapshot bytes, and use docs/SPAN_004_COMPLETION.md for the closing interpretation."
   ],
   "evaluation": [
     "Keep the exact prompt-grouped split IDs and frozen attempt-002 reference. Existing dev and confirmation were inspected and are exploratory. New grouped inner validation must retrain models without its held-out groups; cached in-sample training predictions cannot stand in for OOF predictions. Nested selection reduces additional tuning bias but cannot retroactively make inspected data untouched.",
@@ -3097,9 +3179,10 @@
     "[Original 40-item register and historical context](docs/HYPOTHESES_0_8.md); Git history preserves the original wording.",
     "[First-place author, related 2024 LMSYS competition](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629) reported 0.876 public versus 0.96898 private. [Kaggle staff](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/524376) described rerunning on a new private set. That is a different competition and does not establish a clean 0.8 target here.",
     "[Skywork reward-model repository](https://github.com/SkyworkAI/Skywork-Reward), [Skywork Reward V2 paper](https://arxiv.org/abs/2507.01352), and [second-place LMSYS write-up](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527685) supply technical precedents, not measured local gains or verified deployment feasibility.",
-    "[V3 results](docs/SPAN_003_RESULTS.md), [official verification](results/span_003/deployed_candidate.json) and [completion/archival framing erratum](docs/SPAN_003_COMPLETION.md) supersede the earlier global best-score framing. No v4 experiment has run."
+    "[V3 results](docs/SPAN_003_RESULTS.md), [official verification](results/span_003/deployed_candidate.json) and [completion/archival framing erratum](docs/SPAN_003_COMPLETION.md) supersede the earlier global best-score framing. These v3 references predate v4; the completed v4 diagnostic is linked below.",
+    "[V4 results](docs/SPAN_004_RESULTS.md), [native repeatability evidence](docs/SPAN_004_E04.md) and [H44 deferral](docs/SPAN_004_H44.md) record the completed diagnostic and conditional next-stage stop."
   ],
-  "active_version": 4,
+  "active_version": 5,
   "versions": [
     {
       "number": 1,
@@ -3319,7 +3402,7 @@
     },
     {
       "number": 4,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -3374,10 +3457,65 @@
       "carried_from": 3,
       "start_sha256": "33d49170b1ca4c95d573761a6119589d15e29faf94ef8a836d8c44088f06c148",
       "start_markdown_sha256": "81407a66c1db9dd0e1769b0236c6fdbaf30a098ad98db3c6aed4080488b262a1",
-      "start_sealed_at": "2026-11-04T13:22:33+00:00"
+      "start_sealed_at": "2026-11-04T13:22:33+00:00",
+      "final_sha256": "79aabf21bd7fc5de5938707f9c4914e78a8f35bb79543fd38e05c4e8256fcf63",
+      "final_markdown_sha256": "1a9a0060681fcdcf992c0b6b5d4addca3cd5d7d7a7e7b9bf182d9589efa22e3b",
+      "final_sealed_at": "2026-11-04T16:36:02+00:00",
+      "closed_at": "2026-11-04T16:36:02+00:00",
+      "closing_note": "V4 completed E04 with 512 fresh requests: neither cache setting passes fixed repeatability guards. H44 remains unexecuted and deferred against this failed prerequisite. Queued E05 request-concurrency diagnostic for v5; total charge 839.253 seconds, no new submission. Stop before v5 execution.",
+      "closing_evidence": [
+        "docs/SPAN_004_RESULTS.md"
+      ]
     },
     {
       "number": 5,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H36",
+        "H38",
+        "H41",
+        "H44",
+        "E05"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 4,
+      "start_sha256": "2a31cc95353ecbfd736b5f8c07360681e8dd54ef15eee8606f30bd85767d5847",
+      "start_markdown_sha256": "e073b57480323fe77b8e3fc3d56f09872b58a81972caee4b7c91500d8375e665",
+      "start_sealed_at": "2026-11-04T16:36:02+00:00"
+    },
+    {
+      "number": 6,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

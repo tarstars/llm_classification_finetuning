@@ -1,38 +1,43 @@
 # Project memory
 
-## Current state — active v4 goal, 2026-11-04
+## V4 closing snapshot — 2026-11-04
 
-First attempt is now terminal ERROR before model inference: a serialized-manifest
-SHA guard depended on package-key order. Parsed manifests/all175file records are
-identical; preserve37.403s charge. A separate canonical-manifest retry is RUNNING,
-capped1680s; both attempts plus60s reserve bound1777.403<=original1800s. Same
-worker, inputs, two configurations and numeric limits. Corrected contract727615e
-was pushed before source `arseniytrushin/llm-preference-span-004-native-repeatability-retry/1`
-was accepted15:32:41UTC. Live controller73210, log
-`/tmp/arena_span004_repeatability_retry_controller.log`. See recovery proof and
-context handoff; do not restart either the completed first job or the live retry.
+V4 is sealed; **v5 is active with35tasks** (34carryovers plus new E05), no focus
+or execution. V6 is an empty draft. The v4 goal stops at this boundary.
+**E04 is done with negative evidence; H44 was not fitted and is deferred.**
+Both cache_prompt settings fail all repeat/permutation/restart probability guards
+on the same64rows/64groups:512fresh requests, prepared tokens identical throughout.
+Mean drift0.0188–0.0280 and maximum0.1708–0.3282 exceed fixed0.001/0.01.
+Actual two-T4 native execution and175runtime files pass their identity checks.
+Disabling prompt reuse alone does not establish repeatability. Request concurrency
+is an untested follow-up, E05, rather than an established cause. H44 requires a
+passing stable/feasible recipe and consistent fitting scores before calibration.
 
-Premeasurement protocol/input/resource/native-source contract **77fdda2** is
-committed/pushed. Exact job `arseniytrushin/llm-preference-span-004-native-repeatability/1`
-was accepted15:11:46UTC and later failed at its manifest guard, capped1,800s. Controller90738 monitored the
-actual returned ref; log `/tmp/arena_span004_repeatability_controller.log`.
-No new quality result yet. One log-stream timeout did not change live status.
-The analyzer is prepared for post-terminal trace/stability/runtime/loss checks;
-H44 remains gated. See context handoff before any action; never duplicate the job.
+Best official loss remains **0.95481**, submission57979825. No new submission,
+classifier training, optional2,048-row rescore,1,024-row follow-up or H44 fit.
+Frozen-calibration losses on the64known rows are descriptive, not independent
+validation. The unchanged classifier, training-prior, majority and uniform
+controls are included. Confirmation was unused; original labels/caches preserved.
 
-The user set the v4 goal. Original activation **14:29:32 UTC on November4**,
-epoch1793802572; fixed deadline **November6 at14:29:32 UTC**. Active objective
-is `GOAL.md`, focus **E04 then H44**. V4 has35members; the other33 remain eligible
-carryovers. Finish a bounded repeatability/calibration span, seal v4/form v5 and
-empty v6, then stop. No official submission or classifier training in this span.
+Original start14:29:32UTC November4, deadlineNovember6 same time; original
+quota-reduced cap29,337.999s. First setup failed before inference on serialized
+JSON ordering (37.403s); semantic identity of all175file records justified a
+precommitted canonical-manifest correction. Retry completed (801.850s), worker/
+inputs/configurations/thresholds unchanged. Total **839.253s /0.23313session-hours**
+is below the original1,800-second diagnostic cap. Final quota79,501.254s used,
+zero reservations, no paid scaling or refresh extension. Exact GPU sources are
+terminal; the stuck read-only local downloader exited143 and55selected artifacts
+were recovered with bounded verified reads, with zero additional GPU launches.
 
-Read-only setup quota reports29,337.999seconds available and zero reservations.
-Fresh complete resource/job inventory and a committed experiment protocol/config
-are still required before GPU work. Initial diagnostic ceiling1,800s, consistent
-rescoring7,200s, conditional new-group check3,600s and offline profile1,800s;
-all count against the original quota-reduced cap. No v4 experiment was launched
-during activation. Best official score remains0.95481. Archive `docs/GOAL_V3.md`
-preserves the completed contract byte-for-byte; user notebook07 remains untouched.
+Fresh terminal/source audit reconstructs512response vectors and16paired loss
+intervals, verifies the two actual versions, score and zero current reservations.
+Fourteen previous snapshot files remain unchanged. Global framing was refreshed
+before sealing; post-advance tooling checks and the executed notebook15 record
+the actual version boundary. See [v4 results](SPAN_004_RESULTS.md),
+[completion](SPAN_004_COMPLETION.md), [notebook15](../notebooks/15_backlog_v4_span.ipynb)
+and [context handoff](CONTEXT_HANDOFF.md). Preserve user notebook07's metadata edit.
+
+Entries below are historical snapshots, including old “active/pending” wording.
 
 ## V3 closing snapshot — 2026-11-04
 
