@@ -6,7 +6,7 @@ Version **3**, active; **37** tasks. Focus for this span: E03, H39, E02, H43.
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **24**, ready **0**, running **1**, done **1**, rejected **0**, deferred **9**.
+Hypothesis status: planned **24**, ready **0**, running **0**, done **2**, rejected **0**, deferred **9**.
 
 Our best recorded official score is **0.97025**. Reaching 0.8 would require **0.17025** lower log loss (about 17.5%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of 1.0 or prove leaderboard gains are target leakage.
 
@@ -59,8 +59,8 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 31 | [H39](#h39) | P1 / running | Budgeted strong-judge cascade | -0.01…+0.015 | high | 2…6 | 0…0 | 2…8 | E00, H37, H03 |
-| 46 | [E02](#e02) | P1 / running | Package an offline native CUDA runtime and verify backend execution | — | medium | 2…6 | 0.1…0.5 | 0…0 | E00, E01 |
+| 31 | [H39](#h39) | P1 / done | Budgeted strong-judge cascade | -0.01…+0.015 | high | 2…6 | 0…0 | 2…8 | E00, H37, H03 |
+| 46 | [E02](#e02) | P1 / done | Package an offline native CUDA runtime and verify backend execution | — | medium | 2…6 | 0.1…0.5 | 0…0 | E00, E01 |
 | 47 | [E03](#e03) | P1 / running | Verify the continued classifier export offline and obtain one frozen official score | — | medium | 2…4 | 0.1…0.25 | 4…6 | E00, E01, H03 |
 | 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
@@ -124,7 +124,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 
 ### H39
 
-**Budgeted strong-judge cascade** — P1, running, risk high.
+**Budgeted strong-judge cascade** — P1, done, risk high.
 
 A costly judge may help selected rows if a gate can predict its incremental benefit.
 
@@ -154,10 +154,11 @@ A costly judge may help selected rows if a gate can predict its incremental bene
 - 2026-11-04T04:19:43+00:00 — planned: Final v2 handoff explicitly requires the accepted H03 step1438 comparator before cached cascade selection; prior checkpoint800 ensemble gain is not additive. No v3 experiment executed. Evidence: [docs/SPAN_002_H03.md](docs/SPAN_002_H03.md)
 - 2026-11-04T08:03:30+00:00 — running: Frozen3cd8407 protocol/resource contract. Starting the predeclared nested2048-row latest-classifier cascade comparison, only10%/20% entropy routes plus matched random/full-blend/component controls; no new inference. Evidence: [docs/SPAN_003_PROTOCOL.md](docs/SPAN_003_PROTOCOL.md)
 - 2026-11-04T08:24:23+00:00 — running: Cached20% entropy route passes primary gate: loss0.959997 to0.955138, gain0.004859 CI[0.000245,0.009314], but superiority over random is unproven. Full-blend complementarity persists; full-data recipe frozen before possible1024-new-group follow-up. E02/runtime gate pending. Evidence: [docs/SPAN_003_H39.md](docs/SPAN_003_H39.md)
+- 2026-11-04T09:08:22+00:00 — done: Cached20% route improves loss but current measured deployment projects26044.8s before extra loading, above25200s.10% route fits projection but qualityCI includeszero; both fail numerical cache identity. Declared gates stop optional1024-row expansion; no route adopted or submitted. Positive cached result and negative deployment evidence preserved. Evidence: [docs/SPAN_003_H39.md](docs/SPAN_003_H39.md)
 
 ### E02
 
-**Package an offline native CUDA runtime and verify backend execution** — P1, running, risk medium.
+**Package an offline native CUDA runtime and verify backend execution** — P1, done, risk medium.
 
 Vendoring the required native CUDA libraries and checking the serving backend itself can make offline judge execution reliable on the current Kaggle image.
 
@@ -186,6 +187,7 @@ Vendoring the required native CUDA libraries and checking the serving backend it
 - 2026-11-03T20:03:58+00:00 — planned: Actual native backend saw zero devices despite two T4 allocations until missing CUDA-12 libraries were installed; queue an offline packaging/backend verification prerequisite for v3. Preserve the failed old-cache identity gate and require consistent numerical comparisons. Evidence: [docs/SPAN_002_RUNTIME.md](docs/SPAN_002_RUNTIME.md)
 - 2026-11-04T08:18:24+00:00 — running: Built portable offline native runtime from immutable binary and completed CUDA12 recovery output, including pinned package metadata/licenses and SHA manifest. Launch64-row reference/device/memory profile under1800s ceiling; preserve unchanged judge source/config. Evidence: [docs/SPAN_003_PROTOCOL.md](docs/SPAN_003_PROTOCOL.md)
 - 2026-11-04T08:40:55+00:00 — running: Nativev1 failed39.515s before inference because our1MiB heuristic rejects valid728800-byte libcudart from pinned official wheel. Correct to ELF/exact runtime-SHA checks; preserve numeric0.01/0.1 limits and failedsource. Allocate one900s retry from original reserve; preview124.745s also explicitly budgeted. Cached config lineage retained at2536daf. Evidence: [results/span_003/runtime_recovery_plan.json](results/span_003/runtime_recovery_plan.json)
+- 2026-11-04T09:08:22+00:00 — done: Offline portable CUDA artifact verified with both actual T4s,64 finite normalized predictions and retained licenses/hashes; numerical compatibility failed mean0.020895/max0.188726 vs0.01/0.1. Stop without relaxing guard or pooling caches. Original39.515s failure and373.405s retry charged; full report distinguishes hardware success from numerical failure. Evidence: [docs/SPAN_003_E02.md](docs/SPAN_003_E02.md)
 
 ### E03
 

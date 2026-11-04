@@ -1,8 +1,8 @@
 {
-  "stage": "waiting_for_kernel",
-  "utc": "2026-11-04T08:47:27.470664+00:00",
+  "stage": "failed",
+  "utc": "2026-11-04T08:50:59.784428+00:00",
   "pid": 1565697,
   "job": "native_profile_retry",
-  "status": "RUNNING",
+  "status": "ERROR",
   "version": 1
 }

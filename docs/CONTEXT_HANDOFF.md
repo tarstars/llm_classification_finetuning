@@ -1,224 +1,141 @@
 # Context handoff — 2026-11-04
 
-**The user has authorized a new v3 goal.** The goal service is active with
-objective `GOAL.md`, original creation epoch **1793778137**: **2026-11-04
-07:42:17 UTC**, immutable deadline **November 6 at 07:42:17 UTC**.
-Focus is **E03, H39, E02, H43**. Defaults remain **12 elapsed two-T4 session-hours
-and 48 wall-clock hours**, constrained by freshly verified available quota.
-The activation record is [results/span_003/activation.json](../results/span_003/activation.json).
-Do not reuse v2's clock or quota baseline, reset this clock, repeat completed
-jobs, or start v4 work. The old v3 boundary is superseded only by this new user
-authorization; the new goal stops after sealing v3 and forming v4.
+The user-authorized v3 goal is **active** (`GOAL.md`). Original activation epoch
+**1793778137**, **November 4 at 07:42:17 UTC**, immutable deadline **November 6 at
+07:42:17 UTC**. Focus **E03/H39/E02/H43**. Effective initial quota reduces the
+12-hour default to **30,076.296 seconds / 8.35453 two-T4 session-hours**. Never
+reset the clock/cap or repeat completed jobs. V4 is a draft, not execution scope.
 
-V3 is executing. The frozen premeasurement contract/resource/input commit is
-`3cd8407`, with effective cap **30076.296 seconds / 8.35453 session-hours**
-(initial used77923.704,0reserved, refreshNov7). Protocol/config under span_003.
-No official v3 submission yet. Check [live report](SPAN_003_RESULTS.md),
-[H39](SPAN_003_H39.md), [H43](SPAN_003_H43.md), current job receipts and service
-state; do not infer liveness from a lock or status file alone.
+Read [GOAL.md](../GOAL.md), [policy](../PROJECT_POLICY.md),
+[live results](SPAN_003_RESULTS.md), [protocol](SPAN_003_PROTOCOL.md), and the
+actual receipt/job artifacts before acting. This is a dated orientation snapshot.
 
-Concrete progress:
-- H43 is done: nested2048-row conditional loss0.945236 loses to vector+calibration
-  0.931579. Plainvector0.941681, latestclassifier0.959997. Selectedfamily gain
-  0.010102 [0.004034,0.015725] versus vector; no deployability claim.
-- H39 running: entropy20% loss0.955138, gain0.004859 [0.000245,0.009314], actual
-  routed19.92%. Random20%0.956761; superiority of entropy over random unproven.
-  Full-blend complementarity survives latestclassifier. The full2k recipe is
-  frozen before any1024-new-group follow-up; E02/runtime gates still required.
-- E03 running: `classifier-smoke/1` COMPLETE, actual source prefix
-  `arseniytrushin/llm-preference-span-003-`. Offline64-row identity mean0.000212,
-  max0.002180 passes0.002/0.03; visible3-row CSV validated by notebook.
-  Charge200.632s, session184.86s, profile0.591862s/row. Controller handle24300
-  exited0. Prediction preview classifier-predict/1 is also COMPLETE; controller97129
-  exited0, session109.63s/charge124.745s. Both CSVs are now independently checked
-  against actual raw IDs/schema, with finite/unit-sum probabilities. No submit.
-- E02 running: `native-profile/1` terminalERROR before inference at our
-  file-size>1MiB heuristic, charge39.515s. Preserve the pushed source/intent and
-  outputs. Never rebuild its launched folder. The official pinned runtime wheel proves libcudart.so.12 is a valid728800-byte
-  ELF. Its PyPI SHA and library SHA are in heavy native_parent_inspect/
-  official_runtime_inspection.json. This is our invalid minimum-size heuristic,
-  not numerical drift. Large parent-library CPU download55228 ended with a
-  ChunkedEncodingError; its partial CUBLAS file is NOT a valid artifact. Do not
-  use that partial file or restart the large download. Replace the heuristic
-  with ELF/checksum verification, preserve failed source, and budget any new
-  GPU retry explicitly. No numerical guard was evaluated.
+## The one live execution
 
-Current recovery state: first native-profile/1 ERROR is preserved. The new
-`native-profile-retry/1` was launched with a900s ceiling and is RUNNING, last
-API observation08:41:34UTC. Controller PTY3989, log
-/tmp/arena_span003_native_retry.log; verify this exact handle/receipt before any
-new launch. New guard checks x86_64 ELF headers and exact libcudart SHA from the
-pinned wheel; numerical0.01/0.1 limits unchanged. Its parent libraries come from
-the original recovery output, not the failed partial local download.
+**Official submission 57979825 is accepted; score pending.** Accepted November 4
+at09:31:37 UTC, source `arseniytrushin/llm-preference-span-003-classifier-predict/1`,
+scriptVersionId **365549578**. Last observed status PENDING; do not invent a score.
+Best recorded official score before this span is **0.97025**.
 
-Config budget amendment is results/span_003/runtime_recovery_plan.json. Preserve
-cached analysis source/config at commit2536daf; current config adds900s retry and
-explicit124.745s completed preview charge, leaving2951.551s recovery reserve.
-Original cap30076.296s and deadline unchanged. Do NOT rerun cached analysis with
-the amended config: its frozen recipe includes the original config. H39 follow-up
-must load frozen_cached_recipes.json and use that recipe without reselecting.
-V4 draft now has H44, a proposed routed-mixture postcalibration experiment based
-on the measured full-blend calibration gain. It has not executed.
+Observer/controller **PTY44399**, log `/tmp/arena_span003_official_bounded.log`.
+Program `scripts/submit_span_003.py`; private state in
+`<heavy root>/runs/span_003/official`, aggregate mirrors in `results/span_003/`.
+Re-poll the exact live handle or accepted ref before acting. If the observer is
+confirmed stopped/missing, rerun the observer with its existing receipt; it skips
+submission and monitors the same ref. An observation timeout does not mean the
+remote job stopped. Never push/submit another candidate or delete intent/receipt.
 
-New programs: prepare_span_003.py; analyze_span_003_cached.py with
-arena/span_cascade.py; build_span_003_classifier.py with arena/span_export.py;
-build_span_003_native.py; run_span_003_job.py. Three new probability/roundtrip/
-label-exclusion tests passed. All generated execution notebooks require the
-F821 source checker. It caught a missing zlib import before native launch and
-was fixed; that was not a GPU failure. The corrected native guard now has a bounded retry in progress; inspect its
-actual outputs before any expansion. Controller output collection now includes CSVs (the old copied pattern
-omitted them); smoke CSVs were re-collected and independently validated locally.
+**No new GPU jobs while the official run is pending.** The job controller enforces
+this once an intent exists. All four preview/profile versions are terminal. The
+submitted notebook has a21,600-second ceiling and its own whole-run deadline;
+one frozen candidate, no refit, no leaderboard retuning. Its64-row offline identity
+and both visible CSVs passed independently; exact remote source/export hashes,
+all49 owned notebook observations and fresh quota were checked before submission.
 
-The cached report/source/config/protocol hashes must retain their lineage if a
-later allocation/configuration changes; do not retroactively rewrite measured
-history. CPU analysis shared by H39/H43 took9.09s. Per-row arrays and sample IDs
-remain private. No v4 experiment or new training has started.
+The first read-only preflight (PTY1625) stalled on TLS before any intent/receipt.
+It was explicitly terminated, verified exit143, with no write or GPU duplication.
+The replacement has10s connect/45s read timeouts, three retries for reads only,
+progress every5 observations and another fresh quota check just before its single
+write. The accepted intent records the current controller SHA; preserve lineage
+if fixing that source later. Do not retry an ambiguous write without reconciliation.
 
-Before an official submission: all other GPU jobs should be terminal so hidden
-execution accounting is isolated; refresh quota, freeze an explicit preview/
-hidden execution ledger and count the preview charge. Reserve the hidden ceiling
-within the remaining original cap. Code-competition rerun quota charging may not
-be fully exposed: report measured weekly charges separately from a conservative
-hidden-execution bound, without double counting. One frozen classifier submission
-only. The current profile projection is18775.95s before measured setup, below the
-21600s role ceiling. Stop if a guard/access/runtime gate fails; preserve receipts
-and reconcile ambiguous uploads before retries.
+## Actual v3 outcomes
 
-Still required: E02 diagnosis/offline verification; classifier preview/official
-receipt if admitted; H39 new-group/runtime check if admitted; reports/notebook14,
-final resource/provenance audit, v3 sealing/v4 formation/emptyv5, publication.
-Stop before executing v4. Full [goal](../GOAL.md); prior contracts
-[GOAL_V1](GOAL_V1.md) and [GOAL_V2](GOAL_V2.md).
+Three focus tasks are done; only E03 waits for the official result.
 
-V2 is complete: all five focus items have reports, all six GPU execution versions
-are terminal, controllers/collector exited, and commit `502e2a7` was pushed and
-verified against remote main. Preserve its frozen evidence and snapshots.
-The information below is dated background; verify current files/service state.
+| Task | Verified outcome |
+| --- | --- |
+| H43 | On2,048 rows/1,953 groups, conditional blend0.945236 loses to calibrated vector0.931579; plain vector0.941681 and latest classifier0.959997. Nested selector chooses calibrated vector in every fold, gain0.010102 [0.004034,0.015725] over vector. Research control only, no deployment claim. |
+| H39 | Cached20% entropy route0.955138, gain0.004859 [0.000245,0.009314], actual routed19.92%. Entropy superiority over random is uncertain. Current native20% projection26,044.80s before extra loading exceeds25,200s;10% fits22,410.37s but its gainCI includes zero. Neither passes all gates. Optional1,024-row expansion was NOT run. |
+| E02 | Portable artifact resolves libraries/licenses, detects and actually uses both native T4s, scores64rows, but raw identity fails mean0.020895/max0.188726 versus fixed0.01/0.1. Cause unisolated. No cache reuse or further judge GPU work in v3. |
+| E03 | Offline64-row classifier mean/max raw-average drift0.000212/0.002180 passes0.002/0.03. Both3-row visible CSVs independently match IDs/schema/finite unit-sum probabilities. Real submission57979825 is pending. |
 
-## Read first
+[H39 report](SPAN_003_H39.md), [H43](SPAN_003_H43.md), [E02](SPAN_003_E02.md),
+[E03](SPAN_003_E03.md), and aggregate JSON contain complete values and limitations.
+All development is inspected/exploratory, confirmation unused. Classifier raw
+views are averaged before calibration; all new component calibration, weights,
+gates and family selection exclude evaluation groups through nested grouped fits.
+Conditional bootstrap intervals do not undo earlier inspection or all multiplicity.
+The native judge is single-order; no both-order invariance is established.
 
-- [Project policy](../PROJECT_POLICY.md), [v2 results](SPAN_002_RESULTS.md),
-  [completion record](SPAN_002_COMPLETION.md), [executed notebook 13](../notebooks/13_backlog_v2_span.ipynb).
-- [H03 report](SPAN_002_H03.md), [H37 report](SPAN_002_H37.md),
-  [terminal audit](../results/span_002/terminal_audit.json),
-  [decisions](../results/span_002/decisions.json).
-- [Active backlog](../BACKLOG.md); canonical registry
-  [backlog/hypotheses.json](../backlog/hypotheses.json).
-- [README](../README.md) links original attempts, EDA, blind judging and leakage
-  audit. [Initial request](../initial_prompt.md) preserves the broader program.
+H43's gain on this2k cohort is not an official or full-dev score. Do not add it to
+H03's old gain or deploy incompatible cached calibrators. No pretraining-corpus
+contamination audit was performed in this span. Original human labels are intact.
 
-## Current model and measured outcomes
+## Sources, budget and artifacts
 
-**Official best remains 0.97025**, attempt002 Qwen3-4B QLoRA checkpoint800.
-No v2 submission was made. Do not replace this with a local estimate.
+Premeasurement contract/input/quota commit **3cd8407**; cached analysis/source/
+configuration commit **2536daf**. Recovery/publication **785f01e**. Preserve sealed
+v1/v2 snapshots. Current config adds a900s native retry plus124.745s completed
+prediction-preview debit, leaving2,951.551s reserve. Cached source hashes must be
+verified against2536daf when current admin configuration differs. **Do not rerun
+cached analysis with the amended config**; frozen recipes retain the original
+config. No new statistical variants were added after measurement.
 
-**New local research reference:** continued step1438, one nominal epoch.
-Full5746-row/5211-group primary matched cross-fitted temperature loss
-**0.968872 → 0.954069**, gain **0.014803 [0.010945,0.018368]**; accuracy53.79%.
-Secondary nested calibration gain0.013321 [0.010274,0.016086]. Development is
-exploratory and intervals condition on fitted OOF predictions; confirmation was
-not used. This does not establish a path to0.8 or an irreducible loss floor.
+Initial quota:77,923.704 used,0reserved, refresh November7. Measured completed
+charges before official submission:200.632 smoke +124.745 prediction preview
++39.515 initial native failure +373.405 native retry = **738.297 seconds**.
+Official hidden ceiling21,600s gives admitted whole-span conservative bound
+**22,338.297s / 6.20508h**, within original cap. Projection including measured
+preview setup is18,879.006s for25,000 assumed hidden rows. Actual hidden count and
+GPU cost may not be exposed: distinguish measured weekly charges from the hidden
+execution bound; unchanged quota is not proof of free GPU work. No paid scaling,
+refresh extension or more GPU jobs. Original clock/deadline remain unchanged.
 
-Frozen [manifest](../results/span_002/research_candidate.json):
-- source `arseniytrushin/llm-preference-span-002-exposure/1`, adapter `exposure/adapter`;
-- adapter SHA `ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b`;
-- temperature0.9441963863130951, aligned original/swapped probability average first;
-- class order A/B/tie; unchanged1024-token packing and Qwen3-4B base;
-- officially_verified=false; old attempt002/model_selection.json unchanged.
+Native original `native-profile/1` ERROR: our1MiB heuristic rejected valid
+728,800-byte libcudart. Official pinned-wheel SHA and extracted ELF SHA proved
+that mistake. Corrected `native-profile-retry/1` checks x86_64 ELF headers and the
+exact runtime SHA, then failed the unchanged numerical gate after64valid scores.
+Its session358.27s includes loading/preflight; scoring77.53s/1.21148s per row.
+Sampled device-used peaks9,543/8,833MiB,640 samples, not allocator peak memory.
+Do not silently relax the failed guard or assert a numerical cause. Failed
+sources, scores and portable manifest are retained separately from old caches.
 
-H03 directly logged638 new accepted updates,0 skips,20392 unique rows,
-11828586 packed tokens. Both ranks restored parent scheduler796/AMPscale4096.
-Old accepted update count796 is reconstructed; old row/token exposure is unknown.
-Torch cu128→cu130 change disclosed; initial inference identity passed, without
-bitwise training equivalence. Export289tensors finite. Rank0 peak7.26GiB.
-Train14812.44s, dev predictions3481.30s; assumed25k deployment with margin5.22h.
-Offline reload/hidden inference remains future E03 work, not a verified deployment.
+The large CPU-only parent-library download (PTY55228) ended in a
+ChunkedEncodingError. Its partial CUBLAS file is NOT a valid artifact; do not use
+or restart it. The corrected GPU job used the immutable original recovery output,
+not that partial file. All native controllers are now stopped; do not restart them.
 
-Primary tie-class loss worsens1.00129→1.06568 and recall45.41→37.92%, but binary
-tie loss and AUROC improve. Nested calibration improves all class contributions.
-Matched raw-order disagreement35.45→24.22%. Clipped rows remain harder despite
-both slices improving; this is observational, not causal proof for longer context.
+Executed [notebook14](../notebooks/14_backlog_v3_span.ipynb) has5code cells,
+3figures,0errors, showing the accepted/pending official state. Rebuild/re-execute
+after the result and again after version closure. Builder
+`scripts/build_span_003_notebook.py`; executer `scripts/execute_notebook.py`.
+Three new probability/roundtrip/label-exclusion tests pass. Undefined-name checks
+caught a missing zlib before GPU launch. Final tests/audit still required.
 
-H40 nested calibration gain0.001132 interval[-0.000564,+0.002954], inconclusive.
-H42 closed at its practical calibration gate; no anchor training. E01 actual
-CUDA forced-overflow/resume probe passed parameter-change/count/state checks.
+## Remaining work and version boundary
 
-H37 current-runtime2048-row nested blend gain0.025007 [0.015015,0.035853];
-frozen1486-row new-group gain0.021022 [0.009262,0.032468]. It beats both components
-against checkpoint800, but sequential25k projection13.74h fails7h guard.
-Complementarity with improved H03 is untested: gains cannot be added.
-Binary tie loss improves despite worse human-tie class loss.
+V3 active37members, focus4. V4 draft has **H44** (routed-mixture calibration) and
+**E04** (native numerical repeatability), neither executed. Read full records and
+risks. H08 remains a different classifier-precision experiment, not a duplicate.
+On closure, expected v4 membership is33unfinished carryovers +2discoveries=35;
+verify actual CLI output, sealed v3 snapshots and empty v5, not just this forecast.
 
-## Version boundary and next choices
+1. Monitor exact official receipt57979825 to terminal status. Preserve failures;
+   no second submission. If complete, validate the actual public score and report
+   it separately from local estimates. Preserve the old candidate and choose best
+   recorded official score honestly.
+2. Finalize decisions and reports, independently check private probability losses/
+   coverage/source hashes, exact remote execution sources and all terminal state,
+   original resource bounds and actual/hidden-cost accounting. Inspect the actual
+   gate coverage; a green helper alone is insufficient.
+3. Refresh notebook14, reports, README/progress/handoff. Resolve E03 with real
+   evidence, then CLI advance sealsv3/activatesv4/opens emptyv5. Check historical
+   snapshots/views and run required18backlog tests after advancement, scientific
+   checks appropriate to changed code, notebook execution and diff checks.
+4. Commit/push explicit reviewed paths; verify remote main equals closing HEAD.
+   Only then update_goal complete. **Stop before executing v4.**
 
-- V1 closed41 historical members, original start/final snapshots preserved.
-- V2 closed39 members, all5focus items done; start/final snapshots preserved.
-- **V3 active37 tasks =3 discoveries +34unfinished carryovers; focus E03/H39/E02/H43.**
-- **V4 empty draft**. No v3 experiments have started.
-
-Use `uv run python scripts/backlog.py versions`, `list --version 3 --new`,
-`list --version 3 --carried`, `show ID` and `check` before a new span.
-
-The new goal authorizes the following bounded focus:
-1. **E03** offline classifier export/reload guard, measured runtime and one frozen
-   official verification; no new training or leaderboard retuning.
-2. **H39** cached latest-classifier/judge complementarity, only10%/20% entropy
-   routes with matched random controls and nested selection; zero-GPU first.
-3. **E02** offline native CUDA artifacts/device discovery/profile before a real
-   judge deployment. Distinct from E03's Torch/LoRA export.
-4. **H43** lower-priority conditional-winner blending versus full-vector and
-   symmetric calibration controls. Preserving tie mass may discard useful signal.
-H05/H23 retain revised bounded optimization/context tests, without automatic
-extra epochs or a causal truncation claim. H41/distillation remain deferred as
-recorded. Read full records, estimates/dependencies and stop rules before selection.
-
-## Completed v2 resources, failures and provenance
-
-Original v2 clock2026-11-03T18:23:46UTC, deadline2026-11-05T18:23:46UTC;
-user re-setting the same goal did not reset it. Actual final account charge
-22407.300s =6.22425 two-T4sessionh, within43200s. No paid scaling or quota refresh.
-Final audit2026-11-04T04:24:47.620991+00:00:77923.704used,0reserved,30076.296remaining;
-these are dated observations, not future quota availability. Three unrelated
-404 notebook observations last ran2022/2025; all current project versions verified.
-Overlapping jobs prevent per-job quota attribution; account delta counts failures.
-
-Terminal versions (prefix `arseniytrushin/llm-preference-span-002-`):
-- exposure-probe/1 COMPLETE;
-- exposure/1 COMPLETE (actual returned slug differs from requested build slug);
-- judge-expansion/1 ERROR: native CUDA could not resolve missing CUDA12 libraries;
-- judge-recovery/2 COMPLETE at failed old-cache identity gate after native repair;
-- judge-consistent/2 ERROR after512valid predictions, missinghashlib at recipe export;
-- judge-extra/2 COMPLETE for original1536extras only, after local recipe freeze.
-Version1 recovery/consistent/extra saves requested no execution. Ambiguous uploads
-were proven absent before retries. Never infer a new job from an intended slug.
-
-Pinned CUDA12 runtime/BLAS packages restored both native T4s, but historical-cache
-raw identity failed and remains a negative result. Uniform current-runtime2048
-predictions were evaluated separately; incompatible old judge outputs were not
-pooled. Native both-order behavior and peak allocated memory were not captured.
-All failed immutable sources retained. Notebook static F821 checks now run before
-launch. See [runtime report](SPAN_002_RUNTIME.md) and exact source hashes in results.
-
-`audit_span_002.py --final` verified six remote source versions, original input
-hashes, historical calibration source618e4a5/H37source4653463, current H03source,
-private probability coverage/finite sums and independently recomputed10lossarrays.
-`check_span_002_closure.py` verifies final version/artifact/notebook handoff.
-The final notebook executed6codecells/5figures/0errors after advancement.
-Scientific8tests and backlog18tests pass; source/name checks and diff checks pass.
-
-## Filesystem and publication
-
-Repository: `/home/tarstars/prj/llm_classification_finetuning`, GitHub `main`.
-Heavy root: `~/database/llm_classification_finetuning`, span artifacts in
-`runs/span_002`; private raw text, ids, predictions, states, weights and standalone
-PNG/SVG figures stay there. Notebook link `~/notebooks/llm_classification_finetuning`
-resolves to this repository's `notebooks/`. Use `.venv/bin/python` / uv environment.
-
-Preserve the user's unrelated dirty `notebooks/07_error_poster.ipynb` kernel
-display-name edit. Stage explicit reviewed paths only; broad directory staging
-was previously auto-review rejected, but explicit reviewed aggregate paths and
-separate push succeeded. No outstanding approval blocker. Never print credentials.
+Repo `/home/tarstars/prj/llm_classification_finetuning`, GitHub main. Heavy root
+`~/database/llm_classification_finetuning`; raw text, IDs, per-row predictions,
+vectors, states, weights and standalone figures stay there. Notebook link
+`~/notebooks/llm_classification_finetuning` points to this repo's notebooks.
+Use `.venv/bin/python`/uv. Preserve the user's unrelated dirty
+`notebooks/07_error_poster.ipynb` kernel display-name edit; never stage/reset it.
 
 Never recursively walk `$HOME`, `~/prj`, Arc/FUSE checkouts or
-`/media/tarstars/medium_data/database/troll_farm`; scope searches to named project
-directories. Do not use the Arc skill for this ordinary GitHub repository.
+`/media/tarstars/medium_data/database/troll_farm`; search named project directories.
+No subagents unless explicitly authorized. No credential output. Use ordinary Git
+for this GitHub project. Historical background: [v2 report](SPAN_002_RESULTS.md),
+[completion](SPAN_002_COMPLETION.md), [v1 report](SPAN_001_RESULTS.md),
+[initial request](../initial_prompt.md), and [README](../README.md).

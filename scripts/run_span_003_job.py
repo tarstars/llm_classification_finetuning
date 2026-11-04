@@ -55,6 +55,12 @@ def main():
                 (aggregate / filename).write_bytes((directory / filename).read_bytes())
 
     if not (directory / 'push.json').exists():
+        official = root / 'official'
+        if (official / 'submission_intent.json').exists():
+            result = official / 'official_result.json'
+            assert result.exists() and json.loads(result.read_text())['status'].split('.')[-1] in (
+                'COMPLETE', 'ERROR', 'FAILED', 'INVALID', 'CANCELED', 'CANCELLED'
+            ), 'An accepted or ambiguous official submission blocks new GPU jobs'
         admission = (root / 'admission.lock').open('a')
         fcntl.flock(admission, fcntl.LOCK_EX | fcntl.LOCK_NB)
         action('quota')

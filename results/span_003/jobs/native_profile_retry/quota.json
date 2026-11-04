@@ -1,8 +1,8 @@
 {
   "refresh_time": "2026-11-07 00:00:00",
-  "used_seconds": 78288.596,
+  "used_seconds": 78662.001,
   "reserved_seconds": 0.0,
   "allowed_seconds": 108000.0,
   "pay_to_scale_enabled": false,
-  "remaining_seconds": 29711.403999999995
+  "remaining_seconds": 29337.998999999996
 }

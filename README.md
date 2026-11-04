@@ -28,9 +28,10 @@ official score; offline export verification is queued for v3. See the
 V3 is underway: on the same 2,048 cached dev rows, the latest classifier gives
 0.959997, an entropy20% judge cascade0.955138, and a postcalibrated full mixture
 0.931579. These are exploratory subset results. Offline classifier reload and
-both visible CSV previews passed; no new official submission yet. See the
-[live v3 report](docs/SPAN_003_RESULTS.md). Native runtime verification is being
-repeated after correcting an overly strict library-size heuristic.
+both visible CSV previews passed. Official submission **57979825** is accepted,
+score pending. Native hardware verification passed but numerical compatibility
+and the20% cascade runtime guard failed, stopping judge expansion. See the
+[live v3 report](docs/SPAN_003_RESULTS.md).
 
 The completed [dataset/model EDA](EDA_REPORT.md) identifies answer-order sensitivity,
 weak tie discrimination, and difficult correctness/constraint comparisons. A small

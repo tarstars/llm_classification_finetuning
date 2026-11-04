@@ -2253,7 +2253,7 @@
       "title": "Budgeted strong-judge cascade",
       "priority": "P1",
       "rank": 31,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.01,
         0.015
@@ -2327,6 +2327,14 @@
           "at": "2026-11-04T08:24:23+00:00",
           "status": "running",
           "note": "Cached20% entropy route passes primary gate: loss0.959997 to0.955138, gain0.004859 CI[0.000245,0.009314], but superiority over random is unproven. Full-blend complementarity persists; full-data recipe frozen before possible1024-new-group follow-up. E02/runtime gate pending.",
+          "evidence": [
+            "docs/SPAN_003_H39.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T09:08:22+00:00",
+          "status": "done",
+          "note": "Cached20% route improves loss but current measured deployment projects26044.8s before extra loading, above25200s.10% route fits projection but qualityCI includeszero; both fail numerical cache identity. Declared gates stop optional1024-row expansion; no route adopted or submitted. Positive cached result and negative deployment evidence preserved.",
           "evidence": [
             "docs/SPAN_003_H39.md"
           ]
@@ -2780,7 +2788,7 @@
       ],
       "id": "E02",
       "rank": 46,
-      "status": "running",
+      "status": "done",
       "introduced_in": 3,
       "discovered_during": 2,
       "derived_from": [
@@ -2809,6 +2817,14 @@
           "note": "Nativev1 failed39.515s before inference because our1MiB heuristic rejects valid728800-byte libcudart from pinned official wheel. Correct to ELF/exact runtime-SHA checks; preserve numeric0.01/0.1 limits and failedsource. Allocate one900s retry from original reserve; preview124.745s also explicitly budgeted. Cached config lineage retained at2536daf.",
           "evidence": [
             "results/span_003/runtime_recovery_plan.json"
+          ]
+        },
+        {
+          "at": "2026-11-04T09:08:22+00:00",
+          "status": "done",
+          "note": "Offline portable CUDA artifact verified with both actual T4s,64 finite normalized predictions and retained licenses/hashes; numerical compatibility failed mean0.020895/max0.188726 vs0.01/0.1. Stop without relaxing guard or pooling caches. Original39.515s failure and373.405s retry charged; full report distinguishes hardware success from numerical failure.",
+          "evidence": [
+            "docs/SPAN_003_E02.md"
           ]
         }
       ]
@@ -2944,6 +2960,67 @@
           "note": "V3 shows a positive cheap cascade and a0.0101 gain from postcalibrating the full mixture. Queue a bounded route-calibration comparison for v4; its gain is unmeasured and the entire fitted chain must stay inside grouped folds. No v4 execution.",
           "evidence": [
             "docs/SPAN_003_H43.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Establish a reproducible native judge scoring recipe",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        6
+      ],
+      "pilot_gpu_wall_hours": [
+        0.15,
+        0.5
+      ],
+      "followup_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Native numerical consistency must be established before reusing judge calibrators or claiming a deployable cached cascade.",
+      "basis": "E02 offline artifact resolves dependencies, verifies both actual T4s and scores64rows, but mean/max raw drift0.020895/0.188726 fails fixed0.01/0.1 limits despite unchanged model/prompt/config. Cause is unisolated. At current1.21148s/row,20% cascade also fails7h projection;10% cached gain is uncertain.",
+      "first_test": "Freeze artifact/model/config/input hashes and a64-row sentinel. First replay identical input/order twice with unchanged serving settings, then one fixed permutation, aligning output IDs. Record raw probability/class changes, token counts, BOS/template and actual backend behavior; use labels only for descriptive loss effects, never to choose serving settings. Cap the initial diagnostic at two predeclared serving configurations and preserve every failed numerical guard. Only an explainable/stable recipe and feasible routed fraction justify a separately budgeted uniformly re-scored fitting cohort followed by a frozen independent new-group check.",
+      "acceptance": "Verified fixed-artifact raw scoring stability under the declared replay/order tests, with explicit tolerances and measured runtime. If the recipe changes, generate all matched component/cache comparisons consistently and refit only within valid groups before any independent check. No direct loss-gain claim from infrastructure stability.",
+      "stop": "Stop if drift remains unexplained or the stable recipe is too slow; do not silently loosen thresholds, pool incompatible raw caches, or optimize numerical settings against observed labels.",
+      "risk_reason": "Quantized serving may change scores with execution conditions; the causal factor is not established. Chasing agreement with an old cache or searching precision settings can hide a different effective model and spend substantial GPU quota.",
+      "mitigation": "Change one factor at a time, pin hashes and fixed input order, retain raw differences and both controls, measure devices/memory/runtime, and cap retries. Keep old results as historical and require consistent new validation instead of inventing cache equivalence.",
+      "rationale": "A concrete compatibility prerequisite discovered after E02 hardware packaging succeeded. Distinct from H08, which tests classifier inference precision and effective-weight comparability; this concerns repeatability of an unchanged native judge recipe.",
+      "revision": "New v4 prerequisite from actual v3 numerical-identity failure. It does not promise a better model or establish batching as the cause. Do not execute during v3.",
+      "depends_on": [
+        "E00",
+        "E02"
+      ],
+      "evidence": [
+        "docs/SPAN_003_E02.md",
+        "results/span_003/native_profile_results.json",
+        "docs/SPAN_003_H39.md"
+      ],
+      "id": "E04",
+      "rank": 49,
+      "status": "planned",
+      "introduced_in": 4,
+      "discovered_during": 3,
+      "derived_from": [
+        "E02",
+        "H39"
+      ],
+      "history": [
+        {
+          "at": "2026-11-04T09:11:58+00:00",
+          "status": "planned",
+          "note": "Offline native hardware works but unchanged numerical guard fails; no predeclared route passes all current gates. Queue bounded label-independent repeatability diagnosis and consistent validation for v4; distinct from classifier precision H08, not executed.",
+          "evidence": [
+            "docs/SPAN_003_E02.md"
           ]
         }
       ]
@@ -3199,7 +3276,8 @@
       "number": 4,
       "state": "draft",
       "item_ids": [
-        "H44"
+        "H44",
+        "E04"
       ],
       "focus_ids": [],
       "history": []

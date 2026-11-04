@@ -2,19 +2,28 @@
 
 ## Active v3 goal — 2026-11-04
 
-Original activation2026-11-04 07:42:17UTC, deadlineNov6sameUTC; effective quota cap
-30076.296s/8.35453two-T4sessionh. FocusE03/H39/E02/H43; v3 active, v4 draft.
-Premeasurement contract3cd8407; first measured milestone2536daf. H43done:
-conditional0.945236 loses to calibratedvector0.931579 on2048cachedrows; classifier
-0.959997. H39selected20%route0.955138, gain0.004859 CI[0.000245,0.009314], with no
-proven entropy advantage over random. Frozen recipe awaitsE02/new-group check.
-E03offline64-row identity and two visibleCSV previews pass; no new officialscore.
-E02firstprofile failed before inference at an invalid1MiB minimum for728800-byte
-libcudart. Failedsource/39.515s retained; a900s retry uses ELF/checksum checks with
-unchanged numerical thresholds. Current original-span charge before retry364.892s.
-H44route-mixture calibration is queued forv4, not executed. SeeSPAN_003_RESULTS,
-H39/H43/E03reports andCONTEXT_HANDOFF for live handles, resource history and next
-steps. Preserve notebook07 and stop after v3/v4 boundary; goal remains active.
+Original activation07:42:17UTC, deadlineNov6 at the same time; cap30,076.296s/
+8.35453two-T4sessionh. E02/H39/H43 are done. Offline classifier passed64-row
+identity and both visibleCSV checks; official **submission57979825** was accepted
+at09:31:37UTC, exact classifier-predict/1 (scriptVersionId365549578). Score pending;
+best recorded official remains0.97025. No new GPU jobs while this receipt runs.
+
+H43calibrated vector0.931579 beats plainvector0.941681 on2048cachedrows; conditional
+0.945236 loses. H39cached20%route0.955138 improves classifier0.959997, but current
+native20% projection26,044.8s exceeds7h.10% gain is uncertain. Offline CUDA artifact
+uses both T4s but raw identity fails0.020895/0.188726 vs0.01/0.1; stop expansion,
+no1,024-row follow-up. Numerical cause unisolated, failed guards preserved.
+Completed charges738.297s; admitted hidden ceiling21,600s gives whole-span bound
+22,338.297s. Keep measured charges separate from hidden compute bound.
+
+V4draft has H44route calibration and E04native numerical repeatability, unexecuted.
+Notebook14 executes5code cells/3figures/0errors, pending official state. Protocol
+3cd8407, cached source2536daf, recovery785f01e; admin budget changes do not rewrite
+cached history. The earlier TLS preflight stopped before any intent; current
+observer44399 uses bounded reads and monitors the one accepted receipt. See
+[context handoff](CONTEXT_HANDOFF.md) and [live report](SPAN_003_RESULTS.md).
+Still required: receipt/result, final audits, reports/notebook, v3seal/v4formation,
+publication and goal completion. Stop before v4; preserve user's notebook07.
 
 ## Current handoff — 2026-11-04
 

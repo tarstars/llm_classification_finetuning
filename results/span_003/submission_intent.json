@@ -1,0 +1,44 @@
+{
+  "created_at": "2026-11-04T09:31:32.509412+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-003-classifier-predict",
+  "version": 1,
+  "notebook_sha256": "73457410843da9f15417e4bbc4b85969eae4860b1fdcf189be12a6ff5fd9e0e4",
+  "manifest_sha256": "2091f699df6f3b17a79f2d23f22827013598748ffe8599f9cafc61b0052fd56c",
+  "adapter_sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b",
+  "quota_before": {
+    "used_seconds": 78662.001,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false
+  },
+  "observed_span_charged_before": 738.2970000000059,
+  "hidden_execution_ceiling_seconds": 21600,
+  "conservative_span_seconds_bound": 22338.297000000006,
+  "span_cap_seconds": 30076.296000000002,
+  "projection_rows_assumption": 25000,
+  "projected_seconds_including_measured_setup": 18879.006430715745,
+  "all_owned_observed_terminal": true,
+  "owned_notebook_count": 49,
+  "unobserved_old_notebooks": [
+    {
+      "kernel_sha256": "1be3866170da769ae28a502772222b186570c2d8dfb4f499e2e012c6433a8d35",
+      "status": 404,
+      "last_run_time": "2025-12-17 11:20:26.657000"
+    },
+    {
+      "kernel_sha256": "dd8b751a3d26416f67f344973a27e1b84ee9f8935088d4f2f4393df7e438b540",
+      "status": 404,
+      "last_run_time": "2022-04-20 10:52:45.893000"
+    },
+    {
+      "kernel_sha256": "69e91610ce0dfb93b7d44619ee6995b228e83dc71446d5384e0a7b2b44861f55",
+      "status": 404,
+      "last_run_time": "2022-04-20 10:24:42.037000"
+    }
+  ],
+  "confirmation_used": false,
+  "message": "Span003 frozen H03 step1438; T0.9441963863; no refit",
+  "new_gpu_jobs_allowed_during_hidden_run": false,
+  "controller_sha256": "f7ab6b32d24cc3bc2b8d18b454cd4690576cf19a410a6903f2c92b090db9bb35"
+}

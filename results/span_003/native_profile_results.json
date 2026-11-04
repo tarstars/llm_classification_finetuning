@@ -1,0 +1,85 @@
+{
+  "span": 3,
+  "hardware_passed": true,
+  "numerical_identity_passed": false,
+  "cached_numerical_recipe_reusable": false,
+  "gate": {
+    "rows": 64,
+    "mean_probability_difference": 0.02089541270889921,
+    "max_probability_difference": 0.18872561257683373,
+    "mean_limit": 0.01,
+    "max_limit": 0.1,
+    "identity_passed": false,
+    "seconds_per_row": 1.2114766367656262,
+    "scoring_seconds": 77.53450475300008,
+    "setup_seconds_before_profile": 17.430931568145752,
+    "sampled_gpu_used_peak_mib": [
+      9543,
+      8833
+    ],
+    "memory_samples": 640,
+    "memory_note": "Sampled total device memory used, including driver/runtime; not allocator peak memory.",
+    "native_both_devices_verified": true,
+    "session_seconds": 358.2742474079132
+  },
+  "hardware": {
+    "ldd": "\tlinux-vdso.so.1 (0x00007d3fa1a36000)\n\tlibggml-base.so.0 => /kaggle/working/offline_native_runtime/bin/libggml-base.so.0 (0x00007d3fa195d000)\n\tlibcudart.so.12 => /kaggle/working/offline_native_runtime/cuda12/nvidia/cuda_runtime/lib/libcudart.so.12 (0x00007d3f96800000)\n\tlibcublas.so.12 => /kaggle/working/offline_native_runtime/cuda12/nvidia/cublas/lib/libcublas.so.12 (0x00007d3f8f600000)\n\tlibcuda.so.1 => /usr/local/nvidia/lib64/libcuda.so.1 (0x00007d3f89800000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007d3f89582000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007d3f96b17000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007d3fa191c000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007d3f8936f000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007d3fa1a38000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x00007d3fa18c6000)\n\tlibdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007d3fa18c1000)\n\tlibpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007d3fa18ba000)\n\tlibrt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007d3fa18b5000)\n\tlibcublasLt.so.12 => /kaggle/working/offline_native_runtime/cuda12/nvidia/cublas/lib/libcublasLt.so.12 (0x00007d3f57000000)\n",
+    "devices": "Available devices:\n  CUDA0: Tesla T4 (14911 MiB, 14806 MiB free)\n  CUDA1: Tesla T4 (14911 MiB, 14806 MiB free)\n",
+    "portable_manifest_sha256": "0de4e0738d3493621a0369487bc7c6222597e6fe700327555537c9afd7cba2b9",
+    "library_files": 175,
+    "packages": {
+      "nvidia-cuda-runtime-cu12": "12.8.90",
+      "nvidia-cublas-cu12": "12.8.4.1"
+    }
+  },
+  "routes": {
+    "entropy_10": {
+      "projected_seconds_before_additional_model_loading": 22410.374983974216,
+      "runtime_guard_passed": true,
+      "cached_quality_gate_passed": false,
+      "gain": {
+        "gain": 0.0024099103202463285,
+        "interval_95": [
+          -0.0011309905775652588,
+          0.005870871215362374
+        ],
+        "groups": 1953,
+        "rows": 2048,
+        "replicates": 2000,
+        "weighted_class_contributions": [
+          0.0015741020736704035,
+          0.0011097436307243112,
+          -0.0002739353841483864
+        ]
+      }
+    },
+    "entropy_20": {
+      "projected_seconds_before_additional_model_loading": 26044.804894271096,
+      "runtime_guard_passed": false,
+      "cached_quality_gate_passed": true,
+      "gain": {
+        "gain": 0.00485891732389086,
+        "interval_95": [
+          0.0002454277496625618,
+          0.009313982935750502
+        ],
+        "groups": 1953,
+        "rows": 2048,
+        "replicates": 2000,
+        "weighted_class_contributions": [
+          0.0018804465450447912,
+          0.002290838536320971,
+          0.0006876322425250976
+        ]
+      }
+    }
+  },
+  "original_failure_charge_seconds": 39.515,
+  "retry_charge_seconds": 373.40499999999884,
+  "span_charged_seconds_so_far": 738.2970000000059,
+  "decision": "Stop at the declared numerical/runtime gates. No route passes quality, current runtime and cache-identity gates together; do not score the optional1024 rows or reuse incompatible calibrators.",
+  "numerical_cause": "Not isolated; no claim that packaging, batching or a particular kernel caused the drift.",
+  "portable_artifact_kernel": "arseniytrushin/llm-preference-span-003-native-profile-retry/1",
+  "portable_artifact_path": "offline_native_runtime",
+  "private_raw_profile_sha256": "0008beea994d0f68fdc3a45d4a621511c16d70c63691df48b5527ea228285cd0"
+}
