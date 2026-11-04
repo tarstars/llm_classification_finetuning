@@ -16,7 +16,7 @@ from arena.data import ROOT, json_write
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('job', choices=['classifier_smoke','classifier_predict','native_profile','cascade_followup'])
+    parser.add_argument('job', choices=['classifier_smoke','classifier_predict','native_profile','native_profile_retry','cascade_followup'])
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
     root = ROOT / 'runs/span_003'

@@ -25,6 +25,13 @@ with 95% group interval **[0.010945, 0.018368]**, accuracy **53.79%**. It has no
 official score; offline export verification is queued for v3. See the
 [v2 results](docs/SPAN_002_RESULTS.md) and [frozen manifest](results/span_002/research_candidate.json).
 
+V3 is underway: on the same 2,048 cached dev rows, the latest classifier gives
+0.959997, an entropy20% judge cascade0.955138, and a postcalibrated full mixture
+0.931579. These are exploratory subset results. Offline classifier reload and
+both visible CSV previews passed; no new official submission yet. See the
+[live v3 report](docs/SPAN_003_RESULTS.md). Native runtime verification is being
+repeated after correcting an overly strict library-size heuristic.
+
 The completed [dataset/model EDA](EDA_REPORT.md) identifies answer-order sensitivity,
 weak tie discrimination, and difficult correctness/constraint comparisons. A small
 longer-context inference pilot shows an uncertain gain. See the executed EDA notebooks

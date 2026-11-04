@@ -185,6 +185,7 @@ Vendoring the required native CUDA libraries and checking the serving backend it
 
 - 2026-11-03T20:03:58+00:00 — planned: Actual native backend saw zero devices despite two T4 allocations until missing CUDA-12 libraries were installed; queue an offline packaging/backend verification prerequisite for v3. Preserve the failed old-cache identity gate and require consistent numerical comparisons. Evidence: [docs/SPAN_002_RUNTIME.md](docs/SPAN_002_RUNTIME.md)
 - 2026-11-04T08:18:24+00:00 — running: Built portable offline native runtime from immutable binary and completed CUDA12 recovery output, including pinned package metadata/licenses and SHA manifest. Launch64-row reference/device/memory profile under1800s ceiling; preserve unchanged judge source/config. Evidence: [docs/SPAN_003_PROTOCOL.md](docs/SPAN_003_PROTOCOL.md)
+- 2026-11-04T08:40:55+00:00 — running: Nativev1 failed39.515s before inference because our1MiB heuristic rejects valid728800-byte libcudart from pinned official wheel. Correct to ELF/exact runtime-SHA checks; preserve numeric0.01/0.1 limits and failedsource. Allocate one900s retry from original reserve; preview124.745s also explicitly budgeted. Cached config lineage retained at2536daf. Evidence: [results/span_003/runtime_recovery_plan.json](results/span_003/runtime_recovery_plan.json)
 
 ### E03
 

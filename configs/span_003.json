@@ -46,9 +46,11 @@
     "classifier_smoke": 900,
     "classifier_predict": 21600,
     "native_profile": 1800,
-    "cascade_followup": 1800
+    "cascade_followup": 1800,
+    "native_profile_retry": 900
   },
   "gpu_session_seconds_cap": 30076.296000000002,
-  "recovery_reserve_seconds": 3976.296000000002,
-  "maximum_official_submissions": 1
+  "recovery_reserve_seconds": 2951.551000000002,
+  "maximum_official_submissions": 1,
+  "completed_prediction_preview_charge_seconds": 124.745
 }

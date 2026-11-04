@@ -2,14 +2,19 @@
 
 ## Active v3 goal — 2026-11-04
 
-The user authorized v3 execution. Goal service objective GOAL.md is active from
-2026-11-04 07:42:17 UTC (epoch1793778137), deadline November6 at the same UTC time.
-Focus: E03 classifier offline export/one frozen official verification; H39 cached
-budgeted judge cascade; E02 offline native CUDA packaging/profile; H43 conditional
-blending diagnostic. Limits12two-T4sessionh/48wallh, reduced by freshly verified
-quota. No v3 GPU launch yet; freeze the protocol, resource baseline and allocations
-before new measurements. Form/seal v4 at closure, carry unfinished work and stop
-before executing v4. Completed v2 goal is archived at GOAL_V2.md.
+Original activation2026-11-04 07:42:17UTC, deadlineNov6sameUTC; effective quota cap
+30076.296s/8.35453two-T4sessionh. FocusE03/H39/E02/H43; v3 active, v4 draft.
+Premeasurement contract3cd8407; first measured milestone2536daf. H43done:
+conditional0.945236 loses to calibratedvector0.931579 on2048cachedrows; classifier
+0.959997. H39selected20%route0.955138, gain0.004859 CI[0.000245,0.009314], with no
+proven entropy advantage over random. Frozen recipe awaitsE02/new-group check.
+E03offline64-row identity and two visibleCSV previews pass; no new officialscore.
+E02firstprofile failed before inference at an invalid1MiB minimum for728800-byte
+libcudart. Failedsource/39.515s retained; a900s retry uses ELF/checksum checks with
+unchanged numerical thresholds. Current original-span charge before retry364.892s.
+H44route-mixture calibration is queued forv4, not executed. SeeSPAN_003_RESULTS,
+H39/H43/E03reports andCONTEXT_HANDOFF for live handles, resource history and next
+steps. Preserve notebook07 and stop after v3/v4 boundary; goal remains active.
 
 ## Current handoff — 2026-11-04
 

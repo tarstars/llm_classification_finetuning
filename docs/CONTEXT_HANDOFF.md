@@ -43,13 +43,30 @@ Concrete progress:
   with ELF/checksum verification, preserve failed source, and budget any new
   GPU retry explicitly. No numerical guard was evaluated.
 
+Current recovery state: first native-profile/1 ERROR is preserved. The new
+`native-profile-retry/1` was launched with a900s ceiling and is RUNNING, last
+API observation08:41:34UTC. Controller PTY3989, log
+/tmp/arena_span003_native_retry.log; verify this exact handle/receipt before any
+new launch. New guard checks x86_64 ELF headers and exact libcudart SHA from the
+pinned wheel; numerical0.01/0.1 limits unchanged. Its parent libraries come from
+the original recovery output, not the failed partial local download.
+
+Config budget amendment is results/span_003/runtime_recovery_plan.json. Preserve
+cached analysis source/config at commit2536daf; current config adds900s retry and
+explicit124.745s completed preview charge, leaving2951.551s recovery reserve.
+Original cap30076.296s and deadline unchanged. Do NOT rerun cached analysis with
+the amended config: its frozen recipe includes the original config. H39 follow-up
+must load frozen_cached_recipes.json and use that recipe without reselecting.
+V4 draft now has H44, a proposed routed-mixture postcalibration experiment based
+on the measured full-blend calibration gain. It has not executed.
+
 New programs: prepare_span_003.py; analyze_span_003_cached.py with
 arena/span_cascade.py; build_span_003_classifier.py with arena/span_export.py;
 build_span_003_native.py; run_span_003_job.py. Three new probability/roundtrip/
 label-exclusion tests passed. All generated execution notebooks require the
 F821 source checker. It caught a missing zlib import before native launch and
-was fixed; that was not a GPU failure. The native failed library heuristic still
-needs diagnosis. Controller output collection now includes CSVs (the old copied pattern
+was fixed; that was not a GPU failure. The corrected native guard now has a bounded retry in progress; inspect its
+actual outputs before any expansion. Controller output collection now includes CSVs (the old copied pattern
 omitted them); smoke CSVs were re-collected and independently validated locally.
 
 The cached report/source/config/protocol hashes must retain their lineage if a

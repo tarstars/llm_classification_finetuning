@@ -1,4 +1,5 @@
 """Verify a portable native CUDA artifact offline against the current judge cache."""
+import argparse
 import base64
 import hashlib
 import io
@@ -16,9 +17,16 @@ sys.path.insert(0, str(REPO / "src"))
 from arena.data import ROOT, json_write
 
 root = ROOT / "runs/span_003"
-dest = root / "notebooks/native_profile"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--role', choices=['native_profile', 'native_profile_retry'], default='native_profile')
+args = parser.parse_args()
+config = json.loads((REPO / 'configs/span_003.json').read_text())
+cap = config['job_seconds_caps'][args.role]
+runtime_inspection = json.loads((root / 'native_parent_inspect/official_runtime_inspection.json').read_text())
+assert runtime_inspection['version'] == '12.8.90' and runtime_inspection['ELF']
+dest = root / 'notebooks' / args.role
 dest.mkdir(parents=True, exist_ok=True)
-assert not (root / "jobs/native_profile/push_intent.json").exists()
+assert not (root / 'jobs' / args.role / 'push_intent.json').exists()
 selection = json.loads((ROOT / "runs/attempt_003/judge_selection.json").read_text())
 for name, key in [("judge", "judge_source_sha256"), ("judge_runtime", "runtime_source_sha256")]:
     assert hashlib.sha256((REPO / f"src/arena/{name}.py").read_bytes()).hexdigest() == selection[key]
@@ -45,6 +53,7 @@ import signal
 DEADLINE=SESSION_STARTED+1800-60
 def expired(*unused):raise TimeoutError('Native profile deadline reached')
 signal.signal(signal.SIGALRM,expired);signal.alarm(max(1,int(DEADLINE-time.time())))""")
+nb.cells[1].source = nb.cells[1].source.replace('DEADLINE=SESSION_STARTED+1800-60', f'DEADLINE=SESSION_STARTED+{cap}-60')
 nb.cells.append(nbf.v4.new_code_cell(f'''import subprocess,importlib.metadata,hashlib,zlib
 from arena import judge_runtime
 REPAIR=next(p for p in [Path('/kaggle/input/llm-preference-span-002-judge-recovery'),
@@ -61,7 +70,11 @@ license_files=[p for p in (BUNDLE/'cuda12').rglob('*') if p.is_file() and ('lice
 assert len(license_files)>=2,'Retain NVIDIA license notices in the portable artifact'
 paths=[str(BUNDLE/'cuda12/nvidia/cublas/lib'),str(BUNDLE/'cuda12/nvidia/cuda_runtime/lib')]
 for path in [Path(paths[0])/'libcublas.so.12',Path(paths[0])/'libcublasLt.so.12',Path(paths[1])/'libcudart.so.12']:
-    assert path.is_file() and path.stat().st_size>1_000_000,'Missing/corrupt saved CUDA library'
+    assert path.is_file(),'Missing saved CUDA library'
+    with path.open('rb') as handle:header=handle.read(64)
+    assert len(header)==64 and header[:6].hex()=='7f454c460201' and int.from_bytes(header[18:20],'little')==62,'Invalid x86_64 ELF library'
+with (Path(paths[1])/'libcudart.so.12').open('rb') as handle:
+    assert hashlib.file_digest(handle,'sha256').hexdigest()=={runtime_inspection['library_sha256']!r},'CUDA runtime differs from the pinned published wheel'
 original_environment=judge_runtime.runtime_environment
 def offline_environment(executable):
     result=original_environment(executable)
@@ -130,14 +143,15 @@ for cell in nb.cells:
         compile(cell.source, "native-offline-bundle", "exec")
 nbf.write(nb, dest / "job.ipynb")
 metadata = json.loads((ROOT / "runs/span_002/notebooks/ensemble-extra/kernel-metadata.json").read_text())
-metadata.update(id="arseniytrushin/llm-preference-span-003-native-profile", title="LLM Preference Span 003 Native Profile", enable_internet=False)
+metadata.update(id="arseniytrushin/llm-preference-span-003-"+args.role.replace('_','-'), title="LLM Preference Span 003 "+args.role.replace('_',' ').title(), enable_internet=False)
 metadata["kernel_sources"] = [selection["runtime_kernel"], "arseniytrushin/llm-preference-span-002-judge-recovery/2"]
 json_write(dest / "kernel-metadata.json", metadata)
-json_write(REPO / "results/span_003/native_profile_bundle.json", {
+json_write(REPO / f"results/span_003/{args.role}_bundle.json", {
     "notebook_sha256": hashlib.sha256((dest / "job.ipynb").read_bytes()).hexdigest(),
     "parent_source_notebook_sha256": hashlib.sha256(old.read_bytes()).hexdigest(),
-    "maximum_session_seconds": 1800, "profile_rows": 64, "internet_enabled": False,
+    "maximum_session_seconds": cap, "profile_rows": 64, "internet_enabled": False,
     "native_source_sha256": selection["runtime_source_sha256"], "judge_source_sha256": selection["judge_source_sha256"],
     "license_sha256": hashlib.sha256(license_path.read_bytes()).hexdigest(),
+    "official_cuda_runtime_library_sha256": runtime_inspection['library_sha256'],
     "source_revision": selection["config"]["llama_revision"], "parent_kernels": metadata["kernel_sources"]})
 print(dest)

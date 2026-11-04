@@ -1,0 +1,15 @@
+{
+  "utc": "2026-11-04T08:41:10.545397+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-003-native-profile-retry",
+  "max_session_seconds": 900,
+  "quota_before": {
+    "refresh_time": "2026-11-07 00:00:00",
+    "used_seconds": 78288.596,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 29711.403999999995
+  },
+  "span_remaining_before_reservation": 29711.403999999995,
+  "notebook_sha256": "8e5cab3b3a158d80d4e107196a472f18fa81f1dd027b3a1346930ab590ff2df2"
+}

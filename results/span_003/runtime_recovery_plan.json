@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-11-04T08:40:52.890280+00:00",
+  "cached_analysis_source_commit": "2536daf",
+  "old_config_sha256": "bc5696f402e5c4a7f9f793a038dc1c0a6a215896c281e4e14c27530a03ce3671",
+  "new_config_sha256": "bf67eb10ef728b4b838f8902c59b0241dd4cdad743baece789ee462788b0982d",
+  "failed_kernel": "arseniytrushin/llm-preference-span-003-native-profile/1",
+  "failed_job_charge_seconds": 39.515,
+  "cause": "The arbitrary1MiB minimum rejects the legitimate728800-byte pinned CUDA runtime ELF; no numerical identity check ran.",
+  "correction": "Verify x86_64 ELF headers and the exact libcudart SHA256 from the published pinned wheel, then retain ldd/native-device/actual-inference and unchanged numerical guards.",
+  "retry_seconds_ceiling": 900,
+  "completed_prediction_preview_charge_seconds": 124.745,
+  "remaining_recovery_reserve_seconds": 2951.551000000002,
+  "official_runtime_inspection": {
+    "package": "nvidia-cuda-runtime-cu12",
+    "version": "12.8.90",
+    "wheel_url": "https://files.pythonhosted.org/packages/0d/9b/a997b638fcd068ad6e4d53b8551a7d30fe8b404d6f1804abf1df69838932/nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "wheel_sha256": "adade8dcbd0edf427b7204d480d6066d33902cab2a4707dcfc48a2d0fd44ab90",
+    "library_path": "nvidia/cuda_runtime/lib/libcudart.so.12",
+    "library_bytes": 728800,
+    "library_sha256": "c3a75b33af334a3486d197dbd1584a2985183ba4688d237a2be5f2f679329920",
+    "ELF": true
+  },
+  "large_parent_download": "CPU-only download ended with ChunkedEncodingError; partial CUBLAS file must not be used.",
+  "initial_cap_and_clock_unchanged": true
+}

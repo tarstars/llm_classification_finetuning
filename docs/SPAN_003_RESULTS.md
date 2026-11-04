@@ -14,7 +14,7 @@ to **8.35453 elapsed two-T4 session-hours**. No paid scaling/refresh extension.
   0.000212/max0.002180, within0.002/0.03. Visible3-row CSV valid. No new submission.
 - **E02:** first native-profile job stopped before inference on a file-size guard;
   the>1MiB heuristic rejects the official728,800-byte CUDA runtime ELF.
-  Correct the format/checksum guard before a bounded retry; charge39.515seconds
+  Corrected to ELF and pinned-wheel checksum checks; a900s retry is running; charge39.515seconds
   is retained. Numerical identity was not evaluated.
 
 The classifier smoke charge is200.632seconds; with initial native failure,
