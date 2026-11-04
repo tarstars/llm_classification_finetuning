@@ -12,25 +12,48 @@ This is not the required complete initial resource inventory. Before GPU work,
 verify all actual jobs/quota, freeze the cap as min(43,200, initial available),
 write protocol/config/artifact/sample/budget contracts and commit them. Do not
 reset the activation clock or use v3's original allowance. No v4 experiment or
-GPU job was launched during goal activation; E04/H44 remain planned.
+GPU job was launched during goal activation; both tasks were planned then.
+See the later live execution milestone below for current E04 status.
 
 E04 first requires bounded label-independent64-row replay/permutation/restart
 diagnostics, at most two configurations. Only a genuinely stable recipe justifies
 consistent cache rescoring and H44's nested three-family calibration comparison.
 Stop/defer against failed gates with evidence; do not reuse incompatible scores.
-Read the full current goal/task records before implementing the protocol.
+Read the full current goal/task records before continuing the protocol.
 
 V4 preparation milestone: complete initial inventory froze the actual cap at
 29,337.999s, baseline quota78,662.001 used,0reserved, refreshNov7 unchanged.
 Protocol/config/input/sample/bundle hashes and dependency availability are now
 in `results/span_004/`; both exact native parents are COMPLETE and modelversion2
-is available. E04 is running preparation; no GPU push yet. Two64-row replay cases
+is available. E04 preparation completed before the one push below. Two64-row replay cases
 change only cache_prompt; eightpasses share two server starts, capped1,800s.
-Native worker/transport/coverage tests pass and all embedded module hashes match.
-Commit/push the premeasurement contract before launching
-`scripts/run_span_004_job.py repeatability`, then monitor its exact returned
-version and controller handle. Heavy root is `runs/span_004`, log is chosen at
-launch. H44 remains planned behind an actual passing E04 stability/runtime gate.
+Native payload/coverage tests pass and all embedded module hashes match.
+The premeasurement contract/source were committed and pushed as **77fdda2**
+before launch. One actual job is now RUNNING:
+**arseniytrushin/llm-preference-span-004-native-repeatability/1**. Kaggle derived
+this slug from the title; use the actual returned push ref, not the planned
+metadata ID without native. Accepted around15:11:46 UTC; 1,800s job ceiling,
+1,740s notebook alarm. **Controller PTY90738**, log
+`/tmp/arena_span004_repeatability_controller.log`. Re-poll that exact live handle;
+do not duplicate a job because a log/status request times out. A bounded20s live
+log snapshot timed out, while subsequent exact status remained RUNNING.
+
+Private outputs/state are under `runs/span_004/jobs/repeatability`; aggregate
+push/intent/admission evidence is mirrored under `results/span_004/jobs/`.
+The actual GPU notebook and its embedded worker are immutable after push.
+`scripts/analyze_span_004_repeatability.py` is prepared but has not been run:
+after actual terminal/controller exit, verify downloaded artifacts, run it with
+database write access and OPENBLAS_NUM_THREADS=2. It requires complete8-pass
+outputs, checks raw responses/token identity, applies label-independent stability/
+runtime gates and reports fixed-calibration loss diagnostics without refitting.
+If the job fails, inspect actual partial evidence rather than inventing coverage
+or rerunning blindly. No native cause has been established yet.
+
+H44 remains planned behind an actual passing E04 stability/runtime gate. If no
+configuration qualifies, finish the substantive E04 diagnostic with negative
+evidence and defer H44 with the real reason. Otherwise admit a consistent2,048-row
+rescore before any H44 fit. Notebook15/reports/final audit/version closure are
+still required. Queue only grounded v5 discoveries; do not execute v5.
 
 V3 is complete and sealed; its unchanged contract is `docs/GOAL_V3.md`.
 Do not rerun v3 jobs or its closure checker against the now-advanced live registry;

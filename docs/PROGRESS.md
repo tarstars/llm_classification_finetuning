@@ -2,6 +2,14 @@
 
 ## Current state — active v4 goal, 2026-11-04
 
+Premeasurement protocol/input/resource/native-source contract **77fdda2** is
+committed/pushed. Exact job `arseniytrushin/llm-preference-span-004-native-repeatability/1`
+was accepted15:11:46UTC and is RUNNING, capped1,800s. Controller90738 monitors the
+actual returned ref; log `/tmp/arena_span004_repeatability_controller.log`.
+No new quality result yet. One log-stream timeout did not change live status.
+The analyzer is prepared for post-terminal trace/stability/runtime/loss checks;
+H44 remains gated. See context handoff before any action; never duplicate the job.
+
 The user set the v4 goal. Original activation **14:29:32 UTC on November4**,
 epoch1793802572; fixed deadline **November6 at14:29:32 UTC**. Active objective
 is `GOAL.md`, focus **E04 then H44**. V4 has35members; the other33 remain eligible
