@@ -1,0 +1,54 @@
+{
+  "span": 3,
+  "seed": 20261120,
+  "outer_group_folds": 5,
+  "inner_group_folds": 3,
+  "classifier_temperature_bounds": [
+    0.5,
+    3.0
+  ],
+  "judge_temperature_bounds": [
+    0.25,
+    8.0
+  ],
+  "tie_intercept_bounds": [
+    -1.0,
+    1.0
+  ],
+  "bootstrap_group_replicates": 2000,
+  "cheap_useful_gain": 0.001,
+  "confirmation_used": false,
+  "route_fractions": [
+    0.1,
+    0.2
+  ],
+  "blend_families": [
+    "vector",
+    "conditional",
+    "vector_tie"
+  ],
+  "native_profile_rows": 64,
+  "classifier_smoke_rows": 64,
+  "cascade_followup_rows": 1024,
+  "classifier_identity_limits": {
+    "mean": 0.002,
+    "maximum": 0.03
+  },
+  "native_identity_limits": {
+    "mean": 0.01,
+    "maximum": 0.1
+  },
+  "projection_hidden_rows_assumption": 25000,
+  "projection_multiplier": 1.2,
+  "projection_reserve_seconds": 600,
+  "per_job_seconds_cap": 25200,
+  "job_seconds_caps": {
+    "classifier_smoke": 900,
+    "classifier_predict": 21600,
+    "native_profile": 1800,
+    "cascade_followup": 1800
+  },
+  "gpu_session_seconds_cap": 30076.296000000002,
+  "recovery_reserve_seconds": 3976.296000000002,
+  "maximum_official_submissions": 1
+}

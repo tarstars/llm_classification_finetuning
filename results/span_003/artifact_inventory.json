@@ -1,0 +1,47 @@
+{
+  "candidate": {
+    "path": "/home/tarstars/prj/llm_classification_finetuning/results/span_002/research_candidate.json",
+    "sha256": "2091f699df6f3b17a79f2d23f22827013598748ffe8599f9cafc61b0052fd56c"
+  },
+  "classifier": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/exposure/output/exposure/dev_predictions.npz",
+    "sha256": "51fabd9e17111d44e0176569a10c816d7cc3c0e3de5534da93d9645e08ae8dae",
+    "rows": 5746,
+    "groups": 5211
+  },
+  "judge_fit": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/ensemble-consistent/output/cached_current/judge_predictions.npz",
+    "sha256": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d",
+    "rows": 512,
+    "groups": 497
+  },
+  "judge_extra": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/ensemble-extra/output/gemma26/judge_predictions.npz",
+    "sha256": "e8e169ee44aafa68fc2ce5481728f7a1c107e596015792a9bcc9a4c6be30dc20",
+    "rows": 1536,
+    "groups": 1486
+  },
+  "adapter": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/exposure/output/exposure/adapter/adapter_model.safetensors",
+    "sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b"
+  },
+  "split": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/split_ids.json",
+    "sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1"
+  },
+  "raw_train": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/raw/train.csv",
+    "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2"
+  },
+  "sample_ids_sha256": "b8d6128da21abf47e9ab2059d4a6848303dcd9fbe954f81f63997fa5cbe66917",
+  "sample_counts": {
+    "classifier_smoke": 64,
+    "native_profile": 64,
+    "cascade_followup": 1024
+  },
+  "source_sha256": {
+    "scripts/prepare_span_003.py": "fdb507246439c293e4a0b3366dc527d3d7ac3be648b5aee540b9797e1b62b306",
+    "GOAL.md": "d0cbf68031d1029caf7ff355478fce4a50058caa12201fc9b9fd02b0965aeb6d",
+    "src/arena/joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672"
+  }
+}

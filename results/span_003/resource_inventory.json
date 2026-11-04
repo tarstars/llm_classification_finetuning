@@ -1,0 +1,127 @@
+{
+  "observed_at": "2026-11-04T07:52:48.557139+00:00",
+  "quota": {
+    "used_seconds": 77923.704,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "pay_to_scale_enabled": false,
+    "remaining_seconds": 30076.296000000002
+  },
+  "owned_notebook_count": 45,
+  "project_jobs": [
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-extra",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-consistent",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-recovery",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-exposure",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-expansion",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-exposure-probe",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-001-joint-pilots",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-001-frozen-reward-pilot",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-predict-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-dev-003-ctx1024",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-dev-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-profile-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-binary-probe-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-probe-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-training-error-poster-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-4b-eda-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-4b-predict-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-4b-confirm-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-4b-train-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-8b-pilot-002-batch4",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-8b-pilot-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-gpu-probe-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-offline-attempt-001",
+      "status": "COMPLETE"
+    }
+  ],
+  "nonterminal_jobs": [],
+  "unobserved_old_notebooks": [
+    {
+      "kernel_sha256": "1be3866170da769ae28a502772222b186570c2d8dfb4f499e2e012c6433a8d35",
+      "http_status": 404,
+      "last_run_time": "2025-12-17 11:20:26.657000",
+      "error_type": "HTTPError"
+    },
+    {
+      "kernel_sha256": "dd8b751a3d26416f67f344973a27e1b84ee9f8935088d4f2f4393df7e438b540",
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:52:45.893000",
+      "error_type": "HTTPError"
+    },
+    {
+      "kernel_sha256": "69e91610ce0dfb93b7d44619ee6995b228e83dc71446d5384e0a7b2b44861f55",
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:24:42.037000",
+      "error_type": "HTTPError"
+    }
+  ]
+}
