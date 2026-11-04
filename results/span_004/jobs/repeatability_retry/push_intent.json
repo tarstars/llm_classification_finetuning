@@ -1,0 +1,16 @@
+{
+  "utc": "2026-11-04T15:32:25.720636+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-004-native-repeatability-retry",
+  "max_session_seconds": 1680,
+  "quota_before": {
+    "used_seconds": 78699.404,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 29300.596000000005
+  },
+  "span_charged_before": 37.40299999999115,
+  "notebook_sha256": "a7bf853df608520308bfbb94f0baab4278612cd2377f91e79307e02920377e88",
+  "config_sha256": "9cb9e500cfa08906e57bc545cb4ead59d18d88283ccd657447b8200c8cbff47c"
+}

@@ -37,14 +37,18 @@ records are identical; actual charge37.403s. Controller90738 exited1 and final
 quota has zero reservations. Do not resume/re-push this old job. Its log is
 `/tmp/arena_span004_repeatability_controller.log`; keep all failed evidence.
 
-Separate role **repeatability_retry** is prepared with canonical JSON comparison,
+Separate role **repeatability_retry** was accepted and is RUNNING with canonical JSON comparison,
 retaining every manifest field/hash/size. Worker byte-identical to77fdda2; two
 cache settings, sentinel/order and numerical limits unchanged. Retry ceiling1680s,
 source alarm1620s; both attempts plus60s reserve bound1777.403<=original1800s.
 Recovery proof, retry bundle and retry contract are under results/span_004.
-Commit/push this correction before
-`scripts/run_span_004_job.py repeatability_retry`, then monitor the new exact
-returned source/handle. No new serving configuration or relaxed numeric threshold.
+Correction contract was committed/pushed as **727615e** before launch.
+Actual source **arseniytrushin/llm-preference-span-004-native-repeatability-retry/1**,
+accepted15:32:41 UTC, now **controller PTY73210**, log
+`/tmp/arena_span004_repeatability_retry_controller.log`. Re-poll this exact live
+handle/version; never duplicate it because an observation expires. Both actual
+runtime parents and pinned model remained available. No new serving configuration
+or relaxed numeric threshold. Original clock/cap remain unchanged.
 
 Private outputs/state are under `runs/span_004/jobs/repeatability`; aggregate
 push/intent/admission evidence is mirrored under `results/span_004/jobs/`.

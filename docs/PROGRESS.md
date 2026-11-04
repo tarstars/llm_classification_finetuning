@@ -4,10 +4,13 @@
 
 First attempt is now terminal ERROR before model inference: a serialized-manifest
 SHA guard depended on package-key order. Parsed manifests/all175file records are
-identical; preserve37.403s charge. A separate canonical-manifest retry is prepared,
+identical; preserve37.403s charge. A separate canonical-manifest retry is RUNNING,
 capped1680s; both attempts plus60s reserve bound1777.403<=original1800s. Same
-worker, inputs, two configurations and numeric limits. See recovery proof and
-context handoff; do not restart the completed first job.
+worker, inputs, two configurations and numeric limits. Corrected contract727615e
+was pushed before source `arseniytrushin/llm-preference-span-004-native-repeatability-retry/1`
+was accepted15:32:41UTC. Live controller73210, log
+`/tmp/arena_span004_repeatability_retry_controller.log`. See recovery proof and
+context handoff; do not restart either the completed first job or the live retry.
 
 Premeasurement protocol/input/resource/native-source contract **77fdda2** is
 committed/pushed. Exact job `arseniytrushin/llm-preference-span-004-native-repeatability/1`
