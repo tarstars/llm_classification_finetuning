@@ -440,6 +440,7 @@ Native numerical consistency must be established before reusing judge calibrator
 
 - 2026-11-04T09:11:58+00:00 — planned: Offline native hardware works but unchanged numerical guard fails; no predeclared route passes all current gates. Queue bounded label-independent repeatability diagnosis and consistent validation for v4; distinct from classifier precision H08, not executed. Evidence: [docs/SPAN_003_E02.md](docs/SPAN_003_E02.md)
 - 2026-11-04T15:03:30+00:00 — running: Prepared the fixed v4 protocol, complete initial quota/job inventory, input/sample hashes and two label-independent cache_on/cache_off cases. Eight64-row replay/order/restart passes share two clean server starts; total diagnostic ceiling1800s. No GPU launch until the premeasurement source/config/dependency contract is committed. Evidence: [docs/SPAN_004_PROTOCOL.md](docs/SPAN_004_PROTOCOL.md)
+- 2026-11-04T15:27:42+00:00 — running: First native-repeatability/1 is authoritatively ERROR and controller exited1 before model inference: serialized JSON package-key order changed, but parsed manifest and all175 file hashes/sizes match. Preserve37.403s charge. Prepare separate canonical-manifest retry capped1680s plus60s reserve, total1777.403<=original1800s diagnostic allocation. Worker/configurations/inputs/numerical limits unchanged. Evidence: [results/span_004/manifest_guard_recovery.json](results/span_004/manifest_guard_recovery.json)
 
 ### H22
 

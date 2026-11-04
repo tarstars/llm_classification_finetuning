@@ -1,0 +1,19 @@
+{
+  "failure": "Serialized JSON package-key ordering differs; all parsed fields and175 file hashes/sizes are equal.",
+  "parsed_manifests_equal": true,
+  "changed_file_records": 0,
+  "files": 175,
+  "original_byte_sha256": "0de4e0738d3493621a0369487bc7c6222597e6fe700327555537c9afd7cba2b9",
+  "observed_byte_sha256": "0f3a224a7ee235a4efc4c8b88ed2b3937da079bc36d154e8f47a40bad0c389ca",
+  "canonical_sha256": "a3faba4f5e96d9dcab552adbecf5ef8aedc3f21239a0e0bf78384d702775ca0d",
+  "failed_before_model_inference": true,
+  "competition_scoring_requests": 0,
+  "original_charge_seconds": 37.40299999999115,
+  "original_diagnostic_stage_seconds_cap": 1800,
+  "retry_seconds_cap": 1680,
+  "finalization_reserve_seconds": 60,
+  "remaining_after_retry_bound_seconds": 22.597000000008848,
+  "statistical_settings_or_numerical_limits_changed": false,
+  "worker_sha256_unchanged": "a2a064e7c45a59af0c084cd5dbe15dcbf257ab6cd1425392c47e2c418272bebe",
+  "original_source_commit": "77fdda2"
+}

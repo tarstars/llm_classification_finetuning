@@ -29,21 +29,30 @@ is available. E04 preparation completed before the one push below. Two64-row rep
 change only cache_prompt; eightpasses share two server starts, capped1,800s.
 Native payload/coverage tests pass and all embedded module hashes match.
 The premeasurement contract/source were committed and pushed as **77fdda2**
-before launch. One actual job is now RUNNING:
+before launch. The first actual job is terminal ERROR:
 **arseniytrushin/llm-preference-span-004-native-repeatability/1**. Kaggle derived
-this slug from the title; use the actual returned push ref, not the planned
-metadata ID without native. Accepted around15:11:46 UTC; 1,800s job ceiling,
-1,740s notebook alarm. **Controller PTY90738**, log
-`/tmp/arena_span004_repeatability_controller.log`. Re-poll that exact live handle;
-do not duplicate a job because a log/status request times out. A bounded20s live
-log snapshot timed out, while subsequent exact status remained RUNNING.
+this slug from the title. It failed before model inference because our serialized
+manifest SHA depended on package-key order. Parsed manifests and all175file
+records are identical; actual charge37.403s. Controller90738 exited1 and final
+quota has zero reservations. Do not resume/re-push this old job. Its log is
+`/tmp/arena_span004_repeatability_controller.log`; keep all failed evidence.
+
+Separate role **repeatability_retry** is prepared with canonical JSON comparison,
+retaining every manifest field/hash/size. Worker byte-identical to77fdda2; two
+cache settings, sentinel/order and numerical limits unchanged. Retry ceiling1680s,
+source alarm1620s; both attempts plus60s reserve bound1777.403<=original1800s.
+Recovery proof, retry bundle and retry contract are under results/span_004.
+Commit/push this correction before
+`scripts/run_span_004_job.py repeatability_retry`, then monitor the new exact
+returned source/handle. No new serving configuration or relaxed numeric threshold.
 
 Private outputs/state are under `runs/span_004/jobs/repeatability`; aggregate
 push/intent/admission evidence is mirrored under `results/span_004/jobs/`.
 The actual GPU notebook and its embedded worker are immutable after push.
 `scripts/analyze_span_004_repeatability.py` is prepared but has not been run:
-after actual terminal/controller exit, verify downloaded artifacts, run it with
-database write access and OPENBLAS_NUM_THREADS=2. It requires complete8-pass
+after actual retry terminal/controller exit, verify downloaded artifacts, run it with
+database write access, OPENBLAS_NUM_THREADS=2 and `--job repeatability_retry`.
+It requires complete8-pass
 outputs, checks raw responses/token identity, applies label-independent stability/
 runtime gates and reports fixed-calibration loss diagnostics without refitting.
 If the job fails, inspect actual partial evidence rather than inventing coverage

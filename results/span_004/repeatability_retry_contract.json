@@ -1,0 +1,26 @@
+{
+  "span": 4,
+  "source_sha256": {
+    "GOAL.md": "4e7d508c1ed5b88c159ff08c7336b3ed211febed65f7d50adf87293039585d5d",
+    "docs/SPAN_004_PROTOCOL.md": "c955d674f19abbc85167dd395f260be00654e2bc7fce9ad2a28fc0144df57a1b",
+    "configs/span_004.json": "9cb9e500cfa08906e57bc545cb4ead59d18d88283ccd657447b8200c8cbff47c",
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/judge.py": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b",
+    "src/arena/judge_runtime.py": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+    "src/arena/span_repeatability.py": "a2a064e7c45a59af0c084cd5dbe15dcbf257ab6cd1425392c47e2c418272bebe",
+    "src/arena/span004_support.py": "990176d0501e8655e0d0618fa9ebf23676dc91f2bcf2a4888a2cdce019b2c9f7",
+    "scripts/build_span_004_native.py": "9fded472617b5794c5c83c9a2f9114873fd79abf5a723fef47c046624b714685",
+    "scripts/run_span_004_job.py": "9ce8ca55eda545f90cf90f5e1d909ee09f17f87fcfaf223ff33d372c12054c1e",
+    "scripts/analyze_span_004_repeatability.py": "e865f04e5d17ad167a4a72fb365a26cdbee9f55bf60618b2916a31b3e8e02b6c"
+  },
+  "original_contract_commit": "77fdda2",
+  "changed_statistical_settings": false,
+  "worker_byte_identical_to_original_contract": true,
+  "failure_evidence_sha256": "598908763a206d05fe31469c3080bc9040e43c16d6e2c9fbe2fb35a403fb84a6",
+  "retry_bundle_sha256": "06113e86a3d1332730e4a474044929e35cd6da9831e715a216988703ab3b3c18",
+  "input_inventory_sha256": "47aff2a03def928b1912288b4f5c7ec9d16a459d2afe354ab6b1dc3d8e4b1490",
+  "initial_resources_sha256": "051caad0f43f80467315d77105e8adf639d667bf4e6fc87d392b2916cfc78466",
+  "span_plan_sha256": "1b3452a009673eb287d339fff3da7fa7a0f1602cf682ecce338f4cf359b8fb09",
+  "maximum_serving_configurations": 2,
+  "official_submissions_allowed": 0
+}

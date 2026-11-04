@@ -21,7 +21,7 @@ def read(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('job', choices=['repeatability'])
+    parser.add_argument('job', choices=['repeatability', 'repeatability_retry'])
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()
     heavy, aggregate = ROOT / 'runs/span_004', REPO / 'results/span_004'
@@ -38,7 +38,7 @@ def main():
     assert digest(folder / metadata['code_file']) == bundle['notebook_sha256']
     assert digest(REPO / 'configs/span_004.json') == bundle['config_sha256']
     assert cap <= plan['per_job_seconds_cap'] and metadata['enable_internet'] is False
-    contract = read(aggregate / 'premeasurement_contract.json')
+    contract = read(aggregate / ('repeatability_retry_contract.json' if args.job.endswith('_retry') else 'premeasurement_contract.json'))
     for source, sha in contract['source_sha256'].items():
         assert digest(REPO / source) == sha, source
         committed = subprocess.check_output(['git', 'show', 'HEAD:' + source], cwd=REPO)
@@ -69,6 +69,11 @@ def main():
         assert q['refresh_time'] == plan['initial_quota_refresh_time']
         spent = q['used_seconds'] - plan['quota_used_at_start']
         assert spent >= 0 and spent + cap <= plan['gpu_session_seconds_cap']
+        if args.job.endswith('_retry'):
+            assert read(heavy / 'jobs/repeatability/controller_state.json')['stage'] == 'failed'
+            recovery = read(aggregate / 'manifest_guard_recovery.json')
+            assert recovery['parsed_manifests_equal'] and recovery['changed_file_records'] == 0
+            assert spent + cap + 60 <= config['diagnostic_stage_seconds_cap'], 'Both attempts share the original1800s stage'
         assert q['remaining_seconds'] >= cap and time.time() + cap + 300 < deadline
         intent = {'utc': datetime.now(timezone.utc).isoformat(), 'kernel': metadata['id'],
                   'max_session_seconds': cap, 'quota_before': q, 'span_charged_before': spent,

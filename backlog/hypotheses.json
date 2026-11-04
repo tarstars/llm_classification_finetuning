@@ -3049,6 +3049,14 @@
           "evidence": [
             "docs/SPAN_004_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-04T15:27:42+00:00",
+          "status": "running",
+          "note": "First native-repeatability/1 is authoritatively ERROR and controller exited1 before model inference: serialized JSON package-key order changed, but parsed manifest and all175 file hashes/sizes match. Preserve37.403s charge. Prepare separate canonical-manifest retry capped1680s plus60s reserve, total1777.403<=original1800s diagnostic allocation. Worker/configurations/inputs/numerical limits unchanged.",
+          "evidence": [
+            "results/span_004/manifest_guard_recovery.json"
+          ]
         }
       ]
     }

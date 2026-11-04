@@ -1,0 +1,8 @@
+{
+  "stage": "failed",
+  "utc": "2026-11-04T15:20:11.791019+00:00",
+  "job": "repeatability",
+  "kernel_version": "arseniytrushin/llm-preference-span-004-native-repeatability/1",
+  "status": "ERROR",
+  "observed_charge_seconds": 37.40299999999115
+}

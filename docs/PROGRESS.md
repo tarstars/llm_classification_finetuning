@@ -2,9 +2,16 @@
 
 ## Current state — active v4 goal, 2026-11-04
 
+First attempt is now terminal ERROR before model inference: a serialized-manifest
+SHA guard depended on package-key order. Parsed manifests/all175file records are
+identical; preserve37.403s charge. A separate canonical-manifest retry is prepared,
+capped1680s; both attempts plus60s reserve bound1777.403<=original1800s. Same
+worker, inputs, two configurations and numeric limits. See recovery proof and
+context handoff; do not restart the completed first job.
+
 Premeasurement protocol/input/resource/native-source contract **77fdda2** is
 committed/pushed. Exact job `arseniytrushin/llm-preference-span-004-native-repeatability/1`
-was accepted15:11:46UTC and is RUNNING, capped1,800s. Controller90738 monitors the
+was accepted15:11:46UTC and later failed at its manifest guard, capped1,800s. Controller90738 monitored the
 actual returned ref; log `/tmp/arena_span004_repeatability_controller.log`.
 No new quality result yet. One log-stream timeout did not change live status.
 The analyzer is prepared for post-terminal trace/stability/runtime/loss checks;

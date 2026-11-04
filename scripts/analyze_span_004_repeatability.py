@@ -1,4 +1,5 @@
 """Audit E04 replay artifacts and apply frozen label-independent admission gates."""
+import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -27,8 +28,11 @@ def digest(path):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--job', choices=['repeatability','repeatability_retry'], default='repeatability')
+    args = parser.parse_args()
     heavy, aggregate = ROOT / 'runs/span_004', REPO / 'results/span_004'
-    directory = heavy / 'jobs/repeatability'
+    directory = heavy / 'jobs' / args.job
     assert read(directory / 'controller_state.json')['stage'] in {'complete','failed'}, 'Wait for actual terminal accounting'
     output = directory / 'output'
     config, plan = read(REPO / 'configs/span_004.json'), read(heavy / 'span_plan.json')
@@ -41,7 +45,7 @@ def main():
     assert summary['competition_labels_accessed'] is False and summary['model_parameters_fitted'] is False
     assert set(summary['configurations']) == {'cache_on','cache_off'}
     hardware = read(output / 'hardware.json')
-    assert hardware['portable_manifest_sha256'] == inputs['portable_manifest']['sha256']
+    assert read(output / 'offline_native_runtime/manifest.json') == read(inputs['portable_manifest']['path'])
     assert hardware['devices'].count('T4') == 2 and 'not found' not in hardware['ldd']
     frame, _ = read_competition(ROOT / 'raw')
     frame = frame.set_index('id',drop=False)
@@ -121,7 +125,7 @@ def main():
     selected = next((row['name'] for row in config['diagnostic_configurations']
                      if cases[row['name']]['qualifies_for_consistent_fitting_cache']),None)
     quota_after, intent = read(directory / 'quota.json'), read(directory / 'push_intent.json')
-    result = {'span':4,'checked_at':datetime.now(timezone.utc).isoformat(),'diagnostic_complete':True,
+    result = {'span':4,'job':args.job,'checked_at':datetime.now(timezone.utc).isoformat(),'diagnostic_complete':True,
         'rows':64,'groups':len(set(groups)),'competition_scoring_requests':512,'server_starts':2,
         'cases':cases,'selected_recipe':selected,'new_uniform_cache_admitted':selected is not None,
         'historical_h37_raw_metrics':metrics(labels,old['original']),

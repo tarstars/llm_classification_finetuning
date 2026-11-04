@@ -79,6 +79,25 @@ requires passing historical identity. Otherwise preserve it as historical and
 score all fitting rows consistently. If no configuration qualifies, stop E04
 with negative evidence and defer H44 against its failed prerequisite.
 
+## Manifest guard correction before any model inference
+
+The first exact job native-repeatability/1 ended ERROR before loading the model:
+the raw manifest JSON SHA differed solely because the two package keys were
+serialized in a different order. Independent comparison finds equal parsed
+manifests,175identical file records and canonical SHA
+`a3faba4f5e96d9dcab552adbecf5ef8aedc3f21239a0e0bf78384d702775ca0d`.
+Keep the source, failed guard and **37.403-second charge**. No competition row
+was scored. [Recovery proof](../results/span_004/manifest_guard_recovery.json).
+
+One separate repeatability_retry job compares canonical JSON with sorted keys,
+retaining every manifest field/file SHA/size. This corrects serialization identity;
+no model/worker, two serving configurations, input/order or numerical limit changes.
+Retry cap is **1,680seconds**, source alarm1,620seconds. Both attempts plus60s
+finalization reserve bound1,777.403seconds, inside the original1,800-second total
+diagnostic allocation. Controller enforces that cumulative gate and confirms
+the first job is actually terminal before any retry. Original clock/cap remain
+unchanged. No extra configuration or hidden threshold relaxation is permitted.
+
 ## H44: conditional next stage, no measurements yet
 
 Use matching H03 raw original/aligned-swap averages and only a valid E04 judge
