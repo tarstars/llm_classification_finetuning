@@ -81,8 +81,8 @@ print('Shared CPU analysis seconds:',cached['cpu_elapsed_seconds'])
 
 The64-row Internet-disabled reload and both visible CSVs are independently
 checked. Visible3-row predictions do not establish a leaderboard score.
-The frozen temperature/adapter are unchanged. Submission remains pending until
-the exact accepted receipt is terminal with a real score.
+The frozen temperature/adapter are unchanged. The exact accepted receipt below
+records the terminal official score separately from local estimates.
 '''), nbf.v4.new_code_cell('''verification=read('classifier_verification.json')
 display(pd.DataFrame(verification['identity']['identity']).T)
 display(pd.DataFrame(verification['independently_validated_previews']).T)
@@ -141,7 +141,7 @@ if (RESULTS/'decisions.json').exists():
     display(pd.DataFrame([{'task':name,'experiment_complete':value['experiment_complete'],
                           'decision':value['reason']} for name,value in decisions['tasks'].items()]))
     print('Best recorded official:',decisions['best_recorded_official_now'])
-for filename in ['submission_intent.json','terminal_audit.json','closure_audit.json']:
+for filename in ['submission_intent.json','terminal_audit.json']:
     if (RESULTS/filename).exists():print(filename,read(filename))
 display(pd.DataFrame([{'version':v['number'],'state':v['state'],'tasks':len(v['item_ids']),
                       'focus':v['focus_ids']} for v in registry['versions']]))

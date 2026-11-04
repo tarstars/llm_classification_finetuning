@@ -71,7 +71,8 @@ def main():
                 "official_submission": receipt["ref"], "official_status": status,
                 "officially_verified": is_verified, "official_log_loss": score,
                 "improves_best_recorded_official": is_verified and score < baseline,
-                "reason": "One frozen classifier submitted; monitor its exact receipt. No refit or leaderboard retuning."},
+                "reason": ("One frozen classifier verified with its terminal official score. No refit or leaderboard retuning."
+                           if is_verified else "One frozen classifier submitted; monitor its exact receipt. No refit or leaderboard retuning.")},
     }
     if is_verified:
         manifest_path = REPO / "results/span_002/research_candidate.json"

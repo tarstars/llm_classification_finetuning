@@ -1,0 +1,23 @@
+{
+  "span": 3,
+  "verified_at": "2026-11-04T13:21:25.100740+00:00",
+  "source_kernel": "arseniytrushin/llm-preference-span-003-classifier-predict",
+  "kernel_version": 1,
+  "script_version_id": 365549578,
+  "submission_ref": 57979825,
+  "official_log_loss": 0.95481,
+  "officially_verified": true,
+  "best_recorded_official": true,
+  "frozen_manifest": "results/span_002/research_candidate.json",
+  "frozen_manifest_sha256": "2091f699df6f3b17a79f2d23f22827013598748ffe8599f9cafc61b0052fd56c",
+  "adapter_sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b",
+  "temperature": 0.9441963863130951,
+  "class_order": [
+    "winner_model_a",
+    "winner_model_b",
+    "winner_tie"
+  ],
+  "prediction_recipe": "Average aligned original/swapped raw probabilities, then apply the frozen temperature.",
+  "old_official_candidate_preserved": true,
+  "note": "New verification record; do not modify the historical frozen v2 manifest or attempt002 selection."
+}

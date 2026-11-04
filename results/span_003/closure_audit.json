@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-11-04T13:31:25.134624+00:00",
+  "passed": true,
+  "active_version": 4,
+  "v3_closed": true,
+  "v3_focus_resolved": [
+    "E02",
+    "E03",
+    "H39",
+    "H43"
+  ],
+  "v4_focus_empty": true,
+  "v4_new": [
+    "E04",
+    "H44"
+  ],
+  "v4_carryovers": 33,
+  "v4_tasks": 35,
+  "v5_empty_draft": true,
+  "no_running_tasks": true,
+  "historical_snapshots_unchanged_from": "a18feff",
+  "historical_snapshot_sha256": {
+    "backlog/versions/v1.final.json": "a3b0967e5285242bb356c5dc4e1ca33c2bd41cd58a24d84794153d8b840f6138",
+    "backlog/versions/v1.final.md": "9462b9a7f33cd4e9d8e3948a1e2f1ef971411af242100f35b8cbb25a9f2a5ea7",
+    "backlog/versions/v1.start.json": "0184479f9c5cd767531411490f21fc38fb89cc5fdd343b89d2d7254bd0baef5e",
+    "backlog/versions/v1.start.md": "9d62a7657c069b40023e178c7f1004f55419ef41f583d8264e5509b57272e0fd",
+    "backlog/versions/v2.final.json": "66606162be35a509e9ae56493293d7924f7f01983b0b31b1d3b8ab5298291001",
+    "backlog/versions/v2.final.md": "e8278377328a0ffbd68f94f9da5a7db8a90a38aa47c392100ba47e063ea5adf0",
+    "backlog/versions/v2.start.json": "e83cec43f76ea1fdd348b213aaafdc0290c8fd84735ce295f5216593a1146ec7",
+    "backlog/versions/v2.start.md": "554cbbfb85fe5e0f5303abeeea19244c5c0406f2c118c0f7483561e55f922a21",
+    "backlog/versions/v3.start.json": "126241dd30b8f1117ad2a332e936072a5e49b4fcfff482f207f8e47403462490",
+    "backlog/versions/v3.start.md": "3f2a382fadb41c0e9940c54cece092e87df761cc9fdad6f7a641088f355db73d"
+  },
+  "official_submission": {
+    "ref": 57979825,
+    "status": "COMPLETE",
+    "public_score": "0.95481"
+  },
+  "conservative_compute_seconds_bound": 22338.297000000006,
+  "terminal_audit_at": "2026-11-04T13:20:35.035385+00:00",
+  "notebook_executed_code_cells": 5,
+  "notebook_figures": 3,
+  "notebook_errors": 0,
+  "notebook_link_resolves": true,
+  "artifact_sha256": {
+    "results/span_003/cached_results.json": "84dd3081b3b978ae41083fdfda0da73a3a635927668474a07faf585ed371f5df",
+    "results/span_003/frozen_cached_recipes.json": "8f0420d33116a7893c859cb9b5213d823d18143a4a21efed6bde95472dba1cda",
+    "results/span_003/classifier_verification.json": "86359602522212e4aad11c0bba9e3902e0c1abeb76481b4cda1a396586e1d41b",
+    "results/span_003/native_profile_results.json": "f01a09755b4dfbe3328465a4b18f2ff47e0978c9b6e01c5d07039f8d45b73b08",
+    "results/span_003/decisions.json": "ed6007139be4ded3c06b5e476e1f38851582206b1f63a0de243d43a4f3ce0312",
+    "results/span_003/local_audit.json": "b848e5c92a538fdff8fb88085be12c7fa7d9b4eae759d2a0b0ce729eb57eaeb5",
+    "results/span_003/terminal_audit.json": "0e79c1d69e577387a7dd72ec3b9a621ad664058194c67b31a850d26327502597",
+    "results/span_003/submission_intent.json": "030a96342cdaa4463a6dff99e7ecd8159b50c795a6e09de22469d590ff927d8b",
+    "results/span_003/receipt.json": "162f4ab98c538b9f26b3cd33aad66de42c911a2a8f3eb573eead692484cf29d1",
+    "results/span_003/official_result.json": "e1673099f10d0d84aa56dd9e9b334e0fed77dd62c6735901dbadf0faf25600c5",
+    "results/span_003/official_accounting.json": "2dcae538181d0096c4a65336d31995decddaa6170df9809b53f9a86f32b0be20",
+    "docs/SPAN_003_RESULTS.md": "88ede7b871678d0a00b1f0971042c80e371cd4e09c9f5b65b1ceb99fdd4c5a69",
+    "docs/SPAN_003_H39.md": "39ef829bfb58c4ab3f9d91aa854453eb4774824c65858076292835a64ee400d4",
+    "docs/SPAN_003_H43.md": "8d11611e28d88cbab2ffd15ffc53a0b6a3ea7486c20d1a1a69dd21a8eef9fb51",
+    "docs/SPAN_003_E02.md": "411a98dd3f6e762341f024cc50888ac89f82b410a9be1a2410c5ead20154a492",
+    "docs/SPAN_003_E03.md": "e5e8ef2e4f171d64b270b16139ded9c38ccf294a8887f8b58446616f7bdf67ce",
+    "docs/SPAN_003_COMPLETION.md": "e3bc7a6e58598f646ee32df32c5eae9c5e269c6965c508c306e85968e9c3ffa6",
+    "results/span_003/deployed_candidate.json": "cf5cf8cdb740c8fd30251fa43d100ea81c4b0496b8606190e647a9fc8703a0de",
+    "notebooks/14_backlog_v3_span.ipynb": "8609d2a97bb836fb21647ae7d4ad8c6f0f7fd642faebf94e28cac37912c44f2c",
+    "scripts/check_span_003_closure.py": "9877e6e106e5b8cdd424e082a9eab626d1c23a75eb370cd98681b95bcd834472",
+    "backlog/hypotheses.json": "0977f1a3b36a4f41b994669d9d0135f812857ea87467c952abc82548959ca7e4",
+    "backlog/versions/v3.final.json": "519b836c95d22323a7cf9ae584df312be3887bc040f0da473e1ce08aeda659a2",
+    "backlog/versions/v3.final.md": "1bc8afb394ce7450aecab09dc6b169bddd4f1fdb12723f206d961924dd7df8aa",
+    "backlog/versions/v4.start.json": "33d49170b1ca4c95d573761a6119589d15e29faf94ef8a836d8c44088f06c148",
+    "backlog/versions/v4.start.md": "81407a66c1db9dd0e1769b0236c6fdbaf30a098ad98db3c6aed4080488b262a1"
+  },
+  "publication": "Verify remote main equals local HEAD after the closing commit/push; do not execute v4."
+}

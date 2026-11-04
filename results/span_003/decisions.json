@@ -1,7 +1,7 @@
 {
   "span": 3,
-  "generated_at": "2026-11-04T10:40:46.379664+00:00",
-  "all_focus_measurements_complete": false,
+  "generated_at": "2026-11-04T13:21:25.101083+00:00",
+  "all_focus_measurements_complete": true,
   "tasks": {
     "H43": {
       "experiment_complete": true,
@@ -77,28 +77,28 @@
       "reason": "Native CUDA and actual two-device inference work, but cache identity fails. No threshold relaxation, cache pooling or further GPU expansion."
     },
     "E03": {
-      "experiment_complete": false,
+      "experiment_complete": true,
       "offline_identity_passed": true,
       "visible_csvs_verified": true,
       "official_submission": 57979825,
-      "official_status": "PENDING",
-      "officially_verified": false,
-      "official_log_loss": null,
-      "improves_best_recorded_official": false,
-      "reason": "One frozen classifier submitted; monitor its exact receipt. No refit or leaderboard retuning."
+      "official_status": "COMPLETE",
+      "officially_verified": true,
+      "official_log_loss": 0.95481,
+      "improves_best_recorded_official": true,
+      "reason": "One frozen classifier verified with its terminal official score. No refit or leaderboard retuning."
     }
   },
   "official_submissions_made": 1,
   "best_recorded_official_before_span": 0.97025,
-  "best_recorded_official_now": 0.97025,
-  "source_sha256": "35b79a5b05c08b419fa9f69f3a42dcd9ce6f2ffa8ca14209b6d29f1e12cbdb68",
+  "best_recorded_official_now": 0.95481,
+  "source_sha256": "45aa395aaf4bf9aa3d387dc729f24827c18fe08ae0710e992ceb2c6723268ab0",
   "input_sha256": {
     "cached_results.json": "84dd3081b3b978ae41083fdfda0da73a3a635927668474a07faf585ed371f5df",
     "native_profile_results.json": "f01a09755b4dfbe3328465a4b18f2ff47e0978c9b6e01c5d07039f8d45b73b08",
     "classifier_verification.json": "86359602522212e4aad11c0bba9e3902e0c1abeb76481b4cda1a396586e1d41b",
-    "local_audit.json": "eae8d74af7f4fe5e8f0693a6613532cf63a6a568dd1193b79dc9b7934fd887d9",
+    "local_audit.json": "b848e5c92a538fdff8fb88085be12c7fa7d9b4eae759d2a0b0ce729eb57eaeb5",
     "receipt.json": "162f4ab98c538b9f26b3cd33aad66de42c911a2a8f3eb573eead692484cf29d1",
-    "official_result.json": "b2d5997a23fb43d6082a2fc5b78a37f6b7a79955116679563a8f1d8ea5d23d01"
+    "official_result.json": "e1673099f10d0d84aa56dd9e9b334e0fed77dd62c6735901dbadf0faf25600c5"
   },
   "selection_limits": "Inspected development; grouped nested fits; conditional group-bootstrap intervals. Native numeric cause unisolated; no cross-cohort additive gain claim."
 }

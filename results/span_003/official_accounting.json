@@ -1,0 +1,14 @@
+{
+  "quota_after": {
+    "used_seconds": 78662.001,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false
+  },
+  "measured_span_quota_charge_seconds": 738.2970000000059,
+  "hidden_receipt_elapsed_seconds": 13586.301637649536,
+  "conservative_span_compute_seconds_bound": 22338.297000000006,
+  "within_original_cap": true,
+  "method": "Other goal GPU jobs stopped before submission; no new GPU jobs allowed. Measured account charges are separate from a conservative hidden ceiling, not assumed zero when quota is unchanged. Receipt elapsed includes queue/obfuscation, not measured GPU time."
+}

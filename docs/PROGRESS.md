@@ -1,6 +1,37 @@
 # Project memory
 
-## Active v3 goal — 2026-11-04
+## Current state — completed v3 span, 2026-11-04
+
+**Best official log loss is 0.95481**, improved from 0.97025 by 0.01544.
+Frozen submission57979825 completed; observer44399 exited0. The Qwen3-4B H03
+step1438 adapter, 1,024-token packing, aligned order averaging and frozen
+temperature0.9441963863130951 are verified without retraining or leaderboard
+retuning. Old official candidate and historical v2 manifest remain unchanged.
+
+All four v3 focus tasks E03/H39/E02/H43 are done. Cached calibrated full mixture
+achieves0.931579 on2,048 exploratory rows; conditional tie preservation loses.
+The20% entropy route gains0.004859 but misses current runtime and numerical
+compatibility gates. Native offline CUDA uses both T4s yet fails unchanged
+identity limits; optional1,024-row scoring and cascade submission were stopped.
+
+Original clock07:42:17UTC onNovember4 and deadlineNovember6 are preserved.
+Measured weekly charge738.297s includes all four preview/profile jobs; hidden
+GPUtime is unexposed, so report the separate conservative whole-span bound
+22,338.297s/6.20508h against the original30,076.296s/8.35453h cap. Zero final
+reservations, no paid scaling/refresh extension. Fresh source/terminal/quota and
+closure audits pass. Final notebook14 executes5code cells/3figures/0errors;
+18backlog tests pass after advancement, and scientific/source checks pass.
+
+**V3 is sealed, v4 active with35tasks** (33unfinished carryovers plus H44/E04),
+no focus and no execution; **v5 is empty draft**. H44 requires a compatible E04
+recipe. Preserve all historical snapshots and stop before v4 work. See
+[v3 results](SPAN_003_RESULTS.md), [completion](SPAN_003_COMPLETION.md),
+[notebook14](../notebooks/14_backlog_v3_span.ipynb) and
+[context handoff](CONTEXT_HANDOFF.md). User notebook07 edit remains untouched.
+
+Entries below are historical snapshots, including old “active/pending” wording.
+
+## V3 in-progress snapshot — 2026-11-04, before official result
 
 Original activation07:42:17UTC, deadlineNov6 at the same time; cap30,076.296s/
 8.35453two-T4sessionh. E02/H39/H43 are done. Offline classifier passed64-row
@@ -25,7 +56,7 @@ observer44399 uses bounded reads and monitors the one accepted receipt. See
 Still required: receipt/result, final audits, reports/notebook, v3seal/v4formation,
 publication and goal completion. Stop before v4; preserve user's notebook07.
 
-## Current handoff — 2026-11-04
+## V2 closing snapshot — 2026-11-04
 
 V2 is sealed; all five focus items H40/E01/H03/H37/H42 are done and all GPU
 versions are terminal. H03 continuation to fixed1438/one epoch improves matched

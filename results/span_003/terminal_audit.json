@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-11-04T13:20:35.035385+00:00",
+  "passed": true,
+  "jobs": [
+    {
+      "role": "classifier_smoke",
+      "kernel_version": "arseniytrushin/llm-preference-span-003-classifier-smoke/1",
+      "status": "COMPLETE",
+      "notebook_sha256": "d138502e1273b2f8906ffad08779b453c84bef13298b3aa71b42cf0e4a8387ed",
+      "remote_source_matches": true,
+      "internet_disabled": true
+    },
+    {
+      "role": "native_profile",
+      "kernel_version": "arseniytrushin/llm-preference-span-003-native-profile/1",
+      "status": "ERROR",
+      "notebook_sha256": "038cc0c8d24f7448d4958792efeba7f164e0113276d20438874a8ae24e8d9942",
+      "remote_source_matches": true,
+      "internet_disabled": true
+    },
+    {
+      "role": "classifier_predict",
+      "kernel_version": "arseniytrushin/llm-preference-span-003-classifier-predict/1",
+      "status": "COMPLETE",
+      "notebook_sha256": "73457410843da9f15417e4bbc4b85969eae4860b1fdcf189be12a6ff5fd9e0e4",
+      "remote_source_matches": true,
+      "internet_disabled": true
+    },
+    {
+      "role": "native_profile_retry",
+      "kernel_version": "arseniytrushin/llm-preference-span-003-native-profile-retry/1",
+      "status": "ERROR",
+      "notebook_sha256": "8e5cab3b3a158d80d4e107196a472f18fa81f1dd027b3a1346930ab590ff2df2",
+      "remote_source_matches": true,
+      "internet_disabled": true
+    }
+  ],
+  "all_recorded_jobs_terminal": true,
+  "official_submission": {
+    "ref": 57979825,
+    "status": "COMPLETE",
+    "public_score": "0.95481"
+  },
+  "owned_notebook_count": 49,
+  "nonterminal_owned_notebooks": [],
+  "unobserved_old_notebooks": [
+    {
+      "kernel_sha256": "1be3866170da769ae28a502772222b186570c2d8dfb4f499e2e012c6433a8d35",
+      "http_status": 404,
+      "last_run_time": "2025-12-17 11:20:26.657000"
+    },
+    {
+      "kernel_sha256": "dd8b751a3d26416f67f344973a27e1b84ee9f8935088d4f2f4393df7e438b540",
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:52:45.893000"
+    },
+    {
+      "kernel_sha256": "69e91610ce0dfb93b7d44619ee6995b228e83dc71446d5384e0a7b2b44861f55",
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:24:42.037000"
+    }
+  ],
+  "quota": {
+    "used_seconds": 78662.001,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false
+  },
+  "measured_span_quota_charge_seconds": 738.2970000000059,
+  "conservative_span_compute_seconds_bound": 22338.297000000006,
+  "gpu_session_seconds_cap": 30076.296000000002,
+  "within_original_compute_cap": true,
+  "original_start": "2026-11-04T07:42:17+00:00",
+  "original_deadline": "2026-11-06T07:42:17+00:00",
+  "within_original_deadline": true,
+  "no_paid_scaling": true,
+  "no_quota_refresh_used": true,
+  "no_optional_followup_executed": true,
+  "local_audit_sha256": "b848e5c92a538fdff8fb88085be12c7fa7d9b4eae759d2a0b0ce729eb57eaeb5",
+  "accounting_limit": "Hidden code-competition GPU time may not be exposed in quota. Actual account charge and conservative source-bounded hidden allowance are reported separately; receipt elapsed is not GPU time."
+}

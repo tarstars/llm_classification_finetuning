@@ -1,7 +1,7 @@
 {
   "ref": 57979825,
-  "status": "SubmissionStatus.PENDING",
-  "public_score": "",
+  "status": "SubmissionStatus.COMPLETE",
+  "public_score": "0.95481",
   "private_score": "",
   "date": "2026-11-04 09:31:36.027000",
   "description": "Span003 frozen H03 step1438; T0.9441963863; no refit",

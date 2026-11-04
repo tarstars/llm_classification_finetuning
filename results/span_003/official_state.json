@@ -1,13 +1,27 @@
 {
-  "stage": "waiting_for_official_result",
-  "utc": "2026-11-04T09:44:57.369490+00:00",
+  "stage": "official_terminal",
+  "utc": "2026-11-04T13:17:58.826105+00:00",
   "submission": {
     "ref": 57979825,
-    "status": "SubmissionStatus.PENDING",
-    "public_score": "",
+    "status": "SubmissionStatus.COMPLETE",
+    "public_score": "0.95481",
     "private_score": "",
     "date": "2026-11-04 09:31:36.027000",
     "description": "Span003 frozen H03 step1438; T0.9441963863; no refit",
     "url": "/code/arseniytrushin/llm-preference-span-003-classifier-predict?scriptVersionId=365549578"
+  },
+  "accounting": {
+    "quota_after": {
+      "used_seconds": 78662.001,
+      "reserved_seconds": 0.0,
+      "allowed_seconds": 108000.0,
+      "refresh_time": "2026-11-07 00:00:00",
+      "paid_scaling": false
+    },
+    "measured_span_quota_charge_seconds": 738.2970000000059,
+    "hidden_receipt_elapsed_seconds": 13586.301637649536,
+    "conservative_span_compute_seconds_bound": 22338.297000000006,
+    "within_original_cap": true,
+    "method": "Other goal GPU jobs stopped before submission; no new GPU jobs allowed. Measured account charges are separate from a conservative hidden ceiling, not assumed zero when quota is unchanged. Receipt elapsed includes queue/obfuscation, not measured GPU time."
   }
 }
