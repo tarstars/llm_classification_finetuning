@@ -1,7 +1,7 @@
 {
   "span": 2,
-  "generated_at": "2026-11-03T21:38:24.097119+00:00",
-  "all_focus_measurements_complete": false,
+  "generated_at": "2026-11-04T00:09:31.725751+00:00",
+  "all_focus_measurements_complete": true,
   "tasks": {
     "H40": {
       "experiment_complete": true,
@@ -49,8 +49,45 @@
       "reason": "Both larger quality checks pass; full sequential deployment fails the seven-hour guard."
     },
     "H03": {
-      "experiment_complete": false,
-      "reason": "Final full-development probabilities and accepted-exposure audit pending."
+      "experiment_complete": true,
+      "primary_contrast": {
+        "gain": 0.014803277227999973,
+        "interval_95": [
+          0.010945489367988295,
+          0.018368393990048196
+        ],
+        "groups": 5211,
+        "rows": 5746,
+        "replicates": 2000,
+        "weighted_class_contributions": [
+          0.017446129233436504,
+          0.017247944884855232,
+          -0.01989079689029176
+        ]
+      },
+      "secondary_contrast": {
+        "gain": 0.013320734918465919,
+        "interval_95": [
+          0.010273524663480105,
+          0.016086079258159
+        ],
+        "groups": 5211,
+        "rows": 5746,
+        "replicates": 2000,
+        "weighted_class_contributions": [
+          0.005164953129303773,
+          0.004871575638420801,
+          0.0032842061507413448
+        ]
+      },
+      "exposure_verified": true,
+      "quality_gate_passed": true,
+      "runtime_projection_guard_passed": true,
+      "projection_rows_assumption": 25000,
+      "projected_seconds_with_margin": 18775.945073677336,
+      "accepted_as_research_reference": true,
+      "officially_deployed": false,
+      "reason": "Use the declared fixed final endpoint and matched cross-fitted temperature comparison; official verification is a separate step."
     }
   },
   "best_recorded_official_loss_before_span": 0.97025,
@@ -62,5 +99,5 @@
     "positive_group_interval_required": true,
     "individual_job_guard_seconds": 25200
   },
-  "source_sha256": "5b0ec3677f29335243f1ea28f1f6bd26bfce7a67fc30bbca704254f11cffee24"
+  "source_sha256": "744d89a8e93a7847372717a521313939ef1e2ecd1bb59ed6e63284b34ef2fd7a"
 }

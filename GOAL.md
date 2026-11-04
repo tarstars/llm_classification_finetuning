@@ -1,5 +1,10 @@
 # Goal: execute a bounded backlog-v2 span and form backlog v3
 
+Research span closed on **2026-11-04**: v2 is sealed, v3 is active with 37 tasks
+and no selected focus, and v4 is an empty draft. See
+[results](docs/SPAN_002_RESULTS.md) and [completion evidence](docs/SPAN_002_COMPLETION.md).
+The contract below is preserved; do not execute v3 under this goal.
+
 Work in `/home/tarstars/prj/llm_classification_finetuning`. Follow `AGENTS.md` and
 `PROJECT_POLICY.md`. Act autonomously to test useful improvements to human-preference
 classification, record honest outcomes and prepare the next version of the backlog.

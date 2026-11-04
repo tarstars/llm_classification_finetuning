@@ -1,0 +1,68 @@
+{
+  "span": 2,
+  "source_kernel": "arseniytrushin/llm-preference-span-002-exposure",
+  "version_number": 1,
+  "adapter_path": "exposure/adapter",
+  "adapter_sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b",
+  "initial_step": 800,
+  "final_step": 1438,
+  "epochs_completed": 1.0,
+  "temperature": 0.9441963863130951,
+  "calibration_family": "temperature",
+  "class_order": [
+    "winner_model_a",
+    "winner_model_b",
+    "winner_tie"
+  ],
+  "calibration_fit_rows": 5746,
+  "calibration_note": "Full exploratory development fit after the cross-fitted model comparison; no confirmation labels used.",
+  "prediction_recipe": "Average aligned original/swapped raw probabilities, then apply the frozen temperature.",
+  "config": {
+    "attempt": "002",
+    "model_id": "Qwen/Qwen3-4B",
+    "model_source": "qwen-lm/qwen-3/transformers/4b/1",
+    "max_length": 1024,
+    "seed": 20261102,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "epochs": 1,
+    "train_batch_size": 4,
+    "eval_batch_size": 4,
+    "gradient_accumulation_steps": 4,
+    "group_training_by_length": true,
+    "eval_steps": 200,
+    "selection_dev_rows": 1024,
+    "max_train_seconds": 21600,
+    "preprocessing_sha256": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "split_ids_sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1"
+  },
+  "confirmation_used_for_selection": false,
+  "primary_crossfit_comparison": {
+    "gain": 0.014803277227999973,
+    "interval_95": [
+      0.010945489367988295,
+      0.018368393990048196
+    ],
+    "groups": 5211,
+    "rows": 5746,
+    "replicates": 2000,
+    "weighted_class_contributions": [
+      0.017446129233436504,
+      0.017247944884855232,
+      -0.01989079689029176
+    ]
+  },
+  "officially_verified": false,
+  "source_predictions_sha256": "51fabd9e17111d44e0176569a10c816d7cc3c0e3de5534da93d9645e08ae8dae",
+  "analysis_results_sha256": "7ac703930cb180d91d997c91b111ccc198fb4c385744af1b65f2a0be91ecfa19",
+  "frozen_at": "2026-11-04T00:09:31.725159+00:00"
+}

@@ -7,9 +7,9 @@ is multiclass log loss (lower is better).
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
-The current [goal](GOAL.md) executes a bounded v2 span and forms backlog v3, with
-focus H40, E01, H03, H37 and H42. Limits are 12 two-T4 session-hours and 48 elapsed
-hours, further constrained by verified available quota. The completed
+The [v2 goal](GOAL.md) has completed its five focus items and formed backlog v3.
+Actual use was 6.224 two-T4 session-hours within the original 12-hour compute and
+48-hour wall-clock limits. All GPU jobs are terminal. The completed
 [first-span goal](docs/GOAL_V1.md) is preserved for history.
 
 Our best official Kaggle score is **0.97025**, achieved by the Qwen3-4B QLoRA
@@ -17,6 +17,12 @@ preference classifier in attempt 002. Frozen-model confirmation gave **0.96236 l
 loss** and **53.06% accuracy** on 5,746 examples. Training stopped at its six-hour
 budget after 0.61 epochs; checkpoint 800 was selected on development data.
 See [attempt 002 results](ATTEMPT_002_RESULTS.md) and the [protocol](docs/ATTEMPT_002.md).
+
+Our new **local research reference** continues that checkpoint to one epoch:
+matched full-development loss improves **0.968872 → 0.954069**, gain **0.014803**
+with 95% group interval **[0.010945, 0.018368]**, accuracy **53.79%**. It has no new
+official score; offline export verification is queued for v3. See the
+[v2 results](docs/SPAN_002_RESULTS.md) and [frozen manifest](results/span_002/research_candidate.json).
 
 The completed [dataset/model EDA](EDA_REPORT.md) identifies answer-order sensitivity,
 weak tie discrimination, and difficult correctness/constraint comparisons. A small
@@ -40,13 +46,16 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v2**, with **39 tasks**: three discoveries and 36 unfinished
-carryovers. Its focus is H40, E01, H03, H37 and H42; v3 is the
-[next-version draft](backlog/NEXT.md), now containing H43 (winner-only blending)
-and E02 (offline native CUDA verification).
+The active version is **v3**, with **37 tasks**: three discoveries and 34 unfinished
+carryovers. New tasks are E02 (offline native CUDA verification), E03 (continued
+classifier export and one frozen official verification), and H43 (conditional
+blending). H39 prioritizes a cached judge-cascade pilot using the improved
+classifier. V3 focus is unselected; no v3 work has started. V4 is the empty
+[next-version draft](backlog/NEXT.md).
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),
-[v1 final history](backlog/versions/v1.final.md) and [v2 start](backlog/versions/v2.start.md).
+[v1 final history](backlog/versions/v1.final.md), [v2 final history](backlog/versions/v2.final.md)
+and [v3 start](backlog/versions/v3.start.md).
 [Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
 The JSON-backed CLI browses work, records status/evidence and regenerates the page:
 
@@ -55,8 +64,8 @@ uv run python scripts/backlog.py list --priority P1
 uv run python scripts/backlog.py list --actionable
 uv run python scripts/backlog.py list --actionable --focus
 uv run python scripts/backlog.py versions
-uv run python scripts/backlog.py list --version 2 --new
-uv run python scripts/backlog.py list --version 2 --carried
+uv run python scripts/backlog.py list --version 3 --new
+uv run python scripts/backlog.py list --version 3 --carried
 uv run python scripts/backlog.py list --version next
 uv run python scripts/backlog.py show H09
 uv run python scripts/backlog.py check
@@ -69,17 +78,17 @@ None justified promotion. The best new point estimate was **0.97609** versus
 uncertainty including no improvement. Paired training reduced order bias but raised
 tie losses. Total compute was **4.154 two-T4 session-hours**, including a failed probe.
 V2 adds optimizer/exposure instrumentation (E01), a conditional tie-preserving
-follow-up (H42), and a deferred reward-feature diagnostic (H41). The current v2
-goal starts with cached calibration H40 and instrumentation E01 before more
-training. V2 is now underway: H40/E01 and the H42 stopping gate are complete;
-H37 now shows a 0.0250 nested gain on 2,048 rows, confirmed by a frozen-recipe
-new-group check, but its full sequential deployment fails the runtime guard.
-H03 continuation remains in progress. See the
+follow-up (H42), and a deferred reward-feature diagnostic (H41). V2 completed
+H40/E01/H03/H37/H42: calibration alone was inconclusive, the H42 gate stopped
+without training, and H03 improved the classifier. H37 shows a 0.0250 nested gain
+on 2,048 rows against the old classifier, confirmed by a frozen new-group check,
+but its full sequential deployment fails the runtime guard. Its complementarity
+with improved H03 remains untested; gains cannot be added. See the
 [v2 report](docs/SPAN_002_RESULTS.md) and [protocol](docs/SPAN_002_PROTOCOL.md).
 
-Read a fresh pinned-job status and numerical progress snapshot with
-`uv run python scripts/span_progress.py --job joint`. It records dated observations
-under `results/span_001/` and omits raw log text.
+The [completion record](docs/SPAN_002_COMPLETION.md) links resource, provenance,
+notebook and version checks. A new goal must select v3 focus and refresh resources
+before execution; the completed v2 goal stops at this boundary.
 
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
@@ -99,6 +108,7 @@ classifier comparison and all baselines.
 - [300 blind judgments by the current assistant](notebooks/10_blind_self_judge.ipynb)
 - [Target associations and leakage audit](notebooks/11_target_associations_and_leakage.ipynb)
 - [Backlog v1 span: controlled pilots and evidence](notebooks/12_backlog_v1_span.ipynb)
+- [Backlog v2 span: calibration, accepted exposure and judge ensemble](notebooks/13_backlog_v2_span.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary

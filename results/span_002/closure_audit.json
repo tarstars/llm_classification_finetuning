@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-11-04T04:25:34.037914+00:00",
+  "passed": true,
+  "active_version": 3,
+  "v2_closed": true,
+  "v3_focus_empty": true,
+  "v3_discoveries": [
+    "E02",
+    "E03",
+    "H43"
+  ],
+  "v3_carryovers": 34,
+  "v3_tasks": 37,
+  "v4_empty_draft": true,
+  "no_running_tasks": true,
+  "terminal_resource_audit_at": "2026-11-04T04:24:47.620991+00:00",
+  "gpu_session_hours": 6.224249999999999,
+  "historical_snapshots_unchanged_from": "8e2fadc",
+  "historical_snapshot_sha256": {
+    "backlog/versions/v1.final.json": "a3b0967e5285242bb356c5dc4e1ca33c2bd41cd58a24d84794153d8b840f6138",
+    "backlog/versions/v1.final.md": "9462b9a7f33cd4e9d8e3948a1e2f1ef971411af242100f35b8cbb25a9f2a5ea7",
+    "backlog/versions/v1.start.json": "0184479f9c5cd767531411490f21fc38fb89cc5fdd343b89d2d7254bd0baef5e",
+    "backlog/versions/v1.start.md": "9d62a7657c069b40023e178c7f1004f55419ef41f583d8264e5509b57272e0fd",
+    "backlog/versions/v2.start.json": "e83cec43f76ea1fdd348b213aaafdc0290c8fd84735ce295f5216593a1146ec7",
+    "backlog/versions/v2.start.md": "554cbbfb85fe5e0f5303abeeea19244c5c0406f2c118c0f7483561e55f922a21"
+  },
+  "candidate_manifest_and_private_export_match": true,
+  "official_submission_made": false,
+  "notebook": {
+    "executed_code_cells": 6,
+    "figures": 5,
+    "errors": 0
+  },
+  "notebook_link_resolves": true,
+  "artifact_sha256": {
+    "results/span_002/calibration_results.json": "85ff1c8e066e95a63b971d5974c09384ed080c1ab5db8a88f70a28c4e702abc5",
+    "results/span_002/instrumentation_results.json": "7f8a7331ab074f2391ea6673233ea45b83aa311e95f9d361b3da49773153668d",
+    "results/span_002/exposure_results.json": "7ac703930cb180d91d997c91b111ccc198fb4c385744af1b65f2a0be91ecfa19",
+    "results/span_002/expanded_results.json": "2dbb8dbda3c00d7466d9f60204a06fd2eb9b3baa5f51d838885aeb3de25d2ad7",
+    "results/span_002/packing_diagnostics.json": "cd66c18571f5aa2a0c9342a9682a05a1e21fd9d2e1483f8e1a6c094cd3f7edd3",
+    "results/span_002/research_candidate.json": "2091f699df6f3b17a79f2d23f22827013598748ffe8599f9cafc61b0052fd56c",
+    "results/span_002/decisions.json": "74e664c69f8ced5b0b7c6b56b6884d5a643bf8e8c276d203c9891ecf67433399",
+    "results/span_002/terminal_audit.json": "4f444fe73e2bf1958e0e6453e4da10bf2690bf40b59ede33a81059be45593fb5",
+    "docs/SPAN_002_RESULTS.md": "977afc3cb49041db53008cc37b70ed8e5605033d0c70a333033db2c482efe46c",
+    "docs/SPAN_002_H03.md": "32f44a72c9116da749ebe9229e6fb05620b0ec2e1adc892821a153d8479c4803",
+    "docs/SPAN_002_H37.md": "2227ae095a422457f6adae5afe1dc15a4e28fd9df57904dd81c825686ecbdea7",
+    "docs/SPAN_002_H40.md": "76e0c797242b74f8582f293efc1beae10a53810cfed837668cf9abe31ce04e20",
+    "docs/SPAN_002_H42.md": "d0595df065f65e6c366d91a219909c5983f1c996881edb5145264fc298421e5a",
+    "docs/SPAN_002_E01.md": "0c81a67372cc8046e516736cb6c99050e2cea3e3ab251f81710c7dcce8cef0ed",
+    "scripts/check_span_002_closure.py": "d4b385ca6b2cadfa7e34cca778e14b60c5fbc571d7a5c6a4234b0ed5015d4a7a",
+    "notebooks/13_backlog_v2_span.ipynb": "2115eee6801e86fb8144803cd332efc85ad0c2474f13c6bda9da5b80edac63d9"
+  },
+  "publication": "Verify remote main equals local HEAD after the closing commit and push."
+}

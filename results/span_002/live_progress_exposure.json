@@ -3,9 +3,9 @@
   "kernel": "arseniytrushin/llm-preference-span-002-exposure",
   "version": 1,
   "status": "KernelWorkerStatus.RUNNING",
-  "status_observed_at": "2026-11-03T23:13:50.374052+00:00",
+  "status_observed_at": "2026-11-03T23:31:03.582402+00:00",
   "log_reader_exit_code": 0,
-  "log_snapshot_mtime": "2026-11-03T23:14:03.134711+00:00",
+  "log_snapshot_mtime": "2026-11-03T23:31:16.401956+00:00",
   "last_snapshot_phase": "training_complete_final_outputs_pending",
   "JOINT_PROGRESS": {
     "step": 1438,

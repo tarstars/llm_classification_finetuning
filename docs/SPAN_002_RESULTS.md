@@ -1,174 +1,165 @@
-# Span 002: work in progress
+# Span 002 results: training helps; judge complementarity needs a cheaper path
 
-The v2 goal is **active**, not complete. H40, E01 and the conditional H42 gate are
-finished, and H37's larger comparison is complete; H03 remains in progress.
-No candidate is promoted and the best
-official Kaggle loss remains **0.97025**. This report will be completed after the
-recorded jobs and evaluations finish.
+The five v2 focus items **H40, E01, H03, H37 and H42 are finished**. Continuing
+the Qwen3-4B classifier to its fixed one-epoch endpoint improves full-development
+log loss **0.968872 → 0.954069**, with positive paired evidence. It is our new
+local research reference. A classifier/judge blend improves quality against the
+old classifier, but full sequential deployment fails the runtime guard.
+There was **no new competition submission**; best recorded official loss remains
+**0.97025**. Neither experiment establishes a route to 0.8.
 
-[Protocol](SPAN_002_PROTOCOL.md) · [Goal](../GOAL.md) · [Executed notebook](../notebooks/13_backlog_v2_span.ipynb) · [Aggregate evidence](../results/span_002/)
+[Protocol](SPAN_002_PROTOCOL.md) · [Goal](../GOAL.md) · [Executed notebook 13](../notebooks/13_backlog_v2_span.ipynb) · [Decisions](../results/span_002/decisions.json) · [Terminal audit](../results/span_002/terminal_audit.json)
 
-Original start **2026-11-03 18:23:46 UTC**; fixed deadline **November 5 at the same
-UTC time**. Maximum compute **12 elapsed two-T4 session-hours**, constrained by
-current quota. Initial live quota was 52,483.596 seconds / 14.58 hours available,
-with no reserved time; refresh is not used to extend this span.
+## Outcomes
 
-| Task | State | Measured result / outstanding work |
+Positive gain means lower log loss on identical rows. Cohorts differ between
+tasks; their losses/gains cannot be compared or added as if they shared a
+baseline. Development is exploratory; confirmation was not used. Intervals are
+paired group bootstraps conditional on fitted OOF predictions, without a
+multiple-comparison or untouched-data guarantee.
+
+| Task | Measured result | Decision |
 | --- | --- | --- |
-| H40 calibration | done | Full-dev nested gain 0.0011325; 95% interval [-0.0005643, +0.0029542] |
-| E01 exposure instrumentation | done | Both real CUDA ranks passed overflow, parameter-change and resume checks |
-| H42 tie anchoring | done at gate | Calibration meets stopping tolerances; no anchor training performed |
-| H37 ensemble | done | Nested gain 0.025007; frozen new-group gain 0.021022; full deployment fails runtime guard |
-| H03 exposure | running | First matched selection loss 0.95994 vs original 0.97870; final evaluation pending |
+| H40 calibration | Nested gain 0.001132, 95% interval [−0.000564, +0.002954], 5,746 rows | Uncertain primary gain; retain temperature control |
+| E01 instrumentation | Real two-T4 overflow/resume and parameter-change checks pass | Use verified accepted counters in H03 |
+| H03 continuation | **0.014803 [0.010945, 0.018368]** gain, 5,746 rows / 5,211 groups | Accept fixed step 1438 as local research reference |
+| H37 ensemble | **0.025007 [0.015015, 0.035853]** nested gain, 2,048 rows; frozen new-group gain **0.021022 [0.009262, 0.032468]**, 1,486 rows | Quality supported against checkpoint 800; full deployment too slow |
+| H42 tie anchoring | Calibrated paired/frozen gaps meet predefined practical tolerances | Stop at CPU gate; no anchor training |
 
-## Completed calibration and measurement
+Reports: [H40](SPAN_002_H40.md), [E01](SPAN_002_E01.md),
+[H03](SPAN_002_H03.md), [H37](SPAN_002_H37.md), [H42](SPAN_002_H42.md).
+`done` includes actual negative/inconclusive outcomes and conditional stopping;
+it does not assert that every proposal improved quality.
 
-On the same 5,746 development rows, always predicting the most frequent training
-class (**A**) gives **34.91% accuracy**. Training-prior probabilities give
-**1.097216 log loss**, versus 1.098612 for uniform probabilities. The unsmoothed
-hard majority rule has infinite exact log loss on any error; its finite diagnostic
-is 17.984688 under the common 1e-12 clipping convention. These controls use only
-the original 45,985 training labels. [Baseline metrics](../results/span_002/packing_diagnostics.json)
-also record the deterministic argmax tie rule and class-level metrics.
+## Classifier and remaining errors
 
-[H40 report](SPAN_002_H40.md): on all 5,746 exploratory development rows, matched
-cross-fitted temperature loss is **0.968872**, versus **0.967740** for nested grouped
-calibration selection. Temperature-plus-tie alone gives 0.967179, a separately
-declared family diagnostic. The primary nested gain remains uncertain and is not
-an official-score improvement.
+Continuation preserved checkpoint 800's optimizer, scheduler, scaler, rank RNG
+states, schedule/seed and unchanged 1,024-token packing. Both models average
+aligned original/swapped probabilities and fit separate temperatures within
+identical five grouped folds.
 
-On the fixed common 1,024 rows, calibrated frozen and paired CE+KL losses are
-0.976986 and 0.976835. Their overall/tie-class gaps meet the predefined H42 practical
-stopping tolerances. [H42 closes at this gate](SPAN_002_H42.md), not after training
-an anchored model, and this is not an equivalence proof.
+| System | Log loss | Accuracy | Tie AUROC |
+| --- | ---: | ---: | ---: |
+| Checkpoint 800, cross-fitted temperature | 0.968872 | 52.73% | 0.66758 |
+| Continued step 1438, same procedure | **0.954069** | **53.79%** | **0.67902** |
+| Checkpoint 800, secondary nested calibration | 0.967740 | 53.20% | 0.66741 |
+| Continued, secondary nested calibration | **0.954419** | **53.93%** | **0.67825** |
 
-[E01 report](SPAN_002_E01.md): five nominal cycles, four accepted updates and one
-intentional skip on each T4; actual parameter changes, scheduler advancement,
-private row/token/class accounting and checkpoint resume verified. Notebook time
-55.02 seconds; 69.986 quota seconds before the next job launched. Current PyTorch
-is 2.11.0+cu130, versus historical 2.11.0+cu128; stateful continuation must disclose
-that runtime change.
+Secondary nested gain is **0.013321 [0.010274, 0.016086]**. Historical deployed
+calibration gives 0.968825 on these rows, reported separately. Final raw selection
+loss 0.949409 uses the original single-order 1,024-row sample, a different metric.
+The fixed step 1438 is retained despite step 1400's negligible selection advantage.
 
-## H37 cached result and runtime recovery
+H03 directly logged **638 accepted new logical updates, zero skips**,
+**20,392 unique row visits / 18,991 groups**, and **11.83 million packed tokens**.
+Both ranks start at saved scheduler position 796 and AMP scale 4096. Historical
+accepted rows/tokens remain unknown; 796 old updates are reconstructed under
+pinned semantics. New cu130 differs from historical cu128; starting identity
+checks passed, without a bitwise-equivalence claim.
 
-On 512 matched rows / 497 prompt groups, nested grouped evaluation gives:
+Primary A/B losses improve, but human-tie loss worsens **1.00129 → 1.06568**
+and tie recall falls **45.41% → 37.92%**. Aggregate binary tie loss nevertheless
+improves **0.57473 → 0.56709**. With nested calibration all three class
+contributions improve. Operating points, class slices and discrimination must
+be distinguished before proposing a tie fix.
 
-| System | Log loss | Accuracy |
-| --- | ---: | ---: |
-| Classifier, matched cross-fitted temperature | 0.991976 | 51.56% |
-| Gemma judge, matched cross-fitted temperature + tie | 1.002209 | 50.78% |
-| One-weight blend | 0.972668 | 54.30% |
+Matched raw-order disagreement on a separate 1,024-row diagnostic falls
+**35.45% → 24.22%**, a reduction of 11.23 points [8.31, 14.40]. Clipped inputs
+remain harder: continued loss **1.01358** on 1,152 clipped rows versus **0.93915**
+on 4,594 uncut rows. Both slices improve with unchanged packing. This association
+does not prove longer context would help.
 
-Blend gain is **0.019308**, 95% group interval **[-0.000202, +0.039046]**. It is a
-promising pilot, not a proven gain. These losses cannot be compared directly with
-the full-dev classifier loss because the rows differ. The cached-data blend was
-frozen before extra-row scoring; a 1,536-row uniform expansion excludes those 512
-IDs, with additional new-group-only verification predeclared.
+The finite adapter and full-dev-fitted temperature **0.9441963863** are in the
+[frozen candidate manifest](../results/span_002/research_candidate.json).
+Actual source: `arseniytrushin/llm-preference-span-002-exposure/1`.
+A conservative 25,000-row projection is **5.22 hours**; offline export/reload
+and hidden execution remain unverified. The previous official candidate is
+preserved. No second epoch or full-data refit occurred.
 
-First expansion kernel `arseniytrushin/llm-preference-span-002-judge-expansion/1`
-ended **ERROR** after one completed row and a 600-second local-server completion
-timeout. All partial artifacts and server logs are retained. Its first row took
-350.60 seconds, invalidating the historical runtime projection for that execution.
+## Judge evidence and failures
 
-Recovery `/llm-preference-span-002-judge-recovery/2` completed its stopping screen.
-The native backend initially detected no GPU because `libcudart.so.12` and
-`libcublas.so.12` were missing; pinned libraries restored both allocated T4s.
-The 32-row GPU profile took 38.65 seconds and passed its runtime screen, but raw
-probability drift from the historical cache was mean 0.021964 / max 0.168023,
-above the declared 0.01 / 0.1 limits. It correctly stopped without scoring extras.
-[Actual runtime evidence](../results/span_002/runtime_diagnostic_results.json)
-preserves that failed guard; its numerical cause is not isolated.
+The historical 512-row pilot was promising but inconclusive: gain 0.019308
+[−0.000202, +0.039046]. Initial expansion failed after a slow first row and a
+600-second timeout. Native inference detected zero GPUs despite allocated T4s
+because CUDA-12 runtime/BLAS libraries were missing. Pinned library repair
+restored both native devices, but the old-cache identity guard failed (mean
+0.021964, maximum 0.168023), correctly stopping without extras.
 
-A [separately declared comparison](SPAN_002_RUNTIME.md) now re-scores all fixed
-2,048 IDs under one current runtime, without pooling historical judge outputs.
-It scores the 512 fit rows first, freezes the recipe, checks measured remaining
-runtime, then scores the original extra 1,536. Kernel
-`arseniytrushin/llm-preference-span-002-judge-consistent/2` completed its 512 rows in
-509.057 seconds, then failed on an omitted `hashlib` import during recipe export.
-No extra inference had started. Valid predictions are retained; the recipe was
-fitted/frozen locally before `/judge-extra/2` launched for only the remaining
-1,536. Model, prompt, packing, sources and IDs are unchanged. The new continuation's
-3,480-second ceiling comes from previously unallocated time; all conservative role
-ceilings sum to 40,380 seconds within the unchanged 43,200 cap. Version-1 saves
-requested no execution; version-2 receipts identify actual GPU runs. The historical
-identity failure remains a separate negative finding.
+A separately declared comparison re-scored all fixed 2,048 rows consistently
+under the repaired runtime, without pooling historical outputs. The first
+512 predictions were valid, but an omitted `hashlib` import caused recipe export
+to fail. These predictions were retained, the recipe frozen locally, and only
+the remaining 1,536 scored. The new-group check excludes 50 extras sharing
+fitting-cohort groups. Failures, versions and costs remain recorded; static
+notebook checks now catch undefined names. [Runtime evidence](SPAN_002_RUNTIME.md)
 
-The continuation is now **COMPLETE**. [H37's final report](SPAN_002_H37.md) gives
-current-runtime nested loss **0.949572 versus 0.974579** for its matched classifier
-on 2,048 rows / 1,953 groups: gain **0.025007**, 95% group interval
-**[0.015015, 0.035853]**. The separately frozen recipe gains **0.021022**, interval
-**[0.009262, 0.032468]**, on 1,486 new-group rows after excluding 50 overlapping
-rows from the 1,536 extras. Both checks beat both components. This supports
-complementarity against checkpoint 800, not automatic complementarity against
-any improved H03 model.
+Nested blend loss is **0.949572**, versus classifier **0.974579** and judge
+**0.986413** on 2,048 rows. Frozen new-group loss is **0.953322**, versus
+classifier **0.974344** and judge **0.987900** on 1,486 rows. Both checks beat both
+components. Aggregate binary tie loss improves despite worse human-tie class
+loss. Native both-order behavior and peak allocated memory were not measured;
+physical device capacity is not a peak-memory measurement.
 
-Deployment is gated out: the sequential 25,000-row projection with margin is
-**49,446 seconds / 13.74 hours**, above the declared seven-hour guard. H37 closes
-as a completed positive-quality experiment with a runtime constraint. No full
-ensemble is submitted. H39 is reprioritized for a bounded cached cascade test in
-v3. H43's rationale is corrected: tie-class loss worsens, but overall binary tie
-loss improves, so preserving tie mass is not an obvious improvement.
+Sequential 25,000-row inference with margin projects **49,446 seconds /
+13.74 hours**, above the seven-hour guard. No full ensemble is adopted.
+Its gains are against checkpoint 800: complementarity with improved H03 remains
+untested, so gains cannot be added.
 
-## H03 and remaining deliverables
+## Constant controls
 
-Immutable original training output contains adapter, optimizer, scheduler, scaler,
-Trainer state and both rank RNG files at checkpoint 800. H03 continues that state
-toward step 1438, with a starting-probability identity guard, direct accepted
-exposure logs, original training seed/schedule/selection sample, plateau stopping
-and a final full-dev scoring reserve. The primary endpoint is fixed, not selected
-as the best new checkpoint. This is not a bitwise-equivalence claim across CUDA
-builds. Actual prediction and exposure results are pending.
+Majority class **A** comes only from the original 45,985 training labels
+(A 16,052; B 15,723; tie 14,210). On all 5,746 dev rows, always choosing A gives
+**34.91% accuracy / 0.17251 macro-F1**. Training-prior probability loss is
+**1.097216**, versus **1.098612** uniform. Exact unsmoothed hard-majority loss is
+infinite on errors; finite diagnostic **17.984688** uses common 1e-12 clipping.
+Deterministic argmax ties choose A, so uniform probabilities' argmax accuracy is
+34.91%, not the expectation of random class sampling.
+[Full controls and packing](../results/span_002/packing_diagnostics.json)
 
-Dated first validation at **20:19 UTC**: step **1000**, raw original-order selection
-log loss **0.9599414**, accuracy **54.59%** on the original fixed 1,024 rows. Original
-checkpoint 800's same selection metric was **0.9787039**. This 0.0187625 reduction
-is encouraging but is not the final swap-averaged/calibrated full-dev comparison
-or an official score. The starting-inference guard passed before updates. The
-current notebook executes all six code cells with four figures and explicitly
-marks final evaluation as pending.
+## Resources and closure
 
-The next fixed selection validation, at step **1200**, gives raw original-order
-loss **0.9533240**, accuracy **55.08%** on those same 1,024 rows. This continues the
-improvement without changing the fixed endpoint or selecting a new checkpoint.
-Final full-dev predictions, matched calibration and exposure reconciliation remain
-required before accepting a candidate.
+Original clock: **2026-11-03 18:23:46 UTC**, immutable deadline **November 5
+at the same UTC time**. At the final remote audit on **November 4 at 04:24 UTC**,
+all six execution versions were terminal, **zero GPU seconds reserved**, and
+no current owned notebook running. Three unrelated 404 notebook observations
+last ran in 2022/2025; these retained account-inventory limitations predate this
+span and are not missing current project jobs.
 
-At step **1400**, that fixed selection loss improved further to **0.9494021**;
-accuracy was **54.88%**. This intermediate result does not replace the fixed
-step-1438 endpoint or the required full-development comparison.
+Actual account charge is **22,407.300 seconds / 6.22425 elapsed two-T4
+session-hours**, including setup, probes, failures, recovery, training and scoring.
+Overlap prevents exact per-job attribution; overlapping quota deltas are not
+counted twice. This is within **43,200 seconds** and the original deadline.
+No quota refresh or paid scaling was used. Remaining account quota at audit was
+30,076.296 seconds; no future availability is claimed.
 
-Training has now finished at **1438 / one nominal epoch**. Final selection loss
-is **0.9494095**, accuracy **54.79%**; loop time is **14,805.754 seconds**, including
-its selection evaluations. Full-development prediction outputs remain pending.
-The final endpoint is retained despite the negligible difference from step 1400.
+H03 training took 14,812.44 seconds; final dev scoring took 3,481.30 seconds.
+Throughput was 798.56 accepted packed tokens/second under the training-wall
+denominator. Rank-0 peak allocation was 7.26 GiB; rank-1 peak is unreported.
+E01 internal time was 55.02 seconds; its isolated quota delta was 69.986 seconds.
+Task reports preserve denominators and coverage limits.
 
-The immutable parent scheduler/scaler files were also downloaded and checked.
-At nominal checkpoint 800, scheduler position is **796** and AMP scale **4096**.
-Under the pinned accepted-only LambdaLR semantics, this reconstructs 796 accepted
-updates before continuation; historical row/token exposure remains unlogged.
-Final analysis requires both ranks' first new cycle to start at that saved
-scheduler position and scale. New accepted updates are directly measured and are
-logical optimizer updates, not a sum over DDP ranks.
+The optional v2 submission was not performed. Offline export QA and one frozen
+official verification form a separate v3 prerequisite. The cap was not exhausted;
+closure does not require spending the remainder or automatically starting v3.
 
-[Verified descriptors](../results/span_002/packing_diagnostics.json) reuse the exact
-parent checkpoint tokenizer and unchanged packing source. Full-dev clipping is
-20.05% of rows; mean row content retention is 93.51%, but corpus-token retention
-is 79.72%. No confirmation quality was evaluated. A frozen 1,024-row raw-order
-reference is retained privately for the final matched comparison. The notebook
-shows both retention definitions and the judge's measurement limitations.
+## V3 handoff
 
-The [decision artifact](../results/span_002/decisions.json) explicitly leaves H03
-unfinished. Its builder requires practical positive paired evidence, valid accepted
-exposure and a feasible runtime projection before freezing a research candidate;
-offline export validation and an official score remain separate from local quality.
+The next backlog contains **three discoveries plus 34 unfinished carryovers:
+37 tasks**. New discoveries are **E02** (offline native CUDA packaging/profile),
+**E03** (continued-classifier offline export and frozen official verification),
+and **H43** (bounded conditional-winner blending). H39 is reprioritized for a
+cached **10%/20% entropy cascade** with random-routing controls and the latest
+classifier. None of this v3 work was executed in v2.
 
-Two discoveries are queued in the v3 draft and have not been executed: H43 tests
-conditional blending against matched full-vector/calibration controls, while E02
-packages a verified native CUDA runtime for offline use. Remaining v2 work will
-be carried forward when the span closes.
+Expanded evidence corrects H43's rationale: worse human-tie class loss does not
+imply a worse aggregate tie channel. H23 retains the observational clipping
+caveat; H05 retains a bounded optimization question rather than an automatic
+extra epoch. Stable IDs, provenance and prior outcomes remain in the registry.
+Advancement seals v2, activates v3 and opens an **empty v4 draft**. The
+[completion record](SPAN_002_COMPLETION.md) records actual final checks.
 
-Still required: finish/stop every job, evaluate expanded/final predictions if valid,
-write final outcomes and resource audit, execute notebook 13, record justified v3
-follow-ups/carryovers, validate and seal v2, publish v3 and stop before executing it.
-Development remains exploratory; confirmation is unused. Heavy/private artifacts
-stay under `~/database/llm_classification_finetuning/runs/span_002`.
+Programs, aggregate metrics, reports and notebook are versioned. Private text,
+row IDs, predictions, state, weights and figures remain under
+`~/database/llm_classification_finetuning/runs/span_002`. The existing
+`~/notebooks/llm_classification_finetuning` link is preserved. The goal stops
+at the v3 boundary.

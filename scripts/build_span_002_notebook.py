@@ -1,4 +1,4 @@
-"""Build the reproducible v2 notebook from aggregate evidence, including partial-state labels."""
+"""Build the reproducible v2 notebook from aggregate evidence."""
 from pathlib import Path
 import nbformat as nbf
 
@@ -6,8 +6,8 @@ REPO=Path(__file__).resolve().parents[1]
 cells=[nbf.v4.new_markdown_cell('''# Backlog v2 — calibration, exposure and ensemble evidence
 
 Read `docs/SPAN_002_PROTOCOL.md` and `docs/SPAN_002_RESULTS.md` for the predeclared
-contract and decisions. This notebook reads current evidence and labels unfinished
-work explicitly. Its existence does not establish span completion. All development
+contract and decisions. The completed span accepts the continued classifier as a
+local research reference; its official verification remains future work. All development
 data have been inspected; confirmation is unused. Local log loss is not a new
 official Kaggle score. Best official loss remains 0.97025 unless separately updated.
 '''),nbf.v4.new_code_cell('''import json
@@ -215,6 +215,12 @@ if audit_path.exists():
     display(json.loads(audit_path.read_text()))
 else:
     print('Terminal resource audit pending; goal remains active.')
+if (RESULTS/'decisions.json').exists():
+    print('Adoption decisions:',read('decisions.json'))
+if (RESULTS/'research_candidate.json').exists():
+    candidate=read('research_candidate.json')
+    print('Frozen research reference:',{key:candidate[key] for key in
+          ['source_kernel','version_number','final_step','temperature','officially_verified']})
 display(pd.DataFrame([{'version':v['number'],'state':v['state'],'members':len(v['item_ids']),
                       'focus':v['focus_ids']} for v in registry['versions']]))
 print('Standalone figures:',FIGURES)

@@ -1,35 +1,32 @@
 # Project memory
 
-## Current handoff — 2026-11-03
+## Current handoff — 2026-11-04
 
-V2 execution update: H40, E01 and the conditional H42 stopping gate are **done**.
-H37 is also **done**; H03 remains **running**. The current-runtime 2,048-row nested
-ensemble gains 0.025007, interval [0.015015,0.035853]; the frozen 1,486-row new-group
-check gains 0.021022, interval [0.009262,0.032468]. Full sequential deployment
-projects to 13.74 hours and fails the seven-hour guard, so it is not adopted.
-Native CUDA repair, failed historical identity and the missing-import failure are
-preserved; valid control predictions were reused. All judge jobs are terminal.
-H39 is reprioritized for a v3 cache-only cascade pilot; H43 expectations are reduced
-because binary tie loss improves despite worse human-tie class loss.
-Stateful checkpoint-800 continuation's first selection validation at step
-1000 improved raw original-order loss from 0.97870 to 0.95994 on the same 1,024 rows;
-final full-dev/calibrated quality remains pending. Step 1200 improved the same
-selection metric further to 0.953324, accuracy 55.08%. Verified packing descriptors
-and a matched 1,024-row frozen raw-order reference now support the final analysis.
-H43 and E02 are queued in the v3 draft; neither has run. See [v2 report](SPAN_002_RESULTS.md),
-[protocol](SPAN_002_PROTOCOL.md) and dated files under `results/span_002/`.
-The goal remains active; no v2 model is promoted and no new submission occurred.
+V2 is sealed; all five focus items H40/E01/H03/H37/H42 are done and all GPU
+versions are terminal. H03 continuation to fixed1438/one epoch improves matched
+5746-row dev loss0.968872→0.954069, gain0.014803 [0.010945,0.018368], accuracy53.79%.
+638 new accepted updates,0 skips,11.83M packed tokens; finite export and full-dev
+calibration frozen as the local research reference. No new official submission;
+best recorded official loss remains0.97025. Offline export/verification is E03.
 
-Start with [CONTEXT_HANDOFF.md](CONTEXT_HANDOFF.md). The user authorized the current
-[v2 goal](../GOAL.md): execute focus H40, E01, H03, H37 and conditional H42, then
-seal v2 and form v3. Limits remain 12 two-T4 session-hours and 48 elapsed hours,
-subject to verified quota. Focus and original clock are recorded in span-002 files.
-V1 is sealed; its [completed goal](GOAL_V1.md) is archived. V2 has 39 tasks and v3
-has two draft discoveries. No v1 pilot justified promotion, and the official best remains
-0.97025. See
-[span results](SPAN_001_RESULTS.md) and [notebook 12](../notebooks/12_backlog_v1_span.ipynb).
-All v1 GPU jobs are terminal. The older prompted-judge pipeline is also complete,
-with official loss 0.98653; see [its final results](../ATTEMPT_003_RESULTS.md).
+H37 blend quality is supported against the old classifier (nested2048-row gain
+0.025007; frozen1486-new-group gain0.021022), but full deployment projects13.74h
+and fails the7h guard. Complementarity with improved H03 is untested; do not add
+these gains. H40 calibration is inconclusive; H42 stopped at its CPU gate without
+anchor training; E01 verified actual overflow, parameter changes and resume.
+
+V3 is active with37tasks:3discoveries E02/E03/H43 plus34unfinished carryovers,
+no selected focus and no execution. H39 prioritizes a cached10%/20% entropy-route
+pilot with latest-classifier and random controls. V4 is an empty draft. The
+completed [goal](../GOAL.md) stops at this boundary; new work needs a new span
+contract. Historical v1/v2 snapshots are preserved.
+
+Actual span charge22407.300s/6.22425two-T4sessionh includes all setup, failed
+native CUDA runs, recovery and scoring;0reserved, no paid scaling/quota refresh,
+within original12hcompute/48hwall limits. Final notebook13 executes6codecells,
+5figures,0errors. Scientific8tests and backlog18tests pass. See
+[results](SPAN_002_RESULTS.md), [H03](SPAN_002_H03.md),
+[completion record](SPAN_002_COMPLETION.md), and [context handoff](CONTEXT_HANDOFF.md).
 Entries below are dated historical snapshots, including old “in progress” wording.
 
 ## Prompted-judge experiment in progress — 2026-11-02

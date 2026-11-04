@@ -1,8 +1,8 @@
 {
-  "stage": "waiting_for_kernel",
-  "utc": "2026-11-03T23:27:01.229177+00:00",
+  "stage": "complete",
+  "utc": "2026-11-04T00:05:36.139713+00:00",
   "pid": 220989,
   "job": "exposure",
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "version": 1
 }
