@@ -7,11 +7,15 @@ is multiclass log loss (lower is better).
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
-The completed [v3 goal](GOAL.md) focused on **E03, H39, E02 and H43**, then formed
-backlog v4. Original quota reduced its cap to 8.35453 elapsed two-T4 session-hours;
-the conservative whole-span bound including hidden inference is 6.20508 hours.
-No v4 experiment has started.
-The completed [v1](docs/GOAL_V1.md) and [v2](docs/GOAL_V2.md) goals are archived.
+The active [v4 goal](GOAL.md) focuses on **E04 then H44**: verify native judge
+repeatability, then test routed-mixture calibration if its prerequisite passes.
+It starts November 4 at 14:29:32 UTC, with a fixed 48-hour deadline and at most
+12 elapsed two-T4 session-hours, reduced by fresh quota. It ends by forming v5;
+no official submission or classifier retraining is included. No v4 GPU job has
+started during activation.
+The completed [v1](docs/GOAL_V1.md), [v2](docs/GOAL_V2.md) and
+[v3](docs/GOAL_V3.md) goals are archived. V3's conservative whole-span compute
+bound was 6.20508 hours against its original 8.35453-hour quota cap.
 V2 used 6.224 session-hours; all its GPU jobs are terminal.
 
 Our best official Kaggle score is **0.95481**, achieved by the frozen continued
@@ -65,7 +69,8 @@ The active version is **v4**, with **35 tasks**: 33 unfinished carryovers and tw
 new discoveries, H44 (routed-mixture calibration) and E04 (native numerical
 repeatability). H44 requires a genuinely compatible E04 recipe. V3 is sealed
 with all four focus experiments done, including negative deployment findings.
-V4 has no selected focus or execution; [v5 is an empty draft](backlog/NEXT.md).
+V4 focus is E04/H44; activation has not launched an experiment.
+[V5 is an empty draft](backlog/NEXT.md).
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),
 [v1 final history](backlog/versions/v1.final.md), [v2 final history](backlog/versions/v2.final.md)

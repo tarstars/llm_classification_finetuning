@@ -1,0 +1,22 @@
+{
+  "span": 4,
+  "goal_service_created_at": 1793802572,
+  "started_at": "2026-11-04T14:29:32+00:00",
+  "deadline": "2026-11-06T14:29:32+00:00",
+  "focus": [
+    "E04",
+    "H44"
+  ],
+  "seed": 20261121,
+  "requested_gpu_session_seconds_cap": 43200,
+  "per_job_seconds_cap": 25200,
+  "initial_full_resource_inventory_required": true,
+  "setup_quota_remaining_seconds": 29337.999,
+  "setup_quota_note": "Read-only pre-activation quota probe only. Freeze the initial complete inventory and any lower cap before GPU work.",
+  "goal_contract_sha256": "4e7d508c1ed5b88c159ff08c7336b3ed211febed65f7d50adf87293039585d5d",
+  "previous_closed_commit": "f06870652e9ba979acd2c4faab85065d2a836edc",
+  "official_baseline": {
+    "submission_ref": 57979825,
+    "log_loss": 0.95481
+  }
+}

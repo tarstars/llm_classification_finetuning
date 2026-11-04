@@ -20,7 +20,7 @@ Follow-ups above nine hours require multiple resumable jobs and enough verified 
 
 Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots.
 
-V3 completed E03/H39/E02/H43 and verified the frozen H03 step1438 classifier at official log loss0.95481 (local full-dev0.954069). Matched2,048-row judge complementarity survives against this latest classifier, but native numerical identity and selected-route runtime gates fail; its local blend gains are not deployed or additive. V3 is sealed; v4 has35tasks (33unfinished carryovers plus H44/E04), no selected focus and no execution. V5 is empty draft. A new goal must select focus and refresh resources.
+V3 completed E03/H39/E02/H43 and verified the frozen H03 step1438 classifier at official log loss0.95481 (local full-dev0.954069). Matched2,048-row judge complementarity survives against this latest classifier, but native numerical identity and selected-route runtime gates fail; its local blend gains are not deployed or additive. V3 is sealed; v4 has35tasks (33unfinished carryovers plus H44/E04), focus E04/H44 under the newly activated v4 goal; no experiment has launched during activation. V5 is empty draft. Before any GPU launch, refresh actual resources and freeze the v4 protocol and budgets.
 
 ## Browse and update
 

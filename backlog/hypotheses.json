@@ -3052,7 +3052,7 @@
     "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
     "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.",
     "Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots.",
-    "V3 completed E03/H39/E02/H43 and verified the frozen H03 step1438 classifier at official log loss0.95481 (local full-dev0.954069). Matched2,048-row judge complementarity survives against this latest classifier, but native numerical identity and selected-route runtime gates fail; its local blend gains are not deployed or additive. V3 is sealed; v4 has35tasks (33unfinished carryovers plus H44/E04), no selected focus and no execution. V5 is empty draft. A new goal must select focus and refresh resources."
+    "V3 completed E03/H39/E02/H43 and verified the frozen H03 step1438 classifier at official log loss0.95481 (local full-dev0.954069). Matched2,048-row judge complementarity survives against this latest classifier, but native numerical identity and selected-route runtime gates fail; its local blend gains are not deployed or additive. V3 is sealed; v4 has35tasks (33unfinished carryovers plus H44/E04), focus E04/H44 under the newly activated v4 goal; no experiment has launched during activation. V5 is empty draft. Before any GPU launch, refresh actual resources and freeze the v4 protocol and budgets."
   ],
   "revisions": [
     "**H07/H06:** the final causal classification token already sees both retained answers. Bidirectional masking is an architectural experiment, not a fix for missing access to answer B; H07 moves to P4.",
@@ -3341,8 +3341,20 @@
         "H44",
         "E04"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "E04",
+        "H44"
+      ],
+      "history": [
+        {
+          "at": "2026-11-04T14:29:20+00:00",
+          "note": "User set the v4 goal. Select bounded E04 repeatability diagnostics followed by H44 routed-mixture calibration only after a genuinely passing prerequisite. Preserve the other33 carryovers; report/seal v4 and form v5, with no v5 execution or new official submission in this span.",
+          "focus_ids": [
+            "E04",
+            "H44"
+          ]
+        }
+      ],
       "carried_from": 3,
       "start_sha256": "33d49170b1ca4c95d573761a6119589d15e29faf94ef8a836d8c44088f06c148",
       "start_markdown_sha256": "81407a66c1db9dd0e1769b0236c6fdbaf30a098ad98db3c6aed4080488b262a1",

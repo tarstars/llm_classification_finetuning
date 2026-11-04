@@ -1,9 +1,28 @@
-# Context handoff — 2026-11-04, completed v3 span
+# Context handoff — 2026-11-04, active v4 goal
 
-The user-authorized bounded v3 span is complete and sealed. **Backlog v4 is active
-with 35 tasks** (33 unfinished carryovers plus H44/E04), no selected focus and no
-execution. **V5 is an empty draft. Stop before v4 work.** The current `GOAL.md`
-is the completed v3 contract; a future span needs a separately selected focus.
+The user set the v4 goal. **GOAL.md is active**, original service activation
+**2026-11-04 14:29:32 UTC**, epoch **1793802572**; immutable deadline
+**2026-11-06 14:29:32 UTC**. Record is `results/span_004/activation.json`.
+Focus **E04 then H44**, within active v4's35tasks. Other33members remain
+carryovers. V5 is empty draft. The goal ends by sealing v4/forming v5 and empty
+v6, without v5 execution. No new official submission or classifier training.
+
+Setup quota probe:29,337.999seconds available, zero reservations, no paid scaling.
+This is not the required complete initial resource inventory. Before GPU work,
+verify all actual jobs/quota, freeze the cap as min(43,200, initial available),
+write protocol/config/artifact/sample/budget contracts and commit them. Do not
+reset the activation clock or use v3's original allowance. No v4 experiment or
+GPU job was launched during goal activation; E04/H44 remain planned.
+
+E04 first requires bounded label-independent64-row replay/permutation/restart
+diagnostics, at most two configurations. Only a genuinely stable recipe justifies
+consistent cache rescoring and H44's nested three-family calibration comparison.
+Stop/defer against failed gates with evidence; do not reuse incompatible scores.
+Read the full current goal/task records before implementing the protocol.
+
+V3 is complete and sealed; its unchanged contract is `docs/GOAL_V3.md`.
+Do not rerun v3 jobs or its closure checker against the now-advanced live registry;
+its completion evidence describes the closing commit `f068706`.
 
 Read [v3 results](SPAN_003_RESULTS.md), [completion](SPAN_003_COMPLETION.md),
 [policy](../PROJECT_POLICY.md) and actual audit/registry files. This is a dated
@@ -66,7 +85,7 @@ subsequent failed numerical guard. Partial local CUBLAS download is invalid and
 was never used; do not resume it. Native scoring77.53s/1.21148s per row; sampled
 used-memory peaks9,543/8,833MiB across640samples, not allocator peak memory.
 
-## Clock, compute and proof
+## Completed v3 clock, compute and proof
 
 Original goal activation **2026-11-04 07:42:17 UTC**, epoch1793778137; original
 deadline **2026-11-06 07:42:17 UTC**. Cap **30,076.296s /8.35453 elapsed two-T4
@@ -101,7 +120,8 @@ the files' hashes are linked. No v4 task was run as part of v3 closure.
 
 H44 (routed-mixture calibration) and E04 (native numerical repeatability) are new
 v4 tasks. H44 requires a genuinely compatible E04 recipe, not merely done status.
-No next-span focus is chosen. V4 estimates are forecasts, not measured gains.
+V4 focus is now E04/H44 under the new goal. Its estimates remain forecasts,
+not measured gains; no v4 result has been produced during activation.
 Current global framing was refreshed after snapshot sealing. The v3-final/
 v4-start introductory0.97025 paragraph is an archival erratum; their E03 records
 already contain0.95481. Keep snapshot bytes unchanged; current registry/BACKLOG

@@ -1,6 +1,22 @@
 # Project memory
 
-## Current state — completed v3 span, 2026-11-04
+## Current state — active v4 goal, 2026-11-04
+
+The user set the v4 goal. Original activation **14:29:32 UTC on November4**,
+epoch1793802572; fixed deadline **November6 at14:29:32 UTC**. Active objective
+is `GOAL.md`, focus **E04 then H44**. V4 has35members; the other33 remain eligible
+carryovers. Finish a bounded repeatability/calibration span, seal v4/form v5 and
+empty v6, then stop. No official submission or classifier training in this span.
+
+Read-only setup quota reports29,337.999seconds available and zero reservations.
+Fresh complete resource/job inventory and a committed experiment protocol/config
+are still required before GPU work. Initial diagnostic ceiling1,800s, consistent
+rescoring7,200s, conditional new-group check3,600s and offline profile1,800s;
+all count against the original quota-reduced cap. No v4 experiment was launched
+during activation. Best official score remains0.95481. Archive `docs/GOAL_V3.md`
+preserves the completed contract byte-for-byte; user notebook07 remains untouched.
+
+## V3 closing snapshot — 2026-11-04
 
 **Best official log loss is 0.95481**, improved from 0.97025 by 0.01544.
 Frozen submission57979825 completed; observer44399 exited0. The Qwen3-4B H03
