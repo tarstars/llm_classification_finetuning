@@ -7,10 +7,11 @@ is multiclass log loss (lower is better).
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
-The [v2 goal](GOAL.md) has completed its five focus items and formed backlog v3.
-Actual use was 6.224 two-T4 session-hours within the original 12-hour compute and
-48-hour wall-clock limits. All GPU jobs are terminal. The completed
-[first-span goal](docs/GOAL_V1.md) is preserved for history.
+The active [goal](GOAL.md) executes a bounded v3 span, focused on **E03, H39, E02
+and H43**, then forms backlog v4. Limits are 12 two-T4 session-hours and 48 elapsed
+hours from November 4 at 07:42:17 UTC, further bounded by freshly verified quota.
+The completed [v1](docs/GOAL_V1.md) and [v2](docs/GOAL_V2.md) goals are archived.
+V2 used 6.224 session-hours; all its GPU jobs are terminal.
 
 Our best official Kaggle score is **0.97025**, achieved by the Qwen3-4B QLoRA
 preference classifier in attempt 002. Frozen-model confirmation gave **0.96236 log
@@ -50,7 +51,8 @@ The active version is **v3**, with **37 tasks**: three discoveries and 34 unfini
 carryovers. New tasks are E02 (offline native CUDA verification), E03 (continued
 classifier export and one frozen official verification), and H43 (conditional
 blending). H39 prioritizes a cached judge-cascade pilot using the improved
-classifier. V3 focus is unselected; no v3 work has started. V4 is the empty
+classifier. V3 focus is E03/H39/E02/H43; the goal is active and execution
+preparation has begun. V4 is the empty
 [next-version draft](backlog/NEXT.md).
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),
@@ -87,8 +89,9 @@ with improved H03 remains untested; gains cannot be added. See the
 [v2 report](docs/SPAN_002_RESULTS.md) and [protocol](docs/SPAN_002_PROTOCOL.md).
 
 The [completion record](docs/SPAN_002_COMPLETION.md) links resource, provenance,
-notebook and version checks. A new goal must select v3 focus and refresh resources
-before execution; the completed v2 goal stops at this boundary.
+notebook and version checks for the completed v2 span. The current v3 goal
+refreshes resources and evaluates the four selected tasks before sealing v3,
+forming v4 and stopping at that next boundary.
 
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and

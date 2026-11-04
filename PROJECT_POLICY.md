@@ -11,7 +11,8 @@ JSON for estimates, priorities, dependencies and experiment design, then regener
 the Markdown. Preserve stable hypothesis IDs and previous outcomes. A backlog
 version defines a research span; its `focus_ids` define that span's bounded
 execution scope. [GOAL.md](GOAL.md) describes the current span and its limits;
-the completed first-span goal is preserved at [docs/GOAL_V1.md](docs/GOAL_V1.md).
+completed contracts are preserved at [docs/GOAL_V1.md](docs/GOAL_V1.md) and
+[docs/GOAL_V2.md](docs/GOAL_V2.md).
 
 | Status | Meaning |
 | --- | --- |

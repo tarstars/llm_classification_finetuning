@@ -1,11 +1,27 @@
 # Context handoff — 2026-11-04
 
-**The v2 research span is closed. Stop at the v3 boundary.** All five focus items
-H40/E01/H03/H37/H42 are done with evidence; all six GPU execution versions are
-terminal and their controllers/measurement collector exited successfully. Do not
-restart old GPU jobs or run v3 automatically. The completed contract remains in
-[GOAL.md](../GOAL.md); a new goal must select v3 focus and refresh resources.
-This is a dated orientation record: verify actual files/service state on resumption.
+**The user has authorized a new v3 goal.** The goal service is active with
+objective `GOAL.md`, original creation epoch **1793778137**: **2026-11-04
+07:42:17 UTC**, immutable deadline **November 6 at 07:42:17 UTC**.
+Focus is **E03, H39, E02, H43**. Defaults remain **12 elapsed two-T4 session-hours
+and 48 wall-clock hours**, constrained by freshly verified available quota.
+The activation record is [results/span_003/activation.json](../results/span_003/activation.json).
+Do not reuse v2's clock or quota baseline, reset this clock, repeat completed
+jobs, or start v4 work. The old v3 boundary is superseded only by this new user
+authorization; the new goal stops after sealing v3 and forming v4.
+
+Preparation has begun; no v3 GPU job has launched and quota has not yet been
+refreshed for this span. First freeze the actual protocol/plan, resource inventory,
+artifact/sample hashes and allocations in span_003 paths before measurements or
+launches. Then work autonomously through the four focus tasks and publish the
+results notebook14, task/span reports, audits and versioned v4 handoff. Read the
+full [current goal](../GOAL.md). Completed contracts are archived at
+[GOAL_V1](GOAL_V1.md) and [GOAL_V2](GOAL_V2.md).
+
+V2 is complete: all five focus items have reports, all six GPU execution versions
+are terminal, controllers/collector exited, and commit `502e2a7` was pushed and
+verified against remote main. Preserve its frozen evidence and snapshots.
+The information below is dated background; verify current files/service state.
 
 ## Read first
 
@@ -65,13 +81,13 @@ Binary tie loss improves despite worse human-tie class loss.
 
 - V1 closed41 historical members, original start/final snapshots preserved.
 - V2 closed39 members, all5focus items done; start/final snapshots preserved.
-- **V3 active37 tasks =3 discoveries +34unfinished carryovers; focus empty.**
+- **V3 active37 tasks =3 discoveries +34unfinished carryovers; focus E03/H39/E02/H43.**
 - **V4 empty draft**. No v3 experiments have started.
 
 Use `uv run python scripts/backlog.py versions`, `list --version 3 --new`,
 `list --version 3 --carried`, `show ID` and `check` before a new span.
 
-Useful next choices, not execution authorization under the old goal:
+The new goal authorizes the following bounded focus:
 1. **E03** offline classifier export/reload guard, measured runtime and one frozen
    official verification; no new training or leaderboard retuning.
 2. **H39** cached latest-classifier/judge complementarity, only10%/20% entropy
@@ -84,7 +100,7 @@ H05/H23 retain revised bounded optimization/context tests, without automatic
 extra epochs or a causal truncation claim. H41/distillation remain deferred as
 recorded. Read full records, estimates/dependencies and stop rules before selection.
 
-## Resources, failures and provenance
+## Completed v2 resources, failures and provenance
 
 Original v2 clock2026-11-03T18:23:46UTC, deadline2026-11-05T18:23:46UTC;
 user re-setting the same goal did not reset it. Actual final account charge

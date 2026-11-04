@@ -1,5 +1,16 @@
 # Project memory
 
+## Active v3 goal — 2026-11-04
+
+The user authorized v3 execution. Goal service objective GOAL.md is active from
+2026-11-04 07:42:17 UTC (epoch1793778137), deadline November6 at the same UTC time.
+Focus: E03 classifier offline export/one frozen official verification; H39 cached
+budgeted judge cascade; E02 offline native CUDA packaging/profile; H43 conditional
+blending diagnostic. Limits12two-T4sessionh/48wallh, reduced by freshly verified
+quota. No v3 GPU launch yet; freeze the protocol, resource baseline and allocations
+before new measurements. Form/seal v4 at closure, carry unfinished work and stop
+before executing v4. Completed v2 goal is archived at GOAL_V2.md.
+
 ## Current handoff — 2026-11-04
 
 V2 is sealed; all five focus items H40/E01/H03/H37/H42 are done and all GPU

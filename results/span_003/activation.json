@@ -1,0 +1,19 @@
+{
+  "span": 3,
+  "goal_service_created_at": 1793778137,
+  "started_at": "2026-11-04T07:42:17+00:00",
+  "deadline": "2026-11-06T07:42:17+00:00",
+  "requested_gpu_session_seconds_cap": 43200,
+  "per_job_seconds_cap": 25200,
+  "focus": [
+    "E03",
+    "H39",
+    "E02",
+    "H43"
+  ],
+  "seed": 20261120,
+  "confirmation_used": false,
+  "quota_verified": false,
+  "execution_started": false,
+  "clock_note": "Original v3 goal activation; preserve on every continuation or resumption."
+}
