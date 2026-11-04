@@ -1,0 +1,749 @@
+{
+  "observed_at": "2026-11-04T15:03:49.732153+00:00",
+  "parents": [
+    {
+      "source": "arseniytrushin/llm-preference-judge-binary-probe-003/1",
+      "status": "COMPLETE",
+      "files": [
+        {
+          "name": "bundled_code/arena/__init__.py"
+        },
+        {
+          "name": "bundled_code/arena/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "bundled_code/arena/__pycache__/judge_runtime.cpython-313.pyc"
+        },
+        {
+          "name": "bundled_code/arena/judge_runtime.py"
+        },
+        {
+          "name": "gemma26/server.log"
+        },
+        {
+          "name": "gemma26/smoke.json"
+        },
+        {
+          "name": "gemma31/server.log"
+        },
+        {
+          "name": "gemma31/smoke.json"
+        },
+        {
+          "name": "probe_summary.json"
+        },
+        {
+          "name": "runtime/bin/libggml-base.so"
+        },
+        {
+          "name": "runtime/bin/libggml-base.so.0"
+        },
+        {
+          "name": "runtime/bin/libggml-base.so.0.28.0"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-alderlake.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-cannonlake.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-cascadelake.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-cooperlake.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-haswell.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-icelake.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-ivybridge.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-piledriver.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-sandybridge.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-sapphirerapids.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-skylakex.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-sse42.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-x64.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cpu-zen4.so"
+        },
+        {
+          "name": "runtime/bin/libggml-cuda.so"
+        },
+        {
+          "name": "runtime/bin/libggml-rpc.so"
+        },
+        {
+          "name": "runtime/bin/libggml.so"
+        },
+        {
+          "name": "runtime/bin/libggml.so.0"
+        },
+        {
+          "name": "runtime/bin/libggml.so.0.28.0"
+        },
+        {
+          "name": "runtime/bin/libllama-batched-bench-impl.so"
+        },
+        {
+          "name": "runtime/bin/libllama-bench-impl.so"
+        },
+        {
+          "name": "runtime/bin/libllama-cli-impl.so"
+        },
+        {
+          "name": "runtime/bin/libllama-common.so"
+        },
+        {
+          "name": "runtime/bin/libllama-common.so.0"
+        },
+        {
+          "name": "runtime/bin/libllama-common.so.0.8.0"
+        },
+        {
+          "name": "runtime/bin/libllama-completion-impl.so"
+        },
+        {
+          "name": "runtime/bin/libllama-fit-params-impl.so"
+        },
+        {
+          "name": "runtime/bin/libllama-perplexity-impl.so"
+        },
+        {
+          "name": "runtime/bin/libllama-quantize-impl.so"
+        },
+        {
+          "name": "runtime/bin/libllama-server-impl.so"
+        },
+        {
+          "name": "runtime/bin/libllama.so"
+        },
+        {
+          "name": "runtime/bin/libllama.so.0"
+        },
+        {
+          "name": "runtime/bin/libllama.so.0.8.0"
+        },
+        {
+          "name": "runtime/bin/libmtmd.so"
+        },
+        {
+          "name": "runtime/bin/libmtmd.so.0"
+        },
+        {
+          "name": "runtime/bin/libmtmd.so.0.8.0"
+        },
+        {
+          "name": "runtime/bin/llama-server"
+        },
+        {
+          "name": "runtime/runtime.json"
+        }
+      ]
+    },
+    {
+      "source": "arseniytrushin/llm-preference-span-002-judge-recovery/2",
+      "status": "COMPLETE",
+      "files": [
+        {
+          "name": "bundled_code/arena/__init__.py"
+        },
+        {
+          "name": "bundled_code/arena/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "bundled_code/arena/__pycache__/data.cpython-313.pyc"
+        },
+        {
+          "name": "bundled_code/arena/__pycache__/judge.cpython-313.pyc"
+        },
+        {
+          "name": "bundled_code/arena/__pycache__/judge_runtime.cpython-313.pyc"
+        },
+        {
+          "name": "bundled_code/arena/data.py"
+        },
+        {
+          "name": "bundled_code/arena/judge.py"
+        },
+        {
+          "name": "bundled_code/arena/judge_runtime.py"
+        },
+        {
+          "name": "cuda12/nvidia/__init__.py"
+        },
+        {
+          "name": "cuda12/nvidia/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/__init__.py"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/include/__init__.py"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/include/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/include/cublas.h"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/include/cublasLt.h"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/include/cublasXt.h"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/include/cublas_api.h"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/include/cublas_v2.h"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/include/nvblas.h"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/lib/__init__.py"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/lib/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/lib/libcublas.so.12"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/lib/libcublasLt.so.12"
+        },
+        {
+          "name": "cuda12/nvidia/cublas/lib/libnvblas.so.12"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/__init__.py"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/__init__.py"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/builtin_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/channel_descriptor.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/common_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/async.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/coalesced_reduce.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/coalesced_scan.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/driver_abi.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/functional.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/helpers.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/info.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/invoke.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/memory.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/partitioning.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/reduce.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/scan.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/details/sync.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/memcpy_async.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/reduce.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cooperative_groups/scan.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuComplex.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudaEGL.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudaEGLTypedefs.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudaGL.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudaGLTypedefs.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudaProfilerTypedefs.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudaTypedefs.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudaVDPAU.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudaVDPAUTypedefs.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_awbarrier.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_awbarrier_helpers.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_awbarrier_primitives.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_bf16.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_bf16.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_device_runtime_api.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_egl_interop.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_fp16.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_fp16.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_fp4.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_fp4.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_fp6.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_fp6.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_fp8.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_fp8.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_gl_interop.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_occupancy.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_pipeline.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_pipeline_helpers.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_pipeline_primitives.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_runtime.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_runtime_api.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_surface_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_texture_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cuda_vdpau_interop.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/cudart_platform.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/device_atomic_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/device_atomic_functions.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/device_double_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/device_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/device_launch_parameters.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/device_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/driver_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/driver_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/host_config.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/host_defines.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/library_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/math_constants.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/math_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/mma.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_20_atomic_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_20_atomic_functions.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_20_intrinsics.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_20_intrinsics.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_30_intrinsics.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_30_intrinsics.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_32_atomic_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_32_atomic_functions.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_32_intrinsics.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_32_intrinsics.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_35_atomic_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_35_intrinsics.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_60_atomic_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_60_atomic_functions.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_61_intrinsics.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/sm_61_intrinsics.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/surface_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/surface_indirect_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/surface_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/texture_fetch_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/texture_indirect_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/texture_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/vector_functions.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/vector_functions.hpp"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/include/vector_types.h"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/lib/__init__.py"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/lib/__pycache__/__init__.cpython-313.pyc"
+        },
+        {
+          "name": "cuda12/nvidia/cuda_runtime/lib/libcudart.so.12"
+        },
+        {
+          "name": "cuda12/nvidia_cublas_cu12-12.8.4.1.dist-info/INSTALLER"
+        },
+        {
+          "name": "cuda12/nvidia_cublas_cu12-12.8.4.1.dist-info/License.txt"
+        },
+        {
+          "name": "cuda12/nvidia_cublas_cu12-12.8.4.1.dist-info/METADATA"
+        },
+        {
+          "name": "cuda12/nvidia_cublas_cu12-12.8.4.1.dist-info/RECORD"
+        },
+        {
+          "name": "cuda12/nvidia_cublas_cu12-12.8.4.1.dist-info/REQUESTED"
+        },
+        {
+          "name": "cuda12/nvidia_cublas_cu12-12.8.4.1.dist-info/WHEEL"
+        },
+        {
+          "name": "cuda12/nvidia_cublas_cu12-12.8.4.1.dist-info/top_level.txt"
+        },
+        {
+          "name": "cuda12/nvidia_cuda_runtime_cu12-12.8.90.dist-info/INSTALLER"
+        },
+        {
+          "name": "cuda12/nvidia_cuda_runtime_cu12-12.8.90.dist-info/License.txt"
+        },
+        {
+          "name": "cuda12/nvidia_cuda_runtime_cu12-12.8.90.dist-info/METADATA"
+        },
+        {
+          "name": "cuda12/nvidia_cuda_runtime_cu12-12.8.90.dist-info/RECORD"
+        },
+        {
+          "name": "cuda12/nvidia_cuda_runtime_cu12-12.8.90.dist-info/REQUESTED"
+        },
+        {
+          "name": "cuda12/nvidia_cuda_runtime_cu12-12.8.90.dist-info/WHEEL"
+        },
+        {
+          "name": "cuda12/nvidia_cuda_runtime_cu12-12.8.90.dist-info/top_level.txt"
+        },
+        {
+          "name": "hardware_diagnostic.json"
+        },
+        {
+          "name": "profile/judge_config.json"
+        },
+        {
+          "name": "profile/judge_predictions.npz"
+        },
+        {
+          "name": "profile/judge_summary.json"
+        },
+        {
+          "name": "profile/preflight.json"
+        },
+        {
+          "name": "profile/progress.json"
+        },
+        {
+          "name": "profile/run_identity.json"
+        },
+        {
+          "name": "profile/scored_rows.jsonl"
+        },
+        {
+          "name": "profile/server.log"
+        },
+        {
+          "name": "recovery_gate.json"
+        },
+        {
+          "name": "runtime_bin/libggml-base.so"
+        },
+        {
+          "name": "runtime_bin/libggml-base.so.0"
+        },
+        {
+          "name": "runtime_bin/libggml-base.so.0.28.0"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-alderlake.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-cannonlake.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-cascadelake.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-cooperlake.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-haswell.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-icelake.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-ivybridge.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-piledriver.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-sandybridge.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-sapphirerapids.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-skylakex.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-sse42.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-x64.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cpu-zen4.so"
+        },
+        {
+          "name": "runtime_bin/libggml-cuda.so"
+        },
+        {
+          "name": "runtime_bin/libggml-rpc.so"
+        },
+        {
+          "name": "runtime_bin/libggml.so"
+        },
+        {
+          "name": "runtime_bin/libggml.so.0"
+        },
+        {
+          "name": "runtime_bin/libggml.so.0.28.0"
+        },
+        {
+          "name": "runtime_bin/libllama-batched-bench-impl.so"
+        },
+        {
+          "name": "runtime_bin/libllama-bench-impl.so"
+        },
+        {
+          "name": "runtime_bin/libllama-cli-impl.so"
+        },
+        {
+          "name": "runtime_bin/libllama-common.so"
+        },
+        {
+          "name": "runtime_bin/libllama-common.so.0"
+        },
+        {
+          "name": "runtime_bin/libllama-common.so.0.8.0"
+        },
+        {
+          "name": "runtime_bin/libllama-completion-impl.so"
+        },
+        {
+          "name": "runtime_bin/libllama-fit-params-impl.so"
+        },
+        {
+          "name": "runtime_bin/libllama-perplexity-impl.so"
+        },
+        {
+          "name": "runtime_bin/libllama-quantize-impl.so"
+        },
+        {
+          "name": "runtime_bin/libllama-server-impl.so"
+        },
+        {
+          "name": "runtime_bin/libllama.so"
+        },
+        {
+          "name": "runtime_bin/libllama.so.0"
+        },
+        {
+          "name": "runtime_bin/libllama.so.0.8.0"
+        },
+        {
+          "name": "runtime_bin/libmtmd.so"
+        },
+        {
+          "name": "runtime_bin/libmtmd.so.0"
+        },
+        {
+          "name": "runtime_bin/libmtmd.so.0.8.0"
+        },
+        {
+          "name": "runtime_bin/llama-server"
+        },
+        {
+          "name": "session_summary.json"
+        }
+      ]
+    }
+  ],
+  "model_source": "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2",
+  "pinned_model_version_available": true,
+  "model_version_metadata": {
+    "id": 897279,
+    "versionNumber": 2
+  }
+}

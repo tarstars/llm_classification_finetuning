@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-04T14:47:21.464999+00:00",
+  "method": "Authenticated official Kaggle competition-page API",
+  "pages": [
+    {
+      "name": "rules",
+      "characters": 31277,
+      "sha256": "064f238970209a2e1089fa1889d376088844f8ec8e3799361d39d9bfb17e6a72"
+    },
+    {
+      "name": "Evaluation",
+      "characters": 483,
+      "sha256": "e374875f29489cd4f908f8529979fd4e10f97bfdb5369abe2bc1658dc427c69d"
+    },
+    {
+      "name": "Code Requirements",
+      "characters": 1038,
+      "sha256": "6c2e540d8367164dec3eda334d9357fe25414d40a9b2ebbdb50c9fe8e982e6df"
+    }
+  ]
+}

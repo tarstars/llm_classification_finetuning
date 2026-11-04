@@ -1,0 +1,29 @@
+{
+  "span": 4,
+  "seed": 20261121,
+  "diagnostic_configurations": [
+    {"name": "cache_on", "cache_prompt": true},
+    {"name": "cache_off", "cache_prompt": false}
+  ],
+  "diagnostic_passes": ["initial", "repeat", "permuted", "restart"],
+  "repeatability_limits": {"mean": 0.001, "maximum": 0.01},
+  "historical_identity_limits": {"mean": 0.01, "maximum": 0.1},
+  "route_fraction": 0.2,
+  "blend_families": ["original_route", "global_postcalibration", "route_postcalibration"],
+  "outer_group_folds": 5,
+  "inner_group_folds": 3,
+  "route_regularization_grid": [0.01, 0.1, 1.0],
+  "classifier_temperature_bounds": [0.5, 3.0],
+  "judge_temperature_bounds": [0.25, 8.0],
+  "post_temperature_bounds": [0.5, 3.0],
+  "tie_intercept_bounds": [-1.0, 1.0],
+  "bootstrap_group_replicates": 2000,
+  "cheap_useful_gain": 0.001,
+  "projection_hidden_rows_assumption": 25000,
+  "projection_multiplier": 1.2,
+  "projection_reserve_seconds": 600,
+  "per_job_seconds_cap": 25200,
+  "job_seconds_caps": {"repeatability": 1800, "consistent_cache": 7200, "cascade_followup": 3600, "offline_profile": 1800},
+  "maximum_official_submissions": 0,
+  "confirmation_used": false
+}

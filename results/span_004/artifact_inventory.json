@@ -1,0 +1,50 @@
+{
+  "classifier": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/exposure/output/exposure/dev_predictions.npz",
+    "sha256": "51fabd9e17111d44e0176569a10c816d7cc3c0e3de5534da93d9645e08ae8dae"
+  },
+  "judge_fit": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/ensemble-consistent/output/cached_current/judge_predictions.npz",
+    "sha256": "6c354da277e31ea97c0e85c62a5829c90fb5524f8a3172f94e8253622df1274d"
+  },
+  "judge_extra": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/ensemble-extra/output/gemma26/judge_predictions.npz",
+    "sha256": "e8e169ee44aafa68fc2ce5481728f7a1c107e596015792a9bcc9a4c6be30dc20"
+  },
+  "adapter": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/exposure/output/exposure/adapter/adapter_model.safetensors",
+    "sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b"
+  },
+  "split": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/split_ids.json",
+    "sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1"
+  },
+  "raw_train": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/raw/train.csv",
+    "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2"
+  },
+  "candidate": {
+    "path": "/home/tarstars/prj/llm_classification_finetuning/results/span_003/deployed_candidate.json",
+    "sha256": "cf5cf8cdb740c8fd30251fa43d100ea81c4b0496b8606190e647a9fc8703a0de"
+  },
+  "portable_manifest": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_003/jobs/native_profile_retry/output/offline_native_runtime/manifest.json",
+    "sha256": "0de4e0738d3493621a0369487bc7c6222597e6fe700327555537c9afd7cba2b9"
+  },
+  "previous_native_reference": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_003/jobs/native_profile_retry/output/native_reference.npz",
+    "sha256": "040273ed533de53a80a7e30638cbea4183a0d0a40e2da727f25444caa5d2f377"
+  },
+  "previous_native_observed": {
+    "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_003/jobs/native_profile_retry/output/native/judge_predictions.npz",
+    "sha256": "0008beea994d0f68fdc3a45d4a621511c16d70c63691df48b5527ea228285cd0"
+  },
+  "sample_ids_sha256": "3bfaeb12379871b9de6fd8d20eb407af1a70b08ded8dd8f147817afa831ae995",
+  "sample_counts": {
+    "sentinel": 64,
+    "fitting": 2048,
+    "followup": 1024
+  },
+  "fitting_groups": 1953,
+  "confirmation_used": false
+}

@@ -3026,7 +3026,7 @@
       ],
       "id": "E04",
       "rank": 49,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 4,
       "discovered_during": 3,
       "derived_from": [
@@ -3040,6 +3040,14 @@
           "note": "Offline native hardware works but unchanged numerical guard fails; no predeclared route passes all current gates. Queue bounded label-independent repeatability diagnosis and consistent validation for v4; distinct from classifier precision H08, not executed.",
           "evidence": [
             "docs/SPAN_003_E02.md"
+          ]
+        },
+        {
+          "at": "2026-11-04T15:03:30+00:00",
+          "status": "running",
+          "note": "Prepared the fixed v4 protocol, complete initial quota/job inventory, input/sample hashes and two label-independent cache_on/cache_off cases. Eight64-row replay/order/restart passes share two clean server starts; total diagnostic ceiling1800s. No GPU launch until the premeasurement source/config/dependency contract is committed.",
+          "evidence": [
+            "docs/SPAN_004_PROTOCOL.md"
           ]
         }
       ]

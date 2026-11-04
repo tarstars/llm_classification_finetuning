@@ -69,7 +69,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 14 | [H24](#h24) | P2 / planned | Adaptive question budget | -0.008…+0.01 | medium | 6…14 | 0.5…2 | 10…22 | E00 |
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
-| 49 | [E04](#e04) | P2 / planned | Establish a reproducible native judge scoring recipe | — | high | 2…6 | 0.15…0.5 | 0.5…2 | E00, E02 |
+| 49 | [E04](#e04) | P2 / running | Establish a reproducible native judge scoring recipe | — | high | 2…6 | 0.15…0.5 | 0.5…2 | E00, E02 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 19 | [H36](#h36) | P3 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
 | 20 | [H29](#h29) | P3 / planned | Human-preference prompt rubric | -0.015…+0.01 | low | 3…8 | 0.5…2 | 2…6 | E00 |
@@ -412,7 +412,7 @@ Training and inference with more retained context may improve truncated comparis
 
 ### E04
 
-**Establish a reproducible native judge scoring recipe** — P2, planned, risk high.
+**Establish a reproducible native judge scoring recipe** — P2, running, risk high.
 
 Native numerical consistency must be established before reusing judge calibrators or claiming a deployable cached cascade.
 
@@ -439,6 +439,7 @@ Native numerical consistency must be established before reusing judge calibrator
 **References:** [docs/SPAN_003_E02.md](docs/SPAN_003_E02.md); [results/span_003/native_profile_results.json](results/span_003/native_profile_results.json); [docs/SPAN_003_H39.md](docs/SPAN_003_H39.md)
 
 - 2026-11-04T09:11:58+00:00 — planned: Offline native hardware works but unchanged numerical guard fails; no predeclared route passes all current gates. Queue bounded label-independent repeatability diagnosis and consistent validation for v4; distinct from classifier precision H08, not executed. Evidence: [docs/SPAN_003_E02.md](docs/SPAN_003_E02.md)
+- 2026-11-04T15:03:30+00:00 — running: Prepared the fixed v4 protocol, complete initial quota/job inventory, input/sample hashes and two label-independent cache_on/cache_off cases. Eight64-row replay/order/restart passes share two clean server starts; total diagnostic ceiling1800s. No GPU launch until the premeasurement source/config/dependency contract is committed. Evidence: [docs/SPAN_004_PROTOCOL.md](docs/SPAN_004_PROTOCOL.md)
 
 ### H22
 

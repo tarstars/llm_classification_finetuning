@@ -20,6 +20,18 @@ consistent cache rescoring and H44's nested three-family calibration comparison.
 Stop/defer against failed gates with evidence; do not reuse incompatible scores.
 Read the full current goal/task records before implementing the protocol.
 
+V4 preparation milestone: complete initial inventory froze the actual cap at
+29,337.999s, baseline quota78,662.001 used,0reserved, refreshNov7 unchanged.
+Protocol/config/input/sample/bundle hashes and dependency availability are now
+in `results/span_004/`; both exact native parents are COMPLETE and modelversion2
+is available. E04 is running preparation; no GPU push yet. Two64-row replay cases
+change only cache_prompt; eightpasses share two server starts, capped1,800s.
+Native worker/transport/coverage tests pass and all embedded module hashes match.
+Commit/push the premeasurement contract before launching
+`scripts/run_span_004_job.py repeatability`, then monitor its exact returned
+version and controller handle. Heavy root is `runs/span_004`, log is chosen at
+launch. H44 remains planned behind an actual passing E04 stability/runtime gate.
+
 V3 is complete and sealed; its unchanged contract is `docs/GOAL_V3.md`.
 Do not rerun v3 jobs or its closure checker against the now-advanced live registry;
 its completion evidence describes the closing commit `f068706`.

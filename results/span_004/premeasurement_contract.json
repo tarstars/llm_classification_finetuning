@@ -1,0 +1,19 @@
+{
+  "span": 4,
+  "source_sha256": {
+    "GOAL.md": "4e7d508c1ed5b88c159ff08c7336b3ed211febed65f7d50adf87293039585d5d",
+    "docs/SPAN_004_PROTOCOL.md": "8380093cf36a068cc6b8ca0bcf4730a21e32b99e90dc88b746f96f13d495ebd7",
+    "configs/span_004.json": "1b7424ff378da019f12a004c95a5e7d958736fc1eae69fea9500ef1a11c185ea",
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/judge.py": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b",
+    "src/arena/judge_runtime.py": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+    "src/arena/span_repeatability.py": "a2a064e7c45a59af0c084cd5dbe15dcbf257ab6cd1425392c47e2c418272bebe"
+  },
+  "input_inventory_sha256": "47aff2a03def928b1912288b4f5c7ec9d16a459d2afe354ab6b1dc3d8e4b1490",
+  "initial_resources_sha256": "051caad0f43f80467315d77105e8adf639d667bf4e6fc87d392b2916cfc78466",
+  "span_plan_sha256": "1b3452a009673eb287d339fff3da7fa7a0f1602cf682ecce338f4cf359b8fb09",
+  "notebook_bundle_sha256": "2a56397ec5a19839f2d1fce9bdadb1bb6e1546fe123b072c6ef3bc6a6e54015a",
+  "no_new_quality_measurements_or_gpu_launches_before_contract": true,
+  "maximum_serving_configurations": 2,
+  "official_submissions_allowed": 0
+}

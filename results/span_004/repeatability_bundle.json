@@ -1,0 +1,27 @@
+{
+  "notebook_sha256": "90c040400d36230ea69b63e06bf3d2d2ed91385911aebf679c7aef022c5f1944",
+  "parent_notebook_sha256": "8e5cab3b3a158d80d4e107196a472f18fa81f1dd027b3a1346930ab590ff2df2",
+  "source_sha256": {
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/judge.py": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b",
+    "src/arena/judge_runtime.py": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+    "src/arena/span_repeatability.py": "a2a064e7c45a59af0c084cd5dbe15dcbf257ab6cd1425392c47e2c418272bebe"
+  },
+  "config_sha256": "1b7424ff378da019f12a004c95a5e7d958736fc1eae69fea9500ef1a11c185ea",
+  "maximum_session_seconds": 1800,
+  "configurations": 2,
+  "passes_per_configuration": 4,
+  "rows_per_pass": 64,
+  "unique_competition_rows": 64,
+  "maximum_competition_scoring_requests": 512,
+  "server_starts": 2,
+  "competition_labels_accessed": false,
+  "internet_enabled": false,
+  "portable_manifest_sha256": "0de4e0738d3493621a0369487bc7c6222597e6fe700327555537c9afd7cba2b9",
+  "model_source": "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2",
+  "model_weights_sha256": "Captured on the GPU before first inference; immutable Kaggle version pinned before launch.",
+  "parent_kernels": [
+    "arseniytrushin/llm-preference-judge-binary-probe-003/1",
+    "arseniytrushin/llm-preference-span-002-judge-recovery/2"
+  ]
+}

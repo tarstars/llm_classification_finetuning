@@ -1,0 +1,16 @@
+{
+  "span": 4,
+  "started_at": "2026-11-04T14:29:32+00:00",
+  "deadline": "2026-11-06T14:29:32+00:00",
+  "focus": [
+    "E04",
+    "H44"
+  ],
+  "seed": 20261121,
+  "gpu_session_seconds_cap": 29337.998999999996,
+  "quota_used_at_start": 78662.001,
+  "initial_quota_refresh_time": "2026-11-07 00:00:00",
+  "per_job_seconds_cap": 25200,
+  "maximum_official_submissions": 0,
+  "confirmation_used": false
+}
