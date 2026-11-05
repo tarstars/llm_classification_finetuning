@@ -20,9 +20,13 @@ in the exact expected export output; old checkpoint800 cannot substitute.
 CPU freeze completed at10:29:56UTC:90,889source answers after1,081union duplicates
 purged;554.202CPUelapsed seconds,3.699GiBpeak. All source/head weights and private
 posteriors are bound by results/span_006/frozen_recipe.json; confirmation votes and
-source names remain unread. No GPU launch yet at this checkpoint. The confirmation
-bundle/controller/evaluation programs are prepared; sources will be committed before
-one fresh admission. Preserve the exact future returned version; do not duplicate. Check
+source names remain unread. Confirmation job ACCEPTED10:34:57UTC, exact source
+arseniytrushin/llm-preference-span-006-confirmation/1, initially QUEUED.
+Controller PTY32845/PID4143163; log /tmp/arena_span006_confirmation_controller.log.
+Source/recipe contract20b7fee was committed/pushed before launch. One push only;
+5400sservice cap,512-row checkpoint chunks,64-row raw identity guard before
+confirmation. Observe this exact live version; never re-push because a read expires.
+CPUfreeze PTY35817 exited0. Recipe remains frozen; reveal_intent absent. Check
 actual task status, started records and exact controller versions before continuing;
 never duplicate an already started worker. Heavy root runs/span_006.
 
