@@ -1,5 +1,13 @@
 # Project memory
 
+## V5 execution preparation — 2026-11-05
+
+User authorized the next span. FocusE06/E07/H45; CPU-only7.5hstage ceiling,
+zeroGPU, no submission/newLoRA fit. Exact inputs/folds and protocol/source hashes
+are frozen before fitting.64sources,45,985training and5,746development rows,
+existing embedding digest verified. See protocol and live context handoff.
+Original user-task clock07:17:10UTC,48hdeadline; no new goal-service activation.
+
 ## V5 planning addition — 2026-11-05
 
 The user requested a source-model experiment in the next unstarted span.

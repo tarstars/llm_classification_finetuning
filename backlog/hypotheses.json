@@ -3692,7 +3692,11 @@
         "E07",
         "H45"
       ],
-      "focus_ids": [],
+      "focus_ids": [
+        "E06",
+        "E07",
+        "H45"
+      ],
       "history": [
         {
           "at": "2026-11-05T06:27:43+00:00",
@@ -3725,6 +3729,15 @@
           "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
           "evidence": [
             "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T07:20:56+00:00",
+          "note": "User requested execution of the next span after adding the source-model experiment. Select bounded CPU-first E06→E07→H45; actual scientific gates control advancement. Keep E05/H44 and the other35members as carryovers. No GPU launch or official submission in this span.",
+          "focus_ids": [
+            "E06",
+            "E07",
+            "H45"
           ]
         }
       ],

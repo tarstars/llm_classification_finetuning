@@ -1,27 +1,35 @@
-# Context handoff — 2026-11-05, v5 planning after completed v4
+# Context handoff — 2026-11-05, executing v5
 
-V4 is complete and sealed. **V5 is active with 38 tasks: 34 unfinished carryovers,
-E05, and user-requested planning additions E06/E07/H45. No v5 focus or experiment
-execution; v6 is empty draft.**
-`GOAL.md` remains the completed v4 contract, copied byte-for-byte to
-[GOAL_V4.md](GOAL_V4.md); it does not authorize another span.
+The user requested execution of the next span. V5 has38members and focus
+**E06 → E07 → H45**, conditional on actual scientific gates. Other35members,
+including E05/H44, remain carryovers. V6 is empty draft. `GOAL.md` is the new
+bounded execution contract; completed v4 is archived exactly at `GOAL_V4.md`.
+No new goal-service activation was requested. Original user-task clock is
+2026-11-05 07:17:10UTC, deadlineNovember7 at the same time; never reuse v4's clock.
 
-On November 5 the user asked to add the source-model experiment to the next span.
-The [plan](SPAN_005_SOURCE_MODEL_PLAN.md) covers opponent-adjusted strength and
-true-identity residual diagnostics (E06), text-to-source probability prediction
-(E07), and nested incremental preference prediction alongside LoRA (H45).
-They are planned, with actual scientific advancement gates; no pilot has run.
-`queue --into-active` records these explicit pre-execution additions while retaining
-the original 35-task v5-start snapshot. All sealed snapshot bytes remain unchanged.
-The v4 completion/closure audits describe their original closing registry and
-remain historical evidence; do not rerun them against this amended live plan.
-The policy now documents the narrowly guarded planning command. Ordinary research
-discoveries still queue into the next-version draft. No new goal has been activated.
+CPU-only: stage ceilings1.5h/4h/2h,2numerical threads,6GiB RSS guard. GPU budget0,
+no new extraction, LoRA retraining or submission. Source/strength parameters use
+original training only; nested residual evaluation uses the fixed development
+cohort. Confirmation remains unused. After actual completion seal v5/form v6 and
+empty v7, publish, then stop before v6 execution.
 
-Read [v4 results](SPAN_004_RESULTS.md), [completion](SPAN_004_COMPLETION.md),
-[E04](SPAN_004_E04.md), [H44 deferral](SPAN_004_H44.md) and
-[policy](../PROJECT_POLICY.md). This is a dated orientation snapshot, not a
-substitute for fresh state/quota checks before any future experiment.
+Protocol/config/source and prepared artifact/input/fold hashes are under
+`docs/SPAN_005_PROTOCOL.md`, `configs/span_005.json`, `results/span_005`.
+Preparation verified45,985train/5,746dev rows,5,211dev prompt groups,64sources and
+full existing-embedding text-order digest. `run_span_005_e06.py` is prepared;
+no measured v5 result yet at this preparation milestone. Read live CLI status and
+actual run files before acting; never duplicate an already started worker.
+Heavy path: `~/database/llm_classification_finetuning/runs/span_005`.
+
+Fresh initial owned-job/quota inventory: no current nonterminal job, zero
+reservations,28,498.746sremaining, no scaling; quota is not spent in this span.
+Three old source404s remain disclosed. All18sealed snapshot files are preserved,
+including original35-task v5-start; the prior user-requested planning amendments
+added E06/E07/H45 before focus. Notebook07/12 user edits remain unrelated.
+The completed v4 audits are historical; do not rerun them against the live v5 plan.
+
+Read `PROJECT_POLICY.md`, source-model plan and frozen protocol before resuming.
+The earlier v4 findings below are historical background.
 
 ## V4 outcome and stopping decision
 

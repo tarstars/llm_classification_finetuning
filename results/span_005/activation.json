@@ -1,0 +1,13 @@
+{
+  "span": 5,
+  "started_at": "2026-11-05T07:17:10+00:00",
+  "deadline": "2026-11-07T07:17:10+00:00",
+  "clock_source": "First clock observation while executing the explicit user instruction; not goal-service activation",
+  "focus": [
+    "E06",
+    "E07",
+    "H45"
+  ],
+  "gpu_budget_seconds": 0,
+  "goal_contract_sha256": "3631a465f4ea0f2f249e98b6f96d9d6163a7782b494cc28396221ccc202a576b"
+}
