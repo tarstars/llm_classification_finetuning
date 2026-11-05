@@ -8,16 +8,28 @@ Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
-V6 completed the frozen source-strength transfer. Matched calibration gives
-**0.946628** confirmation loss and the correction **0.945753**, a gain of
-**0.000876 [−0.000390, 0.002173]**. The quality gate failed; the style control
-nearly matches it. H46 is done without promotion and E08 was deferred without
-execution. One offline two-T4 job used **1.09226 session-hours**; no new submission.
-See [v6 results](docs/SPAN_006_RESULTS.md), [completion](docs/SPAN_006_COMPLETION.md),
+The active **v7** is a bounded research and engineering span: observable QLoRA
+continuation, paired context retention, native-judge concurrency, direct source
+strength, framework reliability and pipeline theory. Nine focus tasks are selected
+from 43 members. Training is running; no new official score is claimed. The
+[plan](docs/SPAN_007_PLAN.md) fixes the clock and compute caps. Follow durable
+status with `.venv/bin/python scripts/status.py --follow` and read the
+[theory guide](docs/PIPELINE_THEORY.md) and
+[review of skipped work](docs/SPAN_007_CARRYOVER_REVIEW.md).
+
+V7's completed CPU source experiment rejects the fixed direct-ridge recipe:
+source MSE **0.213089** versus identity projection **0.201731**; nested preference
+loss **0.953205** versus matched identity control **0.952434**. The independent
+replay audit passes. There is no source-model promotion; see
+[H47 results](docs/SPAN_007_H47.md).
+
+V6's frozen source-strength transfer gained only
+**0.000876 [−0.000390, 0.002173]**, below its gate. H46 completed and E08 was
+deferred without execution. One offline two-T4 job used **1.09226 session-hours**;
+no submission. See [v6 results](docs/SPAN_006_RESULTS.md),
+[completion](docs/SPAN_006_COMPLETION.md),
 [executed notebook17](notebooks/17_backlog_v6_span.ipynb) and
-[completed v6 contract](docs/GOAL_V6.md). V7 contains 36 unfinished carryovers plus
-H47, a development-only proposal to predict strength directly; it has no focus
-or execution. V8 is an empty draft.
+[completed v6 contract](docs/GOAL_V6.md).
 
 The completed [v4 goal](docs/GOAL_V4.md) tested **E04**, native judge repeatability.
 Both cache settings failed the fixed probability guards on 512 fresh requests;
@@ -85,11 +97,10 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v7**, with **37 tasks**: 36 unfinished carryovers plus
-H47 (direct strength regression). V6 completed H46 with a failed quality gate;
-E08 remains deferred, requiring genuinely positive new quality evidence before
-any future qualification. E05/H44 retain their judge prerequisites. V7 has no
-selected focus or execution; [v8 is an empty draft](backlog/NEXT.md).
+The active version is **v7**, with **43 tasks** and nine focus items. V8 is a
+[next-version draft](backlog/NEXT.md) collecting evidence-grounded discoveries;
+it does not authorize execution. E08 requires genuinely positive source evidence,
+and H44 requires a stable affordable judge plus a fresh consistent cache.
 The original 35-task v5-start snapshot and its explicit planning amendments are
 preserved, along with all historical snapshots.
 Each completed span preserves snapshots and carries unfinished work forward.

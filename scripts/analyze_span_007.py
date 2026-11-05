@@ -9,8 +9,14 @@ from scipy.optimize import minimize_scalar
 REPO=Path(__file__).resolve().parents[1];sys.path.insert(0,str(REPO/'src'))
 from arena.data import ROOT,CLASSES,prompt_groups
 from arena.experiment import read_json,atomic_json,sha256,utc_now
-from arena.span_heads import temperature,loss_rows
-from arena.span007_analysis import score_candidate
+from arena.span_heads import temperature,loss_rows,metrics,paired_group_gain
+from arena.span007_analysis import score_candidate,loss_decomposition
+
+
+def order_diagnostics(a,b):
+    delta=np.abs(a-b)
+    return {'argmax_disagreement_fraction':float(np.mean(a.argmax(1)!=b.argmax(1))),
+            'mean_absolute_probability_difference':float(delta.mean()),'maximum_absolute_probability_difference':float(delta.max())}
 
 
 def main():
@@ -34,6 +40,7 @@ def main():
     y=dev[CLASSES].to_numpy().argmax(1);groups=prompt_groups(dev).to_numpy(dtype=str)
     old=np.load(inv['input_artifacts']['classifier']['path']);np.testing.assert_array_equal(old['ids'],dev.id)
     baseline=(old['original']+old['aligned_swap'])/2
+    baseline_orders=[old['original'].copy(),old['aligned_swap'].copy()]
     output=job/'output'/role;summary=read_json(output/'summary.json');assert summary['complete']
     source_proof=read_json(pub/'jobs'/role/'source_verification.json');assert source_proof['passed']
     hardware=[read_json(output/f'gpu_rank{rank}.json') for rank in [0,1]]
@@ -42,6 +49,7 @@ def main():
         file=output/'dev_predictions.npz';assert sha256(file)==summary['development_prediction_sha256']
         raw=np.load(file);np.testing.assert_array_equal(raw['ids'],dev.id);np.testing.assert_array_equal(raw['labels'],y)
         candidate=(raw['original']+raw['aligned_swap'])/2
+        candidate_orders=[raw['original'],raw['aligned_swap']]
         rate=max(.6527916988221372,summary['development_prediction_seconds']/len(dev))
         cold=max(0,charge-summary['training_seconds']-summary['development_prediction_seconds'])
         projection=25000*rate*1.2+cold+600
@@ -69,6 +77,9 @@ def main():
             np.testing.assert_array_equal(covered,ids)
         original_cached=baseline[indices].copy();short=(first['original']+first['aligned_swap'])/2
         baseline=baseline.copy();baseline[indices]=short;candidate=baseline.copy();candidate[indices]=(second['original']+second['aligned_swap'])/2
+        baseline_orders[0][indices]=first['original'];baseline_orders[1][indices]=first['aligned_swap']
+        candidate_orders=[v.copy() for v in baseline_orders]
+        candidate_orders[0][indices]=second['original'];candidate_orders[1][indices]=second['aligned_swap']
         delta=np.abs(short-original_cached)
         fraction=len(indices)/len(dev);rate=(1-fraction)*.6527916988221372+fraction*summary['long_seconds']/len(indices)
         cold=max(0,charge-summary['short_seconds']-summary['long_seconds']);projection=25000*rate*1.2+cold+600
@@ -78,10 +89,16 @@ def main():
                'candidate_kind':'context','max_length':2048,'conditional_short_batch_size':4,'conditional_long_batch_size':8,
                'prediction_seconds_per_row':rate,'cold_setup_seconds':cold,'projected_inference_seconds':projection,
                'adapter_sha256':summary['adapter_sha256']}
+        short_t=temperature(baseline[indices],.9441963863130951);long_t=temperature(candidate[indices],.9441963863130951)
+        extra.update(confirmation_target_columns_loaded=False,confirmation_targets_used=False,
+                     changed_slice={'rows':len(indices),'metrics':{'short':metrics(y[indices],short_t),'long':metrics(y[indices],long_t)},
+                     'paired_gain':paired_group_gain(y[indices],short_t,long_t,groups[indices],dict(cfg,seed=cfg['bootstrap_seed']))})
     result,probabilities=score_candidate(y,groups,baseline,candidate,cfg,role)
     result.update(task=name,complete=True,charged_gpu_seconds=charge,**extra)
     result['artifact_checks_passed']=True
     result['source_verification_sha256']=sha256(pub/'jobs'/role/'source_verification.json')
+    result['order_diagnostics']={'reference':order_diagnostics(*baseline_orders),'candidate':order_diagnostics(*candidate_orders)}
+    result['loss_decomposition']={name:loss_decomposition(y,p) for name,p in probabilities.items()}
     result['runtime_gate_passed']=bool(projection<=25200)
     result['eligible']=bool(result['quality_gate']['passed'] and result['runtime_gate_passed'])
     fit=minimize_scalar(lambda t:loss_rows(y,temperature(candidate,t)).mean(),bounds=(.5,3.),method='bounded')
