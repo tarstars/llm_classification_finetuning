@@ -25,13 +25,29 @@ milestoneb2ad8e4. One push,13200srole cap, shared scripts/run_experiment.py.
 Actual initial prediction identity, optimizer fingerprint, scheduler position1434
 and AMPscale4096 checked before training. Training began19:04:08UTC.
 
-Latest observed20:06UTC:160accepted updates,0AMPskips,1.55millionrank0packedtokens,
-peakrank0allocated7.26GiB. First monitoring checkpoint/newcycle128 savedstep1566:
-256-row original-order loss0.956740 versus frozen baseline0.949364. This is one
-bad check under the fixed+0.005/two-consecutive rule. Nextnewcycle256 may stop
-training, otherwise fixedmax320; no schedule/best-checkpoint retuning. 4200
-seconds are reserved for final5746-row both-order development scoring. Expected
-wholejob completion around22UTC, actualservicecapabout22:38UTC.
+At20:40:58UTC the predeclared monitor stopped training at256accepted updates,
+zeroAMPskips. Original-order256-row monitor losses0.949364baseline,
+0.956740at128,0.970608at256 triggered the fixed+0.005/two-consecutive rule.
+Rank0accepted2425592packedtokens/4096rows; global totals await independentaudit.
+Full5746-row both-order development scoring/retrieval is pending. Keep final
+stopped endpoint, not a better earlier checkpoint. Actualservicecapabout22:38UTC.
+
+Durable sequence executor is running, session12911,
+/tmp/arena_span007_orchestrator.log, committed26c3682. It waits for existing H49,
+then verifies/collects/audits H49 and executes notebook19, and sequentially admits
+prepared H48/E05 with the shared controller. It records actual negative results,
+conditionally defers H44/H50 and freezes candidate selection. It stops at
+fixed_gpu_sequence_finished; root must finish any positive conditional branch and
+closure. Do not duplicate it. Logs/resources under heavyroot/orchestrator.
+
+Latest pushed milestone70f5e86. All sources remain frozen; status.py is an
+independent observer and now displays final/checkpoint counters rather than a
+stale prior five-cycle sample. Tests97 in total after3new supervisor tests;
+final fullsuite stillpending. E12 is queued forv8 from actual protocol/dtype/
+target-access corrections. README now describes activev7. Collectors also report
+order sensitivity, exact tie/winner decomposition and the changed context slice.
+The new scripts/check_span_007_closure.py checks freshremote termination/resources
+and sealed v7/v8+v9 state. It is prepared, not yet executed.
 
 Use .venv/bin/python scripts/status.py --follow. Shared runner samples SSE every
 about2min, heartbeatabout45s. Live tokens are rank0 only; audit sums both ranks.

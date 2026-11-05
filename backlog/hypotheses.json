@@ -3938,6 +3938,14 @@
           "evidence": [
             "docs/SPAN_007_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-05T20:42:23+00:00",
+          "status": "running",
+          "note": "The fixed monitor stopped training at new cycle256: losses0.949364 baseline,0.956740 at128,0.970608 at256. All256 updates accepted, zero AMP skips. Preserve final endpoint; full development scoring/retrieval and independent audit remain pending.",
+          "evidence": [
+            "results/span_007/jobs/continuation/progress.json"
+          ]
         }
       ]
     },

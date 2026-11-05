@@ -640,6 +640,7 @@ Test bounded additional exposure under an observable warm restart
 
 - 2026-11-05T18:39:31+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 - 2026-11-05T18:56:03+00:00 — running: Starting the frozen checkpoint1438 warm restart from source15a888a. One schedule, at most320newnominal cycles, full-dev fixed endpoint;13200srole cap including setup/evaluation. No GPU push has yet been sent. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
+- 2026-11-05T20:42:23+00:00 — running: The fixed monitor stopped training at new cycle256: losses0.949364 baseline,0.956740 at128,0.970608 at256. All256 updates accepted, zero AMP skips. Preserve final endpoint; full development scoring/retrieval and independent audit remain pending. Evidence: [results/span_007/jobs/continuation/progress.json](results/span_007/jobs/continuation/progress.json)
 
 ### H50
 
