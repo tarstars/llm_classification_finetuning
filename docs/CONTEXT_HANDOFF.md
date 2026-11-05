@@ -1,16 +1,33 @@
-# Context handoff — 2026-11-05, completed v5
+# Context handoff — 2026-11-05, executing v6
 
-**V5 is complete and sealed. V6 has 37 tasks: 35 unfinished carryovers plus H46/E08.
-No selected focus or v6 execution; v7 is empty draft. Stop here.**
-`GOAL.md` remains the completed v5 execution contract, archived byte-for-byte at
-`docs/GOAL_V5.md`. The user requested span execution, not a new goal-service
-activation; v4's service goal stays historical. No new service goal was created.
-Original v5 user-task clock 2026-11-05 07:17:10 UTC, fixed deadline November 7 same
-time. Never reuse/reset it or rerun completed workers.
+The user requested the next span. Active v6 has37members, focus H46 then conditional
+E08;35others remain carryovers. Original user-task clock10:03:27UTC November5,
+fixed deadlineNovember7 same time. No new goal-service activation. Completed v5
+contract remains exactly in docs/GOAL_V5.md; GOAL.md is now v6's bounded contract.
 
-Read [v5 results](SPAN_005_RESULTS.md), [completion](SPAN_005_COMPLETION.md),
-[E06](SPAN_005_E06.md), [E07](SPAN_005_E07.md), [H45](SPAN_005_H45.md), actual
-registry/audit files and the project policy before any new work.
+Initial quota used79501.254s,0reserved,28498.746sremaining; no live owned Kaggle
+job, no scaling, refreshNovember7 unchanged. Span cap8100elapsed2T4session-seconds:
+H46confirmation5400s, E08profile2700s, all setup/failures included. CPU stages
+freeze/evaluate/export each3600s,2threads,6GiB. No official submission or LoRA fit.
+
+Protocol/config and prepared source/input hashes are in results/span_006. H46
+freezes exactly the compact strength family after purging auxiliary training
+against development+confirmation inputs. Only development fits source/meta choices;
+confirmation inputs contain id/prompt/responses only. Freeze all artifact hashes
+before GPU inference/target evaluation. Latest H03 raw confirmation cache is absent
+in the exact expected export output; old checkpoint800 cannot substitute.
+
+Scripts prepare_span_006.py/freeze_span_006.py and GPU module span006_export.py
+are prepared. No measured v6 result or GPU launch yet at this checkpoint. Check
+actual task status, started records and exact controller versions before continuing;
+never duplicate an already started worker. Heavy root runs/span_006.
+
+H46 must show>=0.001matched loss gain with positive group interval versus frozen
+calibration, surviving style control, before E08. If not, record real H46 outcome
+and defer E08 rather than retuning. Original confirmation was historically inspected:
+this is a frozen transfer check, not fresh untouched validation. End by sealingv6,
+formingv7/emptyv8, publishing, then stop. Preserve notebook07/12 user edits and all
+22prior sealed snapshot files. The v5 findings below are historical context.
 
 ## V5 findings and next-version tasks
 

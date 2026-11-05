@@ -1,0 +1,7 @@
+{
+  "span": 6,
+  "started_at": "2026-11-05T10:03:27+00:00",
+  "deadline": "2026-11-07T10:03:27+00:00",
+  "clock_source": "First clock observation executing explicit user task; no new goal-service activation",
+  "goal_contract_sha256": "239a253576e7d3e3e394d814b82a3d31879f2c785ae954ea488681993ae908c6"
+}

@@ -1,5 +1,14 @@
 # Project memory
 
+## V6 execution preparation — 2026-11-05
+
+User authorized next span, focusH46/E08. Fixed clock10:03:27UTC,48hdeadline.
+Original GPUcap2.25elapsed2T4hours, split1.5hconfirmation/.75hconditionalprofile,
+reduced by fresh quota. Initial79501.254sused,0reserved,28498.746sremaining.
+Freeze compact source/strength/meta before confirmation votes; generate current
+H03 raw predictions if needed, never reuse checkpoint800. No submission or model
+training. See current protocol, input hashes and context handoff.
+
 ## V5 closing snapshot — 2026-11-05
 
 V5 is sealed; v6 has37tasks (35carryovers+H46/E08), no focus/execution; v7 empty.

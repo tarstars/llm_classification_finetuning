@@ -1,0 +1,63 @@
+{
+  "seed": 20261125,
+  "inner_group_folds": 3,
+  "bootstrap_group_replicates": 2000,
+  "practical_gain": 0.001,
+  "source_min_training_answers": 100,
+  "source_max_chars": 4096,
+  "source_word_features": 12000,
+  "source_char_features": 24000,
+  "source_char_ngram_range": [
+    3,
+    5
+  ],
+  "source_word_ngram_range": [
+    1,
+    2
+  ],
+  "source_logistic_C": 2.0,
+  "source_max_iterations": 150,
+  "source_tolerance": 0.001,
+  "residual_regularization_grid": [
+    0.001,
+    0.01,
+    0.1
+  ],
+  "residual_max_iterations": 500,
+  "calibration_slope_bounds": [
+    0.3333333333333333,
+    2.0
+  ],
+  "tie_intercept_bounds": [
+    -1.0,
+    1.0
+  ],
+  "rss_guard_gib": 6,
+  "span": 6,
+  "started_at": "2026-11-05T10:03:27+00:00",
+  "deadline": "2026-11-07T10:03:27+00:00",
+  "focus": [
+    "H46",
+    "E08"
+  ],
+  "bootstrap_seed": 20261126,
+  "gpu_session_seconds_cap": 8100,
+  "job_seconds_caps": {
+    "confirmation": 5400,
+    "offline_profile": 2700
+  },
+  "cpu_stage_seconds_caps": {
+    "freeze": 3600,
+    "evaluate": 3600,
+    "offline_export": 3600
+  },
+  "numerical_threads": 2,
+  "smoke_rows": 64,
+  "smoke_mean_tolerance": 0.002,
+  "smoke_max_tolerance": 0.03,
+  "source_mean_tolerance": 1e-06,
+  "source_max_tolerance": 1e-05,
+  "temperature": 0.9441963863130951,
+  "confirmation_rows": 5746,
+  "maximum_official_submissions": 0
+}

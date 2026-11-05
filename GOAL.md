@@ -1,49 +1,51 @@
-# Execute bounded backlog v5 and form v6
+# Execute bounded backlog v6 and form v7
 
-The user authorized execution of the next span on 2026-11-05, after requesting
-the source-model experiment. Focus **E06 → E07 → H45**, with actual scientific
-gates, in active v5's 38 tasks. Other 35 tasks remain carryovers. Follow
-`AGENTS.md`, `PROJECT_POLICY.md` and `docs/SPAN_005_SOURCE_MODEL_PLAN.md`.
-Completed v1–v4 contracts and all sealed snapshots remain unchanged.
+The user authorized the next span on2026-11-05. Focus H46 then conditional E08,
+within active v6's37members; other35tasks remain carryovers. Follow AGENTS.md,
+PROJECT_POLICY.md and the fixed protocol/configuration. Completed v1–v5 contracts
+and all sealed snapshots remain unchanged.
 
-This is the execution contract for the user instruction. No new goal-service
-activation was requested: record the first execution-clock observation
-**2026-11-05 07:17:10 UTC**, with a fixed 48-hour deadline
-**2026-11-07 07:17:10 UTC**. Never reuse/reset the completed v4 service clock.
-GPU budget is **zero**, with no classifier retraining, external extraction or
-official submission. Keep original H03 and all human votes unchanged. Bound
-experiment CPU elapsed time to **7.5 hours** total: E06 1.5h, E07 4h, H45 2h,
-including controls and failed fits. Use at most two numerical worker threads
-and target below 6 GiB resident memory; stop a worker rather than swapping out
-the laptop. Report engineering/wall time separately. Do not spend the optional
-GPU follow-up allowance from the proposal in this span.
+Original execution-clock observation:2026-11-05 10:03:27UTC. Fixed48hdeadline:
+2026-11-07 10:03:27UTC. This is a user-task clock, not a new goal-service activation.
+Never reset it or reuse a completed span's clock. GPU cap is at most8100elapsed
+2-T4 session-seconds (2.25h), further reduced by initial freshly observed quota.
+H46 has5400s and E08 has2700s, including setup, failures and retries. No paid
+scaling, quota-refresh expansion, classifier training, new family search, external
+embedding extraction or official submission. Each job must fit current service
+rules and the seven-hour ceiling. Fresh full inventory/dependencies and committed
+source/contracts are required before every launch; never retry a mutation blindly.
 
-Before fitting, freeze and commit `docs/SPAN_005_PROTOCOL.md`, configuration,
-original clock/resource/input identities, exact training/development groups,
-source vocabulary, folds, primary comparators, variants and acceptance limits.
-Use the original attempt-002 split. Development is inspected/exploratory;
-confirmation remains unused. Fit all meta selection/calibration inside grouped
-inner training folds; cached in-sample LoRA training predictions are not OOF.
-Pure source/strength fits use original training rows, with duplicate purging at
-every auxiliary fit/evaluation boundary. Report coverage instead of hiding it.
+Use at most2numerical CPU threads,6GiB RSS, and3600sper CPU stage for source/meta
+freezing, final evaluation, or conditional export. A failure/recovery shares its
+original stage cap. Preserve all failed numerical/evaluation gates.
 
-Complete E06 with real strength/opponent/tie and nested residual diagnostics.
-Advance E07 only when the predeclared E06 information gate passes. Train at most
-the two cheap source heads in the plan, using existing frozen embeddings only;
-select them from training source labels, never development preference losses.
-H45 requires useful held-out source prediction and a feasible offline path.
-Compare exactly two small residual families against matched LoRA recalibration,
-style, source-only and shuffled-source controls. Preserve probability class order,
-finite unit sums and A/B equivariance. Use 2,000 paired prompt-group resamples.
-No gain is required: stop and justifiably defer downstream work when gates fail.
+H46 freezes the compact inferred-strength recipe from v5, never the rejected
+nested two-family selector. Keep original splits, votes, H03 step1438 export,
+1024tokenpacking, raw original/aligned-swap averaging and temperature unchanged.
+Purge source-training duplicates against development plus confirmation text;
+refit the fixed source recipe if needed, recompute development posteriors, select
+regularization only inside grouped development folds, fit final meta parameters
+on development, then freeze all weights and hashes before confirmation votes.
+Confirmation has historically been inspected: call this a frozen transfer check,
+not untouched validation. Latest H03 raw confirmation predictions must be verified
+or generated with its exact export; checkpoint800 is not a substitute.
 
-Produce per-task reports, aggregate metrics/decisions, an executed results notebook,
-completion/resource/provenance audit and updated project memory. Heavy artifacts
-stay under `~/database/llm_classification_finetuning/runs/span_005`. Queue grounded
-discoveries for v6, preserving their provenance and estimated effort/risk/gain.
-Resolve all focus items with evidence, stop all workers, refresh framing before
-sealing v5, activate v6 with unfinished work/discoveries and open empty v7.
-Run appropriate scientific/notebook checks and all backlog tests after advance.
-Preserve the user's unrelated notebook07 and notebook12 edits and notebook link.
-Commit/push reviewed explicit paths and verify remote main equals closing HEAD.
-**Stop before executing v6.**
+Evaluate once with frozen calibration/style/shuffled-source controls on the same
+5746confirmation rows. Require gain>=0.001 and positive paired prompt-group
+95%interval against matched LoRA calibration, surviving the style control, plus
+valid/swap-safe coverage and feasible runtime. If absent or inconclusive, finish
+H46 with evidence and defer E08. Do not retune on confirmation or leaderboard.
+E08 needs a genuinely positive gate, not done status alone: qualify one bounded
+Internet-disabled64-row frozen joint classifier/source/meta path, preserve exact
+component and overall tolerances, measure setup/throughput/memory and CSV integrity.
+No official submission in this span, even if qualification passes.
+
+Write focus reports, aggregate metrics/decisions, completion/provenance/resource
+checks and executed notebook17. Heavy data/predictions/weights/logs stay under
+~/database/llm_classification_finetuning/runs/span_006. Queue complete evidence-
+grounded discoveries for v7. Resolve focus items with actual evidence, finish/stop
+all workers and jobs, refresh framing before sealing v6, activate v7 with all
+unfinished carryovers/discoveries and open empty v8. Run appropriate scientific,
+notebook and post-advance backlog checks. Preserve notebook07/12 edits and notebook
+symlink. Commit/push explicit reviewed paths and verify remote main equals closing
+HEAD. Stop before executing v7.
