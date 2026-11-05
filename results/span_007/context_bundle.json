@@ -1,0 +1,28 @@
+{
+  "role": "context",
+  "source_sha256": {
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "src/arena/joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+    "src/arena/joint_infer.py": "740bb4f3219a26dd2583607ced241c6dffcc00db9133bc271add0c0586d74eea",
+    "src/arena/training_exposure.py": "81a405f90ed999d6834265e8b31fe39dd296eef831d5b7ab17a179f4a62d0633",
+    "src/arena/span006_inputs.py": "0c5e00e7e28a06b6d5aa6fe808259237737106e6d3894c6280de7e9a2604b122",
+    "src/arena/experiment.py": "6decc6777c0bf543cd5f4905b66b9006d39bfb7028f7ebc7b5f84cecfbbaa66a",
+    "src/arena/telemetry.py": "656dc095e9ced45fb395dd2f19a16c734f8ab6caa9ddd14f9f5e4fe4631d8cc3",
+    "src/arena/span007_context.py": "dfc707a3d705a881ef737c2be66af755eda1bbb90f5a5175541145d8313f9b5d",
+    "scripts/build_span_007.py": "8480437c5f4a9f97de74673312f428725e712056784dc2febbf0395e40ecac59",
+    "scripts/run_experiment.py": "d8e151b7896e6be0b17d668e20a125c7586d51c93ee524a34d94a229c7c31631",
+    "src/arena/kaggle_control.py": "ea25a3b93e37f1e630e429bacccec98e418efedba1f656817a90d5c42e053e00",
+    "src/arena/span007_analysis.py": "9c3e26f10ff9b2b3d0b7f82a6e054b132308535cbfb8ecc886c050afa6b24de6",
+    "GOAL.md": "9300760873b75c8ab811a6278c7cad21ae638872280d5f5435fc2ba596ca6e29",
+    "configs/span_007.json": "0444c2769c9fc607ff607f7062f60f69307ad1b42495ef43acc106ab8232769f",
+    "docs/SPAN_007_PLAN.md": "80eb5ac666eecf0bca2e173d1488b2c058491b5270d70a3eccb3924d655ed396",
+    "src/arena/prediction.py": "976e3bd0bb043f03572d92ab699b773adc53838835bfc876451349723b1eb1f7",
+    "scripts/build_span_007_context.py": "1ac62461e1062b1faadf4a252217dd396b86a9a205a3a04df01f7dcf14293eff",
+    "docs/SPAN_007_H48_PROTOCOL.md": "812347b14380870093176beb5721f12116b3a28fa9ec4b677aaf1a0c88bbc766"
+  },
+  "notebook_sha256": "b268c16440a8d09fcb759458f2abb0a232c0b225fa8c44af13a598bc43cf8b48",
+  "metadata_sha256": "65ba297eaa3e1b0c42a675f29156d18d71950a9dcec2d6cf001721d428e08b2d",
+  "cap_seconds": 2700,
+  "internet_enabled": false
+}

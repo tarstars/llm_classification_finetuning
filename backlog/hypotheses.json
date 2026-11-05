@@ -2067,7 +2067,7 @@
       "id": "H36",
       "kind": "hypothesis",
       "title": "Structural residual correction",
-      "priority": "P3",
+      "priority": "P2",
       "rank": 19,
       "status": "planned",
       "gain": [
@@ -2093,20 +2093,21 @@
       ],
       "risk": "low",
       "claim": "A small fold-local residual model may add limited structure information beyond the existing classifier.",
-      "basis": "A prior cross-fitted structural blend gained 0.00073 with interval [-0.00054,0.00199]. Structure-only confirmation loss was 1.03059.",
+      "basis": "A prior cross-fitted structural blend gained 0.00073 with interval [-0.00054,0.00199]. Structure-only confirmation loss was 1.03059. V6 style control0.945815 nearly matches strength0.945753 versus calibration0.946628 on inspected confirmation; this is a point observation without a fresh structural-model comparison.",
       "first_test": "Use existing held-out predictions for a fixed low-capacity nested calibration/residual test. A deployed training-data stack requires true OOF inputs; in-sample training predictions are forbidden.",
       "acceptance": "A repeatable positive paired overall gain beyond the existing blend, with explicit selection cost and feature exclusions.",
       "stop": "Stop after the predeclared test if the interval remains compatible with no benefit; do not grow a large feature search.",
       "risk_reason": "Target-derived EDA fields or in-sample base predictions can create artificial stacking gains.",
       "mitigation": "Allowlist test-computable text descriptors; exclude canonical_label, IDs, model identities and all winner metadata.",
       "rationale": "Cheap polish with weak measured upside; no GPU retraining is budgeted for this cache-only scope.",
-      "revision": "This extends an already tested small/uncertain blend, not a new likely breakthrough.",
+      "revision": "This extends an already tested small/uncertain blend, not a new likely breakthrough. V7 carryover review raises priority for a cheap fixed-family nested CPU residual test, after source-specific gains failed. No H36 fit is executed in v7.",
       "depends_on": [
         "E00"
       ],
       "evidence": [
         "EDA_REPORT.md",
-        "TARGET_AUDIT.md"
+        "TARGET_AUDIT.md",
+        "docs/SPAN_007_CARRYOVER_REVIEW.md"
       ],
       "history": [],
       "introduced_in": 1,
@@ -3564,7 +3565,7 @@
       ],
       "id": "H47",
       "rank": 56,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 7,
       "discovered_during": 6,
       "derived_from": [
@@ -3577,6 +3578,14 @@
           "note": "Actual frozen transfer failed; source strength reconstruction correlates0.585 with known ratings despite adequate source coverage. Queue a single direct-strength target comparison, with fold-local rating estimation and no confirmation tuning; no v7 execution.",
           "evidence": [
             "docs/SPAN_006_H46.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T19:06:50+00:00",
+          "status": "running",
+          "note": "Start fixed nested direct-strength regression: five original source folds, three inner folds, ridge1/10/100, fold-local rating targets and matched residual controls. Source/contract committed before fitting; CPUcap10800s,2threads,6GiB, no confirmation targets/GPU.",
+          "evidence": [
+            "docs/SPAN_007_H47_PROTOCOL.md"
           ]
         }
       ]
@@ -3760,7 +3769,7 @@
       "title": "Explain pipeline theory and reassess skipped work",
       "id": "E11",
       "rank": 59,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3773,6 +3782,22 @@
           "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T19:10:58+00:00",
+          "status": "running",
+          "note": "Document objective, packing, symmetry, calibration and exact tie/winner loss decomposition; reproduce numerical channels on saved development caches and review all unfinished carryovers. No confirmation access or new model fitting.",
+          "evidence": [
+            "docs/PIPELINE_THEORY.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T19:34:28+00:00",
+          "status": "done",
+          "note": "Completed theoretical guide, executable tie/winner NLL decomposition on5746dev rows, and explicit review of all43v7members. H36 raised as a future cheap test; no unselected fit or confirmation evaluation. Source-fold and target-access reporting distinctions recorded transparently.",
+          "evidence": [
+            "docs/SPAN_007_E11.md"
           ]
         }
       ]

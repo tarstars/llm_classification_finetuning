@@ -1,0 +1,22 @@
+{
+  "role": "judge_stability",
+  "source_sha256": {
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/judge.py": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b",
+    "src/arena/judge_runtime.py": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+    "src/arena/span_repeatability.py": "a2a064e7c45a59af0c084cd5dbe15dcbf257ab6cd1425392c47e2c418272bebe",
+    "src/arena/experiment.py": "6decc6777c0bf543cd5f4905b66b9006d39bfb7028f7ebc7b5f84cecfbbaa66a",
+    "src/arena/span007_judge.py": "54bc441e17e9a678c1e6d603203b82115b37a74ab5a5c9707019938ec913b0b8",
+    "scripts/build_span_007_judge.py": "c17f5f370cae0bef32cc0245029556274c4f1c6c91259ca56e03feb3f773701a",
+    "scripts/run_experiment.py": "d8e151b7896e6be0b17d668e20a125c7586d51c93ee524a34d94a229c7c31631",
+    "src/arena/kaggle_control.py": "ea25a3b93e37f1e630e429bacccec98e418efedba1f656817a90d5c42e053e00",
+    "GOAL.md": "9300760873b75c8ab811a6278c7cad21ae638872280d5f5435fc2ba596ca6e29",
+    "configs/span_007.json": "0444c2769c9fc607ff607f7062f60f69307ad1b42495ef43acc106ab8232769f",
+    "docs/SPAN_007_PLAN.md": "80eb5ac666eecf0bca2e173d1488b2c058491b5270d70a3eccb3924d655ed396"
+  },
+  "notebook_sha256": "d539e9a9d664d20f0604cc8ce2e0afc60a6c6a2d6e4fcfa6f80ae76c11752d5f",
+  "metadata_sha256": "ebe761a0668d60004cb4d6a50e59f8c1ce44c3fcd0baa593bdebfe33ea87e481",
+  "cap_seconds": 2400,
+  "internet_enabled": false,
+  "historical_parent_sha256": "a7bf853df608520308bfbb94f0baab4278612cd2377f91e79307e02920377e88"
+}

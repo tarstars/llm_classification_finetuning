@@ -6,7 +6,7 @@ Version **7**, active; **43** tasks. Focus for this span: E09, E10, E11, H49, H4
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **27**, ready **0**, running **1**, done **0**, rejected **0**, deferred **10**.
+Hypothesis status: planned **26**, ready **0**, running **2**, done **0**, rejected **0**, deferred **10**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -73,15 +73,15 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 14 | [H24](#h24) | P2 / planned | Adaptive question budget | -0.008…+0.01 | medium | 6…14 | 0.5…2 | 10…22 | E00 |
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
+| 19 | [H36](#h36) | P2 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
 | 50 | [E05](#e05) | P2 / planned | Test native judge sensitivity to request concurrency | — | high | 1…4 | 0.5…1.5 | 0.5…2 | E00, E04 |
 | 57 | [E09](#e09) | P2 / done | Reusable experiment control and framework reliability | — | medium | 2…4 | 0…0 | 0…0 | E00 |
 | 58 | [E10](#e10) | P2 / running | Observe every pipeline stage and actual training exposure | — | medium | 2…4 | 0…0 | 0…0 | E00, E09 |
-| 59 | [E11](#e11) | P2 / planned | Explain pipeline theory and reassess skipped work | — | medium | 2…4 | 0…0 | 0…0 | E00 |
+| 59 | [E11](#e11) | P2 / done | Explain pipeline theory and reassess skipped work | — | medium | 2…4 | 0…0 | 0…0 | E00 |
 | 60 | [H48](#h48) | P2 / planned | Expand the paired context-retention experiment on the current classifier | -0.01…+0.015 | high | 2…5 | 0.75…0.75 | 0…0 | E00, E09 |
 | 61 | [H49](#h49) | P2 / running | Test bounded additional exposure under an observable warm restart | -0.01…+0.015 | high | 3…7 | 3.667…3.667 | 0…0 | E00, E09, H03 |
 | 62 | [H50](#h50) | P2 / planned | Qualify and officially evaluate one frozen v7 classifier candidate | -0.015…+0.015 | high | 2…5 | 1.25…1.25 | 0…0 | E00, E09, H48, H49 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
-| 19 | [H36](#h36) | P3 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
 | 20 | [H29](#h29) | P3 / planned | Human-preference prompt rubric | -0.015…+0.01 | low | 3…8 | 0.5…2 | 2…6 | E00 |
 | 21 | [H16](#h16) | P3 / planned | Refusal appropriateness | -0.005…+0.008 | medium | 6…14 | 0.25…1 | 8…18 | E00 |
 | 22 | [H18](#h18) | P3 / planned | Controlled instruction counterexamples | -0.01…+0.015 | medium | 10…24 | 0.5…2 | 10…22 | E00 |
@@ -97,7 +97,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 33 | [H34](#h34) | P3 / planned | Executable code evidence | -0.008…+0.01 | high | 20…50 | 0.25…1 | 6…18 | E00 |
 | 34 | [H26](#h26) | P3 / planned | Hierarchical long-text comparison | -0.02…+0.02 | high | 24…60 | 2…6 | 24…60 | E00, H23 |
 | 55 | [E08](#e08) | P3 / deferred | Qualify classifier plus inferred-strength correction for offline inference | — | high | 2…5 | 0.25…0.75 | 0…0 | E00, H46 |
-| 56 | [H47](#h47) | P3 / planned | Predict source strength directly rather than reconstructing source identity | -0.003…+0.003 | high | 3…7 | 0…0 | 0…1.5 | E00, E06, E07, H46 |
+| 56 | [H47](#h47) | P3 / running | Predict source strength directly rather than reconstructing source identity | -0.003…+0.003 | high | 3…7 | 0…0 | 0…1.5 | E00, E06, E07, H46 |
 | 35 | [H08](#h08) | P4 / deferred | Inference quantization sensitivity | -0.005…+0.005 | medium | 4…10 | 0.5…2 | 1…4 | E00 |
 | 36 | [H12](#h12) | P4 / deferred | Soft targets for repeated votes | -0.001…+0.001 | low | 2…5 | 0…0 | 0…0 | E00 |
 | 37 | [H07](#h07) | P4 / deferred | Bidirectional comparison attention | -0.03…+0.015 | high | 16…40 | 2…6 | 12…30 | E00 |
@@ -427,6 +427,34 @@ Training and inference with more retained context may improve truncated comparis
 
 - 2026-11-04T04:19:44+00:00 — planned: Record final H03 clipped/uncut losses1.013582/0.939146 with unchanged packing; confounding prevents a causal longer-context claim. Preserve the bounded matched context test for carryover. Evidence: [docs/SPAN_002_H03.md](docs/SPAN_002_H03.md)
 
+### H36
+
+**Structural residual correction** — P2, planned, risk low.
+
+A small fold-local residual model may add limited structure information beyond the existing classifier.
+
+**Why this rank:** Cheap polish with weak measured upside; no GPU retraining is budgeted for this cache-only scope.
+
+**Evidence:** A prior cross-fitted structural blend gained 0.00073 with interval [-0.00054,0.00199]. Structure-only confirmation loss was 1.03059. V6 style control0.945815 nearly matches strength0.945753 versus calibration0.946628 on inspected confirmation; this is a point observation without a fresh structural-model comparison.
+
+**Planning estimate:** loss reduction -0.003…+0.003; confidence low. Engineering 3…8 person-hours; CPU 0.25…2 elapsed hours; two-T4 pilot 0…0 hours; additional follow-up 0…0 hours.
+
+**First test:** Use existing held-out predictions for a fixed low-capacity nested calibration/residual test. A deployed training-data stack requires true OOF inputs; in-sample training predictions are forbidden.
+
+**Advance/adopt:** A repeatable positive paired overall gain beyond the existing blend, with explicit selection cost and feature exclusions.
+
+**Stop/defer:** Stop after the predeclared test if the interval remains compatible with no benefit; do not grow a large feature search.
+
+**Risk and mitigation:** Target-derived EDA fields or in-sample base predictions can create artificial stacking gains. Allowlist test-computable text descriptors; exclude canonical_label, IDs, model identities and all winner metadata.
+
+**Revision:** This extends an already tested small/uncertain blend, not a new likely breakthrough. V7 carryover review raises priority for a cheap fixed-family nested CPU residual test, after source-specific gains failed. No H36 fit is executed in v7.
+
+**Depends on:** E00. Currently unmet: none.
+
+**Origin:** introduced in v1; discovered during initial planning; derived from none.
+
+**References:** [EDA_REPORT.md](EDA_REPORT.md); [TARGET_AUDIT.md](TARGET_AUDIT.md); [docs/SPAN_007_CARRYOVER_REVIEW.md](docs/SPAN_007_CARRYOVER_REVIEW.md)
+
 ### E05
 
 **Test native judge sensitivity to request concurrency** — P2, planned, risk high.
@@ -522,7 +550,7 @@ Observe every pipeline stage and actual training exposure
 
 ### E11
 
-**Explain pipeline theory and reassess skipped work** — P2, planned, risk medium.
+**Explain pipeline theory and reassess skipped work** — P2, done, risk medium.
 
 Explain pipeline theory and reassess skipped work
 
@@ -549,6 +577,8 @@ Explain pipeline theory and reassess skipped work
 **References:** [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 - 2026-11-05T18:39:31+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
+- 2026-11-05T19:10:58+00:00 — running: Document objective, packing, symmetry, calibration and exact tie/winner loss decomposition; reproduce numerical channels on saved development caches and review all unfinished carryovers. No confirmation access or new model fitting. Evidence: [docs/PIPELINE_THEORY.md](docs/PIPELINE_THEORY.md)
+- 2026-11-05T19:34:28+00:00 — done: Completed theoretical guide, executable tie/winner NLL decomposition on5746dev rows, and explicit review of all43v7members. H36 raised as a future cheap test; no unselected fit or confirmation evaluation. Source-fold and target-access reporting distinctions recorded transparently. Evidence: [docs/SPAN_007_E11.md](docs/SPAN_007_E11.md)
 
 ### H48
 
@@ -668,34 +698,6 @@ Capping each repeated training prompt contribution might improve generalization 
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
 **References:** [TARGET_AUDIT.md](TARGET_AUDIT.md)
-
-### H36
-
-**Structural residual correction** — P3, planned, risk low.
-
-A small fold-local residual model may add limited structure information beyond the existing classifier.
-
-**Why this rank:** Cheap polish with weak measured upside; no GPU retraining is budgeted for this cache-only scope.
-
-**Evidence:** A prior cross-fitted structural blend gained 0.00073 with interval [-0.00054,0.00199]. Structure-only confirmation loss was 1.03059.
-
-**Planning estimate:** loss reduction -0.003…+0.003; confidence low. Engineering 3…8 person-hours; CPU 0.25…2 elapsed hours; two-T4 pilot 0…0 hours; additional follow-up 0…0 hours.
-
-**First test:** Use existing held-out predictions for a fixed low-capacity nested calibration/residual test. A deployed training-data stack requires true OOF inputs; in-sample training predictions are forbidden.
-
-**Advance/adopt:** A repeatable positive paired overall gain beyond the existing blend, with explicit selection cost and feature exclusions.
-
-**Stop/defer:** Stop after the predeclared test if the interval remains compatible with no benefit; do not grow a large feature search.
-
-**Risk and mitigation:** Target-derived EDA fields or in-sample base predictions can create artificial stacking gains. Allowlist test-computable text descriptors; exclude canonical_label, IDs, model identities and all winner metadata.
-
-**Revision:** This extends an already tested small/uncertain blend, not a new likely breakthrough.
-
-**Depends on:** E00. Currently unmet: none.
-
-**Origin:** introduced in v1; discovered during initial planning; derived from none.
-
-**References:** [EDA_REPORT.md](EDA_REPORT.md); [TARGET_AUDIT.md](TARGET_AUDIT.md)
 
 ### H29
 
@@ -1122,7 +1124,7 @@ A scientifically qualified compact source correction may be deployable if its ex
 
 ### H47
 
-**Predict source strength directly rather than reconstructing source identity** — P3, planned, risk high.
+**Predict source strength directly rather than reconstructing source identity** — P3, running, risk high.
 
 A direct continuous strength target may retain more useful quality information than a64-class identity loss at the same sparse text capacity.
 
@@ -1149,6 +1151,7 @@ A direct continuous strength target may retain more useful quality information t
 **References:** [docs/SPAN_006_H46.md](docs/SPAN_006_H46.md); [results/span_006/descriptive_shift.json](results/span_006/descriptive_shift.json)
 
 - 2026-11-05T11:48:01+00:00 — planned: Actual frozen transfer failed; source strength reconstruction correlates0.585 with known ratings despite adequate source coverage. Queue a single direct-strength target comparison, with fold-local rating estimation and no confirmation tuning; no v7 execution. Evidence: [docs/SPAN_006_H46.md](docs/SPAN_006_H46.md)
+- 2026-11-05T19:06:50+00:00 — running: Start fixed nested direct-strength regression: five original source folds, three inner folds, ridge1/10/100, fold-local rating targets and matched residual controls. Source/contract committed before fitting; CPUcap10800s,2threads,6GiB, no confirmation targets/GPU. Evidence: [docs/SPAN_007_H47_PROTOCOL.md](docs/SPAN_007_H47_PROTOCOL.md)
 
 ### H08
 

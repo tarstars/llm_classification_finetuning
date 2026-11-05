@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-11-05T19:26:26+00:00",
+  "source_outer_fold_counts": {
+    "0": 15282,
+    "1": 15372,
+    "2": 15331
+  },
+  "preference_outer_fold_counts": {
+    "0": 1149,
+    "1": 1149,
+    "2": 1149,
+    "3": 1151,
+    "4": 1148
+  },
+  "inner_folds": 3,
+  "original_input_sha256": "8238a2e89566a33fe3cb316dcef7218f90b99e2230c17d81566bc50781e2c32e",
+  "original_H47_contract_sha256": "7d8d63a4f13966746316079070f270d03749d8a814959c90867ef8a4e09515b2",
+  "frozen_runner_unchanged": true,
+  "preference_results_available_at_correction": false,
+  "erratum": "docs/SPAN_007_H47_ERRATUM.md"
+}
