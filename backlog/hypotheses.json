@@ -3621,7 +3621,7 @@
       "title": "Reusable experiment control and framework reliability",
       "id": "E09",
       "rank": 57,
-      "status": "running",
+      "status": "done",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3642,6 +3642,14 @@
           "note": "Implement shared future-run control with fault tests, immutable mutation intent and bounded artifact recovery; baseline full test suite is being checked. Preserve historical frozen code.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:56:02+00:00",
+          "status": "done",
+          "note": "Shared run control implemented. Full91tests pass; real read-only continuation admission at18:55:16 verifies committed source, quota and pinned dependencies. No GPU mutation in this dry-run; actual integration follows.",
+          "evidence": [
+            "docs/SPAN_007_E09.md"
           ]
         }
       ]
@@ -3687,7 +3695,7 @@
       "title": "Observe every pipeline stage and actual training exposure",
       "id": "E10",
       "rank": 58,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3698,6 +3706,14 @@
           "at": "2026-11-05T18:39:30+00:00",
           "status": "planned",
           "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:56:02+00:00",
+          "status": "running",
+          "note": "Telemetry/optimizer/schedule contracts pass; integrating stage events and actual exposure auditing into the one fixed H49 continuation. Live status and executed telemetry notebook remain required.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
           ]
@@ -3867,7 +3883,7 @@
       "title": "Test bounded additional exposure under an observable warm restart",
       "id": "H49",
       "rank": 61,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3878,6 +3894,14 @@
           "at": "2026-11-05T18:39:31+00:00",
           "status": "planned",
           "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:56:03+00:00",
+          "status": "running",
+          "note": "Starting the frozen checkpoint1438 warm restart from source15a888a. One schedule, at most320newnominal cycles, full-dev fixed endpoint;13200srole cap including setup/evaluation. No GPU push has yet been sent.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
           ]

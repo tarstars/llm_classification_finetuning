@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "tests_run": 91,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 15.568654465023428,
+  "baseline_tests": 78,
+  "new_framework_tests": 10,
+  "new_telemetry_tests": 3
+}

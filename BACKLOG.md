@@ -6,7 +6,7 @@ Version **7**, active; **43** tasks. Focus for this span: E09, E10, E11, H49, H4
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **28**, ready **0**, running **0**, done **0**, rejected **0**, deferred **10**.
+Hypothesis status: planned **27**, ready **0**, running **1**, done **0**, rejected **0**, deferred **10**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -74,11 +74,11 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
 | 50 | [E05](#e05) | P2 / planned | Test native judge sensitivity to request concurrency | — | high | 1…4 | 0.5…1.5 | 0.5…2 | E00, E04 |
-| 57 | [E09](#e09) | P2 / running | Reusable experiment control and framework reliability | — | medium | 2…4 | 0…0 | 0…0 | E00 |
-| 58 | [E10](#e10) | P2 / planned | Observe every pipeline stage and actual training exposure | — | medium | 2…4 | 0…0 | 0…0 | E00, E09 |
+| 57 | [E09](#e09) | P2 / done | Reusable experiment control and framework reliability | — | medium | 2…4 | 0…0 | 0…0 | E00 |
+| 58 | [E10](#e10) | P2 / running | Observe every pipeline stage and actual training exposure | — | medium | 2…4 | 0…0 | 0…0 | E00, E09 |
 | 59 | [E11](#e11) | P2 / planned | Explain pipeline theory and reassess skipped work | — | medium | 2…4 | 0…0 | 0…0 | E00 |
 | 60 | [H48](#h48) | P2 / planned | Expand the paired context-retention experiment on the current classifier | -0.01…+0.015 | high | 2…5 | 0.75…0.75 | 0…0 | E00, E09 |
-| 61 | [H49](#h49) | P2 / planned | Test bounded additional exposure under an observable warm restart | -0.01…+0.015 | high | 3…7 | 3.667…3.667 | 0…0 | E00, E09, H03 |
+| 61 | [H49](#h49) | P2 / running | Test bounded additional exposure under an observable warm restart | -0.01…+0.015 | high | 3…7 | 3.667…3.667 | 0…0 | E00, E09, H03 |
 | 62 | [H50](#h50) | P2 / planned | Qualify and officially evaluate one frozen v7 classifier candidate | -0.015…+0.015 | high | 2…5 | 1.25…1.25 | 0…0 | E00, E09, H48, H49 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 19 | [H36](#h36) | P3 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
@@ -459,7 +459,7 @@ A controlled client-concurrency ablation can test whether concurrent execution c
 
 ### E09
 
-**Reusable experiment control and framework reliability** — P2, running, risk medium.
+**Reusable experiment control and framework reliability** — P2, done, risk medium.
 
 Reusable experiment control and framework reliability
 
@@ -487,10 +487,11 @@ Reusable experiment control and framework reliability
 
 - 2026-11-05T18:39:30+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 - 2026-11-05T18:41:20+00:00 — running: Implement shared future-run control with fault tests, immutable mutation intent and bounded artifact recovery; baseline full test suite is being checked. Preserve historical frozen code. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
+- 2026-11-05T18:56:02+00:00 — done: Shared run control implemented. Full91tests pass; real read-only continuation admission at18:55:16 verifies committed source, quota and pinned dependencies. No GPU mutation in this dry-run; actual integration follows. Evidence: [docs/SPAN_007_E09.md](docs/SPAN_007_E09.md)
 
 ### E10
 
-**Observe every pipeline stage and actual training exposure** — P2, planned, risk medium.
+**Observe every pipeline stage and actual training exposure** — P2, running, risk medium.
 
 Observe every pipeline stage and actual training exposure
 
@@ -510,13 +511,14 @@ Observe every pipeline stage and actual training exposure
 
 **Revision:** User-requested planning addition before v7 focus or execution.
 
-**Depends on:** E00, E09. Currently unmet: E09.
+**Depends on:** E00, E09. Currently unmet: none.
 
 **Origin:** introduced in v7; discovered during initial planning; derived from E01.
 
 **References:** [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 - 2026-11-05T18:39:30+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
+- 2026-11-05T18:56:02+00:00 — running: Telemetry/optimizer/schedule contracts pass; integrating stage events and actual exposure auditing into the one fixed H49 continuation. Live status and executed telemetry notebook remain required. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 ### E11
 
@@ -570,7 +572,7 @@ Expand the paired context-retention experiment on the current classifier
 
 **Revision:** User-requested planning addition before v7 focus or execution.
 
-**Depends on:** E00, E09. Currently unmet: E09.
+**Depends on:** E00, E09. Currently unmet: none.
 
 **Origin:** introduced in v7; discovered during initial planning; derived from H23.
 
@@ -580,7 +582,7 @@ Expand the paired context-retention experiment on the current classifier
 
 ### H49
 
-**Test bounded additional exposure under an observable warm restart** — P2, planned, risk high.
+**Test bounded additional exposure under an observable warm restart** — P2, running, risk high.
 
 Test bounded additional exposure under an observable warm restart
 
@@ -600,13 +602,14 @@ Test bounded additional exposure under an observable warm restart
 
 **Revision:** User-requested planning addition before v7 focus or execution.
 
-**Depends on:** E00, E09, H03. Currently unmet: E09.
+**Depends on:** E00, E09, H03. Currently unmet: none.
 
 **Origin:** introduced in v7; discovered during initial planning; derived from H03.
 
 **References:** [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 - 2026-11-05T18:39:31+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
+- 2026-11-05T18:56:03+00:00 — running: Starting the frozen checkpoint1438 warm restart from source15a888a. One schedule, at most320newnominal cycles, full-dev fixed endpoint;13200srole cap including setup/evaluation. No GPU push has yet been sent. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 ### H50
 
@@ -630,7 +633,7 @@ Qualify and officially evaluate one frozen v7 classifier candidate
 
 **Revision:** User-requested planning addition before v7 focus or execution.
 
-**Depends on:** E00, E09, H48, H49. Currently unmet: E09, H48, H49.
+**Depends on:** E00, E09, H48, H49. Currently unmet: H48, H49.
 
 **Origin:** introduced in v7; discovered during initial planning; derived from H03.
 
