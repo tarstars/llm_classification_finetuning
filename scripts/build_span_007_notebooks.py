@@ -16,7 +16,12 @@ sys.path.insert(0,str(REPO/'src'))
 from arena.data import ROOT
 PUB=REPO/'results/span_007';RUN=ROOT/'runs/span_007';FIG=RUN/'figures';FIG.mkdir(parents=True,exist_ok=True)
 def read(path):return json.loads(Path(path).read_text())
-def result(name):return read(PUB/name)
+def result(name):
+    path=PUB/name
+    if name in ['H49_results.json','H48_results.json']:
+        recovered=PUB/name.replace('_results.json','_recovered_artifacts_results.json')
+        if recovered.exists():path=recovered
+    return read(path)
 def save(fig,name):
     for suffix in ['png','svg']:fig.savefig(FIG/(name+'.'+suffix),dpi=160,bbox_inches='tight')
     plt.show()
@@ -43,6 +48,7 @@ Positive gain lowers loss. Intervals condition on saved predictions.
 '''),code('''rows=[]
 for name in ['H49','H48']:
     r=result(name+'_results.json')
+    if r.get('recovered_complete_artifacts'):print(name,'complete artifacts recovered; service status remains',r['service_status'])
     if r.get('complete'):
         g=r['gains'][r['primary']];rows.append({'task':name,'recipe':r['primary'],**g,'passed':r['quality_gate']['passed']})
     else:print(name,'incomplete:',r.get('reason'))
@@ -139,7 +145,8 @@ Tokens are real packed content, excluding padding. The audit validates canonical
 training labels, held-out exclusion, per-cycle scheduler/scaler behavior and
 agreement of DDP skip vectors. Per-rank unique counts cannot be summed into a
 global unique count. Peak memory covers this complete run, not an isolated
-inference-only measurement.
+inference-only measurement. Curves show periodic samples; audited totals below
+include the final cycle.
 '''),code('''fig,ax=plt.subplots(figsize=(8,3.4));ax.plot(cycles.step-1438,cycles.processed_tokens/1e6,label='Rank0 processed tokens');ax.plot(cycles.step-1438,cycles.accepted_tokens/1e6,'--',label='Rank0 accepted tokens');ax.set_xlabel('Additional nominal cycles');ax.set_ylabel('Millions of packed tokens');ax.legend();save(fig,'training_exposure')
 rank_summaries=[read(OUT/f'exposure_summary_rank{i}.json') for i in [0,1]];display(pd.DataFrame(rank_summaries))
 hardware=[read(OUT/f'gpu_rank{i}.json') for i in [0,1]];fig,ax=plt.subplots(figsize=(6.5,3.1));x=np.arange(2);ax.bar(x-.15,[r['peak_allocated_bytes']/2**30 for r in hardware],.3,label='Allocated');ax.bar(x+.15,[r['peak_reserved_bytes']/2**30 for r in hardware],.3,label='Reserved');ax.set_xticks(x,['T4 rank0','T4 rank1']);ax.set_ylabel('GiB peak');ax.legend();save(fig,'training_gpu_memory')

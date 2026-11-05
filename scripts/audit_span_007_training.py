@@ -3,6 +3,7 @@ from pathlib import Path
 import json
 import sys
 import time
+import argparse
 import numpy as np
 import pandas as pd
 from safetensors.torch import load_file
@@ -16,8 +17,13 @@ from arena.telemetry import restart_factor
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--recover-complete-artifacts',action='store_true');args=parser.parse_args()
     started=time.monotonic();pub=REPO/'results/span_007';run=ROOT/'runs/span_007';job=run/'jobs/continuation'
-    assert read_json(job/'controller_state.json')['stage']=='complete'
+    state=read_json(job/'controller_state.json')
+    assert state['stage']=='complete' or (args.recover_complete_artifacts and state['stage']=='failed')
+    if args.recover_complete_artifacts:
+        assert 'NameError: name \'role\' is not defined' in (run/'recovery/continuation/terminal_error.log').read_text()
+        for name,digest in read_json(job/'retrieval.json')['artifact_sha256'].items():assert sha256(job/'output'/name)==digest
     verify_sources(REPO,read_json(pub/'continuation_bundle.json')['source_sha256'])
     inv=read_json(pub/'artifact_inventory.json');out=job/'output/continuation';summary=read_json(out/'summary.json');source=read_json(out/'resume_source.json')
     assert summary['complete'] and sha256(out/'adapter/adapter_model.safetensors')==summary['adapter_sha256']
@@ -70,7 +76,8 @@ def main():
     if summary['stopped_for_instability']:stop_reasons.append('monitoring regression')
     if len(skip_vectors[0])>=8 and all(skip_vectors[0][-8:]):stop_reasons.append('eight consecutive AMP skips')
     if summary['new_cycles']==320:stop_reasons.append('fixed cycle endpoint')
-    proof={'passed':True,'checked_at':utc_now(),'new_nominal_cycles':summary['new_cycles'],'new_logical_accepted_updates':ranks[0]['accepted_updates'],
+    proof={'passed':True,'checked_at':utc_now(),'service_status':state['status'],'complete_artifact_recovery':args.recover_complete_artifacts,
+           'new_nominal_cycles':summary['new_cycles'],'new_logical_accepted_updates':ranks[0]['accepted_updates'],
            'new_logical_skipped_updates':ranks[0]['skipped_updates'],'global_accepted_rows':total_rows,'global_accepted_unique_rows':len(global_ids),
            'global_accepted_packed_tokens':total_tokens,'per_rank':ranks,'hardware':hardware,'stop_reasons':stop_reasons,
            'parent_optimizer_fingerprint_checked_before_updates':source['parent_optimizer_restored'],

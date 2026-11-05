@@ -3854,7 +3854,7 @@
       "title": "Expand the paired context-retention experiment on the current classifier",
       "id": "H48",
       "rank": 60,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3865,6 +3865,14 @@
           "at": "2026-11-05T18:39:31+00:00",
           "status": "planned",
           "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T21:44:11+00:00",
+          "status": "running",
+          "note": "Starting fixed context role under the original v7 cap; one persisted GPU intent, no variant search.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
           ]
@@ -3916,7 +3924,7 @@
       "title": "Test bounded additional exposure under an observable warm restart",
       "id": "H49",
       "rank": 61,
-      "status": "running",
+      "status": "done",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3945,6 +3953,14 @@
           "note": "The fixed monitor stopped training at new cycle256: losses0.949364 baseline,0.956740 at128,0.970608 at256. All256 updates accepted, zero AMP skips. Preserve final endpoint; full development scoring/retrieval and independent audit remain pending.",
           "evidence": [
             "results/span_007/jobs/continuation/progress.json"
+          ]
+        },
+        {
+          "at": "2026-11-05T21:44:06+00:00",
+          "status": "done",
+          "note": "Fixed continuation experiment finished; see actual coverage, gates, uncertainty and charged compute. Negative/incomplete results are retained.",
+          "evidence": [
+            "docs/SPAN_007_H49.md"
           ]
         }
       ]
@@ -4068,6 +4084,65 @@
           "note": "Actual v7 corrections motivate deriving fold, precision and target-access statements from validated artifact metadata; queue only, no v8 execution.",
           "evidence": [
             "docs/SPAN_007_H47_ERRATUM.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Checkpoint full-partition inference with bounded progress and numerical identity",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0.05,
+        0.15
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "medium",
+      "claim": "Bounded, ordered prediction chunks can make long evaluations observable and recoverable without changing the classifier recipe.",
+      "basis": "V7 H49 records full-development start/finish but writes its5746-row both-order predictions only at the end of the roughly one-hour stage. Training exposure telemetry is detailed, while this inference stage has no intermediate completion count or saved prediction chunks. No failure or quality gain is inferred.",
+      "first_test": "Extend the reusable label-free inference helper with one fixed chunk size aligned to distributed batch boundaries, ordered ID/hash coverage, atomic raw predictions and aggregate completion/throughput events. Prove no missing/duplicate rows, correct swapped alignment and safe continuation from an interrupted artifact using synthetic tests. Before deployment, compare the same small real cohort with the unchanged whole-frame recipe under frozen weights/batch/precision and the existing raw identity limits.",
+      "acceptance": "Failure injection resumes saved chunks without refitting or silently launching another GPU job, produces exactly the frozen row order and aggregate progress, and passes the existing mean0.002/max0.03 raw identity guard with both devices verified. Report measured costs; no preference gain is claimed.",
+      "stop": "Stop on identity, DDP coverage or original resource-cap failure. No precision/batch search or relaxed tolerance; no live/historical worker rewrite. Real profiling requires a newly authorized span and fresh admission.",
+      "risk_reason": "Chunk boundaries can change distributed padding, ordering and numerical outputs; a resumed mixed cache can falsely appear complete.",
+      "mitigation": "Bind all chunks to immutable weights/source/packing/runtime hashes and ordered IDs, align global batch boundaries, test both orientations and interruption, and reject inconsistent or partial coverage.",
+      "rationale": "Prevents opaque long evaluation phases and expensive rework while preserving the measured recipe.",
+      "revision": "Queued from an observed v7 observability limitation; not executed in the current fixed span.",
+      "depends_on": [
+        "E09",
+        "E10"
+      ],
+      "evidence": [
+        "docs/SPAN_007_E10.md",
+        "src/arena/span007_train.py"
+      ],
+      "id": "E13",
+      "rank": 64,
+      "status": "planned",
+      "introduced_in": 8,
+      "discovered_during": 7,
+      "derived_from": [
+        "E10"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T20:50:49+00:00",
+          "status": "planned",
+          "note": "The actual full-development stage has start/end events but no chunk progress or recoverable intermediate predictions; queue a numerically qualified inference helper, preserving live source.",
+          "evidence": [
+            "docs/SPAN_007_E10.md"
           ]
         }
       ]
@@ -4731,7 +4806,8 @@
       "number": 8,
       "state": "draft",
       "item_ids": [
-        "E12"
+        "E12",
+        "E13"
       ],
       "focus_ids": [],
       "history": []

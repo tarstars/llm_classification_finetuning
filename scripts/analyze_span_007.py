@@ -20,14 +20,23 @@ def order_diagnostics(a,b):
 
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('role',choices=['continuation','context','judge_stability']);args=parser.parse_args();role=args.role
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('role',choices=['continuation','context','judge_stability'])
+    parser.add_argument('--recover-complete-artifacts',action='store_true');args=parser.parse_args();role=args.role
     root=ROOT/'runs/span_007';pub=REPO/'results/span_007';job=root/'jobs'/role;cfg=read_json(REPO/'configs/span_007.json')
     name={'continuation':'H49','context':'H48','judge_stability':'E05'}[role]
-    assert not (pub/(name+'_results.json')).exists(),'Preserve the first evaluated result'
+    suffix='_recovered_artifacts_results.json' if args.recover_complete_artifacts else '_results.json'
+    assert not (pub/(name+suffix)).exists(),'Preserve the first evaluated result'
     state=read_json(job/'controller_state.json');assert state['stage'] in ['complete','failed']
     charge=read_json(job/'quota.json')['used_seconds']-read_json(job/'push_intent.json')['quota_before']['used_seconds']
     assert charge<=cfg['job_seconds_caps'][role]+.1
-    if state['stage']=='failed':
+    if args.recover_complete_artifacts:
+        assert role in ['continuation','context'] and state['stage']=='failed'
+        assert read_json(pub/(name+'_results.json'))['complete'] is False
+        assert (REPO/'docs/SPAN_007_ARTIFACT_RECOVERY.md').exists()
+        receipt=read_json(job/'retrieval.json')
+        for file,digest in receipt['artifact_sha256'].items():assert sha256(job/'output'/file)==digest
+        assert 'NameError: name \'role\' is not defined' in (root/'recovery'/role/'terminal_error.log').read_text()
+    if state['stage']=='failed' and not args.recover_complete_artifacts:
         result={'task':name,'complete':False,'quality_gate':{'passed':False},'affordable_stable_recipe':False,
                 'charged_gpu_seconds':charge,'reason':'The bounded remote execution failed; retain partial outputs, no promotion.',
                 'source_sha256':sha256(Path(__file__))}
@@ -75,6 +84,9 @@ def main():
                 path=output/f"{size}_{chunk['start']:04d}.npz";assert sha256(path)==chunk['sha256']
                 covered.extend(np.load(path)['ids'].tolist())
             np.testing.assert_array_equal(covered,ids)
+            for view in ['original','aligned_swap']:
+                joined=np.vstack([np.load(output/f"{size}_{c['start']:04d}.npz")[view] for c in summary['chunks'][str(size)]])
+                np.testing.assert_array_equal(joined,prediction[view])
         original_cached=baseline[indices].copy();short=(first['original']+first['aligned_swap'])/2
         baseline=baseline.copy();baseline[indices]=short;candidate=baseline.copy();candidate[indices]=(second['original']+second['aligned_swap'])/2
         baseline_orders[0][indices]=first['original'];baseline_orders[1][indices]=first['aligned_swap']
@@ -93,10 +105,19 @@ def main():
         extra.update(confirmation_target_columns_loaded=False,confirmation_targets_used=False,
                      changed_slice={'rows':len(indices),'metrics':{'short':metrics(y[indices],short_t),'long':metrics(y[indices],long_t)},
                      'paired_gain':paired_group_gain(y[indices],short_t,long_t,groups[indices],dict(cfg,seed=cfg['bootstrap_seed']))})
+    for view in [*baseline_orders,*candidate_orders]:
+        assert view.shape==(len(y),3) and np.isfinite(view).all() and (view>=0).all() and (view<=1).all()
+        np.testing.assert_allclose(view.sum(1),1,atol=1e-6)
     result,probabilities=score_candidate(y,groups,baseline,candidate,cfg,role)
     result.update(task=name,complete=True,charged_gpu_seconds=charge,**extra)
     result['artifact_checks_passed']=True
     result['source_verification_sha256']=sha256(pub/'jobs'/role/'source_verification.json')
+    result['recovered_complete_artifacts']=args.recover_complete_artifacts
+    result['service_status']=state['status']
+    if args.recover_complete_artifacts:
+        result['first_service_failure_result_sha256']=sha256(pub/(name+'_results.json'))
+        result['recovery_protocol_sha256']=sha256(REPO/'docs/SPAN_007_ARTIFACT_RECOVERY.md')
+        result['terminal_error_sha256']=sha256(root/'recovery'/role/'terminal_error.log')
     result['order_diagnostics']={'reference':order_diagnostics(*baseline_orders),'candidate':order_diagnostics(*candidate_orders)}
     result['loss_decomposition']={name:loss_decomposition(y,p) for name,p in probabilities.items()}
     result['runtime_gate_passed']=bool(projection<=25200)
@@ -105,10 +126,10 @@ def main():
     result['frozen_full_development_temperature']=float(fit.x)
     result['temperature_fit_used_confirmation']=False
     result['source_sha256']=sha256(Path(__file__));result['scoring_source_sha256']=sha256(REPO/'src/arena/span007_analysis.py')
-    destination=root/'analysis'/role;destination.mkdir(parents=True,exist_ok=True)
+    destination=root/'analysis'/(role+('_recovered' if args.recover_complete_artifacts else ''));destination.mkdir(parents=True,exist_ok=True)
     np.savez(destination/'predictions.npz',ids=dev.id,labels=y,groups=groups,raw_baseline=baseline,raw_candidate=candidate,**probabilities)
     result['prediction_sha256']=sha256(destination/'predictions.npz')
-    for folder in [destination,pub]:atomic_json(folder/(name+'_results.json'),result)
+    for folder in [destination,pub]:atomic_json(folder/(name+suffix),result)
     print({k:result[k] for k in ['task','quality_gate','gains','projected_inference_seconds','eligible','new_cycles'] if k in result})
 
 

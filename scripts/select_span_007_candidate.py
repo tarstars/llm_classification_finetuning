@@ -10,7 +10,14 @@ from arena.experiment import read_json,atomic_json,sha256,utc_now
 root=ROOT/'runs/span_007';pub=REPO/'results/span_007';cfg=read_json(REPO/'configs/span_007.json')
 assert not (pub/'candidate_selection.json').exists(),'Preserve the first frozen selection'
 assert not (root/'confirmation_reveal_intent.json').exists(),'Freeze before confirmation evaluation'
-results={kind:read_json(pub/(task+'_results.json')) for kind,task in [('continuation','H49'),('context','H48')]}
+paths={}
+for kind,task in [('continuation','H49'),('context','H48')]:
+    recovered=pub/(task+'_recovered_artifacts_results.json');first=pub/(task+'_results.json')
+    worker=root/'jobs'/kind/'output'/kind/'summary.json'
+    if worker.exists() and read_json(worker).get('complete') and not read_json(first).get('complete'):
+        assert recovered.exists(),'Resolve complete worker artifact recovery before candidate freezing'
+    paths[kind]=recovered if recovered.exists() else first
+results={kind:read_json(path) for kind,path in paths.items()}
 for kind,result in results.items():
     if result.get('eligible'):
         assert result['artifact_checks_passed']
@@ -19,7 +26,8 @@ for kind,result in results.items():
 chosen=next((kind for kind in cfg['candidate_priority'] if results[kind].get('eligible')),None)
 record={'frozen_at':utc_now(),'eligible':chosen is not None,'candidate_kind':chosen,'priority':cfg['candidate_priority'],
         'confirmation_targets_used':False,'rule':'Training first if its frozen quality/runtime gate passes, otherwise context if it passes.',
-        'input_sha256':{kind:sha256(pub/(task+'_results.json')) for kind,task in [('continuation','H49'),('context','H48')]},
+        'input_sha256':{kind:sha256(path) for kind,path in paths.items()},
+        'input_paths':{kind:str(path.relative_to(REPO)) for kind,path in paths.items()},
         'source_sha256':sha256(Path(__file__))}
 if chosen:
     result=results[chosen];ids=read_json(root/'sample_ids.json')['smoke'];inv=read_json(pub/'artifact_inventory.json')
@@ -42,4 +50,6 @@ if chosen:
                   temperature=result['frozen_full_development_temperature'],max_length=result['max_length'],
                   source_model='qwen-lm/qwen-3/transformers/4b/1',smoke_reference_sha256=sha256(root/'candidate_smoke_reference.npz'),
                   projected_inference_seconds=result['projected_inference_seconds'])
+    record['recovered_complete_artifacts']=result.get('recovered_complete_artifacts',False)
+    record['private_artifact_export_required']=bool(chosen=='continuation' and result.get('service_status')!='COMPLETE')
 atomic_json(pub/'candidate_selection.json',record);print(record)
