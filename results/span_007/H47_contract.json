@@ -1,0 +1,27 @@
+{
+  "source_sha256": "97d086a6e9b8a5009c51669bcec0c7e8bccd2d1ab5d38914dffc8d234cf73688",
+  "input_sha256": {
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_005/train.parquet": "1d7528b40272ced4b147124a36f0e5d20d91ff3777699c6341f936eaac461e1a",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_005/dev.parquet": "b213de8045ded5c05f1e96ee27f19b5b7a384bb5423debfdf2a80d997ec14e51",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_006/confirmation_inputs.parquet": "bac48ecba4eb50bbace37a3312007d55d0bed773ad13d57dcd47c78837e9b038",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/source_predictions.npz": "366400ff6f137d7ae34739eac3c543ef98d68ea1d73643833773b68f8710d673",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_005/inputs.npz": "8238a2e89566a33fe3cb316dcef7218f90b99e2230c17d81566bc50781e2c32e",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_005/source_vocabulary.json": "872d076c6702f5ce3983616bb3a6dd36eea13c8875c9c4aabfdcdc433a828b56",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_005/E07/tfidf_predictions.npz": "8558242ef303688537a38e20dce522b4f9f323ba4d157756aa38e18279471467",
+    "/home/tarstars/prj/llm_classification_finetuning/configs/span_005.json": "69abe796fa8717295e632de3ac01c84ae53ec76ace7222530e0c10c47a5aaf67",
+    "/home/tarstars/prj/llm_classification_finetuning/configs/span_007.json": "0444c2769c9fc607ff607f7062f60f69307ad1b42495ef43acc106ab8232769f",
+    "/home/tarstars/prj/llm_classification_finetuning/docs/SPAN_007_H47_PROTOCOL.md": "e0dff689f22ac710ae03330b0dbed4dc06e31c783248b75f4aaf8d5dd3147c67",
+    "/home/tarstars/prj/llm_classification_finetuning/src/arena/source_models.py": "da7d48c00549f894ff06f5284846530b4030444d6e48cd7a04fb33f3bf5a93dd",
+    "/home/tarstars/prj/llm_classification_finetuning/src/arena/source_evaluation.py": "874ecfcbdf1d0dc22aebe786962be65a26f12cd5c90c4c14852ec9d232998881"
+  },
+  "ridge_grid": [
+    1,
+    10,
+    100
+  ],
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "final_penalty_rule": "median of five training-inner selections",
+  "confirmation_targets_read": false,
+  "new_gpu_seconds": 0
+}

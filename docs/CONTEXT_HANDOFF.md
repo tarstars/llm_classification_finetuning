@@ -1,3 +1,28 @@
+# Current execution: v7, 30-hour span
+
+User authorized a balanced long span on mains. Original clock2026-11-05 18:30:17UTC;
+deadline2026-11-07 00:30:17UTC. See GOAL.md and docs/SPAN_007_PLAN.md. Focus
+E09/E10/E11/H49/H48/E05/H44/H47/H50. ChargedGPUcap24000s, optional one hidden
+submission separately<=25200s. Do not reset on quota refresh. No goal-service activation.
+Initial quota24566.595s remaining,0reserved, no activejob; no local NVIDIA GPU.
+
+E09done: shared controller/download/admission foundation;91tests and actualread-only
+admission pass. Contracts8a2dfd2; sharedsource15a888a; frameworkevidencebf4fdfc pushed.
+H49 training RUNNING exact arseniytrushin/llm-preference-span-007-continuation/1,
+accepted18:57:00UTC. Controller PTY15134, log/tmp/arena_span007_continuation_controller.log.
+13200srole cap, one push. Identity/actual optimizer+scaler+scheduler checks passed;
+training began19:04:08UTC. Observe existing version; never duplicate. Frozen shared
+sources and builder must remain unchanged while it runs. Status via scripts/status.py.
+320newnominalcycles maximum, fixed1e-5 accepted-positionwarm restart, finalstopped
+endpoint only. Final full-dev scoring reserved. E10running; actualtwo-rank trace audit
+and notebooks pending. All otherfocus work remains to execute. H47 CPU protocol,
+runner and contract prepared; do not rerun it if started.json exists. Heavyrootspan_007.
+
+User notebook07/12 edits must stay untouched. All26preexisting snapshot files hashed
+in results/span_007/artifact_inventory.json. Queue new discoveries into v8 only.
+No subagents. Scope searches only to this project; never walk HOME,~/prj or FUSE.
+Stop aftersealingv7/formingv8, neverexecutev8. The v6 record below is historical.
+
 # Context handoff — 2026-11-05, v6 closed
 
 The requested next span is complete. V6 is sealed; **v7 is active with37tasks**

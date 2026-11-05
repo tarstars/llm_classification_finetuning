@@ -1,7 +1,8 @@
 {
-  "stage": "dry_run_admissible",
-  "at": "2026-11-05T18:55:16.941478+00:00",
-  "pid": 1076263,
+  "stage": "monitoring",
+  "at": "2026-11-05T19:06:08.248567+00:00",
+  "pid": 1081886,
   "role": "continuation",
-  "cap_seconds": 13200
+  "status": "RUNNING",
+  "kernel_version": "arseniytrushin/llm-preference-span-007-continuation/1"
 }
