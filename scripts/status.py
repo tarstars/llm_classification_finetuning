@@ -24,6 +24,13 @@ while True:
         last=cycles[-1] if cycles else {};counts=last.get('counts',{})
         logged=[e for e in events if e.get('event')=='metrics' and 'loss' in e.get('metrics',{})]
         metrics=logged[-1].get('metrics',{}) if logged else {}
+        validations=[e for e in events if e.get('stage')=='validation' and e.get('event')=='measured']
+        checkpoints=[e for e in events if e.get('stage')=='checkpoint' and e.get('event')=='saved']
+        monitor=REPO/'results'/f'span_{args.span:03d}'/'training_monitoring_contract.json';bad_checks=None
+        if monitor.exists():
+            contract=json.loads(monitor.read_text());bad_checks=0
+            for event in validations:
+                bad_checks=bad_checks+1 if event['metrics'].get('eval_log_loss',0)>=contract['baseline_original_order_log_loss']+contract['catastrophic_margin'] else 0
         rows.append({'job':folder.name,'remote':remote.get('status'),'controller':state.get('stage'),
                      'phase':progress.get('latest',{}).get('stage'),'step':last.get('step'),
                      'rank0_accepted_updates':counts.get('accepted_updates'),'rank0_accepted_tokens':counts.get('accepted_tokens'),
@@ -31,6 +38,9 @@ while True:
                      'recent_train_loss':metrics.get('loss'),'gradient_norm_before_clip':metrics.get('grad_norm'),
                      'learning_rate':last.get('metrics',{}).get('learning_rate'),'amp_scale':last.get('metrics',{}).get('amp_scale'),
                      'rank0_peak_allocated_bytes':last.get('gpu',{}).get('peak_allocated_bytes'),
+                     'monitoring_original_order_log_loss':validations[-1]['metrics'].get('eval_log_loss') if validations else None,
+                     'last_saved_checkpoint':checkpoints[-1].get('step') if checkpoints else None,
+                     'consecutive_bad_monitoring_checks':bad_checks,
                      'last_observation_at':remote.get('observed_at',state.get('at'))})
     cpu=ROOT/'runs'/f'span_{args.span:03d}'/'strength'
     if (cpu/'started.json').exists():
@@ -41,9 +51,9 @@ while True:
             if memory_file.exists():
                 for line in memory_file.read_text().splitlines():
                     if line.startswith('VmRSS:'):rss=int(line.split()[1])/1024
-            rows.append({'job':'strength','controller':'complete' if complete else ('CPU running' if memory_file.exists() else 'CPU stopped'),
+            rows.append({'job':'strength','controller':'complete' if complete else ('CPU running' if memory_file.exists() else 'CPU awaiting result; process visibility unavailable'),
                          'phase':event.get('stage'),'event':event.get('event'),'outer_fold':event.get('rank'),
-                         'inner_fold':event.get('step'),'rss_mib':rss,'last_event_at':event.get('at')})
+                         'inner_fold':event.get('step'),'rss_mib':rss,'process_observation_available':memory_file.exists(),'last_event_at':event.get('at')})
         except (FileNotFoundError,json.JSONDecodeError):pass
     encoded=json.dumps(rows,indent=2)
     if encoded!=previous:print(encoded,flush=True);previous=encoded

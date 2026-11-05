@@ -1,0 +1,14 @@
+{
+  "failed_source_sha256": "dfcdbeb8bfcc6ce843d722bfd2827f7b60b237808b2f40202a84f047c40cd97b",
+  "failed_log_sha256": "58f02ba62727929a5cb4d075acc235afb4659a9552b09e3648a73c7d839ac945",
+  "failure": "Audit feature normalization statistics were computed in float32 instead of the model fitting code's float64.",
+  "observed_max_disagreement": 2.24398571e-08,
+  "model_parameters_changed": false,
+  "thresholds_changed": false,
+  "original_audit_clock": {
+    "started_at": "2026-11-05T19:47:13.378405+00:00",
+    "deadline": "2026-11-05T20:47:13.378405+00:00",
+    "basis": "Original redirected log birth timestamp, earlier than the first Python audit computation; conservative recovery cap."
+  },
+  "H47_results_sha256": "bcd7ddb74968dd950555d3ded6172123fbf263056a0bdc296facdf56568aa68e"
+}

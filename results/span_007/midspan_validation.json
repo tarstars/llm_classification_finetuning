@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "tests_run": 94,
+  "failures": 0,
+  "errors": 0,
+  "stage": "After shared prediction/judge and target-isolation additions; before final experiment closure",
+  "raw_log": "/tmp/arena_span007_midspan_tests.log"
+}

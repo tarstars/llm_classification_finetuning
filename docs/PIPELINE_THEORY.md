@@ -126,6 +126,10 @@ H47 asks whether directly regressing strength is better aligned than a64-class
 identity objective. Its ratings are estimated training targets, not known true
 utility. It uses fold-local ratings and matched residual features. This prevents
 a positive result from being attributed automatically to a different feature set.
+The source heads still have different capacity: a weighted softmax over many
+linear class logits is nonlinear in the sparse input, whereas one ridge score is
+linear. H47's negative result therefore rejects its fixed practical recipe rather
+than proving continuous strength objectives are intrinsically worse.
 
 A prompted judge is another conditional predictor. A mixture
 `m=(1−w)q_classifier+w q_judge` can help when errors differ, even when the judge is

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-05T20:05:59.691952+00:00",
+  "source_outer_folds": 3,
+  "preference_outer_folds": 5,
+  "source_predictions_replayed": 91970,
+  "final_serialized_predictions_replayed": 11492,
+  "meta_predictions_reconstructed": 28730,
+  "source_fold_targets_verified": true,
+  "confirmation_targets_used": false,
+  "audit_seconds": 483.8661078601144,
+  "H47_results_sha256": "bcd7ddb74968dd950555d3ded6172123fbf263056a0bdc296facdf56568aa68e",
+  "source_sha256": "88062b150d1ff8d9d2cb2979dc97743fd4f97c4adc47ad20c03922e9a679296c",
+  "output_sha256": {
+    "predictions.npz": "8f1251da2c784dd7bd8647a9a3756037fd52c38b9e50f8a5deafaa146ebcc093",
+    "regressor.joblib": "163f94bdad40031cf2db551388752e883829812c19d71d362c02526e425c0fb6",
+    "fold0.npz": "af3c57e81bfc6501536ef3bdab75269313e708e64241ba1907d0f4522052f472",
+    "fold2.npz": "0e9fd7eb44fada93a2e37ed06483fe767141c1e3df8153afb725959bf22f83ab",
+    "fold1.npz": "caedf182bb8a5fa7b47a7843e1a6ec2a58247b2a84560efdb39ef77f56e2db7c"
+  }
+}

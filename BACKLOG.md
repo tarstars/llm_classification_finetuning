@@ -6,7 +6,7 @@ Version **7**, active; **43** tasks. Focus for this span: E09, E10, E11, H49, H4
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **26**, ready **0**, running **2**, done **0**, rejected **0**, deferred **10**.
+Hypothesis status: planned **26**, ready **0**, running **1**, done **1**, rejected **0**, deferred **10**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -97,7 +97,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 33 | [H34](#h34) | P3 / planned | Executable code evidence | -0.008…+0.01 | high | 20…50 | 0.25…1 | 6…18 | E00 |
 | 34 | [H26](#h26) | P3 / planned | Hierarchical long-text comparison | -0.02…+0.02 | high | 24…60 | 2…6 | 24…60 | E00, H23 |
 | 55 | [E08](#e08) | P3 / deferred | Qualify classifier plus inferred-strength correction for offline inference | — | high | 2…5 | 0.25…0.75 | 0…0 | E00, H46 |
-| 56 | [H47](#h47) | P3 / running | Predict source strength directly rather than reconstructing source identity | -0.003…+0.003 | high | 3…7 | 0…0 | 0…1.5 | E00, E06, E07, H46 |
+| 56 | [H47](#h47) | P3 / done | Predict source strength directly rather than reconstructing source identity | -0.003…+0.003 | high | 3…7 | 0…0 | 0…1.5 | E00, E06, E07, H46 |
 | 35 | [H08](#h08) | P4 / deferred | Inference quantization sensitivity | -0.005…+0.005 | medium | 4…10 | 0.5…2 | 1…4 | E00 |
 | 36 | [H12](#h12) | P4 / deferred | Soft targets for repeated votes | -0.001…+0.001 | low | 2…5 | 0…0 | 0…0 | E00 |
 | 37 | [H07](#h07) | P4 / deferred | Bidirectional comparison attention | -0.03…+0.015 | high | 16…40 | 2…6 | 12…30 | E00 |
@@ -1124,7 +1124,7 @@ A scientifically qualified compact source correction may be deployable if its ex
 
 ### H47
 
-**Predict source strength directly rather than reconstructing source identity** — P3, running, risk high.
+**Predict source strength directly rather than reconstructing source identity** — P3, done, risk high.
 
 A direct continuous strength target may retain more useful quality information than a64-class identity loss at the same sparse text capacity.
 
@@ -1152,6 +1152,7 @@ A direct continuous strength target may retain more useful quality information t
 
 - 2026-11-05T11:48:01+00:00 — planned: Actual frozen transfer failed; source strength reconstruction correlates0.585 with known ratings despite adequate source coverage. Queue a single direct-strength target comparison, with fold-local rating estimation and no confirmation tuning; no v7 execution. Evidence: [docs/SPAN_006_H46.md](docs/SPAN_006_H46.md)
 - 2026-11-05T19:06:50+00:00 — running: Start fixed nested direct-strength regression: five original source folds, three inner folds, ridge1/10/100, fold-local rating targets and matched residual controls. Source/contract committed before fitting; CPUcap10800s,2threads,6GiB, no confirmation targets/GPU. Evidence: [docs/SPAN_007_H47_PROTOCOL.md](docs/SPAN_007_H47_PROTOCOL.md)
+- 2026-11-05T20:07:15+00:00 — done: Direct ridge is worse: source MSE0.213089 versus identity0.201731, gainCI whollynegative; preference0.953205 versus matched identity0.952434, no calibration gate. Independent full replay audit passes. Preserve source3-fold prose erratum and audit-only float64 recovery; no confirmation/GPU/promotion. Evidence: [docs/SPAN_007_H47.md](docs/SPAN_007_H47.md)
 
 ### H08
 

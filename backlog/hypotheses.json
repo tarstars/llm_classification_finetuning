@@ -3565,7 +3565,7 @@
       ],
       "id": "H47",
       "rank": 56,
-      "status": "running",
+      "status": "done",
       "introduced_in": 7,
       "discovered_during": 6,
       "derived_from": [
@@ -3586,6 +3586,14 @@
           "note": "Start fixed nested direct-strength regression: five original source folds, three inner folds, ridge1/10/100, fold-local rating targets and matched residual controls. Source/contract committed before fitting; CPUcap10800s,2threads,6GiB, no confirmation targets/GPU.",
           "evidence": [
             "docs/SPAN_007_H47_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T20:07:15+00:00",
+          "status": "done",
+          "note": "Direct ridge is worse: source MSE0.213089 versus identity0.201731, gainCI whollynegative; preference0.953205 versus matched identity0.952434, no calibration gate. Independent full replay audit passes. Preserve source3-fold prose erratum and audit-only float64 recovery; no confirmation/GPU/promotion.",
+          "evidence": [
+            "docs/SPAN_007_H47.md"
           ]
         }
       ]

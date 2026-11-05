@@ -1,0 +1,14 @@
+{
+  "baseline_original_order_log_loss": 0.9493642715974101,
+  "catastrophic_margin": 0.005,
+  "consecutive_bad_checks_to_stop": 2,
+  "monitor_new_cycles": [
+    128,
+    256,
+    320
+  ],
+  "rows": 256,
+  "recipe_frozen_before_launch": true,
+  "notebook_sha256": "d1821bae95ec8b6deea286c8b7982bebfa2613ec70c76326fc326a397a8c48d5",
+  "note": "Publication of a monitoring value already embedded in the committed launch notebook, not a new threshold selection."
+}
