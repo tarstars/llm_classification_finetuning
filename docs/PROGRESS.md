@@ -1,5 +1,21 @@
 # Project memory
 
+## V5 planning addition — 2026-11-05
+
+The user requested a source-model experiment in the next unstarted span.
+V5 now has **38 tasks**, with no selected focus or experiment execution:
+E06 estimates opponent-adjusted strength and a true-identity residual diagnostic;
+E07 predicts soft source probabilities from text; H45 tests their incremental
+contribution over current LoRA. See the [bounded plan](SPAN_005_SOURCE_MODEL_PLAN.md).
+Downstream work requires actual positive scientific/feasibility gates, not only
+done statuses. No new result, compute use or submission is claimed.
+
+The CLI's explicit `queue --into-active` planning option rejects selected/started
+spans, records additive amendments, and preserves the original v5-start and all
+earlier snapshots. Ordinary discoveries still go into the next-version draft.
+The original v4 closing audit remains historical. User notebook07 and notebook12
+edits are preserved. No new goal has been activated.
+
 ## V4 closing snapshot — 2026-11-04
 
 V4 is sealed; **v5 is active with35tasks** (34carryovers plus new E05), no focus

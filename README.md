@@ -14,6 +14,9 @@ of Kaggle session time, including its failed setup attempt, and made no submissi
 See the [results](docs/SPAN_004_RESULTS.md) and [executed notebook15](notebooks/15_backlog_v4_span.ipynb).
 Backlog v5 is active with no selected focus or execution; its new E05 task tests
 request concurrency before further judge rescoring.
+The [source-model experiment plan](docs/SPAN_005_SOURCE_MODEL_PLAN.md) adds E06
+(model strength), E07 (text-to-source probabilities) and H45 (incremental LoRA
+features) at the user's request, with conditional gates and matched controls.
 The completed [v1](docs/GOAL_V1.md), [v2](docs/GOAL_V2.md) and
 [v3](docs/GOAL_V3.md) goals are archived. V3's conservative whole-span compute
 bound was 6.20508 hours against its original 8.35453-hour quota cap.
@@ -66,10 +69,13 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v5**, with **35 tasks**: 34 unfinished carryovers and
-new E05 (native judge request-concurrency sensitivity). H44 now depends on E05
+The active version is **v5**, with **38 tasks**: 34 unfinished carryovers,
+E05 (native judge request-concurrency sensitivity), and the three source-model
+planning additions E06/E07/H45. H44 now depends on E05
 providing an actually stable, feasible recipe and consistent scores. E04 is done
 with negative evidence; H44 was deferred without fitting. No v5 task has started.
+The original 35-task v5-start snapshot is preserved; version history records the
+user-requested additions made before focus selection or execution.
 [V6 is an empty draft](backlog/NEXT.md).
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),

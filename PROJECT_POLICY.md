@@ -135,6 +135,16 @@ executing its successor backlog; select a new bounded goal first.
    uv run python scripts/backlog.py list --version next
    ```
 
+   **User-requested planning before a span starts:** when the active version has
+   just been formed but has never selected a focus or started preparation/work,
+   an explicit user request may add tasks to that upcoming span with
+   `queue --into-active`. Link a plan recording the request with `--evidence`.
+   The CLI appends planned items and version-history amendments, preserving the
+   original start snapshot and all earlier snapshots. Parents must originate in
+   earlier versions; same-span prerequisites belong in `depends_on`. This does
+   not select focus, launch work or reset a goal. After focus/preparation begins,
+   use the ordinary next-version queue. The default fixed-membership rule remains.
+
    IDs continue as H41, H42, and so on for hypotheses, or E01 onward for
    prerequisites. `introduced_in`, `discovered_during` and `derived_from` preserve
    provenance. Draft tasks cannot become ready, run or be marked done before their

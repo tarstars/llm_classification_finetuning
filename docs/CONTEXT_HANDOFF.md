@@ -1,9 +1,22 @@
-# Context handoff — 2026-11-04, completed v4
+# Context handoff — 2026-11-05, v5 planning after completed v4
 
-V4 is complete and sealed. **V5 is active with 35 tasks:34 unfinished carryovers
-plus new E05. No v5 focus or execution; v6 is empty draft. Stop here.**
+V4 is complete and sealed. **V5 is active with 38 tasks: 34 unfinished carryovers,
+E05, and user-requested planning additions E06/E07/H45. No v5 focus or experiment
+execution; v6 is empty draft.**
 `GOAL.md` remains the completed v4 contract, copied byte-for-byte to
 [GOAL_V4.md](GOAL_V4.md); it does not authorize another span.
+
+On November 5 the user asked to add the source-model experiment to the next span.
+The [plan](SPAN_005_SOURCE_MODEL_PLAN.md) covers opponent-adjusted strength and
+true-identity residual diagnostics (E06), text-to-source probability prediction
+(E07), and nested incremental preference prediction alongside LoRA (H45).
+They are planned, with actual scientific advancement gates; no pilot has run.
+`queue --into-active` records these explicit pre-execution additions while retaining
+the original 35-task v5-start snapshot. All sealed snapshot bytes remain unchanged.
+The v4 completion/closure audits describe their original closing registry and
+remain historical evidence; do not rerun them against this amended live plan.
+The policy now documents the narrowly guarded planning command. Ordinary research
+discoveries still queue into the next-version draft. No new goal has been activated.
 
 Read [v4 results](SPAN_004_RESULTS.md), [completion](SPAN_004_COMPLETION.md),
 [E04](SPAN_004_E04.md), [H44 deferral](SPAN_004_H44.md) and

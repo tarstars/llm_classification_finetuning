@@ -203,6 +203,69 @@ class BacklogWorkflow(unittest.TestCase):
             backlog.queue(self.data, self.proposal(), ['H99'], 'Invalid source')
         self.assertEqual(self.data, original)
 
+    def test_user_planning_addition_preserves_start_snapshot_and_final_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'backlog.json'
+            data = backlog.advance(self.finished_focus(), source, 'Finished', ['docs/span.md'])
+            paths = backlog.snapshot_paths(source, 2, 'start')
+            original = [path.read_bytes() for path in paths]
+            changed, key = backlog.queue(data, self.proposal(), ['H09'], 'User requested next-span task',
+                                         ['docs/plan.md'], into_active=True)
+            item = next(x for x in changed['items'] if x['id'] == key)
+            self.assertEqual((item['introduced_in'], item['discovered_during'], item['status']),
+                             (2, None, 'planned'))
+            self.assertEqual(backlog.version_record(changed, 3)['item_ids'], [])
+            self.assertEqual(backlog.version_record(changed)['focus_ids'], [])
+            backlog.check_snapshots(changed, source)
+            self.assertEqual([path.read_bytes() for path in paths], original)
+            self.assertNotIn(key, backlog.version_record(data)['item_ids'])
+            changed = backlog.set_focus(changed, 2, [key], 'Select the user-requested pilot')
+            changed = backlog.update(changed, key, 'done', 'Actual result', ['docs/result.md'])
+            changed = backlog.advance(changed, source, 'Finished pilot', ['docs/span2.md'])
+            backlog.check_snapshots(changed, source)
+            self.assertIn(key, backlog.version_record(backlog.load_version(changed, source, 2), 2)['item_ids'])
+            self.assertEqual([path.read_bytes() for path in paths], original)
+
+    def test_active_additions_reject_selected_or_started_spans_and_unlogged_membership(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'backlog.json'
+            data = backlog.advance(self.finished_focus(), source, 'Finished', ['docs/span.md'])
+            original = deepcopy(data)
+            with self.assertRaisesRegex(backlog.BacklogError, '--evidence'):
+                backlog.queue(data, self.proposal(), ['H09'], 'No evidence', into_active=True)
+            focused = backlog.set_focus(data, 2, ['H04'], 'Selected')
+            with self.assertRaisesRegex(backlog.BacklogError, 'unstarted'):
+                backlog.queue(focused, self.proposal(), ['H09'], 'Too late', ['docs/plan.md'], into_active=True)
+            worked = backlog.update(data, 'H04', 'running', 'Started preparation')
+            worked = backlog.update(worked, 'H04', 'deferred', 'Stopped', ['docs/stopped.md'])
+            with self.assertRaisesRegex(backlog.BacklogError, 'unstarted'):
+                backlog.queue(worked, self.proposal(), ['H09'], 'Stopped is not unstarted',
+                              ['docs/plan.md'], into_active=True)
+            changed, _ = backlog.queue(data, self.proposal(), ['H09'], 'User planning',
+                                       ['docs/plan.md'], into_active=True)
+            backlog.version_record(changed)['history'] = []
+            with self.assertRaisesRegex(backlog.BacklogError, 'membership changed'):
+                backlog.check_snapshots(changed, source)
+            self.assertEqual(data, original)
+
+    def test_cli_active_planning_addition_is_visible_and_validated(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'backlog.json'
+            data = backlog.advance(self.finished_focus(), source, 'Finished', ['docs/span.md'])
+            backlog.save(data, source, source.with_suffix('.md'))
+            proposal = Path(directory) / 'proposal.json'
+            proposal.write_text(json.dumps(self.proposal()))
+            def run(*args):
+                with contextlib.redirect_stdout(io.StringIO()) as out:
+                    backlog.main(['--file', str(source), *args])
+                return out.getvalue()
+            self.assertIn('Added H41 to unstarted v2', run(
+                'queue', '--into-active', '--item-file', str(proposal), '--from', 'H09',
+                '--note', 'User requested upcoming-span planning', '--evidence', 'docs/plan.md'))
+            self.assertIn('H41', {x['id'] for x in json.loads(run('list', '--new', '--json'))})
+            self.assertEqual(json.loads(run('list', '--version', 'next', '--json')), [])
+            self.assertIn('OK:', run('check'))
+
     def test_advance_requires_resolved_focus_and_no_running_tasks(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / 'backlog.json'

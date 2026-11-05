@@ -381,7 +381,22 @@ def check_snapshots(data, source):
             frozen = json.loads(paths[0].read_text())
             _require(frozen.get("snapshot", {}).get("stage") == stage and
                      frozen["snapshot"].get("version") == record["number"], "Wrong snapshot metadata")
-            _require(record["item_ids"] == version_record(frozen, record["number"])["item_ids"],
+            expected_ids = list(version_record(frozen, record["number"])["item_ids"])
+            if stage == "start":
+                # Explicit user planning can add work before a span starts. Keep
+                # the original snapshot and account for every additive amendment.
+                by_id = {x["id"]: x for x in data["items"]}
+                for event in record["history"]:
+                    if event.get("kind") != "planning_addition":
+                        continue
+                    additions = event.get("item_ids", [])
+                    _require(additions and event.get("note") and event.get("evidence") and
+                             event.get("at") and len(additions) == len(set(additions)) and
+                             all(key not in expected_ids and key in by_id and
+                                 by_id[key]["introduced_in"] == record["number"] for key in additions),
+                             f"v{record['number']}: invalid planning addition")
+                    expected_ids.extend(additions)
+            _require(record["item_ids"] == expected_ids,
                      f"v{record['number']}: sealed version membership changed")
 
 
@@ -420,7 +435,7 @@ def task_template(kind="hypothesis"):
             "depends_on": [], "evidence": []}
 
 
-def queue(data, proposal, parents, note, evidence=()):
+def queue(data, proposal, parents, note, evidence=(), *, into_active=False):
     ensure_live(data)
     _require(isinstance(proposal, dict), "Proposal must be a task object")
     _require(bool(note.strip()) and bool(parents), "Queueing needs a discovery note and parent task(s)")
@@ -428,19 +443,40 @@ def queue(data, proposal, parents, note, evidence=()):
     by_id = {x["id"]: x for x in candidate["items"]}
     _require(all(x in by_id and by_id[x]["introduced_in"] <= data["active_version"] for x in parents),
              "Follow-up parents must exist in the current or an earlier version")
+    if into_active:
+        record = version_record(candidate)
+        _require(evidence, "Active planning additions need --evidence for the user-requested plan")
+        _require(record.get("start_sealed_at") and not record["focus_ids"] and
+                 not any(event.get("focus_ids") for event in record["history"]),
+                 "Active additions require an unstarted span before any focus selection")
+        _require(all(by_id[key]["status"] in ("planned", "deferred") for key in record["item_ids"]),
+                 "Active additions require an unstarted span")
+        started = datetime.fromisoformat(record["start_sealed_at"])
+        _require(not any(event["status"] in ("ready", "running", "done", "rejected") and
+                         datetime.fromisoformat(event["at"]) >= started
+                         for key in record["item_ids"] for event in by_id[key]["history"]),
+                 "Active additions require an unstarted span; previous work remains in history")
+        _require(all(by_id[key]["introduced_in"] < data["active_version"] for key in parents),
+                 "Active planning parents must come from an earlier version")
     kind = proposal.get("kind", "hypothesis")
     _require(kind in ("hypothesis", "prerequisite"), "Invalid proposed task kind")
     prefix = "H" if kind == "hypothesis" else "E"
     sequence = max([int(x[1:]) for x in by_id if x.startswith(prefix)], default=0) + 1
     key = f"{prefix}{sequence:02}"
     item = deepcopy(proposal)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     item.update(id=key, kind=kind, rank=max(x["rank"] for x in candidate["items"]) + 1,
-                status="planned", introduced_in=data["active_version"] + 1,
-                discovered_during=data["active_version"], derived_from=list(dict.fromkeys(parents)),
-                history=[{"at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                status="planned", introduced_in=data["active_version"] + (0 if into_active else 1),
+                discovered_during=None if into_active else data["active_version"],
+                derived_from=list(dict.fromkeys(parents)),
+                history=[{"at": now,
                           "status": "planned", "note": note.strip(), "evidence": list(evidence)}])
     candidate["items"].append(item)
     version_record(candidate, item["introduced_in"])["item_ids"].append(key)
+    if into_active:
+        version_record(candidate)["history"].append({
+            "at": now, "kind": "planning_addition", "item_ids": [key],
+            "note": note.strip(), "evidence": list(evidence)})
     return validate(candidate), key
 
 
@@ -546,6 +582,8 @@ def main(argv=None):
     adding.add_argument("--from", dest="parents", action="append", required=True)
     adding.add_argument("--note", required=True)
     adding.add_argument("--evidence", action="append", default=[])
+    adding.add_argument("--into-active", action="store_true",
+                        help="Explicit user planning addition to an unstarted active span; preserve its start snapshot")
     focusing = commands.add_parser("focus", help="Select the bounded scope of a span")
     focusing.add_argument("ids", nargs="+")
     focusing.add_argument("--version", help="Version number or 'next'; default active")
@@ -625,9 +663,13 @@ def main(argv=None):
         elif args.command == "queue":
             check_snapshots(data, args.file)
             proposal = json.loads(args.item_file.read_text())
-            candidate, key = queue(data, proposal, args.parents, args.note, args.evidence)
+            candidate, key = queue(data, proposal, args.parents, args.note, args.evidence,
+                                   into_active=args.into_active)
             save(candidate, args.file, view)
-            print(f"Queued {key} for v{data['active_version'] + 1}, discovered during v{data['active_version']}")
+            if args.into_active:
+                print(f"Added {key} to unstarted v{data['active_version']}; original start snapshot preserved")
+            else:
+                print(f"Queued {key} for v{data['active_version'] + 1}, discovered during v{data['active_version']}")
         elif args.command == "focus":
             check_snapshots(data, args.file)
             candidate = set_focus(data, resolve_version(data, args.version), args.ids, args.note)

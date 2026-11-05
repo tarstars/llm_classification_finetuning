@@ -3139,6 +3139,186 @@
           ]
         }
       ]
+    },
+    {
+      "estimate_confidence": "low",
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "evidence": [
+        "docs/SPAN_005_SOURCE_MODEL_PLAN.md",
+        "TARGET_AUDIT.md"
+      ],
+      "revision": "User-requested planning addition on 2026-11-05 to unstarted v5. Preserve its original start snapshot; no focus, goal activation or experiment execution. See the linked bounded plan.",
+      "kind": "prerequisite",
+      "title": "Estimate model strength and true-identity residual signal",
+      "priority": "P1",
+      "gain": null,
+      "engineering_hours": [
+        2,
+        4
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        1.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "risk": "medium",
+      "claim": "Opponent-adjusted source strength and a true-identity diagnostic can establish whether this bounded representation is worth approximating from text.",
+      "basis": "Prior matched audit: structure loss1.03059, true identities1.04185, identities plus structure0.99196 on inspected confirmation. Incremental value over latest H03 is unmeasured; true identities are unavailable in test.",
+      "first_test": "Training-only source/pair/exposure and duplicate-identity inventory; fit one shrinkage-regularized symmetric strength model with an explicit tie term, plus prior/pair controls. On matched development rows use prompt-grouped nested residual fitting with latest frozen LoRA and true-identity features as a diagnostic, compared with LoRA-only recalibration and style controls. Fit parameters inside appropriate folds; never use in-sample LoRA training predictions as OOF.",
+      "acceptance": "Report opponent-adjusted rankings with uncertainty and coverage. Advance this implementation only for plausible practical residual gain, aiming for0.001 lower matched loss with uncertainty not ruling that benefit out, and sufficient train-supported source coverage. True-identity results are diagnostic, not deployable or a formal universal upper bound.",
+      "stop": "If this bounded representation adds no useful matched residual signal or lacks source support, finish the negative diagnostic and defer E07/H45 with evidence; a done status alone does not pass the scientific gate.",
+      "risk_reason": "Raw wins confound opponent and prompt mix; rare models overfit and actual names could create an invalid deployed shortcut. Existing development selection is exploratory.",
+      "mitigation": "Train-only shrinkage and opponent adjustment, explicit ties, prompt-grouped nested meta fitting, matched style/recalibration controls and bootstrap intervals. Preserve the unavailable-name diagnostic distinction.",
+      "rationale": "Cheap first gate for the user proposal before attribution training, distinct from the previous identity-only audit and domain experts H38.",
+      "depends_on": [
+        "E00"
+      ],
+      "id": "E06",
+      "rank": 51,
+      "status": "planned",
+      "introduced_in": 5,
+      "discovered_during": null,
+      "derived_from": [
+        "E00"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T06:27:43+00:00",
+          "status": "planned",
+          "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
+          "evidence": [
+            "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        }
+      ]
+    },
+    {
+      "estimate_confidence": "low",
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "evidence": [
+        "docs/SPAN_005_SOURCE_MODEL_PLAN.md",
+        "TARGET_AUDIT.md"
+      ],
+      "revision": "User-requested planning addition on 2026-11-05 to unstarted v5. Preserve its original start snapshot; no focus, goal activation or experiment execution. See the linked bounded plan.",
+      "kind": "prerequisite",
+      "title": "Predict source-model probabilities from response text",
+      "priority": "P2",
+      "gain": null,
+      "engineering_hours": [
+        3,
+        7
+      ],
+      "cpu_wall_hours": [
+        1,
+        4
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "A compact text model may recover a useful soft source distribution without requiring model names at prediction time.",
+      "basis": "Names exist on training rows but not competition test. We have not trained source attribution; response style may encode source or merely generic verbosity. Requires an actually passing E06 pilot gate, not completion alone.",
+      "first_test": "After passing E06, compare at most two fixed inexpensive heads: character/word TF-IDF multinomial logistic regression and a linear head on existing suitable frozen per-answer embeddings. Group both sides by prompt, purge exact normalized answer duplicates across each fitting/evaluation boundary, fit preprocessing and calibration within training folds, and use training-only source validation for selection. Save OOF auxiliary predictions and frozen development posteriors; no new backbone training or external embedding extraction in the pilot.",
+      "acceptance": "Held-out source log loss beats training-frequency prior with calibrated finite posteriors, explicit rare/unknown handling and measured coverage. Report top-k/macro/per-model behavior and duplicate conflicts. Require a test-computable, feasible offline inference path before H45; attribution accuracy alone does not establish a preference gain.",
+      "stop": "Stop the chosen implementation if source signal fails on grouped duplicate-purged evaluation, needs unavailable inputs, exceeds the frozen CPU cap or lacks an affordable offline path. Do not start optional GPU inference without separate resource admission.",
+      "risk_reason": "Duplicate responses and shared prompts can inflate attribution; rare/unknown models and distribution shift undermine confidence. Cached external embeddings can hide deployment cost.",
+      "mitigation": "Prompt grouping, answer-duplicate purging, fold-only preprocessing/calibration, training-prior fallback, soft probabilities rather than hard names, and explicit offline feature-generation accounting.",
+      "rationale": "Tests the missing answer-to-source step directly, rather than treating true source names as available competition features.",
+      "depends_on": [
+        "E00",
+        "E06"
+      ],
+      "id": "E07",
+      "rank": 52,
+      "status": "planned",
+      "introduced_in": 5,
+      "discovered_during": null,
+      "derived_from": [
+        "E00"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T06:27:43+00:00",
+          "status": "planned",
+          "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
+          "evidence": [
+            "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        }
+      ]
+    },
+    {
+      "estimate_confidence": "low",
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "evidence": [
+        "docs/SPAN_005_SOURCE_MODEL_PLAN.md",
+        "TARGET_AUDIT.md"
+      ],
+      "revision": "User-requested planning addition on 2026-11-05 to unstarted v5. Preserve its original start snapshot; no focus, goal activation or experiment execution. See the linked bounded plan.",
+      "kind": "hypothesis",
+      "title": "Add inferred source-model features to LoRA preference predictions",
+      "priority": "P2",
+      "gain": [
+        -0.005,
+        0.01
+      ],
+      "engineering_hours": [
+        3,
+        6
+      ],
+      "cpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "risk": "high",
+      "claim": "Inferred source distributions and opponent-adjusted strength may add residual preference signal beyond frozen LoRA and simple answer style.",
+      "basis": "Actual identities improve an older structure-only audit, but no inferred-identity or incremental latest-LoRA gain has been measured. The forecast is subjective and not additive with E06/E07 or earlier gains. Requires both E06 and E07 to pass actual scientific/feasibility gates.",
+      "first_test": "Freeze training-selected source/strength recipes; evaluate matched fixed development rows in prompt-grouped nested outer/inner folds. Compare exactly two low-capacity residual families: expected strength/pair prior/uncertainty, and full soft source posteriors. Include LoRA-only recalibration, source-only, style/length and shuffled-source controls. Fit every learned meta/calibration/selection stage inside folds; never substitute true names or LoRA in-sample training predictions. Check swap equivariance, tie channels and offline total runtime.",
+      "acceptance": "At least0.001 lower overall log loss with positive paired group evidence against matched LoRA-only recalibration, surviving the style control. Report all families, class losses/recall, accuracy, coverage and2000group-bootstrap intervals. Freeze before an independently specified follow-up and require a measured offline deployment path before any submission.",
+      "stop": "Stop or defer if gain disappears under nesting, is explained by generic style/global recalibration, depends on true names, harms overall loss or lacks a feasible offline runtime. An interval including zero remains inconclusive; do not retune on leaderboard outcomes.",
+      "risk_reason": "Stacking on in-sample predictions leaks information; source identification may duplicate existing LoRA text signal or encode brittle dataset-specific style. Existing dev/confirmation are inspected.",
+      "mitigation": "Frozen training-selected auxiliaries, held-out/nested meta features, tightly bounded families and controls, soft uncertainty-aware inputs, prompt-group intervals and explicit exploratory wording. No new LoRA fitting in the pilot.",
+      "rationale": "Directly evaluates the user proposal against the current classifier, separating source accuracy from actual preference-score benefit.",
+      "depends_on": [
+        "E00",
+        "E06",
+        "E07"
+      ],
+      "id": "H45",
+      "rank": 53,
+      "status": "planned",
+      "introduced_in": 5,
+      "discovered_during": null,
+      "derived_from": [
+        "E00"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T06:27:43+00:00",
+          "status": "planned",
+          "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
+          "evidence": [
+            "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -3163,7 +3343,8 @@
     "Retained all forty IDs for traceability. H12, H36 and H40 have deliberately bounded CPU-first scopes; deeper training/OOF work requires a separately recorded budget. Added E00 outside the count to make dependencies and evaluation prerequisites explicit.",
     "V3 closing update2026-11-04: refresh current global framing to verified official0.95481 and latest matched controls; retain original subjective forecasts unless task evidence warrants a revision. This administrative refresh followed v3-final/v4-start sealing: their old0.97025 introductory framing is preserved as a documented erratum, while their E03 task record already contains0.95481. Do not rewrite sealed snapshot bytes. See docs/SPAN_003_COMPLETION.md.",
     "V4 E04: disabling prompt reuse alone does not establish stable probabilities; batch/concurrency sensitivity remains untested. H44 is explicitly deferred behind new E05 and a genuinely stable feasible recipe. No v4 blend gain or new official score is claimed; unchanged forecast ranges remain subjective plans.",
-    "V4 closure bibliography erratum: one v3 source-list sentence in sealed v4-final/v5-start still says no v4 experiment has run. It was inherited from the activation record; their task outcomes and main framing correctly record completed E04 and deferred H44. Correct the current bibliography, preserve sealed snapshot bytes, and use docs/SPAN_004_COMPLETION.md for the closing interpretation."
+    "V4 closure bibliography erratum: one v3 source-list sentence in sealed v4-final/v5-start still says no v4 experiment has run. It was inherited from the activation record; their task outcomes and main framing correctly record completed E04 and deferred H44. Correct the current bibliography, preserve sealed snapshot bytes, and use docs/SPAN_004_COMPLETION.md for the closing interpretation.",
+    "User planning addition2026-11-05 before any v5 focus/preparation: add E06 source strength/oracle residual diagnostics, E07 text-to-source probabilities, and H45 incremental LoRA integration. Live v5 membership is38; preserve original35-task v5-start and all earlier snapshots. Scientific pilot gates remain required; no experiment or goal activated. See docs/SPAN_005_SOURCE_MODEL_PLAN.md."
   ],
   "evaluation": [
     "Keep the exact prompt-grouped split IDs and frozen attempt-002 reference. Existing dev and confirmation were inspected and are exploratory. New grouped inner validation must retrain models without its held-out groups; cached in-sample training predictions cannot stand in for OOF predictions. Nested selection reduces additional tuning bias but cannot retroactively make inspected data untouched.",
@@ -3180,7 +3361,8 @@
     "[First-place author, related 2024 LMSYS competition](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629) reported 0.876 public versus 0.96898 private. [Kaggle staff](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/524376) described rerunning on a new private set. That is a different competition and does not establish a clean 0.8 target here.",
     "[Skywork reward-model repository](https://github.com/SkyworkAI/Skywork-Reward), [Skywork Reward V2 paper](https://arxiv.org/abs/2507.01352), and [second-place LMSYS write-up](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527685) supply technical precedents, not measured local gains or verified deployment feasibility.",
     "[V3 results](docs/SPAN_003_RESULTS.md), [official verification](results/span_003/deployed_candidate.json) and [completion/archival framing erratum](docs/SPAN_003_COMPLETION.md) supersede the earlier global best-score framing. These v3 references predate v4; the completed v4 diagnostic is linked below.",
-    "[V4 results](docs/SPAN_004_RESULTS.md), [native repeatability evidence](docs/SPAN_004_E04.md) and [H44 deferral](docs/SPAN_004_H44.md) record the completed diagnostic and conditional next-stage stop."
+    "[V4 results](docs/SPAN_004_RESULTS.md), [native repeatability evidence](docs/SPAN_004_E04.md) and [H44 deferral](docs/SPAN_004_H44.md) record the completed diagnostic and conditional next-stage stop.",
+    "[V5 source-model experiment plan](docs/SPAN_005_SOURCE_MODEL_PLAN.md) records the explicit user-requested pre-execution additions, diagnostic evidence, conditional stages, bounded effort and evaluation controls; no new measurement is claimed."
   ],
   "active_version": 5,
   "versions": [
@@ -3505,10 +3687,47 @@
         "H38",
         "H41",
         "H44",
-        "E05"
+        "E05",
+        "E06",
+        "E07",
+        "H45"
       ],
       "focus_ids": [],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-05T06:27:43+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "E06"
+          ],
+          "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
+          "evidence": [
+            "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T06:27:43+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "E07"
+          ],
+          "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
+          "evidence": [
+            "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T06:27:43+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "H45"
+          ],
+          "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
+          "evidence": [
+            "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        }
+      ],
       "carried_from": 4,
       "start_sha256": "2a31cc95353ecbfd736b5f8c07360681e8dd54ef15eee8606f30bd85767d5847",
       "start_markdown_sha256": "e073b57480323fe77b8e3fc3d56f09872b58a81972caee4b7c91500d8375e665",
