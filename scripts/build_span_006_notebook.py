@@ -61,6 +61,13 @@ save(fig,'transfer_class_losses')
 print('Source diagnostics:',result['source_diagnostics'])
 print('Head swap errors:',result['head_swap_max_error'])
 print('Raw classifier order:',result['raw_classifier_order'])
+shift=read('descriptive_shift.json')
+display(pd.DataFrame([{'cohort':k,'rows':v['rows'],'clipped_source_fraction':v['source_input_clipped_fraction'],
+                      'source_accuracy':v.get('source_accuracy'),'source_loss':v.get('source_log_loss'),
+                      'strength_correlation':v.get('inferred_strength_pearson'),'strength_rmse':v.get('inferred_strength_rmse'),
+                      'source_distribution_TV':v['source_name_total_variation_from_training']} for k,v in shift['cohorts'].items()]))
+display(pd.DataFrame(shift['confirmation_confidence_bins']))
+print(shift['warning'])
 '''),md('''## Resource use and conditional offline qualification
 
 Charge includes setup and controls; two T4s for one elapsed hour count as one

@@ -69,10 +69,12 @@ def main():
             ratings = np.load(directory / 'assets/ratings.npz')['ratings']
             head = np.load(directory / 'assets/strength_head.npz')
             reconstructed = residual_predict(p, *compact_features(actual['qa'], actual['qb'], ratings), head)
+            np.testing.assert_allclose(actual['calibrated'], p, atol=1e-7)
             np.testing.assert_allclose(actual['joint'], reconstructed, atol=1e-7)
             checks = {}
             for name, observed, expected in [('raw', average, (reference['original'] + reference['aligned_swap']) / 2),
                                              ('source', np.vstack([actual['qa'], actual['qb']]), np.vstack([reference['qa'], reference['qb']])),
+                                             ('calibrated', actual['calibrated'], reference['calibrated']),
                                              ('joint', actual['joint'], reference['joint'])]:
                 delta = np.abs(observed - expected)
                 checks[name] = {'mean': float(delta.mean()), 'maximum': float(delta.max()),
@@ -96,6 +98,7 @@ def main():
             projection = contract['hidden_rows_assumption'] * (classifier + auxiliary) * contract['runtime_margin'] + setup + contract['runtime_reserve_seconds']
             result.update(passed=bool(summary['passed'] and projection <= contract['runtime_ceiling_seconds']),
                           identity=checks, hardware=hardware, csv_valid=True, visible_rows=3,
+                          source_order_max_error=summary['source_order_max_error'],
                           classifier_seconds_per_row=classifier, source_meta_seconds_per_row=auxiliary,
                           cold_setup_allowance_seconds=setup, projected_joint_seconds=projection,
                           hidden_rows_assumption=contract['hidden_rows_assumption'],

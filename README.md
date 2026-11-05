@@ -7,6 +7,18 @@ is multiclass log loss (lower is better).
 Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
+
+V6 completed the frozen source-strength transfer. Matched calibration gives
+**0.946628** confirmation loss and the correction **0.945753**, a gain of
+**0.000876 [−0.000390, 0.002173]**. The quality gate failed; the style control
+nearly matches it. H46 is done without promotion and E08 was deferred without
+execution. One offline two-T4 job used **1.09226 session-hours**; no new submission.
+See [v6 results](docs/SPAN_006_RESULTS.md), [completion](docs/SPAN_006_COMPLETION.md),
+[executed notebook17](notebooks/17_backlog_v6_span.ipynb) and
+[completed v6 contract](docs/GOAL_V6.md). V7 contains 36 unfinished carryovers plus
+H47, a development-only proposal to predict strength directly; it has no focus
+or execution. V8 is an empty draft.
+
 The completed [v4 goal](docs/GOAL_V4.md) tested **E04**, native judge repeatability.
 Both cache settings failed the fixed probability guards on 512 fresh requests;
 **H44** calibration was not run and remains deferred. V4 used **839.253 seconds**
@@ -15,12 +27,12 @@ See the [results](docs/SPAN_004_RESULTS.md) and [executed notebook15](notebooks/
 V5 completed the source-model experiment. Known model strength improves the
 matched diagnostic from **0.953701 to 0.940456**, but the practical nested source
 selector gives **0.953834** and fails adoption. The fixed strength-only family
-is promising at 0.952397 and needs frozen replication. TF-IDF source-class accuracy
-is 27.08%, a different task metric. GPU use and submissions were zero.
+gave 0.952397; its frozen v6 transfer did not pass the quality gate.
+TF-IDF source-class accuracy is 27.08%, a different task metric. GPU use and submissions were zero.
 See [v5 results](docs/SPAN_005_RESULTS.md), [completion](docs/SPAN_005_COMPLETION.md)
 and [executed notebook16](notebooks/16_backlog_v5_span.ipynb).
-V6 is executing H46 frozen replication followed by conditional E08 offline
-qualification; see the [fixed protocol](docs/SPAN_006_PROTOCOL.md). The completed [v5 contract](docs/GOAL_V5.md) is archived.
+The completed [v5 contract](docs/GOAL_V5.md) and
+[v6 protocol](docs/SPAN_006_PROTOCOL.md) preserve the two source-model spans.
 The completed [v1](docs/GOAL_V1.md), [v2](docs/GOAL_V2.md) and
 [v3](docs/GOAL_V3.md) goals are archived. V3's conservative whole-span compute
 bound was 6.20508 hours against its original 8.35453-hour quota cap.
@@ -73,11 +85,11 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v6**, with **37 tasks**: 35 unfinished carryovers plus
-H46 (freeze/replicate compact inferred strength) and E08 (conditional offline
-classifier/source qualification). V5 completed E06/E07/H45 with a negative primary
-adoption decision. E05/H44 remain carryovers, with their judge prerequisites
-unchanged. V6 focuses on H46/E08; [v7 is the next-version draft](backlog/NEXT.md).
+The active version is **v7**, with **37 tasks**: 36 unfinished carryovers plus
+H47 (direct strength regression). V6 completed H46 with a failed quality gate;
+E08 remains deferred, requiring genuinely positive new quality evidence before
+any future qualification. E05/H44 retain their judge prerequisites. V7 has no
+selected focus or execution; [v8 is an empty draft](backlog/NEXT.md).
 The original 35-task v5-start snapshot and its explicit planning amendments are
 preserved, along with all historical snapshots.
 Each completed span preserves snapshots and carries unfinished work forward.
@@ -85,7 +97,8 @@ See the [initial v1 snapshot](backlog/versions/v1.start.md),
 [v1 final history](backlog/versions/v1.final.md), [v2 final history](backlog/versions/v2.final.md)
 and [v3 final history](backlog/versions/v3.final.md),
 [v4 final history](backlog/versions/v4.final.md),
-[v5 final history](backlog/versions/v5.final.md).
+[v5 final history](backlog/versions/v5.final.md),
+[v6 final history](backlog/versions/v6.final.md).
 [Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
 The JSON-backed CLI browses work, records status/evidence and regenerates the page:
 
@@ -94,8 +107,8 @@ uv run python scripts/backlog.py list --priority P1
 uv run python scripts/backlog.py list --actionable
 uv run python scripts/backlog.py list --actionable --focus
 uv run python scripts/backlog.py versions
-uv run python scripts/backlog.py list --version 6 --new
-uv run python scripts/backlog.py list --version 6 --carried
+uv run python scripts/backlog.py list --version 7 --new
+uv run python scripts/backlog.py list --version 7 --carried
 uv run python scripts/backlog.py list --version next
 uv run python scripts/backlog.py show H09
 uv run python scripts/backlog.py check
@@ -120,8 +133,9 @@ compatibility and runtime gates fail; gains cannot be added. See the
 The [v2 completion record](docs/SPAN_002_COMPLETION.md),
 [v3 completion record](docs/SPAN_003_COMPLETION.md),
 [v4 completion record](docs/SPAN_004_COMPLETION.md) and
-[v5 completion record](docs/SPAN_005_COMPLETION.md) link resource, provenance,
-notebook and version checks. V5 stops at the v6 boundary.
+[v5 completion record](docs/SPAN_005_COMPLETION.md) and
+[v6 completion record](docs/SPAN_006_COMPLETION.md) link resource, provenance,
+notebook and version checks. V6 stops at the v7 boundary.
 
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
@@ -145,6 +159,7 @@ classifier comparison and all baselines.
 - [Backlog v3 span: affordable judge use and frozen classifier verification](notebooks/14_backlog_v3_span.ipynb)
 - [Backlog v4 span: native repeatability and calibration stopping decision](notebooks/15_backlog_v4_span.ipynb)
 - [Backlog v5 span: source attribution and residual preference evidence](notebooks/16_backlog_v5_span.ipynb)
+- [Backlog v6 span: frozen inferred-strength transfer](notebooks/17_backlog_v6_span.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary

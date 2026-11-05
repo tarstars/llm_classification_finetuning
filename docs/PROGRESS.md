@@ -1,5 +1,31 @@
 # Project memory
 
+## V6 closing snapshot — 2026-11-05
+
+V6 is sealed; v7 has37tasks (36carryovers+H47), no focus/execution, v8 empty.
+H46 frozen transfer gives0.945753 versus calibration0.946628: gain0.000876
+CI[-0.000390,0.002173]. Style0.945815 nearly matches it, so the prespecified
+quality gate fails. H46 done without promotion; E08 deferred, unexecuted.
+Source accuracy27.98%, strength correlation0.585 and small coarse shift motivate
+H47 direct-strength regression as a proposal only. No further source variants,
+confirmation tuning, large-classifier training, extraction or submission.
+
+One Internet-disabled2T4job COMPLETE, charge3932.151s/1.09226h. CPUfreeze554.202s,
+evaluation4.048s, independent audit39.648s, peakCPU3.699GiB. Original clock10:03:27UTC
+November5 and fixed48hdeadline preserved; GPUcap8100s, H465400/E082700, no reset.
+All5746confirmation rows/5174groups,12chunks,64-row guard and actual two-T4 use
+verified. Cohort historically inspected; all source/meta fitting frozen before
+this span's votes. Final quota83433.405sused,0reserved,24566.595remaining;
+no current live job/scaling, November7 refresh unchanged. Official0.95481 unchanged.
+
+Executed notebook17 has5code cells,3figures,0errors and closed-v6/current-v7 state.
+31relevant tests pass after advance; scientific/pre-reveal/terminal/closure proofs
+bind actual evidence.22earlier snapshot files, notebook07/12 edits and notebooklink
+are preserved. See [v6 results](SPAN_006_RESULTS.md), [completion](SPAN_006_COMPLETION.md)
+and [handoff](CONTEXT_HANDOFF.md). Stop before v7 execution.
+
+Entries below are dated historical snapshots.
+
 ## V6 execution preparation — 2026-11-05
 
 User authorized next span, focusH46/E08. Fixed clock10:03:27UTC,48hdeadline.

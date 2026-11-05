@@ -1,13 +1,12 @@
 {
-  "observed_at": "2026-11-05T11:24:11.055719+00:00",
-  "log_snapshot_at": "2026-11-05T11:23:02.694396+00:00",
+  "observed_at": "2026-11-05T11:46:40.588528+00:00",
   "kernel_version": "arseniytrushin/llm-preference-span-006-confirmation/1",
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "controller_session": 32845,
   "controller_pid": 4143163,
-  "confirmation_rows_done": 4096,
+  "confirmation_rows_done": 5746,
   "confirmation_total_rows": 5746,
-  "confirmation_votes_revealed": false,
+  "confirmation_votes_revealed": true,
   "checkpoint_records": [
     {
       "phase": "smoke",
@@ -74,6 +73,37 @@
       "end": 4096,
       "seconds": 325.7102013130002,
       "sha256": "cbc2aba52e6a5686ad83e307399fd91945a64e90edcb31a2c1f1a8330b0dab0b"
+    },
+    {
+      "phase": "confirmation",
+      "start": 4096,
+      "end": 4608,
+      "seconds": 335.22015827899986,
+      "sha256": "07dea4acf234b46a6e34817514642a990d0c14a63ee2b149df49bee768e4fe63"
+    },
+    {
+      "phase": "confirmation",
+      "start": 4608,
+      "end": 5120,
+      "seconds": 332.80497792100005,
+      "sha256": "f37302fd34e82f7446bddf3f0dcee0601f5df17f633f214eea9e90a3c27ad0ac"
+    },
+    {
+      "phase": "confirmation",
+      "start": 5120,
+      "end": 5632,
+      "seconds": 332.41406177,
+      "sha256": "97dc948a5960b3b62065fe12afe4c7d37ef68ad0f579819b39e387a715e3f943"
+    },
+    {
+      "phase": "confirmation",
+      "start": 5632,
+      "end": 5746,
+      "seconds": 80.41768837800055,
+      "sha256": "614810495f3f61bcb5e09a273f5d617adf499b072f595cf053f4a5a99d34dad8"
     }
-  ]
+  ],
+  "note": "All chunks verified before vote access; completed controller exited0.",
+  "progress_source": "Verified completed output summary and all12chunks; earlier live snapshots remain in private job logs.",
+  "completed_summary_sha256": "fd17c0285d67431cf0128550871b6abd51b2ce7db35b70b90f1a38b17b4a1b29"
 }

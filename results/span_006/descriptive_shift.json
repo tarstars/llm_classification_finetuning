@@ -1,0 +1,145 @@
+{
+  "cohorts": {
+    "train": {
+      "rows": 45985,
+      "prompt_characters": {
+        "mean": 352.8543873002066,
+        "p50": 92.0,
+        "p90": 754.0,
+        "p99": 4605.639999999985
+      },
+      "answer_characters": {
+        "mean": 1332.6984233989344,
+        "p50": 1037.0,
+        "p90": 2706.0,
+        "p99": 6727.859999999986
+      },
+      "source_input_clipped_fraction": 0.03497879743394585,
+      "label_proportions": [
+        0.3490703490268566,
+        0.3419158421224312,
+        0.30901380885071217
+      ],
+      "source_rare_or_unknown_fraction": 0.0008481026421659236,
+      "source_name_total_variation_from_training": 0.0
+    },
+    "dev": {
+      "rows": 5746,
+      "prompt_characters": {
+        "mean": 354.63452836756005,
+        "p50": 94.0,
+        "p90": 747.0,
+        "p99": 4809.300000000005
+      },
+      "answer_characters": {
+        "mean": 1363.2501740341106,
+        "p50": 1065.0,
+        "p90": 2723.0,
+        "p99": 7079.360000000001
+      },
+      "source_input_clipped_fraction": 0.03915767490428124,
+      "label_proportions": [
+        0.34911242603550297,
+        0.3419770274973895,
+        0.3089105464671075
+      ],
+      "source_rare_or_unknown_fraction": 0.0009571876087713191,
+      "source_name_total_variation_from_training": 0.027255671871391045,
+      "source_accuracy": 0.28324051514096765,
+      "source_log_loss": 2.856180429458618,
+      "source_top_probability": {
+        "mean": 0.273273728785954,
+        "p50": 0.1984202340245247,
+        "p90": 0.5782441854476928,
+        "p99": 0.9202521932125092
+      },
+      "source_entropy": {
+        "mean": 2.9013731989504175,
+        "p50": 3.190467119216919,
+        "p90": 3.6004984378814697,
+        "p99": 3.747515935897827
+      },
+      "inferred_strength_rmse": 0.4870531495005645,
+      "inferred_strength_pearson": 0.5935440603775689
+    },
+    "confirmation": {
+      "rows": 5746,
+      "prompt_characters": {
+        "mean": 368.0812739296902,
+        "p50": 93.0,
+        "p90": 837.5,
+        "p99": 5286.700000000003
+      },
+      "answer_characters": {
+        "mean": 1334.892882004873,
+        "p50": 1051.0,
+        "p90": 2669.699999999999,
+        "p99": 7078.360000000001
+      },
+      "source_input_clipped_fraction": 0.03228332753219631,
+      "label_proportions": [
+        0.34911242603550297,
+        0.3418029933867038,
+        0.30908458057779326
+      ],
+      "source_rare_or_unknown_fraction": 0.0009571876087713191,
+      "source_name_total_variation_from_training": 0.03245787634635169,
+      "source_accuracy": 0.27984684998259657,
+      "source_log_loss": 2.860599994659424,
+      "source_top_probability": {
+        "mean": 0.27383048621742484,
+        "p50": 0.20059502869844437,
+        "p90": 0.5796912312507628,
+        "p99": 0.91211318731308
+      },
+      "source_entropy": {
+        "mean": 2.8968680644992335,
+        "p50": 3.184301733970642,
+        "p90": 3.5928053855895996,
+        "p99": 3.7508173751831055
+      },
+      "inferred_strength_rmse": 0.4774418503945748,
+      "inferred_strength_pearson": 0.5850270512705952
+    }
+  },
+  "confirmation_confidence_bins": [
+    {
+      "source_confidence_low": 0,
+      "source_confidence_high": 0.1,
+      "rows": 187,
+      "gain": 0.00028560593775679764
+    },
+    {
+      "source_confidence_low": 0.1,
+      "source_confidence_high": 0.2,
+      "rows": 2143,
+      "gain": 0.0007629402576006339
+    },
+    {
+      "source_confidence_low": 0.2,
+      "source_confidence_high": 0.35,
+      "rows": 1947,
+      "gain": 0.0003832247469622283
+    },
+    {
+      "source_confidence_low": 0.35,
+      "source_confidence_high": 0.5,
+      "rows": 906,
+      "gain": 0.0016052249687280133
+    },
+    {
+      "source_confidence_low": 0.5,
+      "source_confidence_high": 1.0,
+      "rows": 563,
+      "gain": 0.0020297188283104122
+    }
+  ],
+  "descriptive_only": true,
+  "new_models_or_fits": 0,
+  "gate_unchanged": {
+    "passed": false,
+    "rule": "Fixed strength gain>=0.001 and95%lower>0 versus calibration, positive95%evidence versus style, full valid coverage and conditional runtime<=25200s."
+  },
+  "warning": "Inspected cohorts and descriptive slices. Bin gains are not validated gates or deployment evidence.",
+  "source_sha256": "b24b5de8fbe492b4307d7c94df9c5f7f5c3ab34cdad83902551bb6f1ab184079"
+}

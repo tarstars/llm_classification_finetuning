@@ -1,0 +1,31 @@
+{
+  "files": 24,
+  "artifact_sha256": {
+    "confirmation/chunk_00000.npz": "789f0ad7034166c9bd4ac276a68b82ffc14e392a81725e884148919891c24cc3",
+    "confirmation/chunk_00512.npz": "1e665c5992c079fc7eb31ae7cfbf9b6cae0eb7009d5e4c84e160ebae823000b4",
+    "confirmation/chunk_01024.npz": "93e91ef0b9955b8ec95ad8657cc6982ba55070dec73f270a0d26aeb3f23370f1",
+    "confirmation/chunk_01536.npz": "05ce6ef336af3780afb2775d111d170b490c09cd3e4469a11b5c6c56bd50e47c",
+    "confirmation/chunk_02048.npz": "106b5f41689a2ac5e18715eb16c342ff20071994ea6eccd8bf4c85d4ba37757e",
+    "confirmation/chunk_02560.npz": "b8c2cc53d3474bc57e07e7e5b6c87c1c288b0e6ab1168642796380e6ee4e3f79",
+    "confirmation/chunk_03072.npz": "566e65e3c646ca36a9b3d79e54a199cc336e19f2f70a7d1a24934871b27f0564",
+    "confirmation/chunk_03584.npz": "cbc2aba52e6a5686ad83e307399fd91945a64e90edcb31a2c1f1a8330b0dab0b",
+    "confirmation/chunk_04096.npz": "07dea4acf234b46a6e34817514642a990d0c14a63ee2b149df49bee768e4fe63",
+    "confirmation/chunk_04608.npz": "f37302fd34e82f7446bddf3f0dcee0601f5df17f633f214eea9e90a3c27ad0ac",
+    "confirmation/chunk_05120.npz": "97dc948a5960b3b62065fe12afe4c7d37ef68ad0f579819b39e387a715e3f943",
+    "confirmation/chunk_05632.npz": "614810495f3f61bcb5e09a273f5d617adf499b072f595cf053f4a5a99d34dad8",
+    "confirmation/confirmation_predictions.npz": "30ff5c2ebd4d0cd52c9f4ccbbcccc9021537f3ab6e2ca2581545b986fd991405",
+    "confirmation/confirmation_summary.json": "fd17c0285d67431cf0128550871b6abd51b2ce7db35b70b90f1a38b17b4a1b29",
+    "confirmation/gpu_rank0.json": "1c37e5793600a5f9e23a55af56f30f20461053cd646e2c93856fcdac467d2d4b",
+    "confirmation/gpu_rank1.json": "5b9ac98656dd82734da38aeed8e786322be21fbe931a629fb45af54ede4be091",
+    "confirmation/progress.json": "61358ea709660ed2a2e70fe216c4c313850009878bb04a98f8c1b87555d6273e",
+    "confirmation/smoke_predictions.npz": "ee4dd7861a82b4e49377ba69fddce14c824e712644ac5dbcdfee1bd9d53670a3",
+    "confirmation/smoke_summary.json": "f3e07a2819f64435c79355452a926017dad535af4daf8d38c97b1fc72a9229ba",
+    "manifest.json": "05369cf230e84f9b485982561fc47583392896f9113eafd95aef5979aead4a9d",
+    "reference.npz": "273a194e5d37e8a00007e1cb7fa7031da1927fbb640a7754f8515d4ade30f374",
+    "selection.json": "e817c6b49150f184a64667dd9ad9c0e4333c46238ffa7c20dc9dc231fc7b34f6",
+    "session_summary.json": "7a2c33a6121013f8091dbfcb9225759014c99ddb2d44c71963c71336b31ff1ad",
+    "worker_console.log": "58cb8a7cb29c235ef6d8b3739a2e7eb57b484d88b1621443c67400dfede5355c"
+  },
+  "new_gpu_executions": 0,
+  "signed_urls_persisted": false
+}

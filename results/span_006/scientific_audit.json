@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-05T11:43:11.500714+00:00",
+  "rows": 5746,
+  "groups": 5174,
+  "chunks_verified": 12,
+  "token_packing_recomputed": true,
+  "head_predictions_reconstructed": 22984,
+  "contrasts_recomputed": 4,
+  "frozen_before_vote_access": true,
+  "source_union_purge_verified": true,
+  "old_snapshot_files_preserved": 22,
+  "serialized_source_replay_answers": 22984,
+  "hardware": [
+    {
+      "rank": 0,
+      "local_rank": -1,
+      "device": 0,
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "peak_allocated_bytes": 5305029632,
+      "peak_reserved_bytes": 5603590144
+    },
+    {
+      "rank": 1,
+      "local_rank": -1,
+      "device": 1,
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "peak_allocated_bytes": 4234590208,
+      "peak_reserved_bytes": 4485808128
+    }
+  ],
+  "gate": {
+    "passed": false,
+    "rule": "Fixed strength gain>=0.001 and95%lower>0 versus calibration, positive95%evidence versus style, full valid coverage and conditional runtime<=25200s."
+  },
+  "charged_gpu_seconds": 3932.150999999998,
+  "audit_seconds": 39.648377923993394,
+  "H46_results_sha256": "c8c94f61b8a7f15a7735d6249d15748dd4203f716c0dd59176e741b5129b58d6",
+  "frozen_recipe_sha256": "731da70e65b46e2175c16410f34bba5b03af04ddb2e5b7bc4c0ca03a04894642",
+  "source_sha256": "7aa439c91388bdb86a066a73f0eb42d9159a32dafd61b8294c3c2b816ef974a2"
+}

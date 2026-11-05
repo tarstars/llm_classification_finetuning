@@ -28,7 +28,7 @@ def main():
     assert not (root / 'jobs/offline_profile/push_intent.json').exists(), 'Launched source remains immutable'
     assets = read(pub / 'offline_assets.json')
     uploaded = read(pub / 'offline_asset_upload.json')
-    assert uploaded['ready'] and uploaded['dataset'] == assets['dataset']
+    assert uploaded['ready'] and uploaded['private_verified'] and uploaded['dataset'] == assets['dataset']
     assert uploaded['zip_sha256'] == assets['zip_sha256']
     cfg = read(REPO / 'configs/span_006.json')
     contract = read(REPO / 'configs/span_006_offline_profile.json')

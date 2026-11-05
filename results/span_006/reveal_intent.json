@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-05T11:41:42.895494+00:00",
+  "frozen_recipe_sha256": "731da70e65b46e2175c16410f34bba5b03af04ddb2e5b7bc4c0ca03a04894642",
+  "raw_prediction_sha256": "30ff5c2ebd4d0cd52c9f4ccbbcccc9021537f3ab6e2ca2581545b986fd991405",
+  "evaluation_source_sha256": "bb6977407da0a4a0a05339bdf4bdbad05e9c4c1b3e510f8ddd37d712d6804a4b",
+  "all_predictions_computed_before_votes": true,
+  "model_fit_operations": 0
+}

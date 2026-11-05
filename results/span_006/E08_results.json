@@ -1,0 +1,12 @@
+{
+  "task": "E08",
+  "at": "2026-11-05T11:43:48.098703+00:00",
+  "new_official_submissions": 0,
+  "H46_gate_passed": false,
+  "source_sha256": "795a664d0e0170e57106df1f0a6731b20dc95c6c0c6bde4860d8aff7e124430e",
+  "status": "deferred",
+  "executed": false,
+  "passed": false,
+  "charged_gpu_seconds": 0,
+  "reason": "H46 did not pass its prespecified quality gate; the conditional offline qualification was not executed."
+}

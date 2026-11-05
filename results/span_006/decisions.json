@@ -1,0 +1,58 @@
+{
+  "span": 6,
+  "focus": [
+    "H46",
+    "E08"
+  ],
+  "H46": {
+    "status": "done",
+    "quality_gate_passed": false,
+    "primary_loss": 0.9457526229111632,
+    "primary_gain": {
+      "gain": 0.0008756688803934023,
+      "interval_95": [
+        -0.0003898768565268832,
+        0.002173203435911227
+      ],
+      "groups": 5174,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "gain_vs_style": {
+      "gain": 6.27523133456308e-05,
+      "interval_95": [
+        -0.001584026390711396,
+        0.0016041419268757787
+      ],
+      "groups": 5174,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "post_hoc_promotion": false
+  },
+  "E08": {
+    "status": "deferred",
+    "executed": false,
+    "charged_gpu_seconds": 0,
+    "reason": "H46 did not pass its prespecified quality gate; the conditional offline qualification was not executed."
+  },
+  "best_official_log_loss": 0.95481,
+  "new_submissions": 0,
+  "charged_gpu_seconds": 3932.150999999998,
+  "gpu_cap_seconds": 8100,
+  "cpu_freeze_seconds": 554.2020769400988,
+  "cpu_evaluate_seconds": 4.048076999839395,
+  "confirmation_historically_inspected": true,
+  "scientific_audit_passed": true,
+  "parameters_frozen_before_vote_access": true,
+  "input_sha256": {
+    "H46_results.json": "c8c94f61b8a7f15a7735d6249d15748dd4203f716c0dd59176e741b5129b58d6",
+    "E08_results.json": "6b5d8418fbcae0f09c8732c0480fbc34d64d51b3b39a388dc1a82239ae620683",
+    "descriptive_shift.json": "0308b9e9bccf944d1944639de220ce209bc92c30609927060a87db65e49a6d5f",
+    "pre_reveal_audit.json": "500accc360e3e4e43dcffff569cf7754ce94b11f617e71b13e9a13277c5f5f98",
+    "reveal_intent.json": "a60f324ed44a2f6c4ce584eaf8a7c0f9671bdb812e00530ed1be480e5068e75b",
+    "scientific_audit.json": "aa286c05e6c8889db07bc1c41012957a31537b29e4f66d4bfb0748f5525ee722",
+    "terminal_audit.json": "7fc04dcae990aa7f795a1fac19337153dbab70ebf09f76bda2195ad24cce682b"
+  },
+  "next_step": "Queue a development-only direct-strength regression test from the weak source-to-strength reconstruction; retain original official candidate and stop before v7 execution."
+}

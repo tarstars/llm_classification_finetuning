@@ -3416,7 +3416,7 @@
       ],
       "id": "H46",
       "rank": 54,
-      "status": "running",
+      "status": "done",
       "introduced_in": 6,
       "discovered_during": 5,
       "derived_from": [
@@ -3438,11 +3438,19 @@
           "evidence": [
             "docs/SPAN_006_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-05T11:46:40+00:00",
+          "status": "done",
+          "note": "Frozen 5746-row transfer completed: strength loss0.945753 versus calibration0.946628, gain0.000876 CI[-0.000390,0.002173]; style gain0.000063 CI crosseszero. Prespecified quality gate failed. Full identity, coverage and scientific audit pass; no promotion. Charge3932.151session-seconds.",
+          "evidence": [
+            "docs/SPAN_006_H46.md"
+          ]
         }
       ]
     },
     {
-      "priority": "P2",
+      "priority": "P3",
       "estimate_confidence": "low",
       "risk": "high",
       "evidence": [
@@ -3450,7 +3458,7 @@
         "docs/SPAN_005_RESULTS.md",
         "results/span_005/H45_results.json"
       ],
-      "revision": "New v6 proposal from the completed v5 experiment. No execution or promotion during v5; primary nested selector failed. Keep forecasts separate from the positive post-inspection fixed-family observation.",
+      "revision": "New v6 proposal from the completed v5 experiment. No execution or promotion during v5; primary nested selector failed. Keep forecasts separate from the positive post-inspection fixed-family observation. V6 H46 gain0.000876 has an interval crossingzero and does not survive style. E08 is deferred without execution; future qualification needs a separately specified genuinely positive quality follow-up and an explicit contract revision, not the historical done status.",
       "kind": "prerequisite",
       "title": "Qualify classifier plus inferred-strength correction for offline inference",
       "gain": null,
@@ -3484,7 +3492,7 @@
       ],
       "id": "E08",
       "rank": 55,
-      "status": "planned",
+      "status": "deferred",
       "introduced_in": 6,
       "discovered_during": 5,
       "derived_from": [
@@ -3498,6 +3506,78 @@
           "evidence": [
             "docs/SPAN_005_H45.md"
           ]
+        },
+        {
+          "at": "2026-11-05T11:46:40+00:00",
+          "status": "deferred",
+          "note": "Not executed: actual H46 quality gate failed. No real source export, private asset upload, joint profile or CSV. Prepared generic programs are not qualification. Zero E08GPUcharge; preserve original official model.",
+          "evidence": [
+            "docs/SPAN_006_E08.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Predict source strength directly rather than reconstructing source identity",
+      "priority": "P3",
+      "gain": [
+        -0.003,
+        0.003
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        3,
+        7
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        1.5
+      ],
+      "cpu_wall_hours": [
+        0.5,
+        3
+      ],
+      "risk": "high",
+      "claim": "A direct continuous strength target may retain more useful quality information than a64-class identity loss at the same sparse text capacity.",
+      "basis": "V6 source accuracy27.98%, loss2.860600 and inferred/known strength correlation0.585 accompany only0.000876 gain[-0.000390,0.002173] over calibration; style nearly matches it. V5 true-name strength has0.013246 diagnostic gain. The gap motivates testing the target representation, not claiming a gain.",
+      "first_test": "Predeclare one development-only CPU comparison with unchanged source text cap/word-char features and original splits. Replace multinomial identity training with ridge regression to train-only opponent-adjusted source ratings; use exactly three ridge penalties chosen inside prompt-grouped training folds, duplicate-purge held answers, and estimate ratings using only each fitting fold's preference votes. Compare direct predicted ratings to the fixed identity-posterior expected rating on matched source OOF rows. For preference evaluation freeze source recipes on original training, purge development/confirmation input duplicates, and use identical three residual features for both methods: rating difference, absolute difference and mean. All meta scaling/calibration/regularization selection stays inside grouped nested development folds. Retain calibration, style and the old full compact family as controls; no family selector or confirmation evaluation. Freeze all exact grids, seeds, fold IDs and code before fitting.",
+      "acceptance": "Direct rating reconstruction improves matched training-OOF rating error, and the sole candidate gives at least0.001 lower nested development log loss with positive paired prompt-group evidence versus calibration, survives style, and improves the matched three-feature identity control. Report class/tie behavior, full old-compact control, swap safety, compute and all outcomes. Development is inspected: positive evidence only proposes a separate frozen transfer/qualification, never immediate deployment.",
+      "stop": "Stop if controls explain the gain, intervals includezero, or the predeclared CPU/RSS cap is reached. Do not expand grids, choose features after outer scores, refit on confirmation, upload assets or submit. Any follow-up GPU allowance requires a separate goal and fresh admission.",
+      "risk_reason": "The existing classifier may already absorb model-style signal. Continuous ratings are noisy and target-derived; global rating estimation or in-sample source predictions can leak preference outcomes. The post-H46 choice itself adds selection bias.",
+      "mitigation": "Fold-local rating estimation and text transforms, prompt grouping, duplicate purging, training-only source selection, nested development residuals, fixed equal features/controls and explicit inspected-data status. Keep confirmation closed for this experiment.",
+      "rationale": "Tests one target-representation change with zero pilot GPU cost instead of pursuing a finer source-class score as an end in itself. Stronger model/context and judge-stability tasks retain higher priority.",
+      "revision": "New v7 proposal from the completed v6 transfer and descriptive source-strength reconstruction. Forecast is subjective and can regress; no new fit or result is claimed.",
+      "depends_on": [
+        "E00",
+        "E06",
+        "E07",
+        "H46"
+      ],
+      "evidence": [
+        "docs/SPAN_006_H46.md",
+        "results/span_006/descriptive_shift.json"
+      ],
+      "id": "H47",
+      "rank": 56,
+      "status": "planned",
+      "introduced_in": 7,
+      "discovered_during": 6,
+      "derived_from": [
+        "H46"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T11:48:01+00:00",
+          "status": "planned",
+          "note": "Actual frozen transfer failed; source strength reconstruction correlates0.585 with known ratings despite adequate source coverage. Queue a single direct-strength target comparison, with fold-local rating estimation and no confirmation tuning; no v7 execution.",
+          "evidence": [
+            "docs/SPAN_006_H46.md"
+          ]
         }
       ]
     }
@@ -3510,7 +3590,8 @@
     "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.",
     "Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots.",
     "V3 verified H03 step1438 at official loss0.95481. V4 completed E04:512 fresh native requests on64rows show substantial drift for identical token inputs with either cache setting. H44 was not fitted and is deferred; E05 request-concurrency diagnosis is queued for v5. Old cached blend gains remain exploratory, conditional on their recorded predictions, not verified deployment gains. Best official score is unchanged. A new span needs a selected focus and fresh resources.",
-    "V5 completed the source-model experiment on the unchanged5746development rows: known-name strength lowers calibrated LoRA loss0.953701 to0.940456, but the practical nested source selector0.953834 does not improve its comparator. Compact inferred strength alone gives0.001305 conditional gain, selected after inspection and requiring frozen replication. Source TF-IDF accuracy27.08% is a different task metric. ZeroGPU/new submissions; official best remains0.95481. H46 replication and conditional E08 offline qualification are queued for v6, without execution."
+    "V5 completed the source-model experiment on the unchanged5746development rows: known-name strength lowers calibrated LoRA loss0.953701 to0.940456, but the practical nested source selector0.953834 does not improve its comparator. Compact inferred strength alone gives0.001305 conditional gain, selected after inspection and requiring frozen replication. Source TF-IDF accuracy27.08% is a different task metric. ZeroGPU/new submissions; official best remains0.95481. At v5 closure H46 replication and conditional E08 qualification were queued for v6; the v6 outcome follows.",
+    "V6 completed frozen compact-strength transfer on5746 historically inspected confirmation rows: calibrated LoRA0.946628, strength0.945753, gain0.000876 CI[-0.000390,0.002173]. Style0.945815 nearly matches strength; the practical minimum and both paired-evidence gates fail. H46 is done without promotion and E08 is deferred, unexecuted; done status is not positive evidence. Source attribution27.98% and strength correlation0.585 leave a direct-strength regression hypothesis for v7. One verified offline2T4 job cost3932.151session-seconds; no new submission, best official0.95481 unchanged. V7 needs a separately selected focus and fresh resource admission."
   ],
   "revisions": [
     "**H07/H06:** the final causal classification token already sees both retained answers. Bidirectional masking is an architectural experiment, not a fix for missing access to answer B; H07 moves to P4.",
@@ -3546,9 +3627,10 @@
     "[V3 results](docs/SPAN_003_RESULTS.md), [official verification](results/span_003/deployed_candidate.json) and [completion/archival framing erratum](docs/SPAN_003_COMPLETION.md) supersede the earlier global best-score framing. These v3 references predate v4; the completed v4 diagnostic is linked below.",
     "[V4 results](docs/SPAN_004_RESULTS.md), [native repeatability evidence](docs/SPAN_004_E04.md) and [H44 deferral](docs/SPAN_004_H44.md) record the completed diagnostic and conditional next-stage stop.",
     "[V5 source-model experiment plan](docs/SPAN_005_SOURCE_MODEL_PLAN.md) records the explicit user-requested pre-execution additions, diagnostic evidence, conditional stages, bounded effort and evaluation controls; no new measurement is claimed.",
-    "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision."
+    "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
+    "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 6,
+  "active_version": 7,
   "versions": [
     {
       "number": 1,
@@ -3940,7 +4022,7 @@
     },
     {
       "number": 6,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -3997,10 +4079,67 @@
       "carried_from": 5,
       "start_sha256": "9e8da506f8d31cd2031a330160a015cad1176b4bfd11a8598da0f2afcdbb9b89",
       "start_markdown_sha256": "522d26bab54b7d4eff3b3423538a285e507b7414d2166fb1c4550ad6c44a1c8f",
-      "start_sealed_at": "2026-11-05T08:16:24+00:00"
+      "start_sealed_at": "2026-11-05T08:16:24+00:00",
+      "final_sha256": "8380e0a31b8c58bba2717fc14a7a80d2fc99840d8b4b77a756727fa5518e7924",
+      "final_markdown_sha256": "a2dc575b309c94022837ea5802579973a7440c291e5965b641ce49f00c49871b",
+      "final_sealed_at": "2026-11-05T11:49:20+00:00",
+      "closed_at": "2026-11-05T11:49:20+00:00",
+      "closing_note": "V6 frozen H46 transfer completed with a failed quality gate: gain0.000876 CI crosseszero and style nearly matches it. E08 remains unexecuted/deferred. One verified GPUjob cost3932.151s; official0.95481 unchanged. Preserve36unfinished carryovers and add H47 direct-strength proposal; stop before v7 work.",
+      "closing_evidence": [
+        "docs/SPAN_006_RESULTS.md"
+      ]
     },
     {
       "number": 7,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H36",
+        "H38",
+        "H41",
+        "H44",
+        "E05",
+        "E08",
+        "H47"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 6,
+      "start_sha256": "71942464e78a3c9019e0c8a4b80b9ab9213725aafa5564a8b8046d260ea189a1",
+      "start_markdown_sha256": "9e7ec4e890af813166c82ac575f7dd9c29baf15f6d21f79d77ed24277004d323",
+      "start_sealed_at": "2026-11-05T11:49:20+00:00"
+    },
+    {
+      "number": 8,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

@@ -94,11 +94,16 @@ def main():
         head = np.load(args.assets / 'strength_head.npz')
         source_setup = time.monotonic() - begin
         cpu_seconds = []
+        source_order_max_error = 0.
         results = []
         for frame, pair in zip([smoke, visible], views):
             begin = time.monotonic()
             qa = source.predict(frame.response_a)
             qb = source.predict(frame.response_b)
+            replay = source.predict(list(frame.response_b)[::-1] + list(frame.response_a)[::-1])
+            delta_order = np.abs(replay - np.vstack([qb[::-1], qa[::-1]]))
+            source_order_max_error = max(source_order_max_error, float(delta_order.max()))
+            assert delta_order.mean() <= contract['source_mean_tolerance'] and delta_order.max() <= contract['source_max_tolerance']
             average = (pair[0] + pair[1]) / 2
             logits = np.log(np.clip(average, 1e-12, 1)) / manifest['temperature']
             p = np.exp(logits - np.logaddexp.reduce(logits, axis=1, keepdims=True))
@@ -109,11 +114,12 @@ def main():
             assert np.isfinite(joint).all() and (joint >= 0).all()
             np.testing.assert_allclose(joint.sum(1), 1, atol=1e-6)
             cpu_seconds.append(time.monotonic() - begin)
-            results.append((qa, qb, average, joint))
-        qa, qb, average, joint = results[0]
+            results.append((qa, qb, average, joint, p))
+        qa, qb, average, joint, calibrated = results[0]
         checks = {}
         for name, actual, expected in [('raw', average, (reference['original'] + reference['aligned_swap']) / 2),
                                        ('source', np.vstack([qa, qb]), np.vstack([reference['qa'], reference['qb']])),
+                                       ('calibrated', calibrated, reference['calibrated']),
                                        ('joint', joint, reference['joint'])]:
             delta = np.abs(actual - expected)
             checks[name] = {'mean': float(delta.mean()), 'maximum': float(delta.max()),
@@ -128,10 +134,11 @@ def main():
                    'smoke_original_tokens_sha256': token_digest(packed[0][0]),
                    'smoke_swapped_tokens_sha256': token_digest(packed[0][1]),
                    'confirmation_votes_read': False, 'model_fit_operations': 0,
+                   'source_order_max_error': source_order_max_error,
                    'asset_manifest_sha256': sha(args.assets / 'asset_manifest.json'),
                    'contract_sha256': sha(args.contract), 'adapter_sha256': manifest['adapter_sha256']}
         np.savez(args.out / 'smoke_predictions.npz', ids=smoke.id.to_numpy(), original=views[0][0],
-                 aligned_swap=views[0][1], qa=qa, qb=qb, joint=joint)
+                 aligned_swap=views[0][1], qa=qa, qb=qb, calibrated=calibrated, joint=joint)
         submission = pd.DataFrame(results[1][3], columns=CLASSES)
         submission.insert(0, 'id', visible.id.to_numpy())
         assert submission.id.is_unique and submission.id.tolist() == visible.id.tolist()

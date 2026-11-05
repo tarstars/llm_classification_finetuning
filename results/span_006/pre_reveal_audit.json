@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-05T11:41:17.705471+00:00",
+  "source_files_verified": 20,
+  "rows": 5746,
+  "chunks": 12,
+  "remote_source_matches": true,
+  "internet_disabled": true,
+  "actual_two_t4_inference": true,
+  "confirmation_votes_read": false,
+  "frozen_recipe_sha256": "731da70e65b46e2175c16410f34bba5b03af04ddb2e5b7bc4c0ca03a04894642",
+  "prediction_sha256": "30ff5c2ebd4d0cd52c9f4ccbbcccc9021537f3ab6e2ca2581545b986fd991405",
+  "charged_gpu_seconds": 3932.150999999998,
+  "source_sha256": "644b93c27ee055f3e3174d1a15301997eb0b15c6e7d6a283ad04212d13068199"
+}

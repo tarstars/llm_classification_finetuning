@@ -1,8 +1,10 @@
 {
-  "stage": "observed",
-  "at": "2026-11-05T10:34:57.861669+00:00",
+  "stage": "complete",
+  "at": "2026-11-05T11:40:50.715398+00:00",
   "pid": 4143163,
   "role": "confirmation",
-  "status": "QUEUED",
-  "kernel_version": "arseniytrushin/llm-preference-span-006-confirmation/1"
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span-006-confirmation/1",
+  "charged_seconds": 3932.150999999998,
+  "files": 24
 }

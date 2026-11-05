@@ -83,7 +83,7 @@ def main():
         head = np.load(assets / 'strength_head.npz')
         joint = residual_predict(p, *compact_features(qa, qb, ratings), head)
         np.savez(root / 'reference.npz', ids=reference['ids'], original=reference['original'],
-                 aligned_swap=reference['aligned_swap'], qa=qa, qb=qb, joint=joint)
+                 aligned_swap=reference['aligned_swap'], qa=qa, qb=qb, calibrated=p, joint=joint)
         folder.mkdir(exist_ok=True)
         with zipfile.ZipFile(folder / 'assets.zip', 'w', compression=zipfile.ZIP_DEFLATED) as archive:
             for name in names + ['asset_manifest.json']:
@@ -121,8 +121,16 @@ def main():
     assert (root / 'asset_upload_intent.json').exists()
     status = json.loads(read_call(lambda: api.dataset_status(ref, format='json')))
     assert status['current_version_number'] == 1
+    from kagglesdk.datasets.types.dataset_api_service import ApiGetDatasetRequest
+    def lookup():
+        request = ApiGetDatasetRequest()
+        request.owner_slug, request.dataset_slug = ref.split('/')
+        with api.build_kaggle_client() as client:
+            return client.datasets.dataset_api_client.get_dataset(request)
+    dataset = read_call(lookup)
+    assert dataset.is_private and dataset.current_version_number == 1
     result = {'dataset': ref + '/1', 'status': status['status'], 'ready': status['status'] == 'ready',
-              'private_requested': True, 'zip_sha256': assets['zip_sha256'],
+              'private_requested': True, 'private_verified': True, 'zip_sha256': assets['zip_sha256'],
               'observed_at': datetime.now(timezone.utc).isoformat()}
     for dest in [root, pub]:
         json_write(dest / 'offline_asset_upload.json', result)
