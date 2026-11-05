@@ -3256,7 +3256,7 @@
       ],
       "id": "E07",
       "rank": 52,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 5,
       "discovered_during": null,
       "derived_from": [
@@ -3269,6 +3269,14 @@
           "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
           "evidence": [
             "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T07:36:20+00:00",
+          "status": "running",
+          "note": "E06 information gate passed. Starting frozen training-group source attribution: TF-IDF and cached-embedding controls, duplicate-purged fits, source-label-only selection, zero GPU. Protocol/source contract ef9aa1c; CPU cap4h, RSS6GiB.",
+          "evidence": [
+            "docs/SPAN_005_E06.md"
           ]
         }
       ]

@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-11-05T07:45:33.015759+00:00",
+  "task": "E07",
+  "status": "running",
+  "worker_pid": 3848531,
+  "controller_session": 74958,
+  "completed_fold_records": [
+    {
+      "family": "tfidf",
+      "fit_seconds": 348.7316181950737,
+      "score_seconds": 35.736393210012466,
+      "fit_answers": 60560,
+      "evaluation_answers": 30564,
+      "iterations": [
+        19
+      ],
+      "warnings": [],
+      "features": 36000,
+      "rss_gib": 2.715869903564453,
+      "fold": 0,
+      "purged_fit_answers": 846
+    }
+  ],
+  "gpu_seconds": 0,
+  "source_selection_uses_training_labels_only": true,
+  "not_final_quality_estimate": true
+}

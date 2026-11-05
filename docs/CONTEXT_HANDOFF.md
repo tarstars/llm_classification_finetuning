@@ -16,9 +16,21 @@ empty v7, publish, then stop before v6 execution.
 Protocol/config/source and prepared artifact/input/fold hashes are under
 `docs/SPAN_005_PROTOCOL.md`, `configs/span_005.json`, `results/span_005`.
 Preparation verified45,985train/5,746dev rows,5,211dev prompt groups,64sources and
-full existing-embedding text-order digest. `run_span_005_e06.py` is prepared;
-no measured v5 result yet at this preparation milestone. Read live CLI status and
-actual run files before acting; never duplicate an already started worker.
+full existing-embedding text-order digest. E06 is DONE: nested oracle-strength loss0.940456 versus calibrated LoRA0.953701,
+gain0.013246 CI[0.008968,0.017515]; information gate passes. The first E06 worker
+failed before fitting on object-typed group strings; recovery7c0943d recomputes
+canonical hashes without pickle, preserves inputs and a60sreserve inside5400s.
+Successful E06 used19.528s. See E06 report/results and recovery proof.
+
+E07 is RUNNING under frozen contract ef9aa1c: exact PID3848531, controller74958,
+log `/tmp/arena_span005_e07.log`. First TF-IDF fold converged19iterations in
+348.73sfit+35.74sscore, peak2.72GiB, source accuracy27.30% versus6.64%frequency,
+source loss2.92403 versus3.81875 on30,564held-out answers. These are partial
+training-source results, not preference gain. Original4hcap and6GiBguard remain.
+Do not duplicate this live worker. Its started.json/private outputs are under
+runs/span_005/E07. H45 worker/audit/notebook builder are prepared but H45 requires
+actual E07 completion plus a passing gate and a committed contract before fitting.
+Read live CLI status and actual run files before acting; never duplicate a worker.
 Heavy path: `~/database/llm_classification_finetuning/runs/span_005`.
 
 Fresh initial owned-job/quota inventory: no current nonterminal job, zero
