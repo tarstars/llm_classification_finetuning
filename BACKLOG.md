@@ -71,7 +71,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
 | 50 | [E05](#e05) | P2 / planned | Test native judge sensitivity to request concurrency | — | high | 1…4 | 0.5…1.5 | 0.5…2 | E00, E04 |
-| 52 | [E07](#e07) | P2 / running | Predict source-model probabilities from response text | — | high | 3…7 | 0…0 | 0…0.5 | E00, E06 |
+| 52 | [E07](#e07) | P2 / done | Predict source-model probabilities from response text | — | high | 3…7 | 0…0 | 0…0.5 | E00, E06 |
 | 53 | [H45](#h45) | P2 / planned | Add inferred source-model features to LoRA preference predictions | -0.005…+0.01 | high | 3…6 | 0…0 | 0…0 | E00, E06, E07 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 19 | [H36](#h36) | P3 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
@@ -481,7 +481,7 @@ A controlled client-concurrency ablation can test whether concurrent execution c
 
 ### E07
 
-**Predict source-model probabilities from response text** — P2, running, risk high.
+**Predict source-model probabilities from response text** — P2, done, risk high.
 
 A compact text model may recover a useful soft source distribution without requiring model names at prediction time.
 
@@ -509,6 +509,7 @@ A compact text model may recover a useful soft source distribution without requi
 
 - 2026-11-05T06:27:43+00:00 — planned: User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched. Evidence: [docs/SPAN_005_SOURCE_MODEL_PLAN.md](docs/SPAN_005_SOURCE_MODEL_PLAN.md)
 - 2026-11-05T07:36:20+00:00 — running: E06 information gate passed. Starting frozen training-group source attribution: TF-IDF and cached-embedding controls, duplicate-purged fits, source-label-only selection, zero GPU. Protocol/source contract ef9aa1c; CPU cap4h, RSS6GiB. Evidence: [docs/SPAN_005_E06.md](docs/SPAN_005_E06.md)
+- 2026-11-05T08:06:09+00:00 — done: Completed all three duplicate-purged source folds and final fits. TF-IDF source loss2.938585 vs prior3.822561, accuracy27.08%; cached embeddings3.704803/9.95%. All fits converged. Portable stage14.009s/11492answers, CPU1703.979s, peak3.701GiB, zeroGPU; actual gate passes. Evidence: [docs/SPAN_005_E07.md](docs/SPAN_005_E07.md)
 
 ### H45
 
@@ -532,7 +533,7 @@ Inferred source distributions and opponent-adjusted strength may add residual pr
 
 **Revision:** User-requested planning addition on 2026-11-05 to unstarted v5. Preserve its original start snapshot; no focus, goal activation or experiment execution. See the linked bounded plan.
 
-**Depends on:** E00, E06, E07. Currently unmet: E07.
+**Depends on:** E00, E06, E07. Currently unmet: none.
 
 **Origin:** introduced in v5; discovered during initial planning; derived from E00.
 

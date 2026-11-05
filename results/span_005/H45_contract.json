@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-05T08:06:10.046095+00:00",
+  "task": "H45",
+  "runner_sha256": "668a5eed8fe69c429609a532a04f034e6b8c872f8d0389abe5b690630eeb7167",
+  "config_sha256": "69abe796fa8717295e632de3ac01c84ae53ec76ace7222530e0c10c47a5aaf67",
+  "E06_result_sha256": "f092c2fd148b24f3aea685b58cae0f75dc5da445e2704795f691a9c20bb63c93",
+  "E07_result_sha256": "c50dacb45e6c53deb539b2562a9726994c3b4e18c771fbe1abd27b1539dfe8b8",
+  "strength_sha256": "cabfec0ca629b616e03518f3776d095be586ed484ca5430525d3234b0169c889",
+  "source_prediction_sha256": "8558242ef303688537a38e20dce522b4f9f323ba4d157756aa38e18279471467",
+  "evaluation_source_sha256": "874ecfcbdf1d0dc22aebe786962be65a26f12cd5c90c4c14852ec9d232998881",
+  "portable_source_family": "tfidf",
+  "cpu_seconds_cap": 7200,
+  "gpu_seconds_cap": 0,
+  "extra_cold_setup_seconds": 395.90864416327304,
+  "setup_adjusted_projected_seconds": 19245.252848054915,
+  "adoption_rule": "gain>=0.001 and paired95%lower bound>0 versus calibration; positive gain and paired95%lower bound>0 versus style. Preserve all outcomes; no submission."
+}

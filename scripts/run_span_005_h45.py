@@ -27,6 +27,7 @@ def main():
     assert digest(out/'E06/strength.npz')==contract['strength_sha256']
     assert digest(out/'E07/tfidf_predictions.npz')==contract['source_prediction_sha256']
     assert digest(REPO/'src/arena/source_evaluation.py')==contract['evaluation_source_sha256']
+    assert contract['setup_adjusted_projected_seconds']<=25200,'Include conservative cold setup in runtime admission'
     json_write(directory/'started.json',{'at':datetime.now(timezone.utc).isoformat(),'pid':os.getpid(),'source_sha256':digest(Path(__file__))})
     def expired(signum,frame):raise TimeoutError('Original H45 CPU elapsed cap reached')
     signal.signal(signal.SIGALRM,expired);signal.alarm(cfg['cpu_stage_seconds_caps']['H45'])

@@ -3256,7 +3256,7 @@
       ],
       "id": "E07",
       "rank": 52,
-      "status": "running",
+      "status": "done",
       "introduced_in": 5,
       "discovered_during": null,
       "derived_from": [
@@ -3277,6 +3277,14 @@
           "note": "E06 information gate passed. Starting frozen training-group source attribution: TF-IDF and cached-embedding controls, duplicate-purged fits, source-label-only selection, zero GPU. Protocol/source contract ef9aa1c; CPU cap4h, RSS6GiB.",
           "evidence": [
             "docs/SPAN_005_E06.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T08:06:09+00:00",
+          "status": "done",
+          "note": "Completed all three duplicate-purged source folds and final fits. TF-IDF source loss2.938585 vs prior3.822561, accuracy27.08%; cached embeddings3.704803/9.95%. All fits converged. Portable stage14.009s/11492answers, CPU1703.979s, peak3.701GiB, zeroGPU; actual gate passes.",
+          "evidence": [
+            "docs/SPAN_005_E07.md"
           ]
         }
       ]
