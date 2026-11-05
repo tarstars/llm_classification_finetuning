@@ -3181,7 +3181,7 @@
       ],
       "id": "E06",
       "rank": 51,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 5,
       "discovered_during": null,
       "derived_from": [
@@ -3194,6 +3194,22 @@
           "note": "User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched.",
           "evidence": [
             "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T07:28:34+00:00",
+          "status": "running",
+          "note": "Starting the preregistered CPU-only E06 strength and nested true-identity residual diagnostic after protocol/input/source commit4602f61. Original clock and zero GPU budget preserved.",
+          "evidence": [
+            "docs/SPAN_005_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T07:32:09+00:00",
+          "status": "done",
+          "note": "Completed64-source strength fit and five-outer/three-inner grouped oracle residual evaluation on5746dev rows. Nested strength reduces loss0.953701→0.940456, gain0.013246 CI[0.008968,0.017515]; full identities weaker. Gate passes; original encoding failure/recovery preserved, accountedCPU<=79.528s, zeroGPU.",
+          "evidence": [
+            "docs/SPAN_005_E06.md"
           ]
         }
       ]

@@ -5,6 +5,8 @@ from scipy.optimize import approx_fprime
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
 from arena.source_models import Strength,ResidualHead,source_features,answer_hash,purge_answers
 from arena.source_evaluation import fit_selected
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
+from run_span_005_e07 import fit_head
 
 
 class SourceContracts(unittest.TestCase):
@@ -37,6 +39,19 @@ class SourceContracts(unittest.TestCase):
         changed=y.copy();changed[val]=(changed[val]+1)%3
         second,other,_=fit_selected(p,changed,groups,features,fit,val,cfg,['empty'])
         np.testing.assert_array_equal(first,second);self.assertEqual(detail,other)
+
+    def test_attribution_fit_ignores_heldout_labels_and_vocabulary(self):
+        text=np.array(['alpha beta '+('apple' if i%2 else 'pear') for i in range(48)]+
+                      ['evaluationonlytoken alpha']*12,dtype=object)
+        y=np.arange(60)%2;fit=np.arange(48);val=np.arange(48,60)
+        cfg={'source_word_features':100,'source_char_features':100,'source_word_ngram_range':[1,2],
+             'source_char_ngram_range':[3,5],'source_logistic_C':1.,'source_max_iterations':150,
+             'source_tolerance':.001,'seed':1,'source_max_chars':4096}
+        first,bundle,_=fit_head('tfidf',fit,val,text,np.empty((60,0)),y,2,cfg)
+        changed=y.copy();changed[val]=1-changed[val]
+        second,_,_=fit_head('tfidf',fit,val,text,np.empty((60,0)),changed,2,cfg)
+        np.testing.assert_array_equal(first,second)
+        self.assertNotIn('evaluationonlytoken',bundle['parts'][0].vocabulary_)
 
 
 if __name__=='__main__':unittest.main()

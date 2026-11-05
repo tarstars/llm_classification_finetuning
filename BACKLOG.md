@@ -60,7 +60,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 48 | [H44](#h44) | P1 / deferred | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43, E04, E05 |
-| 51 | [E06](#e06) | P1 / planned | Estimate model strength and true-identity residual signal | — | medium | 2…4 | 0…0 | 0…0 | E00 |
+| 51 | [E06](#e06) | P1 / done | Estimate model strength and true-identity residual signal | — | medium | 2…4 | 0…0 | 0…0 | E00 |
 | 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
@@ -161,7 +161,7 @@ Postcalibration may recover miscalibration introduced by an affordable routed mi
 
 ### E06
 
-**Estimate model strength and true-identity residual signal** — P1, planned, risk medium.
+**Estimate model strength and true-identity residual signal** — P1, done, risk medium.
 
 Opponent-adjusted source strength and a true-identity diagnostic can establish whether this bounded representation is worth approximating from text.
 
@@ -188,6 +188,8 @@ Opponent-adjusted source strength and a true-identity diagnostic can establish w
 **References:** [docs/SPAN_005_SOURCE_MODEL_PLAN.md](docs/SPAN_005_SOURCE_MODEL_PLAN.md); [TARGET_AUDIT.md](TARGET_AUDIT.md)
 
 - 2026-11-05T06:27:43+00:00 — planned: User requested source-model strength, text attribution and preference integration in the next unstarted span on 2026-11-05. Add this bounded planned task to v5, preserving its start snapshot; no experiment launched. Evidence: [docs/SPAN_005_SOURCE_MODEL_PLAN.md](docs/SPAN_005_SOURCE_MODEL_PLAN.md)
+- 2026-11-05T07:28:34+00:00 — running: Starting the preregistered CPU-only E06 strength and nested true-identity residual diagnostic after protocol/input/source commit4602f61. Original clock and zero GPU budget preserved. Evidence: [docs/SPAN_005_PROTOCOL.md](docs/SPAN_005_PROTOCOL.md)
+- 2026-11-05T07:32:09+00:00 — done: Completed64-source strength fit and five-outer/three-inner grouped oracle residual evaluation on5746dev rows. Nested strength reduces loss0.953701→0.940456, gain0.013246 CI[0.008968,0.017515]; full identities weaker. Gate passes; original encoding failure/recovery preserved, accountedCPU<=79.528s, zeroGPU. Evidence: [docs/SPAN_005_E06.md](docs/SPAN_005_E06.md)
 
 ### H02
 
@@ -499,7 +501,7 @@ A compact text model may recover a useful soft source distribution without requi
 
 **Revision:** User-requested planning addition on 2026-11-05 to unstarted v5. Preserve its original start snapshot; no focus, goal activation or experiment execution. See the linked bounded plan.
 
-**Depends on:** E00, E06. Currently unmet: E06.
+**Depends on:** E00, E06. Currently unmet: none.
 
 **Origin:** introduced in v5; discovered during initial planning; derived from E00.
 
@@ -529,7 +531,7 @@ Inferred source distributions and opponent-adjusted strength may add residual pr
 
 **Revision:** User-requested planning addition on 2026-11-05 to unstarted v5. Preserve its original start snapshot; no focus, goal activation or experiment execution. See the linked bounded plan.
 
-**Depends on:** E00, E06, E07. Currently unmet: E06, E07.
+**Depends on:** E00, E06, E07. Currently unmet: E07.
 
 **Origin:** introduced in v5; discovered during initial planning; derived from E00.
 

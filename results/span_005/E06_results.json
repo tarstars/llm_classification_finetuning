@@ -1,0 +1,1501 @@
+{
+  "metrics": {
+    "calibration": {
+      "rows": 5746,
+      "log_loss": 0.9537014250890133,
+      "accuracy": 0.5388096066829099,
+      "macro_f1": 0.5283105011786908,
+      "brier": 0.5675147522811611,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8949579045051218,
+        0.9075489972708669,
+        1.0711825647813766
+      ],
+      "class_recall": [
+        0.6166500498504487,
+        0.6162849872773537,
+        0.36507042253521127
+      ],
+      "tie_precision": 0.5217391304347826,
+      "mean_predictive_entropy": 0.9533860129304783,
+      "mean_class_probability": [
+        0.3463764997011838,
+        0.34473938697449064,
+        0.3088841133243273
+      ],
+      "predicted_class_fraction": [
+        0.39244691959624084,
+        0.3914027149321267,
+        0.21615036547163244
+      ],
+      "tie_auc": 0.6789358057182177,
+      "confusion_matrix": [
+        [
+          1237,
+          473,
+          296
+        ],
+        [
+          456,
+          1211,
+          298
+        ],
+        [
+          562,
+          565,
+          648
+        ]
+      ]
+    },
+    "style": {
+      "rows": 5746,
+      "log_loss": 0.9548089655361645,
+      "accuracy": 0.5337626174730247,
+      "macro_f1": 0.5233475284575182,
+      "brier": 0.5682921601480941,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8954169846499891,
+        0.9080301419029793,
+        1.0737164033372215
+      ],
+      "class_recall": [
+        0.6101694915254238,
+        0.6111959287531806,
+        0.3616901408450704
+      ],
+      "tie_precision": 0.5119617224880383,
+      "mean_predictive_entropy": 0.9530563196514829,
+      "mean_class_probability": [
+        0.34659100233816337,
+        0.3447293481240902,
+        0.3086796495377482
+      ],
+      "predicted_class_fraction": [
+        0.39035851026801255,
+        0.3914027149321267,
+        0.21823877479986079
+      ],
+      "tie_auc": 0.6770027771767851,
+      "confusion_matrix": [
+        [
+          1224,
+          478,
+          304
+        ],
+        [
+          456,
+          1201,
+          308
+        ],
+        [
+          563,
+          570,
+          642
+        ]
+      ]
+    },
+    "oracle_strength": {
+      "rows": 5746,
+      "log_loss": 0.9404558032608349,
+      "accuracy": 0.5508179603202228,
+      "macro_f1": 0.5410177260822389,
+      "brier": 0.559264877377499,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8771254427819912,
+        0.8909063606849099,
+        1.0668813569409776
+      ],
+      "class_recall": [
+        0.6271186440677966,
+        0.6249363867684479,
+        0.38253521126760565
+      ],
+      "tie_precision": 0.5271739130434783,
+      "mean_predictive_entropy": 0.9411566746808828,
+      "mean_class_probability": [
+        0.34715571400446216,
+        0.3440179377320138,
+        0.3088263482635246
+      ],
+      "predicted_class_fraction": [
+        0.39001044204664115,
+        0.38583362339018445,
+        0.22415593456317437
+      ],
+      "tie_auc": 0.6836079889054802,
+      "confusion_matrix": [
+        [
+          1258,
+          456,
+          292
+        ],
+        [
+          420,
+          1228,
+          317
+        ],
+        [
+          563,
+          533,
+          679
+        ]
+      ]
+    },
+    "oracle_full": {
+      "rows": 5746,
+      "log_loss": 0.9522119036162344,
+      "accuracy": 0.5445527323355378,
+      "macro_f1": 0.5360334889123989,
+      "brier": 0.5667427392749194,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8885958451010931,
+        0.9041929738081624,
+        1.077265994012987
+      ],
+      "class_recall": [
+        0.6156530408773679,
+        0.6111959287531806,
+        0.39042253521126763
+      ],
+      "tie_precision": 0.5194902548725637,
+      "mean_predictive_entropy": 0.9354245271045475,
+      "mean_class_probability": [
+        0.34709563854317854,
+        0.3438729387494234,
+        0.30903142270739753
+      ],
+      "predicted_class_fraction": [
+        0.3844413505046989,
+        0.38339714584058476,
+        0.23216150365471633
+      ],
+      "tie_auc": 0.6747935206302029,
+      "confusion_matrix": [
+        [
+          1235,
+          442,
+          329
+        ],
+        [
+          452,
+          1201,
+          312
+        ],
+        [
+          522,
+          560,
+          693
+        ]
+      ]
+    },
+    "nested_selected": {
+      "rows": 5746,
+      "log_loss": 0.9404558032608349,
+      "accuracy": 0.5508179603202228,
+      "macro_f1": 0.5410177260822389,
+      "brier": 0.559264877377499,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8771254427819912,
+        0.8909063606849099,
+        1.0668813569409776
+      ],
+      "class_recall": [
+        0.6271186440677966,
+        0.6249363867684479,
+        0.38253521126760565
+      ],
+      "tie_precision": 0.5271739130434783,
+      "mean_predictive_entropy": 0.9411566746808828,
+      "mean_class_probability": [
+        0.34715571400446216,
+        0.3440179377320138,
+        0.3088263482635246
+      ],
+      "predicted_class_fraction": [
+        0.39001044204664115,
+        0.38583362339018445,
+        0.22415593456317437
+      ],
+      "tie_auc": 0.6836079889054802,
+      "confusion_matrix": [
+        [
+          1258,
+          456,
+          292
+        ],
+        [
+          420,
+          1228,
+          317
+        ],
+        [
+          563,
+          533,
+          679
+        ]
+      ]
+    },
+    "frozen_classifier": {
+      "rows": 5746,
+      "log_loss": 0.9539706567352386,
+      "accuracy": 0.5379394361294814,
+      "macro_f1": 0.5289220074519821,
+      "brier": 0.5677447675598635,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8984307358604866,
+        0.9098912785876004,
+        1.0655363239661457
+      ],
+      "class_recall": [
+        0.6081754735792622,
+        0.6096692111959288,
+        0.37915492957746477
+      ],
+      "tie_precision": 0.5149196633511859,
+      "mean_predictive_entropy": 0.9539706585730453,
+      "mean_class_probability": [
+        0.34540705449909254,
+        0.3438557169268625,
+        0.3107372285740463
+      ],
+      "predicted_class_fraction": [
+        0.38670379394361293,
+        0.38583362339018445,
+        0.22746258266620256
+      ],
+      "tie_auc": 0.6791287538882247,
+      "confusion_matrix": [
+        [
+          1220,
+          468,
+          318
+        ],
+        [
+          451,
+          1198,
+          316
+        ],
+        [
+          551,
+          551,
+          673
+        ]
+      ]
+    },
+    "training_prior": {
+      "rows": 5746,
+      "log_loss": 1.0972160902484214,
+      "accuracy": 0.34911242603550297,
+      "macro_f1": 0.17251461988304095,
+      "brier": 0.6657465171102929,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        1.052481803949991,
+        1.073190647866522,
+        1.1743693142456517
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 1.0972274095648862,
+      "mean_class_probability": [
+        0.34907034902681583,
+        0.3419158421224448,
+        0.309013808850737
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          2006,
+          0,
+          0
+        ],
+        [
+          1965,
+          0,
+          0
+        ],
+        [
+          1775,
+          0,
+          0
+        ]
+      ]
+    },
+    "uniform": {
+      "rows": 5746,
+      "log_loss": 1.0986122886681096,
+      "accuracy": 0.34911242603550297,
+      "macro_f1": 0.17251461988304095,
+      "brier": 0.6666666666666669,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        1.0986122886681096,
+        1.0986122886681098,
+        1.0986122886681096
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 1.0986122886681093,
+      "mean_class_probability": [
+        0.3333333333333061,
+        0.3333333333333061,
+        0.3333333333333061
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          2006,
+          0,
+          0
+        ],
+        [
+          1965,
+          0,
+          0
+        ],
+        [
+          1775,
+          0,
+          0
+        ]
+      ]
+    },
+    "majority_clipped_1e-12": {
+      "rows": 5746,
+      "log_loss": 17.98468830030922,
+      "accuracy": 0.34911242603550297,
+      "macro_f1": 0.17251461988304095,
+      "brier": 1.3017751479250885,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        1.999955756561757e-12,
+        27.631021115928547,
+        27.631021115928547
+      ],
+      "class_recall": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 5.7262220032913245e-11,
+      "mean_class_probability": [
+        0.9999999999981047,
+        9.999999999978892e-13,
+        9.999999999978892e-13
+      ],
+      "predicted_class_fraction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "tie_auc": 0.5,
+      "confusion_matrix": [
+        [
+          2006,
+          0,
+          0
+        ],
+        [
+          1965,
+          0,
+          0
+        ],
+        [
+          1775,
+          0,
+          0
+        ]
+      ]
+    },
+    "strength_only": {
+      "rows": 5746,
+      "log_loss": 1.0442748011065135,
+      "accuracy": 0.44274277758440655,
+      "macro_f1": 0.34907812329966537,
+      "brier": 0.6293408779321022,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.9870390519016365,
+        0.990693610632423,
+        1.168275900929934
+      ],
+      "class_recall": [
+        0.6375872382851445,
+        0.6437659033078881,
+        0.0
+      ],
+      "tie_precision": 0.0,
+      "mean_predictive_entropy": 1.0572483055628499,
+      "mean_class_probability": [
+        0.3475613470700174,
+        0.34374177543770595,
+        0.3086968774922779
+      ],
+      "predicted_class_fraction": [
+        0.5006961364427428,
+        0.4993038635572572,
+        0.0
+      ],
+      "tie_auc": 0.5483972178576368,
+      "confusion_matrix": [
+        [
+          1279,
+          727,
+          0
+        ],
+        [
+          700,
+          1265,
+          0
+        ],
+        [
+          898,
+          877,
+          0
+        ]
+      ]
+    },
+    "pair_frequency": {
+      "rows": 5746,
+      "log_loss": 1.0548131411673154,
+      "accuracy": 0.43665158371040724,
+      "macro_f1": 0.4094248844216386,
+      "brier": 0.635670317438745,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.9993515010683552,
+        1.0071527612948337,
+        1.1702546603154511
+      ],
+      "class_recall": [
+        0.5797607178464607,
+        0.5262086513994911,
+        0.17577464788732394
+      ],
+      "tie_precision": 0.3627906976744186,
+      "mean_predictive_entropy": 1.063264055417282,
+      "mean_class_probability": [
+        0.3474870950076694,
+        0.34330056012368815,
+        0.3092123448686426
+      ],
+      "predicted_class_fraction": [
+        0.45231465367211976,
+        0.3980160111381831,
+        0.1496693351896972
+      ],
+      "tie_auc": 0.5417131953139132,
+      "confusion_matrix": [
+        [
+          1163,
+          564,
+          279
+        ],
+        [
+          662,
+          1034,
+          269
+        ],
+        [
+          774,
+          689,
+          312
+        ]
+      ]
+    }
+  },
+  "contrasts": {
+    "style_vs_calibration": {
+      "gain": -0.0011075404471509566,
+      "interval_95": [
+        -0.0019752616696506833,
+        -0.0002097595202764499
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "oracle_strength_vs_calibration": {
+      "gain": 0.013245621828178504,
+      "interval_95": [
+        0.008967992635261404,
+        0.01751520024467121
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "oracle_full_vs_calibration": {
+      "gain": 0.0014895214727789173,
+      "interval_95": [
+        -0.0033388002637043325,
+        0.006558990385869679
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "nested_selected_vs_calibration": {
+      "gain": 0.013245621828178504,
+      "interval_95": [
+        0.008967992635261404,
+        0.01751520024467121
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "frozen_classifier_vs_calibration": {
+      "gain": -0.00026923164622498605,
+      "interval_95": [
+        -0.001109547841219117,
+        0.0005743940369659513
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "training_prior_vs_calibration": {
+      "gain": -0.14351466515940783,
+      "interval_95": [
+        -0.1576574251515792,
+        -0.12945234703121072
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "uniform_vs_calibration": {
+      "gain": -0.14491086357909633,
+      "interval_95": [
+        -0.15874541358914274,
+        -0.13120300290181597
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "majority_clipped_1e-12_vs_calibration": {
+      "gain": -17.030986875221508,
+      "interval_95": [
+        -17.42143718406497,
+        -16.65204769251424
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "strength_only_vs_calibration": {
+      "gain": -0.09057337601750005,
+      "interval_95": [
+        -0.10477283092017761,
+        -0.07675010749613737
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "pair_frequency_vs_calibration": {
+      "gain": -0.10111171607830205,
+      "interval_95": [
+        -0.11543304359019316,
+        -0.08681743089338836
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "selected_vs_style": {
+      "gain": 0.014353162275329456,
+      "interval_95": [
+        0.010060298479076716,
+        0.01867910778756102
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    }
+  },
+  "task": "E06",
+  "rows": 5746,
+  "groups": 5211,
+  "source_models": 64,
+  "train_rows": 45985,
+  "source_known_pair_coverage": 1.0,
+  "rankings": [
+    {
+      "model": "gpt-4-1106-preview",
+      "answers": 5939,
+      "wins": 3268,
+      "ties": 1653,
+      "raw_win_rate": 0.5502609866980973,
+      "rating": 1.566252117025164,
+      "conditional_cluster_normal_interval_95": [
+        1.4964517791498353,
+        1.6360524549004927
+      ]
+    },
+    {
+      "model": "gpt-4-0125-preview",
+      "answers": 930,
+      "wins": 478,
+      "ties": 290,
+      "raw_win_rate": 0.513978494623656,
+      "rating": 1.3242751955514578,
+      "conditional_cluster_normal_interval_95": [
+        1.1947487112589188,
+        1.4538016798439968
+      ]
+    },
+    {
+      "model": "gpt-4-0314",
+      "answers": 3268,
+      "wins": 1582,
+      "ties": 953,
+      "raw_win_rate": 0.48408812729498163,
+      "rating": 1.0528696586670496,
+      "conditional_cluster_normal_interval_95": [
+        0.9705520110111678,
+        1.1351873063229314
+      ]
+    },
+    {
+      "model": "gpt-4-0613",
+      "answers": 4900,
+      "wins": 1944,
+      "ties": 1483,
+      "raw_win_rate": 0.396734693877551,
+      "rating": 0.82660357224567,
+      "conditional_cluster_normal_interval_95": [
+        0.7566356624771013,
+        0.8965714820142388
+      ]
+    },
+    {
+      "model": "claude-1",
+      "answers": 3176,
+      "wins": 1389,
+      "ties": 947,
+      "raw_win_rate": 0.4373425692695214,
+      "rating": 0.7230017503050958,
+      "conditional_cluster_normal_interval_95": [
+        0.6399246202646461,
+        0.8060788803455455
+      ]
+    },
+    {
+      "model": "mistral-medium",
+      "answers": 2638,
+      "wins": 964,
+      "ties": 876,
+      "raw_win_rate": 0.36542835481425323,
+      "rating": 0.6686604040086713,
+      "conditional_cluster_normal_interval_95": [
+        0.5805879255462975,
+        0.7567328824710452
+      ]
+    },
+    {
+      "model": "gpt-3.5-turbo-0314",
+      "answers": 1044,
+      "wins": 572,
+      "ties": 267,
+      "raw_win_rate": 0.5478927203065134,
+      "rating": 0.6396347326071078,
+      "conditional_cluster_normal_interval_95": [
+        0.5072119411584193,
+        0.7720575240557963
+      ]
+    },
+    {
+      "model": "claude-2.0",
+      "answers": 1972,
+      "wins": 756,
+      "ties": 576,
+      "raw_win_rate": 0.38336713995943206,
+      "rating": 0.5262354161660499,
+      "conditional_cluster_normal_interval_95": [
+        0.4239578019412079,
+        0.6285130303908918
+      ]
+    },
+    {
+      "model": "qwen1.5-72b-chat",
+      "answers": 450,
+      "wins": 173,
+      "ties": 151,
+      "raw_win_rate": 0.3844444444444444,
+      "rating": 0.5184616191113515,
+      "conditional_cluster_normal_interval_95": [
+        0.3594764678431274,
+        0.6774467703795755
+      ]
+    },
+    {
+      "model": "gemini-pro-dev-api",
+      "answers": 1201,
+      "wins": 386,
+      "ties": 368,
+      "raw_win_rate": 0.32139883430474603,
+      "rating": 0.42493723470257955,
+      "conditional_cluster_normal_interval_95": [
+        0.30163886165881726,
+        0.5482356077463418
+      ]
+    },
+    {
+      "model": "mixtral-8x7b-instruct-v0.1",
+      "answers": 2831,
+      "wins": 950,
+      "ties": 914,
+      "raw_win_rate": 0.33557046979865773,
+      "rating": 0.41240539845373675,
+      "conditional_cluster_normal_interval_95": [
+        0.32581518598993664,
+        0.49899561091753686
+      ]
+    },
+    {
+      "model": "claude-2.1",
+      "answers": 4483,
+      "wins": 1366,
+      "ties": 1308,
+      "raw_win_rate": 0.3047066696408655,
+      "rating": 0.4102430278742677,
+      "conditional_cluster_normal_interval_95": [
+        0.3327674848180086,
+        0.4877185709305268
+      ]
+    },
+    {
+      "model": "claude-instant-1",
+      "answers": 3285,
+      "wins": 1293,
+      "ties": 950,
+      "raw_win_rate": 0.39360730593607307,
+      "rating": 0.39517920775667903,
+      "conditional_cluster_normal_interval_95": [
+        0.3139722344113208,
+        0.47638618110203723
+      ]
+    },
+    {
+      "model": "yi-34b-chat",
+      "answers": 1175,
+      "wins": 431,
+      "ties": 380,
+      "raw_win_rate": 0.3668085106382979,
+      "rating": 0.393536300019801,
+      "conditional_cluster_normal_interval_95": [
+        0.2717777343981136,
+        0.5152948656414884
+      ]
+    },
+    {
+      "model": "gpt-3.5-turbo-0613",
+      "answers": 5707,
+      "wins": 1919,
+      "ties": 1775,
+      "raw_win_rate": 0.33625372349745924,
+      "rating": 0.3837740698597255,
+      "conditional_cluster_normal_interval_95": [
+        0.31995230873843206,
+        0.44759583098101896
+      ]
+    },
+    {
+      "model": "llama-2-70b-chat",
+      "answers": 2800,
+      "wins": 1045,
+      "ties": 914,
+      "raw_win_rate": 0.3732142857142857,
+      "rating": 0.38149204024516287,
+      "conditional_cluster_normal_interval_95": [
+        0.29568005301537453,
+        0.4673040274749512
+      ]
+    },
+    {
+      "model": "gemini-pro",
+      "answers": 1129,
+      "wins": 363,
+      "ties": 339,
+      "raw_win_rate": 0.32152347209920284,
+      "rating": 0.38099837584889545,
+      "conditional_cluster_normal_interval_95": [
+        0.24945251143544991,
+        0.512544240262341
+      ]
+    },
+    {
+      "model": "vicuna-33b",
+      "answers": 2993,
+      "wins": 1038,
+      "ties": 1009,
+      "raw_win_rate": 0.3468092215168727,
+      "rating": 0.3497896254402293,
+      "conditional_cluster_normal_interval_95": [
+        0.2675882951231108,
+        0.4319909557573478
+      ]
+    },
+    {
+      "model": "wizardlm-70b",
+      "answers": 1282,
+      "wins": 458,
+      "ties": 408,
+      "raw_win_rate": 0.35725429017160687,
+      "rating": 0.34762220153559137,
+      "conditional_cluster_normal_interval_95": [
+        0.23090468295502148,
+        0.46433972011616126
+      ]
+    },
+    {
+      "model": "starling-lm-7b-alpha",
+      "answers": 911,
+      "wins": 327,
+      "ties": 293,
+      "raw_win_rate": 0.3589462129527991,
+      "rating": 0.31823222351169134,
+      "conditional_cluster_normal_interval_95": [
+        0.18615901763999107,
+        0.4503054293833916
+      ]
+    },
+    {
+      "model": "gpt-3.5-turbo-0125",
+      "answers": 694,
+      "wins": 216,
+      "ties": 231,
+      "raw_win_rate": 0.3112391930835735,
+      "rating": 0.2602144769295502,
+      "conditional_cluster_normal_interval_95": [
+        0.11909186793402876,
+        0.4013370859250716
+      ]
+    },
+    {
+      "model": "nous-hermes-2-mixtral-8x7b-dpo",
+      "answers": 264,
+      "wins": 88,
+      "ties": 77,
+      "raw_win_rate": 0.3333333333333333,
+      "rating": 0.21758162536891992,
+      "conditional_cluster_normal_interval_95": [
+        0.04191412005914452,
+        0.3932491306786953
+      ]
+    },
+    {
+      "model": "wizardlm-13b",
+      "answers": 1252,
+      "wins": 456,
+      "ties": 424,
+      "raw_win_rate": 0.36421725239616615,
+      "rating": 0.19222019171022897,
+      "conditional_cluster_normal_interval_95": [
+        0.07618470026704698,
+        0.30825568315341095
+      ]
+    },
+    {
+      "model": "tulu-2-dpo-70b",
+      "answers": 941,
+      "wins": 300,
+      "ties": 291,
+      "raw_win_rate": 0.3188097768331562,
+      "rating": 0.1879428972899323,
+      "conditional_cluster_normal_interval_95": [
+        0.05699122438956719,
+        0.31889457019029743
+      ]
+    },
+    {
+      "model": "pplx-70b-online",
+      "answers": 1150,
+      "wins": 366,
+      "ties": 326,
+      "raw_win_rate": 0.3182608695652174,
+      "rating": 0.11970369559054905,
+      "conditional_cluster_normal_interval_95": [
+        -0.007563819475077588,
+        0.2469712106561757
+      ]
+    },
+    {
+      "model": "openchat-3.5",
+      "answers": 1299,
+      "wins": 380,
+      "ties": 449,
+      "raw_win_rate": 0.2925327174749808,
+      "rating": 0.103100941498069,
+      "conditional_cluster_normal_interval_95": [
+        -0.012998931449509032,
+        0.21920081444564704
+      ]
+    },
+    {
+      "model": "openhermes-2.5-mistral-7b",
+      "answers": 767,
+      "wins": 226,
+      "ties": 276,
+      "raw_win_rate": 0.29465449804432853,
+      "rating": 0.09301560717198669,
+      "conditional_cluster_normal_interval_95": [
+        -0.04002422629833903,
+        0.22605544064231242
+      ]
+    },
+    {
+      "model": "gpt-3.5-turbo-1106",
+      "answers": 2695,
+      "wins": 705,
+      "ties": 852,
+      "raw_win_rate": 0.26159554730983303,
+      "rating": 0.054217197635451235,
+      "conditional_cluster_normal_interval_95": [
+        -0.03673252423435954,
+        0.145166919505262
+      ]
+    },
+    {
+      "model": "mpt-30b-chat",
+      "answers": 490,
+      "wins": 178,
+      "ties": 147,
+      "raw_win_rate": 0.363265306122449,
+      "rating": 0.05083566122038631,
+      "conditional_cluster_normal_interval_95": [
+        -0.1045255975213862,
+        0.20619691996215883
+      ]
+    },
+    {
+      "model": "deepseek-llm-67b-chat",
+      "answers": 635,
+      "wins": 151,
+      "ties": 217,
+      "raw_win_rate": 0.2377952755905512,
+      "rating": 0.021837912854489605,
+      "conditional_cluster_normal_interval_95": [
+        -0.12451750600331277,
+        0.16819333171229198
+      ]
+    },
+    {
+      "model": "llama2-70b-steerlm-chat",
+      "answers": 534,
+      "wins": 145,
+      "ties": 162,
+      "raw_win_rate": 0.27153558052434457,
+      "rating": 0.02087964153353868,
+      "conditional_cluster_normal_interval_95": [
+        -0.1384329379702261,
+        0.18019222103730348
+      ]
+    },
+    {
+      "model": "guanaco-33b",
+      "answers": 532,
+      "wins": 191,
+      "ties": 165,
+      "raw_win_rate": 0.35902255639097747,
+      "rating": 0.01908986724367917,
+      "conditional_cluster_normal_interval_95": [
+        -0.13479670306228603,
+        0.17297643754964437
+      ]
+    },
+    {
+      "model": "solar-10.7b-instruct-v1.0",
+      "answers": 687,
+      "wins": 180,
+      "ties": 224,
+      "raw_win_rate": 0.26200873362445415,
+      "rating": 0.009951932304360518,
+      "conditional_cluster_normal_interval_95": [
+        -0.1352381968915518,
+        0.15514206150027282
+      ]
+    },
+    {
+      "model": "vicuna-13b",
+      "answers": 2725,
+      "wins": 987,
+      "ties": 838,
+      "raw_win_rate": 0.36220183486238533,
+      "rating": 0.009564995215552988,
+      "conditional_cluster_normal_interval_95": [
+        -0.07563459076438586,
+        0.09476458119549183
+      ]
+    },
+    {
+      "model": "dolphin-2.2.1-mistral-7b",
+      "answers": 298,
+      "wins": 74,
+      "ties": 107,
+      "raw_win_rate": 0.2483221476510067,
+      "rating": -0.009014346733677243,
+      "conditional_cluster_normal_interval_95": [
+        -0.17270813794311574,
+        0.15467944447576126
+      ]
+    },
+    {
+      "model": "llama-2-13b-chat",
+      "answers": 2091,
+      "wins": 668,
+      "ties": 676,
+      "raw_win_rate": 0.3194643711142994,
+      "rating": -0.014962876027256586,
+      "conditional_cluster_normal_interval_95": [
+        -0.11205521680646154,
+        0.08212946475194836
+      ]
+    },
+    {
+      "model": "mistral-7b-instruct-v0.2",
+      "answers": 78,
+      "wins": 21,
+      "ties": 23,
+      "raw_win_rate": 0.2692307692307692,
+      "rating": -0.019522388769986677,
+      "conditional_cluster_normal_interval_95": [
+        -0.18657882873829668,
+        0.1475340511983233
+      ]
+    },
+    {
+      "model": "llama-2-7b-chat",
+      "answers": 1446,
+      "wins": 444,
+      "ties": 497,
+      "raw_win_rate": 0.3070539419087137,
+      "rating": -0.03284163884060269,
+      "conditional_cluster_normal_interval_95": [
+        -0.14307297152401954,
+        0.07738969384281415
+      ]
+    },
+    {
+      "model": "openchat-3.5-0106",
+      "answers": 197,
+      "wins": 51,
+      "ties": 64,
+      "raw_win_rate": 0.25888324873096447,
+      "rating": -0.05738332278316124,
+      "conditional_cluster_normal_interval_95": [
+        -0.2287668237414236,
+        0.11400017817510111
+      ]
+    },
+    {
+      "model": "qwen1.5-7b-chat",
+      "answers": 175,
+      "wins": 46,
+      "ties": 55,
+      "raw_win_rate": 0.26285714285714284,
+      "rating": -0.06202550940091441,
+      "conditional_cluster_normal_interval_95": [
+        -0.23744405500306115,
+        0.11339303620123231
+      ]
+    },
+    {
+      "model": "zephyr-7b-beta",
+      "answers": 1939,
+      "wins": 572,
+      "ties": 627,
+      "raw_win_rate": 0.294997421351212,
+      "rating": -0.07501677705124626,
+      "conditional_cluster_normal_interval_95": [
+        -0.175709429413399,
+        0.025675875310906496
+      ]
+    },
+    {
+      "model": "codellama-34b-instruct",
+      "answers": 1181,
+      "wins": 335,
+      "ties": 356,
+      "raw_win_rate": 0.283657917019475,
+      "rating": -0.08658638340779187,
+      "conditional_cluster_normal_interval_95": [
+        -0.2095462656804197,
+        0.03637349886483596
+      ]
+    },
+    {
+      "model": "falcon-180b-chat",
+      "answers": 229,
+      "wins": 64,
+      "ties": 65,
+      "raw_win_rate": 0.2794759825327511,
+      "rating": -0.13810774778693538,
+      "conditional_cluster_normal_interval_95": [
+        -0.31590008342136056,
+        0.039684587847489794
+      ]
+    },
+    {
+      "model": "zephyr-7b-alpha",
+      "answers": 324,
+      "wins": 90,
+      "ties": 107,
+      "raw_win_rate": 0.2777777777777778,
+      "rating": -0.17716665814100427,
+      "conditional_cluster_normal_interval_95": [
+        -0.3487527812612853,
+        -0.005580535020723254
+      ]
+    },
+    {
+      "model": "palm-2",
+      "answers": 1567,
+      "wins": 502,
+      "ties": 438,
+      "raw_win_rate": 0.32035737077217613,
+      "rating": -0.19840415756624138,
+      "conditional_cluster_normal_interval_95": [
+        -0.30752108983268844,
+        -0.08928722529979433
+      ]
+    },
+    {
+      "model": "pplx-7b-online",
+      "answers": 1014,
+      "wins": 253,
+      "ties": 293,
+      "raw_win_rate": 0.2495069033530572,
+      "rating": -0.20744044024153926,
+      "conditional_cluster_normal_interval_95": [
+        -0.33758485385489856,
+        -0.07729602662818
+      ]
+    },
+    {
+      "model": "koala-13b",
+      "answers": 1317,
+      "wins": 465,
+      "ties": 422,
+      "raw_win_rate": 0.3530751708428246,
+      "rating": -0.21361875098465638,
+      "conditional_cluster_normal_interval_95": [
+        -0.32642818690516984,
+        -0.10080931506414294
+      ]
+    },
+    {
+      "model": "qwen-14b-chat",
+      "answers": 847,
+      "wins": 223,
+      "ties": 290,
+      "raw_win_rate": 0.2632821723730815,
+      "rating": -0.21721489424260831,
+      "conditional_cluster_normal_interval_95": [
+        -0.3497984071723267,
+        -0.08463138131288997
+      ]
+    },
+    {
+      "model": "stripedhyena-nous-7b",
+      "answers": 727,
+      "wins": 167,
+      "ties": 246,
+      "raw_win_rate": 0.2297111416781293,
+      "rating": -0.23686616948059955,
+      "conditional_cluster_normal_interval_95": [
+        -0.37659318911230244,
+        -0.09713914984889663
+      ]
+    },
+    {
+      "model": "qwen1.5-4b-chat",
+      "answers": 170,
+      "wins": 32,
+      "ties": 61,
+      "raw_win_rate": 0.18823529411764706,
+      "rating": -0.26537798769621196,
+      "conditional_cluster_normal_interval_95": [
+        -0.4368373215722905,
+        -0.09391865382013345
+      ]
+    },
+    {
+      "model": "vicuna-7b",
+      "answers": 1269,
+      "wins": 357,
+      "ties": 400,
+      "raw_win_rate": 0.28132387706855794,
+      "rating": -0.3213286271772411,
+      "conditional_cluster_normal_interval_95": [
+        -0.43672515517123667,
+        -0.2059320991832455
+      ]
+    },
+    {
+      "model": "mistral-7b-instruct",
+      "answers": 1285,
+      "wins": 321,
+      "ties": 422,
+      "raw_win_rate": 0.24980544747081712,
+      "rating": -0.33261951350692626,
+      "conditional_cluster_normal_interval_95": [
+        -0.4494029784733223,
+        -0.21583604854053023
+      ]
+    },
+    {
+      "model": "gpt4all-13b-snoozy",
+      "answers": 316,
+      "wins": 69,
+      "ties": 93,
+      "raw_win_rate": 0.21835443037974683,
+      "rating": -0.5634810490980227,
+      "conditional_cluster_normal_interval_95": [
+        -0.728642234146429,
+        -0.3983198640496163
+      ]
+    },
+    {
+      "model": "chatglm3-6b",
+      "answers": 794,
+      "wins": 131,
+      "ties": 233,
+      "raw_win_rate": 0.16498740554156172,
+      "rating": -0.6853445707607011,
+      "conditional_cluster_normal_interval_95": [
+        -0.8237640641466275,
+        -0.5469250773747747
+      ]
+    },
+    {
+      "model": "mpt-7b-chat",
+      "answers": 722,
+      "wins": 168,
+      "ties": 216,
+      "raw_win_rate": 0.23268698060941828,
+      "rating": -0.6927172683678844,
+      "conditional_cluster_normal_interval_95": [
+        -0.8325684291575987,
+        -0.5528661075781701
+      ]
+    },
+    {
+      "model": "RWKV-4-Raven-14B",
+      "answers": 924,
+      "wins": 213,
+      "ties": 291,
+      "raw_win_rate": 0.2305194805194805,
+      "rating": -0.7280855224104998,
+      "conditional_cluster_normal_interval_95": [
+        -0.8587188476987211,
+        -0.5974521971222786
+      ]
+    },
+    {
+      "model": "alpaca-13b",
+      "answers": 1117,
+      "wins": 292,
+      "ties": 323,
+      "raw_win_rate": 0.26141450313339304,
+      "rating": -0.7497845197698737,
+      "conditional_cluster_normal_interval_95": [
+        -0.8721198119470776,
+        -0.6274492275926699
+      ]
+    },
+    {
+      "model": "chatglm2-6b",
+      "answers": 449,
+      "wins": 64,
+      "ties": 132,
+      "raw_win_rate": 0.14253897550111358,
+      "rating": -0.8253096968547401,
+      "conditional_cluster_normal_interval_95": [
+        -0.9800942971585256,
+        -0.6705250965509546
+      ]
+    },
+    {
+      "model": "oasst-pythia-12b",
+      "answers": 1195,
+      "wins": 275,
+      "ties": 335,
+      "raw_win_rate": 0.2301255230125523,
+      "rating": -0.9220946089817165,
+      "conditional_cluster_normal_interval_95": [
+        -1.0421385956593059,
+        -0.802050622304127
+      ]
+    },
+    {
+      "model": "fastchat-t5-3b",
+      "answers": 817,
+      "wins": 165,
+      "ties": 242,
+      "raw_win_rate": 0.20195838433292534,
+      "rating": -0.9259058086850038,
+      "conditional_cluster_normal_interval_95": [
+        -1.0581472521523478,
+        -0.7936643652176599
+      ]
+    },
+    {
+      "model": "chatglm-6b",
+      "answers": 988,
+      "wins": 175,
+      "ties": 346,
+      "raw_win_rate": 0.1771255060728745,
+      "rating": -1.0241992425995328,
+      "conditional_cluster_normal_interval_95": [
+        -1.146624444604,
+        -0.9017740405950655
+      ]
+    },
+    {
+      "model": "stablelm-tuned-alpha-7b",
+      "answers": 631,
+      "wins": 107,
+      "ties": 198,
+      "raw_win_rate": 0.16957210776545167,
+      "rating": -1.1425373615725842,
+      "conditional_cluster_normal_interval_95": [
+        -1.2868523020037523,
+        -0.9982224211414161
+      ]
+    },
+    {
+      "model": "llama-13b",
+      "answers": 425,
+      "wins": 64,
+      "ties": 123,
+      "raw_win_rate": 0.15058823529411763,
+      "rating": -1.2128991516878997,
+      "conditional_cluster_normal_interval_95": [
+        -1.3694127277871113,
+        -1.0563855755886882
+      ]
+    },
+    {
+      "model": "dolly-v2-12b",
+      "answers": 659,
+      "wins": 96,
+      "ties": 206,
+      "raw_win_rate": 0.1456752655538695,
+      "rating": -1.266503823875621,
+      "conditional_cluster_normal_interval_95": [
+        -1.4012915540922404,
+        -1.1317160936590016
+      ]
+    }
+  ],
+  "ranking_uncertainty": "Conditional prompt-cluster sandwich normal intervals at the penalized fit; not refitted bootstrap intervals, intrinsic skill, or correction for shrinkage/selection bias.",
+  "gate": {
+    "passed": true,
+    "rule": "Nested-oracle gain >0,95% upper bound >=0.001,and >=95% known-pair coverage; an information gate, not adoption.",
+    "evidence": {
+      "gain": 0.013245621828178504,
+      "interval_95": [
+        0.008967992635261404,
+        0.01751520024467121
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    }
+  },
+  "strength_fit": {
+    "iterations": 44,
+    "gradient_norm": 8.587956796861061e-08
+  },
+  "cpu_elapsed_seconds": 19.528303336002864,
+  "peak_rss_gib": 0.6398887634277344,
+  "official_score_unchanged": 0.95481,
+  "confirmation_used": false,
+  "gpu_seconds": 0,
+  "oracle_is_diagnostic_only": true,
+  "prior": [
+    0.3490703490268566,
+    0.3419158421224312,
+    0.30901380885071217
+  ],
+  "majority_loss_note": "Exact one-hot loss infinite on errors; finite table clips at1e-12.",
+  "prediction_sha256": "82cf511c4bba2be7a5aa8aca1c699f13f4ac9007d85a0db1fb72ba08a0e7c91f",
+  "folds_sha256": "77a4477ad3fd3ae965d4eb5436907131c12017c63c83abce76b6754e5e8e9e88",
+  "source_sha256": "ac6891f4c1d9cdd69fdfb2de02a2c16e0e8fb69c5fc566cb16ee14a4849c99d7",
+  "config_sha256": "69abe796fa8717295e632de3ac01c84ae53ec76ace7222530e0c10c47a5aaf67",
+  "failed_attempt_cpu_seconds_upper_bound": 60,
+  "cpu_accounted_seconds_upper_bound": 79.52830333600286
+}

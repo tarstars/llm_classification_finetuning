@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-05T07:35:33.040372+00:00",
+  "task": "E07",
+  "runner_sha256": "aacbf63194cb708a64471b43e2133dd382e020d49c4a2664a2d6a6a9b509d122",
+  "config_sha256": "69abe796fa8717295e632de3ac01c84ae53ec76ace7222530e0c10c47a5aaf67",
+  "E06_result_sha256": "f092c2fd148b24f3aea685b58cae0f75dc5da445e2704795f691a9c20bb63c93",
+  "fixed_prior_classifier_profile_sha256": "4fe3db62d698c33a5f212ecbe1ee2067a3cff5577b1ba9b34cf776e51dfaaa56",
+  "frozen_classifier_seconds_per_row": 0.6058648357892445,
+  "cpu_seconds_cap": 14400,
+  "gpu_seconds_cap": 0,
+  "label_schema": "Original-training source vocabulary fixed before fits; fold-fitted parameters, IDF, scaler, priors only.",
+  "portable_family": "tfidf",
+  "embedding_family_research_only": true,
+  "development_vote_selection": false
+}
