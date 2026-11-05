@@ -74,7 +74,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
 | 50 | [E05](#e05) | P2 / planned | Test native judge sensitivity to request concurrency | — | high | 1…4 | 0.5…1.5 | 0.5…2 | E00, E04 |
-| 57 | [E09](#e09) | P2 / planned | Reusable experiment control and framework reliability | — | medium | 2…4 | 0…0 | 0…0 | E00 |
+| 57 | [E09](#e09) | P2 / running | Reusable experiment control and framework reliability | — | medium | 2…4 | 0…0 | 0…0 | E00 |
 | 58 | [E10](#e10) | P2 / planned | Observe every pipeline stage and actual training exposure | — | medium | 2…4 | 0…0 | 0…0 | E00, E09 |
 | 59 | [E11](#e11) | P2 / planned | Explain pipeline theory and reassess skipped work | — | medium | 2…4 | 0…0 | 0…0 | E00 |
 | 60 | [H48](#h48) | P2 / planned | Expand the paired context-retention experiment on the current classifier | -0.01…+0.015 | high | 2…5 | 0.75…0.75 | 0…0 | E00, E09 |
@@ -459,7 +459,7 @@ A controlled client-concurrency ablation can test whether concurrent execution c
 
 ### E09
 
-**Reusable experiment control and framework reliability** — P2, planned, risk medium.
+**Reusable experiment control and framework reliability** — P2, running, risk medium.
 
 Reusable experiment control and framework reliability
 
@@ -486,6 +486,7 @@ Reusable experiment control and framework reliability
 **References:** [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 - 2026-11-05T18:39:30+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
+- 2026-11-05T18:41:20+00:00 — running: Implement shared future-run control with fault tests, immutable mutation intent and bounded artifact recovery; baseline full test suite is being checked. Preserve historical frozen code. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 ### E10
 

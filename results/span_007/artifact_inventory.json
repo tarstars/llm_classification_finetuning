@@ -1,0 +1,133 @@
+{
+  "span": 7,
+  "prepared_at": "2026-11-05T18:44:19.831386+00:00",
+  "started_at": "2026-11-05T18:30:17+00:00",
+  "deadline": "2026-11-07T00:30:17+00:00",
+  "confirmation_targets_read": false,
+  "input_artifacts": {
+    "classifier": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/exposure/output/exposure/dev_predictions.npz",
+      "sha256": "51fabd9e17111d44e0176569a10c816d7cc3c0e3de5534da93d9645e08ae8dae"
+    },
+    "adapter": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_002/jobs/exposure/output/exposure/adapter/adapter_model.safetensors",
+      "sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b"
+    },
+    "split": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/split_ids.json",
+      "sha256": "066f7ab82a3f14464ce0ef67bfd8b8b34ed190679bfea5c1fea80abc3aa4ecd1"
+    },
+    "raw_train": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/raw/train.csv",
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2"
+    },
+    "candidate": {
+      "path": "/home/tarstars/prj/llm_classification_finetuning/results/span_003/deployed_candidate.json",
+      "sha256": "cf5cf8cdb740c8fd30251fa43d100ea81c4b0496b8606190e647a9fc8703a0de"
+    },
+    "train.parquet": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/train.parquet",
+      "sha256": "1d7528b40272ced4b147124a36f0e5d20d91ff3777699c6341f936eaac461e1a"
+    },
+    "dev.parquet": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/dev.parquet",
+      "sha256": "b213de8045ded5c05f1e96ee27f19b5b7a384bb5423debfdf2a80d997ec14e51"
+    },
+    "source_vocabulary.json": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/source_vocabulary.json",
+      "sha256": "872d076c6702f5ce3983616bb3a6dd36eea13c8875c9c4aabfdcdc433a828b56"
+    },
+    "strength": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/E06/strength.npz",
+      "sha256": "cabfec0ca629b616e03518f3776d095be586ed484ca5430525d3234b0169c889"
+    },
+    "classifier_manifest": {
+      "path": "/home/tarstars/prj/llm_classification_finetuning/results/span_002/research_candidate.json",
+      "sha256": "2091f699df6f3b17a79f2d23f22827013598748ffe8599f9cafc61b0052fd56c"
+    },
+    "training_selection": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/model_selection.json",
+      "sha256": "68a097c19cabe454c99925cc41153fd9cfb4b5a35bc3f656b361b21706bd7ca8"
+    },
+    "prior_source_config": {
+      "path": "/home/tarstars/prj/llm_classification_finetuning/configs/span_005.json",
+      "sha256": "69abe796fa8717295e632de3ac01c84ae53ec76ace7222530e0c10c47a5aaf67"
+    },
+    "confirmation_inputs": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/confirmation_inputs.parquet",
+      "sha256": "bac48ecba4eb50bbace37a3312007d55d0bed773ad13d57dcd47c78837e9b038"
+    },
+    "smoke_reference": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_007/smoke_reference.npz",
+      "sha256": "273a194e5d37e8a00007e1cb7fa7031da1927fbb640a7754f8515d4ade30f374"
+    },
+    "sample_ids": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_007/sample_ids.json",
+      "sha256": "d599aecec56b552ad0b6d0d9edba562c12b68f3e57ac5b0adadf5d54ba843549"
+    },
+    "confirmation_reference": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/jobs/confirmation/output/confirmation/confirmation_predictions.npz",
+      "sha256": "30ff5c2ebd4d0cd52c9f4ccbbcccc9021537f3ab6e2ca2581545b986fd991405"
+    },
+    "native_parent": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_004/notebooks/repeatability_retry/job.ipynb",
+      "sha256": "a7bf853df608520308bfbb94f0baab4278612cd2377f91e79307e02920377e88"
+    },
+    "source_predictions": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/source_predictions.npz",
+      "sha256": "366400ff6f137d7ae34739eac3c543ef98d68ea1d73643833773b68f8710d673"
+    },
+    "source_bundle": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/source_bundle.joblib",
+      "sha256": "2aff0a422bb5bd011ab0b17e6d559dc760b2ebe733f3cc7d446297d4a3a11066"
+    }
+  },
+  "train_rows": 45985,
+  "dev_rows": 5746,
+  "dev_groups": 5211,
+  "context_changed_rows": 1152,
+  "context_text_sha256": "069622dd87be8fcfeaf0c69522af31a1c6edd70061164aaacbf5a30bdef0a750",
+  "context_token_sha256": {
+    "1024_original": "0b65e0fbcc673d432391aafe1adca5aa6c76dd6b9cde20766e1cf86e2e8025b9",
+    "1024_swapped": "6851fbc70ce2797146c2d3aa9b13e729feb4cc5e6fe4cb193af7912be2205fd3",
+    "2048_original": "81bb88768b8858eb46fd43be453b4c697ac27a08ec4f17dcf33c9fb8b76d79c0",
+    "2048_swapped": "32e2097d3d7bc96ceeb681b22c9c4e0979597cc07d64c57416a6d9b029a32de3"
+  },
+  "old_snapshot_sha256": {
+    "backlog/versions/v2.final.md": "e8278377328a0ffbd68f94f9da5a7db8a90a38aa47c392100ba47e063ea5adf0",
+    "backlog/versions/v5.start.json": "2a31cc95353ecbfd736b5f8c07360681e8dd54ef15eee8606f30bd85767d5847",
+    "backlog/versions/v4.start.json": "33d49170b1ca4c95d573761a6119589d15e29faf94ef8a836d8c44088f06c148",
+    "backlog/versions/v5.final.md": "022b2b48117d6daebcb0a889eca9d5159e0572ffa859f41c69448cac7a266158",
+    "backlog/versions/v1.final.md": "9462b9a7f33cd4e9d8e3948a1e2f1ef971411af242100f35b8cbb25a9f2a5ea7",
+    "backlog/versions/v1.start.md": "9d62a7657c069b40023e178c7f1004f55419ef41f583d8264e5509b57272e0fd",
+    "backlog/versions/v2.start.json": "e83cec43f76ea1fdd348b213aaafdc0290c8fd84735ce295f5216593a1146ec7",
+    "backlog/versions/v7.start.md": "9e7ec4e890af813166c82ac575f7dd9c29baf15f6d21f79d77ed24277004d323",
+    "backlog/versions/v3.start.md": "3f2a382fadb41c0e9940c54cece092e87df761cc9fdad6f7a641088f355db73d",
+    "backlog/versions/v4.final.json": "79aabf21bd7fc5de5938707f9c4914e78a8f35bb79543fd38e05c4e8256fcf63",
+    "backlog/versions/v4.start.md": "81407a66c1db9dd0e1769b0236c6fdbaf30a098ad98db3c6aed4080488b262a1",
+    "backlog/versions/v3.start.json": "126241dd30b8f1117ad2a332e936072a5e49b4fcfff482f207f8e47403462490",
+    "backlog/versions/v3.final.md": "1bc8afb394ce7450aecab09dc6b169bddd4f1fdb12723f206d961924dd7df8aa",
+    "backlog/versions/v4.final.md": "1a9a0060681fcdcf992c0b6b5d4addca3cd5d7d7a7e7b9bf182d9589efa22e3b",
+    "backlog/versions/v7.start.json": "71942464e78a3c9019e0c8a4b80b9ab9213725aafa5564a8b8046d260ea189a1",
+    "backlog/versions/v1.final.json": "a3b0967e5285242bb356c5dc4e1ca33c2bd41cd58a24d84794153d8b840f6138",
+    "backlog/versions/v1.start.json": "0184479f9c5cd767531411490f21fc38fb89cc5fdd343b89d2d7254bd0baef5e",
+    "backlog/versions/v2.final.json": "66606162be35a509e9ae56493293d7924f7f01983b0b31b1d3b8ab5298291001",
+    "backlog/versions/v2.start.md": "554cbbfb85fe5e0f5303abeeea19244c5c0406f2c118c0f7483561e55f922a21",
+    "backlog/versions/v3.final.json": "519b836c95d22323a7cf9ae584df312be3887bc040f0da473e1ce08aeda659a2",
+    "backlog/versions/v5.final.json": "7591f7d255932369c5052a1f5356da84ea35f192094ae026d53e3b928f89f8cf",
+    "backlog/versions/v6.final.json": "8380e0a31b8c58bba2717fc14a7a80d2fc99840d8b4b77a756727fa5518e7924",
+    "backlog/versions/v5.start.md": "e073b57480323fe77b8e3fc3d56f09872b58a81972caee4b7c91500d8375e665",
+    "backlog/versions/v6.start.md": "522d26bab54b7d4eff3b3423538a285e507b7414d2166fb1c4550ad6c44a1c8f",
+    "backlog/versions/v6.final.md": "a2dc575b309c94022837ea5802579973a7440c291e5965b641ce49f00c49871b",
+    "backlog/versions/v6.start.json": "9e8da506f8d31cd2031a330160a015cad1176b4bfd11a8598da0f2afcdbb9b89"
+  },
+  "user_notebook_sha256": {
+    "notebooks/07_error_poster.ipynb": "e2d49655fc41e28f1c91b0dc9e64bab4f22dca28212c9c6df991ae0c6311eb0b",
+    "notebooks/12_backlog_v1_span.ipynb": "2b2f7c5c80efe3cc4e720e208c8fe4769dbbe317addd8e23ab7e5f2cbcc060b4"
+  },
+  "contract_sha256": {
+    "GOAL.md": "9300760873b75c8ab811a6278c7cad21ae638872280d5f5435fc2ba596ca6e29",
+    "configs/span_007.json": "0444c2769c9fc607ff607f7062f60f69307ad1b42495ef43acc106ab8232769f",
+    "docs/SPAN_007_PLAN.md": "80eb5ac666eecf0bca2e173d1488b2c058491b5270d70a3eccb3924d655ed396"
+  }
+}

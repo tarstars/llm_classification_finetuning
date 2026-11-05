@@ -3621,7 +3621,7 @@
       "title": "Reusable experiment control and framework reliability",
       "id": "E09",
       "rank": 57,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3632,6 +3632,14 @@
           "at": "2026-11-05T18:39:30+00:00",
           "status": "planned",
           "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:41:20+00:00",
+          "status": "running",
+          "note": "Implement shared future-run control with fault tests, immutable mutation intent and bounded artifact recovery; baseline full test suite is being checked. Preserve historical frozen code.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
           ]
