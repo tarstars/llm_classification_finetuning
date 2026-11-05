@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "training_answers": 91970,
+  "development_answers": 11492,
+  "final_fit_answers": 91088,
+  "purged": 882,
+  "families": {
+    "tfidf": {
+      "fit_indices_sha256": "373343d598ef4cb5727a1e33bf629cda2fc7116d57ddf2c040974e9fdacbd5cf",
+      "no_development_answer_overlap": true
+    },
+    "cached_embedding": {
+      "fit_indices_sha256": "373343d598ef4cb5727a1e33bf629cda2fc7116d57ddf2c040974e9fdacbd5cf",
+      "no_development_answer_overlap": true
+    }
+  }
+}

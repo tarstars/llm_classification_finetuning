@@ -1,5 +1,25 @@
 # Project memory
 
+## V5 closing snapshot — 2026-11-05
+
+V5 is sealed; v6 has37tasks (35carryovers+H46/E08), no focus/execution; v7 empty.
+E06/E07/H45 all done. Known model strength gives oracle loss0.940456 versus matched
+calibrated LoRA0.953701, gain0.013246 CI[0.008968,0.017515]. Portable TF-IDF source
+attribution reaches27.08%accuracy/2.938585loss; cached embeddings9.95%/3.704803.
+Practical nested selector0.953834 fails adoption. Compact strength-only0.952397
+has a small positive post-inspection signal; H46 freezes replication and E08 needs
+actual replicated benefit before offline qualification. No post-hoc promotion.
+
+Original clock07:17:10UTC November5,48hdeadline. Successful CPU elapsed1748.212s,
+conservative failure-inclusive1808.212s, peak3.701GiB; GPU/new submissions0.
+Best official0.95481 unchanged. Initial pre-fit loader failure is preserved with
+same-data recovery. Full scientific/remote/closure checks, executed notebook16
+and26tests pass. All18previous sealed snapshots and user notebook07/12 edits
+remain preserved. See [v5 results](SPAN_005_RESULTS.md),
+[completion](SPAN_005_COMPLETION.md) and [handoff](CONTEXT_HANDOFF.md).
+
+Entries below are dated historical preparation/in-progress snapshots.
+
 ## V5 execution preparation — 2026-11-05
 
 User authorized the next span. FocusE06/E07/H45; CPU-only7.5hstage ceiling,

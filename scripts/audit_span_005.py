@@ -87,6 +87,10 @@ def main():
             # Hard majority is intentionally clipped in its metric, not its saved array.
             np.testing.assert_allclose(loss(y,probability).mean(),m['log_loss'],atol=1e-12)
             np.testing.assert_allclose((probability.argmax(1)==y).mean(),m['accuracy'],atol=1e-12)
+            confusion=np.zeros((3,3),int);np.add.at(confusion,(y,probability.argmax(1)),1)
+            np.testing.assert_array_equal(confusion,m['confusion_matrix'])
+            np.testing.assert_allclose([loss(y,probability)[y==k].mean() for k in range(3)],m['class_loss'],atol=1e-12)
+            np.testing.assert_allclose(np.diag(confusion)/confusion.sum(1),m['class_recall'],atol=1e-12)
         for name,value in result['contrasts'].items():
             if name=='selected_vs_style':first,last='style','nested_selected'
             else:last,first=name.split('_vs_')
@@ -94,6 +98,11 @@ def main():
             np.testing.assert_allclose(interval(delta,groups,cfg),value['interval_95'],atol=1e-12)
         proof['tasks'][task]={'outer_predictions_reconstructed':reconstructed,'metric_rows':len(y),'contrasts_recomputed':len(result['contrasts']),
                              'cpu_seconds':result['cpu_elapsed_seconds'],'source_sha256':result['source_sha256'],'gate':result['gate']}
+        g=result['contrasts']['nested_selected_vs_calibration']
+        if task=='E06':expected=g['gain']>0 and g['interval_95'][1]>=.001 and result['source_known_pair_coverage']>=.95
+        else:
+            style=result['contrasts']['selected_vs_style'];expected=g['gain']>=.001 and g['interval_95'][0]>0 and style['gain']>0 and style['interval_95'][0]>0
+        assert result['gate']['passed']==bool(expected)
     # Audit all source OOF coverage and duplicate purges independently.
     source_result=read(pub/'E07_results.json');classes=vocab['source_classes'];clook={n:i for i,n in enumerate(classes)}
     texts=np.r_[train.response_a,train.response_b,dev.response_a,dev.response_b];hashes=np.array([answer_hash(t) for t in texts]);n=2*len(train)
@@ -113,6 +122,7 @@ def main():
             np.testing.assert_allclose(saved['oof_prior'][val],np.tile(prior,(len(val),1)),atol=1e-7)
         value=-np.log(np.maximum(saved['oof'][np.arange(n),target],1e-12))
         np.testing.assert_allclose(value.mean(),stats['oof']['log_loss'],rtol=1e-6)
+        np.testing.assert_allclose((saved['oof'].argmax(1)==target).mean(),stats['oof']['accuracy'],atol=1e-12)
         proof.setdefault('source_families',{})[family]={'oof_answers':n,'duplicate_purges_verified':True,'training_source_loss':float(value.mean())}
     # Local offline replay of the actual serialized portable feature/head bundle.
     bundle=joblib.load(out/'E07/tfidf_bundle.joblib');cap=bundle['max_chars']
@@ -120,6 +130,11 @@ def main():
     x=hstack([v.transform(packed) for v in bundle['parts']],format='csr',dtype=np.float32)
     q=np.full((len(packed),len(classes)),1e-12);q[:,bundle['model'].classes_]=bundle['model'].predict_proba(x);q[x.getnnz(axis=1)==0]=bundle['prior'];q/=q.sum(1,keepdims=True)
     saved=np.load(out/'E07/tfidf_predictions.npz');np.testing.assert_allclose(q,np.vstack([saved['dev_a'],saved['dev_b']]),atol=1e-6)
+    sentinel=np.random.default_rng(cfg['seed']).permutation(len(packed))[:64]
+    xs=hstack([v.transform([packed[i] for i in sentinel]) for v in bundle['parts']],format='csr',dtype=np.float32)
+    qs=np.full((len(sentinel),len(classes)),1e-12);qs[:,bundle['model'].classes_]=bundle['model'].predict_proba(xs);qs[xs.getnnz(axis=1)==0]=bundle['prior'];qs/=qs.sum(1,keepdims=True)
+    np.testing.assert_allclose(qs,q[sentinel],atol=1e-6)
+    proof['portable_batch_order_max_difference']=float(np.max(np.abs(qs-q[sentinel])))
     proof['portable_bundle_replay_rows']=len(packed);proof['source_prediction_gate']=source_result['gate']
     proof['cpu_accounted_upper_seconds']=read(pub/'E06_results.json')['cpu_accounted_seconds_upper_bound']+source_result['cpu_elapsed_seconds']+read(pub/'H45_results.json')['cpu_elapsed_seconds']
     assert proof['cpu_accounted_upper_seconds']<27000

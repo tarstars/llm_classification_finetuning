@@ -100,7 +100,8 @@ print('E06 including conservative failure allowance:',e06['cpu_accounted_seconds
 for name in ['decisions.json','scientific_audit.json','terminal_audit.json']:
     if (RESULTS/name).exists():
         value=read(name)
-        print(name,{k:v for k,v in value.items() if k not in ['artifact_sha256','tasks','jobs','old_snapshot_sha256']})
+        print(name,{k:v for k,v in value.items() if k not in ['artifact_sha256','tasks','jobs','inventory','old_snapshot_sha256']})
+        if 'inventory' in value:print('Closing quota:',value['inventory']['quota'])
 display(pd.DataFrame([{'version':v['number'],'state':v['state'],'tasks':len(v['item_ids']),'focus':v['focus_ids']} for v in registry['versions']]))
 print('Standalone figures:',FIGURES)
 ''')]

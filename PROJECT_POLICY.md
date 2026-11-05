@@ -12,8 +12,9 @@ the Markdown. Preserve stable hypothesis IDs and previous outcomes. A backlog
 version defines a research span; its `focus_ids` define that span's bounded
 execution scope. [GOAL.md](GOAL.md) describes the current span and its limits;
 completed contracts are preserved at [docs/GOAL_V1.md](docs/GOAL_V1.md),
-[docs/GOAL_V2.md](docs/GOAL_V2.md), [docs/GOAL_V3.md](docs/GOAL_V3.md)
-and [docs/GOAL_V4.md](docs/GOAL_V4.md). A completed goal file does not authorize
+[docs/GOAL_V2.md](docs/GOAL_V2.md), [docs/GOAL_V3.md](docs/GOAL_V3.md),
+[docs/GOAL_V4.md](docs/GOAL_V4.md) and [docs/GOAL_V5.md](docs/GOAL_V5.md).
+A completed goal file does not authorize
 executing its successor backlog; select a new bounded goal first.
 
 | Status | Meaning |

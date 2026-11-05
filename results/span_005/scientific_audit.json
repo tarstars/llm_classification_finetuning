@@ -1,0 +1,71 @@
+{
+  "span": 5,
+  "passed": true,
+  "original_start": "2026-11-05T07:17:10+00:00",
+  "original_deadline": "2026-11-07T07:17:10+00:00",
+  "confirmation_used": false,
+  "gpu_seconds": 0,
+  "snapshot_files_preserved": 18,
+  "input_artifact_hashes_verified": true,
+  "tasks": {
+    "E06": {
+      "outer_predictions_reconstructed": 22984,
+      "metric_rows": 5746,
+      "contrasts_recomputed": 11,
+      "cpu_seconds": 19.528303336002864,
+      "source_sha256": "ac6891f4c1d9cdd69fdfb2de02a2c16e0e8fb69c5fc566cb16ee14a4849c99d7",
+      "gate": {
+        "passed": true,
+        "rule": "Nested-oracle gain >0,95% upper bound >=0.001,and >=95% known-pair coverage; an information gate, not adoption.",
+        "evidence": {
+          "gain": 0.013245621828178504,
+          "interval_95": [
+            0.008967992635261404,
+            0.01751520024467121
+          ],
+          "groups": 5211,
+          "rows": 5746,
+          "replicates": 2000
+        }
+      }
+    },
+    "H45": {
+      "outer_predictions_reconstructed": 28730,
+      "metric_rows": 5746,
+      "contrasts_recomputed": 11,
+      "cpu_seconds": 24.70457460009493,
+      "source_sha256": "668a5eed8fe69c429609a532a04f034e6b8c872f8d0389abe5b690630eeb7167",
+      "gate": {
+        "passed": false,
+        "rule": "Gain>=0.001 and paired95%lower bound>0 versus both calibration and style; no official submission in this span."
+      }
+    }
+  },
+  "source_families": {
+    "tfidf": {
+      "oof_answers": 91970,
+      "duplicate_purges_verified": true,
+      "training_source_loss": 2.938585042953491
+    },
+    "cached_embedding": {
+      "oof_answers": 91970,
+      "duplicate_purges_verified": true,
+      "training_source_loss": 3.7048025131225586
+    }
+  },
+  "portable_batch_order_max_difference": 0.0,
+  "portable_bundle_replay_rows": 11492,
+  "source_prediction_gate": {
+    "passed": true,
+    "rule": "Portable TF-IDF OOF gain over prior >0; finite full coverage; measured conditional path<=25200s and RSS<6GiB."
+  },
+  "cpu_accounted_upper_seconds": 1808.2119811230805,
+  "checked_at": "2026-11-05T08:08:40.677022+00:00",
+  "audit_seconds": 27.3663185168989,
+  "source_sha256": "4a5eb784c37e20c7b692b14c1af50c254f87b41946d21c12e0c97d0e49a25fe6",
+  "artifact_sha256": {
+    "results/span_005/E07_results.json": "c50dacb45e6c53deb539b2562a9726994c3b4e18c771fbe1abd27b1539dfe8b8",
+    "results/span_005/H45_results.json": "bfc116e1a0d7363543a797da8877545b20899e8f550dae4ed282ca020e823ff3",
+    "results/span_005/E06_results.json": "f092c2fd148b24f3aea685b58cae0f75dc5da445e2704795f691a9c20bb63c93"
+  }
+}

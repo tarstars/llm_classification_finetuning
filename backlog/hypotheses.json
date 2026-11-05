@@ -3335,7 +3335,7 @@
       ],
       "id": "H45",
       "rank": 53,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 5,
       "discovered_during": null,
       "derived_from": [
@@ -3349,6 +3349,147 @@
           "evidence": [
             "docs/SPAN_005_SOURCE_MODEL_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-05T08:06:54+00:00",
+          "status": "running",
+          "note": "Both E06/E07 scientific gates passed. Starting fixed five-outer/three-inner grouped practical source residual comparison, using TF-IDF posteriors only and no development model names. Committed H45 contract9d0782b includes19245.25ssetup-adjusted projection; zeroGPU/no submission.",
+          "evidence": [
+            "docs/SPAN_005_E07.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T08:12:55+00:00",
+          "status": "done",
+          "note": "Completed practical nested source integration. Compact strength family0.952397 gives gain0.001305 CI[0.000037,0.002618], but primary nested family selector0.953834 vscalibration0.953701 has gain-0.000133 CI[-0.002038,0.001660]; adoption fails. No post-hoc winner promotion, GPU use or submission; CPU24.705s.",
+          "evidence": [
+            "docs/SPAN_005_H45.md"
+          ]
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "estimate_confidence": "low",
+      "risk": "high",
+      "evidence": [
+        "docs/SPAN_005_H45.md",
+        "docs/SPAN_005_RESULTS.md",
+        "results/span_005/H45_results.json"
+      ],
+      "revision": "New v6 proposal from the completed v5 experiment. No execution or promotion during v5; primary nested selector failed. Keep forecasts separate from the positive post-inspection fixed-family observation. Clarify transfer ordering: source duplicate purging covers development plus confirmation, and any auxiliary refit and development meta fitting are completed/frozen before confirmation votes are evaluated.",
+      "kind": "hypothesis",
+      "title": "Freeze and replicate inferred-strength correction on a separate cohort",
+      "gain": [
+        -0.003,
+        0.004
+      ],
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        1,
+        1.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "claim": "The predeclared compact source-strength family may provide a small reproducible residual gain once its recipe is frozen and transferred without family reselection.",
+      "basis": "V5 known-name strength gain0.013246; inferred strength alone0.001305 CI[0.000037,0.002618]. The primary nested two-family selector instead loses0.000133 and fails adoption. The family is now chosen after seeing outer results, so the original fixed-family CI is insufficient for promotion.",
+      "first_test": "Freeze the compact strength family and all source/rating/class-mapping/configuration choices. Inventory latest H03 raw confirmation predictions; if absent, admit one bounded both-order inference job with the exact verified export. Before opening confirmation votes, purge source-training answers duplicated in the union of development and confirmation; perform any required auxiliary refit with the frozen recipe, recompute development posteriors, and select residual regularization only in grouped inner development folds. Fit final residual/calibration parameters on development, then freeze all artifacts. Evaluate once on the original5746-row confirmation partition, new to this recipe but historically inspected; no untouched-data claim. Include matched frozen LoRA-calibration, style and shuffled-source controls. No family/grid expansion or confirmation-driven retuning.",
+      "acceptance": "At least0.001 lower matched loss with positive paired prompt-group evidence versus LoRA-only calibration and a surviving style control, plus finite/swap-safe coverage and feasible runtime. Report calibration/source distribution shift and all outcomes. Only then consider E08 offline qualification.",
+      "stop": "Stop without deployment if the transferred gain is absent, inconclusive or style-explained; do not retune on confirmation or leaderboard results. Do not relabel old checkpoint800 predictions as current H03 predictions.",
+      "risk_reason": "Choosing the compact family after inspecting v5 can exploit noise. Confirmation was historically inspected; source-style priors may shift. Latest H03 confirmation inference may need quota not yet available.",
+      "mitigation": "Freeze before a single transfer check, disclose inspected-data status and source coverage, use paired groups and matched controls, and freshly admit inference. Separate confirmation duplicate purging/refitting from evaluation labels.",
+      "rationale": "Follows the measured small fixed-family signal while respecting the failed primary selector; seeks replication rather than post-hoc promotion.",
+      "depends_on": [
+        "E00",
+        "E06",
+        "E07",
+        "H45"
+      ],
+      "id": "H46",
+      "rank": 54,
+      "status": "planned",
+      "introduced_in": 6,
+      "discovered_during": 5,
+      "derived_from": [
+        "H45"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T08:14:06+00:00",
+          "status": "planned",
+          "note": "V5 practical selector failed despite a small positive compact-strength family. Queue a frozen separate-cohort replication and conditional offline qualification; preserve post-inspection status and do not execute v6.",
+          "evidence": [
+            "docs/SPAN_005_H45.md"
+          ]
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "estimate_confidence": "low",
+      "risk": "high",
+      "evidence": [
+        "docs/SPAN_005_H45.md",
+        "docs/SPAN_005_RESULTS.md",
+        "results/span_005/H45_results.json"
+      ],
+      "revision": "New v6 proposal from the completed v5 experiment. No execution or promotion during v5; primary nested selector failed. Keep forecasts separate from the positive post-inspection fixed-family observation.",
+      "kind": "prerequisite",
+      "title": "Qualify classifier plus inferred-strength correction for offline inference",
+      "gain": null,
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        0.75
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "claim": "A scientifically qualified compact source correction may be deployable if its exact frozen classifier, source head and meta recipe reproduce offline within budget.",
+      "basis": "V5 portable source scoring14.009s/11492answers and setup-adjusted projection19245.25s suggest affordable overhead, but no new joint Kaggle profile exists and the primary quality gate failed. E08 requires an actually positive H46 replication, not done status alone.",
+      "first_test": "After H46 genuinely qualifies, pin the final residual, TF-IDF vocabulary/IDF/coefficients, rating/class mapping, classifier/export and probability recipe with checksums. Package compatible CPU libraries or portable numerical parameters without online feature services. Run one bounded Internet-disabled64-row joint classifier/source/meta reload and original/swapped replay, with explicit source/overall numerical tolerances frozen beforehand. Measure all setup, GPU/CPU inference, memory and CSV integrity; compare the same frozen rows to local source and classifier caches.",
+      "acceptance": "Actual offline probability/order/schema/hardware checks pass without relaxed tolerances. A measured conservative total-runtime path with20%margin and600sreserve fits seven hours at an explicitly stated hidden-size assumption. Preserve raw and calibrated component equality separately. No submission in this qualification task.",
+      "stop": "Defer if H46 is negative/inconclusive or if compatibility, dependency availability, replay or total runtime fails. Never use this infrastructure task as a reason to submit the rejected v5 selector or switch families after follow-up inspection.",
+      "risk_reason": "Local scikit-learn serialization and CPU speed may differ on Kaggle; nested research predictions are not a frozen deployable meta model. End-to-end timing includes more than the source head.",
+      "mitigation": "Freeze only after replicated quality, explicitly refit/freeze final meta parameters without evaluation labels, validate pinned libraries/weights offline, include cold setup and per-device behavior, and stop before any official submission.",
+      "rationale": "Distinct from native judge E02/E04/E05: this is a classifier+CPU source pipeline with no judge or external embedding dependency.",
+      "depends_on": [
+        "E00",
+        "H46"
+      ],
+      "id": "E08",
+      "rank": 55,
+      "status": "planned",
+      "introduced_in": 6,
+      "discovered_during": 5,
+      "derived_from": [
+        "H45"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T08:14:06+00:00",
+          "status": "planned",
+          "note": "V5 practical selector failed despite a small positive compact-strength family. Queue a frozen separate-cohort replication and conditional offline qualification; preserve post-inspection status and do not execute v6.",
+          "evidence": [
+            "docs/SPAN_005_H45.md"
+          ]
         }
       ]
     }
@@ -3360,7 +3501,8 @@
     "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
     "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.",
     "Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots.",
-    "V3 verified H03 step1438 at official loss0.95481. V4 completed E04:512 fresh native requests on64rows show substantial drift for identical token inputs with either cache setting. H44 was not fitted and is deferred; E05 request-concurrency diagnosis is queued for v5. Old cached blend gains remain exploratory, conditional on their recorded predictions, not verified deployment gains. Best official score is unchanged. A new span needs a selected focus and fresh resources."
+    "V3 verified H03 step1438 at official loss0.95481. V4 completed E04:512 fresh native requests on64rows show substantial drift for identical token inputs with either cache setting. H44 was not fitted and is deferred; E05 request-concurrency diagnosis is queued for v5. Old cached blend gains remain exploratory, conditional on their recorded predictions, not verified deployment gains. Best official score is unchanged. A new span needs a selected focus and fresh resources.",
+    "V5 completed the source-model experiment on the unchanged5746development rows: known-name strength lowers calibrated LoRA loss0.953701 to0.940456, but the practical nested source selector0.953834 does not improve its comparator. Compact inferred strength alone gives0.001305 conditional gain, selected after inspection and requiring frozen replication. Source TF-IDF accuracy27.08% is a different task metric. ZeroGPU/new submissions; official best remains0.95481. H46 replication and conditional E08 offline qualification are queued for v6, without execution."
   ],
   "revisions": [
     "**H07/H06:** the final causal classification token already sees both retained answers. Bidirectional masking is an architectural experiment, not a fix for missing access to answer B; H07 moves to P4.",
@@ -3376,7 +3518,8 @@
     "V3 closing update2026-11-04: refresh current global framing to verified official0.95481 and latest matched controls; retain original subjective forecasts unless task evidence warrants a revision. This administrative refresh followed v3-final/v4-start sealing: their old0.97025 introductory framing is preserved as a documented erratum, while their E03 task record already contains0.95481. Do not rewrite sealed snapshot bytes. See docs/SPAN_003_COMPLETION.md.",
     "V4 E04: disabling prompt reuse alone does not establish stable probabilities; batch/concurrency sensitivity remains untested. H44 is explicitly deferred behind new E05 and a genuinely stable feasible recipe. No v4 blend gain or new official score is claimed; unchanged forecast ranges remain subjective plans.",
     "V4 closure bibliography erratum: one v3 source-list sentence in sealed v4-final/v5-start still says no v4 experiment has run. It was inherited from the activation record; their task outcomes and main framing correctly record completed E04 and deferred H44. Correct the current bibliography, preserve sealed snapshot bytes, and use docs/SPAN_004_COMPLETION.md for the closing interpretation.",
-    "User planning addition2026-11-05 before any v5 focus/preparation: add E06 source strength/oracle residual diagnostics, E07 text-to-source probabilities, and H45 incremental LoRA integration. Live v5 membership is38; preserve original35-task v5-start and all earlier snapshots. Scientific pilot gates remain required; no experiment or goal activated. See docs/SPAN_005_SOURCE_MODEL_PLAN.md."
+    "User planning addition2026-11-05 before any v5 focus/preparation: add E06 source strength/oracle residual diagnostics, E07 text-to-source probabilities, and H45 incremental LoRA integration. Live v5 membership is38; preserve original35-task v5-start and all earlier snapshots. Scientific pilot gates remain required; no experiment or goal activated. See docs/SPAN_005_SOURCE_MODEL_PLAN.md.",
+    "V5 source integration: preserve the negative primary nested-family result even though a fixed strength family is promising. H46 freezes a separate-cohort replication; E08 needs that actual quality gate before offline qualification. No post-hoc family promotion, new official score, or0.8 guarantee."
   ],
   "evaluation": [
     "Keep the exact prompt-grouped split IDs and frozen attempt-002 reference. Existing dev and confirmation were inspected and are exploratory. New grouped inner validation must retrain models without its held-out groups; cached in-sample training predictions cannot stand in for OOF predictions. Nested selection reduces additional tuning bias but cannot retroactively make inspected data untouched.",
@@ -3394,9 +3537,10 @@
     "[Skywork reward-model repository](https://github.com/SkyworkAI/Skywork-Reward), [Skywork Reward V2 paper](https://arxiv.org/abs/2507.01352), and [second-place LMSYS write-up](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527685) supply technical precedents, not measured local gains or verified deployment feasibility.",
     "[V3 results](docs/SPAN_003_RESULTS.md), [official verification](results/span_003/deployed_candidate.json) and [completion/archival framing erratum](docs/SPAN_003_COMPLETION.md) supersede the earlier global best-score framing. These v3 references predate v4; the completed v4 diagnostic is linked below.",
     "[V4 results](docs/SPAN_004_RESULTS.md), [native repeatability evidence](docs/SPAN_004_E04.md) and [H44 deferral](docs/SPAN_004_H44.md) record the completed diagnostic and conditional next-stage stop.",
-    "[V5 source-model experiment plan](docs/SPAN_005_SOURCE_MODEL_PLAN.md) records the explicit user-requested pre-execution additions, diagnostic evidence, conditional stages, bounded effort and evaluation controls; no new measurement is claimed."
+    "[V5 source-model experiment plan](docs/SPAN_005_SOURCE_MODEL_PLAN.md) records the explicit user-requested pre-execution additions, diagnostic evidence, conditional stages, bounded effort and evaluation controls; no new measurement is claimed.",
+    "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision."
   ],
-  "active_version": 5,
+  "active_version": 6,
   "versions": [
     {
       "number": 1,
@@ -3683,7 +3827,7 @@
     },
     {
       "number": 5,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -3776,10 +3920,67 @@
       "carried_from": 4,
       "start_sha256": "2a31cc95353ecbfd736b5f8c07360681e8dd54ef15eee8606f30bd85767d5847",
       "start_markdown_sha256": "e073b57480323fe77b8e3fc3d56f09872b58a81972caee4b7c91500d8375e665",
-      "start_sealed_at": "2026-11-04T16:36:02+00:00"
+      "start_sealed_at": "2026-11-04T16:36:02+00:00",
+      "final_sha256": "7591f7d255932369c5052a1f5356da84ea35f192094ae026d53e3b928f89f8cf",
+      "final_markdown_sha256": "022b2b48117d6daebcb0a889eca9d5159e0572ffa859f41c69448cac7a266158",
+      "final_sealed_at": "2026-11-05T08:16:24+00:00",
+      "closed_at": "2026-11-05T08:16:24+00:00",
+      "closing_note": "V5 completed E06/E07/H45 on fixed training/development groups. Known-source strength has a clear residual signal; TF-IDF source attribution works. Primary nested practical selector fails adoption, while compact strength alone has a small post-inspection signal. Zero GPU/new submissions; queue H46 frozen transfer and conditional E08 offline qualification. Preserve35carryovers and stop before v6 execution.",
+      "closing_evidence": [
+        "docs/SPAN_005_RESULTS.md"
+      ]
     },
     {
       "number": 6,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H36",
+        "H38",
+        "H41",
+        "H44",
+        "E05",
+        "H46",
+        "E08"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 5,
+      "start_sha256": "9e8da506f8d31cd2031a330160a015cad1176b4bfd11a8598da0f2afcdbb9b89",
+      "start_markdown_sha256": "522d26bab54b7d4eff3b3423538a285e507b7414d2166fb1c4550ad6c44a1c8f",
+      "start_sealed_at": "2026-11-05T08:16:24+00:00"
+    },
+    {
+      "number": 7,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

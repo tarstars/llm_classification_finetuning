@@ -12,11 +12,15 @@ Both cache settings failed the fixed probability guards on 512 fresh requests;
 **H44** calibration was not run and remains deferred. V4 used **839.253 seconds**
 of Kaggle session time, including its failed setup attempt, and made no submission.
 See the [results](docs/SPAN_004_RESULTS.md) and [executed notebook15](notebooks/15_backlog_v4_span.ipynb).
-Backlog v5 is active with no selected focus or execution; its new E05 task tests
-request concurrency before further judge rescoring.
-The [source-model experiment plan](docs/SPAN_005_SOURCE_MODEL_PLAN.md) adds E06
-(model strength), E07 (text-to-source probabilities) and H45 (incremental LoRA
-features) at the user's request, with conditional gates and matched controls.
+V5 completed the source-model experiment. Known model strength improves the
+matched diagnostic from **0.953701 to 0.940456**, but the practical nested source
+selector gives **0.953834** and fails adoption. The fixed strength-only family
+is promising at 0.952397 and needs frozen replication. TF-IDF source-class accuracy
+is 27.08%, a different task metric. GPU use and submissions were zero.
+See [v5 results](docs/SPAN_005_RESULTS.md), [completion](docs/SPAN_005_COMPLETION.md)
+and [executed notebook16](notebooks/16_backlog_v5_span.ipynb).
+V6 is active with no focus/execution; H46 replication and conditional E08 offline
+qualification are queued. The completed [v5 contract](docs/GOAL_V5.md) is archived.
 The completed [v1](docs/GOAL_V1.md), [v2](docs/GOAL_V2.md) and
 [v3](docs/GOAL_V3.md) goals are archived. V3's conservative whole-span compute
 bound was 6.20508 hours against its original 8.35453-hour quota cap.
@@ -69,19 +73,19 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v5**, with **38 tasks**: 34 unfinished carryovers,
-E05 (native judge request-concurrency sensitivity), and the three source-model
-planning additions E06/E07/H45. H44 now depends on E05
-providing an actually stable, feasible recipe and consistent scores. E04 is done
-with negative evidence; H44 was deferred without fitting. No v5 task has started.
-The original 35-task v5-start snapshot is preserved; version history records the
-user-requested additions made before focus selection or execution.
-[V6 is an empty draft](backlog/NEXT.md).
+The active version is **v6**, with **37 tasks**: 35 unfinished carryovers plus
+H46 (freeze/replicate compact inferred strength) and E08 (conditional offline
+classifier/source qualification). V5 completed E06/E07/H45 with a negative primary
+adoption decision. E05/H44 remain carryovers, with their judge prerequisites
+unchanged. V6 has no selected focus or execution; [v7 is an empty draft](backlog/NEXT.md).
+The original 35-task v5-start snapshot and its explicit planning amendments are
+preserved, along with all historical snapshots.
 Each completed span preserves snapshots and carries unfinished work forward.
 See the [initial v1 snapshot](backlog/versions/v1.start.md),
 [v1 final history](backlog/versions/v1.final.md), [v2 final history](backlog/versions/v2.final.md)
 and [v3 final history](backlog/versions/v3.final.md),
-[v4 final history](backlog/versions/v4.final.md).
+[v4 final history](backlog/versions/v4.final.md),
+[v5 final history](backlog/versions/v5.final.md).
 [Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
 The JSON-backed CLI browses work, records status/evidence and regenerates the page:
 
@@ -90,8 +94,8 @@ uv run python scripts/backlog.py list --priority P1
 uv run python scripts/backlog.py list --actionable
 uv run python scripts/backlog.py list --actionable --focus
 uv run python scripts/backlog.py versions
-uv run python scripts/backlog.py list --version 5 --new
-uv run python scripts/backlog.py list --version 5 --carried
+uv run python scripts/backlog.py list --version 6 --new
+uv run python scripts/backlog.py list --version 6 --carried
 uv run python scripts/backlog.py list --version next
 uv run python scripts/backlog.py show H09
 uv run python scripts/backlog.py check
@@ -114,9 +118,10 @@ compatibility and runtime gates fail; gains cannot be added. See the
 [v2 report](docs/SPAN_002_RESULTS.md) and [protocol](docs/SPAN_002_PROTOCOL.md).
 
 The [v2 completion record](docs/SPAN_002_COMPLETION.md),
-[v3 completion record](docs/SPAN_003_COMPLETION.md) and
-[v4 completion record](docs/SPAN_004_COMPLETION.md) link resource, provenance,
-notebook and version checks. V4 stops at the v5 boundary.
+[v3 completion record](docs/SPAN_003_COMPLETION.md),
+[v4 completion record](docs/SPAN_004_COMPLETION.md) and
+[v5 completion record](docs/SPAN_005_COMPLETION.md) link resource, provenance,
+notebook and version checks. V5 stops at the v6 boundary.
 
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and
@@ -139,6 +144,7 @@ classifier comparison and all baselines.
 - [Backlog v2 span: calibration, accepted exposure and judge ensemble](notebooks/13_backlog_v2_span.ipynb)
 - [Backlog v3 span: affordable judge use and frozen classifier verification](notebooks/14_backlog_v3_span.ipynb)
 - [Backlog v4 span: native repeatability and calibration stopping decision](notebooks/15_backlog_v4_span.ipynb)
+- [Backlog v5 span: source attribution and residual preference evidence](notebooks/16_backlog_v5_span.ipynb)
 - [Executed offline Kaggle notebook](kaggle/offline_submission.ipynb)
 
 The first attempt compares TF-IDF, a GRU trained from scratch, and contemporary

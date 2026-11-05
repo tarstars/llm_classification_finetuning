@@ -1,0 +1,57 @@
+{
+  "span": 5,
+  "focus": [
+    "E06",
+    "E07",
+    "H45"
+  ],
+  "E06": {
+    "status": "done",
+    "information_gate_passed": true
+  },
+  "E07": {
+    "status": "done",
+    "portable_gate_passed": true
+  },
+  "H45": {
+    "status": "done",
+    "primary_adoption_gate_passed": false,
+    "primary_loss": 0.9538344653839755,
+    "primary_gain": {
+      "gain": -0.00013304029496211917,
+      "interval_95": [
+        -0.0020379657195243018,
+        0.001660322859250589
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "fixed_strength_family_gain": {
+      "gain": 0.0013048803163494612,
+      "interval_95": [
+        3.704840767361772e-05,
+        0.0026182996958365153
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "post_hoc_promotion": false
+  },
+  "best_official_log_loss": 0.95481,
+  "new_submissions": 0,
+  "gpu_seconds": 0,
+  "confirmation_used": false,
+  "experiment_elapsed_seconds": 1748.2119811230805,
+  "conservative_failure_allowance_seconds": 60,
+  "experiment_accounted_upper_seconds": 1808.2119811230805,
+  "scientific_audit_passed": true,
+  "input_sha256": {
+    "E06_results.json": "f092c2fd148b24f3aea685b58cae0f75dc5da445e2704795f691a9c20bb63c93",
+    "E07_results.json": "c50dacb45e6c53deb539b2562a9726994c3b4e18c771fbe1abd27b1539dfe8b8",
+    "H45_results.json": "bfc116e1a0d7363543a797da8877545b20899e8f550dae4ed282ca020e823ff3",
+    "scientific_audit.json": "2c4d28f6b5781b98cd4da1ae934d076cf8834a23ea9c7dd53e9fdc80f40daaba"
+  },
+  "next_step": "Freeze and replicate compact strength-only correction before any promotion; qualify an offline pipeline only after a genuinely passing follow-up."
+}

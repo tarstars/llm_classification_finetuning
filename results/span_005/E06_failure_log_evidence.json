@@ -1,0 +1,7 @@
+{
+  "failed_worker_exit": 1,
+  "failed_before_fitting": true,
+  "private_log_sha256": "4c73ea0db827e7797af9b53ba27182666a647d794526d1248ec4802610a2a50c",
+  "private_log_bytes": 960,
+  "preserved_private_path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/E06_failed_encoding/worker.log"
+}

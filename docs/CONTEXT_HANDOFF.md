@@ -1,46 +1,98 @@
-# Context handoff — 2026-11-05, executing v5
+# Context handoff — 2026-11-05, completed v5
 
-The user requested execution of the next span. V5 has38members and focus
-**E06 → E07 → H45**, conditional on actual scientific gates. Other35members,
-including E05/H44, remain carryovers. V6 is empty draft. `GOAL.md` is the new
-bounded execution contract; completed v4 is archived exactly at `GOAL_V4.md`.
-No new goal-service activation was requested. Original user-task clock is
-2026-11-05 07:17:10UTC, deadlineNovember7 at the same time; never reuse v4's clock.
+**V5 is complete and sealed. V6 has 37 tasks: 35 unfinished carryovers plus H46/E08.
+No selected focus or v6 execution; v7 is empty draft. Stop here.**
+`GOAL.md` remains the completed v5 execution contract, archived byte-for-byte at
+`docs/GOAL_V5.md`. The user requested span execution, not a new goal-service
+activation; v4's service goal stays historical. No new service goal was created.
+Original v5 user-task clock 2026-11-05 07:17:10 UTC, fixed deadline November 7 same
+time. Never reuse/reset it or rerun completed workers.
 
-CPU-only: stage ceilings1.5h/4h/2h,2numerical threads,6GiB RSS guard. GPU budget0,
-no new extraction, LoRA retraining or submission. Source/strength parameters use
-original training only; nested residual evaluation uses the fixed development
-cohort. Confirmation remains unused. After actual completion seal v5/form v6 and
-empty v7, publish, then stop before v6 execution.
+Read [v5 results](SPAN_005_RESULTS.md), [completion](SPAN_005_COMPLETION.md),
+[E06](SPAN_005_E06.md), [E07](SPAN_005_E07.md), [H45](SPAN_005_H45.md), actual
+registry/audit files and the project policy before any new work.
 
-Protocol/config/source and prepared artifact/input/fold hashes are under
-`docs/SPAN_005_PROTOCOL.md`, `configs/span_005.json`, `results/span_005`.
-Preparation verified45,985train/5,746dev rows,5,211dev prompt groups,64sources and
-full existing-embedding text-order digest. E06 is DONE: nested oracle-strength loss0.940456 versus calibrated LoRA0.953701,
-gain0.013246 CI[0.008968,0.017515]; information gate passes. The first E06 worker
-failed before fitting on object-typed group strings; recovery7c0943d recomputes
-canonical hashes without pickle, preserves inputs and a60sreserve inside5400s.
-Successful E06 used19.528s. See E06 report/results and recovery proof.
+## V5 findings and next-version tasks
 
-E07 is RUNNING under frozen contract ef9aa1c: exact PID3848531, controller74958,
-log `/tmp/arena_span005_e07.log`. First TF-IDF fold converged19iterations in
-348.73sfit+35.74sscore, peak2.72GiB, source accuracy27.30% versus6.64%frequency,
-source loss2.92403 versus3.81875 on30,564held-out answers. These are partial
-training-source results, not preference gain. Original4hcap and6GiBguard remain.
-Do not duplicate this live worker. Its started.json/private outputs are under
-runs/span_005/E07. H45 worker/audit/notebook builder are prepared but H45 requires
-actual E07 completion plus a passing gate and a committed contract before fitting.
-Read live CLI status and actual run files before acting; never duplicate a worker.
-Heavy path: `~/database/llm_classification_finetuning/runs/span_005`.
+All focus tasks E06/E07/H45 are DONE, including a negative primary adoption
+result. Fixed original split45,985 train/5,746 dev,5,211 dev prompt groups; original
+votes unchanged. Training-only source/strength; nested grouped residual/meta
+fitting; no in-sample LoRA training predictions as OOF. Confirmation unused in
+v5; existing development and checkpoint selection remain exploratory.
 
-Fresh initial owned-job/quota inventory: no current nonterminal job, zero
-reservations,28,498.746sremaining, no scaling; quota is not spent in this span.
-Three old source404s remain disclosed. All18sealed snapshot files are preserved,
-including original35-task v5-start; the prior user-requested planning amendments
-added E06/E07/H45 before focus. Notebook07/12 user edits remain unrelated.
-The completed v4 audits are historical; do not rerun them against the live v5 plan.
+- E06 known-source strength: LoRA calibration 0.953701 → oracle0.940456,
+  gain 0.013246 CI[0.008968,0.017515]. All five selectors choose compact strength.
+  Full one-hot identity family0.952212 is weaker. Names are diagnostic only.
+- E07 source TF-IDF:27.08%accuracy,54.49%top5,loss 2.938585 versus prior 3.822561.
+  Cached embedding head:9.95%,loss 3.704803. All fits converge without warnings.
+  Prompt-group OOF and duplicate purges; finalfit 91,088 answers after882purged.
+  Training-only source validation selects no development preference outcome.
+  Embedding head is research-only; portable TF-IDF has no external service dependency.
+- H45 primary nested selector0.953834 versus calibration 0.953701: gain−0.000133
+  CI[−0.002038,0.001660], adoption FAILS. Fixed strength-only 0.952397 has small
+  gain 0.001305 CI[0.000037,0.002618]; retain as post-inspection opportunity, not
+  a replacement primary result. Full source posterior0.954611 is weaker; fold 0
+  selects it and four others select strength. Shuffled control0.953985. Source-only
+  preference loss 1.077106/41.99%accuracy; source accuracy is a different task.
 
-Read `PROJECT_POLICY.md`, source-model plan and frozen protocol before resuming.
+H46 is queued for a frozen compact-strength replication on original confirmation,
+new to this recipe but historically inspected. Purge auxiliary training against
+both development/confirmation before any needed refit, recompute development
+features and freeze all meta parameters before evaluating confirmation votes.
+Latest H03 confirmation predictions may require newly admitted inference; never
+substitute checkpoint800 predictions. E08 offline classifier+source qualification
+requires an actually positive H46 quality gate, not done status alone. Neither
+new task has run. E05/H44 judge chain remains untouched carryover.
+
+## V5 execution, costs and proofs
+
+Protocol/input/source freeze4602f61; loader recovery7c0943d; E07 contractef9aa1c;
+H45 contract9d0782b. First E06 worker failed before fitting on object-string NumPy
+arrays. Preserve original NPZ and failed archive; never enable pickle to load
+its groups. Recovery recomputes canonical prompt hashes from frozen Parquet with
+unchanged code and reserves 60s inside original5400s. Failed exit1, retry exit 0,
+E07 controller74958 exit 0, H45 controller8093 exit 0; no live worker to resume.
+
+CPU stage caps 1.5h/4h/2h,2numerical threads,6GiB RSS. Successful experiment elapsed
+19.528 + 1703.979 + 24.705 = 1748.212s; conservative failure-inclusive bound1808.212s.
+Peak worker RSS 3.701 GiB. Audit/notebook/preparation/reporting time separate.
+GPU budget/usage0, no new LoRA fit/extraction/official submission. Source inference
+14.009s/11492 answers. Setup-inclusive25k-row projection19245.25s uses old classifier
+rate and local CPU speed, not a new Kaggle end-to-end measurement.
+
+`scientific_audit.json` reconstructs all outer probabilities from actual parameters,
+fold-local transforms, losses/confusions/recalls/intervals, source coverage/priors/
+purges and local serialized-head replay. Final-purge audit checks exact finalfit
+indices for both source families. Raw data, source posteriors, weights and private
+logs live under `~/database/llm_classification_finetuning/runs/span_005`.
+Do not overwrite outputs or rerun completed stage scripts. Audit hashes bind
+specific programs/results; later versions should treat closing proofs as historical.
+
+Fresh remote closing observation08:11:10 UTC: no current nonterminal owned notebook,
+weekly used 79,501.254s unchanged,0 reserved,28,498.746sremaining, no scaling/refresh
+extension, official57979825 COMPLETE0.95481, no new submission. Three old2022/2025
+source 404s remain disclosed. Future compute requires fresh admission.
+
+All 18 earlier sealed snapshots remain unchanged, including original35-task v5-start
+and its3 explicit planning additions. V5-final/v6-start reflect38completed-span
+members,35 carryovers+2discoveries. Notebook 16 has5 executed code cells,3 figures,
+0 errors and closed-v5 state.21 post-advance backlog tests,5 scientific contract tests,
+notebook/diff checks pass. Closure proof binds final artifacts/version boundary.
+
+Best official remains0.95481 with the same Qwen3-4B H03 step1438 export, aligned
+raw averaging before temperature0.9441963863130951. AdapterSHA
+ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b.
+The historical0.954069 local number used cross-fitted temperatures; frozenfull-fit
+reference 0.953971 and this span's matched nested calibration 0.953701 differ.
+Keep old candidate/manifests; no new deployable candidate was promoted.
+
+Preserve user notebook 07/12 edits; never stage/reset them. Notebook symlink remains
+`~/notebooks/llm_classification_finetuning` → project/notebooks. Stage explicit
+reviewed paths only. Existing GH keyring helper over HTTPS works; do not print
+credentials or alter global auth. Verify remote main equals closing HEAD. Final
+response supplies publication hash. No v6 execution. Never walk HOME,~/prj or
+Arc/FUSE mounts; restrict searches to this project. No subagents unless requested.
+
 The earlier v4 findings below are historical background.
 
 ## V4 outcome and stopping decision
@@ -71,7 +123,7 @@ scores. E05 completion status alone is insufficient. No E05 work has begun.
 Frozen-calibration loss 0.97126–0.98064 is descriptive: these 64 rows belong to its
 old 2,048-row fitting cohort. All effect intervals include zero. No parameter was
 fitted from new predictions or setting chosen by label loss. Matched classifier
-loss 0.95782, training-prior1.09165 and uniform1.09861 are included; hard-majority
+loss 0.95782, training-prior 1.09165 and uniform1.09861 are included; hard-majority
 accuracy 40.625%, with explicit clipping for its finite reported loss. Confirmation
 and original labels remain untouched. Do not treat these 64 rows as new validation.
 
@@ -106,7 +158,7 @@ Never commit raw traces/logs: the failed traceback embeds private sample IDs.
 
 Premeasurement contract/source was committed and pushed as 77fdda2; recovery
 contract 727615e preceded the retry. `span_repeatability.py` remains byte-identical
-to77fdda2. All175 runtime records and the full immutable version 2 GGUF are checked.
+to77fdda2. All 175 runtime records and the full immutable version 2 GGUF are checked.
 `terminal_audit.json` independently reconstructs512 response vectors, input tokens,
 losses/confusions/16 paired intervals, charges, exact remote sources and terminal
 states. Complete owned-notebook inventory has no current nonterminal run; three
@@ -114,7 +166,7 @@ old 2022/2025 sources return 404 and remain disclosed. Submission 57979825 is CO
 at 0.95481, with no submission during v4. See `results/span_004/closure_audit.json`
 for the final version/notebook/report hashes and boundary checks.
 
-Final notebook 15 has5executed code cells, 3 figures and 0 errors, including actual
+Final notebook 15 has5 executed code cells, 3 figures and 0 errors, including actual
 closed-v4 state. All 18 backlog tests run after advance; 2span004 scientific tests,
 notebook source and diff checks pass. Global framing was corrected before sealing.
 V4-final/v5-start snapshots preserve the real outcome;14 earlier snapshots remain
@@ -136,7 +188,7 @@ Verified manifest is `results/span_003/deployed_candidate.json`; preserve origin
 attempt002 and historicalv2 manifests. Full-dev0.954069 is separate from official
 0.95481; original attempt002 confirmation 0.96236 remains historical.
 
-V3's2,048-row research controls: classifier0.959997,20% entropy cascade0.955138,
+V3's2,048-row research controls: classifier 0.959997,20% entropy cascade0.955138,
 full calibrated mixture0.931579. These exploratory gains cannot be added across
 cohorts or claimed as deployable scores. The native identity/runtime failures
 stopped expansion. V3 was sealed at f068706; its original contract is
