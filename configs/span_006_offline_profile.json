@@ -1,0 +1,14 @@
+{
+  "smoke_rows": 64,
+  "source_mean_tolerance": 0.000001,
+  "source_max_tolerance": 0.00001,
+  "raw_mean_tolerance": 0.002,
+  "raw_max_tolerance": 0.03,
+  "joint_mean_tolerance": 0.002,
+  "joint_max_tolerance": 0.03,
+  "hidden_rows_assumption": 25000,
+  "runtime_margin": 1.2,
+  "runtime_reserve_seconds": 600,
+  "runtime_ceiling_seconds": 25200,
+  "note": "Same absolute probability identity limits for raw and final joint predictions, fixed before any E08 outputs. This is an engineering identity check; H46 is the separate quality gate."
+}

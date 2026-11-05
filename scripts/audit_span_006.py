@@ -59,7 +59,7 @@ def main():
     original,swapped,_=JointTokenizer(tokenizer,1024).encode_frame(confirm)
     assert token_digest(original)==summary['original_tokens_sha256'] and token_digest(swapped)==summary['swapped_tokens_sha256']
     ref=np.load(out/'smoke_reference.npz');observed=np.load(job/'output/confirmation/smoke_predictions.npz')
-    np.testing.assert_array_equal(ref['ids'],observed['ids']);delta=np.abs((ref['original']+ref['aligned_swap']-observed['original']-observed['aligned_swap'])/2)
+    np.testing.assert_array_equal(ref['ids'],observed['ids']);delta=np.abs((observed['original']+observed['aligned_swap'])/2-(ref['original']+ref['aligned_swap'])/2)
     np.testing.assert_allclose([delta.mean(),delta.max()],[smoke['mean_raw_average_difference'],smoke['max_raw_average_difference']],atol=1e-12)
     assert delta.mean()<=.002 and delta.max()<=.03
     hardware=[read(job/'output/confirmation'/f'gpu_rank{k}.json') for k in [0,1]]
@@ -67,7 +67,8 @@ def main():
     saved=np.load(out/'H46/predictions.npz');assert sha(out/'H46/predictions.npz')==result['prediction_sha256']
     labels=pd.read_csv(inputs['input_artifacts']['raw_train']['path'],usecols=['id',*CLASSES]).set_index('id').loc[confirm.id,CLASSES].to_numpy().argmax(1)
     np.testing.assert_array_equal(saved['labels'],labels);np.testing.assert_array_equal(saved['ids'],confirm.id);np.testing.assert_array_equal(saved['groups'],groups)
-    rawp=(raw['original']+raw['aligned_swap'])/2;lp=np.log(np.clip(rawp,1e-12,1))/.9441963863130951;p=np.exp(lp-logsumexp(lp,axis=1,keepdims=True))
+    rawp=np.asarray((raw['original']+raw['aligned_swap'])/2,dtype=np.float64);rawp=np.clip(rawp,1e-12,1);rawp/=rawp.sum(1,keepdims=True)
+    lp=np.log(rawp)/.9441963863130951;p=np.exp(lp-logsumexp(lp,axis=1,keepdims=True))
     np.testing.assert_allclose(p,saved['frozen_classifier'],atol=1e-12)
     source=np.load(out/'freeze/source_predictions.npz');qa,qb=source['confirmation_a'],source['confirmation_b'];r=np.load(out/'freeze/ratings.npz')['ratings'];perm=saved['shuffled_permutation']
     np.testing.assert_array_equal(perm,np.random.default_rng(cfg['bootstrap_seed']).permutation(len(confirm)))

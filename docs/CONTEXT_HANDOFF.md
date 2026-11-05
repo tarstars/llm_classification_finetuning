@@ -26,9 +26,13 @@ Controller PTY32845/PID4143163; log /tmp/arena_span006_confirmation_controller.l
 Source/recipe contract20b7fee was committed/pushed before launch. One push only;
 5400sservice cap,512-row checkpoint chunks,64-row raw identity guard before
 confirmation. Observe this exact live version; never re-push because a read expires.
+Read-only remote-source observation at11:11:44UTC verifies cells equal local and
+Internet disabled. Prepared pre-reveal and closure checks, descriptive shift program
+and conditional E08 export/private-asset/profile programs have not evaluated targets
+or run E08. Never run their gated actions unless H46 genuinely passes.
 CPUfreeze PTY35817 exited0. Recipe remains frozen; reveal_intent absent.
 The job is now RUNNING;64-row identity PASSED mean0.000212/max0.002180 against
-unchanged0.002/0.03. Latest live checkpoint covers2048/5746confirmation rows,
+unchanged0.002/0.03. Latest live checkpoint covers4096/5746confirmation rows,
 both orders; chunks take about330–345s/512rows. Expected total about65–70session
 minutes, still below5400s. Bounded live logs via scripts/kaggle_job.py logs with
 --attempt span_006 --job confirmation; full paths are in controller receipts.

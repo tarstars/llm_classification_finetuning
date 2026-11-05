@@ -19,8 +19,8 @@ is promising at 0.952397 and needs frozen replication. TF-IDF source-class accur
 is 27.08%, a different task metric. GPU use and submissions were zero.
 See [v5 results](docs/SPAN_005_RESULTS.md), [completion](docs/SPAN_005_COMPLETION.md)
 and [executed notebook16](notebooks/16_backlog_v5_span.ipynb).
-V6 is active with no focus/execution; H46 replication and conditional E08 offline
-qualification are queued. The completed [v5 contract](docs/GOAL_V5.md) is archived.
+V6 is executing H46 frozen replication followed by conditional E08 offline
+qualification; see the [fixed protocol](docs/SPAN_006_PROTOCOL.md). The completed [v5 contract](docs/GOAL_V5.md) is archived.
 The completed [v1](docs/GOAL_V1.md), [v2](docs/GOAL_V2.md) and
 [v3](docs/GOAL_V3.md) goals are archived. V3's conservative whole-span compute
 bound was 6.20508 hours against its original 8.35453-hour quota cap.
@@ -77,7 +77,7 @@ The active version is **v6**, with **37 tasks**: 35 unfinished carryovers plus
 H46 (freeze/replicate compact inferred strength) and E08 (conditional offline
 classifier/source qualification). V5 completed E06/E07/H45 with a negative primary
 adoption decision. E05/H44 remain carryovers, with their judge prerequisites
-unchanged. V6 has no selected focus or execution; [v7 is an empty draft](backlog/NEXT.md).
+unchanged. V6 focuses on H46/E08; [v7 is the next-version draft](backlog/NEXT.md).
 The original 35-task v5-start snapshot and its explicit planning amendments are
 preserved, along with all historical snapshots.
 Each completed span preserves snapshots and carries unfinished work forward.
