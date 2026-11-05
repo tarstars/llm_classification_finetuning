@@ -3580,6 +3580,364 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "prerequisite",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Reusable experiment control and framework reliability",
+      "basis": "Prior runs duplicated per-span controllers and needed download/source serialization recovery.",
+      "first_test": "Implement future-run admission, immutable intent and source guards, safe bounded retrieval and resume; test network/truncation/path/budget/duplicate-mutation failure cases.",
+      "acceptance": "Fault tests and a real read-only admission/dry-run pass; actual-job integration is reported at span closure. Old frozen programs remain unchanged.",
+      "stop": "Stop at the fixed span/dependency/resource boundary; preserve negative evidence.",
+      "risk_reason": "Implementation or provenance mistakes can invalidate expensive runs.",
+      "mitigation": "Freeze contracts, use meaningful fault tests and actual saved evidence.",
+      "rationale": "Explicit user request for a balanced long span.",
+      "revision": "User-requested planning addition before v7 focus or execution.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/SPAN_007_PLAN.md"
+      ],
+      "title": "Reusable experiment control and framework reliability",
+      "id": "E09",
+      "rank": 57,
+      "status": "planned",
+      "introduced_in": 7,
+      "discovered_during": null,
+      "derived_from": [
+        "E01"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T18:39:30+00:00",
+          "status": "planned",
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prerequisite",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Observe every pipeline stage and actual training exposure",
+      "basis": "E01/H03 log accepted updates, but current per-span logs lack a unified stage/run view and learning curves.",
+      "first_test": "Add compact stage events and status; integrate actual training loss/LR/gradients, token/row acceptance, AMP skips, scheduler/scaler, checkpoints, hardware and timing. Replay old traces and audit the new H49 trace.",
+      "acceptance": "Reconstruct real counters across ranks, preserve missing measurements, produce an executed telemetry notebook and usable live status.",
+      "stop": "Stop at the fixed span/dependency/resource boundary; preserve negative evidence.",
+      "risk_reason": "Implementation or provenance mistakes can invalidate expensive runs.",
+      "mitigation": "Freeze contracts, use meaningful fault tests and actual saved evidence.",
+      "rationale": "Explicit user request for a balanced long span.",
+      "revision": "User-requested planning addition before v7 focus or execution.",
+      "depends_on": [
+        "E00",
+        "E09"
+      ],
+      "evidence": [
+        "docs/SPAN_007_PLAN.md"
+      ],
+      "title": "Observe every pipeline stage and actual training exposure",
+      "id": "E10",
+      "rank": 58,
+      "status": "planned",
+      "introduced_in": 7,
+      "discovered_during": null,
+      "derived_from": [
+        "E01"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T18:39:30+00:00",
+          "status": "planned",
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prerequisite",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "medium",
+      "claim": "Explain pipeline theory and reassess skipped work",
+      "basis": "Source correction did not survive style and training remains the largest proven local gain; older tasks have stale estimates.",
+      "first_test": "Compute three-class loss decomposition on matched saved predictions, document objectives/packing/order/calibration/mixtures and inspected-data limits, then review all carried hypotheses with evidence and next tests.",
+      "acceptance": "Reproducible theory/decomposition and a complete carryover decision table; no invented noise floor or additive score promises.",
+      "stop": "Stop at the fixed span/dependency/resource boundary; preserve negative evidence.",
+      "risk_reason": "Implementation or provenance mistakes can invalidate expensive runs.",
+      "mitigation": "Freeze contracts, use meaningful fault tests and actual saved evidence.",
+      "rationale": "Explicit user request for a balanced long span.",
+      "revision": "User-requested planning addition before v7 focus or execution.",
+      "depends_on": [
+        "E00"
+      ],
+      "evidence": [
+        "docs/SPAN_007_PLAN.md"
+      ],
+      "title": "Explain pipeline theory and reassess skipped work",
+      "id": "E11",
+      "rank": 59,
+      "status": "planned",
+      "introduced_in": 7,
+      "discovered_during": null,
+      "derived_from": [
+        "H46"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "status": "planned",
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "priority": "P2",
+      "gain": [
+        -0.01,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        0.75,
+        0.75
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Expand the paired context-retention experiment on the current classifier",
+      "basis": "Full-dev1152clipped rows have worse observed loss, but prior context pilot was inconclusive.",
+      "first_test": "Pair 1024/2048 inference on every changed development input, include unchanged rows in overall paired effects, same frozen weights/temperature and token hashes. No training change.",
+      "acceptance": "Overall gain>=.001 with positive paired group interval, valid reload and affordable runtime; report changed-slice and calibration controls.",
+      "stop": "Stop at the fixed span/dependency/resource boundary; preserve negative evidence.",
+      "risk_reason": "Implementation or provenance mistakes can invalidate expensive runs.",
+      "mitigation": "Freeze contracts, use meaningful fault tests and actual saved evidence.",
+      "rationale": "Explicit user request for a balanced long span.",
+      "revision": "User-requested planning addition before v7 focus or execution.",
+      "depends_on": [
+        "E00",
+        "E09"
+      ],
+      "evidence": [
+        "docs/SPAN_007_PLAN.md"
+      ],
+      "title": "Expand the paired context-retention experiment on the current classifier",
+      "id": "H48",
+      "rank": 60,
+      "status": "planned",
+      "introduced_in": 7,
+      "discovered_during": null,
+      "derived_from": [
+        "H23"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "status": "planned",
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "priority": "P2",
+      "gain": [
+        -0.01,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        3,
+        7
+      ],
+      "pilot_gpu_wall_hours": [
+        3.667,
+        3.667
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Test bounded additional exposure under an observable warm restart",
+      "basis": "H03 continuation improved matched loss0.014803; the final flat ending schedule does not establish a second-epoch benefit.",
+      "first_test": "One fixed checkpoint1438 warm restart, restore optimizer/scaler/RNG, replace scheduler explicitly with1e-5/16acceptedwarmup/cosine, at most320newnominal cycles and fixed endpoint. Full-dev matched grouped temperature comparison; no schedule grid.",
+      "acceptance": "Matched full-dev loss gain>=.003 with positive group interval, finite weights and auditable exposure; fixed candidate only, no best-checkpoint fishing.",
+      "stop": "Stop at the fixed span/dependency/resource boundary; preserve negative evidence.",
+      "risk_reason": "Implementation or provenance mistakes can invalidate expensive runs.",
+      "mitigation": "Freeze contracts, use meaningful fault tests and actual saved evidence.",
+      "rationale": "Explicit user request for a balanced long span.",
+      "revision": "User-requested planning addition before v7 focus or execution.",
+      "depends_on": [
+        "E00",
+        "E09",
+        "H03"
+      ],
+      "evidence": [
+        "docs/SPAN_007_PLAN.md"
+      ],
+      "title": "Test bounded additional exposure under an observable warm restart",
+      "id": "H49",
+      "rank": 61,
+      "status": "planned",
+      "introduced_in": 7,
+      "discovered_during": null,
+      "derived_from": [
+        "H03"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "status": "planned",
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "priority": "P2",
+      "gain": [
+        -0.015,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        1.25,
+        1.25
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "Qualify and officially evaluate one frozen v7 classifier candidate",
+      "basis": "Best official0.95481; v6 source correction failed. One genuinely qualified classifier/context candidate may improve it.",
+      "first_test": "After H49 and H48 resolve, choose training first only if its actual primary gate passes, otherwise context if it passes. Freeze candidate before confirmation, apply strict transfer/identity/runtime/schema gates and at most one official submission.",
+      "acceptance": "Confirmation gain>=.001 with positive group interval against matched frozen reference, actual offline reload/visible CSV/device/runtime checks, and an actual completed official score. Negative outcomes stop promotion.",
+      "stop": "Stop at the fixed span/dependency/resource boundary; preserve negative evidence.",
+      "risk_reason": "Implementation or provenance mistakes can invalidate expensive runs.",
+      "mitigation": "Freeze contracts, use meaningful fault tests and actual saved evidence.",
+      "rationale": "Explicit user request for a balanced long span.",
+      "revision": "User-requested planning addition before v7 focus or execution.",
+      "depends_on": [
+        "E00",
+        "E09",
+        "H48",
+        "H49"
+      ],
+      "evidence": [
+        "docs/SPAN_007_PLAN.md"
+      ],
+      "title": "Qualify and officially evaluate one frozen v7 classifier candidate",
+      "id": "H50",
+      "rank": 62,
+      "status": "planned",
+      "introduced_in": 7,
+      "discovered_during": null,
+      "derived_from": [
+        "H03"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "status": "planned",
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -4129,10 +4487,108 @@
         "H44",
         "E05",
         "E08",
-        "H47"
+        "H47",
+        "E09",
+        "E10",
+        "E11",
+        "H48",
+        "H49",
+        "H50"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "E09",
+        "E10",
+        "E11",
+        "H49",
+        "H48",
+        "E05",
+        "H44",
+        "H47",
+        "H50"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T18:39:30+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "E09"
+          ],
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:39:30+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "E10"
+          ],
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "E11"
+          ],
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "H48"
+          ],
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "H49"
+          ],
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "H50"
+          ],
+          "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T18:39:31+00:00",
+          "note": "User authorized30-hour balanced span. Select framework/observability/theory, bounded continuation/context/judge diagnostics, direct-strength CPU follow-up and genuinely conditional calibration/promotion. Fixed24000s chargedGPUcap and one possible official evaluation; preserve all other carryovers.",
+          "focus_ids": [
+            "E09",
+            "E10",
+            "E11",
+            "H49",
+            "H48",
+            "E05",
+            "H44",
+            "H47",
+            "H50"
+          ]
+        }
+      ],
       "carried_from": 6,
       "start_sha256": "71942464e78a3c9019e0c8a4b80b9ab9213725aafa5564a8b8046d260ea189a1",
       "start_markdown_sha256": "9e7ec4e890af813166c82ac575f7dd9c29baf15f6d21f79d77ed24277004d323",
