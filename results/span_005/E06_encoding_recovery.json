@@ -1,0 +1,16 @@
+{
+  "observed_at": "2026-11-05T07:30:08.873274+00:00",
+  "failure": "Object group-string arrays rejected by allow_pickle=False before any model fit.",
+  "original_runner_sha256": "f6880bc4dc5fcffec3f6b48d3eb44433697ae918c1cea30af8d0602a13defc35",
+  "revised_runner_sha256": "ac6891f4c1d9cdd69fdfb2de02a2c16e0e8fb69c5fc566cb16ee14a4849c99d7",
+  "source_contract_commit": "4602f61",
+  "failed_worker_exit": 1,
+  "failed_directory": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/E06_failed_encoding",
+  "failure_cpu_seconds_upper_bound": 60,
+  "remaining_E06_seconds_cap": 5340,
+  "original_E06_seconds_cap": 5400,
+  "original_inputs_unchanged": true,
+  "group_values": "Recomputed by the unchanged prompt_groups function from frozen train/dev Parquet text; no pickle loading.",
+  "row_ids_folds_configuration_thresholds_changed": false,
+  "fitted_models_before_failure": 0
+}

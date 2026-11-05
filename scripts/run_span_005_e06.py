@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 REPO=Path(__file__).resolve().parents[1];sys.path.insert(0,str(REPO/'src'))
-from arena.data import ROOT,CLASSES,json_write
+from arena.data import ROOT,CLASSES,json_write,prompt_groups
 from arena.span_heads import metrics,temperature
 from arena.source_models import Strength,source_features,style_features
 from arena.source_evaluation import evaluate,summarize
@@ -20,7 +20,10 @@ def main():
     start=time.monotonic();out=ROOT/'runs/span_005';pub=REPO/'results/span_005'
     assert not (out/'E06/summary.json').exists(),'Completed E06 is immutable'
     cfg=json.loads((REPO/'configs/span_005.json').read_text());manifest=json.loads((pub/'artifact_inventory.json').read_text())
-    for name,sha in manifest['source_sha256'].items():assert digest(REPO/name)==sha,name
+    recovery=json.loads((pub/'E06_encoding_recovery.json').read_text()) if (pub/'E06_encoding_recovery.json').exists() else None
+    for name,sha in manifest['source_sha256'].items():
+        expected=recovery['revised_runner_sha256'] if recovery and name=='scripts/run_span_005_e06.py' else sha
+        assert digest(REPO/name)==expected,name
     for name,item in manifest['input_artifacts'].items():assert digest(item['path'])==item['sha256'],name
     directory=out/'E06';directory.mkdir(exist_ok=True)
     if (directory/'started.json').exists():raise RuntimeError('E06 already started; inspect its actual outputs before any recovery')
@@ -30,13 +33,14 @@ def main():
         assert rss<cfg['rss_guard_gib'],f'Resident memory guard {rss:.2f}GiB'
         print(*args,**kwargs)
     def expired(signum,frame):raise TimeoutError('Original E06 CPU elapsed cap reached')
-    signal.signal(signal.SIGALRM,expired);signal.alarm(cfg['cpu_stage_seconds_caps']['E06'])
+    signal.signal(signal.SIGALRM,expired);signal.alarm(cfg['cpu_stage_seconds_caps']['E06']-(60 if recovery else 0))
     train=pd.read_parquet(out/'train.parquet');dev=pd.read_parquet(out/'dev.parquet');a=np.load(out/'inputs.npz')
     vocabulary=json.loads((out/'source_vocabulary.json').read_text());names=vocabulary['all_training_sources']
-    y=a['labels'];yt=a['train_labels'];groups=a['groups'];p=temperature(a['probabilities'],.9441963863130951)
+    # Recompute canonical hashes from frozen prompt text; never unpickle arrays.
+    y=a['labels'];yt=a['train_labels'];groups=prompt_groups(dev).to_numpy(dtype=str);p=temperature(a['probabilities'],.9441963863130951)
     strength=Strength(cfg['strength_l2_sum'],cfg['strength_max_iterations']).fit(train.model_a,train.model_b,yt,names)
     np.savez(directory/'strength.npz',theta=strength.theta,row_scores=strength.row_scores,hessian=strength.hessian)
-    _,ginv=np.unique(a['train_groups'],return_inverse=True);sums=np.zeros((ginv.max()+1,len(names)+1));np.add.at(sums,ginv,strength.row_scores)
+    _,ginv=np.unique(prompt_groups(train).to_numpy(dtype=str),return_inverse=True);sums=np.zeros((ginv.max()+1,len(names)+1));np.add.at(sums,ginv,strength.row_scores)
     bread=np.linalg.inv(strength.hessian);cov=bread@(sums.T@sums)@bread;se=np.sqrt(np.maximum(0,np.diag(cov)))
     exposure=pd.concat([train.model_a,train.model_b]).value_counts()
     wins=pd.concat([train.loc[yt==0,'model_a'],train.loc[yt==1,'model_b']]).value_counts()
@@ -82,6 +86,8 @@ def main():
         prior=prior.tolist(),majority_loss_note='Exact one-hot loss infinite on errors; finite table clips at1e-12.',
         prediction_sha256=digest(directory/'predictions.npz'),folds_sha256=digest(directory/'folds.json'),
         source_sha256=digest(Path(__file__)),config_sha256=digest(REPO/'configs/span_005.json'))
+    result['failed_attempt_cpu_seconds_upper_bound']=60 if recovery else 0
+    result['cpu_accounted_seconds_upper_bound']=result['cpu_elapsed_seconds']+result['failed_attempt_cpu_seconds_upper_bound']
     for folder in [directory,pub]:json_write(folder/'E06_results.json',result)
     json_write(directory/'summary.json',{'complete':True,'gate_passed':gate,'cpu_elapsed_seconds':result['cpu_elapsed_seconds']})
     signal.alarm(0)
