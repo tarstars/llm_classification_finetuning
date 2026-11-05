@@ -4003,6 +4003,66 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Generate experiment contracts and reports from validated artifact schemas",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "medium",
+      "claim": "Machine-derived fold, target-access and numerical metadata can prevent contradictions between a frozen executable and its human-readable protocol.",
+      "basis": "H47 prose said five source folds while the saved executable correctly used three; its independent replay initially used float32 normalization where fitting used float64. H49 inherited a targets-read flag that meant unused although the legacy loader physically loads those columns. These were corrected transparently without changing candidates.",
+      "first_test": "Create one typed run manifest carrying actual fold IDs/counts, fitting/transform dtypes, target columns loaded versus used, split roles and source hashes. Generate new-run contract/report sections from it, with negative tests for contradictory fold counts, precision, target-access claims and stale hashes. Replay only small synthetic or already saved fixtures; leave sealed historical artifacts unchanged.",
+      "acceptance": "A dry-run manifest reproduces the actual H47 three-source/five-preference fold schema and H49 loaded-but-unused target boundary. Contradictory fixtures fail before compute admission, and generated reports identify empirical coverage and provenance without claiming new model quality.",
+      "stop": "Stop after the bounded schema and fixture test; no historical rewrite, new model fit, GPU job or score gain is required.",
+      "risk_reason": "A declarative schema can itself be stale or overcomplicated and may create false confidence if it is not checked against executable inputs.",
+      "mitigation": "Read saved fold artifacts and explicit reader/selection contracts; bind source and input hashes, use failure fixtures, and retain manual scientific review. Keep the initial schema small.",
+      "rationale": "Small CPU-only framework work addresses observed documentation and replay errors before another costly research span.",
+      "revision": "New v8 proposal from actual v7 provenance corrections, not an assertion that the corrected experiments were invalid.",
+      "depends_on": [
+        "E09",
+        "E11"
+      ],
+      "evidence": [
+        "docs/SPAN_007_H47_ERRATUM.md",
+        "docs/SPAN_007_TARGET_ACCESS.md",
+        "results/span_007/H47_audit_recovery.json"
+      ],
+      "id": "E12",
+      "rank": 63,
+      "status": "planned",
+      "introduced_in": 8,
+      "discovered_during": 7,
+      "derived_from": [
+        "E11"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T20:21:38+00:00",
+          "status": "planned",
+          "note": "Actual v7 corrections motivate deriving fold, precision and target-access statements from validated artifact metadata; queue only, no v8 execution.",
+          "evidence": [
+            "docs/SPAN_007_H47_ERRATUM.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -4662,7 +4722,9 @@
     {
       "number": 8,
       "state": "draft",
-      "item_ids": [],
+      "item_ids": [
+        "E12"
+      ],
       "focus_ids": [],
       "history": []
     }
