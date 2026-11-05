@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-05T21:59:06.847402+00:00",
+  "descriptive_identity_only": true,
+  "cohorts": {
+    "monitor": {
+      "mean_single_view_loss_before": 0.9525153584558759,
+      "mean_single_view_loss_after": 0.9582040087398004,
+      "reference_averaging_benefit": 0.010517983005201348,
+      "candidate_averaging_benefit": 0.01247389287679146,
+      "mean_single_view_gain": -0.005688650283924512,
+      "change_in_averaging_benefit": 0.0019559098715901113,
+      "order_averaged_gain": -0.003732740412334401
+    },
+    "full_development": {
+      "mean_single_view_loss_before": 0.9657780281157033,
+      "mean_single_view_loss_after": 0.9658428783818741,
+      "reference_averaging_benefit": 0.011442532744112444,
+      "candidate_averaging_benefit": 0.01281393938339459,
+      "mean_single_view_gain": -6.485026617075729e-05,
+      "change_in_averaging_benefit": 0.0013714066392821467,
+      "order_averaged_gain": 0.0013065563731113894
+    }
+  },
+  "interpretation": "A Jensen-gap identity conditional on saved predictions; not causal evidence that more disagreement improves quality.",
+  "input_sha256": "689d376a10594f970dd75d51bbabd282fa55a00ef0d89829a20735a9d823cfbd",
+  "source_sha256": "2683dfcda853222b492b9ae150e775435ff7cdf22e273ba91fe42cb8e965122e"
+}

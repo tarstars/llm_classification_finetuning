@@ -1,5 +1,5 @@
 {
-  "status": "RUNNING",
+  "status": "ERROR",
   "kernel_version": "arseniytrushin/llm-preference-span-007-continuation/1",
-  "observed_at": "2026-11-05T19:06:08.242071+00:00"
+  "observed_at": "2026-11-05T21:42:24.977263+00:00"
 }

@@ -1,0 +1,315 @@
+{
+  "rows": 5746,
+  "groups": 5211,
+  "primary": "temperature_cv",
+  "metrics": {
+    "frozen_reference": {
+      "rows": 5746,
+      "log_loss": 0.9539706567352386,
+      "accuracy": 0.5379394361294814,
+      "macro_f1": 0.5289220074519821,
+      "brier": 0.5677447675598635,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8984307358604866,
+        0.9098912785876004,
+        1.0655363239661457
+      ],
+      "class_recall": [
+        0.6081754735792622,
+        0.6096692111959288,
+        0.37915492957746477
+      ],
+      "tie_precision": 0.5149196633511859,
+      "mean_predictive_entropy": 0.9539706585730453,
+      "mean_class_probability": [
+        0.34540705449909254,
+        0.3438557169268625,
+        0.3107372285740463
+      ],
+      "predicted_class_fraction": [
+        0.38670379394361293,
+        0.38583362339018445,
+        0.22746258266620256
+      ],
+      "tie_auc": 0.6791287538882247,
+      "confusion_matrix": [
+        [
+          1220,
+          468,
+          318
+        ],
+        [
+          451,
+          1198,
+          316
+        ],
+        [
+          551,
+          551,
+          673
+        ]
+      ]
+    },
+    "candidate_fixed_temperature": {
+      "rows": 5746,
+      "log_loss": 0.9525795363701128,
+      "accuracy": 0.5395057431256526,
+      "macro_f1": 0.5277661100811469,
+      "brier": 0.5666455715362725,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8880536876661893,
+        0.8997557794768918,
+        1.083980964423775
+      ],
+      "class_recall": [
+        0.6201395812562313,
+        0.6244274809160305,
+        0.3543661971830986
+      ],
+      "tie_precision": 0.5202646815550042,
+      "mean_predictive_entropy": 0.95411718966489,
+      "mean_class_probability": [
+        0.3483567497189171,
+        0.34663167168803916,
+        0.3050115785930444
+      ],
+      "predicted_class_fraction": [
+        0.39349112426035504,
+        0.39610163592064046,
+        0.21040723981900453
+      ],
+      "tie_auc": 0.6789421900326664,
+      "confusion_matrix": [
+        [
+          1244,
+          466,
+          296
+        ],
+        [
+          454,
+          1227,
+          284
+        ],
+        [
+          563,
+          583,
+          629
+        ]
+      ]
+    },
+    "reference_temperature_cv": {
+      "rows": 5746,
+      "log_loss": 0.9541744800980231,
+      "accuracy": 0.5379394361294814,
+      "macro_f1": 0.5289220074519821,
+      "brier": 0.5678559252258901,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8987115284401505,
+        0.9099752150711129,
+        1.06578588111412
+      ],
+      "class_recall": [
+        0.6081754735792622,
+        0.6096692111959288,
+        0.37915492957746477
+      ],
+      "tie_precision": 0.5149196633511859,
+      "mean_predictive_entropy": 0.9538792418467577,
+      "mean_class_probability": [
+        0.34541586828277476,
+        0.3438689912001888,
+        0.31071514051703925
+      ],
+      "predicted_class_fraction": [
+        0.38670379394361293,
+        0.38583362339018445,
+        0.22746258266620256
+      ],
+      "tie_auc": 0.6790480277788615,
+      "confusion_matrix": [
+        [
+          1220,
+          468,
+          318
+        ],
+        [
+          451,
+          1198,
+          316
+        ],
+        [
+          551,
+          551,
+          673
+        ]
+      ]
+    },
+    "candidate_temperature_cv": {
+      "rows": 5746,
+      "log_loss": 0.9528200696191157,
+      "accuracy": 0.5395057431256526,
+      "macro_f1": 0.5277661100811469,
+      "brier": 0.566786298427905,
+      "class_counts": [
+        2006,
+        1965,
+        1775
+      ],
+      "class_loss": [
+        0.8879405000221295,
+        0.899501765904712,
+        1.085168736329176
+      ],
+      "class_recall": [
+        0.6201395812562313,
+        0.6244274809160305,
+        0.3543661971830986
+      ],
+      "tie_precision": 0.5202646815550042,
+      "mean_predictive_entropy": 0.9524683374561235,
+      "mean_class_probability": [
+        0.3484972799549013,
+        0.34675939968225084,
+        0.30474332036284724
+      ],
+      "predicted_class_fraction": [
+        0.39349112426035504,
+        0.39610163592064046,
+        0.21040723981900453
+      ],
+      "tie_auc": 0.6788181924587059,
+      "confusion_matrix": [
+        [
+          1244,
+          466,
+          296
+        ],
+        [
+          454,
+          1227,
+          284
+        ],
+        [
+          563,
+          583,
+          629
+        ]
+      ]
+    }
+  },
+  "gains": {
+    "fixed_temperature": {
+      "gain": 0.0013911203651255561,
+      "interval_95": [
+        -0.00023271579698021447,
+        0.0029787350101095306
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    },
+    "temperature_cv": {
+      "gain": 0.0013544104789076949,
+      "interval_95": [
+        -0.00028307476223434055,
+        0.0029689824631975977
+      ],
+      "groups": 5211,
+      "rows": 5746,
+      "replicates": 2000
+    }
+  },
+  "quality_gate": {
+    "passed": false,
+    "minimum_gain": 0.003,
+    "rule": "Predeclared primary gain at least the practical minimum and paired-group95%lower>0"
+  },
+  "inspected_development": true,
+  "task": "H49",
+  "complete": true,
+  "charged_gpu_seconds": 9888.945999999996,
+  "new_cycles": 256,
+  "training_seconds": 5913.4362790000005,
+  "stopped_for_budget": false,
+  "stopped_for_instability": true,
+  "adapter_sha256": "29905b14143ef3149cd8f804f620703a2fcdc634819a25509a3fe38dab4d32b9",
+  "candidate_kind": "continuation",
+  "max_length": 1024,
+  "prediction_seconds_per_row": 0.6527916988221372,
+  "cold_setup_seconds": 348.61836005299574,
+  "projected_inference_seconds": 20532.36932471711,
+  "confirmation_target_columns_loaded": true,
+  "confirmation_targets_used": false,
+  "target_access_note": "Legacy CSV loader loads columns, but only train/dev targets feed the frozen executable. See docs/SPAN_007_TARGET_ACCESS.md; preserve the worker record.",
+  "artifact_checks_passed": true,
+  "source_verification_sha256": "c3477558f847d3495558174f41824766be4b1af356c02883777928127fcdc26f",
+  "recovered_complete_artifacts": true,
+  "service_status": "ERROR",
+  "first_service_failure_result_sha256": "36a7dd658420249fb770f8b3758eab68584f123393d49f57e921ec68e39eb088",
+  "recovery_protocol_sha256": "a55aeb2c5c6c30c80ec5709e53e985f83b36fd400ea6a690fdb5df1f7e7263e5",
+  "terminal_error_sha256": "787ccb52f4a74679dd1b99f2dd44e7bf4ed4c6ff96b08f8106642de79728e241",
+  "order_diagnostics": {
+    "reference": {
+      "argmax_disagreement_fraction": 0.25600417681865645,
+      "mean_absolute_probability_difference": 0.07419541128453458,
+      "maximum_absolute_probability_difference": 0.4860543574359708
+    },
+    "candidate": {
+      "argmax_disagreement_fraction": 0.2692307692307692,
+      "mean_absolute_probability_difference": 0.07862170101014167,
+      "maximum_absolute_probability_difference": 0.5243766800106464
+    }
+  },
+  "loss_decomposition": {
+    "frozen_reference": {
+      "multiclass_loss": 0.9539706567352386,
+      "binary_tie_channel": 0.5669927844287219,
+      "weighted_conditional_winner_channel": 0.3869778723065165,
+      "conditional_winner_loss_on_decisive_rows": 0.559953375540983,
+      "tie_frequency": 0.3089105464671075
+    },
+    "candidate_fixed_temperature": {
+      "multiclass_loss": 0.9525795363701128,
+      "binary_tie_channel": 0.5670822624683425,
+      "weighted_conditional_winner_channel": 0.38549727390177035,
+      "conditional_winner_loss_on_decisive_rows": 0.5578109634448686,
+      "tie_frequency": 0.3089105464671075
+    },
+    "reference_temperature_cv": {
+      "multiclass_loss": 0.9541744800980231,
+      "binary_tie_channel": 0.5671138155132128,
+      "weighted_conditional_winner_channel": 0.3870606645848104,
+      "conditional_winner_loss_on_decisive_rows": 0.560073175196253,
+      "tie_frequency": 0.3089105464671075
+    },
+    "candidate_temperature_cv": {
+      "multiclass_loss": 0.9528200696191157,
+      "binary_tie_channel": 0.5673067203082607,
+      "weighted_conditional_winner_channel": 0.38551334931085485,
+      "conditional_winner_loss_on_decisive_rows": 0.55783422441203,
+      "tie_frequency": 0.3089105464671075
+    }
+  },
+  "runtime_gate_passed": true,
+  "eligible": false,
+  "frozen_full_development_temperature": 0.9379042598238876,
+  "temperature_fit_used_confirmation": false,
+  "source_sha256": "41abb49e861e7881ceffaccd979f191eed4bcd399025c15e708ae021c7c5ed3a",
+  "scoring_source_sha256": "9c3e26f10ff9b2b3d0b7f82a6e054b132308535cbfb8ecc886c050afa6b24de6",
+  "prediction_sha256": "916e65c1fb66744f2cf4b13555f8812a0fd0fb88a909d7d50759d1bf428a77c4"
+}

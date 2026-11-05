@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "observed_at": "2026-11-05T20:04:41.773452+00:00",
+  "observed_at": "2026-11-05T21:43:59.826180+00:00",
   "kernel_version": "arseniytrushin/llm-preference-span-007-continuation/1",
   "remote_cells_match": true,
   "internet_disabled": true,

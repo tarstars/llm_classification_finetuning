@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-05T21:54:13.947343+00:00",
+  "service_status": "ERROR",
+  "complete_artifact_recovery": true,
+  "new_nominal_cycles": 256,
+  "new_logical_accepted_updates": 256,
+  "new_logical_skipped_updates": 0,
+  "global_accepted_rows": 8192,
+  "global_accepted_unique_rows": 8192,
+  "global_accepted_packed_tokens": 4831619,
+  "per_rank": [
+    {
+      "rank": 0,
+      "cycles": 256,
+      "accepted_updates": 256,
+      "skipped_updates": 0,
+      "processed_tokens": 2425592,
+      "accepted_tokens": 2425592,
+      "processed_rows": 4096,
+      "accepted_rows": 4096,
+      "processed_unique_rows": 4096,
+      "accepted_unique_rows": 4096,
+      "processed_class_counts": [
+        1443,
+        1364,
+        1289
+      ],
+      "accepted_class_counts": [
+        1443,
+        1364,
+        1289
+      ],
+      "last_global_step": 1694
+    },
+    {
+      "rank": 1,
+      "cycles": 256,
+      "accepted_updates": 256,
+      "skipped_updates": 0,
+      "processed_tokens": 2406027,
+      "accepted_tokens": 2406027,
+      "processed_rows": 4096,
+      "accepted_rows": 4096,
+      "processed_unique_rows": 4096,
+      "accepted_unique_rows": 4096,
+      "processed_class_counts": [
+        1497,
+        1395,
+        1204
+      ],
+      "accepted_class_counts": [
+        1497,
+        1395,
+        1204
+      ],
+      "last_global_step": 1694
+    }
+  ],
+  "hardware": [
+    {
+      "rank": 0,
+      "device": 0,
+      "name": "Tesla T4",
+      "peak_allocated_bytes": 7792131072,
+      "peak_reserved_bytes": 8944353280
+    },
+    {
+      "rank": 1,
+      "device": 1,
+      "name": "Tesla T4",
+      "peak_allocated_bytes": 7792131072,
+      "peak_reserved_bytes": 8944353280
+    }
+  ],
+  "stop_reasons": [
+    "monitoring regression"
+  ],
+  "parent_optimizer_fingerprint_checked_before_updates": true,
+  "token_lengths_reconstructed": true,
+  "confirmation_target_columns_loaded": true,
+  "confirmation_targets_used": false,
+  "finite_adapter_tensors": 289,
+  "audit_seconds": 21.767660887213424,
+  "source_sha256": "e0795350eb912c980a4c24706d44384552ae66673268fb509b8c139d93fbda4b",
+  "adapter_sha256": "29905b14143ef3149cd8f804f620703a2fcdc634819a25509a3fe38dab4d32b9",
+  "summary_sha256": "853804b4cf259db0b22eb44c039146924ca8f852b30a2b3f167ec4ed2d40603a",
+  "trace_sha256": {
+    "exposure_rank0.jsonl": "7b612f38df41b4ff6f03bc5710491593710fc64dffe92dba11d16e7a4ed7ee3a",
+    "exposure_rank1.jsonl": "82de559c3a83e7eb94e34345abd8db2a7fafff1058becc92c2c70cf1c7059b0b"
+  }
+}

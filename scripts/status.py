@@ -20,6 +20,11 @@ while True:
             try:return json.loads(p.read_text())
             except (FileNotFoundError,json.JSONDecodeError):return {}
         state=read('controller_state.json');remote=read('status.json');progress=read('progress.json')
+        worker=ROOT/'runs'/f'span_{args.span:03d}'/'jobs'/folder.name/'output'/folder.name
+        if state.get('stage') in ['complete','failed'] and (worker/'stages/latest_event.json').exists():
+            progress['latest']=json.loads((worker/'stages/latest_event.json').read_text())
+        latest=progress.get('latest',{})
+        summary=json.loads((worker/'summary.json').read_text()) if (worker/'summary.json').exists() else {}
         events=progress.get('events',[]);cycles=[e for e in events if e.get('event')=='cycle']
         last=cycles[-1] if cycles else {}
         counted=[e for e in events if 'cycles' in e.get('counts',{})]
@@ -34,7 +39,8 @@ while True:
             for event in validations:
                 bad_checks=bad_checks+1 if event['metrics'].get('eval_log_loss',0)>=contract['baseline_original_order_log_loss']+contract['catastrophic_margin'] else 0
         rows.append({'job':folder.name,'remote':remote.get('status'),'controller':state.get('stage'),
-                     'phase':progress.get('latest',{}).get('stage'),'step':exposure.get('step'),
+                     'phase':latest.get('stage'),'stage_event':latest.get('event'),'stage_rows':latest.get('rows'),
+                     'worker_artifacts_complete':summary.get('complete',latest.get('complete')),'step':exposure.get('step'),
                      'rank0_accepted_updates':counts.get('accepted_updates'),'rank0_accepted_tokens':counts.get('accepted_tokens'),
                      'rank0_amp_skips':counts.get('skipped_updates'),'last_gpu_event_at':progress.get('latest',{}).get('at'),
                      'recent_train_loss':metrics.get('loss'),'gradient_norm_before_clip':metrics.get('grad_norm'),

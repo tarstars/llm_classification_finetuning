@@ -1,0 +1,11 @@
+{
+  "task": "H49",
+  "complete": false,
+  "quality_gate": {
+    "passed": false
+  },
+  "affordable_stable_recipe": false,
+  "charged_gpu_seconds": 9888.945999999996,
+  "reason": "The bounded remote execution failed; retain partial outputs, no promotion.",
+  "source_sha256": "95ac9e06012ceebb482382f8e854e8d279fa56ec54e925a026289cfd89c031f0"
+}

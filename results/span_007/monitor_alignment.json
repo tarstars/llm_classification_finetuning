@@ -1,0 +1,135 @@
+{
+  "at": "2026-11-05T21:55:45.224100+00:00",
+  "descriptive_only": true,
+  "no_fitting_or_new_gpu": true,
+  "endpoints_previously_fixed": true,
+  "cohorts": {
+    "monitor": {
+      "original_raw": {
+        "rows": 256,
+        "reference_log_loss": 0.9493642715974101,
+        "candidate_log_loss": 0.970671174450626,
+        "paired_gain": {
+          "gain": -0.021306902853215973,
+          "interval_95": [
+            -0.035146994085621976,
+            -0.007427021295890902
+          ],
+          "groups": 251,
+          "rows": 256,
+          "replicates": 2000
+        }
+      },
+      "aligned_swap_raw": {
+        "rows": 256,
+        "reference_log_loss": 0.9556664453143418,
+        "candidate_log_loss": 0.9457368430289748,
+        "paired_gain": {
+          "gain": 0.009929602285367,
+          "interval_95": [
+            -0.004074129383559101,
+            0.02340449972686323
+          ],
+          "groups": 251,
+          "rows": 256,
+          "replicates": 2000
+        }
+      },
+      "order_average_raw": {
+        "rows": 256,
+        "reference_log_loss": 0.9419973754506745,
+        "candidate_log_loss": 0.9457301158630089,
+        "paired_gain": {
+          "gain": -0.003732740412334412,
+          "interval_95": [
+            -0.010920545232500922,
+            0.0034582219537152106
+          ],
+          "groups": 251,
+          "rows": 256,
+          "replicates": 2000
+        }
+      },
+      "order_average_frozen_temperature": {
+        "rows": 256,
+        "reference_log_loss": 0.9403156025845527,
+        "candidate_log_loss": 0.9441672987989912,
+        "paired_gain": {
+          "gain": -0.003851696214438481,
+          "interval_95": [
+            -0.011421704208204507,
+            0.0037504317096971377
+          ],
+          "groups": 251,
+          "rows": 256,
+          "replicates": 2000
+        }
+      }
+    },
+    "full_development": {
+      "original_raw": {
+        "rows": 5746,
+        "reference_log_loss": 0.9641038857854126,
+        "candidate_log_loss": 0.964932968993821,
+        "paired_gain": {
+          "gain": -0.0008290832084082611,
+          "interval_95": [
+            -0.0038786552263243863,
+            0.002183053772163767
+          ],
+          "groups": 5211,
+          "rows": 5746,
+          "replicates": 2000
+        }
+      },
+      "aligned_swap_raw": {
+        "rows": 5746,
+        "reference_log_loss": 0.9674521704459941,
+        "candidate_log_loss": 0.9667527877699272,
+        "paired_gain": {
+          "gain": 0.000699382676066871,
+          "interval_95": [
+            -0.0022536995918157714,
+            0.0036964695236784985
+          ],
+          "groups": 5211,
+          "rows": 5746,
+          "replicates": 2000
+        }
+      },
+      "order_average_raw": {
+        "rows": 5746,
+        "reference_log_loss": 0.9543354953715909,
+        "candidate_log_loss": 0.9530289389984795,
+        "paired_gain": {
+          "gain": 0.0013065563731113148,
+          "interval_95": [
+            -0.00023233754426256776,
+            0.002825693027267407
+          ],
+          "groups": 5211,
+          "rows": 5746,
+          "replicates": 2000
+        }
+      },
+      "order_average_frozen_temperature": {
+        "rows": 5746,
+        "reference_log_loss": 0.9539706567352386,
+        "candidate_log_loss": 0.9525795363701128,
+        "paired_gain": {
+          "gain": 0.0013911203651255561,
+          "interval_95": [
+            -0.00023271579698021447,
+            0.0029787350101095306
+          ],
+          "groups": 5211,
+          "rows": 5746,
+          "replicates": 2000
+        }
+      }
+    }
+  },
+  "scope": "Existing inspected development predictions; not a test of a different stopping strategy.",
+  "source_sha256": "077f4cf80239897ed7eb1c1fe69d4c397395f35a67dbb6ec309ab4defcdf1e1d",
+  "final_prediction_sha256": "bb7db3bf9649bb60922a0ae61b1a62ee4b6506b963955abc25d618ce42811404"
+}

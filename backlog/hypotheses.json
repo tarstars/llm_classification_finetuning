@@ -3668,6 +3668,14 @@
           "evidence": [
             "docs/SPAN_007_E09.md"
           ]
+        },
+        {
+          "at": "2026-11-05T22:00:03+00:00",
+          "status": "done",
+          "note": "Shared control preserved exact failed service status and complete outputs without another GPU mutation. An experiment-wrapper epilogue bug is documented; the future literal-role helper passes full-cell success/failure/watchdog tests. Original foundation evidence and accepted sources remain preserved.",
+          "evidence": [
+            "docs/SPAN_007_E09.md"
+          ]
         }
       ]
     },
@@ -3959,6 +3967,14 @@
           "at": "2026-11-05T21:44:06+00:00",
           "status": "done",
           "note": "Fixed continuation experiment finished; see actual coverage, gates, uncertainty and charged compute. Negative/incomplete results are retained.",
+          "evidence": [
+            "docs/SPAN_007_H49.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:00:03+00:00",
+          "status": "done",
+          "note": "Preserve serviceERROR from a final bookkeeping NameError; worker artifacts were complete. Frozen CPU recovery and independent ledger audit pass. MatchedCV0.952820 vs0.954174, gain0.001354 CI[-0.000283,0.002969], below0.003 gate.256accepted updates,0skips,4.832Mtokens; no promotion or GPU retry.",
           "evidence": [
             "docs/SPAN_007_H49.md"
           ]

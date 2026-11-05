@@ -76,6 +76,15 @@ swapping answers swaps A/B probabilities. Averaging probabilities and averaging
 logits are different operations. Our published recipe averages raw probabilities
 before temperature scaling.
 
+Convexity of negative log gives an exact descriptive decomposition: raw
+order-averaged loss equals mean individual-view loss minus a nonnegative
+averaging benefit (the Jensen gap). In v7, mean individual-view loss barely
+worsens while that benefit grows, producing a small averaged improvement.
+The original-order256-row monitor nevertheless worsens. This illustrates why
+cohort, orientation, calibration and stopping diagnostics must be identified
+explicitly. It does not show that increasing order disagreement causes better
+quality. See [measured decomposition](../results/span_007/order_averaging_decomposition.json).
+
 Log loss scores the full distribution. Accuracy only inspects its largest entry.
 Two models with identical hard predictions can therefore have different log loss.
 A confidently wrong answer is particularly expensive. Class priors and a clipped

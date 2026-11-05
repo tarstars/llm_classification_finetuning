@@ -51,6 +51,14 @@ executing its successor backlog; select a new bounded goal first.
    Make one main change per initial ablation. Record source/configuration/checkpoint
    hashes and the locations of inputs and outputs.
 
+   Exercise generated notebook subprocess cells through their final bookkeeping
+   with a tiny CPU worker before GPU admission. Syntax compilation alone does not
+   catch an undefined runtime name. For new templates, use the tested literal-role
+   helper in `arena.notebook_worker`, and cover successful exit, failed exit and
+   the owned-process watchdog. Preserve already accepted historical notebooks.
+   A failed service status stays failed even when separately verified complete
+   worker artifacts can be recovered without another GPU execution.
+
    Verify current Kaggle quota, active jobs, model availability, memory fit and
    submission runtime before launching GPU work.
    For a native inference server, check that the backend itself detects the requested

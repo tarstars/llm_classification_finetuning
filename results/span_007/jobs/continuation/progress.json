@@ -1,34 +1,10 @@
 {
-  "observed_at": "2026-11-05T20:41:07.069444+00:00",
+  "observed_at": "2026-11-05T21:40:08.353066+00:00",
   "latest": {
-    "at": "2026-11-05T20:40:58.608115+00:00",
-    "stage": "training",
-    "event": "finished",
-    "step": 1694,
-    "elapsed_seconds": 5910.779943324,
-    "counts": {
-      "rank": 0,
-      "cycles": 256,
-      "accepted_updates": 256,
-      "skipped_updates": 0,
-      "processed_tokens": 2425592,
-      "accepted_tokens": 2425592,
-      "processed_rows": 4096,
-      "accepted_rows": 4096,
-      "processed_unique_rows": 4096,
-      "accepted_unique_rows": 4096,
-      "processed_class_counts": [
-        1443,
-        1364,
-        1289
-      ],
-      "accepted_class_counts": [
-        1443,
-        1364,
-        1289
-      ],
-      "last_global_step": 1694
-    }
+    "at": "2026-11-05T20:41:09.345288+00:00",
+    "stage": "full_development",
+    "event": "started",
+    "rows": 5746
   },
   "events": [
     {
@@ -2898,6 +2874,12 @@
         ],
         "last_global_step": 1694
       }
+    },
+    {
+      "at": "2026-11-05T20:41:09.345288+00:00",
+      "stage": "full_development",
+      "event": "started",
+      "rows": 5746
     }
   ]
 }

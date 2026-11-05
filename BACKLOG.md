@@ -6,7 +6,7 @@ Version **7**, active; **43** tasks. Focus for this span: E09, E10, E11, H49, H4
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **26**, ready **0**, running **1**, done **1**, rejected **0**, deferred **10**.
+Hypothesis status: planned **25**, ready **0**, running **1**, done **2**, rejected **0**, deferred **10**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -78,8 +78,8 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 57 | [E09](#e09) | P2 / done | Reusable experiment control and framework reliability | — | medium | 2…4 | 0…0 | 0…0 | E00 |
 | 58 | [E10](#e10) | P2 / running | Observe every pipeline stage and actual training exposure | — | medium | 2…4 | 0…0 | 0…0 | E00, E09 |
 | 59 | [E11](#e11) | P2 / done | Explain pipeline theory and reassess skipped work | — | medium | 2…4 | 0…0 | 0…0 | E00 |
-| 60 | [H48](#h48) | P2 / planned | Expand the paired context-retention experiment on the current classifier | -0.01…+0.015 | high | 2…5 | 0.75…0.75 | 0…0 | E00, E09 |
-| 61 | [H49](#h49) | P2 / running | Test bounded additional exposure under an observable warm restart | -0.01…+0.015 | high | 3…7 | 3.667…3.667 | 0…0 | E00, E09, H03 |
+| 60 | [H48](#h48) | P2 / running | Expand the paired context-retention experiment on the current classifier | -0.01…+0.015 | high | 2…5 | 0.75…0.75 | 0…0 | E00, E09 |
+| 61 | [H49](#h49) | P2 / done | Test bounded additional exposure under an observable warm restart | -0.01…+0.015 | high | 3…7 | 3.667…3.667 | 0…0 | E00, E09, H03 |
 | 62 | [H50](#h50) | P2 / planned | Qualify and officially evaluate one frozen v7 classifier candidate | -0.015…+0.015 | high | 2…5 | 1.25…1.25 | 0…0 | E00, E09, H48, H49 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 20 | [H29](#h29) | P3 / planned | Human-preference prompt rubric | -0.015…+0.01 | low | 3…8 | 0.5…2 | 2…6 | E00 |
@@ -516,6 +516,7 @@ Reusable experiment control and framework reliability
 - 2026-11-05T18:39:30+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 - 2026-11-05T18:41:20+00:00 — running: Implement shared future-run control with fault tests, immutable mutation intent and bounded artifact recovery; baseline full test suite is being checked. Preserve historical frozen code. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 - 2026-11-05T18:56:02+00:00 — done: Shared run control implemented. Full91tests pass; real read-only continuation admission at18:55:16 verifies committed source, quota and pinned dependencies. No GPU mutation in this dry-run; actual integration follows. Evidence: [docs/SPAN_007_E09.md](docs/SPAN_007_E09.md)
+- 2026-11-05T22:00:03+00:00 — done: Shared control preserved exact failed service status and complete outputs without another GPU mutation. An experiment-wrapper epilogue bug is documented; the future literal-role helper passes full-cell success/failure/watchdog tests. Original foundation evidence and accepted sources remain preserved. Evidence: [docs/SPAN_007_E09.md](docs/SPAN_007_E09.md)
 
 ### E10
 
@@ -582,7 +583,7 @@ Explain pipeline theory and reassess skipped work
 
 ### H48
 
-**Expand the paired context-retention experiment on the current classifier** — P2, planned, risk high.
+**Expand the paired context-retention experiment on the current classifier** — P2, running, risk high.
 
 Expand the paired context-retention experiment on the current classifier
 
@@ -609,10 +610,11 @@ Expand the paired context-retention experiment on the current classifier
 **References:** [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 - 2026-11-05T18:39:31+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
+- 2026-11-05T21:44:11+00:00 — running: Starting fixed context role under the original v7 cap; one persisted GPU intent, no variant search. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 
 ### H49
 
-**Test bounded additional exposure under an observable warm restart** — P2, running, risk high.
+**Test bounded additional exposure under an observable warm restart** — P2, done, risk high.
 
 Test bounded additional exposure under an observable warm restart
 
@@ -641,6 +643,8 @@ Test bounded additional exposure under an observable warm restart
 - 2026-11-05T18:39:31+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 - 2026-11-05T18:56:03+00:00 — running: Starting the frozen checkpoint1438 warm restart from source15a888a. One schedule, at most320newnominal cycles, full-dev fixed endpoint;13200srole cap including setup/evaluation. No GPU push has yet been sent. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 - 2026-11-05T20:42:23+00:00 — running: The fixed monitor stopped training at new cycle256: losses0.949364 baseline,0.956740 at128,0.970608 at256. All256 updates accepted, zero AMP skips. Preserve final endpoint; full development scoring/retrieval and independent audit remain pending. Evidence: [results/span_007/jobs/continuation/progress.json](results/span_007/jobs/continuation/progress.json)
+- 2026-11-05T21:44:06+00:00 — done: Fixed continuation experiment finished; see actual coverage, gates, uncertainty and charged compute. Negative/incomplete results are retained. Evidence: [docs/SPAN_007_H49.md](docs/SPAN_007_H49.md)
+- 2026-11-05T22:00:03+00:00 — done: Preserve serviceERROR from a final bookkeeping NameError; worker artifacts were complete. Frozen CPU recovery and independent ledger audit pass. MatchedCV0.952820 vs0.954174, gain0.001354 CI[-0.000283,0.002969], below0.003 gate.256accepted updates,0skips,4.832Mtokens; no promotion or GPU retry. Evidence: [docs/SPAN_007_H49.md](docs/SPAN_007_H49.md)
 
 ### H50
 
@@ -664,7 +668,7 @@ Qualify and officially evaluate one frozen v7 classifier candidate
 
 **Revision:** User-requested planning addition before v7 focus or execution.
 
-**Depends on:** E00, E09, H48, H49. Currently unmet: H48, H49.
+**Depends on:** E00, E09, H48, H49. Currently unmet: H48.
 
 **Origin:** introduced in v7; discovered during initial planning; derived from H03.
 

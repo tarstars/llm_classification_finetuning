@@ -71,6 +71,10 @@ print('Source MSE:',source['source_mse'],'final ridge penalty:',source['final_al
 fig,ax=plt.subplots(figsize=(6,3.2));ax.bar(['Direct ridge','Identity projection'],[source['source_mse']['direct'],source['source_mse']['identity']]);ax.set_ylabel('OOF estimated-source-rating MSE; lower is better');save(fig,'v7_source_mse')
 pipeline=result('pipeline_analysis.json');display(pd.DataFrame(pipeline['decomposition']).T)
 print(pipeline['constant_confidence_model'])
+if (PUB/'monitor_alignment.json').exists():
+    alignment=result('monitor_alignment.json')
+    display(pd.DataFrame([{'cohort':c,'view':v,'gain':r['paired_gain']['gain']} for c,m in alignment['cohorts'].items() for v,r in m.items()]))
+    print('Raw loss averaging identity:',result('order_averaging_decomposition.json')['cohorts'])
 '''),md('''## Native numerical stability and actual resources
 
 The native server configuration stays fixed; client concurrency is the tested

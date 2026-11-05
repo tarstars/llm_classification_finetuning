@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-05T21:43:21.783300+00:00",
+  "stage": "continuation",
+  "event": "failed",
+  "status": "ERROR",
+  "kernel_version": "arseniytrushin/llm-preference-span-007-continuation/1",
+  "charged_seconds": 9888.945999999996,
+  "files": 43
+}
