@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "scope": "Integrity and coverage of saved chunks only; full quality and deployment are unqualified.",
+  "checked_at": "2026-11-05T22:31:20.218840+00:00",
+  "expected_changed_rows": 1152,
+  "paired_complete_rows": 896,
+  "missing_long_rows": 256,
+  "coverage": {
+    "1024": {
+      "rows": 1152,
+      "chunks": 9,
+      "completed_chunk_seconds": 931.065652346,
+      "seconds_per_completed_row": 0.8082167121059027,
+      "aggregate_complete": true,
+      "prediction_files_sha256": {
+        "1024_0000.npz": "07742225fdfc8b4dc49fee7494ec7bfde184219938638792dc8de9d9c0dda909",
+        "1024_0128.npz": "7fa97e588c7616cd38177e077c76521d4f8217728e46b5e6231c9bac770f2ee4",
+        "1024_0256.npz": "c150a6ec452fb4d5a5bd1c91745f201003bd7d79508bcb2cf342b904a943e7e6",
+        "1024_0384.npz": "49991037d679700fce8eba78a0e4c0dacc00623b1c5cda4c8b2b2173b3e562d4",
+        "1024_0512.npz": "b0aa847e32a9bd25c0aaf5a80c5566f07c7a93ebcf2d0b87ed4a133aef160146",
+        "1024_0640.npz": "fe1734046a478aee1a6ca3b20a39b97152008965f09f4654805dd4d2c6f5ead2",
+        "1024_0768.npz": "fedbe764a3c0b43926b8a6a78ef2379acaf59440bb380809c1db86f5e5a37c40",
+        "1024_0896.npz": "988c973f9a8ce578d198d7d018ad06c42b31a3b6c6122f4645d94e09e40f274b",
+        "1024_1024.npz": "c72e7c2e33b89fa63af3f608c330f67c43a669ca6d0137529ce44955a4d24b17"
+      }
+    },
+    "2048": {
+      "rows": 896,
+      "chunks": 7,
+      "completed_chunk_seconds": 1315.2167823650002,
+      "seconds_per_completed_row": 1.4678758731752235,
+      "aggregate_complete": false,
+      "prediction_files_sha256": {
+        "2048_0000.npz": "5c71e4722124b027ec54814e7f5306e2173f324ca3087c0f9b8cf2bf0f0a2e43",
+        "2048_0128.npz": "d504fcb258ac776710cdba4ad1f542f65540e32598403c258219dc8933d10aa0",
+        "2048_0256.npz": "9f4b77f807a5fd1e706bd88cde49496786e8235a4ed2257848302bdbd5c71d3c",
+        "2048_0384.npz": "1b9d1161be2d04af4a3669346d7adef95d799ab2e2bcd7e663b7dda0d505ed70",
+        "2048_0512.npz": "21abd069e4c5ed5d273e44c7895033b3f3173d30695810de3a1480b62a9683cb",
+        "2048_0640.npz": "94bb2be3573cc441616bc816db05dbabfaf75dd9aea02b13a52a2166f9ef3ad9",
+        "2048_0768.npz": "a47bcfaf4a6076e8dceca8a0ea3adf36aa36d6508cc9b8cf95ccb5df4c57554e"
+      }
+    }
+  },
+  "identity": {
+    "mean": 0.000307880267487546,
+    "maximum": 0.0017752036450042752,
+    "passed": true,
+    "fixed_eval_batch_size_per_gpu": 8
+  },
+  "competition_targets_read": false,
+  "full_quality_estimated": false,
+  "complete_worker_summary_available": false,
+  "measured_final_peak_memory_available": false,
+  "charged_gpu_seconds": 2603.023000000001,
+  "source_sha256": "6597d1c5bdef70cd58ed38b4c358c99d4951d1926f83844d1b0878d73e6fc03a",
+  "retrieval_sha256": "e8fba67eec5d0e110fc29a36fc90118510f17b536c8ca6d0c1c3f7910f042832"
+}

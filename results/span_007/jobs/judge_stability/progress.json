@@ -1,0 +1,99 @@
+{
+  "observed_at": "2026-11-05T22:44:40.340733+00:00",
+  "latest": {
+    "at": "2026-11-05T22:43:36.625482+00:00",
+    "stage": "judge_stability",
+    "event": "complete",
+    "complete": true,
+    "passed": false
+  },
+  "events": [
+    {
+      "at": "2026-11-05T22:35:34.124731+00:00",
+      "stage": "judge_stability/serial/initial",
+      "event": "pass_completed",
+      "rows": 64,
+      "seconds": 62.24696816799997,
+      "metrics": {
+        "client_concurrency": 1
+      }
+    },
+    {
+      "at": "2026-11-05T22:36:39.661414+00:00",
+      "stage": "judge_stability/serial/repeat",
+      "event": "pass_completed",
+      "rows": 64,
+      "seconds": 65.510257551,
+      "metrics": {
+        "client_concurrency": 1
+      }
+    },
+    {
+      "at": "2026-11-05T22:37:45.107091+00:00",
+      "stage": "judge_stability/serial/permuted",
+      "event": "pass_completed",
+      "rows": 64,
+      "seconds": 65.423902354,
+      "metrics": {
+        "client_concurrency": 1
+      }
+    },
+    {
+      "at": "2026-11-05T22:39:10.631599+00:00",
+      "stage": "judge_stability/parallel/initial",
+      "event": "pass_completed",
+      "rows": 64,
+      "seconds": 83.91568252599996,
+      "metrics": {
+        "client_concurrency": 16
+      }
+    },
+    {
+      "at": "2026-11-05T22:40:14.241948+00:00",
+      "stage": "judge_stability/parallel/repeat",
+      "event": "pass_completed",
+      "rows": 64,
+      "seconds": 63.58778753699994,
+      "metrics": {
+        "client_concurrency": 16
+      }
+    },
+    {
+      "at": "2026-11-05T22:41:23.163204+00:00",
+      "stage": "judge_stability/parallel/permuted",
+      "event": "pass_completed",
+      "rows": 64,
+      "seconds": 68.89972693599998,
+      "metrics": {
+        "client_concurrency": 16
+      }
+    },
+    {
+      "at": "2026-11-05T22:42:36.550306+00:00",
+      "stage": "judge_stability/serial/restart",
+      "event": "pass_completed",
+      "rows": 64,
+      "seconds": 64.08850971499999,
+      "metrics": {
+        "client_concurrency": 1
+      }
+    },
+    {
+      "at": "2026-11-05T22:43:35.241327+00:00",
+      "stage": "judge_stability/parallel/restart",
+      "event": "pass_completed",
+      "rows": 64,
+      "seconds": 57.17727710299994,
+      "metrics": {
+        "client_concurrency": 16
+      }
+    },
+    {
+      "at": "2026-11-05T22:43:36.625482+00:00",
+      "stage": "judge_stability",
+      "event": "complete",
+      "complete": true,
+      "passed": false
+    }
+  ]
+}

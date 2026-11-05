@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-05T23:07:07.419871+00:00",
+  "notebooks": [
+    {
+      "name": "18_backlog_v7_span.ipynb",
+      "code_cells": 5,
+      "figures": 3,
+      "sha256": "1f620f8e470e25d2d1db0e9a6c2df980586f179d7067788743cde3379e246633"
+    },
+    {
+      "name": "19_training_observability.ipynb",
+      "code_cells": 5,
+      "figures": 4,
+      "sha256": "c33129ed2f2bc8c7bf9dc6837afb0f8ba20edb49b37a4b1bee2e4f3bb8daf708"
+    }
+  ],
+  "generator_sha256": "7e4aaa0a6ee134b03708ab34663d0174b3130fcef50d20f53a80694d1f5a14cf",
+  "active_version": 8,
+  "no_new_fit_or_gpu": true
+}

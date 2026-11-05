@@ -51,7 +51,11 @@ for name in ['H49','H48']:
     if r.get('recovered_complete_artifacts'):print(name,'complete artifacts recovered; service status remains',r['service_status'])
     if r.get('complete'):
         g=r['gains'][r['primary']];rows.append({'task':name,'recipe':r['primary'],**g,'passed':r['quality_gate']['passed']})
-    else:print(name,'incomplete:',r.get('reason'))
+    else:
+        print(name,'incomplete:',r.get('reason'))
+        if name=='H48' and (PUB/'context_partial_audit.json').exists():
+            coverage=result('context_partial_audit.json')
+            print('Verified saved rows by length:',{k:v['rows'] for k,v in coverage['coverage'].items()},'missing long rows:',coverage['missing_long_rows'],'integrity audit:',coverage['passed'])
 r=result('H47_results.json');rows.append({'task':'H47','recipe':'nested residual versus calibration',**r['contrasts']['calibration'],'passed':r['gate']['passed']})
 display(pd.DataFrame(rows))
 fig,ax=plt.subplots(figsize=(9,3.4))
@@ -97,10 +101,10 @@ Read the frozen candidate selection and H50 result for actual confirmation,
 offline qualification and official evaluation. There is at most one submission;
 no leaderboard tuning. Framework tests, actual exposure audits and preserved
 snapshots are independent checks, not model quality measurements.
-'''),code('''for name in ['candidate_selection.json','H50_results.json','H47_audit.json','training_audit.json','terminal_audit.json','decisions.json','validation.json']:
+'''),code('''for name in ['candidate_selection.json','H50_results.json','H47_audit.json','training_audit.json','judge_audit.json','terminal_audit.json','decisions.json','validation.json']:
     p=PUB/name
     if p.exists():
-        value=read(p);print(name,{k:v for k,v in value.items() if k not in ['artifact_sha256','output_sha256','input_sha256','inventory','jobs','test_sha256']})
+        value=read(p);print(name,{k:v for k,v in value.items() if k not in ['artifact_sha256','output_sha256','input_sha256','inventory','jobs','test_sha256','test_and_program_sha256']})
 display(pd.DataFrame([{'version':v['number'],'state':v['state'],'tasks':len(v['item_ids']),'focus':v['focus_ids']} for v in registry['versions']]))
 print('Standalone figures:',FIG)
 ''')]

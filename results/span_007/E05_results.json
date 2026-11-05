@@ -1,0 +1,165 @@
+{
+  "task": "E05",
+  "complete": true,
+  "rows": 64,
+  "configurations": {
+    "parallel": {
+      "concurrency": 16,
+      "repeatability_passed": false,
+      "comparisons": {
+        "repeat": {
+          "rows": 64,
+          "mean_probability_difference": 0.022360665488227415,
+          "max_probability_difference": 0.16844010276810278,
+          "argmax_disagreement": 0.0625,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false,
+          "prepared_tokens_identical": true
+        },
+        "permuted": {
+          "rows": 64,
+          "mean_probability_difference": 0.020388528872743162,
+          "max_probability_difference": 0.12778124540492097,
+          "argmax_disagreement": 0.046875,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false,
+          "prepared_tokens_identical": true
+        },
+        "restart": {
+          "rows": 64,
+          "mean_probability_difference": 0.01701411388489862,
+          "max_probability_difference": 0.09581717664283079,
+          "argmax_disagreement": 0.03125,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": false,
+          "prepared_tokens_identical": true
+        }
+      },
+      "seconds_per_row": 1.3111664827656249,
+      "projected_cascade_seconds": 28332.14340500887,
+      "eligible": false,
+      "memory_peak_mib": [
+        9549,
+        8837
+      ],
+      "passes": {
+        "initial": {
+          "rows": 64,
+          "seconds": 83.91465489699999,
+          "prediction_sha256": "27d60c78f0299278dedb13528b66e15a539ce6cf2d3da3901fe539360fc96b7a",
+          "requests_sha256": "9d4b90fad336c376eb870ec1db186ddfd28fe0945f2dd2fb3d7a54c8016762a5"
+        },
+        "repeat": {
+          "rows": 64,
+          "seconds": 63.58612242200002,
+          "prediction_sha256": "dd18034677478b16502642d5f3097387a764acfd8d1afd47458b33d17662dc8e",
+          "requests_sha256": "4dc09bf0a47a7a508ffb84e9671faa3e83c8f44adb47eb9fa09fce2c23773909"
+        },
+        "permuted": {
+          "rows": 64,
+          "seconds": 68.89866556100003,
+          "prediction_sha256": "a03cf0fa20bcc8c93985c84b45806eca6d84e0f53590e5e5a1108778823fa203",
+          "requests_sha256": "e82a1a3fb276715d2c95409b20ff9dc0a0835f5d63abc5eb16fe287865418681"
+        },
+        "restart": {
+          "rows": 64,
+          "seconds": 57.176174052999954,
+          "prediction_sha256": "0b4f36a0f2a8fc59d9525163da2d09da9428c6bebb29ec3ab6a48ec17d43f808",
+          "requests_sha256": "78a22e4807c795f2a3c413e8ff34baad10fea53dbf72aee1ab81de1186349c9f"
+        }
+      }
+    },
+    "serial": {
+      "concurrency": 1,
+      "repeatability_passed": true,
+      "comparisons": {
+        "repeat": {
+          "rows": 64,
+          "mean_probability_difference": 0.0,
+          "max_probability_difference": 0.0,
+          "argmax_disagreement": 0.0,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": true,
+          "prepared_tokens_identical": true
+        },
+        "permuted": {
+          "rows": 64,
+          "mean_probability_difference": 0.0,
+          "max_probability_difference": 0.0,
+          "argmax_disagreement": 0.0,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": true,
+          "prepared_tokens_identical": true
+        },
+        "restart": {
+          "rows": 64,
+          "mean_probability_difference": 0.0,
+          "max_probability_difference": 0.0,
+          "argmax_disagreement": 0.0,
+          "limits": {
+            "mean": 0.001,
+            "maximum": 0.01
+          },
+          "passed": true,
+          "prepared_tokens_identical": true
+        }
+      },
+      "seconds_per_row": 1.0235800302499989,
+      "projected_cascade_seconds": 26606.62468991511,
+      "eligible": false,
+      "memory_peak_mib": [
+        9541,
+        8831
+      ],
+      "passes": {
+        "initial": {
+          "rows": 64,
+          "seconds": 62.24185139999997,
+          "prediction_sha256": "d0f19bac6946326247d6ccefebf0ed18fa6f29b838dce2d86fd54b8edca19823",
+          "requests_sha256": "403c7de619d413e575815e856547708d8ec044b7a3c501ce2a674a98bd884cca"
+        },
+        "repeat": {
+          "rows": 64,
+          "seconds": 65.50912193599993,
+          "prediction_sha256": "d0f19bac6946326247d6ccefebf0ed18fa6f29b838dce2d86fd54b8edca19823",
+          "requests_sha256": "39d3e65454d4caea0f78acda21204ebe9bfacf7b805333d17da35da31c1c07bd"
+        },
+        "permuted": {
+          "rows": 64,
+          "seconds": 65.42288279700006,
+          "prediction_sha256": "f6015826069401bd192ce2a251b5f1777186ae29c674d078bacfc4de2a6f6400",
+          "requests_sha256": "97e46cd8a8439a64d46d47b41c9816ca44df31e65b41ef7316c1061f962bda02"
+        },
+        "restart": {
+          "rows": 64,
+          "seconds": 64.08744025200008,
+          "prediction_sha256": "d0f19bac6946326247d6ccefebf0ed18fa6f29b838dce2d86fd54b8edca19823",
+          "requests_sha256": "7e8f859cba4106a4af6b208b33cb87885079cb4ffa4b653e9d13dc5e4441304f"
+        }
+      }
+    }
+  },
+  "affordable_stable_recipe": false,
+  "chosen_recipe": null,
+  "competition_labels_accessed": false,
+  "model_sha256": "4c856523d61d77922dbc0b26753a6bf6208e5d69d80db0c04dcd776832d054c5",
+  "projection_hidden_rows_assumption": 25000,
+  "numerical_thresholds_unchanged": true,
+  "charged_gpu_seconds": 838.6129999999976,
+  "source_sha256": "41abb49e861e7881ceffaccd979f191eed4bcd399025c15e708ae021c7c5ed3a"
+}

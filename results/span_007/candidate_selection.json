@@ -1,0 +1,20 @@
+{
+  "frozen_at": "2026-11-05T22:37:25.625661+00:00",
+  "eligible": false,
+  "candidate_kind": null,
+  "priority": [
+    "continuation",
+    "context"
+  ],
+  "confirmation_targets_used": false,
+  "rule": "Training first if its frozen quality/runtime gate passes, otherwise context if it passes.",
+  "input_sha256": {
+    "continuation": "3ed2b00298d0d028de32de1260494ff5595120634f8b763276d9adda00fb880f",
+    "context": "4e2841dbcfe3eca6ccb3203fb1369f402e221928c3bd95a304e86d0964ab829b"
+  },
+  "input_paths": {
+    "continuation": "results/span_007/H49_recovered_artifacts_results.json",
+    "context": "results/span_007/H48_results.json"
+  },
+  "source_sha256": "15141e90430fb7f3d872758afa0254a8d40b53bc4b3e62626ebfbfed1a700904"
+}

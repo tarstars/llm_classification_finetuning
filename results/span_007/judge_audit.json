@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-05T22:50:42.404974+00:00",
+  "competition_requests_replayed": 512,
+  "labels_read": false,
+  "case_stability": {
+    "serial": true,
+    "parallel": false
+  },
+  "token_inputs_identical": true,
+  "cache_off_verified": true,
+  "native_two_t4_verified": true,
+  "serial_ten_percent_route_seconds_scenario": 23535.88459916511,
+  "scenario_note": "Timing-only extrapolation with the existing formula; not a qualified end-to-end recipe or a change to the failed20%gate.",
+  "audit_seconds": 0.36604121583513916,
+  "source_sha256": "e554c9476b9c71c4effa89a209f66e4efefd94c0b78c34283efad8e171305423",
+  "E05_results_sha256": "35f81ad356c8ae86f03a00c9298158dee591a25ab024656ff16e5326d0c29eeb",
+  "retrieval_sha256": "46c0ec22bb9b0d62c722870f7d641c66f7264a579b8add56964fd50f59edea40"
+}

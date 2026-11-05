@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-05T22:45:50.200080+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span007-judge-stability/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "notebook_sha256": "d539e9a9d664d20f0604cc8ce2e0afc60a6c6a2d6e4fcfa6f80ae76c11752d5f",
+  "source_sha256": "ef54dab88bdcde7e717d004cb28a0d176b1dd63c0180d6ece2e999675cb9e8dd"
+}

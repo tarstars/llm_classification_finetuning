@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-05T22:29:04.964337+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span-007-context/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "notebook_sha256": "b268c16440a8d09fcb759458f2abb0a232c0b225fa8c44af13a598bc43cf8b48",
+  "source_sha256": "ef54dab88bdcde7e717d004cb28a0d176b1dd63c0180d6ece2e999675cb9e8dd"
+}

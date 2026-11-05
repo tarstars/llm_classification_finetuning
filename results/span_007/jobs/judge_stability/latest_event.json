@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-05T22:45:43.041878+00:00",
+  "stage": "judge_stability",
+  "event": "complete",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span007-judge-stability/1",
+  "charged_seconds": 838.6129999999976,
+  "files": 59
+}

@@ -1,0 +1,10 @@
+{
+  "stage": "failed",
+  "at": "2026-11-05T22:29:00.582752+00:00",
+  "pid": 1588952,
+  "role": "context",
+  "status": "ERROR",
+  "kernel_version": "arseniytrushin/llm-preference-span-007-context/1",
+  "charged_seconds": 2603.023000000001,
+  "files": 27
+}

@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-11-05T22:29:35.251525+00:00",
+  "parents": [
+    {
+      "source": "arseniytrushin/llm-preference-judge-binary-probe-003/1",
+      "status": "COMPLETE",
+      "output_files": 50
+    },
+    {
+      "source": "arseniytrushin/llm-preference-span-002-judge-recovery/2",
+      "status": "COMPLETE",
+      "output_files": 192
+    }
+  ],
+  "models": [
+    {
+      "source": "google/gemma-4/gguf/gemma-4-26b-a4b-it-qat-q4_0-gguf/2",
+      "available": true
+    }
+  ]
+}

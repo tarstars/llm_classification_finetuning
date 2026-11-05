@@ -1,0 +1,111 @@
+{
+  "observed_at": "2026-11-05T22:54:33.436932+00:00",
+  "charged_gpu_seconds": {
+    "continuation": 9888.945999999996,
+    "context": 2603.023000000001,
+    "judge_stability": 838.6129999999976,
+    "judge_cache": 0.0,
+    "promotion": 0.0
+  },
+  "total_charged_gpu_seconds": 13330.581999999995,
+  "gpu_session_seconds_cap": 24000,
+  "unused_fixed_allowance_seconds": 10669.418000000005,
+  "hidden_official_seconds": 0,
+  "paid_scaling": false,
+  "cpu_source_worker_wall_seconds": 1872.7038477880415,
+  "cpu_source_peak_rss_gib": 3.4103317260742188,
+  "successful_source_audit_wall_seconds": 483.8661078601144,
+  "earlier_failed_audit_wall_seconds": null,
+  "failed_audit_note": "Failure/source retained under the original one-hour recovery window; a separate elapsed duration was not recorded.",
+  "supervised_cpu_stages": {
+    "judge_stability_source_resources": {
+      "seconds_this_observation": 5.057508597150445,
+      "peak_rss_bytes": 13615104,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793922346.2914157,
+      "numerical_threads": 2
+    },
+    "context_analysis_resources": {
+      "seconds_this_observation": 5.012203413061798,
+      "peak_rss_bytes": 11771904,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793921346.215922,
+      "numerical_threads": 2
+    },
+    "continuation_recovery_analysis_resources": {
+      "seconds_this_observation": 10.027005217969418,
+      "peak_rss_bytes": 383205376,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793919214.882394,
+      "numerical_threads": 2
+    },
+    "judge_stability_analysis_resources": {
+      "seconds_this_observation": 5.060107880039141,
+      "peak_rss_bytes": 14327808,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793922351.356452,
+      "numerical_threads": 2
+    },
+    "continuation_source_resources": {
+      "seconds_this_observation": 5.024980985093862,
+      "peak_rss_bytes": 13807616,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793918636.0358794,
+      "numerical_threads": 2
+    },
+    "continuation_analysis_resources": {
+      "seconds_this_observation": 5.010554060107097,
+      "peak_rss_bytes": 11788288,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793918641.0718613,
+      "numerical_threads": 2
+    },
+    "training_audit_resources": {
+      "seconds_this_observation": 35.2225403629709,
+      "peak_rss_bytes": 2234576896,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793919224.9137342,
+      "numerical_threads": 2
+    },
+    "context_source_resources": {
+      "seconds_this_observation": 5.018945150077343,
+      "peak_rss_bytes": 13656064,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793921341.1918514,
+      "numerical_threads": 2
+    },
+    "recovery_notebook_build_resources": {
+      "seconds_this_observation": 5.039342468138784,
+      "peak_rss_bytes": 13705216,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793919260.1411748,
+      "numerical_threads": 2
+    },
+    "training_notebook_resources": {
+      "seconds_this_observation": 5.02671921486035,
+      "peak_rss_bytes": 12058624,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793919265.1865563,
+      "numerical_threads": 2
+    },
+    "final_summary_notebook_resources": {
+      "seconds_this_observation": 10.044689486036077,
+      "peak_rss_bytes": 308039680,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793923612.2230117,
+      "numerical_threads": 2
+    },
+    "final_training_notebook_resources": {
+      "seconds_this_observation": 5.025680595077574,
+      "peak_rss_bytes": 13795328,
+      "returncode": 0,
+      "original_stage_deadline_epoch": 1793923622.3649733,
+      "numerical_threads": 2
+    }
+  },
+  "numerical_threads": 2,
+  "rss_guard_gib": 6,
+  "remaining_kaggle_seconds": 11236.013000000006,
+  "no_active_jobs": true,
+  "presentation_recorded_at": "2026-11-05T23:07:07.423599+00:00"
+}

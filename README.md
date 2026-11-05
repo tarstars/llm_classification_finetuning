@@ -8,28 +8,37 @@ Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
-The active **v7** is a bounded research and engineering span: observable QLoRA
-continuation, paired context retention, native-judge concurrency, direct source
-strength, framework reliability and pipeline theory. Nine focus tasks are selected
-from 43 members. Training is running; no new official score is claimed. The
-[plan](docs/SPAN_007_PLAN.md) fixes the clock and compute caps. Follow durable
-status with `.venv/bin/python scripts/status.py --follow` and read the
-[theory guide](docs/PIPELINE_THEORY.md) and
+V7 completed the balanced research and engineering span. No candidate passed its
+promotion gates, and the best official score remains **0.95481**. Continued QLoRA
+training gave a small development gain of **0.001354**, with uncertainty crossing
+zero. Serial judge requests were **exactly reproducible** across repeat, row
+permutation and restart; the fixed 20% route still exceeds the runtime limit.
+The context study saved all 1,152 short controls and 896 long rows, leaving 256
+long rows missing. Direct linear source-strength regression failed its gate.
+
+The actual training trace is independently audited: **256 accepted updates, zero
+AMP skips, 8,192 unique training rows and 4.83 million packed tokens**. An outer
+notebook bookkeeping error occurred after the worker had saved complete results;
+its service failure remains preserved alongside CPU-only artifact recovery. The
+future wrapper now has full-cell regression tests. V7 used **3.70294 elapsed
+two-T4 session-hours** and made no submission. See the
+[v7 results](docs/SPAN_007_RESULTS.md), [completion checks](docs/SPAN_007_COMPLETION.md),
+[summary notebook18](notebooks/18_backlog_v7_span.ipynb),
+[training notebook19](notebooks/19_training_observability.ipynb),
+[pipeline theory](docs/PIPELINE_THEORY.md), and
 [review of skipped work](docs/SPAN_007_CARRYOVER_REVIEW.md).
 
-V7's completed CPU source experiment rejects the fixed direct-ridge recipe:
-source MSE **0.213089** versus identity projection **0.201731**; nested preference
-loss **0.953205** versus matched identity control **0.952434**. The independent
-replay audit passes. There is no source-model promotion; see
-[H47 results](docs/SPAN_007_H47.md).
+The active backlog is now **v8: 40 tasks**, including 36 unfinished carryovers and
+four discoveries: artifact-backed contracts (E12), recoverable evaluation progress
+(E13), completion of the frozen context cohort (H51), and a prospectively profiled
+10% serial judge route (H52). It has **no focus or execution**. V9 is an empty
+draft. The [completed v7 contract](docs/GOAL_V7.md) stops at this boundary.
 
-V6's frozen source-strength transfer gained only
-**0.000876 [−0.000390, 0.002173]**, below its gate. H46 completed and E08 was
-deferred without execution. One offline two-T4 job used **1.09226 session-hours**;
-no submission. See [v6 results](docs/SPAN_006_RESULTS.md),
-[completion](docs/SPAN_006_COMPLETION.md),
-[executed notebook17](notebooks/17_backlog_v6_span.ipynb) and
-[completed v6 contract](docs/GOAL_V6.md).
+V6's frozen source-strength transfer had an inconclusive gain of
+0.000876 [−0.000390, 0.002173] and made no submission. See
+[v6 results](docs/SPAN_006_RESULTS.md), [completion](docs/SPAN_006_COMPLETION.md),
+[notebook17](notebooks/17_backlog_v6_span.ipynb), and
+[completed contract](docs/GOAL_V6.md).
 
 The completed [v4 goal](docs/GOAL_V4.md) tested **E04**, native judge repeatability.
 Both cache settings failed the fixed probability guards on 512 fresh requests;
@@ -97,10 +106,11 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v7**, with **43 tasks** and nine focus items. V8 is a
-[next-version draft](backlog/NEXT.md) collecting evidence-grounded discoveries;
-it does not authorize execution. E08 requires genuinely positive source evidence,
-and H44 requires a stable affordable judge plus a fresh consistent cache.
+The active version is **v8**, with **40 tasks** and no selected focus or execution.
+Its four new proposals retain provenance and bounded tests; unfinished work is
+carried forward. [V9 is an empty draft](backlog/NEXT.md). Completed dependencies
+alone do not establish scientific readiness: H44's original 20% route remains
+infeasible, and H50 needs a genuinely positive frozen future classifier.
 The original 35-task v5-start snapshot and its explicit planning amendments are
 preserved, along with all historical snapshots.
 Each completed span preserves snapshots and carries unfinished work forward.
@@ -109,7 +119,8 @@ See the [initial v1 snapshot](backlog/versions/v1.start.md),
 and [v3 final history](backlog/versions/v3.final.md),
 [v4 final history](backlog/versions/v4.final.md),
 [v5 final history](backlog/versions/v5.final.md),
-[v6 final history](backlog/versions/v6.final.md).
+[v6 final history](backlog/versions/v6.final.md) and
+[v7 final history](backlog/versions/v7.final.md).
 [Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
 The JSON-backed CLI browses work, records status/evidence and regenerates the page:
 
@@ -118,8 +129,8 @@ uv run python scripts/backlog.py list --priority P1
 uv run python scripts/backlog.py list --actionable
 uv run python scripts/backlog.py list --actionable --focus
 uv run python scripts/backlog.py versions
-uv run python scripts/backlog.py list --version 7 --new
-uv run python scripts/backlog.py list --version 7 --carried
+uv run python scripts/backlog.py list --version 8 --new
+uv run python scripts/backlog.py list --version 8 --carried
 uv run python scripts/backlog.py list --version next
 uv run python scripts/backlog.py show H09
 uv run python scripts/backlog.py check
@@ -145,8 +156,9 @@ The [v2 completion record](docs/SPAN_002_COMPLETION.md),
 [v3 completion record](docs/SPAN_003_COMPLETION.md),
 [v4 completion record](docs/SPAN_004_COMPLETION.md) and
 [v5 completion record](docs/SPAN_005_COMPLETION.md) and
-[v6 completion record](docs/SPAN_006_COMPLETION.md) link resource, provenance,
-notebook and version checks. V6 stops at the v7 boundary.
+[v6 completion record](docs/SPAN_006_COMPLETION.md) and
+[v7 completion record](docs/SPAN_007_COMPLETION.md) link resource, provenance,
+notebook and version checks. V7 stops at the v8 planning boundary.
 
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and

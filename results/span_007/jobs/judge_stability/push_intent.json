@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-05T22:29:40.408225+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-007-judge-stability",
+  "quota_before": {
+    "used_seconds": 95925.374,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 12074.626000000004
+  },
+  "max_session_seconds": 2400,
+  "notebook_sha256": "d539e9a9d664d20f0604cc8ce2e0afc60a6c6a2d6e4fcfa6f80ae76c11752d5f",
+  "metadata_sha256": "ebe761a0668d60004cb4d6a50e59f8c1ce44c3fcd0baa593bdebfe33ea87e481"
+}

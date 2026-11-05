@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "at": "2026-11-05T22:45:43.039306+00:00",
+  "pid": 1719476,
+  "role": "judge_stability",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span007-judge-stability/1",
+  "charged_seconds": 838.6129999999976,
+  "files": 59
+}

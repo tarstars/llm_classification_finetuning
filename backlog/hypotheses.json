@@ -2993,6 +2993,22 @@
           "evidence": [
             "docs/SPAN_004_H44.md"
           ]
+        },
+        {
+          "at": "2026-11-05T22:46:01+00:00",
+          "status": "deferred",
+          "note": "E05 did not establish a stable affordable native recipe. No uniform fitting-cache rescore or nested routed calibration was executed.",
+          "evidence": [
+            "docs/SPAN_007_H44.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:55:02+00:00",
+          "status": "deferred",
+          "note": "Serial64-row repeat/permutation/restart isexactlystable, but fixed20%cascadeprojects26606.6s>7h. No512-rowcache ornestedfit; zeroGPUcharge. H52 separatelyqueues a prospective10%serialroute, preservingthis20%contract.",
+          "evidence": [
+            "docs/SPAN_007_H44.md"
+          ]
         }
       ]
     },
@@ -3124,7 +3140,7 @@
       ],
       "id": "E05",
       "rank": 50,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 5,
       "discovered_during": 4,
       "derived_from": [
@@ -3137,6 +3153,30 @@
           "note": "Both fixed cache settings fail replay/order/restart stability despite identical token inputs; cache reuse alone is insufficient. Queue one bounded client-concurrency ablation with unchanged16-slot server and cache disabled. Cause remains unisolated; no v5 execution.",
           "evidence": [
             "docs/SPAN_004_E04.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:29:16+00:00",
+          "status": "running",
+          "note": "Starting fixed judge_stability role under the original v7 cap; one persisted GPU intent, no variant search.",
+          "evidence": [
+            "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:45:56+00:00",
+          "status": "done",
+          "note": "Fixed judge_stability experiment finished; see actual coverage, gates, uncertainty and charged compute. Negative/incomplete results are retained.",
+          "evidence": [
+            "docs/SPAN_007_E05.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:52:51+00:00",
+          "status": "done",
+          "note": "All512requests independentlyreplayed. Serial repeat/permutation/restart drift isexactzero; client16drifts up to0.16844. Fixed20%serialprojection26606.6s fails7h, soH44deferred.10%scenario23535.9s onlymotivates prospectiveH52; no quality claim. Charged838.613s.",
+          "evidence": [
+            "docs/SPAN_007_E05.md"
           ]
         }
       ]
@@ -3720,7 +3760,7 @@
       "title": "Observe every pipeline stage and actual training exposure",
       "id": "E10",
       "rank": 58,
-      "status": "running",
+      "status": "done",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3741,6 +3781,14 @@
           "note": "Telemetry/optimizer/schedule contracts pass; integrating stage events and actual exposure auditing into the one fixed H49 continuation. Live status and executed telemetry notebook remain required.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:55:02+00:00",
+          "status": "done",
+          "note": "Actual training/stage telemetry complete: executednotebook19, two-rank ledger audit,512native response replay and partial-context coverage audit. Distinguish serviceERROR from completeworker recovery, report missing memory/fullcontext values, and record unexecutedconditionalstages. AllGPUjobsended.",
+          "evidence": [
+            "docs/SPAN_007_E10.md"
           ]
         }
       ]
@@ -3862,7 +3910,7 @@
       "title": "Expand the paired context-retention experiment on the current classifier",
       "id": "H48",
       "rank": 60,
-      "status": "running",
+      "status": "done",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -3883,6 +3931,22 @@
           "note": "Starting fixed context role under the original v7 cap; one persisted GPU intent, no variant search.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:29:11+00:00",
+          "status": "done",
+          "note": "Fixed context experiment finished; see actual coverage, gates, uncertainty and charged compute. Negative/incomplete results are retained.",
+          "evidence": [
+            "docs/SPAN_007_H48.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:33:00+00:00",
+          "status": "done",
+          "note": "Deadline-limited, not a negative quality result: saved1152short/896long rows,256long missing. Chunk/ID/probability/receipt audit passes; no full score, final memory metric or promotion.2603.023GPUseconds, no retry. H51 queued forv8completion with overlap identity and route profiling.",
+          "evidence": [
+            "docs/SPAN_007_H48.md"
           ]
         }
       ]
@@ -4027,7 +4091,7 @@
       "title": "Qualify and officially evaluate one frozen v7 classifier candidate",
       "id": "H50",
       "rank": 62,
-      "status": "planned",
+      "status": "deferred",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -4040,6 +4104,14 @@
           "note": "Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet.",
           "evidence": [
             "docs/SPAN_007_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T22:46:06+00:00",
+          "status": "deferred",
+          "note": "Neither frozen classifier candidate passed its predeclared quality/runtime gates. No confirmation qualification or official submission was executed.",
+          "evidence": [
+            "docs/SPAN_007_H50.md"
           ]
         }
       ]
@@ -4128,21 +4200,22 @@
       ],
       "risk": "medium",
       "claim": "Bounded, ordered prediction chunks can make long evaluations observable and recoverable without changing the classifier recipe.",
-      "basis": "V7 H49 records full-development start/finish but writes its5746-row both-order predictions only at the end of the roughly one-hour stage. Training exposure telemetry is detailed, while this inference stage has no intermediate completion count or saved prediction chunks. No failure or quality gain is inferred.",
-      "first_test": "Extend the reusable label-free inference helper with one fixed chunk size aligned to distributed batch boundaries, ordered ID/hash coverage, atomic raw predictions and aggregate completion/throughput events. Prove no missing/duplicate rows, correct swapped alignment and safe continuation from an interrupted artifact using synthetic tests. Before deployment, compare the same small real cohort with the unchanged whole-frame recipe under frozen weights/batch/precision and the existing raw identity limits.",
+      "basis": "V7 H49 records full-development start/finish but writes its5746-row both-order predictions only at the end of the roughly one-hour stage. Training exposure telemetry is detailed, while this inference stage has no intermediate completion count or saved prediction chunks. No failure or quality gain is inferred. H48 then preserved896long rows in chunks but no final peak-memory files after its deadline, while all1152short rows survived.",
+      "first_test": "Extend the reusable label-free inference helper with one fixed chunk size aligned to distributed batch boundaries, ordered ID/hash coverage, atomic raw predictions and aggregate completion/throughput and per-chunk peak-memory events. Prove no missing/duplicate rows, correct swapped alignment and safe continuation from an interrupted artifact using synthetic tests. Before deployment, compare the same small real cohort with the unchanged whole-frame recipe under frozen weights/batch/precision and the existing raw identity limits.",
       "acceptance": "Failure injection resumes saved chunks without refitting or silently launching another GPU job, produces exactly the frozen row order and aggregate progress, and passes the existing mean0.002/max0.03 raw identity guard with both devices verified. Report measured costs; no preference gain is claimed.",
       "stop": "Stop on identity, DDP coverage or original resource-cap failure. No precision/batch search or relaxed tolerance; no live/historical worker rewrite. Real profiling requires a newly authorized span and fresh admission.",
       "risk_reason": "Chunk boundaries can change distributed padding, ordering and numerical outputs; a resumed mixed cache can falsely appear complete.",
       "mitigation": "Bind all chunks to immutable weights/source/packing/runtime hashes and ordered IDs, align global batch boundaries, test both orientations and interruption, and reject inconsistent or partial coverage.",
       "rationale": "Prevents opaque long evaluation phases and expensive rework while preserving the measured recipe.",
-      "revision": "Queued from an observed v7 observability limitation; not executed in the current fixed span.",
+      "revision": "Queued from an observed v7 observability limitation; not executed in the current fixed span. Actual H48 partial artifact evidence also motivates per-chunk hardware telemetry.",
       "depends_on": [
         "E09",
         "E10"
       ],
       "evidence": [
         "docs/SPAN_007_E10.md",
-        "src/arena/span007_train.py"
+        "src/arena/span007_train.py",
+        "docs/SPAN_007_H48.md"
       ],
       "id": "E13",
       "rank": 64,
@@ -4159,6 +4232,134 @@
           "note": "The actual full-development stage has start/end events but no chunk progress or recoverable intermediate predictions; queue a numerically qualified inference helper, preserving live source.",
           "evidence": [
             "docs/SPAN_007_E10.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Complete the frozen context cohort from verified partial prediction chunks",
+      "priority": "P2",
+      "gain": [
+        -0.004,
+        0.004
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        2
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        0.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0.5
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.2
+      ],
+      "risk": "medium",
+      "claim": "Finishing the256missing long-context rows can resolve the original paired context question without repeating completed controls, while matched route timing determines feasibility.",
+      "basis": "V7 H48 timed out:1152short rows and896long rows pass chunk-integrity checks, leaving256missing. Short/long completed-prefix rates are0.8082/1.4679seconds per row, so average whole-development throughput underestimated the changed-cohort cost. No full quality result exists; this proposal does not infer a gain from incomplete coverage.",
+      "first_test": "Before quality use, freeze original1152IDs/text/token hashes, both-order1024/2048packing, same old H03weights/batch8/T4/runtime and all cached chunk hashes. One fresh GPU job capped1800seconds:64-row short identity, a fixed first128-row long overlap identity against saved chunks, and the remaining256long rows in aligned128-rowchunks. Use unchanged mean0.002/max0.03limits. Also predeclare a label-free fixed128-row sample of unchanged dev inputs at their production batch4 to profile the conditional route. No precision/batch variants. Stitch only after overlap and full ordered coverage pass; apply the original fixed-temperature quality contrast on all5746rows, with unchanged rows explicitly included. Report original conservative runtime projection and a separately prospective matched-route projection with at least20%margin and600-secondreserve. Freeze all timing methods/sampleIDs before displaying full quality.",
+      "acceptance": "All1152changed rows have compatible raw predictions in both lengths/orders with finite probabilities and verified IDs/hashes. Report matched gain/group interval, class/tie/order behavior and actual full cost. Advancement requires at least0.001gain with positive95%group interval and feasible<=7hprospectively measured route. Any future qualification still needs a separately frozen candidate and confirmation; completion alone is not deployment.",
+      "stop": "Stop on overlap drift, source mismatch, OOM, original1800-secondcap or incomplete coverage; preserve new failures without another GPU job or assumedzero missing effects. No repeated variants, confirmation selection or submission in the completion study. Do not execute until a new bounded span authorizes it.",
+      "risk_reason": "Mixing old/new batches can change floating-point outputs or row alignment. Changed-prefix timing may not represent the remaining rows or the unchanged route; repeated inspected-development use adds selection bias.",
+      "mitigation": "Immutable weight/source/packing/cache hashes, fixed overlap and existing raw limits, aligned chunk boundaries, no target-based row selection, explicit coverage and timing uncertainty, and a future independent transfer gate.",
+      "rationale": "A narrow15–30minute completion is cheaper than repeating the45-minute partially successful study. It resolves a skipped question while preserving all negative operational evidence.",
+      "revision": "New v8 proposal from actual v7 deadline failure. The gain range is subjective and can regress; no incomplete quality estimate supports it.",
+      "depends_on": [
+        "E00",
+        "E09",
+        "H48"
+      ],
+      "evidence": [
+        "docs/SPAN_007_H48.md",
+        "results/span_007/context_partial_audit.json"
+      ],
+      "id": "H51",
+      "rank": 65,
+      "status": "planned",
+      "introduced_in": 8,
+      "discovered_during": 7,
+      "derived_from": [
+        "H48"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T22:33:00+00:00",
+          "status": "planned",
+          "note": "H48 reached its original deadline with896/1152long rows and allshort controls saved. Queue a single bounded completion with overlap identity and prospective matched-route timing; no full quality claim or v8 execution.",
+          "evidence": [
+            "docs/SPAN_007_H48.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Test a stable serial judge on a fixed10%classifier route",
+      "priority": "P1",
+      "gain": [
+        -0.006,
+        0.008
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        0.6,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        2
+      ],
+      "cpu_wall_hours": [
+        0.2,
+        1
+      ],
+      "risk": "high",
+      "claim": "A smaller serial judge route may retain useful complementarity while fitting the inference budget now that serialization removes the observed drift.",
+      "basis": "E05 serial repeat/permutation/restart differences are exactlyzero on64rows, while client16 drifts up to0.16844. Stable serial20%cascade projects26606.625s and fails7h;10%under the same formula projects23535.885s, leaving room for a prospectively measured full pipeline. This is timing evidence only, not a quality gain. Existing v3 mixture findings used incompatible caches and cannot be adopted.",
+      "first_test": "Freeze exactly one route: at most10%of rows selected from classifier entropy only, using the unchanged E05 serial/cache-off original-order teacher. No20%reinterpretation or concurrency/precision search. One GPU pilot capped3600seconds including cold starts, complete model switching, fixed64-row repeat/restart stability checks, a label-free fixed128-row routed timing profile and a uniformly sampled2048-row fresh judge cache if stability/runtime pass. Predeclare timing samples and require<=25200s for25000rows with at least20%margin plus600-secondreserve, accounting for both classifier and judge cold setup and routed length mix. Reuse cached latest-H03 classifier predictions on identical rows. In CPU grouped nested folds fit component calibration and a small fixed mixture-weight grid; entropy thresholds fit inside fitting folds, with a deterministic10%input-only budget cap. Compare the sole cascade with matched classifier and global-calibration controls. Do not optimize H44postcalibration families or select a route fraction here. Report original-order teacher coverage and fixed64-row answer-swap diagnostics; do not claim exact answer-swap invariance.",
+      "acceptance": "The actual fixed serial recipe remains numerically stable and its complete sequential route profile fits7h. The sole cascade gains at least0.001log loss with positive paired prompt-group95%lower bound over matched global classifier calibration, under honest nested fitting. Report class/tie/order behavior, route fraction, cache coverage, memory, full cost and inspected-data limitations. A positive pilot only proposes a separate frozen confirmation/offline qualification; no immediate official submission.",
+      "stop": "Stop before cache fitting if repeatability, complete pipeline runtime or original3600-secondGPUcap fails. Stop adoption if controls explain the apparent gain, uncertainty crosseszero or quality regresses. No another GPU attempt, route-fraction grid, old-cache pooling, confirmation tuning or submission in this study. Any follow-up needs a new goal and fresh quota admission.",
+      "risk_reason": "The largest-entropy rows can be ambiguous ties and may not benefit from the judge. A10%route yields a small effective evaluation sample; repeatedly inspected data and fitted gates/calibrators can overfit. The original-order teacher may add answer-order bias. Current timing excludes an unmeasured integrated model switch.",
+      "mitigation": "One prospective capped route, uniform fresh cache, nested complete fitting chain and controls, group intervals, unchanged stability thresholds, explicit answer-order diagnostics and complete cold/switch profiling before quality use. Preserve old20%failures and require a separate transfer if positive.",
+      "rationale": "A controlled smaller route addresses the actual affordability blocker; E05 now supplies stable numerical evidence. It is distinct from changing prompts, more source identities or H44postcalibration on an infeasible20%route.",
+      "revision": "New v8 discovery from completed E05 and its independent512-response audit. Gain range is subjective, not measured, and overlaps other mixture ideas.",
+      "depends_on": [
+        "E00",
+        "E05",
+        "E09",
+        "H39"
+      ],
+      "evidence": [
+        "docs/SPAN_007_E05.md",
+        "docs/SPAN_007_H44.md",
+        "results/span_007/judge_audit.json"
+      ],
+      "id": "H52",
+      "rank": 66,
+      "status": "planned",
+      "introduced_in": 8,
+      "discovered_during": 7,
+      "derived_from": [
+        "E05"
+      ],
+      "history": [
+        {
+          "at": "2026-11-05T22:52:51+00:00",
+          "status": "planned",
+          "note": "Serial responses are exactlystable but the original20%runtime gate fails. Queue one distinct10%serial route study with complete cold/switch profiling and a fresh uniform cache; do not change v7gate or executev8.",
+          "evidence": [
+            "docs/SPAN_007_E05.md"
           ]
         }
       ]
@@ -4212,7 +4413,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 7,
+  "active_version": 8,
   "versions": [
     {
       "number": 1,
@@ -4673,7 +4874,7 @@
     },
     {
       "number": 7,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -4816,15 +5017,72 @@
       "carried_from": 6,
       "start_sha256": "71942464e78a3c9019e0c8a4b80b9ab9213725aafa5564a8b8046d260ea189a1",
       "start_markdown_sha256": "9e7ec4e890af813166c82ac575f7dd9c29baf15f6d21f79d77ed24277004d323",
-      "start_sealed_at": "2026-11-05T11:49:20+00:00"
+      "start_sealed_at": "2026-11-05T11:49:20+00:00",
+      "final_sha256": "f72435b1081ba5c51265e4b107e0b5a0e407412ab050033fa06b38a114794805",
+      "final_markdown_sha256": "1e251ac0d08e07108c3edb7877badbe3e2891fc79ba58556e0292e1957912b75",
+      "final_sealed_at": "2026-11-05T22:57:01+00:00",
+      "closed_at": "2026-11-05T22:57:01+00:00",
+      "closing_note": "V7 completed seven focus experiments/engineering tasks and deferred two branches at fixed gates. Audited small continuation gain is inconclusive, context coverage incomplete, serial judge exactly stable but20%runtime fails; no submission. Carry unfinished work and four evidence-grounded discoveries into v8, with emptyv9; stop beforev8execution.",
+      "closing_evidence": [
+        "docs/SPAN_007_RESULTS.md"
+      ]
     },
     {
       "number": 8,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H36",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "H50",
         "E12",
-        "E13"
+        "E13",
+        "H51",
+        "H52"
       ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 7,
+      "start_sha256": "fb2f8be81b4f34d8271a0b5699d1b0de1b803a9fb8d95c8252749f8aa9a66482",
+      "start_markdown_sha256": "7866586288005fefd7c07b8f1319a09795b809bafaf9e316b61fa4b75fc3f613",
+      "start_sealed_at": "2026-11-05T22:57:01+00:00"
+    },
+    {
+      "number": 9,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }

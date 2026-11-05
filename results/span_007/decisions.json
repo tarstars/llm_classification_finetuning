@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-11-05T22:57:01.181234+00:00",
+  "focus_resolved": true,
+  "focus_dispositions": {
+    "E09": "done",
+    "E10": "done",
+    "E11": "done",
+    "H49": "done",
+    "H48": "done",
+    "E05": "done",
+    "H44": "deferred",
+    "H47": "done",
+    "H50": "deferred"
+  },
+  "official_submissions": 0,
+  "best_verified_official": 0.95481,
+  "classifier_candidate_eligible": false,
+  "H49": "Small inconclusive recovered gain below the frozen threshold; no promotion.",
+  "H48": "Incomplete coverage, not a negative quality finding; no full-cohort estimate.",
+  "E05": "Serial exactly stable on the sentinel; fixed20%runtime fails. Parallel remains unstable.",
+  "H47": "Direct ridge fails source and preference gates; no transfer.",
+  "next_discoveries": [
+    "E12",
+    "E13",
+    "H51",
+    "H52"
+  ],
+  "successor_execution_authorized": false
+}

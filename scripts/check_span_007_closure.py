@@ -72,6 +72,11 @@ def main():
     assert set(versions[8]['item_ids'])==carry|new
     assert all(items[k]['status'] in ['planned','deferred'] for k in versions[8]['item_ids'])
     orchestrated=read_json(pub/'orchestration.json');assert orchestrated['event']=='fixed_gpu_sequence_finished'
+    assert not orchestrated['conditional_H44_pending'] and not orchestrated['conditional_H50_pending']
+    try:
+        pid=read_json(run/'orchestrator/started.json')['pid'];os.kill(pid,0)
+        assert b'scripts/execute_span_007.py' not in (Path('/proc')/str(pid)/'cmdline').read_bytes(),'Live sequence controller remains'
+    except (ProcessLookupError,FileNotFoundError):pass
     for job in remote['jobs']:
         controller=read_json(run/'jobs'/job['role']/'controller_state.json')
         try:
@@ -87,7 +92,15 @@ def main():
         notebooks.append({'name':name,'code_cells':len(cells),'figures':figures,'sha256':sha256(path)})
     assert (Path.home()/'notebooks/llm_classification_finetuning').resolve()==REPO/'notebooks'
     assert read_json(pub/'H47_audit.json')['passed'] and read_json(pub/'validation.json')['passed']
-    if read_json(pub/'H49_results.json').get('complete'):assert read_json(pub/'training_audit.json')['passed']
+    for result,script in [('H47_audit.json','audit_span_007_strength.py'),('judge_audit.json','audit_span_007_judge.py'),
+                          ('context_partial_audit.json','audit_span_007_context_partial.py')]:
+        proof=read_json(pub/result);assert proof['passed'] and proof['source_sha256']==sha256(REPO/'scripts'/script)
+    if (pub/'H49_recovered_artifacts_results.json').exists() or read_json(pub/'H49_results.json').get('complete'):
+        training=read_json(pub/'training_audit.json');assert training['passed']
+        assert training['source_sha256']==sha256(REPO/'scripts/audit_span_007_training.py')
+    selection=read_json(pub/'candidate_selection.json')
+    assert not selection['eligible'] and not remote['new_official_submissions']
+    for kind,relative in selection['input_paths'].items():assert sha256(REPO/relative)==selection['input_sha256'][kind]
     documents=[REPO/'docs'/f'SPAN_007_{name}.md' for name in ['E09','E10','E11','H49','H48','E05','H44','H47','H50','RESULTS','COMPLETION']]
     files=documents+[REPO/'docs/GOAL_V7.md',REPO/'backlog/hypotheses.json',REPO/'backlog/versions/v7.final.json',REPO/'backlog/versions/v7.final.md',REPO/'backlog/versions/v8.start.json',REPO/'backlog/versions/v8.start.md']
     files+=[p for p in pub.glob('*.json') if p.name!='closure_audit.json']

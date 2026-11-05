@@ -1,0 +1,9 @@
+{
+  "task": "H44",
+  "executed": false,
+  "status": "deferred",
+  "passed": false,
+  "charged_gpu_seconds": 0,
+  "reason": "E05 did not establish a stable affordable native recipe. No uniform fitting-cache rescore or nested routed calibration was executed.",
+  "at": "2026-11-05T22:46:01.441474+00:00"
+}
