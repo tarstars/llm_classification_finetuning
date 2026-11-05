@@ -6,7 +6,7 @@ Version **6**, active; **37** tasks. Focus for this span: H46, E08.
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **25**, ready **0**, running **0**, done **0**, rejected **0**, deferred **10**.
+Hypothesis status: planned **24**, ready **0**, running **1**, done **0**, rejected **0**, deferred **10**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -72,7 +72,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
 | 50 | [E05](#e05) | P2 / planned | Test native judge sensitivity to request concurrency | — | high | 1…4 | 0.5…1.5 | 0.5…2 | E00, E04 |
-| 54 | [H46](#h46) | P2 / planned | Freeze and replicate inferred-strength correction on a separate cohort | -0.003…+0.004 | high | 2…5 | 1…1.5 | 0…0 | E00, E06, E07, H45 |
+| 54 | [H46](#h46) | P2 / running | Freeze and replicate inferred-strength correction on a separate cohort | -0.003…+0.004 | high | 2…5 | 1…1.5 | 0…0 | E00, E06, E07, H45 |
 | 55 | [E08](#e08) | P2 / planned | Qualify classifier plus inferred-strength correction for offline inference | — | high | 2…5 | 0.25…0.75 | 0…0 | E00, H46 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 19 | [H36](#h36) | P3 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
@@ -451,7 +451,7 @@ A controlled client-concurrency ablation can test whether concurrent execution c
 
 ### H46
 
-**Freeze and replicate inferred-strength correction on a separate cohort** — P2, planned, risk high.
+**Freeze and replicate inferred-strength correction on a separate cohort** — P2, running, risk high.
 
 The predeclared compact source-strength family may provide a small reproducible residual gain once its recipe is frozen and transferred without family reselection.
 
@@ -478,6 +478,7 @@ The predeclared compact source-strength family may provide a small reproducible 
 **References:** [docs/SPAN_005_H45.md](docs/SPAN_005_H45.md); [docs/SPAN_005_RESULTS.md](docs/SPAN_005_RESULTS.md); [results/span_005/H45_results.json](results/span_005/H45_results.json)
 
 - 2026-11-05T08:14:06+00:00 — planned: V5 practical selector failed despite a small positive compact-strength family. Queue a frozen separate-cohort replication and conditional offline qualification; preserve post-inspection status and do not execute v6. Evidence: [docs/SPAN_005_H45.md](docs/SPAN_005_H45.md)
+- 2026-11-05T10:20:35+00:00 — running: Starting preregistered v6 frozen compact-strength transfer. Protocol/input/source commit386be47 precedes fitting. Refit source head after union duplicate purging; freeze development-selected meta weights before confirmation inference/votes. GPUstage<=5400s and no submission. Evidence: [docs/SPAN_006_PROTOCOL.md](docs/SPAN_006_PROTOCOL.md)
 
 ### E08
 

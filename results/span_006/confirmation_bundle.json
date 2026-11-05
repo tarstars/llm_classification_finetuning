@@ -1,0 +1,30 @@
+{
+  "role": "confirmation",
+  "notebook_sha256": "a600ca3bd1c050f9ca7404528e83c84028b605c13cb003b04a14f2631fbf8327",
+  "metadata_sha256": "4f433c0067da7dcf959916aa94d549664f1b5ae6f2e4ed83f5f47dca052f561d",
+  "source_sha256": {
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "src/arena/joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+    "src/arena/joint_infer.py": "740bb4f3219a26dd2583607ced241c6dffcc00db9133bc271add0c0586d74eea",
+    "src/arena/span006_inputs.py": "0c5e00e7e28a06b6d5aa6fe808259237737106e6d3894c6280de7e9a2604b122",
+    "src/arena/span006_export.py": "d2cd02e7c32ac8b006084a19e69c901828a335c847a68d9787db9b6e8fb82c9d",
+    "scripts/build_span_006_confirmation.py": "17fdd9e4811e9ce481f243ddd6e8bdbe4cf0117871df1c8df965c5ca3be06718",
+    "scripts/run_span_006_job.py": "1f7effdbc9c164e49a33b7067ffb78c1cad53f58bacfe54b17b25227e98875ee",
+    "scripts/evaluate_span_006.py": "bb6977407da0a4a0a05339bdf4bdbad05e9c4c1b3e510f8ddd37d712d6804a4b",
+    "GOAL.md": "239a253576e7d3e3e394d814b82a3d31879f2c785ae954ea488681993ae908c6",
+    "configs/span_006.json": "1f6ca51f968bce2673f2c54b3cddba0db9c6f203761a5a8dc618c202801711e0",
+    "docs/SPAN_006_PROTOCOL.md": "18f44b7d0dbe77e00e708865f546294df046cf88fe086a967bb61e878ce45fd4",
+    "results/span_006/frozen_recipe.json": "731da70e65b46e2175c16410f34bba5b03af04ddb2e5b7bc4c0ca03a04894642"
+  },
+  "frozen_recipe_sha256": "731da70e65b46e2175c16410f34bba5b03af04ddb2e5b7bc4c0ca03a04894642",
+  "config_sha256": "1f6ca51f968bce2673f2c54b3cddba0db9c6f203761a5a8dc618c202801711e0",
+  "session_seconds_cap": 5400,
+  "parents": [
+    "arseniytrushin/llm-preference-qwen3-4b-train-002/1",
+    "arseniytrushin/llm-preference-span-002-exposure/1"
+  ],
+  "model_source": "qwen-lm/qwen-3/transformers/4b/1",
+  "internet_enabled": false,
+  "labels_read": false
+}

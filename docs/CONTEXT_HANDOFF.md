@@ -17,8 +17,12 @@ confirmation inputs contain id/prompt/responses only. Freeze all artifact hashes
 before GPU inference/target evaluation. Latest H03 raw confirmation cache is absent
 in the exact expected export output; old checkpoint800 cannot substitute.
 
-Scripts prepare_span_006.py/freeze_span_006.py and GPU module span006_export.py
-are prepared. No measured v6 result or GPU launch yet at this checkpoint. Check
+CPU freeze completed at10:29:56UTC:90,889source answers after1,081union duplicates
+purged;554.202CPUelapsed seconds,3.699GiBpeak. All source/head weights and private
+posteriors are bound by results/span_006/frozen_recipe.json; confirmation votes and
+source names remain unread. No GPU launch yet at this checkpoint. The confirmation
+bundle/controller/evaluation programs are prepared; sources will be committed before
+one fresh admission. Preserve the exact future returned version; do not duplicate. Check
 actual task status, started records and exact controller versions before continuing;
 never duplicate an already started worker. Heavy root runs/span_006.
 

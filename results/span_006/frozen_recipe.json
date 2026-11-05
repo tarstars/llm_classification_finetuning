@@ -1,0 +1,145 @@
+{
+  "span": 6,
+  "frozen_at": "2026-11-05T10:29:56.823525+00:00",
+  "family": "compact_inferred_strength",
+  "source_family": "tfidf",
+  "confirmation_votes_read": false,
+  "confirmation_source_names_read": false,
+  "development_rows": 5746,
+  "confirmation_rows": 5746,
+  "source_fit_answers": 90889,
+  "purged_against_dev_and_confirmation": 1081,
+  "source_details": {
+    "fit_seconds": 517.3793098640162,
+    "score_seconds": 27.235705711180344,
+    "fit_answers": 90889,
+    "evaluation_answers": 22984,
+    "iterations": [
+      18
+    ],
+    "warnings": [],
+    "features": 36000,
+    "rss_gib": 3.6987876892089844
+  },
+  "head_selection": {
+    "calibration": {
+      "family_fixed_before_confirmation": true,
+      "chosen_regularization": 0.0,
+      "inner_scores": [
+        {
+          "regularization": 0.0,
+          "development_inner_loss": 0.9539794930264371
+        }
+      ],
+      "parameters": 3,
+      "iterations": 6,
+      "gradient_norm": 2.177414572885542e-08
+    },
+    "style": {
+      "family_fixed_before_confirmation": true,
+      "chosen_regularization": 0.1,
+      "inner_scores": [
+        {
+          "regularization": 0.001,
+          "development_inner_loss": 0.9570524421238921
+        },
+        {
+          "regularization": 0.01,
+          "development_inner_loss": 0.9564983005760924
+        },
+        {
+          "regularization": 0.1,
+          "development_inner_loss": 0.955679826009469
+        }
+      ],
+      "parameters": 18,
+      "iterations": 18,
+      "gradient_norm": 1.4648414690599413e-06
+    },
+    "strength": {
+      "family_fixed_before_confirmation": true,
+      "chosen_regularization": 0.1,
+      "inner_scores": [
+        {
+          "regularization": 0.001,
+          "development_inner_loss": 0.9538588025049857
+        },
+        {
+          "regularization": 0.01,
+          "development_inner_loss": 0.9536650848554911
+        },
+        {
+          "regularization": 0.1,
+          "development_inner_loss": 0.9530041057758593
+        }
+      ],
+      "parameters": 10,
+      "iterations": 13,
+      "gradient_norm": 1.9573832819292327e-07
+    },
+    "shuffled": {
+      "family_fixed_before_confirmation": true,
+      "chosen_regularization": 0.1,
+      "inner_scores": [
+        {
+          "regularization": 0.001,
+          "development_inner_loss": 0.9543920476267466
+        },
+        {
+          "regularization": 0.01,
+          "development_inner_loss": 0.9542677495547541
+        },
+        {
+          "regularization": 0.1,
+          "development_inner_loss": 0.9539710559249495
+        }
+      ],
+      "parameters": 10,
+      "iterations": 13,
+      "gradient_norm": 3.65113202747371e-07
+    }
+  },
+  "recipe_artifacts": {
+    "source_bundle.joblib": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/source_bundle.joblib",
+      "sha256": "2aff0a422bb5bd011ab0b17e6d559dc760b2ebe733f3cc7d446297d4a3a11066"
+    },
+    "source_predictions.npz": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/source_predictions.npz",
+      "sha256": "366400ff6f137d7ae34739eac3c543ef98d68ea1d73643833773b68f8710d673"
+    },
+    "source_fit_indices.npz": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/source_fit_indices.npz",
+      "sha256": "71845cbb129d6d0f17c7729c016b638dc80b4ba935aa65b589faaf4612777324"
+    },
+    "ratings.npz": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/ratings.npz",
+      "sha256": "b9a377c67227b890faa3d7b34e23a356d871cc189cb5f47e312b765ab07229ee"
+    },
+    "head_selection.json": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/head_selection.json",
+      "sha256": "52418ab1701a9674869d57679f436ba439d7f7a0cd9b8b3c9c3b0a8c476dd629"
+    },
+    "calibration_head.npz": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/calibration_head.npz",
+      "sha256": "9975b5eeedd3d807455b0c0478f91b9eb0212742fecdc9a9892bea6d13ad0f13"
+    },
+    "style_head.npz": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/style_head.npz",
+      "sha256": "bae2be8641da7ed26d85766c07085726c92fb712b929e065594bfc5970de49f7"
+    },
+    "strength_head.npz": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/strength_head.npz",
+      "sha256": "a6ef359144d6f4c11ffc17351fd4e698d94b2305af90dc68771a0dde2b628bd0"
+    },
+    "shuffled_head.npz": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_006/freeze/shuffled_head.npz",
+      "sha256": "33e2f87842c8969dea9697444e453465ca9cbae108ca5933dcd9557387f71df8"
+    }
+  },
+  "input_manifest_sha256": "6dcb04bfd67e68f84b5271126c8835b1a88964a21966f34154cca274405070fc",
+  "config_sha256": "1f6ca51f968bce2673f2c54b3cddba0db9c6f203761a5a8dc618c202801711e0",
+  "source_sha256": "cb354a4b39e3f2b8ff5b2f29024f569e37317c30c6fa64242cc234698f58f040",
+  "cpu_elapsed_seconds": 554.2020769400988,
+  "peak_rss_gib": 3.6987876892089844
+}

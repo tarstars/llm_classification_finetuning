@@ -3416,7 +3416,7 @@
       ],
       "id": "H46",
       "rank": 54,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 6,
       "discovered_during": 5,
       "derived_from": [
@@ -3429,6 +3429,14 @@
           "note": "V5 practical selector failed despite a small positive compact-strength family. Queue a frozen separate-cohort replication and conditional offline qualification; preserve post-inspection status and do not execute v6.",
           "evidence": [
             "docs/SPAN_005_H45.md"
+          ]
+        },
+        {
+          "at": "2026-11-05T10:20:35+00:00",
+          "status": "running",
+          "note": "Starting preregistered v6 frozen compact-strength transfer. Protocol/input/source commit386be47 precedes fitting. Refit source head after union duplicate purging; freeze development-selected meta weights before confirmation inference/votes. GPUstage<=5400s and no submission.",
+          "evidence": [
+            "docs/SPAN_006_PROTOCOL.md"
           ]
         }
       ]
