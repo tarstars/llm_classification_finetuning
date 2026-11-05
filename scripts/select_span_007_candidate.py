@@ -11,6 +11,11 @@ root=ROOT/'runs/span_007';pub=REPO/'results/span_007';cfg=read_json(REPO/'config
 assert not (pub/'candidate_selection.json').exists(),'Preserve the first frozen selection'
 assert not (root/'confirmation_reveal_intent.json').exists(),'Freeze before confirmation evaluation'
 results={kind:read_json(pub/(task+'_results.json')) for kind,task in [('continuation','H49'),('context','H48')]}
+for kind,result in results.items():
+    if result.get('eligible'):
+        assert result['artifact_checks_passed']
+        assert read_json(pub/'jobs'/kind/'source_verification.json')['passed']
+        if kind=='continuation':assert read_json(pub/'training_audit.json')['passed']
 chosen=next((kind for kind in cfg['candidate_priority'] if results[kind].get('eligible')),None)
 record={'frozen_at':utc_now(),'eligible':chosen is not None,'candidate_kind':chosen,'priority':cfg['candidate_priority'],
         'confirmation_targets_used':False,'rule':'Training first if its frozen quality/runtime gate passes, otherwise context if it passes.',

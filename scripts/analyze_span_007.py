@@ -35,6 +35,9 @@ def main():
     old=np.load(inv['input_artifacts']['classifier']['path']);np.testing.assert_array_equal(old['ids'],dev.id)
     baseline=(old['original']+old['aligned_swap'])/2
     output=job/'output'/role;summary=read_json(output/'summary.json');assert summary['complete']
+    source_proof=read_json(pub/'jobs'/role/'source_verification.json');assert source_proof['passed']
+    hardware=[read_json(output/f'gpu_rank{rank}.json') for rank in [0,1]]
+    assert [h['rank'] for h in hardware]==[0,1] and all('T4' in h['name'] for h in hardware)
     if role=='continuation':
         file=output/'dev_predictions.npz';assert sha256(file)==summary['development_prediction_sha256']
         raw=np.load(file);np.testing.assert_array_equal(raw['ids'],dev.id);np.testing.assert_array_equal(raw['labels'],y)
@@ -50,6 +53,10 @@ def main():
         extra.update(confirmation_target_columns_loaded=True,confirmation_targets_used=False,
                      target_access_note='Legacy CSV loader loads columns, but only train/dev targets feed the frozen executable. See docs/SPAN_007_TARGET_ACCESS.md; preserve the worker record.')
     else:
+        assert summary['text_sha256']==inv['context_text_sha256']
+        assert summary['token_sha256']==inv['context_token_sha256']
+        assert summary['rows']==inv['context_changed_rows']==1152
+        assert summary['eval_batch_size_per_gpu']==8 and summary['identity']['passed']
         ids=read_json(root/'sample_ids.json')['context'];lookup={int(v):i for i,v in enumerate(dev.id)};indices=np.array([lookup[int(v)] for v in ids])
         first=np.load(output/'predictions_1024.npz');second=np.load(output/'predictions_2048.npz')
         for size,prediction in [(1024,first),(2048,second)]:
@@ -73,6 +80,8 @@ def main():
                'adapter_sha256':summary['adapter_sha256']}
     result,probabilities=score_candidate(y,groups,baseline,candidate,cfg,role)
     result.update(task=name,complete=True,charged_gpu_seconds=charge,**extra)
+    result['artifact_checks_passed']=True
+    result['source_verification_sha256']=sha256(pub/'jobs'/role/'source_verification.json')
     result['runtime_gate_passed']=bool(projection<=25200)
     result['eligible']=bool(result['quality_gate']['passed'] and result['runtime_gate_passed'])
     fit=minimize_scalar(lambda t:loss_rows(y,temperature(candidate,t)).mean(),bounds=(.5,3.),method='bounded')
