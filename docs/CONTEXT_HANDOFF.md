@@ -26,7 +26,18 @@ Controller PTY32845/PID4143163; log /tmp/arena_span006_confirmation_controller.l
 Source/recipe contract20b7fee was committed/pushed before launch. One push only;
 5400sservice cap,512-row checkpoint chunks,64-row raw identity guard before
 confirmation. Observe this exact live version; never re-push because a read expires.
-CPUfreeze PTY35817 exited0. Recipe remains frozen; reveal_intent absent. Check
+CPUfreeze PTY35817 exited0. Recipe remains frozen; reveal_intent absent.
+The job is now RUNNING;64-row identity PASSED mean0.000212/max0.002180 against
+unchanged0.002/0.03. Latest live checkpoint covers2048/5746confirmation rows,
+both orders; chunks take about330–345s/512rows. Expected total about65–70session
+minutes, still below5400s. Bounded live logs via scripts/kaggle_job.py logs with
+--attempt span_006 --job confirmation; full paths are in controller receipts.
+New audit_span_006.py / build_span_006_notebook.py are prepared, not run. Generic
+source_portable.py with two synthetic portability tests is prepared for conditional
+E08; no actual E08 experiment or target evaluation yet. Do not run evaluator until
+exact GPU version is COMPLETE, output hashes/coverage/source are verified, and all
+frozen recipe checks pass. Evaluator is already committed/pinned in GPU bundle;
+it refuses repeated reveal or fit operations. Check
 actual task status, started records and exact controller versions before continuing;
 never duplicate an already started worker. Heavy root runs/span_006.
 

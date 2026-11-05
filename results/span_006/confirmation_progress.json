@@ -1,0 +1,51 @@
+{
+  "observed_at": "2026-11-05T11:01:45.765525+00:00",
+  "log_snapshot_at": "2026-11-05T11:01:20.027917+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span-006-confirmation/1",
+  "status": "RUNNING",
+  "controller_session": 32845,
+  "controller_pid": 4143163,
+  "confirmation_rows_done": 2048,
+  "confirmation_total_rows": 5746,
+  "confirmation_votes_revealed": false,
+  "checkpoint_records": [
+    {
+      "phase": "smoke",
+      "rows": 64,
+      "mean_raw_average_difference": 0.0002120285287312635,
+      "max_raw_average_difference": 0.0021797327120208765,
+      "passed": true,
+      "prediction_seconds": 37.846832448999976,
+      "adapter_sha256": "ca8be9cfd98309fdc8406bf740b13ed3ee413f3820ec6bcbbf7f3f4059f4b15b",
+      "tokenizer_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506"
+    },
+    {
+      "phase": "confirmation",
+      "start": 0,
+      "end": 512,
+      "seconds": 341.345528766,
+      "sha256": "789f0ad7034166c9bd4ac276a68b82ffc14e392a81725e884148919891c24cc3"
+    },
+    {
+      "phase": "confirmation",
+      "start": 512,
+      "end": 1024,
+      "seconds": 332.786568105,
+      "sha256": "1e665c5992c079fc7eb31ae7cfbf9b6cae0eb7009d5e4c84e160ebae823000b4"
+    },
+    {
+      "phase": "confirmation",
+      "start": 1024,
+      "end": 1536,
+      "seconds": 331.70863652800017,
+      "sha256": "93e91ef0b9955b8ec95ad8657cc6982ba55070dec73f270a0d26aeb3f23370f1"
+    },
+    {
+      "phase": "confirmation",
+      "start": 1536,
+      "end": 2048,
+      "seconds": 340.05769202700003,
+      "sha256": "05ce6ef336af3780afb2775d111d170b490c09cd3e4469a11b5c6c56bd50e47c"
+    }
+  ]
+}
