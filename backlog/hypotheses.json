@@ -151,7 +151,7 @@
       "title": "Larger supervised classifier",
       "priority": "P2",
       "rank": 6,
-      "status": "planned",
+      "status": "running",
       "gain": [
         -0.015,
         0.035
@@ -190,7 +190,16 @@
         "ATTEMPT_002_RESULTS.md",
         "ATTEMPT_004_RESULTS.md"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-06T14:40:17+00:00",
+          "status": "running",
+          "note": "Prepared a conditional4B/8B pilot with verified exact8B transformer availability, fixed1024train/512dev samples, matched packing/globalbatch32 and32accepted-update stop. No GPU admission unless all earlier candidates fail; reserve5400s.",
+          "evidence": [
+            "docs/SPAN_008_DEPENDENCY_AUDIT.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -1049,6 +1058,22 @@
           "evidence": [
             "results/span_001/reward_results.json",
             "docs/SPAN_001_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T14:32:03+00:00",
+          "status": "running",
+          "note": "Audit one public winning teacher training repository at exact commit05ac9b9; check whether its final merged folds include our development and confirmation targets before considering distillation.",
+          "evidence": [
+            "docs/SPAN_008_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T14:33:54+00:00",
+          "status": "deferred",
+          "note": "Exact-commit audit shows final public teacher merges five adapters trained on original competition votes; independent local teacher advantage cannot be established on our cohorts. No weights/soft-label generation or distillation. Require provenance excluding eval groups.",
+          "evidence": [
+            "docs/SPAN_008_H15.md"
           ]
         }
       ],
@@ -2078,7 +2103,7 @@
       "title": "Structural residual correction",
       "priority": "P2",
       "rank": 19,
-      "status": "planned",
+      "status": "done",
       "gain": [
         -0.003,
         0.003
@@ -2118,7 +2143,24 @@
         "TARGET_AUDIT.md",
         "docs/SPAN_007_CARRYOVER_REVIEW.md"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-06T14:25:28+00:00",
+          "status": "running",
+          "note": "Start one fixed symmetric structural tree residual with nested group fitting and matched calibration, probability-only and linear-style controls; CPU2threads/6GiB/7200s.",
+          "evidence": [
+            "docs/SPAN_008_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T14:29:17+00:00",
+          "status": "done",
+          "note": "Fixed nested structural residual loss0.952887 vs calibration0.953959, gain0.001072 CI[0.000085,0.001972]; probability-only tree control comparison CI crosseszero. Predeclared gate fails; no promotion. CPU29.53s/RSS0.463GiB.",
+          "evidence": [
+            "docs/SPAN_008_H36.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []

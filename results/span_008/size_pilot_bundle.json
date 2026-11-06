@@ -1,0 +1,25 @@
+{
+  "role": "size_pilot",
+  "source_sha256": {
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "src/arena/joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+    "src/arena/training_exposure.py": "81a405f90ed999d6834265e8b31fe39dd296eef831d5b7ab17a179f4a62d0633",
+    "src/arena/experiment.py": "6decc6777c0bf543cd5f4905b66b9006d39bfb7028f7ebc7b5f84cecfbbaa66a",
+    "src/arena/telemetry.py": "656dc095e9ced45fb395dd2f19a16c734f8ab6caa9ddd14f9f5e4fe4631d8cc3",
+    "src/arena/span006_inputs.py": "0c5e00e7e28a06b6d5aa6fe808259237737106e6d3894c6280de7e9a2604b122",
+    "src/arena/span008_size.py": "c9c8c50c3afbfb0a46865c79c1ec44261bd8fae4256187dc4acd536d9b17233c",
+    "src/arena/span008_size_session.py": "d8a5b73f4cd2a440fa577bd6ac8e645f0ef255664ade27b99c835144cff7a2f4",
+    "scripts/build_span_008_size.py": "8b1ba947394ef69c4e828b2c340984958aebc45dabe096e474931bf4b16f37b6",
+    "scripts/run_span_008_job.py": "5ce86094f5643d5e9194e80cb432327693b3fbed5a6f4f65b1ce323e19178dd5",
+    "src/arena/notebook_worker.py": "2c49e8edd28b2dabe70a21bbca9c8598458b78fcf6c7c3939cef7aeabd81bb13",
+    "src/arena/kaggle_control.py": "ea25a3b93e37f1e630e429bacccec98e418efedba1f656817a90d5c42e053e00",
+    "GOAL.md": "04ae27550ee34d7765a915fcb3e8d9724c741d5535ef3292656d704033a1726e",
+    "configs/span_008.json": "e7551df63d977b9f3fd9874f8819be88f61f41fbdf5fb4690e4870da26b0dc95",
+    "docs/SPAN_008_PLAN.md": "81da9fa3937e0a4d41cb0d1263a4d6cc56a770dbb5c380f66bda9817d7564fce"
+  },
+  "notebook_sha256": "2e9b1153f47bbfbadaf7f43bf3b3fb9ac9a5e07f46af4a5ea6785aee59f60e65",
+  "metadata_sha256": "66f34413752b2d9bcd1fb31f7cf8d08128aecd7e3d643bda21e55f1bec6dbf18",
+  "cap_seconds": 5400,
+  "internet_enabled": false
+}

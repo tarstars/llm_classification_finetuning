@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "serialized_last_cell_sha256": "c9e34455758ad832fe34aa3ca4704d26bacfcf159031bb8d5cceaf94a061c7f2",
+  "result": {
+    "seconds": 0.019423246383666992,
+    "exit_code": 0,
+    "role": "size_pilot"
+  },
+  "new_gpu_executions": 0,
+  "sample_rows": {
+    "train": 1024,
+    "dev": 512
+  },
+  "sample_ids_sha256": "7ca4870471df7e9b942d240b53371bd943915a7a11bcbaf7d56f5f2fcea317d0",
+  "confirmation_targets_loaded": false,
+  "raw_competition_csv_attached": false
+}

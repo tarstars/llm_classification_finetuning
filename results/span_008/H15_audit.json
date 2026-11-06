@@ -1,0 +1,47 @@
+{
+  "task": "H15",
+  "audit_complete": true,
+  "teacher": "Final five-fold Gemma2-9B adapter merge from shyoulala/LMSYS_BlackPearl",
+  "repository": "https://github.com/shyoulala/LMSYS_BlackPearl",
+  "commit": "05ac9b917a99aac43bfe0dbcb30e6e83a38688be",
+  "observed_at": "2026-11-06T14:33:54.257218+00:00",
+  "files_sha256": {
+    "README.md": "bff589e6b2f5f3775ad8b04336c58b6b5c30ab076b214b328ea578cc42266785",
+    "src__prepare_data.py": "e2ece47498696668a5656894c7750d3911c3fc1ffe9e39870b7a2cbbd39641d2",
+    "src__run_pipeline.sh": "e3f19f6e16e7656be0aedc75acdfd28951385c9a6bcd29179256f4826cb95221",
+    "src__run_final.sh": "b8f1fbb85691ba3d09c7bfa3358c0cb4e251ce1470c3291de7c9d61159130c05",
+    "src__run_gptq.py": "e6917e268c24514501bee3d3c6e9bce1d57c54cc8e70e09ab2026e1e007e9065",
+    "src__merge_lora.py": "e28b73ecf5c8806783286ed53fe00ac3f4abdffba6184b5bbbc1757712356120"
+  },
+  "protocol_observations": [
+    "Preprocessing reads original competition train.csv and adds the external deduplicated33K dataset to each training fold.",
+    "Five stratified folds use seed2025, with each original training row in four fitting folds.",
+    "Final source averages all five trained adapters before quantization; this is not an OOF predictor for any original training row.",
+    "Published workflow distills supervised70B/72B teachers into9B, with eight A100-80GB training hardware; its quality is not evidence that an unfitted general judge is stronger."
+  ],
+  "inference": "If the published checkpoint follows this code and includes the same original competition rows as described, our development and confirmation votes have influenced four of its five component adapters. It cannot establish independent teacher advantage on these cohorts.",
+  "checkpoint_training_independently_reproduced": false,
+  "checkpoint_downloaded": false,
+  "quality_measured": false,
+  "distillation_performed": false,
+  "decision": "Defer actual distillation until a stronger teacher is measured without supervised access to evaluation groups. Public solution is architectural evidence, not a clean benchmark or adopted checkpoint.",
+  "future_pilot": "Train or obtain a teacher whose supervised training excludes our group partitions; verify hashes and provenance; compare with the student on fixed development groups; only if useful, score a fixed training-only subset and compare CE+KL against matched CE-only accepted exposure. Cost a separate confirmation and full teacher generation before launch.",
+  "qwen8_availability": [
+    {
+      "id": 363139,
+      "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+      "url": "/models/qwen-lm/qwen-3/Transformers/8b/1",
+      "variationSlug": "8b",
+      "versionNumber": 1,
+      "modelTitle": "Qwen 3",
+      "thumbnailUrl": "https://storage.googleapis.com/kaggle-organizations/3878/thumbnail.jpg",
+      "modelId": 322000,
+      "ownerSlug": "qwen-lm",
+      "modelSlug": "qwen-3",
+      "modelInstanceId": 301517
+    }
+  ],
+  "competition_text_sent": false,
+  "new_gpu_seconds": 0,
+  "source_sha256": "3c39852429e1e434daca730068269698047a776dd8064f299351b158a4a83259"
+}

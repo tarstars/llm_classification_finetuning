@@ -6,7 +6,7 @@ Version **8**, active; **40** tasks. Focus for this span: H52, H51, H36, H17, H0
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **24**, ready **0**, running **2**, done **0**, rejected **0**, deferred **11**.
+Hypothesis status: planned **22**, ready **0**, running **3**, done **1**, rejected **0**, deferred **11**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -65,7 +65,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 48 | [H44](#h44) | P1 / deferred | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43, E04, E05 |
 | 66 | [H52](#h52) | P1 / running | Test a stable serial judge on a fixed10%classifier route | -0.006…+0.008 | high | 2…5 | 0.6…1 | 0…2 | E00, E05, E09, H39 |
-| 6 | [H02](#h02) | P2 / planned | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
+| 6 | [H02](#h02) | P2 / running | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
 | 10 | [H10](#h10) | P2 / planned | Shared response utilities | -0.02…+0.02 | high | 10…24 | 1…3 | 12…28 | E00 |
@@ -74,7 +74,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 14 | [H24](#h24) | P2 / planned | Adaptive question budget | -0.008…+0.01 | medium | 6…14 | 0.5…2 | 10…22 | E00 |
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
-| 19 | [H36](#h36) | P2 / planned | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
+| 19 | [H36](#h36) | P2 / done | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
 | 62 | [H50](#h50) | P2 / deferred | Qualify and officially evaluate one frozen v7 classifier candidate | -0.015…+0.015 | high | 2…5 | 1.25…1.25 | 0…0 | E00, E09, H48, H49 |
 | 63 | [E12](#e12) | P2 / planned | Generate experiment contracts and reports from validated artifact schemas | — | medium | 2…4 | 0…0 | 0…0 | E09, E11 |
 | 64 | [E13](#e13) | P2 / running | Checkpoint full-partition inference with bounded progress and numerical identity | — | medium | 2…4 | 0.05…0.15 | 0…0 | E09, E10 |
@@ -201,7 +201,7 @@ A smaller serial judge route may retain useful complementarity while fitting the
 
 ### H02
 
-**Larger supervised classifier** — P2, planned, risk high.
+**Larger supervised classifier** — P2, running, risk high.
 
 An 8–9B supervised preference classifier may learn distinctions missed by Qwen3-4B.
 
@@ -226,6 +226,8 @@ An 8–9B supervised preference classifier may learn distinctions missed by Qwen
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
 **References:** [ATTEMPT_002_RESULTS.md](ATTEMPT_002_RESULTS.md); [ATTEMPT_004_RESULTS.md](ATTEMPT_004_RESULTS.md)
+
+- 2026-11-06T14:40:17+00:00 — running: Prepared a conditional4B/8B pilot with verified exact8B transformer availability, fixed1024train/512dev samples, matched packing/globalbatch32 and32accepted-update stop. No GPU admission unless all earlier candidates fail; reserve5400s. Evidence: [docs/SPAN_008_DEPENDENCY_AUDIT.md](docs/SPAN_008_DEPENDENCY_AUDIT.md)
 
 ### H05
 
@@ -372,6 +374,8 @@ A demonstrated stronger preference teacher may provide useful soft labels for a 
 **References:** [ATTEMPT_003_RESULTS.md](ATTEMPT_003_RESULTS.md); [ATTEMPT_004_RESULTS.md](ATTEMPT_004_RESULTS.md); [Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)
 
 - 2026-11-03T11:05:03+00:00 — deferred: No demonstrated teacher advantage from the current candidates: the H01 reward pilot is worse than LoRA, and the prior general judge official score is also worse. Revisit after a stronger teacher is measured, before full distillation cost. Evidence: [results/span_001/reward_results.json](results/span_001/reward_results.json); [docs/SPAN_001_PROTOCOL.md](docs/SPAN_001_PROTOCOL.md)
+- 2026-11-06T14:32:03+00:00 — running: Audit one public winning teacher training repository at exact commit05ac9b9; check whether its final merged folds include our development and confirmation targets before considering distillation. Evidence: [docs/SPAN_008_PLAN.md](docs/SPAN_008_PLAN.md)
+- 2026-11-06T14:33:54+00:00 — deferred: Exact-commit audit shows final public teacher merges five adapters trained on original competition votes; independent local teacher advantage cannot be established on our cohorts. No weights/soft-label generation or distillation. Require provenance excluding eval groups. Evidence: [docs/SPAN_008_H15.md](docs/SPAN_008_H15.md)
 
 ### H24
 
@@ -461,7 +465,7 @@ Training and inference with more retained context may improve truncated comparis
 
 ### H36
 
-**Structural residual correction** — P2, planned, risk low.
+**Structural residual correction** — P2, done, risk low.
 
 A small fold-local residual model may add limited structure information beyond the existing classifier.
 
@@ -486,6 +490,9 @@ A small fold-local residual model may add limited structure information beyond t
 **Origin:** introduced in v1; discovered during initial planning; derived from none.
 
 **References:** [EDA_REPORT.md](EDA_REPORT.md); [TARGET_AUDIT.md](TARGET_AUDIT.md); [docs/SPAN_007_CARRYOVER_REVIEW.md](docs/SPAN_007_CARRYOVER_REVIEW.md)
+
+- 2026-11-06T14:25:28+00:00 — running: Start one fixed symmetric structural tree residual with nested group fitting and matched calibration, probability-only and linear-style controls; CPU2threads/6GiB/7200s. Evidence: [docs/SPAN_008_PLAN.md](docs/SPAN_008_PLAN.md)
+- 2026-11-06T14:29:17+00:00 — done: Fixed nested structural residual loss0.952887 vs calibration0.953959, gain0.001072 CI[0.000085,0.001972]; probability-only tree control comparison CI crosseszero. Predeclared gate fails; no promotion. CPU29.53s/RSS0.463GiB. Evidence: [docs/SPAN_008_H36.md](docs/SPAN_008_H36.md)
 
 ### H50
 
