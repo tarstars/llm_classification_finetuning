@@ -4795,6 +4795,68 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Assess the accessible earlier BlackPearl classifier as a conditional ensemble complement",
+      "priority": "P3",
+      "gain": [
+        0,
+        0.015
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        2
+      ],
+      "pilot_gpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.2
+      ],
+      "risk": "high",
+      "claim": "An accessible earlier author classifier might offer complementary preferences if the frozen tascj submission remains short of rank30; no advantage is established.",
+      "basis": "Read-only H54 audit resolves public COMPLETE parent sayoulala/merge-gemma-model-step1/1 with a full three-class42layer classifier, distinct from inaccessible final winning weights.",
+      "first_test": "After H54 outcome and v10 activation, first resolve checkpoint training/label provenance, license, input packing and size/runtime. Stop before GPU if likely redundant or unsupported; only then predeclare one bounded complementary-model pilot with fresh resources.",
+      "acceptance": "Traceable deployable source plus independent outcome evidence under the rank goal; overlapping local rows cannot establish a gain. Accessibility alone does not admit a submission.",
+      "stop": "No new GPU while current official run is pending; no automatic selection. Stop if provenance/label mapping is unresolved, if no credible complementarity/runtime case exists, or if rank30 is already achieved. Preserve original final-model403.",
+      "risk_reason": "Earlier checkpoint may be weaker or redundant; original-train overlap contaminates local quality and runtime/quantization may be costly.",
+      "mitigation": "Treat as low-priority conditional discovery, distinguish earlier from final winner, audit before compute, require fresh caps and record negative findings.",
+      "rationale": "Records a concrete alternative source rather than repeatedly querying an unavailable final dataset; expected gain remains uncertain and small.",
+      "revision": "Discovered through public author outputs during H54 official wait; not executed or admitted in v9.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H54"
+      ],
+      "evidence": [
+        "docs/SPAN_009_ALTERNATE_SOURCE_AUDIT.md"
+      ],
+      "id": "H55",
+      "rank": 71,
+      "status": "planned",
+      "introduced_in": 10,
+      "discovered_during": 9,
+      "derived_from": [
+        "H54"
+      ],
+      "history": [
+        {
+          "at": "2026-11-06T20:37:28+00:00",
+          "status": "planned",
+          "note": "Exact public author parent retains an earlier3class model; this is not final winning merge. Conditional low-priority next-span provenance/complementarity study only, no new GPU or submission.",
+          "evidence": [
+            "docs/SPAN_009_ALTERNATE_SOURCE_AUDIT.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -5620,7 +5682,8 @@
       "number": 10,
       "state": "draft",
       "item_ids": [
-        "E15"
+        "E15",
+        "H55"
       ],
       "focus_ids": [],
       "history": []

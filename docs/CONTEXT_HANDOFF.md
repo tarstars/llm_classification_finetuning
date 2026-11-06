@@ -96,7 +96,13 @@ reviewed explicit paths, never user07/12. Notebook21 is now executed: four code
 cells, one figure, zero errors;116tests pass in14.346s. Refresh after official
 result using scripts/build_span_009_review.py followed by scripts/execute_notebook.py
 notebooks/21_backlog_v9_public_ensemble.ipynb. V10 draft now has E15 (retain
-model/cohort/batch in sanitized progress), queued but not executed.
+model/cohort/batch in sanitized progress) and H55, both queued, not executed.
+H55 records an accessible earlier BlackPearl classifier in exact public parent
+sayoulala/merge-gemma-model-step1/1 (COMPLETE, four full safetensor shards).
+Only config/index were downloaded. This is not the inaccessible final winning
+merge; no measured advantage or GPU admission. See SPAN_009_ALTERNATE_SOURCE_AUDIT.md
+and blackpearl_parent_availability.json. Keep it conditional/low-priority rather
+than assuming the author's winning score applies to these earlier weights.
 BacklogCLI tracks progress and next-span discoveries.
 
 ## Historical v8 closure snapshot

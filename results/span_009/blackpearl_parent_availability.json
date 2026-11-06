@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-06T20:35:33.724383+00:00",
+  "source": "sayoulala/merge-gemma-model-step1/1",
+  "status": "COMPLETE",
+  "file_inventory": [
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/config.json"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/model-00001-of-00004.safetensors"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/model-00002-of-00004.safetensors"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/model-00003-of-00004.safetensors"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/model-00004-of-00004.safetensors"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/model.safetensors.index.json"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/special_tokens_map.json"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/tokenizer.json"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/tokenizer.model"
+    },
+    {
+      "name": "v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905_merge/tokenizer_config.json"
+    }
+  ],
+  "config": {
+    "architectures": [
+      "Gemma2ForSequenceClassification"
+    ],
+    "torch_dtype": "bfloat16",
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1",
+      "2": "LABEL_2"
+    },
+    "num_hidden_layers": 42,
+    "hidden_size": 3584
+  },
+  "new_gpu_executions": 0,
+  "weights_downloaded": false,
+  "is_documented_final_winning_checkpoint": false,
+  "small_file_sha256": {
+    "source.ipynb": "6fecd385d6e94a290c03ced98d37fe9166a9040037b3e2a60671eb7df96c1c1c",
+    "config.json": "495654440bf70a9ec11b0fdf75e1b32fdb68ab6f186efb80ab0117b7e33acdff",
+    "model.safetensors.index.json": "5de82368792498ade3a7d1ff9c6707e9ca39f6d81f0c503721bf74992edc1d9c"
+  },
+  "declared_weight_bytes": 18483433472
+}
