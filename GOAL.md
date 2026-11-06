@@ -1,25 +1,34 @@
-# Execute v8's score-improvement plan and form v9
+# Reach the top 30 on the competition leaderboard
 
-Execute the authorized bounded plan in docs/SPAN_008_PLAN.md and
-configs/span_008.json. Focus H52/H51/H36/H17/H02/H15/E13 and conditional H50.
-Research GPUcaps3600+1800seconds; one5400-second reserve funds either qualification
-of one frozen genuinely positive candidate or a matched size pilot if none passes,
-never both. Total chargedcap10800seconds, no paid scaling or quota-refresh
-expansion. Current task started2026-11-06 14:03:59UTC; the original mains deadline
-2026-11-07 00:30:17UTC remains fixed. Optional one hidden evaluation<=25200seconds
-requires that full allowance plus reporting reserve before this deadline.
+User objective: **move to 30 place in leaderboard**. Success requires a fresh,
+complete Kaggle leaderboard observation showing our team (17244411) at rank30
+or better after a legitimately scored submission. Local metrics, a completed
+experiment or a closed backlog span do not complete this objective.
 
-Run the serial10%judge and missing-context experiments with immutable sources,
-actual cold/switch profiling, unchanged numerical guards and original splits/votes.
-Use nested group fitting for the CPU correction and judge mixture. Establish actual
-gates before choosing the fixed priority H52→H51→H36. Preserve original failures;
-never pool incompatible or incomplete caches into a full quality claim.
+At 2026-11-06 19:18:45 UTC we are57/313, loss0.95481; rank30 is0.83086.
+The threshold can change. Keep the objective active across bounded spans until
+achieved, explicitly paused, or genuinely blocked under the goal-service rules.
 
-Audit external data and teacher provenance; prepare unfunded stages honestly.
-Keep CPU work2threads/6GiB within original caps. No external text service, subagents,
-unbounded model search or automatic v9execution. Save heavy artifacts under
-~/database/llm_classification_finetuning/runs/span_008. Preserve user07/12edits and
-all historical snapshots. Produce reports, actual telemetry, executed notebook,
-resource/scientific/closure checks; sealv8/formv9+emptyv10, archive this exact
-contract, commit/push important reviewed results and verify remote main=HEAD.
-This is an ordinary task, not a goal-service activation.
+Execute [docs/SPAN_009_PLAN.md](docs/SPAN_009_PLAN.md) first. Focus E14 (exact
+dependency identity) and H54 (public supervised model deployment). Prioritize
+strong publicly released competition checkpoints with their actual preprocessing
+and offline runtime. Original-train supervision is allowed for deployment but
+invalidates independent-quality claims on overlapping local heldouts. Run genuine
+inference on test text; no hidden targets, copied predictions or ID-label lookups.
+
+Use free Kaggle compute only. Pre-refresh public GPU execution <=2,400 seconds
+total. After freshly observing the quota refresh, a second bounded phase may
+use <=21,600 public GPU seconds. At most two frozen candidate recipes and two
+official submissions in this phase; no leaderboard-driven parameter search.
+Each hidden run must satisfy the nine-hour competition limit with a measured
+conservative projection and process watchdog. Count failures/retries in the caps.
+No paid scaling or external text API. CPU: two threads, six GiB RSS target,
+<=three hours heavy analysis/conversion before revisiting the plan.
+
+Store heavy artifacts under ~/database/llm_classification_finetuning/runs/span_009.
+Keep programs, aggregate evidence, executed review notebooks and project memory
+in Git; commit/push important results. Preserve user-dirty notebooks07/12 and
+historical snapshots. The old mains window is not a new goal deadline: use durable
+remote receipts and resume exact versions without duplicate GPU mutations.
+If v9 closes before top30, prepare another bounded phase under this same goal.
+The completed v8 contract remains unchanged in docs/GOAL_V8.md.

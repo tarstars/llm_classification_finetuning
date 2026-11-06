@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-11-06T19:23:06.888459+00:00",
+  "parents": [],
+  "models": [
+    {
+      "source": "qwen-lm/qwen-3/transformers/8b/1",
+      "available": true,
+      "model_instance_id": 301517,
+      "model_version_id": 363139
+    }
+  ]
+}

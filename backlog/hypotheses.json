@@ -4536,7 +4536,7 @@
       ],
       "id": "E14",
       "rank": 67,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 9,
       "discovered_during": 8,
       "derived_from": [
@@ -4549,6 +4549,20 @@
           "note": "Observed a live model-list response containing other frameworks/variations; version-number-only admission can falsely pass. Future shared-helper fix, preserve v8 bundles.",
           "evidence": [
             "docs/SPAN_008_DEPENDENCY_AUDIT.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T19:22:08+00:00",
+          "status": "running",
+          "note": "Implement exact full-instance matching and regression fixtures before any new GPU admission.",
+          "evidence": []
+        },
+        {
+          "at": "2026-11-06T19:23:39+00:00",
+          "status": "done",
+          "note": "Full model identity matching now rejects unrelated/missing/ambiguous versions; three regression tests and read-only live exact8B admission pass, no GPU.",
+          "evidence": [
+            "docs/SPAN_009_DEPENDENCY_RESULTS.md"
           ]
         }
       ]
@@ -4612,6 +4626,75 @@
           "note": "All five fitted judge temperatures hit3.0; routed accuracy rises while loss does not. Queue one CPU-only wider-ceiling ablation with unchanged full-chain controls, no v8 retuning.",
           "evidence": [
             "docs/SPAN_008_H52.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Deploy a strong public supervised competition checkpoint toward rank30",
+      "priority": "P1",
+      "gain": [
+        0.03,
+        0.13
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        8
+      ],
+      "pilot_gpu_wall_hours": [
+        0.2,
+        0.67
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        6
+      ],
+      "cpu_wall_hours": [
+        0.2,
+        3
+      ],
+      "risk": "high",
+      "claim": "A public competition-trained distilled classifier or ensemble can close substantially more of the0.12395 official-loss gap than the weak-model calibration/context ablations.",
+      "basis": "User outcome goal rank30; live rank57/313 at0.95481 versus0.83086 threshold. Original winning teams released supervised inference weights and code.",
+      "first_test": "Freeze one accessible author recipe and provenance; qualify exact offline dependencies, bothT4 execution, class/ID/CSV invariants and conservative nine-hour runtime in a bounded profile. Existing local heldouts may overlap training and cannot establish independent quality.",
+      "acceptance": "Actual Kaggle code submission with terminal score and fresh complete leaderboard rank<=30; intermediate engineering gates do not complete the user objective.",
+      "stop": "At most two frozen recipes/two official submissions in this phase; pre-refresh public GPU<=2400s, refreshed-free phase<=21600s only after fresh quota admission; no paid compute, copied predictions, hidden targets or leaderboard parameter search. Carry unfinished work into another bounded phase.",
+      "risk_reason": "Public checkpoint may be inaccessible, incompatible with current offline runtime, training-overlapping on local heldouts, or weaker on current hidden distribution.",
+      "mitigation": "Inspect author sources and licenses; freeze preprocessing and source versions, profile actual devices/runtime, label overlap honestly, preserve exact mutation receipts and require official outcome verification.",
+      "rationale": "Directly targets the large score gap with legally available pretrained supervision rather than repeating low-gain weak-model ablations.",
+      "revision": "Added before v9 focus/preparation under the explicit persistent user goal; H15 clean-teacher restrictions do not prohibit supervised deployment.",
+      "depends_on": [
+        "E00",
+        "E14"
+      ],
+      "evidence": [
+        "docs/SPAN_009_PLAN.md"
+      ],
+      "id": "H54",
+      "rank": 69,
+      "status": "running",
+      "introduced_in": 9,
+      "discovered_during": null,
+      "derived_from": [
+        "H15"
+      ],
+      "history": [
+        {
+          "at": "2026-11-06T19:22:07+00:00",
+          "status": "planned",
+          "note": "Explicit user rank30 goal adds strong public supervised deployment before v9 focus/work; independent-teacher restrictions are not deployment restrictions.",
+          "evidence": [
+            "docs/SPAN_009_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T19:23:39+00:00",
+          "status": "running",
+          "note": "Starting bounded author-source/runtime qualification for accessible tascj Gemma2/Llama3 ensemble; BlackPearl weights return403. Plan and overlap limitations frozen.",
+          "evidence": [
+            "docs/SPAN_009_PLAN.md"
           ]
         }
       ]
@@ -5403,10 +5486,34 @@
         "E08",
         "E12",
         "E14",
-        "H53"
+        "H53",
+        "H54"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "E14",
+        "H54"
+      ],
+      "history": [
+        {
+          "at": "2026-11-06T19:22:07+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "H54"
+          ],
+          "note": "Explicit user rank30 goal adds strong public supervised deployment before v9 focus/work; independent-teacher restrictions are not deployment restrictions.",
+          "evidence": [
+            "docs/SPAN_009_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T19:22:07+00:00",
+          "note": "Rank30 requires a much stronger deployment model. Fix exact-source admission first, then qualify one frozen public supervised recipe; leave calibration-only H53 outside this initial focus.",
+          "focus_ids": [
+            "E14",
+            "H54"
+          ]
+        }
+      ],
       "carried_from": 8,
       "start_sha256": "621ea7cfb4d362e2366c56e61325a8c0c540cba1eee17e555dcd845f6d1f4d5a",
       "start_markdown_sha256": "a637b2b9e25521adffd3484b503e63a22b215339c30766589a8bf0595df6757d",

@@ -50,6 +50,46 @@ def retrieve(api, exact, directory):
     return receipt
 
 
+def exact_model_version(source, versions):
+    """Select one fully identified version, never an unrelated version number.
+
+    Kaggle can return variations/frameworks other than the requested instance.
+    Missing or contradictory identity is insufficient evidence of availability.
+    """
+    parts = source.strip('/').split('/')
+    if len(parts) != 5 or not parts[-1].isdigit():
+        raise ValueError('Expected pinned owner/model/framework/variation/version')
+    def framework(value):
+        return str(value).lower().removeprefix('model_framework_').replace('_', '').replace('-', '')
+    wanted = (parts[0].lower(), parts[1].lower(), framework(parts[2]),
+              parts[3].lower(), int(parts[4]))
+    matches = []
+    for row in versions:
+        def field(camel, snake):
+            return row.get(camel, row.get(snake))
+        values = [field('ownerSlug', 'owner_slug'), field('modelSlug', 'model_slug'),
+                  row.get('framework'), field('variationSlug', 'variation_slug'),
+                  field('versionNumber', 'version_number')]
+        if any(value is None for value in values):
+            continue
+        try:
+            identity = (str(values[0]).lower(), str(values[1]).lower(), framework(values[2]),
+                        str(values[3]).lower(), int(values[4]))
+        except (TypeError, ValueError):
+            continue
+        if identity != wanted:
+            continue
+        if row.get('url'):
+            url_parts = row['url'].strip('/').split('/')
+            expected = ['models', *parts]
+            if [p.lower() for p in url_parts] != [p.lower() for p in expected]:
+                raise ValueError('Conflicting model identity URL')
+        matches.append(row)
+    if len(matches) != 1:
+        raise ValueError(f'Exact model version unavailable or ambiguous: {source} ({len(matches)} matches)')
+    return matches[0]
+
+
 def verify_dependencies(api, metadata):
     result={'observed_at':utc_now(),'parents':[],'models':[]}
     for source in metadata['kernel_sources']:
@@ -62,9 +102,12 @@ def verify_dependencies(api, metadata):
         if not version.isdigit(): raise ValueError('Unpinned model')
         response=read_call(lambda:api.model_instance_versions_list(instance,page_size=100))
         versions=[x.to_dict() for x in response.version_list.versions]
-        if not any(int(x.get('versionNumber',x.get('version_number')))==int(version) for x in versions):
-            raise ValueError('Pinned model version unavailable')
-        result['models'].append({'source':source,'available':True})
+        if len(versions) >= 100:
+            raise ValueError('Model listing may be truncated; paginate before admission')
+        matched=exact_model_version(source,versions)
+        result['models'].append({'source':source,'available':True,
+            'model_instance_id':matched.get('modelInstanceId',matched.get('model_instance_id')),
+            'model_version_id':matched.get('id')})
     return result
 
 
