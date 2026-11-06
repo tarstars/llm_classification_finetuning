@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "responses_independently_replayed": 2432,
+  "targets_used": false,
+  "native_both_devices_verified": true,
+  "label_tokens_from_same_pinned_model": [
+    236776,
+    236799,
+    236780
+  ],
+  "historical_sentinel_token_maps_identical": true,
+  "source_sha256": "421170b9e2e990a9d7f45cc4a76c8e77f40a9259c07092d9ffdf91a01fd62c70"
+}

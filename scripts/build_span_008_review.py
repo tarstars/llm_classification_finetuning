@@ -1,7 +1,10 @@
 """Build the aggregate v8 results notebook; execute it after all decisions close."""
 from pathlib import Path
+import json
 import nbformat as nbf
 REPO=Path(__file__).resolve().parents[1];md=nbf.v4.new_markdown_cell;code=nbf.v4.new_code_cell
+registry=json.loads((REPO/'backlog/hypotheses.json').read_text())
+assert registry['active_version']==8,'Preserve the executed historical notebook after span sealing'
 cells=[md('''# V8: bounded score-improvement experiments
 
 Stable serial judge routing, completion of the fixed context cohort, a controlled

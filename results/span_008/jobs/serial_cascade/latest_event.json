@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-06T15:22:46.442513+00:00",
+  "stage": "serial_cascade",
+  "event": "complete",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span008-serial-cascade/1",
+  "charged_seconds": 3110.245999999999,
+  "files": 163
+}

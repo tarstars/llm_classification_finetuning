@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-11-06T15:27:21.494181+00:00",
+  "outer_folds": [
+    {
+      "fold": 0,
+      "judge_temperature": 3.0,
+      "judge_tie_intercept": 0.3138863849541748,
+      "classifier_temperature": 0.9297041794539507,
+      "temperature_at_upper_bound": true,
+      "weight": 0.5,
+      "fitted_model_sha256": "dba3f6318b6c1ac64b7b087d125f35d5eb75e0932ade988e7c8b0b598c845ce0"
+    },
+    {
+      "fold": 1,
+      "judge_temperature": 3.0,
+      "judge_tie_intercept": 0.29323995015041443,
+      "classifier_temperature": 0.9371049176157275,
+      "temperature_at_upper_bound": true,
+      "weight": 0.25,
+      "fitted_model_sha256": "88824f1299c19e1d2a6d799b3c6e8811dde8d101f6d90d1f205d1aef1c4d00f2"
+    },
+    {
+      "fold": 2,
+      "judge_temperature": 3.0,
+      "judge_tie_intercept": 0.31207739611681673,
+      "classifier_temperature": 0.9009134991516776,
+      "temperature_at_upper_bound": true,
+      "weight": 0.5,
+      "fitted_model_sha256": "0dda2b667be297199ecceb2be65c69e0a410d927e85beff03f6dbe05a2a6eb43"
+    },
+    {
+      "fold": 3,
+      "judge_temperature": 3.0,
+      "judge_tie_intercept": 0.29829391223558543,
+      "classifier_temperature": 0.9211305474097182,
+      "temperature_at_upper_bound": true,
+      "weight": 0.25,
+      "fitted_model_sha256": "46f5529677228c79cc2e5b1108168f608eb8ab48117de2e15ba25c6537f1e6b1"
+    },
+    {
+      "fold": 4,
+      "judge_temperature": 3.0,
+      "judge_tie_intercept": 0.31048195375274096,
+      "classifier_temperature": 0.9244567586272006,
+      "temperature_at_upper_bound": true,
+      "weight": 0.75,
+      "fitted_model_sha256": "564362a2f0c2c4c95b416823fc6fd50db048d26ce46f3d66d0466b9ab697b710"
+    }
+  ],
+  "upper_bound": 3.0,
+  "binding_outer_folds": 5,
+  "alternative_fit_performed": false,
+  "new_gpu_executions": 0,
+  "interpretation": "A binding bound motivates a separately predeclared sensitivity study; this alone does not establish an improvement or explain all errors.",
+  "source_sha256": "e0bc5dc1edab87fd0ed6e568fbb595a3a8a05ef5e8103f68218e0eccfe7d0d17"
+}

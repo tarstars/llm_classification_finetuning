@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T14:24:16.948571+00:00",
+  "kernel": "arseniytrushin/llm-preference-span-008-serial-cascade",
+  "quota_before": {
+    "used_seconds": 96763.987,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 11236.013000000006
+  },
+  "max_session_seconds": 3600,
+  "notebook_sha256": "878d709dd6b640727ef07381cfe93eb5a329077b6e7466fd3ec691cea3de5178",
+  "metadata_sha256": "9e8a4e27e4f108496300a9704f5562924d93a61da8fcacb766fa2f4b61c676c7"
+}

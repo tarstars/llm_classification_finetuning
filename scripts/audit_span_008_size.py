@@ -12,7 +12,7 @@ from arena.experiment import read_json,atomic_json,sha256,verify_sources,utc_now
 from arena.exposure_validation import validate_exposure
 from arena.joint_data import JointTokenizer
 from arena.span006_inputs import token_digest
-from arena.span_heads import metrics,paired_group_gain
+from arena.span_heads import metrics,paired_group_gain,crossfit_temperature
 from arena.data import prompt_groups
 
 
@@ -67,7 +67,13 @@ def main():
         matched=hashes['4b']==hashes['8b'] and exposures['4b']==exposures['8b'] and all(result['arms'][s]['accepted_updates']==cfg['size_pilot_accepted_updates'] for s in ['4b','8b'])
         result.update(complete=state['status']=='COMPLETE',quality_comparison_valid=matched,raw_paired_gain=paired_group_gain(y,predictions['4b'],predictions['8b'],groups,dict(cfg,seed=cfg['bootstrap_seed'])),
             exposure_note='Same packed inputs, accepted row multiset and token count' if matched else 'Unequal accepted exposure or packing; do not attribute observed loss difference causally to size')
-        np.savez_compressed(run/'size_comparison.npz',ids=dev.id,labels=y,groups=groups,small=predictions['4b'],large=predictions['8b'])
+        calibrated={}
+        for size in ['4b','8b']:
+            calibrated[size],temperatures=crossfit_temperature(y,predictions[size],groups,cfg)
+            result['arms'][size].update(temperature_cv_metrics=metrics(y,calibrated[size]),fold_temperatures=temperatures)
+        result['temperature_cv_diagnostic']=paired_group_gain(y,calibrated['4b'],calibrated['8b'],groups,dict(cfg,seed=cfg['bootstrap_seed']))
+        result['primary_comparison']='Raw paired loss, subject to matched exposure; temperature CV is a fixed secondary calibration diagnostic, not an alternative promotion gate'
+        np.savez_compressed(run/'size_comparison.npz',ids=dev.id,labels=y,groups=groups,small=predictions['4b'],large=predictions['8b'],calibrated_small=calibrated['4b'],calibrated_large=calibrated['8b'])
     result.update(cpu_seconds=time.monotonic()-start,peak_rss_gib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024**2,checked_at=utc_now(),
         decision='Short fresh-head capacity/throughput pilot only; no full-training quality or official-score claim. Full8Btraining needs a new bounded compute plan.')
     atomic_json(pub/'H02_results.json',result);print({k:v for k,v in result.items() if k!='arms'},flush=True)

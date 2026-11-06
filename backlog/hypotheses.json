@@ -4349,7 +4349,7 @@
       ],
       "id": "H51",
       "rank": 65,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 8,
       "discovered_during": 7,
       "derived_from": [
@@ -4362,6 +4362,14 @@
           "note": "H48 reached its original deadline with896/1152long rows and allshort controls saved. Queue a single bounded completion with overlap identity and prospective matched-route timing; no full quality claim or v8 execution.",
           "evidence": [
             "docs/SPAN_007_H48.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T15:23:24+00:00",
+          "status": "running",
+          "note": "Start the single1800-second fixed completion with overlap identity,256missing rows and prospective unchanged-route timing.",
+          "evidence": [
+            "docs/SPAN_008_PLAN.md"
           ]
         }
       ]
@@ -4414,7 +4422,7 @@
       ],
       "id": "H52",
       "rank": 66,
-      "status": "running",
+      "status": "done",
       "introduced_in": 8,
       "discovered_during": 7,
       "derived_from": [
@@ -4435,6 +4443,14 @@
           "note": "Prepare fixed serial10%cascade with complete classifier/native cold-switch profiling, unchanged stability guards and a fresh2048-row cache. GPUcap3600s; no variant search.",
           "evidence": [
             "docs/SPAN_008_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T15:23:21+00:00",
+          "status": "done",
+          "note": "Bounded experiment finished; retain actual coverage, numerical/runtime gates, uncertainty and negative/incomplete evidence.",
+          "evidence": [
+            "docs/SPAN_008_H52.md"
           ]
         }
       ]
@@ -4493,6 +4509,69 @@
           "note": "Observed a live model-list response containing other frameworks/variations; version-number-only admission can falsely pass. Future shared-helper fix, preserve v8 bundles.",
           "evidence": [
             "docs/SPAN_008_DEPENDENCY_AUDIT.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Test the binding temperature ceiling in the stable10%judge cascade",
+      "priority": "P1",
+      "gain": [
+        -0.002,
+        0.006
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        2
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0.3,
+        1.5
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.3
+      ],
+      "risk": "high",
+      "claim": "A restrictive judge-temperature bound may prevent adequate confidence shrinkage and hide useful information on the uncertain route.",
+      "basis": "V8 H52 is numerically stable and runtime-feasible but loses0.000211 against calibrated classifier. Routed197-row accuracy improves34.01%to42.64%while loss worsens1.098711to1.100901. All five outer judge temperatures bind at the predeclared maximum3.0. This is a diagnostic, not a demonstrated causal explanation or gain.",
+      "first_test": "Change only the judge temperature upper bound from3 to10. Keep classifier bounds, prompt/runtime/source/cache, original10%router, tie-bias bounds, mixture grid and outer5/inner3group fitting unchanged. Refit the complete chain and the original bound3control on exactly the2048stable cached rows. No extra temperature grid, route fractions, prompt changes, route-specific fitting or retraining. Inspect boundary counts, class/tie/order and paired uncertainty. Record the post-result origin and historically inspected cohort.",
+      "acceptance": "At least0.001nested overall loss reduction with positive group95%lower bound over matched classifier and evidence against the original bound3cascade; all numerical/runtime contracts retained. A positive exploratory result requires a separately frozen confirmation before adoption.",
+      "stop": "Stop if gain is inconclusive, regressions emerge, controls explain it or the new ceiling still binds; do not widen again or select another family in the same span. No v8 execution or confirmation/official tuning.",
+      "risk_reason": "The bound was noticed after observing the existing results; repeated data use and only197routed evaluation rows create substantial selection uncertainty. Calibration alone cannot guarantee removal of the large observed answer-order sensitivity.",
+      "mitigation": "One fixed primary ablation, entire chain nested within prompt groups, original control retained, paired uncertainty and independent frozen transfer; no quality claim from binding alone.",
+      "rationale": "Existing stable cache enables a small CPU-only test motivated by a concrete fitted-parameter constraint, before more teacher inference or training spend.",
+      "revision": "New v9 discovery from completed v8 H52. Gain range is subjective, not measured and not additive with other calibration hypotheses.",
+      "depends_on": [
+        "E00",
+        "E05",
+        "H52"
+      ],
+      "evidence": [
+        "docs/SPAN_008_H52.md",
+        "results/span_008/H52_calibration_audit.json"
+      ],
+      "id": "H53",
+      "rank": 68,
+      "status": "planned",
+      "introduced_in": 9,
+      "discovered_during": 8,
+      "derived_from": [
+        "H52"
+      ],
+      "history": [
+        {
+          "at": "2026-11-06T15:27:21+00:00",
+          "status": "planned",
+          "note": "All five fitted judge temperatures hit3.0; routed accuracy rises while loss does not. Queue one CPU-only wider-ceiling ablation with unchanged full-chain controls, no v8 retuning.",
+          "evidence": [
+            "docs/SPAN_008_H52.md"
           ]
         }
       ]
@@ -5240,7 +5319,8 @@
       "number": 9,
       "state": "draft",
       "item_ids": [
-        "E14"
+        "E14",
+        "H53"
       ],
       "focus_ids": [],
       "history": []

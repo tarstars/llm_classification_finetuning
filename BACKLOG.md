@@ -6,7 +6,7 @@ Version **8**, active; **40** tasks. Focus for this span: H52, H51, H36, H17, H0
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **22**, ready **0**, running **2**, done **1**, rejected **0**, deferred **12**.
+Hypothesis status: planned **21**, ready **0**, running **2**, done **2**, rejected **0**, deferred **12**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -64,7 +64,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | Rank | ID | Priority / status | Hypothesis | Gain | Risk | Eng h | Pilot GPU h | Follow-up GPU h | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 48 | [H44](#h44) | P1 / deferred | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43, E04, E05 |
-| 66 | [H52](#h52) | P1 / running | Test a stable serial judge on a fixed10%classifier route | -0.006…+0.008 | high | 2…5 | 0.6…1 | 0…2 | E00, E05, E09, H39 |
+| 66 | [H52](#h52) | P1 / done | Test a stable serial judge on a fixed10%classifier route | -0.006…+0.008 | high | 2…5 | 0.6…1 | 0…2 | E00, E05, E09, H39 |
 | 6 | [H02](#h02) | P2 / running | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
@@ -78,7 +78,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 62 | [H50](#h50) | P2 / deferred | Qualify and officially evaluate one frozen v7 classifier candidate | -0.015…+0.015 | high | 2…5 | 1.25…1.25 | 0…0 | E00, E09, H48, H49 |
 | 63 | [E12](#e12) | P2 / planned | Generate experiment contracts and reports from validated artifact schemas | — | medium | 2…4 | 0…0 | 0…0 | E09, E11 |
 | 64 | [E13](#e13) | P2 / running | Checkpoint full-partition inference with bounded progress and numerical identity | — | medium | 2…4 | 0.05…0.15 | 0…0 | E09, E10 |
-| 65 | [H51](#h51) | P2 / planned | Complete the frozen context cohort from verified partial prediction chunks | -0.004…+0.004 | medium | 1…2 | 0.25…0.5 | 0…0.5 | E00, E09, H48 |
+| 65 | [H51](#h51) | P2 / running | Complete the frozen context cohort from verified partial prediction chunks | -0.004…+0.004 | medium | 1…2 | 0.25…0.5 | 0…0.5 | E00, E09, H48 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 20 | [H29](#h29) | P3 / planned | Human-preference prompt rubric | -0.015…+0.01 | low | 3…8 | 0.5…2 | 2…6 | E00 |
 | 21 | [H16](#h16) | P3 / planned | Refusal appropriateness | -0.005…+0.008 | medium | 6…14 | 0.25…1 | 8…18 | E00 |
@@ -170,7 +170,7 @@ Postcalibration may recover miscalibration introduced by an affordable routed mi
 
 ### H52
 
-**Test a stable serial judge on a fixed10%classifier route** — P1, running, risk high.
+**Test a stable serial judge on a fixed10%classifier route** — P1, done, risk high.
 
 A smaller serial judge route may retain useful complementarity while fitting the inference budget now that serialization removes the observed drift.
 
@@ -198,6 +198,7 @@ A smaller serial judge route may retain useful complementarity while fitting the
 
 - 2026-11-05T22:52:51+00:00 — planned: Serial responses are exactlystable but the original20%runtime gate fails. Queue one distinct10%serial route study with complete cold/switch profiling and a fresh uniform cache; do not change v7gate or executev8. Evidence: [docs/SPAN_007_E05.md](docs/SPAN_007_E05.md)
 - 2026-11-06T14:15:05+00:00 — running: Prepare fixed serial10%cascade with complete classifier/native cold-switch profiling, unchanged stability guards and a fresh2048-row cache. GPUcap3600s; no variant search. Evidence: [docs/SPAN_008_PLAN.md](docs/SPAN_008_PLAN.md)
+- 2026-11-06T15:23:21+00:00 — done: Bounded experiment finished; retain actual coverage, numerical/runtime gates, uncertainty and negative/incomplete evidence. Evidence: [docs/SPAN_008_H52.md](docs/SPAN_008_H52.md)
 
 ### H02
 
@@ -589,7 +590,7 @@ Bounded, ordered prediction chunks can make long evaluations observable and reco
 
 ### H51
 
-**Complete the frozen context cohort from verified partial prediction chunks** — P2, planned, risk medium.
+**Complete the frozen context cohort from verified partial prediction chunks** — P2, running, risk medium.
 
 Finishing the256missing long-context rows can resolve the original paired context question without repeating completed controls, while matched route timing determines feasibility.
 
@@ -616,6 +617,7 @@ Finishing the256missing long-context rows can resolve the original paired contex
 **References:** [docs/SPAN_007_H48.md](docs/SPAN_007_H48.md); [results/span_007/context_partial_audit.json](results/span_007/context_partial_audit.json)
 
 - 2026-11-05T22:33:00+00:00 — planned: H48 reached its original deadline with896/1152long rows and allshort controls saved. Queue a single bounded completion with overlap identity and prospective matched-route timing; no full quality claim or v8 execution. Evidence: [docs/SPAN_007_H48.md](docs/SPAN_007_H48.md)
+- 2026-11-06T15:23:24+00:00 — running: Start the single1800-second fixed completion with overlap identity,256missing rows and prospective unchanged-route timing. Evidence: [docs/SPAN_008_PLAN.md](docs/SPAN_008_PLAN.md)
 
 ### H22
 
