@@ -8,10 +8,12 @@
     "path": "notebooks/21_backlog_v9_public_ensemble.ipynb",
     "code_cells": 4,
     "errors": 0,
-    "sha256": "a73b3ccb73eaebc7fb00cda90396211ffe4cc958f314f2ccb55a1e65c0c3d3e8"
+    "sha256": "a9cbc7998ab150d16ad9b28c05134c42e6d4a89393926da4c354e66418a6af25"
   },
   "public_gpu_seconds": 2108.15,
   "public_cap_seconds": 2400,
-  "official_submissions": 0,
-  "goal_achieved": false
+  "official_submissions": 1,
+  "goal_achieved": false,
+  "official_receipt": 58068582,
+  "official_status": "PENDING"
 }

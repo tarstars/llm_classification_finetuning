@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-06T20:28:36.782183+00:00",
+  "kernel": "arseniytrushin/llm-preference-span009-public-ensemble",
+  "version": 4,
+  "notebook_sha256": "16f722f632a45fcb38ec32c274bb3c8d2d99121d515883cf1f9e8fc5800c64ca",
+  "qualification_sha256": "093f229445b078993c0139a8c053d52b442b61514d63c92fb2d4deccece0a254",
+  "controller_sha256": "966ffdf73d661322f8077f270ccc7990e0839b9306bebbe189261f1631614cfd",
+  "quota_before": {
+    "used_seconds": 107221.205,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 778.7949999999983
+  },
+  "public_gpu_charged_seconds": 2108.1500000000087,
+  "hidden_seconds_cap": 32400,
+  "separate_hidden_allowance": true,
+  "projection_seconds": 26980.97050912318,
+  "official_candidate_number": 1,
+  "no_new_research_jobs_during_hidden_run": true,
+  "message": "Span009 frozen public tascj Gemma2/Llama3 equal ensemble; no local-quality claim"
+}

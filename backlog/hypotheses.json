@@ -4728,6 +4728,14 @@
           "evidence": [
             "docs/SPAN_009_H54_QUALIFICATION.md"
           ]
+        },
+        {
+          "at": "2026-11-06T20:29:26+00:00",
+          "status": "running",
+          "note": "Official code submission58068582 accepted20:28:39UTC from audited exactversion4; receiptPENDING, no score/rank improvement claimed. Monitor same receipt only; no new research GPU jobs during hidden evaluation.",
+          "evidence": [
+            "docs/SPAN_009_PROGRESS.md"
+          ]
         }
       ]
     },

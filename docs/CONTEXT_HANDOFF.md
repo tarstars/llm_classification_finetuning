@@ -1,6 +1,6 @@
 # Active goal: reach leaderboard rank30; v9 executing
 
-Snapshot 2026-11-06 20:27UTC. New user outcome goal **move to 30 place in
+Snapshot 2026-11-06 20:29UTC. New user outcome goal **move to 30 place in
 leaderboard** is active in the goal service. Do not mark it complete until a
 fresh fully paginated Kaggle leaderboard proves team17244411 rank<=30. Initial
 live rank57/313, loss0.95481, rank30 threshold0.83086. No new official score yet.
@@ -78,9 +78,15 @@ checkpointSHA, actual devices/memory/timing and CSV checks. All required model
 predictions are now recovered and audited. Heavy source caches are under ROOT/runs/span_009/
 research; never download giant host weights without a reason.
 
-Next: commit/push the audited qualification and execute scripts/submit_span_009_public.py
-once. Qualification now passes. It submits exact tested version4 and monitors
-only its persisted receipt. No official intent/receipt yet at this snapshot.
+Official submission **58068582** accepted2026-11-06 20:28:39UTC from exact
+tested version4; live statusPENDING at20:28:39UTC. Controller exec session28832
+was live. Revalidate the exact receipt/process, never send another mutation.
+Use scripts/submit_span_009_public.py --observe-only if the local observation
+window ends; it resumes the same receipt. This script has one-hour resumable
+observation windows, while hidden runtime allowance is9h. No new research GPU
+job during hidden evaluation, including after quota refresh. Resource projection
+is7.495h; this is not a new quality estimate. Official score/rank remain pending;
+last verified own rank57/313 score.95481. Do not complete the goal prematurely.
 Use --observe-only to resume an accepted official receipt. Verify live finalrank.
 If worse than30, retain goal and plan the next bounded phase; no hidden-score fit.
 

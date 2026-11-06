@@ -53,3 +53,13 @@ uses no recovery cache and runs both models on its actual test. Re-run both
 uniform256 cohorts after fixed8row warmups; count warmup once in startup and
 retain20%margin/600seconds reserve. Finish Llama long/test, require matched
 probabilities and all original engineering gates. Preserve failed cold estimate.
+
+Version4 COMPLETE; independent qualification passes. Actual total publicGPU
+2108.150s/35.136min,116tests pass, Notebook21 executed without errors. New warm
+projection26980.971s/7.495h with20%margin/startup/reserve; both uniform controls
+maxdifference0. All long/test/device/source/CSV checks pass. See the qualification
+report; original failed cold projection and prior failures are preserved.
+
+Official submission **58068582** accepted2026-11-06 20:28:39UTC from exact
+version4; current receipt statusPENDING, no official score yet. The persistent
+rank30 goal remains active. No new research GPU jobs while hidden scoring runs.
