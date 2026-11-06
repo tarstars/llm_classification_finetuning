@@ -1,6 +1,6 @@
 # V8 executing — frozen context confirmation running
 
-Snapshot2026-11-06 16:04UTC. Verify live files/service state before resuming.
+Snapshot2026-11-06 16:10UTC. Verify live files/service state before resuming.
 User authorized "execute this plan". Ordinary task, no goal-service activation.
 V8focus H52/H51/H36/H17/H02/H15/E13/H50. V9draft has E14andH53; do not execute it.
 Contract: GOAL.md, configs/span_008.json, docs/SPAN_008_PLAN.md. Original mains
@@ -50,10 +50,9 @@ success from public preview.
 
 ## Immediate remaining steps
 
-New scripts/submit_span_008.py and execute_span_008_promotion.py are written,
-compiled but NOT YET committed/launched at this snapshot. Review/commit/push these,
-new E13/H02docs/results, source-verification receipt and other reviewed completed
-outputs. Then start execute_span_008_promotion.py escalated into a private log.
+scripts/submit_span_008.py and execute_span_008_promotion.py are committed/pushed
+inb0275ea. The latter is RUNNING, PID738881at snapshot, toolsession27611, log
+/tmp/arena_span008_promotion_orchestrator.log. Do not start another controller.
 It monitors the existing promotion job, invokes frozen evaluate_span_008_promotion.py
 once, and only if every gate passes and the full hidden clock fits, invokes the
 one-intent submit controller. It preserves failures, no GPU retry/fallback.
@@ -69,7 +68,7 @@ Primary gain>=.001withpositivegroup95%lower, fullruntime<=25200. Runtime uses ma
 of devprospective and fullconfirmationrate,20%margin, actualsessioncold and600s.
 H50result metadata may later append officialref/status/score; primary stats remain.
 
-check_span_008_closure.py was extended (uncommitted) to distinguish research
+check_span_008_closure.py was extended and committed to distinguish research
 charge from separate hidden bound/accountdelta, including quota refresh without
 new research admissions. Don't silently assume hiddenchargezero if accountdelta
 is unchanged. All exact public job receipts remain frozen before any refresh.
@@ -108,9 +107,11 @@ viewsemantics in chunk_audit.json and E13report. E14queues exactAPIinstancecheck
 
 ## Validation/publication and closure still required
 
-Fullsuite107tests passed in current /tmp/arena_span008_tests_qualification.log;
-initial104passed before added size/route tests. New closure/submission code compiled.
-Source milestone0344856pushed. Later uncommitted files exist; inspectstatus.
+Fullsuite107tests passed in14.429s, log /tmp/arena_span008_tests_qualification.log;
+3additional submission-admission tests pass (110distincttests). Initial104passed
+before added size/route tests. New closure/submission code compiled. Source
+milestoneb0275eapushed. Inspectstatus for later docs/changes. At16:09latestlog has
+1024short confirmation rows complete,557.3seconds forward time, no votes read.
 Best verified official remains .95481/submission57979825 unless new result proves
 otherwise. Current researchcharge3967.704s before promotion, <=9367.704s including
 its full cap. No official receipt/reveal intent exists at this snapshot.

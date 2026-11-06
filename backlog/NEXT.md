@@ -116,7 +116,7 @@ Dependency admission should reject a requested model version unless variation, f
 
 **Revision:** New evidence-grounded engineering follow-up from v8 E13; not executed during v8.
 
-**Depends on:** E09, E13. Currently unmet: E13.
+**Depends on:** E09, E13. Currently unmet: none.
 
 **Origin:** introduced in v9; discovered during v8; derived from E13.
 

@@ -8,8 +8,24 @@ Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
-V7 completed the balanced research and engineering span. No candidate passed its
-promotion gates, and the best official score remains **0.95481**. Continued QLoRA
+V8 is executing the bounded score-improvement plan. Completing the frozen context
+cohort improves development loss **0.953962 → 0.951337**, gain **0.002625** with
+paired group95%interval **[0.000675,0.004590]**. Its predeclared conditional runtime
+projection passes. A frozen full-confirmation/offline qualification is running;
+no new official improvement is claimed. Best verified official remains **0.95481**.
+See the [plan](docs/SPAN_008_PLAN.md), [context result](docs/SPAN_008_H51.md) and
+[frozen qualification protocol](docs/SPAN_008_H50_PROTOCOL.md).
+
+The stable10%judge cascade failed its quality gate, and the structural correction
+was inconclusive against its probability-only control. External-data preparation
+is complete; training/distillation and the conditional8Bpilot remain deferred
+because the shared reserve funds context qualification. See
+[judge](docs/SPAN_008_H52.md), [structural](docs/SPAN_008_H36.md),
+[external data](docs/SPAN_008_H17.md), [teacher](docs/SPAN_008_H15.md),
+[larger-model readiness](docs/SPAN_008_H02.md) and [chunk reliability](docs/SPAN_008_E13.md).
+
+V7 completed the earlier balanced research and engineering span. No candidate
+passed its promotion gates. Continued QLoRA
 training gave a small development gain of **0.001354**, with uncertainty crossing
 zero. Serial judge requests were **exactly reproducible** across repeat, row
 permutation and restart; the fixed 20% route still exceeds the runtime limit.
@@ -28,11 +44,13 @@ two-T4 session-hours** and made no submission. See the
 [pipeline theory](docs/PIPELINE_THEORY.md), and
 [review of skipped work](docs/SPAN_007_CARRYOVER_REVIEW.md).
 
-The active backlog is now **v8: 40 tasks**, including 36 unfinished carryovers and
+The active backlog is **v8: 40 tasks**, including 36 unfinished carryovers and
 four discoveries: artifact-backed contracts (E12), recoverable evaluation progress
 (E13), completion of the frozen context cohort (H51), and a prospectively profiled
-10% serial judge route (H52). It has **no focus or execution**. V9 is an empty
-draft. The [completed v7 contract](docs/GOAL_V7.md) stops at this boundary.
+10% serial judge route (H52). Its bounded focus has8tasks. V9 is a draft with
+E14(exact model-instance admission) and H53(the binding judge-temperature ceiling),
+plus unfinished carryovers at closure. The [current contract](GOAL.md) stops
+beforev9. The [completed v7 contract](docs/GOAL_V7.md) remains archived.
 
 V6's frozen source-strength transfer had an inconclusive gain of
 0.000876 [−0.000390, 0.002173] and made no submission. See
@@ -106,11 +124,11 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v8**, with **40 tasks** and no selected focus or execution.
-Its four new proposals retain provenance and bounded tests; unfinished work is
-carried forward. [V9 is an empty draft](backlog/NEXT.md). Completed dependencies
+The active version is **v8**, with **40 tasks** and a selected8-task execution.
+Its four original new proposals retain provenance and bounded tests; unfinished work
+is carried forward. [V9 has two queued discoveries](backlog/NEXT.md). Completed dependencies
 alone do not establish scientific readiness: H44's original 20% route remains
-infeasible, and H50 needs a genuinely positive frozen future classifier.
+infeasible. H50 is qualifying the frozen positive longer-context candidate.
 The original 35-task v5-start snapshot and its explicit planning amendments are
 preserved, along with all historical snapshots.
 Each completed span preserves snapshots and carries unfinished work forward.
