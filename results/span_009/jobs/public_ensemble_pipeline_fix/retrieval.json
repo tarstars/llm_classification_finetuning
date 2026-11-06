@@ -1,0 +1,20 @@
+{
+  "files": 11,
+  "artifact_sha256": {
+    "public_ensemble/m0_checkpoint.json": "053699c6ab61a2a2cbbecd2bf3a40955f6e4a0a3f2abed5f50e27ed7e027e1a8",
+    "public_ensemble/m0_long.npz": "f0cdc3f38df3a8091fda4147865922b371167961af0a3979ffac48f82d57cfc1",
+    "public_ensemble/m0_summary.json": "2f40e2a131f2f974574350f80a789a60b5919cf8256c6d3bd81ef6d9e9c075d4",
+    "public_ensemble/m0_test.npz": "416b6e64ac23c1afd1264cee6ce68fdaa9bef07d830334fff85c96e6ba8f66b0",
+    "public_ensemble/m0_uniform.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "public_ensemble/m3_checkpoint.json": "5b8acbde594a45028d140e5e90dc9fedc56fae2c6bd6025cee90e7e5b09c2b2f",
+    "public_ensemble/m3_summary.json": "6df9cb311c930c81af9c349e06322b6b98c518fdd75adea94b3c8133726b0668",
+    "public_ensemble/m3_uniform.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "public_ensemble/profile_selection.json": "5b9286cff20fd9f13d18ba1e220981521235bf010d7456288dd3161596a40c7a",
+    "session_summary.json": "00dafab9a536f8c06debb607f2471cb096fd0c7bbcf1cb7f88de4fe7210c361b",
+    "worker_console.log": "2278b6e4618c57f306c694966737a347b9c0d85bfd66b681aaf9570331868f1e"
+  },
+  "final_checkpoint": -1,
+  "new_gpu_executions": 0,
+  "signed_urls_persisted": false,
+  "retrieved_at": "2026-11-06T20:04:47.241525+00:00"
+}

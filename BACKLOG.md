@@ -260,6 +260,7 @@ A public competition-trained distilled classifier or ensemble can close substant
 - 2026-11-06T19:23:39+00:00 — running: Starting bounded author-source/runtime qualification for accessible tascj Gemma2/Llama3 ensemble; BlackPearl weights return403. Plan and overlap limitations frozen. Evidence: [docs/SPAN_009_PLAN.md](docs/SPAN_009_PLAN.md)
 - 2026-11-06T19:36:14+00:00 — running: Exact public ensemble v1 ERROR before any cell due missing kernelspec; charge10.620s, source/failure preserved. Prepare separate explicit-kernel runtime fix capped2200s within original2400 total; model recipe unchanged. Evidence: [docs/SPAN_009_PROGRESS.md](docs/SPAN_009_PROGRESS.md)
 - 2026-11-06T19:47:45+00:00 — running: Version2 ERROR at DataLoader fork transition after complete256row Gemma uniform cohort; recovered six artifacts, charge414.992s (total425.612). Prepare distinct1000s author-scheduling/zero-fork fix with matched available prediction control; no official submission. Evidence: [docs/SPAN_009_PROGRESS.md](docs/SPAN_009_PROGRESS.md)
+- 2026-11-06T20:09:31+00:00 — running: Version3 watchdogERROR; charge895.742s, total1321.354s. Both uniform cohorts and Gemma long/test recovered; exact256row Gemma identity. Cold projection33795.914s FAIL. Prepare one1000s hash-verified recovery/warm measurement with unchanged20%margin, hidden cache exclusion and missing Llama completion. Evidence: [docs/SPAN_009_PROGRESS.md](docs/SPAN_009_PROGRESS.md)
 
 ### H02
 

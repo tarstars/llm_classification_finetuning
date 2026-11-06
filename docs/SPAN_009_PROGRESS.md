@@ -39,3 +39,17 @@ Prepared/auditable sources pushed at232953d. Runtime/probability comparisons and
 all Llama/long/test outputs are pending. The recovered Gemma uniform256 profile
 has descriptive loss.656236/accuracy.734375; it may overlap supervised training
 and is not evidence of independent gain or official quality.
+
+Version3 is terminalERROR from its owned880second watchdog (exit-15); charge
+895.742seconds,11files recovered. Both uniform256 cohorts and all Gemma
+long/test cohorts are complete; Llama long/test are missing. Gemma probability
+identity versus version2 is exact (maxdifference0). Cold uniform times157.470/
+123.225seconds yield33795.914seconds with20%margin/startup/reserve: runtimeFAIL.
+Total public charge1321.354seconds. No official submission.
+
+Prepared one1000second public_ensemble_resume attempt. Hash-verified completed
+Gemma long/test outputs are embedded only for public qualification; hidden mode
+uses no recovery cache and runs both models on its actual test. Re-run both
+uniform256 cohorts after fixed8row warmups; count warmup once in startup and
+retain20%margin/600seconds reserve. Finish Llama long/test, require matched
+probabilities and all original engineering gates. Preserve failed cold estimate.

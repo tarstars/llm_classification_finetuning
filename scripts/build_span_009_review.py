@@ -90,7 +90,7 @@ without changing the inference recipe. Receipt elapsed time includes queue and
 obfuscation and is not a GPU-time measurement. A pending official result is
 displayed explicitly; notebook generation does not imply the rank goal is met.
 '''), code('''charges=[]
-for role in ['public_ensemble','public_ensemble_runtime_fix','public_ensemble_pipeline_fix']:
+for role in ['public_ensemble','public_ensemble_runtime_fix','public_ensemble_pipeline_fix','public_ensemble_resume']:
     r=read(PUB/'jobs'/role/'controller_state.json')
     charges.append({'attempt':role,'stage':r['stage'],'charged_seconds':r.get('charged_seconds')})
 display(pd.DataFrame(charges))

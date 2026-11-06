@@ -19,7 +19,7 @@ from arena.span009_public import ensemble, validate_probabilities, CLASSES
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--source-only', action='store_true')
-    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix', 'public_ensemble_pipeline_fix'], default='public_ensemble_runtime_fix')
+    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix', 'public_ensemble_pipeline_fix', 'public_ensemble_resume'], default='public_ensemble_runtime_fix')
     args = parser.parse_args()
     root = ROOT / 'runs/span_009'
     pub = REPO / 'results/span_009'
@@ -72,7 +72,7 @@ def main():
             assert all(x > 0 for x in cohort['peak_allocated_bytes'])
     summaries = [read_json(out / (r + '_summary.json')) for r in ['m0', 'm3']]
     rate = sum(s['cohorts']['uniform']['seconds']/256 for s in summaries)
-    cold = sum(s['cold_seconds'] for s in summaries)
+    cold = sum(s['cold_seconds']+s['cohorts'].get('warmup',{}).get('seconds',0) for s in summaries)
     projected = 25000*rate*1.2+cold+600
     assert np.isclose(projected, q['projected_hidden_seconds'])
     csv = job / 'output/submission.csv'
@@ -85,7 +85,7 @@ def main():
         csv_sha256=sha256(csv), csv_verified=True, both_t4_verified=True,
         independent_local_quality=False, measured_roles=summaries, official_submissions=0)
     atomic_json(pub / (role + '_qualification.json'), result)
-    if role == 'public_ensemble_pipeline_fix':
+    if role in ['public_ensemble_pipeline_fix','public_ensemble_resume']:
         control = root/'jobs/public_ensemble_runtime_fix/output/public_ensemble'
         identity = {}
         assert read_json(out/'m0_checkpoint.json') == read_json(control/'m0_checkpoint.json')
@@ -98,6 +98,19 @@ def main():
         identity['m0_uniform'] = {'rows': len(delta), 'max_abs_probability_difference': float(delta.max())}
         result['scheduling_identity_control'] = identity
         result['control_coverage_limitation'] = 'Only Gemma uniform256 completed before the control worker segfaulted; no control for other cohorts/model.'
+        if role == 'public_ensemble_resume':
+            previous=root/'jobs/public_ensemble_pipeline_fix/output/public_ensemble'
+            matched={}
+            for model in ['m0','m3']:
+                new=np.load(out/(model+'_uniform.npz'));old=np.load(previous/(model+'_uniform.npz'))
+                assert np.array_equal(new['ids'],old['ids']) and np.array_equal(new['lengths'],old['lengths'])
+                delta=np.abs(new['probabilities']-old['probabilities']);assert delta.max()<1e-5
+                matched[model]={'rows':256,'max_abs_probability_difference':float(delta.max())}
+            for cohort in ['long','test']:
+                assert sha256(out/('m0_'+cohort+'.npz')) == sha256(previous/('m0_'+cohort+'.npz'))
+            result['recovery_identity_control']=matched
+            result['original_cold_profile_projection_seconds']=33795.91428638781
+            result['projection_method']='Uniform256 after explicit8row warmup; count measured warmup once in startup; retain20%margin and600s reserve.'
         result['role'] = role
         atomic_json(pub / 'H54_qualification.json', result)
     print(json.dumps({key: result[key] for key in ['complete', 'runtime_projection_seconds', 'runtime_gate_passed', 'both_t4_verified']}))

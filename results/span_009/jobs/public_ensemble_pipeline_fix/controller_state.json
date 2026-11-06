@@ -1,0 +1,10 @@
+{
+  "stage": "failed",
+  "at": "2026-11-06T20:04:47.253462+00:00",
+  "pid": 1373589,
+  "role": "public_ensemble_pipeline_fix",
+  "status": "ERROR",
+  "kernel_version": "arseniytrushin/llm-preference-span009-public-ensemble/3",
+  "charged_seconds": 895.7419999999984,
+  "files": 11
+}

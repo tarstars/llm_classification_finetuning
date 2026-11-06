@@ -4712,6 +4712,14 @@
           "evidence": [
             "docs/SPAN_009_PROGRESS.md"
           ]
+        },
+        {
+          "at": "2026-11-06T20:09:31+00:00",
+          "status": "running",
+          "note": "Version3 watchdogERROR; charge895.742s, total1321.354s. Both uniform cohorts and Gemma long/test recovered; exact256row Gemma identity. Cold projection33795.914s FAIL. Prepare one1000s hash-verified recovery/warm measurement with unchanged20%margin, hidden cache exclusion and missing Llama completion.",
+          "evidence": [
+            "docs/SPAN_009_PROGRESS.md"
+          ]
         }
       ]
     }

@@ -1,6 +1,7 @@
 """Build the frozen offline public ensemble with bounded qualification/rerun."""
 from pathlib import Path
 import argparse
+import base64
 import hashlib
 import json
 import sys
@@ -21,11 +22,11 @@ from arena.span009_public import profile_indices, TEXT
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix', 'public_ensemble_pipeline_fix'], default='public_ensemble')
+    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix', 'public_ensemble_pipeline_fix', 'public_ensemble_resume'], default='public_ensemble')
     args = parser.parse_args()
     role = args.role
     cap = {'public_ensemble': 2400, 'public_ensemble_runtime_fix': 2200,
-           'public_ensemble_pipeline_fix': 1000}[role]
+           'public_ensemble_pipeline_fix': 1000, 'public_ensemble_resume': 1000}[role]
     root = ROOT / 'runs/span_009'
     folder = root / 'notebooks' / role
     assert not (root / 'jobs' / role / 'push_intent.json').exists(), 'Never rebuild an accepted source'
@@ -53,6 +54,44 @@ os.chdir(WORK)
 command=[sys.executable,'-u',str(WORK/'public_ensemble.py'),'--raw',str(RAW),'--assets',str(ASSETS),'--out',str(WORK/'public_ensemble')]+([] if IS_RERUN else ['--qualify'])
 env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='2',TOKENIZERS_PARALLELISM='false',HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',PYTHONUNBUFFERED='1')
 '''
+    cache_manifest = None
+    cache_checks = []
+    if role == 'public_ensemble_resume':
+        from arena.span009_public import validate_probabilities
+        previous = root/'jobs/public_ensemble_pipeline_fix'
+        assert json.loads((previous/'status.json').read_text())['status'] == 'ERROR'
+        cache = previous/'output/public_ensemble'
+        selected = json.loads((pub/'profile_selection.json').read_text())
+        for model, cohort, expected_ids in [('m0','uniform',selected['uniform_ids']),
+                ('m0','long',selected['long_ids']), ('m3','uniform',selected['uniform_ids'])]:
+            import numpy as np
+            data = np.load(cache/(model+'_'+cohort+'.npz'))
+            assert np.array_equal(data['ids'],expected_ids)
+            validate_probabilities(data['probabilities'],len(expected_ids))
+        names = ['profile_selection.json','m0_checkpoint.json','m0_summary.json',
+                 'm3_checkpoint.json','m3_summary.json','m0_uniform.npz','m0_long.npz',
+                 'm0_test.npz','m3_uniform.npz']
+        cache_manifest = dict(origin_kernel='arseniytrushin/llm-preference-span009-public-ensemble/3',
+            origin_status='ERROR', fully_completed_cohorts_only=True,
+            file_sha256={name:sha256(cache/name) for name in names})
+        setup += "\nif not IS_RERUN:\n    import base64\n    CACHE=WORK/'recovered';CACHE.mkdir()\n"
+        for name in names:
+            encoded = base64.b64encode((cache/name).read_bytes()).decode()
+            setup += f"    (CACHE/{name!r}).write_bytes(base64.b64decode({encoded!r}))\n"
+        setup += f"    (CACHE/'verified_manifest.json').write_text({json.dumps(cache_manifest)!r})\n"
+        setup += "    command+=['--warm-profile','--resume-cache',str(CACHE)]\n"
+        serialized_cache = 'if not IS_RERUN:'+setup.split('\nif not IS_RERUN:',1)[1]
+        for hidden in [False, True]:
+            with tempfile.TemporaryDirectory(prefix='span009-cache-mode-') as tmp:
+                scope = dict(IS_RERUN=hidden,WORK=Path(tmp),command=['tiny-worker'])
+                exec(compile(serialized_cache,'serialized-recovery-cache-branch','exec'),scope)
+                if hidden:
+                    assert not (Path(tmp)/'recovered').exists() and scope['command']==['tiny-worker']
+                else:
+                    for name, expected in cache_manifest['file_sha256'].items():
+                        assert sha256(Path(tmp)/'recovered'/name)==expected
+                    assert '--warm-profile' in scope['command'] and '--resume-cache' in scope['command']
+                cache_checks.append(dict(hidden=hidden,passed=True))
     nb = nbf.v4.new_notebook(cells=[
         nbf.v4.new_markdown_cell('# V9 — frozen public supervised ensemble\n\nAdapted from tascj0/lmsys-0805 (Apache-2.0 source). Gemma2-9B original order and Llama3-8B swapped order, equal weights. Local profile rows may overlap model training; no independent local quality claim. Both public qualification and hidden rerun use the same inference function.'),
         nbf.v4.new_code_cell(setup),
@@ -124,7 +163,12 @@ env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLA
         visible_test_sha256=visible, author_repository_commit='83cd93d50b9283c18711e8c63e4e1c6399c7b9ce',
         author_notebook_sha256=sha256(root/'research/tascj0__lmsys-0805/lmsys-0805.ipynb'),
         public_profile_selection_sha256=sha256(pub/'profile_selection.json')))
+    if cache_manifest:
+        bundle_path = pub/(role+'_bundle.json')
+        value = json.loads(bundle_path.read_text());value['recovered_cache']=cache_manifest
+        atomic_json(bundle_path,value)
     atomic_json(pub / (role + '_cell_rehearsals.json'), dict(passed=True, rehearsals=rehearsals, mode_checks=mode_checks,
+        recovery_cache_mode_checks=cache_checks,
         notebook_engine_startup_passed=True, kernelspec=nb.metadata.kernelspec.name,
         last_cell_sha256=hashlib.sha256(actual.encode()).hexdigest(), new_gpu_executions=0))
     print(folder)

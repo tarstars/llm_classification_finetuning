@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-06T20:04:47.255692+00:00",
+  "stage": "public_ensemble_pipeline_fix",
+  "event": "failed",
+  "status": "ERROR",
+  "kernel_version": "arseniytrushin/llm-preference-span009-public-ensemble/3",
+  "charged_seconds": 895.7419999999984,
+  "files": 11
+}

@@ -71,3 +71,30 @@ Initial projection:25,000 hidden rows × measured uniform seconds/row ×1.2,
 plus both cold starts and600seconds reserve. Review long-sequence timing and
 coverage before accepting this extrapolation. Save all failures. No training or
 independent quality claim is authorized by a passing runtime gate.
+
+## One bounded partial-output recovery and warm measurement
+
+Version3 reached its owned watchdog (exit-15, serviceERROR), charged895.742s;
+all Gemma cohorts and Llama uniform256 are complete, Llama long/test missing.
+Gemma uniform probabilities exactly match all256 recovered version2 rows (max
+absolute difference0). The cold uniform projection is33795.914seconds: FAIL at
+the unchanged32400second limit. Preserve this result. Total phase charge1321.354s.
+
+Prepare one1000second recovery role before further compute. Embed only verified
+small model-output artifacts/hashes from exact failed version3 in the private
+notebook. Never relabel that versionCOMPLETE. Reuse its completed Gemma long/test
+outputs only in public qualification, with identical IDs/checkpoints and byte
+hashes. Hidden mode never receives/uses the recovery cache and performs full
+model inference on its actual test text. No raw conversations or target labels
+are embedded. Freshly run both uniform256 cohorts again and finish Llama long/test.
+
+Before timing uniform inference, run a fixed eight-row warmup (first eight of the
+already frozen uniform IDs) through each exact model. Charge measured warmup once
+in startup, alongside actual cold loading; extrapolate warmed uniform256 seconds
+per row with the original20%margin and600second reserve. This is one prospective
+startup/steady-state measurement, not a lowered margin or parameter sweep.
+Report the original failed projection beside the new one. Require ID/length
+identity and max probability difference<1e-5 versus both saved uniform controls,
+all source/CSV/device checks, and full Llama long stress coverage before submission.
+If it still fails, no submission under this runtime recipe. Fresh admission must
+keep1321.354s plus1000s within the original2400s phase cap.

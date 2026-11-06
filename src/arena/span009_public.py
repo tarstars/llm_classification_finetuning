@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import time
@@ -97,6 +98,9 @@ def infer_role(args):
     shards = sorted(set(index['weight_map'].values()))
     source['weight_shards'] = {name: {'bytes': (model_path / name).stat().st_size,
                                      'sha256': digest(model_path / name)} for name in shards}
+    if args.resume_cache:
+        expected = json.loads((Path(args.resume_cache)/(role+'_checkpoint.json')).read_text())
+        assert source == expected, 'Recovered artifact/checkpoint mismatch'
     save(Path(args.out) / (role + '_checkpoint.json'), source)
     tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
     processor = ProcessorPAB(tokenizer, max_length=4096, support_system_role=not is_gemma)
@@ -117,8 +121,18 @@ def infer_role(args):
     summary = {'role': role, 'cold_seconds': cold, 'cohorts': {}, 'versions': {
         'python': sys.version.split()[0], 'torch': torch.__version__, 'transformers': transformers.__version__,
         'triton': triton.__version__, 'xformers': xformers.__version__}, 'loading_exact': True}
-    for name in (['uniform', 'long', 'test'] if args.qualify else ['test']):
+    names = (['warmup'] if args.warm_profile else []) + ['uniform', 'long', 'test'] if args.qualify else ['test']
+    for name in names:
         frame = pd.read_parquet(Path(args.out) / (name + '.parquet'))
+        if args.resume_cache and role == 'm0' and name in ['long', 'test']:
+            recovered = np.load(Path(args.out)/(role+'_'+name+'.npz'))
+            assert np.array_equal(recovered['ids'], frame.id)
+            old = json.loads((Path(args.resume_cache)/(role+'_summary.json')).read_text())
+            summary['cohorts'][name] = old['cohorts'][name]
+            summary.setdefault('recovered_cohorts', []).append(name)
+            save(Path(args.out)/(role+'_summary.json'), summary)
+            event('verified_cohort_reused', role=role, cohort=name, rows=len(frame))
+            continue
         if not is_gemma:
             frame[['response_a', 'response_b']] = frame[['response_b', 'response_a']].values
         # These placeholders serve the unchanged author dataset interface only.
@@ -195,6 +209,17 @@ def orchestrate(args):
         save(out / 'profile_selection.json', {'seed': 42, 'uses_targets': False,
             'uniform_ids': train.iloc[uniform].id.tolist(), 'long_ids': train.iloc[long].id.tolist(),
             'train_csv_sha256': digest(raw / 'train.csv'), 'local_quality_is_independent': False})
+        if args.warm_profile:
+            frames['warmup'] = train.iloc[uniform[:8]]
+    if args.resume_cache:
+        assert args.qualify, 'Recovered public profile artifacts cannot be used in hidden inference'
+        cache = Path(args.resume_cache)
+        manifest = json.loads((cache/'verified_manifest.json').read_text())
+        for name, expected in manifest['file_sha256'].items():
+            assert digest(cache/name) == expected
+        assert json.loads((cache/'profile_selection.json').read_text()) == json.loads((out/'profile_selection.json').read_text())
+        for name in ['m0_long.npz', 'm0_test.npz']:
+            shutil.copyfile(cache/name, out/name)
     for name, frame in frames.items():
         frame.to_parquet(out / (name + '.parquet'), index=False)
     for role in ['m0', 'm3']:
@@ -202,6 +227,10 @@ def orchestrate(args):
             '--raw', args.raw, '--assets', args.assets, '--out', args.out]
         if args.qualify:
             command.append('--qualify')
+        if args.warm_profile:
+            command.append('--warm-profile')
+        if args.resume_cache:
+            command.extend(['--resume-cache', args.resume_cache])
         subprocess.run(command, check=True)
     for name, frame in frames.items():
         gemma = np.load(out / ('m0_' + name + '.npz'))
@@ -222,9 +251,10 @@ def orchestrate(args):
     if args.qualify:
         summaries = [json.loads((out / (r + '_summary.json')).read_text()) for r in ['m0', 'm3']]
         per_row = sum(s['cohorts']['uniform']['seconds'] / s['cohorts']['uniform']['rows'] for s in summaries)
-        cold = sum(s['cold_seconds'] for s in summaries)
+        cold = sum(s['cold_seconds']+s['cohorts'].get('warmup',{}).get('seconds',0) for s in summaries)
         record.update(uniform_seconds_per_row=per_row, cold_seconds=cold, hidden_rows_assumed=25000,
-                      projected_hidden_seconds=25000 * per_row * 1.2 + cold + 600)
+                      projected_hidden_seconds=25000 * per_row * 1.2 + cold + 600,
+                      warm_profile=args.warm_profile, startup_includes_measured_warmup=args.warm_profile)
         record['runtime_gate_passed'] = record['projected_hidden_seconds'] < 32400
     save(out / 'qualification.json', record)
     event('complete', **record)
@@ -237,5 +267,7 @@ if __name__ == '__main__':
     parser.add_argument('--out', required=True)
     parser.add_argument('--qualify', action='store_true')
     parser.add_argument('--role', choices=['m0', 'm3'])
+    parser.add_argument('--resume-cache')
+    parser.add_argument('--warm-profile', action='store_true')
     args = parser.parse_args()
     (infer_role if args.role else orchestrate)(args)
