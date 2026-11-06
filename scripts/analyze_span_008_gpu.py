@@ -90,7 +90,7 @@ def main():
         for i,v in enumerate(['original','aligned_swap']):reference_orders[i][idx]=short[v]
         candidate_orders=[p.copy() for p in reference_orders]
         for i,v in enumerate(['original','aligned_swap']):candidate_orders[i][idx]=joined[v]
-        baseline=(reference_orders[0]+reference_orders[1])/2;candidate=(candidate_orders[0]+candidate_orders[1])/2
+        deployed_baseline=baseline.copy();baseline=(reference_orders[0]+reference_orders[1])/2;candidate=(candidate_orders[0]+candidate_orders[1])/2
         t=.9441963863130951;outputs={'short':temperature(baseline,t),'long':temperature(candidate,t)};ids=dev.id.to_numpy();contrast=paired_group_gain(y,outputs['short'],outputs['long'],groups,bootstrap)
         events=[__import__('json').loads(line) for line in (out/'stages/events.jsonl').read_text().splitlines()]
         measured=summary['long_seconds']+sum(e.get('seconds',0) for e in events if e['stage'] in ['smoke','overlap','unchanged_profile'])
@@ -105,6 +105,9 @@ def main():
             changed_slice={'rows':len(idx),'contrast':paired_group_gain(y[idx],outputs['short'][idx],outputs['long'][idx],groups[idx],bootstrap),
                 'metrics':{k:metrics(y[idx],v[idx]) for k,v in outputs.items()}},unchanged_rows=len(dev)-len(idx),runtime=runtime,
             order_diagnostics={'short':order_diagnostics(*reference_orders),'long':order_diagnostics(*candidate_orders)},
+            deployed_baseline_sensitivity={'contrast':paired_group_gain(y,temperature(deployed_baseline,t),outputs['long'],groups,bootstrap),
+                'changed_short_cache_drift_mean':float(np.abs(baseline[idx]-deployed_baseline[idx]).mean()),
+                'changed_short_cache_drift_max':float(np.abs(baseline[idx]-deployed_baseline[idx]).max()),'primary_gate_unchanged':True},
             frozen_temperature=t,confirmation_targets_read=False,competition_targets_used_by_gpu=False)
     np.savez_compressed(destination/'predictions.npz',ids=ids,labels=y,groups=groups,**outputs)
     result.update(prediction_sha256=sha256(destination/'predictions.npz'),cpu_seconds=time.monotonic()-started,peak_rss_gib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024**2)

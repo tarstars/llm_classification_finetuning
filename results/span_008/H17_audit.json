@@ -1,0 +1,179 @@
+{
+  "task": "H17",
+  "audit_complete": true,
+  "training_performed": false,
+  "sources": {
+    "at": "2026-11-06T14:16:15.965035+00:00",
+    "sources": [
+      {
+        "source": "lmsys/chatbot_arena_conversations",
+        "revision": "1b6335d42a1d2c7e34870c905d03ab964f7f2bd8",
+        "gated": "auto",
+        "license": "cc",
+        "downloaded": false,
+        "decision": "Metadata-only: do not accept account-sharing conditions or bypass source gating."
+      },
+      {
+        "source": "allenai/ultrafeedback_binarized_cleaned",
+        "revision": "f304ce59671d155273c861746581faa354d8a9af",
+        "gated": false,
+        "license": "mit",
+        "downloaded": true,
+        "files": [
+          {
+            "file": "/home/tarstars/database/llm_classification_finetuning/runs/span_008/external/allenai__ultrafeedback_binarized_cleaned/train_prefs-00000-of-00001.parquet",
+            "sha256": "c2414c7870cf9db881ae21008dd7b72ba40d40807a5511021e7ae853e577543c",
+            "bytes": 219203601
+          }
+        ],
+        "card_sha256": "4a8931524990b9a4b1099747ee4477b327299bc857360bb89f6575766592172c",
+        "decision": "Audit synthetic preference/target semantics and overlap before any proposed training."
+      }
+    ],
+    "competition_text_sent": false
+  },
+  "external_rows": 60829,
+  "target_semantics": {
+    "annotation": "Synthetic GPT-4 ranked responses; chosen/rejected is not a human three-class vote",
+    "equal_score_rows": 3808,
+    "reversed_score_rows": 0,
+    "identical_answer_rows": 359,
+    "empty_answer_rows": 151,
+    "gap_quantiles": [
+      0.0,
+      1.0,
+      1.5,
+      3.0,
+      6.0,
+      9.0
+    ],
+    "human_tie_labels_available": false,
+    "equal_scores_are_not_valid_human_tie_labels": true
+  },
+  "source_counts": {
+    "sharegpt": 19180,
+    "flan_v2_niv2": 14963,
+    "evol_instruct": 9648,
+    "ultrachat": 9566,
+    "flan_v2_cot": 2897,
+    "false_qa": 2255,
+    "flan_v2_p3": 1832,
+    "flan_v2_flan2021": 488
+  },
+  "exact_overlap": {
+    "train": {
+      "exact_prompt_rows": 13,
+      "exact_any_answer_rows": 1764
+    },
+    "dev": {
+      "exact_prompt_rows": 3,
+      "exact_any_answer_rows": 814
+    },
+    "confirmation": {
+      "exact_prompt_rows": 2,
+      "exact_any_answer_rows": 1116
+    }
+  },
+  "near_overlap": {
+    "prompt": {
+      "matched_external_texts_by_partition": {
+        "train": 33,
+        "dev": 22,
+        "confirmation": 12
+      },
+      "verified_pairs": 273,
+      "query_texts": 60829,
+      "original_texts": 57477
+    },
+    "answer": {
+      "matched_external_texts_by_partition": {
+        "train": 40,
+        "confirmation": 11,
+        "dev": 7
+      },
+      "verified_pairs": 619,
+      "query_texts": 121658,
+      "original_texts": 114954
+    }
+  },
+  "near_method": {
+    "retrieval": "Eight minimum BLAKE2b hashes of unique five-word shingles; any hash candidate, exact Jaccard verification >=0.8",
+    "scope": "All prompts and all answers against all competition partitions, using text only",
+    "candidate_pairs_verified": 3242166,
+    "recall_guaranteed": false,
+    "short_texts_under_five_words": "Exact matching only",
+    "semantic_overlap_tested": false
+  },
+  "purged_external_rows": 1848,
+  "provisionally_usable_rows": 54926,
+  "safe_rows_sha256": "5ccdb485e181bcd9db63e078203da119a1131a0f50079faa711ae1a972d39d5f",
+  "profiles": {
+    "competition_prompt": {
+      "rows": 57477,
+      "characters_quantiles": [
+        3.0,
+        48.0,
+        92.0,
+        238.0,
+        1427.0,
+        4705.439999999937,
+        32869.0
+      ],
+      "code_fraction": 0.007463855107260295,
+      "non_ascii_fraction": 0.0908711310611201,
+      "refusal_proxy_fraction": 0.015032099796440315
+    },
+    "competition_answer": {
+      "rows": 114954,
+      "characters_quantiles": [
+        0.0,
+        394.0,
+        1041.0,
+        1816.0,
+        3588.3499999999913,
+        6789.350000000006,
+        53605.0
+      ],
+      "code_fraction": 0.09740417906292952,
+      "non_ascii_fraction": 0.12237068740539694,
+      "refusal_proxy_fraction": 0.09926579327383127
+    },
+    "external_prompt": {
+      "rows": 60829,
+      "characters_quantiles": [
+        7.0,
+        107.0,
+        356.0,
+        764.0,
+        2452.5999999999985,
+        4850.720000000001,
+        14512.0
+      ],
+      "code_fraction": 0.005540120666129642,
+      "non_ascii_fraction": 0.16188002433050025,
+      "refusal_proxy_fraction": 0.023705798221243156
+    },
+    "external_answer": {
+      "rows": 121658,
+      "characters_quantiles": [
+        0.0,
+        228.0,
+        739.0,
+        1807.0,
+        3327.149999999994,
+        4323.0,
+        12603.0
+      ],
+      "code_fraction": 0.09045849841358562,
+      "non_ascii_fraction": 0.1228114879416068,
+      "refusal_proxy_fraction": 0.0832908645547354
+    }
+  },
+  "proposal": "Future separate auxiliary decisive-preference pretraining, <=20%external batches, randomize A/B, then human-vote-only finetuning; never relabel score ties as human ties. Purge exact and detected near overlaps from all held cohorts; approximate matching leaves residual contamination risk.",
+  "decision": "Preparation complete; mixed-data training deferred to a separately budgeted span and source-license review. No gain claimed.",
+  "competition_targets_loaded": false,
+  "seconds": 881.0017582320363,
+  "recovery_elapsed_before_seconds": 65.785161,
+  "peak_rss_gib": 1.50994873046875,
+  "source_sha256": "61c49ed3dd34142c3e8d91fca25e485c08d45442c446830e1953c170798ad2ed"
+}

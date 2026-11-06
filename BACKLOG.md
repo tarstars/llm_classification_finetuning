@@ -6,7 +6,7 @@ Version **8**, active; **40** tasks. Focus for this span: H52, H51, H36, H17, H0
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **22**, ready **0**, running **3**, done **1**, rejected **0**, deferred **11**.
+Hypothesis status: planned **22**, ready **0**, running **2**, done **1**, rejected **0**, deferred **12**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -69,7 +69,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
 | 10 | [H10](#h10) | P2 / planned | Shared response utilities | -0.02…+0.02 | high | 10…24 | 1…3 | 12…28 | E00 |
-| 11 | [H17](#h17) | P2 / running | Additional public preference data | -0.02…+0.04 | high | 16…40 | 1…3 | 16…40 | E00 |
+| 11 | [H17](#h17) | P2 / deferred | Additional public preference data | -0.02…+0.04 | high | 16…40 | 1…3 | 16…40 | E00 |
 | 12 | [H15](#h15) | P2 / deferred | Preference-teacher distillation | -0.02…+0.05 | high | 20…50 | 2…6 | 24…80 | E00, H01 |
 | 14 | [H24](#h24) | P2 / planned | Adaptive question budget | -0.008…+0.01 | medium | 6…14 | 0.5…2 | 10…22 | E00 |
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
@@ -317,7 +317,7 @@ Shared question-answer scoring may enforce useful A/B symmetry, at the cost of s
 
 ### H17
 
-**Additional public preference data** — P2, running, risk high.
+**Additional public preference data** — P2, deferred, risk high.
 
 Clean, compatible additional comparisons may improve coverage beyond the 46K training partition.
 
@@ -344,6 +344,7 @@ Clean, compatible additional comparisons may improve coverage beyond the 46K tra
 **References:** [TARGET_AUDIT.md](TARGET_AUDIT.md); [Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)
 
 - 2026-11-06T14:15:05+00:00 — running: Begin CPU-only source/target/overlap audit. Check original LMSYS33K access without accepting account-sharing terms; audit one pinned open UltraFeedback split if gated. No mixed-data GPUtraining funded. Evidence: [docs/SPAN_008_PLAN.md](docs/SPAN_008_PLAN.md)
+- 2026-11-06T14:42:09+00:00 — deferred: Audited pinned open60,829-row synthetic preference split; original LMSYS source remains gated. Purged detected overlap/invalid or equal-score pairs,54,926provisionally usable. No human tie targets or mixed-data training; preparation complete, future training separately funded. CPU881s including bounded memory recovery. Evidence: [docs/SPAN_008_H17.md](docs/SPAN_008_H17.md)
 
 ### H15
 

@@ -1136,7 +1136,7 @@
       "title": "Additional public preference data",
       "priority": "P2",
       "rank": 11,
-      "status": "running",
+      "status": "deferred",
       "gain": [
         -0.02,
         0.04
@@ -1182,6 +1182,14 @@
           "note": "Begin CPU-only source/target/overlap audit. Check original LMSYS33K access without accepting account-sharing terms; audit one pinned open UltraFeedback split if gated. No mixed-data GPUtraining funded.",
           "evidence": [
             "docs/SPAN_008_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T14:42:09+00:00",
+          "status": "deferred",
+          "note": "Audited pinned open60,829-row synthetic preference split; original LMSYS source remains gated. Purged detected overlap/invalid or equal-score pairs,54,926provisionally usable. No human tie targets or mixed-data training; preparation complete, future training separately funded. CPU881s including bounded memory recovery.",
+          "evidence": [
+            "docs/SPAN_008_H17.md"
           ]
         }
       ],
@@ -4430,6 +4438,64 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Verify full Kaggle model-instance identities in dependency admission",
+      "priority": "P1",
+      "gain": null,
+      "estimate_confidence": "medium",
+      "engineering_hours": [
+        0.3,
+        1
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0,
+        0.05
+      ],
+      "risk": "low",
+      "claim": "Dependency admission should reject a requested model version unless variation, framework and version all match the requested source.",
+      "basis": "V8 live model_instance_versions_list for transformers/8b returned45entries across frameworks and variations; version1 alone also matched an unrelated235B variation. V8 uses a separate exact8B transformer check.",
+      "first_test": "Add a fixture with duplicate version numbers across frameworks/variations; require exactly matching owner/model/framework/variation/version and explicit failure for missing or ambiguous identity. Integrate the shared admission helper and one read-only dry-run without a GPU mutation.",
+      "acceptance": "False-positive fixture is rejected, exact intended match passes, source is frozen in future bundles and regression tests pass.",
+      "stop": "No GPU execution or historical notebook rewrite; stop if API response cannot establish exact identity and record the uncertainty.",
+      "risk_reason": "Changing a shared helper during accepted live runs can violate source contracts.",
+      "mitigation": "Do not edit v8 accepted sources; prepare/test the change only in the next authorized span.",
+      "rationale": "Small framework improvement addresses an observed validity gap in model availability checking.",
+      "revision": "New evidence-grounded engineering follow-up from v8 E13; not executed during v8.",
+      "depends_on": [
+        "E09",
+        "E13"
+      ],
+      "evidence": [
+        "docs/SPAN_008_DEPENDENCY_AUDIT.md"
+      ],
+      "id": "E14",
+      "rank": 67,
+      "status": "planned",
+      "introduced_in": 9,
+      "discovered_during": 8,
+      "derived_from": [
+        "E13"
+      ],
+      "history": [
+        {
+          "at": "2026-11-06T14:40:31+00:00",
+          "status": "planned",
+          "note": "Observed a live model-list response containing other frameworks/variations; version-number-only admission can falsely pass. Future shared-helper fix, preserve v8 bundles.",
+          "evidence": [
+            "docs/SPAN_008_DEPENDENCY_AUDIT.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -5173,7 +5239,9 @@
     {
       "number": 9,
       "state": "draft",
-      "item_ids": [],
+      "item_ids": [
+        "E14"
+      ],
       "focus_ids": [],
       "history": []
     }
