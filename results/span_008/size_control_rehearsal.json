@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-06T15:09:19.080667+00:00",
+  "test": "tests/test_span008_size.py",
+  "test_sha256": "123243e39e6eeddfb5288af3ef788b171f8f19d9828e885827c0f6e5adbe116f",
+  "worker_sha256": "c9c8c50c3afbfb0a46865c79c1ec44261bd8fae4256187dc4acd536d9b17233c",
+  "device": "CPU tiny classifier",
+  "nominal_max_steps": 4,
+  "fixed_schedule_updates": 2,
+  "actual_global_step": 2,
+  "actual_accepted_updates": 2,
+  "actual_accepted_rows": 8,
+  "final_learning_rate": 0,
+  "scope": "Actual Trainer callback order and scheduler, not GPU numerical or 8B fit qualification",
+  "new_gpu_executions": 0
+}

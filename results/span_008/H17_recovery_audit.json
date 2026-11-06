@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-06T15:09:19.077782+00:00",
+  "initial_attempt_source_sha256": "675b7ebfed505db54540d8fb1bb682dd94d4dbc27fdb3a248087c3f810d723dc",
+  "recovered_source_sha256": "61c49ed3dd34142c3e8d91fca25e485c08d45442c446830e1953c170798ad2ed",
+  "original_started_at": "2026-11-06T14:26:54.051873+00:00",
+  "recovery_started_at": "2026-11-06T14:27:59.837055+00:00",
+  "original_cpu_clock_preserved": true,
+  "reason": "Stop before retaining all original answer shingle strings; keep retrieval index only and verify candidates on demand",
+  "new_gpu_executions": 0
+}
