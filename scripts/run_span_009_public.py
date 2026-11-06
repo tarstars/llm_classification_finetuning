@@ -14,6 +14,7 @@ from arena.span004_support import api_client, quota
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--dry-run', action='store_true')
+    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix'], default='public_ensemble')
     args = parser.parse_args()
     root = ROOT / 'runs/span_009'
     pub = REPO / 'results/span_009'
@@ -28,11 +29,16 @@ def main():
             atomic_json(pub / 'span_plan.json', plan)
             atomic_json(config, dict(started_at=plan['started_at'], deadline=plan['deadline'],
                 job_seconds_caps={'public_ensemble': 2400}))
+        if args.role == 'public_ensemble_runtime_fix':
+            assert read_json(root/'jobs/public_ensemble/status.json')['status'] == 'ERROR'
+            cfg = read_json(config)
+            cfg['job_seconds_caps']['public_ensemble_runtime_fix'] = 2200
+            atomic_json(config, cfg)
     def precondition(role):
-        assert read_json(pub / 'cell_rehearsals.json')['passed']
-        assert role == 'public_ensemble'
-        assert read_json(pub / 'public_ensemble_bundle.json')['internet_enabled'] is False
-    run_job(REPO, root, pub, config, 'public_ensemble', dry_run=args.dry_run, precondition=precondition)
+        rehearsal = pub / (role+'_cell_rehearsals.json') if role != 'public_ensemble' else pub/'cell_rehearsals.json'
+        assert read_json(rehearsal)['passed']
+        assert read_json(pub / (role+'_bundle.json'))['internet_enabled'] is False
+    run_job(REPO, root, pub, config, args.role, dry_run=args.dry_run, precondition=precondition)
 
 
 if __name__ == '__main__':

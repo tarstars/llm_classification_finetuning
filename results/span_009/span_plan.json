@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-06T19:30:58.726321+00:00",
+  "initial_quota_refresh_time": "2026-11-07 00:00:00",
+  "quota_used_at_start": 105113.055,
+  "gpu_session_seconds_cap": 2400,
+  "deadline": "2026-11-07T00:00:00+00:00",
+  "public_phase": "before_observed_refresh"
+}

@@ -4696,6 +4696,14 @@
           "evidence": [
             "docs/SPAN_009_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-06T19:36:14+00:00",
+          "status": "running",
+          "note": "Exact public ensemble v1 ERROR before any cell due missing kernelspec; charge10.620s, source/failure preserved. Prepare separate explicit-kernel runtime fix capped2200s within original2400 total; model recipe unchanged.",
+          "evidence": [
+            "docs/SPAN_009_PROGRESS.md"
+          ]
         }
       ]
     }

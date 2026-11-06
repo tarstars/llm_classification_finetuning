@@ -42,6 +42,14 @@ hidden worker<=32280 inside32400seconds. A hidden flag or changed test hash
 skips public profiling only. Require all engineering gates and a full conservative
 projection before one official code submission. Never automatically repush.
 
+Version1 failed before any notebook cell: the old image's papermill requires an
+explicit kernelspec. Exact statusERROR, charged10.620seconds, zero worker output;
+the failure and source are preserved. A distinct runtime-fix attempt adds the
+Python3 kernelspec, rehearses actual notebook-engine startup plus the unchanged
+final worker cell, and is capped at2200service seconds (2080worker seconds).
+Both attempts together must remain below the original2400second phase cap.
+No model, preprocessing, class mapping, packing or ensemble weight changes.
+
 Initial projection:25,000 hidden rows × measured uniform seconds/row ×1.2,
 plus both cold starts and600seconds reserve. Review long-sequence timing and
 coverage before accepting this extrapolation. Save all failures. No training or

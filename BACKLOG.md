@@ -258,6 +258,7 @@ A public competition-trained distilled classifier or ensemble can close substant
 
 - 2026-11-06T19:22:07+00:00 — planned: Explicit user rank30 goal adds strong public supervised deployment before v9 focus/work; independent-teacher restrictions are not deployment restrictions. Evidence: [docs/SPAN_009_PLAN.md](docs/SPAN_009_PLAN.md)
 - 2026-11-06T19:23:39+00:00 — running: Starting bounded author-source/runtime qualification for accessible tascj Gemma2/Llama3 ensemble; BlackPearl weights return403. Plan and overlap limitations frozen. Evidence: [docs/SPAN_009_PLAN.md](docs/SPAN_009_PLAN.md)
+- 2026-11-06T19:36:14+00:00 — running: Exact public ensemble v1 ERROR before any cell due missing kernelspec; charge10.620s, source/failure preserved. Prepare separate explicit-kernel runtime fix capped2200s within original2400 total; model recipe unchanged. Evidence: [docs/SPAN_009_PROGRESS.md](docs/SPAN_009_PROGRESS.md)
 
 ### H02
 

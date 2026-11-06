@@ -1,0 +1,22 @@
+{
+  "role": "public_ensemble_runtime_fix",
+  "source_sha256": {
+    "src/arena/span009_public.py": "6bdbed01d7c62d51a3eec7c31fcbfc71c3aa75f5905d0f60c921267954953475",
+    "src/arena/notebook_worker.py": "2c49e8edd28b2dabe70a21bbca9c8598458b78fcf6c7c3939cef7aeabd81bb13",
+    "src/arena/kaggle_control.py": "6a7a8828860a50c1f19cfddc637dc02c2f95940ef4e4083f6ef4e4ddb7ffb972",
+    "scripts/build_span_009_public.py": "caabbd06f94b9826b7005af874b84fa21c42823d0c431d3aa303bdc051e3abaf",
+    "scripts/run_span_009_public.py": "a5bd572d9d51a7b59525bacc7da384ad123d4b82d1833fc637526795411c3f17",
+    "docs/SPAN_009_PLAN.md": "a8528fda3246029ad8612010f59bc093542074fa860fc7a66850b7d1579b46e0",
+    "docs/SPAN_009_PUBLIC_MODEL_PROTOCOL.md": "2f47cbe30ddb634b4e89d37f239f3bae23fe5076d0d19d28a0b536b08cec3690",
+    "GOAL.md": "3909cadc3524315c3947570128466d2a7ea7b78c955419ce41dea598832e0f55"
+  },
+  "notebook_sha256": "195b459d37018da89f7bdb42d3014f2d081d818076bdc07e8df15c868b838db9",
+  "metadata_sha256": "6d9261bcf618b866a2e920a3b883379f8f649b6148cea0b091f0b95a8c18ec3c",
+  "public_cap_seconds": 2200,
+  "hidden_cap_seconds": 32400,
+  "internet_enabled": false,
+  "visible_test_sha256": "4d6a47208951532a0b6bf862a75531806270f4782afc342125fd399682d09957",
+  "author_repository_commit": "83cd93d50b9283c18711e8c63e4e1c6399c7b9ce",
+  "author_notebook_sha256": "220c13c75f3512cf0515aa4b31e1632574854fc77715458c4d6ad30486633afe",
+  "public_profile_selection_sha256": "5b9286cff20fd9f13d18ba1e220981521235bf010d7456288dd3161596a40c7a"
+}
