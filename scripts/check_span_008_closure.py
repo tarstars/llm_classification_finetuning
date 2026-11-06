@@ -29,8 +29,7 @@ def main():
             jobs.append({'role':role,'kernel_version':exact,'status':status,'charged_seconds':charge,'source_verified':True,'retrieved_files_verified':len(receipt['artifact_sha256'])})
         assert not {'promotion','size_pilot'}<=set(j['role'] for j in jobs),'Shared reserve used twice'
         observed=public_inventory(inventory(api,cfg['started_at']));q=observed['quota'];plan=read_json(pub/'span_plan.json');total=sum(j['charged_seconds'] for j in jobs)
-        assert not observed['nonterminal_jobs'] and q['reserved_seconds']==0 and not q['paid_scaling'];assert q['refresh_time']==plan['initial_quota_refresh_time']
-        assert abs(q['used_seconds']-plan['quota_used_at_start']-total)<.1 and total<=cfg['gpu_session_seconds_cap']+.1
+        assert not observed['nonterminal_jobs'] and q['reserved_seconds']==0 and not q['paid_scaling'];assert total<=cfg['gpu_session_seconds_cap']+.1
         submissions=list(read_call(lambda:api.competition_submissions('llm-classification-finetuning')) or []);old=next(s for s in submissions if int(s.ref)==cfg['public_submission_reference'])
         assert str(old.status).endswith('COMPLETE') and float(old.public_score)==.95481;fresh=[]
         for s in submissions:
@@ -41,7 +40,22 @@ def main():
         assert len(fresh)<=cfg['maximum_official_submissions']
         if fresh:
             h50=read_json(pub/'H50_results.json');assert h50['official_submission_ref']==fresh[0]['ref'] and h50['executed']
+            intent=read_json(pub/'submission_intent.json');accounting=read_json(pub/'official_accounting.json')
+            assert accounting['separate_hidden_seconds_bound']<=cfg['hidden_submission_seconds_cap']
+            assert intent['quota_before']['refresh_time']==plan['initial_quota_refresh_time']
+            assert abs(intent['quota_before']['used_seconds']-plan['quota_used_at_start']-total)<.1
+            assert intent['all_owned_observed_terminal'] and intent['no_new_research_gpu_jobs_during_hidden_execution']
+            hidden_account_delta=accounting['observed_account_delta_seconds']
+            if accounting['same_quota_period']:
+                assert hidden_account_delta>=-.1 and abs(q['used_seconds']-intent['quota_before']['used_seconds']-hidden_account_delta)<.1
+            else:
+                assert hidden_account_delta is None,'Do not fabricate a negative/zero charge across quota refresh'
+            hidden_bound=accounting['separate_hidden_seconds_bound']
+        else:
+            assert q['refresh_time']==plan['initial_quota_refresh_time'] and abs(q['used_seconds']-plan['quota_used_at_start']-total)<.1
+            hidden_account_delta=0;hidden_bound=0
         result={'passed':True,'checked_at':utc_now(),'jobs':jobs,'inventory':observed,'total_charged_seconds':total,'new_official_submissions':fresh,
+            'research_charged_seconds':total,'observed_hidden_account_delta_seconds':hidden_account_delta,'separate_hidden_seconds_bound':hidden_bound,
             'official_score':min([.95481]+[s['score'] for s in fresh if s['status']=='COMPLETE' and s['score'] is not None]),'source_sha256':sha256(Path(__file__))}
         atomic_json(pub/'terminal_audit.json',result);print({k:v for k,v in result.items() if k!='inventory'});return
     remote=read_json(pub/'terminal_audit.json');assert remote['passed'] and sha256(Path(__file__))==remote['source_sha256']

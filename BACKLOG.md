@@ -6,7 +6,7 @@ Version **8**, active; **40** tasks. Focus for this span: H52, H51, H36, H17, H0
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **21**, ready **0**, running **2**, done **3**, rejected **0**, deferred **11**.
+Hypothesis status: planned **21**, ready **0**, running **1**, done **3**, rejected **0**, deferred **12**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -65,7 +65,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 48 | [H44](#h44) | P1 / deferred | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43, E04, E05 |
 | 66 | [H52](#h52) | P1 / done | Test a stable serial judge on a fixed10%classifier route | -0.006…+0.008 | high | 2…5 | 0.6…1 | 0…2 | E00, E05, E09, H39 |
-| 6 | [H02](#h02) | P2 / running | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
+| 6 | [H02](#h02) | P2 / deferred | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
 | 10 | [H10](#h10) | P2 / planned | Shared response utilities | -0.02…+0.02 | high | 10…24 | 1…3 | 12…28 | E00 |
@@ -77,7 +77,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 19 | [H36](#h36) | P2 / done | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
 | 62 | [H50](#h50) | P2 / running | Qualify and officially evaluate one frozen v7 classifier candidate | -0.015…+0.015 | high | 2…5 | 1.25…1.25 | 0…0 | E00, E09, H48, H49 |
 | 63 | [E12](#e12) | P2 / planned | Generate experiment contracts and reports from validated artifact schemas | — | medium | 2…4 | 0…0 | 0…0 | E09, E11 |
-| 64 | [E13](#e13) | P2 / running | Checkpoint full-partition inference with bounded progress and numerical identity | — | medium | 2…4 | 0.05…0.15 | 0…0 | E09, E10 |
+| 64 | [E13](#e13) | P2 / done | Checkpoint full-partition inference with bounded progress and numerical identity | — | medium | 2…4 | 0.05…0.15 | 0…0 | E09, E10 |
 | 65 | [H51](#h51) | P2 / done | Complete the frozen context cohort from verified partial prediction chunks | -0.004…+0.004 | medium | 1…2 | 0.25…0.5 | 0…0.5 | E00, E09, H48 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 20 | [H29](#h29) | P3 / planned | Human-preference prompt rubric | -0.015…+0.01 | low | 3…8 | 0.5…2 | 2…6 | E00 |
@@ -202,7 +202,7 @@ A smaller serial judge route may retain useful complementarity while fitting the
 
 ### H02
 
-**Larger supervised classifier** — P2, running, risk high.
+**Larger supervised classifier** — P2, deferred, risk high.
 
 An 8–9B supervised preference classifier may learn distinctions missed by Qwen3-4B.
 
@@ -229,6 +229,7 @@ An 8–9B supervised preference classifier may learn distinctions missed by Qwen
 **References:** [ATTEMPT_002_RESULTS.md](ATTEMPT_002_RESULTS.md); [ATTEMPT_004_RESULTS.md](ATTEMPT_004_RESULTS.md)
 
 - 2026-11-06T14:40:17+00:00 — running: Prepared a conditional4B/8B pilot with verified exact8B transformer availability, fixed1024train/512dev samples, matched packing/globalbatch32 and32accepted-update stop. No GPU admission unless all earlier candidates fail; reserve5400s. Evidence: [docs/SPAN_008_DEPENDENCY_AUDIT.md](docs/SPAN_008_DEPENDENCY_AUDIT.md)
+- 2026-11-06T15:58:53+00:00 — deferred: Exact8Binstance and fixed1024train/512dev32accepted-update pilot prepared and CPU control rehearsed. H51won the fixed priority, so the mutually exclusive5400sreserve funds context confirmation; no8BGPUrun or full training performed. Evidence: [docs/SPAN_008_H02.md](docs/SPAN_008_H02.md)
 
 ### H05
 
@@ -560,7 +561,7 @@ Machine-derived fold, target-access and numerical metadata can prevent contradic
 
 ### E13
 
-**Checkpoint full-partition inference with bounded progress and numerical identity** — P2, running, risk medium.
+**Checkpoint full-partition inference with bounded progress and numerical identity** — P2, done, risk medium.
 
 Bounded, ordered prediction chunks can make long evaluations observable and recoverable without changing the classifier recipe.
 
@@ -588,6 +589,7 @@ Bounded, ordered prediction chunks can make long evaluations observable and reco
 
 - 2026-11-05T20:50:49+00:00 — planned: The actual full-development stage has start/end events but no chunk progress or recoverable intermediate predictions; queue a numerically qualified inference helper, preserving live source. Evidence: [docs/SPAN_007_E10.md](docs/SPAN_007_E10.md)
 - 2026-11-06T14:15:05+00:00 — running: Implement atomic compatible prediction chunks with per-rank memory/progress and coverage checks; actual numerical qualification shares H51overlap within its1800scap. Evidence: [docs/SPAN_008_PLAN.md](docs/SPAN_008_PLAN.md)
+- 2026-11-06T15:58:52+00:00 — done: Atomic contract-bound chunks, resume/corruption/coverage checks and full-cell/watchdog/accepted-update tests pass. Actual2048teacher+256context chunks verified; all1152long rows stitched after128overlap identity, with both-rank memory. Native duplicate storage alias is explicitly unmeasured/unused. Evidence: [docs/SPAN_008_E13.md](docs/SPAN_008_E13.md)
 
 ### H51
 

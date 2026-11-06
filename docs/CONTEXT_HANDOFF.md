@@ -1,88 +1,125 @@
-# V8 executing — verify live state before acting
+# V8 executing — frozen context confirmation running
 
-Updated2026-11-06 during the user-authorized "execute this plan" task. V8 is
-active, focus H52/H51/H36/H17/H02/H15/E13/H50. V9 is a draft with new E14. The
-current GOAL.md, configs/span_008.json and docs/SPAN_008_PLAN.md are the bounded
-contract; no goal-service activation. Original deadline2026-11-07 00:30:17UTC.
-ChargedGPU cap10800seconds: judge3600, context1800, mutually exclusive
-promotion5400 OR size_pilot5400. No refresh/paid expansion. Optional one official
-hidden evaluation<=25200s needs its full allowance+300s before the deadline
-(cutoffNovember6 17:25:17UTC). CPU2threads/6GiB, finite original stage caps.
+Snapshot2026-11-06 16:04UTC. Verify live files/service state before resuming.
+User authorized "execute this plan". Ordinary task, no goal-service activation.
+V8focus H52/H51/H36/H17/H02/H15/E13/H50. V9draft has E14andH53; do not execute it.
+Contract: GOAL.md, configs/span_008.json, docs/SPAN_008_PLAN.md. Original mains
+end2026-11-07 00:30:17UTC. ResearchGPUcap10800s, no paid/refresh expansion:
+judge3600,context1800, mutually exclusive promotion5400 OR size_pilot5400.
+One optional hidden official evaluation is separately capped25200s; admission
+cutoffNovember6 17:25:17UTC (full allowance+300s before original deadline).
+CPU2threads/6GiB and finite original clocks. Use .venv/bin/python.
 
-Use .venv/bin/python. Heavy root=/home/tarstars/database/llm_classification_finetuning;
-v8 files under runs/span_008. Never walk HOME, ~/prj, Arc/FUSE mounts or troll_farm.
-No subagents. Preserve user-dirty notebooks07/12; hashes are frozen in the v8
-artifact inventory. Do not edit accepted GPU worker/builder/config sources while
-jobs or dependent admissions remain live. Commit explicit reviewed paths only.
+Heavy root=/home/tarstars/database/llm_classification_finetuning/runs/span_008.
+Never walk HOME, ~/prj, Arc/FUSE mounts or troll_farm. No subagents.
+Preserve user-dirty notebooks07/12; hashes frozen in artifact_inventory.json.
+Never edit accepted worker/builder/protocol/config sources during live or
+potential official execution. Stage explicit reviewed paths only.
 
-## Live sequence
+## Live work — finish this, do not restart the earlier sequence
 
-The serial judge exact version is
-arseniytrushin/llm-preference-span008-serial-cascade/1. Its one local controller
-is scripts/run_span_008_job.py serial_cascade, log /tmp/arena_span008_serial_controller.log.
-At14:58UTC it is collecting the fresh2048-row uniform cache after classifier
-identity, repeat/restart and integrated runtime gates passed. Read
-results/span_008/jobs/serial_cascade/{controller_state,progress}.json for fresh
-state. Do not launch another judge version. Raw traces stay private.
+H51passed and was frozen at15:39UTC in results/span_008/candidate_selection.json.
+The old scripts/execute_span_008.py controller exited successfully at its
+frozen_candidate_requires_qualification phase. DO NOT rerun it: the judge/context
+sequence is complete, and reports now include added diagnostics.
 
-The durable scripts/execute_span_008.py is running, log
-/tmp/arena_span008_orchestrator.log, private orchestrator/started.json has its PID.
-It waits for the existing judge, verifies/analyzes it, marks its backlog result,
-then starts exactly one context_completion job. After verifying/scoring that job,
-it freezes candidate_selection.json by fixed H52→H51→H36 priority. If a candidate
-is eligible it stops for the agent to implement frozen H50 qualification/export.
-If none is eligible it admits the already built size_pilot notebook,5400seconds,
-with4B then8B sequential32accepted-update arms. It stops after GPU terminal/source
-verification; the agent must finish audits, reporting, notebook and closure.
-Check state/results before any resume; persisted GPU intents are never repeated.
+The single promotion GPU job is RUNNING:
+arseniytrushin/llm-preference-span008-context-promotion/1. Its existing controller
+is scripts/run_span_008_job.py promotion, log /tmp/arena_span008_promotion_controller.log,
+PID in results/span_008/jobs/promotion/controller_state.json (696972at snapshot).
+Tool session1820. Started15:55UTC; servicecap5400s, internalpublicclock5280s.
+Expected full confirmation takes~75–85minutes. Never push another version.
+Source verification already passes in jobs/promotion/source_verification.json.
+No size-pilot GPU intent exists and none may follow a negative confirmation.
 
-All three notebooks are built under private notebooks/ROLE; source hashes and
-full-cell CPU rehearsal receipts are in results/span_008. Size pilot is conditional,
-not yet launched at this snapshot. Its input CSV contains only fixed1024train and
-512dev rows; confirmation votes are not attached. Exact8B transformer variation
-availability is separately checked in H15_audit.json because the shared model
-version API returns other frameworks/variations too. Future fix E14 is queued.
+Accepted H50source is committed in0344856 (verify laterHEAD). Notebook under
+private notebooks/promotion. Worker arena.span008_context_export reloads frozen
+H03, raw64-row smoke, all5746confirmation rows then visible test, with the same
+conditional1024/2048function. Changed means either packed view changes, not just
+length. Shortbatch4/chunk512, longbatch8/chunk128, atomicboth-viewchunks, per-rank
+memory, averagealignedprobabilities then originalT0.9441963863130951. No winner
+columns in GPU loader. Confirmation inputparquet schema is id+threeTEXTcolumns.
 
-## Completed CPU results
+Same exact accepted notebook is intended for optional submission. Its platform
+rerun flag OR changed visible-test-bytehash skips the confirmation loop on hidden
+inference; test prediction math is identical. Publicservicecap5400, hiddenworker
+ownedwatchdog25200. Actual serialized switch and full final cell are CPU-rehearsed.
+The Kaggle push's session_timeout_seconds is per public request; competition
+reruns separately enforce competitionCodeRequirements. Don't infer official
+success from public preview.
 
-H36 done: nested structural residual .952887 vs globalcal .953959, gain.001072
-CI[.000085,.001972]. Against identical probability-only trees gain.000982
-CI[-.000063,.001963], so the full gate FAILS. No promotion fit. CPU29.53s/RSS.463GiB.
-H17 preparation complete/deferred: gated original LMSYS metadata only; downloaded
-pinned AllenAI cleaned UltraFeedback60829synthetic pairs.3808equal-score pairs are
-not human ties. Exact/approx overlap audit leaves54926provisionally usable rows;
-no mixed-data training. CPU881s includes a stopped memory-heavy attempt and one
-recovery under the original clock; peak1.51GiB. H15 audit complete/deferred:
-BlackPearl is a GitHub repository, not the proposed HF model identifier. Its final
-five-fold adapter merge has supervised original competition votes; it cannot
-establish independent advantage on our local cohorts. No teacher weights or
-soft labels obtained. Full reports/results are docs/SPAN_008_H{36,17,15}.md.
+## Immediate remaining steps
 
-Initial suite104tests passed in14.547s, log /tmp/arena_span008_tests_initial.log;
-new report/audit programs subsequently compiled. Final validation is still needed.
-Latest pushed source milestone e4863e6 (verify HEAD/remote; later work may exist).
+New scripts/submit_span_008.py and execute_span_008_promotion.py are written,
+compiled but NOT YET committed/launched at this snapshot. Review/commit/push these,
+new E13/H02docs/results, source-verification receipt and other reviewed completed
+outputs. Then start execute_span_008_promotion.py escalated into a private log.
+It monitors the existing promotion job, invokes frozen evaluate_span_008_promotion.py
+once, and only if every gate passes and the full hidden clock fits, invokes the
+one-intent submit controller. It preserves failures, no GPU retry/fallback.
+The submit script requires its own source committed. It verifies exact accepted
+version/source, all owned jobs terminal, paid off, CSV, source/hash, quality and
+runtime before one competition_submit_code. Any existing intent/receipt must be
+reconciled, never resubmitted. Original power/deadline remains fixed.
 
-## Remaining agent work
+Frozen evaluator source/protocol are already in promotion_bundle, DO NOT EDIT.
+It checks complete raw predictions/inputs/CSV/source/bothT4s, every unchanged-row
+rawidentity, then persists confirmation_reveal_intent BEFORE loading votes. No fit.
+Primary gain>=.001withpositivegroup95%lower, fullruntime<=25200. Runtime uses max
+of devprospective and fullconfirmationrate,20%margin, actualsessioncold and600s.
+H50result metadata may later append officialref/status/score; primary stats remain.
 
-Inspect GPU outcomes, don't infer quality from progress. scripts/analyze_span_008_gpu.py
-implements frozen H52/H51 comparisons; the durable controller invokes it once.
-H52 successful-cache analysis independently replays all response probabilities.
-If no winner, after size job use scripts/audit_span_008_size.py to reconcile actual
-both-rank accepted rows/tokens/scales/scheduler, packing and raw paired quality.
-Incomplete arms remain incomplete; don't attribute unequal exposure to size.
-Do not treat32fresh-head updates as a full8Btraining campaign or official model.
+check_span_008_closure.py was extended (uncommitted) to distinguish research
+charge from separate hidden bound/accountdelta, including quota refresh without
+new research admissions. Don't silently assume hiddenchargezero if accountdelta
+is unchanged. All exact public job receipts remain frozen before any refresh.
 
-If a winner passes, implement only that frozen confirmation/offline branch within
-the single reserve. No fallback pilot after a negative confirmation. Official
-submission only after qualification, runtime/CSV/native proofs and clock admission.
-Otherwise write H50 deferral with evidence, no official-score claim.
+## Completed results
 
-Finish E13 actual chunk/coverage/memory audit and report, H02/H50 reports/status,
-span report and completion record. Build the review notebook with
-scripts/build_span_008_review.py and execute notebooks/20_backlog_v8_span.ipynb.
-Remote resource audit: scripts/check_span_008_closure.py --remote. Resolve every
-focus item, archive exact GOAL as docs/GOAL_V8.md, sealv8/formv9+emptyv10 using the
-backlog CLI, run final tests/checks, update README/policy/handoff, run the review
-notebook against final state and local closure audit. Preserve30old snapshots.
-Commit/push reviewed explicit files and verify GitHubmain=HEAD; stop beforev9.
-Best verified official remains .95481/submission57979825 until proven otherwise.
+H52done: stable repeat/restart/tokenidentity, all2432responses replayed, bothnative
+T4s, integratedprojection24120.4s passes. Uniform2048rows: calibratedclassifier
+loss.946010, cascade.946221, gain−.000211CI[−.003040,.002676], failsquality.
+197routedrows accuracy34.01→42.64%whileloss1.098711→1.100901.64swaps meanabs
+probabilitydifference.138888/max.741979. Every outer judgeTbinds at3.0; only a
+readonly parameter audit, NO alternative fit. NewH53queuesoneCPU-onlyTceiling
+3→10ablation forv9. Charge3110.246s. Report docs/SPAN_008_H52.md.
+
+H51done: all1152pairedcontextrows complete. Overall5746fixedTloss.953962→.951337,
+gain.002625CI[.000675,.004590]. Changedslice1.013492→1.000398. Deployedbaseline
+sensitivitygain.002634CI[.000683,.004603].128overlap drift exactlyzero; original
+896+new256fullorderedcoverage andbothrankmemorypass. Charge857.458s. Original
+conservativeprojection25868.1sFAIL; predeclaredconditionalprojection24282.9sPASS
+(short.5867s/row,longmaxold/new1.5743,cold141.8,margin20%,reserve600). No training.
+
+H36done/ineligible: nestedstructural.952887vscalibration.953959,gain.001072
+CI[.000085,.001972]; probability-onlytreecontrolgain.000982CIcrosseszero.
+H17deferred after completed60829-rowexternal audit:54926provisionallyusable,
+3808equalsynthetic-score rows aren'thuman ties, exact/approxoverlappurged,
+no mixed-data training. CPU881s includes original stoppedattempt and recovery
+under unchangedclock; original source recovered exactly bySHA and preserved.
+H15deferred: publicBlackPearlfinal5foldmerge includes originalcompetitionvotes;
+not an independent teacherbenchmark. No weights/softlabels/distillation.
+H02deferred: exact8Btransformeravailable,1024train/512dev32accepted-update pilot
+prepared and CPUcontrolrehearsed, but reservefundsH50. No8BGPUfit/qualityclaim.
+E13done: atomicchunks/source/IDs/coverage/overlapaudits+bothrankmemory pass. Native
+chunks' unused aligned_swap duplicatesoriginal for genericstorage; not measured
+swap probabilities. Exportedjudge_cache omitsalias; no quality uses it. Explicit
+viewsemantics in chunk_audit.json and E13report. E14queues exactAPIinstancechecks.
+
+## Validation/publication and closure still required
+
+Fullsuite107tests passed in current /tmp/arena_span008_tests_qualification.log;
+initial104passed before added size/route tests. New closure/submission code compiled.
+Source milestone0344856pushed. Later uncommitted files exist; inspectstatus.
+Best verified official remains .95481/submission57979825 unless new result proves
+otherwise. Current researchcharge3967.704s before promotion, <=9367.704s including
+its full cap. No official receipt/reveal intent exists at this snapshot.
+
+After H50/optionalofficial terminal, write actual H50/span/completion reports,
+resolve H50status, build review notebook with build_span_008_review.py whilev8active,
+archive exactGOAL as docs/GOAL_V8.md, advancebacklog→v9+emptyv10. Run backlogchecks,
+appropriate finalvalidation, remote resourceaudit(check_span_008_closure.py --remote),
+execute notebooks/20_backlog_v8_span.ipynb against finalstate, updateREADME/policy/
+handoff, run localclosureaudit, commit/push explicit reviewedfiles andverifyremote
+HEAD. The builder rejects reruns after spansealing; buildbeforeadvance, executelater.
+Preserve30oldsnapshots and user07/12hashes. Stop beforev9, no automaticnextspan.

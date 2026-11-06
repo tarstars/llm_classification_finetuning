@@ -1,0 +1,65 @@
+{
+  "observed_at": "2026-11-06T15:36:22.647627+00:00",
+  "latest": {
+    "at": "2026-11-06T15:33:15.156661+00:00",
+    "stage": "context_completion",
+    "event": "chunk_completed",
+    "rows": 128,
+    "seconds": 198.26106542699995,
+    "gpu": {
+      "rank": 0,
+      "device": 0,
+      "name": "Tesla T4",
+      "peak_allocated_bytes": 6132427264,
+      "peak_reserved_bytes": 7822376960,
+      "scope": "Whole worker so far, including load"
+    }
+  },
+  "events": [
+    {
+      "at": "2026-11-06T15:26:24.185159+00:00",
+      "stage": "smoke",
+      "event": "complete",
+      "rows": 64,
+      "seconds": 41.790434969000046,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4814226944,
+        "peak_reserved_bytes": 5641338880,
+        "scope": "Whole worker so far, including load"
+      }
+    },
+    {
+      "at": "2026-11-06T15:29:53.983775+00:00",
+      "stage": "overlap",
+      "event": "complete",
+      "rows": 128,
+      "seconds": 195.73062939700003,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7822376960,
+        "scope": "Whole worker so far, including load"
+      }
+    },
+    {
+      "at": "2026-11-06T15:33:15.156661+00:00",
+      "stage": "context_completion",
+      "event": "chunk_completed",
+      "rows": 128,
+      "seconds": 198.26106542699995,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7822376960,
+        "scope": "Whole worker so far, including load"
+      }
+    }
+  ]
+}

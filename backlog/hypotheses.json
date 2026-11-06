@@ -151,7 +151,7 @@
       "title": "Larger supervised classifier",
       "priority": "P2",
       "rank": 6,
-      "status": "running",
+      "status": "deferred",
       "gain": [
         -0.015,
         0.035
@@ -197,6 +197,14 @@
           "note": "Prepared a conditional4B/8B pilot with verified exact8B transformer availability, fixed1024train/512dev samples, matched packing/globalbatch32 and32accepted-update stop. No GPU admission unless all earlier candidates fail; reserve5400s.",
           "evidence": [
             "docs/SPAN_008_DEPENDENCY_AUDIT.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T15:58:53+00:00",
+          "status": "deferred",
+          "note": "Exact8Binstance and fixed1024train/512dev32accepted-update pilot prepared and CPU control rehearsed. H51won the fixed priority, so the mutually exclusive5400sreserve funds context confirmation; no8BGPUrun or full training performed.",
+          "evidence": [
+            "docs/SPAN_008_H02.md"
           ]
         }
       ],
@@ -4286,7 +4294,7 @@
       ],
       "id": "E13",
       "rank": 64,
-      "status": "running",
+      "status": "done",
       "introduced_in": 8,
       "discovered_during": 7,
       "derived_from": [
@@ -4307,6 +4315,14 @@
           "note": "Implement atomic compatible prediction chunks with per-rank memory/progress and coverage checks; actual numerical qualification shares H51overlap within its1800scap.",
           "evidence": [
             "docs/SPAN_008_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T15:58:52+00:00",
+          "status": "done",
+          "note": "Atomic contract-bound chunks, resume/corruption/coverage checks and full-cell/watchdog/accepted-update tests pass. Actual2048teacher+256context chunks verified; all1152long rows stitched after128overlap identity, with both-rank memory. Native duplicate storage alias is explicitly unmeasured/unused.",
+          "evidence": [
+            "docs/SPAN_008_E13.md"
           ]
         }
       ]

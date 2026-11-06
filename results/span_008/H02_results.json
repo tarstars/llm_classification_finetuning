@@ -1,0 +1,13 @@
+{
+  "task": "H02",
+  "executed": false,
+  "status": "deferred",
+  "preparation_complete": true,
+  "quality_comparison_valid": false,
+  "arms": {},
+  "charged_gpu_seconds": 0,
+  "reason": "The sole reserve is committed to the frozen positive context candidate; mutually exclusive size pilot was not admitted. No8BGPUfit, throughput, quality or full-training claim.",
+  "candidate_selection_sha256": "1418e8d8cb90c64e5935bd9a853cf0b54d756d8f159b614afaf8cc0910bc0550",
+  "bundle_sha256": "6cae670b21dab6d0d9ccb933132d163d5930b88f4bd49f3954d9270f02b24471",
+  "observed_at": "2026-11-06T15:58:52.903773+00:00"
+}

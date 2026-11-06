@@ -65,7 +65,7 @@ for role,cap in cfg['job_seconds_caps'].items():
 display(pd.DataFrame(charges));print('Total charged:',sum(r['charged_seconds'] for r in charges),'seconds')
 fig,ax=plt.subplots(figsize=(8,3.2));ax.bar([r['role'] for r in charges],[r['charged_seconds']/3600 for r in charges]);ax.set_ylabel('Elapsed two-T4 session-hours');ax.tick_params(axis='x',rotation=15);save(fig,'v8_compute')
 p=PUB/'H02_results.json'
-if p.exists():
+if p.exists() and read(p).get('executed',True):
     size=read(p);print('Matched exposure:',size.get('quality_comparison_valid'),'paired result:',size.get('raw_paired_gain'))
     display(pd.DataFrame([{'size':k,'complete':r['complete'],'raw_loss':r.get('raw_metrics',{}).get('log_loss'),'accepted_updates':r.get('accepted_updates'),
         'accepted_rows':r.get('global_accepted_rows'),'accepted_tokens':r.get('global_accepted_tokens'),'train_seconds':r.get('training_seconds'),'inference_seconds_per_row':r.get('prediction_seconds_per_row')} for k,r in size['arms'].items()]))
