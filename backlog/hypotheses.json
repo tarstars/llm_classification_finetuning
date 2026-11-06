@@ -1111,7 +1111,7 @@
       "title": "Additional public preference data",
       "priority": "P2",
       "rank": 11,
-      "status": "planned",
+      "status": "running",
       "gain": [
         -0.02,
         0.04
@@ -1150,7 +1150,16 @@
         "TARGET_AUDIT.md",
         "[Historical first-place recipe](https://www.kaggle.com/competitions/lmsys-chatbot-arena/discussion/527629)"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-06T14:15:05+00:00",
+          "status": "running",
+          "note": "Begin CPU-only source/target/overlap audit. Check original LMSYS33K access without accepting account-sharing terms; audit one pinned open UltraFeedback split if gated. No mixed-data GPUtraining funded.",
+          "evidence": [
+            "docs/SPAN_008_PLAN.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -4219,7 +4228,7 @@
       ],
       "id": "E13",
       "rank": 64,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 8,
       "discovered_during": 7,
       "derived_from": [
@@ -4232,6 +4241,14 @@
           "note": "The actual full-development stage has start/end events but no chunk progress or recoverable intermediate predictions; queue a numerically qualified inference helper, preserving live source.",
           "evidence": [
             "docs/SPAN_007_E10.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T14:15:05+00:00",
+          "status": "running",
+          "note": "Implement atomic compatible prediction chunks with per-rank memory/progress and coverage checks; actual numerical qualification shares H51overlap within its1800scap.",
+          "evidence": [
+            "docs/SPAN_008_PLAN.md"
           ]
         }
       ]
@@ -4347,7 +4364,7 @@
       ],
       "id": "H52",
       "rank": 66,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 8,
       "discovered_during": 7,
       "derived_from": [
@@ -4360,6 +4377,14 @@
           "note": "Serial responses are exactlystable but the original20%runtime gate fails. Queue one distinct10%serial route study with complete cold/switch profiling and a fresh uniform cache; do not change v7gate or executev8.",
           "evidence": [
             "docs/SPAN_007_E05.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T14:15:05+00:00",
+          "status": "running",
+          "note": "Prepare fixed serial10%cascade with complete classifier/native cold-switch profiling, unchanged stability guards and a fresh2048-row cache. GPUcap3600s; no variant search.",
+          "evidence": [
+            "docs/SPAN_008_PLAN.md"
           ]
         }
       ]
@@ -5072,8 +5097,32 @@
         "H51",
         "H52"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H52",
+        "H51",
+        "H36",
+        "H17",
+        "H02",
+        "H15",
+        "E13",
+        "H50"
+      ],
+      "history": [
+        {
+          "at": "2026-11-06T14:11:55+00:00",
+          "note": "User authorized the proposed next plan. Execute judge/context/CPUresidual and data/teacher audits under10800GPU seconds; qualification or matchedsizepilot shareone reserve. No full data-mixture/distillation campaign orv9execution.",
+          "focus_ids": [
+            "H52",
+            "H51",
+            "H36",
+            "H17",
+            "H02",
+            "H15",
+            "E13",
+            "H50"
+          ]
+        }
+      ],
       "carried_from": 7,
       "start_sha256": "fb2f8be81b4f34d8271a0b5699d1b0de1b803a9fb8d95c8252749f8aa9a66482",
       "start_markdown_sha256": "7866586288005fefd7c07b8f1319a09795b809bafaf9e316b61fa4b75fc3f613",

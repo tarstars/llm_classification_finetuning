@@ -1,0 +1,8 @@
+{
+  "span": 8,
+  "started_at": "2026-11-06T14:03:59+00:00",
+  "deadline": "2026-11-07T00:30:17+00:00",
+  "gpu_session_seconds_cap": 10800,
+  "initial_quota_refresh_time": "2026-11-07 00:00:00",
+  "quota_used_at_start": 96763.987
+}

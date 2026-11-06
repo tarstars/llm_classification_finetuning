@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "serialized_last_cell_sha256": "0d5f481f1b7baffaa30092b3b9be4ce5649d20ccb1e52f5caee9de7d1d0c7ac9",
+  "result": {
+    "seconds": 0.022540569305419922,
+    "exit_code": 0,
+    "role": "serial_cascade"
+  },
+  "new_gpu_executions": 0
+}

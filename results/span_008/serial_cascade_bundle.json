@@ -1,0 +1,31 @@
+{
+  "role": "serial_cascade",
+  "source_sha256": {
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/joint_data.py": "a2e047f0e732dd4b1da19fb18baf49ecda888e7602ba3fb353a39c327a93e672",
+    "src/arena/joint_train.py": "5d743ac6646000647d1c7fe852f790c752ae93e0aff5ec1b624753fb13c7614c",
+    "src/arena/joint_infer.py": "740bb4f3219a26dd2583607ced241c6dffcc00db9133bc271add0c0586d74eea",
+    "src/arena/training_exposure.py": "81a405f90ed999d6834265e8b31fe39dd296eef831d5b7ab17a179f4a62d0633",
+    "src/arena/span006_inputs.py": "0c5e00e7e28a06b6d5aa6fe808259237737106e6d3894c6280de7e9a2604b122",
+    "src/arena/experiment.py": "6decc6777c0bf543cd5f4905b66b9006d39bfb7028f7ebc7b5f84cecfbbaa66a",
+    "src/arena/telemetry.py": "656dc095e9ced45fb395dd2f19a16c734f8ab6caa9ddd14f9f5e4fe4631d8cc3",
+    "src/arena/prediction.py": "976e3bd0bb043f03572d92ab699b773adc53838835bfc876451349723b1eb1f7",
+    "src/arena/prediction_chunks.py": "a05c5bf26e959e6e454224293e809baaf4e909b4aaec1ea7c6713b1469dccd3b",
+    "src/arena/span008_classifier.py": "d615b2a2ac7668c9bc0aa1755d923ef28c51372779be533176e16b48d6fd770c",
+    "src/arena/judge.py": "51c1258fb94618570e682bffff560941b78ddf03c13c067c30d3cbaea8cf631b",
+    "src/arena/judge_runtime.py": "650c6ef576127f92c66e11d7c057ab350177acd19792f3a9652904b4a4e234a1",
+    "src/arena/span_repeatability.py": "a2a064e7c45a59af0c084cd5dbe15dcbf257ab6cd1425392c47e2c418272bebe",
+    "src/arena/span008_serial.py": "db43dbbe317ae082a848d880272b2ea5f2b4583fd4768f69d1a321245dbc72e5",
+    "scripts/build_span_008.py": "64a3988f619f5e04282797e18daaae04c02c67b0690ae7bd99b38e7a3a15a208",
+    "scripts/run_span_008_job.py": "5ce86094f5643d5e9194e80cb432327693b3fbed5a6f4f65b1ce323e19178dd5",
+    "src/arena/kaggle_control.py": "ea25a3b93e37f1e630e429bacccec98e418efedba1f656817a90d5c42e053e00",
+    "src/arena/notebook_worker.py": "2c49e8edd28b2dabe70a21bbca9c8598458b78fcf6c7c3939cef7aeabd81bb13",
+    "GOAL.md": "04ae27550ee34d7765a915fcb3e8d9724c741d5535ef3292656d704033a1726e",
+    "configs/span_008.json": "e7551df63d977b9f3fd9874f8819be88f61f41fbdf5fb4690e4870da26b0dc95",
+    "docs/SPAN_008_PLAN.md": "81da9fa3937e0a4d41cb0d1263a4d6cc56a770dbb5c380f66bda9817d7564fce"
+  },
+  "notebook_sha256": "878d709dd6b640727ef07381cfe93eb5a329077b6e7466fd3ec691cea3de5178",
+  "metadata_sha256": "9e8a4e27e4f108496300a9704f5562924d93a61da8fcacb766fa2f4b61c676c7",
+  "cap_seconds": 3600,
+  "internet_enabled": false
+}
