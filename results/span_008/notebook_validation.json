@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-06T17:23:31.861527+00:00",
+  "notebook": "notebooks/20_backlog_v8_span.ipynb",
+  "notebook_sha256": "680c5e43d6d535f629ea6e031534c2fd019d902920cca72850852814450fe0a9",
+  "code_cells": 5,
+  "figures": 3,
+  "error_outputs": 0,
+  "executed_after_v8_sealing": true,
+  "active_backlog_version": 9
+}

@@ -43,6 +43,10 @@ for task in ['H52','H51']:
         rows.append({'task':task,**r['contrast'],'eligible':r['eligible']})
         print(task,'metrics:',{k:round(m['log_loss'],6) for k,m in r['metrics'].items()},'runtime:',r['runtime'])
     else:print(task,'No full quality comparison:',r.get('reason'),'worker summary:',r.get('worker_summary',{}))
+confirmation=read(PUB/'H50_results.json')
+if confirmation.get('confirmation_complete'):
+    rows.append({'task':'H50 confirmation',**confirmation['contrast'],'eligible':confirmation['eligible_for_official']})
+    print('Frozen confirmation losses:',{k:round(v['log_loss'],6) for k,v in confirmation['metrics'].items()})
 r=read(PUB/'H36_results.json')
 for name,g in r['contrasts'].items():rows.append({'task':'H36 vs '+name,**g,'eligible':r['eligible']})
 display(pd.DataFrame(rows))

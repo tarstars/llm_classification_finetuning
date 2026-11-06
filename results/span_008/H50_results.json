@@ -1,0 +1,170 @@
+{
+  "task": "H50",
+  "executed": true,
+  "confirmation_complete": true,
+  "confirmation_historically_inspected": true,
+  "fit_operations": 0,
+  "parameters_frozen_before_vote_access": true,
+  "metrics": {
+    "frozen_classifier": {
+      "rows": 5746,
+      "log_loss": 0.9471606394051313,
+      "accuracy": 0.5421162547859381,
+      "macro_f1": 0.5344501304776728,
+      "brier": 0.5632473389238745,
+      "class_counts": [
+        2006,
+        1964,
+        1776
+      ],
+      "class_loss": [
+        0.9048415222662315,
+        0.8944279996444903,
+        1.0532749713142144
+      ],
+      "class_recall": [
+        0.6036889332003988,
+        0.609979633401222,
+        0.3975225225225225
+      ],
+      "tie_precision": 0.5123367198838897,
+      "mean_predictive_entropy": 0.9524374687327611,
+      "mean_class_probability": [
+        0.34298015381840485,
+        0.34561281916999337,
+        0.31140702701160305
+      ],
+      "predicted_class_fraction": [
+        0.3788722589627567,
+        0.3813087365123564,
+        0.2398190045248869
+      ],
+      "tie_auc": 0.6911847300701205,
+      "confusion_matrix": [
+        [
+          1211,
+          445,
+          350
+        ],
+        [
+          444,
+          1198,
+          322
+        ],
+        [
+          522,
+          548,
+          706
+        ]
+      ]
+    },
+    "context": {
+      "rows": 5746,
+      "log_loss": 0.9455407606122358,
+      "accuracy": 0.5435085276714235,
+      "macro_f1": 0.5354248324627553,
+      "brier": 0.5621994050007102,
+      "class_counts": [
+        2006,
+        1964,
+        1776
+      ],
+      "class_loss": [
+        0.8992338824741544,
+        0.894434157954224,
+        1.0543611238810011
+      ],
+      "class_recall": [
+        0.6116650049850448,
+        0.6089613034623218,
+        0.39414414414414417
+      ],
+      "tie_precision": 0.5154639175257731,
+      "mean_predictive_entropy": 0.9508419984989236,
+      "mean_class_probability": [
+        0.3435740643229512,
+        0.345336577402008,
+        0.3110893582750397
+      ],
+      "predicted_class_fraction": [
+        0.3821789070657849,
+        0.3814827706230421,
+        0.236338322311173
+      ],
+      "tie_auc": 0.6910698481857172,
+      "confusion_matrix": [
+        [
+          1227,
+          442,
+          337
+        ],
+        [
+          447,
+          1196,
+          321
+        ],
+        [
+          522,
+          554,
+          700
+        ]
+      ]
+    }
+  },
+  "contrast": {
+    "gain": 0.0016198787928954211,
+    "interval_95": [
+      -0.0004273037300514263,
+      0.0034857908764568
+    ],
+    "groups": 5174,
+    "rows": 5746,
+    "replicates": 2000
+  },
+  "quality_gate_passed": false,
+  "unchanged_raw_identity": {
+    "rows": 4573,
+    "mean": 0.00025259293560624823,
+    "maximum": 0.012657592084525049,
+    "passed": true
+  },
+  "runtime": {
+    "prediction_seconds_per_row": 0.7847030918374901,
+    "confirmation_seconds_per_row": 0.7239711079704144,
+    "cold_setup_seconds": 186.02547505326766,
+    "projected_seconds": 24327.11823017797,
+    "passed": true
+  },
+  "eligible_for_official": false,
+  "csv_verified": true,
+  "csv_sha256": "fe00069ddb0946a8abf24c6316b3336e1c8e072cbb2e2067182aae978dc7448a",
+  "changed_rows": 1173,
+  "hardware": [
+    {
+      "rank": 0,
+      "device": 0,
+      "name": "Tesla T4",
+      "peak_allocated_bytes": 6132427264,
+      "peak_reserved_bytes": 7650410496
+    },
+    {
+      "rank": 1,
+      "device": 1,
+      "name": "Tesla T4",
+      "peak_allocated_bytes": 6132427264,
+      "peak_reserved_bytes": 7902068736
+    }
+  ],
+  "charged_gpu_seconds": 4381.363999999987,
+  "new_official_submissions": 0,
+  "official_submission_ref": null,
+  "order_diagnostics": {
+    "decision_disagreement": 0.24608423250957187,
+    "mean_probability_l1": 0.21992649834213251,
+    "second_position_advantage": -0.010376137922591594
+  },
+  "source_sha256": "4c546d90cb8b64d54c19707e89f8764be5eba3b504d8743b869e99b0980c7200",
+  "cpu_seconds": 1.545138001209125,
+  "peak_rss_gib": 0.477325439453125,
+  "candidate_selection_sha256": "1418e8d8cb90c64e5935bd9a853cf0b54d756d8f159b614afaf8cc0910bc0550"
+}

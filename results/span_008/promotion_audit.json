@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-06T17:12:41.248394+00:00",
+  "checks": {
+    "confirmation": {
+      "rows": 5746,
+      "changed_rows": 1173,
+      "verified_chunks": 19,
+      "route_reconstructed_from_tokens": true,
+      "arrays_equal_measured_chunks": true,
+      "both_rank_memory_verified": true
+    },
+    "test": {
+      "rows": 3,
+      "changed_rows": 1,
+      "verified_chunks": 2,
+      "route_reconstructed_from_tokens": true,
+      "arrays_equal_measured_chunks": true,
+      "both_rank_memory_verified": true
+    }
+  },
+  "contrast_replayed": {
+    "gain": 0.0016198787928954211,
+    "interval_95": [
+      -0.0004273037300514263,
+      0.0034857908764568
+    ],
+    "groups": 5174,
+    "rows": 5746,
+    "replicates": 2000
+  },
+  "quality_gate_passed": false,
+  "no_official_intent": true,
+  "fit_operations": 0,
+  "new_gpu_executions": 0,
+  "seconds": 8.724680332932621,
+  "peak_rss_gib": 1.0116424560546875,
+  "source_sha256": "0e6b52cdab790524f3f9e077ed07df1b9caca95e9c49a74d36661dc1e8a74ebe",
+  "confirmation_reveal_intent_sha256": "24d6496615a260b58df98bdd4d669402c695e8bac24403a56d871f9f71624604"
+}

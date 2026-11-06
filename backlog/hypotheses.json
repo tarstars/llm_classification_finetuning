@@ -4158,7 +4158,7 @@
       "title": "Qualify and officially evaluate one frozen v7 classifier candidate",
       "id": "H50",
       "rank": 62,
-      "status": "running",
+      "status": "done",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -4187,6 +4187,14 @@
           "note": "H51 is frozen by the declared priority: full-dev fixed-temperature gain0.002625 CI[0.000675,0.004590], prospective conditional projection24282.9s. Use the sole5400s reserve for frozen confirmation/offline qualification; size pilot is excluded.",
           "evidence": [
             "results/span_008/candidate_selection.json"
+          ]
+        },
+        {
+          "at": "2026-11-06T17:12:30+00:00",
+          "status": "done",
+          "note": "Frozen full5746-row confirmation completes: loss0.947161→0.945541, gain0.001620 CI[-0.000427,0.003486]. Identity/source/bothT4/CSV/runtime pass, quality interval crosseszero. No official submission or size fallback; GPU4381.364s.",
+          "evidence": [
+            "docs/SPAN_008_H50.md"
           ]
         }
       ]
@@ -4657,7 +4665,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 8,
+  "active_version": 9,
   "versions": [
     {
       "number": 1,
@@ -5273,7 +5281,7 @@
     },
     {
       "number": 8,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -5345,15 +5353,69 @@
       "carried_from": 7,
       "start_sha256": "fb2f8be81b4f34d8271a0b5699d1b0de1b803a9fb8d95c8252749f8aa9a66482",
       "start_markdown_sha256": "7866586288005fefd7c07b8f1319a09795b809bafaf9e316b61fa4b75fc3f613",
-      "start_sealed_at": "2026-11-05T22:57:01+00:00"
+      "start_sealed_at": "2026-11-05T22:57:01+00:00",
+      "final_sha256": "1b27f3d732516e49c4dd1479a9083d905daa6ec2828df4ecb84a3f373a5eb78c",
+      "final_markdown_sha256": "205223f46a961b6c44689c66d72bab0a79e22f1f63de3d5e26527c0cc2bc3ce5",
+      "final_sealed_at": "2026-11-06T17:17:00+00:00",
+      "closed_at": "2026-11-06T17:17:00+00:00",
+      "closing_note": "V8 complete: context development gain0.002625 but frozen confirmation gain0.001620 CIcrosseszero; no submission. Stable judge and structural controls fail, external/teacher/8Bpreparation recorded, actual chunks/source/runtime audited. Carry unfinished work and activate E14/H53 without executingv9.",
+      "closing_evidence": [
+        "docs/SPAN_008_RESULTS.md"
+      ]
     },
     {
       "number": 9,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
         "E14",
         "H53"
       ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 8,
+      "start_sha256": "621ea7cfb4d362e2366c56e61325a8c0c540cba1eee17e555dcd845f6d1f4d5a",
+      "start_markdown_sha256": "a637b2b9e25521adffd3484b503e63a22b215339c30766589a8bf0595df6757d",
+      "start_sealed_at": "2026-11-06T17:17:00+00:00"
+    },
+    {
+      "number": 10,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }

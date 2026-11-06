@@ -8,13 +8,15 @@ Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
-V8 is executing the bounded score-improvement plan. Completing the frozen context
+V8 completed the bounded score-improvement plan. Completing the frozen context
 cohort improves development loss **0.953962 → 0.951337**, gain **0.002625** with
 paired group95%interval **[0.000675,0.004590]**. Its predeclared conditional runtime
-projection passes. A frozen full-confirmation/offline qualification is running;
-no new official improvement is claimed. Best verified official remains **0.95481**.
-See the [plan](docs/SPAN_008_PLAN.md), [context result](docs/SPAN_008_H51.md) and
-[frozen qualification protocol](docs/SPAN_008_H50_PROTOCOL.md).
+projection passes. Frozen confirmation improves by **0.001620**, but its 95% interval
+**[−0.000427, 0.003486]** crosses zero, so no submission is made. Best verified
+official remains **0.95481**. V8 used **2.31919 elapsed two-T4 session-hours**.
+See the [v8 results](docs/SPAN_008_RESULTS.md), [completion checks](docs/SPAN_008_COMPLETION.md),
+[executed notebook20](notebooks/20_backlog_v8_span.ipynb),
+[context result](docs/SPAN_008_H51.md) and [confirmation](docs/SPAN_008_H50.md).
 
 The stable10%judge cascade failed its quality gate, and the structural correction
 was inconclusive against its probability-only control. External-data preparation
@@ -44,13 +46,12 @@ two-T4 session-hours** and made no submission. See the
 [pipeline theory](docs/PIPELINE_THEORY.md), and
 [review of skipped work](docs/SPAN_007_CARRYOVER_REVIEW.md).
 
-The active backlog is **v8: 40 tasks**, including 36 unfinished carryovers and
-four discoveries: artifact-backed contracts (E12), recoverable evaluation progress
-(E13), completion of the frozen context cohort (H51), and a prospectively profiled
-10% serial judge route (H52). Its bounded focus has8tasks. V9 is a draft with
-E14(exact model-instance admission) and H53(the binding judge-temperature ceiling),
-plus unfinished carryovers at closure. The [current contract](GOAL.md) stops
-beforev9. The [completed v7 contract](docs/GOAL_V7.md) remains archived.
+The active backlog is **v9: 37 tasks**, with **35 unfinished carryovers and two
+new discoveries**: E14 verifies exact model-instance admission, and H53 tests the
+binding judge-temperature ceiling using the stable cache. V9 has no selected focus
+or execution; v10 is an empty draft. V8 sealed with five completed focus items and
+three justified deferrals. The [completed v8 contract](docs/GOAL_V8.md) stops before
+v9, and GOAL.md retains that exact completed contract.
 
 V6's frozen source-strength transfer had an inconclusive gain of
 0.000876 [−0.000390, 0.002173] and made no submission. See
@@ -124,11 +125,13 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v8**, with **40 tasks** and a selected8-task execution.
-Its four original new proposals retain provenance and bounded tests; unfinished work
-is carried forward. [V9 has two queued discoveries](backlog/NEXT.md). Completed dependencies
+The active version is **v9**, with **37 tasks** and no selected focus or execution.
+Its two new discoveries retain provenance and bounded tests; unfinished work
+is carried forward. [The next-version view](backlog/NEXT.md) is the empty v10 draft.
+Completed dependencies
 alone do not establish scientific readiness: H44's original 20% route remains
-infeasible. H50 is qualifying the frozen positive longer-context candidate.
+infeasible. H50 completed context qualification without a submission after its
+uncertainty gate failed. A later goal must choose a new bounded focus.
 The original 35-task v5-start snapshot and its explicit planning amendments are
 preserved, along with all historical snapshots.
 Each completed span preserves snapshots and carries unfinished work forward.
@@ -175,8 +178,9 @@ The [v2 completion record](docs/SPAN_002_COMPLETION.md),
 [v4 completion record](docs/SPAN_004_COMPLETION.md) and
 [v5 completion record](docs/SPAN_005_COMPLETION.md) and
 [v6 completion record](docs/SPAN_006_COMPLETION.md) and
-[v7 completion record](docs/SPAN_007_COMPLETION.md) link resource, provenance,
-notebook and version checks. V7 stops at the v8 planning boundary.
+[v7 completion record](docs/SPAN_007_COMPLETION.md) and
+[v8 completion record](docs/SPAN_008_COMPLETION.md) link resource, provenance,
+notebook and version checks. V8 stops at the v9 planning boundary.
 
 Attempt 001's offline ensemble scored **1.00897** on Kaggle, with a local estimate
 of **1.00956**. Its research ensemble achieved **1.00194 holdout log loss** and

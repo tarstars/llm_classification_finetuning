@@ -1,0 +1,271 @@
+{
+  "observed_at": "2026-11-06T17:06:39.862510+00:00",
+  "latest": {
+    "at": "2026-11-06T17:06:12.690726+00:00",
+    "stage": "confirmation/long",
+    "event": "chunk_completed",
+    "rows": 1152,
+    "seconds": 1652.7301484360005,
+    "gpu": {
+      "rank": 0,
+      "device": 0,
+      "name": "Tesla T4",
+      "peak_allocated_bytes": 6132427264,
+      "peak_reserved_bytes": 7650410496
+    }
+  },
+  "events": [
+    {
+      "at": "2026-11-06T16:02:22.292212+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 512,
+      "seconds": 282.670751096,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:06:56.905681+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 1024,
+      "seconds": 557.2645917660001,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:11:36.405508+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 1536,
+      "seconds": 836.7440775790001,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:16:16.238187+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 2048,
+      "seconds": 1116.5552122740003,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:20:48.393916+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 2560,
+      "seconds": 1388.6890621190003,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:25:19.450602+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 3072,
+      "seconds": 1659.7267040100003,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:29:46.864966+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 3584,
+      "seconds": 1927.1207585210004,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:34:15.045750+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 4096,
+      "seconds": 2195.2807644580002,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:38:39.756679+00:00",
+      "stage": "confirmation/short",
+      "event": "chunk_completed",
+      "rows": 4573,
+      "seconds": 2459.972738801,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 4234590208,
+        "peak_reserved_bytes": 4529848320
+      }
+    },
+    {
+      "at": "2026-11-06T16:41:45.592757+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 128,
+      "seconds": 185.81264603900036,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    },
+    {
+      "at": "2026-11-06T16:44:49.960544+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 256,
+      "seconds": 370.1611753870002,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    },
+    {
+      "at": "2026-11-06T16:47:47.058705+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 384,
+      "seconds": 547.240209259,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    },
+    {
+      "at": "2026-11-06T16:50:55.049440+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 512,
+      "seconds": 735.212292098,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    },
+    {
+      "at": "2026-11-06T16:53:58.061451+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 640,
+      "seconds": 918.1944335020003,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    },
+    {
+      "at": "2026-11-06T16:57:04.234114+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 768,
+      "seconds": 1104.3388301150003,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    },
+    {
+      "at": "2026-11-06T17:00:05.145071+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 896,
+      "seconds": 1285.2288694440003,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    },
+    {
+      "at": "2026-11-06T17:03:10.247006+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 1024,
+      "seconds": 1470.310848559,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    },
+    {
+      "at": "2026-11-06T17:06:12.690726+00:00",
+      "stage": "confirmation/long",
+      "event": "chunk_completed",
+      "rows": 1152,
+      "seconds": 1652.7301484360005,
+      "gpu": {
+        "rank": 0,
+        "device": 0,
+        "name": "Tesla T4",
+        "peak_allocated_bytes": 6132427264,
+        "peak_reserved_bytes": 7650410496
+      }
+    }
+  ]
+}

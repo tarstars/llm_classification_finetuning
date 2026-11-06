@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-06T17:08:41.337924+00:00",
+  "stage": "promotion",
+  "event": "complete",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span008-context-promotion/1",
+  "charged_seconds": 4381.363999999987,
+  "files": 90
+}

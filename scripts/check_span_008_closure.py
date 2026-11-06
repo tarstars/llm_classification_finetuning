@@ -3,6 +3,7 @@ from pathlib import Path
 from datetime import datetime,timezone
 import argparse,sys
 import nbformat
+import psutil
 REPO=Path(__file__).resolve().parents[1];sys.path.insert(0,str(REPO/'src'))
 from arena.data import ROOT
 from arena.experiment import read_json,atomic_json,sha256,utc_now
@@ -73,6 +74,18 @@ def main():
     carry={k for k in versions[8]['item_ids'] if items[k]['status'] not in ['done','rejected']};new={k for k in versions[9]['item_ids'] if items[k]['introduced_in']==9}
     assert set(versions[9]['item_ids'])==carry|new
     validation=read_json(pub/'validation.json');assert validation['passed']
+    for name,script in [('chunk_audit.json','audit_span_008_chunks.py'),('promotion_audit.json','audit_span_008_promotion.py')]:
+        checked=read_json(pub/name);assert checked['passed'] and checked['source_sha256']==sha256(REPO/'scripts'/script)
+    assert read_json(pub/'H52_request_audit.json')['passed']
+    if not remote['new_official_submissions']:
+        assert not (root/'official/submission_intent.json').exists() and not (pub/'submission_intent.json').exists()
+    controllers=[read_json(pub/'jobs'/role/'controller_state.json') for role in ['serial_cascade','context_completion','promotion']]
+    controllers +=[read_json(pub/'promotion_orchestration.json'),read_json(root/'orchestrator/started.json')]
+    for state in controllers:
+        if 'pid' not in state:continue
+        try:command=' '.join(psutil.Process(state['pid']).cmdline())
+        except psutil.NoSuchProcess:continue
+        assert not any(name in command for name in ['run_span_008_job.py','execute_span_008.py','execute_span_008_promotion.py']),'Owned controller remains live'
     notebook=REPO/'notebooks/20_backlog_v8_span.ipynb';nb=nbformat.read(notebook,4);cells=[c for c in nb.cells if c.cell_type=='code']
     assert cells and all(c.execution_count is not None and all(o.output_type!='error' for o in c.outputs) for c in cells)
     assert (Path.home()/'notebooks/llm_classification_finetuning').resolve()==REPO/'notebooks'
@@ -83,7 +96,7 @@ def main():
     files=[p for p in pub.glob('*.json') if p.name!='closure_audit.json']+[REPO/'docs/SPAN_008_RESULTS.md',REPO/'docs/SPAN_008_COMPLETION.md',REPO/'docs/GOAL_V8.md',notebook]
     atomic_json(pub/'closure_audit.json',{'passed':True,'checked_at':utc_now(),'v8_closed':True,'active_version':9,'v9_tasks':len(versions[9]['item_ids']),
         'v9_new':sorted(new),'v9_carryovers':len(carry),'v10_empty_draft':True,'no_v9_execution':True,'old_snapshot_files_preserved':len(inv['old_snapshot_sha256']),
-        'user_notebooks_preserved':True,'notebook_code_cells':len(cells),'notebook_sha256':sha256(notebook),'total_charged_seconds':remote['total_charged_seconds'],
+        'user_notebooks_preserved':True,'no_owned_live_controllers':True,'scientific_replays_passed':True,'notebook_code_cells':len(cells),'notebook_sha256':sha256(notebook),'total_charged_seconds':remote['total_charged_seconds'],
         'official_score':remote['official_score'],'file_sha256':{str(p.relative_to(REPO)):sha256(p) for p in files},'source_sha256':sha256(Path(__file__))})
     print('V8 local closure audit passed')
 
