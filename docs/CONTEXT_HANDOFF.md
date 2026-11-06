@@ -1,6 +1,6 @@
 # Active goal: reach leaderboard rank30; v9 executing
 
-Snapshot 2026-11-06 19:49UTC. New user outcome goal **move to 30 place in
+Snapshot 2026-11-06 20:10UTC. New user outcome goal **move to 30 place in
 leaderboard** is active in the goal service. Do not mark it complete until a
 fresh fully paginated Kaggle leaderboard proves team17244411 rank<=30. Initial
 live rank57/313, loss0.95481, rank30 threshold0.83086. No new official score yet.
@@ -33,8 +33,10 @@ control exists. Source review also found our host-copy order serialized the
 author's intended GPU overlap.
 
 Distinct role **public_ensemble_pipeline_fix**, exact version **.../3**, accepted
-and RUNNING at19:48:58UTC. Controller exec session99320 is live; revalidate it,
-never duplicate a mutation because an observer times out. It restores author's
+and now terminalERROR after the owned880second watchdog (exit-15). Charge895.742s,
+11 recovered files. Both uniform256 cohorts and Gemma long/test are complete;
+Llama long/test are missing. Gemma matches version2 exactly (maxdelta0). Cold
+uniform projection33795.914s FAILS unchanged32400s limit. It restores author's
 overlap ordering and uses workers0 to avoid post-CUDA forks. Same weights,
 packing and .5/.5 ensemble. Its service cap1000seconds plus prior425.612 remain
 inside original2400. Compare all available256Gemma predictions within1e-5;
@@ -42,8 +44,21 @@ do not claim missing control coverage. Full new two-model/long/test checks still
 required. Source/receipts are under ROOT/runs/span_009/jobs/public_ensemble_pipeline_fix
 and results/span_009/jobs. Prepared sources pushed at232953d.
 
+Current role **public_ensemble_resume**, exact **.../4**, RUNNING20:10:26UTC,
+controller exec session25180/PID1435145 live. Revalidate, never duplicate a
+mutation on timeout. Cap1000s; existing total1321.354 plus1000 fits original2400.
+Commit3e2d622 pushed: one bounded warm-runtime/recovery protocol. Both uniform256
+cohorts are rerun after fixed8row warmups; count warmup once in startup, retain
+20%margin/600s reserve and original failed cold estimate. Finish Llama long/test.
+Only completed Gemma long/test predictions from exact failed version3 are reused
+in public qualification, with byte/ID/checkpoint hashes. Small cached outputs
+are embedded in the private notebook, no raw text/labels. Actual serialized
+hidden branch tests prove no recovery cache/flags are created or used in hidden
+inference. Require both fresh uniform controls within1e-5. Never call failed
+version3 COMPLETE. Hidden code runs the actual models on actual hidden text.
+
 ROOT=/home/tarstars/database/llm_classification_finetuning; use .venv/bin/python.
-Controller: scripts/run_span_009_public.py --role public_ensemble_pipeline_fix.
+Controller: scripts/run_span_009_public.py --role public_ensemble_resume.
 It resumes the exact existing receipt. New source builds are forbidden after a
 role's push_intent exists. Total pre-refresh public GPUcap2400seconds; recovery
 old sessioncap2200 is historical; current pipeline-fix cap1000. Initial freequota2886.945s,
@@ -58,8 +73,8 @@ checkpointSHA, actual devices/memory/timing and CSV checks. No model predictions
 for Llama/long/test yet recovered at this snapshot. Heavy source caches are under ROOT/runs/span_009/
 research; never download giant host weights without a reason.
 
-Next: observe existing version3, retrieve its terminal output, then run
-scripts/audit_span_009_public.py --role public_ensemble_pipeline_fix. It checks remote source,
+Next: observe existing version4, retrieve its terminal output, then run
+scripts/audit_span_009_public.py --role public_ensemble_resume. It checks remote source,
 profile IDs, checkpoint configurations, aligned predictions, devices, CSV and
 conservative runtime. If all gates pass, review long-sequence timing, freeze and
 commit qualification/audit, then scripts/submit_span_009_public.py submits one

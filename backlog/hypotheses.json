@@ -4722,6 +4722,63 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Keep model and cohort identity in sanitized live progress",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "medium",
+      "engineering_hours": [
+        0.1,
+        0.4
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0,
+        0.05
+      ],
+      "risk": "low",
+      "claim": "Keeping controlled role/cohort/batch labels makes multi-model inference progress unambiguous without exposing conversation text.",
+      "basis": "H54 native logs include m0/m3 and uniform/long/test labels; shared observe_logs whitelist discards these, leaving ambiguous rows/seconds in public progress.json.",
+      "first_test": "Extract the sanitization helper and use observed H54 event fixtures, malformed lines and missing labels; retain role/cohort/batch while excluding text/auth fields. CPU-only dry observation after frozen v9 runs close.",
+      "acceptance": "Progress records identify model and cohort, privacy exclusions still pass, actual event fixtures pass and no GPU mutation occurs.",
+      "stop": "Do not edit shared accepted-source hashes during active v9 inference or official evaluation; no new GPU run solely for this observer fix.",
+      "risk_reason": "Changing the shared helper during an accepted run can break source verification.",
+      "mitigation": "Execute in the next authorized span and freeze updated sources in future bundles; preserve native logs and historical sources.",
+      "rationale": "An observed observability gap slowed diagnosis; fix is small and independent of model quality.",
+      "revision": "V9 H54 discovery; next-span task, outside current rank30 model qualification scope.",
+      "depends_on": [
+        "E13"
+      ],
+      "evidence": [
+        "docs/SPAN_009_OBSERVABILITY_FINDINGS.md"
+      ],
+      "id": "E15",
+      "rank": 70,
+      "status": "planned",
+      "introduced_in": 10,
+      "discovered_during": 9,
+      "derived_from": [
+        "H54"
+      ],
+      "history": [
+        {
+          "at": "2026-11-06T20:11:51+00:00",
+          "status": "planned",
+          "note": "Native H54 role/cohort/batch labels disappear from sanitized progress; future CPU-only observer fix, preserve frozen live source hashes.",
+          "evidence": [
+            "docs/SPAN_009_OBSERVABILITY_FINDINGS.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -5546,7 +5603,9 @@
     {
       "number": 10,
       "state": "draft",
-      "item_ids": [],
+      "item_ids": [
+        "E15"
+      ],
       "focus_ids": [],
       "history": []
     }

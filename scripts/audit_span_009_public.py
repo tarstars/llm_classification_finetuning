@@ -99,9 +99,15 @@ def main():
         result['scheduling_identity_control'] = identity
         result['control_coverage_limitation'] = 'Only Gemma uniform256 completed before the control worker segfaulted; no control for other cohorts/model.'
         if role == 'public_ensemble_resume':
+            assert q['warm_profile'] and q['startup_includes_measured_warmup']
             previous=root/'jobs/public_ensemble_pipeline_fix/output/public_ensemble'
             matched={}
             for model in ['m0','m3']:
+                warm=np.load(out/(model+'_warmup.npz'))
+                assert np.array_equal(warm['ids'],expected['uniform_ids'][:8])
+                validate_probabilities(warm['probabilities'],8)
+                summary=read_json(out/(model+'_summary.json'))
+                assert summary['cohorts']['warmup']['rows']==8 and summary['cohorts']['warmup']['seconds']>0
                 new=np.load(out/(model+'_uniform.npz'));old=np.load(previous/(model+'_uniform.npz'))
                 assert np.array_equal(new['ids'],old['ids']) and np.array_equal(new['lengths'],old['lengths'])
                 delta=np.abs(new['probabilities']-old['probabilities']);assert delta.max()<1e-5
