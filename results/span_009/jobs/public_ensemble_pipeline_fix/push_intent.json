@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-06T19:48:54.618812+00:00",
+  "kernel": "arseniytrushin/llm-preference-span009-public-ensemble",
+  "quota_before": {
+    "used_seconds": 105538.667,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-07 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 2461.3329999999987
+  },
+  "max_session_seconds": 1000,
+  "notebook_sha256": "f9e2e05b82d5b4f24867c63247c18478dbcd89831ede19a28c7c7ea70fd52bbc",
+  "metadata_sha256": "6d9261bcf618b866a2e920a3b883379f8f649b6148cea0b091f0b95a8c18ec3c"
+}

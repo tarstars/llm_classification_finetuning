@@ -1,6 +1,6 @@
 # Active goal: reach leaderboard rank30; v9 executing
 
-Snapshot 2026-11-06 19:39UTC. New user outcome goal **move to 30 place in
+Snapshot 2026-11-06 19:49UTC. New user outcome goal **move to 30 place in
 leaderboard** is active in the goal service. Do not mark it complete until a
 fresh fully paginated Kaggle leaderboard proves team17244411 rank<=30. Initial
 live rank57/313, loss0.95481, rank30 threshold0.83086. No new official score yet.
@@ -25,16 +25,28 @@ is terminalERROR before any cells: old papermill required explicit kernelspec.
 Charged10.620seconds, zero worker outputs. Failure/source/receipt preserved.
 Do not rerun/rebuild that role. A distinct recovery role public_ensemble_runtime_fix
 adds explicit Python3 kernelspec and real notebook-engine startup rehearsal;
-model recipe unchanged. Exact version **.../2** is RUNNING at19:38:37UTC.
-Controller exec session42931/PID1340085 was live; revalidate it, never duplicate
-a mutation because an observer times out. Source/metadata receipts are under
-ROOT/runs/span_009/jobs/public_ensemble_runtime_fix and results/span_009/jobs.
+model recipe unchanged. Version2 is now terminalERROR, charged414.992seconds,
+six recovered files. All256Gemma uniform rows completed, then a fresh DataLoader
+worker segfaulted at the long-cohort transition. Descriptive training-overlapping
+loss .656236/accuracy.734375 is not independent quality. No Llama/long/test
+control exists. Source review also found our host-copy order serialized the
+author's intended GPU overlap.
+
+Distinct role **public_ensemble_pipeline_fix**, exact version **.../3**, accepted
+and RUNNING at19:48:58UTC. Controller exec session99320 is live; revalidate it,
+never duplicate a mutation because an observer times out. It restores author's
+overlap ordering and uses workers0 to avoid post-CUDA forks. Same weights,
+packing and .5/.5 ensemble. Its service cap1000seconds plus prior425.612 remain
+inside original2400. Compare all available256Gemma predictions within1e-5;
+do not claim missing control coverage. Full new two-model/long/test checks still
+required. Source/receipts are under ROOT/runs/span_009/jobs/public_ensemble_pipeline_fix
+and results/span_009/jobs. Prepared sources pushed at232953d.
 
 ROOT=/home/tarstars/database/llm_classification_finetuning; use .venv/bin/python.
-Controller: scripts/run_span_009_public.py --role public_ensemble_runtime_fix.
+Controller: scripts/run_span_009_public.py --role public_ensemble_pipeline_fix.
 It resumes the exact existing receipt. New source builds are forbidden after a
 role's push_intent exists. Total pre-refresh public GPUcap2400seconds; recovery
-sessioncap2200 leaves room after the first failure. Initial freequota2886.945s,
+old sessioncap2200 is historical; current pipeline-fix cap1000. Initial freequota2886.945s,
 refresh2026-11-07 00:00:00, paidFalse. After actual refresh, a separately admitted
 phase<=21600seconds is allowed by the new goal contract. No paid scaling/textAPI.
 Hidden inference<=9h, <=two frozen recipes/two official submissions in this phase.
@@ -43,11 +55,11 @@ Hidden inference<=9h, <=two frozen recipes/two official submissions in this phas
 hidden branches pass. Recovery also starts a real tiny notebook via nbclient.
 Uniform256+long64 profile IDs frozen before GPU; wrapper adds strict loading,
 checkpointSHA, actual devices/memory/timing and CSV checks. No model predictions
-yet recovered at this snapshot. Heavy source caches are under ROOT/runs/span_009/
+for Llama/long/test yet recovered at this snapshot. Heavy source caches are under ROOT/runs/span_009/
 research; never download giant host weights without a reason.
 
-Next: observe existing version2, retrieve its terminal output, then run
-scripts/audit_span_009_public.py (default recovery role). It checks remote source,
+Next: observe existing version3, retrieve its terminal output, then run
+scripts/audit_span_009_public.py --role public_ensemble_pipeline_fix. It checks remote source,
 profile IDs, checkpoint configurations, aligned predictions, devices, CSV and
 conservative runtime. If all gates pass, review long-sequence timing, freeze and
 commit qualification/audit, then scripts/submit_span_009_public.py submits one
@@ -59,7 +71,9 @@ If worse than30, retain goal and plan the next bounded phase; no hidden-score fi
 Important sources and first failure were pushed at b1e28f1/fe4c00e; verify latest
 HEAD/remote. Later controller/aggregate/progress files may still be dirty; stage
 reviewed explicit paths, never user07/12. Produce an executed v9 review notebook
-after real measurements. BacklogCLI tracks progress and next-span discoveries.
+after real measurements using scripts/build_span_009_review.py followed by
+scripts/execute_notebook.py notebooks/21_backlog_v9_public_ensemble.ipynb.
+BacklogCLI tracks progress and next-span discoveries.
 
 ## Historical v8 closure snapshot
 

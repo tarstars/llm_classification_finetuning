@@ -3,6 +3,7 @@
   "deadline": "2026-11-07T00:00:00+00:00",
   "job_seconds_caps": {
     "public_ensemble": 2400,
-    "public_ensemble_runtime_fix": 2200
+    "public_ensemble_runtime_fix": 2200,
+    "public_ensemble_pipeline_fix": 1000
   }
 }

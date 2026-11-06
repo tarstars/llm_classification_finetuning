@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-06T19:49:51.183321+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span009-public-ensemble/3",
+  "notebook_sha256": "f9e2e05b82d5b4f24867c63247c18478dbcd89831ede19a28c7c7ea70fd52bbc",
+  "cell_sources_identical": true,
+  "remote_docker_image": "gcr.io/kaggle-private-byod/python@sha256:e3f9bf91d1b7b36bf77554565d27c5733585fbe5e2b7f0832e068824e7accc3c",
+  "remote_dataset_sources": [
+    "tascj0/lmsys-checkpoints-0-0805",
+    "tascj0/lmsys-checkpoints-3-0805",
+    "tascj0/lmsys-modules-0805",
+    "tascj0/lmsys-packages"
+  ],
+  "internet_enabled": false
+}

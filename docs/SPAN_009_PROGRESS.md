@@ -33,3 +33,9 @@ author's intended GPU overlap. Prepared a distinct1000second pipeline-fix role:
 restore author ordering, disable worker forks, compare the recovered256Gemma
 predictions within1e-5, and require full new two-model/long/test/runtime checks.
 Historical sources and failures stay preserved. No official submission yet.
+
+Pipeline-fix version3 accepted and observedRUNNING2026-11-06 19:48:58UTC.
+Prepared/auditable sources pushed at232953d. Runtime/probability comparisons and
+all Llama/long/test outputs are pending. The recovered Gemma uniform256 profile
+has descriptive loss.656236/accuracy.734375; it may overlap supervised training
+and is not evidence of independent gain or official quality.
