@@ -1,0 +1,94 @@
+{
+  "observed_at": "2026-11-06T20:23:02.225082+00:00",
+  "latest": {
+    "stage": "cohort_complete",
+    "rows": 256,
+    "seconds": 94.92521647299998
+  },
+  "events": [
+    {
+      "stage": "model_loading"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 8,
+      "seconds": 17.47905773100001
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 8,
+      "seconds": 22.247568287000036
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 31.078025525999976
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 73.08905499899998
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 116.49269384500002
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 256,
+      "seconds": 124.202406198
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 256,
+      "seconds": 126.84434288799997
+    },
+    {
+      "stage": "verified_cohort_reused",
+      "rows": 64
+    },
+    {
+      "stage": "verified_cohort_reused",
+      "rows": 3
+    },
+    {
+      "stage": "model_loading"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 8,
+      "seconds": 12.813416378999932
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 8,
+      "seconds": 16.712216412999965
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 23.79822430899992
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 54.7974643
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 87.65055933499991
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 256,
+      "seconds": 92.92242580599998
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 256,
+      "seconds": 94.92521647299998
+    }
+  ]
+}

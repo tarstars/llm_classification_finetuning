@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-06T20:26:40.852486+00:00",
+  "tests": {
+    "passed": 116,
+    "seconds": 14.346
+  },
+  "notebook": {
+    "path": "notebooks/21_backlog_v9_public_ensemble.ipynb",
+    "code_cells": 4,
+    "errors": 0,
+    "sha256": "a73b3ccb73eaebc7fb00cda90396211ffe4cc958f314f2ccb55a1e65c0c3d3e8"
+  },
+  "public_gpu_seconds": 2108.15,
+  "public_cap_seconds": 2400,
+  "official_submissions": 0,
+  "goal_achieved": false
+}

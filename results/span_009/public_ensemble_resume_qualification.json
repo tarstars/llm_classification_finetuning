@@ -1,0 +1,194 @@
+{
+  "checked_at": "2026-11-06T20:24:48.937522+00:00",
+  "complete": true,
+  "source": {
+    "passed": true,
+    "checked_at": "2026-11-06T20:24:48.255919+00:00",
+    "kernel_version": "arseniytrushin/llm-preference-span009-public-ensemble/4",
+    "notebook_sha256": "16f722f632a45fcb38ec32c274bb3c8d2d99121d515883cf1f9e8fc5800c64ca",
+    "cell_sources_identical": true,
+    "remote_docker_image": "gcr.io/kaggle-private-byod/python@sha256:e3f9bf91d1b7b36bf77554565d27c5733585fbe5e2b7f0832e068824e7accc3c",
+    "remote_dataset_sources": [
+      "tascj0/lmsys-checkpoints-0-0805",
+      "tascj0/lmsys-checkpoints-3-0805",
+      "tascj0/lmsys-modules-0805",
+      "tascj0/lmsys-packages"
+    ],
+    "internet_enabled": false
+  },
+  "coverage": {
+    "uniform": {
+      "rows": 256,
+      "aligned_ensemble_replayed": true
+    },
+    "long": {
+      "rows": 64,
+      "aligned_ensemble_replayed": true
+    },
+    "test": {
+      "rows": 3,
+      "aligned_ensemble_replayed": true
+    }
+  },
+  "runtime_projection_seconds": 26980.97050912318,
+  "runtime_gate_passed": true,
+  "csv_sha256": "1fd8473f737c5136f46cefd30c25c6b3659b0b6063d4a7faa7bc71865f72e2c6",
+  "csv_verified": true,
+  "both_t4_verified": true,
+  "independent_local_quality": false,
+  "measured_roles": [
+    {
+      "role": "m0",
+      "cold_seconds": 170.673445819,
+      "cohorts": {
+        "warmup": {
+          "rows": 8,
+          "seconds": 22.247568287000036,
+          "tokens": 6366,
+          "max_tokens": 1380,
+          "token_ids_sha256": "ec11b4a7ecc93d32368723bc5eee7b2e3765bf83473b2985c050a436b5129afb",
+          "peak_allocated_bytes": [
+            10763062784,
+            8940364800
+          ],
+          "peak_reserved_bytes": [
+            11578376192,
+            9711910912
+          ]
+        },
+        "uniform": {
+          "rows": 256,
+          "seconds": 126.84434288799997,
+          "tokens": 240851,
+          "max_tokens": 4330,
+          "token_ids_sha256": "4015e2ba9056bdc0b48938ed155b367669bd99bd29f9c6ecc83972ea260d0b84",
+          "peak_allocated_bytes": [
+            10973638144,
+            9105754112
+          ],
+          "peak_reserved_bytes": [
+            13111394304,
+            11186208768
+          ]
+        },
+        "long": {
+          "rows": 64,
+          "seconds": 187.533964933,
+          "tokens": 276229,
+          "max_tokens": 4330,
+          "token_ids_sha256": "d608e39edf4ee1625ab606373b97b0cb0192cfb18a1c3206fa86eb28a5fe6edc",
+          "peak_allocated_bytes": [
+            10892544512,
+            9070341120
+          ],
+          "peak_reserved_bytes": [
+            12780044288,
+            10900996096
+          ]
+        },
+        "test": {
+          "rows": 3,
+          "seconds": 3.0571841140000515,
+          "tokens": 2936,
+          "max_tokens": 1951,
+          "token_ids_sha256": "996f7403e8e8d9b1fb96dfbb92b743bb02a4d7883892aa372021cd11e4787cfc",
+          "peak_allocated_bytes": [
+            10472400384,
+            8619234304
+          ],
+          "peak_reserved_bytes": [
+            12780044288,
+            10900996096
+          ]
+        }
+      },
+      "versions": {
+        "python": "3.10.13",
+        "torch": "2.1.2",
+        "transformers": "4.42.3",
+        "triton": "2.2.0",
+        "xformers": "0.0.24+042abc8.d20240802"
+      },
+      "loading_exact": true,
+      "recovered_cohorts": [
+        "long",
+        "test"
+      ]
+    },
+    {
+      "role": "m3",
+      "cold_seconds": 182.71704098700002,
+      "cohorts": {
+        "warmup": {
+          "rows": 8,
+          "seconds": 16.712216412999965,
+          "tokens": 6227,
+          "max_tokens": 1361,
+          "token_ids_sha256": "a8d30dc84fc444b164d9584642292de304b3bebd1691ee6b04e7802abf392d90",
+          "peak_allocated_bytes": [
+            8651025920,
+            7617096704
+          ],
+          "peak_reserved_bytes": [
+            9443475456,
+            8407482368
+          ]
+        },
+        "uniform": {
+          "rows": 256,
+          "seconds": 94.92521647299998,
+          "tokens": 233953,
+          "max_tokens": 4330,
+          "token_ids_sha256": "159305f636305c46bc4cea9da26c6f8080050392c2fa6b0c33662a48d303019a",
+          "peak_allocated_bytes": [
+            8862224896,
+            7810156544
+          ],
+          "peak_reserved_bytes": [
+            11280580608,
+            10244587520
+          ]
+        },
+        "long": {
+          "rows": 64,
+          "seconds": 116.33990986699996,
+          "tokens": 276423,
+          "max_tokens": 4333,
+          "token_ids_sha256": "6e0f08197545d18acf3a90444912d308d30fd94c1446cde57d3751a2f2363b63",
+          "peak_allocated_bytes": [
+            8823183872,
+            7789240832
+          ],
+          "peak_reserved_bytes": [
+            11280580608,
+            10244587520
+          ]
+        },
+        "test": {
+          "rows": 3,
+          "seconds": 1.9025807220000388,
+          "tokens": 2787,
+          "max_tokens": 1816,
+          "token_ids_sha256": "e5fd6d2547a78633b8231a60155bb7f6aa3260a0213e13979b24a42be7ab73eb",
+          "peak_allocated_bytes": [
+            8348276224,
+            7278939136
+          ],
+          "peak_reserved_bytes": [
+            11280580608,
+            10244587520
+          ]
+        }
+      },
+      "versions": {
+        "python": "3.10.13",
+        "torch": "2.1.2",
+        "transformers": "4.42.3",
+        "triton": "2.2.0",
+        "xformers": "0.0.24+042abc8.d20240802"
+      },
+      "loading_exact": true
+    }
+  ],
+  "official_submissions": 0
+}

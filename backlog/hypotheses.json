@@ -4720,6 +4720,14 @@
           "evidence": [
             "docs/SPAN_009_PROGRESS.md"
           ]
+        },
+        {
+          "at": "2026-11-06T20:26:40+00:00",
+          "status": "running",
+          "note": "Exact version4 COMPLETE; both256row prediction identity controls maxdelta0, long/test and bothGPU/source/CSV checks pass. Conservative warm projection26980.971s incl20%margin/startup/reserve; original coldFAIL preserved. TotalGPU2108.150s,116tests pass, Notebook21 executed. Admit one frozen official submission; rank goal pending.",
+          "evidence": [
+            "docs/SPAN_009_H54_QUALIFICATION.md"
+          ]
         }
       ]
     },

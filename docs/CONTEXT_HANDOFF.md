@@ -1,6 +1,6 @@
 # Active goal: reach leaderboard rank30; v9 executing
 
-Snapshot 2026-11-06 20:10UTC. New user outcome goal **move to 30 place in
+Snapshot 2026-11-06 20:27UTC. New user outcome goal **move to 30 place in
 leaderboard** is active in the goal service. Do not mark it complete until a
 fresh fully paginated Kaggle leaderboard proves team17244411 rank<=30. Initial
 live rank57/313, loss0.95481, rank30 threshold0.83086. No new official score yet.
@@ -44,9 +44,14 @@ do not claim missing control coverage. Full new two-model/long/test checks still
 required. Source/receipts are under ROOT/runs/span_009/jobs/public_ensemble_pipeline_fix
 and results/span_009/jobs. Prepared sources pushed at232953d.
 
-Current role **public_ensemble_resume**, exact **.../4**, RUNNING20:10:26UTC,
-controller exec session25180/PID1435145 live. Revalidate, never duplicate a
-mutation on timeout. Cap1000s; existing total1321.354 plus1000 fits original2400.
+Current role **public_ensemble_resume**, exact **.../4**, terminalCOMPLETE at
+20:23:47UTC; controller session25180 ended after retrieving31files. Charge786.796s;
+total public2108.150s/35.136min, within2400s. Do not rebuild/relaunch the role.
+Independent audit PASS: both uniform256 prediction controls maxdifference0,
+source/checkpoint/IDs/CSV/bothT4/long coverage pass. Warm projection26980.971s
+(7.495h), includes20%margin,392.350s measured startup/warmup and600s reserve.
+Original cold projection33795.914s remainsFAIL. See H54_qualification.json,
+docs/SPAN_009_H54_QUALIFICATION.md and qualification_validation.json.
 Commit3e2d622 pushed: one bounded warm-runtime/recovery protocol. Both uniform256
 cohorts are rerun after fixed8row warmups; count warmup once in startup, retain
 20%margin/600s reserve and original failed cold estimate. Finish Llama long/test.
@@ -69,25 +74,23 @@ Hidden inference<=9h, <=two frozen recipes/two official submissions in this phas
 116tests passed; full final-cell success/failure/watchdog and serialized public/
 hidden branches pass. Recovery also starts a real tiny notebook via nbclient.
 Uniform256+long64 profile IDs frozen before GPU; wrapper adds strict loading,
-checkpointSHA, actual devices/memory/timing and CSV checks. No model predictions
-for Llama/long/test yet recovered at this snapshot. Heavy source caches are under ROOT/runs/span_009/
+checkpointSHA, actual devices/memory/timing and CSV checks. All required model
+predictions are now recovered and audited. Heavy source caches are under ROOT/runs/span_009/
 research; never download giant host weights without a reason.
 
-Next: observe existing version4, retrieve its terminal output, then run
-scripts/audit_span_009_public.py --role public_ensemble_resume. It checks remote source,
-profile IDs, checkpoint configurations, aligned predictions, devices, CSV and
-conservative runtime. If all gates pass, review long-sequence timing, freeze and
-commit qualification/audit, then scripts/submit_span_009_public.py submits one
-exact tested version and monitors its receipt. This submission script is prepared
-only; no official intent/receipt yet. Never invoke it before qualification passes.
+Next: commit/push the audited qualification and execute scripts/submit_span_009_public.py
+once. Qualification now passes. It submits exact tested version4 and monitors
+only its persisted receipt. No official intent/receipt yet at this snapshot.
 Use --observe-only to resume an accepted official receipt. Verify live finalrank.
 If worse than30, retain goal and plan the next bounded phase; no hidden-score fit.
 
 Important sources and first failure were pushed at b1e28f1/fe4c00e; verify latest
 HEAD/remote. Later controller/aggregate/progress files may still be dirty; stage
-reviewed explicit paths, never user07/12. Produce an executed v9 review notebook
-after real measurements using scripts/build_span_009_review.py followed by
-scripts/execute_notebook.py notebooks/21_backlog_v9_public_ensemble.ipynb.
+reviewed explicit paths, never user07/12. Notebook21 is now executed: four code
+cells, one figure, zero errors;116tests pass in14.346s. Refresh after official
+result using scripts/build_span_009_review.py followed by scripts/execute_notebook.py
+notebooks/21_backlog_v9_public_ensemble.ipynb. V10 draft now has E15 (retain
+model/cohort/batch in sanitized progress), queued but not executed.
 BacklogCLI tracks progress and next-span discoveries.
 
 ## Historical v8 closure snapshot
