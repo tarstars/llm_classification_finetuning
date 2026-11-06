@@ -37,6 +37,11 @@ def main():
             assembled=store.assemble(starts,ids);target='completed_long.npz' if role=='context_completion' else 'judge_cache.npz';saved=np.load(out/target)
             for key in ['ids','original']+(['aligned_swap'] if role=='context_completion' else []):np.testing.assert_array_equal(assembled[key],saved[key])
             record['aggregate_arrays_equal_chunks']=True
+        if role=='serial_cascade':
+            record['measured_probability_views']=['original']
+            record['unused_storage_alias']='aligned_swap in generic native chunks duplicates original for storage compatibility. It is not a measured swapped prediction and is excluded from judge_cache.npz and every quality/repeatability comparison.'
+            if full:np.testing.assert_array_equal(assembled['original'],assembled['aligned_swap'])
+        else:record['measured_probability_views']=['original','aligned_swap']
         if role=='context_completion' and full:
             ref=np.load(root/'context_overlap_reference.npz');overlap=np.load(out/'overlap.npz');np.testing.assert_array_equal(ref['ids'],overlap['ids'])
             delta=np.abs(np.r_[ref['original']-overlap['original'],ref['aligned_swap']-overlap['aligned_swap']]);limits=cfg['raw_identity_limits']

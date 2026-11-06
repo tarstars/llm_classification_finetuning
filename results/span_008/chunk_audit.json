@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "checked_at": "2026-11-06T15:40:45.113593+00:00",
+  "checks": {
+    "serial_cascade": {
+      "chunk_store_created": true,
+      "chunks": 16,
+      "verified_rows": 2048,
+      "expected_rows": 2048,
+      "full_coverage": true,
+      "contract_sha256": "4b1eeec6f8ffbb228de71fb08b6ec80241fbd14977d1312c81435ea5930f033d",
+      "service_status": "COMPLETE",
+      "aggregate_arrays_equal_chunks": true,
+      "measured_probability_views": [
+        "original"
+      ],
+      "unused_storage_alias": "aligned_swap in generic native chunks duplicates original for storage compatibility. It is not a measured swapped prediction and is excluded from judge_cache.npz and every quality/repeatability comparison."
+    },
+    "context_completion": {
+      "chunk_store_created": true,
+      "chunks": 2,
+      "verified_rows": 256,
+      "expected_rows": 256,
+      "full_coverage": true,
+      "contract_sha256": "a4c8199c290a8eba4efd06419973f2a0c04a4807b4ab022261e2ec02b1b32191",
+      "service_status": "COMPLETE",
+      "aggregate_arrays_equal_chunks": true,
+      "measured_probability_views": [
+        "original",
+        "aligned_swap"
+      ],
+      "overlap": {
+        "rows": 128,
+        "mean_probability_difference": 0.0,
+        "max_probability_difference": 0.0,
+        "passed": true
+      },
+      "per_rank_final_peak_memory": [
+        {
+          "rank": 0,
+          "device": 0,
+          "name": "Tesla T4",
+          "peak_allocated_bytes": 6132427264,
+          "peak_reserved_bytes": 7822376960
+        },
+        {
+          "rank": 1,
+          "device": 1,
+          "name": "Tesla T4",
+          "peak_allocated_bytes": 6132427264,
+          "peak_reserved_bytes": 7734296576
+        }
+      ],
+      "scope": "Whole worker per rank, including model loading; not isolated allocation per chunk",
+      "stitched_long_rows": 1152
+    }
+  },
+  "competition_targets_read": false,
+  "new_gpu_executions": 0,
+  "seconds": 0.18806205200962722,
+  "interruption_test": "Uncommitted temporary ignored; resume cache hit performs zero fake inference calls; changed source contract, corruption, reordered IDs, incomplete coverage and overwrites are rejected",
+  "recovery_scope": "Aligned atomic chunks and compatible partial reuse. No automatic retry of a failed GPU version.",
+  "source_sha256": "776d02571a9c2cc059cb069fa7cc7ef2f0b109b756fe0df1d3ac0c145ae954fa",
+  "helper_sha256": "a05c5bf26e959e6e454224293e809baaf4e909b4aaec1ea7c6713b1469dccd3b"
+}

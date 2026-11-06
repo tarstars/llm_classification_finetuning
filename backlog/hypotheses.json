@@ -4150,7 +4150,7 @@
       "title": "Qualify and officially evaluate one frozen v7 classifier candidate",
       "id": "H50",
       "rank": 62,
-      "status": "deferred",
+      "status": "running",
       "introduced_in": 7,
       "discovered_during": null,
       "derived_from": [
@@ -4171,6 +4171,14 @@
           "note": "Neither frozen classifier candidate passed its predeclared quality/runtime gates. No confirmation qualification or official submission was executed.",
           "evidence": [
             "docs/SPAN_007_H50.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T15:40:37+00:00",
+          "status": "running",
+          "note": "H51 is frozen by the declared priority: full-dev fixed-temperature gain0.002625 CI[0.000675,0.004590], prospective conditional projection24282.9s. Use the sole5400s reserve for frozen confirmation/offline qualification; size pilot is excluded.",
+          "evidence": [
+            "results/span_008/candidate_selection.json"
           ]
         }
       ]
@@ -4349,7 +4357,7 @@
       ],
       "id": "H51",
       "rank": 65,
-      "status": "running",
+      "status": "done",
       "introduced_in": 8,
       "discovered_during": 7,
       "derived_from": [
@@ -4370,6 +4378,14 @@
           "note": "Start the single1800-second fixed completion with overlap identity,256missing rows and prospective unchanged-route timing.",
           "evidence": [
             "docs/SPAN_008_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-06T15:38:57+00:00",
+          "status": "done",
+          "note": "Bounded experiment finished; retain actual coverage, numerical/runtime gates, uncertainty and negative/incomplete evidence.",
+          "evidence": [
+            "docs/SPAN_008_H51.md"
           ]
         }
       ]

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "serialized_last_cell_sha256": "36b619fab69ef49d488d09c2e52b29150c6b4708dbf1cbf4cd7cb7cfc259fc44",
+  "result": {
+    "seconds": 0.01911616325378418,
+    "exit_code": 0,
+    "role": "promotion"
+  },
+  "new_gpu_executions": 0,
+  "public_service_seconds_cap": 5400,
+  "competition_worker_seconds_cap": 25200,
+  "same_prediction_function_for_qualification_and_test": true,
+  "serialized_mode_switch_tests": [
+    {
+      "expected_hidden": false,
+      "actual_hidden": false,
+      "deadline_seconds": 5280,
+      "passed": true
+    },
+    {
+      "expected_hidden": true,
+      "actual_hidden": true,
+      "deadline_seconds": 25080,
+      "passed": true
+    },
+    {
+      "expected_hidden": true,
+      "actual_hidden": true,
+      "deadline_seconds": 25080,
+      "passed": true
+    }
+  ]
+}

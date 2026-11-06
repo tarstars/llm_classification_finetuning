@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-06T15:27:56.855454+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span008-context-completion/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "notebook_sha256": "c14558b15892a60949fa89b89c0e993e0bfabdfce94460a3aa36f33c11daf614",
+  "source_sha256": "ef54dab88bdcde7e717d004cb28a0d176b1dd63c0180d6ece2e999675cb9e8dd"
+}

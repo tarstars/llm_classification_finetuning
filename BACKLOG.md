@@ -6,7 +6,7 @@ Version **8**, active; **40** tasks. Focus for this span: H52, H51, H36, H17, H0
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **21**, ready **0**, running **2**, done **2**, rejected **0**, deferred **12**.
+Hypothesis status: planned **21**, ready **0**, running **2**, done **3**, rejected **0**, deferred **11**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -75,10 +75,10 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 15 | [H25](#h25) | P2 / planned | Turn-aligned serialization | -0.008…+0.01 | medium | 8…18 | 0.5…2 | 10…22 | E00 |
 | 16 | [H23](#h23) | P2 / planned | Longer-context training | -0.01…+0.015 | high | 6…16 | 1…3 | 20…48 | E00 |
 | 19 | [H36](#h36) | P2 / done | Structural residual correction | -0.003…+0.003 | low | 3…8 | 0…0 | 0…0 | E00 |
-| 62 | [H50](#h50) | P2 / deferred | Qualify and officially evaluate one frozen v7 classifier candidate | -0.015…+0.015 | high | 2…5 | 1.25…1.25 | 0…0 | E00, E09, H48, H49 |
+| 62 | [H50](#h50) | P2 / running | Qualify and officially evaluate one frozen v7 classifier candidate | -0.015…+0.015 | high | 2…5 | 1.25…1.25 | 0…0 | E00, E09, H48, H49 |
 | 63 | [E12](#e12) | P2 / planned | Generate experiment contracts and reports from validated artifact schemas | — | medium | 2…4 | 0…0 | 0…0 | E09, E11 |
 | 64 | [E13](#e13) | P2 / running | Checkpoint full-partition inference with bounded progress and numerical identity | — | medium | 2…4 | 0.05…0.15 | 0…0 | E09, E10 |
-| 65 | [H51](#h51) | P2 / running | Complete the frozen context cohort from verified partial prediction chunks | -0.004…+0.004 | medium | 1…2 | 0.25…0.5 | 0…0.5 | E00, E09, H48 |
+| 65 | [H51](#h51) | P2 / done | Complete the frozen context cohort from verified partial prediction chunks | -0.004…+0.004 | medium | 1…2 | 0.25…0.5 | 0…0.5 | E00, E09, H48 |
 | 17 | [H22](#h22) | P3 / planned | Repeated-prompt reweighting | -0.008…+0.005 | low | 2…5 | 0.5…1 | 8…18 | E00 |
 | 20 | [H29](#h29) | P3 / planned | Human-preference prompt rubric | -0.015…+0.01 | low | 3…8 | 0.5…2 | 2…6 | E00 |
 | 21 | [H16](#h16) | P3 / planned | Refusal appropriateness | -0.005…+0.008 | medium | 6…14 | 0.25…1 | 8…18 | E00 |
@@ -498,7 +498,7 @@ A small fold-local residual model may add limited structure information beyond t
 
 ### H50
 
-**Qualify and officially evaluate one frozen v7 classifier candidate** — P2, deferred, risk high.
+**Qualify and officially evaluate one frozen v7 classifier candidate** — P2, running, risk high.
 
 Qualify and officially evaluate one frozen v7 classifier candidate
 
@@ -526,6 +526,7 @@ Qualify and officially evaluate one frozen v7 classifier candidate
 
 - 2026-11-05T18:39:31+00:00 — planned: Explicit user planning addition for a balanced30-hour span; see fixed plan. No experiment launched yet. Evidence: [docs/SPAN_007_PLAN.md](docs/SPAN_007_PLAN.md)
 - 2026-11-05T22:46:06+00:00 — deferred: Neither frozen classifier candidate passed its predeclared quality/runtime gates. No confirmation qualification or official submission was executed. Evidence: [docs/SPAN_007_H50.md](docs/SPAN_007_H50.md)
+- 2026-11-06T15:40:37+00:00 — running: H51 is frozen by the declared priority: full-dev fixed-temperature gain0.002625 CI[0.000675,0.004590], prospective conditional projection24282.9s. Use the sole5400s reserve for frozen confirmation/offline qualification; size pilot is excluded. Evidence: [results/span_008/candidate_selection.json](results/span_008/candidate_selection.json)
 
 ### E12
 
@@ -590,7 +591,7 @@ Bounded, ordered prediction chunks can make long evaluations observable and reco
 
 ### H51
 
-**Complete the frozen context cohort from verified partial prediction chunks** — P2, running, risk medium.
+**Complete the frozen context cohort from verified partial prediction chunks** — P2, done, risk medium.
 
 Finishing the256missing long-context rows can resolve the original paired context question without repeating completed controls, while matched route timing determines feasibility.
 
@@ -618,6 +619,7 @@ Finishing the256missing long-context rows can resolve the original paired contex
 
 - 2026-11-05T22:33:00+00:00 — planned: H48 reached its original deadline with896/1152long rows and allshort controls saved. Queue a single bounded completion with overlap identity and prospective matched-route timing; no full quality claim or v8 execution. Evidence: [docs/SPAN_007_H48.md](docs/SPAN_007_H48.md)
 - 2026-11-06T15:23:24+00:00 — running: Start the single1800-second fixed completion with overlap identity,256missing rows and prospective unchanged-route timing. Evidence: [docs/SPAN_008_PLAN.md](docs/SPAN_008_PLAN.md)
+- 2026-11-06T15:38:57+00:00 — done: Bounded experiment finished; retain actual coverage, numerical/runtime gates, uncertainty and negative/incomplete evidence. Evidence: [docs/SPAN_008_H51.md](docs/SPAN_008_H51.md)
 
 ### H22
 

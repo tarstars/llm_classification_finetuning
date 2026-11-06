@@ -75,6 +75,9 @@ def main():
         result['primary_comparison']='Raw paired loss, subject to matched exposure; temperature CV is a fixed secondary calibration diagnostic, not an alternative promotion gate'
         np.savez_compressed(run/'size_comparison.npz',ids=dev.id,labels=y,groups=groups,small=predictions['4b'],large=predictions['8b'],calibrated_small=calibrated['4b'],calibrated_large=calibrated['8b'])
     result.update(cpu_seconds=time.monotonic()-start,peak_rss_gib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024**2,checked_at=utc_now(),
+        comparison_limitations=['Two pretrained family checkpoints also differ in architecture and potentially pretraining; matched finetuning exposure does not isolate parameter count alone.',
+            'Per-device microbatch and accumulation differ to fit memory; report their numerical recipe and actual accepted exposure.',
+            'Only32accepted updates from fresh classifier heads on1024rows, with512 historically inspected development examples; no full-training or official-score estimate follows.'],
         decision='Short fresh-head capacity/throughput pilot only; no full-training quality or official-score claim. Full8Btraining needs a new bounded compute plan.')
     atomic_json(pub/'H02_results.json',result);print({k:v for k,v in result.items() if k!='arms'},flush=True)
 

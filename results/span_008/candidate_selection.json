@@ -1,0 +1,17 @@
+{
+  "frozen_at": "2026-11-06T15:39:00.713371+00:00",
+  "eligible": true,
+  "candidate_kind": "context_completion",
+  "priority": [
+    "serial_cascade",
+    "context_completion",
+    "structure"
+  ],
+  "confirmation_targets_used": false,
+  "input_sha256": {
+    "serial_cascade": "db183965a7896dc4b823546a0c2d76f24563dc1c906a9d72dbd8e60d99c0baec",
+    "context_completion": "80ed374030d7313b241da49e243ff62eea4883d82e763dc2c5d893d045f4e72b",
+    "structure": "75426c800f08e70128fe9cf4259c16c44283eec243d7b5555158620c6bc56956"
+  },
+  "source_sha256": "4fdf6a4e4a30cde5b28ee654cfdbc65e54605d2bceddf888fa6f7fe7cc6dd27c"
+}
