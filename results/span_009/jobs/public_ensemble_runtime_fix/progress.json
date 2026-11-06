@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-11-06T19:42:47.852449+00:00",
+  "latest": {
+    "stage": "inference_progress",
+    "rows": 160,
+    "seconds": 148.92044318
+  },
+  "events": [
+    {
+      "stage": "model_loading"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 71.66089133999992
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 148.92044318
+    }
+  ]
+}

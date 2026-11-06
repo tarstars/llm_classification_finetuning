@@ -23,3 +23,13 @@ Recovery startup/success/failure/watchdog/mode rehearsals pass. Corrected source
 commitfe4c00e is pushed. Exact version2 was accepted and observedRUNNING at
 2026-11-06 19:38:37UTC. GPU inference/quality are still pending. The separate
 submission controller is prepared only; no official submission has been made.
+
+Version2 is now terminalERROR, charged414.992seconds, six recovered artifacts.
+All256uniform Gemma rows completed (253.491seconds,240851tokens, strict weights
+and finite predictions); a new DataLoader worker segfaulted at the long-cohort
+transition. No Llama/long/test predictions exist. Total charge425.612seconds.
+Source inspection also found a host-copy ordering mismatch that serialized the
+author's intended GPU overlap. Prepared a distinct1000second pipeline-fix role:
+restore author ordering, disable worker forks, compare the recovered256Gemma
+predictions within1e-5, and require full new two-model/long/test/runtime checks.
+Historical sources and failures stay preserved. No official submission yet.

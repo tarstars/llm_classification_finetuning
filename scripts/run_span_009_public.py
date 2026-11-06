@@ -14,7 +14,7 @@ from arena.span004_support import api_client, quota
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--dry-run', action='store_true')
-    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix'], default='public_ensemble')
+    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix', 'public_ensemble_pipeline_fix'], default='public_ensemble')
     args = parser.parse_args()
     root = ROOT / 'runs/span_009'
     pub = REPO / 'results/span_009'
@@ -33,6 +33,12 @@ def main():
             assert read_json(root/'jobs/public_ensemble/status.json')['status'] == 'ERROR'
             cfg = read_json(config)
             cfg['job_seconds_caps']['public_ensemble_runtime_fix'] = 2200
+            atomic_json(config, cfg)
+        if args.role == 'public_ensemble_pipeline_fix':
+            assert read_json(root/'jobs/public_ensemble_runtime_fix/status.json')['status'] == 'ERROR'
+            assert (root/'jobs/public_ensemble_runtime_fix/output/public_ensemble/m0_uniform.npz').exists()
+            cfg = read_json(config)
+            cfg['job_seconds_caps']['public_ensemble_pipeline_fix'] = 1000
             atomic_json(config, cfg)
     def precondition(role):
         rehearsal = pub / (role+'_cell_rehearsals.json') if role != 'public_ensemble' else pub/'cell_rehearsals.json'

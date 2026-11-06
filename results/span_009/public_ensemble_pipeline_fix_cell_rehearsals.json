@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.016705751419067383,
+        "exit_code": 0,
+        "role": "public_ensemble_pipeline_fix"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.02193450927734375,
+        "exit_code": 7,
+        "role": "public_ensemble_pipeline_fix"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.20102834701538086,
+        "exit_code": -15,
+        "role": "public_ensemble_pipeline_fix"
+      }
+    }
+  ],
+  "mode_checks": [
+    {
+      "flag": "",
+      "expected_hidden": false,
+      "passed": true
+    },
+    {
+      "flag": "",
+      "expected_hidden": true,
+      "passed": true
+    },
+    {
+      "flag": "true",
+      "expected_hidden": true,
+      "passed": true
+    }
+  ],
+  "notebook_engine_startup_passed": true,
+  "kernelspec": "python3",
+  "last_cell_sha256": "5545b9e7d7ee3efd530ad17005aa885dcdd402331c59c3d26cb6242b40d99bfb",
+  "new_gpu_executions": 0
+}

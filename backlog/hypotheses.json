@@ -4704,6 +4704,14 @@
           "evidence": [
             "docs/SPAN_009_PROGRESS.md"
           ]
+        },
+        {
+          "at": "2026-11-06T19:47:45+00:00",
+          "status": "running",
+          "note": "Version2 ERROR at DataLoader fork transition after complete256row Gemma uniform cohort; recovered six artifacts, charge414.992s (total425.612). Prepare distinct1000s author-scheduling/zero-fork fix with matched available prediction control; no official submission.",
+          "evidence": [
+            "docs/SPAN_009_PROGRESS.md"
+          ]
         }
       ]
     }

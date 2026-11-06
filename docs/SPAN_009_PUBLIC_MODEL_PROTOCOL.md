@@ -50,6 +50,23 @@ final worker cell, and is capped at2200service seconds (2080worker seconds).
 Both attempts together must remain below the original2400second phase cap.
 No model, preprocessing, class mapping, packing or ensemble weight changes.
 
+The runtime-fix control's first160 uniform Gemma rows take148.92seconds. Source
+inspection finds a wrapper scheduling mismatch: logits.cpu() was called before
+launching GPU0's next stage, serializing work the author overlaps. Prepare a
+distinct pipeline-fix attempt that places the host copy after both stage launches,
+exactly matching the author. The control then failed when a new DataLoader worker
+segfaulted at the long-cohort transition after CUDA/tokenizer execution. All256
+uniform Gemma rows completed:253.491seconds,240851tokens, peak10.18/8.48GiB;
+charge414.992seconds, exactERROR, six recovered artifacts. No Llama or long/test
+control predictions exist. Keep the failure and compare the available256Gemma
+rows' IDs, lengths, checkpoint hashes and probabilities (maxdifference<1e-5).
+Do not claim numerical identity on missing controls. Disable DataLoader forks
+(workers0) to address the observed lifecycle failure. No training/packing/weight
+changes. The pipeline-fix service cap is1000seconds, admitted only after control
+termination and recovery
+and fresh total charges plus1000 fit the original2400second phase budget. If it
+does not fit, wait for an explicitly admitted refreshed-free-quota phase.
+
 Initial projection:25,000 hidden rows × measured uniform seconds/row ×1.2,
 plus both cold starts and600seconds reserve. Review long-sequence timing and
 coverage before accepting this extrapolation. Save all failures. No training or

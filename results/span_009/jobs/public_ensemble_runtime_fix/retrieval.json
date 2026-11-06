@@ -1,0 +1,15 @@
+{
+  "files": 6,
+  "artifact_sha256": {
+    "public_ensemble/m0_checkpoint.json": "053699c6ab61a2a2cbbecd2bf3a40955f6e4a0a3f2abed5f50e27ed7e027e1a8",
+    "public_ensemble/m0_summary.json": "1a688149f24b5deaf302c1b56477b0741075cfb95bcfadf6d6e573dab9832c6b",
+    "public_ensemble/m0_uniform.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "public_ensemble/profile_selection.json": "5b9286cff20fd9f13d18ba1e220981521235bf010d7456288dd3161596a40c7a",
+    "session_summary.json": "e4677f61166697deb1090b7c0b1c8450caa2d2a56a6344d99e45432050cc0191",
+    "worker_console.log": "4e3661472d13912cc0e3eb65f5e6fe23722c55da89c1075f0748a1da40631626"
+  },
+  "final_checkpoint": -1,
+  "new_gpu_executions": 0,
+  "signed_urls_persisted": false,
+  "retrieved_at": "2026-11-06T19:45:10.252484+00:00"
+}

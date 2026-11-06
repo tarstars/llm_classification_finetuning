@@ -21,10 +21,11 @@ from arena.span009_public import profile_indices, TEXT
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix'], default='public_ensemble')
+    parser.add_argument('--role', choices=['public_ensemble', 'public_ensemble_runtime_fix', 'public_ensemble_pipeline_fix'], default='public_ensemble')
     args = parser.parse_args()
     role = args.role
-    cap = 2400 if role == 'public_ensemble' else 2200
+    cap = {'public_ensemble': 2400, 'public_ensemble_runtime_fix': 2200,
+           'public_ensemble_pipeline_fix': 1000}[role]
     root = ROOT / 'runs/span_009'
     folder = root / 'notebooks' / role
     assert not (root / 'jobs' / role / 'push_intent.json').exists(), 'Never rebuild an accepted source'

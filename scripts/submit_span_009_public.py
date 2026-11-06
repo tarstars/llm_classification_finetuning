@@ -72,7 +72,7 @@ def main():
             gate = read_json(pub / 'H54_qualification.json')
             assert all(gate[key] for key in ['complete', 'runtime_gate_passed', 'csv_verified', 'both_t4_verified'])
             assert gate['runtime_projection_seconds'] < 32400 and gate['independent_local_quality'] is False
-            role = 'public_ensemble_runtime_fix'
+            role = gate['role']
             bundle = read_json(pub/(role+'_bundle.json'))
             verify_sources(REPO, bundle['source_sha256'])
             job = root/'jobs'/role

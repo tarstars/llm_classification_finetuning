@@ -128,7 +128,9 @@ def infer_role(args):
         path = Path(args.out) / (role + '_input.parquet')
         frame.to_parquet(path, index=False)
         dataset = LMSYSDataset(path, processor=processor, include_swap=False, is_parquet=True)
-        loader = DataLoader(dataset, batch_size=80, num_workers=2,
+        # Re-forking workers after CUDA/tokenizer execution crashed in the
+        # long-cohort control. Keep tokenization in this process for reliability.
+        loader = DataLoader(dataset, batch_size=80, num_workers=0,
             collate_fn=ShardedMaxTokensCollator(max_tokens=8192, base_collator=VarlenCollator()))
         outs, lengths, token_hash = [], [], hashlib.sha256()
         previous = None
@@ -146,12 +148,17 @@ def infer_role(args):
                     position_ids=micro['position_ids'], max_seq_len=micro['max_seq_len'],
                     attn_bias=BlockDiagonalCausalMask.from_seqlens(micro['seq_lens'])), 'cuda:0')
                 with torch.no_grad(), torch.cuda.amp.autocast():
+                    logits = None
                     if previous is not None:
                         hidden, prev_seq = previous
-                        outs.append(model.forward_part2(hidden, prev_seq, freq1).cpu())
+                        logits = model.forward_part2(hidden, prev_seq, freq1)
                     hidden = model.forward_part1(input_ids, seq_info, freq0)
                     seq1, hidden1 = to_device([seq_info, hidden], 'cuda:1')
                     previous = hidden1, seq1
+                    # Match the author: launch both GPU stages before the blocking
+                    # host copy, so the two devices can overlap their work.
+                    if logits is not None:
+                        outs.append(logits.cpu())
             event('inference_progress', role=role, cohort=name, batch=batch_number,
                   rows=len(lengths), seconds=time.monotonic()-begin)
         if previous is not None:
