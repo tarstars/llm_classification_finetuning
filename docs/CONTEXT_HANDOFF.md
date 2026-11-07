@@ -1,4 +1,4 @@
-# Active goal: above20th place; v13 Gemma-only probe accepted and queued
+# Active goal: above20th place; v13 Gemma-only probe accepted and running
 
 Snapshot2026-11-07 after v12closure and v13preparation. Read PROJECT_POLICY.md,
 GOAL.md, docs/SPAN_013_PLAN.md and docs/SPAN_012_RESULTS.md. Persistent objective
@@ -10,7 +10,7 @@ negative H58, sealed v12, selected H60and obtained a positive information gate.
 ## Current v13 state and next action
 
 Backlogv13has40members, focus H60only, statusrunning; v14draft empty. One quality
-recipe; one v13GPU probe accepted and QUEUED as of19:34UTC. Cached replay under results/span_013 passes:
+recipe; one v13GPU probe accepted and RUNNING since19:35:01UTC. Cached replay under results/span_013 passes:
 uniform512loss0.654242->0.652988, gain0.001253853, descriptive group95%
 [-0.00003863,0.00261964]. All3classes improve on uniform; controls gain0.00119445,
 long gain0.00004339. Original votes overlap checkpoint training: not honest CV,
@@ -50,7 +50,7 @@ runtime qualified yet. Actual source read-back passed for the exact accepted /1v
 pinned image and assets; internet disabled.
 
 Exact accepted public job arseniytrushin/llm-preference-span013-gemma-order/1 at
-19:34:04UTC, QUEUED. Controller unified session82852 LIVE: poll this handle and
+19:34:04UTC, RUNNING since19:35:01UTC. Controller unified session82852 LIVE: poll this handle and
 exact accepted version; never re-push/rebuild/restart on observation timeout.
 Fresh full admission:64owned notebooks, no active jobs, no reserved quota, paid
 off; all four public datasets pinned v1, all official receipts terminal. Source-
@@ -62,8 +62,8 @@ Auditor and future official controller/notebook25can be developed separately.
 Next: observe82852. Once exact COMPLETE/retrieval, run full
 .venv/bin/python scripts/audit_span_013_order.py and inspect controls/runtime
 before deciding anything. No duplicate admission/dry-run. All gates are needed
-before one frozen official submission; the official controller still needs
-implementation. Notebook25still needs implementation/execution. Other carried
+before one frozen official submission; the official controller is implemented/tested; notebook25is executed with cached
+evidence and pending qualification. Rebuild after the actual gate and final result. Other carried
 tasks remain unselected. No live GPU/controller remains from old spans.
 
 Old v10cache: ROOT/runs/span_010/jobs/order_pilot/output/order_completion; canonical
