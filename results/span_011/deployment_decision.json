@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-07T12:18:40.940021+00:00",
+  "submit": true,
+  "domain_review_completed": true,
+  "parameters_selected_without_leaderboard_feedback": true,
+  "temperature": 1.3161518671742531,
+  "candidate_kernel_version": "arseniytrushin/llm-preference-span011-confirmation-calibration/1",
+  "confirmation_loss_reduction": 0.01141383802969142,
+  "paired_group95": [
+    0.004395606536469478,
+    0.01839701596127209
+  ],
+  "confirmation_temperature_refitted": false,
+  "independent_competition_cv": false,
+  "official_score_forecast": null,
+  "domain_review": {
+    "report": "docs/SPAN_011_CONFIRMATION.md",
+    "all_three_classes_improved": true,
+    "class_fractions_close_to_original_training": true,
+    "main_length_bins_improved": true,
+    "small_3072_4096_bin_regression_rows": 11,
+    "code_and_other_prompt_proxies_improved": true,
+    "limitations": "Later English single-turn model pairs remain harder; no claim of identical competition conditionals or official-score gain.",
+    "rationale": "Predeclared independent fixed-temperature confirmation passed with positive lower bound; no class regression, broad main-length/proxy gains and exact engineering controls support one frozen official test."
+  },
+  "evidence_sha256": {
+    "confirmation_metrics.json": "1a4cc42ecd72159298f8a780651c16443d996ecca36472c151f51cab5a1958b7",
+    "frozen_temperature.json": "6e1b033fd0d2e2ca68a1256b6c60564016c8d9cb75dee7633372fb8b616075fc",
+    "learning_metrics.json": "76d812a069eda93ec31d5537092016afbaedf18982bdca96d1e1cbab45f450bb",
+    "calibration_learning_qualification.json": "478554a8b9eb4bbe9c803bf65024b77507af2a3f2b35f460a7f53c8cccf65597",
+    "calibration_confirmation_qualification.json": "d21b97bdc167e74c788a9fde42d4a5433671fb678434d5a913b76ab740ec1bc0",
+    "calibration_confirmation_bundle.json": "82bba66f05c33680e71359901f143bea9807491d938a2adb75bfcba94700e3c4",
+    "calibration_confirmation_source_verification.json": "02dac9659e1a8ad133ba4708c886a162935b991778099bbdc9d30eea1c31aed8"
+  }
+}

@@ -1,12 +1,14 @@
-# Active goal: above20th place; v11 H59 confirmation preparation
+# Active goal: above20th place; v11 H59 official candidate preparation
 
-Snapshot2026-11-07 after the learning pilot. Read PROJECT_POLICY.md, GOAL.md,
-docs/SPAN_011_PLAN.md and docs/SPAN_011_LEARNING.md. Persistent success is actual
+Snapshot2026-11-07 after untouched confirmation. Read PROJECT_POLICY.md, GOAL.md,
+docs/SPAN_011_PLAN.md, docs/SPAN_011_LEARNING.md and docs/SPAN_011_CONFIRMATION.md.
+Persistent success is actual
 rank<=19 on a fresh complete Kaggle leaderboard for team17244411, not a local
 metric or span closure. Last verified10:23:49UTC: rank30/311,.83053;
 rank19/20cutoff.82915, leader.82711. Goal remains active and unachieved.
 Previous goal turn was progress: exact pilot submission and source preparation;
-this turn completed inference, engineering qualification and learning-only fit.
+this turn completed both inference stages, exact engineering checks, learning-only
+fit and independent fixed-temperature confirmation.
 
 ## Current span and evidence
 
@@ -39,55 +41,61 @@ Class fractions A/B/tie .3389/.3613/.2998 are close to original .3491/.3419/.309
 Gain mostly improves tie logloss; A/B slight regressions and mixed length bins.
 Source2025model pairs are harder; this is out-of-time source evidence, not CV
 on competition labels. See learning_metrics.json and docs/SPAN_011_LEARNING.md.
-Confirmation labels remain UNOPENED. No official v11 submission/intent exists.
+Confirmation labels stayed unopened until after the frozen learning T and
+confirmation engineering qualification; they are now evaluated as described below.
+No official v11 submission/intent exists yet.
 
-## Immediate next action
+## Current confirmation and next action
 
-Learning positive point gain passes only the information gate. The separately
-admitted fixed1024confirmation pass is now RUNNING. Exact accepted version:
-arseniytrushin/llm-preference-span011-confirmation-calibration/1, accepted11:46:14UTC,
-RUNNING11:47:11UTC. Live controller handle72056; poll it, never re-push/restart an
-accepted mutation on observation timeout. Private text-only input dataset
-arseniytrushin/llm-span011-confirmation-inputs/1 is ready/private-verified, labels
-local/unopened. Frozen recipe commitc664beb is pushed; learning/frozenT/report
-commit9c249ea is pushed. Confirmation source read-back80260 terminal exit0 proved
-identical cells/image/datasets and exact T1.3161518671742531. No inference-source
-hash changed from qualified learning. Rehearsals passed all final cells/branches/
-watchdog/startup. Fresh admission quota used8272.289s, remaining99727.711s,
-reserved0, paid off, no nonterminal jobs before this admission. Public cap7200s;
-original phase deadline/caps retained. No confirmation labels read yet.
+Confirmation exact job arseniytrushin/llm-preference-span011-confirmation-calibration/1
+COMPLETE12:14:23UTC, controller72056 terminal exit0. All20retrieved files verified.
+Both256row raw component controls again maxdiff0. All engineering gates passed;
+conservative projection remains29849.450s using max startup across sessions.
+Charge1650.445s; combined v11public4087.202s/1.1353two-T4session hours.
+Confirmation labels were opened ONCE after engineering qualification, after the
+pre-frozen T and exact notebook/source were committed. No confirmation fit.
 
-After the exact confirmation job is COMPLETE and fully retrieved, run
-scripts/audit_span_011_calibration.py --stage confirmation, then only if engineering
-passes scripts/analyze_span_011_calibration.py --stage confirmation. Analyzer
-opens confirmation labels once against the frozen T hash and never fits on them.
-Require gain>=.001 and paired group95%lower>0, plus class/length/domain review.
-If evidence fails, retain baseline and close H59 without submission. No widening
-or averaging T values based on confirmation/leaderboard. Freeze file stays unchanged.
+Confirmation fixedT1.3161518671742531: loss1.04426491->1.03285107, gain.01141384,
+pairedgroup95[.00439561,.01839702], passes point>=.001/lower>0. Accuracy.472656
+unchanged. A/B/tie losses all improve;7/8length bins improve, regression limited
+to11rows in3072–4096. Code proxy48rows and remaining976both improve. Priors
+.3643/.3428/.2930 are close to original. Later English model pairs remain harder;
+this is independent-source evidence, not competition CV or an official forecast.
+See docs/SPAN_011_CONFIRMATION.md, confirmation_metrics.json and final notebook23
+(four executed code cells/two figures/no errors).
 
-scripts/submit_span_011_calibration.py is ready for one qualified confirmation
-version. Its three CPU tests passed admission guards and full runtime accounting.
-It requires deployment_decision.json with explicit completed domain review,
-temperature and all seven exact evidence hashes, then fresh quota/jobs and
-committed exact source before a single official mutation. No deployment decision
-exists yet. Observe the exact receipt, never re-submit after timeout. No research
-GPU while official scoring is pending. Do not mark the rankgoal complete from
-any local gain or finished span; verify actual fresh rank<=19 plus deliverables.
+Domain review admits ONE exact existing confirmation version at frozen T for
+an official test. results/span_011/deployment_decision.json contains all seven
+exact evidence hashes, class/length/domain rationale and no-LB-fitting marker.
+No official receipt/intent exists yet. Next commit/push confirmation report,
+metrics/decision/qualification/receipts/notebook, then run
+scripts/submit_span_011_calibration.py (not observe-only). It refreshes full
+quota/jobs and guards before one mutation. Avoid duplicate full dry-run inventories
+that previously provoked429; actual admission performs the same read-only checks.
+Use exact accepted receipt/version and preserve intent after any ambiguous reply.
 
-Before confirmation unblinding, the engineering audit was tightened to retain
-the original512row target throughput and use the larger observed startup cost
-from the learning/confirmation sessions. It cannot lower the earlier projection;
-all current candidate cold/warmup/other overhead is included. Three admission/
-runtime tests passed. Accepted inference source, frozen T and quality thresholds
-are unchanged. Full confirmation qualification/metrics remain pending.
+The official controller is committed/tested and requires fresh private-source/
+CSV/temperature/evidence identities, all original raw numerical checks, <=32400s
+projection, remaining free quota and original quota/deadline, no pending official
+receipt or research job. Once accepted, no researchGPU until it is terminal.
+Observe the same receipt, never re-submit on observation timeout. Actual official
+score/rank, not this confirmed source gain, determines movement toward rank<=19.
+Do not re-fit T, expert weights, tie offsets or routes from confirmation/LB feedback.
+Keep H59running until official outcome and final report/publication/closure.
+
+If official rank<=19, verify a fresh complete leaderboard plus all deliverables
+and publication before updating the persistent goal complete. If not, preserve
+baseline/both study results, close H59/v11 with actual evidence, queue discoveries
+forv12 and select another bounded span under the same persistent rankgoal. A
+finished span or local gain does not complete the goal.
 
 ## Frozen resources/source/publication
 
 Phase plan results/span_011/span_plan.json and configs/span_011.json retain
 original deadline2026-11-09T10:32:36.230293+00:00,21600s public total including
 retries, learning5400s, separately admitted confirmation7200s, max2frozen recipes/
-2official candidates. InitialGPUused5835.532s, refreshNov14, paid off. Learning
-charge2436.757s leaves19163.243s within original public cap; quota refresh cannot
+2official candidates. InitialGPUused5835.532s, refreshNov14, paid off. Combined public
+charge4087.202s leaves17512.798s within original public cap; quota refresh cannot
 enlarge it. Each hidden25krow conservative projection includes20%margin/all
 startup/warmup/600sreserve and must be<32400s with owned watchdog. No external
 text inference API, paid scaling or public prediction cache in hidden mode.
@@ -117,8 +125,10 @@ e73ea02 and telemetry2221523 are pushed. Preserve dirty user notebooks07/12.
 Notebook23 builder scripts/build_span_011_review.py reads only aggregates and
 sanitized progress at results/span_011/jobs/<role>/progress.json, not a top-level
 progress.json. Rebuild/execute with escalation for local Jupyter sockets after
-new evidence; final notebook23 must include final actual metrics. Notebook23 was refreshed/executed with engineering and learning metrics (four
-code cells, two figures, zero errors). Refresh again after confirmation.
+new evidence; final notebook23 must include final actual metrics. Notebook23 was
+refreshed/executed with engineering, learning and untouched
+confirmation metrics (four code cells, two figures, zero errors). Official outcome
+will require a final report/notebook refresh.
 
 ## V10 evidence and immutable history
 

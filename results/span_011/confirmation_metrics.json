@@ -1,0 +1,150 @@
+{
+  "at": "2026-11-07T12:15:46.243572+00:00",
+  "stage": "confirmation",
+  "temperature": 1.3161518671742531,
+  "comparison": {
+    "rows": 1024,
+    "groups": 1024,
+    "baseline_log_loss": 1.0442649126052856,
+    "candidate_log_loss": 1.0328510730039873,
+    "loss_reduction": 0.01141383802969142,
+    "paired_group95": [
+      0.004395606536469478,
+      0.01839701596127209
+    ],
+    "baseline_accuracy": 0.47265625,
+    "candidate_accuracy": 0.47265625,
+    "argmax_preserved": true,
+    "class_log_loss": {
+      "0": {
+        "rows": 373,
+        "base": 0.9920599460601807,
+        "candidate": 0.9919981684838485
+      },
+      "1": {
+        "rows": 351,
+        "base": 1.018730878829956,
+        "candidate": 1.0139716918421404
+      },
+      "2": {
+        "rows": 300,
+        "base": 1.1390478610992432,
+        "candidate": 1.1057337269167211
+      }
+    }
+  },
+  "information_gate_passed": true,
+  "quality_design": "Untouched confirmation at pre-frozen learning temperature",
+  "folds": null,
+  "diagnostics": {
+    "length_bin_0": {
+      "rows": 244,
+      "baseline_log_loss": 1.027815580368042,
+      "candidate_log_loss": 1.014341642589306,
+      "loss_reduction": 0.013473865089772457
+    },
+    "length_bin_1": {
+      "rows": 247,
+      "baseline_log_loss": 1.0722683668136597,
+      "candidate_log_loss": 1.0555832496171356,
+      "loss_reduction": 0.016685014562514016
+    },
+    "length_bin_2": {
+      "rows": 219,
+      "baseline_log_loss": 1.0314655303955078,
+      "candidate_log_loss": 1.026807871276778,
+      "loss_reduction": 0.004657767067096214
+    },
+    "length_bin_3": {
+      "rows": 206,
+      "baseline_log_loss": 1.0404493808746338,
+      "candidate_log_loss": 1.0296787608872955,
+      "loss_reduction": 0.010770711492041734
+    },
+    "length_bin_4": {
+      "rows": 56,
+      "baseline_log_loss": 1.0322023630142212,
+      "candidate_log_loss": 1.0216968377315938,
+      "loss_reduction": 0.010505430553816973
+    },
+    "length_bin_5": {
+      "rows": 33,
+      "baseline_log_loss": 1.0507783889770508,
+      "candidate_log_loss": 1.0436769177551704,
+      "loss_reduction": 0.0071014847683905785
+    },
+    "length_bin_6": {
+      "rows": 11,
+      "baseline_log_loss": 0.9530268311500549,
+      "candidate_log_loss": 0.9748834709110489,
+      "loss_reduction": -0.021856609958671527
+    },
+    "length_bin_7": {
+      "rows": 8,
+      "baseline_log_loss": 1.313018560409546,
+      "candidate_log_loss": 1.2557809221939085,
+      "loss_reduction": 0.05723756370983149
+    },
+    "code_keyword_proxy": {
+      "rows": 48,
+      "baseline_log_loss": 1.1983133554458618,
+      "candidate_log_loss": 1.1545704929056704,
+      "loss_reduction": 0.04374285881490131
+    },
+    "other_prompts": {
+      "rows": 976,
+      "baseline_log_loss": 1.0366888046264648,
+      "candidate_log_loss": 1.026864872025216,
+      "loss_reduction": 0.009823886187795852
+    },
+    "confidence": {
+      "baseline": {
+        "mean_max_probability": 0.5264682769775391,
+        "over_90pct_rows": 14,
+        "brier_score": 0.6289328103859422,
+        "mean_class_probabilities": [
+          0.3526918292045593,
+          0.3415376842021942,
+          0.305770605802536
+        ]
+      },
+      "candidate": {
+        "mean_max_probability": 0.4837318547240964,
+        "over_90pct_rows": 2,
+        "brier_score": 0.6217759875525329,
+        "mean_class_probabilities": [
+          0.34768310390762475,
+          0.33879436178152783,
+          0.3135225343108468
+        ]
+      }
+    },
+    "observed_class_fractions": [
+      0.3642578125,
+      0.3427734375,
+      0.29296875
+    ],
+    "original_training_class_fractions": [
+      0.34907876193955845,
+      0.341910677314404,
+      0.30901056074603755
+    ],
+    "transfer_limits": "English first-evaluation single-turn later votes, length-matched to original population. New model population and class prior may differ. Code keyword is a diagnostic proxy only. Not competition CV."
+  },
+  "prediction_sha256": "1f1f8b4f34c91fb935c00ac2b4201ce55580526b47803533ff35491ec689ef93",
+  "labels_sha256": "2ca01833234446b33d259262291a5710a79689fe069b1d58153bb205c398ff0f",
+  "source_revision": "6322995ab34d7c2693e3f47dd13fa5caa0789a74",
+  "selected_timestamp_range": [
+    "2025-04-17T03:51:30.343572+00:00",
+    "2025-07-24T23:39:24.483169+00:00"
+  ],
+  "independent_source_out_of_time": true,
+  "independent_competition_cv": false,
+  "confirmation_labels_inspected": true,
+  "new_gpu_executions": 0,
+  "script_sha256": "2d4fe5e6601cc9465ae6de108e927007d155c712ceb008f2cbe770b4ad428f07",
+  "statistics_sha256": "a2f815a158dd06b1584fcb734ef0ee985b3726b60768b23941032fc90f75fe47",
+  "temperature_fit_on_confirmation": false,
+  "requires_domain_review_before_official_submission": true,
+  "frozen_temperature_sha256": "6e1b033fd0d2e2ca68a1256b6c60564016c8d9cb75dee7633372fb8b616075fc"
+}

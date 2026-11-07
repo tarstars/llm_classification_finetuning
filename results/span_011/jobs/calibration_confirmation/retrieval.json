@@ -1,0 +1,29 @@
+{
+  "files": 20,
+  "artifact_sha256": {
+    "calibration/ensemble_confirmation.npz": "1f1f8b4f34c91fb935c00ac2b4201ce55580526b47803533ff35491ec689ef93",
+    "calibration/ensemble_control.npz": "42a03d3fe1af9d282f7c7c1b676952deab76aa5c2e9ce4deff5411514b2afa95",
+    "calibration/ensemble_test.npz": "5c984d887688e3f3cdfbd59aaf4186c642344cf600014b21257b4e86d662e7e3",
+    "calibration/m0_checkpoint.json": "053699c6ab61a2a2cbbecd2bf3a40955f6e4a0a3f2abed5f50e27ed7e027e1a8",
+    "calibration/m0_confirmation.npz": "2b60f0e512572e16f379e1a277732fb6a1157fb7ae2a07df80d99fa29d70a634",
+    "calibration/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "calibration/m0_summary.json": "0100d9e73cb764ac98ddf2bfb487e8d24eeb7df11a3ade82c46366b54a19c430",
+    "calibration/m0_test.npz": "416b6e64ac23c1afd1264cee6ce68fdaa9bef07d830334fff85c96e6ba8f66b0",
+    "calibration/m0_warmup.npz": "dda50072fcd1e293d6cb80c64a4f60e36037d801e1f56d349835f904df426b20",
+    "calibration/m3_checkpoint.json": "5b8acbde594a45028d140e5e90dc9fedc56fae2c6bd6025cee90e7e5b09c2b2f",
+    "calibration/m3_confirmation.npz": "a1ac5241b35728f1f76f1cb10db9f848bc55412eb2540de55c48b6b47f272db5",
+    "calibration/m3_control.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "calibration/m3_summary.json": "f8260d94162e50e543781182592d6afdf0da5ce23ab111190c16955095e8de95",
+    "calibration/m3_test.npz": "61330b55152f24cc19f6f6416f8cf4aec2dbd3949d88c4d99402ffe42f3faeb5",
+    "calibration/m3_warmup.npz": "9bfd253c3c5e4641ca6e3ae1e3df113f5594b7c97136bb8f1851346ddb881404",
+    "calibration/qualification.json": "0d5559a8d12a4a93e92796b40c2049f88d3fd2bc3d051e6fff41c436fe2e578f",
+    "hardware.json": "1077a9368c5bc1b1c0d77a34201b0419d17e8fb9d1e682c1113fc5b701683c34",
+    "session_summary.json": "b1998cec42c10f291b52da24951995e9c444be912ca830c6e2612608ccb4c2f4",
+    "submission.csv": "190aa377dfa048d1b93deae00cd9703b2fe555e6ffb29679998604dd4f30f1cf",
+    "worker_console.log": "d3e2ef8bf0bacef1c9c649d12d7d77fa334ef78da26034b540910e833f40f759"
+  },
+  "final_checkpoint": -1,
+  "new_gpu_executions": 0,
+  "signed_urls_persisted": false,
+  "retrieved_at": "2026-11-07T12:14:31.597026+00:00"
+}

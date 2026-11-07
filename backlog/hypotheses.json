@@ -5286,6 +5286,14 @@
           "evidence": [
             "results/span_011/jobs/calibration_confirmation/push.json"
           ]
+        },
+        {
+          "at": "2026-11-07T12:18:41+00:00",
+          "status": "running",
+          "note": "Untouched1024-group confirmation at pre-frozen T1.3161518671742531 passed: loss1.04426491->1.03285107, gain.01141384, paired95[.00439561,.01839702], accuracy unchanged. All3classes improve;7/8length bins positive (11-row long bin regresses), code/other proxies improve. Raw controls0diff; worst-startup target projection29849.450s. Public total4087.202s. Domain review approves one frozen official test; no LB-derived fitting, official score not forecast.",
+          "evidence": [
+            "docs/SPAN_011_CONFIRMATION.md"
+          ]
         }
       ]
     }
