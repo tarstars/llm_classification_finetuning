@@ -23,3 +23,9 @@ runtimeFAIL. Independent audit and submission programs now take an explicit
 --role, so a failed qualification cannot be mistaken for a different recipe.
 Never rebuild a source after its push intent, or re-submit after an ambiguous
 receipt. Only a fresh complete official rank<=19completes the goal.
+
+Second pilot is now RUNNING at exact returned source
+arseniytrushin/llm-preference-span010-packed-order-completion/1, commit25d71c9.
+Kaggle derived this slug from the title instead of the requested order-packed ID;
+the controller follows the actual response and no second push was made.
+Observer handle64908; recover/observe this exact version if observation expires.

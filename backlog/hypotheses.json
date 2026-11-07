@@ -5036,6 +5036,14 @@
           "evidence": [
             "docs/SPAN_010_ORDER_PILOT_RESULTS.md"
           ]
+        },
+        {
+          "at": "2026-11-07T08:31:46+00:00",
+          "status": "running",
+          "note": "Packing variant frozen/pushed at25d71c9. One GPU mutation accepted actual returnedversionarseniytrushin/llm-preference-span010-packed-order-completion/1 and RUNNING; Kaggle title-derived slug differs from intendedid. Controller64908 follows exact response, no repush. Original2802.478s charge and phasecap21600s preserved.",
+          "evidence": [
+            "docs/SPAN_010_PACKED_PROTOCOL.md"
+          ]
         }
       ]
     }

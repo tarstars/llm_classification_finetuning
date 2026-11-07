@@ -30,6 +30,13 @@ def paired_interval(delta,groups):
     return np.quantile(draws,[.025,.975]).tolist()
 
 
+def write_qualification(directory,role,result):
+    if role not in ['order_pilot','order_packed'] or result.get('role')!=role:
+        raise ValueError('Qualification must identify its actual experiment attempt')
+    atomic_json(Path(directory)/('H57_'+role+'_qualification.json'),result)
+    atomic_json(Path(directory)/'H57_qualification.json',result)
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--source-only',action='store_true')
     parser.add_argument('--role',choices=['order_pilot','order_packed'],default='order_pilot');args=parser.parse_args()
@@ -105,14 +112,14 @@ def main():
                 descriptive_paired_group95=paired_interval(delta,groups),
                 independent=False,original_votes_seen_in_checkpoint_training=True)
     prior=ROOT/'runs/span_009/jobs/public_ensemble_resume/output/public_ensemble'
-    for role in ['m0','m3']:
-        loaded=read_json(out/(role+'_checkpoint.json'))
-        assert loaded==read_json(prior/(role+'_checkpoint.json'))
-        assert loaded==read_json(out/(role+'_reverse_checkpoint.json'))
-        a=np.load(out/(role+'_control.npz'));b=np.load(prior/(role+'_uniform.npz'))
+    for model_role in ['m0','m3']:
+        loaded=read_json(out/(model_role+'_checkpoint.json'))
+        assert loaded==read_json(prior/(model_role+'_checkpoint.json'))
+        assert loaded==read_json(out/(model_role+'_reverse_checkpoint.json'))
+        a=np.load(out/(model_role+'_control.npz'));b=np.load(prior/(model_role+'_uniform.npz'))
         assert np.array_equal(a['ids'],b['ids']) and np.array_equal(a['lengths'],b['lengths'])
         difference=float(np.max(np.abs(a['probabilities']-b['probabilities'])))
-        identity[role]=dict(rows=256,max_abs_probability_difference=difference,passed=difference<1e-5)
+        identity[model_role]=dict(rows=256,max_abs_probability_difference=difference,passed=difference<1e-5)
     summaries={r:read_json(out/(r+'_summary.json')) for r in ['m0','m3','m3_reverse','m0_reverse']}
     for s in summaries.values():
         assert s['loading_exact']
@@ -133,8 +140,8 @@ def main():
         csv_sha256=sha256(csv),csv_verified=True,both_t4_verified=True,
         artifact_files_verified=len(retrieval['artifact_sha256']),measured_roles=summaries,
         base_seconds_per_row=base,reverse_seconds_per_all_row=reverse,startup_seconds=startup)
-    atomic_json(pub/('H57_'+role+'_qualification.json'),result)
-    atomic_json(pub/'H57_qualification.json',result)
+    assert role==args.role
+    write_qualification(pub,role,result)
     print(json.dumps({k:result[k] for k in ['complete','all_controls_passed','runtime_projection_seconds','runtime_gate_passed','both_t4_verified']}))
 
 

@@ -38,16 +38,19 @@ losses or official feedback. Float64 JS replay differed<6e-17 across libm/NumPy;
 auditor uses1e-12relative/1e-14absolute for JS only, exact route indices and unchanged
 1e-5prediction controls. The runtimeFAIL remains unchanged.
 
-## Second packing-only recipe in preparation
+## Second packing-only recipe RUNNING
 
 New files span010_packed.py/build_span_010_packed.py/run_span_010_packed.py.
 Only driver difference: packed microbatch tokens8192->12288. Models,4096context,
 image/kernels, batch80, routing and weights unchanged. Separate Kaggle slug
-arseniytrushin/llm-preference-span010-order-packed; roleorder_packed. Builder proves
+arseniytrushin/llm-preference-span010-packed-order-completion/1; roleorder_packed.
+This is the actual returned title-derived slug (metadata requested order-packed).
+One accepted mutation only; controller64908 follows the exact response. Source
+commit25d71c9 is pushed. Never repush or rebuild this accepted notebook. Builder proves
 all other driver bytes identical and exercises actual serialized cells/startup.
 Three packed CPU orchestration fixtures and two leaderboard tests pass; initial
 full121suite passed earlier. Recompute all controls/orientations/subset timings;
-no cache. Freeze/commit new bundle before launch; never rebuild after push intent.
+no cache. The frozen new bundle matches committedHEAD; never rebuild after push intent.
 After admission, recover/observe the exact same accepted version. An observation
 timeout does not authorize another GPU mutation. First frozen local files remain
 unchanged, so historical source verification still works.

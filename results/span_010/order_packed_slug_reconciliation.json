@@ -1,0 +1,8 @@
+{
+  "intended_id": "arseniytrushin/llm-preference-span010-order-packed",
+  "actual_kernel_version": "arseniytrushin/llm-preference-span010-packed-order-completion/1",
+  "accepted_cells_identical": true,
+  "one_push_only": true,
+  "new_gpu_executions_for_reconciliation": 0,
+  "reason": "Kaggle derived the new slug from the notebook title; all later reads/submission use the exact returned ref/version."
+}

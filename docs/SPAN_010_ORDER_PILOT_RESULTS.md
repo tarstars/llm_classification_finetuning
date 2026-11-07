@@ -25,6 +25,12 @@ rtol1e-12/atol1e-14 for this diagnostic only. Selected indices, prediction repla
 checkpoint/ID checks and the original1e-5prediction-control gate remain strict.
 The measured runtimeFAIL is unchanged.
 
+When adding per-attempt audit files, a model-loop variable briefly shadowed the
+attempt name in generated report metadata. This was fixed before any official
+submission; an actual first-attempt audit was rerun and a regression fixture now
+preserves separate attempt records and rejects model names as attempt names.
+Worker outputs, prediction controls and measured metrics were unchanged.
+
 [Full preserved audit](../results/span_010/H57_order_pilot_qualification.json).
 No official v10 submission has been made. Prepare a separately frozen, single-
 change packing variant under the remaining original phase budget before another

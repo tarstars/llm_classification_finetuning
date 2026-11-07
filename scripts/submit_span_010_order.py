@@ -59,6 +59,7 @@ def main():
                 'scripts/audit_span_010_order.py':sha256(REPO/'scripts/audit_span_010_order.py')})
             qualification=pub/('H57_'+role+'_qualification.json')
             gate=read_json(qualification)
+            assert gate['role']==role,'Qualification belongs to another experiment attempt'
             assert all(gate[k] for k in ['complete','all_controls_passed','runtime_gate_passed','csv_verified','both_t4_verified'])
             assert not gate['independent_local_quality'] and gate['runtime_projection_seconds']<32400
             bundle=read_json(pub/(role+'_bundle.json'));verify_sources(REPO,bundle['source_sha256'])
