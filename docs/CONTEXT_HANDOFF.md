@@ -1,217 +1,80 @@
-# Active goal: reach leaderboard rank30; v9 executing
+# Rank30 achieved; v9 is sealed
 
-Snapshot 2026-11-07 01:45UTC. New user outcome goal **move to 30 place in
-leaderboard** is active in the goal service. Do not mark it complete until a
-fresh fully paginated Kaggle leaderboard proves team17244411 rank<=30. Initial
-live rank57/313, loss0.95481, rank30 threshold0.83086. No new official score yet.
-The completed v8 stop contract below is historical, superseded for new work by
-the explicit rank30 objective and current GOAL.md/docs/SPAN_009_PLAN.md.
+Snapshot2026-11-07 after the official result. Verify current files and live
+service state for later questions. The user objective **move to30place in
+leaderboard** is achieved: exact submission58068582 COMPLETE, score0.83053,
+team17244411 rank30/312 on full leaderboard and independent repeat02:11:38UTC.
+Previous best0.95481/rank57; absolute loss reduction0.12428. This is an official
+result, not a local quality estimate. Final publication/current-rank verification
+precedes the goal-service completion update. Do not start more experiments.
 
-V9 now has38members and focus E14/H54. E14done (exact full model identity fix,
-regression fixtures and read-only live check); H54running. H53 remains outside
-initial focus. V10 remains discovery draft. No subagents. Preserve dirty user
-notebooks07/12. Scope all searches to the project, never HOME/prj/FUSE mounts.
+Read README.md, PROJECT_POLICY.md, docs/SPAN_009_RESULTS.md and
+SPAN_009_COMPLETION.md. GOAL.md remains the exact completed rank30 contract,
+archived unchanged in docs/GOAL_V9.md; it does not authorize v10 execution.
+V9 focus E14/H54 is done. Active v10 has39tasks:36 unfinished carryovers plus
+E15/H55/H56, no focus/execution. V11 is empty. A later user goal chooses a new
+bounded span. All historical backlog snapshots remain preserved.
 
-H54 freezes the accessible historical tascj public Gemma2-9B/Llama3-8B trained
-ensemble, unchanged author modules/ProcessorPAB and equal .5/.5 weights, Llama
-swapped and aligned[1,0,2]. Four author Kaggle datasets pinned version1, old
-Python3.10 image e3f9bf91...cc3c and offline Triton/xformers wheels. Source
-repo83cd93d50b9283c18711e8c63e4e1c6399c7b9ce Apache2.0. Original-train and
-external-data supervision means our local heldouts can overlap training: no
-independent local-quality claim. BlackPearl final weight dataset returned403.
+## Deployed model and outcome
 
-First exact version arseniytrushin/llm-preference-span009-public-ensemble/1
-is terminalERROR before any cells: old papermill required explicit kernelspec.
-Charged10.620seconds, zero worker outputs. Failure/source/receipt preserved.
-Do not rerun/rebuild that role. A distinct recovery role public_ensemble_runtime_fix
-adds explicit Python3 kernelspec and real notebook-engine startup rehearsal;
-model recipe unchanged. Version2 is now terminalERROR, charged414.992seconds,
-six recovered files. All256Gemma uniform rows completed, then a fresh DataLoader
-worker segfaulted at the long-cohort transition. Descriptive training-overlapping
-loss .656236/accuracy.734375 is not independent quality. No Llama/long/test
-control exists. Source review also found our host-copy order serialized the
-author's intended GPU overlap.
+Exact notebook arseniytrushin/llm-preference-span009-public-ensemble/4 uses
+public tascj Gemma2-9B and Llama3-8B classifiers with unchanged author
+ProcessorPAB/custom kernels,4096conversation-token limit, equal .5/.5 weights,
+Gemma original answer order and Llama swapped/aligned[1,0,2]. Four public
+Kaggle datasets are pinned version1; old Python3.10 image and offline wheels
+are pinned. No new project training or hidden-label lookup. These models have
+original-vote/external supervision; local losses may overlap training and cannot
+establish independent quality. The official score establishes deployment quality.
 
-Distinct role **public_ensemble_pipeline_fix**, exact version **.../3**, accepted
-and now terminalERROR after the owned880second watchdog (exit-15). Charge895.742s,
-11 recovered files. Both uniform256 cohorts and Gemma long/test are complete;
-Llama long/test are missing. Gemma matches version2 exactly (maxdelta0). Cold
-uniform projection33795.914s FAILS unchanged32400s limit. It restores author's
-overlap ordering and uses workers0 to avoid post-CUDA forks. Same weights,
-packing and .5/.5 ensemble. Its service cap1000seconds plus prior425.612 remain
-inside original2400. Compare all available256Gemma predictions within1e-5;
-do not claim missing control coverage. Full new two-model/long/test checks still
-required. Source/receipts are under ROOT/runs/span_009/jobs/public_ensemble_pipeline_fix
-and results/span_009/jobs. Prepared sources pushed at232953d.
+See results/span_009/{official_result,official_leaderboard,
+final_leaderboard_verification,deployed_candidate,H54_qualification}.json.
+Both fresh256-row model predictions exactly match saved controls; independent
+source/checkpoint/ID/CSV/bothT4/runtime audits pass. Version4 COMPLETE; versions1–3
+stayERROR (missing kernelspec, DataLoader crash, owned watchdog). Partial-output
+recovery is explicit, hash-verified and public-only. Actual serialized hidden
+branch tests prove no recovery cache/flags enter hidden inference.
 
-Current role **public_ensemble_resume**, exact **.../4**, terminalCOMPLETE at
-20:23:47UTC; controller session25180 ended after retrieving31files. Charge786.796s;
-total public2108.150s/35.136min, within2400s. Do not rebuild/relaunch the role.
-Independent audit PASS: both uniform256 prediction controls maxdifference0,
-source/checkpoint/IDs/CSV/bothT4/long coverage pass. Warm projection26980.971s
-(7.495h), includes20%margin,392.350s measured startup/warmup and600s reserve.
-Original cold projection33795.914s remainsFAIL. See H54_qualification.json,
-docs/SPAN_009_H54_QUALIFICATION.md and qualification_validation.json.
-Commit3e2d622 pushed: one bounded warm-runtime/recovery protocol. Both uniform256
-cohorts are rerun after fixed8row warmups; count warmup once in startup, retain
-20%margin/600s reserve and original failed cold estimate. Finish Llama long/test.
-Only completed Gemma long/test predictions from exact failed version3 are reused
-in public qualification, with byte/ID/checkpoint hashes. Small cached outputs
-are embedded in the private notebook, no raw text/labels. Actual serialized
-hidden branch tests prove no recovery cache/flags are created or used in hidden
-inference. Require both fresh uniform controls within1e-5. Never call failed
-version3 COMPLETE. Hidden code runs the actual models on actual hidden text.
+All48retrieved files pass hashes. Public GPU charge2108.150s/35.136minutes,
+under2400s. Conservative hidden projection26980.971s/7.495h includes20%margin,
+startup/warmup and600s reserve, under9h. Original cold projection33795.914sFAIL
+is preserved. About5h42m receipt wall time includes queue/obfuscation, not exact
+GPU time. Quota reset during scoring: do not subtract across periods. No extra
+research GPU was admitted; paid scaling off, no active jobs/reservations at
+terminal audit. All observer/controller handles are terminal; do not resubmit.
 
-ROOT=/home/tarstars/database/llm_classification_finetuning; use .venv/bin/python.
-Controller: scripts/run_span_009_public.py --role public_ensemble_resume.
-It resumes the exact existing receipt. New source builds are forbidden after a
-role's push_intent exists. Total pre-refresh public GPUcap2400seconds; recovery
-old sessioncap2200 is historical; current pipeline-fix cap1000. Initial freequota2886.945s,
-refresh2026-11-07 00:00:00, paidFalse. After actual refresh, a separately admitted
-phase<=21600seconds is allowed by the new goal contract. No paid scaling/textAPI.
-Hidden inference<=9h, <=two frozen recipes/two official submissions in this phase.
+## Artifacts and preservation
 
-116tests passed; full final-cell success/failure/watchdog and serialized public/
-hidden branches pass. Recovery also starts a real tiny notebook via nbclient.
-Uniform256+long64 profile IDs frozen before GPU; wrapper adds strict loading,
-checkpointSHA, actual devices/memory/timing and CSV checks. All required model
-predictions are now recovered and audited. Heavy source caches are under ROOT/runs/span_009/
-research; never download giant host weights without a reason.
+Use .venv/bin/python. Heavy root=/home/tarstars/database/llm_classification_finetuning;
+private caches, artifacts and figures live under runs/span_009. Never walk HOME,
+~/prj, Arc/FUSE mounts or troll_farm. No subagents. Preserve user-dirty notebooks
+07_error_poster.ipynb and12_backlog_v1_span.ipynb; never stage/reset them.
+~/notebooks/llm_classification_finetuning links to this repository's notebooks.
 
-Official submission **58068582** accepted2026-11-06 20:28:39UTC from exact
-tested version4; live statusPENDING at2026-11-07 01:44:10UTC. Initial observer
-sessions28832/95282/15903/14710/96800 ended normally at their one-hour windows;
-current read-only observer exec session81740 was live. Revalidate the exact
-receipt/process, never send another mutation. This is a verified remote wait,
-not a stopped GPU job. No new score or rank is available after four receipt hours.
-Use scripts/submit_span_009_public.py --observe-only if the local observation
-window ends; it resumes the same receipt. This script has one-hour resumable
-observation windows, while hidden runtime allowance is9h. No new research GPU
-job during hidden evaluation, including after quota refresh. Resource projection
-is7.495h; this is not a new quality estimate. Official score/rank remain pending;
-last verified own rank57/313 score.95481. Do not complete the goal prematurely.
-Use --observe-only to resume an accepted official receipt. Verify live finalrank.
-If worse than30, retain goal and plan the next bounded phase; no hidden-score fit.
+Notebook21_backlog_v9_public_ensemble.ipynb is executed: five code cells, two
+figures, zero errors, actual official score/rank. Its builder deliberately refuses
+rewriting after span sealing.116tests passed; closure checks include backlog
+version formation, source/goal archive, snapshot hashes, notebook/link, resources
+and publication. See results/span_009/closure_audit.json and completion record.
 
-Important sources and first failure were pushed at b1e28f1/fe4c00e; verify latest
-HEAD/remote. Later controller/aggregate/progress files may still be dirty; stage
-reviewed explicit paths, never user07/12. Notebook21 is now executed: five code
-cells, two figures, zero errors;116tests pass in14.346s. Refresh after official
-result using scripts/build_span_009_review.py followed by scripts/execute_notebook.py
-notebooks/21_backlog_v9_public_ensemble.ipynb. V10 draft now has E15 (retain
-model/cohort/batch in sanitized progress), H55 and H56; all queued, not executed.
-H55 records an accessible earlier BlackPearl classifier in exact public parent
-sayoulala/merge-gemma-model-step1/1 (COMPLETE, four full safetensor shards).
-Only config/index were downloaded. This is not the inaccessible final winning
-merge; no measured advantage or GPU admission. See SPAN_009_ALTERNATE_SOURCE_AUDIT.md
-and blackpearl_parent_availability.json. Keep it conditional/low-priority rather
-than assuming the author's winning score applies to these earlier weights.
-H56 revisits skipped H10 using released Skywork Reward V2 Qwen3-0.6B/8B
-scalar heads, with a symmetric three-class tie calibrator. Only official cards
-and configs were downloaded/pinned; no weights/GPU/text service. This is future
-planning after H54's outcome, not a third v9 candidate. See
-SPAN_009_REWARD_MODEL_FOLLOWUP.md and reward_v2_source_planning.json. Benchmark
-claims do not establish Kaggle gain; provenance and exact offline availability
-remain to audit. Primary8B arm, tiny arm only a cheap control; avoid substituting
-the easier tiny model for the rank goal. Budget proposal<=1h pilot plus separately
-admitted<=4h follow-up. Do not execute if rank30 is achieved or scoring is pending.
-Post-submission CPU audit completed all57477Gemma input lengths in237.352s,
-1.024GiB RSS, zero targets/GPU. First256token fingerprint exactly matches GPU.
-Full mean926.573 versus uniform940.824 (sample1.515%higher); p95=2054.2,
-max4330,362rows (0.630%)>=4300near-cap proxy. This is not exact truncation
-detection, hidden lengths or a revised runtime gate. See full_pab_length_audit.json,
-SPAN_009_LENGTH_AUDIT_RESULTS.md and Notebook21 (now five code cells/two figures).
-BacklogCLI tracks progress and next-span discoveries.
+The label-free CPU audit checks all57477prepared Gemma inputs after exact256row
+GPU token identity: mean926.573 versus sample940.824 (sample1.515%higher),
+p95=2054.2,max4330,362rows (0.630%)>=4300near-cap proxy. Not exact truncation
+or hidden lengths, and no revised runtime gate. See full_pab_length_audit.json.
 
-## Historical v8 closure snapshot
+## Conditional future work, not executed
 
-Snapshot2026-11-06 after v8 closure. Verify current files and live service state
-before acting. The user's "execute this plan" task is complete. V8 is sealed;
-v9 is active with **37 tasks: 35 carryovers and two discoveries**, no focus or
-execution. V10 is an empty draft. GOAL.md is the exact completed v8 contract,
-archived as docs/GOAL_V8.md; it does not authorize successor execution.
+E15 retains role/cohort/batch in sanitized live progress. H55 records accessible
+earlier BlackPearl weights in sayoulala/merge-gemma-model-step1/1, distinct from
+the inaccessible final winning merge; only small config/index downloaded.
+H56 revisits old H10 using released Skywork Reward V2 Qwen3 scalar heads and a
+symmetric tie calibrator. Official cards/configs are pinned; no weights/GPU/text
+service. Proposed0.6B cheap control/8Bmain arm<=1h pilot plus separately admitted
+<=4h follow-up, with provenance/runtime/nested calibration checks. These are
+unmeasured ideas and were explicitly conditional on missing the rank30 target.
+Since it is achieved, do not launch them under this completed goal.
 
-Read README.md, PROJECT_POLICY.md, docs/SPAN_008_RESULTS.md and the completion
-record. Use .venv/bin/python. Never walk HOME, ~/prj, Arc/FUSE mounts or troll_farm.
-No subagents. Heavy root=/home/tarstars/database/llm_classification_finetuning;
-v8 artifacts are under runs/span_008. User-dirty notebooks07/12 are preserved
-and excluded from commits. The ~/notebooks project link points to repo/notebooks.
-
-## Results
-
-Best verified official remains **0.95481**, submission57979825. No new official
-submission, hidden evaluation, paid scaling, external text API, new goal-service
-activation or quota-refresh expansion in v8. The original mains deadline was
-2026-11-07 00:30:17UTC and was not reset.
-
-H51 completed the original context cohort: 896 saved long rows plus 256 new rows,
-with exactly zero raw drift on the fixed128-row long overlap. All1152paired rows
-and5746overall development rows are covered. FixedTloss .953962→.951337,
-gain.002625 CI[.000675,.004590]. Matched deployed-baseline sensitivity agrees.
-Original conservative projection25868.1sFAIL; prospectively declared conditional
-projection24282.9sPASS. No weights trained or calibration changed.
-
-H50 was the one frozen context qualification, using the mutually exclusive
-reserve instead of the8Bpilot. Recomputed all5746confirmation rows:4573short,
-1173long. Loss .947161→.945541, gain.001620 CI[−.000427,.003486], so the statistical
-gate FAILS. Identity on every unchanged row, bothT4s, source/coverage, visible CSV
-and24327.1sprojection PASS. No submission or fallback after the failed gate.
-Independent token-route/chunk reconstruction exactly replays the contrast.
-
-H52 serial10%judge is stable/affordable but not better. All2432responses replay;
-cache2048rows,197routed. Loss .946010→.946221, gain−.000211 CIcrosseszero.
-Routed accuracy34.01→42.64%while loss1.098711→1.100901.64answer swaps have mean
-absolute per-probabilitydifference .138888/max.741979. Allfive judge temperatures
-hit3.0. The latter is a readonly diagnostic, not an alternative fit or a gain.
-H53 queues one fixed ceiling3→10CPU-only ablation for v9.
-
-H36's structural residual gains.001072 over calibration, but its comparison with
-the identical probability-only tree control is inconclusive; no promotion.
-H17 audits60829synthetic external pairs, leaving54926provisionally usable after
-purges.3808equal-score pairs are not human tie targets. Original LMSYS remains
-gated; no mixed-data training. The stopped CPU memory attempt and exact source
-are preserved; recovery retains its original clock. H15 audits the final public
-BlackPearl5foldmerge: known original-vote supervision prevents an independent
-local teacher benchmark. No weights, soft labels or distillation obtained.
-H02 prepares an exact-instance8B/matched exposure pilot and real CPUstop/scheduler
-test, but no8BGPUrun or quality claim. H02/H15/H17 carry as deferred.
-
-E13 completes compatible atomic chunks, ID/hash/coverage/interruption guards,
-whole-cell success/failure/watchdog rehearsals and actual both-rank memory. Native
-chunks have an explicitly unused aligned_swap storage alias duplicating original;
-it is not a measured swapped view, is omitted from judge_cache.npz and is never
-used for quality/equivariance. E14 queues full model framework/variation/version
-checking after the API returned unrelated variants with the same version number.
-
-## Closure proof
-
-110tests pass in13.305s after version formation. Notebook20_backlog_v8_span has
-five executed code cells, three figures and zero errors. Figures stay in database.
-All three exact versions COMPLETE,289retrieved files/hash-checked, no active jobs,
-reservations or owned controllers. Researchcharge8349.068s/2.31919two-T4sessionhours,
-under10800s; hidden0. Remainingquota2886.945s at final observation, paidFalse.
-Treat quota as dated and verify afresh before future work.
-
-See results/span_008/{validation,notebook_validation,terminal_audit,chunk_audit,
-promotion_audit,closure_audit}.json and docs/SPAN_008_COMPLETION.md. Closure checks
-30old snapshots, user07/12hashes, exact goal/archive, notebook link, source/result
-hashes, carryover membership and emptyv10. All model/source caches are preserved.
-The closing commit contains closure_audit.json; verify GitHubmain=HEAD.
-
-The old sequence/controller programs are completed: execute_span_008.py,
-run_span_008_job.py promotion and execute_span_008_promotion.py all ended. Do not
-rerun them or the sealed review builder: that can overwrite historical reports.
-Optional submission code was prepared but never invoked; there is no submission
-intent or receipt to resume. No pending permission or automatic-review rejection
-remains. Stage explicit reviewed paths and preserve user notebook changes.
-
-## Next span, not executed
-
-V9 new tasks: E14 exact model-instance admission (noGPU), H53 one binding judge
-calibration-bound sensitivity test on the existing stable cache (noGPU pilot).
-H53 must keep the complete nested chain and original bounds3control, record its
-post-result origin, and require a separately frozen transfer before adoption.
-H02 larger training, H17 auxiliary data and H15 clean teacher/distillation remain
-possible with explicit fresh resource/provenance admission. E12 artifact-derived
-contracts remains an unfinished carryover. A new bounded user goal selects focus;
-no automatic v9 execution follows this completed contract.
+GitHub reflection is tarstars/llm_classification_finetuning, main. The closing
+commit contains the final closure audit; verify remote main=HEAD for publication.
+Earlier milestones:17c6406 full-length audit,4a5fabc accepted official receipt,
+50b6dfd qualified notebook,3e2d622 recovery protocol. Historical reports/contracts
+and exact Kaggle versions retain the earlier evidence and failures.

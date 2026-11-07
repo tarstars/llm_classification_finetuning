@@ -16,7 +16,8 @@ completed contracts are preserved at [docs/GOAL_V1.md](docs/GOAL_V1.md),
 [docs/GOAL_V4.md](docs/GOAL_V4.md), [docs/GOAL_V5.md](docs/GOAL_V5.md),
 [docs/GOAL_V6.md](docs/GOAL_V6.md),
 and [docs/GOAL_V7.md](docs/GOAL_V7.md),
-[docs/GOAL_V8.md](docs/GOAL_V8.md).
+[docs/GOAL_V8.md](docs/GOAL_V8.md),
+[docs/GOAL_V9.md](docs/GOAL_V9.md).
 A completed goal file does not authorize
 executing its successor backlog; select a new bounded goal first.
 

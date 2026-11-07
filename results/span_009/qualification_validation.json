@@ -8,19 +8,20 @@
     "path": "notebooks/21_backlog_v9_public_ensemble.ipynb",
     "code_cells": 5,
     "errors": 0,
-    "sha256": "5a1fc3c084f402471f9eeca4b74c32a2a7fce089afab1aa0fac27656de354928"
+    "sha256": "a7830cf6e68be69fef551d645ee4d9b6de3a523a043f72ea234557e4083edf5d"
   },
   "public_gpu_seconds": 2108.15,
   "public_cap_seconds": 2400,
   "official_submissions": 1,
-  "goal_achieved": false,
+  "goal_achieved": true,
   "official_receipt": 58068582,
-  "official_status": "PENDING",
+  "official_status": "COMPLETE",
   "post_submission_cpu_length_audit": {
     "complete": true,
     "rows": 57477,
     "gpu_executions": 0,
     "uniform_token_ids_identical": true,
     "report_sha256": "c498a05007806291c2c6fb189d28f8c45ad7d042342a51a28045de16b79ba079"
-  }
+  },
+  "leaderboard_rank": 30
 }

@@ -8,12 +8,22 @@ Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
+**Rank30 goal achieved:** official submission **58068582** scored **0.83053**,
+verified at **30/312 teams** on2026-11-07. This improves the previous0.95481
+by0.12428. The frozen public Gemma2-9B/Llama3-8B ensemble uses the author's
+preprocessing and equal weights; local profile scores may overlap its training.
+The official result is the quality evidence. Public GPU use, including failed
+pilots, was35.136minutes under the40minute cap; the measured conservative hidden
+projection was7.495hours within the9hour limit. See [v9 results](docs/SPAN_009_RESULTS.md),
+[completion](docs/SPAN_009_COMPLETION.md), [executed notebook21](notebooks/21_backlog_v9_public_ensemble.ipynb)
+and [deployed candidate](results/span_009/deployed_candidate.json).
+
 V8 completed the bounded score-improvement plan. Completing the frozen context
 cohort improves development loss **0.953962 → 0.951337**, gain **0.002625** with
 paired group95%interval **[0.000675,0.004590]**. Its predeclared conditional runtime
 projection passes. Frozen confirmation improves by **0.001620**, but its 95% interval
-**[−0.000427, 0.003486]** crosses zero, so no submission is made. Best verified
-official remains **0.95481**. V8 used **2.31919 elapsed two-T4 session-hours**.
+**[−0.000427, 0.003486]** crosses zero, so no submission is made. At v8 closure,
+best official was **0.95481**. V8 used **2.31919 elapsed two-T4 session-hours**.
 See the [v8 results](docs/SPAN_008_RESULTS.md), [completion checks](docs/SPAN_008_COMPLETION.md),
 [executed notebook20](notebooks/20_backlog_v8_span.ipynb),
 [context result](docs/SPAN_008_H51.md) and [confirmation](docs/SPAN_008_H50.md).
@@ -46,12 +56,12 @@ two-T4 session-hours** and made no submission. See the
 [pipeline theory](docs/PIPELINE_THEORY.md), and
 [review of skipped work](docs/SPAN_007_CARRYOVER_REVIEW.md).
 
-The active backlog is **v9: 37 tasks**, with **35 unfinished carryovers and two
-new discoveries**: E14 verifies exact model-instance admission, and H53 tests the
-binding judge-temperature ceiling using the stable cache. V9 has no selected focus
-or execution; v10 is an empty draft. V8 sealed with five completed focus items and
-three justified deferrals. The [completed v8 contract](docs/GOAL_V8.md) stops before
-v9, and GOAL.md retains that exact completed contract.
+The active backlog is **v10:39tasks**, with **36 unfinished carryovers and three
+new discoveries**: E15 retains live model/cohort labels, H55 records an earlier
+author checkpoint, and H56 revisits shared utilities using modern reward models.
+It has no selected focus or execution; v11 is an empty draft. V9 sealed with
+E14/H54 done and the rank30 goal achieved. [The completed contract](docs/GOAL_V9.md)
+is preserved exactly; forming v10 does not authorize its execution.
 
 V6's frozen source-strength transfer had an inconclusive gain of
 0.000876 [−0.000390, 0.002173] and made no submission. See
@@ -78,8 +88,8 @@ The completed [v1](docs/GOAL_V1.md), [v2](docs/GOAL_V2.md) and
 bound was 6.20508 hours against its original 8.35453-hour quota cap.
 V2 used 6.224 session-hours; all its GPU jobs are terminal.
 
-Our best official Kaggle score is **0.95481**, achieved by the frozen continued
-Qwen3-4B QLoRA classifier, submission **57979825**. This improves the previous
+Before v9, the best official score was **0.95481**, achieved by the frozen continued
+Qwen3-4B QLoRA classifier, submission **57979825**. It improved the previous
 best **0.97025** by **0.01544**, without a new fit or leaderboard retuning in v3.
 See the [v3 results](docs/SPAN_003_RESULTS.md) and
 [verified candidate](results/span_003/deployed_candidate.json).
@@ -125,9 +135,9 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v9**, with **37 tasks** and no selected focus or execution.
-Its two new discoveries retain provenance and bounded tests; unfinished work
-is carried forward. [The next-version view](backlog/NEXT.md) is the empty v10 draft.
+The active version is **v10**, with **39 tasks** and no selected focus or execution.
+Its three new discoveries retain provenance and bounded tests; unfinished work
+is carried forward. [The next-version view](backlog/NEXT.md) is the empty v11 draft.
 Completed dependencies
 alone do not establish scientific readiness: H44's original 20% route remains
 infeasible. H50 completed context qualification without a submission after its
@@ -141,7 +151,9 @@ and [v3 final history](backlog/versions/v3.final.md),
 [v4 final history](backlog/versions/v4.final.md),
 [v5 final history](backlog/versions/v5.final.md),
 [v6 final history](backlog/versions/v6.final.md) and
-[v7 final history](backlog/versions/v7.final.md).
+[v7 final history](backlog/versions/v7.final.md),
+[v8 final history](backlog/versions/v8.final.md) and
+[v9 final history](backlog/versions/v9.final.md).
 [Revision notes](docs/HYPOTHESES_0_8.md) explain corrections to the original register.
 The JSON-backed CLI browses work, records status/evidence and regenerates the page:
 

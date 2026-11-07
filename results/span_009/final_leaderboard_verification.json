@@ -1,0 +1,18 @@
+{
+  "submission_ref": 58068582,
+  "submission_status": "SubmissionStatus.COMPLETE",
+  "submission_score": 0.83053,
+  "independent_repeat": true,
+  "leaderboard": {
+    "observed_at": "2026-11-07T02:11:38.796450+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 30,
+    "teams": 312,
+    "score": 0.83053,
+    "rank30_score": 0.83053,
+    "leader_score": 0.82711,
+    "target_achieved": true,
+    "latest_team_submission_date": "2026-11-06T20:28:37.696Z"
+  }
+}

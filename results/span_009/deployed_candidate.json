@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-07T02:18:51.794529+00:00",
+  "kind": "public_supervised_ensemble",
+  "kernel_version": "arseniytrushin/llm-preference-span009-public-ensemble/4",
+  "notebook_sha256": "16f722f632a45fcb38ec32c274bb3c8d2d99121d515883cf1f9e8fc5800c64ca",
+  "metadata_sha256": "6d9261bcf618b866a2e920a3b883379f8f649b6148cea0b091f0b95a8c18ec3c",
+  "dataset_sources": [
+    "tascj0/lmsys-checkpoints-0-0805/1",
+    "tascj0/lmsys-checkpoints-3-0805/1",
+    "tascj0/lmsys-modules-0805/1",
+    "tascj0/lmsys-packages/1"
+  ],
+  "class_order": [
+    "winner_model_a",
+    "winner_model_b",
+    "winner_tie"
+  ],
+  "models": [
+    "Gemma2-9B",
+    "Llama3-8B"
+  ],
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "llama_answer_order": "swapped_then_align_1_0_2",
+  "new_project_training": false,
+  "independent_local_validation": false,
+  "submission_ref": 58068582,
+  "official_status": "COMPLETE",
+  "official_log_loss": 0.83053,
+  "previous_official_log_loss": 0.95481,
+  "official_loss_reduction": 0.12428,
+  "leaderboard": {
+    "observed_at": "2026-11-07T02:11:38.796450+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 30,
+    "teams": 312,
+    "score": 0.83053,
+    "rank30_score": 0.83053,
+    "leader_score": 0.82711,
+    "target_achieved": true,
+    "latest_team_submission_date": "2026-11-06T20:28:37.696Z"
+  },
+  "runtime_projection_seconds": 26980.97050912318,
+  "qualification_sha256": "093f229445b078993c0139a8c053d52b442b61514d63c92fb2d4deccece0a254"
+}

@@ -11,7 +11,7 @@ def main():
     assert registry['active_version'] == 9, 'Preserve historical executed notebooks'
     assert (REPO/'results/span_009/H54_qualification.json').exists(), 'Wait for actual audited measurements'
     md, code = nbf.v4.new_markdown_cell, nbf.v4.new_code_cell
-    cells = [md('''# V9: a public supervised ensemble toward leaderboard rank30
+    cells = [md('''# V9: reached leaderboard rank30 with a public supervised ensemble
 
 Gemma2-9B in original answer order and Llama3-8B in swapped order, using the
 historical tascj recipe and equal weights. These models were trained on original
