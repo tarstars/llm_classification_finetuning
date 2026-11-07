@@ -70,3 +70,9 @@ results/span_011/calibration_confirmation_qualification.json,
 results/span_011/calibration_confirmation_source_verification.json,
 results/span_011/frozen_temperature.json and executed notebook23. Per-row outputs
 and labels stay private under the project database.
+
+Official submission **58091536** was accepted at2026-11-07 12:22:36UTC from the
+exact qualified version. Initial status PENDING. See results/span_011/official_receipt.json
+and official_submission_intent.json. No official score or rank improvement is
+claimed yet. The controller observes that receipt, with no research GPU jobs
+while it is pending; the frozen parameters and evidence remain unchanged.

@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-07T12:22:34.363649+00:00",
+  "role": "calibration_confirmation",
+  "reference": "arseniytrushin/llm-preference-span011-confirmation-calibration",
+  "version": 1,
+  "exact": "arseniytrushin/llm-preference-span011-confirmation-calibration/1",
+  "temperature": 1.3161518671742531,
+  "notebook_sha256": "5cec6d38df5f18c3cbedcb3d729bcc48c9793f8ce3544c3a710172719cde9df3",
+  "qualification_sha256": "d21b97bdc167e74c788a9fde42d4a5433671fb678434d5a913b76ab740ec1bc0",
+  "decision_sha256": "364c53ea756fd07ea5d6668d374e02c9516eab87fe842befc1bd7ccb144b27e7",
+  "projection_seconds": 29849.449955610115,
+  "quota_before": {
+    "used_seconds": 9922.734,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 98077.266
+  },
+  "hidden_seconds_cap": 32400,
+  "message": "Span011 frozen independent later-vote shared temperature; unchanged equal two-expert inference",
+  "controller_sha256": "685d5df03478a26e50d0799ccecac925ba6871fd03943f6dabbbc5eed7f9e58b"
+}

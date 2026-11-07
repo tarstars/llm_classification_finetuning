@@ -1,6 +1,6 @@
-# Active goal: above20th place; v11 H59 official candidate preparation
+# Active goal: above20th place; v11 official58091536 pending
 
-Snapshot2026-11-07 after untouched confirmation. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot2026-11-07 after official acceptance at12:22:36UTC. Read PROJECT_POLICY.md, GOAL.md,
 docs/SPAN_011_PLAN.md, docs/SPAN_011_LEARNING.md and docs/SPAN_011_CONFIRMATION.md.
 Persistent success is actual
 rank<=19 on a fresh complete Kaggle leaderboard for team17244411, not a local
@@ -8,7 +8,7 @@ metric or span closure. Last verified10:23:49UTC: rank30/311,.83053;
 rank19/20cutoff.82915, leader.82711. Goal remains active and unachieved.
 Previous goal turn was progress: exact pilot submission and source preparation;
 this turn completed both inference stages, exact engineering checks, learning-only
-fit and independent fixed-temperature confirmation.
+fit, independent fixed-temperature confirmation and one official submission.
 
 ## Current span and evidence
 
@@ -43,7 +43,7 @@ Source2025model pairs are harder; this is out-of-time source evidence, not CV
 on competition labels. See learning_metrics.json and docs/SPAN_011_LEARNING.md.
 Confirmation labels stayed unopened until after the frozen learning T and
 confirmation engineering qualification; they are now evaluated as described below.
-No official v11 submission/intent exists yet.
+Official v11receipt58091536 is now pending as described below.
 
 ## Current confirmation and next action
 
@@ -64,24 +64,31 @@ this is independent-source evidence, not competition CV or an official forecast.
 See docs/SPAN_011_CONFIRMATION.md, confirmation_metrics.json and final notebook23
 (four executed code cells/two figures/no errors).
 
-Domain review admits ONE exact existing confirmation version at frozen T for
-an official test. results/span_011/deployment_decision.json contains all seven
-exact evidence hashes, class/length/domain rationale and no-LB-fitting marker.
-No official receipt/intent exists yet. Next commit/push confirmation report,
-metrics/decision/qualification/receipts/notebook, then run
-scripts/submit_span_011_calibration.py (not observe-only). It refreshes full
-quota/jobs and guards before one mutation. Avoid duplicate full dry-run inventories
-that previously provoked429; actual admission performs the same read-only checks.
-Use exact accepted receipt/version and preserve intent after any ambiguous reply.
+Domain review admitted ONE exact existing confirmation version at frozen T.
+results/span_011/deployment_decision.json contains all seven exact evidence hashes,
+class/length/domain rationale and no-LB-fitting marker. Confirmation evidence,
+final notebook and decision are committed/pushed as77276c1.
 
-The official controller is committed/tested and requires fresh private-source/
-CSV/temperature/evidence identities, all original raw numerical checks, <=32400s
-projection, remaining free quota and original quota/deadline, no pending official
-receipt or research job. Once accepted, no researchGPU until it is terminal.
-Observe the same receipt, never re-submit on observation timeout. Actual official
-score/rank, not this confirmed source gain, determines movement toward rank<=19.
-Do not re-fit T, expert weights, tie offsets or routes from confirmation/LB feedback.
-Keep H59running until official outcome and final report/publication/closure.
+**Official submission58091536 accepted2026-11-07 12:22:36UTC.** Exact source:
+arseniytrushin/llm-preference-span011-confirmation-calibration/1. At12:22:37UTC
+status SubmissionStatus.PENDING. Live official controller handle88472. Poll that
+handle and results/span_011/official_result.json; no new GPU or official mutation.
+Never re-submit or re-push on observation timeout. If this handle is genuinely
+terminal/missing, reconcile authoritative receipt58091536 before a bounded
+--observe-only continuation on the SAME receipt. Public job statuses are already
+COMPLETE and do not show hidden-scoring progress; monitor the official receipt.
+
+Fresh official admission: no active jobs/reservations, paid scaling off,
+remaining98077.266free seconds, original quota period/deadline preserved. Public
+phase total4087.202s; conservative hidden projection29849.450s, owned watchdog
+32400s cap. Receipt/intent/admission are durable in both public results and private
+ROOT/runs/span_011/official/calibration. No researchGPU while receipt pending.
+
+The goal remains active. Wait for this exact official outcome, then verify actual
+fresh fully paginated rank for team17244411, report official score/transfer result,
+refresh final notebook23, close H59/v11 with real evidence and publish. Do not fit
+T/weights/tie offsets/routes from confirmation or leaderboard feedback. No goal
+completion from confirmed source gain alone; current actual best remains.83053.
 
 If official rank<=19, verify a fresh complete leaderboard plus all deliverables
 and publication before updating the persistent goal complete. If not, preserve
@@ -127,7 +134,7 @@ sanitized progress at results/span_011/jobs/<role>/progress.json, not a top-leve
 progress.json. Rebuild/execute with escalation for local Jupyter sockets after
 new evidence; final notebook23 must include final actual metrics. Notebook23 was
 refreshed/executed with engineering, learning and untouched
-confirmation metrics (four code cells, two figures, zero errors). Official outcome
+confirmation metrics (four code cells, two figures, zero errors). The notebook also shows pending official58091536. A terminal official outcome
 will require a final report/notebook refresh.
 
 ## V10 evidence and immutable history

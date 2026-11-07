@@ -108,6 +108,13 @@ else:print('Source scoring/quality analysis pending; no fitted or confirmed gain
  display(pd.DataFrame(q['comparison']['class_log_loss']).T)
  rows={k:v for k,v in q['diagnostics'].items() if k.startswith('length_bin_') or k in ['code_keyword_proxy','other_prompts']}
  display(pd.DataFrame(rows).T)
+path=PUB/'official_result.json'
+if path.exists():
+ official=json.loads(path.read_text())
+ display(pd.DataFrame([{k:official.get(k) for k in ['ref','status','public_score','private_score','date']}]))
+ if not official.get('public_score'):print('Official scoring pending; source confirmation is not a competition-score forecast.')
+path=PUB/'official_leaderboard.json'
+if path.exists():display(pd.DataFrame([json.loads(path.read_text())]))
 print('Goal completion requires a fresh complete official observation at rank<=19.')''')])
     nb.metadata.update(kernelspec=dict(display_name='Python 3',language='python',name='python3'))
     executed=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()

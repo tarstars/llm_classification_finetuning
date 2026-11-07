@@ -5294,6 +5294,14 @@
           "evidence": [
             "docs/SPAN_011_CONFIRMATION.md"
           ]
+        },
+        {
+          "at": "2026-11-07T12:24:45+00:00",
+          "status": "running",
+          "note": "One official submission accepted: receipt58091536 at12:22:36UTC, exact arseniytrushin/llm-preference-span011-confirmation-calibration/1, frozenT1.3161518671742531. Fresh inventory had no active jobs/reservations/paid scaling, free98077.266s; public phase consumed4087.202s and runtime projection29849.450s. Controller88472 monitors this exact receipt, currentlyPENDING. No researchGPU or parameter fitting while official scoring is pending; targetrank<=19 remains unachieved.",
+          "evidence": [
+            "results/span_011/official_receipt.json"
+          ]
         }
       ]
     }
