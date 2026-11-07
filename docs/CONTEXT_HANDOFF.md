@@ -1,6 +1,6 @@
 # Active goal: reach leaderboard rank30; v9 executing
 
-Snapshot 2026-11-07 00:39UTC. New user outcome goal **move to 30 place in
+Snapshot 2026-11-07 01:45UTC. New user outcome goal **move to 30 place in
 leaderboard** is active in the goal service. Do not mark it complete until a
 fresh fully paginated Kaggle leaderboard proves team17244411 rank<=30. Initial
 live rank57/313, loss0.95481, rank30 threshold0.83086. No new official score yet.
@@ -79,9 +79,9 @@ predictions are now recovered and audited. Heavy source caches are under ROOT/ru
 research; never download giant host weights without a reason.
 
 Official submission **58068582** accepted2026-11-06 20:28:39UTC from exact
-tested version4; live statusPENDING at2026-11-07 00:38:19UTC. Initial observer
-sessions28832/95282/15903/14710 ended normally at their one-hour windows;
-current read-only observer exec session96800 was live. Revalidate the exact
+tested version4; live statusPENDING at2026-11-07 01:44:10UTC. Initial observer
+sessions28832/95282/15903/14710/96800 ended normally at their one-hour windows;
+current read-only observer exec session81740 was live. Revalidate the exact
 receipt/process, never send another mutation. This is a verified remote wait,
 not a stopped GPU job. No new score or rank is available after four receipt hours.
 Use scripts/submit_span_009_public.py --observe-only if the local observation
@@ -95,8 +95,8 @@ If worse than30, retain goal and plan the next bounded phase; no hidden-score fi
 
 Important sources and first failure were pushed at b1e28f1/fe4c00e; verify latest
 HEAD/remote. Later controller/aggregate/progress files may still be dirty; stage
-reviewed explicit paths, never user07/12. Notebook21 is now executed: four code
-cells, one figure, zero errors;116tests pass in14.346s. Refresh after official
+reviewed explicit paths, never user07/12. Notebook21 is now executed: five code
+cells, two figures, zero errors;116tests pass in14.346s. Refresh after official
 result using scripts/build_span_009_review.py followed by scripts/execute_notebook.py
 notebooks/21_backlog_v9_public_ensemble.ipynb. V10 draft now has E15 (retain
 model/cohort/batch in sanitized progress), H55 and H56; all queued, not executed.
@@ -115,6 +115,12 @@ claims do not establish Kaggle gain; provenance and exact offline availability
 remain to audit. Primary8B arm, tiny arm only a cheap control; avoid substituting
 the easier tiny model for the rank goal. Budget proposal<=1h pilot plus separately
 admitted<=4h follow-up. Do not execute if rank30 is achieved or scoring is pending.
+Post-submission CPU audit completed all57477Gemma input lengths in237.352s,
+1.024GiB RSS, zero targets/GPU. First256token fingerprint exactly matches GPU.
+Full mean926.573 versus uniform940.824 (sample1.515%higher); p95=2054.2,
+max4330,362rows (0.630%)>=4300near-cap proxy. This is not exact truncation
+detection, hidden lengths or a revised runtime gate. See full_pab_length_audit.json,
+SPAN_009_LENGTH_AUDIT_RESULTS.md and Notebook21 (now five code cells/two figures).
 BacklogCLI tracks progress and next-span discoveries.
 
 ## Historical v8 closure snapshot

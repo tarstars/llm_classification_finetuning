@@ -99,6 +99,34 @@ for name in ['official_receipt.json','official_result.json','official_leaderboar
     print(name,read(p) if p.exists() else 'Pending / not submitted')
 print('Goal completion requires a fresh complete leaderboard observation with team17244411 rank<=30.')
 ''')]
+    if (REPO/'results/span_009/full_pab_length_audit.json').exists():
+        cells[4:4]=[md('''## Full training input lengths — post-submission diagnostic
+
+CPU preprocessing first reproduced all256 accepted Gemma GPU token IDs exactly,
+then counted prepared lengths on every original training row without targets.
+This checks sample representativeness and context saturation. It does not reveal
+hidden-test lengths, establish generalization or change the frozen runtime gate.
+The4300-token threshold is a near-cap proxy, not exact truncation detection.
+'''),code('''from arena.experiment import sha256
+length_audit=read(PUB/'full_pab_length_audit.json')
+assert length_audit['complete'] and length_audit['uniform_token_ids_identical']
+path=RUN/'analysis/full_pab_lengths.npz'
+assert sha256(path)==length_audit['artifact_sha256']
+lengths=np.load(path)['lengths'];assert len(lengths)==length_audit['rows']
+display(pd.DataFrame([{'rows':len(lengths),'full_mean_tokens':length_audit['full_mean_tokens'],
+    'uniform_mean_tokens':length_audit['uniform_mean_tokens'],
+    'full_to_uniform_ratio':length_audit['full_to_uniform_mean_ratio'],
+    'near_cap_rows':length_audit['near_context_cap_rows'],
+    'near_cap_percent':100*length_audit['near_context_cap_rows']/len(lengths)}]))
+display(pd.Series(length_audit['quantiles'],name='Gemma input-token quantiles'))
+fig,ax=plt.subplots(figsize=(9,3.5));ax.hist(lengths,bins=40,color='C0',alpha=.75)
+ax.axvline(length_audit['full_mean_tokens'],color='C1',label='Full training mean')
+ax.axvline(length_audit['uniform_mean_tokens'],color='C2',linestyle='--',label='Uniform256 mean')
+ax.axvline(4300,color='black',linestyle=':',label='Near-cap proxy')
+ax.set(xlabel='Prepared Gemma input tokens',ylabel='Training rows');ax.legend()
+save(fig,'v9_full_input_lengths')
+print('No targets/GPU were used; the submitted model and original runtime gate remain unchanged.')
+''')]
     nb = nbf.v4.new_notebook(cells=cells, metadata=dict(kernelspec=dict(
         display_name='arena-llm',language='python',name='arena-llm')))
     path = REPO/'notebooks/21_backlog_v9_public_ensemble.ipynb'

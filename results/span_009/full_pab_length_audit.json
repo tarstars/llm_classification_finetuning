@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-07T01:37:37.206273+00:00",
+  "post_submission_diagnostic": true,
+  "model_or_submission_changed": false,
+  "uses_targets": false,
+  "new_gpu_executions": 0,
+  "uniform_token_ids_identical": true,
+  "processor_sha256": "cc2376291ff5e499f0738a204848d3f1c75b9bf4399d32678d0696fa334078b7",
+  "tokenizer_sha256": "7da53ca29fb16f6b2489482fc0bc6a394162cdab14d12764a1755ebc583fea79",
+  "script_sha256": "e8580c296ea6e6aa5fadaf477f4ffca357e3d69cb5f6d0e308512a649b1f4919",
+  "train_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+  "complete": true,
+  "rows": 57477,
+  "elapsed_seconds": 237.3515689058695,
+  "peak_rss_bytes": 1098944512,
+  "full_mean_tokens": 926.5732553891122,
+  "uniform_mean_tokens": 940.82421875,
+  "full_to_uniform_mean_ratio": 0.9848526822791382,
+  "quantiles": {
+    "0": 257.0,
+    "0.25": 525.0,
+    "0.5": 789.0,
+    "0.75": 1107.0,
+    "0.9": 1567.0,
+    "0.95": 2054.199999999997,
+    "0.99": 3753.959999999992,
+    "1": 4330.0
+  },
+  "near_context_cap_rows": 362,
+  "near_cap_definition": "Final packed input>=4300tokens; a proxy, not exact truncation detection.",
+  "artifact_sha256": "ccb5ed19914939a6708c4f615ba04646a41bbe834e040d492a2e015d2f6968db",
+  "original_runtime_gate_unchanged": true
+}

@@ -4736,6 +4736,14 @@
           "evidence": [
             "docs/SPAN_009_PROGRESS.md"
           ]
+        },
+        {
+          "at": "2026-11-07T01:45:34+00:00",
+          "status": "running",
+          "note": "While receipt58068582 remainsPENDING, CPU-only full57477row Gemma length audit passes exact256row GPU token fingerprint. Full mean926.573 vs940.824 sample;362rows near cap. Zero targets/GPU, no changed admission; Notebook21 now5executed cells/2figures.",
+          "evidence": [
+            "docs/SPAN_009_LENGTH_AUDIT_RESULTS.md"
+          ]
         }
       ]
     },
