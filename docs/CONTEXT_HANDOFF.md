@@ -93,6 +93,12 @@ outside all sequential model/cold/cohort timers to startup before the separate
 1e-5raw controls stay fixed. Two submission/runtime guard tests passed. Full real
 qualification/learning metrics remain pending; no frozen temperature exists.
 
+Live aggregate model telemetry is at
+results/span_011/jobs/calibration_learning/progress.json (job subdirectory,
+not results/span_011/progress.json). At10:59:18 snapshot Gemma warmup completed,
+control batch0/80rows was active. Raw logs stay private. Notebook23 now also
+shows the latest sanitized model/cohort progress; rebuild for evidence changes.
+
 Fit only T in[.5,2] on log equal-ensemble probabilities. Group-cross-fit within
 1024learning groups; positive point gain is stage2 information gate. Freeze T
 before confirmation asset upload/scoring. Confirmation needs gain>=.001 and paired

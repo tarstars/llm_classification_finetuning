@@ -60,6 +60,12 @@ for role in ['calibration_learning','calibration_confirmation']:
  if path.exists():
   status=json.loads(path.read_text());jobs.append({'role':role,**status})
 display(pd.DataFrame(jobs))
+live=[]
+for role in ['calibration_learning','calibration_confirmation']:
+ path=PUB/'jobs'/role/'progress.json'
+ if path.exists():
+  p=json.loads(path.read_text());live.append({'job':role,'observed_at':p['observed_at'],**p['latest']})
+display(pd.DataFrame(live))
 checks=[]
 for role in ['calibration_learning','calibration_confirmation']:
  path=PUB/(role+'_qualification.json')
