@@ -1,0 +1,27 @@
+{
+  "role": "calibration_confirmation",
+  "source_sha256": {
+    "GOAL.md": "8c2cb0e6fa31ff739c3bc13f99bed86f3bb585c040254f24a97c810d96b377be",
+    "docs/SPAN_011_PLAN.md": "569844b42588103e2192b8e820a8427e5912b51a4edb16c404264653ccc7a980",
+    "src/arena/span011_calibration.py": "7d4f6d55237da9e1250e8a9457b6f01324daf0190fa0f16fc6290c02695c030c",
+    "src/arena/notebook_worker.py": "2c49e8edd28b2dabe70a21bbca9c8598458b78fcf6c7c3939cef7aeabd81bb13",
+    "src/arena/kaggle_control.py": "23f8e4d09c17647a42d5771e32400d4816e5230a4dee18a631dcd394380d1793",
+    "scripts/build_span_011_calibration.py": "ba8999fd302795d13b8f9c870b4976521f4295125c949f48c23cd431ff8cbb52",
+    "scripts/run_span_011_calibration.py": "5cb10cb7c9bf52a3a6ad4844c6f4d309152289b944e466685df573ff585292e1",
+    "scripts/prepare_span_011_assets.py": "990c2d9f055a2f5e9d7dca209bcf2f80c7b32c00c10905eeb02fa2553b5eb189",
+    "tests/test_span011_calibration.py": "501a9f0ad2c1fcf647686123036c746638a57475cef93a7d16a042aee4c1bb1c",
+    "tests/test_span011_data.py": "a66cdbe2903c4da4050a7b2f1af51e6b5b9b50ae35c95014d490095e0fbb2075",
+    "src/arena/span011_data.py": "807fd88b1ab931cf41cdac45e80c4c29d3451185e63eb58156b74bbb18dd127b",
+    "scripts/prepare_span_011_cohort.py": "7dedbf78a8192a0ea686af7ab261fe6a61894aa2bc587dbcbcdfeef36e1296e5"
+  },
+  "notebook_sha256": "5cec6d38df5f18c3cbedcb3d729bcc48c9793f8ce3544c3a710172719cde9df3",
+  "metadata_sha256": "0d42f1a0432ee50b466a23894f33ff860a55d191f7abc96c1b34d2ffbfcb6634",
+  "public_cap_seconds": 7200,
+  "hidden_cap_seconds": 32400,
+  "visible_test_sha256": "4d6a47208951532a0b6bf862a75531806270f4782afc342125fd399682d09957",
+  "cohort_sha256": "c1cb6e2b9ec53a6ac93b95050b13f38322fb122b5ae1a95a0705c3767086d49a",
+  "temperature": 1.3161518671742531,
+  "internet_enabled": false,
+  "stage": "confirmation",
+  "frozen_temperature_sha256": "6e1b033fd0d2e2ca68a1256b6c60564016c8d9cb75dee7633372fb8b616075fc"
+}
