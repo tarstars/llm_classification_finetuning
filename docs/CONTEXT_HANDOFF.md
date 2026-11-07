@@ -12,7 +12,7 @@ obtained an actual negative result and changed the next experiment accordingly.
 
 V11 is SEALED, H59done (negative result). Activev12 has41members:40unfinished
 carryovers plus E17new CPU transport diagnosis. Focus only **E16 then H58**;
-E17/H55/H56 and others remain unselected. v13draft empty. E16running preparation;
+E17/H55/H56 and others remain unselected. v13draft empty. E16running on GPU;
 one v12GPU probe accepted. Profile module src/arena/span012_profile.py, runner
 scripts/run_span_012_order.py and builder scripts/build_span_012_profile.py are
 implemented. Three CPU tests passed (same-role ABA/full80row warmups/four input
@@ -20,10 +20,9 @@ columns; numeric/speed/drift selection gates; read-only XML GPU telemetry).
 The model inference core matches the original v10source exactly; packing is the
 only numerical setting varied. Actual serialized worker success/failure/watchdog,
 engineering public/hidden-denial branches and notebook-engine startup passed.
-Phase plan/config and packing_profile bundle are prepared, not pushed yet.
+Phase plan/config and packing_profile bundle are frozen and pushed as1949d30.
 Frozen source1949d30 is pushed. Exact accepted job
-arseniytrushin/llm-preference-span012-packing-profile/1 at18:46:54UTC; latest18:51:50
-statusQUEUED. Live controller1111: poll it, never re-push/restart on observation
+arseniytrushin/llm-preference-span012-packing-profile/1 at18:46:54UTC; RUNNING since18:54:18UTC. Live controller1111: poll it, never re-push/restart on observation
 timeout. Source read-back97423 terminal exit0, exact cells/image/assets matched.
 No E16numeric/runtime result yet. Do not start H58before E16done.
 
