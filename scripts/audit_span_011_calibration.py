@@ -16,6 +16,19 @@ from arena.span004_support import api_client,read_call
 from arena.span011_calibration import ensemble,temperature_scale,validate_probabilities,CLASSES
 
 
+def runtime_estimate(summaries,session_seconds):
+    seconds=sum(s['cohorts']['uniform']['seconds'] for s in summaries.values())
+    cold_warm=sum(s['cold_seconds']+s['cohorts']['warmup']['seconds'] for s in summaries.values())
+    measured=sum(s['cold_seconds']+sum(c['seconds'] for c in s['cohorts'].values()) for s in summaries.values())
+    assert session_seconds>=measured-1,'Session timing contradicts sequential model timing'
+    other=max(0.,session_seconds-measured)
+    worker_projection=25000*seconds/512*1.2+cold_warm+600
+    return dict(projection_seconds=worker_projection+other,startup_seconds=cold_warm+other,
+        cold_and_warmup_seconds=cold_warm,other_session_overhead_seconds=other,
+        worker_reported_projection_seconds=worker_projection,uniform_rows=512,measured_here=True,
+        session_seconds=session_seconds,includes_all_observed_session_overhead=True)
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--stage',choices=['learning','confirmation'],default='learning')
     parser.add_argument('--source-only',action='store_true');args=parser.parse_args()
@@ -80,11 +93,8 @@ def main():
     assert len(hardware['gpus'])==2 and all('T4' in name for name in hardware['gpus'])
     assert hardware['python'].startswith('3.10.')
     if stage=='learning':
-        seconds=sum(s['cohorts']['uniform']['seconds'] for s in summaries.values())
-        startup=sum(s['cold_seconds']+s['cohorts']['warmup']['seconds'] for s in summaries.values())
-        projection=25000*seconds/512*1.2+startup+600
-        assert np.isclose(projection,qualification['projected_hidden_seconds'])
-        timing=dict(projection_seconds=projection,startup_seconds=startup,uniform_rows=512,measured_here=True)
+        timing=runtime_estimate(summaries,read_json(job/'output/session_summary.json')['seconds'])
+        assert np.isclose(timing['worker_reported_projection_seconds'],qualification['projected_hidden_seconds'])
     else:
         learning=read_json(pub/'calibration_learning_qualification.json')
         assert learning['all_controls_passed'] and learning['runtime_gate_passed']

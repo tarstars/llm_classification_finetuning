@@ -8,10 +8,22 @@ from unittest.mock import patch
 REPO=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(REPO/'scripts'))
 from submit_span_011_calibration import candidate
+from audit_span_011_calibration import runtime_estimate
 from arena.experiment import sha256
 
 
 class OfficialAdmission(unittest.TestCase):
+    def test_runtime_gate_counts_setup_and_bookkeeping_outside_model_timers(self):
+        summaries={name:dict(cold_seconds=10,cohorts=dict(warmup=dict(seconds=2),
+            uniform=dict(seconds=256),learning=dict(seconds=500))) for name in ['m0','m3']}
+        measured=2*(10+2+256+500)
+        timing=runtime_estimate(summaries,measured+80)
+        self.assertEqual(timing['other_session_overhead_seconds'],80)
+        self.assertEqual(timing['startup_seconds'],104)
+        self.assertEqual(timing['projection_seconds'],25000*1.2+104+600)
+        self.assertGreater(timing['projection_seconds'],timing['worker_reported_projection_seconds'])
+        with self.assertRaises(AssertionError):runtime_estimate(summaries,measured-10)
+
     def test_blocks_unconfirmed_stale_or_unreviewed_candidate(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);pub=root/'public';pub.mkdir();role='calibration_confirmation'

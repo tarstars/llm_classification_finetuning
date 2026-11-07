@@ -68,3 +68,11 @@ zero, stale evidence and a changed output file. Fresh quota/jobs and a committed
 controller are required before a mutation. An accepted receipt is monitored
 without re-submission. No deployment decision or official intent exists yet;
 these checks are preparation, not evidence of calibration quality.
+
+The exact accepted pilot entered RUNNING at10:55:53UTC after roughly14minutes
+queued. Runtime audit now explicitly adds the observed session time outside all
+model/cold/cohort timers to the projected startup cost, before the separate600s
+reserve. This covers package setup, process imports and orchestration instead of
+implicitly absorbing them into the reserve. A synthetic timing check passed and
+rejects contradictory sequential timers. The worker's original projection is
+retained for reconciliation; inference, controls and32400s threshold are unchanged.

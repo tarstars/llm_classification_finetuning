@@ -81,8 +81,17 @@ It requires results/span_011/deployment_decision.json with explicit completed
 domain review, temperature and all seven named evidence hashes, then fresh full
 quota/jobs and exact source before one official mutation. No decision/official
 intent exists. This is a guarded future path, not a quality claim. Pilot still
-QUEUED at10:55:02UTC; live controller34709 continues polling the same accepted
-version. Do not re-push or open labels while queued.
+RUNNING since10:55:53UTC after about14minutes queued; live controller34709 continues
+polling the same accepted version. No model ARENA_EVENT was available at10:57:36;
+startup runtime/package logs exist with no observed error. Do not re-push or open
+labels before full engineering qualification.
+
+Runtime audit was tightened without touching accepted inference source:
+scripts/audit_span_011_calibration.py runtime_estimate adds session_summary time
+outside all sequential model/cold/cohort timers to startup before the separate
+600sreserve. Worker original projection is retained/reconciled;32400s gate and
+1e-5raw controls stay fixed. Two submission/runtime guard tests passed. Full real
+qualification/learning metrics remain pending; no frozen temperature exists.
 
 Fit only T in[.5,2] on log equal-ensemble probabilities. Group-cross-fit within
 1024learning groups; positive point gain is stage2 information gate. Freeze T
