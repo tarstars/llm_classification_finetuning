@@ -43,6 +43,9 @@ IS_RERUN=os.environ.get('KAGGLE_IS_COMPETITION_RERUN','').strip().lower() in ['t
 DEADLINE=STARTED+(32400 if IS_RERUN else {cap})-120
 print('Runtime',sys.version,'hidden',IS_RERUN,flush=True)
 assert sys.version_info[:2]==(3,10),'Pinned author image not honored'
+GPU_INFO=subprocess.check_output(['nvidia-smi','--query-gpu=name,memory.total','--format=csv,noheader'],text=True).strip().splitlines()
+assert len(GPU_INFO)==2 and all('T4' in name for name in GPU_INFO),'Expected two T4 devices'
+(WORK/'hardware.json').write_text(json.dumps(dict(gpus=GPU_INFO,python=sys.version)))
 ASSETS=WORK/'assets';ASSETS.mkdir(exist_ok=True)
 for slug in ['lmsys-checkpoints-0-0805','lmsys-checkpoints-3-0805','lmsys-modules-0805','lmsys-packages']:
     source=next(p for p in [Path('/kaggle/input')/slug,Path('/kaggle/input/datasets/tascj0')/slug] if p.exists())

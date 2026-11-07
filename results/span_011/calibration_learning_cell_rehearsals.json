@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.01673126220703125,
+        "exit_code": 0,
+        "role": "calibration_learning"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.015690088272094727,
+        "exit_code": 7,
+        "role": "calibration_learning"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.20096349716186523,
+        "exit_code": -15,
+        "role": "calibration_learning"
+      }
+    }
+  ],
+  "mode_checks": [
+    {
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    }
+  ],
+  "notebook_engine_startup_passed": true,
+  "last_cell_sha256": "c83c281a3cc8197189c12b0f1ab203038539c0881f3678cebb024528c6ce5591",
+  "new_gpu_executions": 0
+}
