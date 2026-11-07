@@ -1,7 +1,7 @@
 {
   "ref": 58091536,
-  "status": "SubmissionStatus.PENDING",
-  "public_score": "",
+  "status": "SubmissionStatus.COMPLETE",
+  "public_score": "0.84797",
   "private_score": "",
   "date": "2026-11-07 12:22:35.177000",
   "description": "Span011 frozen independent later-vote shared temperature; unchanged equal two-expert inference"

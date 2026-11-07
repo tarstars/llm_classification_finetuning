@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-07T18:31:42.944348+00:00",
+  "passed": true,
+  "sealed_version": 11,
+  "span_outcome": "Confirmed later-vote gain failed official transfer",
+  "goal_achieved_by_span": false,
+  "official_score": 0.84797,
+  "best_score": 0.83053,
+  "official_regression": 0.01744,
+  "leaderboard": {
+    "observed_at": "2026-11-07T18:12:31.913569+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 30,
+    "teams": 313,
+    "score": 0.83053,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82704,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-07T12:22:35.176Z"
+  },
+  "public_gpu_seconds": 4087.202,
+  "public_cap_seconds": 21600,
+  "official_submissions": 1,
+  "artifact_files_verified": 47,
+  "prior_snapshots_preserved": 42,
+  "user_notebooks_preserved": true,
+  "goal_archive_sha256": "8c2cb0e6fa31ff739c3bc13f99bed86f3bb585c040254f24a97c810d96b377be",
+  "source_reference_commit": "77276c1",
+  "source_maps_verified": 2,
+  "notebook_code_cells": 4,
+  "notebook_figures": 2,
+  "notebook_errors": 0,
+  "notebook_sha256": "f7b77cf3e255a796d19704d13843a326a76b61ab02a18118f5393b4f1e0b4b03",
+  "unfinished_carryovers": 40,
+  "new_discoveries": [
+    "E17"
+  ],
+  "successor_members": 41
+}

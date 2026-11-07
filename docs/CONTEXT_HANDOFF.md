@@ -1,176 +1,105 @@
-# Active goal: above20th place; v11 official58091536 pending
+# Active goal: above20th place; v12 E16/H58 preparation
 
-Snapshot2026-11-07 after official acceptance at12:22:36UTC. Read PROJECT_POLICY.md, GOAL.md,
-docs/SPAN_011_PLAN.md, docs/SPAN_011_LEARNING.md and docs/SPAN_011_CONFIRMATION.md.
-Persistent success is actual
-rank<=19 on a fresh complete Kaggle leaderboard for team17244411, not a local
-metric or span closure. Last verified10:23:49UTC: rank30/311,.83053;
-rank19/20cutoff.82915, leader.82711. Goal remains active and unachieved.
-Previous goal turn was progress: exact pilot submission and source preparation;
-this turn completed both inference stages, exact engineering checks, learning-only
-fit, independent fixed-temperature confirmation and one official submission.
+Snapshot2026-11-07 after v11 closure. Read PROJECT_POLICY.md, GOAL.md,
+docs/SPAN_012_PLAN.md and docs/SPAN_011_RESULTS.md. Persistent objective is actual
+rank<=19 for team17244411 on a fresh fully paginated Kaggle leaderboard, not local
+quality or a completed span. Latest18:12:31UTC: rank30/313, best.83053,
+rank19/20cutoff.82915, leader.82704. Goal remains active/unachieved. Prior waiting
+turns were verified waits on the same live official controller; the present turn
+obtained an actual negative result and changed the next experiment accordingly.
 
-## Current span and evidence
+## Current work and next action
 
-V10 sealed. Activev11:41members, focus H59running only; v12empty.
-E16/H58/H55/H56 remain unselected. H59tests one shared temperature on unchanged
-8192packing Gemma2-9Boriginal plus ArmoRM/Llama3-8Bswapped, equal weights,
-4096conversation cap, fp16/author kernels/pinned Python3.10image. No reverse pass,
-expert-weight/tieoffset/routecap/LB parameter search or backbone training.
+V11 is SEALED, H59done (negative result). Activev12 has41members:40unfinished
+carryovers plus E17new CPU transport diagnosis. Focus only **E16 then H58**;
+E17/H55/H56 and others remain unselected. v13draft empty. No v12GPU admitted,
+program/phase config/notebooks not yet implemented. Begin E16bounded profile
+implementation/preparation; do not start H58before E16done. Prospective contract
+is committed with this handoff: matched6144/8192packing probe before the cheaper
+Llama-only answer-order completion. Do not fit new T/weights/routes from scores.
 
-Learning exact Kaggle job:
-arseniytrushin/llm-preference-span011-learning-calibration/1, COMPLETE11:37:02UTC.
-Controller34709 is terminal exit0; do not restart it or re-push the pilot.
-All27retrieved files hash-verified. Both256row original component controls have
-max probability difference0. Checkpoint hashes, source/input/IDs/swaps/mixture/
-CSV/prepared Gemma lengths and two T4 devices passed. Qualification:
-results/span_011/calibration_learning_qualification.json. Projection29849.450s
-(8.292h), with20%margin, all362.497sstartup/warmup/other session overhead and600s
-reserve, passes32400s. Audit retains bare worker29810.248s plus39.202sother
-observed overhead; inference source and1e-5raw control threshold unchanged.
-Actual GPU charge2436.757s (0.677two-T4session hours), under5400s.
-Heavy outputs ROOT/runs/span_011/jobs/calibration_learning/output/calibration.
+E16<=1800two-T4seconds including setup: exact original256control rows, both
+loaded experts, full-batch first80row warmups,8192first/6144/8192last bracket.
+Record token/ID/checkpoint/raw-probability controls (strict1e-5), devices, memory,
+clocks/utilization and timing. Production defaults8192;6144eligible only if both
+raw controls pass,8kbracket stablewithin10% and summed warm timing>=5%faster.
+Preserve any numerical failure, no12ktrial. See full stop/selection rules in plan.
 
-Learning1024groups, five group-hash folds: base logloss1.02417326 -> cross-fitted
-1.01955768, gain.00461556, pairedgroup95[-.00245062,.01240010]; uncertain,
-not established improvement or a forecast of competition score. Accuracy.486328
-is unchanged. Fold temperatures1.2272–1.4324. Full-learning fitted scalar is
-T=1.3161518671742531, now frozen in results/span_011/frozen_temperature.json
-BEFORE confirmation inputs upload or confirmation predictions/labels inspection.
-Class fractions A/B/tie .3389/.3613/.2998 are close to original .3491/.3419/.3090.
-Gain mostly improves tie logloss; A/B slight regressions and mixed length bins.
-Source2025model pairs are harder; this is out-of-time source evidence, not CV
-on competition labels. See learning_metrics.json and docs/SPAN_011_LEARNING.md.
-Confirmation labels stayed unopened until after the frozen learning T and
-confirmation engineering qualification; they are now evaluated as described below.
-Official v11receipt58091536 is now pending as described below.
+After E16done, H58replays ONE fixed rule on cached original v10outputs. These
+votes overlap checkpoint training; descriptive uniform512gain>.0005is only an
+information gate. Keep equal total weights, T1, context4096, fp16/author kernels/
+pinned Python3.10image. Same original10%work/20%row JS-disagreement-per-work route.
+On route: .5Gemma-original+.25aligned-Llama-swapped+.25Llama-original;
+off route original equal ensemble. Then freeze/rehearse a real three-pass worker
+and remeasure original control256/uniform512/long64/test. Hidden mode performs
+actual inference, no public cache/source labels. Source/IDs/swaps/checkpoints/
+CSV/two-T4/raw controls mandatory. Target25kprojection<32400s with20%margin,
+allstartup/warmup/other overhead+selectedreverse+600sreserve, owned watchdog.
 
-## Current confirmation and next action
+New v12public cap7200seconds including retries: E16<=1800,H58<=1800, at most one
+separately admitted engineering follow-up<=3600. Max3public accepted versions,
+one fixed production recipe/one official submission. Fresh full quota/jobs/deps
+and fixed original quota period/48hour deadline before GPU. No quota-refresh
+expansion, researchGPU while official pending, paid scaling, external text API,
+hidden target lookup or cache. Actual v11terminal quota used9922.734s, remaining
+98077.266s, reserved0, refreshNov14, paid off; refresh again at actual admission.
 
-Confirmation exact job arseniytrushin/llm-preference-span011-confirmation-calibration/1
-COMPLETE12:14:23UTC, controller72056 terminal exit0. All20retrieved files verified.
-Both256row raw component controls again maxdiff0. All engineering gates passed;
-conservative projection remains29849.450s using max startup across sessions.
-Charge1650.445s; combined v11public4087.202s/1.1353two-T4session hours.
-Confirmation labels were opened ONCE after engineering qualification, after the
-pre-frozen T and exact notebook/source were committed. No confirmation fit.
+Reuse the frozen tascj source/assets already under ROOT/runs/span_009/research:
+lmsys-checkpoints-0-0805 and3-0805, author modules/packages (public pinnedv1).
+Original inference wrapper src/arena/span010_order.py has all four orientations,
+route_indices, pipeline/strict loading and profile_indices; fork into a new v12
+module, preserve historical source. Original raw CSV ROOT/raw; v10fixed IDs in
+results/span_010/profile_selection.json. Old original256controls are v9
+ROOT/runs/span_009/jobs/public_ensemble_resume/output/public_ensemble/m{0,3}_uniform.npz.
+V10cached complete base/reverse/routed outputs:
+ROOT/runs/span_010/jobs/order_pilot/output/order_completion.
+Use reusable run_job controller/notebook_worker, exact one intent/receipt per
+mutation, actual serialized-cell success/failure/watchdog/public-hidden/startup
+rehearsals. Avoid back-to-back full inventory dry-runs that can provoke429.
+Notebook24 will document v12actual results; it does not exist yet.
 
-Confirmation fixedT1.3161518671742531: loss1.04426491->1.03285107, gain.01141384,
-pairedgroup95[.00439561,.01839702], passes point>=.001/lower>0. Accuracy.472656
-unchanged. A/B/tie losses all improve;7/8length bins improve, regression limited
-to11rows in3072–4096. Code proxy48rows and remaining976both improve. Priors
-.3643/.3428/.2930 are close to original. Later English model pairs remain harder;
-this is independent-source evidence, not competition CV or an official forecast.
-See docs/SPAN_011_CONFIRMATION.md, confirmation_metrics.json and final notebook23
-(four executed code cells/two figures/no errors).
+## Sealed v11 result and preservation
 
-Domain review admitted ONE exact existing confirmation version at frozen T.
-results/span_011/deployment_decision.json contains all seven exact evidence hashes,
-class/length/domain rationale and no-LB-fitting marker. Confirmation evidence,
-final notebook and decision are committed/pushed as77276c1.
+Official58091536 COMPLETE.84797 at18:12:27UTC, worse than baseline.83053by.01744;
+rank30/313 unchanged. Exact source arseniytrushin/llm-preference-span011-confirmation-calibration/1,
+frozen T1.3161518671742531 fitted on1024later-vote learning groups before1024blind
+confirmation. Learning group-CV gain.004616 CI[-.002451,.012400]; independent
+confirmation gain.011414 CI[.004396,.018397], all3classes/7of8length bins improved.
+That positive source result failed competition transfer. Later English model-pair
+population shift is plausible, not causally proven. No claim of a universal honest
+loss or target leakage; no temperature retuning. Bothsource reports and official
+negative result are retained. E17queued for future CPU-only transport diagnosis.
 
-**Official submission58091536 accepted2026-11-07 12:22:36UTC.** Exact source:
-arseniytrushin/llm-preference-span011-confirmation-calibration/1. At12:22:37UTC
-status SubmissionStatus.PENDING. Live official controller handle88472. Poll that
-handle and results/span_011/official_result.json; no new GPU or official mutation.
-Never re-submit or re-push on observation timeout. If this handle is genuinely
-terminal/missing, reconcile authoritative receipt58091536 before a bounded
---observe-only continuation on the SAME receipt. Public job statuses are already
-COMPLETE and do not show hidden-scoring progress; monitor the official receipt.
+Both public jobs COMPLETE,27+20=47retrieved files hash-verified, both256row base
+controls perjob maxdiff0, token lengths/source/checkpoints/IDs/swaps/CSV/devices
+passed. Conservative target projection29849.450s includes20%margin, worst observed
+startup and600sreserve. Publiccharges2436.757+1650.445=4087.202s under21600s.
+One official submission; receipt walltimeabout5h50m is not measured hiddenGPUtime.
+Public controllers34709/72056 and official88472 are all terminal exit0. Do not
+restart/rebuild/resubmit any v11job. No pending official receipt remains.
 
-Fresh official admission: no active jobs/reservations, paid scaling off,
-remaining98077.266free seconds, original quota period/deadline preserved. Public
-phase total4087.202s; conservative hidden projection29849.450s, owned watchdog
-32400s cap. Receipt/intent/admission are durable in both public results and private
-ROOT/runs/span_011/official/calibration. No researchGPU while receipt pending.
-
-The goal remains active. Wait for this exact official outcome, then verify actual
-fresh fully paginated rank for team17244411, report official score/transfer result,
-refresh final notebook23, close H59/v11 with real evidence and publish. Do not fit
-T/weights/tie offsets/routes from confirmation or leaderboard feedback. No goal
-completion from confirmed source gain alone; current actual best remains.83053.
-
-If official rank<=19, verify a fresh complete leaderboard plus all deliverables
-and publication before updating the persistent goal complete. If not, preserve
-baseline/both study results, close H59/v11 with actual evidence, queue discoveries
-forv12 and select another bounded span under the same persistent rankgoal. A
-finished span or local gain does not complete the goal.
-
-## Frozen resources/source/publication
-
-Phase plan results/span_011/span_plan.json and configs/span_011.json retain
-original deadline2026-11-09T10:32:36.230293+00:00,21600s public total including
-retries, learning5400s, separately admitted confirmation7200s, max2frozen recipes/
-2official candidates. InitialGPUused5835.532s, refreshNov14, paid off. Combined public
-charge4087.202s leaves17512.798s within original public cap; quota refresh cannot
-enlarge it. Each hidden25krow conservative projection includes20%margin/all
-startup/warmup/600sreserve and must be<32400s with owned watchdog. No external
-text inference API, paid scaling or public prediction cache in hidden mode.
-
-Pinned public source lmarena-ai/arena-human-preference-140k revision
-6322995ab34d7c2693e3f47dd13fa5caa0789a74. CardSHA
-2960894314c63712189097b5fe731e6342ef1bdeedc16acbd52becd8dc7cf312.
-Both exact checkpoint datasets publicversion1 published2024-08-05. Source
-selected votes Apr17–Jul24,2025; chronology does not cover modern reward models.
-135634rows audited,49118eligible English first-eval single-turn text pairs,
-45703prompt/session groups,1known competition pair including swaps excluded.
-Separate representative/group hashes avoid repeated-vote group weighting.
-2048groups fill fixed length quotas[488,495,438,413,111,66,22,15]; split learning
-[244,248,219,207,55,33,11,7] and confirmation remainder. No label-based selection.
-Inputs only id,prompt,response_a,response_b as plain Parquetv1; numeric source
-IDs and UUID/session/group mappings stay private. Labels are separate NPZ files.
-Manifest results/span_011/cohort_manifest.json; heavy ROOT/runs/span_011/cohort.
-Seven source shards1613803705bytes verified within original30min deadline;
-preparation108.358s/1.0835GBRSS/two threads; total heavy CPU below1h review cap.
-Source attribution/terms accompany private text inputs. Fresh authenticated rules
-allowed public external data, require9h/offline and forbid hand-labeling.
-
-Learning private dataset arseniytrushin/llm-span011-learning-inputs/1 is verified.
-Accepted source read-back matched cells/image/datasets. Source commit9c76631,
-preparationbf52056, analysiscc442ac, official guards8365620, stricter runtime
-e73ea02 and telemetry2221523 are pushed. Preserve dirty user notebooks07/12.
-Notebook23 builder scripts/build_span_011_review.py reads only aggregates and
-sanitized progress at results/span_011/jobs/<role>/progress.json, not a top-level
-progress.json. Rebuild/execute with escalation for local Jupyter sockets after
-new evidence; final notebook23 must include final actual metrics. Notebook23 was
-refreshed/executed with engineering, learning and untouched
-confirmation metrics (four code cells, two figures, zero errors). The notebook also shows pending official58091536. A terminal official outcome
-will require a final report/notebook refresh.
-
-## V10 evidence and immutable history
-
-Two exact public jobs COMPLETE, no official submissions/intents:
-order_pilot: arseniytrushin/llm-preference-span010-order-completion/1,
-2802.478s, projection32998.845s FAIL, base controls maxdiff0.
-order_packed: arseniytrushin/llm-preference-span010-packed-order-completion/1,
-3033.054s, projection36586.536s FAIL, probability diffs.0002135/.0006124 FAIL1e-5.
-Second slug was title-derived; actual response/source read-back is verified, no
-repush. Both observers85261/64908terminal; do not restart/rebuild/resubmit.
-All100retrieved files hash-verified, total5835.532s/1.620981h under21600s. Fresh
-terminal inventory no active jobs/reservations, paid scaling off. Descriptive
-original-vote loss gain.00123has CI crossingzero and overlaps checkpoint training;
-no independent quality/official gain. See docs/SPAN_010_RESULTS.md and completion.
-
-Notebook22 is final executed: four code cells, two figures, zero errors. Builder
-refuses afterv10closure. H57qualifications are separate by attempt. Auditor's
-float64JSroundoff tolerance is1e-12rel/1e-14abs only; indices/prediction gate remain
-strict. An attempt-label loop shadowing bug was fixed and regression-tested
-before any official submission; metrics/predictions were unchanged.
-Closure audit passed;21backlog tests passed afteradvance. Old38snapshot files
-and dirty user notebooks07/12 preserved; v10.final/v11.start add4new snapshots.
-Exact oldGOAL is docs/GOAL_V10.md. V10frozen maps validate against commit25d71c9
-and that archive, because current GOAL.md intentionally advances. Do not rerun
-historical builders/auditors expecting a previous active version/current GOAL.
+Notebook23 is final:4executed code cells,2figures,0errors, explicit official
+regression headline. Its builder refuses afterv11closure; do not rerun it.
+Exact oldGOAL is docs/GOAL_V11.md. Standalone scripts/audit_span_011_closure.py
+passed after currentGOALadvanced: validates47files, exact source maps against
+Git77276c1+archive, old42snapshot hashes/usernotebooks and sealed membership.
+Do not rerun historical builders/auditors that expect the currentGOAL to be v11;
+use the archived contract and closure verifier.21backlog tests passed; check passed.
+V11final/v12start add4snapshots, now46. Carry40unfinished plusE17=41members.
+All older v10/v9evidence stays immutable; docs/SPAN_010_RESULTS.md has the previous
+two unqualified order-completion recipes (9.166h8k and10.163h12k, latter failed
+raw numerical controls). The12kfailure is preserved, not a successful speedup.
 
 ## Environment/publication
 
-Cwd /home/tarstars/prj/llm_classification_finetuning, Python.venv/bin/python.
-ROOT=/home/tarstars/database/llm_classification_finetuning. Never walk HOME,~/prj,
-Arc/FUSE mounts or troll_farm. No subagents. Preserve user-dirty notebooks
-07_error_poster.ipynb and12_backlog_v1_span.ipynb; never stage/reset them.
-~/notebooks/llm_classification_finetuning already links to repo/notebooks.
-GitHub tarstars/llm_classification_finetuning,main; commit/push important results
-with reviewed explicit paths. V9best official submission58068582/.83053 is genuine
-public tascj Gemma2-9B original +ArmoRM/Llama3-8B swapped equal ensemble, source
-arseniytrushin/llm-preference-span009-public-ensemble/4. Old own-trained.95481
-reference is historical. Earlier v10source commits7e3be95/25d71c9; researchf4b6e50.
+Cwd /home/tarstars/prj/llm_classification_finetuning; Python.venv/bin/python.
+ROOT=/home/tarstars/database/llm_classification_finetuning; heavy v12files go
+ROOT/runs/span_012. Never walk HOME,~/prj, Arc/FUSE mounts or troll_farm. No agents.
+Preserve user-dirty notebooks07_error_poster.ipynb and12_backlog_v1_span.ipynb;
+never stage/reset them. Their hashes and42previous snapshots were verified.
+~/notebooks/llm_classification_finetuning points to repo/notebooks.
+GitHub tarstars/llm_classification_finetuning,main. Commit/push reviewed explicit
+paths for important milestones. Current v11closure/v12plan changes need publication
+before GPU admission; no v12source bundle exists. Baseline winning receipt58068582
+is source arseniytrushin/llm-preference-span009-public-ensemble/4 at.83053.
+Old own-trained.95481 is historical and is not the current best.

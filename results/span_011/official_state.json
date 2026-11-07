@@ -1,6 +1,19 @@
 {
-  "at": "2026-11-07T12:26:26.337603+00:00",
-  "stage": "monitoring",
+  "at": "2026-11-07T18:12:31.942624+00:00",
+  "stage": "terminal",
   "receipt": 58091536,
-  "status": "PENDING"
+  "score": 0.84797,
+  "leaderboard": {
+    "observed_at": "2026-11-07T18:12:31.913569+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 30,
+    "teams": 313,
+    "score": 0.83053,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82704,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-07T12:22:35.176Z"
+  }
 }

@@ -116,6 +116,17 @@ if path.exists():
 path=PUB/'official_leaderboard.json'
 if path.exists():display(pd.DataFrame([json.loads(path.read_text())]))
 print('Goal completion requires a fresh complete official observation at rank<=19.')''')])
+    result_path=REPO/'results/span_011/official_result.json'
+    if result_path.exists():
+        official=read_json(result_path)
+        if official['status'].endswith('COMPLETE'):
+            score=float(official['public_score']);leader=read_json(REPO/'results/span_011/official_leaderboard.json')
+            outcome='did not improve the competition score' if score>=.83053 else 'improved the competition score'
+            nb.cells.insert(1,nbf.v4.new_markdown_cell(
+                f'**Official outcome: {score:.5f}; this attempt {outcome}.** '
+                f'Existing best0.83053; current team rank{leader["rank"]}/{leader["teams"]}. '
+                'The positive later-vote confirmation did not establish transfer to the competition. '
+                'Preserve the baseline and the negative result; do not tune another temperature to this score.'))
     nb.metadata.update(kernelspec=dict(display_name='Python 3',language='python',name='python3'))
     executed=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     assert not any(o.output_type=='error' for c in executed.cells for o in c.get('outputs',[]))

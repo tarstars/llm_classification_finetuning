@@ -5224,7 +5224,7 @@
       ],
       "id": "H59",
       "rank": 76,
-      "status": "running",
+      "status": "done",
       "introduced_in": 11,
       "discovered_during": 10,
       "derived_from": [
@@ -5302,6 +5302,73 @@
           "evidence": [
             "results/span_011/official_receipt.json"
           ]
+        },
+        {
+          "at": "2026-11-07T18:22:56+00:00",
+          "status": "done",
+          "note": "Completed negative competition transfer test: official58091536 COMPLETE0.84797 versus best0.83053, fresh rank30/313. Untouched later-vote gain.011414 did not transfer despite exact0diff controls and8.292h conservative runtime. KeepT1baseline; no LB temperature tuning. Both public jobs/official controller terminal,47files verified,4087.202publicGPUseconds, one official submission. E17queued for future CPU transport diagnosis; persistent rank<=19goal continues.",
+          "evidence": [
+            "docs/SPAN_011_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Diagnose calibration transport failure before reusing later votes as a target proxy",
+      "priority": "P2",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.25,
+        1
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.25
+      ],
+      "risk": "medium",
+      "claim": "Cached prediction/retention and exposure diagnostics can distinguish documented population differences from unsupported causal explanations of the failed temperature transfer.",
+      "basis": "H59 improved untouched2025source loss by0.011414 with paired95%lower0.004396, but official0.84797 regressed versus best0.83053; matching lengths and similar class priors did not ensure transfer.",
+      "first_test": "Compare fixed confidence/entropy, expert disagreement, prepared lengths and source coverage on cached original training-overlapping controls versus later-vote groups. No fitting, parameter variants, GPU or new submission; label original diagnostics as training-overlapping.",
+      "acceptance": "A reproducible CPU notebook/report separates observed shift and valid exposure facts from hypotheses, and states what independent evidence would be needed before using a source as a competition-calibration surrogate.",
+      "stop": "Stop within15CPUminutes or1engineeringhour. No hidden target lookup, temperature/weight refitting from official feedback, extra GPU, or claim that biased original-training diagnostics estimate hidden calibration.",
+      "risk_reason": "The hidden conditional distribution is unavailable; diagnostic differences and a negative official result do not identify a unique cause or prove target leakage.",
+      "mitigation": "Use existing fixed recipes and cached outputs, preserve every original result and exposure limitation, and make no new model-selection claim.",
+      "rationale": "Retain the transport lesson as an explicit future prerequisite rather than repeating a successful-source/failed-target calibration experiment or declaring a universal honest loss.",
+      "revision": "Queued from the actual completed v11 official regression; future CPU analysis only, not another v11 recipe or a selected next-span task.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H59"
+      ],
+      "evidence": [
+        "docs/SPAN_011_RESULTS.md"
+      ],
+      "id": "E17",
+      "rank": 77,
+      "status": "planned",
+      "introduced_in": 12,
+      "discovered_during": 11,
+      "derived_from": [
+        "H59"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T18:21:26+00:00",
+          "status": "planned",
+          "note": "Untouched later-vote gain did not transfer: official0.84797 versus best0.83053; queue bounded CPU transport/exposure diagnosis, no refit or GPU.",
+          "evidence": [
+            "docs/SPAN_011_RESULTS.md"
+          ]
         }
       ]
     }
@@ -5354,7 +5421,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 11,
+  "active_version": 12,
   "versions": [
     {
       "number": 1,
@@ -6218,7 +6285,7 @@
     },
     {
       "number": 11,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -6277,10 +6344,83 @@
       "carried_from": 10,
       "start_sha256": "195dfd732640265a2c8de9edc46131f1cd4e41cb52988347dd36acde2c38c3e3",
       "start_markdown_sha256": "10b12c63fdd5211fc659e4fcfb7b43ffbd66410ed2d44d0d7bb99bc7ee6752e3",
-      "start_sealed_at": "2026-11-07T09:28:09+00:00"
+      "start_sealed_at": "2026-11-07T09:28:09+00:00",
+      "final_sha256": "777c1512c6eae7dac5213285c55cdbd29182605a4bf93ff088a57cbd3cc3ee47",
+      "final_markdown_sha256": "b46f4a6d00edc1fb6e9166d2ca9c128d192b84e39c1a9d3d24aa260bbb55542e",
+      "final_sealed_at": "2026-11-07T18:25:53+00:00",
+      "closed_at": "2026-11-07T18:25:53+00:00",
+      "closing_note": "H59completed: independently confirmed later-vote temperature failed official transfer (.84797vs.83053), rank30/313. Preserve both public jobs/47files, one terminal official receipt, notebook23 and exactv11contract. QueueE17CPUdiagnostic, carry40unfinished tasks; persistent rank<=19goal continues into a newly selected bounded span.",
+      "closing_evidence": [
+        "docs/SPAN_011_RESULTS.md"
+      ]
     },
     {
       "number": 12,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H55",
+        "H56",
+        "E16",
+        "H58",
+        "E17"
+      ],
+      "focus_ids": [
+        "E16",
+        "H58"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T18:31:41+00:00",
+          "note": "Persistent rank<=19goal continues after negative v11official0.84797. Select only carriedE16 matched packing prerequisite and H58 fixed cheaper Llama-only reverse route; T1/equal total expert weights, prospective docs/SPAN_012_PLAN.md and new7200s public cap. E17/H55/H56 stay unselected.",
+          "focus_ids": [
+            "E16",
+            "H58"
+          ]
+        }
+      ],
+      "carried_from": 11,
+      "start_sha256": "00825244958f7e6c28663481eabf6416666c4831c424573a8d2000015c41090c",
+      "start_markdown_sha256": "c84d81776bc4318f4fd973d35717056074189cab9ba5da72ab09d188598a742b",
+      "start_sealed_at": "2026-11-07T18:25:53+00:00"
+    },
+    {
+      "number": 13,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],
