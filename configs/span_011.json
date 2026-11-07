@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-07T10:32:36.230280+00:00",
+  "deadline": "2026-11-09T10:32:36.230293+00:00",
+  "job_seconds_caps": {
+    "calibration_learning": 5400,
+    "calibration_confirmation": 7200
+  }
+}

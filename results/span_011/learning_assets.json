@@ -1,0 +1,20 @@
+{
+  "prepared": true,
+  "dataset": "arseniytrushin/llm-span011-learning-inputs/1",
+  "rows": 1024,
+  "private_requested": true,
+  "fields": [
+    "id",
+    "prompt",
+    "response_a",
+    "response_b"
+  ],
+  "input_sha256": "7b63b0b31c0612d7de7a553e55a3bdadd10359190b0262b55235fb31e1b29df1",
+  "upload_files": {
+    "learning.parquet": "7b63b0b31c0612d7de7a553e55a3bdadd10359190b0262b55235fb31e1b29df1",
+    "dataset-metadata.json": "b8f12eb62ae063f9ccbe447e3eb4f4283a4b0d54bd406d27f3e254ec2b84675c",
+    "README.md": "4b368bc70a7d12bd0837506ccf57ba91aaced9672f9df20ef3f76378e212ebd5"
+  },
+  "labels_included": false,
+  "new_gpu_executions": 0
+}

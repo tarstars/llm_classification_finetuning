@@ -1,71 +1,74 @@
-# Active goal: above20th place; v11 H59 source preparation
+# Active goal: above20th place; v11 H59 learning pass preparation
 
-Snapshot2026-11-07 after v10closure. Read PROJECT_POLICY.md, GOAL.md and
-docs/SPAN_011_PLAN.md. Persistent goal is rank<=19 on a fresh complete Kaggle
-leaderboard for team17244411, not a local metric or a finished span. Latest
-verified09:24:32UTC: rank30/311, official0.83053, rank19/20threshold0.82915.
-Goal remains active and unachieved. No genuine blocker is present.
+Snapshot2026-11-07. Read PROJECT_POLICY.md, GOAL.md, docs/SPAN_011_PLAN.md.
+Persistent success is rank<=19 on a fresh complete Kaggle leaderboard for
+team17244411, not a local metric or a finished span. Fresh10:23:49UTC observation:
+rank30/311,.83053; rank19/20cutoff.82915, leader.82711. Goal active, unachieved.
+The preceding status-only turn was no progress; this turn completed ingestion,
+cohort preparation and tested actual two-expert orchestration. No blocker.
 
 ## Current backlog and next action
 
-V10 is sealed with E15/H57done. Active v11 has41members (38unfinished carryovers
-plus E16/H58/H59), focus **H59running only**; v12empty. E16/H58/H55/H56 remain
-unselected. H59prepares independent-source confidence calibration of the unchanged
-8192packing equal Gemma/Llama baseline, no extra model pass/backbone fit.
+V10 sealed. Activev11:41members, focus H59running only; v12empty.
+E16/H58/H55/H56 remain unselected. H59tests one shared confidence temperature on
+unchanged8192packing Gemma2-9Boriginal plus ArmoRM/Llama3-8Bswapped, equalweights,
+4096conversation cap, fp16/author kernels/pinned Python3.10image. No reverse pass.
 
-Current program scripts/audit_span_011_sources.py passed metadata stage:
-both exact public datasets are stillversion1, lastUpdated2024-08-05 at05:50/06:25UTC.
-Official Arena140k source revision6322995ab34d7c2693e3f47dd13fa5caa0789a74 is pinned,
-cardSHA2960894314c63712189097b5fe731e6342ef1bdeedc16acbd52becd8dc7cf312,
-ungated; about1.6138GB compressed. The metadata audit downloaded only card/metadata; a later raw-shard download is
-now running. **Zero rows parsed/scored and zero v11 GPU jobs**. Actual row timestamps, format,
-duplicates and eligible support still need verification. ready_for_gpu=False.
-Evidence: results/span_011/source_metadata_audit.json. About64GB disk was free.
+Source official lmarena-ai/arena-human-preference-140k revision
+6322995ab34d7c2693e3f47dd13fa5caa0789a74, public/ungated. CardSHA
+2960894314c63712189097b5fe731e6342ef1bdeedc16acbd52becd8dc7cf312.
+Both exact public checkpoint datasets remainversion1, published2024-08-05.
+Prompts CC-BY4; outputs provider terms. Source attribution accompanies private
+text-only assets. Chronology applies to these2024weights, not modern rewardmodels.
 
-scripts/download_span_011_source.py is prepared: exact seven-shard size/LFS-hash
-guards, <=2GBcompressed, original30minute resumable intent deadline, no row
-parsing/scoring and ready_for_gpu=False. Downloader is now live as local handle32464, original deadline
-2026-11-07T10:29:36.620244+00:00. Source metadata passed and1613803705total bytes
-are expected; first shard was actively streaming. Poll this exact handle and
-results/span_011/source_download.json. Resume completed files by hashes and partial
-files byRange; do not reset the original intent/deadline implicitly. Then implement
-the streaming cohort preparation program. Download
-seven pinned Parquet shards under ROOT/runs/span_011 (<=2GBcompressed); process
-projected columns in batches, two threads,6GiB target, <=one heavy hour before
-review. Do not expand3GBnested data at once. Select English, first evaluation,
-single-turn text pairs with identical user history and actual date>2024-08-05.
-Exclude known competition canonical triples including swaps, keep one row per
-prompt/session group, and select before labels. Use cached source Gemma tokenizer
-and author ProcessorPAB (see scripts/audit_span_009_lengths.py) for prepared
-lengths; verify tokenizer/source hashes and the existing CPU/GPU control.
+Downloader32464 and cohort preparer69487 terminal exit0. Seven pinned shards,
+1613803705bytes verified within original30minute download deadline. Preparation
+108.358s/1083514880peakRSSbytes, two threads; total CPU preparation under1hour.
+135634rows audited:49118eligible English/first-evaluation/single-turn text pairs,
+45703prompt/session groups. Excluded1known competition triple including swaps.
+Representative rowhash and independent grouphash avoid repeated-vote weighting.
+Actual model text/order preserved; normalization is only for hashes.
 
-Frozen target length bins [0,512,768,1024,1536,2048,3072,4096,4500] from the verified
-full57477-row label-free audit. Total2048 quotas [488,495,438,413,111,66,22,15];
-learning1024 [244,248,219,207,55,33,11,7], confirmation1024the remainder.
-Use deterministic seed42hash selection within bins, no labels/model IDs/style
-features. If strata lack support, stop and revise before scoring. Keep raw text,
-labels, per-row outputs private under the database. Map model_a/model_b to0/1,
-tie/both_bad to2; retain actual A/Border while hashing swaps for duplicate checks.
-Use numeric synthetic IDs for NPZalignment if needed; original UUIDs are mapping
-metadata only, never prediction features. Confirmation labels remain uninspected
-until learning/frozen parameter stage completes.
+Frozen2048groups fill length bins[0,512,768,1024,1536,2048,3072,4096,4500],
+quotas[488,495,438,413,111,66,22,15]. Learning1024quotas
+[244,248,219,207,55,33,11,7]; confirmation remainder. Selected dates Apr17–Jul24,2025.
+Mean947.388Gemma tokens; exact old256row CPU/GPU token fingerprint passed.
+Manifest results/span_011/cohort_manifest.json; heavy cohort ROOT/runs/span_011/cohort.
+Inputs plain Arrow Parquetv1 with only id,prompt,response_a,response_b. Numeric
+int64source IDs and UUID/session/group mappings stay separate. Labels are private;
+neither learning nor confirmation outcomes have been inspected. Confirm split
+must remain unopened until learning-only T is frozen. No source rows scored yet.
 
-Stage1: fixed1024learning groups plus original control256/uniform512/long64/test
-engineering cohorts, public cap5400s. Cross-fit one T in[.5,2] within learning
-folds, freeze T before separately admitted1024confirmation pass (<=7200s). Require
-confirmation gain>=.001 and paired group95%lower bound>0, plus class/length/domain
-checks before official admission. No expert weights, tie-offset/route-cap or
-leaderboard parameter search. Temperature preserves predicted class; it calibrates
-log loss. Later-vote evidence is out-of-time, not competition CV. This chronology
-does not automatically apply to modern reward models such as H56.
+Phase preparation complete: results/span_011/span_plan.json, configs/span_011.json.
+Original48hour deadline,21600s public total including retries, learning5400s,
+confirmation separately admitted7200s, max2frozenrecipes/2officialcandidates.
+InitialGPUused5835.532s, remaining102164.468s, refreshNov14, no reservations/
+nonterminal jobs, paid off. Conservative label-free pilot forecast3452.553s.
+Fresh authenticated official pages confirm public external data allowed,9hour
+notebook cap/internet off/hand-labeling forbidden. Raw snapshot is private.
 
-New public phase<=21600s, max2frozenrecipes/2officialsubmissions; each hiddenrun
-requires measured conservative<32400s with20%margin, startup/warmup and600sreserve,
-owned watchdog. Fresh full quota/jobs/dependencies and a fixed48hour deadline
-before admission. No GPU admission yet; phase plan/config and pilot/cohort builder
-are not implemented. No paid scaling, external text API, hidden label lookup or
-public prediction cache in hidden mode. No research GPU while official scoring
-is pending. Do not consume refreshed quota to enlarge a frozen phase.
+Seven tests passed: label-blind parsing/rejections/grouping/input schema, scalar
+argmax/swap, actual learning/confirmation/hidden orchestration using CPU worker.
+New inference AST matches v10base exactly except allowed role/cohort names.
+No actual GPU numerical/runtime result. See docs/SPAN_011_PREPARATION.md.
+Learning assets are prepared but not uploaded. Next: commit programs/preparation,
+then scripts/prepare_span_011_assets.py upload / verify. Preserve one private
+upload intent/receipt. Build scripts/build_span_011_calibration.py, exercise actual
+serialized worker success/failure/watchdog, public/hidden input branches and
+notebook-engine startup; commit frozen source/bundle. Then dry-run and launch
+scripts/run_span_011_calibration.py. No v11 GPU job admitted yet.
+
+Fit only T in[.5,2] on log equal-ensemble probabilities. Group-cross-fit within
+1024learning groups; positive point gain is stage2 information gate. Freeze T
+before confirmation asset upload/scoring. Confirmation needs gain>=.001 and paired
+group95%lower>0 plus class/length/domain checks. No expert-weight/tieoffset/
+routecap/LB search. Independent later votes are out-of-time, not competition CV.
+Source/ID/swap/CSV/checkpoint/device/numeric audit mandatory; old1e-5raw-control
+threshold unchanged. Hidden25krow projection plus20%margin/allstartup/warmup/
+600sreserve must be<32400s and owned watchdog. No public prediction cache in
+hidden mode, researchGPU while officialpending, paid scaling or external textAPI.
+Quota refresh cannot enlarge frozen phase. Exact handles/version receipts prevent
+restarts on observation timeout. A failed span does not complete the rankgoal.
 
 ## V10 evidence and immutable history
 

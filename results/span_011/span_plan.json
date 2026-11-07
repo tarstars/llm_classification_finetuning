@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-11-07T10:32:36.230280+00:00",
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "quota_used_at_start": 5835.532,
+  "gpu_session_seconds_cap": 21600,
+  "deadline": "2026-11-09T10:32:36.230293+00:00",
+  "target_rank_maximum": 19,
+  "public_pilot_seconds_cap": 5400,
+  "official_candidate_limit": 2,
+  "initial_quota": {
+    "used_seconds": 5835.532,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 102164.468
+  },
+  "frozen_recipe_limit": 2,
+  "learning_rows": 1024,
+  "confirmation_rows": 1024,
+  "temperature_bounds": [
+    0.5,
+    2.0
+  ],
+  "learning_forecast_seconds": 3452.552718833577,
+  "learning_forecast_safety_factor": 1.5,
+  "learning_work_ratio": 1.0079852517681651,
+  "original_fixed_profile_seconds": 1378.541428692,
+  "forecast_learning_inference_seconds": 1474.0112901415769,
+  "learning_control_source": "arseniytrushin/llm-preference-span010-order-completion/1",
+  "confirmed_external_data_allowed": true,
+  "official_pages_sha256": "49cea14b2c5e59f629e2c7a10746366ac80492d1d46f2da4f06b25e84b85bb13",
+  "source_format_dates_overlap_verified": true,
+  "cohort_manifest_sha256": "bd45005a8d9340499c2cc7a5af69ea94a954b0f8e293d2eae9755c47da33063d",
+  "confirmation_labels_inspected": false,
+  "ready_for_gpu": true
+}

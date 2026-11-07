@@ -320,6 +320,7 @@ A single temperature fitted to genuinely later human votes may correct ensemble 
 - 2026-11-07T08:54:57+00:00 — planned: Official2025Arena vote source may permit independent calibration of2024checkpoints; pinned card/metadata only, zero data scoring or GPU. Source/domain audits and one-scalar protocol required in next activated span. Evidence: [docs/SPAN_010_POST2024_CALIBRATION.md](docs/SPAN_010_POST2024_CALIBRATION.md)
 - 2026-11-07T09:32:35+00:00 — running: Starting v11source/chronology/duplicate/format audit before data scoring or GPU admission; pinned official2025card metadata available. Freeze2048groups and learning/confirmation split under SPAN_011_PLAN before fitting one temperature. Evidence: [docs/SPAN_011_PLAN.md](docs/SPAN_011_PLAN.md)
 - 2026-11-07T09:43:05+00:00 — running: Before source labels or GPU scoring, v11plan fixes target-length-bin matching from the existing label-free Gemma length audit to reduce2025domain shift;1024learning/1024confirmation groups. Exact checkpoint publication metadata audit is underway; no new GPU. Evidence: [docs/SPAN_011_PLAN.md](docs/SPAN_011_PLAN.md)
+- 2026-11-07T10:32:08+00:00 — running: Pinned Arena140k download completed within original deadline. Audited135634 rows;49118eligible,45703prompt/session groups; excluded1known competition pair. Froze2048label-blind length-matched groups (1024learning/1024confirmation), exact CPU/GPU control tokens; no labels inspected or GPU run yet. Evidence: [results/span_011/cohort_manifest.json](results/span_011/cohort_manifest.json)
 
 ### H02
 

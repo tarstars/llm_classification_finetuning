@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-07T10:31:08.518386+00:00",
+  "stage": "cohort_frozen",
+  "seconds": 108.36573788104579,
+  "counts": {
+    "source_rows": 135634,
+    "eligible_rows": 49118,
+    "reject_language": 64459,
+    "reject_evaluation_order": 13416,
+    "reject_turn_count": 8593,
+    "reject_nontext_or_empty": 47,
+    "reject_known_pair": 1,
+    "unique_groups": 45703,
+    "groups_tokenized": 7493
+  },
+  "rows": 2048,
+  "learning": 1024,
+  "confirmation": 1024,
+  "labels_inspected": false
+}

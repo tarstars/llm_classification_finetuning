@@ -5254,6 +5254,14 @@
           "evidence": [
             "docs/SPAN_011_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-07T10:32:08+00:00",
+          "status": "running",
+          "note": "Pinned Arena140k download completed within original deadline. Audited135634 rows;49118eligible,45703prompt/session groups; excluded1known competition pair. Froze2048label-blind length-matched groups (1024learning/1024confirmation), exact CPU/GPU control tokens; no labels inspected or GPU run yet.",
+          "evidence": [
+            "results/span_011/cohort_manifest.json"
+          ]
         }
       ]
     }
