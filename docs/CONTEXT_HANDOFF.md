@@ -10,7 +10,7 @@ pilot and recovered terminal results. This is not a blocked condition.
 
 ## Current span and resources
 
-V10 has40members, focus E15done/H57running; v11empty draft. H55/H56 unselected.
+V10 has40members, focus E15done/H57running; v11draft contains E16/H58/H59. H55/H56 unselected.
 The persistent user goal authorizes this new span after completed rank30; old
 rank30 stop rules are historical. Public phase21600s total, same quota period
 and deadline2026-11-08T07:27:25UTC. Initial pilot charged2802.478s; second prospective
@@ -79,3 +79,18 @@ old accepted Kaggle version4 and commit057370d preserve v9 (rank30/.83053).
 Previous own-trained Qwen3-4B official.95481 is historical. Never rerun historical
 builders against a different active version. GitHub tarstars/llm_classification_finetuning,
 branchmain; commit/push important measured results and verify publication.
+
+## New v11 discoveries, not executed
+
+E16 profiles6144/8192packing on matched GPUs before full qualification. H58 keeps
+total expert weights equal but averages only the cheaper Llama order on the
+fixed route;8.596h is a forecast, not a new worker gate. See
+docs/SPAN_010_RUNTIME_FOLLOWUPS.md. H59 pins official Arena140k2025vote metadata
+(revision6322995ab34d7c2693e3f47dd13fa5caa0789a74) for possible independent-source
+one-temperature calibration of2024checkpoints. Source card/schema only: zero
+conversation rows downloaded or scored. Verify actual timestamps, deduplication,
+model lineage and domain shift before use; newer reward models do not inherit
+this chronological exclusion. See docs/SPAN_010_POST2024_CALIBRATION.md.
+These three tasks are next-version draft discoveries; no extra v10 GPU or
+calibration fit is authorized by their queue status. Current job64908 remains
+the only live pilot. Complete/audit it before closing v10 or selecting v11focus.

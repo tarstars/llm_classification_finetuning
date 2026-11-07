@@ -1,0 +1,25 @@
+{
+  "dataset": "lmarena-ai/arena-human-preference-140k",
+  "revision": "6322995ab34d7c2693e3f47dd13fa5caa0789a74",
+  "gated": false,
+  "private": false,
+  "card_sha256": "2960894314c63712189097b5fe731e6342ef1bdeedc16acbd52becd8dc7cf312",
+  "license": "cc-by-4.0",
+  "download_bytes": 1613803705,
+  "dataset_bytes": 3029998372,
+  "files": [
+    ".gitattributes",
+    "README.md",
+    "data/train-00000-of-00007.parquet",
+    "data/train-00001-of-00007.parquet",
+    "data/train-00002-of-00007.parquet",
+    "data/train-00003-of-00007.parquet",
+    "data/train-00004-of-00007.parquet",
+    "data/train-00005-of-00007.parquet",
+    "data/train-00006-of-00007.parquet"
+  ],
+  "only_card_and_metadata_downloaded": true,
+  "conversation_rows_downloaded": 0,
+  "new_gpu_executions": 0,
+  "source_url": "https://huggingface.co/datasets/lmarena-ai/arena-human-preference-140k/blob/6322995ab34d7c2693e3f47dd13fa5caa0789a74/README.md"
+}

@@ -5046,6 +5046,192 @@
           ]
         }
       ]
+    },
+    {
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        2
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.3
+      ],
+      "risk": "medium",
+      "evidence": [
+        "docs/SPAN_010_RUNTIME_FOLLOWUPS.md"
+      ],
+      "revision": "Queued during H57 from measured runtime failure and live component timing; not executed in v10.",
+      "kind": "prerequisite",
+      "title": "Profile packing on matched GPUs before full multi-orientation qualification",
+      "priority": "P1",
+      "gain": null,
+      "pilot_gpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "claim": "A matched warm performance profile can identify a valid runtime recipe and reject infeasible candidates before paying for every orientation.",
+      "basis": "First8kpilot projects9.166h; live12kGemma512takes312.999s versus280.146s in the first session, so a larger budget did not establish a speed gain.",
+      "first_test": "After v11 activates, compare6144and8192 on identical256rows with full-batch warmups on the same loaded model; both GPUs, memory/clocks, token/probability controls, max30minutes.",
+      "acceptance": "Traceable measured runtime/memory result with unchanged numerical gates and a conservative deployment projection; choose purely on engineering evidence.",
+      "stop": "No extra v10GPU. Stop at30minutes, memory/identity failure or base-only projected runtime already exceeding9h; preserve failures and phase caps.",
+      "risk_reason": "Session clocks, JIT and larger-microbatch pipeline bubbles confound separate-run timings; smaller packs may also be slower.",
+      "mitigation": "Matched same-session controls, explicit warmup/cache order and telemetry; no label or leaderboard parameter selection.",
+      "rationale": "Avoid repeated full four-orientation pilots when a short base performance gate can establish infeasibility.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H57"
+      ],
+      "id": "E16",
+      "rank": 74,
+      "status": "planned",
+      "introduced_in": 11,
+      "discovered_during": 10,
+      "derived_from": [
+        "H57"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T08:44:20+00:00",
+          "status": "planned",
+          "note": "Measured8kfull-recipe failure and slower12kGemma component motivate a matched engineering profile before full qualification; no extra current-span GPU",
+          "evidence": [
+            "docs/SPAN_010_RUNTIME_FOLLOWUPS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        2
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.3
+      ],
+      "risk": "medium",
+      "evidence": [
+        "docs/SPAN_010_RUNTIME_FOLLOWUPS.md"
+      ],
+      "revision": "Queued during H57 from measured runtime failure and live component timing; not executed in v10.",
+      "kind": "hypothesis",
+      "title": "Average only the cheaper Llama expert order on the fixed disagreement route",
+      "priority": "P1",
+      "gain": [
+        -0.004,
+        0.004
+      ],
+      "pilot_gpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "claim": "One-expert reverse inference may retain useful order averaging while meeting the nine-hour limit; actual quality is unknown.",
+      "basis": "First pilot measured Gemma/Llama routed512 reverse costs32.714/23.801s; omitting Gemma reverse gives an8.596h feasibility forecast with unchanged margin/reserve.",
+      "first_test": "In activated v11, replay one fixed.5Gemma+.25Llama-swapped+.25Llama-original rule on-route, then freeze/rehearse a real three-pass worker and measure it within30minutes.",
+      "acceptance": "Measured conservative<9h worker with correct swaps, fixed route, equal total expert weights and official scored outcome; rank<=19 remains the user goal.",
+      "stop": "No extra v10GPU, hidden cache, leaderboard weight search or silent gate/cap relaxation. Stop on identity/runtime failure or insufficient useful signal.",
+      "risk_reason": "Gemma order bias remains; cheaper reverse checks may miss the errors responsible for the observed gain. Local votes overlap checkpoint training.",
+      "mitigation": "Preserve model weights.5/.5 and fixed route; report overlap and diagnostic uncertainty; test actual deployment and use official scoring for outcome evidence.",
+      "rationale": "Directly addresses the measured runtime barrier without retraining or inventing an independent local-quality claim.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H57",
+        "E16"
+      ],
+      "id": "H58",
+      "rank": 75,
+      "status": "planned",
+      "introduced_in": 11,
+      "discovered_during": 10,
+      "derived_from": [
+        "H57"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T08:44:20+00:00",
+          "status": "planned",
+          "note": "Measured per-expert reverse cost supports a cheaper fixed three-prediction alternative;8.596h is a forecast, not an admitted or quality-validated candidate",
+          "evidence": [
+            "docs/SPAN_010_RUNTIME_FOLLOWUPS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Calibrate the frozen public ensemble on post-checkpoint Arena human votes",
+      "priority": "P1",
+      "gain": [
+        -0.005,
+        0.005
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        1.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        2
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "A single temperature fitted to genuinely later human votes may correct ensemble confidence without original-vote training overlap or extra deployment inference.",
+      "basis": "Official135634row Arena140k release exposes2025timestamps and four human outcomes; our pinned checkpoints were publishedAugust2024. Only card/metadata were read, no data scored.",
+      "first_test": "In activated v11, audit dates/license/schema/duplicates; freeze2048English first-evaluation single-turn text pairs, evaluate unchanged two-expert baseline and one group-cross-fitted T in[.5,2], with independent-source confirmation and<=90min pilot.",
+      "acceptance": "Verified temporal/duplicate exclusion, honest group confirmation with paired classwise calibration evidence, frozen source/parameter and measured<9h deployment; official rank<=19 remains the outcome target.",
+      "stop": "No additional v10GPU or calibration fit. Stop on invalid lineage, unmapped/mismatched conversation histories, inadequate independent-source evidence, runtime failure or resource cap. No hidden-score parameter fitting.",
+      "risk_reason": "Later models, prompts and rater behavior can shift calibration relative to the competition; chronology does not itself exclude duplicate text or establish target-domain transfer.",
+      "mitigation": "Verify dates/duplicates, limit to a fixed matching English first-turn subset, group sessions/prompts, fit only one scalar in folds and report domain shift; preserve baseline and require official outcome evidence.",
+      "rationale": "Addresses the actual independent-evaluation gap and adds essentially no inference cost, unlike additional model passes.",
+      "revision": "Revisits completed H40 for the newly deployed supervised ensemble using a newly pinned later-vote source; planning discovery only.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H40",
+        "H54",
+        "H57"
+      ],
+      "evidence": [
+        "docs/SPAN_010_POST2024_CALIBRATION.md"
+      ],
+      "id": "H59",
+      "rank": 76,
+      "status": "planned",
+      "introduced_in": 11,
+      "discovered_during": 10,
+      "derived_from": [
+        "H57"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T08:54:57+00:00",
+          "status": "planned",
+          "note": "Official2025Arena vote source may permit independent calibration of2024checkpoints; pinned card/metadata only, zero data scoring or GPU. Source/domain audits and one-scalar protocol required in next activated span.",
+          "evidence": [
+            "docs/SPAN_010_POST2024_CALIBRATION.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -5953,7 +6139,11 @@
     {
       "number": 11,
       "state": "draft",
-      "item_ids": [],
+      "item_ids": [
+        "E16",
+        "H58",
+        "H59"
+      ],
       "focus_ids": [],
       "history": []
     }
