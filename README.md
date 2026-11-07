@@ -8,6 +8,8 @@ Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
+**Active goal:** move above20th place (rank19 or better). V10 focuses E15/H57: bounded answer-order averaging of the deployed ensemble. See [the current contract](GOAL.md) and [v10 plan](docs/SPAN_010_PLAN.md).
+
 **Rank30 goal achieved:** official submission **58068582** scored **0.83053**,
 verified at **30/312 teams** on2026-11-07. This improves the previous0.95481
 by0.12428. The frozen public Gemma2-9B/Llama3-8B ensemble uses the author's
@@ -56,10 +58,10 @@ two-T4 session-hours** and made no submission. See the
 [pipeline theory](docs/PIPELINE_THEORY.md), and
 [review of skipped work](docs/SPAN_007_CARRYOVER_REVIEW.md).
 
-The active backlog is **v10:39tasks**, with **36 unfinished carryovers and three
+The active backlog is **v10:40tasks**, with **36 unfinished carryovers and four
 new discoveries**: E15 retains live model/cohort labels, H55 records an earlier
 author checkpoint, and H56 revisits shared utilities using modern reward models.
-It has no selected focus or execution; v11 is an empty draft. V9 sealed with
+E15 is done and H57 is running under the new rank19 goal; v11 is an empty draft. V9 sealed with
 E14/H54 done and the rank30 goal achieved. [The completed contract](docs/GOAL_V9.md)
 is preserved exactly; forming v10 does not authorize its execution.
 
@@ -135,8 +137,8 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v10**, with **39 tasks** and no selected focus or execution.
-Its three new discoveries retain provenance and bounded tests; unfinished work
+The active version is **v10**, with **40 tasks**, focusing E15/H57 under the new goal.
+Its four new discoveries retain provenance and bounded tests; unfinished work
 is carried forward. [The next-version view](backlog/NEXT.md) is the empty v11 draft.
 Completed dependencies
 alone do not establish scientific readiness: H44's original 20% route remains

@@ -1,3 +1,36 @@
+# Active goal: move above 20th place (rank19 or better)
+
+Updated2026-11-07. The user explicitly starts a new outcome goal after the
+completed rank30 goal. Follow GOAL.md and docs/SPAN_010_PLAN.md. Latest live
+observation07:17UTC: rank30/312, score0.83053; ranks13–20 score0.82915. Need
+strict rank<=19, not merely a tie at the cutoff. Do not mark complete without a
+fresh complete leaderboard verification. Goal remains active across bounded spans.
+
+V10 has40members after explicit pre-span H57 addition; focus E15/H57. E15done
+with two progress-parser fixtures. H57running: cost-bounded reverse-order checks
+for both deployed classifiers on disagreement/work-ranked rows, <=10%work and
+<=20%rows. Equal four-prediction average on-route; unchanged base off-route.
+Frozen protocol is prospective; original-vote local scores overlap model training.
+No independent-CV claim or leaderboard weight fitting. H55/H56 stay unselected.
+V11 is empty. All historical snapshots and user notebooks07/12 are preserved.
+
+Public phase cap21600s; initial pilot5400s; at most two frozen recipes/two official
+submissions; each hidden run needs measured conservative<9h and watchdog. Fresh
+free quota30h,0used/reserved, paid scaling off, no live jobs at initial observation.
+Heavy root/runs/span_010; aggregate files/results under results/span_010. New
+builder/run scripts are build_span_010_order.py and run_span_010_order.py.
+Commit frozen sources before GPU admission; never rebuild after push intent.
+Resume/observe the same exact version if any controller observation expires.
+
+GOAL.md and shared future controller change intentionally for this new goal.
+The v9 accepted notebook remains immutable; its old GOAL is docs/GOAL_V9.md and
+its source commit057370d/Kaggle version4 preserve the accepted implementation.
+Do not rerun historical builders/audits that assume the previous active version.
+The notes below describe completed v9 only and their no-further-experiments stop
+applies to that completed goal, superseded by this explicit new user goal.
+
+---
+
 # Rank30 achieved; v9 is sealed
 
 Snapshot2026-11-07 after the official result. Verify current files and live

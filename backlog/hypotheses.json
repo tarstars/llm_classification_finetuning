@@ -4795,7 +4795,7 @@
       ],
       "id": "E15",
       "rank": 70,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 10,
       "discovered_during": 9,
       "derived_from": [
@@ -4808,6 +4808,22 @@
           "note": "Native H54 role/cohort/batch labels disappear from sanitized progress; future CPU-only observer fix, preserve frozen live source hashes.",
           "evidence": [
             "docs/SPAN_009_OBSERVABILITY_FINDINGS.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T07:23:27+00:00",
+          "status": "running",
+          "note": "Extract bounded progress sanitization and retain role/cohort/batch for the v10 order-averaging pilot",
+          "evidence": [
+            "docs/SPAN_010_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T07:23:27+00:00",
+          "status": "done",
+          "note": "Two parser fixtures pass: bounded role/cohort and integer batch survive; unknown raw-text and credential fields are excluded. Historical accepted v9 notebook unchanged.",
+          "evidence": [
+            "docs/SPAN_010_E15.md"
           ]
         }
       ]
@@ -4932,6 +4948,77 @@
           "note": "Released modern scalar reward heads make the skipped shared-utility idea cheaper to test. Queue two bounded size arms and one symmetric tie calibrator for v10; no new v9 GPU or pending-submission changes.",
           "evidence": [
             "docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Complete answer-order averaging on disputed pairs within the deployment budget",
+      "priority": "P1",
+      "gain": [
+        -0.005,
+        0.005
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0.4,
+        1.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        4.5
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "Reversed-order inference on a bounded disagreement subset may reduce position sensitivity enough to improve the official0.83053 score.",
+      "basis": "H54 establishes an official rank30 ensemble and measured two-T4 throughput; the new above20 goal needs >0.00138 improvement at the observed cutoff.",
+      "first_test": "Freeze E15/H57 protocol and label-free cohorts; profile all four orientations and actual10%work/20%rows routed subset under5400s. Audit exact controls, swaps, coverage, devices and runtime.",
+      "acceptance": "Legitimate frozen candidate with measured conservative<9h inference and official scored improvement; rank<=19 is the persistent outcome requirement. Overlapping local losses are descriptive only.",
+      "stop": "Stop on unresolved identity/swap/source/runtime failure, initial5400s or phase21600s cap. No leaderboard weight tuning, paid scaling, automatic expansion or hidden caches.",
+      "risk_reason": "Extra inference can exceed nine hours; model disagreement need not identify order errors and training overlap prevents independent local gain estimates.",
+      "mitigation": "Preserve equal weights and processing; deterministic label-free cost budget, real subset timing,20%runtime margin, source/CSV/identity audits and prospective official candidate.",
+      "rationale": "Tests a missing symmetry property using already-qualified models, with lower setup and provenance risk than a new model.",
+      "revision": "Explicit new rank19 goal authorizes this pre-span addition; old rank30-conditional tasks remain unselected.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H54",
+        "E15"
+      ],
+      "evidence": [
+        "docs/SPAN_010_PLAN.md"
+      ],
+      "id": "H57",
+      "rank": 73,
+      "status": "running",
+      "introduced_in": 10,
+      "discovered_during": null,
+      "derived_from": [
+        "H54"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T07:22:56+00:00",
+          "status": "planned",
+          "note": "New user goal above20 permits a pre-span order-averaging experiment; preserve start snapshot and select focus separately",
+          "evidence": [
+            "docs/SPAN_010_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T07:23:27+00:00",
+          "status": "running",
+          "note": "Prospective10%work/20%rows route and equal four-prediction average frozen; preparing exact-source CPU rehearsals and bounded5400s GPU profile",
+          "evidence": [
+            "docs/SPAN_010_PLAN.md"
           ]
         }
       ]
@@ -5806,10 +5893,34 @@
         "H53",
         "E15",
         "H55",
-        "H56"
+        "H56",
+        "H57"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "E15",
+        "H57"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T07:22:56+00:00",
+          "kind": "planning_addition",
+          "item_ids": [
+            "H57"
+          ],
+          "note": "New user goal above20 permits a pre-span order-averaging experiment; preserve start snapshot and select focus separately",
+          "evidence": [
+            "docs/SPAN_010_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T07:22:56+00:00",
+          "note": "Start v10 for the new rank<=19 goal: progress telemetry and bounded order completion using the verified0.83053 ensemble",
+          "focus_ids": [
+            "E15",
+            "H57"
+          ]
+        }
+      ],
       "carried_from": 9,
       "start_sha256": "bfd8a78fa7c5157359b4b34ea59114e560614cc95347f38bc9dbbfd5ccdfa433",
       "start_markdown_sha256": "61f7452195e84fd06f2120ff2a3ec44b8b87e8701d35db32aa0dd676451a7a13",

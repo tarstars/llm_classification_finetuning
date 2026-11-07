@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-11-07T07:27:25.184772+00:00",
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "quota_used_at_start": 0.0,
+  "gpu_session_seconds_cap": 21600,
+  "deadline": "2026-11-08T07:27:25.184788+00:00",
+  "target_rank_maximum": 19,
+  "public_pilot_seconds_cap": 5400,
+  "official_candidate_limit": 2,
+  "initial_quota": {
+    "used_seconds": 0.0,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 108000.0
+  }
+}

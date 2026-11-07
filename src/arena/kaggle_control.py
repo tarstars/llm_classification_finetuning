@@ -111,6 +111,21 @@ def verify_dependencies(api, metadata):
     return result
 
 
+def sanitize_event(record):
+    """Keep aggregate telemetry and bounded worker identifiers, never raw text."""
+    allowed={'at','stage','event','step','elapsed_seconds','rank','counts','metrics','gpu',
+             'training_seconds','rows','seconds','passed','complete','new_cycles','stopped_for_budget'}
+    result={key:value for key,value in record.items() if key in allowed}
+    for key in ['role','cohort']:
+        value=record.get(key)
+        if isinstance(value,str) and re.fullmatch(r'[A-Za-z0-9_.-]{1,64}',value):
+            result[key]=value
+    value=record.get('batch')
+    if isinstance(value,int) and not isinstance(value,bool) and value>=0:
+        result['batch']=value
+    return result
+
+
 def observe_logs(repo, root, role, public):
     """Reuse the existing bounded SSE reader; retain raw streams privately."""
     command=[sys.executable,str(repo/'scripts/kaggle_job.py'),'logs','--run-directory',str(root),
@@ -127,9 +142,7 @@ def observe_logs(repo, root, role, public):
                 if not message.startswith('ARENA_EVENT '): continue
                 try:record=json.loads(message.removeprefix('ARENA_EVENT '))
                 except json.JSONDecodeError:continue
-                allowed={'at','stage','event','step','elapsed_seconds','rank','counts','metrics','gpu',
-                         'training_seconds','rows','seconds','passed','complete','new_cycles','stopped_for_budget'}
-                records.append({key:value for key,value in record.items() if key in allowed})
+                records.append(sanitize_event(record))
         if records:
             atomic_json(public/'progress.json',{'observed_at':utc_now(),'latest':records[-1],'events':records})
     except (OSError,subprocess.TimeoutExpired,ValueError):
