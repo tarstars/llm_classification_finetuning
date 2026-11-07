@@ -108,6 +108,8 @@ if path.exists():
  display(pd.DataFrame([{k:result.get(k) for k in ['ref','status','public_score','private_score','date']}]))
  if result['status'].endswith('COMPLETE'):
   print('Official change versus retained0.83053:',float(result['public_score'])-.83053)
+ elif result['status'].split('.')[-1] in ['ERROR','FAILED','INVALID','CANCELED','CANCELLED']:
+  print('Official execution ended without a score:',result['status'])
  else:print('Official scoring pending; no new official score yet.')
 else:print('No official submission yet.')
 for name in ['official_leaderboard.json','final_leaderboard.json']:

@@ -5509,6 +5509,70 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Conditionally expand Gemma-only order coverage within measured runtime headroom",
+      "priority": "P1",
+      "gain": [
+        -0.003,
+        0.003
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        1.5
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        0.75
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0.75
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.2
+      ],
+      "risk": "medium",
+      "claim": "If H60 improves the official score but misses rank19, a single15pct-work/20pct-row Gemma-only route may improve coverage within the unchanged nine-hour limit; no new-route quality is measured.",
+      "basis": "Actual H60 qualified projection30912.486s leaves1487.514s after20pct margin and600s reserve; routed uniform Gemma costs31.781841s for83rows/9.9805pct work. Linear15pct scaling forecasts31843.595s total, not a measured deployment.",
+      "first_test": "After v14 activation and H60 official improvement short of rank19, predeclare one15pct-work/20pct-row route with unchanged JS/work order, mixture/T1/8192/context/source. Replay fixed cohorts with matched predictions and overlap/uncertainty reporting, then profile the actual three-pass deployment under fresh caps.",
+      "acceptance": "A frozen fixed-rule trial with strict1e-5 raw/source/ID/token/swap/CSV/two-T4 controls and measured conservative<32400s including all overhead,20pct margin and600s reserve; official rank remains the outcome.",
+      "stop": "Do not execute while H60 official scoring is pending or the goal is achieved. Defer if H60 fails official transfer. No route grid, weight/temperature or leaderboard parameter search; stop on information/numerical/runtime/source failure without margin relaxation.",
+      "risk_reason": "The token-work runtime forecast may fail for longer rows/packing; more coverage may add noisy or harmful preferences, and original-vote quality overlaps checkpoint training.",
+      "mitigation": "Conditional advancement only after real H60 improvement, one predeclared15pct rule and actual runtime qualification; retain original route as comparator and report uncertainty/overlap. Forecasts are not measured gains.",
+      "rationale": "Records a concrete way to use measured deployment headroom if the current fixed candidate helps but falls short, without admitting extra current-span work.",
+      "revision": "Queued during v13 official wait from actual qualification headroom; no expanded-route replay, GPU or score exists.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "E16",
+        "H60"
+      ],
+      "evidence": [
+        "docs/SPAN_013_RUNTIME_HEADROOM.md"
+      ],
+      "id": "H61",
+      "rank": 79,
+      "status": "planned",
+      "introduced_in": 14,
+      "discovered_during": 13,
+      "derived_from": [
+        "H60",
+        "E16"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T20:13:42+00:00",
+          "status": "planned",
+          "note": "Actual qualified runtime leaves24.8conservative minutes. Queue one conditional15pct-work successor only if the pending H60 trial improves official score but misses rank19; no new route has been scored or admitted.",
+          "evidence": [
+            "docs/SPAN_013_RUNTIME_HEADROOM.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -6630,7 +6694,9 @@
     {
       "number": 14,
       "state": "draft",
-      "item_ids": [],
+      "item_ids": [
+        "H61"
+      ],
       "focus_ids": [],
       "history": []
     }

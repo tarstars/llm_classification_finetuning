@@ -9,7 +9,7 @@ executed notebook25, and submitted the one qualified frozen official candidate.
 
 ## Current state and next action
 
-Backlogv13has40members, focus H60only/running; v14draft empty. Exact public
+Backlogv13has40members, focus H60only/running; v14draft contains H61 (conditional broader Gemma route). Exact public
 arseniytrushin/llm-preference-span013-gemma-order/1 COMPLETE20:02:20UTC. Controller
 82852terminal exit0, source audit88195terminal exit0. All36retrieved files hash
 verified. No live public research controller/GPU. Official v13receipt58103553accepted
@@ -70,7 +70,7 @@ result/state JSON files; only status/result/state will evolve during observation
 
 Frozen public bundle source commit344c9de, acceptance/source proof2417926,
 submission/notebook preparations010f7e8 are pushed. Actual qualification/frozen decision/current official controller5182478 is pushed;
-accepted receipt/pending notebook evidence is being published. Do not edit files in gemma_order_bundle.json (GOAL/plan/config/
+accepted receipt/pending notebook evidence8b59448 is pushed. Do not edit files in gemma_order_bundle.json (GOAL/plan/config/
 phase/cached replay, original inference, span013order/pipeline/builder/runner and
 worker tests). Auditor/official controller/notebook builder are separate and may
 be fixed without rewriting accepted GPU source. Full auditor alreadypassed; avoid
@@ -81,6 +81,26 @@ Original IDs results/span_010/profile_selection.json. V10cache under
 ROOT/runs/span_010/jobs/order_pilot/output/order_completion; original controls
 ROOT/runs/span_009/jobs/public_ensemble_resume/output/public_ensemble. All50older
 snapshots and user notebooks07/12hashes are preserved againstGitd7f2e5c.
+
+## Prepared closure and queued discovery
+
+scripts/audit_span_013_closure.py is implemented/compiled, NOT run or passed yet:
+it requires actual terminal official result, docs/GOAL_V13.md archive, final
+notebook/report, terminal inventory and sealed v13/v14snapshots. It verifies the
+exact36artifacts, original50snapshot/user-note hashes, Git344c9desource map,
+all control families, frozen decision/official intent/controller hash and actual
+leaderboard outcome. Do not execute it as a substitute for finishing scoring.
+The notebook builder now labels terminal service failures correctly rather than
+calling every non-COMPLETE state pending; pending output stays unchanged.
+
+New H61is queued in v14from measured H60runtime headroom, not executed. Actual
+30912.486sprojection leaves1487.514saftermargin/reserve. One15%work/20%row Gemma
+route is a future candidate only if H60improves the official score but still misses
+rank19; defer if H60fails transfer, no execution if goal achieved. Linear work
+forecast31843.595s/8.845h is not measured runtime/quality. No expanded-route replay
+or GPU has occurred. See docs/SPAN_013_RUNTIME_HEADROOM.md. V13membership/focus,
+quality recipe, GPU phase and one official receipt remain unchanged. At closure,
+carry39unfinished plus H61into v14; new snapshots add4to the current50.
 
 ## V12 sealed evidence
 
