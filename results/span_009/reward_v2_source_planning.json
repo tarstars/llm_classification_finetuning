@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-07T00:34:42.639173+00:00",
+  "planning_only": true,
+  "new_gpu_executions": 0,
+  "weights_downloaded": false,
+  "models": [
+    {
+      "model": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "gated": false,
+      "license": "apache-2.0",
+      "files": {
+        "README.md": {
+          "bytes": 19017,
+          "sha256": "607a29e7fefde587b6adfdcc825a9cafe4670e8dc690070b849eef4d54ef73d7"
+        },
+        "config.json": {
+          "bytes": 846,
+          "sha256": "7102434fa8ad9f5d2e6b89d92ae811c945f7a17a6a9361a4229ddc2e804a2e64"
+        }
+      },
+      "config": {
+        "architectures": [
+          "Qwen3ForSequenceClassification"
+        ],
+        "model_type": "qwen3",
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "torch_dtype": "bfloat16",
+        "hidden_size": 1024,
+        "num_hidden_layers": 28
+      }
+    },
+    {
+      "model": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "gated": false,
+      "license": "apache-2.0",
+      "files": {
+        "README.md": {
+          "bytes": 15775,
+          "sha256": "84d596cf10098030e47a99a2aba5388643b15d91f015bb60e47891e3e114bd67"
+        },
+        "config.json": {
+          "bytes": 848,
+          "sha256": "9b98949ef09d00c7f75be85844d62130954375628c7a3362c9ca94b44bd285ec"
+        }
+      },
+      "config": {
+        "architectures": [
+          "Qwen3ForSequenceClassification"
+        ],
+        "model_type": "qwen3",
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "torch_dtype": "bfloat16",
+        "hidden_size": 4096,
+        "num_hidden_layers": 36
+      }
+    }
+  ]
+}

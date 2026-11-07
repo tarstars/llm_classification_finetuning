@@ -4857,6 +4857,68 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Revisit shared utilities with frozen modern reward models and symmetric tie calibration",
+      "priority": "P1",
+      "gain": [
+        -0.015,
+        0.03
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        4
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "A post-trained preference reward model may complement or replace a joint classifier more cheaply than training shared utilities from scratch; real Kaggle gain is unmeasured.",
+      "basis": "Official Skywork Reward V2 paper/cards describe26Mpreference training and ungated0.6B/8BQwen3 scalar heads. This revisits H10 feasibility, not evidence of superiority.",
+      "first_test": "After H54 terminates and v10 activates, audit provenance/offline availability; predeclare one1024row cohort, two size arms max, one symmetric3parameter tie mapping, nested group calibration and matched runtime/retention diagnostics. No weights or GPU in current planning.",
+      "acceptance": "A practical log-loss improvement with paired uncertainty on the cleanest admissible comparison, explicit overlap limits, and measured<=9h frozen deployment; known-overlap local fusion cannot prove generalization. Official score/rank remains outcome evidence.",
+      "stop": "Do not run if rank30 is achieved or current official receipt is pending. Initial<=1twoT4hour, separately admitted follow-up<=4hours; stop on poor information or runtime failure. No leaderboard weight fitting or automatic budget expansion.",
+      "risk_reason": "Binary scalar rewards do not directly model ties/both-bad votes, can miss pair interactions, may overlap training data and can exceed runtime if added to the whole ensemble.",
+      "mitigation": "Keep joint baseline; omit unidentified absolute reward offset; enforce A/B symmetry; fit calibrators in folds, audit overlap, use0.6B only as a cheap control and8B as main arm; measure replacement versus addition cost.",
+      "rationale": "A skipped old architecture becomes testable with released preference-trained heads and a small calibrator, rather than another weak generic prompt experiment.",
+      "revision": "V9 planning-only follow-up for v10, with exact official source-card/config revisions; no model-quality result yet.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H54"
+      ],
+      "evidence": [
+        "docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md"
+      ],
+      "id": "H56",
+      "rank": 72,
+      "status": "planned",
+      "introduced_in": 10,
+      "discovered_during": 9,
+      "derived_from": [
+        "H10"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T00:37:54+00:00",
+          "status": "planned",
+          "note": "Released modern scalar reward heads make the skipped shared-utility idea cheaper to test. Queue two bounded size arms and one symmetric tie calibrator for v10; no new v9 GPU or pending-submission changes.",
+          "evidence": [
+            "docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -5683,7 +5745,8 @@
       "state": "draft",
       "item_ids": [
         "E15",
-        "H55"
+        "H55",
+        "H56"
       ],
       "focus_ids": [],
       "history": []

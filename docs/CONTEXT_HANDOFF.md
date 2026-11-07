@@ -1,6 +1,6 @@
 # Active goal: reach leaderboard rank30; v9 executing
 
-Snapshot 2026-11-06 20:29UTC. New user outcome goal **move to 30 place in
+Snapshot 2026-11-07 00:39UTC. New user outcome goal **move to 30 place in
 leaderboard** is active in the goal service. Do not mark it complete until a
 fresh fully paginated Kaggle leaderboard proves team17244411 rank<=30. Initial
 live rank57/313, loss0.95481, rank30 threshold0.83086. No new official score yet.
@@ -79,8 +79,11 @@ predictions are now recovered and audited. Heavy source caches are under ROOT/ru
 research; never download giant host weights without a reason.
 
 Official submission **58068582** accepted2026-11-06 20:28:39UTC from exact
-tested version4; live statusPENDING at20:28:39UTC. Controller exec session28832
-was live. Revalidate the exact receipt/process, never send another mutation.
+tested version4; live statusPENDING at2026-11-07 00:38:19UTC. Initial observer
+sessions28832/95282/15903/14710 ended normally at their one-hour windows;
+current read-only observer exec session96800 was live. Revalidate the exact
+receipt/process, never send another mutation. This is a verified remote wait,
+not a stopped GPU job. No new score or rank is available after four receipt hours.
 Use scripts/submit_span_009_public.py --observe-only if the local observation
 window ends; it resumes the same receipt. This script has one-hour resumable
 observation windows, while hidden runtime allowance is9h. No new research GPU
@@ -96,13 +99,22 @@ reviewed explicit paths, never user07/12. Notebook21 is now executed: four code
 cells, one figure, zero errors;116tests pass in14.346s. Refresh after official
 result using scripts/build_span_009_review.py followed by scripts/execute_notebook.py
 notebooks/21_backlog_v9_public_ensemble.ipynb. V10 draft now has E15 (retain
-model/cohort/batch in sanitized progress) and H55, both queued, not executed.
+model/cohort/batch in sanitized progress), H55 and H56; all queued, not executed.
 H55 records an accessible earlier BlackPearl classifier in exact public parent
 sayoulala/merge-gemma-model-step1/1 (COMPLETE, four full safetensor shards).
 Only config/index were downloaded. This is not the inaccessible final winning
 merge; no measured advantage or GPU admission. See SPAN_009_ALTERNATE_SOURCE_AUDIT.md
 and blackpearl_parent_availability.json. Keep it conditional/low-priority rather
 than assuming the author's winning score applies to these earlier weights.
+H56 revisits skipped H10 using released Skywork Reward V2 Qwen3-0.6B/8B
+scalar heads, with a symmetric three-class tie calibrator. Only official cards
+and configs were downloaded/pinned; no weights/GPU/text service. This is future
+planning after H54's outcome, not a third v9 candidate. See
+SPAN_009_REWARD_MODEL_FOLLOWUP.md and reward_v2_source_planning.json. Benchmark
+claims do not establish Kaggle gain; provenance and exact offline availability
+remain to audit. Primary8B arm, tiny arm only a cheap control; avoid substituting
+the easier tiny model for the rank goal. Budget proposal<=1h pilot plus separately
+admitted<=4h follow-up. Do not execute if rank30 is achieved or scoring is pending.
 BacklogCLI tracks progress and next-span discoveries.
 
 ## Historical v8 closure snapshot
