@@ -1,76 +1,73 @@
-# Active goal: above20th place; v13 Gemma-only probe accepted and running
+# Active goal: above20th place; v13 qualified for one official trial
 
-Snapshot2026-11-07 after v12closure and v13preparation. Read PROJECT_POLICY.md,
-GOAL.md, docs/SPAN_013_PLAN.md and docs/SPAN_012_RESULTS.md. Persistent objective
-is actual rank<=19 for team17244411 on a fresh fully paginated official leaderboard.
-Fresh19:21:42UTC: rank30/313, best0.83053, rank19/20cutoff0.82915, leader0.82704.
-Goal remains active/unachieved. This turn made progress: completed E16, stopped
-negative H58, sealed v12, selected H60and obtained a positive information gate.
+Snapshot2026-11-07T20:06UTC. Read PROJECT_POLICY.md, GOAL.md,
+docs/SPAN_013_PLAN.md and docs/H60_GEMMA_ORDER_QUALIFICATION.md. Persistent goal
+is actual rank<=19 for team17244411 on a fresh complete official leaderboard.
+Latest verified19:21:42UTC: rank30/313, best0.83053, cutoff0.82915. Goal active,
+unachieved. This turn made progress: completed actual three-pass qualification,
+executed notebook25, prepared/tested one-receipt official controller.
 
-## Current v13 state and next action
+## Current state and next action
 
-Backlogv13has40members, focus H60only, statusrunning; v14draft empty. One quality
-recipe; one v13GPU probe accepted and RUNNING since19:35:01UTC. Cached replay under results/span_013 passes:
-uniform512loss0.654242->0.652988, gain0.001253853, descriptive group95%
-[-0.00003863,0.00261964]. All3classes improve on uniform; controls gain0.00119445,
-long gain0.00004339. Original votes overlap checkpoint training: not honest CV,
-not an official-score estimate. No new rule was fitted after this observation.
+Backlogv13has40members, focus H60only/running; v14draft empty. Exact public
+arseniytrushin/llm-preference-span013-gemma-order/1 COMPLETE20:02:20UTC. Controller
+82852terminal exit0, source audit88195terminal exit0. All36retrieved files hash
+verified. No live public controller/GPU; no official v13receipt yet. Do not restart
+or rebuild the accepted source. All gates pass: base controls256both0difference,
+Gemma reverse routed42/83/6rows0difference, token/ID/checkpoint/source/CSV/bothT4
+checks, actual route/mixture replay. Original8192packing/context4096/fp16/image.
 
-Rule on unchanged10%work/20%row label-free JS/work route:
-.25Gemma-original+.25aligned-Gemma-swapped+.5aligned-Llama-swapped. Off-route
-retain original equal ensemble. T1, packing8192, context4096, fp16/author image.
-Source contract/prospective rule was pushed f26ed2f before inspecting this replay.
-No weight/route/T/leaderboard search. Original inference helper span010_order.py
-is embedded unchanged; span013_order.py is the fixed mixture; span013_pipeline.py
-runs m0/m3/m0_reverse with actual text and no hidden caches. Public cohorts are
-original control256/uniform512/long64/test3; reverse only routed subsets. Full80-row
-warmup for each role. Hidden uses only actual test rows (first80for warmup).
+Fixed rule on unchanged10%work/20%row JS/work route: .25Gemma-original+
+.25aligned-Gemma-swapped+.5aligned-Llama-swapped, base equal mix off-route, T1.
+No weights/routes/T/leaderboard search. Actual and cached uniform512loss
+0.654242->0.652988, gain0.001253853, descriptive group95%[-0.00003863,0.00261964].
+Votes overlap checkpoint training, not honest CV or an official forecast. One
+fixed quality recipe was frozen f26ed2f before examining its cached replay.
 
-scripts/run_span_013_order.py --prepare completed. Original deadline
-2026-11-09T19:29:48.662254+00:00, quota periodNov14, startingused11222.639s,
-remaining96777.361s, reserved0, paid off. Config/phase now frozen prospectively.
-Public phase<=6000s, initialgemma_order<=2400s, maxone separately admitted unchanged-
-quality engineering followup<=3600s, max2public versions/one official. Initial40min
-was documented before work: base/stress passes plus fullwarmups make30min too tight.
-Never enlarge oldv12caps or retry a timed-out observation as a fresh mutation.
+Conservative full25kprojection30912.486s/8.586802h PASS: (475.836808base+
+31.781841routed reverse)/512*25000*1.2 +379.384391cold+144.846259full80-row warmups
++44.975132other+600reserve. Margin/reserve/tolerance not relaxed. Actual public
+session1657.866s, charged1671.483s/27.858min, within2400s. V13public cap6000s,
+max2public versions/one production recipe/one official submission; no follow-up
+needed. Current free quota95105.878s, reserved0, used12894.122s, allowed108000s,
+refreshNov14, paid off. Deadline2026-11-09T19:29:48.662254+00:00. Refresh full
+quota/jobs/assets/paginated pending receipts immediately before official admission.
 
-Builder scripts/build_span_013_order.py completed, actual serialized success/
-failure/watchdog, public/hidden branches and real notebook-engine startup all pass.
-Three CPUtests pass, including both swapped-class alignments, exact unrouted base,
-invalid routes and full actual orchestration in public/hidden modes with no hidden
-train file. Frozen private notebook ROOT/runs/span_013/notebooks/gemma_order,
-bundle/rehearsals/profile IDs in results/span_013. Audit script
-scripts/audit_span_013_order.py implemented/compiled, --source-only after acceptance,
-full after COMPLETE/retrieval. It verifies raw base controls vs v9and matched
-Gemma-reverse routed controls vs v10, token hashes/IDs/checkpoints/CSV/devices,
-actual mixture/route and conservative25kprojection<32400s with20%margin, all
-startup/fullwarmup/other overhead and600sreserve. Preserve failure, no tolerance
-or runtime-margin relaxation. The public recipe has not been numerically or
-runtime qualified yet. Actual source read-back passed for the exact accepted /1version: identical cells,
-pinned image and assets; internet disabled.
+results/span_013/deployment_decision.json is prepared/frozen submit=true from
+actual qualification, bundle/source proof and cached gate hashes. Publish this
+file, qualification report/metrics and executed notebook25before official call.
+Script scripts/submit_span_013_order.py implements --prepare-decision (local),
+initial submission and --observe-only. Its candidate guard validates all control
+families, exact attempt/source/version/CSV/hash receipt, conservative projection,
+fixed recipe and committed frozen decision. Initial call refreshes full jobs/quota,
+all cursor pages of prior submissions (SDK default20drops cursors), all four
+public pinned v1datasets and deadline; then writes one exclusive intent before
+one mutation. Existing receipt bypasses candidate/mutation and observes the same
+ref. Three tests pass (strict guards, pagination, existing-receipt no-mutation).
+A live full read found all6previous receipts terminal. No pending trial yet.
 
-Exact accepted public job arseniytrushin/llm-preference-span013-gemma-order/1 at
-19:34:04UTC, RUNNING since19:35:01UTC. Controller unified session82852 LIVE: poll this handle and
-exact accepted version; never re-push/rebuild/restart on observation timeout.
-Fresh full admission:64owned notebooks, no active jobs, no reserved quota, paid
-off; all four public datasets pinned v1, all official receipts terminal. Source-
-only audit69421terminal exit0 passed. Frozen source/bundle commit344c9de is pushed.
-Do not edit any file listed in gemma_order_bundle.json now (including tests,
-GOAL/plan/config/phase/cached replay and inference/pipeline/builder/runner helpers).
-Auditor and future official controller/notebook25can be developed separately.
+Next: commit/push the reviewed qualification/notebook/decision/current controller,
+then .venv/bin/python scripts/submit_span_013_order.py exactly once. Record the
+accepted receipt/live handle and observe it. Never restart/resubmit just because
+observation times out. No researchGPU while official pending. Only an actual
+fresh fully paginated rank<=19plus final reporting can complete the goal.
+Notebook25currently3executed code cells/2figures/0errors; rebuild for pending and
+final official outcome. Builder refuses after closure. H60must remain running
+until official outcome or evidenced stop; do not mark done from local success.
 
-Next: observe82852. Once exact COMPLETE/retrieval, run full
-.venv/bin/python scripts/audit_span_013_order.py and inspect controls/runtime
-before deciding anything. No duplicate admission/dry-run. All gates are needed
-before one frozen official submission; the official controller is implemented/tested; notebook25is executed with cached
-evidence and pending qualification. Rebuild after the actual gate and final result. Other carried
-tasks remain unselected. No live GPU/controller remains from old spans.
+Frozen public bundle source commit344c9de, acceptance/source proof2417926,
+submission/notebook preparations010f7e8 are pushed. The latest qualification is
+being published. Do not edit files in gemma_order_bundle.json (GOAL/plan/config/
+phase/cached replay, original inference, span013order/pipeline/builder/runner and
+worker tests). Auditor/official controller/notebook builder are separate and may
+be fixed without rewriting accepted GPU source. Full auditor alreadypassed; avoid
+rerunning it after freezing a decision because it updates evidence timestamps/
+hashes. Read the preserved qualification and receipt hashes instead.
 
-Old v10cache: ROOT/runs/span_010/jobs/order_pilot/output/order_completion; canonical
-IDs results/span_010/profile_selection.json. Best original controls:
-ROOT/runs/span_009/jobs/public_ensemble_resume/output/public_ensemble/m{0,3}_uniform.npz.
-All50old snapshot and user-notebook hashes verified in v13preservation.json
-againstGitd7f2e5c. Preserve historical helpers and span012_order.py (H58hash frozen).
+Original IDs results/span_010/profile_selection.json. V10cache under
+ROOT/runs/span_010/jobs/order_pilot/output/order_completion; original controls
+ROOT/runs/span_009/jobs/public_ensemble_resume/output/public_ensemble. All50older
+snapshots and user notebooks07/12hashes are preserved againstGitd7f2e5c.
 
 ## V12 sealed evidence
 

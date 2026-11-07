@@ -28,6 +28,21 @@ def submissions(api):
     return collect_pages(fetch,records=lambda result:result.submissions)
 
 
+def dataset_dependencies(api,metadata):
+    from kagglesdk.datasets.types.dataset_api_service import ApiGetDatasetRequest
+    records=[]
+    for source in metadata['dataset_sources']:
+        owner,slug,version=source.split('/')
+        assert owner=='tascj0' and version=='1','Unexpected or unpinned dependency'
+        request=ApiGetDatasetRequest();request.owner_slug=owner;request.dataset_slug=slug
+        with api.build_kaggle_client() as client:
+            dataset=read_call(lambda:client.datasets.dataset_api_client.get_dataset(request))
+        assert dataset.current_version_number==1 and not dataset.is_private,'Pinned public asset changed'
+        records.append(dict(source=source,public=True,current_version=dataset.current_version_number))
+    assert len(records)==4
+    return dict(at=utc_now(),datasets=records)
+
+
 def check_gate(role,gate,proof,bundle,replay):
     assert role==gate['role']==bundle['role'],'Qualification belongs to another attempt'
     assert all(gate[k] for k in ['complete','all_controls_passed','runtime_gate_passed','csv_verified','both_t4_verified'])
@@ -107,7 +122,9 @@ def main():
             prior=submissions(api)
             assert all(str(s.status).split('.')[-1] in TERMINAL for s in prior),'Official scoring pending'
             assert not any(getattr(s,'description','')==message for s in prior),'Reconcile possible duplicate'
-            save('admission.json',dict(at=utc_now(),inventory=fresh,public_gpu_charged_seconds=charge,**source))
+            dependencies=dataset_dependencies(api,read_json(root/'notebooks'/source['role']/'kernel-metadata.json'))
+            save('admission.json',dict(at=utc_now(),inventory=fresh,dependencies=dependencies,
+                submission_history_complete=True,prior_submissions=len(prior),public_gpu_charged_seconds=charge,**source))
             intent=dict(at=utc_now(),**source,quota_before=q,hidden_seconds_cap=32400,message=message,
                 decision_sha256=sha256(pub/'deployment_decision.json'),controller_sha256=sha256(Path(__file__)))
             write_intent(folder/'submission_intent.json',intent);atomic_json(pub/'official_submission_intent.json',intent)

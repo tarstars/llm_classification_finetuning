@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-07T20:03:37.387274+00:00",
+  "submit": true,
+  "role": "gemma_order",
+  "kernel_version": "arseniytrushin/llm-preference-span013-gemma-order/1",
+  "temperature": 1,
+  "packing_tokens": 8192,
+  "recipe": "On fixed route: .25 Gemma original + .25 aligned Gemma swapped + .5 aligned Llama swapped; off-route base",
+  "parameters_selected_without_leaderboard_feedback": true,
+  "independent_local_quality": false,
+  "interpretation": "Training-overlapping descriptive information only; official result tests target transfer",
+  "evidence_sha256": {
+    "gemma_order_qualification.json": "925ab812dd16be5aeab1b5c649c773d82722050a73e43d6a672c914ffd68e700",
+    "gemma_order_bundle.json": "69e41a6a7ba249d5f6e39d13b5231b5312031973bfb26685177914ee66637b32",
+    "gemma_order_source_verification.json": "43994065f4ec14ad78435ba16a200e3c184306aee2647268baddfb8195f1e4b8",
+    "H60_cached_replay.json": "c3b70dbcd779e7fc708df37dfea1ce6255c4831b9de1fe4c5d4dac9d799ff5e7"
+  },
+  "projection_seconds": 30912.48602725137
+}

@@ -5491,6 +5491,14 @@
           "evidence": [
             "results/span_013/jobs/gemma_order/push.json"
           ]
+        },
+        {
+          "at": "2026-11-07T20:05:05+00:00",
+          "status": "running",
+          "note": "Exact Gemma-only /1 public run COMPLETE; all36 artifact hashes, source/checkpoint/ID/token/CSV/two-T4 checks pass. Base and nonempty reverse raw controls reproduce exactly. Conservative full projection30912.486s (8.5868h) passes unchanged9h/margin/reserve gates; actual public charge1671.483s. Frozen deployment decision permits one official trial; publish qualification and notebook25 before submitting. Local gain remains training-overlapping descriptive evidence.",
+          "evidence": [
+            "docs/H60_GEMMA_ORDER_QUALIFICATION.md"
+          ]
         }
       ]
     }
