@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-07T10:41:43.426222+00:00",
+  "kernel": "arseniytrushin/llm-preference-span011-learning-calibration",
+  "quota_before": {
+    "used_seconds": 5835.532,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 102164.468
+  },
+  "max_session_seconds": 5400,
+  "notebook_sha256": "6e16f901b532cafa11997a1ebab8201cd6912ef43dcf469df3547617df0cf6bc",
+  "metadata_sha256": "807ed00a09bdcdac74cb65ffce3d7b0f2d0a275135fabd81b150d91d15d01f30"
+}

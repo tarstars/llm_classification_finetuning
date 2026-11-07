@@ -5262,6 +5262,14 @@
           "evidence": [
             "results/span_011/cohort_manifest.json"
           ]
+        },
+        {
+          "at": "2026-11-07T10:42:15+00:00",
+          "status": "running",
+          "note": "Learning pilot accepted as arseniytrushin/llm-preference-span011-learning-calibration/1, initiallyQUEUED; controller34709 observes exact version,5400s cap. Earlier controller82970 ended on429during read-only inventory with no push intent; cooldown retry submitted once. Independent source1024learning plus original control256/uniform512/long64/test; confirmation labels remain untouched.",
+          "evidence": [
+            "results/span_011/jobs/calibration_learning/push.json"
+          ]
         }
       ]
     }

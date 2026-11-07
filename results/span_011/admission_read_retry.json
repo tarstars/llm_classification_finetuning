@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-07T10:40:05.249976+00:00",
+  "controller_handle": 82970,
+  "terminal_exit": 1,
+  "http_status": 429,
+  "failed_step": "read-only complete inventory before mutation",
+  "push_intent_exists": false,
+  "push_receipt_exists": false,
+  "new_gpu_executions": 0,
+  "action": "Cooldown then retry unchanged source after confirming no mutation intent.",
+  "reconciled": true,
+  "retry_accepted_exact_version": "arseniytrushin/llm-preference-span011-learning-calibration/1",
+  "accepted_after_cooldown": true,
+  "total_gpu_pushes": 1
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "at": "2026-11-07T10:42:19.798572+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span011-learning-calibration/1",
+  "notebook_sha256": "6e16f901b532cafa11997a1ebab8201cd6912ef43dcf469df3547617df0cf6bc",
+  "cell_sources_identical": true,
+  "internet_enabled": false,
+  "remote_docker_image": "gcr.io/kaggle-private-byod/python@sha256:e3f9bf91d1b7b36bf77554565d27c5733585fbe5e2b7f0832e068824e7accc3c",
+  "remote_dataset_sources": [
+    "arseniytrushin/llm-span011-learning-inputs",
+    "tascj0/lmsys-checkpoints-0-0805",
+    "tascj0/lmsys-checkpoints-3-0805",
+    "tascj0/lmsys-modules-0805",
+    "tascj0/lmsys-packages"
+  ],
+  "temperature": 1.0
+}

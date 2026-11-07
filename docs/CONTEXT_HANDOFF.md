@@ -51,12 +51,28 @@ Seven tests passed: label-blind parsing/rejections/grouping/input schema, scalar
 argmax/swap, actual learning/confirmation/hidden orchestration using CPU worker.
 New inference AST matches v10base exactly except allowed role/cohort names.
 No actual GPU numerical/runtime result. See docs/SPAN_011_PREPARATION.md.
-Learning assets are prepared but not uploaded. Next: commit programs/preparation,
-then scripts/prepare_span_011_assets.py upload / verify. Preserve one private
-upload intent/receipt. Build scripts/build_span_011_calibration.py, exercise actual
-serialized worker success/failure/watchdog, public/hidden input branches and
-notebook-engine startup; commit frozen source/bundle. Then dry-run and launch
-scripts/run_span_011_calibration.py. No v11 GPU job admitted yet.
+Learning text-only private dataset arseniytrushin/llm-span011-learning-inputs/1
+is ready/private-verified. Actual serialized notebook passed success/failure/
+watchdog, public/hidden input branches and engine startup. Accepted exact GPUjob
+arseniytrushin/llm-preference-span011-learning-calibration/1 at10:41:46UTC, QUEUED.
+Controller handle34709 is live; poll it, never restart the accepted mutation.
+The prior82970controller was terminal exit1 on HTTP429during read-only inventory,
+with no intent/receipt; cooldown retry created exactly one GPU push. Source-only
+read-back9544 completed and proved cell/source/image/dataset identity.
+Frozen pilot source commit9c76631 is pushed; preparation commitbf52056 is pushed.
+Initial cap5400seconds, no new confirmation or official submission.
+
+src/arena/span011_statistics.py and scripts/analyze_span_011_calibration.py
+implement fixed five group-hash folds and one shared scalar, endpoints included.
+Two synthetic statistics tests passed; real learning labels remain uninspected.
+Full scripts/audit_span_011_calibration.py must verify recovered outputs/control/
+runtime before the analyzer can open learning labels. Run full audit only after
+exact job COMPLETE and retrieval complete; numerical failures remain failures.
+No fallback to cached predictions. Then analyze learning, freeze T, and only if
+cross-fitted point gain>0 plus engineering gates pass prepare/upload/build and
+separately admit confirmation. Stage2recipe requires the frozen T hash.
+Notebook23 builder scripts/build_span_011_review.py reads only aggregate evidence;
+execute with escalation for local Jupyter sockets, refresh as evidence arrives.
 
 Fit only T in[.5,2] on log equal-ensemble probabilities. Group-cross-fit within
 1024learning groups; positive point gain is stage2 information gate. Freeze T
