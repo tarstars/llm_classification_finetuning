@@ -5426,8 +5426,8 @@
         2
       ],
       "pilot_gpu_wall_hours": [
-        0.1,
-        0.5
+        0.25,
+        0.6666666666666666
       ],
       "followup_gpu_wall_hours": [
         0,
@@ -5440,13 +5440,13 @@
       "risk": "medium",
       "claim": "Gemma-only answer-order averaging may retain the earlier four-orientation signal within the runtime limit; quality is unmeasured.",
       "basis": "H57 four-order uniform descriptive gain0.001232 missed runtime; H58 Llama-only gain-0.000129 failed its information gate. E16 retained8192 with exact raw controls and8.044h base-only projection.",
-      "first_test": "After v13 activation, freeze one .25Gemma-original+.25aligned-Gemma-swapped+.5aligned-Llama-swapped rule on the unchanged10pct-work/20pct-row route, T1. Replay the same fixed cached cohorts, require uniform descriptive gain>0.0005, then qualify a real three-pass worker within30minutes.",
+      "first_test": "After v13 activation, freeze one .25Gemma-original+.25aligned-Gemma-swapped+.5aligned-Llama-swapped rule on the unchanged10pct-work/20pct-row route, T1. Replay the same fixed cached cohorts, require uniform descriptive gain>0.0005, then qualify a real three-pass worker within40minutes including setup and full80-row warmups.",
       "acceptance": "Traceable source/checkpoints, exact IDs/tokens/swaps/CSV/two-T4 controls and conservative actual projection<32400s including20pct margin, all overhead and600s reserve; one frozen official outcome evaluates the rank<=19 goal.",
       "stop": "No current-span extra GPU, cache in hidden inference, weight/route/temperature or leaderboard search. Stop on information, strict1e-5 numerical, source, memory or runtime failure; preserve every failure.",
       "risk_reason": "The earlier combined gain may be noise or interactions; original votes overlap checkpoint training and Gemma reverse is slower than Llama reverse.",
       "mitigation": "Treat cached gain and uncertainty as descriptive only; predeclare one rule, require matched actual deployment controls and report official outcome. Do not infer additive log-loss gains.",
       "rationale": "Directly tests the complementary component suggested by the negative Llama-only result using existing bounded engineering infrastructure.",
-      "revision": "Discovered in v12 after the predeclared H58 replay failed; no Gemma-only replay or new GPU has yet occurred.",
+      "revision": "Discovered in v12 after the predeclared H58 replay failed; no Gemma-only replay or new GPU has yet occurred. Before v13 work, prospectively revise initial cap to2400s: measured base/stress passes plus full warmups and selected Gemma reverse make1800s too tight; docs/SPAN_013_PLAN.md fixes the6000s total phase.",
       "depends_on": [
         "E00",
         "E14",
@@ -5459,7 +5459,7 @@
       ],
       "id": "H60",
       "rank": 78,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 13,
       "discovered_during": 12,
       "derived_from": [
@@ -5474,6 +5474,14 @@
           "note": "Llama-only order averaging failed despite the earlier combined rule descriptive signal; test the complementary Gemma-only rule in a future span, with no additive-gain claim or current-span GPU.",
           "evidence": [
             "docs/H58_LLAMA_ORDER_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T19:26:32+00:00",
+          "status": "running",
+          "note": "Starting the one predeclared v13 cached replay and deployment preparation under docs/SPAN_013_PLAN.md; no GPU or alternate quality rule admitted.",
+          "evidence": [
+            "docs/SPAN_013_PLAN.md"
           ]
         }
       ]
@@ -6578,8 +6586,18 @@
         "E17",
         "H60"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H60"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T19:26:31+00:00",
+          "note": "V12 is sealed. Under the persistent rank<=19 goal, select one complementary Gemma-only rule suggested by combined-order versus Llama-only evidence. Freeze T1, original route and equal expert totals; first fixed cached information gate, then bounded actual qualification. Initial2400s/total6000s prospectively accounts for measured stress-cohort/full-warmup cost.",
+          "focus_ids": [
+            "H60"
+          ]
+        }
+      ],
       "carried_from": 12,
       "start_sha256": "55c1c3460f7803efa1b37c6a7d40f899497fa7f8ac462d7261fc6baa108ff02e",
       "start_markdown_sha256": "9609e41430c70cd565e0365c5df2cd7506bc043b6884769d553292773dd6e748",
