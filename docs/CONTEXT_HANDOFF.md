@@ -43,16 +43,19 @@ Confirmation labels remain UNOPENED. No official v11 submission/intent exists.
 
 ## Immediate next action
 
-Learning positive point gain passes only the information gate. Separately admit
-fixed1024confirmation at frozen T. Its text-only asset is prepared locally via
-scripts/prepare_span_011_assets.py prepare --stage confirmation, not uploaded yet.
-Commit the learning report/results/frozenT/asset receipt, then upload/verify the
-private confirmation dataset. Build/rehearse scripts/build_span_011_calibration.py
---stage confirmation, commit frozen bundle and run
-scripts/run_span_011_calibration.py --stage confirmation. Fresh full inventory/
-quota/dependencies are checked by that exact controller; avoid back-to-back full
-inventory dry-runs (a prior429read-only failure was reconciled before a single
-learning push). Never restart an accepted GPU mutation on observation timeout.
+Learning positive point gain passes only the information gate. The separately
+admitted fixed1024confirmation pass is now RUNNING. Exact accepted version:
+arseniytrushin/llm-preference-span011-confirmation-calibration/1, accepted11:46:14UTC,
+RUNNING11:47:11UTC. Live controller handle72056; poll it, never re-push/restart an
+accepted mutation on observation timeout. Private text-only input dataset
+arseniytrushin/llm-span011-confirmation-inputs/1 is ready/private-verified, labels
+local/unopened. Frozen recipe commitc664beb is pushed; learning/frozenT/report
+commit9c249ea is pushed. Confirmation source read-back80260 terminal exit0 proved
+identical cells/image/datasets and exact T1.3161518671742531. No inference-source
+hash changed from qualified learning. Rehearsals passed all final cells/branches/
+watchdog/startup. Fresh admission quota used8272.289s, remaining99727.711s,
+reserved0, paid off, no nonterminal jobs before this admission. Public cap7200s;
+original phase deadline/caps retained. No confirmation labels read yet.
 
 After the exact confirmation job is COMPLETE and fully retrieved, run
 scripts/audit_span_011_calibration.py --stage confirmation, then only if engineering

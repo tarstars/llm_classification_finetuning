@@ -5278,6 +5278,14 @@
           "evidence": [
             "docs/SPAN_011_LEARNING.md"
           ]
+        },
+        {
+          "at": "2026-11-07T11:46:45+00:00",
+          "status": "running",
+          "note": "Confirmation admitted on fresh free quota: exact arseniytrushin/llm-preference-span011-confirmation-calibration/1 accepted11:46:14UTC, initiallyQUEUED; live controller72056. Fixed1024untouched groups; T1.3161518671742531 frozen/committed before upload and used unchanged. Input dataset private/text-only; final cells/branches/watchdog rehearsed; inference-source hashes identical to qualified learning pilot. Original phase caps/deadline retained; confirmation labels unopened.",
+          "evidence": [
+            "results/span_011/jobs/calibration_confirmation/push.json"
+          ]
         }
       ]
     }
