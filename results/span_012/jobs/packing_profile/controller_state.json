@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "at": "2026-11-07T19:15:57.899362+00:00",
+  "pid": 1118372,
+  "role": "packing_profile",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span012-packing-profile/1",
+  "charged_seconds": 1299.9049999999988,
+  "files": 21
+}

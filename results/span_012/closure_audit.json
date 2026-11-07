@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-07T19:22:45.998609+00:00",
+  "passed": true,
+  "sealed_version": 12,
+  "goal_achieved_by_span": false,
+  "outcome": "Retain8192; Llama-only order information gate failed",
+  "public_gpu_seconds": 1299.9049999999988,
+  "official_submissions": 0,
+  "artifact_files_verified": 21,
+  "prior_snapshots_preserved": 46,
+  "user_notebooks_preserved": true,
+  "source_reference_commit": "1949d30",
+  "notebook_code_cells": 3,
+  "notebook_figures": 1,
+  "notebook_axes": 2,
+  "notebook_errors": 0,
+  "notebook_sha256": "59aee60eaef431130fa428a49c7f3931017d56e42a3fd6b0735b5d529bf1f130",
+  "unfinished_carryovers": 39,
+  "new_discoveries": [
+    "H60"
+  ],
+  "successor_members": 40,
+  "leaderboard": {
+    "observed_at": "2026-11-07T19:21:42.881012+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 30,
+    "teams": 313,
+    "score": 0.83053,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82704,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-07T12:22:35.176Z"
+  }
+}

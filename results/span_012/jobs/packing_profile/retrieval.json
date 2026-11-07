@@ -1,0 +1,30 @@
+{
+  "files": 21,
+  "artifact_sha256": {
+    "hardware.json": "1077a9368c5bc1b1c0d77a34201b0419d17e8fb9d1e682c1113fc5b701683c34",
+    "packing_profile/m0_checkpoint.json": "053699c6ab61a2a2cbbecd2bf3a40955f6e4a0a3f2abed5f50e27ed7e027e1a8",
+    "packing_profile/m0_profile_6144.npz": "623b3815b5c5a6e9553f541301147ff4a4916663dd797eac4f1133ce9be244b3",
+    "packing_profile/m0_profile_8192_first.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "packing_profile/m0_profile_8192_last.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "packing_profile/m0_summary.json": "6be71ead0df9b3fd5d5015c84bcae446b5311d13fccd5a19c70e595abe79d8d6",
+    "packing_profile/m0_warmup_6144.npz": "b2ab0390fb760214ed1d2c638d48ec3ac7fb09e0b03114219abea0f74dc6d720",
+    "packing_profile/m0_warmup_8192_first.npz": "b2ab0390fb760214ed1d2c638d48ec3ac7fb09e0b03114219abea0f74dc6d720",
+    "packing_profile/m0_warmup_8192_last.npz": "b2ab0390fb760214ed1d2c638d48ec3ac7fb09e0b03114219abea0f74dc6d720",
+    "packing_profile/m3_checkpoint.json": "5b8acbde594a45028d140e5e90dc9fedc56fae2c6bd6025cee90e7e5b09c2b2f",
+    "packing_profile/m3_profile_6144.npz": "2f549192aaf68d0f689e24426011b6ec4ac7dfcc76e4f61a3001834565363ca4",
+    "packing_profile/m3_profile_8192_first.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "packing_profile/m3_profile_8192_last.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "packing_profile/m3_summary.json": "808d34bc20cdf9b62f5680c6c4829d0e134436c4bdb1a24cd127353d1673a385",
+    "packing_profile/m3_warmup_6144.npz": "b3cfffd67e20bfd61831ad6ae52946e5ba610dbf108edbc3d5cf2c4bcd29e7b6",
+    "packing_profile/m3_warmup_8192_first.npz": "b947bf6868e318ae32bfbfc28aff8eecb89037de4a44017ea13f80ff78c1af21",
+    "packing_profile/m3_warmup_8192_last.npz": "b947bf6868e318ae32bfbfc28aff8eecb89037de4a44017ea13f80ff78c1af21",
+    "packing_profile/profile_complete.json": "64e94ac9141e2aabc44789d8a00c902cbb44b1dd344a7022d8b7f01582380a75",
+    "packing_profile/profile_selection.json": "be3406061ca63e4629cdfbff279b1aee8558cf1abcba1c4efa8eb4652614580b",
+    "session_summary.json": "5e743487db317c71c620e3cd7c815a32f815669cc09bca3025eae8f73ab0ad26",
+    "worker_console.log": "4ea9f5ca398ddc99717c19b8132165a691fb4615a0d3af0f7bb492af0093694e"
+  },
+  "final_checkpoint": -1,
+  "new_gpu_executions": 0,
+  "signed_urls_persisted": false,
+  "retrieved_at": "2026-11-07T19:15:57.886833+00:00"
+}

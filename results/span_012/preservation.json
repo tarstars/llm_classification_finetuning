@@ -53,5 +53,7 @@
     "notebooks/07_error_poster.ipynb": "e2d49655fc41e28f1c91b0dc9e64bab4f22dca28212c9c6df991ae0c6311eb0b",
     "notebooks/12_backlog_v1_span.ipynb": "2b2f7c5c80efe3cc4e720e208c8fe4769dbbe317addd8e23ab7e5f2cbcc060b4"
   },
-  "previous_goal_archive_sha256": "8c2cb0e6fa31ff739c3bc13f99bed86f3bb585c040254f24a97c810d96b377be"
+  "previous_goal_archive_sha256": "8c2cb0e6fa31ff739c3bc13f99bed86f3bb585c040254f24a97c810d96b377be",
+  "goal_archive_sha256": "e992e7dcf5701c0e60de85cddd91fc478e09d2964dce5e8f786f4b66a980c3a8",
+  "source_reference_commit": "1949d30"
 }

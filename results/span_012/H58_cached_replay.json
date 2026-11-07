@@ -1,0 +1,109 @@
+{
+  "at": "2026-11-07T19:18:43.659464+00:00",
+  "information_gate_passed": false,
+  "information_gain_threshold": 0.0005,
+  "independent_local_quality": false,
+  "original_votes_seen_in_checkpoint_training": true,
+  "rule": "on route: .5 Gemma original + .25 aligned Llama swapped + .25 Llama original; off route: base",
+  "temperature": 1,
+  "work_fraction": 0.1,
+  "row_fraction": 0.2,
+  "quality_variants_tested": 1,
+  "coverage": {
+    "control": {
+      "rows": 256,
+      "selected_rows": 42,
+      "route_replayed": true,
+      "selected_work_fraction": 0.09949411201819536,
+      "independent": false,
+      "baseline_log_loss": 0.5994288921356201,
+      "candidate_log_loss": 0.5994868488475421,
+      "loss_reduction": -5.800137902584989e-05,
+      "descriptive_paired_group95": [
+        -0.0017050833371984326,
+        0.0015970283072924507
+      ],
+      "baseline_accuracy": 0.7734375,
+      "candidate_accuracy": 0.7734375,
+      "class_loss_reduction": {
+        "winner_model_a": -0.0010936191706436415,
+        "winner_model_b": 0.00047636265798829366,
+        "winner_tie": 0.0006008372064632833
+      }
+    },
+    "uniform": {
+      "rows": 512,
+      "selected_rows": 83,
+      "route_replayed": true,
+      "selected_work_fraction": 0.09980524132228646,
+      "independent": false,
+      "baseline_log_loss": 0.6542420983314514,
+      "candidate_log_loss": 0.6543706518569249,
+      "loss_reduction": -0.00012854990932252986,
+      "descriptive_paired_group95": [
+        -0.001454267468024228,
+        0.0012143049855936033
+      ],
+      "baseline_accuracy": 0.75,
+      "candidate_accuracy": 0.751953125,
+      "class_loss_reduction": {
+        "winner_model_a": -0.001391282336416734,
+        "winner_model_b": -0.0004100481520618475,
+        "winner_tie": 0.001238652259845102
+      }
+    },
+    "long": {
+      "rows": 64,
+      "selected_rows": 6,
+      "route_replayed": true,
+      "selected_work_fraction": 0.089095825394392,
+      "independent": false,
+      "baseline_log_loss": 0.8965277671813965,
+      "candidate_log_loss": 0.8983944885189408,
+      "loss_reduction": -0.0018666964246654666,
+      "descriptive_paired_group95": [
+        -0.005727693769703262,
+        0.001166670754191796
+      ],
+      "baseline_accuracy": 0.609375,
+      "candidate_accuracy": 0.609375,
+      "class_loss_reduction": {
+        "winner_model_a": -0.00641304667248899,
+        "winner_model_b": 0.0003594674025709521,
+        "winner_tie": 0.0007430453265820075
+      }
+    },
+    "test": {
+      "rows": 3,
+      "selected_rows": 0,
+      "route_replayed": true,
+      "selected_work_fraction": 0.0,
+      "independent": false
+    }
+  },
+  "cache_sha256": {
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_control.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_reverse_routed_control.npz": "cc8eaf21f0bf1479641b2e2d7ef9e08b6c9bebc2bfbe3f186797a60c972612ac",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/routing_control.npz": "bbc9adc2fff390d345c97ed41ab96d00c36c4ddf7326fb422144f38f616bc3eb",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_uniform.npz": "07267d576085aa72d975f2f287d7ec034fffd22317f2048f4c6e5c4ad371069e",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_uniform.npz": "c378c1b89b86603a3d72e8839397399c1803360ee9af6fa52fdda3a36baf74a3",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_reverse_routed_uniform.npz": "76de421cc2a1836b9902a75523600966b774a83040e8f756d98239bb7b14ca74",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/routing_uniform.npz": "3d21ff6b5e10392b1383aa71055485634f9a82b3bc7bbd0d8db69340ccb911e2",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_long.npz": "f0cdc3f38df3a8091fda4147865922b371167961af0a3979ffac48f82d57cfc1",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_long.npz": "843ed1ff1ed8f505503869276d86dbafbf2b07975f628f038bc49ed2b74eb3cb",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_reverse_routed_long.npz": "892bfbedd69413a513d481644dfd8a657831677819a14f86c8d5fe501e6a7c3d",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/routing_long.npz": "f21e62bf151ea6bf078ea97f904a3df4ca7f5d3eeb6c6514da48edfeec70c270",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_test.npz": "416b6e64ac23c1afd1264cee6ce68fdaa9bef07d830334fff85c96e6ba8f66b0",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_test.npz": "61330b55152f24cc19f6f6416f8cf4aec2dbd3949d88c4d99402ffe42f3faeb5",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_reverse_routed_test.npz": "3303c92dd65688b545fac6a3bb710d2e0d29303a9a7125062737ecd909312fd5",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/routing_test.npz": "ad1f886bf33ba763d585714b06bf5fc1e247bfa8b5cacd30af18f29da7b42281"
+  },
+  "source_sha256": {
+    "src/arena/span012_order.py": "a5d9a0ff24e466e053eb4fdbb59f96ac8483be95999da8fc5865d01ff88d8afb",
+    "scripts/replay_span_012_llama.py": "d51d9dd6bfff59477c97cf8e07b7d4b4cc2e40551403fa9e8da87d0749dfa82f",
+    "scripts/audit_span_010_order.py": "0a0faa90b77b6d01f9ac47dc82d93a211327d50361a3b0c723bff43f9e65044e"
+  },
+  "decision": "Stop H58 without new GPU",
+  "new_gpu_executions": 0
+}

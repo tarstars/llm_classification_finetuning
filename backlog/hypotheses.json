@@ -5097,7 +5097,7 @@
       ],
       "id": "E16",
       "rank": 74,
-      "status": "running",
+      "status": "done",
       "introduced_in": 11,
       "discovered_during": 10,
       "derived_from": [
@@ -5126,6 +5126,14 @@
           "note": "Matched engineering probe accepted as arseniytrushin/llm-preference-span012-packing-profile/1 at18:46:54UTC, initiallyQUEUED; exact controller1111 live,1800s cap. Source read-back passed; actual cells/branches/watchdog/startup and three CPU protocol checks passed. Same loaded models/control256/full80-row warmups/8k-6k-8k bracket; no preference labels. H58remains planned until E16qualification.",
           "evidence": [
             "results/span_012/jobs/packing_profile/push.json"
+          ]
+        },
+        {
+          "at": "2026-11-07T19:17:43+00:00",
+          "status": "done",
+          "note": "Matched exact GPU job /1 COMPLETE; all8192raw controls difference0,6144failsboth(0.0002201/0.0006124) andonly2.35pctfaster. Keep8192. BothT4telemetry/source/token/checkpoint gatespassed; base-onlyprojection28956.954s;actualcharge1299.905s. Executednotebook24. H58stillrequiresitsowngates.",
+          "evidence": [
+            "docs/E16_MATCHED_PACKING_RESULTS.md"
           ]
         }
       ]
@@ -5176,7 +5184,7 @@
       ],
       "id": "H58",
       "rank": 75,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 11,
       "discovered_during": 10,
       "derived_from": [
@@ -5189,6 +5197,22 @@
           "note": "Measured per-expert reverse cost supports a cheaper fixed three-prediction alternative;8.596h is a forecast, not an admitted or quality-validated candidate",
           "evidence": [
             "docs/SPAN_010_RUNTIME_FOLLOWUPS.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T19:17:54+00:00",
+          "status": "running",
+          "note": "E16 completed with the engineering gate passed at8192 packing. Starting the single fixed cached replay from the v12 contract; no new GPU or official submission until its information gate and the actual three-pass qualification pass.",
+          "evidence": [
+            "docs/E16_MATCHED_PACKING_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T19:21:38+00:00",
+          "status": "done",
+          "note": "The single fixed cached replay failed its predeclared uniform512 information gate: base loss0.654242, candidate0.654371, reduction-0.000129. Votes overlap checkpoint training; uncertainty includes zero. Stop without H58 GPU or official submission; preserve the result and queue the complementary Gemma-only hypothesis.",
+          "evidence": [
+            "docs/H58_LLAMA_ORDER_RESULTS.md"
           ]
         }
       ]
@@ -5387,6 +5411,72 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Average only the Gemma expert order on the fixed disagreement route",
+      "priority": "P1",
+      "gain": [
+        -0.004,
+        0.004
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        2
+      ],
+      "pilot_gpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.3
+      ],
+      "risk": "medium",
+      "claim": "Gemma-only answer-order averaging may retain the earlier four-orientation signal within the runtime limit; quality is unmeasured.",
+      "basis": "H57 four-order uniform descriptive gain0.001232 missed runtime; H58 Llama-only gain-0.000129 failed its information gate. E16 retained8192 with exact raw controls and8.044h base-only projection.",
+      "first_test": "After v13 activation, freeze one .25Gemma-original+.25aligned-Gemma-swapped+.5aligned-Llama-swapped rule on the unchanged10pct-work/20pct-row route, T1. Replay the same fixed cached cohorts, require uniform descriptive gain>0.0005, then qualify a real three-pass worker within30minutes.",
+      "acceptance": "Traceable source/checkpoints, exact IDs/tokens/swaps/CSV/two-T4 controls and conservative actual projection<32400s including20pct margin, all overhead and600s reserve; one frozen official outcome evaluates the rank<=19 goal.",
+      "stop": "No current-span extra GPU, cache in hidden inference, weight/route/temperature or leaderboard search. Stop on information, strict1e-5 numerical, source, memory or runtime failure; preserve every failure.",
+      "risk_reason": "The earlier combined gain may be noise or interactions; original votes overlap checkpoint training and Gemma reverse is slower than Llama reverse.",
+      "mitigation": "Treat cached gain and uncertainty as descriptive only; predeclare one rule, require matched actual deployment controls and report official outcome. Do not infer additive log-loss gains.",
+      "rationale": "Directly tests the complementary component suggested by the negative Llama-only result using existing bounded engineering infrastructure.",
+      "revision": "Discovered in v12 after the predeclared H58 replay failed; no Gemma-only replay or new GPU has yet occurred.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H57",
+        "E16",
+        "H58"
+      ],
+      "evidence": [
+        "docs/H58_LLAMA_ORDER_RESULTS.md"
+      ],
+      "id": "H60",
+      "rank": 78,
+      "status": "planned",
+      "introduced_in": 13,
+      "discovered_during": 12,
+      "derived_from": [
+        "H58",
+        "H57",
+        "E16"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T19:21:38+00:00",
+          "status": "planned",
+          "note": "Llama-only order averaging failed despite the earlier combined rule descriptive signal; test the complementary Gemma-only rule in a future span, with no additive-gain claim or current-span GPU.",
+          "evidence": [
+            "docs/H58_LLAMA_ORDER_RESULTS.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -5437,7 +5527,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 12,
+  "active_version": 13,
   "versions": [
     {
       "number": 1,
@@ -6372,7 +6462,7 @@
     },
     {
       "number": 12,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -6433,10 +6523,70 @@
       "carried_from": 11,
       "start_sha256": "00825244958f7e6c28663481eabf6416666c4831c424573a8d2000015c41090c",
       "start_markdown_sha256": "c84d81776bc4318f4fd973d35717056074189cab9ba5da72ab09d188598a742b",
-      "start_sealed_at": "2026-11-07T18:25:53+00:00"
+      "start_sealed_at": "2026-11-07T18:25:53+00:00",
+      "final_sha256": "0ba37185b8e240c3d3b77ec5f57b8c59db78ac95ced0f44fed6825901370a684",
+      "final_markdown_sha256": "e3dc8b910959d44230a08071ef554cf4b00f83677adb1c839298894e5cf021b6",
+      "final_sealed_at": "2026-11-07T19:22:44+00:00",
+      "closed_at": "2026-11-07T19:22:44+00:00",
+      "closing_note": "V12 finished: exact8192 controls pass,6144 fails and is only2.35pct faster; fixed Llama-only replay fails its information gate. One public probe charged1299.905s, no official submission. Preserve39 unfinished tasks and add H60 for the complementary Gemma-only rule; rank<=19 goal remains active.",
+      "closing_evidence": [
+        "docs/SPAN_012_RESULTS.md"
+      ]
     },
     {
       "number": 13,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H55",
+        "H56",
+        "E17",
+        "H60"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 12,
+      "start_sha256": "55c1c3460f7803efa1b37c6a7d40f899497fa7f8ac462d7261fc6baa108ff02e",
+      "start_markdown_sha256": "9609e41430c70cd565e0365c5df2cd7506bc043b6884769d553292773dd6e748",
+      "start_sealed_at": "2026-11-07T19:22:44+00:00"
+    },
+    {
+      "number": 14,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

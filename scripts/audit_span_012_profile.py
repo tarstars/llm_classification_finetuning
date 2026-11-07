@@ -70,6 +70,9 @@ def main():
     except ValueError:
         selection=dict(selected_packing=8192,base_controls_passed=False,selection_uses_labels=False,
                        failure='Canonical raw control or measured duration invalid; no production admission')
+    # The frozen selector compares a NumPy mean, producing np.bool_ for its
+    # speed decision. Convert output scalars without changing any gate or input.
+    selection={key:value.item() if isinstance(value,np.generic) else value for key,value in selection.items()}
     packing=selection['selected_packing']
     times=[]
     for summary in summaries.values():
