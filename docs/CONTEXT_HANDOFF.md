@@ -17,15 +17,19 @@ Current program scripts/audit_span_011_sources.py passed metadata stage:
 both exact public datasets are stillversion1, lastUpdated2024-08-05 at05:50/06:25UTC.
 Official Arena140k source revision6322995ab34d7c2693e3f47dd13fa5caa0789a74 is pinned,
 cardSHA2960894314c63712189097b5fe731e6342ef1bdeedc16acbd52becd8dc7cf312,
-ungated; about1.6138GB compressed. Only card/metadata downloaded: **zero
-conversation rows and zero v11 GPU jobs**. Actual row timestamps, format,
+ungated; about1.6138GB compressed. The metadata audit downloaded only card/metadata; a later raw-shard download is
+now running. **Zero rows parsed/scored and zero v11 GPU jobs**. Actual row timestamps, format,
 duplicates and eligible support still need verification. ready_for_gpu=False.
 Evidence: results/span_011/source_metadata_audit.json. About64GB disk was free.
 
 scripts/download_span_011_source.py is prepared: exact seven-shard size/LFS-hash
 guards, <=2GBcompressed, original30minute resumable intent deadline, no row
-parsing/scoring and ready_for_gpu=False. Run/observe this downloader after the
-closing publication, then implement the streaming cohort preparation program. Download
+parsing/scoring and ready_for_gpu=False. Downloader is now live as local handle32464, original deadline
+2026-11-07T10:29:36.620244+00:00. Source metadata passed and1613803705total bytes
+are expected; first shard was actively streaming. Poll this exact handle and
+results/span_011/source_download.json. Resume completed files by hashes and partial
+files byRange; do not reset the original intent/deadline implicitly. Then implement
+the streaming cohort preparation program. Download
 seven pinned Parquet shards under ROOT/runs/span_011 (<=2GBcompressed); process
 projected columns in batches, two threads,6GiB target, <=one heavy hour before
 review. Do not expand3GBnested data at once. Select English, first evaluation,

@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-07T10:03:11.879693+00:00",
+  "complete": false,
+  "revision": "6322995ab34d7c2693e3f47dd13fa5caa0789a74",
+  "files": [
+    {
+      "name": "train-00000-of-00007.parquet",
+      "bytes": 231962042,
+      "sha256": "7b871a964dc9b238fe0d59f817dbe1a7a56934e23ec4d989f86e6891e5a891cf",
+      "reused": false
+    }
+  ],
+  "ready_for_gpu": false,
+  "source_rows_parsed": 0,
+  "source_rows_scored": 0,
+  "new_gpu_executions": 0,
+  "deadline": "2026-11-07T10:29:36.620244+00:00",
+  "expected_bytes": 1613803705
+}
