@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-07T11:37:11.538706+00:00",
+  "stage": "calibration_learning",
+  "event": "complete",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span011-learning-calibration/1",
+  "charged_seconds": 2436.7570000000005,
+  "files": 27
+}

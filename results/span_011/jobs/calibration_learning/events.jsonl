@@ -1,0 +1,6 @@
+{"at": "2026-11-07T10:38:05.942783+00:00", "stage": "calibration_learning", "event": "dry_run_admissible", "cap_seconds": 5400}
+{"at": "2026-11-07T10:41:43.432584+00:00", "stage": "calibration_learning", "event": "pushing_one_version"}
+{"at": "2026-11-07T10:41:46.595981+00:00", "stage": "calibration_learning", "event": "remote_status", "status": "QUEUED", "kernel_version": "arseniytrushin/llm-preference-span011-learning-calibration/1"}
+{"at": "2026-11-07T10:55:53.242966+00:00", "stage": "calibration_learning", "event": "remote_status", "status": "RUNNING", "kernel_version": "arseniytrushin/llm-preference-span011-learning-calibration/1"}
+{"at": "2026-11-07T11:37:02.542262+00:00", "stage": "calibration_learning", "event": "remote_status", "status": "COMPLETE", "kernel_version": "arseniytrushin/llm-preference-span011-learning-calibration/1"}
+{"at": "2026-11-07T11:37:11.538706+00:00", "stage": "calibration_learning", "event": "complete", "status": "COMPLETE", "kernel_version": "arseniytrushin/llm-preference-span011-learning-calibration/1", "charged_seconds": 2436.7570000000005, "files": 27}

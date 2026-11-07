@@ -1,0 +1,20 @@
+{
+  "prepared": true,
+  "dataset": "arseniytrushin/llm-span011-confirmation-inputs/1",
+  "rows": 1024,
+  "private_requested": true,
+  "fields": [
+    "id",
+    "prompt",
+    "response_a",
+    "response_b"
+  ],
+  "input_sha256": "c1cb6e2b9ec53a6ac93b95050b13f38322fb122b5ae1a95a0705c3767086d49a",
+  "upload_files": {
+    "dataset-metadata.json": "2d6fcd5b851b8b6432fb058b85bd237197bc41fc4aa19e42c49ff3d530320c1f",
+    "README.md": "4b368bc70a7d12bd0837506ccf57ba91aaced9672f9df20ef3f76378e212ebd5",
+    "confirmation.parquet": "c1cb6e2b9ec53a6ac93b95050b13f38322fb122b5ae1a95a0705c3767086d49a"
+  },
+  "labels_included": false,
+  "new_gpu_executions": 0
+}

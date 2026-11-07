@@ -1,0 +1,264 @@
+{
+  "at": "2026-11-07T11:37:36.435257+00:00",
+  "complete": true,
+  "role": "calibration_learning",
+  "source": {
+    "passed": true,
+    "at": "2026-11-07T11:37:35.658047+00:00",
+    "kernel_version": "arseniytrushin/llm-preference-span011-learning-calibration/1",
+    "notebook_sha256": "6e16f901b532cafa11997a1ebab8201cd6912ef43dcf469df3547617df0cf6bc",
+    "cell_sources_identical": true,
+    "internet_enabled": false,
+    "remote_docker_image": "gcr.io/kaggle-private-byod/python@sha256:e3f9bf91d1b7b36bf77554565d27c5733585fbe5e2b7f0832e068824e7accc3c",
+    "remote_dataset_sources": [
+      "arseniytrushin/llm-span011-learning-inputs",
+      "tascj0/lmsys-checkpoints-0-0805",
+      "tascj0/lmsys-checkpoints-3-0805",
+      "tascj0/lmsys-modules-0805",
+      "tascj0/lmsys-packages"
+    ],
+    "temperature": 1.0
+  },
+  "control_identity": {
+    "m0": {
+      "rows": 256,
+      "max_abs_probability_difference": 0.0,
+      "passed": true
+    },
+    "m3": {
+      "rows": 256,
+      "max_abs_probability_difference": 0.0,
+      "passed": true
+    }
+  },
+  "all_controls_passed": true,
+  "csv_verified": true,
+  "csv_sha256": "863da970006c628de7ccf51ade296c26c223437908469027e0ce5c4dd813e580",
+  "both_t4_verified": true,
+  "rows_scored": 1024,
+  "artifact_files_verified": 27,
+  "runtime": {
+    "projection_seconds": 29849.449955610115,
+    "startup_seconds": 362.4969028562202,
+    "cold_and_warmup_seconds": 323.2950369080001,
+    "other_session_overhead_seconds": 39.201865948220075,
+    "worker_reported_projection_seconds": 29810.248089661894,
+    "uniform_rows": 512,
+    "measured_here": true,
+    "session_seconds": 2421.65376329422,
+    "includes_all_observed_session_overhead": true
+  },
+  "runtime_gate_passed": true,
+  "measured_roles": {
+    "m0": {
+      "role": "m0",
+      "cold_seconds": 115.56844282600002,
+      "cohorts": {
+        "warmup": {
+          "rows": 8,
+          "seconds": 22.90606213799998,
+          "tokens": 6366,
+          "max_tokens": 1380,
+          "token_ids_sha256": "ec11b4a7ecc93d32368723bc5eee7b2e3765bf83473b2985c050a436b5129afb",
+          "peak_allocated_bytes": [
+            10763062784,
+            8940364800
+          ],
+          "peak_reserved_bytes": [
+            11578376192,
+            9711910912
+          ]
+        },
+        "control": {
+          "rows": 256,
+          "seconds": 136.72445236,
+          "tokens": 240851,
+          "max_tokens": 4330,
+          "token_ids_sha256": "4015e2ba9056bdc0b48938ed155b367669bd99bd29f9c6ecc83972ea260d0b84",
+          "peak_allocated_bytes": [
+            10973638144,
+            9105754112
+          ],
+          "peak_reserved_bytes": [
+            13111394304,
+            11186208768
+          ]
+        },
+        "uniform": {
+          "rows": 512,
+          "seconds": 283.019647813,
+          "tokens": 477424,
+          "max_tokens": 4330,
+          "token_ids_sha256": "8f6eeb69e3c4a8193140ea3d6d596af5edc27a93f9d4a72091ea1f66f4be6f50",
+          "peak_allocated_bytes": [
+            10930763264,
+            9108442112
+          ],
+          "peak_reserved_bytes": [
+            13111394304,
+            11186208768
+          ]
+        },
+        "long": {
+          "rows": 64,
+          "seconds": 182.025477013,
+          "tokens": 276229,
+          "max_tokens": 4330,
+          "token_ids_sha256": "d608e39edf4ee1625ab606373b97b0cb0192cfb18a1c3206fa86eb28a5fe6edc",
+          "peak_allocated_bytes": [
+            10892544512,
+            9070341120
+          ],
+          "peak_reserved_bytes": [
+            13111394304,
+            11186208768
+          ]
+        },
+        "test": {
+          "rows": 3,
+          "seconds": 3.0330195310000363,
+          "tokens": 2936,
+          "max_tokens": 1951,
+          "token_ids_sha256": "996f7403e8e8d9b1fb96dfbb92b743bb02a4d7883892aa372021cd11e4787cfc",
+          "peak_allocated_bytes": [
+            10472746496,
+            8619234304
+          ],
+          "peak_reserved_bytes": [
+            13111394304,
+            11186208768
+          ]
+        },
+        "learning": {
+          "rows": 1024,
+          "seconds": 583.6043748409999,
+          "tokens": 972166,
+          "max_tokens": 4330,
+          "token_ids_sha256": "bff128919c563ee0bd2a839d23028a197f719c8e6ad7e6872016307ef7697d32",
+          "peak_allocated_bytes": [
+            10931049984,
+            9108800512
+          ],
+          "peak_reserved_bytes": [
+            13178503168,
+            11253317632
+          ]
+        }
+      },
+      "versions": {
+        "python": "3.10.13",
+        "torch": "2.1.2",
+        "transformers": "4.42.3",
+        "triton": "2.2.0",
+        "xformers": "0.0.24+042abc8.d20240802"
+      },
+      "loading_exact": true
+    },
+    "m3": {
+      "role": "m3",
+      "cold_seconds": 167.749134141,
+      "cohorts": {
+        "warmup": {
+          "rows": 8,
+          "seconds": 17.07139780300008,
+          "tokens": 6227,
+          "max_tokens": 1361,
+          "token_ids_sha256": "a8d30dc84fc444b164d9584642292de304b3bebd1691ee6b04e7802abf392d90",
+          "peak_allocated_bytes": [
+            8651025920,
+            7617096704
+          ],
+          "peak_reserved_bytes": [
+            9443475456,
+            8407482368
+          ]
+        },
+        "control": {
+          "rows": 256,
+          "seconds": 104.75236042999995,
+          "tokens": 233953,
+          "max_tokens": 4330,
+          "token_ids_sha256": "159305f636305c46bc4cea9da26c6f8080050392c2fa6b0c33662a48d303019a",
+          "peak_allocated_bytes": [
+            8862224896,
+            7810156544
+          ],
+          "peak_reserved_bytes": [
+            11280580608,
+            10244587520
+          ]
+        },
+        "uniform": {
+          "rows": 512,
+          "seconds": 209.98435095399986,
+          "tokens": 462769,
+          "max_tokens": 4330,
+          "token_ids_sha256": "e9b8f367f489125fd0cae8395fe0112b8a4ac93a4a48818cea9ff960ccb4edaf",
+          "peak_allocated_bytes": [
+            8887666176,
+            7807920128
+          ],
+          "peak_reserved_bytes": [
+            11347689472,
+            10311696384
+          ]
+        },
+        "long": {
+          "rows": 64,
+          "seconds": 132.95753574699984,
+          "tokens": 276423,
+          "max_tokens": 4333,
+          "token_ids_sha256": "6e0f08197545d18acf3a90444912d308d30fd94c1446cde57d3751a2f2363b63",
+          "peak_allocated_bytes": [
+            8823183872,
+            7789240832
+          ],
+          "peak_reserved_bytes": [
+            11347689472,
+            10311696384
+          ]
+        },
+        "test": {
+          "rows": 3,
+          "seconds": 2.1337792670001363,
+          "tokens": 2787,
+          "max_tokens": 1816,
+          "token_ids_sha256": "e5fd6d2547a78633b8231a60155bb7f6aa3260a0213e13979b24a42be7ab73eb",
+          "peak_allocated_bytes": [
+            8348276224,
+            7278939136
+          ],
+          "peak_reserved_bytes": [
+            11347689472,
+            10311696384
+          ]
+        },
+        "learning": {
+          "rows": 1024,
+          "seconds": 420.92186248200005,
+          "tokens": 943535,
+          "max_tokens": 4330,
+          "token_ids_sha256": "a5fa3e00229db48bf24b8d80ee87bad4dbcaa879f54915214908bd5d00b073ce",
+          "peak_allocated_bytes": [
+            8841864704,
+            7807920128
+          ],
+          "peak_reserved_bytes": [
+            11349786624,
+            10311696384
+          ]
+        }
+      },
+      "versions": {
+        "python": "3.10.13",
+        "torch": "2.1.2",
+        "transformers": "4.42.3",
+        "triton": "2.2.0",
+        "xformers": "0.0.24+042abc8.d20240802"
+      },
+      "loading_exact": true
+    }
+  },
+  "confirmation_labels_inspected": false,
+  "quality_not_evaluated": true
+}

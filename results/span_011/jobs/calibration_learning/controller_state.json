@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "at": "2026-11-07T11:37:11.535280+00:00",
+  "pid": 3949812,
+  "role": "calibration_learning",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span011-learning-calibration/1",
+  "charged_seconds": 2436.7570000000005,
+  "files": 27
+}

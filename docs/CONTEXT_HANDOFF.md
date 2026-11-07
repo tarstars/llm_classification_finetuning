@@ -1,115 +1,114 @@
-# Active goal: above20th place; v11 H59 learning pass preparation
+# Active goal: above20th place; v11 H59 confirmation preparation
 
-Snapshot2026-11-07. Read PROJECT_POLICY.md, GOAL.md, docs/SPAN_011_PLAN.md.
-Persistent success is rank<=19 on a fresh complete Kaggle leaderboard for
-team17244411, not a local metric or a finished span. Fresh10:23:49UTC observation:
-rank30/311,.83053; rank19/20cutoff.82915, leader.82711. Goal active, unachieved.
-The preceding status-only turn was no progress; this turn completed ingestion,
-cohort preparation and tested actual two-expert orchestration. No blocker.
+Snapshot2026-11-07 after the learning pilot. Read PROJECT_POLICY.md, GOAL.md,
+docs/SPAN_011_PLAN.md and docs/SPAN_011_LEARNING.md. Persistent success is actual
+rank<=19 on a fresh complete Kaggle leaderboard for team17244411, not a local
+metric or span closure. Last verified10:23:49UTC: rank30/311,.83053;
+rank19/20cutoff.82915, leader.82711. Goal remains active and unachieved.
+Previous goal turn was progress: exact pilot submission and source preparation;
+this turn completed inference, engineering qualification and learning-only fit.
 
-## Current backlog and next action
+## Current span and evidence
 
 V10 sealed. Activev11:41members, focus H59running only; v12empty.
-E16/H58/H55/H56 remain unselected. H59tests one shared confidence temperature on
-unchanged8192packing Gemma2-9Boriginal plus ArmoRM/Llama3-8Bswapped, equalweights,
-4096conversation cap, fp16/author kernels/pinned Python3.10image. No reverse pass.
+E16/H58/H55/H56 remain unselected. H59tests one shared temperature on unchanged
+8192packing Gemma2-9Boriginal plus ArmoRM/Llama3-8Bswapped, equal weights,
+4096conversation cap, fp16/author kernels/pinned Python3.10image. No reverse pass,
+expert-weight/tieoffset/routecap/LB parameter search or backbone training.
 
-Source official lmarena-ai/arena-human-preference-140k revision
-6322995ab34d7c2693e3f47dd13fa5caa0789a74, public/ungated. CardSHA
+Learning exact Kaggle job:
+arseniytrushin/llm-preference-span011-learning-calibration/1, COMPLETE11:37:02UTC.
+Controller34709 is terminal exit0; do not restart it or re-push the pilot.
+All27retrieved files hash-verified. Both256row original component controls have
+max probability difference0. Checkpoint hashes, source/input/IDs/swaps/mixture/
+CSV/prepared Gemma lengths and two T4 devices passed. Qualification:
+results/span_011/calibration_learning_qualification.json. Projection29849.450s
+(8.292h), with20%margin, all362.497sstartup/warmup/other session overhead and600s
+reserve, passes32400s. Audit retains bare worker29810.248s plus39.202sother
+observed overhead; inference source and1e-5raw control threshold unchanged.
+Actual GPU charge2436.757s (0.677two-T4session hours), under5400s.
+Heavy outputs ROOT/runs/span_011/jobs/calibration_learning/output/calibration.
+
+Learning1024groups, five group-hash folds: base logloss1.02417326 -> cross-fitted
+1.01955768, gain.00461556, pairedgroup95[-.00245062,.01240010]; uncertain,
+not established improvement or a forecast of competition score. Accuracy.486328
+is unchanged. Fold temperatures1.2272–1.4324. Full-learning fitted scalar is
+T=1.3161518671742531, now frozen in results/span_011/frozen_temperature.json
+BEFORE confirmation inputs upload or confirmation predictions/labels inspection.
+Class fractions A/B/tie .3389/.3613/.2998 are close to original .3491/.3419/.3090.
+Gain mostly improves tie logloss; A/B slight regressions and mixed length bins.
+Source2025model pairs are harder; this is out-of-time source evidence, not CV
+on competition labels. See learning_metrics.json and docs/SPAN_011_LEARNING.md.
+Confirmation labels remain UNOPENED. No official v11 submission/intent exists.
+
+## Immediate next action
+
+Learning positive point gain passes only the information gate. Separately admit
+fixed1024confirmation at frozen T. Its text-only asset is prepared locally via
+scripts/prepare_span_011_assets.py prepare --stage confirmation, not uploaded yet.
+Commit the learning report/results/frozenT/asset receipt, then upload/verify the
+private confirmation dataset. Build/rehearse scripts/build_span_011_calibration.py
+--stage confirmation, commit frozen bundle and run
+scripts/run_span_011_calibration.py --stage confirmation. Fresh full inventory/
+quota/dependencies are checked by that exact controller; avoid back-to-back full
+inventory dry-runs (a prior429read-only failure was reconciled before a single
+learning push). Never restart an accepted GPU mutation on observation timeout.
+
+After the exact confirmation job is COMPLETE and fully retrieved, run
+scripts/audit_span_011_calibration.py --stage confirmation, then only if engineering
+passes scripts/analyze_span_011_calibration.py --stage confirmation. Analyzer
+opens confirmation labels once against the frozen T hash and never fits on them.
+Require gain>=.001 and paired group95%lower>0, plus class/length/domain review.
+If evidence fails, retain baseline and close H59 without submission. No widening
+or averaging T values based on confirmation/leaderboard. Freeze file stays unchanged.
+
+scripts/submit_span_011_calibration.py is ready for one qualified confirmation
+version. Its two CPU tests passed admission guards and full runtime accounting.
+It requires deployment_decision.json with explicit completed domain review,
+temperature and all seven exact evidence hashes, then fresh quota/jobs and
+committed exact source before a single official mutation. No deployment decision
+exists yet. Observe the exact receipt, never re-submit after timeout. No research
+GPU while official scoring is pending. Do not mark the rankgoal complete from
+any local gain or finished span; verify actual fresh rank<=19 plus deliverables.
+
+## Frozen resources/source/publication
+
+Phase plan results/span_011/span_plan.json and configs/span_011.json retain
+original deadline2026-11-09T10:32:36.230293+00:00,21600s public total including
+retries, learning5400s, separately admitted confirmation7200s, max2frozen recipes/
+2official candidates. InitialGPUused5835.532s, refreshNov14, paid off. Learning
+charge2436.757s leaves19163.243s within original public cap; quota refresh cannot
+enlarge it. Each hidden25krow conservative projection includes20%margin/all
+startup/warmup/600sreserve and must be<32400s with owned watchdog. No external
+text inference API, paid scaling or public prediction cache in hidden mode.
+
+Pinned public source lmarena-ai/arena-human-preference-140k revision
+6322995ab34d7c2693e3f47dd13fa5caa0789a74. CardSHA
 2960894314c63712189097b5fe731e6342ef1bdeedc16acbd52becd8dc7cf312.
-Both exact public checkpoint datasets remainversion1, published2024-08-05.
-Prompts CC-BY4; outputs provider terms. Source attribution accompanies private
-text-only assets. Chronology applies to these2024weights, not modern rewardmodels.
+Both exact checkpoint datasets publicversion1 published2024-08-05. Source
+selected votes Apr17–Jul24,2025; chronology does not cover modern reward models.
+135634rows audited,49118eligible English first-eval single-turn text pairs,
+45703prompt/session groups,1known competition pair including swaps excluded.
+Separate representative/group hashes avoid repeated-vote group weighting.
+2048groups fill fixed length quotas[488,495,438,413,111,66,22,15]; split learning
+[244,248,219,207,55,33,11,7] and confirmation remainder. No label-based selection.
+Inputs only id,prompt,response_a,response_b as plain Parquetv1; numeric source
+IDs and UUID/session/group mappings stay private. Labels are separate NPZ files.
+Manifest results/span_011/cohort_manifest.json; heavy ROOT/runs/span_011/cohort.
+Seven source shards1613803705bytes verified within original30min deadline;
+preparation108.358s/1.0835GBRSS/two threads; total heavy CPU below1h review cap.
+Source attribution/terms accompany private text inputs. Fresh authenticated rules
+allowed public external data, require9h/offline and forbid hand-labeling.
 
-Downloader32464 and cohort preparer69487 terminal exit0. Seven pinned shards,
-1613803705bytes verified within original30minute download deadline. Preparation
-108.358s/1083514880peakRSSbytes, two threads; total CPU preparation under1hour.
-135634rows audited:49118eligible English/first-evaluation/single-turn text pairs,
-45703prompt/session groups. Excluded1known competition triple including swaps.
-Representative rowhash and independent grouphash avoid repeated-vote weighting.
-Actual model text/order preserved; normalization is only for hashes.
-
-Frozen2048groups fill length bins[0,512,768,1024,1536,2048,3072,4096,4500],
-quotas[488,495,438,413,111,66,22,15]. Learning1024quotas
-[244,248,219,207,55,33,11,7]; confirmation remainder. Selected dates Apr17–Jul24,2025.
-Mean947.388Gemma tokens; exact old256row CPU/GPU token fingerprint passed.
-Manifest results/span_011/cohort_manifest.json; heavy cohort ROOT/runs/span_011/cohort.
-Inputs plain Arrow Parquetv1 with only id,prompt,response_a,response_b. Numeric
-int64source IDs and UUID/session/group mappings stay separate. Labels are private;
-neither learning nor confirmation outcomes have been inspected. Confirm split
-must remain unopened until learning-only T is frozen. No source rows scored yet.
-
-Phase preparation complete: results/span_011/span_plan.json, configs/span_011.json.
-Original48hour deadline,21600s public total including retries, learning5400s,
-confirmation separately admitted7200s, max2frozenrecipes/2officialcandidates.
-InitialGPUused5835.532s, remaining102164.468s, refreshNov14, no reservations/
-nonterminal jobs, paid off. Conservative label-free pilot forecast3452.553s.
-Fresh authenticated official pages confirm public external data allowed,9hour
-notebook cap/internet off/hand-labeling forbidden. Raw snapshot is private.
-
-Seven tests passed: label-blind parsing/rejections/grouping/input schema, scalar
-argmax/swap, actual learning/confirmation/hidden orchestration using CPU worker.
-New inference AST matches v10base exactly except allowed role/cohort names.
-No actual GPU numerical/runtime result. See docs/SPAN_011_PREPARATION.md.
-Learning text-only private dataset arseniytrushin/llm-span011-learning-inputs/1
-is ready/private-verified. Actual serialized notebook passed success/failure/
-watchdog, public/hidden input branches and engine startup. Accepted exact GPUjob
-arseniytrushin/llm-preference-span011-learning-calibration/1 at10:41:46UTC, QUEUED.
-Controller handle34709 is live; poll it, never restart the accepted mutation.
-The prior82970controller was terminal exit1 on HTTP429during read-only inventory,
-with no intent/receipt; cooldown retry created exactly one GPU push. Source-only
-read-back9544 completed and proved cell/source/image/dataset identity.
-Frozen pilot source commit9c76631 is pushed; preparation commitbf52056 is pushed.
-Initial cap5400seconds, no new confirmation or official submission.
-
-src/arena/span011_statistics.py and scripts/analyze_span_011_calibration.py
-implement fixed five group-hash folds and one shared scalar, endpoints included.
-Two synthetic statistics tests passed; real learning labels remain uninspected.
-Full scripts/audit_span_011_calibration.py must verify recovered outputs/control/
-runtime before the analyzer can open learning labels. Run full audit only after
-exact job COMPLETE and retrieval complete; numerical failures remain failures.
-No fallback to cached predictions. Then analyze learning, freeze T, and only if
-cross-fitted point gain>0 plus engineering gates pass prepare/upload/build and
-separately admit confirmation. Stage2recipe requires the frozen T hash.
-Notebook23 builder scripts/build_span_011_review.py reads only aggregate evidence;
-execute with escalation for local Jupyter sockets, refresh as evidence arrives.
-
-scripts/submit_span_011_calibration.py is prepared for a possible qualified
-confirmation version only. Its CPU admission test passed valid-witness and
-unreviewed/insufficient-gain/inconclusive-CI/stale-evidence/changed-CSV rejection.
-It requires results/span_011/deployment_decision.json with explicit completed
-domain review, temperature and all seven named evidence hashes, then fresh full
-quota/jobs and exact source before one official mutation. No decision/official
-intent exists. This is a guarded future path, not a quality claim. Pilot still
-RUNNING since10:55:53UTC after about14minutes queued; live controller34709 continues
-polling the same accepted version. No model ARENA_EVENT was available at10:57:36;
-startup runtime/package logs exist with no observed error. Do not re-push or open
-labels before full engineering qualification.
-
-Runtime audit was tightened without touching accepted inference source:
-scripts/audit_span_011_calibration.py runtime_estimate adds session_summary time
-outside all sequential model/cold/cohort timers to startup before the separate
-600sreserve. Worker original projection is retained/reconciled;32400s gate and
-1e-5raw controls stay fixed. Two submission/runtime guard tests passed. Full real
-qualification/learning metrics remain pending; no frozen temperature exists.
-
-Live aggregate model telemetry is at
-results/span_011/jobs/calibration_learning/progress.json (job subdirectory,
-not results/span_011/progress.json). At10:59:18 snapshot Gemma warmup completed,
-control batch0/80rows was active. Raw logs stay private. Notebook23 now also
-shows the latest sanitized model/cohort progress; rebuild for evidence changes.
-
-Fit only T in[.5,2] on log equal-ensemble probabilities. Group-cross-fit within
-1024learning groups; positive point gain is stage2 information gate. Freeze T
-before confirmation asset upload/scoring. Confirmation needs gain>=.001 and paired
-group95%lower>0 plus class/length/domain checks. No expert-weight/tieoffset/
-routecap/LB search. Independent later votes are out-of-time, not competition CV.
-Source/ID/swap/CSV/checkpoint/device/numeric audit mandatory; old1e-5raw-control
-threshold unchanged. Hidden25krow projection plus20%margin/allstartup/warmup/
-600sreserve must be<32400s and owned watchdog. No public prediction cache in
-hidden mode, researchGPU while officialpending, paid scaling or external textAPI.
-Quota refresh cannot enlarge frozen phase. Exact handles/version receipts prevent
-restarts on observation timeout. A failed span does not complete the rankgoal.
+Learning private dataset arseniytrushin/llm-span011-learning-inputs/1 is verified.
+Accepted source read-back matched cells/image/datasets. Source commit9c76631,
+preparationbf52056, analysiscc442ac, official guards8365620, stricter runtime
+e73ea02 and telemetry2221523 are pushed. Preserve dirty user notebooks07/12.
+Notebook23 builder scripts/build_span_011_review.py reads only aggregates and
+sanitized progress at results/span_011/jobs/<role>/progress.json, not a top-level
+progress.json. Rebuild/execute with escalation for local Jupyter sockets after
+new evidence; final notebook23 must include final actual metrics. Notebook23 was refreshed/executed with engineering and learning metrics (four
+code cells, two figures, zero errors). Refresh again after confirmation.
 
 ## V10 evidence and immutable history
 

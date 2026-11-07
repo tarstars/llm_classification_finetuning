@@ -5270,6 +5270,14 @@
           "evidence": [
             "results/span_011/jobs/calibration_learning/push.json"
           ]
+        },
+        {
+          "at": "2026-11-07T11:40:30+00:00",
+          "status": "running",
+          "note": "Learning jobCOMPLETE;27artifacts hash-verified; both256row component controls maxdiff0, full conservative target projection29849.450s passes. Charge2436.757s.1024later-vote group-CV loss1.02417326->1.01955768, gain.00461556, paired95[-.00245062,.01240010]; uncertainty retained. Freeze learning-only T1.3161518671742531 before separately admitted1024untouched confirmation. No official submission.",
+          "evidence": [
+            "docs/SPAN_011_LEARNING.md"
+          ]
         }
       ]
     }

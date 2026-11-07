@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-07T11:38:01.002894+00:00",
+  "temperature": 1.3161518671742531,
+  "temperature_bounds": [
+    0.5,
+    2.0
+  ],
+  "base_weights": [
+    0.5,
+    0.5
+  ],
+  "fitting_groups": 1024,
+  "learning_gate_passed": true,
+  "learning_cross_fitted_loss_reduction": 0.004615561298905826,
+  "learning_prediction_sha256": "53285eca238b57553445f61423c07f80b4a44175386671c0c10bb54761285cc7",
+  "learning_label_sha256": "91ef3a40fc8ee933d2a405aa740f0820302ea9250e85e360b32d39a2b0988a08",
+  "confirmation_labels_inspected": false,
+  "confirmation_predictions_available": false,
+  "checkpoint_recipe_sha256": "7d4f6d55237da9e1250e8a9457b6f01324daf0190fa0f16fc6290c02695c030c",
+  "cross_fit_and_full_fit_share_only_learning_groups": true
+}
