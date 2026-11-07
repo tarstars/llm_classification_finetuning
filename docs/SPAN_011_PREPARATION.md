@@ -76,3 +76,6 @@ reserve. This covers package setup, process imports and orchestration instead of
 implicitly absorbing them into the reserve. A synthetic timing check passed and
 rejects contradictory sequential timers. The worker's original projection is
 retained for reconciliation; inference, controls and32400s threshold are unchanged.
+Confirmation will retain the original target-runtime profile and use the larger
+startup cost measured across the two sessions. This conservative accounting rule
+was tested before confirmation unblinding; it never lowers the earlier projection.

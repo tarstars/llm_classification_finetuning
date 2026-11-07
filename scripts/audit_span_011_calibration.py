@@ -29,6 +29,18 @@ def runtime_estimate(summaries,session_seconds):
         session_seconds=session_seconds,includes_all_observed_session_overhead=True)
 
 
+def confirmation_runtime(learning,summaries,session_seconds):
+    measured=sum(s['cold_seconds']+sum(c['seconds'] for c in s['cohorts'].values()) for s in summaries.values())
+    assert session_seconds>=measured-1,'Session timing contradicts sequential model timing'
+    cold_warm=sum(s['cold_seconds']+s['cohorts']['warmup']['seconds'] for s in summaries.values())
+    overhead=max(0.,session_seconds-measured)
+    startup=max(learning['startup_seconds'],cold_warm+overhead)
+    return dict(learning,measured_here=False,projection_seconds=learning['projection_seconds']+startup-learning['startup_seconds'],
+        startup_seconds=startup,confirmation_cold_and_warmup_seconds=cold_warm,
+        confirmation_other_session_overhead_seconds=overhead,confirmation_session_seconds=session_seconds,
+        learning_profile_projection_seconds=learning['projection_seconds'],startup_uses_maximum_of_both_sessions=True)
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--stage',choices=['learning','confirmation'],default='learning')
     parser.add_argument('--source-only',action='store_true');args=parser.parse_args()
@@ -99,7 +111,7 @@ def main():
         learning=read_json(pub/'calibration_learning_qualification.json')
         assert learning['all_controls_passed'] and learning['runtime_gate_passed']
         assert sha256(pub/'frozen_temperature.json')==bundle['frozen_temperature_sha256']
-        timing=dict(learning['runtime'],measured_here=False)
+        timing=confirmation_runtime(learning['runtime'],summaries,read_json(job/'output/session_summary.json')['seconds'])
         assert read_json(pub/'calibration_learning_bundle.json')['source_sha256']['src/arena/span011_calibration.py']==bundle['source_sha256']['src/arena/span011_calibration.py']
     cap=read_json(REPO/'configs/span_011.json')['job_seconds_caps'][role]
     assert read_json(job/'output/session_summary.json')['seconds']<=cap

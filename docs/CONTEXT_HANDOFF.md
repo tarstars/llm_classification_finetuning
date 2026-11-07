@@ -66,13 +66,20 @@ If evidence fails, retain baseline and close H59 without submission. No widening
 or averaging T values based on confirmation/leaderboard. Freeze file stays unchanged.
 
 scripts/submit_span_011_calibration.py is ready for one qualified confirmation
-version. Its two CPU tests passed admission guards and full runtime accounting.
+version. Its three CPU tests passed admission guards and full runtime accounting.
 It requires deployment_decision.json with explicit completed domain review,
 temperature and all seven exact evidence hashes, then fresh quota/jobs and
 committed exact source before a single official mutation. No deployment decision
 exists yet. Observe the exact receipt, never re-submit after timeout. No research
 GPU while official scoring is pending. Do not mark the rankgoal complete from
 any local gain or finished span; verify actual fresh rank<=19 plus deliverables.
+
+Before confirmation unblinding, the engineering audit was tightened to retain
+the original512row target throughput and use the larger observed startup cost
+from the learning/confirmation sessions. It cannot lower the earlier projection;
+all current candidate cold/warmup/other overhead is included. Three admission/
+runtime tests passed. Accepted inference source, frozen T and quality thresholds
+are unchanged. Full confirmation qualification/metrics remain pending.
 
 ## Frozen resources/source/publication
 

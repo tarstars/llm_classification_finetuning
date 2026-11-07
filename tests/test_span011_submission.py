@@ -8,7 +8,7 @@ from unittest.mock import patch
 REPO=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(REPO/'scripts'))
 from submit_span_011_calibration import candidate
-from audit_span_011_calibration import runtime_estimate
+from audit_span_011_calibration import runtime_estimate,confirmation_runtime
 from arena.experiment import sha256
 
 
@@ -23,6 +23,19 @@ class OfficialAdmission(unittest.TestCase):
         self.assertEqual(timing['projection_seconds'],25000*1.2+104+600)
         self.assertGreater(timing['projection_seconds'],timing['worker_reported_projection_seconds'])
         with self.assertRaises(AssertionError):runtime_estimate(summaries,measured-10)
+
+    def test_confirmation_reuses_original_throughput_but_counts_worst_startup(self):
+        learning=dict(startup_seconds=100,projection_seconds=30000)
+        summaries={name:dict(cold_seconds=70,cohorts=dict(warmup=dict(seconds=10),
+            control=dict(seconds=100),confirmation=dict(seconds=400))) for name in ['m0','m3']}
+        measured=2*(70+10+100+400)
+        result=confirmation_runtime(learning,summaries,measured+50)
+        self.assertEqual(result['startup_seconds'],210)
+        self.assertEqual(result['projection_seconds'],30110)
+        learning=dict(startup_seconds=250,projection_seconds=30000)
+        result=confirmation_runtime(learning,summaries,measured+50)
+        self.assertEqual(result['projection_seconds'],30000)
+        self.assertEqual(result['startup_seconds'],250)
 
     def test_blocks_unconfirmed_stale_or_unreviewed_candidate(self):
         with tempfile.TemporaryDirectory() as tmp:
