@@ -34,8 +34,10 @@ from arena.data import ROOT
 PUB=REPO/'results/span_010';RUN=ROOT/'runs/span_010'
 read=lambda p:json.loads(p.read_text())
 Q=read(PUB/'H57_qualification.json') if (PUB/'H57_qualification.json').exists() else None
-print('Source:',read(PUB/'order_pilot_source_verification.json'))
-print('Current public job:',read(PUB/'jobs/order_pilot/status.json'))
+for role in ['order_pilot','order_packed']:
+    for name in [role+'_source_verification.json','jobs/'+role+'/status.json']:
+        path=PUB/name
+        if path.exists():print(name,read(path))
 print('Independent local quality evidence:',False)
 '''),md('''## Inference validity and runtime
 
@@ -47,6 +49,13 @@ run must remain below32400seconds. Failed controls/gates remain visible.
 '''),code('''if Q is None:
     print('GPU audit pending; no measured quality/runtime result yet.')
 else:
+    history=[]
+    for role in ['order_pilot','order_packed']:
+        path=PUB/('H57_'+role+'_qualification.json')
+        if path.exists():
+            q=read(path);history.append(dict(role=role,hours=q['runtime_projection_seconds']/3600,
+                runtime_gate=q['runtime_gate_passed'],controls=q['all_controls_passed']))
+    display(pd.DataFrame(history))
     display(pd.DataFrame(Q['control_identity']).T)
     display(pd.DataFrame(Q['coverage']).T)
     rows=[]
@@ -78,7 +87,7 @@ intervals describe these observed, training-overlapping rows.
     for name in ['control','uniform','long']:
         c=Q['coverage'][name]
         print(name,'descriptive reduction',c['descriptive_loss_reduction'],'paired group95%',c['descriptive_paired_group95'])
-    out=RUN/'jobs/order_pilot/output/order_completion'
+    out=RUN/'jobs'/Q.get('role','order_pilot')/'output/order_completion'
     d=np.load(out/'routing_uniform.npz');selected=d['selected_indices'];mask=np.zeros(len(d['ids']),dtype=bool);mask[selected]=True
     fig,axes=plt.subplots(1,2,figsize=(10,3.5))
     axes[0].hist(d['disagreement'][~mask],bins=25,alpha=.65,label='Unrouted')
@@ -92,8 +101,9 @@ The public phase is capped at six elapsed T4x2 session-hours, including failures
 the initial pilot is capped at90minutes. Paid scaling stays off. Official receipt
 wall time includes queue/obfuscation and is not measured GPU usage. A pending
 result is displayed explicitly and does not complete the rank objective.
-'''),code('''state=PUB/'jobs/order_pilot/controller_state.json'
-if state.exists():print('Public controller:',read(state))
+'''),code('''for role in ['order_pilot','order_packed']:
+    state=PUB/'jobs'/role/'controller_state.json'
+    if state.exists():print(role,read(state))
 for name in ['official_receipt.json','official_result.json','official_leaderboard.json']:
     path=PUB/name;print(name,read(path) if path.exists() else 'Not submitted / pending')
 print('Completion requires a fresh complete leaderboard observation with team17244411 at rank<=19.')

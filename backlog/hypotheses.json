@@ -5028,6 +5028,14 @@
           "evidence": [
             "results/span_010/order_pilot_source_verification.json"
           ]
+        },
+        {
+          "at": "2026-11-07T08:21:37+00:00",
+          "status": "running",
+          "note": "First exact pilot COMPLETE,2802.478s/50files; controls and route replay pass, conservative32998.845s runtimeFAIL. No official submission. Preserve evidence and prospectively freeze only8192->12288packing change under original phase cap and unchanged1e-5/20%/600s gates.",
+          "evidence": [
+            "docs/SPAN_010_ORDER_PILOT_RESULTS.md"
+          ]
         }
       ]
     }

@@ -1,0 +1,19 @@
+{
+  "first_pilot_complete": true,
+  "public_gpu_seconds": 2802.478,
+  "artifact_files_verified": 50,
+  "base_prediction_control_max_difference": 0,
+  "first_projection_seconds": 32998.84512709851,
+  "first_runtime_gate_passed": false,
+  "official_submissions": 0,
+  "goal_achieved": false,
+  "packed_cpu_tests": 3,
+  "leaderboard_tests": 2,
+  "targeted_tests_passed": true,
+  "notebook": {
+    "code_cells": 4,
+    "figures": 2,
+    "errors": 0,
+    "sha256": "5e210539b8a05b883b04b75096d736b339e5bcd774152f78bff9ddf32bc3e2c9"
+  }
+}

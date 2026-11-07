@@ -31,24 +31,26 @@ def paired_interval(delta,groups):
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--source-only',action='store_true');args=parser.parse_args()
-    root=ROOT/'runs/span_010';pub=REPO/'results/span_010';job=root/'jobs/order_pilot'
-    bundle=read_json(pub/'order_pilot_bundle.json');verify_sources(REPO,bundle['source_sha256'])
+    parser=argparse.ArgumentParser();parser.add_argument('--source-only',action='store_true')
+    parser.add_argument('--role',choices=['order_pilot','order_packed'],default='order_pilot');args=parser.parse_args()
+    role=args.role
+    root=ROOT/'runs/span_010';pub=REPO/'results/span_010';job=root/'jobs'/role
+    bundle=read_json(pub/(role+'_bundle.json'));verify_sources(REPO,bundle['source_sha256'])
     push=read_json(job/'push.json');exact=push['ref'].removeprefix('/code/')+'/'+str(push['version_number'])
-    original=root/'notebooks/order_pilot/job.ipynb';assert sha256(original)==bundle['notebook_sha256']
-    api=api_client();folder=root/'audited_sources/order_pilot';folder.mkdir(parents=True,exist_ok=True)
+    original=root/'notebooks'/role/'job.ipynb';assert sha256(original)==bundle['notebook_sha256']
+    api=api_client();folder=root/'audited_sources'/role;folder.mkdir(parents=True,exist_ok=True)
     read_call(lambda:api.kernels_pull(exact,path=str(folder),metadata=True,quiet=True))
     notebooks=list(folder.glob('*.ipynb'));assert len(notebooks)==1
     cells=lambda p:[(c.cell_type,c.source) for c in nbformat.read(p,4).cells]
     assert cells(original)==cells(notebooks[0]),'Accepted code differs from frozen notebook'
     metadata=read_json(folder/'kernel-metadata.json')
-    local_metadata=read_json(root/'notebooks/order_pilot/kernel-metadata.json')
+    local_metadata=read_json(root/'notebooks'/role/'kernel-metadata.json')
     assert metadata['enable_internet'] is False and metadata['docker_image']==local_metadata['docker_image']
     assert sorted(x.rsplit('/1',1)[0] for x in local_metadata['dataset_sources'])==sorted(metadata['dataset_sources'])
     proof=dict(passed=True,at=utc_now(),kernel_version=exact,notebook_sha256=bundle['notebook_sha256'],
         cell_sources_identical=True,internet_enabled=False,remote_docker_image=metadata['docker_image'],
         remote_dataset_sources=metadata['dataset_sources'])
-    atomic_json(pub/'order_pilot_source_verification.json',proof)
+    atomic_json(pub/(role+'_source_verification.json'),proof)
     if args.source_only:
         print(json.dumps(proof));return
     status=str(read_call(lambda:api.kernels_status(exact)).status).split('.')[-1]
@@ -70,13 +72,17 @@ def main():
         indices,js,work=route_indices(ids,a['probabilities'],b['probabilities'][:,[1,0,2]],np.c_[a['lengths'],b['lengths']])
         saved=np.load(out/('routing_'+name+'.npz'))
         np.testing.assert_array_equal(indices,saved['selected_indices'])
-        np.testing.assert_array_equal(js,saved['disagreement']);np.testing.assert_array_equal(work,saved['work'])
+        # NumPy/libm versions can differ at float64 roundoff in log(). Route
+        # indices remain exact; this tolerance is only for the JS diagnostic.
+        np.testing.assert_allclose(js,saved['disagreement'],rtol=1e-12,atol=1e-14)
+        np.testing.assert_array_equal(work,saved['work'])
         ar=np.load(out/('m0_reverse_routed_'+name+'.npz'));br=np.load(out/('m3_reverse_routed_'+name+'.npz'))
         assert all(np.array_equal(x['ids'],ids[indices]) for x in [ar,br])
         calculated=complete_orders(a['probabilities'],b['probabilities'],indices,ar['probabilities'],br['probabilities'])
         np.testing.assert_array_equal(calculated,actual['probabilities'])
         assert len(indices)<=int(.2*len(ids)) and work[indices].sum()<=.1*work.sum()
         records[name]=dict(rows=len(ids),selected_rows=len(indices),route_replayed=True,mixture_replayed=True,
+            max_abs_js_replay_difference=float(np.max(np.abs(js-saved['disagreement']))),
             selected_work_fraction=float(work[indices].sum()/work.sum()),mean_disagreement=float(js.mean()),
             selected_mean_disagreement=float(js[indices].mean()) if len(indices) else None)
         if frame is not None:
@@ -121,12 +127,13 @@ def main():
     assert submission.columns.tolist()==['id',*CLASSES] and np.array_equal(submission.id,test.id)
     validate_probabilities(submission[CLASSES].to_numpy(),len(test))
     np.testing.assert_allclose(submission[CLASSES],np.load(out/'ensemble_test.npz')['probabilities'],atol=1e-7)
-    result=dict(at=utc_now(),complete=True,source=proof,coverage=records,control_identity=identity,
+    result=dict(at=utc_now(),role=role,complete=True,source=proof,coverage=records,control_identity=identity,
         all_controls_passed=all(x['passed'] for x in identity.values()),descriptive_metrics=metrics,
         independent_local_quality=False,runtime_projection_seconds=projection,runtime_gate_passed=projection<32400,
         csv_sha256=sha256(csv),csv_verified=True,both_t4_verified=True,
         artifact_files_verified=len(retrieval['artifact_sha256']),measured_roles=summaries,
         base_seconds_per_row=base,reverse_seconds_per_all_row=reverse,startup_seconds=startup)
+    atomic_json(pub/('H57_'+role+'_qualification.json'),result)
     atomic_json(pub/'H57_qualification.json',result)
     print(json.dumps({k:result[k] for k in ['complete','all_controls_passed','runtime_projection_seconds','runtime_gate_passed','both_t4_verified']}))
 

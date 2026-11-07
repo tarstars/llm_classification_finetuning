@@ -41,8 +41,10 @@ def fields(obj):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--observe-only',action='store_true')
+    parser.add_argument('--role',choices=['order_pilot','order_packed'],default='order_pilot')
     args=parser.parse_args();root=ROOT/'runs/span_010';pub=REPO/'results/span_010'
-    folder=root/'official/order_completion';folder.mkdir(parents=True,exist_ok=True)
+    role=args.role
+    folder=root/'official'/role;folder.mkdir(parents=True,exist_ok=True)
     api=api_client()
     with exclusive_lock(folder/'controller.lock'):
         def save(name,value):
@@ -55,15 +57,16 @@ def main():
             assert not (folder/'submission_intent.json').exists(),'Reconcile existing intent; never resubmit'
             verify_sources(REPO,{str(Path(__file__).relative_to(REPO)):sha256(Path(__file__)),
                 'scripts/audit_span_010_order.py':sha256(REPO/'scripts/audit_span_010_order.py')})
-            gate=read_json(pub/'H57_qualification.json')
+            qualification=pub/('H57_'+role+'_qualification.json')
+            gate=read_json(qualification)
             assert all(gate[k] for k in ['complete','all_controls_passed','runtime_gate_passed','csv_verified','both_t4_verified'])
             assert not gate['independent_local_quality'] and gate['runtime_projection_seconds']<32400
-            bundle=read_json(pub/'order_pilot_bundle.json');verify_sources(REPO,bundle['source_sha256'])
-            job=root/'jobs/order_pilot';push=read_json(job/'push.json')
+            bundle=read_json(pub/(role+'_bundle.json'));verify_sources(REPO,bundle['source_sha256'])
+            job=root/'jobs'/role;push=read_json(job/'push.json')
             reference=push['ref'].removeprefix('/code/');version=push['version_number'];exact=reference+'/'+str(version)
             assert gate['source']['kernel_version']==exact
             assert gate['source']['notebook_sha256']==bundle['notebook_sha256']
-            assert sha256(root/'notebooks/order_pilot/job.ipynb')==bundle['notebook_sha256']
+            assert sha256(root/'notebooks'/role/'job.ipynb')==bundle['notebook_sha256']
             assert sha256(job/'output/submission.csv')==gate['csv_sha256']
             assert str(read_call(lambda:api.kernels_status(exact)).status).endswith('COMPLETE')
             plan=read_json(pub/'span_plan.json');fresh=public_inventory(inventory(api,plan['started_at']))
@@ -71,11 +74,11 @@ def main():
             assert q['refresh_time']==plan['initial_quota_refresh_time'],'Quota refresh requires explicit re-admission'
             charge=q['used_seconds']-plan['quota_used_at_start'];assert -.1<=charge<=21600.1
             assert len(list((root/'official').glob('*/receipt.json')))<plan['official_candidate_limit']
-            message='Span010 frozen10pct-work equal-order completion of tascj classifiers; no local-CV claim'
+            message=f'Span010 {role} frozen10pct-work equal-order completion; no local-CV claim'
             prior=list(read_call(lambda:api.competition_submissions('llm-classification-finetuning')) or [])
             assert not any(getattr(x,'description','')==message for x in prior),'Reconcile possible accepted duplicate'
             intent=dict(at=utc_now(),kernel=reference,version=version,notebook_sha256=bundle['notebook_sha256'],
-                qualification_sha256=sha256(pub/'H57_qualification.json'),controller_sha256=sha256(Path(__file__)),
+                qualification_sha256=sha256(qualification),controller_sha256=sha256(Path(__file__)),
                 quota_before=q,public_gpu_charged_seconds=charge,hidden_seconds_cap=32400,
                 projection_seconds=gate['runtime_projection_seconds'],message=message)
             write_intent(folder/'submission_intent.json',intent);atomic_json(pub/'official_submission_intent.json',intent)

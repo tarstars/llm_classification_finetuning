@@ -1,3 +1,5 @@
 {"at": "2026-11-07T07:29:32.414863+00:00", "stage": "order_pilot", "event": "pushing_one_version"}
 {"at": "2026-11-07T07:29:35.253530+00:00", "stage": "order_pilot", "event": "remote_status", "status": "QUEUED", "kernel_version": "arseniytrushin/llm-preference-span010-order-completion/1"}
 {"at": "2026-11-07T07:30:32.247835+00:00", "stage": "order_pilot", "event": "remote_status", "status": "RUNNING", "kernel_version": "arseniytrushin/llm-preference-span010-order-completion/1"}
+{"at": "2026-11-07T08:16:44.198339+00:00", "stage": "order_pilot", "event": "remote_status", "status": "COMPLETE", "kernel_version": "arseniytrushin/llm-preference-span010-order-completion/1"}
+{"at": "2026-11-07T08:17:04.403266+00:00", "stage": "order_pilot", "event": "complete", "status": "COMPLETE", "kernel_version": "arseniytrushin/llm-preference-span010-order-completion/1", "charged_seconds": 2802.478, "files": 50}

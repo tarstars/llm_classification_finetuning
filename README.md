@@ -10,6 +10,12 @@ For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
 **Active goal:** move above20th place (rank19 or better). V10 focuses E15/H57: bounded answer-order averaging of the deployed ensemble. See [the current contract](GOAL.md) and [v10 plan](docs/SPAN_010_PLAN.md).
 
+The first v10 pilot passes exact prediction controls but its conservative
+runtime is **9.166 hours**, exceeding the nine-hour limit; it is not submitted.
+A separately frozen packing-only variant tests12288instead of8192tokens per
+microbatch with unchanged models, route and weights. See [the measured result](docs/SPAN_010_ORDER_PILOT_RESULTS.md),
+[next protocol](docs/SPAN_010_PACKED_PROTOCOL.md) and [executed notebook22](notebooks/22_backlog_v10_order_completion.ipynb).
+
 **Rank30 goal achieved:** official submission **58068582** scored **0.83053**,
 verified at **30/312 teams** on2026-11-07. This improves the previous0.95481
 by0.12428. The frozen public Gemma2-9B/Llama3-8B ensemble uses the author's

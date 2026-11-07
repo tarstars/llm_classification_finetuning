@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.014041900634765625,
+        "exit_code": 0,
+        "role": "order_packed"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.013466119766235352,
+        "exit_code": 7,
+        "role": "order_packed"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.20092463493347168,
+        "exit_code": -15,
+        "role": "order_packed"
+      }
+    }
+  ],
+  "mode_checks": [
+    {
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    }
+  ],
+  "notebook_engine_startup_passed": true,
+  "new_gpu_executions": 0
+}

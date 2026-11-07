@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "base_sha256": "7bb9dc38ed6161eb0fc20a9b65703d44ac2bd900d2337502dc9f1a81c4c18e3e",
+  "packed_sha256": "763a7e56e960a7954dae41a1488fd7adb39e4f623c4fce0140b2253e77d1f5c2",
+  "only_change": "max_tokens=8192 -> max_tokens=12288",
+  "new_gpu_executions": 0
+}

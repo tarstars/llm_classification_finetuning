@@ -259,6 +259,7 @@ Reversed-order inference on a bounded disagreement subset may reduce position se
 - 2026-11-07T07:22:56+00:00 — planned: New user goal above20 permits a pre-span order-averaging experiment; preserve start snapshot and select focus separately Evidence: [docs/SPAN_010_PLAN.md](docs/SPAN_010_PLAN.md)
 - 2026-11-07T07:23:27+00:00 — running: Prospective10%work/20%rows route and equal four-prediction average frozen; preparing exact-source CPU rehearsals and bounded5400s GPU profile Evidence: [docs/SPAN_010_PLAN.md](docs/SPAN_010_PLAN.md)
 - 2026-11-07T07:36:09+00:00 — running: Frozen commit7e3be95 pushed; exact Kaggle versionarseniytrushin/llm-preference-span010-order-completion/1 accepted and RUNNING. Source read-back matches offline image/datasets;121tests plus2targeted leaderboard fixtures pass. Executed notebook22 explicitly pending; no official submission yet. Evidence: [results/span_010/order_pilot_source_verification.json](results/span_010/order_pilot_source_verification.json)
+- 2026-11-07T08:21:37+00:00 — running: First exact pilot COMPLETE,2802.478s/50files; controls and route replay pass, conservative32998.845s runtimeFAIL. No official submission. Preserve evidence and prospectively freeze only8192->12288packing change under original phase cap and unchanged1e-5/20%/600s gates. Evidence: [docs/SPAN_010_ORDER_PILOT_RESULTS.md](docs/SPAN_010_ORDER_PILOT_RESULTS.md)
 
 ### H02
 

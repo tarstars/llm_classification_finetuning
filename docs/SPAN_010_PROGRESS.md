@@ -1,30 +1,25 @@
-# V10 pilot is running; official rank remains30
+# V10: first pilot completed; packing-only variant prepared
 
-The new user goal requires rank19 or better. Initial live observation:0.83053,
-rank30/312; rank19/20cutoff0.82915. The E15/H57 protocol and source were frozen
-and pushed at7e3be95 before GPU admission. The exact accepted public notebook is
-arseniytrushin/llm-preference-span010-order-completion/1. Read-back confirms its
-serialized cells, pinned old image/datasets and disabled internet. No official
-submission has been made for v10.
+The user goal remains rank19or better. Official best stays0.83053/rank30; no v10
+submission yet. First public version arseniytrushin/llm-preference-span010-order-completion/1
+is COMPLETE, charged2802.478seconds; all50retrieved files pass hashes. Exact256row
+prediction controls have maximum difference0 for both models. Source, IDs,
+checkpoint loading, swaps, route/mixture replay, CSV and both T4s pass.
 
-E15 is complete: bounded role/cohort/batch survive sanitization, with fixtures
-and live Gemma inference progress confirming the useful identifiers. H57 remains
-running. The public worker must stop within5280seconds of notebook start; service
-cap5400seconds, phase total21600seconds. Controller uses a durable exact-version
-receipt. A lost observation handle is not evidence that the remote job stopped;
-re-poll this same version and reconcile its intent before any new mutation.
+Conservative runtime32998.845seconds FAILS the unchanged32400second limit. This
+recipe is not submitted. Uniform training-overlapping loss improves by.001232,
+with group95%[-.000199,.002712]; it is not independent quality evidence.
+See SPAN_010_ORDER_PILOT_RESULTS.md and H57_order_pilot_qualification.json.
 
-Validation:121tests passed in14.758seconds, plus two targeted leaderboard tests
-prove full pagination and the strict19-versus20completion decision. The final
-notebook subprocess cell passed success, failure, owned watchdog and real
-notebook-engine startup rehearsals. Notebook22 is executed with four code cells,
-zero errors and explicit pending measurements. This is progress evidence, not a
-claim that local or official quality improved.
+The second prospective recipe changes only packed microbatch budget8192->12288,
+with byte-equivalence proof for everything else. Three packed CPU orchestration
+fixtures, two goal/leaderboard tests and actual serialized worker/startup
+rehearsals pass. All prediction controls,20%margin,600sreserve, nine-hour hidden
+limit and original21600second phase cap remain unchanged. Its public job cap is
+5400seconds. Freeze/commit before admission and preserve both exact receipts.
 
-Next: recover terminal artifacts without another GPU execution; run
-scripts/audit_span_010_order.py for strict checkpoint/control/route/CSV/device
-and measured runtime checks. Preserve a failed runtime/identity gate. Only a
-passing audited frozen candidate can be considered for one official submission;
-scripts/submit_span_010_order.py has durable intent/receipt and observe-only mode.
-Refresh notebook22 after measured results. Overlapping training scores cannot
-establish independent quality. Only current official rank<=19completes the goal.
+Notebook22 is executed with four code cells, two figures and the first measured
+runtimeFAIL. Independent audit and submission programs now take an explicit
+--role, so a failed qualification cannot be mistaken for a different recipe.
+Never rebuild a source after its push intent, or re-submit after an ambiguous
+receipt. Only a fresh complete official rank<=19completes the goal.
