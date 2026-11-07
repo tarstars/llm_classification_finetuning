@@ -5020,6 +5020,14 @@
           "evidence": [
             "docs/SPAN_010_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-07T07:36:09+00:00",
+          "status": "running",
+          "note": "Frozen commit7e3be95 pushed; exact Kaggle versionarseniytrushin/llm-preference-span010-order-completion/1 accepted and RUNNING. Source read-back matches offline image/datasets;121tests plus2targeted leaderboard fixtures pass. Executed notebook22 explicitly pending; no official submission yet.",
+          "evidence": [
+            "results/span_010/order_pilot_source_verification.json"
+          ]
         }
       ]
     }

@@ -1,0 +1,17 @@
+{
+  "full_suite_tests": 121,
+  "full_suite_seconds": 14.758,
+  "full_suite_passed": true,
+  "additional_targeted_leaderboard_tests": 2,
+  "additional_targeted_passed": true,
+  "notebook": {
+    "path": "notebooks/22_backlog_v10_order_completion.ipynb",
+    "code_cells": 4,
+    "errors": 0,
+    "sha256": "eef1288f58b2a62bd4259d0b837a7666c2a32a54ecac7b02daed139e6fca1ecc",
+    "qualification_pending": true
+  },
+  "new_gpu_jobs": 1,
+  "official_submissions": 0,
+  "goal_achieved": false
+}

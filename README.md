@@ -60,7 +60,8 @@ two-T4 session-hours** and made no submission. See the
 
 The active backlog is **v10:40tasks**, with **36 unfinished carryovers and four
 new discoveries**: E15 retains live model/cohort labels, H55 records an earlier
-author checkpoint, and H56 revisits shared utilities using modern reward models.
+author checkpoint, H56 revisits shared utilities using modern reward models,
+and H57 adds bounded answer-order averaging for the new rank19 goal.
 E15 is done and H57 is running under the new rank19 goal; v11 is an empty draft. V9 sealed with
 E14/H54 done and the rank30 goal achieved. [The completed contract](docs/GOAL_V9.md)
 is preserved exactly; forming v10 does not authorize its execution.

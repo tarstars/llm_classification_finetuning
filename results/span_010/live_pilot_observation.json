@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-07T07:36:15.288330+00:00",
+  "status": "KernelWorkerStatus.RUNNING",
+  "kernel_version": "arseniytrushin/llm-preference-span010-order-completion/1",
+  "quota": {
+    "used_seconds": 399.914678,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 107600.085322
+  }
+}

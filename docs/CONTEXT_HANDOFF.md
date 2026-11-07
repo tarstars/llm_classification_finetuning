@@ -19,7 +19,7 @@ submissions; each hidden run needs measured conservative<9h and watchdog. Fresh
 free quota30h,0used/reserved, paid scaling off, no live jobs at initial observation.
 Heavy root/runs/span_010; aggregate files/results under results/span_010. New
 builder/run scripts are build_span_010_order.py and run_span_010_order.py.
-Commit frozen sources before GPU admission; never rebuild after push intent.
+Frozen commit7e3be95 is pushed. Exact Kaggle notebook arseniytrushin/llm-preference-span010-order-completion/1 is RUNNING; local controller handle85261. Never rebuild after its push intent. Source read-back passes. Notebook22 is executed with four cells and explicit pending measurements. Audit/review/submit scripts are prepared; do not submit before H57_qualification passes.
 Resume/observe the same exact version if any controller observation expires.
 
 GOAL.md and shared future controller change intentionally for this new goal.
