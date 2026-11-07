@@ -57,3 +57,14 @@ results/span_011/cohort_manifest.json, tests/test_span011_data.py and
 tests/test_span011_calibration.py. The phase admission records quota, original
 48hour deadline and a conservative label-free pilot forecast separately in
 results/span_011/span_plan.json. No local quality or official gain is claimed.
+
+While the exact accepted pilot remained QUEUED, the official controller was
+prepared in scripts/submit_span_011_calibration.py. It requires an independently
+confirmed loss reduction>=.001 with paired95%lower>0, a completed class/length/
+domain review, matching frozen source/temperature/evidence/output hashes and the
+original numerical/runtime gates. A CPU admission test passed for a valid witness
+and rejected absent domain review, insufficient point gain, an interval crossing
+zero, stale evidence and a changed output file. Fresh quota/jobs and a committed
+controller are required before a mutation. An accepted receipt is monitored
+without re-submission. No deployment decision or official intent exists yet;
+these checks are preparation, not evidence of calibration quality.

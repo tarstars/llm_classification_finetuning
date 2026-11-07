@@ -74,6 +74,16 @@ separately admit confirmation. Stage2recipe requires the frozen T hash.
 Notebook23 builder scripts/build_span_011_review.py reads only aggregate evidence;
 execute with escalation for local Jupyter sockets, refresh as evidence arrives.
 
+scripts/submit_span_011_calibration.py is prepared for a possible qualified
+confirmation version only. Its CPU admission test passed valid-witness and
+unreviewed/insufficient-gain/inconclusive-CI/stale-evidence/changed-CSV rejection.
+It requires results/span_011/deployment_decision.json with explicit completed
+domain review, temperature and all seven named evidence hashes, then fresh full
+quota/jobs and exact source before one official mutation. No decision/official
+intent exists. This is a guarded future path, not a quality claim. Pilot still
+QUEUED at10:55:02UTC; live controller34709 continues polling the same accepted
+version. Do not re-push or open labels while queued.
+
 Fit only T in[.5,2] on log equal-ensemble probabilities. Group-cross-fit within
 1024learning groups; positive point gain is stage2 information gate. Freeze T
 before confirmation asset upload/scoring. Confirmation needs gain>=.001 and paired
