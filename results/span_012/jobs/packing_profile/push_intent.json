@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-07T18:46:51.157051+00:00",
+  "kernel": "arseniytrushin/llm-preference-span012-packing-profile",
+  "quota_before": {
+    "used_seconds": 9922.734,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 98077.266
+  },
+  "max_session_seconds": 1800,
+  "notebook_sha256": "8e81aceb54bbfd6a096ba2eb93c3db4aa55250556998b0e882acebd424df1dec",
+  "metadata_sha256": "f66290014eebfcea373d6f9dd1cb416e6760ff3b667c7dfa21d43731dff2869f"
+}

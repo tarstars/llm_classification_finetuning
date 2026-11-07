@@ -5119,6 +5119,14 @@
           "evidence": [
             "docs/SPAN_012_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-07T18:54:27+00:00",
+          "status": "running",
+          "note": "Matched engineering probe accepted as arseniytrushin/llm-preference-span012-packing-profile/1 at18:46:54UTC, initiallyQUEUED; exact controller1111 live,1800s cap. Source read-back passed; actual cells/branches/watchdog/startup and three CPU protocol checks passed. Same loaded models/control256/full80-row warmups/8k-6k-8k bracket; no preference labels. H58remains planned until E16qualification.",
+          "evidence": [
+            "results/span_012/jobs/packing_profile/push.json"
+          ]
         }
       ]
     },

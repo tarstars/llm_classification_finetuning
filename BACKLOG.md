@@ -259,6 +259,7 @@ A matched warm performance profile can identify a valid runtime recipe and rejec
 
 - 2026-11-07T08:44:20+00:00 — planned: Measured8kfull-recipe failure and slower12kGemma component motivate a matched engineering profile before full qualification; no extra current-span GPU Evidence: [docs/SPAN_010_RUNTIME_FOLLOWUPS.md](docs/SPAN_010_RUNTIME_FOLLOWUPS.md)
 - 2026-11-07T18:36:44+00:00 — running: Starting v12bounded matched packing implementation; full protocol in docs/SPAN_012_PLAN.md: same loaded experts/control256,80-row warmups,8k/6k/8k bracket, strict1e-5 numeric controls,<=1800s. No GPU admitted yet; H58 waits for E16completion. Evidence: [docs/SPAN_012_PLAN.md](docs/SPAN_012_PLAN.md)
+- 2026-11-07T18:54:27+00:00 — running: Matched engineering probe accepted as arseniytrushin/llm-preference-span012-packing-profile/1 at18:46:54UTC, initiallyQUEUED; exact controller1111 live,1800s cap. Source read-back passed; actual cells/branches/watchdog/startup and three CPU protocol checks passed. Same loaded models/control256/full80-row warmups/8k-6k-8k bracket; no preference labels. H58remains planned until E16qualification. Evidence: [results/span_012/jobs/packing_profile/push.json](results/span_012/jobs/packing_profile/push.json)
 
 ### H58
 

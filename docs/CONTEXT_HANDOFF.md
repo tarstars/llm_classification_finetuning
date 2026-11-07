@@ -13,7 +13,7 @@ obtained an actual negative result and changed the next experiment accordingly.
 V11 is SEALED, H59done (negative result). Activev12 has41members:40unfinished
 carryovers plus E17new CPU transport diagnosis. Focus only **E16 then H58**;
 E17/H55/H56 and others remain unselected. v13draft empty. E16running preparation;
-no v12GPU admitted yet. Profile module src/arena/span012_profile.py, runner
+one v12GPU probe accepted. Profile module src/arena/span012_profile.py, runner
 scripts/run_span_012_order.py and builder scripts/build_span_012_profile.py are
 implemented. Three CPU tests passed (same-role ABA/full80row warmups/four input
 columns; numeric/speed/drift selection gates; read-only XML GPU telemetry).
@@ -21,8 +21,20 @@ The model inference core matches the original v10source exactly; packing is the
 only numerical setting varied. Actual serialized worker success/failure/watchdog,
 engineering public/hidden-denial branches and notebook-engine startup passed.
 Phase plan/config and packing_profile bundle are prepared, not pushed yet.
-Next commit/push these sources/bundle, then actual run_span_012_order.py admission
-(no redundant full dry-run inventory). Do not start H58before E16done. Prospective contract
+Frozen source1949d30 is pushed. Exact accepted job
+arseniytrushin/llm-preference-span012-packing-profile/1 at18:46:54UTC; latest18:51:50
+statusQUEUED. Live controller1111: poll it, never re-push/restart on observation
+timeout. Source read-back97423 terminal exit0, exact cells/image/assets matched.
+No E16numeric/runtime result yet. Do not start H58before E16done.
+
+scripts/audit_span_012_profile.py is implemented/compiled; its source-only mode
+passed. After exact job COMPLETE/retrieval, run full audit. It verifies old256IDs/
+lengths/token fingerprints/checkpoints, all raw diffs, ABA hardware/timing and the
+predeclared5%/10%/1e-5rule, and a conservative base-only projection. Any failed
+smaller-pack control stays failed; canonical control failure stops production.
+Production H58still needs a separate real three-pass qualification and fixed-rule
+cached replay. Do not edit immutable span012_profile.py/runner/config/plan/builder
+now: the accepted bundle hashes them. Add separate H58order driver/builder later. Prospective contract
 is committed with this handoff: matched6144/8192packing probe before the cheaper
 Llama-only answer-order completion. Do not fit new T/weights/routes from scores.
 
@@ -117,7 +129,7 @@ Preserve user-dirty notebooks07_error_poster.ipynb and12_backlog_v1_span.ipynb;
 never stage/reset them. Their hashes and42previous snapshots were verified.
 ~/notebooks/llm_classification_finetuning points to repo/notebooks.
 GitHub tarstars/llm_classification_finetuning,main. Commit/push reviewed explicit
-paths for important milestones. V11closure/v12plan commit6762497 is pushed. Current E16programs/phase/rehearsal
-bundle need commit/push before GPU admission. No accepted v12GPU source exists. Baseline winning receipt58068582
+paths for important milestones. V11closure/v12plan commit6762497 is pushed. E16frozen programs/phase/rehearsal bundle1949d30 is pushed. Admission/source
+verification/auditor are being published with the live controller handoff. Baseline winning receipt58068582
 is source arseniytrushin/llm-preference-span009-public-ensemble/4 at.83053.
 Old own-trained.95481 is historical and is not the current best.

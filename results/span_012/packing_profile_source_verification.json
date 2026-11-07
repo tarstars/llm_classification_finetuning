@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-07T18:50:16.035377+00:00",
+  "passed": true,
+  "kernel_version": "arseniytrushin/llm-preference-span012-packing-profile/1",
+  "notebook_sha256": "8e81aceb54bbfd6a096ba2eb93c3db4aa55250556998b0e882acebd424df1dec",
+  "cell_sources_identical": true,
+  "internet_enabled": false,
+  "engineering_only": true
+}
