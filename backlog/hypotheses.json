@@ -5499,6 +5499,14 @@
           "evidence": [
             "docs/H60_GEMMA_ORDER_QUALIFICATION.md"
           ]
+        },
+        {
+          "at": "2026-11-07T20:07:48+00:00",
+          "status": "running",
+          "note": "Qualified exact frozen /1 officially accepted at20:07:13UTC as receipt58103553; PENDING, controller82882 live. Fresh full jobs/quota, all four public pinned datasets and all6 prior receipts verified before the single mutation. Public research is stopped while scoring. Goal remains actual rank<=19, not local gain or qualification.",
+          "evidence": [
+            "results/span_013/official_receipt.json"
+          ]
         }
       ]
     }

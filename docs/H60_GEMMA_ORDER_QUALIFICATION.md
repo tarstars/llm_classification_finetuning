@@ -66,3 +66,8 @@ qualification. Publish the official result and final notebook before span closur
 [Frozen deployment decision](../results/span_013/deployment_decision.json) ·
 [Executed notebook25](../notebooks/25_gemma_only_order.ipynb) ·
 [Prospective protocol](SPAN_013_PLAN.md)
+
+Official trial accepted2026-11-07T20:07:13UTC as receipt58103553, exact source /1.
+Status PENDING; no new score/rank outcome yet. Fresh admission verified all four
+pinned public datasets, full jobs/quota and all six prior receipts. Observe the
+same durable receipt; no additional research GPU while scoring.

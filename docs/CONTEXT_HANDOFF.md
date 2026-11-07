@@ -1,18 +1,19 @@
-# Active goal: above20th place; v13 qualified for one official trial
+# Active goal: above20th place; v13 official receipt58103553 PENDING
 
-Snapshot2026-11-07T20:06UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot2026-11-07T20:08UTC. Read PROJECT_POLICY.md, GOAL.md,
 docs/SPAN_013_PLAN.md and docs/H60_GEMMA_ORDER_QUALIFICATION.md. Persistent goal
 is actual rank<=19 for team17244411 on a fresh complete official leaderboard.
 Latest verified19:21:42UTC: rank30/313, best0.83053, cutoff0.82915. Goal active,
 unachieved. This turn made progress: completed actual three-pass qualification,
-executed notebook25, prepared/tested one-receipt official controller.
+executed notebook25, and submitted the one qualified frozen official candidate.
 
 ## Current state and next action
 
 Backlogv13has40members, focus H60only/running; v14draft empty. Exact public
 arseniytrushin/llm-preference-span013-gemma-order/1 COMPLETE20:02:20UTC. Controller
 82852terminal exit0, source audit88195terminal exit0. All36retrieved files hash
-verified. No live public controller/GPU; no official v13receipt yet. Do not restart
+verified. No live public research controller/GPU. Official v13receipt58103553accepted
+20:07:13UTC, PENDING. Unified official controller82882 LIVE; poll this handle. Do not restart
 or rebuild the accepted source. All gates pass: base controls256both0difference,
 Gemma reverse routed42/83/6rows0difference, token/ID/checkpoint/source/CSV/bothT4
 checks, actual route/mixture replay. Original8192packing/context4096/fp16/image.
@@ -44,20 +45,32 @@ all cursor pages of prior submissions (SDK default20drops cursors), all four
 public pinned v1datasets and deadline; then writes one exclusive intent before
 one mutation. Existing receipt bypasses candidate/mutation and observes the same
 ref. Three tests pass (strict guards, pagination, existing-receipt no-mutation).
-A live full read found all6previous receipts terminal. No pending trial yet.
+A live full read found all6previous receipts terminal. The sole official trial is now PENDING as receipt58103553.
 
-Next: commit/push the reviewed qualification/notebook/decision/current controller,
-then .venv/bin/python scripts/submit_span_013_order.py exactly once. Record the
-accepted receipt/live handle and observe it. Never restart/resubmit just because
-observation times out. No researchGPU while official pending. Only an actual
-fresh fully paginated rank<=19plus final reporting can complete the goal.
-Notebook25currently3executed code cells/2figures/0errors; rebuild for pending and
-final official outcome. Builder refuses after closure. H60must remain running
-until official outcome or evidenced stop; do not mark done from local success.
+Next: observe unified session82882 and exact official receipt58103553. The public
+probe82852is terminal. Never rerun the initial submission, public builder, source
+audit or --prepare-decision while scoring; preserve the frozen evidence. An
+observation timeout is not failure: re-poll the same handle. If a monitor is
+actually terminal/missing, inspect the same receipt via API and use --observe-only
+without a new mutation. No researchGPU while official pending. This is a verified
+wait, not a blocker. Only actual fresh complete rank<=19plus final reporting can
+complete the outcome goal. On terminal result, inspect score/rank, rebuild final
+notebook25, report H60and resolve focus; preserve negative/uncertain outcomes.
+Notebook25currently3executed code cells/2figures/0errors and explicitly PENDING.
+Builder refuses after closure. Keep H60running until official outcome/evidenced
+stop. Do not mark done from local qualification.
+
+Official admission20:07UTC: no active jobs/reservations, free95105.878s/paid off,
+all four dataset sources still public v1, all6prior official receipts terminal.
+One durable intent precedes one mutation; exact source /1and frozen notebook SHA
+recorded. Public charge1671.483s. Official result has no score yet. Hidden wall
+clock includes queue/obfuscation and is not measured GPU time. The owned hidden
+watchdog/cap remain32400s. Preserve official_admission/submission_intent/receipt/
+result/state JSON files; only status/result/state will evolve during observation.
 
 Frozen public bundle source commit344c9de, acceptance/source proof2417926,
-submission/notebook preparations010f7e8 are pushed. The latest qualification is
-being published. Do not edit files in gemma_order_bundle.json (GOAL/plan/config/
+submission/notebook preparations010f7e8 are pushed. Actual qualification/frozen decision/current official controller5182478 is pushed;
+accepted receipt/pending notebook evidence is being published. Do not edit files in gemma_order_bundle.json (GOAL/plan/config/
 phase/cached replay, original inference, span013order/pipeline/builder/runner and
 worker tests). Auditor/official controller/notebook builder are separate and may
 be fixed without rewriting accepted GPU source. Full auditor alreadypassed; avoid

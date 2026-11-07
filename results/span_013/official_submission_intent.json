@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-07T20:07:11.042350+00:00",
+  "role": "gemma_order",
+  "reference": "arseniytrushin/llm-preference-span013-gemma-order",
+  "version": 1,
+  "exact": "arseniytrushin/llm-preference-span013-gemma-order/1",
+  "notebook_sha256": "e323c8e4909a2a597398ee39aeff12f7d941cf74672fb4d5c173ef6f868bff18",
+  "qualification_sha256": "925ab812dd16be5aeab1b5c649c773d82722050a73e43d6a672c914ffd68e700",
+  "projection_seconds": 30912.48602725137,
+  "quota_before": {
+    "used_seconds": 12894.122,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 95105.878
+  },
+  "hidden_seconds_cap": 32400,
+  "message": "Span013 frozen Gemma-only order averaging; original route, equal expert totals, T1",
+  "decision_sha256": "12960fd8e4c29a73d5d486cbfe27343d88eb48b9ad2dfefae62dcc0a705b49e8",
+  "controller_sha256": "3127b6a229364b6712c1d31edad803ea0f5753301bc462804109647141657786"
+}
