@@ -1,11 +1,13 @@
 # Active goal: above20th place; v13 official receipt58103553 PENDING
 
-Snapshot2026-11-07T20:08UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot2026-11-07T22:49UTC. Read PROJECT_POLICY.md, GOAL.md,
 docs/SPAN_013_PLAN.md and docs/H60_GEMMA_ORDER_QUALIFICATION.md. Persistent goal
 is actual rank<=19 for team17244411 on a fresh complete official leaderboard.
-Latest verified19:21:42UTC: rank30/313, best0.83053, cutoff0.82915. Goal active,
-unachieved. This turn made progress: completed actual three-pass qualification,
-executed notebook25, and submitted the one qualified frozen official candidate.
+Latest fully paginated22:49:25UTC: rank30/312, best0.83053, cutoff0.82915,
+leader0.82704. Goal active/unachieved. Previous waiting turns were verified waits
+on the same live official controller. Current observation also verified all
+leaderboard pages, score ordering and raw API fields: no separate rank field;
+rank is the one-based response position, and our score has no preceding tie.
 
 ## Current state and next action
 
@@ -13,7 +15,9 @@ Backlogv13has40members, focus H60only/running; v14draft contains H61 (conditiona
 arseniytrushin/llm-preference-span013-gemma-order/1 COMPLETE20:02:20UTC. Controller
 82852terminal exit0, source audit88195terminal exit0. All36retrieved files hash
 verified. No live public research controller/GPU. Official v13receipt58103553accepted
-20:07:13UTC, PENDING. Unified official controller82882 LIVE; poll this handle. Do not restart
+20:07:13UTC, still PENDING at22:48:48UTC. Unified official controller82882 LIVE;
+poll this handle. Bounded read-loop cells810and812are finished; the accepted
+official controller82882continues independently. Do not restart
 or rebuild the accepted source. All gates pass: base controls256both0difference,
 Gemma reverse routed42/83/6rows0difference, token/ID/checkpoint/source/CSV/bothT4
 checks, actual route/mixture replay. Original8192packing/context4096/fp16/image.
@@ -81,6 +85,13 @@ Original IDs results/span_010/profile_selection.json. V10cache under
 ROOT/runs/span_010/jobs/order_pilot/output/order_completion; original controls
 ROOT/runs/span_009/jobs/public_ensemble_resume/output/public_ensemble. All50older
 snapshots and user notebooks07/12hashes are preserved againstGitd7f2e5c.
+
+Current leaderboard snapshot/rank-field proof are in results/span_013/
+leaderboard_status.json and leaderboard_rank_semantics.json. Notebook25chooses
+the newest available leaderboard timestamp, so pending-era snapshots cannot
+override the eventual official/final observation. Its refreshed pending output
+is being published. No GPU recipe, source bundle, decision or official controller
+was changed.
 
 ## Prepared closure and queued discovery
 

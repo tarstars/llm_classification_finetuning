@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-11-07T22:49:25.766811+00:00",
+  "complete": true,
+  "rows": 312,
+  "record_fields": [
+    "score",
+    "submissionDate",
+    "teamId",
+    "teamName"
+  ],
+  "rank_fields": {},
+  "score_order_verified": true,
+  "rank_definition": "One-based position in the complete official API response",
+  "same_score_teams_before": 0
+}
