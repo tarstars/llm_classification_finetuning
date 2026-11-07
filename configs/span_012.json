@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-11-07T18:42:08.701634+00:00",
+  "deadline": "2026-11-09T18:42:08.701644+00:00",
+  "job_seconds_caps": {
+    "packing_profile": 1800,
+    "llama_order": 1800,
+    "llama_order_followup": 3600
+  }
+}

@@ -66,7 +66,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | 48 | [H44](#h44) | P1 / deferred | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43, E04, E05 |
 | 68 | [H53](#h53) | P1 / planned | Test the binding temperature ceiling in the stable10%judge cascade | -0.002…+0.006 | high | 0.5…2 | 0…0 | 0.3…1.5 | E00, E05, H52 |
 | 72 | [H56](#h56) | P1 / planned | Revisit shared utilities with frozen modern reward models and symmetric tie calibration | -0.015…+0.03 | high | 1…3 | 0.25…1 | 0…4 | E00, E14, H54 |
-| 74 | [E16](#e16) | P1 / planned | Profile packing on matched GPUs before full multi-orientation qualification | — | medium | 0.5…2 | 0.1…0.5 | 0…1 | E00, E14, H57 |
+| 74 | [E16](#e16) | P1 / running | Profile packing on matched GPUs before full multi-orientation qualification | — | medium | 0.5…2 | 0.1…0.5 | 0…1 | E00, E14, H57 |
 | 75 | [H58](#h58) | P1 / planned | Average only the cheaper Llama expert order on the fixed disagreement route | -0.004…+0.004 | medium | 0.5…2 | 0.1…0.5 | 0…1 | E00, E14, H57, E16 |
 | 6 | [H02](#h02) | P2 / deferred | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
@@ -231,7 +231,7 @@ A post-trained preference reward model may complement or replace a joint classif
 
 ### E16
 
-**Profile packing on matched GPUs before full multi-orientation qualification** — P1, planned, risk medium.
+**Profile packing on matched GPUs before full multi-orientation qualification** — P1, running, risk medium.
 
 A matched warm performance profile can identify a valid runtime recipe and reject infeasible candidates before paying for every orientation.
 
@@ -258,6 +258,7 @@ A matched warm performance profile can identify a valid runtime recipe and rejec
 **References:** [docs/SPAN_010_RUNTIME_FOLLOWUPS.md](docs/SPAN_010_RUNTIME_FOLLOWUPS.md)
 
 - 2026-11-07T08:44:20+00:00 — planned: Measured8kfull-recipe failure and slower12kGemma component motivate a matched engineering profile before full qualification; no extra current-span GPU Evidence: [docs/SPAN_010_RUNTIME_FOLLOWUPS.md](docs/SPAN_010_RUNTIME_FOLLOWUPS.md)
+- 2026-11-07T18:36:44+00:00 — running: Starting v12bounded matched packing implementation; full protocol in docs/SPAN_012_PLAN.md: same loaded experts/control256,80-row warmups,8k/6k/8k bracket, strict1e-5 numeric controls,<=1800s. No GPU admitted yet; H58 waits for E16completion. Evidence: [docs/SPAN_012_PLAN.md](docs/SPAN_012_PLAN.md)
 
 ### H58
 

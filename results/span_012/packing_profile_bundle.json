@@ -1,0 +1,21 @@
+{
+  "role": "packing_profile",
+  "source_sha256": {
+    "GOAL.md": "e992e7dcf5701c0e60de85cddd91fc478e09d2964dce5e8f786f4b66a980c3a8",
+    "docs/SPAN_012_PLAN.md": "e10976402c8872351d55333459af4114bd20679d93f78ad4ac03d0f552e0a066",
+    "configs/span_012.json": "3675e2f9db908e3e6c905c28198c084054cce85c958dd4512bb5607b9e9fc291",
+    "results/span_012/span_plan.json": "350df5acf2cba6b5a665c4fd3747f034e9a0e81ce7a6bee69b0186136b2edf8b",
+    "src/arena/span012_profile.py": "0a1ae1ea390dc4f1a55a9cd16b26291881fe6fa7f138c89d2d6ae44308935aef",
+    "src/arena/notebook_worker.py": "2c49e8edd28b2dabe70a21bbca9c8598458b78fcf6c7c3939cef7aeabd81bb13",
+    "src/arena/kaggle_control.py": "23f8e4d09c17647a42d5771e32400d4816e5230a4dee18a631dcd394380d1793",
+    "scripts/build_span_012_profile.py": "4f26e3f0f638d44d77d6c09f0c350be79c19097bf55ae3047dc9ff852e1ca0c8",
+    "scripts/run_span_012_order.py": "5cad5b1ce99a27922bb539fe14eaaaf104988583fc847175818d6f6f3e5fc4e9",
+    "tests/test_span012_profile.py": "c58af3f037f620b9d4dbe86af28e148b0c34e73533fcb04b727938492992a12d"
+  },
+  "notebook_sha256": "8e81aceb54bbfd6a096ba2eb93c3db4aa55250556998b0e882acebd424df1dec",
+  "metadata_sha256": "f66290014eebfcea373d6f9dd1cb416e6760ff3b667c7dfa21d43731dff2869f",
+  "public_cap_seconds": 1800,
+  "engineering_only": true,
+  "hidden_submissions_forbidden": true,
+  "visible_test_sha256": "4d6a47208951532a0b6bf862a75531806270f4782afc342125fd399682d09957"
+}

@@ -5097,7 +5097,7 @@
       ],
       "id": "E16",
       "rank": 74,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 11,
       "discovered_during": 10,
       "derived_from": [
@@ -5110,6 +5110,14 @@
           "note": "Measured8kfull-recipe failure and slower12kGemma component motivate a matched engineering profile before full qualification; no extra current-span GPU",
           "evidence": [
             "docs/SPAN_010_RUNTIME_FOLLOWUPS.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T18:36:44+00:00",
+          "status": "running",
+          "note": "Starting v12bounded matched packing implementation; full protocol in docs/SPAN_012_PLAN.md: same loaded experts/control256,80-row warmups,8k/6k/8k bracket, strict1e-5 numeric controls,<=1800s. No GPU admitted yet; H58 waits for E16completion.",
+          "evidence": [
+            "docs/SPAN_012_PLAN.md"
           ]
         }
       ]

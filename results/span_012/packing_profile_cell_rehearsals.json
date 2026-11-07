@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.02516460418701172,
+        "exit_code": 0,
+        "role": "packing_profile"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.024581193923950195,
+        "exit_code": 7,
+        "role": "packing_profile"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.20198464393615723,
+        "exit_code": -15,
+        "role": "packing_profile"
+      }
+    }
+  ],
+  "mode_checks": [
+    {
+      "hidden": false,
+      "denied": false,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "denied": true,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "denied": true,
+      "passed": true
+    }
+  ],
+  "notebook_engine_startup_passed": true,
+  "last_cell_sha256": "05f595e57ce3671eaae3d2cb38688d99c81bc6305bbb48a7b899bf578c7c0b4e",
+  "new_gpu_executions": 0
+}

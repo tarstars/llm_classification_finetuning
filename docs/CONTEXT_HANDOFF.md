@@ -12,9 +12,17 @@ obtained an actual negative result and changed the next experiment accordingly.
 
 V11 is SEALED, H59done (negative result). Activev12 has41members:40unfinished
 carryovers plus E17new CPU transport diagnosis. Focus only **E16 then H58**;
-E17/H55/H56 and others remain unselected. v13draft empty. No v12GPU admitted,
-program/phase config/notebooks not yet implemented. Begin E16bounded profile
-implementation/preparation; do not start H58before E16done. Prospective contract
+E17/H55/H56 and others remain unselected. v13draft empty. E16running preparation;
+no v12GPU admitted yet. Profile module src/arena/span012_profile.py, runner
+scripts/run_span_012_order.py and builder scripts/build_span_012_profile.py are
+implemented. Three CPU tests passed (same-role ABA/full80row warmups/four input
+columns; numeric/speed/drift selection gates; read-only XML GPU telemetry).
+The model inference core matches the original v10source exactly; packing is the
+only numerical setting varied. Actual serialized worker success/failure/watchdog,
+engineering public/hidden-denial branches and notebook-engine startup passed.
+Phase plan/config and packing_profile bundle are prepared, not pushed yet.
+Next commit/push these sources/bundle, then actual run_span_012_order.py admission
+(no redundant full dry-run inventory). Do not start H58before E16done. Prospective contract
 is committed with this handoff: matched6144/8192packing probe before the cheaper
 Llama-only answer-order completion. Do not fit new T/weights/routes from scores.
 
@@ -36,6 +44,14 @@ actual inference, no public cache/source labels. Source/IDs/swaps/checkpoints/
 CSV/two-T4/raw controls mandatory. Target25kprojection<32400s with20%margin,
 allstartup/warmup/other overhead+selectedreverse+600sreserve, owned watchdog.
 
+Prepared original v12deadline2026-11-09T18:42:08.701644+00:00 and quota period
+Nov14; initial quota used9922.734s, remaining98077.266s, reserved0, paid off.
+Preparation read quota only; actual run_job admission must refresh full jobs and
+exact public dependencies before a single push. All46snapshot/usernotebook hashes
+verified in results/span_012/preservation.json. Phase/config/source are frozen in
+packing_profile_bundle.json; do not modify them after admission. H58uses a separate
+future order-driver/builder, importing the immutable profile inference helper.
+
 New v12public cap7200seconds including retries: E16<=1800,H58<=1800, at most one
 separately admitted engineering follow-up<=3600. Max3public accepted versions,
 one fixed production recipe/one official submission. Fresh full quota/jobs/deps
@@ -56,7 +72,9 @@ ROOT/runs/span_010/jobs/order_pilot/output/order_completion.
 Use reusable run_job controller/notebook_worker, exact one intent/receipt per
 mutation, actual serialized-cell success/failure/watchdog/public-hidden/startup
 rehearsals. Avoid back-to-back full inventory dry-runs that can provoke429.
-Notebook24 will document v12actual results; it does not exist yet.
+Notebook24 will document v12actual results; it does not exist yet. E16GPU source
+is engineering-only and explicitly denies hidden competition reruns; it is not a
+submission candidate. Use a separate actual hidden-capable H58notebook later.
 
 ## Sealed v11 result and preservation
 
@@ -99,7 +117,7 @@ Preserve user-dirty notebooks07_error_poster.ipynb and12_backlog_v1_span.ipynb;
 never stage/reset them. Their hashes and42previous snapshots were verified.
 ~/notebooks/llm_classification_finetuning points to repo/notebooks.
 GitHub tarstars/llm_classification_finetuning,main. Commit/push reviewed explicit
-paths for important milestones. Current v11closure/v12plan changes need publication
-before GPU admission; no v12source bundle exists. Baseline winning receipt58068582
+paths for important milestones. V11closure/v12plan commit6762497 is pushed. Current E16programs/phase/rehearsal
+bundle need commit/push before GPU admission. No accepted v12GPU source exists. Baseline winning receipt58068582
 is source arseniytrushin/llm-preference-span009-public-ensemble/4 at.83053.
 Old own-trained.95481 is historical and is not the current best.
