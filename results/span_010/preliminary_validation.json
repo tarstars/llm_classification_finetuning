@@ -13,5 +13,7 @@
   },
   "new_gpu_jobs": 1,
   "official_submissions": 0,
-  "goal_achieved": false
+  "goal_achieved": false,
+  "historical_milestone": true,
+  "superseded_by": "results/span_010/closure_audit.json"
 }

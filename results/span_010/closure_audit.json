@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-07T09:51:56.235034+00:00",
+  "passed": true,
+  "span_outcome": "Two completed but unqualified recipes; no submission",
+  "goal_achieved": false,
+  "goal_objective": "move above 20th place in leaderboard",
+  "leaderboard": {
+    "observed_at": "2026-11-07T09:24:32.187567+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 30,
+    "teams": 311,
+    "score": 0.83053,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82711,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-06T20:28:37.696Z"
+  },
+  "prior_snapshots_preserved": 38,
+  "user_notebooks_preserved": true,
+  "exact_goal_archive_sha256": "0482c267909c3ab282eb7a1c06107619697802ec549775507098c0ea73c13617",
+  "historical_source_commit": "25d71c9",
+  "source_maps_verified": 2,
+  "public_gpu_seconds": 5835.532,
+  "public_cap_seconds": 21600,
+  "artifact_files_verified": 100,
+  "official_submissions": 0,
+  "notebook_code_cells": 4,
+  "notebook_figures": 2,
+  "notebook_errors": 0,
+  "notebook_sha256": "f85217f6a65b55bd46904650e8d3e560c2066e4136b2b93b6681e24440ca49e2",
+  "sealed_version": 10,
+  "active_version": 11,
+  "active_members": 41,
+  "unfinished_carryovers": 38,
+  "new_discoveries": [
+    "E16",
+    "H58",
+    "H59"
+  ],
+  "next_focus": [
+    "H59"
+  ],
+  "next_draft": 12,
+  "next_draft_empty": true
+}

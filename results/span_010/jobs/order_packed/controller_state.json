@@ -1,8 +1,10 @@
 {
-  "stage": "monitoring",
-  "at": "2026-11-07T08:36:47.463838+00:00",
+  "stage": "complete",
+  "at": "2026-11-07T09:20:57.485287+00:00",
   "pid": 3539313,
   "role": "order_packed",
-  "status": "RUNNING",
-  "kernel_version": "arseniytrushin/llm-preference-span010-packed-order-completion/1"
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span010-packed-order-completion/1",
+  "charged_seconds": 3033.054,
+  "files": 50
 }

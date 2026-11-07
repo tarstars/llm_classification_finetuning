@@ -21,5 +21,7 @@
   "second_source_verified": true,
   "second_kernel_version": "arseniytrushin/llm-preference-span010-packed-order-completion/1",
   "second_source_slug_reconciled": true,
-  "second_measurements_pending": true
+  "second_measurements_pending": true,
+  "historical_milestone": true,
+  "superseded_by": "results/span_010/closure_audit.json"
 }

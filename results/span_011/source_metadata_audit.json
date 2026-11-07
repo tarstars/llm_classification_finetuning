@@ -1,0 +1,104 @@
+{
+  "at": "2026-11-07T09:45:16.068271+00:00",
+  "metadata_stage_passed": true,
+  "ready_for_gpu": false,
+  "source": {
+    "dataset": "lmarena-ai/arena-human-preference-140k",
+    "revision": "6322995ab34d7c2693e3f47dd13fa5caa0789a74",
+    "gated": false,
+    "private": false,
+    "card_sha256": "2960894314c63712189097b5fe731e6342ef1bdeedc16acbd52becd8dc7cf312",
+    "license": "cc-by-4.0",
+    "download_bytes": 1613803705,
+    "dataset_bytes": 3029998372,
+    "files": [
+      ".gitattributes",
+      "README.md",
+      "data/train-00000-of-00007.parquet",
+      "data/train-00001-of-00007.parquet",
+      "data/train-00002-of-00007.parquet",
+      "data/train-00003-of-00007.parquet",
+      "data/train-00004-of-00007.parquet",
+      "data/train-00005-of-00007.parquet",
+      "data/train-00006-of-00007.parquet"
+    ],
+    "only_card_and_metadata_downloaded": true,
+    "conversation_rows_downloaded": 0,
+    "new_gpu_executions": 0,
+    "source_url": "https://huggingface.co/datasets/lmarena-ai/arena-human-preference-140k/blob/6322995ab34d7c2693e3f47dd13fa5caa0789a74/README.md"
+  },
+  "checkpoint_publications": [
+    {
+      "source": "tascj0/lmsys-checkpoints-0-0805",
+      "version": 1,
+      "last_updated": "2024-08-05T05:50:39.747Z",
+      "dataset_id": 5496762
+    },
+    {
+      "source": "tascj0/lmsys-checkpoints-3-0805",
+      "version": 1,
+      "last_updated": "2024-08-05T06:25:21.173Z",
+      "dataset_id": 5496920
+    }
+  ],
+  "checkpoint_dates_before_2025": true,
+  "row_timestamps_verified": false,
+  "conversation_format_verified": false,
+  "source_overlap_verified": false,
+  "conversation_rows_downloaded": 0,
+  "new_gpu_executions": 0,
+  "free_disk_bytes": 64536911872,
+  "target_length_audit_sha256": "ccb5ed19914939a6708c4f615ba04646a41bbe834e040d492a2e015d2f6968db",
+  "target_length_bins": [
+    0,
+    512,
+    768,
+    1024,
+    1536,
+    2048,
+    3072,
+    4096,
+    4500
+  ],
+  "target_bin_counts": [
+    13691,
+    13892,
+    12281,
+    11588,
+    3124,
+    1853,
+    616,
+    432
+  ],
+  "cohort_bin_quotas": [
+    488,
+    495,
+    438,
+    413,
+    111,
+    66,
+    22,
+    15
+  ],
+  "learning_bin_quotas": [
+    244,
+    248,
+    219,
+    207,
+    55,
+    33,
+    11,
+    7
+  ],
+  "confirmation_bin_quotas": [
+    244,
+    247,
+    219,
+    206,
+    56,
+    33,
+    11,
+    8
+  ],
+  "next_action": "Stream pinned source data, verify actual dates/format/overlap and build fixed eligible groups before scoring."
+}

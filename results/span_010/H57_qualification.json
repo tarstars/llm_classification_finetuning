@@ -1,12 +1,12 @@
 {
-  "at": "2026-11-07T08:33:26.124147+00:00",
-  "role": "order_pilot",
+  "at": "2026-11-07T09:21:44.353917+00:00",
+  "role": "order_packed",
   "complete": true,
   "source": {
     "passed": true,
-    "at": "2026-11-07T08:33:24.677976+00:00",
-    "kernel_version": "arseniytrushin/llm-preference-span010-order-completion/1",
-    "notebook_sha256": "c881bd98b950e1fbbaae20d29a4a417aaa843262cae1694ec215a6ec0de24f8e",
+    "at": "2026-11-07T09:21:43.166156+00:00",
+    "kernel_version": "arseniytrushin/llm-preference-span010-packed-order-completion/1",
+    "notebook_sha256": "b4ac54a1ce59111afdb424bfe8d4b93134118ba3e1b7a9896ed9efaf61ed7f45",
     "cell_sources_identical": true,
     "internet_enabled": false,
     "remote_docker_image": "gcr.io/kaggle-private-byod/python@sha256:e3f9bf91d1b7b36bf77554565d27c5733585fbe5e2b7f0832e068824e7accc3c",
@@ -25,12 +25,12 @@
       "mixture_replayed": true,
       "max_abs_js_replay_difference": 2.7755575615628914e-17,
       "selected_work_fraction": 0.09949411201819536,
-      "mean_disagreement": 0.013277724801915539,
-      "selected_mean_disagreement": 0.052855655489847594,
-      "descriptive_loss_reduction": 0.0012113143319158197,
+      "mean_disagreement": 0.013276528513764525,
+      "selected_mean_disagreement": 0.05284675950153374,
+      "descriptive_loss_reduction": 0.0012143995736810936,
       "descriptive_paired_group95": [
-        -0.0009474516269468313,
-        0.0033996676792281137
+        -0.0009448659009201985,
+        0.0034035769005132162
       ],
       "independent": false,
       "original_votes_seen_in_checkpoint_training": true
@@ -42,12 +42,12 @@
       "mixture_replayed": true,
       "max_abs_js_replay_difference": 5.551115123125783e-17,
       "selected_work_fraction": 0.09980524132228646,
-      "mean_disagreement": 0.014044201221932794,
-      "selected_mean_disagreement": 0.05658292158601659,
-      "descriptive_loss_reduction": 0.0012319385287382612,
+      "mean_disagreement": 0.014044315582753404,
+      "selected_mean_disagreement": 0.05658376431233507,
+      "descriptive_loss_reduction": 0.0012330978204581873,
       "descriptive_paired_group95": [
-        -0.00019943988769342992,
-        0.002712091259794665
+        -0.00019925540114395376,
+        0.0027129690446264765
       ],
       "independent": false,
       "original_votes_seen_in_checkpoint_training": true
@@ -59,12 +59,12 @@
       "mixture_replayed": true,
       "max_abs_js_replay_difference": 1.3877787807814457e-17,
       "selected_work_fraction": 0.089095825394392,
-      "mean_disagreement": 0.007928507943284958,
-      "selected_mean_disagreement": 0.034369317347348306,
-      "descriptive_loss_reduction": -0.001731667741254374,
+      "mean_disagreement": 0.007928053400323147,
+      "selected_mean_disagreement": 0.034363605237768866,
+      "descriptive_loss_reduction": -0.0017307714191157767,
       "descriptive_paired_group95": [
-        -0.005613948369356625,
-        0.0011712429164305955
+        -0.005612214511459256,
+        0.0011710844982875195
       ],
       "independent": false,
       "original_votes_seen_in_checkpoint_training": true
@@ -83,215 +83,215 @@
   "control_identity": {
     "m0": {
       "rows": 256,
-      "max_abs_probability_difference": 0.0,
-      "passed": true
+      "max_abs_probability_difference": 0.00021350383758544922,
+      "passed": false
     },
     "m3": {
       "rows": 256,
-      "max_abs_probability_difference": 0.0,
-      "passed": true
+      "max_abs_probability_difference": 0.0006123781204223633,
+      "passed": false
     }
   },
-  "all_controls_passed": true,
+  "all_controls_passed": false,
   "descriptive_metrics": [
     {
       "cohort": "control",
       "model": "base",
       "rows": 256,
-      "descriptive_log_loss": 0.5994288921356201,
+      "descriptive_log_loss": 0.59942227602005,
       "accuracy": 0.7734375,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.532220184803009,
-        "winner_model_b": 0.5318856835365295,
-        "winner_tie": 0.7651282548904419
+        "winner_model_a": 0.532217800617218,
+        "winner_model_b": 0.5318732857704163,
+        "winner_tie": 0.765123188495636
       }
     },
     {
       "cohort": "control",
       "model": "candidate",
       "rows": 256,
-      "descriptive_log_loss": 0.5982175331366005,
+      "descriptive_log_loss": 0.5982078437845952,
       "accuracy": 0.7734375,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.5305149558550516,
-        "winner_model_b": 0.5306588939358254,
-        "winner_tie": 0.7645561625427225
+        "winner_model_a": 0.5305113358592481,
+        "winner_model_b": 0.530644976923792,
+        "winner_tie": 0.7645439301044435
       }
     },
     {
       "cohort": "control",
       "model": "gemma_tta",
       "rows": 256,
-      "descriptive_log_loss": 0.654900848865509,
+      "descriptive_log_loss": 0.6548973917961121,
       "accuracy": 0.734375,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.5942992568016052,
-        "winner_model_b": 0.5882847309112549,
-        "winner_tie": 0.8111816644668579
+        "winner_model_a": 0.5942978858947754,
+        "winner_model_b": 0.5882811546325684,
+        "winner_tie": 0.8111758232116699
       }
     },
     {
       "cohort": "control",
       "model": "llama_tta",
       "rows": 256,
-      "descriptive_log_loss": 0.5628150701522827,
+      "descriptive_log_loss": 0.5628069639205933,
       "accuracy": 0.796875,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.4885011911392212,
-        "winner_model_b": 0.49780377745628357,
-        "winner_tie": 0.734398603439331
+        "winner_model_a": 0.48849767446517944,
+        "winner_model_b": 0.4977962076663971,
+        "winner_tie": 0.7343839406967163
       }
     },
     {
       "cohort": "control",
       "model": "full_four",
       "rows": 256,
-      "descriptive_log_loss": 0.5988001227378845,
+      "descriptive_log_loss": 0.5987944602966309,
       "accuracy": 0.78125,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.53254634141922,
-        "winner_model_b": 0.5310568809509277,
-        "winner_tie": 0.7635400295257568
+        "winner_model_a": 0.5325444936752319,
+        "winner_model_b": 0.531050980091095,
+        "winner_tie": 0.763529896736145
       }
     },
     {
       "cohort": "uniform",
       "model": "base",
       "rows": 512,
-      "descriptive_log_loss": 0.6542420983314514,
+      "descriptive_log_loss": 0.6542433500289917,
       "accuracy": 0.75,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.5523418188095093,
-        "winner_model_b": 0.5459375381469727,
-        "winner_tie": 0.8351376056671143
+        "winner_model_a": 0.5523415207862854,
+        "winner_model_b": 0.5459346771240234,
+        "winner_tie": 0.8351435661315918
       }
     },
     {
       "cohort": "uniform",
       "model": "candidate",
       "rows": 512,
-      "descriptive_log_loss": 0.6530101634188641,
+      "descriptive_log_loss": 0.6530102376784461,
       "accuracy": 0.75390625,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.5514068760699291,
-        "winner_model_b": 0.5459549828191231,
-        "winner_tie": 0.8326086131791295
+        "winner_model_a": 0.5514042253261732,
+        "winner_model_b": 0.5459552407724857,
+        "winner_tie": 0.8326109855931165
       }
     },
     {
       "cohort": "uniform",
       "model": "gemma_tta",
       "rows": 512,
-      "descriptive_log_loss": 0.7101415395736694,
+      "descriptive_log_loss": 0.71014404296875,
       "accuracy": 0.728515625,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.6122227311134338,
-        "winner_model_b": 0.6026079654693604,
-        "winner_tie": 0.8868223428726196
+        "winner_model_a": 0.6122251749038696,
+        "winner_model_b": 0.6026002764701843,
+        "winner_tie": 0.886833131313324
       }
     },
     {
       "cohort": "uniform",
       "model": "llama_tta",
       "rows": 512,
-      "descriptive_log_loss": 0.614457368850708,
+      "descriptive_log_loss": 0.6144576072692871,
       "accuracy": 0.76171875,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.5100271701812744,
-        "winner_model_b": 0.5044246315956116,
-        "winner_tie": 0.7990520596504211
+        "winner_model_a": 0.5100276470184326,
+        "winner_model_b": 0.5044234991073608,
+        "winner_tie": 0.7990531325340271
       }
     },
     {
       "cohort": "uniform",
       "model": "full_four",
       "rows": 512,
-      "descriptive_log_loss": 0.6532680988311768,
+      "descriptive_log_loss": 0.6532691717147827,
       "accuracy": 0.75,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.552922248840332,
-        "winner_model_b": 0.5446683764457703,
-        "winner_tie": 0.8330095410346985
+        "winner_model_a": 0.5529236197471619,
+        "winner_model_b": 0.544663667678833,
+        "winner_tie": 0.8330152630805969
       }
     },
     {
       "cohort": "long",
       "model": "base",
       "rows": 64,
-      "descriptive_log_loss": 0.8965277671813965,
+      "descriptive_log_loss": 0.8965346813201904,
       "accuracy": 0.609375,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.7359507083892822,
-        "winner_model_b": 0.8728689551353455,
-        "winner_tie": 1.1391260623931885
+        "winner_model_a": 0.7359606027603149,
+        "winner_model_b": 0.8728760480880737,
+        "winner_tie": 1.1391284465789795
       }
     },
     {
       "cohort": "long",
       "model": "candidate",
       "rows": 64,
-      "descriptive_log_loss": 0.8982594598355297,
+      "descriptive_log_loss": 0.8982654252652902,
       "accuracy": 0.609375,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.7382861260767306,
-        "winner_model_b": 0.8757520604568292,
-        "winner_tie": 1.1383828908450058
+        "winner_model_a": 0.7382929875431123,
+        "winner_model_b": 0.8757592298561419,
+        "winner_tie": 1.1383859261545037
       }
     },
     {
       "cohort": "long",
       "model": "gemma_tta",
       "rows": 64,
-      "descriptive_log_loss": 0.9070445895195007,
+      "descriptive_log_loss": 0.9070452451705933,
       "accuracy": 0.625,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.783266007900238,
-        "winner_model_b": 0.8928489089012146,
-        "winner_tie": 1.0881046056747437
+        "winner_model_a": 0.7832671999931335,
+        "winner_model_b": 0.892848789691925,
+        "winner_tie": 1.08810555934906
       }
     },
     {
       "cohort": "long",
       "model": "llama_tta",
       "rows": 64,
-      "descriptive_log_loss": 0.9087837934494019,
+      "descriptive_log_loss": 0.9087904095649719,
       "accuracy": 0.546875,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.7353457808494568,
-        "winner_model_b": 0.8738683462142944,
-        "winner_tie": 1.1845790147781372
+        "winner_model_a": 0.7353548407554626,
+        "winner_model_b": 0.8738678097724915,
+        "winner_tie": 1.1845930814743042
       }
     },
     {
       "cohort": "long",
       "model": "full_four",
       "rows": 64,
-      "descriptive_log_loss": 0.9017043709754944,
+      "descriptive_log_loss": 0.9017079472541809,
       "accuracy": 0.609375,
       "independent": false,
       "class_log_loss": {
-        "winner_model_a": 0.7511060237884521,
-        "winner_model_b": 0.8773030638694763,
-        "winner_tie": 1.1324803829193115
+        "winner_model_a": 0.7511119246482849,
+        "winner_model_b": 0.877302885055542,
+        "winner_tie": 1.1324868202209473
       }
     }
   ],
   "independent_local_quality": false,
-  "runtime_projection_seconds": 32998.84512709851,
+  "runtime_projection_seconds": 36586.53629178088,
   "runtime_gate_passed": false,
   "csv_sha256": "2a063205421f8aa0b222fe750d5dac2abdefa21e39d2c98db4b647bc410fff0e",
   "csv_verified": true,
@@ -300,11 +300,11 @@
   "measured_roles": {
     "m0": {
       "role": "m0",
-      "cold_seconds": 128.971445458,
+      "cold_seconds": 117.40351724899998,
       "cohorts": {
         "warmup": {
           "rows": 8,
-          "seconds": 22.238693171000023,
+          "seconds": 21.349264382,
           "tokens": 6366,
           "max_tokens": 1380,
           "token_ids_sha256": "ec11b4a7ecc93d32368723bc5eee7b2e3765bf83473b2985c050a436b5129afb",
@@ -319,62 +319,62 @@
         },
         "control": {
           "rows": 256,
-          "seconds": 138.147384424,
+          "seconds": 173.46795764400002,
           "tokens": 240851,
           "max_tokens": 4330,
           "token_ids_sha256": "4015e2ba9056bdc0b48938ed155b367669bd99bd29f9c6ecc83972ea260d0b84",
           "peak_allocated_bytes": [
-            10973638144,
-            9105754112
+            11356020224,
+            9488679936
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11389632512
           ]
         },
         "uniform": {
           "rows": 512,
-          "seconds": 280.14618286099994,
+          "seconds": 312.998724686,
           "tokens": 477424,
           "max_tokens": 4330,
           "token_ids_sha256": "8f6eeb69e3c4a8193140ea3d6d596af5edc27a93f9d4a72091ea1f66f4be6f50",
           "peak_allocated_bytes": [
-            10930763264,
-            9108442112
+            11309442560,
+            9486909440
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         },
         "long": {
           "rows": 64,
-          "seconds": 178.22377125600008,
+          "seconds": 196.71418663500003,
           "tokens": 276229,
           "max_tokens": 4330,
           "token_ids_sha256": "d608e39edf4ee1625ab606373b97b0cb0192cfb18a1c3206fa86eb28a5fe6edc",
           "peak_allocated_bytes": [
-            10892544512,
-            9070341120
+            11296007680,
+            9473769472
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         },
         "test": {
           "rows": 3,
-          "seconds": 2.947387811999988,
+          "seconds": 3.039762054999983,
           "tokens": 2936,
           "max_tokens": 1951,
           "token_ids_sha256": "996f7403e8e8d9b1fb96dfbb92b743bb02a4d7883892aa372021cd11e4787cfc",
           "peak_allocated_bytes": [
-            10472746496,
-            8619234304
+            10472400384,
+            8619269120
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         }
       },
@@ -389,11 +389,11 @@
     },
     "m3": {
       "role": "m3",
-      "cold_seconds": 166.77969717899998,
+      "cold_seconds": 167.26750085000003,
       "cohorts": {
         "warmup": {
           "rows": 8,
-          "seconds": 16.758742843999926,
+          "seconds": 16.717212288999917,
           "tokens": 6227,
           "max_tokens": 1361,
           "token_ids_sha256": "a8d30dc84fc444b164d9584642292de304b3bebd1691ee6b04e7802abf392d90",
@@ -408,62 +408,62 @@
         },
         "control": {
           "rows": 256,
-          "seconds": 104.463091351,
+          "seconds": 118.39942188400005,
           "tokens": 233953,
           "max_tokens": 4330,
           "token_ids_sha256": "159305f636305c46bc4cea9da26c6f8080050392c2fa6b0c33662a48d303019a",
           "peak_allocated_bytes": [
-            8862224896,
-            7810156544
+            9259609600,
+            8209188864
           ],
           "peak_reserved_bytes": [
-            11280580608,
-            10244587520
+            11720982528,
+            10684989440
           ]
         },
         "uniform": {
           "rows": 512,
-          "seconds": 207.29854497799988,
+          "seconds": 227.07928788200002,
           "tokens": 462769,
           "max_tokens": 4330,
           "token_ids_sha256": "e9b8f367f489125fd0cae8395fe0112b8a4ac93a4a48818cea9ff960ccb4edaf",
           "peak_allocated_bytes": [
-            8887666176,
-            7807920128
+            9246860800,
+            8212883456
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         },
         "long": {
           "rows": 64,
-          "seconds": 130.44394642600014,
+          "seconds": 131.57808013599993,
           "tokens": 276423,
           "max_tokens": 4333,
           "token_ids_sha256": "6e0f08197545d18acf3a90444912d308d30fd94c1446cde57d3751a2f2363b63",
           "peak_allocated_bytes": [
-            8823183872,
-            7789240832
+            8902002176,
+            7856584704
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         },
         "test": {
           "rows": 3,
-          "seconds": 2.1225409319999926,
+          "seconds": 2.16652001500006,
           "tokens": 2787,
           "max_tokens": 1816,
           "token_ids_sha256": "e5fd6d2547a78633b8231a60155bb7f6aa3260a0213e13979b24a42be7ab73eb",
           "peak_allocated_bytes": [
-            8348276224,
-            7278939136
+            8383747584,
+            7278973952
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         }
       },
@@ -478,11 +478,11 @@
     },
     "m3_reverse": {
       "role": "m3_reverse",
-      "cold_seconds": 47.30780770699994,
+      "cold_seconds": 46.938259187000085,
       "cohorts": {
         "warmup": {
           "rows": 8,
-          "seconds": 7.560489700999824,
+          "seconds": 7.714894302999937,
           "tokens": 6227,
           "max_tokens": 1361,
           "token_ids_sha256": "79502b3c26a5c06e19e6a89ed752d228804824c87ed5ac5026b02e57145c7e77",
@@ -497,107 +497,107 @@
         },
         "control": {
           "rows": 256,
-          "seconds": 105.67941229400003,
+          "seconds": 116.24942112999997,
           "tokens": 233951,
           "max_tokens": 4330,
           "token_ids_sha256": "ff540270ffb1c4ea09d34f9c91f4a2c7b99848a81327493a64a4e987019424dc",
           "peak_allocated_bytes": [
-            8862224896,
-            7810156544
+            9259609600,
+            8209188864
           ],
           "peak_reserved_bytes": [
-            11280580608,
-            10244587520
+            11720982528,
+            10684989440
           ]
         },
         "uniform": {
           "rows": 512,
-          "seconds": 207.538807508,
+          "seconds": 227.32256890100007,
           "tokens": 462769,
           "max_tokens": 4330,
           "token_ids_sha256": "e6e68ba9155ef7317ba29bfb74d606697e86b85226200080493460b51f90be0f",
           "peak_allocated_bytes": [
-            8887666176,
-            7807920128
+            9246860800,
+            8212883456
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         },
         "long": {
           "rows": 64,
-          "seconds": 130.1802814299997,
+          "seconds": 131.77240827900005,
           "tokens": 276425,
           "max_tokens": 4333,
           "token_ids_sha256": "bd4067fd85fb71f956c79d1069e709519c5b1f9e7d1d19b20b279a89f664f12d",
           "peak_allocated_bytes": [
-            8823183872,
-            7789240832
+            8902002176,
+            7856584704
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         },
         "test": {
           "rows": 3,
-          "seconds": 2.1164709290001156,
+          "seconds": 2.1600896169998123,
           "tokens": 2787,
           "max_tokens": 1816,
           "token_ids_sha256": "4761649b8318fd426df8c4052e462c554c05025bf03104f72c29ff137bcd0578",
           "peak_allocated_bytes": [
-            8348276224,
-            7278939136
+            8383747584,
+            7278973952
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         },
         "routed_control": {
           "rows": 42,
-          "seconds": 13.448348328000066,
+          "seconds": 16.14673996800002,
           "tokens": 26412,
           "max_tokens": 1704,
           "token_ids_sha256": "c275033f70c24bcff515ccc8c5ee7fce218e2a61cf4a7cd14af8d6a120e5e5b9",
           "peak_allocated_bytes": [
-            8816616960,
-            7767120896
+            9263284736,
+            8212924416
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         },
         "routed_uniform": {
           "rows": 83,
-          "seconds": 23.800801929000045,
+          "seconds": 28.05773989499994,
           "tokens": 50776,
           "max_tokens": 1236,
           "token_ids_sha256": "9b24258918a6362992ef0eb3d054577b9f55de5930259577ba379036e90170b9",
           "peak_allocated_bytes": [
-            8831245824,
-            7797302272
+            9248669184,
+            8199103488
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         },
         "routed_long": {
           "rows": 6,
-          "seconds": 14.49086628799978,
+          "seconds": 15.315438961999917,
           "tokens": 25301,
           "max_tokens": 4333,
           "token_ids_sha256": "5bf6abb5c977c903a4e45bf0bb862964ffd20bc9bd77b15b2a5b3738d63758ab",
           "peak_allocated_bytes": [
-            8823183872,
-            7789240832
+            8910063104,
+            7856584704
           ],
           "peak_reserved_bytes": [
-            11347689472,
-            10311696384
+            12425625600,
+            11389632512
           ]
         },
         "routed_test": {
@@ -618,11 +618,11 @@
     },
     "m0_reverse": {
       "role": "m0_reverse",
-      "cold_seconds": 126.36786470800007,
+      "cold_seconds": 109.04194474600035,
       "cohorts": {
         "warmup": {
           "rows": 8,
-          "seconds": 10.226581017999706,
+          "seconds": 10.591891352999937,
           "tokens": 6366,
           "max_tokens": 1380,
           "token_ids_sha256": "48dfad52e4fb96451d2876ee7aabd5972e8b347b302430a4f76a4cf36024a63d",
@@ -637,107 +637,107 @@
         },
         "control": {
           "rows": 256,
-          "seconds": 140.16675014200018,
+          "seconds": 174.15602996299958,
           "tokens": 240851,
           "max_tokens": 4330,
           "token_ids_sha256": "077ffeff9da334c85352a3ceba07aa58af5ca22119a278c078cc8933556ce6c3",
           "peak_allocated_bytes": [
-            10973638144,
-            9105754112
+            11356020224,
+            9488679936
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11389632512
           ]
         },
         "uniform": {
           "rows": 512,
-          "seconds": 280.56278340300014,
+          "seconds": 313.5175218720001,
           "tokens": 477424,
           "max_tokens": 4330,
           "token_ids_sha256": "399f64e30d8c0f90419031be34e40b598e415a444e0ac21e76c0f4331676ee66",
           "peak_allocated_bytes": [
-            10930763264,
-            9108442112
+            11309442560,
+            9486909440
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         },
         "long": {
           "rows": 64,
-          "seconds": 178.1210815459999,
+          "seconds": 197.55575785699966,
           "tokens": 276231,
           "max_tokens": 4330,
           "token_ids_sha256": "6573d97ccaa0ddf4a74f0956e377c23517c41c5ff54edc3ee05b1fa6957d65fb",
           "peak_allocated_bytes": [
-            10892637696,
-            9070434304
+            11296194048,
+            9473955840
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         },
         "test": {
           "rows": 3,
-          "seconds": 2.929405263999797,
+          "seconds": 3.0761997889999293,
           "tokens": 2936,
           "max_tokens": 1951,
           "token_ids_sha256": "1dff019e7ee44738ca605eefbcedb0547407f69cb3f4ef9bf3dd46f1a2d4cbca",
           "peak_allocated_bytes": [
-            10472746496,
-            8619234304
+            10472400384,
+            8619269120
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         },
         "routed_control": {
           "rows": 42,
-          "seconds": 18.06203580300007,
+          "seconds": 22.22481038800015,
           "tokens": 27209,
           "max_tokens": 1741,
           "token_ids_sha256": "33330f136636476773134f18defd35c4362744a06012f80d03e88f5d3262d1b9",
           "peak_allocated_bytes": [
-            10927834624,
-            9105305600
+            11282027008,
+            9459790336
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         },
         "routed_uniform": {
           "rows": 83,
-          "seconds": 32.71408717600025,
+          "seconds": 37.551915717000156,
           "tokens": 51841,
           "max_tokens": 1255,
           "token_ids_sha256": "f1c3e4fd8bd682861bdcae224d2e9eb55117e92031a11ca2650a49130b72e307",
           "peak_allocated_bytes": [
-            10925059584,
-            9100908032
+            11303850496,
+            9480851968
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         },
         "routed_long": {
           "rows": 6,
-          "seconds": 19.22842873000036,
+          "seconds": 22.481636993999928,
           "tokens": 25098,
           "max_tokens": 4330,
           "token_ids_sha256": "fde011050e5ec5d8f29abe148d5e57e7d309026badbffd189981414fbe35b207",
           "peak_allocated_bytes": [
-            10892637696,
-            9070434304
+            11296194048,
+            9473955840
           ],
           "peak_reserved_bytes": [
-            13111394304,
-            11186208768
+            13394509824,
+            11391729664
           ]
         },
         "routed_test": {
@@ -757,7 +757,7 @@
       "loading_exact": true
     }
   },
-  "base_seconds_per_row": 0.9520404840605465,
-  "reverse_seconds_per_all_row": 0.1103806427832037,
-  "startup_seconds": 526.2113217859994
+  "base_seconds_per_row": 1.0548398682968751,
+  "reverse_seconds_per_all_row": 0.1281438586171877,
+  "startup_seconds": 497.0244843590002
 }

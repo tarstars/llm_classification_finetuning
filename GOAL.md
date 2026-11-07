@@ -1,31 +1,36 @@
-# Move above 20th place on the leaderboard
+# Move above20th place: v11 confidence calibration
 
-User objective: **move above 20th place in leaderboard**. Success means a fresh,
-fully paginated Kaggle leaderboard observation puts team17244411 at **rank19 or
-better**, following legitimate model inference and official scoring. A score tied
-with the current cutoff does not establish success. Keep this outcome active
-across bounded spans until achieved, explicitly paused or genuinely blocked.
+Persistent user objective: **move above20th place in leaderboard**. Success is a
+fresh fully paginated Kaggle observation with team17244411 at rank<=19 after
+legitimate model inference and official scoring. A local metric or completed
+span does not satisfy the goal. Keep it active across bounded spans until
+achieved, explicitly paused or genuinely blocked under the goal-service rules.
 
-At2026-11-07 07:17UTC we are30/312, log loss0.83053. Places13–20 have0.82915;
-we need to improve by more than0.00138 at that threshold. The target can move.
-The completed previous contract is preserved unchanged in docs/GOAL_V9.md.
+At2026-11-07 09:24:32UTC: official0.83053/rank30/311, rank19/20cutoff0.82915.
+V10 completed two unqualified recipes with no submission; preserve its exact
+contract in docs/GOAL_V10.md and all results. The target can change.
 
-Begin v10 with docs/SPAN_010_PLAN.md: E15 (useful progress telemetry) and H57
-(cost-bounded answer-order averaging of the deployed supervised ensemble).
-Preserve both checkpoints, their author processing and equal weights. Prioritize
-valid inference, measured runtime, prospective rules and reproducible evidence.
-Local original-vote scores overlap checkpoint training and are descriptive only.
-Do not calibrate or select mixture weights against leaderboard feedback.
+Execute docs/SPAN_011_PLAN.md, initial focus **H59**. Audit pinned2025Arena human
+votes for chronological/duplicate independence from the frozen2024classifiers,
+then test one group-fitted temperature on the unchanged equal Gemma/Llama
+baseline at8192packing. Select2048eligible groups before labels, matching fixed
+label-free prepared-length bins; stage1024learning
+and1024untouched confirmation groups. No additional model pass or backbone fit.
+Do not fit expert weights, tie offsets or parameters to leaderboard feedback.
+Independent-source confirmation is out-of-time evidence, not competition CV.
 
-Use free Kaggle compute only: this phase public GPU total<=21600seconds,
-initial pilot<=5400seconds, at most two frozen candidate recipes/two official
-submissions. Each hidden run needs a measured conservative projection below
-32400seconds and an owned watchdog. Count retries/failures; refreshed quota
-does not enlarge this phase. Paid scaling and external text APIs remain off.
-CPU analysis: two threads, <=6GiB RSS target, <=3hours before plan review.
-An unsuccessful bounded span does not complete this rank objective.
+Use only free Kaggle compute. This new public phase<=21600s including retries,
+initial pilot<=5400s, separately admitted follow-up<=7200s, at most two frozen
+recipes/two official submissions. Each hidden run needs measured conservative
+<32400s with20%margin, all startup/warmup and600sreserve, plus owned watchdog.
+No research GPU while an official receipt is pending, paid scaling or external
+text inference API. Refresh quota/jobs and freeze the original quota period and
+48hour observation deadline before admission; a quota refresh does not extend
+caps. CPU heavy preparation<=one hour before review, two threads,6GiB target;
+download<=2GBcompressed and stream nested data in bounded batches.
 
-Store heavy artifacts under database/llm_classification_finetuning/runs/span_010;
-keep source, aggregate evidence, an executed results notebook and memory in Git.
-Use the backlog CLI, preserve all historical snapshots and user notebooks07/12,
-and commit/push important milestones. Queue discoveries for the next span.
+Keep raw data, labels and predictions under database/llm_classification_finetuning/runs/span_011.
+Keep programs, executed notebook23, aggregates and Markdown memory in Git;
+commit/push important results. Preserve dirty notebooks07/12, the notebook link
+and all historical snapshots. E16/H58/H55/H56 and other tasks remain unselected.
+Queue discoveries in v12. A failed v11 does not complete the above20goal.

@@ -8,13 +8,16 @@ Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
-**Active goal:** move above20th place (rank19 or better). V10 focuses E15/H57: bounded answer-order averaging of the deployed ensemble. See [the current contract](GOAL.md) and [v10 plan](docs/SPAN_010_PLAN.md).
+**Active goal:** move above20th place (rank19 or better). V11 initially focuses
+H59: audit later Arena votes and test one temperature on the unchanged two-expert
+baseline. See [the current contract](GOAL.md) and [v11 plan](docs/SPAN_011_PLAN.md).
 
-The first v10 pilot passes exact prediction controls but its conservative
-runtime is **9.166 hours**, exceeding the nine-hour limit; it is not submitted.
-A separately frozen packing-only variant tests12288instead of8192tokens per
-microbatch with unchanged models, route and weights. See [the measured result](docs/SPAN_010_ORDER_PILOT_RESULTS.md),
-[next protocol](docs/SPAN_010_PACKED_PROTOCOL.md) and [executed notebook22](notebooks/22_backlog_v10_order_completion.ipynb).
+V10 completed two order-completion pilots but neither qualified: conservative
+runtime **9.166 /10.163hours**, with the second also failing the strict numerical
+control. No official submission was made; best official remains **0.83053,
+rank30/311** at the final live read. Public GPU charge was **1.621hours** within
+the six-hour cap. See [v10 results](docs/SPAN_010_RESULTS.md),
+[completion](docs/SPAN_010_COMPLETION.md) and [executed notebook22](notebooks/22_backlog_v10_order_completion.ipynb).
 
 **Rank30 goal achieved:** official submission **58068582** scored **0.83053**,
 verified at **30/312 teams** on2026-11-07. This improves the previous0.95481
@@ -64,13 +67,12 @@ two-T4 session-hours** and made no submission. See the
 [pipeline theory](docs/PIPELINE_THEORY.md), and
 [review of skipped work](docs/SPAN_007_CARRYOVER_REVIEW.md).
 
-The active backlog is **v10:40tasks**, with **36 unfinished carryovers and four
-new discoveries**: E15 retains live model/cohort labels, H55 records an earlier
-author checkpoint, H56 revisits shared utilities using modern reward models,
-and H57 adds bounded answer-order averaging for the new rank19 goal.
-E15 is done and H57 is running under the new rank19 goal; v11 is an empty draft. V9 sealed with
-E14/H54 done and the rank30 goal achieved. [The completed contract](docs/GOAL_V9.md)
-is preserved exactly; forming v10 does not authorize its execution.
+The active backlog is **v11:41tasks**, with **38 unfinished carryovers and three
+new discoveries**: E16 matched performance profiling, H58 one-expert order
+averaging and H59 confidence calibration using later votes. H59 is the initial
+focus; the others remain unselected. V12 is an empty draft. V10 sealed E15/H57
+with no submission. [Its contract](docs/GOAL_V10.md) and all failures are preserved;
+the persistent above20goal continues under the new bounded plan.
 
 V6's frozen source-strength transfer had an inconclusive gain of
 0.000876 [−0.000390, 0.002173] and made no submission. See
@@ -144,9 +146,9 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v10**, with **40 tasks**, focusing E15/H57 under the new goal.
-Its four new discoveries retain provenance and bounded tests; unfinished work
-is carried forward. [The next-version view](backlog/NEXT.md) is the empty v11 draft.
+The active version is **v11**, with **41 tasks**, initially focusing H59.
+Its three new discoveries retain provenance and bounded tests; unfinished work
+is carried forward. [The next-version view](backlog/NEXT.md) is the empty v12 draft.
 Completed dependencies
 alone do not establish scientific readiness: H44's original 20% route remains
 infeasible. H50 completed context qualification without a submission after its

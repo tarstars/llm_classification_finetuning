@@ -1,96 +1,102 @@
-# Active goal: above20th place (rank19 or better)
+# Active goal: above20th place; v11 H59 source preparation
 
-Updated2026-11-07 after the first v10 pilot. Read GOAL.md, PROJECT_POLICY.md,
-docs/SPAN_010_PLAN.md and docs/SPAN_010_PACKED_PROTOCOL.md. The goal stays active
-until a fresh full leaderboard shows team17244411 at rank<=19. Current best official
-remains0.83053/rank30 (v9 submission58068582); last full read07:36UTC had311teams,
-rank19/20cutoff0.82915. Ties at the cutoff do not prove above20. No v10 official
-submission yet. The first goal turn made progress; the next verified the live
-pilot and recovered terminal results. This is not a blocked condition.
+Snapshot2026-11-07 after v10closure. Read PROJECT_POLICY.md, GOAL.md and
+docs/SPAN_011_PLAN.md. Persistent goal is rank<=19 on a fresh complete Kaggle
+leaderboard for team17244411, not a local metric or a finished span. Latest
+verified09:24:32UTC: rank30/311, official0.83053, rank19/20threshold0.82915.
+Goal remains active and unachieved. No genuine blocker is present.
 
-## Current span and resources
+## Current backlog and next action
 
-V10 has40members, focus E15done/H57running; v11draft contains E16/H58/H59. H55/H56 unselected.
-The persistent user goal authorizes this new span after completed rank30; old
-rank30 stop rules are historical. Public phase21600s total, same quota period
-and deadline2026-11-08T07:27:25UTC. Initial pilot charged2802.478s; second prospective
-job<=5400s fits the remaining cap. At most two frozen recipes/two official
-submissions; no paid scaling or external text API. Each hidden run needs measured
-conservative<32400s with20%margin, all startup/warmup and600sreserve. Never lower
-a gate to admit a failed result. All historical snapshots and user notebooks07/12
-are preserved. No subagents. Scope searches to this project/named heavy folders.
+V10 is sealed with E15/H57done. Active v11 has41members (38unfinished carryovers
+plus E16/H58/H59), focus **H59running only**; v12empty. E16/H58/H55/H56 remain
+unselected. H59prepares independent-source confidence calibration of the unchanged
+8192packing equal Gemma/Llama baseline, no extra model pass/backbone fit.
 
-## First pilot is terminal, not submitted
+Current program scripts/audit_span_011_sources.py passed metadata stage:
+both exact public datasets are stillversion1, lastUpdated2024-08-05 at05:50/06:25UTC.
+Official Arena140k source revision6322995ab34d7c2693e3f47dd13fa5caa0789a74 is pinned,
+cardSHA2960894314c63712189097b5fe731e6342ef1bdeedc16acbd52becd8dc7cf312,
+ungated; about1.6138GB compressed. Only card/metadata downloaded: **zero
+conversation rows and zero v11 GPU jobs**. Actual row timestamps, format,
+duplicates and eligible support still need verification. ready_for_gpu=False.
+Evidence: results/span_011/source_metadata_audit.json. About64GB disk was free.
 
-Exact arseniytrushin/llm-preference-span010-order-completion/1 COMPLETE;
-local observer85261 finished.50files retrieved and hash-verified. Independent
-H57_order_pilot_qualification.json: both256row base controls match v9 exactly
-(maxdifference0); checkpoints/IDs/lengths/routes/four-way alignment/CSV/bothT4s pass.
-Projection32998.845s (9.16635h) FAILS9h by598.845s. Preserve this version and failure.
-See docs/SPAN_010_ORDER_PILOT_RESULTS.md. Source commit7e3be95, auxiliary9f2e11a.
+scripts/download_span_011_source.py is prepared: exact seven-shard size/LFS-hash
+guards, <=2GBcompressed, original30minute resumable intent deadline, no row
+parsing/scoring and ready_for_gpu=False. Run/observe this downloader after the
+closing publication, then implement the streaming cohort preparation program. Download
+seven pinned Parquet shards under ROOT/runs/span_011 (<=2GBcompressed); process
+projected columns in batches, two threads,6GiB target, <=one heavy hour before
+review. Do not expand3GBnested data at once. Select English, first evaluation,
+single-turn text pairs with identical user history and actual date>2024-08-05.
+Exclude known competition canonical triples including swaps, keep one row per
+prompt/session group, and select before labels. Use cached source Gemma tokenizer
+and author ProcessorPAB (see scripts/audit_span_009_lengths.py) for prepared
+lengths; verify tokenizer/source hashes and the existing CPU/GPU control.
 
-Fixed route: Jensen-Shannon expert disagreement/work, workproxy=sum(n*max(1,n/2048)),
-<=10%work and<=20%rows, deterministic ID tie-break. Equal four aligned predictions
-on routed rows, original equal Gemma/Llama mean otherwise. Uniform512route83rows,
-work9.9805%. Descriptive loss0.654242->0.653010 (gain.001232, group95%[-.000199,.002712]);
-not independent: both models trained original votes. Do not fit weights to these
-losses or official feedback. Float64 JS replay differed<6e-17 across libm/NumPy;
-auditor uses1e-12relative/1e-14absolute for JS only, exact route indices and unchanged
-1e-5prediction controls. The runtimeFAIL remains unchanged.
+Frozen target length bins [0,512,768,1024,1536,2048,3072,4096,4500] from the verified
+full57477-row label-free audit. Total2048 quotas [488,495,438,413,111,66,22,15];
+learning1024 [244,248,219,207,55,33,11,7], confirmation1024the remainder.
+Use deterministic seed42hash selection within bins, no labels/model IDs/style
+features. If strata lack support, stop and revise before scoring. Keep raw text,
+labels, per-row outputs private under the database. Map model_a/model_b to0/1,
+tie/both_bad to2; retain actual A/Border while hashing swaps for duplicate checks.
+Use numeric synthetic IDs for NPZalignment if needed; original UUIDs are mapping
+metadata only, never prediction features. Confirmation labels remain uninspected
+until learning/frozen parameter stage completes.
 
-## Second packing-only recipe RUNNING
+Stage1: fixed1024learning groups plus original control256/uniform512/long64/test
+engineering cohorts, public cap5400s. Cross-fit one T in[.5,2] within learning
+folds, freeze T before separately admitted1024confirmation pass (<=7200s). Require
+confirmation gain>=.001 and paired group95%lower bound>0, plus class/length/domain
+checks before official admission. No expert weights, tie-offset/route-cap or
+leaderboard parameter search. Temperature preserves predicted class; it calibrates
+log loss. Later-vote evidence is out-of-time, not competition CV. This chronology
+does not automatically apply to modern reward models such as H56.
 
-New files span010_packed.py/build_span_010_packed.py/run_span_010_packed.py.
-Only driver difference: packed microbatch tokens8192->12288. Models,4096context,
-image/kernels, batch80, routing and weights unchanged. Separate Kaggle slug
-arseniytrushin/llm-preference-span010-packed-order-completion/1; roleorder_packed.
-This is the actual returned title-derived slug (metadata requested order-packed).
-One accepted mutation only; controller64908 follows the exact response. Source
-commit25d71c9 is pushed. Never repush or rebuild this accepted notebook. Builder proves
-all other driver bytes identical and exercises actual serialized cells/startup.
-Three packed CPU orchestration fixtures and two leaderboard tests pass; initial
-full121suite passed earlier. Recompute all controls/orientations/subset timings;
-no cache. The frozen new bundle matches committedHEAD; never rebuild after push intent.
-After admission, recover/observe the exact same accepted version. An observation
-timeout does not authorize another GPU mutation. First frozen local files remain
-unchanged, so historical source verification still works.
+New public phase<=21600s, max2frozenrecipes/2officialsubmissions; each hiddenrun
+requires measured conservative<32400s with20%margin, startup/warmup and600sreserve,
+owned watchdog. Fresh full quota/jobs/dependencies and a fixed48hour deadline
+before admission. No GPU admission yet; phase plan/config and pilot/cohort builder
+are not implemented. No paid scaling, external text API, hidden label lookup or
+public prediction cache in hidden mode. No research GPU while official scoring
+is pending. Do not consume refreshed quota to enlarge a frozen phase.
 
-Audit command: scripts/audit_span_010_order.py --role order_packed (or --source-only).
-It writes separate per-role qualifications and current H57_qualification.json;
-never erase the first failed result. Official submission only after all gates,
-using scripts/submit_span_010_order.py --role order_packed; later --observe-only
-resumes the same receipt. It verifies frozen/committed source, exact completed
-Kaggle version, CSV, fresh jobs/quota, separate intent and candidate count.
-Do not submit the failed order_pilot recipe.
+## V10 evidence and immutable history
 
-## Artifacts and preservation
+Two exact public jobs COMPLETE, no official submissions/intents:
+order_pilot: arseniytrushin/llm-preference-span010-order-completion/1,
+2802.478s, projection32998.845s FAIL, base controls maxdiff0.
+order_packed: arseniytrushin/llm-preference-span010-packed-order-completion/1,
+3033.054s, projection36586.536s FAIL, probability diffs.0002135/.0006124 FAIL1e-5.
+Second slug was title-derived; actual response/source read-back is verified, no
+repush. Both observers85261/64908terminal; do not restart/rebuild/resubmit.
+All100retrieved files hash-verified, total5835.532s/1.620981h under21600s. Fresh
+terminal inventory no active jobs/reservations, paid scaling off. Descriptive
+original-vote loss gain.00123has CI crossingzero and overlaps checkpoint training;
+no independent quality/official gain. See docs/SPAN_010_RESULTS.md and completion.
 
-Use .venv/bin/python. Heavy ROOT=/home/tarstars/database/llm_classification_finetuning;
-private artifacts under runs/span_010, aggregate evidence under results/span_010.
-Notebook22 is executed with measured first-pilot results and failed runtime;
-refresh after the second attempt and official receipt. Builder supports both
-attempt histories. Notebook link ~/notebooks/llm_classification_finetuning already
-points to this repo/notebooks. Preserve dirty notebooks07/12; stage explicit paths.
-Preservation baseline results/span_010/preservation.json hashes38snapshot files
-and user notebooks. Backlog CLI controls status/history and generated Markdown.
+Notebook22 is final executed: four code cells, two figures, zero errors. Builder
+refuses afterv10closure. H57qualifications are separate by attempt. Auditor's
+float64JSroundoff tolerance is1e-12rel/1e-14abs only; indices/prediction gate remain
+strict. An attempt-label loop shadowing bug was fixed and regression-tested
+before any official submission; metrics/predictions were unchanged.
+Closure audit passed;21backlog tests passed afteradvance. Old38snapshot files
+and dirty user notebooks07/12 preserved; v10.final/v11.start add4new snapshots.
+Exact oldGOAL is docs/GOAL_V10.md. V10frozen maps validate against commit25d71c9
+and that archive, because current GOAL.md intentionally advances. Do not rerun
+historical builders/auditors expecting a previous active version/current GOAL.
 
-GOAL.md now contains the above20contract. Exact old contract is docs/GOAL_V9.md;
-old accepted Kaggle version4 and commit057370d preserve v9 (rank30/.83053).
-Previous own-trained Qwen3-4B official.95481 is historical. Never rerun historical
-builders against a different active version. GitHub tarstars/llm_classification_finetuning,
-branchmain; commit/push important measured results and verify publication.
+## Environment/publication
 
-## New v11 discoveries, not executed
-
-E16 profiles6144/8192packing on matched GPUs before full qualification. H58 keeps
-total expert weights equal but averages only the cheaper Llama order on the
-fixed route;8.596h is a forecast, not a new worker gate. See
-docs/SPAN_010_RUNTIME_FOLLOWUPS.md. H59 pins official Arena140k2025vote metadata
-(revision6322995ab34d7c2693e3f47dd13fa5caa0789a74) for possible independent-source
-one-temperature calibration of2024checkpoints. Source card/schema only: zero
-conversation rows downloaded or scored. Verify actual timestamps, deduplication,
-model lineage and domain shift before use; newer reward models do not inherit
-this chronological exclusion. See docs/SPAN_010_POST2024_CALIBRATION.md.
-These three tasks are next-version draft discoveries; no extra v10 GPU or
-calibration fit is authorized by their queue status. Current job64908 remains
-the only live pilot. Complete/audit it before closing v10 or selecting v11focus.
+Cwd /home/tarstars/prj/llm_classification_finetuning, Python.venv/bin/python.
+ROOT=/home/tarstars/database/llm_classification_finetuning. Never walk HOME,~/prj,
+Arc/FUSE mounts or troll_farm. No subagents. Preserve user-dirty notebooks
+07_error_poster.ipynb and12_backlog_v1_span.ipynb; never stage/reset them.
+~/notebooks/llm_classification_finetuning already links to repo/notebooks.
+GitHub tarstars/llm_classification_finetuning,main; commit/push important results
+with reviewed explicit paths. V9best official submission58068582/.83053 is genuine
+public tascj Gemma2-9B original +ArmoRM/Llama3-8B swapped equal ensemble, source
+arseniytrushin/llm-preference-span009-public-ensemble/4. Old own-trained.95481
+reference is historical. Earlier v10source commits7e3be95/25d71c9; researchf4b6e50.

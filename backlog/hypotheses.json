@@ -4998,7 +4998,7 @@
       ],
       "id": "H57",
       "rank": 73,
-      "status": "running",
+      "status": "done",
       "introduced_in": 10,
       "discovered_during": null,
       "derived_from": [
@@ -5043,6 +5043,14 @@
           "note": "Packing variant frozen/pushed at25d71c9. One GPU mutation accepted actual returnedversionarseniytrushin/llm-preference-span010-packed-order-completion/1 and RUNNING; Kaggle title-derived slug differs from intendedid. Controller64908 follows exact response, no repush. Original2802.478s charge and phasecap21600s preserved.",
           "evidence": [
             "docs/SPAN_010_PACKED_PROTOCOL.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T09:28:08+00:00",
+          "status": "done",
+          "note": "Both exact public variants COMPLETE and100files verified;8192runtime9.166hFAIL,12288runtime10.163hFAIL plusprediction drift>1e-5. No official submission or relaxed gates. Goal remainsrank30/.83053; queue E16/H58/H59 and carry unfinished work to v11.",
+          "evidence": [
+            "docs/SPAN_010_RESULTS.md"
           ]
         }
       ]
@@ -5216,7 +5224,7 @@
       ],
       "id": "H59",
       "rank": 76,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 11,
       "discovered_during": 10,
       "derived_from": [
@@ -5229,6 +5237,22 @@
           "note": "Official2025Arena vote source may permit independent calibration of2024checkpoints; pinned card/metadata only, zero data scoring or GPU. Source/domain audits and one-scalar protocol required in next activated span.",
           "evidence": [
             "docs/SPAN_010_POST2024_CALIBRATION.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T09:32:35+00:00",
+          "status": "running",
+          "note": "Starting v11source/chronology/duplicate/format audit before data scoring or GPU admission; pinned official2025card metadata available. Freeze2048groups and learning/confirmation split under SPAN_011_PLAN before fitting one temperature.",
+          "evidence": [
+            "docs/SPAN_011_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-07T09:43:05+00:00",
+          "status": "running",
+          "note": "Before source labels or GPU scoring, v11plan fixes target-length-bin matching from the existing label-free Gemma length audit to reduce2025domain shift;1024learning/1024confirmation groups. Exact checkpoint publication metadata audit is underway; no new GPU.",
+          "evidence": [
+            "docs/SPAN_011_PLAN.md"
           ]
         }
       ]
@@ -5282,7 +5306,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 10,
+  "active_version": 11,
   "versions": [
     {
       "number": 1,
@@ -6063,7 +6087,7 @@
     },
     {
       "number": 10,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -6134,16 +6158,83 @@
       "carried_from": 9,
       "start_sha256": "bfd8a78fa7c5157359b4b34ea59114e560614cc95347f38bc9dbbfd5ccdfa433",
       "start_markdown_sha256": "61f7452195e84fd06f2120ff2a3ec44b8b87e8701d35db32aa0dd676451a7a13",
-      "start_sealed_at": "2026-11-07T02:17:13+00:00"
+      "start_sealed_at": "2026-11-07T02:17:13+00:00",
+      "final_sha256": "0b1da3a2826eaf0754cee30f2df54379f51680ffce78de83f3d37c19c8e78fdc",
+      "final_markdown_sha256": "ebc04f4fcd5f60ef200335571129c3f6c3c7debbc6401278c89bea30c60d133c",
+      "final_sealed_at": "2026-11-07T09:28:09+00:00",
+      "closed_at": "2026-11-07T09:28:09+00:00",
+      "closing_note": "V10 closes E15/H57 after two completed but unqualified recipes,5835.532s public GPU,100files,zero official submissions;rank30/.83053unchanged. Carry38unfinished tasks plusE16/H58/H59; persistent above20goal continues under new bounded v11contract.",
+      "closing_evidence": [
+        "docs/SPAN_010_RESULTS.md"
+      ]
     },
     {
       "number": 11,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H55",
+        "H56",
         "E16",
         "H58",
         "H59"
       ],
+      "focus_ids": [
+        "H59"
+      ],
+      "history": [
+        {
+          "at": "2026-11-07T09:32:35+00:00",
+          "note": "Persistent above20goal continues after v10's two unqualified recipes. Select only later-vote source audit and one-temperature calibration; other41member tasks remain unselected. Separate bounded protocol in SPAN_011_PLAN.",
+          "focus_ids": [
+            "H59"
+          ]
+        }
+      ],
+      "carried_from": 10,
+      "start_sha256": "195dfd732640265a2c8de9edc46131f1cd4e41cb52988347dd36acde2c38c3e3",
+      "start_markdown_sha256": "10b12c63fdd5211fc659e4fcfb7b43ffbd66410ed2d44d0d7bb99bc7ee6752e3",
+      "start_sealed_at": "2026-11-07T09:28:09+00:00"
+    },
+    {
+      "number": 12,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }
