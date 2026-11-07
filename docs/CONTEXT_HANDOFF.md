@@ -1,36 +1,65 @@
-# Active goal: above20th place; v12 sealed, v13 available
+# Active goal: above20th place; v13 Gemma-only worker ready for admission
 
-Snapshot2026-11-07T19:23UTC. Read PROJECT_POLICY.md, GOAL.md and
- docs/SPAN_012_RESULTS.md. Persistent goal is actual rank<=19 for team17244411
-on a fresh fully paginated Kaggle leaderboard. Fresh19:21:42UTC: rank30/313,
-best0.83053, rank19/20cutoff0.82915, leader0.82704. Goal active/unachieved.
-Previous goal turn was progress: actual E16results, negative H58information gate,
-executed notebook24, sealed v12 and formed v13. There is no live GPU/controller or
-pending official submission. Do not restart accepted historical work.
+Snapshot2026-11-07 after v12closure and v13preparation. Read PROJECT_POLICY.md,
+GOAL.md, docs/SPAN_013_PLAN.md and docs/SPAN_012_RESULTS.md. Persistent objective
+is actual rank<=19 for team17244411 on a fresh fully paginated official leaderboard.
+Fresh19:21:42UTC: rank30/313, best0.83053, rank19/20cutoff0.82915, leader0.82704.
+Goal remains active/unachieved. This turn made progress: completed E16, stopped
+negative H58, sealed v12, selected H60and obtained a positive information gate.
 
-## Next action
+## Current v13 state and next action
 
-Backlogv13 has40members:39unfinished carryovers plus newH60. It has no focus yet;
-v14draft is empty. Select H60under a fresh bounded v13contract before preparation.
-H60tests the complementary Gemma-only order average on the same label-free route:
-.25Gemma-original+.25aligned-Gemma-swapped+.5aligned-Llama-swapped on-route;
-off-route retain equal base. T1, original8192packing/context4096/fp16/pinned author
-kernels/image. Do not search weights, routes, T or leaderboard feedback. First
-predeclare one cached replay with uniform512gain>0.0005information gate; it has
-NOT been run. Original votes overlap checkpoint training, not independent CV.
-Then qualify an actual three-pass worker/source/IDs/tokens/CSV/device controls and
-conservative25kprojection<32400s with20%margin, all startup/warmup/other overhead
-and600sreserve. One frozen official result is the outcome; rank<=19remains goal.
+Backlogv13has40members, focus H60only, statusrunning; v14draft empty. One quality
+recipe, no v13GPU admitted yet. Cached replay under results/span_013 passes:
+uniform512loss0.654242->0.652988, gain0.001253853, descriptive group95%
+[-0.00003863,0.00261964]. All3classes improve on uniform; controls gain0.00119445,
+long gain0.00004339. Original votes overlap checkpoint training: not honest CV,
+not an official-score estimate. No new rule was fitted after this observation.
 
-H60is motivated by old four-order descriptive gain0.001232 versus negative
-Llama-only gain-0.000129. Log-loss gains are not additive; this is a hypothesis,
-not a measured Gemma-only score. Reuse existing original v10cache for fixed cohorts:
-ROOT/runs/span_010/jobs/order_pilot/output/order_completion. Relevant arrays are
-m0_{cohort}, m3_{cohort}, m0_reverse_routed_{cohort}, routing_{cohort}. IDs are
-results/span_010/profile_selection.json; cohorts control256/uniform512/long64/test3.
-The unchanged v10infer_role supports m0/m3/m0_reverse and8192packing; consider
-embedding it as an immutable helper in a new span013driver. Preserve historical
-span012_order.py because H58replay freezes its hash. Do not edit accepted helpers.
+Rule on unchanged10%work/20%row label-free JS/work route:
+.25Gemma-original+.25aligned-Gemma-swapped+.5aligned-Llama-swapped. Off-route
+retain original equal ensemble. T1, packing8192, context4096, fp16/author image.
+Source contract/prospective rule was pushed f26ed2f before inspecting this replay.
+No weight/route/T/leaderboard search. Original inference helper span010_order.py
+is embedded unchanged; span013_order.py is the fixed mixture; span013_pipeline.py
+runs m0/m3/m0_reverse with actual text and no hidden caches. Public cohorts are
+original control256/uniform512/long64/test3; reverse only routed subsets. Full80-row
+warmup for each role. Hidden uses only actual test rows (first80for warmup).
+
+scripts/run_span_013_order.py --prepare completed. Original deadline
+2026-11-09T19:29:48.662254+00:00, quota periodNov14, startingused11222.639s,
+remaining96777.361s, reserved0, paid off. Config/phase now frozen prospectively.
+Public phase<=6000s, initialgemma_order<=2400s, maxone separately admitted unchanged-
+quality engineering followup<=3600s, max2public versions/one official. Initial40min
+was documented before work: base/stress passes plus fullwarmups make30min too tight.
+Never enlarge oldv12caps or retry a timed-out observation as a fresh mutation.
+
+Builder scripts/build_span_013_order.py completed, actual serialized success/
+failure/watchdog, public/hidden branches and real notebook-engine startup all pass.
+Three CPUtests pass, including both swapped-class alignments, exact unrouted base,
+invalid routes and full actual orchestration in public/hidden modes with no hidden
+train file. Frozen private notebook ROOT/runs/span_013/notebooks/gemma_order,
+bundle/rehearsals/profile IDs in results/span_013. Audit script
+scripts/audit_span_013_order.py implemented/compiled, --source-only after acceptance,
+full after COMPLETE/retrieval. It verifies raw base controls vs v9and matched
+Gemma-reverse routed controls vs v10, token hashes/IDs/checkpoints/CSV/devices,
+actual mixture/route and conservative25kprojection<32400s with20%margin, all
+startup/fullwarmup/other overhead and600sreserve. Preserve failure, no tolerance
+or runtime-margin relaxation. The public recipe has not been numerically or
+runtime qualified yet. Actual source read-back pending acceptance.
+
+Next: commit/push reviewed frozen bundle/code, then one fresh full admission via
+scripts/run_span_013_order.py. No redundant inventory dry-run. Record the exact
+accepted receipt/live controller and observe it; never restart solely from timeout.
+Source-only audit may run while GPU is live. After COMPLETE retrieve/audit; only
+all gates permit one official submission. Notebook25still needs implementation/
+execution. Other carried tasks unselected. No live GPU remains from old spans.
+
+Old v10cache: ROOT/runs/span_010/jobs/order_pilot/output/order_completion; canonical
+IDs results/span_010/profile_selection.json. Best original controls:
+ROOT/runs/span_009/jobs/public_ensemble_resume/output/public_ensemble/m{0,3}_uniform.npz.
+All50old snapshot and user-notebook hashes verified in v13preservation.json
+againstGitd7f2e5c. Preserve historical helpers and span012_order.py (H58hash frozen).
 
 ## V12 sealed evidence
 
@@ -94,6 +123,6 @@ version/intent and source hashes; never re-push because observation timed out.
 Notebookworker actual serialized success/failure/watchdog/public-hidden/startup
 rehearsals required before GPU. Avoid redundant full inventory dry-runs (429risk).
 
-V12frozen code source1949d30, admission7032732, handoff2f49643. Closure milestone
-is being committed/pushed with these reports. Commit explicit relevant paths,
+V12closure d7f2e5c is pushed; prospective v13contract f26ed2f is pushed. The new
+frozen v13worker sources/bundle are being committed before GPU admission. Commit explicit relevant paths,
 keep the two dirty user notebooks out. No live handle is left from v12.

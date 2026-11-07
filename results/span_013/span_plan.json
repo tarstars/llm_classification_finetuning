@@ -1,0 +1,27 @@
+{
+  "started_at": "2026-11-07T19:29:48.662233+00:00",
+  "deadline": "2026-11-09T19:29:48.662254+00:00",
+  "initial_quota": {
+    "used_seconds": 11222.639,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 96777.361
+  },
+  "quota_used_at_start": 11222.639,
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "gpu_session_seconds_cap": 6000,
+  "public_version_limit": 2,
+  "production_recipe_limit": 1,
+  "official_candidate_limit": 1,
+  "target_rank_maximum": 19,
+  "temperature": 1,
+  "work_fraction": 0.1,
+  "row_fraction": 0.2,
+  "packing_tokens": 8192,
+  "warmup_rows": 80,
+  "raw_probability_tolerance": 1e-05,
+  "hidden_cap_seconds": 32400,
+  "full_inventory_required_before_each_gpu": true
+}
