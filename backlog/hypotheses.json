@@ -5483,6 +5483,14 @@
           "evidence": [
             "docs/SPAN_013_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-07T19:34:25+00:00",
+          "status": "running",
+          "note": "Fixed cached Gemma-only replay passed: uniform loss0.654242 to0.652988, reduction0.001254; descriptive group interval includes zero and votes overlap training. Three CPU orchestration/alignment checks and serialized worker/branch/watchdog/startup rehearsals passed. Exact new public worker accepted as arseniytrushin/llm-preference-span013-gemma-order/1 at19:34UTC, QUEUED, controller82852 live, cap2400s; no official submission.",
+          "evidence": [
+            "results/span_013/jobs/gemma_order/push.json"
+          ]
         }
       ]
     }

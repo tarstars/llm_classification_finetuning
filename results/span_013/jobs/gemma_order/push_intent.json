@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-07T19:34:01.550473+00:00",
+  "kernel": "arseniytrushin/llm-preference-span013-gemma-order",
+  "quota_before": {
+    "used_seconds": 11222.639,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 96777.361
+  },
+  "max_session_seconds": 2400,
+  "notebook_sha256": "e323c8e4909a2a597398ee39aeff12f7d941cf74672fb4d5c173ef6f868bff18",
+  "metadata_sha256": "25b02059d87f268e8b006d23eeb076cbf4cdb7ad9c7b62770c0ba442b4565fd6"
+}

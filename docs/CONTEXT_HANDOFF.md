@@ -1,4 +1,4 @@
-# Active goal: above20th place; v13 Gemma-only worker ready for admission
+# Active goal: above20th place; v13 Gemma-only probe accepted and queued
 
 Snapshot2026-11-07 after v12closure and v13preparation. Read PROJECT_POLICY.md,
 GOAL.md, docs/SPAN_013_PLAN.md and docs/SPAN_012_RESULTS.md. Persistent objective
@@ -10,7 +10,7 @@ negative H58, sealed v12, selected H60and obtained a positive information gate.
 ## Current v13 state and next action
 
 Backlogv13has40members, focus H60only, statusrunning; v14draft empty. One quality
-recipe, no v13GPU admitted yet. Cached replay under results/span_013 passes:
+recipe; one v13GPU probe accepted and QUEUED as of19:34UTC. Cached replay under results/span_013 passes:
 uniform512loss0.654242->0.652988, gain0.001253853, descriptive group95%
 [-0.00003863,0.00261964]. All3classes improve on uniform; controls gain0.00119445,
 long gain0.00004339. Original votes overlap checkpoint training: not honest CV,
@@ -46,14 +46,25 @@ Gemma-reverse routed controls vs v10, token hashes/IDs/checkpoints/CSV/devices,
 actual mixture/route and conservative25kprojection<32400s with20%margin, all
 startup/fullwarmup/other overhead and600sreserve. Preserve failure, no tolerance
 or runtime-margin relaxation. The public recipe has not been numerically or
-runtime qualified yet. Actual source read-back pending acceptance.
+runtime qualified yet. Actual source read-back passed for the exact accepted /1version: identical cells,
+pinned image and assets; internet disabled.
 
-Next: commit/push reviewed frozen bundle/code, then one fresh full admission via
-scripts/run_span_013_order.py. No redundant inventory dry-run. Record the exact
-accepted receipt/live controller and observe it; never restart solely from timeout.
-Source-only audit may run while GPU is live. After COMPLETE retrieve/audit; only
-all gates permit one official submission. Notebook25still needs implementation/
-execution. Other carried tasks unselected. No live GPU remains from old spans.
+Exact accepted public job arseniytrushin/llm-preference-span013-gemma-order/1 at
+19:34:04UTC, QUEUED. Controller unified session82852 LIVE: poll this handle and
+exact accepted version; never re-push/rebuild/restart on observation timeout.
+Fresh full admission:64owned notebooks, no active jobs, no reserved quota, paid
+off; all four public datasets pinned v1, all official receipts terminal. Source-
+only audit69421terminal exit0 passed. Frozen source/bundle commit344c9de is pushed.
+Do not edit any file listed in gemma_order_bundle.json now (including tests,
+GOAL/plan/config/phase/cached replay and inference/pipeline/builder/runner helpers).
+Auditor and future official controller/notebook25can be developed separately.
+
+Next: observe82852. Once exact COMPLETE/retrieval, run full
+.venv/bin/python scripts/audit_span_013_order.py and inspect controls/runtime
+before deciding anything. No duplicate admission/dry-run. All gates are needed
+before one frozen official submission; the official controller still needs
+implementation. Notebook25still needs implementation/execution. Other carried
+tasks remain unselected. No live GPU/controller remains from old spans.
 
 Old v10cache: ROOT/runs/span_010/jobs/order_pilot/output/order_completion; canonical
 IDs results/span_010/profile_selection.json. Best original controls:
@@ -124,5 +135,6 @@ Notebookworker actual serialized success/failure/watchdog/public-hidden/startup
 rehearsals required before GPU. Avoid redundant full inventory dry-runs (429risk).
 
 V12closure d7f2e5c is pushed; prospective v13contract f26ed2f is pushed. The new
-frozen v13worker sources/bundle are being committed before GPU admission. Commit explicit relevant paths,
+frozen v13worker sources/bundle344c9de is pushed; admission/source proof is being
+committed with this live-controller handoff. Commit explicit relevant paths,
 keep the two dirty user notebooks out. No live handle is left from v12.

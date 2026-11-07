@@ -258,6 +258,7 @@ Gemma-only answer-order averaging may retain the earlier four-orientation signal
 
 - 2026-11-07T19:21:38+00:00 — planned: Llama-only order averaging failed despite the earlier combined rule descriptive signal; test the complementary Gemma-only rule in a future span, with no additive-gain claim or current-span GPU. Evidence: [docs/H58_LLAMA_ORDER_RESULTS.md](docs/H58_LLAMA_ORDER_RESULTS.md)
 - 2026-11-07T19:26:32+00:00 — running: Starting the one predeclared v13 cached replay and deployment preparation under docs/SPAN_013_PLAN.md; no GPU or alternate quality rule admitted. Evidence: [docs/SPAN_013_PLAN.md](docs/SPAN_013_PLAN.md)
+- 2026-11-07T19:34:25+00:00 — running: Fixed cached Gemma-only replay passed: uniform loss0.654242 to0.652988, reduction0.001254; descriptive group interval includes zero and votes overlap training. Three CPU orchestration/alignment checks and serialized worker/branch/watchdog/startup rehearsals passed. Exact new public worker accepted as arseniytrushin/llm-preference-span013-gemma-order/1 at19:34UTC, QUEUED, controller82852 live, cap2400s; no official submission. Evidence: [results/span_013/jobs/gemma_order/push.json](results/span_013/jobs/gemma_order/push.json)
 
 ### H02
 
