@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-08T09:47:07.603556+00:00",
+  "passed": true,
+  "validation_method": "Observed successful targeted unittest runs",
+  "native_test_count": 3,
+  "native_tests_skipped": 0,
+  "pipeline_test_count": 2,
+  "real_checkpoint_gpu_executions": 0,
+  "native_model_tests_used_actual_saved_synthetic_GPTQ_and_dense_files": true,
+  "native_softmax_tolerance_checked": 1e-05,
+  "tests_include": [
+    "strict original quantized loading",
+    "strict dense loading",
+    "native versus dense head probabilities",
+    "native versus split probabilities",
+    "source projection coverage",
+    "native positions/pool/literal pad masks",
+    "padded batch budget/index coverage",
+    "public and hidden pipeline CSV",
+    "hidden without train.csv",
+    "child failure propagation"
+  ],
+  "runtime": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "torch": "2.15.0+cpu",
+    "transformers": "4.42.3"
+  },
+  "production_backend": "two native GPTQ8 replicas on separate T4s; full native eager decoder",
+  "production_backend_memory_speed_verified": false,
+  "quality_measured": false,
+  "source_sha256": {
+    "src/arena/span019_model.py": "2b96169a630d7dff0f7a24e8af2288e3eb956b1213084aea62ec8aaf7d6dc0f3",
+    "src/arena/span019_batch.py": "1e050b0e1366023c3a938e70781899b7a49255705abb0c5f1af9edb28b22d520",
+    "src/arena/span019_infer.py": "ed95788880161ab212f8135b5c05f84acd9c1cfdf2df1ba43d55f9dfd4664206",
+    "src/arena/span019_pipeline.py": "ae4b28ff1ea4980a20d1b1882bf2a4eb2f5998913ed48eaf60c8506f0cc11a75",
+    "tests/test_span019_native_model.py": "c198d3d887551ff202b697f4b89ea006b458d22654b9f4a08523f4630b35bf53",
+    "tests/test_span019_pipeline.py": "a9ab6d71df99079b7d98f4394cebfb31a124390abcf88932beb114b33fcb6860"
+  },
+  "production_worker_coverage": "syntax compilation only; real GPU dispatch, memory and throughput untested",
+  "native_core_coverage": "actual saved tiny quantized/dense model and split execution; input batching",
+  "pipeline_coverage": "actual orchestration with CPU fixture children, CSV and failure propagation"
+}

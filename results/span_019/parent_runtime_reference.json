@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-08T09:47:07.612251+00:00",
+  "source_path": "/home/tarstars/database/llm_classification_finetuning/runs/span_013/jobs/gemma_order/output/order_completion/m0_summary.json",
+  "source_sha256": "dfcbf2312726d9c03a28207733a99a6ee8a9d334224fb17cc551d90b1c316431",
+  "cold_seconds": 112.54979286900004,
+  "uniform": {
+    "rows": 512,
+    "seconds": 274.595901349,
+    "tokens": 477424,
+    "max_tokens": 4330,
+    "token_ids_sha256": "8f6eeb69e3c4a8193140ea3d6d596af5edc27a93f9d4a72091ea1f66f4be6f50",
+    "peak_allocated_bytes": [
+      10931107328,
+      9108786176
+    ],
+    "peak_reserved_bytes": [
+      12780044288,
+      10900996096
+    ]
+  },
+  "warmup": {
+    "rows": 80,
+    "seconds": 53.41392083099993,
+    "tokens": 66218,
+    "max_tokens": 3674,
+    "token_ids_sha256": "2310cdd39ed2797d9af8325e310e59ee1ac51ca20082050aba1ebc49ac0ae5d5",
+    "peak_allocated_bytes": [
+      10928964096,
+      9106506752
+    ],
+    "peak_reserved_bytes": [
+      12780044288,
+      10900996096
+    ]
+  },
+  "note": "Worst comparable retained-expert rates/cold/warmup remain required; new mirror has no prior measured runtime."
+}

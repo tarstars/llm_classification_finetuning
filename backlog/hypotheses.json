@@ -6053,6 +6053,14 @@
           "evidence": [
             "docs/SPAN_019_SOURCE_RESULTS.md"
           ]
+        },
+        {
+          "at": "2026-11-08T09:47:07+00:00",
+          "status": "running",
+          "note": "Saved tiny native-GPTQ/dense/split test and public/hidden pipeline tests pass (5tests, no GPU). Select two native GPTQ8 replicas prospectively to preserve native head/attention and avoid dense transport; original quality recipe/caps unchanged. Real GPU fit/probabilities/speed remain unmeasured.",
+          "evidence": [
+            "docs/SPAN_019_GPU_PROTOCOL.md"
+          ]
         }
       ]
     }
