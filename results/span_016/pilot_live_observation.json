@@ -1,17 +1,17 @@
 {
-  "at": "2026-11-08T06:12:37.676999+00:00",
+  "at": "2026-11-08T06:26:11.960775+00:00",
   "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
   "status": "RUNNING",
-  "stream_events": 81,
+  "stream_events": 116,
   "observation_limited_by": "ConnectionError",
   "tracebacks_in_stream": 0,
   "latest_stage": {
     "stage": "inference_progress",
-    "role": "m0",
+    "role": "m3",
     "cohort": "long",
-    "batch": 4,
-    "rows": 400,
-    "seconds": 245.8391687159999
+    "batch": 3,
+    "rows": 320,
+    "seconds": 143.27868646599973
   },
   "latest_worker_cohorts": [
     {
@@ -73,15 +73,48 @@
       "seconds": 154.23407217499994
     },
     {
-      "stage": "inference_progress",
+      "stage": "cohort_complete",
       "role": "m0",
       "cohort": "long",
-      "batch": 4,
-      "rows": 400,
-      "seconds": 245.8391687159999
+      "rows": 1024,
+      "seconds": 605.0851330759999
+    },
+    {
+      "stage": "cohort_complete",
+      "role": "m0",
+      "cohort": "test",
+      "rows": 3,
+      "seconds": 3.133636949999982
+    },
+    {
+      "stage": "model_loading",
+      "role": "m3"
+    },
+    {
+      "stage": "cohort_complete",
+      "role": "m3",
+      "cohort": "warmup",
+      "rows": 80,
+      "seconds": 45.44872730799989
+    },
+    {
+      "stage": "cohort_complete",
+      "role": "m3",
+      "cohort": "control",
+      "rows": 256,
+      "seconds": 112.84628064499975
+    },
+    {
+      "stage": "inference_progress",
+      "role": "m3",
+      "cohort": "long",
+      "batch": 3,
+      "rows": 320,
+      "seconds": 143.27868646599973
     }
   ],
-  "quality_audited": false,
-  "target_runtime_profiled": false,
+  "quality_audited_by_this_observer": false,
+  "target_runtime_profiled_by_this_observer": false,
+  "observer_sha256": "a06e15eda49deff72cfca732e090eb1cc82cc2bbe19deccf109bc6c21523b3cf",
   "new_gpu_executions": 0
 }
