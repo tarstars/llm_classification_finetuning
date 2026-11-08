@@ -23,12 +23,12 @@ results/span_019/closure_audit.json PASSED after transition. Final Notebook31has
 78historical snapshot files now exist, all prior74preserved.37unfinished items
 carried. V20active,38members, focus[H66], H66running=pre-GPUpreparation only;
 v21draftempty. V20source notebook/config/worker are now BUILT and CPUrehearsed;
-V20oneversion ACCEPTED/QUEUED; no newuploads, official or quality outputs in v20.
+V20oneversion ACCEPTED/RUNNING; no newuploads, official or quality outputs in v20.
 Notebook ROOT/runs/span_020/notebooks/batch_candidate/job.ipynb; bundle and actual
 serialized rehearsals in results/span_020/batch_candidate_{bundle,cell_rehearsals}.json.
 Controller exec64026/PID4140906 is LIVE; actualacceptedsource
 arseniytrushin/llm-preference-span020-batch-candidate/1, accepted12:30UTC,
-stillQUEUED at12:33:26UTC. Poll SAME64026; never push another version.
+RUNNING since12:41:36UTC. Poll SAME64026; never push another version.
 Sourceverification61585 TERMINALexit0 at12:32:56UTC: remote cells match,
 internetdisabled, notebookSHA954395768999aeb17c3f6ea0ca75cbc2f08f97d1c5882958cef3a97003c1bafe.
 Freshadmission67owned/noactive,quota89907.711free,paidFalse,7officialterminal;
@@ -37,6 +37,17 @@ Prepare39064/build87470 TERMINALsuccess; do NOTrerun prepare. Notebook32interim
 created with2executedcells/zeroerrors; reviewbuilder excludedfromfrozencandidate.
 After COMPLETE/retrieval, audit_span_020_candidate.py performs fullchecks/drift/
 runtime BEFORE locallyreadingvotes. Do not run auditor during queued/running.
+Larger-shape native/repeated controls passed before other inference. Live80warmup
+53.2942s (slower thanH65),control256136.4944s (faster than153.4703s). Full512
+profile stillpending at12:50UTC; do not infer qualification from short-prefix timing.
+Prepared scripts/submit_span_020_candidate.py plus twoCPUtests/sixnegativecases;
+validation results/span_020/submission_controller_cpu_validation.json. No official
+APIcall/decision made. It checks actualthresholds/native/source/runtime/canonical
+coverage and uses durableintent/unique-message receipt reconciliation, never
+duplicate submission. ONLYif fullcandidate_qualification.json is eligible, run
+its --prepare-decision, commit/push that exactdecision/results, then run once.
+--observe-only resumes SAMEreceipt/intent. Fullrobustboard read follows terminal
+official; model must separately verify goal completion before update_goal.
 
 ## H65 actual completed source/assets/native GPU execution
 

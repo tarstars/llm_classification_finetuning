@@ -6203,6 +6203,14 @@
           "evidence": [
             "results/span_020/jobs/batch_candidate/source_verification.json"
           ]
+        },
+        {
+          "at": "2026-11-08T12:53:02+00:00",
+          "status": "running",
+          "note": "H66RUNNING since12:41:36UTC. Native/repeated controls pass; warmup80=53.294s/control256=136.494s; wait actual512/fullqualification. Prepared gated official controller with2CPUtests/6negativecases before quality output; no official APIcall or deploymentdecision.",
+          "evidence": [
+            "results/span_020/submission_controller_cpu_validation.json"
+          ]
         }
       ]
     }

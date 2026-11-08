@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-08T12:52:07.237402+00:00",
+  "passed": true,
+  "tests": 2,
+  "negative_subtests": 6,
+  "output": "test_complete_fixed_evidence_qualifies (test_span020_submission.SubmissionGateTests.test_complete_fixed_evidence_qualifies) ... ok\ntest_false_green_flags_do_not_override_measured_thresholds (test_span020_submission.SubmissionGateTests.test_false_green_flags_do_not_override_measured_thresholds) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+  "real_qualification_read": false,
+  "actual_submission_executed": false,
+  "new_gpu_executions": 0,
+  "source_sha256": {
+    "scripts/submit_span_020_candidate.py": "af23cd2fffcd18384758ab4a65e808ebe836e00e802dbf0d07da741e2095edec",
+    "tests/test_span020_submission.py": "d061897ac6beef5a78e62a66f7ed9b29b4fcf26d4fa11a0ccd83ac641abb81e0"
+  }
+}
