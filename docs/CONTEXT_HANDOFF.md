@@ -1,9 +1,29 @@
-# H72 pilot complete; full qualification running
+# H72 rejected by runtime floor; capped qualification still finishing
 
-Current snapshot Nov8 2026,19:05UTC. Persistent goal team17244411 rank<=19
+Current snapshot Nov8 2026,19:18UTC. Persistent goal team17244411 rank<=19
 remains ACTIVE/unachieved. Fresh complete board18:19:24UTC:23/312,.82987,
 19th/20th.82915,leader.82692. results/span_026/midpilot_leaderboard.json.
 No new official since H60receipt58103553/source span013-gemma-order/1.
+
+URGENT CURRENTDECISION: NO H72official. QualificationGuniform512=290.599418s
+givesfixedruntimeLOWERBOUND32930.01554s (9h8m50)>32400. Independentfrozenhelper
+replay90738exit0matchesmanualcalculationexactly; unknownfuturemeasurementscan
+onlyincreasebound. No labels/fit/newvariant/marginrelaxation. Evidence
+results/span_026/qualification_runtime_lower_bound.json and
+qualification_runtime_floor_replay.json; scriptverify_span_026_runtime_floor.py
+anddocs/SPAN_026_RUNTIME_REJECTION.md. Syntheticunknownmeasurements=0areONLY
+mathematicalfloors, not actual elapsed-session or completedqualification.
+
+Existingqualification69187/PID964156 stillRUNNING; donotkilllocalobserver or
+re-push. SDKcancelneedskernelSessionId, butexactownedstatus/metadata exposeonly
+notebookid143477335/version1. No guessedcancelrequests. Livecancelmetadata
+16953exit0savedprivately. Onebadreadusedbare1label/404; correctedv1read succeeded.
+There is no safe identifiedcanceltarget inthisAPI;3600sservicecap/3480sowned
+workerwatchdogremains. AwaitSAMErunterminal/artifactretrieval, runfrozenaudit
+foractual engineering output ifCOMPLETE, then close H72negative/noofficial,
+writefinalreport/notebook/archiveGOALV26/closurepreservation andadvancetov27.
+Persistent rankgoalcontinues; H73futureweightprior isplanned, notrun/readyyet.
+Selectanexplicitboundedv27goal beforeanyH73replay/GPU.
 
 H72informationpilot arseniytrushin/llm-preference-span026-context-audit/1
 COMPLETE18:42:19UTC. Controller70441/PID659163 TERMINALexit0;32artifacts SHA
@@ -38,10 +58,10 @@ arseniytrushin/llm-preference-span026-context-candidate/1. Controllerunifiedsess
 69187/PID964156. Sourceverifier51910TERMINALexit0 at18:53:47; acceptedcells/
 image/privateoffline/twoT4/fourpublicv1datasets verified. Followupcap3600s.
 ThisisSECONDandLASTacceptedpublicversioninphase. Noofficialhasbeensubmitted.
-NEXTpollSAME69187/version, neverre-push aftertimeout. After COMPLETE/retrieval, run audit_span_026_candidate.py
-ONCE. Ifeligible, submit_span_026_candidate.py --prepare-decision, commit/push
-thatconcretedecision, then submit_span_026_candidate.py ONCE. --observe-only
-resumessameacceptedreceipt. Freshcompleteinventory/quota/receipts/dependencies
+NEXTpollSAME69187/version, neverre-push aftertimeout. After COMPLETE/retrieval,
+run audit_span_026_candidate.py ONCE forfinalactualrejection. Runtimefloor
+alreadyprohibitsdeployment; do NOTprepare/submitadecision forthisvariant.
+Freshcompleteinventory/quota/receipts/dependencies
 beforeeach GPU/official. Initial7200+follow3600<=10800publics,max2acceptedversions,
 oneofficial, inheritedNov10 08:37:37.343197UTCdeadline/Nov14anchor. No reset,
 newweights/training/externaltextservice/GPUwhileofficialpending/rescuegrid.

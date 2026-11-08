@@ -6820,6 +6820,14 @@
           "evidence": [
             "results/span_026/jobs/context_qualification/source_verification.json"
           ]
+        },
+        {
+          "at": "2026-11-08T19:16:55+00:00",
+          "status": "running",
+          "note": "Qualificationcannotadvance: currentGemma512=290.599418s makesfixed conservative runtimeLOWERBOUND32930.01554s>32400. Independentfrozen-functionreplay90738exit0matchesmanualboundexactly; unknownfuturetimingscanonlyincreasefloor, nolabelsused. Noofficial/norescue/marginrelaxation. CancelSDKrequiresunexposedkernelSessionId; exactversionstatus+metadata exposeonlynotebookId, no guessedcancel request. Existing3600scap/3480swatchdogremains; controller69187observesSAMEversionuntilterminal/retrievalbeforeclosure. H73futureonly.",
+          "evidence": [
+            "docs/SPAN_026_RUNTIME_REJECTION.md"
+          ]
         }
       ]
     },

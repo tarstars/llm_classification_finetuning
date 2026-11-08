@@ -69,7 +69,14 @@ for filename in ['pilot_audit.json','candidate_qualification.json']:
    'gross_regression_guard_passed','runtime_gate_passed','memory_guard_passed',
    'original_training_overlap','independent_cv','hidden_score_forecast','official_submission_eligible']})
   if 'slice_metrics' in result:display(pd.DataFrame(result['slice_metrics']).T)
- else:print(filename,': pending')''')])
+ else:print(filename,': pending')
+floor_path=PUB/'qualification_runtime_floor_replay.json'
+if floor_path.exists():
+ floor=json.loads(floor_path.read_text())
+ print('QUALIFICATION RUNTIME FLOOR: candidate rejected for official deployment')
+ print('Minimum projected hours:',floor['minimum_projection_seconds']/3600,'; cap:',floor['hidden_limit_seconds']/3600)
+ print('Frozen-function replay passed:',floor['passed'],'; target labels used:',floor['uses_targets'])
+ print('Unknown measurements enter only nonnegative maxima. This is a floor, not full terminal qualification.')''')])
     nb.metadata['kernelspec']=dict(display_name='Python 3',language='python',name='python3')
     executed=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     code=[c for c in executed.cells if c.cell_type=='code']

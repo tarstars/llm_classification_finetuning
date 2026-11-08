@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-08T19:13:21.429064+00:00",
+  "passed": true,
+  "uses_targets": false,
+  "qualification_complete": false,
+  "synthetic_unknown_measurements_are_lower_bounds_not_actual_timings": true,
+  "lower_bound_replayed_with_frozen_function": true,
+  "minimum_projection_seconds": 32930.015539637956,
+  "hidden_limit_seconds": 32400,
+  "official_submission_eligible": false,
+  "result": {
+    "projection_seconds": 32930.015539637956,
+    "parent_projection_seconds": 31892.299341955215,
+    "worst_uniform_seconds": {
+      "m0": 290.599418366,
+      "m3": 201.2409069129999,
+      "m0_reverse": 31.781841260999954
+    },
+    "cold_seconds": 407.983022493,
+    "full_parent_warmup_seconds": 158.35486647899978,
+    "other_seconds": 44.975132280097114,
+    "measured_role_seconds": 290.599418366,
+    "session_seconds": 290.599418366,
+    "extra_seconds_per_row": {
+      "pilot_context_probe": 3.4664103000312494,
+      "pilot_changed_extended": 3.3675197244565833
+    },
+    "extra_full_pass_seconds": 645.9149627387421,
+    "extra_full_warmup_seconds": 269.964366455,
+    "full_selector_seconds": 121.83686848899998,
+    "changed_fraction": 0.006211180124223602,
+    "margin": 1.2,
+    "reserve_seconds": 600,
+    "divides_already_parallel_wall_time_by_gpu_count": false,
+    "runtime_gate_passed": false
+  },
+  "lower_bound_source_sha256": "3651a47f7e62c0cffed2997b553d3a4bf8ff0c3833be53f4bff20207a579e30d",
+  "helper_sha256": "773b62131639af1e9c16d8f7816f4e399b7b0503dbffab9ba2640ad8e1630657",
+  "script_sha256": "5a9b1647365bf2eb64b859ed0ad73d716b0b9974d365ed1b2c3ce59d11796399"
+}

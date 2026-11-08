@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-08T19:08:11.550080+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span026-context-candidate/1",
+  "qualification_uniform_gemma_seconds": 290.599418366,
+  "minimum_worst_uniform_seconds": {
+    "m0": 290.599418366,
+    "m3": 201.2409069129999,
+    "m0_reverse": 31.781841260999954
+  },
+  "minimum_parent_projection_seconds": 31892.299341955215,
+  "minimum_cold_seconds": 407.983022493,
+  "minimum_parent_warmup_seconds": 158.35486647899978,
+  "minimum_other_seconds": 44.975132280097114,
+  "minimum_extra_full_pass_seconds": 645.9149627387421,
+  "minimum_extra_warmup_seconds": 269.964366455,
+  "minimum_selector_seconds": 121.83686848899998,
+  "minimum_projection_seconds": 32930.015539637956,
+  "hidden_limit_seconds": 32400,
+  "exceeds_limit": true,
+  "margin": 1.2,
+  "reserve_seconds": 600,
+  "unknown_future_measurements_can_only_increase_bound": true,
+  "uses_targets": false,
+  "source": "Verified accepted worker aggregate event plus frozen runtime inputs; not final full qualification"
+}
