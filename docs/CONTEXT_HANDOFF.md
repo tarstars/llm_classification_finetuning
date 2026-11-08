@@ -1,4 +1,4 @@
-# Active rank goal; v18 sealed, v19 awaiting selection
+# Active rank goal; v18 sealed, v19 H65 source audit
 
 Snapshot Nov8 2026,08:34UTC. Read PROJECT_POLICY.md; verify current live state.
 Persistent objective: team17244411at rank<=19on fresh complete official Kaggle
@@ -12,8 +12,10 @@ inventory:zeroactive/reserved0/paidFalse. Quota used16386.583s/free91613.417s
 
 V18H64done,SEALED:docs/SPAN_018_RESULTS.md,exact docs/GOAL_V18.md,closure_audit
 PASSED,Notebook30FINAL2codecells/0errors. V19has38members:37unfinishedcarry+H65,
-focus initially[];v20draftempty. Preserve74snapshots/userdirty07/12/notebooklink.
-GOAL.md still has v18contract until new selection is published.
+focus[H65]/running;v20draftempty. Preserve74snapshots/userdirty07/12/notebooklink.
+GOAL.md and docs/SPAN_019_PLAN.md select a source-only first stage: no fullweights
+orGPU before a frozen follow-up. Original periods/caps in results/span_019/span_plan.json.
+Source audit program scripts/gather_span_019_source.py has not run yet.
 
 H64onefixedteacher preservesH60on83uniformroute rows,full4order mean on429others.
 Uniform512loss.6529882493->.6532469480,reduction-.000258699,group95%

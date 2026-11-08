@@ -1,39 +1,37 @@
-# Move above20th place: v18missing-order approximation
+# Move above 20th place: v19 accessible native classifier
 
-Persistent objective: team17244411at rank<=19on a fresh complete official Kaggle
-leaderboard after legitimate inference. ACTIVE/unachieved. Retain best0.82987,
-last rank23; rank19cutoff0.82915. V17is sealed; exact contractdocs/GOAL_V17.md,
-actual resultsdocs/SPAN_017_RESULTS.md. Execute docs/SPAN_018_PLAN.md, H64only.
+Persistent objective: team17244411 at rank<=19 on a fresh complete official Kaggle
+leaderboard after legitimate inference. ACTIVE/unachieved; retain0.82987/rank23.
+V18 is sealed; exact docs/GOAL_V18.md and docs/SPAN_018_RESULTS.md. Select H65
+only and execute docs/SPAN_019_PLAN.md. No other carried task is selected.
 
-First, one fixed cached teacher preserves actual H60on-route and uses the equal
-four-orientation mean only off-route, T1/8192/context4096. Same original control/
-uniform512/long/test IDs, sources and group bootstrap(seed42/2000). Strict uniform
-loss reduction>.001before feature inference. Original votes trained the models:
-descriptive information, not independent teacher advantage/CV or scoreforecast.
-No teacher/route/weight/temperature grid; stop without GPU if the gate fails.
+Audit public mirror wath5/kgl_lmsys_pref_classif pinned to
+cd24909db06583ecf00e65b6919c6cc1531c9885. Source-first: at most60minutes/50MiB
+for pinned cards/config/tokenizer/tensor headers and native quantization code.
+Confirm finite3x3584head and all42GPTQ8layers; inspect EOS/pad=1 and native2000
+format/pooling. No full shards, model inference or GPU admitted by this stage.
+Document mirror attribution, missing derivative license and unresolved original
+run lineage; do not invent authentication or claim another artifact's score.
+No private403dataset retry or silent substitution of H55's earlier parent.
 
-A pass permits only a bounded30minute/50MiBsource audit. Freeze state schema,
-one small head, training/group-held-out IDs and objective, numerical/quality
-criteria and actual serialized rehearsals BEFORE new features/GPU. Intended head
-predicts centered teacher logit residuals from existing retained expert states;
-no human labels in its training and no extra large deployment pass. Retain
-H15's unresolved provenance/independent-advantage limits. Teacher approximation
-alone does not prove better human predictions; fresh confirmation as needed.
+Before weights/GPU publish source result and one exact backend/input/ensemble,
+quality IDs/groups/gates and serialized worker rehearsals. Intended single fixed
+replacement ensemble, equal weights/T1, retained partner selected once before
+outputs; no format/weight/temperature/route grid. Original labels overlap training;
+later votes are domain-shift robustness evidence, not competitionCV. No hidden
+labels/cache or external text service. Preserve all failed checks and stop rules.
 
-Strict native/base canonical1e-5/source/head/ID/token/class/route/CSV/twoT4checks,
-actual512/full80warmup profiling, conservative25k<32400s with20pctmargin/all
-feature/head/worst comparable parent-current cold/warmup/other costs/600reserve.
-Only then one frozen official candidate; retain H60if worse. No research while
-officialpending. Actual fresh leaderboard rank defines goal completion.
+Require native-versus-production rawprobabilities<=1e-5/source/head/ID/token/class/
+CSV/bothT4controls, actual512/full80warmup profile and conservative25k<32400seconds
+with20%margin/allcold/other/600reserve before one frozen official candidate.
+No researchGPU during official scoring; fresh complete board proves goal success.
 
-Original period 2026-11-08T08:09:29.533477+00:00 through 2026-11-10T08:09:29.533513+00:00; quota refresh
-2026-11-14 00:00:00. Free public cap18000two-T4seconds, initial3600,
-one separately admitted followup14400,max2public/1productionrecipe/1official.
-FirstCPUcap600s. The cached gate/source audit admit NO GPU. Fresh full quota/
-jobs/pinned dependencies/official cursors before admission, paidFalse. No hidden
-targets/caches/external service or duplicate mutation on observation timeout.
+Original period and quota refresh in results/span_019/span_plan.json, fixed48hour
+span,source60minute deadline. Publiccap18000two-T4seconds:initial3600,one separately
+admittedfollowup14400,max2public/1productionrecipe/1official. Source stage admits
+ZERO GPU/fullweights. Fresh full jobs/quota/pinneddependencies/official cursors
+beforeGPU;paidFalse. No cap/periodreset or duplicate mutation aftertimeout.
 
-Heavy files under database/llm_classification_finetuning/runs/span_018; source,
-Markdown/aggregates/executedNotebook30in Git. Preserve70historical snapshots,
-all archived goals, user notebooks07/12and notebook link. Queue discoveries in
-v19, carry unfinished work. Globalrankgoal remains active across span closure.
+Heavyfiles ROOT/runs/span_019;programs/Markdown/aggregates/executedNotebook31in Git.
+Preserve74snapshots,archivedgoals,userdirty07/12andnotebooklink. CLIstatus/evidence,
+queue discoveriesv20,carryunfinished. Spanclosure does not complete rankgoal.

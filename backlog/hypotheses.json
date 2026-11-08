@@ -6009,7 +6009,7 @@
       ],
       "id": "H65",
       "rank": 83,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 19,
       "discovered_during": 18,
       "derived_from": [
@@ -6023,6 +6023,12 @@
           "evidence": [
             "docs/SPAN_018_CHECKPOINT_DISCOVERY.md"
           ]
+        },
+        {
+          "at": "2026-11-08T08:35:07+00:00",
+          "status": "running",
+          "note": "Preparing v19 immutable source-audit contract for public HF mirror cd24909db06583ecf00e65b6919c6cc1531c9885; no GPU or quality outputs yet.",
+          "evidence": []
         }
       ]
     }
@@ -7542,8 +7548,18 @@
         "H63",
         "H65"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H65"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T08:35:07+00:00",
+          "note": "Persistent rank goal selects the distinct accessible three-class mirror; start with pinned native source and tensor-header audit, no inference or weights admitted yet.",
+          "focus_ids": [
+            "H65"
+          ]
+        }
+      ],
       "carried_from": 18,
       "start_sha256": "0cd8551d7539316baea6b792166a7b31436983c849b53543485c70ce70d72a9c",
       "start_markdown_sha256": "f2e4534730bfb31147ed7bf9cdaa352ff66b23c8ddafbd9ac38226ff32266d48",

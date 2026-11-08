@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-08T08:37:37.343197+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "job_seconds_caps": {
+    "classifier_pilot": 3600,
+    "classifier_followup": 14400
+  }
+}
