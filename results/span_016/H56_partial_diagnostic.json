@@ -1,0 +1,300 @@
+{
+  "at": "2026-11-08T07:01:55.205857+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
+  "service_status": "ERROR",
+  "interpretation": "Failed service retained. Complete expert diagnostics and mathematical completion bounds only; primary full-recipe loss is not measured.",
+  "primary_comparison_complete": false,
+  "information_gate_passed": null,
+  "official_submission_eligible": false,
+  "source_rows": 1024,
+  "canonical_control_identity": {
+    "m0": {
+      "passed": true,
+      "max_abs_probability_difference": 0.0
+    },
+    "m3": {
+      "passed": true,
+      "max_abs_probability_difference": 0.0
+    },
+    "m0_reverse_routed_control": {
+      "passed": true,
+      "max_abs_probability_difference": 0.0
+    }
+  },
+  "native_controls_verified": true,
+  "models": {
+    "training_prior_crossfitted": {
+      "log_loss": 1.095736144222929,
+      "accuracy": 0.3701171875,
+      "class_log_loss": {
+        "winner_model_a": 0.9949113550116137,
+        "winner_model_b": 1.086162456322892,
+        "winner_tie": 1.2346160476493548
+      },
+      "class_accuracy": {
+        "winner_model_a": 1.0,
+        "winner_model_b": 0.0,
+        "winner_tie": 0.0
+      },
+      "mean_class_probabilities": [
+        0.3701149481446701,
+        0.33789817482652923,
+        0.291986877028799
+      ]
+    },
+    "Gemma": {
+      "log_loss": 1.0041933059692383,
+      "accuracy": 0.505859375,
+      "class_log_loss": {
+        "winner_model_a": 1.0138546228408813,
+        "winner_model_b": 0.9019972681999207,
+        "winner_tie": 1.1102070808410645
+      },
+      "class_accuracy": {
+        "winner_model_a": 0.5303430079155673,
+        "winner_model_b": 0.6098265895953757,
+        "winner_tie": 0.35451505016722407
+      },
+      "mean_class_probabilities": [
+        0.34137484431266785,
+        0.3544331192970276,
+        0.304191917181015
+      ]
+    },
+    "Llama_aligned": {
+      "log_loss": 1.0081143379211426,
+      "accuracy": 0.482421875,
+      "class_log_loss": {
+        "winner_model_a": 1.0041738748550415,
+        "winner_model_b": 0.9179986715316772,
+        "winner_tie": 1.1173900365829468
+      },
+      "class_accuracy": {
+        "winner_model_a": 0.5356200527704486,
+        "winner_model_b": 0.5867052023121387,
+        "winner_tie": 0.29431438127090304
+      },
+      "mean_class_probabilities": [
+        0.34209108352661133,
+        0.35704800486564636,
+        0.3008609414100647
+      ]
+    },
+    "reward_8B_crossfitted": {
+      "log_loss": 1.0409154954568303,
+      "accuracy": 0.4599609375,
+      "class_log_loss": {
+        "winner_model_a": 0.985844920364076,
+        "winner_model_b": 0.9540597560575679,
+        "winner_tie": 1.2112293208491338
+      },
+      "class_accuracy": {
+        "winner_model_a": 0.5593667546174143,
+        "winner_model_b": 0.5751445086705202,
+        "winner_tie": 0.20066889632107024
+      },
+      "mean_class_probabilities": [
+        0.355444488568709,
+        0.3526229020626707,
+        0.2919326093686206
+      ]
+    },
+    "reward_0.6B_crossfitted": {
+      "log_loss": 1.0527876741071887,
+      "accuracy": 0.4443359375,
+      "class_log_loss": {
+        "winner_model_a": 0.9910251373706565,
+        "winner_model_b": 0.9787968588072675,
+        "winner_tie": 1.2166967828594244
+      },
+      "class_accuracy": {
+        "winner_model_a": 0.5382585751978892,
+        "winner_model_b": 0.5549132947976878,
+        "winner_tie": 0.19732441471571907
+      },
+      "mean_class_probabilities": [
+        0.3553393137495869,
+        0.3529018586067829,
+        0.29175882764363203
+      ]
+    }
+  },
+  "standalone_reward_vs_llama_loss_reduction": -0.03280118445309299,
+  "standalone_reward_vs_llama_group95": [
+    -0.059330877288923535,
+    -0.007745292309638768
+  ],
+  "frozen_recipe_completion_gain_bounds": [
+    -0.08559347657625413,
+    0.07537215560123582
+  ],
+  "completion_bootstrap_envelope": [
+    -0.10411659814110147,
+    0.09514819769768312
+  ],
+  "common_off_route": {
+    "rows": 716,
+    "loss_reduction": 0.002101210213179192,
+    "paired_group95": [
+      -0.009165139950683993,
+      0.012619253995561835
+    ],
+    "full_cohort": false,
+    "post_hoc_subset": true,
+    "no_predictions_imputed": true
+  },
+  "bounds_are_diagnostic_only": true,
+  "target_runtime_profiled": false,
+  "new_gpu_executions": 0,
+  "session": {
+    "seconds": 3480.0260894298553,
+    "exit_code": -15,
+    "role": "reward_pilot"
+  },
+  "charged_gpu_seconds": 3492.4609999999993,
+  "artifact_hashes_verified": 31,
+  "stopped_by_owned_watchdog": true,
+  "independent_competition_cv": false,
+  "native_inference": {
+    "8B": {
+      "size": "8B",
+      "transformer_version": "4.52.3",
+      "torch_version": "2.1.2",
+      "devices": [
+        0,
+        1
+      ],
+      "loading_exact": true,
+      "scalar_head_restored": true,
+      "cold_seconds": 24.58380287099999,
+      "dtype": "float16",
+      "max_length": 2048,
+      "batch_sequences": 2,
+      "cohorts": {
+        "warmup": {
+          "rows": 80,
+          "seconds": 45.42470883200002,
+          "retained_tokens": 52965,
+          "original_tokens": 52965,
+          "truncated_sequences": 0,
+          "history_counts": {
+            "multiturn_rows": 12,
+            "mismatched_turn_rows": 0,
+            "null_messages_in_rendered_pairs": 0,
+            "missing_user_turns_in_pairs": 0,
+            "missing_assistant_turns_in_pairs": 0
+          },
+          "input_token_hash": "6011b373070f4f46c07fb81cfa819bd498c8cecfabc39d262475d4885a0aa758",
+          "peak_allocated_bytes": [
+            8913063936,
+            7638446592
+          ]
+        },
+        "long": {
+          "rows": 1024,
+          "seconds": 734.457467452,
+          "retained_tokens": 756834,
+          "original_tokens": 818002,
+          "truncated_sequences": 21,
+          "history_counts": {
+            "multiturn_rows": 0,
+            "mismatched_turn_rows": 0,
+            "null_messages_in_rendered_pairs": 0,
+            "missing_user_turns_in_pairs": 0,
+            "missing_assistant_turns_in_pairs": 0
+          },
+          "input_token_hash": "e8f4c29c983b08731b94ff8e6ad6ef1b505baa681fad8d9e3b1b71b6630d8985",
+          "peak_allocated_bytes": [
+            9040303104,
+            7761447424
+          ]
+        },
+        "test": {
+          "rows": 3,
+          "seconds": 2.6335002349999286,
+          "retained_tokens": 2328,
+          "original_tokens": 2328,
+          "truncated_sequences": 0,
+          "history_counts": {
+            "multiturn_rows": 1,
+            "mismatched_turn_rows": 0,
+            "null_messages_in_rendered_pairs": 0,
+            "missing_user_turns_in_pairs": 0,
+            "missing_assistant_turns_in_pairs": 0
+          },
+          "input_token_hash": "d41350c2ba3bd2ad71b9413a3ab719dc6611493b4dbc58aa4016261dbbfeef90",
+          "peak_allocated_bytes": [
+            8417961472,
+            7157886464
+          ]
+        }
+      },
+      "native_controls": {
+        "passed": true,
+        "native_max_abs": 0.0,
+        "repeated_max_abs": 0.0,
+        "identical_input_tensors": true
+      }
+    },
+    "0.6B": {
+      "size": "0.6B",
+      "transformer_version": "4.52.3",
+      "torch_version": "2.1.2",
+      "devices": [
+        0
+      ],
+      "loading_exact": true,
+      "scalar_head_restored": true,
+      "cold_seconds": 4.794881166000096,
+      "dtype": "float16",
+      "max_length": 2048,
+      "batch_sequences": 2,
+      "cohorts": {
+        "warmup": {
+          "rows": 80,
+          "seconds": 7.50591373899988,
+          "retained_tokens": 52965,
+          "original_tokens": 52965,
+          "truncated_sequences": 0,
+          "history_counts": {
+            "multiturn_rows": 12,
+            "mismatched_turn_rows": 0,
+            "null_messages_in_rendered_pairs": 0,
+            "missing_user_turns_in_pairs": 0,
+            "missing_assistant_turns_in_pairs": 0
+          },
+          "input_token_hash": "6011b373070f4f46c07fb81cfa819bd498c8cecfabc39d262475d4885a0aa758",
+          "peak_allocated_bytes": [
+            1550973440
+          ]
+        },
+        "long": {
+          "rows": 1024,
+          "seconds": 100.34937753299982,
+          "retained_tokens": 756834,
+          "original_tokens": 818002,
+          "truncated_sequences": 21,
+          "history_counts": {
+            "multiturn_rows": 0,
+            "mismatched_turn_rows": 0,
+            "null_messages_in_rendered_pairs": 0,
+            "missing_user_turns_in_pairs": 0,
+            "missing_assistant_turns_in_pairs": 0
+          },
+          "input_token_hash": "e8f4c29c983b08731b94ff8e6ad6ef1b505baa681fad8d9e3b1b71b6630d8985",
+          "peak_allocated_bytes": [
+            1614233088
+          ]
+        }
+      },
+      "native_controls": {
+        "passed": true,
+        "native_max_abs": 0.0,
+        "repeated_max_abs": 0.0,
+        "identical_input_tensors": true
+      }
+    }
+  },
+  "source_sha256": "e069c59dfae1d99bb8d16bd6eddb99346a23f6be8ffa4e7e8c7337eeceea10b4",
+  "bounds_source_sha256": "0c2cb6ebc896eb91cd43edc033297a241000b07f32542301d3b5ed8e56e01b26"
+}

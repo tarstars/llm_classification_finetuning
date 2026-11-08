@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-08T07:01:55.199412+00:00",
+  "rows": 1024,
+  "post_hoc_exploratory": true,
+  "mean_feature_not_fitted": true,
+  "mean_reward_tie_auc": 0.4602837043016953,
+  "minus_abs_difference_tie_auc": 0.5855979702456464,
+  "mean_reward_by_class": {
+    "0": {
+      "mean": 11.475106702316404,
+      "sd": 5.709818874345535
+    },
+    "1": {
+      "mean": 11.110844286880052,
+      "sd": 5.949234231091843
+    },
+    "2": {
+      "mean": 10.65853606259145,
+      "sd": 6.198184343702669
+    }
+  },
+  "mean_reward_tie_residual_correlation": -0.0412803038687374,
+  "interpretation": "Exploratory hypothesis generation on inspected source votes; not a full candidate result or competition CV"
+}

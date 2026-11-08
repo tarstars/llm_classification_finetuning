@@ -12,10 +12,13 @@ from arena.experiment import read_json
 
 def main():
     assert read_json(REPO / 'backlog/hypotheses.json')['active_version'] == 16, 'Preserve historical review'
+    final_partial = (REPO/'results/span_016/H56_partial_diagnostic.json').exists()
+    status_line = ('**FINAL: watchdog stopped the service (ERROR); full candidate quality is incomplete.**'
+        if final_partial else '**Source stage passed; GPU quality is unmeasured until an actual run completes.**')
     nb = nbf.v4.new_notebook(cells=[
-        nbf.v4.new_markdown_cell('''# V16: frozen preference rewards and later human votes
+        nbf.v4.new_markdown_cell(f'''# V16: frozen preference rewards and later human votes
 
-**Source stage passed; GPU quality is unmeasured until an actual run completes.**
+{status_line}
 Retain official0.82987/rank23; the rank<=19objective remains active.
 
 Replace one expert with a pretrained scalar reward head and fit only a symmetric
@@ -70,6 +73,26 @@ if (PUB/'H56_information.json').exists():
   **m['class_log_loss']} for name,m in info['models'].items()]))
  display(pd.DataFrame([{k:info[k] for k in ['loss_reduction','paired_group95',
   'information_gate_passed','stronger_quality_gate_passed','official_submission_eligible','decision']}]))
+elif (PUB/'H56_partial_diagnostic.json').exists():
+ partial=read('H56_partial_diagnostic.json')
+ assert partial['service_status']=='ERROR' and not partial['primary_comparison_complete']
+ assert not partial['official_submission_eligible']
+ print('FINAL: failed service preserved; complete expert diagnostics only. No submission.')
+ display(pd.DataFrame([{'model':name,'log_loss':m['log_loss'],'accuracy':m['accuracy'],
+  **m['class_log_loss']} for name,m in partial['models'].items()]))
+ display(pd.DataFrame([partial['common_off_route']]))
+ print('The common off-route subset is exploratory; the full paired loss is unmeasured.')
+ print('Possible completion-gain bounds:',partial['frozen_recipe_completion_gain_bounds'])
+ print('Those bounds are diagnostics and cannot qualify a candidate.')
+ display(pd.DataFrame([{'size':size,'cold_seconds':s['cold_seconds'],
+  'warmup_seconds':s['cohorts']['warmup']['seconds'],
+  'source1024_seconds':s['cohorts']['long']['seconds'],
+  'peak_GiB':[round(x/2**30,3) for x in s['cohorts']['long']['peak_allocated_bytes']]}
+  for size,s in partial['native_inference'].items()]))
+ print('Charged GPU seconds:',partial['charged_gpu_seconds'])
+ print('Owned worker:',partial['session'])
+ print('Artifacts verified:',partial['artifact_hashes_verified'])
+ print('Retain official0.82987. Full quality/runtime gates were not met.')
 else:print('H56_information.json: pending; actual model quality has not been audited.')
 print('A source/CPU check is not a GPU quality estimate or a leaderboard improvement.')''')])
     nb.metadata.update(kernelspec=dict(display_name='Python 3', language='python', name='python3'))

@@ -130,3 +130,15 @@ scripts/observe_span_016_pilot.py keeps aggregate native size/sequence and legac
 row/batch counters, fresh exact-version status, observer timeout type and raw
 private snapshots separately. An idle ConnectionError limits observation and does
 not change the job's RUNNING status. No GPU/source/recipe change or new version.
+
+Final07:03UTC: serviceERROR preserved after owned3480.026s watchdog/exit-15,
+charged3492.461s,31artifacts retrieved and verified. Native8Bsource loss1.040915
+versus Llama1.008114; common716off-route rows only+.002101CI[-.009165,+.012619].
+Primary full comparison/target runtime incomplete; no follow-up or submission.
+All three available legacy controls maxdiff0; native heads/tokens passed.
+Notebook28FINAL3cells/0errors; docs/SPAN_016_RESULTS.md records actual findings.
+Fresh full terminal inventory:66owned/zeroactive,7terminal official receipts,
+91613.417free GPU seconds/paidFalse. Still23rd/312at.82987. V16sealed; v17has
+38carryovers plus H63(P3conditional), no focus. Closure auditPASSED,62old
+snapshots/usernotebooks preserved,66snapshotfiles after transition. Global
+rank<=19goal remains ACTIVE/unachieved.

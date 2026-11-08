@@ -1,5 +1,5 @@
 {
-  "status": "RUNNING",
+  "status": "ERROR",
   "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
-  "observed_at": "2026-11-08T05:45:03.423835+00:00"
+  "observed_at": "2026-11-08T06:41:43.690636+00:00"
 }

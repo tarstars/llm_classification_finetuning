@@ -5,6 +5,7 @@ import sys
 
 import numpy as np
 import pandas as pd
+from sklearn.metrics import roc_auc_score
 
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(REPO/'src'))
@@ -21,7 +22,11 @@ def main():
     root,pub = ROOT/'runs/span_016',REPO/'results/span_016'
     job = root/'jobs/reward_pilot'
     bundle = read_json(pub/'reward_pilot_bundle.json')
-    verify_sources(REPO,bundle['source_sha256'])
+    sources = dict(bundle['source_sha256'])
+    goal_digest = sources.pop('GOAL.md')
+    archived_goal = REPO/'docs/GOAL_V16.md'
+    assert sha256(archived_goal if archived_goal.exists() else REPO/'GOAL.md') == goal_digest
+    verify_sources(REPO,sources)
     push = read_json(job/'push.json')
     exact = push['ref'].removeprefix('/code/')+'/'+str(push['version_number'])
     status = str(read_call(lambda:api_client().kernels_status(exact)).status).split('.')[-1]
@@ -65,6 +70,19 @@ def main():
         difference = float(np.max(np.abs(current['probabilities']-old['probabilities'])))
         assert difference < 1e-5
         canonical[role] = dict(passed=True,max_abs_probability_difference=difference)
+    reverse = np.load(out/'m0_reverse_routed_control.npz')
+    reverse_root = ROOT/'runs/span_013/jobs/gemma_order/output/order_completion'
+    old_reverse = np.load(reverse_root/'m0_reverse_routed_control.npz')
+    reverse_summary = read_json(out/'m0_reverse_summary.json')
+    assert reverse_summary['loading_exact'] and reverse_summary['cohorts']['warmup']['rows'] == 80
+    assert read_json(out/'m0_reverse_checkpoint.json') == read_json(reference/'m0_checkpoint.json')
+    np.testing.assert_array_equal(reverse['ids'],old_reverse['ids'])
+    np.testing.assert_array_equal(reverse['lengths'],old_reverse['lengths'])
+    expected_reverse = read_json(reverse_root/'m0_reverse_summary.json')['cohorts']['routed_control']
+    assert reverse_summary['cohorts']['routed_control']['token_ids_sha256'] == expected_reverse['token_ids_sha256']
+    difference = float(np.max(np.abs(reverse['probabilities']-old_reverse['probabilities'])))
+    assert difference < 1e-5
+    canonical['m0_reverse_routed_control'] = dict(passed=True,max_abs_probability_difference=difference)
     token_manifest = read_json(pub/'matched_token_reference.json')
     token_path = root/'token_audit_matched/expected_long.npz'
     assert sha256(token_path) == token_manifest['artifact_sha256']['expected_long.npz']
@@ -87,6 +105,7 @@ def main():
     d = arrays['reward_8B']['rewards'][:,0]-arrays['reward_8B']['rewards'][:,1]
     small_d = arrays['reward_0.6B']['rewards'][:,0]-arrays['reward_0.6B']['rewards'][:,1]
     cf,small_cf = np.full((1024,3),np.nan),np.full((1024,3),np.nan)
+    prior_cf = np.full((1024,3),np.nan)
     coverage,new = np.zeros(1024,dtype=int),[]
     lengths = np.c_[arrays['m0']['lengths'],arrays['reward_8B']['lengths'].sum(1)]
     for fold in folds:
@@ -97,6 +116,7 @@ def main():
         model.theta = np.asarray(fold['theta'])
         whole = model.predict_proba(d)
         cf[val] = whole[val]
+        prior_cf[val] = np.bincount(y[train],minlength=3)/len(train)
         small_cf[val] = TieCalibration().fit(small_d[train],y[train]).predict_proba(small_d[val])
         route,_,_ = route_indices(ids,gemma,whole,lengths)
         new.extend(np.intersect1d(route,val).tolist())
@@ -104,24 +124,48 @@ def main():
     assert np.all(coverage == 1)
     old,_,_ = route_indices(ids,gemma,llama[:,[1,0,2]],np.c_[arrays['m0']['lengths'],arrays['m3']['lengths']])
     lower,upper = completion_gain_bounds(gemma,llama,cf,y,old,np.sort(np.asarray(new,dtype=int)))
+    common = np.ones(1024,dtype=bool)
+    common[np.union1d(old,np.asarray(new,dtype=int))] = False
+    assert common.any() and np.all(upper[common]-lower[common] < 3e-12)
+    common_delta = (lower[common]+upper[common])/2
     difference = losses(y,llama[:,[1,0,2]])-losses(y,cf)
+    session = read_json(job/'output/session_summary.json')
+    resources = read_json(pub/'jobs/reward_pilot/controller_state.json')
+    assert resources['status'] == status and resources['files'] == retrieval['files']
+    assert session['exit_code'] == -15 and abs(session['seconds']-3480) < 5
+    mean_reward = arrays['reward_8B']['rewards'].astype(float).mean(1)
+    mean_diagnostic = dict(at=utc_now(),rows=1024,post_hoc_exploratory=True,mean_feature_not_fitted=True,
+        mean_reward_tie_auc=float(roc_auc_score(y==2,mean_reward)),
+        minus_abs_difference_tie_auc=float(roc_auc_score(y==2,-abs(d))),
+        mean_reward_by_class={str(k):dict(mean=float(mean_reward[y==k].mean()),
+            sd=float(mean_reward[y==k].std())) for k in range(3)},
+        mean_reward_tie_residual_correlation=float(np.corrcoef(mean_reward,(y==2)-cf[:,2])[0,1]),
+        interpretation='Exploratory hypothesis generation on inspected source votes; not a full candidate result or competition CV')
     result = dict(at=utc_now(),kernel_version=exact,service_status=status,
         interpretation='Failed service retained. Complete expert diagnostics and mathematical completion bounds only; primary full-recipe loss is not measured.',
         primary_comparison_complete=False,information_gate_passed=None,official_submission_eligible=False,
         source_rows=1024,canonical_control_identity=canonical,native_controls_verified=True,
-        models={'Gemma':metrics(y,gemma),'Llama_aligned':metrics(y,llama[:,[1,0,2]]),
+        models={'training_prior_crossfitted':metrics(y,prior_cf),
+            'Gemma':metrics(y,gemma),'Llama_aligned':metrics(y,llama[:,[1,0,2]]),
             'reward_8B_crossfitted':metrics(y,cf),'reward_0.6B_crossfitted':metrics(y,small_cf)},
         standalone_reward_vs_llama_loss_reduction=float(difference.mean()),
         standalone_reward_vs_llama_group95=paired_interval(difference,groups),
         frozen_recipe_completion_gain_bounds=[float(lower.mean()),float(upper.mean())],
         completion_bootstrap_envelope=[paired_interval(lower,groups)[0],paired_interval(upper,groups)[1]],
+        common_off_route=dict(rows=int(common.sum()),loss_reduction=float(common_delta.mean()),
+            paired_group95=paired_interval(common_delta,groups[common]),
+            full_cohort=False,post_hoc_subset=True,no_predictions_imputed=True),
         bounds_are_diagnostic_only=True,target_runtime_profiled=False,new_gpu_executions=0,
+        session=session,charged_gpu_seconds=resources['charged_seconds'],
+        artifact_hashes_verified=retrieval['files'],stopped_by_owned_watchdog=True,
         independent_competition_cv=False,native_inference=native,
         source_sha256=sha256(Path(__file__)),bounds_source_sha256=sha256(REPO/'src/arena/span016_bounds.py'))
+    atomic_json(pub/'reward_mean_diagnostic.json',mean_diagnostic)
     atomic_json(pub/'H56_partial_diagnostic.json',result)
     print(json.dumps({k:result[k] for k in ['service_status','models',
         'standalone_reward_vs_llama_loss_reduction','standalone_reward_vs_llama_group95',
-        'frozen_recipe_completion_gain_bounds','completion_bootstrap_envelope','official_submission_eligible']},indent=2))
+        'frozen_recipe_completion_gain_bounds','completion_bootstrap_envelope','common_off_route',
+        'official_submission_eligible']},indent=2))
 
 
 if __name__ == '__main__':

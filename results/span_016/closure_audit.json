@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-08T07:03:20.525698+00:00",
+  "passed": true,
+  "sealed_version": 16,
+  "goal_achieved_by_span": false,
+  "service_status": "ERROR",
+  "primary_comparison_complete": false,
+  "official_submission_eligible": false,
+  "public_gpu_versions": 1,
+  "official_submissions": 0,
+  "charged_gpu_seconds": 3492.4609999999993,
+  "verified_artifacts": 31,
+  "prior_snapshots_preserved": 62,
+  "snapshot_files_after_transition": 66,
+  "notebook_code_cells": 3,
+  "notebook_errors": 0,
+  "notebook_sha256": "a38a737f49040b7a038f3e0d7e844dd8bfb39df5c07a001293be05b2b103ccd7",
+  "goal_archive_sha256": "c1321240d3a2c4d1cec1566968b36b9792ddb91bdd3269a6d0c81a88ac6765ec",
+  "carried_tasks": 38,
+  "successor_members": 39,
+  "new_discoveries": [
+    "H63"
+  ],
+  "leaderboard": {
+    "observed_at": "2026-11-08T06:53:48.463692+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 23,
+    "teams": 312,
+    "score": 0.82987,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82702,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-07T20:07:11.890Z"
+  }
+}

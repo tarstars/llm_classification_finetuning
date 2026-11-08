@@ -1,3 +1,5 @@
 {"at": "2026-11-08T05:43:18.383306+00:00", "stage": "reward_pilot", "event": "pushing_one_version"}
 {"at": "2026-11-08T05:43:21.370275+00:00", "stage": "reward_pilot", "event": "remote_status", "status": "QUEUED", "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1"}
 {"at": "2026-11-08T05:44:17.749571+00:00", "stage": "reward_pilot", "event": "remote_status", "status": "RUNNING", "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1"}
+{"at": "2026-11-08T06:41:43.709130+00:00", "stage": "reward_pilot", "event": "remote_status", "status": "ERROR", "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1"}
+{"at": "2026-11-08T06:41:53.239741+00:00", "stage": "reward_pilot", "event": "failed", "status": "ERROR", "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1", "charged_seconds": 3492.4609999999993, "files": 31}

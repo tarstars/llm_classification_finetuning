@@ -1,205 +1,129 @@
-# Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
+# Active rank goal; v16 sealed after a watchdog-limited reward pilot
 
-Snapshot2026-11-08T06:04UTC. Read PROJECT_POLICY.md and current GOAL.md, then
-verify live state. Persistent goal "move above20th place" means rank<=19 for
-team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
-Do not create another goal or mark complete from a span closure.
+Snapshot 2026-11-08T07:03:19.168169+00:00. Read PROJECT_POLICY.md and GOAL.md, then verify live state.
+Persistent tool objective is "move above20th place in leaderboard": rank<=19for
+team17244411 on a fresh complete official board. ACTIVE/unachieved, no budget.
+Do not create another goal or mark complete from a span/local-result closure.
 
-## Current authoritative state
+## Authoritative current state
 
-Official best58103553 COMPLETE0.82987, source
-arseniytrushin/llm-preference-span013-gemma-order/1. Improvement0.00066from0.83053,
-moving30th to23rd. Fresh05:34:58UTC board:23/312, rank19/20cutoff0.82915,
-leader0.82702; gap0.00072. Actual rank defines success. NEWv16pilot accepted,
-RUNNING at06:03UTC. Both reward passes completed; Gemma loading. All OLDpublic/official jobs/controllers are terminal: never
-restart or resubmit. All seven official receipts are terminal.
+Best official58103553 COMPLETE0.82987, exact source
+arseniytrushin/llm-preference-span013-gemma-order/1. Fresh2026-11-08T06:53:48UTC
+complete board:23/312, rank19/20cutoff0.82915, leader0.82702, goalfalse. No new
+submission in v16. All7official receipts terminal. Full fresh66owned-notebook
+inventory has no nonterminal jobs; reserved0/paidFalse. Quota used16386.583s,
+remaining91613.417s(25.45h), refreshNov14. All old jobs/controllers are terminal:
+never restart or resubmit them. This includes v16controller85217, exit1after
+preserving ERROR and retrieving31artifacts. No live observer or upload remains.
 
-V15 SEALED, H55done. Exact earlier parent sayoulala/merge-gemma-model-step1/1 is
-COMPLETE; source/config/index hashes matchv9. Original adapter
-sayoulala/v7-8-gemma-v7-64r128-ddgemma2-16bit-4bit905 metadata returns403.
-Exact run/fold, class/head restoration and native format remain unresolved.
-Pinned author training DOES train/save score parameters: CAUSAL_LM/strict=False
-does NOT prove a random head. Family A/B/tie0/1/2mapping is not proof for this
-exact earlier artifact. Training padEOS versus merged pad0 and differing contexts
-prevent silently borrowing final-family input/pooling.905filename is not a score.
-Separate final winning DPO dataset403 was NOT retried. No weight download,
-quality measurement, GPU or submission. Audit140665bytes under50MiB, within60min.
+V16SEALED, focusH56done; docs/SPAN_016_RESULTS.md and docs/GOAL_V16.md authoritative.
+Activev17has39members (38carried plus newH63), focus[]/no work selected. V18draft
+empty. H63is P3conditional native batch engineering, not admitted; current head
+usefulness is insufficient. H62remains P2unselected one15pct-work/30pct-row CPU
+replay; no30pct-row result exists. Select/publish a bounded next-span plan before
+execution, preserving the same global rank goal. Do not invent a successful
+source/quality/runtime result or reset its old limits by rerunning H56.
 
-Result results/span_015/H55_source_audit.json; report docs/SPAN_015_RESULTS.md;
-exact goal docs/GOAL_V15.md. Notebook27FINAL:2executed cells/0errors; builder
-refuses after closure. scripts/audit_span_015_closure.py PASSED:10small files,
-58prior snapshots, user notebooks and39carryovers. Final snapshots capture
-pretransition active state; live registry proves closure. V15final/v16start add
-four snapshots:62historical files now. Closure9dfb891is pushed.
+## V16 actual result
 
-Fresh full v15terminal inventory:65owned notebooks, all jobs/receipts terminal.
-Quota used12894.122s/reserved0/free95105.878s=26.42h, refreshNov14, paid off;
-v15delta0. Recheck full quota/jobs/dependencies/receipt cursors before actualGPU.
-Activev16has39members; focus H56RUNNING, source stage PASSED, first GPU version ADMITTED/RUNNING.
-GOAL.md/docs/SPAN_016_PLAN.md prospectively revise its old rank30guard under the
-continuing rank<=19objective. Preparation fixes a new48hour period/60minute small
-source audit/50MiB; no weights or GPU before supported source audit and exact
-pilot contract.8Bmain/0.6Bcontrol, one symmetric3parameter map, one replacement
-recipe, initial3600s/followup14400s separately admitted, max2public/1official.
-Read docs/SPAN_016_PROGRESS.md and docs/SPAN_016_PILOT_PROTOCOL.md. HF pinned
-models publish no later than2025-07-06T18:16:33UTC. Actual matched1024fresh later-vote
-groups use pre-existing target-length quotas after3072prior-group exclusions,
-seed42hash; datesJuly6 18:51throughJuly24 23:45. Durable IDs precede target queries.
-The initial unused cohort remains preserved; see prospective refinement below.
-Primary quality is later-vote cross-fitted replacement versus H60, not original
-competition training overlap. Domain transport remains uncertain. Pilot gate
-gain>=.005/pairedlower>-.005; stronger official/confirmation gate>=.005/lower>0.
-One3parameter symmetric tie map, fixed5outer/3inner diagnostic folds, no grid.
-Common full reverse-Gemma cache for matched external comparison; actual routed
-uniform512pipeline separately measures deployment. Include1024reward calibration
-inference overhead in hidden runtime; known external votes are training, not
-hidden labels. Only reward expert replaces Llama; equal total expert weights.
+Exact acceptedarseniytrushin/llm-preference-span016-reward-pilot/1 remainsERROR.
+Owned watchdog stopped3480.026s/exit-15during full reverse-Gemma source inference;
+charged3492.461s. One public version, no follow-up, no official.31retrieved files
+under ROOT/runs/span_016/jobs/reward_pilot/output, hashes in retrieval.json.
+No full quality_comparison.npz, completion.json or submission.csv. Primary
+comparison and actual512target runtime UNMEASURED; officialeligibleFalse.
+Never treat the failed service as COMPLETE or the partial diagnostics as its gate.
 
-Source-only audit15.98MB; full-weight acquisition and private staging are complete below. Native synthetic rendering passes both
-local5.22.1and isolated pinned4.52.3runtime; first BatchEncodingAPI failure retained,
-explicit return_dict=False fixes it. Five mapping tests plus five actual pipeline
-bookkeeping tests pass (ten total). Serialized worker success/failure/watchdog/Jupyter and
-public/hidden branches pass; no competition train.csvin hidden CPU test. Notebook28
-is executed interim3cells/0errors and may refresh while v16active. Generated real
-GPU notebook ROOT/runs/span_016/notebooks/reward_pilot; role reward_pilot. Its
-bundle/source/profile/manifest hashes must stay frozen before accepted GPU work.
+Complete1024later-vote source expert metrics:
+- fold-local class-prior baseline loss1.095736, accuracy37.01%.
+- Gemma1.004193/50.59%; alignedLlama1.008114/48.24%.
+- cross-fitted8Breward1.040915/46.00%;0.6B1.052788/44.43%.
+Standalone8BvsLlama loss reduction-.032801,5000group-bootstrap95%[-.059331,-.007745].
+Exact same frozen ensembles'716common-off-route rows give+.002101,
+CI[-.009165,+.012619], a post-hoc incomplete subset. Full completion-gain bounds
+[-.085593,+.075372]are too broad and diagnostic only. No missing outputs imputed.
+Three legacy controls(m0,m3,reverse-routed-control)each maxdiff0. Native heads,
+pooling/repeat/device/2048caps/loading and everyCPUtoken reference passed.
+All32asset hashes(original30+2matched overrides)and31output hashes verified.
 
-Preparation/source freeze dddfecfis PUSHED; final information-stage source
-0d8ea4dis PUSHED. Weight acquisition17682is TERMINAL exit0: all16.329GBweight
-hashes verified; whole33file package16,380,017,198bytes. Receipt
-results/span_016/asset_preparation.json. No need/reason to rerun prepare.
-Private model upload95273is TERMINAL exit0/statusOk. Receipt
-results/span_016/model_upload_receipt.json and ROOT/runs/span_016/assets/upload_response.json.
-NEVER repeat upload. Verification PASSED: private, ready, pinned first version
-arseniytrushin/llm-span016-reward-assets/1.
-All33files/16.38GB have verified local hashes; original
-model/runtime asset remains immutable, including its now-unused initial cohort.
+Source ties29.20%vsoriginal30.90%;8Bmean tie probability29.19%but tie recall20.07%,
+loss1.21123(Llama29.43%/1.11739,Gemma35.45%/1.11021). Conditional discrimination is
+weak. Minusabsreward-difference tieAUC.58560; meanrewardAUC.46028/residualcorr-.04128,
+exploratory/no fitted mean feature. Little evidence for a simple mean-reward fix.
+Do not call later-source loss a competition CV score/forecast or an irreducible
+noise floor. Full mixture result remains unknown despite worse standalone expert.
 
-Prospective refinement BEFORE any GPU/model output: initial1024groups had2.36014x
-competition reward-token work. Preserve them UNUSED and select1024NEWgroups into
-pre-existing v11GemmaPAB length quotas. See docs/SPAN_016_COHORT_REFINEMENT.md and
-results/span_016/matched_cohort_manifest.json. Exclude3072prior groups;9706eligible;
-seed42hash; exact CPU/GPUprocessor identity; durableIDs before votes. Mean native
-pair tokens739.0957vscompetition756.502, ratio.976991;21/2048sequencestruncated.
-Actual labels/data ROOT/runs/span_016/cohort_matched; native CPU reference
-ROOT/runs/span_016/token_audit_matched/expected_long.npz. Initial cohort,
-token_reference.json and token_audit remain preserved, unused. Same chronology,
-model recipe, caps and gates; matching lengths does not remove domain shift.
+Native8Bactual source1024time734.457s,cold24.584,warmup45.425,peak8.42/7.23GiB;
+0.6B100.349s,cold4.795,warmup7.506,peak1.50GiB. No target25kprojection exists.
+Initial source2.36xtoken-work mismatch was prospectively corrected BEFORE GPU:
+actualcohort_matched excludes3072prior groups, length quotas fixed fromv11,
+IDs before targets, later votes after2025-07-06T18:16:33UTC. Native mean739.1vs
+competition512sample756.5tokens/pair. Initialcohort/tokenreferences preserved,
+unused. Domains/users/models/conditional labels can still differ.
 
-New1,960,051byte private input override prepared under matched_assets/upload,
-arseniytrushin/llm-span016-lengthmatched-inputs/1, uploaded ONCE and verified READY.
-Both asset_upload.json and matched_input_upload.json are ready/private/hashbound.
-No repeated upload. Prepared source/bundle27c32ee is pushed. Notebook links ONLY
-matched inputs; verifies original30asset entries plus2override hashes; SIXpinned
-datasets. Actual serialized CPU override, success/failure/watchdog/Jupyter and
-pipeline checks pass. Notebook28threeexecutedcells/0errors. Bundle rebuilt.
-No new GPUversion, recipe, resourcecap or model-quality comparison was added.
+Private model/runtime assetarseniytrushin/llm-span016-reward-assets/1 and separate
+arseniytrushin/llm-span016-lengthmatched-inputs/1are READY/private/pinned/hashverified.
+Both uploads terminal; NEVER repeat intents. All33model packagefiles16.38GBverified.
+Pinned8B6f19fdefb933293d4898bdb59a96f7223d998659/0.6B8c14a4e9e6321deaf572544339b16b8d6bbe8886,
+HF Skywork RewardV2Qwen3, native scalarheads/FP16/18-18split/2048perconversation.
+Mapping fixed3params;5outer/3inner folds, seed42. Model files/temp runtime in/tmp
+on Kaggle; heavy project files stay underROOT. No external text inference used.
 
-Fresh full quota/jobs/dependencies/submission cursors remain mandatory. The actual
-run_span_016_pilot.py performs them via the existing controller. No admission
-until asset_upload.json AND matched_input_upload.json are ready/private/hashbound.
-Publish prepared source/bundle first. Free quota last verified95105.878s, paidFalse,
-reserved0, refreshNov14; source deadline complete, overall deadlineNov10 03:00:42UTC.
-Initial public cap3600s, one separately admitted follow-up14400s, phase18000s.
+## Programs and preservation
 
-First version is INFORMATION ONLY / official_submission_eligible=False. Full1024
-quality groups retained; target512runtime profiling deferred to follow-up. Reward
-symlinks/modern runtime live in /tmp on Kaggle to avoid heavy output captures.
-Native scalar pooling aligns references to the actual output device for Accelerate.
-scripts/audit_span_016_information.py now implements accepted-source/raw-control/
-OOF/calibration/native-token/CSV audits: --source-only after acceptance, full after
-COMPLETE/retrieval. No v16official controller yet; do not reuse v13mutation code.
-No reward-GPU quality result yet. Prior private storage93.2MB precedes new16.38GB
-asset; unrelated names redacted. Never repeat accepted/ambiguous mutations.
-H62row-ceiling remains planned/P2; no extra current-span coverage variants.
+scripts/analyze_span_016_partial.py reproduces diagnostics from immutable failed
+artifacts, verifies accepted source/archive goal and all hashes/native/control/
+folds, never qualifies incomplete data. It generates H56_partial_diagnostic.json
+and reward_mean_diagnostic.json. src/arena/span016_bounds.py computes diagnostic
+shared-completion bounds with floating-point guard;3tests pass. Native baseline
+metrics remain exactly those computed from actual outputs, not fake/test values.
 
-LIVE pilot: unified session85217, controllerPID2965390. Accepted exact version
-arseniytrushin/llm-preference-span016-reward-pilot/1, RUNNING at05:45:03UTC
-(after acceptance QUEUED05:43:21).
-NEVER repush. Observe this exact version/controller; temporary observation failure
-is not terminal. First preflight failed429BEFOREintent/GPU; read-only pacing fix
-5d839a0is pushed (four focused tests). Second full preflight passed65owned jobs,
-zeroactive, all7official receipts terminal, all6datasets pinned, quota remaining
-95105.878s/reserved0/paidFalse/refreshNov14. Current controller reads status45s,
-logs120s; automatic terminal retrieval. New run and receipts under jobs/reward_pilot.
-Accepted source audit PASSED05:43:50UTC, exact cells/image/deps/offline:
-results/span_016/reward_pilot_source_verification.json. Information-only always
-ineligible for official; run full audit_span_016_information.py after COMPLETE/
-retrieval. If failure retain exact status/partial outputs, no automatic retry.
-Notebook28refresh now includes queued state and source proof; no quality claim.
+src/arena/span016_runtime.py is PREPARATION ONLY: refuses information-only/partial
+runs, needs actual512passes/full80warmups, includes calibration1024/cold/other/
+20%per-row margin/600reserve.3tests pass. No v16official controller exists or is
+needed after stop; never reuse v13mutation programs. Accepted notebook/bundle is
+frozen; no duplicate push on observation failure.
 
+Read-only inventory pacing fixed an initial429BEFOREany push,4regression tests.
+scripts/observe_span_016_pilot.py takes bounded exact-version SSE/status snapshots,
+keeps size/row/sequence counters. ConnectionError there is an idle/observation
+limit, not job failure. All observer handles are terminal. The exact historical main controller was
+85217and is terminal; never restart it.
 
-## Sealed model evidence
+Notebook28FINAL,3executed cells/0errors, contains failed status, all expert metrics,
+subset limitations/native timings/resources. Its builder refuses outsidev16.
+scripts/audit_span_016_closure.py PASSED:31hashes,62prior snapshots and user notebooks
+preserved, exact goal archive, failed status/no official,38carry+H63=>39v17members,
+66snapshotfiles now. Re-run that audit/backlogcheck after final publication as needed.
+H63discovery215ebe9and conservative partial-diagnostic helpers85c42e6were pushed;
+final publication commit is reported by git log. Global goal remains active.
 
-V13/H60: fixed10%work/20%row JS/work route,T1,8192packing/context4096. On route
-.25Gemma-original+.25aligned-Gemma-swapped+.5aligned-Llama-swapped; off-route equal
-Gemma-original/aligned-Llama-swapped. All canonical/reverse raw controls measured0,
-36artifact hashes/source/IDs/tokens/class/route/mixture/CSV/twoT4passed.
-Conservative30912.486s/8.586802h includes20%margin/allcold/full80rowwarmup/other/
-600sreserve. Public charge1671.483s; one public/one official/no retry. Official
-wall6h01includesqueue/scoring, not hiddenGPUtime. Uniform512descriptive gain
-.00125385 CI[-.0000386,.0026196]; training overlap precludes CV/forecast.
-Notebook25FINAL; scripts/audit_span_013_closure.py PASSED. Accepted sources immutable.
+## Retained best and earlier negatives
 
-V14/H61: one fixed15%work/20%row common-cache replay increment.0002800553,
-CI[-.0000106694,.000630152], fails frozen>.0005gate. No GPU/submission. Controls
-worsen-.0001729,long+.0003443. Rowcap102/512uses12.7138%work. H62records one future
-15%work/30%row arm, not selected. Common-cache parent versus deployedH60diff4.99e-5
-is an UNMATCHED-cohort diagnostic, not canonical identity. Both replay arms use
-same full cache. Notebook26FINAL; closure verifier PASSED; freeze754e523 and
-closure64fac13pushed.
-
-V12/E16retains8192:6144fails1e-5controls,only2.35%faster; H58Llama-only gate fails,
-no submission. V11T1.3161518671742531official.84797worse,no retuning. V10full4rule
-fails9h;12karm slower/numericalfail. Keep historical negatives/goals/auditors.
+V13H60official improved.83053to.82987/rank30to23. Fixed10%work/20%row route,
+T1/8192packing/context4096. On route.25Gemmaoriginal+.25alignedGemmaswapped+
+.5alignedLlamaswapped; off route equalGemma/Llama. All rawcontrols0; conservative
+30912.486s/8.5868h includes20%margin/cold/full80warmup/other/600reserve. Uniform512
+training-overlap descriptive gain.00125385CI[-.0000386,.0026196], not CV.
+V14H61fixed15%work/20%rows incremental.000280055CI[-.000010669,.000630152], failed
+>.0005gate. Rowcap102/512used12.7138%work; H62future30%row rule unmeasured.
+V15H55source-only stop: BlackPearl earlier parentCOMPLETE/config/indexmatch,
+original adapter403; exact head/run/fold/template unresolved. Family training
+DOESsave trained scorehead: CAUSAL_LM/strict=False does NOTprove random head.
+No GPU/quality/new final-DPO403retry. Earlier12kpacking slower/numericalfail;
+6144packing2.35%fasterbut1e-5controlfail; Llama-only gatefail. V11T1.316151867...
+official.84797worse; no leaderboardretuning. Preserve all archived results/goals.
 
 ## Working rules
 
-Free Kaggle only; no researchGPU while official pending. Freeze recipe/controls
-before predictions; conservative<32400s includes20%margin/alloverhead/600sreserve
-and owned watchdog. Exercise serialized worker success/failure/watchdog/hidden
-branches and Jupyter startup. No leaderboard weight/T/route fitting, hidden
-cache/target lookup, external text inference or automatic old-span expansion.
-
 Cwd /home/tarstars/prj/llm_classification_finetuning, main, GitHub
-tarstars/llm_classification_finetuning. Python.venv/bin/python; PYTHONPATH=src for
-tests/inline arena imports. ROOT=/home/tarstars/database/llm_classification_finetuning.
-Heavy files underROOT; programs/Markdown/aggregates/notebooks in Git. Never walk
-HOME,~/prj, Arc/FUSE or troll_farm. No subagents. Preserve user-dirty notebooks07/12,
-never stage/reset. Notebook symlink resolves to repo/notebooks. Commit/push explicit
-relevant paths. Last goal turn made actual source-audit progress; rank goal ACTIVE.
-
-Pre-GPU validation correction: span016_pipeline.outer_fold_mixture uses each
-outer-training calibrator for ALL cohort routing probabilities, then retains only
-that fold's held-out predictions. This removes indirect label influence through
-other folds' models in the global budget route. Baseline H60global cohort route
-unchanged; source full reverse-Gemma cache common to both arms. quality_routing.json
-records each fold's indices/work; candidate_route is the held-out selection union,
-not a single deployed work budget. New regression test proves other folds' theta
-cannot affect a held-out fold. Ten total CPU checks; all before any actual reward
-output. Bundle/source was rebuilt and rehearsed, awaiting milestone publication.
-
-Latest v16actual progress06:04UTC: native8Bscored all1024quality pairs and visible3
-test rows, then calibration/cross-fitting completed; native0.6Bdiagnostic also
-completed. The exact accepted worker has advanced to model_loading rolem0(Gemma).
-No full paired quality result yet. First reward markers saved in
-results/span_016/reward_live_observation.json. All artifacts require terminal
-retrieval/full audit. Do not infer a target512runtime from sorted partial passes.
-
-Independent auditor now checks hashes of actualmatched source/labels/mapping,
-exact prepared Gemma lengths and fixed8bin quotas, per-class accuracy and per-bin
-loss diagnostics. Native/token/canonical/refit/route/CSV gates unchanged.
-New arena.span016_runtime.projection requires ACTUAL512target passes and a
-successful full session; rejects information-only. Charges productioncold/full80
-warmups, calibration1024reward inference and fit/other overhead,20%per-row margin
-and600reserve. Three focused tests pass. Pure preparation, not admission or
-actual runtime evidence. Commitbd8c721is pushed; original GPUsource unchanged.
-
-Class-frequency diagnostic results/span_016/class_prior_audit.json uses onlyknown
-labels, no model outputs. Competition57477: A34.91%,B34.19%,tie30.90%; source1024:
-A37.01%,B33.79%,tie29.20%. Simple large marginal-label mismatch is not supported;
-conditional/model/user/domain transport is unresolved. No recipe/gate changed.
-Notebook28now includes that descriptive comparison; executed3cells/0errors.
-A separate35second read-only SSE snapshot completed, observer49547terminal;
-ROOT/runs/span_016/observations/long_log_snapshot.json. Its ConnectionError is
-bounded idle-log timeout, NOT job failure. Main controller85217remains live.
+tarstars/llm_classification_finetuning. Python.venv/bin/python, PYTHONPATH=src for
+inline arena imports/tests. ROOT=/home/tarstars/database/llm_classification_finetuning.
+No subagents. Never walkHOME,~/prj,Arc/FUSE mounts or troll_farm. Preserve dirty
+user notebooks07/12, never stage/reset. Notebook link already points to repo.
+Commit/push explicit relevant paths; heavy data/rawpredictions underROOT only.
+New GPU requires fresh complete quota/jobs/dependencies/receipt cursors, paidFalse,
+no officialpending, frozen useful-signal/source/numerical/runtime controls/caps.
+Select scope before work; queue discoveries next version, preserve historical
+snapshots, carry unfinished work. Current goal turn made actual diagnostics and
+sealed the failed span; no recurring external blocker exists.

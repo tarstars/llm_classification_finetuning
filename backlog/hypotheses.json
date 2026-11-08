@@ -4951,7 +4951,7 @@
       ],
       "id": "H56",
       "rank": 72,
-      "status": "running",
+      "status": "done",
       "introduced_in": 10,
       "discovered_during": 9,
       "derived_from": [
@@ -5050,6 +5050,14 @@
           "note": "Same exact v1 remains RUNNING. New bounded read-only observer confirms Gemma quality progress400/1024rows in245.8s, no streamed traceback; short8s snapshots lagged. Both reward passes completed earlier. Observer keeps full size/row/sequence counters, fresh exact-version status and timeout type separate from job failure, with raw logs only in database. No GPU restart, extra version or quality claim.",
           "evidence": [
             "results/span_016/pilot_live_observation.json"
+          ]
+        },
+        {
+          "at": "2026-11-08T06:59:38+00:00",
+          "status": "done",
+          "note": "Stopped without follow-up/submission. Exact v1ERROR: owned watchdog3480.026s/exit-15, charged3492.461s,31artifacts recovered/verified. All3available legacy controls maxdiff0; both native heads/tokens pass. On1024later groups8Breward loss1.040915 versus Llama1.008114, paired delta-.032801CI[-.059331,-.007745]. Common716off-route rows give only.002101CI[-.009165,.012619]; full primary comparison/target512runtime incomplete, no gates qualified. Report/Notebook28preserve failed status. H63queuedP3conditional; retain official.82987/rank23 and leave global rank<=19goal active.",
+          "evidence": [
+            "docs/SPAN_016_RESULTS.md"
           ]
         }
       ]
@@ -5768,7 +5776,7 @@
     {
       "kind": "hypothesis",
       "title": "Native reward microbatch throughput with fixed quality and memory controls",
-      "priority": "P1",
+      "priority": "P3",
       "gain": [
         0,
         0
@@ -5798,8 +5806,8 @@
       "stop": "Stop on unsupported reward usefulness, OOM, source/head/token/native-control failure, no1.3xthroughput gain or infeasible full runtime. No second candidate/grid without a new explicitly bounded proposal.",
       "risk_reason": "Memory and SDPA/kernel efficiency are unmeasured at larger batches; floating-point changes may prevent reusing earlier quality evidence. A strong source expert can still fail target transfer or nine-hour inference.",
       "mitigation": "Inspect actual memory first; one bounded candidate; real native checks and target profile; preserve failures and old outputs. Use fresh confirmation if inspected data would otherwise determine advancement. No automatic retry or hidden prediction cache.",
-      "rationale": "Engineering enabler conditional on H56quality, nominal direct quality gain zero; can support the rank<=19goal if native cost is the limiting factor.",
-      "revision": "Queued prospectively during v16from actual live inference observations before paired quality; does not alter H56or admit compute.",
+      "rationale": "Conditional engineering enabler only. H56recovered8Bstandalone loss1.040915 versus Llama1.008114; common-off-route gain.002101CI[-.009165,.012619]is inconclusive. No current evidence justifies more reward throughput GPU work; nominal direct gain remains zero.",
+      "revision": "After actual H56diagnostics, lower to P3. Full replacement comparison is incomplete after watchdog; do not call it a measured full-ensemble failure. Native peak8.42/7.23GiB and source1024time734.46s are available for a future memory/throughput test only if stronger usefulness evidence appears.",
       "depends_on": [
         "E00",
         "E14",
@@ -5809,7 +5817,9 @@
       "evidence": [
         "docs/SPAN_016_BATCHING_DISCOVERY.md",
         "results/span_016/reward_live_observation.json",
-        "results/span_016/pilot_live_observation.json"
+        "results/span_016/pilot_live_observation.json",
+        "docs/SPAN_016_RESULTS.md",
+        "results/span_016/H56_partial_diagnostic.json"
       ],
       "id": "H63",
       "rank": 81,
@@ -5826,6 +5836,14 @@
           "note": "Actual native batch2timings motivate conditional throughput engineering; reward usefulness and target feasibility are still unknown. Preserve current v16recipe/caps; queue only for v17.",
           "evidence": [
             "docs/SPAN_016_BATCHING_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T06:57:36+00:00",
+          "status": "planned",
+          "note": "Lowered priority toP3after H56: reward expert is worse alone;716common-off-route ensemble rows give only uncertain.0021gain. Full primary comparison remains incomplete. Throughput-only work is conditional and not selected or admitted.",
+          "evidence": [
+            "docs/SPAN_016_RESULTS.md"
           ]
         }
       ]
@@ -5879,7 +5897,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 16,
+  "active_version": 17,
   "versions": [
     {
       "number": 1,
@@ -7097,7 +7115,7 @@
     },
     {
       "number": 16,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -7154,14 +7172,71 @@
       "carried_from": 15,
       "start_sha256": "65b5ed52c9070d9abbba314f8b24ad02b9211c143c43ea67baf06bf2d82c14eb",
       "start_markdown_sha256": "81a5dac85e9e88e4714529967be394b58e909b748cee603f3115b7cd3926f743",
-      "start_sealed_at": "2026-11-08T02:55:13+00:00"
+      "start_sealed_at": "2026-11-08T02:55:13+00:00",
+      "final_sha256": "4700ebc2f9c9ab144427d07ef9d7fd70ea43a92f5e5c1c0f044fae12d298f686",
+      "final_markdown_sha256": "f5fa60326c9159aa6921d3049cb209e38e01bef356b4351293ca40f005c7c5ac",
+      "final_sealed_at": "2026-11-08T07:00:23+00:00",
+      "closed_at": "2026-11-08T07:00:23+00:00",
+      "closing_note": "V16H56stopped after one watchdog-limited GPU version, ERROR preserved,31artifacts verified. Standalone8Breward worse;716common-off-route gain inconclusive; full quality/runtime unmeasured, no follow-up or official trial. Carry38unfinished items plus conditionalH63(P3)into v17. Global rank<=19goal remains active at23rd.",
+      "closing_evidence": [
+        "docs/SPAN_016_RESULTS.md"
+      ]
     },
     {
       "number": 17,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "E17",
+        "H62",
         "H63"
       ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 16,
+      "start_sha256": "6c744b7955f519b98c0409aa3812e7d9c164fac3d0dc4ffe4a3ce6396f7ce1eb",
+      "start_markdown_sha256": "1fee10729a9d35ebcf71b95e410c75988d09fc1c9e61b2a102e91f41fe3ece41",
+      "start_sealed_at": "2026-11-08T07:00:23+00:00"
+    },
+    {
+      "number": 18,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }

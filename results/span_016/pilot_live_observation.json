@@ -1,17 +1,17 @@
 {
-  "at": "2026-11-08T06:26:11.960775+00:00",
+  "at": "2026-11-08T06:42:28.689608+00:00",
   "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
-  "status": "RUNNING",
-  "stream_events": 116,
-  "observation_limited_by": "ConnectionError",
-  "tracebacks_in_stream": 0,
+  "status": "ERROR",
+  "stream_events": 178,
+  "observation_limited_by": null,
+  "tracebacks_in_stream": 2,
   "latest_stage": {
     "stage": "inference_progress",
-    "role": "m3",
+    "role": "m0_reverse",
     "cohort": "long",
-    "batch": 3,
-    "rows": 320,
-    "seconds": 143.27868646599973
+    "batch": 8,
+    "rows": 720,
+    "seconds": 434.5853943679999
   },
   "latest_worker_cohorts": [
     {
@@ -105,12 +105,37 @@
       "seconds": 112.84628064499975
     },
     {
-      "stage": "inference_progress",
+      "stage": "cohort_complete",
       "role": "m3",
       "cohort": "long",
-      "batch": 3,
-      "rows": 320,
-      "seconds": 143.27868646599973
+      "rows": 1024,
+      "seconds": 441.6075482189999
+    },
+    {
+      "stage": "model_loading",
+      "role": "m0_reverse"
+    },
+    {
+      "stage": "cohort_complete",
+      "role": "m0_reverse",
+      "cohort": "warmup",
+      "rows": 80,
+      "seconds": 47.60061516499991
+    },
+    {
+      "stage": "cohort_complete",
+      "role": "m0_reverse",
+      "cohort": "routed_control",
+      "rows": 42,
+      "seconds": 18.415325510000002
+    },
+    {
+      "stage": "inference_progress",
+      "role": "m0_reverse",
+      "cohort": "long",
+      "batch": 8,
+      "rows": 720,
+      "seconds": 434.5853943679999
     }
   ],
   "quality_audited_by_this_observer": false,
