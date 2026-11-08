@@ -6772,6 +6772,14 @@
           "evidence": [
             "docs/SPAN_026_GPU_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-08T17:12:08+00:00",
+          "status": "running",
+          "note": "Single H72 GPUinformationpilot accepted17:10:47UTC: arseniytrushin/llm-preference-span026-context-audit/1, RUNNING. Frozenmethodcommit28bf186pushedBEFOREadmission; freshcompleteinventory87092.109sfree, allofficialterminal, exactfourpublicv1datasets. Acceptedcells/image/privateoffline/twoT4settingsverified17:11:33. Controllerunifiedsession70441/PID659163; observeSAMEhandle/version, neverre-push. Initial7200s cap; noqualitymeasuredyet.",
+          "evidence": [
+            "results/span_026/jobs/context_pilot/source_verification.json"
+          ]
         }
       ]
     }

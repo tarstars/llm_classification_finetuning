@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T17:10:33.899300+00:00",
+  "kernel": "arseniytrushin/llm-preference-span026-context-audit",
+  "quota_before": {
+    "used_seconds": 20907.891,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 87092.109
+  },
+  "max_session_seconds": 7200,
+  "notebook_sha256": "57b6a5f029350456470623828a723e7b2ecc72e026348cf559323ffb10295cf3",
+  "metadata_sha256": "c3919a13d5bff3a6b93c01072f3b487284620df871ada971fac49139b13bf4c7"
+}

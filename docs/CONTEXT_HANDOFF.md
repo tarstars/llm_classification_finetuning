@@ -1,6 +1,6 @@
 # Active rank goal; v25 negative, v26 context-coverage audit selected
 
-Snapshot Nov8 2026,17:10UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot Nov8 2026,17:12UTC. Read PROJECT_POLICY.md, GOAL.md,
 SPAN_026_PLAN.md. Persistent objective team17244411rank<=19 on a fresh complete
 board after legitimateinference. ACTIVE/unachieved, no tokenbudget. No subagents.
 Never walk HOME/~/prj/Arc/FUSE/troll_farm; scope namedproject/exactartifactpaths.
@@ -14,7 +14,7 @@ SAMEcursor on replay, neverdedup. No new officialsincev13.
 
 ## Current v26/H72
 
-V26active,focus[H72],H72running=sourcepreparation, NO liveGPU. V27draftempty.
+V26active,focus[H72],H72running=GPUinformationpilot. V27draftempty.
 90registeredtasks,102snapshots;37unfinishedcarried. Preserveall. Goal/policyplan
 select one4k/6kextraGemma-original evidence variant, not another structuralrule.
 
@@ -60,10 +60,13 @@ cohortbudget/positionguard/30sprogress/callbacks; same4koldforward/packing.
 OldandnewGemmacohorts useSAMEloadedprocess. All11focusedtests pass; builder
 actualfinalcell success/failure/watchdog, standaloneimports andJupyterstartup
 pass. Sourcebundle/rehearsals inresults/span_026/context_pilot_*.json. Generated
-notebook inROOT/runs/span_026/notebooks/context_pilot. NO GPUadmittedyet atthis
-snapshot. NEXTfreeze/pushsources, runcontrollerONCEwithfreshfulladmission,
-trackreturnedhandle. Neverre-pushaftertimeout; observeexistingintent/version.
-Thenverify_experiment_source.py context_pilot --span26. Afterterminalretrieval,
+notebook inROOT/runs/span_026/notebooks/context_pilot. Frozen28bf186pushedBEFORE
+GPUadmission. Singleacceptedversion arseniytrushin/llm-preference-span026-context-audit/1
+RUNNING17:10:47UTC;controllerunifiedsession70441/PID659163. Freshcompleteinventory
+87092.109sfree/noreservation/allofficialterminal; fourpublicv1datasets. Accepted
+cells/image/privateoffline/twoT4settingsverified17:11:33UTC. NEXTobserveSAME
+controller/version, neverre-pushaftertimeout. Sourceverifier23438TERMINALexit0.
+Initial7200scap, noqualitymeasuredyet. Afterterminalretrieval,
 runfrozenaudit_span_026_pilot.py: replayengineeringindependently beforelabels.
 
 Measureextra80rowwarm+64rowsteadyprobe,
@@ -146,5 +149,5 @@ reset. ~/notebooks/llm_classification_finetuning linkcorrect. HeavyarraysDB,
 code/MD/aggregates/executednotebooksGit. Priorpublished5b0d0bcacceptedH71;
 278b9dcpublishedH71negative/H72CPUmethod. 0f5e5f8publishedcoverage/prospectiveamendment/selectorcode;
 1fd64d2publishedselectorproof. Native37086/selector17484/preparer6461TERMINALexit0.
-Builder68066TERMINALexit0. AllnewpilotmethodfilesbeingfrozenBEFOREGPU.
+Builder68066TERMINALexit0. Allnewpilotmethodfilesfrozen28bf186BEFOREGPU.
 Goalturnmade actualnewnegativequalityevidence andnewinformationplan, no blocker.
