@@ -1,7 +1,9 @@
 {
-  "at": "2026-11-08T12:30:01.287551+00:00",
+  "at": "2026-11-08T13:15:31.762092+00:00",
   "stage": "batch_candidate",
-  "event": "remote_status",
-  "status": "QUEUED",
-  "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1"
+  "event": "failed",
+  "status": "ERROR",
+  "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1",
+  "charged_seconds": 2012.0999999999985,
+  "files": 31
 }

@@ -6165,7 +6165,7 @@
       ],
       "id": "H66",
       "rank": 84,
-      "status": "running",
+      "status": "done",
       "introduced_in": 20,
       "discovered_during": 19,
       "derived_from": [
@@ -6219,12 +6219,28 @@
           "evidence": [
             "results/span_020/runtime_live_observation.json"
           ]
+        },
+        {
+          "at": "2026-11-08T13:24:45+00:00",
+          "status": "running",
+          "note": "TERMINALERROR:CUDAOOMsource-tail, charged2012.1s,31verifiedartifacts. Complete original numerical/raw-repeat/canonical controls maxdiff0; fullconservative32892.48s fails9h. No sourceprobabilityartifact or actualreversebaseline; no votes/official/retry. Finalizefailedspan;H67draftamendedtooriginal-onlyCPUfutility withfullsourcegateUNKNOWN.",
+          "evidence": [
+            "results/span_020/partial_engineering_audit.json"
+          ]
+        },
+        {
+          "at": "2026-11-08T13:38:56+00:00",
+          "status": "done",
+          "note": "TerminalERRORCUDAOOMduringlaterdata,2012.1GPU seconds;31artifactsverified. Completedoriginalnative/repeated/canonicalmaxdiff0, throughput1.11486x, conservative32892.48s fails9h. Laterprobabilities/reversebaselineabsent; no votes/official/retry. Finalreport/Notebook32preserveactualfailure;H67CPUfutilityscopeamendedbeforeactivation.",
+          "evidence": [
+            "docs/SPAN_020_RESULTS.md"
+          ]
         }
       ]
     },
     {
       "kind": "hypothesis",
-      "title": "CPU-only usefulness screen for the fixed mirror replacement",
+      "title": "CPU-only original-data futility screen with explicit missing later coverage",
       "priority": "P1",
       "gain": [
         0,
@@ -6248,26 +6264,27 @@
         0.1
       ],
       "risk": "medium",
-      "claim": "Complete cached H66predictions can determine whether the unchanged equal-weight mirror replacement merits further backend engineering, without another GPUexecution.",
-      "basis": "H66actual mirror512267.8156s yields9.0196h lowerbound with required parent rate/margin/reserve, before startup. Native larger-batch controls pass; complete quality remains unmeasured under its engineering-first stop. Original job is finishing source inputs and actual comparator reverse predictions.",
-      "first_test": "Only after H66terminal source/hash/numerical/canonical audit and spanclosure, use all fixed originaluniform512/later1024outputs and actual H60source175reverse predictions. Evaluate ONE.5Gemma+.5mirror/T1candidate. All mirror cohorts from sameH66shape. No inference, parameterfit, new mixture or imputation. CPUcap300s, no network/GPU/official.",
-      "acceptance": "Originaluniform loss reduction>.001 versus actualH60 AND later1024reduction>=0 with seed42/2000paired-prompt-group95lower>-.01. Report accuracy/Brier/classloss and exposure limits. A positive screen only motivates a separately bounded backend proposal; H66remains runtime-ineligible.",
-      "stop": "Stop on missing/corrupt/source-mismatched artifacts, incomplete comparator or either fixed quality failure. No newdata/weight/temperature/route/class-map grid. Negative result stops further compute for this fixed replacement; never claim honest CV or submission eligibility from this CPU screen.",
+      "claim": "Complete original512cached H66outputs can reject an unhelpful fixed mirror replacement without another GPU; an original-only positive result remains inconclusive because later outputs are missing.",
+      "basis": "H66terminalERROR2012.1GPU seconds afterCUDAOOMduring source1024tail.31recovered artifacts include complete original512/Gemma/mirror/H60comparator but no mirror_source.npz or actual source reverse175. Original numerical/canonical controls pass; conservative32892.48s runtime alsofails.",
+      "first_test": "After H66terminal partialaudit/closure, verify complete originaluniform512outputs and oldH60baseline. Evaluate exactly.5Gemma+.5mirror/T1with seed42/2000paired-group bootstrap and class diagnostics. Explicitly assert/source-report that later1024mirror and reverse175are unavailable. CPUcap300s, zero network/GPU/official; no imputation or extra mixture.",
+      "acceptance": "The originaluniform reduction must be>.001. If it fails, reject this fixed replacement without furtherbackendcompute. If it passes, report original-only descriptive information and fullqualitygateUNKNOWN; later1024reduction>=0/95lower>-.01 remains required and needs a separatelybounded completion. Never mark H66eligible or forecast competition score.",
+      "stop": "Stop on incomplete/corrupt originalIDs/class/source/cache artifacts or original lossreduction<=.001. No newdata/weight/temperature/route/classmap grid. Missing later predictions are not estimated, imputed, or treated as passed. Positive original results alone do not authorize GPU/official.",
       "risk_reason": "Original votes overlap checkpointtraining; later votes were previously inspected and shift in domain. Passing is not an independent competition-score estimate. Native logits or an attributed model card alone do not prove predictive usefulness.",
       "mitigation": "Freeze single candidate/gates before votes. Verify exactIDs/classmapping/cachehashes/actualreverse/completed source. Use pairedgroup intervals and label exposure honestly. ZeroGPU/official; preserve failed H66engineering status and all historical snapshots.",
-      "rationale": "Information-first continuation after measured runtime failure: avoid optimizing an unmeasured preference predictor. Existing optional native-equivalent split-dense path merits a proposal only if this fixed candidate is useful.",
-      "revision": "Initial v21discovery during H66; queued only. No vote read, new inference, weight conversion, resource-period reset or current-span scope expansion.",
+      "rationale": "Information-first futility decision after actualOOM. First required qualitygate can decisively reject a weak model using completeoriginal outputs; fullpositive decision cannot be made with missing later data.",
+      "revision": "After terminalH66OOM, revise the earlier queued assumption of completedsourcecaches: original-only futilitycheck, laterfullgate explicitlyunknown. Preserves all original thresholds and failedservice state; no taskexecution in v20.",
       "depends_on": [
         "E00",
         "H66"
       ],
       "evidence": [
         "docs/SPAN_020_INFORMATION_DISCOVERY.md",
-        "results/span_020/runtime_live_observation.json"
+        "results/span_020/runtime_live_observation.json",
+        "results/span_020/partial_engineering_audit.json"
       ],
       "id": "H67",
       "rank": 85,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 21,
       "discovered_during": 20,
       "derived_from": [
@@ -6280,6 +6297,14 @@
           "note": "Actual512speedup1.11486xstillfails runtime lowerbound; queue zeroGPU fixed-candidate usefulness screen onlyafterterminalaudit/closure, before further backend work.",
           "evidence": [
             "docs/SPAN_020_INFORMATION_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T13:38:57+00:00",
+          "status": "running",
+          "note": "Preparing <=300sCPU-only single fixed-candidate original512futility method. H66ERROR and sourcecoverage absence verified; no new vote read, prediction, inference or external APIcall yet.",
+          "evidence": [
+            "docs/SPAN_021_PLAN.md"
           ]
         }
       ]
@@ -6333,7 +6358,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 20,
+  "active_version": 21,
   "versions": [
     {
       "number": 1,
@@ -7827,7 +7852,7 @@
     },
     {
       "number": 20,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -7883,14 +7908,80 @@
       "carried_from": 19,
       "start_sha256": "639e18fd9f71bc1bfd98655a0662c6d98487d985733e07edadc505f737b38754",
       "start_markdown_sha256": "bd74edea7a8f227c65d992432059e048a672e0aeac181fa3dcf2a08568e9f511",
-      "start_sealed_at": "2026-11-08T12:04:55+00:00"
+      "start_sealed_at": "2026-11-08T12:04:55+00:00",
+      "final_sha256": "c7c82e72db57f2c92ba9e5f5604d1d73351e8e149dcefaa5fbaf711ec431392f",
+      "final_markdown_sha256": "01dabdeb52e5767e0f396a379b116daa861431819a226dc3fc8593a286a75962",
+      "final_sealed_at": "2026-11-08T13:38:56+00:00",
+      "closed_at": "2026-11-08T13:38:56+00:00",
+      "closing_note": "Seal H66at declared OOM/runtime stop, preserving ERROR and incomplete source coverage. Carry37unfinished tasks plus H67zeroGPUfutilityscreen; rankgoal stillactive, no resourceperiodreset.",
+      "closing_evidence": [
+        "docs/SPAN_020_RESULTS.md"
+      ]
     },
     {
       "number": 21,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
         "H67"
       ],
+      "focus_ids": [
+        "H67"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T13:38:57+00:00",
+          "note": "Persistent rankgoal continues; next step is one zeroGPUfutility screen from complete original caches. Latercoverage absent, fullgate unknown; no further backend compute without evidence and a bounded proposal.",
+          "focus_ids": [
+            "H67"
+          ]
+        }
+      ],
+      "carried_from": 20,
+      "start_sha256": "a7da4d6e46e6fc896259cd0521dc0cccc947fc5dedf45a342f89e2e80bd640fe",
+      "start_markdown_sha256": "f11c44f01a4b1c6498ee6254e68d85018348edea4e2ae118b9e4a506501c40e2",
+      "start_sealed_at": "2026-11-08T13:38:56+00:00"
+    },
+    {
+      "number": 22,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }

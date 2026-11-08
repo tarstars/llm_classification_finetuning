@@ -1,2 +1,5 @@
 {"at": "2026-11-08T12:29:57.500513+00:00", "stage": "batch_candidate", "event": "pushing_one_version"}
 {"at": "2026-11-08T12:30:01.287551+00:00", "stage": "batch_candidate", "event": "remote_status", "status": "QUEUED", "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1"}
+{"at": "2026-11-08T12:41:36.917152+00:00", "stage": "batch_candidate", "event": "remote_status", "status": "RUNNING", "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1"}
+{"at": "2026-11-08T13:15:20.571241+00:00", "stage": "batch_candidate", "event": "remote_status", "status": "ERROR", "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1"}
+{"at": "2026-11-08T13:15:31.762092+00:00", "stage": "batch_candidate", "event": "failed", "status": "ERROR", "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1", "charged_seconds": 2012.0999999999985, "files": 31}

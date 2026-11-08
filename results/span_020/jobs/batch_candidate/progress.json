@@ -1,0 +1,1212 @@
+{
+  "observed_at": "2026-11-08T13:14:34.915273+00:00",
+  "latest": {
+    "stage": "mirror_progress",
+    "gpu": 0,
+    "rows": 487,
+    "seconds": 430.3599222370001,
+    "cohort": "source",
+    "batch": 52
+  },
+  "events": [
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 10,
+      "seconds": 11.48352742100002,
+      "cohort": "native_reference",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 12,
+      "seconds": 18.143515550000018,
+      "cohort": "native_reference",
+      "batch": 1
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 2,
+      "seconds": 6.840616011999998,
+      "cohort": "parallel_reference",
+      "batch": 1
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 10,
+      "seconds": 11.539312611000014,
+      "cohort": "parallel_reference",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 2,
+      "seconds": 6.55549272799999,
+      "cohort": "parallel_repeat",
+      "batch": 1
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 10,
+      "seconds": 11.523921986000005,
+      "cohort": "parallel_repeat",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_native_controls",
+      "passed": true,
+      "rows": 12
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 19,
+      "seconds": 13.737880625000003,
+      "cohort": "warmup",
+      "batch": 1
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 31,
+      "seconds": 14.414329906999967,
+      "cohort": "warmup",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 29,
+      "seconds": 28.31887509500001,
+      "cohort": "warmup",
+      "batch": 3
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 45,
+      "seconds": 31.538242621999984,
+      "cohort": "warmup",
+      "batch": 2
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 51,
+      "seconds": 53.29342299000001,
+      "cohort": "warmup",
+      "batch": 4
+    },
+    {
+      "stage": "mirror_cohort_complete",
+      "rows": 80,
+      "seconds": 53.29418660099998,
+      "cohort": "warmup"
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 32,
+      "seconds": 8.759037003999993,
+      "cohort": "control",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 32,
+      "seconds": 10.560554833999959,
+      "cohort": "control",
+      "batch": 1
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 55,
+      "seconds": 25.043357824999987,
+      "cohort": "control",
+      "batch": 3
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 61,
+      "seconds": 25.81795093400001,
+      "cohort": "control",
+      "batch": 2
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 74,
+      "seconds": 40.29070213,
+      "cohort": "control",
+      "batch": 5
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 81,
+      "seconds": 42.59874105099999,
+      "cohort": "control",
+      "batch": 4
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 88,
+      "seconds": 55.43449406799999,
+      "cohort": "control",
+      "batch": 7
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 97,
+      "seconds": 59.88782971799998,
+      "cohort": "control",
+      "batch": 6
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 100,
+      "seconds": 70.717079909,
+      "cohort": "control",
+      "batch": 9
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 111,
+      "seconds": 77.46283493099997,
+      "cohort": "control",
+      "batch": 8
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 110,
+      "seconds": 86.513218354,
+      "cohort": "control",
+      "batch": 11
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 123,
+      "seconds": 96.21202182399998,
+      "cohort": "control",
+      "batch": 10
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 116,
+      "seconds": 106.12215695499998,
+      "cohort": "control",
+      "batch": 13
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 130,
+      "seconds": 115.139752681,
+      "cohort": "control",
+      "batch": 12
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 120,
+      "seconds": 119.61041964099996,
+      "cohort": "control",
+      "batch": 15
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 136,
+      "seconds": 136.493802664,
+      "cohort": "control",
+      "batch": 14
+    },
+    {
+      "stage": "mirror_cohort_complete",
+      "rows": 256,
+      "seconds": 136.494408378,
+      "cohort": "control"
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 32,
+      "seconds": 5.405010528000048,
+      "cohort": "uniform",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 32,
+      "seconds": 6.528278700000044,
+      "cohort": "uniform",
+      "batch": 1
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 64,
+      "seconds": 14.901944386000025,
+      "cohort": "uniform",
+      "batch": 2
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 64,
+      "seconds": 17.156892561999996,
+      "cohort": "uniform",
+      "batch": 3
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 96,
+      "seconds": 30.889229482000076,
+      "cohort": "uniform",
+      "batch": 4
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 92,
+      "seconds": 31.542498234999982,
+      "cohort": "uniform",
+      "batch": 5
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 114,
+      "seconds": 46.036509057000046,
+      "cohort": "uniform",
+      "batch": 7
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 121,
+      "seconds": 47.92139548799997,
+      "cohort": "uniform",
+      "batch": 6
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 134,
+      "seconds": 61.374686983000004,
+      "cohort": "uniform",
+      "batch": 9
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 142,
+      "seconds": 64.94074160899999,
+      "cohort": "uniform",
+      "batch": 8
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 152,
+      "seconds": 77.56082611599999,
+      "cohort": "uniform",
+      "batch": 11
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 160,
+      "seconds": 81.54339839400001,
+      "cohort": "uniform",
+      "batch": 10
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 167,
+      "seconds": 93.30381685000003,
+      "cohort": "uniform",
+      "batch": 13
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 176,
+      "seconds": 99.21513631900001,
+      "cohort": "uniform",
+      "batch": 12
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 181,
+      "seconds": 108.65054880899999,
+      "cohort": "uniform",
+      "batch": 15
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 191,
+      "seconds": 117.411489013,
+      "cohort": "uniform",
+      "batch": 14
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 193,
+      "seconds": 123.989511231,
+      "cohort": "uniform",
+      "batch": 17
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 204,
+      "seconds": 135.21083246799998,
+      "cohort": "uniform",
+      "batch": 16
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 204,
+      "seconds": 140.98673648699997,
+      "cohort": "uniform",
+      "batch": 19
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 216,
+      "seconds": 153.71222691100007,
+      "cohort": "uniform",
+      "batch": 18
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 214,
+      "seconds": 158.02656381600008,
+      "cohort": "uniform",
+      "batch": 21
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 227,
+      "seconds": 171.628690727,
+      "cohort": "uniform",
+      "batch": 20
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 223,
+      "seconds": 174.238157145,
+      "cohort": "uniform",
+      "batch": 23
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 230,
+      "seconds": 189.77597028999998,
+      "cohort": "uniform",
+      "batch": 25
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 237,
+      "seconds": 190.48669287500007,
+      "cohort": "uniform",
+      "batch": 22
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 236,
+      "seconds": 205.15727135499998,
+      "cohort": "uniform",
+      "batch": 27
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 245,
+      "seconds": 207.52430825699997,
+      "cohort": "uniform",
+      "batch": 24
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 242,
+      "seconds": 225.178890405,
+      "cohort": "uniform",
+      "batch": 29
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 252,
+      "seconds": 225.408330217,
+      "cohort": "uniform",
+      "batch": 26
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 248,
+      "seconds": 245.21667373600002,
+      "cohort": "uniform",
+      "batch": 31
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 258,
+      "seconds": 246.49161232900002,
+      "cohort": "uniform",
+      "batch": 28
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 264,
+      "seconds": 267.81501710000003,
+      "cohort": "uniform",
+      "batch": 30
+    },
+    {
+      "stage": "mirror_cohort_complete",
+      "rows": 512,
+      "seconds": 267.8156185330001,
+      "cohort": "uniform"
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 6,
+      "seconds": 19.378930281000066,
+      "cohort": "long",
+      "batch": 1
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 6,
+      "seconds": 21.582780177000018,
+      "cohort": "long",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 12,
+      "seconds": 38.93030326300004,
+      "cohort": "long",
+      "batch": 3
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 12,
+      "seconds": 43.19848193300004,
+      "cohort": "long",
+      "batch": 2
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 18,
+      "seconds": 58.51422229399998,
+      "cohort": "long",
+      "batch": 5
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 18,
+      "seconds": 64.56927940399999,
+      "cohort": "long",
+      "batch": 4
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 24,
+      "seconds": 78.22507594299998,
+      "cohort": "long",
+      "batch": 7
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 24,
+      "seconds": 86.01758720400005,
+      "cohort": "long",
+      "batch": 6
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 30,
+      "seconds": 98.17588563900006,
+      "cohort": "long",
+      "batch": 9
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 30,
+      "seconds": 107.61377687599997,
+      "cohort": "long",
+      "batch": 8
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 34,
+      "seconds": 122.10377587900007,
+      "cohort": "long",
+      "batch": 10
+    },
+    {
+      "stage": "mirror_cohort_complete",
+      "rows": 64,
+      "seconds": 122.104353737,
+      "cohort": "long"
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 3,
+      "seconds": 8.05458847500006,
+      "cohort": "test",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_cohort_complete",
+      "rows": 3,
+      "seconds": 8.055182048999995,
+      "cohort": "test"
+    },
+    {
+      "stage": "model_loading",
+      "role": "m0"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 55.62366342699988,
+      "role": "m0",
+      "cohort": "warmup",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 80,
+      "seconds": 57.603896849999956,
+      "role": "m0",
+      "cohort": "warmup"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 36.34101631700014,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 81.24495280400015,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 125.66031275399996,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 256,
+      "seconds": 133.3849743610001,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 3
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 256,
+      "seconds": 135.92020584500005,
+      "role": "m0",
+      "cohort": "control"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 39.36735118399997,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 86.71095070699994,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 126.62976261899985,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 320,
+      "seconds": 168.57451622899998,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 400,
+      "seconds": 207.2268103419999,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 480,
+      "seconds": 246.49904697500006,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 5
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 512,
+      "seconds": 260.6034350309999,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 6
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 512,
+      "seconds": 262.72308172199996,
+      "role": "m0",
+      "cohort": "uniform"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 64,
+      "seconds": 161.7315229819999,
+      "role": "m0",
+      "cohort": "long",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 64,
+      "seconds": 163.78412328799982,
+      "role": "m0",
+      "cohort": "long"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 3,
+      "seconds": 0.09533149799995044,
+      "role": "m0",
+      "cohort": "test",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 3,
+      "seconds": 2.753207125000017,
+      "role": "m0",
+      "cohort": "test"
+    },
+    {
+      "stage": "mirror_engineering_complete",
+      "complete": true,
+      "rows": 3
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 32,
+      "seconds": 4.3043579269999555,
+      "cohort": "source",
+      "batch": 0
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 32,
+      "seconds": 5.300302080999927,
+      "cohort": "source",
+      "batch": 1
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 64,
+      "seconds": 11.104900619999853,
+      "cohort": "source",
+      "batch": 2
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 64,
+      "seconds": 12.890744028999961,
+      "cohort": "source",
+      "batch": 3
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 96,
+      "seconds": 20.83587532499996,
+      "cohort": "source",
+      "batch": 4
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 96,
+      "seconds": 22.40459537599986,
+      "cohort": "source",
+      "batch": 5
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 128,
+      "seconds": 33.568347170999914,
+      "cohort": "source",
+      "batch": 6
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 128,
+      "seconds": 34.93309133299999,
+      "cohort": "source",
+      "batch": 7
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 160,
+      "seconds": 48.93491535899989,
+      "cohort": "source",
+      "batch": 8
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 160,
+      "seconds": 50.33667565099995,
+      "cohort": "source",
+      "batch": 9
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 190,
+      "seconds": 65.19114577999994,
+      "cohort": "source",
+      "batch": 10
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 188,
+      "seconds": 65.27606182099998,
+      "cohort": "source",
+      "batch": 11
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 213,
+      "seconds": 79.75481040599993,
+      "cohort": "source",
+      "batch": 13
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 216,
+      "seconds": 81.41186295299985,
+      "cohort": "source",
+      "batch": 12
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 236,
+      "seconds": 94.96962676899989,
+      "cohort": "source",
+      "batch": 15
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 240,
+      "seconds": 98.14860631800002,
+      "cohort": "source",
+      "batch": 14
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 257,
+      "seconds": 111.26253541000005,
+      "cohort": "source",
+      "batch": 17
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 262,
+      "seconds": 115.20250465100003,
+      "cohort": "source",
+      "batch": 16
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 276,
+      "seconds": 127.55747293500008,
+      "cohort": "source",
+      "batch": 19
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 282,
+      "seconds": 132.98038067099992,
+      "cohort": "source",
+      "batch": 18
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 294,
+      "seconds": 144.0789685489999,
+      "cohort": "source",
+      "batch": 21
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 300,
+      "seconds": 149.6286767019999,
+      "cohort": "source",
+      "batch": 20
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 311,
+      "seconds": 159.77929932100005,
+      "cohort": "source",
+      "batch": 23
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 317,
+      "seconds": 166.67474233200005,
+      "cohort": "source",
+      "batch": 22
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 327,
+      "seconds": 176.0027978569999,
+      "cohort": "source",
+      "batch": 25
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 333,
+      "seconds": 183.773264809,
+      "cohort": "source",
+      "batch": 24
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 342,
+      "seconds": 191.31616109399988,
+      "cohort": "source",
+      "batch": 27
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 349,
+      "seconds": 200.8137888419999,
+      "cohort": "source",
+      "batch": 26
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 357,
+      "seconds": 207.50422360499988,
+      "cohort": "source",
+      "batch": 29
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 364,
+      "seconds": 217.85383282999987,
+      "cohort": "source",
+      "batch": 28
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 370,
+      "seconds": 222.9047046359999,
+      "cohort": "source",
+      "batch": 31
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 378,
+      "seconds": 235.4490129159999,
+      "cohort": "source",
+      "batch": 30
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 383,
+      "seconds": 239.11724327000002,
+      "cohort": "source",
+      "batch": 33
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 391,
+      "seconds": 253.36872899700006,
+      "cohort": "source",
+      "batch": 32
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 395,
+      "seconds": 255.28789450299996,
+      "cohort": "source",
+      "batch": 35
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 403,
+      "seconds": 270.395739714,
+      "cohort": "source",
+      "batch": 34
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 406,
+      "seconds": 271.511198381,
+      "cohort": "source",
+      "batch": 37
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 416,
+      "seconds": 288.16697522999993,
+      "cohort": "source",
+      "batch": 39
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 414,
+      "seconds": 288.2738996779999,
+      "cohort": "source",
+      "batch": 36
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 426,
+      "seconds": 304.37765905800006,
+      "cohort": "source",
+      "batch": 41
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 425,
+      "seconds": 305.8457362019999,
+      "cohort": "source",
+      "batch": 38
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 435,
+      "seconds": 320.00539093300017,
+      "cohort": "source",
+      "batch": 43
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 435,
+      "seconds": 323.7559208959999,
+      "cohort": "source",
+      "batch": 40
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 444,
+      "seconds": 337.33585094099976,
+      "cohort": "source",
+      "batch": 45
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 445,
+      "seconds": 341.63341582,
+      "cohort": "source",
+      "batch": 42
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 453,
+      "seconds": 355.1985274870001,
+      "cohort": "source",
+      "batch": 47
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 454,
+      "seconds": 358.2105168989999,
+      "cohort": "source",
+      "batch": 44
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 461,
+      "seconds": 371.456212456,
+      "cohort": "source",
+      "batch": 49
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 463,
+      "seconds": 375.42905134499983,
+      "cohort": "source",
+      "batch": 46
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 468,
+      "seconds": 387.9926001199999,
+      "cohort": "source",
+      "batch": 51
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 472,
+      "seconds": 393.444689017,
+      "cohort": "source",
+      "batch": 48
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 475,
+      "seconds": 404.7727986719999,
+      "cohort": "source",
+      "batch": 53
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 480,
+      "seconds": 410.9675243519998,
+      "cohort": "source",
+      "batch": 50
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 1,
+      "rows": 481,
+      "seconds": 421.5515048240002,
+      "cohort": "source",
+      "batch": 55
+    },
+    {
+      "stage": "mirror_progress",
+      "gpu": 0,
+      "rows": 487,
+      "seconds": 430.3599222370001,
+      "cohort": "source",
+      "batch": 52
+    }
+  ]
+}

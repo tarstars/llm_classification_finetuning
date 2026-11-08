@@ -1,8 +1,10 @@
 {
-  "stage": "monitoring",
-  "at": "2026-11-08T12:36:40.944549+00:00",
+  "stage": "failed",
+  "at": "2026-11-08T13:15:31.758256+00:00",
   "pid": 4140906,
   "role": "batch_candidate",
-  "status": "QUEUED",
-  "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1"
+  "status": "ERROR",
+  "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1",
+  "charged_seconds": 2012.0999999999985,
+  "files": 31
 }

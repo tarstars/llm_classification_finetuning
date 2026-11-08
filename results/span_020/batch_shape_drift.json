@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-08T13:31:38.360475+00:00",
+  "original_cohorts": {
+    "control": {
+      "rows": 256,
+      "max_abs": 0.002795279026031494,
+      "mean_abs": 0.0001923813639829556,
+      "cells_above_tolerance": 652
+    },
+    "uniform": {
+      "rows": 512,
+      "max_abs": 0.0016382932662963867,
+      "mean_abs": 0.00021504714580563208,
+      "cells_above_tolerance": 1412
+    },
+    "long": {
+      "rows": 64,
+      "max_abs": 0.003254830837249756,
+      "mean_abs": 0.0003622617417325576,
+      "cells_above_tolerance": 177
+    },
+    "test": {
+      "rows": 3,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "cells_above_tolerance": 0
+    }
+  },
+  "across_shape_identity_claimed": false,
+  "new_shape_outputs_used_consistently": true,
+  "later_cohort_available": false,
+  "uses_winner_labels": false,
+  "new_gpu_executions": 0,
+  "artifact_sha256": {
+    "runs/span_019/jobs/classifier_pilot/output/mirror_experiment/mirror_control.npz": "01d7cbecbb8553a27543e292e6c266fdcaca59e157f9c90970b94feb8878ab27",
+    "runs/span_020/jobs/batch_candidate/output/mirror_experiment/mirror_control.npz": "72567a2671e9d11665a859db3ef1d1f05995b921c30ae30cddd220ae7661fa48",
+    "runs/span_019/jobs/classifier_pilot/output/mirror_experiment/mirror_uniform.npz": "2dbdd06f5be49a78e8793c1fc172d7b39445098db8724038f0898cdcc6dfb954",
+    "runs/span_020/jobs/batch_candidate/output/mirror_experiment/mirror_uniform.npz": "a4b1202b121cd19e0dca7e3b11b5d7a138ca9b0eb81e8998f40d7c3121a95f55",
+    "runs/span_019/jobs/classifier_pilot/output/mirror_experiment/mirror_long.npz": "302a0bb0d20765cbe6c13b72a2722f202d57b187e8f4607d7f4ae6aae5f0b49b",
+    "runs/span_020/jobs/batch_candidate/output/mirror_experiment/mirror_long.npz": "1e79f7573ec9b492840a84c5576da35569a499fb58e3150099a8d7ba04f7e641",
+    "runs/span_019/jobs/classifier_pilot/output/mirror_experiment/mirror_test.npz": "7bb0566e752a14ea13536f66a24b4ed21de12a7bfae33250f35766eb1a0cb961",
+    "runs/span_020/jobs/batch_candidate/output/mirror_experiment/mirror_test.npz": "7bb0566e752a14ea13536f66a24b4ed21de12a7bfae33250f35766eb1a0cb961"
+  },
+  "source_sha256": "6293c0e57bb5f6f291b89a4d101b009e48d48e89cd1a7365163c404eae803107",
+  "draft_metadata_key_correction": "Renamed threshold count key for clarity; values and probability comparison unchanged",
+  "before_metadata_key_correction_sha256": "8c21fc96af888a0d904f7a807d0360c3365cda3a69e2c72a7c275b1214312860",
+  "tolerance": 1e-05
+}

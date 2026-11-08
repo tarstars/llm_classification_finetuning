@@ -1,38 +1,27 @@
-# Move above 20th place: v20 one larger native batch
+# Move above 20th place: v21 CPU futility screen
 
-Persistent objective: team17244411 rank<=19 on a fresh complete official Kaggle
-leaderboard after legitimate inference. ACTIVE/unachieved; best0.82987/rank23.
-V19is sealed; preserve docs/GOAL_V19.md and docs/SPAN_019_RESULTS.md.
-Select H66only and execute docs/SPAN_020_PLAN.md. No other carried task selected.
+The persistent objective remains team 17244411 at rank 19 or better on a fresh
+complete official leaderboard after legitimate inference. ACTIVE, unachieved;
+best 0.82987, rank 23. Preserve archived v20 and docs/SPAN_020_RESULTS.md.
+Select H67 only; follow docs/SPAN_021_PLAN.md.
 
-Freeze ONE12288padded-token/max32-row candidate for the unchanged native GPTQ8
-mirror plus retainedGemma equal-weight/T1ensemble. Same checkpoint/privatev1asset,
-head/decoder/softcap50/queryscalar224, formatter/turnjoin/BOS/trunc2000+EOS,
-absolute positions/pool, two replicas and FP32softmax. No batch/context/format/
-mixture/temperature/route/quantization grid or new weight upload. H65passed
-numerical/canonical controls but projected9.66h; its quality is unmeasured.
-Memory estimate13.6743GiB+0.5GiBreserve supports one test, not proof of fit.
-OOMor any numerical/runtime/quality failure stops this candidate; no fallback.
+Use only verified complete original H66 outputs and actual H60 baseline.
+ONE fixed candidate: 0.5 Gemma original + 0.5 mirror original, temperature 1.
+No fitting or weight/temperature/route/class-map grid. Freeze method before votes.
+Primary: original uniform 512, loss reduction >0.001, seed 42/2,000 paired
+prompt-group bootstrap; report accuracy, Brier and class behavior. Use H66's
+shape consistently; do not mix old mirror outputs. Original votes overlap training.
 
-Before GPUfreeze exact worker/bundle and actual CPUserialized notebook success/
-failure/watchdog/startup/public-hidden rehearsals. Recompute all mirror cohorts
-at newshape; report old/new shape drift and preserve failures. Require native/
-repeated matched-packet rawlogits/probabilities<=1e-5, source/head/asset/token/ID/
-class/CSV/bothT4/canonicalcontrols, actual512/full80warmup and conservative25k
-runtime<32400seconds with20%margin/allcold/other/600reserve. Only then locally read
-human votes once: originaluniform512reduction>.001 versus actualH60; later1024
-reduction>=0 with seed42/2000paired-group95lower>-.01. Actual source reverseH60
-route175rows/control42, neverimpute. No independentCV/hidden-scoreforecast claim.
+Failure of the original required gate rejects this fixed replacement. Passing
+leaves full quality INCONCLUSIVE: later 1,024 mirror predictions and actual
+reverse baseline are missing after CUDA OOM. No imputation, honest-CV claim,
+hidden-score forecast or production eligibility. A later completion/backend
+experiment needs a separate bounded proposal. Preserve H66 ERROR/runtime failure.
 
-One publicversion<=5400two-T4seconds, one frozen official onlyafterfullqualif.
-Cumulative H65+H66<=18000publicseconds/twoacceptedpublicversions; H65used1version/
-1705.706seconds. Carry ORIGINALdeadline2026-11-10T08:37:37.343197UTC/Nov14quota
-period, noreset. Fresh fullinventory/quota/pinneddependencies/allofficialcursors,
-paidFalse and enoughpublic+hiddenquota before GPU. No researchGPUduringofficial
-scoring; observe SAMEacceptedversion/receipt after timeout, neverduplicate.
-Hidden inference reads actualtesttext/models only; no labels/cachedpredictions.
-
-Heavyfiles ROOT/runs/span_020; programs/Markdown/aggregates/executedNotebook32in
-Git. Preserve78snapshots, archivedgoals,userdirty07/12andnotebooklink. CLItracking,
-queue discoveriesv21, carryunfinished atclosure. Spanclosure does not complete
-persistent rankgoal; only fresh complete officialrank<=19 does.
+CPU experiment cap 300 seconds; zero inference, GPU, network or official calls.
+Publishing code/results remains authorized. No weight conversion or upload.
+Retain original resource accounting/deadline; no quota or period reset.
+Heavy per-row outputs ROOT/runs/span_021; aggregate results, report, programs and
+executed notebook 33 in Git. Preserve 82 snapshots, archived goals, user notebooks
+07/12 and the notebooks link. CLI tracking; queue discoveries for v22 and carry
+unfinished tasks at closure. Span closure does not achieve the rank objective.

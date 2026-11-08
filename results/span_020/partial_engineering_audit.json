@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-08T13:20:39.292210+00:00",
+  "service_status": "ERROR",
+  "original_engineering_checks_passed": true,
+  "native_controls": {
+    "native_parallel_logits_max_abs": 0.0,
+    "native_parallel_probability_max_abs": 0.0,
+    "repeated_probability_max_abs": 0.0,
+    "rows": 12,
+    "token_fingerprint": "37a129d81304bc080c6b02d1a7b12603776d9aafec387805f0bfec762f9a170d",
+    "tolerance": 1e-05,
+    "passed": true
+  },
+  "repeated_logits": {
+    "passed": true,
+    "raw_logit_max_abs": 0.0,
+    "tolerance": 1e-05,
+    "rows": 12
+  },
+  "failure_type": "torch.cuda.OutOfMemoryError",
+  "failed_stage": "later_source1024",
+  "source_prediction_rows_retrieved": 0,
+  "source1024_complete": false,
+  "actual_source_reverse_complete": false,
+  "full_recipe_complete": false,
+  "console_sha256": "e4e879a62cb6702277c99e7111ba9a637f96f98b28b1d85c86fad74044c21802",
+  "session": {
+    "seconds": 1996.7652168273926,
+    "exit_code": 1,
+    "role": "batch_candidate"
+  },
+  "cuda_requested_mib": 654.0,
+  "cuda_free_mib": 650.81,
+  "cuda_total_gib": 14.56,
+  "cuda_allocated_gib": 12.27,
+  "cuda_reserved_unallocated_gib": 1.52,
+  "retained_canonical_probability_max_abs": 0.0,
+  "runtime": {
+    "actual_rows": 512,
+    "hidden_rows_assumed": 25000,
+    "margin": 1.2,
+    "retained_seconds_per_row": 0.539271797451172,
+    "mirror_parallel_seconds_per_row": 0.5249851415000001,
+    "retained_startup_warmup_other_seconds": 225.92467410400025,
+    "mirror_startup_warmup_other_seconds": 66.11086259599989,
+    "setup_seconds": 72.73564219474792,
+    "reserve_seconds": 600,
+    "projected_hidden_seconds": 32892.479347429915,
+    "runtime_gate_passed": false,
+    "replica_wall_time_not_divided_again": true
+  },
+  "engineering_gate_passed": false,
+  "quality_evaluated": false,
+  "official_submission_eligible": false,
+  "human_votes_read": false,
+  "actual_uniform_rows": 512,
+  "actual_warmup_rows": 80,
+  "source_sha256": {
+    "scripts/audit_span_020_partial.py": "03d074e0842dad48722eac40deb7875b8c6b689aaf032cbd280bf524af89396d",
+    "src/arena/span019_runtime.py": "c32c4d7375044ad20eab1c43e0db49e463db1970105d5f0fa1644150cfefccf5"
+  }
+}

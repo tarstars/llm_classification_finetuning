@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-08T13:38:58.517431+00:00",
+  "passed": true,
+  "sealed_version": 20,
+  "goal_achieved_by_span": false,
+  "public_gpu_seconds": 2012.0999999999985,
+  "cumulative_public_gpu_seconds": 3717.8060000000005,
+  "public_versions": 1,
+  "service_status": "ERROR",
+  "full_recipe_complete": false,
+  "quality_evaluated": false,
+  "official_submissions": 0,
+  "native_numerical_checks_passed": true,
+  "runtime_gate_passed": false,
+  "projected_hidden_seconds": 32892.479347429915,
+  "historical_snapshots_preserved": 78,
+  "snapshot_files_after_transition": 82,
+  "carried_tasks": 37,
+  "new_discoveries": [
+    "H67"
+  ],
+  "notebook_sha256": "502286c002053da5e4837d63af38a9f2063d4acc845b77eff07846b935295386",
+  "goal_archive_sha256": "581d9e3c5e2eb7624e6adba7e8439af02bfc169289fd22e96137770f3dbd59ec",
+  "leaderboard": {
+    "observed_at": "2026-11-08T13:23:45.750926+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 23,
+    "teams": 312,
+    "score": 0.82987,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82702,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-07T20:07:11.890Z",
+    "pagination": {
+      "complete": true,
+      "pages": 4,
+      "rejected_pages": []
+    },
+    "source_sha256": {
+      "scripts/observe_leaderboard.py": "42831e74ff03295144dbbd3067bc9c8d7e4f066136ad889557e5c9895694e18c",
+      "src/arena/leaderboard.py": "e0e563000c6f34875e401c810f885da9b9928bd6a7f865bff3913571b2381789"
+    }
+  }
+}

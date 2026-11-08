@@ -12,19 +12,26 @@ its source, terminal status and every actual canonical/numerical/memory failure
 or success. Do not submit it or run another batch shape. Its quality remains
 unmeasured because the current contract gates votes behind feasible runtime.
 
-Queue a separate v21CPU-only information screen after H66closes. Use its completed,
-hash-verified original512/later1024mirror predictions, matched retained Gemma and
-actual full H60baseline (including source175reverse rows). ONEprimary candidate
-remains .5retainedGemmaoriginal+.5mirrororiginal,T1, same new-shape outputs for
-all cohorts. No fitting, new weight/temperature/route/class-map grid or imputation.
+The job then terminatedERROR with CUDAOOMduring the later-source tail. No
+mirror_source.npz was written and the reverse baseline did not run. Only complete
+originalcontrol256/uniform512/long64/test outputs were recovered. The earlier
+prospective claim that full later caches would become available did not hold.
+
+Queue a separate v21CPU-only **futility** screen after H66closes. Use completed,
+hash-verified original512mirror/retainedGemma predictions and actual cached H60.
+ONEprimary candidate remains .5retainedGemmaoriginal+.5mirrororiginal,T1. No
+fitting, new weight/temperature/route/class-map grid or imputation. The absent
+1024mirror probabilities and source175reverse baseline must stay unavailable.
 Do not alter H66's engineering stop or mark its source deployment eligible.
 
-Evaluate the same predeclared quality criteria once: originaluniform reduction
->.001 versus H60; later1024reduction>=0 with seed42/2000paired-group95lower>-.01.
-Report logloss/accuracy/Brier/class behavior and training/later-inspection/domain
-limits. This CPU screen is a research usefulness decision, not deployment
-qualification, independent CV or a competition-score forecast. Stop further
-backend work if it fails. Budget<=300CPUseconds/zeroGPU/zeroofficial/zeronetwork.
+Evaluate the unchanged original criterion once: uniform loss reduction>.001
+versus H60, seed42/2000paired-group interval and descriptive accuracy/Brier/class
+behavior. Failure of that required first gate suffices to stop this fixed
+replacement. Passing it leaves the **full quality decision inconclusive**: the
+later1024reduction>=0/group95lower>-.01 criterion remains required and unmeasured.
+Any later completion needs a separate bounded proposal, not fabricated coverage.
+Original votes overlap training; this is neither independent CV nor a score
+forecast. Budget<=300CPUseconds/zeroGPU/zeroofficial/zeronetwork.
 
 Only a useful fixed predictor would justify a new bounded backend proposal.
 An earlier option was deferred, not disproven: src/arena/dense_checkpoint.py can

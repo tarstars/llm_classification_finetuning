@@ -13,7 +13,9 @@ def main():
     assert registry['active_version']==20,'Preserve the historical result after closure'
     pub=REPO/'results/span_020'
     stage='INTERIM preparation and execution; larger-batch fit, speed and quality are unmeasured.'
-    if (pub/'candidate_qualification.json').exists():
+    if (pub/'partial_engineering_audit.json').exists():
+        stage='FINAL: serviceERROR after CUDAOOMduring later-source inference; original engineering checks pass, runtime fails, full quality is unmeasured.'
+    elif (pub/'candidate_qualification.json').exists():
         decision=json.loads((pub/'candidate_qualification.json').read_text())
         stage=('Fixed candidate evaluated; qualification is '+str(decision['official_submission_eligible'])
             if decision['quality_evaluated'] else 'Engineering stop before reading quality votes.')
@@ -53,6 +55,16 @@ for name in ['status.json','controller_state.json','progress.json','source_verif
   print(name,r)'''),
         nbf.v4.new_code_cell('''if not (PUB/'candidate_qualification.json').exists():
  print('No full qualification or model quality result at this snapshot.')
+ if (PUB/'partial_engineering_audit.json').exists():
+  e=read('partial_engineering_audit.json')
+  print('Actual service status:',e['service_status'],'; failure:',e['failure_type'],'in',e['failed_stage'])
+  print('Recovered original-data engineering checks passed:',e['original_engineering_checks_passed'])
+  print('Native/repeated rawlogit controls:',e['native_controls'],e['repeated_logits'])
+  print('Retained canonical probability max difference:',e['retained_canonical_probability_max_abs'])
+  print('Full source prediction rows retrieved:',e['source_prediction_rows_retrieved'])
+  print('Actual source reverse comparator complete:',e['actual_source_reverse_complete'])
+  print('Conservative complete-original profile hours:',e['runtime']['projected_hidden_seconds']/3600)
+  print('Human quality votes read:',e['human_votes_read'],'; official eligible:',e['official_submission_eligible'])
  if (PUB/'runtime_live_observation.json').exists():
   r=read('runtime_live_observation.json')
   print('Actual mirror512seconds:',r['mirror_profile_seconds'])
