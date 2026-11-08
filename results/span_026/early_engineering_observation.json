@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T17:34:51.928965+00:00",
+  "observed_at": "2026-11-08T17:33:16.763610+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span026-context-audit/1",
+  "early_engineering_passed": true,
+  "projection_seconds": 32051.569139324303,
+  "hidden_limit_seconds": 32400,
+  "headroom_seconds": 348.43086067569675,
+  "provisional_live_worker_event": true,
+  "independent_terminal_artifact_audit_complete": false,
+  "quality_measured": false,
+  "official_submission_eligible": false,
+  "fixed_scoring_rows": 357,
+  "stage": "scoring_changed_old"
+}

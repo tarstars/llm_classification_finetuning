@@ -1,6 +1,6 @@
 # Active rank goal; v25 negative, v26 context-coverage audit selected
 
-Snapshot Nov8 2026,17:26UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot Nov8 2026,17:36UTC. Read PROJECT_POLICY.md, GOAL.md,
 SPAN_026_PLAN.md. Persistent objective team17244411rank<=19 on a fresh complete
 board after legitimateinference. ACTIVE/unachieved, no tokenbudget. No subagents.
 Never walk HOME/~/prj/Arc/FUSE/troll_farm; scope namedproject/exactartifactpaths.
@@ -71,7 +71,11 @@ runfrozenaudit_span_026_pilot.py: replayengineeringindependently beforelabels.
 
 LiveGPUstage: selector121.8369s,exact357IDs; m0warm80=59.5459s,
 control256=134.1034s andadvancedtocurrentuniform512=264.1297s (old274.5959).
-Current6kwarm/probestillpending. Readprogress/events; observerSSEmaytimeout,
+6kwarm80=269.9644s. Earlyprobe PASSED: projection32051.5691393s (8h54m),
+348.43086sheadroom. ProvisionalSSEevent, NOTindependentterminalaudit or full
+qualification; early_engineering_observation.json recordsdistinction. 17:33UTC
+changed_old36/357at93.49s. Four-output357qualitystagewilltakemoretimetofinish.
+Readprogress/events; observerSSEmaytimeout,
 notexecutionfailure. Manualobserver19239TERMINALexit0capturedrealcontrolprogress.
 
 Whilepilotlive, actualqualificationprogramsprepared, NOTadmitted/builtyet:
@@ -88,6 +92,24 @@ DO NOTreprepare. Builderrequiresfrozenpilot_audit engineering+grossguard first.
 Actualnewqualificationcap3600/publictotal10800/max2versions; stillonlyoneaccepted.
 Fullqualificationusesworseperroleparent/pilot/currentcold+warm+uniform,20pctmargin/
 600reserve, worstextra-throughputincludingactualsmallcohort, fullnewwarm+selector.
+Qualificationpreparationpublished0cbd087; officialcontroller+gateguardtests
+publishedfb4eee3. All18focusedtests pass. scripts/submit_span_026_candidate.py
+implements --prepare-decision (afteractualfullqualification), commit/pushthat
+concretedecision, thensingleofficialsubmissionwithdurableintent/receipt; never
+duplicate. --observe-onlyresumessameacceptedreceipt. Recomputesruntimefromall
+actualsummaryfiles, refusesmissingcanonicalcohorts/memory/runtime/grossguard.
+No newGPU/officialhasbeenlaunched bytheseprograms.
+
+NEXTpoll70441/SAMEversion untilterminal, retrievesource/artifacts viaexisting
+controller, runaudit_span_026_pilot.py ONCE (frozen28bf186). Ifitpassesfixed
+guard, savepilotresults/notebook andcommitthem, then build_span_026_candidate.py
+(builderhasnotrun), actualcell/mode/Jupyterrehearsals, commit/pushbundle before
+run_span_026_candidate.py ONCE; verifyacceptedsource andobserveSAMEreturnedhandle.
+Afterqualificationterminal runaudit_span_026_candidate.py ONCE; ifeligible,
+prepare/freeze/pushdeploymentdecision then submit_span_026_candidate.py ONCE.
+Actualrank<=19freshcompleteboardafteroutcome remains theonlygoalcompletion.
+Notebook38nowincludestheprovisionalearlyscreenandpendingqualitylabels; builder
+readsfinalauditfilesifpresentwhenrerun. No localinference/sourceauditrepeats.
 
 Measureextra80rowwarm+64rowsteadyprobe,
 actualfulltextselectorCPUcost, oldGolduniform512/controls256. Runtimehelper

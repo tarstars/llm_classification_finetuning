@@ -7,11 +7,11 @@ REPO=Path(__file__).resolve().parents[1]
 
 
 def main():
-    nb=nbf.v4.new_notebook(cells=[nbf.v4.new_markdown_cell('''# H72: exact native 4k/6k context coverage
+    nb=nbf.v4.new_notebook(cells=[nbf.v4.new_markdown_cell('''# H72: native 4k/6k coverage and GPU information pilot
 
 One label-free CPU comparison, all57477originalrows. This measures input changes
-and character exposure, not useful semantics, quality or runtime. No new GPU/model
-inference has been admitted. Original votes overlap public checkpoint training;
+and character exposure, not useful semantics, quality or runtime. The later GPU
+stage is reported separately below. Original votes overlap public checkpoint training;
 the prospective evaluation amendment uses local loss as a diagnostic and one
 qualified frozen official trial as the target measurement.
 [Coverage](../docs/SPAN_026_COVERAGE.md) · [Plan](../docs/SPAN_026_PLAN.md) ·
@@ -42,8 +42,34 @@ fig.tight_layout()
 ROOT=Path.home()/'database/llm_classification_finetuning/runs/span_026'
 (ROOT/'figures').mkdir(exist_ok=True)
 fig.savefig(ROOT/'figures/context_coverage.png',dpi=160,bbox_inches='tight');plt.show()
-print('Quality measured:',r['quality_measured'],'; GPU admitted:',r['gpu_admitted'])
-print('Next: actual 6k memory/runtime qualification. Source work is not GPU runtime.')''')])
+print('At the original CPU audit: quality measured:',r['quality_measured'],'; GPU admitted:',r['gpu_admitted'])
+print('Later GPU stages are reported below; source work is not GPU runtime.')'''),
+        nbf.v4.new_markdown_cell('''The early engineering observation comes from the live worker's aggregate log.
+It is provisional until terminal retrieval and independent source/control checks.
+The final qualification measures all three model roles. Neither runtime nor
+training-overlapping loss is a hidden-score forecast.'''),
+        nbf.v4.new_code_cell('''PUB=REPO/'results/span_026'
+prep=json.loads((PUB/'candidate_preparation.json').read_text())
+print('Total label-free source CPU seconds:',prep['aggregate_cpu_source_seconds'],'/ 1200')
+print('Qualification extra rows:',prep['changed_by_cohort'])
+early=json.loads((PUB/'early_engineering_observation.json').read_text())
+display(pd.DataFrame([{'stage':'Retained H60 projection','hours':30912.48602725137/3600},
+ {'stage':'Provisional H72 early screen','hours':early['projection_seconds']/3600},
+ {'stage':'Kaggle limit','hours':early['hidden_limit_seconds']/3600}]))
+print('Early screen passed:',early['early_engineering_passed'],'; headroom seconds:',early['headroom_seconds'])
+print('Observation:',early['observed_at'],'; independently audited:',early['independent_terminal_artifact_audit_complete'])
+print('This observation is not full qualification or a score estimate.')
+for filename in ['pilot_audit.json','candidate_qualification.json']:
+ path=PUB/filename
+ if path.exists():
+  result=json.loads(path.read_text())
+  print(filename)
+  display({k:v for k,v in result.items() if k in ['decision','complete_information','engineering_screen_passed',
+   'weighted_lower_gain','weighted_upper_gain','weighted_lower_gain_paired_group95',
+   'gross_regression_guard_passed','runtime_gate_passed','memory_guard_passed',
+   'original_training_overlap','independent_cv','hidden_score_forecast','official_submission_eligible']})
+  if 'slice_metrics' in result:display(pd.DataFrame(result['slice_metrics']).T)
+ else:print(filename,': pending')''')])
     nb.metadata['kernelspec']=dict(display_name='Python 3',language='python',name='python3')
     executed=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     code=[c for c in executed.cells if c.cell_type=='code']

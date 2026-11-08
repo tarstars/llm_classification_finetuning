@@ -6788,6 +6788,14 @@
           "evidence": [
             "docs/SPAN_026_QUALIFICATION.md"
           ]
+        },
+        {
+          "at": "2026-11-08T17:36:26+00:00",
+          "status": "running",
+          "note": "Actualearly6kengineering screen PASSED at17:33UTC: projected32051.569s (8h54m),348.431sbelow32400cap, memory/control/token gates passedinsideworker. ProvisionalSSEevidence onlyuntilterminalretrieval/independentreplay. Changed-old357scoringunderway onSAMEversion1/controller70441. Qualificationanddurableofficialcontrollersprepared/pushedfb4eee3, all18focusedtests pass; noqualificationpush/noofficial/noqualityyet.",
+          "evidence": [
+            "results/span_026/early_engineering_observation.json"
+          ]
         }
       ]
     }
