@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-08T02:23:36.027547+00:00",
+  "deadline": "2026-11-10T02:23:36.027583+00:00",
+  "job_seconds_caps": {
+    "gemma_route": 2400,
+    "gemma_route_followup": 3600
+  }
+}

@@ -1,35 +1,39 @@
-# Move above20th place: v13 Gemma-only order averaging
+# Move above 20th place: v14 fixed Gemma route coverage
 
-Persistent objective: team17244411 at rank<=19 on a fresh fully paginated Kaggle
-leaderboard after legitimate inference/scoring. Keep the outcome goal active;
-finished local experiments do not complete it. Latest2026-11-07T19:21:42UTC:
-rank30/313, best0.83053, rank19/20cutoff0.82915. V12is sealed and archived.
+Persistent objective: team17244411 at rank<=19 on a fresh fully paginated official
+Kaggle leaderboard after legitimate inference/scoring. The goal stays active
+across bounded spans until achieved. V13 is sealed: best0.82987, rank23/312 at
+2026-11-08T02:11UTC; rank19 cutoff0.82915. Preserve docs/GOAL_V13.md and all results.
 
-Execute docs/SPAN_013_PLAN.md, focus H60only. Test one complementary fixed
-Gemma-only order average after the Llama-only rule failed its information gate.
-On the unchanged10%work/20%row label-free route:
-.25Gemma-original+.25aligned-Gemma-swapped+.5aligned-Llama-swapped; off-route
-original equal ensemble. T1, packing8192, context4096, fp16/author kernels/image.
-No weight, route, temperature or leaderboard search. Cached original votes overlap
-checkpoint training; uniform512gain>0.0005is an information gate, not honest CV.
+Execute docs/SPAN_014_PLAN.md, focus H61 only. Its condition is met by H60's actual
+0.00066 improvement short of rank19. Test exactly one15%work/20%row route, with
+unchanged JS/work order, stable IDs, Gemma-only mixture, T1,8192packing,4096context,
+fp16/author kernels/pinned image. No route grid, weight/T or leaderboard fitting.
 
-Then actual three-pass qualification on old control256/uniform512/long64/test,
-including matched archived reverse-route controls, exact source/checkpoints/IDs/
-token/class alignment/CSV/two-T4 checks. Require conservative25kprojection<32400s,
-20%margin, all startup/full80-row warmup/other overhead/selected reverse work and
-600sreserve, owned watchdog and actual serialized-cell/branch/startup rehearsals.
+First replay the fixed control256/uniform512/long64/test cohorts. Compare15% to
+10% using the same full reverse-Gemma cached probabilities for both arms; report
+unmatched-cohort differences from the actual deployed parent separately. Require
+uniform incremental loss reduction>0.0005 as a futility/information gate. Original
+votes overlap checkpoint training: this is not independent CV or a score forecast.
+Stop H61 without GPU if it fails; do not change the threshold or try another route.
 
-Fresh free Kaggle quota/jobs/dependencies before execution. New public phase cap
-6000s: initial<=2400s, at most one separately admitted engineering follow-up<=3600s;
-max2accepted public versions, one quality recipe and one official submission.
-The initial cap is prospective: old measured base/stress costs and full80-row
-warmups make a30minute first job too tight. Preserve v12's unused allowance;
-never retroactively enlarge old caps. Fix original quota period and48hour deadline;
-refresh cannot enlarge this phase. No researchGPU while official scoring pending,
-paid scaling, external text inference, hidden cache or target lookup.
+If it passes, qualify an actual three-pass worker and canonical old-route controls
+under strict1e-5 source/checkpoint/ID/token/class/CSV/two-T4 gates. Hidden mode uses
+actual test text, no public cache/targets. Require conservative25kprojection<32400s
+with20%margin, all startup/full80-row warmup/other overhead and600sreserve; retain
+comparable H60 runtime bounds. Owned watchdog and serialized success/failure/
+watchdog/public-hidden/Jupyter-startup rehearsals before admission. No submission
+on information, numerical, source or runtime failure.
 
-Heavy v13files under database/llm_classification_finetuning/runs/span_013. Programs,
-aggregates, reports and executed notebook25in Git; commit/push milestones. Preserve
-all50historical snapshots, user notebooks07/12, archived goals and notebook link.
-Queue discoveries in v14. Other tasks remain unselected. A failed v13does not
-complete the persistent leaderboard goal.
+New free public phase<=6000s: initial<=2400s, at most one separately admitted
+engineering follow-up<=3600s, max2public versions/one quality recipe/one official
+submission. Original quota period and48hour deadline are fixed at preparation;
+refresh cannot enlarge caps. Fresh complete jobs/quota/dependencies/pending receipts
+before GPU. No paid scaling, researchGPU while official pending, external text API,
+hidden cache or target lookup. No retroactive expansion of v13's consumed limits.
+
+Heavy files under database/llm_classification_finetuning/runs/span_014. Programs,
+aggregates, reports and executed notebook26 in Git; commit/push milestones. Preserve
+all54prior snapshots, dirty user notebooks07/12, old goals and notebook link.
+Queue discoveries in v15 and carry unfinished tasks. A failed v14 does not complete
+the persistent rank goal. Other carried tasks remain unselected.

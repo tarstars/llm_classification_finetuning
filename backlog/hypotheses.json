@@ -5537,7 +5537,7 @@
       ],
       "followup_gpu_wall_hours": [
         0,
-        0.75
+        1
       ],
       "cpu_wall_hours": [
         0.05,
@@ -5552,7 +5552,7 @@
       "risk_reason": "The token-work runtime forecast may fail for longer rows/packing; more coverage may add noisy or harmful preferences, and original-vote quality overlaps checkpoint training.",
       "mitigation": "Conditional advancement only after real H60 improvement, one predeclared15pct rule and actual runtime qualification; retain original route as comparator and report uncertainty/overlap. Forecasts are not measured gains.",
       "rationale": "Records a concrete way to use measured deployment headroom if the current fixed candidate helps but falls short, without admitting extra current-span work.",
-      "revision": "Queued during v13 official wait from actual qualification headroom; no expanded-route replay, GPU or score exists.",
+      "revision": "Queued during v13 official wait from actual qualification headroom; no expanded-route replay, GPU or score exists. V14 prospectively selects one15pct rule after official H60 improvement; incremental uniform gate>0.0005 versus consistently matched10pct reference, canonical old-route numerical controls and conservative comparable runtime bounds. No expanded-route result inspected; docs/SPAN_014_PLAN.md.",
       "depends_on": [
         "E00",
         "E14",
@@ -5564,7 +5564,7 @@
       ],
       "id": "H61",
       "rank": 79,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 14,
       "discovered_during": 13,
       "derived_from": [
@@ -5578,6 +5578,14 @@
           "note": "Actual qualified runtime leaves24.8conservative minutes. Queue one conditional15pct-work successor only if the pending H60 trial improves official score but misses rank19; no new route has been scored or admitted.",
           "evidence": [
             "docs/SPAN_013_RUNTIME_HEADROOM.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T02:21:39+00:00",
+          "status": "running",
+          "note": "Starting the fixed matched cached replay under docs/SPAN_014_PLAN.md. Incremental uniform loss reduction must exceed0.0005 over the10pct comparator. No expanded-route result has been inspected, no GPU admitted; all other tasks remain unselected.",
+          "evidence": [
+            "docs/SPAN_014_PLAN.md"
           ]
         }
       ]
@@ -6752,8 +6760,18 @@
         "E17",
         "H61"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H61"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T02:21:38+00:00",
+          "note": "H60 actual official improvement0.00066 reaches rank23 but misses rank19. Select one predeclared15pct-work/20pct-row route under the persistent outcome goal; first an incremental matched-cache information gate, then actual controlled deployment only if it passes.",
+          "focus_ids": [
+            "H61"
+          ]
+        }
+      ],
       "carried_from": 13,
       "start_sha256": "441c253892b66e11dcb5e2902f68bbecc9450edf9ab26b727cf10b2fb1a20e6b",
       "start_markdown_sha256": "c71e3e39bdf5bd6ae7d8afb331f1856f93de0bdc0053d6944f33aeea3e1fff8f",
