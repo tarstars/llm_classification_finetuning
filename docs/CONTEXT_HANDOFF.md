@@ -22,8 +22,10 @@ results/span_019/closure_audit.json PASSED after transition. Final Notebook31has
 4executed code cells/zeroerrors, explicitly finalengineering/runtimeFAIL.
 78historical snapshot files now exist, all prior74preserved.37unfinished items
 carried. V20active,38members, focus[H66], H66running=pre-GPUpreparation only;
-v21draftempty. No v20GPUjob/source notebook/config has been built/admitted yet.
-No new uploads, official/controller or quality outputs in v20.
+v21draftempty. V20source notebook/config/worker are now BUILT and CPUrehearsed;
+no v20GPUadmission yet. No newuploads, official or quality outputs in v20.
+Notebook ROOT/runs/span_020/notebooks/batch_candidate/job.ipynb; bundle and actual
+serialized rehearsals in results/span_020/batch_candidate_{bundle,cell_rehearsals}.json.
 
 ## H65 actual completed source/assets/native GPU execution
 
@@ -94,7 +96,7 @@ historicalH65source. Record old/new batch-shape probability differences; recompu
 ALLmirrorcohorts atnewshape, never pool or inherit quality. Native<=1e-5checks
 compare MATCHEDpackets atnewshape, not a false identity claim across shapes.
 
-Build a separate ROOT/runs/span_020 notebook/worker/config/controller and freeze
+Separate ROOT/runs/span_020 notebook/worker/config/controller are built; freeze
 all source/bundle before GPU. Existing span019 modules/builders/tests are concrete
 examples: span019_followup.py orchestrates fixed public inputs and test-onlyhidden;
 span019_checked_infer.py adds repeated rawlogit guard. Historical v19followup was

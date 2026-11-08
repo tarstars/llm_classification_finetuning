@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-08T12:20:50.642054+00:00",
+  "source_path": "/home/tarstars/database/llm_classification_finetuning/runs/span_019/jobs/classifier_pilot/output/mirror_experiment/m0_summary.json",
+  "source_sha256": "5c803c604dc4a0314cc504465d6565f8e83f2c94dc468f260c62575292c90e3d",
+  "cold_seconds": 160.065816585,
+  "uniform": {
+    "rows": 512,
+    "seconds": 276.1071602950001,
+    "tokens": 477424,
+    "max_tokens": 4330,
+    "token_ids_sha256": "8f6eeb69e3c4a8193140ea3d6d596af5edc27a93f9d4a72091ea1f66f4be6f50",
+    "peak_allocated_bytes": [
+      10931107328,
+      9108786176
+    ],
+    "peak_reserved_bytes": [
+      12780044288,
+      10900996096
+    ]
+  },
+  "warmup": {
+    "rows": 80,
+    "seconds": 59.73025608900002,
+    "tokens": 66218,
+    "max_tokens": 3674,
+    "token_ids_sha256": "2310cdd39ed2797d9af8325e310e59ee1ac51ca20082050aba1ebc49ac0ae5d5",
+    "peak_allocated_bytes": [
+      10928964096,
+      9106506752
+    ],
+    "peak_reserved_bytes": [
+      12780044288,
+      10900996096
+    ]
+  },
+  "includes_prior_import_and_other_overhead": true,
+  "prior_reference_sha256": "7b39c7c9a1107d8e842656cf5a90931bd3db81be4e89e80d8572a2531e0a0c2a",
+  "engineering_sha256": "d4ddce9b3f22a7cb526870f1b7763d0c5c4a3d7022458a878f8efebb96fb9bde"
+}

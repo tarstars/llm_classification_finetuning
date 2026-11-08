@@ -226,6 +226,7 @@ One12288-token/max32-row native batch may enable the unchanged H65classifier ens
 
 - 2026-11-08T11:46:43+00:00 — planned: Live full512profile proves current native backend cannot meet9h; queue exactly one memory-conditional larger batch, no quality claim or current-span expansion. Evidence: [docs/SPAN_019_BATCHING_DISCOVERY.md](docs/SPAN_019_BATCHING_DISCOVERY.md)
 - 2026-11-08T12:07:42+00:00 — running: Beginning pre-GPU implementation/rehearsal of sole12288token/max32row candidate under docs/SPAN_020_PLAN.md. H65terminal memory/source controls verified; no v20GPUadmission or quality outputs yet. Same original assets/deadline/quota/cumulativecaps. Evidence: [docs/SPAN_020_PLAN.md](docs/SPAN_020_PLAN.md)
+- 2026-11-08T12:25:02+00:00 — running: One12288token/max32row worker and complete fixed-input notebook built. Six CPU tests plus actual serialized success/failure/watchdog/startup/public-hidden rehearsals pass. Existing assets reused; originaldeadline/quota/sharedcaps preserved. No GPUadmission yet; freeze exactsources before single90mincapped version. Evidence: [results/span_020/batch_candidate_cell_rehearsals.json](results/span_020/batch_candidate_cell_rehearsals.json)
 
 ### H02
 

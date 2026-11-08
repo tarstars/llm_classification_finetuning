@@ -1,0 +1,113 @@
+{
+  "at": "2026-11-08T09:51:36.398091+00:00",
+  "dataset": "arseniytrushin/llm-span019-native-classifier/1",
+  "private_requested": true,
+  "entries": [
+    {
+      "filename": "AutoGPTQ_LICENSE.txt",
+      "bytes": 1075,
+      "sha256": "359b7e32bf71947820366cbdcb7351cde35253b2aeab2516fbf75f8fd4efde2a"
+    },
+    {
+      "filename": "MODEL_MANIFEST.json",
+      "bytes": 989,
+      "sha256": "e25aedbead1278cc57caaacdc231f613c6ed59d23e3517ff584231ef890b4dd9"
+    },
+    {
+      "filename": "README.md",
+      "bytes": 814,
+      "sha256": "5dc5a571083215eef9b73c7950ba8f3bb805e49ffa6e20dc6c6edb6624ad14e9"
+    },
+    {
+      "filename": "config.json",
+      "bytes": 299738,
+      "sha256": "78d4ba2bec989ebf70a10cf2a1ac16d98a2e9062ad92a90bae1809444104ce61"
+    },
+    {
+      "filename": "expected_score.weight.f16",
+      "bytes": 21504,
+      "sha256": "d7f55e588b030cb0feabef6e7372ed4542b812aa58ecbf7625fdcca81f484554"
+    },
+    {
+      "filename": "mirror_model_card.md",
+      "bytes": 7645,
+      "sha256": "b57a0b73ba4daeb62a2b0031a90f0a10fc175b409e4389192d611c372f43b445"
+    },
+    {
+      "filename": "mirror_usage.md",
+      "bytes": 6339,
+      "sha256": "ff696276d512615f4a5f6ab45082d43aa28062c4f1d185387d55ceda3910c4c3"
+    },
+    {
+      "filename": "model-00001-of-00003.safetensors",
+      "bytes": 4977835176,
+      "sha256": "012cfe4344b17127076787b368af5885bb9a18ff0568257f0029d326a1e77c12"
+    },
+    {
+      "filename": "model-00002-of-00003.safetensors",
+      "bytes": 4999878040,
+      "sha256": "23f868d126be9fb922fe9c09f6ed5c48a36e053c55dddff4a549037ed7046fd7"
+    },
+    {
+      "filename": "model-00003-of-00003.safetensors",
+      "bytes": 383467824,
+      "sha256": "31f38d03fcc9a7195795bd34653b5650d804f1716968a49643815c37ed70d824"
+    },
+    {
+      "filename": "model.safetensors.index.json",
+      "bytes": 110738,
+      "sha256": "2ee47c63a7e499ee199a9e1c75c9d84750acba84fbc18612952c3e2a24301da6"
+    },
+    {
+      "filename": "native_qlinear.py",
+      "bytes": 12123,
+      "sha256": "5a6a483784adc7d9ee55e62f6dc4fdaf3a642f56796d2a6b8afea0b2364d751d"
+    },
+    {
+      "filename": "special_tokens_map.json",
+      "bytes": 636,
+      "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351"
+    },
+    {
+      "filename": "tokenizer.json",
+      "bytes": 17518525,
+      "sha256": "7da53ca29fb16f6b2489482fc0bc6a394162cdab14d12764a1755ebc583fea79"
+    },
+    {
+      "filename": "tokenizer.model",
+      "bytes": 4241003,
+      "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+    },
+    {
+      "filename": "tokenizer_config.json",
+      "bytes": 40581,
+      "sha256": "7b245d1616447259c1e8773088085475ec1a7192df47f70b6b4dcad0bb1d3f7b"
+    }
+  ],
+  "total_bytes": 10383442750,
+  "classifier_head_sha256": "d7f55e588b030cb0feabef6e7372ed4542b812aa58ecbf7625fdcca81f484554",
+  "labels_included": false,
+  "predictions_included": false,
+  "public_calibration_text_in_config": true,
+  "original_weights_verified": true,
+  "new_gpu_executions": 0,
+  "upload_sha256": {
+    "model-00001-of-00003.safetensors": "012cfe4344b17127076787b368af5885bb9a18ff0568257f0029d326a1e77c12",
+    "dataset-metadata.json": "434ad46902565f21825f5a987a34b22aef4c11a53fa80b610cdbbfaaed870631",
+    "native_qlinear.py": "5a6a483784adc7d9ee55e62f6dc4fdaf3a642f56796d2a6b8afea0b2364d751d",
+    "AutoGPTQ_LICENSE.txt": "359b7e32bf71947820366cbdcb7351cde35253b2aeab2516fbf75f8fd4efde2a",
+    "README.md": "5dc5a571083215eef9b73c7950ba8f3bb805e49ffa6e20dc6c6edb6624ad14e9",
+    "tokenizer.model": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+    "mirror_model_card.md": "b57a0b73ba4daeb62a2b0031a90f0a10fc175b409e4389192d611c372f43b445",
+    "MODEL_MANIFEST.json": "e25aedbead1278cc57caaacdc231f613c6ed59d23e3517ff584231ef890b4dd9",
+    "tokenizer.json": "7da53ca29fb16f6b2489482fc0bc6a394162cdab14d12764a1755ebc583fea79",
+    "special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+    "config.json": "78d4ba2bec989ebf70a10cf2a1ac16d98a2e9062ad92a90bae1809444104ce61",
+    "mirror_usage.md": "ff696276d512615f4a5f6ab45082d43aa28062c4f1d185387d55ceda3910c4c3",
+    "tokenizer_config.json": "7b245d1616447259c1e8773088085475ec1a7192df47f70b6b4dcad0bb1d3f7b",
+    "model.safetensors.index.json": "2ee47c63a7e499ee199a9e1c75c9d84750acba84fbc18612952c3e2a24301da6",
+    "model-00002-of-00003.safetensors": "23f868d126be9fb922fe9c09f6ed5c48a36e053c55dddff4a549037ed7046fd7",
+    "model-00003-of-00003.safetensors": "31f38d03fcc9a7195795bd34653b5650d804f1716968a49643815c37ed70d824",
+    "expected_score.weight.f16": "d7f55e588b030cb0feabef6e7372ed4542b812aa58ecbf7625fdcca81f484554"
+  }
+}

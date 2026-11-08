@@ -1,0 +1,75 @@
+{
+  "at": "2026-11-08T10:01:37.867765+00:00",
+  "complete": true,
+  "uses_targets": false,
+  "transformers_version": "4.42.3",
+  "tokenizer_sha256": "7da53ca29fb16f6b2489482fc0bc6a394162cdab14d12764a1755ebc583fea79",
+  "source_sha256": {
+    "scripts/prepare_span_019_tokens.py": "cc5a43c8fe12fd9af49257d1965fc64272f21b28b37d9c95ab695df9c4e29874",
+    "src/arena/span019_input.py": "2cec9a9ccbcf5c91a8d139b65cbb43ccab937c7e94ab777b920c431d02e42085",
+    "src/arena/span019_infer.py": "ed95788880161ab212f8135b5c05f84acd9c1cfdf2df1ba43d55f9dfd4664206",
+    "src/arena/span019_pipeline.py": "ae4b28ff1ea4980a20d1b1882bf2a4eb2f5998913ed48eaf60c8506f0cc11a75",
+    "results/span_019/evaluation_selection.json": "bb51468990d9177b4f9e3ce19d2f4ac00a8e808d8790dc79e96c4016159a226a"
+  },
+  "cohorts": {
+    "control": {
+      "rows": 256,
+      "token_fingerprint": "01277a0af76f17517c3eaee46a79067d3d136d12bc5329722e2c4c3011908d8b",
+      "seconds": 0.40658553899265826,
+      "max_tokens": 2001,
+      "mean_tokens": 649.3515625
+    },
+    "uniform": {
+      "rows": 512,
+      "token_fingerprint": "0cec0cda4b597498bde7e9faac0a9d0a24dba88691783bb8df283157b3b2f4b5",
+      "seconds": 0.545132421888411,
+      "max_tokens": 2001,
+      "mean_tokens": 662.142578125
+    },
+    "long": {
+      "rows": 64,
+      "token_fingerprint": "f0b12aa118dbf896b5cd741020fefaa3cbd5f894aa3c1df535a9d1a20c17860a",
+      "seconds": 0.9450734409037977,
+      "max_tokens": 2001,
+      "mean_tokens": 2001.0
+    },
+    "test": {
+      "rows": 3,
+      "token_fingerprint": "f802b6eb855eeccc617ab38694ff70e5aea7916b52d24d7aba60296379a47a16",
+      "seconds": 0.0043741511180996895,
+      "max_tokens": 1712,
+      "mean_tokens": 748.6666666666666
+    },
+    "warmup": {
+      "rows": 80,
+      "token_fingerprint": "46456d187e39f3e68fe94c58ccb45551c64f34654ffbaf50af67ade348987e81",
+      "seconds": 0.03638543211854994,
+      "max_tokens": 2001,
+      "mean_tokens": 575.8375
+    },
+    "reference": {
+      "rows": 12,
+      "token_fingerprint": "37a129d81304bc080c6b02d1a7b12603776d9aafec387805f0bfec762f9a170d",
+      "seconds": 0.014050313970074058,
+      "max_tokens": 2001,
+      "mean_tokens": 555.8333333333334
+    },
+    "source": {
+      "rows": 1024,
+      "token_fingerprint": "953f62e78f80bea3aa09a320909ee9efac9ecefbfee426134e0475c77c540fc9",
+      "seconds": 1.1142997618298978,
+      "max_tokens": 2001,
+      "mean_tokens": 685.23046875
+    }
+  },
+  "artifact_sha256": {
+    "runs/span_019/token_audit/control.npz": "a2308c0ee709d1b74b6dd017d60a2def12f1798e1cd11ee68493b4080bd56339",
+    "runs/span_019/token_audit/uniform.npz": "0e385acbe19dbe4cf55f573b9a5f5af50978a94fd2d9db956ac4c87736911d20",
+    "runs/span_019/token_audit/long.npz": "1e1cbadb9414ab5e7b1ee7635910338b14073cdda5e87135438f08224840990c",
+    "runs/span_019/token_audit/test.npz": "6fcf33979ace9faa0c304a9974e209224fd13adb52f431f27383b34af47a4bb6",
+    "runs/span_019/token_audit/warmup.npz": "9f7d20cf44a6109ed77e2399ce6a798aa26d991237fa714cc1c8cd393cbc710a",
+    "runs/span_019/token_audit/reference.npz": "58cc01689f0a6dc24a237966564ab6b35e723ea5d5fcdf74cc623d9243b099da",
+    "runs/span_019/token_audit/source.npz": "409ccc3d52fa809b694076d7764dfdfc1ff5a46cd25f25ba40ed8da74d0fe106"
+  },
+  "new_gpu_executions": 0
+}

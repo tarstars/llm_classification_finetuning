@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "worker": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.02350640296936035,
+        "exit_code": 0,
+        "role": "batch_candidate"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.02121424674987793,
+        "exit_code": 7,
+        "role": "batch_candidate"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.20133590698242188,
+        "exit_code": -15,
+        "role": "batch_candidate"
+      }
+    }
+  ],
+  "mode_checks": [
+    {
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    }
+  ],
+  "notebook_startup_passed": true,
+  "actual_pipeline_cpu_tests_passed": true,
+  "test_output": "ARENA_EVENT {\"stage\": \"mirror_engineering_complete\", \"complete\": true, \"rows\": 2}\nARENA_EVENT {\"stage\": \"mirror_engineering_complete\", \"complete\": true, \"rows\": 2}\nARENA_EVENT {\"stage\": \"mirror_followup_complete\", \"complete\": true, \"rows\": 4}\ntest_public_routes_and_hidden_csv_without_accessing_source_or_labels (test_span020_pipeline.H66PipelineTests.test_public_routes_and_hidden_csv_without_accessing_source_or_labels) ... ok\ntest_source_hash_rejected_before_inference (test_span020_pipeline.H66PipelineTests.test_source_hash_rejected_before_inference) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.149s\n\nOK\n\ntest_maximum_length_rows_fit_exactly_six_per_batch (test_span020_batch.H66BatchTests.test_maximum_length_rows_fit_exactly_six_per_batch) ... ok\ntest_short_rows_obey_new_row_cap_without_changing_order (test_span020_batch.H66BatchTests.test_short_rows_obey_new_row_cap_without_changing_order) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n\ntest_passes_through_original_logits_and_profile (test_span019_checked_infer.RepeatedLogitTests.test_passes_through_original_logits_and_profile) ... ok\ntest_rejects_a_common_logit_shift_even_if_softmax_would_match (test_span019_checked_infer.RepeatedLogitTests.test_rejects_a_common_logit_shift_even_if_softmax_would_match) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+  "real_model_gpu_exercised": false,
+  "new_gpu_executions": 0
+}

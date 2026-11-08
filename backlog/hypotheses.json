@@ -6187,6 +6187,14 @@
           "evidence": [
             "docs/SPAN_020_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-08T12:25:02+00:00",
+          "status": "running",
+          "note": "One12288token/max32row worker and complete fixed-input notebook built. Six CPU tests plus actual serialized success/failure/watchdog/startup/public-hidden rehearsals pass. Existing assets reused; originaldeadline/quota/sharedcaps preserved. No GPUadmission yet; freeze exactsources before single90mincapped version.",
+          "evidence": [
+            "results/span_020/batch_candidate_cell_rehearsals.json"
+          ]
         }
       ]
     }
