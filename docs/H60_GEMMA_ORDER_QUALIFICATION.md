@@ -49,7 +49,7 @@ transfer. The retained actual best is0.83053; actual rank<=19remains the objecti
 Conservative projection:
 `25000/512 * (475.836808+31.781841) * 1.2 +379.384391+144.846259+44.975132+600`
 = **30912.486s /8.586802h**, below32400s by1487.514s. The20%margin and600sreserve
-are unchanged. Actual hidden wall/GPU time is not yet measured. The owned
+are unchanged. Actual hidden GPU time is not measured. The owned
 watchdog enforces the frozen hidden budget; no admission gate is relaxed.
 
 Actual worker/session1657.866s; Kaggle charged1671.483s/27.858min, within2400s.
@@ -67,7 +67,9 @@ qualification. Publish the official result and final notebook before span closur
 [Executed notebook25](../notebooks/25_gemma_only_order.ipynb) ·
 [Prospective protocol](SPAN_013_PLAN.md)
 
-Official trial accepted2026-11-07T20:07:13UTC as receipt58103553, exact source /1.
-Status PENDING; no new score/rank outcome yet. Fresh admission verified all four
-pinned public datasets, full jobs/quota and all six prior receipts. Observe the
-same durable receipt; no additional research GPU while scoring.
+Official trial accepted2026-11-07T20:07:13UTC as receipt58103553, exact source /1,
+and COMPLETE2026-11-08T02:08UTC at0.82987. This improves0.83053by0.00066and moves
+the team to23rd/312; rank19remains0.82915. The outcome goal remains unachieved.
+Fresh admission verified all four pinned public datasets, full jobs/quota and all
+six prior receipts. The same durable receipt was observed without resubmission.
+See [final span report](SPAN_013_RESULTS.md); no further v13execution is planned.

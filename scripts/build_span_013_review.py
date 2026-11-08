@@ -16,7 +16,7 @@ def main():
         nbf.v4.new_markdown_cell('''# V13: Gemma-only answer-order averaging
 
 The persistent goal is rank19 or better on the actual Kaggle leaderboard. The
-retained official score is0.83053; lower multiclass log loss is better. V12kept
+pre-span official best was0.83053; lower multiclass log loss is better. V12kept
 8192packing and stopped Llama-only order averaging at its fixed information gate.
 This span tests one complementary recipe, frozen before examining its replay.
 
@@ -107,7 +107,7 @@ if path.exists():
  result=read(path.name)
  display(pd.DataFrame([{k:result.get(k) for k in ['ref','status','public_score','private_score','date']}]))
  if result['status'].endswith('COMPLETE'):
-  print('Official change versus retained0.83053:',float(result['public_score'])-.83053)
+  print('Official change versus pre-span best0.83053:',float(result['public_score'])-.83053)
  elif result['status'].split('.')[-1] in ['ERROR','FAILED','INVALID','CANCELED','CANCELLED']:
   print('Official execution ended without a score:',result['status'])
  else:print('Official scoring pending; no new official score yet.')

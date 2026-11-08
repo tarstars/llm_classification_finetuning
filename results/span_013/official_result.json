@@ -1,7 +1,7 @@
 {
   "ref": 58103553,
-  "status": "SubmissionStatus.PENDING",
-  "public_score": "",
+  "status": "SubmissionStatus.COMPLETE",
+  "public_score": "0.82987",
   "private_score": "",
   "date": "2026-11-07 20:07:11.890000",
   "description": "Span013 frozen Gemma-only order averaging; original route, equal expert totals, T1"

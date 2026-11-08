@@ -5459,7 +5459,7 @@
       ],
       "id": "H60",
       "rank": 78,
-      "status": "running",
+      "status": "done",
       "introduced_in": 13,
       "discovered_during": 12,
       "derived_from": [
@@ -5506,6 +5506,14 @@
           "note": "Qualified exact frozen /1 officially accepted at20:07:13UTC as receipt58103553; PENDING, controller82882 live. Fresh full jobs/quota, all four public pinned datasets and all6 prior receipts verified before the single mutation. Public research is stopped while scoring. Goal remains actual rank<=19, not local gain or qualification.",
           "evidence": [
             "results/span_013/official_receipt.json"
+          ]
+        },
+        {
+          "at": "2026-11-08T02:13:20+00:00",
+          "status": "done",
+          "note": "Official58103553 COMPLETE0.82987, improving0.83053 by0.00066 and moving30th to23rd/312; rank19cutoff0.82915, so the persistent goal remains active. One public job charged1671.483s; all36 artifacts and zero-difference controls pass, conservative projection8.5868h. No duplicate or follow-up. H61 conditional next-span criterion is met; no expanded-route replay or GPU yet.",
+          "evidence": [
+            "docs/SPAN_013_RESULTS.md"
           ]
         }
       ]
@@ -5623,7 +5631,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 13,
+  "active_version": 14,
   "versions": [
     {
       "number": 1,
@@ -6631,7 +6639,7 @@
     },
     {
       "number": 13,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -6689,14 +6697,72 @@
       "carried_from": 12,
       "start_sha256": "55c1c3460f7803efa1b37c6a7d40f899497fa7f8ac462d7261fc6baa108ff02e",
       "start_markdown_sha256": "9609e41430c70cd565e0365c5df2cd7506bc043b6884769d553292773dd6e748",
-      "start_sealed_at": "2026-11-07T19:22:44+00:00"
+      "start_sealed_at": "2026-11-07T19:22:44+00:00",
+      "final_sha256": "1030afcf54f197ec8690e14e1ee126bfff48b066f75a462b84475ad12c4cb11a",
+      "final_markdown_sha256": "febfbaa6a424dbf68bf6aa5160f61631c41d4ea4974dc7466b851ecc4a4d7ff9",
+      "final_sealed_at": "2026-11-08T02:14:00+00:00",
+      "closed_at": "2026-11-08T02:14:00+00:00",
+      "closing_note": "V13 completed with official0.82987 and rank23/312, a0.00066 improvement but short of rank19. Preserve exact source,36 artifacts, final notebook25 and one accepted receipt. Carry39 unfinished tasks plus conditional H61 to v14; the persistent leaderboard goal remains active.",
+      "closing_evidence": [
+        "docs/SPAN_013_RESULTS.md"
+      ]
     },
     {
       "number": 14,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H55",
+        "H56",
+        "E17",
         "H61"
       ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 13,
+      "start_sha256": "441c253892b66e11dcb5e2902f68bbecc9450edf9ab26b727cf10b2fb1a20e6b",
+      "start_markdown_sha256": "c71e3e39bdf5bd6ae7d8afb331f1856f93de0bdc0053d6944f33aeea3e1fff8f",
+      "start_sealed_at": "2026-11-08T02:14:00+00:00"
+    },
+    {
+      "number": 15,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }
