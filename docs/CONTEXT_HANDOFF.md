@@ -1,6 +1,6 @@
 # V26 closed negative; v27 packing prerequisite and fixed expert prior
 
-Snapshot Nov8 2026,19:54UTC. Read PROJECT_POLICY.md, GOAL.md and
+Snapshot 2026-11-08T20:30:47.642699+00:00. Read PROJECT_POLICY.md, GOAL.md and
 SPAN_027_PLAN.md. Persistent tool goal: move above20th place, concretely own
 team17244411rank<=19 on a fresh complete official board after legitimate
 inference. ACTIVE/unachieved. Fresh full board19:43:55UTC:23/310,.82987;
@@ -12,13 +12,35 @@ Best legitimate H60receipt58103553, span013-gemma-order/1. No H72official.
 Backlogv27active,focus[H74,H73],H74RUNNING=CPUsourcepreparation,H73PLANNED.
 H73depends on H74; no10240execution/GPU or60/40probability has been computed.
 V28draftempty.92registeredtasks,106historicalsnapshotfiles;37carried+2new=
-39activev27items. New bounded GOAL.md/PLAN selected/pushed53a3a37. Nativecollator
-inspected: sortFalse/world_size1/groupinguseslengthsonly/position_idsresetperseq.
-results/span_027/preservation.jsoncaptures106snapshots+sameuserhashes; source
-inspectionjsonrecords modulehash/oldCPUtokenref. No fullproof/worker/GPUyet.
-Do not infer success from plans/tests/closure. Next prepare H74's
-exact nativecollator/input-stream CPUproof, then freeze actualGPUworker/scoring
-and rehearse before admission. H73cannotrun until H74passes.
+39activev27items. New bounded GOAL.md/PLAN selected/pushed53a3a37.
+H74CPUproof60049TERMINALexit0:15.527s/600, all57477savedGemmalengths,
+53,256,651tokens unchanged; microbatches7368->5903(-19.883pct), maxindividual
+4330unchanged, roworder/positions/streamhash exact. Fullpopulationpayloadwas
+synthetic; separately ALL15actualnativeprofilecohorts haveexactCPUtokenstreams
+underbothcaps. No GPUprobabilityidentity/speed/memory/qualityclaim. Source
+methodfrozen2809d62. Do NOTrerunaudit/preparation; outputs inspan027DB/pub.
+
+GPUprofileengine/checks/driver/runtime/audit/controller/builder NOWprepared.
+Fivefocusedtests pass (rawfailpreserved/earlystop/CSV/unchanged4k/runtime).
+Profileprep/rootprofile_spec/controls preparedONCE; runtime_reference.json
+retainsworsepriorcold/warm/other (other55.849s), notold8192throughputfloor.
+run_span_027_profile.py --prepare94265TERMINALexit0 createdimmutablephaseplan:
+used28811.654/free79188.346s, noreservation/paid, inheriteddeadline/anchor.
+Neverreprepare/reset. Builder49850TERMINALexit0: imports, actualserialized
+success/failure/watchdog, information-rerunguards andJupyterstartupALLPASS.
+notebooks/39_native_packing.ipynb executed36309TERMINALexit0, chartstoredDB.
+CPU/GPUreports docs/SPAN_027_CPU_PROOF.md andSPAN_027_GPU_PROTOCOL.md.
+
+NOv27GPUadmittedyet. NEXTfreeze/pushallnewmethod/code/results/bundle (currently
+uncommitted), then run scripts/run_span_027_profile.py ONCEwithescalation for
+freshfulladmission. Recordreturnedunifiedhandle; fullinventorynormally2-3min
+beforepush, noearlystatefilemeansstillinventorynotstopped. Neverduplicate.
+Afteraccepted, verify_experiment_source.py packing_profile --span27. Observe
+SAMEhandle/version. Controls andmemoryarecheckedaftereachcohort; failedguard
+writesengineering_stop beforecleanstop, no latermodels. OOM/sourceerrorsstay
+errors. AfterCOMPLETE/retrieval runaudit_span_027_profile.py ONCE; no labels.
+Ifengineeringpasses, closeH74withreportandthenstartH73CPU. Iffails,deferH73
+withactualevidence; no packing/numerical/marginrescuegrid.
 
 H74: ONEsum-tokenpacking10240 versus8192 in native author three-role engine.
 Individual4kconversation inputs, old H60route10pctwork/20pctrows, equalexpert
@@ -108,7 +130,7 @@ history. Closure41621/83568passes:73artifacts,102oldsnapshots preserved/106after
 transition,37unfinishedcarried,newH73/H74,Notebook38executed. No historical
 snapshot was edited. Newsourceclosureverifier is audit_span_026_closure.py.
 V26final/startv27snapshots are immutable. Currentpublicationthroughd281be3;
-finalV26closure/newV27contract published53a3a37. H74sourceinspection beingpublished.
+finalV26closure/newV27contract published53a3a37. H74sourceinspection published4ef802d; fullCPUmethod2809d62. CurrentGPUmethod/resultfiles beingfrozen beforeadmission.
 
 ## Prior evidence and workspace rules
 

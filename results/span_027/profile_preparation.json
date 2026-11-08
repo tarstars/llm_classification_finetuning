@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-08T20:13:41.392847+00:00",
+  "prepared": true,
+  "uses_targets": false,
+  "profile_spec_sha256": "7c2e4ade039b661ed00ca55d858b089d557b4c7c1f31fa5286999d54dc22eae7",
+  "canonical_control_sha256": {
+    "m0.npz": "ddb82facbc2a15439761816e899cf99847723dedba2a5576e7a419ed999a9da7",
+    "m0_reverse.npz": "a6cd5f2d836ae2c9939d29f328b0bec6925e91497c68cdde877d20ccb82d5c8c",
+    "m3.npz": "fe2c40d27489313d7b3659a04bc442e5a104b0f2620e15276bf1b58f73329959"
+  },
+  "cohorts": [
+    "control",
+    "uniform",
+    "long",
+    "test"
+  ],
+  "roles": [
+    "m0",
+    "m3",
+    "m0_reverse"
+  ],
+  "packing_tokens": 10240,
+  "conversation_tokens": 4096,
+  "new_gpu_executions": 0,
+  "gpu_admitted": false
+}

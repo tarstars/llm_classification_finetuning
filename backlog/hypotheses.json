@@ -6978,6 +6978,14 @@
           "evidence": [
             "results/span_027/source_inspection.json"
           ]
+        },
+        {
+          "at": "2026-11-08T20:29:12+00:00",
+          "status": "running",
+          "note": "FrozenCPUaudit60049TERMINALexit0:15.527s/600; full57477savedGemmalengths53,256,651tokensunchanged, microbatches7368->5903(-19.883pct), positions/orderexact. Full-lengthpayloadsynthetic; all15actualnativeprofiletokenstreamsexactunderbothcaps. Profile/ref preparationcomplete, 5meaningfulcontrol/stop/CSV/runtime tests pass. Generatedactualcell/import/rerunguard/watchdog/Jupyterrehearsals49850pass. Nextfreeze/pushone10240GPUsource andfreshadmission; nobackendprobability/speed/qualityclaimyet.",
+          "evidence": [
+            "docs/SPAN_027_CPU_PROOF.md"
+          ]
         }
       ]
     }

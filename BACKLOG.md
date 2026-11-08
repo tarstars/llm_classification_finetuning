@@ -227,6 +227,7 @@ Native10240token varlen packing may provide measured runtime headroom while pres
 
 - 2026-11-08T19:47:09+00:00 — planned: Actualfullqual4kparent32668.060sexceeds9hdespiteexactrawcontrols. QueueONE10240nativepackingengineeringprerequisite forH73, withunchangedinputs/model/T1/route, strictcontrols andactualruntime; no new computation/current-spanchange. Evidence: [docs/SPAN_026_PACKING_DISCOVERY.md](docs/SPAN_026_PACKING_DISCOVERY.md)
 - 2026-11-08T20:03:09+00:00 — running: V27boundedgoal selected/published53a3a37, H74prerequisitesdone. StartingCPU-onlysourcepreparation, no10240execution/GPUyet. Exactnativecollators.pyinspected: sortFalse/world1/length-onlygrouping/per-sequencepositionreset. Capture106snapshot/usernotebookhashes andfrozenoldnativeCPUtokenrefs; nextfreezeandrunactualstream/order/packingproofwithin600s beforeGPUworkeradmission. Evidence: [results/span_027/source_inspection.json](results/span_027/source_inspection.json)
+- 2026-11-08T20:29:12+00:00 — running: FrozenCPUaudit60049TERMINALexit0:15.527s/600; full57477savedGemmalengths53,256,651tokensunchanged, microbatches7368->5903(-19.883pct), positions/orderexact. Full-lengthpayloadsynthetic; all15actualnativeprofiletokenstreamsexactunderbothcaps. Profile/ref preparationcomplete, 5meaningfulcontrol/stop/CSV/runtime tests pass. Generatedactualcell/import/rerunguard/watchdog/Jupyterrehearsals49850pass. Nextfreeze/pushone10240GPUsource andfreshadmission; nobackendprobability/speed/qualityclaimyet. Evidence: [docs/SPAN_027_CPU_PROOF.md](docs/SPAN_027_CPU_PROOF.md)
 
 ### H02
 
