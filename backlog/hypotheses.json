@@ -6796,6 +6796,14 @@
           "evidence": [
             "results/span_026/early_engineering_observation.json"
           ]
+        },
+        {
+          "at": "2026-11-08T18:46:16+00:00",
+          "status": "running",
+          "note": "Pilot COMPLETE18:42:19UTC; controller70441terminalexit0,32artifactsverified. Frozenaudit57319exit0: alltoken/checkpoint/IDchecks and256G/256L/42reverse controlsEXACT(maxdiff0). Localoffloss.884017->.897547/on.880353->.884853; descriptiveweightedmin gain-.000234356,95pct[-.000317813,-.000152574], upper+.000122367. Originaltrainingoverlap/noCV/nohiddenforecast. Predeclared-.005grossguardpasses; earlyruntime32051.569spasses. Charge5461.312/7200s. Recordnegativequalityhonestlyandprepareoneactualfullqualification underunchangedprotocol, nofit/grid/officialyet.",
+          "evidence": [
+            "docs/SPAN_026_PILOT_RESULTS.md"
+          ]
         }
       ]
     }

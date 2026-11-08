@@ -1,0 +1,1593 @@
+{
+  "observed_at": "2026-11-08T18:40:01.952658+00:00",
+  "latest": {
+    "stage": "inference_progress",
+    "rows": 320,
+    "seconds": 810.7024709650004,
+    "role": "m0_reverse",
+    "cohort": "changed_old",
+    "batch": 3
+  },
+  "events": [
+    {
+      "stage": "context_selector_complete",
+      "rows": 57477,
+      "seconds": 121.83686848899998
+    },
+    {
+      "stage": "model_loading",
+      "role": "m0"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 20,
+      "seconds": 34.39073964300002,
+      "role": "m0",
+      "cohort": "warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 57.734223051000015,
+      "role": "m0",
+      "cohort": "warmup",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 80,
+      "seconds": 59.54591524799997,
+      "role": "m0",
+      "cohort": "warmup"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 32.62600166899995,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 32.62608710999996,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 140,
+      "seconds": 66.52826244999994,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 78.15827188499998,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 203,
+      "seconds": 98.86406510200004,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 123.94058082899994,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 256,
+      "seconds": 131.65056768800002,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 256,
+      "seconds": 131.65065512900003,
+      "role": "m0",
+      "cohort": "control",
+      "batch": 3
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 256,
+      "seconds": 134.10341448299994,
+      "role": "m0",
+      "cohort": "control"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 71,
+      "seconds": 31.612082197000063,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 39.779593223999996,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 118,
+      "seconds": 64.63647565300005,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 87.53407018200005,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 176,
+      "seconds": 96.19133435200001,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 127.693820846,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 127.69392857499997,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 297,
+      "seconds": 157.71713008900008,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 320,
+      "seconds": 169.70183299899998,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 370,
+      "seconds": 189.92825791100006,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 400,
+      "seconds": 208.525440205,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 424,
+      "seconds": 220.77968218400008,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 5
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 480,
+      "seconds": 247.99133809900002,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 5
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 488,
+      "seconds": 251.95118600900003,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 6
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 512,
+      "seconds": 262.078353795,
+      "role": "m0",
+      "cohort": "uniform",
+      "batch": 6
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 512,
+      "seconds": 264.129694299,
+      "role": "m0",
+      "cohort": "uniform"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 7,
+      "seconds": 31.130268084000022,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 16,
+      "seconds": 61.84891939199997,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 26,
+      "seconds": 93.62549033399989,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 36,
+      "seconds": 126.68073162400003,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 46,
+      "seconds": 159.87917231699987,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 56,
+      "seconds": 190.73581060599997,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 66,
+      "seconds": 222.3993387019999,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 76,
+      "seconds": 254.51361476599993,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 267.091860825,
+      "role": "m0",
+      "cohort": "context_warmup",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 80,
+      "seconds": 269.964366455,
+      "role": "m0",
+      "cohort": "context_warmup"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 8,
+      "seconds": 31.190742705000048,
+      "role": "m0",
+      "cohort": "context_probe",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 18,
+      "seconds": 64.32097878100012,
+      "role": "m0",
+      "cohort": "context_probe",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 27,
+      "seconds": 95.95432327100002,
+      "role": "m0",
+      "cohort": "context_probe",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 37,
+      "seconds": 129.06910718500012,
+      "role": "m0",
+      "cohort": "context_probe",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 46,
+      "seconds": 160.3862561630001,
+      "role": "m0",
+      "cohort": "context_probe",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 55,
+      "seconds": 190.6064376500001,
+      "role": "m0",
+      "cohort": "context_probe",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 64,
+      "seconds": 219.63435152700004,
+      "role": "m0",
+      "cohort": "context_probe",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 64,
+      "seconds": 221.85025920199996,
+      "role": "m0",
+      "cohort": "context_probe"
+    },
+    {
+      "stage": "context_engineering_probe",
+      "passed": true,
+      "seconds": 32051.569139324303,
+      "role": "m0",
+      "cohort": "context_probe"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 11,
+      "seconds": 31.533435472000065,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 23,
+      "seconds": 61.72998867300021,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 36,
+      "seconds": 93.49367489500014,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 49,
+      "seconds": 125.56301402000008,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 62,
+      "seconds": 157.7710572210001,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 75,
+      "seconds": 189.92471473,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 202.25974978800014,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 86,
+      "seconds": 221.2189391190002,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 98,
+      "seconds": 251.29891811800007,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 111,
+      "seconds": 283.37447555000017,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 124,
+      "seconds": 315.3042145820002,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 137,
+      "seconds": 347.5101157050001,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 150,
+      "seconds": 379.5404387760002,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 404.09291332500015,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 161,
+      "seconds": 410.8236814040001,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 173,
+      "seconds": 440.8504325450001,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 186,
+      "seconds": 472.8005540610002,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 199,
+      "seconds": 504.69465676100003,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 212,
+      "seconds": 536.810312648,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 225,
+      "seconds": 568.8247703840002,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 238,
+      "seconds": 600.8603003980002,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 605.8064612120002,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 249,
+      "seconds": 632.3032087430001,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 261,
+      "seconds": 662.3229561000003,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 274,
+      "seconds": 694.0497699390003,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 287,
+      "seconds": 726.2522989260001,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 300,
+      "seconds": 758.364453052,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 313,
+      "seconds": 790.4879068140003,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 320,
+      "seconds": 807.761343226,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 325,
+      "seconds": 821.913100148,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 338,
+      "seconds": 854.0451400050001,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 351,
+      "seconds": 885.926714743,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 357,
+      "seconds": 900.6748649629999,
+      "role": "m0",
+      "cohort": "changed_old",
+      "batch": 4
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 357,
+      "seconds": 902.7388279350002,
+      "role": "m0",
+      "cohort": "changed_old"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 8,
+      "seconds": 32.385552938000274,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 18,
+      "seconds": 64.6497231770004,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 28,
+      "seconds": 96.55691333100003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 37,
+      "seconds": 127.62011255400012,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 47,
+      "seconds": 160.24644203800017,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 57,
+      "seconds": 191.09363051200035,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 67,
+      "seconds": 223.86767399100017,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 77,
+      "seconds": 255.88655825700016,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 265.1099345390003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 85,
+      "seconds": 288.8693462570004,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 95,
+      "seconds": 321.49610951800014,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 105,
+      "seconds": 351.7310679530001,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 116,
+      "seconds": 384.66117340300025,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 126,
+      "seconds": 416.91265215700014,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 135,
+      "seconds": 448.618418948,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 145,
+      "seconds": 479.703256106,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 155,
+      "seconds": 512.9814509760004,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 530.668352266,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 162,
+      "seconds": 543.0346467600002,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 172,
+      "seconds": 575.854260308,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 182,
+      "seconds": 608.8585169020002,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 191,
+      "seconds": 639.725274674,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 201,
+      "seconds": 672.0895344790001,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 211,
+      "seconds": 704.9677845170004,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 220,
+      "seconds": 736.4790114060002,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 229,
+      "seconds": 767.8118500840001,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 238,
+      "seconds": 799.026474189,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 805.6916524830003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 246,
+      "seconds": 829.8199470210002,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 255,
+      "seconds": 860.1737151660004,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 264,
+      "seconds": 890.2110944280003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 274,
+      "seconds": 920.3818238890003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 283,
+      "seconds": 950.6396692400003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 293,
+      "seconds": 982.6281349200003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 302,
+      "seconds": 1012.6907072930003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 311,
+      "seconds": 1043.0492858880002,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 320,
+      "seconds": 1075.6926241410001,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 320,
+      "seconds": 1075.6927077770001,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 328,
+      "seconds": 1106.1785797530001,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 338,
+      "seconds": 1137.3699825990002,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 348,
+      "seconds": 1169.3086874210003,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 357,
+      "seconds": 1200.0092918240002,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 357,
+      "seconds": 1200.0093657410002,
+      "role": "m0",
+      "cohort": "changed_extended",
+      "batch": 4
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 357,
+      "seconds": 1202.2045416310002,
+      "role": "m0",
+      "cohort": "changed_extended"
+    },
+    {
+      "stage": "model_loading",
+      "role": "m3"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 35,
+      "seconds": 30.85848193699985,
+      "role": "m3",
+      "cohort": "warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 44.59868814299989,
+      "role": "m3",
+      "cohort": "warmup",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 80,
+      "seconds": 45.94095688299967,
+      "role": "m3",
+      "cohort": "warmup"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 26.010132069000065,
+      "role": "m3",
+      "cohort": "control",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 90,
+      "seconds": 30.086328075999972,
+      "role": "m3",
+      "cohort": "control",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 59.53869156100018,
+      "role": "m3",
+      "cohort": "control",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 169,
+      "seconds": 64.64321398600032,
+      "role": "m3",
+      "cohort": "control",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 92.83538254700034,
+      "role": "m3",
+      "cohort": "control",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 249,
+      "seconds": 95.85826752000003,
+      "role": "m3",
+      "cohort": "control",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 256,
+      "seconds": 98.23821833600005,
+      "role": "m3",
+      "cohort": "control",
+      "batch": 3
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 256,
+      "seconds": 100.09993866700006,
+      "role": "m3",
+      "cohort": "control"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 13,
+      "seconds": 30.177421331999994,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 30,
+      "seconds": 61.79032504199995,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 47,
+      "seconds": 92.59143189099996,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 64,
+      "seconds": 123.4310614760002,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 153.17526045400018,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 81,
+      "seconds": 159.45710690499982,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 98,
+      "seconds": 190.21907150300012,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 115,
+      "seconds": 221.52325703199995,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 132,
+      "seconds": 252.28589447899958,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 149,
+      "seconds": 283.0713036970001,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 302.8466757739998,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 164,
+      "seconds": 314.63346000399997,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 181,
+      "seconds": 345.86902899600045,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 198,
+      "seconds": 376.6063998259997,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 215,
+      "seconds": 408.1736863340002,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 232,
+      "seconds": 439.4402621219997,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 453.89406508400043,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 247,
+      "seconds": 470.3797359399996,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 263,
+      "seconds": 501.61636750900016,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 279,
+      "seconds": 531.6165690460002,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 296,
+      "seconds": 562.2493505820003,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 313,
+      "seconds": 593.8703723230001,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 320,
+      "seconds": 606.2348992810003,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 329,
+      "seconds": 625.6612788519997,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 346,
+      "seconds": 657.146241986,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 4
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 357,
+      "seconds": 676.8320848350004,
+      "role": "m3",
+      "cohort": "changed_old",
+      "batch": 4
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 357,
+      "seconds": 678.2495519410004,
+      "role": "m3",
+      "cohort": "changed_old"
+    },
+    {
+      "stage": "model_loading",
+      "role": "m0_reverse"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 34,
+      "seconds": 32.51575862299978,
+      "role": "m0_reverse",
+      "cohort": "warmup",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 51.01755432600021,
+      "role": "m0_reverse",
+      "cohort": "warmup",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 80,
+      "seconds": 52.86799434800014,
+      "role": "m0_reverse",
+      "cohort": "warmup"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 42,
+      "seconds": 14.413836648999677,
+      "role": "m0_reverse",
+      "cohort": "control",
+      "batch": 0
+    },
+    {
+      "stage": "cohort_complete",
+      "rows": 42,
+      "seconds": 15.74469015700015,
+      "role": "m0_reverse",
+      "cohort": "control"
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 10,
+      "seconds": 30.053710735000095,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 22,
+      "seconds": 60.86804686400046,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 35,
+      "seconds": 92.6745149490007,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 48,
+      "seconds": 124.77345023700036,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 61,
+      "seconds": 156.96668981899984,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 74,
+      "seconds": 188.85953759200038,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 80,
+      "seconds": 203.61159420200056,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 0
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 85,
+      "seconds": 220.0863358940005,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 97,
+      "seconds": 250.25774183300018,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 110,
+      "seconds": 282.04258360400036,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 123,
+      "seconds": 314.0189563470003,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 136,
+      "seconds": 346.0273556000002,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 149,
+      "seconds": 378.1001195360004,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 160,
+      "seconds": 405.2155058650005,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 1
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 161,
+      "seconds": 411.87255127000026,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 174,
+      "seconds": 444.0923565890007,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 187,
+      "seconds": 476.3078942380007,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 200,
+      "seconds": 508.2216727929999,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 213,
+      "seconds": 540.4898666449999,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 226,
+      "seconds": 572.7327157560003,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 239,
+      "seconds": 604.8852413330005,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 240,
+      "seconds": 607.3782140359999,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 2
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 250,
+      "seconds": 636.5736582059999,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 262,
+      "seconds": 666.6844973320003,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 275,
+      "seconds": 698.7448595579999,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 288,
+      "seconds": 730.9410614220005,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 300,
+      "seconds": 760.9536332870002,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 313,
+      "seconds": 793.2822962250002,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 3
+    },
+    {
+      "stage": "inference_progress",
+      "rows": 320,
+      "seconds": 810.7024709650004,
+      "role": "m0_reverse",
+      "cohort": "changed_old",
+      "batch": 3
+    }
+  ]
+}
