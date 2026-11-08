@@ -1,42 +1,43 @@
-# Move above 20th place: v28 unchanged native stream with CPU prefetch
+# Move above 20th place: v29 fixed two-expert prior
 
-Persistent objective: own team17244411 rank<=19 on a fresh complete official
-leaderboard after legitimate inference. Active, unachieved; retain H60 at
-0.82987/rank23. V27 closed H74 at its numerical stop; preserve GOAL_V27 and all
-failed outputs. Select E18, then conditional H73 under SPAN_028_PLAN.md.
+Persistent objective: team17244411rank<=19 on a fresh complete officialboard
+following legitimateinference. Active/unachieved; H60best0.82987/rank23.
+V28E18closed with exact probabilities but32973.468sruntimeFAIL. Preserve its
+archive/failure and deferred H73. Select ONLY H75 under SPAN_029_PLAN.md.
 
-E18 changes only CPU preparation scheduling: one producer thread, FIFO queue2,
-original8192sum-token packing and exact old batch80 microbatches. Keep native4k
-inputs, original route, equal expert totals/T1, fp16/kernels/sharding and zero
-worker processes. CPU<=300s for source inspection/timing and all15frozen cohort
-stream/boundary/position proofs; rehearse queue-full failure/teardown. All CUDA
-stays on the consumer. One<=3600sactual three-role engineering profile must pass
-old raw controls<=1e-5 on every cohort, exact sources/IDs/tokens/microbatch groups/
-routes/mixtures/CSV, bothT4memory<=95%, and a conservative25kprojection<32400s.
-Use actual new-mode throughput, worse cold/fullwarm/other,20%margin/600reserve;
-include upfront or overlapping CPU time once in measured end-to-end costs.
-No grid, numerical change, packing retry, fallback or faster-node retry.
+One fixed candidate: .6Gemma-original+.4alignedLlama-swapped, normalize rows,
+T1; no reverse pass or routing. Keep native4kinputs/original8192microbatches,
+CPUproducer/FIFOqueue2/batch80/zero workers/fp16/kernels/sharding. Historical
+2expert50/50official0.83053 is weight-ablation comparator; H60is incumbent.
+Two actual base roles screen30766.762s, not qualification or quality evidence.
 
-Only after E18passes, H73 may test its still-uncomputed one fixed prior:
-60%Gemma/40%Llama, split Gemma equally between orientations on the old route.
-Use qualified8192prefetch unchanged, no6kextra. One<=300sdescriptive matched
-cached replay, seed42/2000prompt groups/classes, originaltrainingoverlap/noCV/
-nohiddenforecast. Fixed gross stop uniform512gain<-.005; no fitting/grid or
-positive-localgain requirement. Then one<=3600sactualfull qualification with
-worse matchingprefetch pilot/current timings and all runtime/source/raw controls.
-One frozen official only after passing gates and committed/pushed decision.
-If E18fails, defer H73 with evidence; do not revive failed10240packing.
+First freeze/push source before one<=300sCPUmatched-cache descriptive replay
+on fixed control256/uniform512/long64. Report removal and weight comparisons
+separately against both comparators, seed42/2000prompt-group intervals/classes.
+Originaltrainingoverlap/noCV/nohiddenforecast. One qualityvariant only; no
+fitting/grid. Fixed prospective uniformgainvsH60<-.005grossstop; positive local
+improvement is not required. No earlier60/40quality has been computed.
 
-Public<=7200twoT4seconds/max2acceptedversions/oneofficial<=32400s. Inherit
-2026-11-10T08:37:37.343197UTCdeadline and Nov14quota anchor. Prior v27public
-1107.563s and all earlier weekly charges remain accounted. Last full inventory:
-78080.783sfree, zero reservation/paid scaling. Fresh complete inventory/quota/
-receipts/publicv1dependencies before each GPU; no GPUwhileofficialpending.
-No newweights/training/externaltextservice. Freeze/pushsource and actualserialized
-cell/import/mode/success/failure/watchdog/Jupyterrehearsals before admission.
-Observe same accepted handles after timeouts; never duplicate a mutation.
+If guard passes, ONE<=3600s actualoffline2T4 two-rolequalification with full80
+warmups/allcohorts/visibleCSV. Strict oldraw<=1e-5 and exact source/checkpoint/
+IDs/tokens/positions/host tensors/microbatch controls, <=95pcteachGPUmemory.
+Use worse matching E18/current base-role end-to-end rates and retained worse
+cold/fullwarm/other,20pctmargin/600reserve; require25kprojection<32400. No
+three-role retry or faster-node rescue. If qualified, ONEfrozenofficial<=32400s
+only after committed/pusheddecision and fresh fulladmission; actualhidden text
+inference, no cachedprediction/training-IDlookup. Retain best if candidate loses.
+No further weight choices from its leaderboard feedback.
 
-Preserve110historical snapshots/user07+12notebooks/link/all failed controls.
-Heavy filesDB; code/aggregate/MD/executedNotebook40Git. CLIhistory, discoveries
-v29, unfinishedcarry at closure. A span or passing engineering gate does not
-complete the rank goal; verify actual rank<=19 before completing it.
+Public<=3600twoT4seconds/max1acceptedversion/oneofficial. Inherit original
+2026-11-10T08:37:37.343197UTCdeadline, Nov14anchor and all priorcharges.
+Latestfree76342.526s/used31657.474,reserved0,paidFalse; refresh complete quota/
+ownedjobs/officialreceipts/fourpublicv1datasets before eachGPU. Ensure remaining
+public+fullofficialallowance fits time/quota. No GPUwhileofficialpending/new
+weights/training/externaltextservice, no cap/margin/periodreset. Actualserialized
+cells/imports/public+hidden branches/success/failure/watchdog/Jupyter rehearsals
+and frozen/pushedsource beforeGPU. Observe acceptedhandles aftertimeouts;
+neverduplicate mutation.
+
+Preserve114snapshots/user07+12notebooks/link/alloldcontrols. HeavyfilesDB;
+code/MD/aggregate/executedNotebook41Git. CLIhistory/discoveriesv30/unfinished
+carry. A gate/span is not goalcompletion; verify actualfreshcomplete rank<=19.

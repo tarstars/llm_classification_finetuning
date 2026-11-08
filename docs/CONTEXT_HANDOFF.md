@@ -8,10 +8,16 @@ span013-gemma-order/1. No official since H60.
 
 ## Immediate next action
 
-V28SEALED; activev29/no focus selected yet,39active items=38carried+H75.
+V28SEALED/published d05f9d9; activev29focus[H75],H75RUNNING=CPUmethod
+preparation,39active items=38carried+H75.
 V30draftempty.94registeredtasks,114immutable snapshot files. CurrentGOAL.md
-still closedv28; exactarchive docs/GOAL_V28.md. NEXTpublishclosure, then select
-NEWbounded v29focusH75 before any new execution. Do not revive H73three-role.
+now v29boundedcontract docs/SPAN_029_PLAN.md; exactoldarchive GOAL_V28.
+Only H75selected. CPUmixture unit tests2PASS; no60/40quality/GPUyet.
+NEXTfreeze/push source then runONCE timeout300s .venv/bin/python
+scripts/replay_span_029_prior.py withescalation. It validatesoldartifacts/source,
+captures114snapshot/userfile preservation, then reads labels for one fixed
+variant; source/grouping/comparators/grossguard are frozen before anyquality.
+Recordhandle; do not overwrite replay/preservation. Do not revive H73three-role.
 
 H75queued only, no60/40probability computed. ONEtwo-expert .6Gemma-original+
 .4alignedLlama-swapped candidate, no reverse/route/T change. Baseline2expert

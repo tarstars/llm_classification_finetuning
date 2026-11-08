@@ -7182,7 +7182,7 @@
       ],
       "id": "H75",
       "rank": 94,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 29,
       "discovered_during": 28,
       "derived_from": [
@@ -7195,6 +7195,14 @@
           "note": "Completed exact3roleprefetch profile fails32973.468s; two ACTUALLY measured base roles project30766.762s with unchanged margins. Queue one distinct fixed60/40two-expert qualitytrial with actual50/50official comparator and own full qualification; no current quality computation or 3role rescue.",
           "evidence": [
             "docs/SPAN_028_TWO_EXPERT_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T22:06:26+00:00",
+          "status": "running",
+          "note": "V29bounded contract selected. Preparing fixed-mixture source and<=300s descriptive replay before any60/40quality or GPU. Preserve114snapshots/user notebooks and freeze/push method before labels; no grid or hiddenforecast.",
+          "evidence": [
+            "docs/SPAN_029_PLAN.md"
           ]
         }
       ]
@@ -9402,8 +9410,18 @@
         "H73",
         "H75"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H75"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T22:06:25+00:00",
+          "note": "Persistent rankgoal selects direct fixed60/40two-expert trial after exact3roleprefetch runtimefailure. New bounded SPAN_029_PLAN uses actualhistorical50/50baseline and H60incumbent, oneCPUvariant/oneactualqualification/oneofficial with inherited margins/deadline/quota. H73three-role remains deferred.",
+          "focus_ids": [
+            "H75"
+          ]
+        }
+      ],
       "carried_from": 28,
       "start_sha256": "ca4942e3846c85b974022c1c690e9eb8063eda63ddfbd347279484b41fe066a3",
       "start_markdown_sha256": "f8d4cdedd13bd4ddd82430aefe94e6a2b826aa15cf50552aee50db6fce9221c2",
