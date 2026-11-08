@@ -110,6 +110,12 @@ print('The separate followup is conditional on the initial engineering/runtime g
  fig,ax=plt.subplots(figsize=(7,3))
  ax.barh(['Nine-hour limit','Conservative candidate'],[9,r['projected_hidden_seconds']/3600],color=['gray','tab:orange'])
  ax.set_xlabel('Elapsed hours for 25,000 rows');fig.tight_layout();plt.show()
+ if (PUB/'memory_discovery.json').exists():
+  m=read('memory_discovery.json')
+  print('Observed mirror peak GiB/device:',m['observed_peak_allocated_gib'])
+  print('Hypothetical larger-batch peak GiB:',m['hypothetical_peak_gib'])
+  print('The estimate supports one bounded test:',m['memory_supports_one_bounded_candidate'])
+  print('Larger-batch actual fit, throughput and quality remain unmeasured.')
 elif (PUB/'runtime_live_observation.json').exists():
  r=read('runtime_live_observation.json')
  print('LIVE worker mirror profile:',r['mirror_profile_rows'],'rows in',r['mirror_profile_seconds'],'seconds')

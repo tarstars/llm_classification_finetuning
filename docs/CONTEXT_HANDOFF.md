@@ -1,239 +1,157 @@
-# Active rank goal; v19 native classifier pilot RUNNING
+# Active rank goal; v19 sealed, v20 H66 in preparation
 
-Snapshot Nov8 2026,10:10UTC; verify actual live state. Read PROJECT_POLICY.md,
-GOAL.md, docs/SPAN_019_GPU_PROTOCOL.md. Persistent objective: team17244411rank<=19
-on a fresh complete official board after legitimate inference. ACTIVE/unachieved,
-no token budget. Do not reset/complete from source/CPU/span success. No subagents.
+Snapshot2026-11-08 12:08UTC. Read PROJECT_POLICY.md, GOAL.md and
+[SPAN_020_PLAN.md](SPAN_020_PLAN.md); verify actual files/live state before acting.
+Persistent objective: team17244411rank<=19 on a fresh complete official board
+following legitimate inference. ACTIVE/unachieved, no token budget. Do not reset
+or mark complete because a span, source audit or engineering test finishes.
+No subagents. This goal explicitly continues across span boundaries.
+
+## Current authoritative result
 
 Best official58103553 COMPLETE0.82987, source
-arseniytrushin/llm-preference-span013-gemma-order/1. Fresh coherent10:49:16UTC board:23/311,
-rank19/20cutoff.82915,leader.82702. Last7receipts terminal,66ownednotebookszeroactive,
-quota used16386.583s/free91613.417s(25.45h),refreshNov14. HISTORICAL observations;
-refresh before GPU. No new GPUjob/official yet in v19.
+arseniytrushin/llm-preference-span013-gemma-order/1. Fresh COMPLETE board at
+11:58:54UTC:23/311,rank19/20cutoff0.82915,leader0.82702,goalFalse.
+Receipt results/span_019/final_leaderboard.json. No new official in v19.
+The observer rejects replayed/backward/overlapping pages and retries the SAME
+requested cursor; never silently deduplicate. Last read accepted4pages/rejected1.
+Use scripts/observe_leaderboard.py for future fresh full goal verification.
 
-V18SEALED/H64done,docs/SPAN_018_RESULTS.md,archiveGOAL_V18.md,closure_auditPASSED,
-Notebook30FINAL. V19focus[H65]running,38members(37unfinishedcarry+H65),v20draftempty.
-Preserve74historical snapshots, archived goals,userdirtynotebooks07/12/link. Never
-stage/reset those two notebooks. H64teacher failed>.001gate; no moreteacher/route
-coverage grids under that task. Globalrankgoal continues across spans.
+V19/H65done and SEALED. docs/SPAN_019_RESULTS.md, docs/GOAL_V19.md,
+results/span_019/closure_audit.json PASSED after transition. Final Notebook31has
+4executed code cells/zeroerrors, explicitly finalengineering/runtimeFAIL.
+78historical snapshot files now exist, all prior74preserved.37unfinished items
+carried. V20active,38members, focus[H66], H66running=pre-GPUpreparation only;
+v21draftempty. No v20GPUjob/source notebook/config has been built/admitted yet.
+No new uploads, official/controller or quality outputs in v20.
 
-## H65 actual completed preparation
+## H65 actual completed source/assets/native GPU execution
 
-Candidate PUBLIC/UNGATED HF wath5/kgl_lmsys_pref_classif,
-revisioncd24909db06583ecf00e65b6919c6cc1531c9885. Distinct from H55earlier parent.
-All3original GPTQ8shards ACQUIRED09:49:06UTC,10361181040bytes/SHA256verified.
-Session35176 is TERMINALexit0; NEVERrestart it/acquire. Receipt
-results/span_019/weight_acquisition.json; ROOT/runs/span_019/assets/gptq_origin.
-Native source audit22.43MB/34.4s,1347keys/42layers/294quantprojections,
-finite3x3584F16head. Mirror credits BlackPearl author; exact author-run lineage/
-head training and derivative license remain unverified. No claimed winning score.
-Original Gemma terms and native MITlicense retained. Never retry private403data.
+PUBLIC ungated HF wath5/kgl_lmsys_pref_classif,
+revisioncd24909db06583ecf00e65b6919c6cc1531c9885. Distinct accessible mirror, not
+H55earlier403parent.42layers/1347keys/294GPTQprojections, finite3x3584F16linear
+head. Declared tensor bytes10361028608; all3original weight shards10361181040file
+bytes/SHA256verified. Mirror attribution does not authenticate actual author-run
+lineage, classifier training or winning score. No derivative license declared;
+Gemma terms/MITnative implementation attribution retained. Private assets only.
 
-Native formatter4spaces, turn lists joinednewline; BOS,trunc2000thenappendEOS can
-produce2001tokens. Configpad1 overridden to tokenizerpad0,leftpadding. Preserve
-original absoluteRoPEoffset/pooling, including literalpad0. Eight synthetic input/
-pool checks pass. First synthetic C-layout linear failed.015625 although decoded
-weightsBITIDENTICAL; native layout corrected same3seed controls to0. Original
-failure preserved. Optional dense converter tested but NOTselected deployment.
-Do NOT run `stage_span_019_weights.py expand` as a prerequisite now.
+Original acquisition35176 TERMINALexit0. Original upload5983/PID3843170
+TERMINALexit0. NEVERrestart either or upload again. Private dataset
+arseniytrushin/llm-span019-native-classifier/1 READY/private/exactversion1 verified;
+results/span_019/asset_manifest.json fixes everybyte/headSHA. All remote asset
+file hashes verified in real GPUsetup. Heavy originals ROOT/runs/span_019/assets/
+gptq_origin; private upload package hardlinked, no extra dense copy.
 
-SELECTED backend in GPU_PROTOCOL supersedes early dense asset plan: native GPTQ8
-replicas, one perT4, full Transformers4.42.3 eager decoder, queryscalar224,
-softcap50, simple linear head. Retained tascj runtime has a different MLPhead and
-no-softcap attention path: do NOTreuse it unchanged for the mirror. Source factory
-uses official AutoGPTQ0.7.1Torch fallback, blocking unused optional compiled
-extension imports/restoring sys.modules. No AutoGPTQpackage/Optimumneeded.
-Each native loader strictly checks1347keys/realheadSHA; both GPUs must actually
-score profiles. Weight footprint~10.36GB/device; real activation fit/speed STILL
-UNMEASURED. ReferenceGPU0 versus parallel/repeated matched packets requires every
-logit/probability maxdiff<=1e-5. Common FP32softmax; no fitting/newquantization.
+Native formatter fourspaces, JSONturns joinednewline/null->empty; BOS,trunc2000
+then appendEOS can give2001tokens. Effective tokenizerpad0 overrides configpad1;
+leftpadding, original absolute RoPEoffset and first-pad-minus-one pooling,
+including literalpad0inside text. Native GPTQ8Torch fallback from official
+AutoGPTQ0.7.1, two identical replicas, one/T4. Transformers4.42.3 eager decoder,
+queryscalar224/softcap50/separate gate-up/norm/GELU/unchangedlinearhead.
+Do NOTreuse retained tascj decoder unchanged: different MLPhead/no-softcap path.
+Optional dense converter was tested but NOTdeployed; preserve initial arithmetic
+failure/layoutcorrection. Do NOTexpand/reupload as a prerequisite for H66.
+Optional compiled GPTQextension import warning is not PyTorchCUDAfailure.
 
-Single frozen quality recipe:.5retainedGemmaoriginal+.5mirrororiginal,T1,noTTA/
-route/mixture/format/calibration grid. Originalcontrol256/uniform512/long64 and
-later1024IDs/hashes frozen without reading votes. Gates unchanged:originaluniform
-reduction>.001vsactualH60 AND later1024reduction>=0with group95%lower>-.01,
-seed42/2000. Originaltrainingoverlap/laterhistoricallyinspected/domainshift mean
-notCV or a hidden-score forecast. Neither GPUquality nor newscore available yet.
+Initial pilot36909/PID3983353 TERMINALexit0. Actual accepted canonical source
+arseniytrushin/llm-preference-span019-native-classifier/1 COMPLETE; title resolved
+this slug instead of intended classifier-pilot alias. Always use acceptedref.
+28retrieved artifacts/hashverified; source cells identical/internetdisabled.
+Hardware two15GiBT4, Python3.10.13,Torch2.1.2,Transformers4.42.3. Native/parallel
+rawlogits/probabilities maxdiff0 on12matched rows; repeated probabilities0;
+retained canonical control256probabilities0. Initial version did NOTcheck repeated
+rawlogits; prepared future guard adds that explicit check.
 
-Actual saved tiny original-GPTQ/dense/split tests plus batching tests3passed;
-public/hidden real orchestration CSV/failure tests2passed. Runtime-formula tests2
-pass, reject small profiles/unusedGPU and avoid dividing parallel walltime by2.
-worker_cpu_validation.json states coverage: GPUdispatch is syntax-only untilreal
-pilot. Local isolated runtime /tmp/llm_span019_runtime:Transformers4.42.3,
-NumPy1.26.4,pandas2.2.3,pyarrow15.0.2,tokenizers0.19.1,HFhub0.24.7,pytz2024.2;
-localTorch2.15CPU/Python3.11, NOTthe realGPUruntime. Use HF_HOME=/tmp/llm_span019_hf,
-HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONPATH=/tmp/llm_span019_runtime:src.
-Actual GPU must be pinnedPy3.10/Torch2.1.2/Transformers4.42.3/twoT4.
+Actual mirror80warmup42.2312s,control256153.4703s,uniform512298.5762s,
+long64at2001tokens124.7767s. Both GPUs actually score fullwarmup/profile.
+Retaineduniform512276.1072s. Combined hidden projection34774.1668s=9.66h,
+including20%per-row margin/allcold/warmup/other/600reserve. Mirrorparallel wall
+rate already covers BOTHreplicas; NEVERdivide it by2again. RuntimeFAIL means no
+quality followup, votes or official. H65quality remains UNMEASURED, not poor.
+Actual charge1705.706two-T4seconds=28.43minutes, under3600cap.
 
-Token reference COMPLETE,neverrerun:results/span_019/token_reference.json,
-heavy ROOT/runs/span_019/token_audit. Originaluniform mean662.14tokens/later685.23;
-all64long rows2001. CPU token/position/pool hashes forwarmup/control/uniform/long/
-test/reference/source. No humanlabels read. B-loss/truncation fractions unmeasured.
+Formal gate results/span_019/engineering_qualification.json; memory_discovery.json:
+peakallocated13009684992bytes=12.1162GiB/device.15GiBtotal. Conservative9GiBstatic
+lower bound +1.5times observed dynamic ->13.6743GiB; +512MiBreserve=14.1743GiB.
+This supports ONEbounded larger-batch trial, not GPUfit proof. Required mirror
+speedup~1.1564xif other costs unchanged; unmeasured. H66queued then selected only
+once v19closed. It differs from H63's weak rewardmodel throughput task.
 
-## Current next execution steps
+Terminal inventory67ownednotebooks/noactive;7official receipts allterminal.
+Quota18092.289used/89907.711free seconds(24.97h),reserved0,paidFalse,refreshNov14.
+These are HISTORICAL after pilot, refresh fully before anotherGPUjob. No research
+GPU during official scoring. Every accepted mutation has a durableintent; after
+observationtimeout observe SAMEhandle/version/receipt, never duplicate a push.
 
-Private asset package PREPARED:ROOT/runs/span_019/assets/upload,16payloadfiles/
-10.383GB viahardlinks plusdataset-metadata.json. results/span_019/asset_manifest.json
-fixes every byte/headSHA. Datasetplanned arseniytrushin/llm-span019-native-classifier/1,
-privateonly,no extra archive/dense copy. Includesoriginalquantcalibrationtexts in
-config but no votes/modelidentities/predictions. Native MITlicense provenance in
-native_license_observation.json. Upload STARTEDonce; active execsession5983/hostPID3843170. Intent recorded
-10:36:13UTC; response not yet returned. At10:49read offset3.982GB/4.978GB in
-firstshard. Poll SAMEhandle; do NOTstart anotherupload. /proc process inspection
-needs the same escalated scope as the process (sandboxed ps can miss it).
-File read offsets are NOTserver-ready evidence. Verify actual state beforeacting. Authenticating beforeintent is read-only; uploaderrors
-are sanitized and leave ambiguousintent which must be observed,neverrepeated.
+## H66 next actual execution requirements
 
-Actual notebook built ROOT/runs/span_019/notebooks/classifier_pilot/job.ipynb;
-classifier_pilot_bundle/cell_rehearsals JSONs. Final rebuild completed after the
-optional-extension guard; success/failure/watchdog, notebookengine startup,
-public/hidden branches and5actualCPUtests allpassed. Bundle includes runtime
-projection/auditor and frozen tokenref/manifest. Commit/push exact currentfiles
-BEFOREupload/GPU; verify_sources requires currentHEAD. No pushintent/remote jobyet.
+Read GOAL.md/docs/SPAN_020_PLAN.md. ONEcandidate12288padded tokens/max32rows instead
+of8192/max16. SAMEcheckpoint, native decoder math/head/formatter/tokens/pool/
+replicas/FP32softmax and .5retainedGemmaoriginal+.5mirrororiginal,T1. No batch/
+format/context/mixture/temperature/route/quantization grid. RealOOM/numerical/
+runtime/qualityfailure stops; no automatic smallerfallback. Do not alter accepted
+historicalH65source. Record old/new batch-shape probability differences; recompute
+ALLmirrorcohorts atnewshape, never pool or inherit quality. Native<=1e-5checks
+compare MATCHEDpackets atnewshape, not a false identity claim across shapes.
 
-1. Upload is already INFLIGHT in5983; do NOTrepeat. The original command was
-   `scripts/stage_span_019_assets.py upload` with DB/networkescalation after
-   committing manifests/bundle/rehearsals. Writes assets/upload_intent.json.
-   Poll sameexec handle; a long transfer/observationtimeout never permits duplicate
-   dataset creation. Then actionverify (read-only) untilREADY/private/v1. Do not
-   repeat old v16uploads either. All network api_client calls need escalation;
-   its authenticate performs an OAuth network introspection even for signature reads.
-2. `scripts/run_span_019_pilot.py` admits one classifier_pilot version<=3600s.
-   Sharedcontroller does freshfullinventory/quota,precondition pins datasets and
-   fullofficialreceipts;paidFalse/noactive/pending. Initial role engineeringONLY,
-   notofficialeligible. Nativecontrols then full80warmup+uniform512/oldGcanonical/
-   longstress/visible3CSV. It reads no votes and does not complete later1024quality.
-   Generic --dry-run skips specializedprecondition; do not call it fullqualification.
-3. Observe SAMEaccepted version. `scripts/verify_experiment_source.py classifier_pilot
-   --span19` writes results/span_019/jobs/classifier_pilot/source_verification.json.
-   AfterCOMPLETE, audit_span_019_engineering.py checks allhashes/tokenbanks/oldG
-   control256<=1e-5/hardware/versions/native12rows controls and actual512/80runtime.
-   Projection uses max(parent/current retained rates/cold/warm), fullmirror2replica
-   WALLtime, setup/other/cold/warm+20%margin/600reserve,25k<32400seconds. No humanlabels.
-4. Only ifengineering qualifies, separately freeze/admit followup<=14400seconds
-   for SAMEcomplete quality recipe. That followup module/builder is NOTimplemented
-   yet; keep initial frozen sources stable and add a separate module/builder.
-   Later baselineG/L caches ROOT/runs/span_016/jobs/reward_pilot/output/
-   reward_experiment/{m0,m3}_long.npz. Need actualfixedH60routedreverseG only;
-   no fullreverse cache exists, do not impute. Then onefrozenofficial only ifall
-   quality/runtime/CSV/source gates pass. Fresh complete officialrank proves goal.
+Build a separate ROOT/runs/span_020 notebook/worker/config/controller and freeze
+all source/bundle before GPU. Existing span019 modules/builders/tests are concrete
+examples: span019_followup.py orchestrates fixed public inputs and test-onlyhidden;
+span019_checked_infer.py adds repeated rawlogit guard. Historical v19followup was
+prepared/tested but NEVERexecuted; do NOTrun its controller (failedgate/sealedspan).
+Use actual serialized notebook CPU success/failure/watchdog/startup/public-hidden
+rehearsals before any admission. Exact pinnedimage/datasets/versions retained.
 
-Original period Nov8 08:37:37UTC toNov10 08:37:37UTC, refreshNov14; publiccap18000
-seconds,initial3600/followup14400,max2public/1qualityrecipe/1official. No capreset,
-researchGPUwhileofficialpending,hiddenlabels/predictioncache or externaltextAPI.
-Notebook31 refreshedINTERIM2codecells/0errors forsource/assets/tokenstats; noGPU
-quality yet. Refresh onlywhilev19active. All heavyfilesROOT, code/MD/aggregates/
-notebooksGit. Cwd /home/tarstars/prj/llm_classification_finetuning,main,GitHub
-sameproject under tarstars. Python.venv/bin/python,PYTHONPATH=src:scripts. Neverwalk
-HOME/~/prj/Arc/FUSE/troll_farm; namedproject/exacttaskdirectoriesonly. No subagents.
+Frozen evaluation selection/token banks/routes in results/span_019. Original
+control256/uniform512/long64; later1024. quality_preparation.json fixes actual H60
+reverse routes: source175/control42. Source G/Lcached full1024 at
+ROOT/runs/span_016/jobs/reward_pilot/output/reward_experiment/{m0,m3}_long.npz;
+check oldretrieval/preparation hashes. Actual sourceH60reverse is stillMISSING:
+run old worker m0_reverse on frozen rows (routed_longalias in separatefolder),
+plus original reversecontrol canonical42. Do NOTimpute from failed rewardpilot.
+Original H60cache ROOT/runs/span_013/jobs/gemma_order/output/order_completion.
+H60offroute=.5G+.5alignedL; onroute=.25G+.25alignedGreverse+.5alignedL.
+Use existing private arseniytrushin/llm-span016-lengthmatched-inputs/1 onlyfor
+source.parquet; do NOTread its labels.npz in GPUjob. No newweight upload needed.
 
-Earlier retained recipe/results:docs/SPAN_017_RESULTS.md and archived GOAL_V17.md;
-H60official.82987/8.5868h conservative, priorT1.316.84797worse, no refit. H61/H62
-coverage widening failed; H55earlier source stop; H56rewardpilotfailedwatchdog with
-weak/incompletequality, no resubmit. H63batchingP3unselected. Preserve allnegatives.
+One publicversion completes fullengineering +fixedqualityinputs. Require actual
+512/full80warmup, all source/head/asset/token/ID/class/bothT4/native/rawrepeat/
+canonical/CSVchecks and conservative25k<32400s before locally reading votes once.
+Originaluniform loss reduction>.001 versus actualH60; later1024reduction>=0 and
+seed42/2000paired-prompt-group95lower>-.01. Trainingoverlap/laterinspected/domain
+shift are not competitionCV or scoreforecast. No hiddenpredictioncache/targets,
+modelidentityfeatures or externaltextservice. Hidden code uses actualtesttext.
+Only fullqualification permits onefrozenofficial; officialcontroller notimplemented.
 
+Inherited ORIGINALdeadline2026-11-10T08:37:37.343197UTC/Nov14quotaperiod, noreset.
+CumulativeH65+H66public<=18000two-T4seconds/twoacceptedversions; H65used1/1705.706s.
+H66gets ONEpublicversion<=5400s and <=1official hidden<=32400s, no separate second
+publicfollowup. Need freshremainingquota>=public+hidden caps/noactive/pending,
+fullownedinventory/allofficialcursors/pinneddependencies/paidFalse. Preserve limits.
 
-## Leaderboard observation correction during the upload
+## Workspace and publication
 
-Kaggle cursor queries intermittently replayed the entire first/second page,
-causing the strict historical helper's duplicate-own-team assertion. Do not
-rewrite old helpers/receipts. New src/arena/leaderboard.py and
-scripts/observe_leaderboard.py retry the SAMErequestedcursor and reject every
-replayed/overlapping/backward page, never silentlydeduplicate. Two meaningful
-unitcasespass. Actual10:49:16UTCfullread:4acceptedpages,2rejectedreplays,
-23/311,score.82987,cutoff.82915,leader.82702,goalFalse. Receipt latest_leaderboard.json.
-Use this robust observer for future goal verification/new official controller.
-A failed/incomplete read does NOTmean ownteam vanished or the goal succeeded.
+Cwd /home/tarstars/prj/llm_classification_finetuning, main, GitHub tarstars/same.
+ROOT=/home/tarstars/database/llm_classification_finetuning. Python.venv/bin/python;
+PYTHONPATH=src:scripts. DBwrites/network/Git/Jupyterlocal sockets need escalation;
+ordinary sandbox DNS/socket failure is not service outage. api_client() itself
+network-authenticates, including signature inspections. Elevated processes may
+be invisible to sandboxps; inspect in same elevatedscope.
 
-Current model/workerbundle sources remain frozen from320fabf; no GPU/pushintent
-or newscore. Notebook31 refreshed and important preparation pushed. Source
-observer/liveupload observation are the current new bookkeeping changes.
+Local tiny nativeCPUruntime /tmp/llm_span019_runtime (Transformers4.42.3,NumPy1.26.4,
+pandas2.2.3,pyarrow15.0.2,tokenizers0.19.1,HFhub0.24.7,pytz2024.2); localPython3.11/
+Torch2.15CPU NOTreal GPUruntime. HF_HOME=/tmp/llm_span019_hf,HF_HUB_OFFLINE=1,
+TRANSFORMERS_OFFLINE=1,PYTHONPATH=/tmp/llm_span019_runtime:src for nativeCPUtests.
+Native source ROOT/runs/span_019/source_audit/native/qlinear_cuda_v0.7.1.py.
 
-## Nov8 followup preparation during the same upload
+After b888f9d the closure/v20contract/report/notebook/backlog/snapshots/auditor
+were finalized; verify gitlog/status for their publication state. Preserve userdirty
+notebooks/07_error_poster.ipynb and12_backlog_v1_span.ipynb bytewise; hashes in
+results/span_019/preservation.json. Never stage/reset them. Notebooklink already
+correct. Heavyoutputs stayDB; code/MD/aggregates/executednotebooksGit. Final31
+is historical now; builder intentionally refuses rerun afterv19closure.
 
-At11:08UTC a fresh first page confirms rank23/0.82987 and leader0.82702.
-Two attempted full reads rejected replayed pages; they did not prove a new team
-count or goal success. Latest complete board remains10:49UTC/311teams.
-The preceding user-status turn did not advance model quality; this continuation
-made actual preparation progress and confirmed the same live upload handle5983.
-At11:14UTC PID3843170 remained alive, second shard read position3962798080/4999878040.
-No response/READY receipt; never start another upload. Poll5983 then actionverify.
-
-Quality methods committed/pushed ine17b7ab. Actual CPU preparation completed:
-results/span_019/quality_preparation.json freezes source175/control42reverse rows
-from hash-verified old G/Loutputs, no votes. Additional separate followup sources:
-span019_followup.py, span019_checked_infer.py; build/run/audit_span_019_followup.py.
-The builder derives the initial notebook without changing its frozen source.
-Public followup repeats initial engineering, then mirror source1024 and actual
-retained reverse Gemma on frozen routes. Hidden mode calls original test-only
-pipeline before touching any source text/routes. Repeated raw-logit guard adds
-the explicit<=1e-5check alongside initial reference/probability checks; no math
-change. Two pipeline/public-hidden tests and two raw-logit guard tests pass.
-Actual serialized followup worker success/failure/watchdog, notebookstartup and
-branch rehearsals pass. Final rebuild/commit must match currentfiles before any
-followup admission. Audit script is syntaxchecked, not realGPU-qualified yet.
-
-run_span_019_followup.py separately admits the one<=14400s followup ONLYafter
-engineering_qualification.json passes; freshinventory/quota/private pinnedinputs/
-fullterminalofficialhistory remain mandatory. No followup/public GPU launch yet.
-After COMPLETE, verify_experiment_source.py classifier_followup --span19, then
-audit_span_019_followup.py checks actual assets/IDs/head/tokens/canonicalcontrols/
-full512/80runtime before local votes and fixedgates. Cached source G/Linputs are
-hashverified; sourceH60reverse is actual, neverimputed. No official controller has
-been implemented for this candidate yet; only implement/admit after fullqualif.
-
-## Nov8 11:27UTC: upload COMPLETE; pilot ACCEPTED/QUEUED
-
-Upload5983 exited0 with acceptedresponse. NEVERrepeat the upload. Readiness first
-returned a transient403, then statusREADY and private/exactversion1 were verified
-at11:24:43UTC in results/span_019/asset_upload.json. Original payloadhashes remain
-fixed; GPUsetup must verify everyremoteassetfile. upload_live_observation.json
-now records terminal upload/verifiedREADY, superseding earlier liveoffsets.
-
-Initial controller exec36909/PID3983353 is LIVE. Its freshfullinventory at11:27:14UTC
-observed66ownednotebooks, noactivejobs, quota16386.583used/91613.417free(25.45h),
-paidFalse; all7official receipts terminal and datasetversions/privacy verified.
-ONEpush accepted at11:27UTC; actual canonical source from response is
-arseniytrushin/llm-preference-span019-native-classifier/1 (QUEUED), not the intended
-metadata slug endingclassifier-pilot. Kaggle resolved the title into that actual
-slug; always use the acceptedresponse, never re-push the requestedalias.
-Poll SAME36909 and results/span_019/jobs/classifier_pilot state/status.
-Sourceverification exec28702 exited0 at11:28:19UTC; actualacceptedcells MATCH and
-internetdisabled verified in jobs/classifier_pilot/source_verification.json.
-At11:28:22UTC actualacceptedversion is RUNNING. Engineeringauditor ONLYafter COMPLETE/retrieval.
-No followup/official/newqualityscore yet; no other GPUadmission whilepilotactive.
-
-Final followup source/bundle/rehearsals and executedNotebook31 were pushed in
-a0804a4; verify_sources confirms exactcommittedHEAD. Preservationchecks passed for
-the original initialpilotbundle and both userdirtynotebooks07/12. Notebook31 was
-then refreshed again with READY/CPUpreparation facts. Rankgoal stillACTIVE.
-
-## Nov8 11:43UTC: actual native speed fails; H66queued, not admitted
-
-Existing controller36909 remainsLIVE; actualversion native-classifier/1 RUNNING.
-Live mirror native12row numerical controls PASSED; warmup80=42.2312s,
-control256=153.4703s,uniform512=298.5762s,long64=124.7767s,test3=8.4994s.
-These are real two-replica WALLtimes; never divide by2again. Retained m0has since
-loaded/completedwarmup; latest11:47telemetry was control160rows/85.91s.
-
-results/span_019/runtime_live_observation.json records the mathematical runtime
-lowerbound using mandatory parentretained rate:34184.30038s=9.49564h, ALREADYover
-32400s even before all startup/warmup/other costs. The current recipe cannot pass
-the declared runtimegate. Do NOTadmit classifier_followup or read human quality
-votes. Let existing initialpilot finish its remainingcontrols, retrieve outputs
-and run formal engineeringauditor; preserve any other actualfailures as well.
-No extra GPUjob, modelchange or official submission has occurred.
-
-Queued H66forv20 using CLI, evidence docs/SPAN_019_BATCHING_DISCOVERY.md. It is
-ONEprospective12288padded-token/max32-row candidate for the SAMEcheckpoint/math/
-format/ensemble, conditional on terminalmemory headroom. It differs from H63's
-weak rewardexpert. Direct gain[0,0], no measured speedup or quality. Defer ifmemory
-does not support it, no fallbackgrid. Recompute allmirrorcohorts atnewshape and
-report old/new shape differences, retain native<=1e-5onmatchedpackets and fixed
-qualitygates. Proposed onepublic<=5400s, same originaldeadline/quotaperiod and
-cumulative H65+H66<=18000s/twoacceptedpublicversions. Notselected/admitted yet.
-
-Notebook31 builder refreshed to distinguish initialCPUchecks from liveGPUevidence
-and show runtimefailure. It executes5codecells/zeroerrors. Finish finalreport/
-notebook/closure onlyafterpilotterminal/finalartifactaudit. Activev19/H65running;
-v20draft[H66]. Currentrankgoal ACTIVE, best0.82987/rank23unchanged.
+Never recursivelywalk HOME/~/prj/Arc/FUSE/troll_farm. Search namedproject/exacttask
+directories only. Goalturnclassification: actual progress (finished/auditedpilot,
+measuredruntimefailure, sealedv19/carriedunfinished/selectedboundedH66); no blocker.
+Rankgoal stillACTIVE; no model-quality score exists for mirror or H66.

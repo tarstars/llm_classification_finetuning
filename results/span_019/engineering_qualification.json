@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-08T11:57:28.204799+00:00",
+  "engineering_checks_passed": true,
+  "native_controls": {
+    "native_parallel_logits_max_abs": 0.0,
+    "native_parallel_probability_max_abs": 0.0,
+    "repeated_probability_max_abs": 0.0,
+    "rows": 12,
+    "token_fingerprint": "37a129d81304bc080c6b02d1a7b12603776d9aafec387805f0bfec762f9a170d",
+    "tolerance": 1e-05,
+    "passed": true
+  },
+  "retained_canonical_probability_max_abs": 0.0,
+  "runtime": {
+    "actual_rows": 512,
+    "hidden_rows_assumed": 25000,
+    "margin": 1.2,
+    "retained_seconds_per_row": 0.539271797451172,
+    "mirror_parallel_seconds_per_row": 0.5850473140195314,
+    "retained_startup_warmup_other_seconds": 219.79607267400002,
+    "mirror_startup_warmup_other_seconds": 55.30752569600014,
+    "setup_seconds": 169.48982620239258,
+    "reserve_seconds": 600,
+    "projected_hidden_seconds": 34774.166768693496,
+    "runtime_gate_passed": false,
+    "replica_wall_time_not_divided_again": true
+  },
+  "engineering_gate_passed": false,
+  "quality_evaluated": false,
+  "official_submission_eligible": false,
+  "human_votes_read": false,
+  "actual_uniform_rows": 512,
+  "actual_warmup_rows": 80,
+  "source_sha256": {
+    "scripts/audit_span_019_engineering.py": "70994ab8bef80ae9e10ae2ca7e1b068bd2de8a11c1f6b97b518f4fb0266785e5",
+    "src/arena/span019_runtime.py": "c32c4d7375044ad20eab1c43e0db49e463db1970105d5f0fa1644150cfefccf5"
+  }
+}

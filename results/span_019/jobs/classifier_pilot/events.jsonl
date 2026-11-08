@@ -1,3 +1,5 @@
 {"at": "2026-11-08T11:27:20.817635+00:00", "stage": "classifier_pilot", "event": "pushing_one_version"}
 {"at": "2026-11-08T11:27:26.845547+00:00", "stage": "classifier_pilot", "event": "remote_status", "status": "QUEUED", "kernel_version": "arseniytrushin/llm-preference-span019-native-classifier/1"}
 {"at": "2026-11-08T11:28:22.956888+00:00", "stage": "classifier_pilot", "event": "remote_status", "status": "RUNNING", "kernel_version": "arseniytrushin/llm-preference-span019-native-classifier/1"}
+{"at": "2026-11-08T11:56:17.248152+00:00", "stage": "classifier_pilot", "event": "remote_status", "status": "COMPLETE", "kernel_version": "arseniytrushin/llm-preference-span019-native-classifier/1"}
+{"at": "2026-11-08T11:56:27.046500+00:00", "stage": "classifier_pilot", "event": "complete", "status": "COMPLETE", "kernel_version": "arseniytrushin/llm-preference-span019-native-classifier/1", "charged_seconds": 1705.706000000002, "files": 28}

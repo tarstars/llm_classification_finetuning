@@ -1,8 +1,10 @@
 {
-  "stage": "monitoring",
-  "at": "2026-11-08T11:29:54.390045+00:00",
+  "stage": "complete",
+  "at": "2026-11-08T11:56:27.041657+00:00",
   "pid": 3983353,
   "role": "classifier_pilot",
-  "status": "RUNNING",
-  "kernel_version": "arseniytrushin/llm-preference-span019-native-classifier/1"
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span019-native-classifier/1",
+  "charged_seconds": 1705.706000000002,
+  "files": 28
 }

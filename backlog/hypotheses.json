@@ -6009,7 +6009,7 @@
       ],
       "id": "H65",
       "rank": 83,
-      "status": "running",
+      "status": "done",
       "introduced_in": 19,
       "discovered_during": 18,
       "derived_from": [
@@ -6109,6 +6109,14 @@
           "evidence": [
             "results/span_019/runtime_live_observation.json"
           ]
+        },
+        {
+          "at": "2026-11-08T12:04:55+00:00",
+          "status": "done",
+          "note": "COMPLETE native pilot;28artifacts/source/head/ID/token/native/canonical checks pass(maxdiff0). Actual512/full80warmup projection34774.17s(9.66h) fails9h; stop without quality votes/followup/official. Charged1705.706s. Report/final executedNotebook31 complete;H66queued for one memory-conditional larger batch.",
+          "evidence": [
+            "docs/SPAN_019_RESULTS.md"
+          ]
         }
       ]
     },
@@ -6157,7 +6165,7 @@
       ],
       "id": "H66",
       "rank": 84,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 20,
       "discovered_during": 19,
       "derived_from": [
@@ -6170,6 +6178,14 @@
           "note": "Live full512profile proves current native backend cannot meet9h; queue exactly one memory-conditional larger batch, no quality claim or current-span expansion.",
           "evidence": [
             "docs/SPAN_019_BATCHING_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T12:07:42+00:00",
+          "status": "running",
+          "note": "Beginning pre-GPU implementation/rehearsal of sole12288token/max32row candidate under docs/SPAN_020_PLAN.md. H65terminal memory/source controls verified; no v20GPUadmission or quality outputs yet. Same original assets/deadline/quota/cumulativecaps.",
+          "evidence": [
+            "docs/SPAN_020_PLAN.md"
           ]
         }
       ]
@@ -6223,7 +6239,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 19,
+  "active_version": 20,
   "versions": [
     {
       "number": 1,
@@ -7649,7 +7665,7 @@
     },
     {
       "number": 19,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -7705,14 +7721,80 @@
       "carried_from": 18,
       "start_sha256": "0cd8551d7539316baea6b792166a7b31436983c849b53543485c70ce70d72a9c",
       "start_markdown_sha256": "f2e4534730bfb31147ed7bf9cdaa352ff66b23c8ddafbd9ac38226ff32266d48",
-      "start_sealed_at": "2026-11-08T08:31:03+00:00"
+      "start_sealed_at": "2026-11-08T08:31:03+00:00",
+      "final_sha256": "d1df62e123bf4841ca45d08a18db869ea53a6253d5def87c5368a9b2b0b8d890",
+      "final_markdown_sha256": "b2c6d9b7348bf4facd07b5718d7bdaa44640ff0eca3e7a687be3f2d68762702e",
+      "final_sealed_at": "2026-11-08T12:04:55+00:00",
+      "closed_at": "2026-11-08T12:04:55+00:00",
+      "closing_note": "Seal v19/H65at declared runtime stop: native classifier works, quality unmeasured,9.66h infeasible. Carry all37unfinished items and queueH66; persistent rankgoal remains active, no quota/deadline reset.",
+      "closing_evidence": [
+        "docs/SPAN_019_RESULTS.md"
+      ]
     },
     {
       "number": 20,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
         "H66"
       ],
+      "focus_ids": [
+        "H66"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T12:07:41+00:00",
+          "note": "Persistent rankgoal continues across span boundary; H65runtimefail and actual12.116GiBpeak support ONE larger batch. Preserve same originaldeadline/quota and shared18000s/two-version envelope.",
+          "focus_ids": [
+            "H66"
+          ]
+        }
+      ],
+      "carried_from": 19,
+      "start_sha256": "639e18fd9f71bc1bfd98655a0662c6d98487d985733e07edadc505f737b38754",
+      "start_markdown_sha256": "bd74edea7a8f227c65d992432059e048a672e0aeac181fa3dcf2a08568e9f511",
+      "start_sealed_at": "2026-11-08T12:04:55+00:00"
+    },
+    {
+      "number": 21,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }

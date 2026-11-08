@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-08T12:00:00.267695+00:00",
+  "terminal_artifacts_verified": true,
+  "observed_peak_allocated_bytes": 13009684992,
+  "observed_peak_allocated_gib": 12.116213321685791,
+  "observed_gpu_total_bytes": 16106127360,
+  "candidate_padded_token_cap": 12288,
+  "candidate_max_rows": 32,
+  "observed_padded_token_cap": 8192,
+  "observed_max_rows": 16,
+  "conservative_static_lower_bound_bytes": 9663676416,
+  "declared_tensor_bytes": 10361028608,
+  "hypothetical_dynamic_multiplier": 1.5,
+  "hypothetical_peak_bytes": 14682689280.0,
+  "hypothetical_peak_gib": 13.674319982528687,
+  "untracked_cuda_reserve_bytes": 536870912,
+  "memory_supports_one_bounded_candidate": true,
+  "estimate_is_not_gpu_fit_proof": true,
+  "speedup_unmeasured": true,
+  "quality_unmeasured": true,
+  "hypothetical_maximum_mirror_seconds_per_row_if_other_costs_unchanged": 0.5059084217297483,
+  "minimum_mirror_speedup_if_other_costs_unchanged": 1.1564292842155104,
+  "new_gpu_executions": 0,
+  "original_recipe_quality_evaluated": false,
+  "input_sha256": {
+    "mirror_summary.json": "1f0702807eb585f7dd3e963cddd358507d31991b0154ab32dc6dae09e93962d7",
+    "engineering_qualification.json": "4e769463751d0d858177e32a23ced56d719dd30983e2fc6dc7f368f95dcf8a59"
+  }
+}

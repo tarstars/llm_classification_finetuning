@@ -1,39 +1,38 @@
-# Move above 20th place: v19 accessible native classifier
+# Move above 20th place: v20 one larger native batch
 
-Persistent objective: team17244411 at rank<=19 on a fresh complete official Kaggle
-leaderboard after legitimate inference. ACTIVE/unachieved; retain0.82987/rank23.
-V18 is sealed; exact docs/GOAL_V18.md and docs/SPAN_018_RESULTS.md. Select H65
-only and execute docs/SPAN_019_PLAN.md. No other carried task is selected.
+Persistent objective: team17244411 rank<=19 on a fresh complete official Kaggle
+leaderboard after legitimate inference. ACTIVE/unachieved; best0.82987/rank23.
+V19is sealed; preserve docs/GOAL_V19.md and docs/SPAN_019_RESULTS.md.
+Select H66only and execute docs/SPAN_020_PLAN.md. No other carried task selected.
 
-Audit public mirror wath5/kgl_lmsys_pref_classif pinned to
-cd24909db06583ecf00e65b6919c6cc1531c9885. Source-first: at most60minutes/50MiB
-for pinned cards/config/tokenizer/tensor headers and native quantization code.
-Confirm finite3x3584head and all42GPTQ8layers; inspect EOS/pad=1 and native2000
-format/pooling. No full shards, model inference or GPU admitted by this stage.
-Document mirror attribution, missing derivative license and unresolved original
-run lineage; do not invent authentication or claim another artifact's score.
-No private403dataset retry or silent substitution of H55's earlier parent.
+Freeze ONE12288padded-token/max32-row candidate for the unchanged native GPTQ8
+mirror plus retainedGemma equal-weight/T1ensemble. Same checkpoint/privatev1asset,
+head/decoder/softcap50/queryscalar224, formatter/turnjoin/BOS/trunc2000+EOS,
+absolute positions/pool, two replicas and FP32softmax. No batch/context/format/
+mixture/temperature/route/quantization grid or new weight upload. H65passed
+numerical/canonical controls but projected9.66h; its quality is unmeasured.
+Memory estimate13.6743GiB+0.5GiBreserve supports one test, not proof of fit.
+OOMor any numerical/runtime/quality failure stops this candidate; no fallback.
 
-Follow docs/SPAN_019_ASSET_PROTOCOL.md for the prospective split of asset and
-GPU admission. Before weights publish source result, one exact input/ensemble,
-quality IDs/groups/gates and synthetic native arithmetic controls. Before GPU
-publish the exact backend/worker and actual serialized worker rehearsals. Intended single fixed
-replacement ensemble, equal weights/T1, retained partner selected once before
-outputs; no format/weight/temperature/route grid. Original labels overlap training;
-later votes are domain-shift robustness evidence, not competitionCV. No hidden
-labels/cache or external text service. Preserve all failed checks and stop rules.
+Before GPUfreeze exact worker/bundle and actual CPUserialized notebook success/
+failure/watchdog/startup/public-hidden rehearsals. Recompute all mirror cohorts
+at newshape; report old/new shape drift and preserve failures. Require native/
+repeated matched-packet rawlogits/probabilities<=1e-5, source/head/asset/token/ID/
+class/CSV/bothT4/canonicalcontrols, actual512/full80warmup and conservative25k
+runtime<32400seconds with20%margin/allcold/other/600reserve. Only then locally read
+human votes once: originaluniform512reduction>.001 versus actualH60; later1024
+reduction>=0 with seed42/2000paired-group95lower>-.01. Actual source reverseH60
+route175rows/control42, neverimpute. No independentCV/hidden-scoreforecast claim.
 
-Require native-versus-production rawprobabilities<=1e-5/source/head/ID/token/class/
-CSV/bothT4controls, actual512/full80warmup profile and conservative25k<32400seconds
-with20%margin/allcold/other/600reserve before one frozen official candidate.
-No researchGPU during official scoring; fresh complete board proves goal success.
+One publicversion<=5400two-T4seconds, one frozen official onlyafterfullqualif.
+Cumulative H65+H66<=18000publicseconds/twoacceptedpublicversions; H65used1version/
+1705.706seconds. Carry ORIGINALdeadline2026-11-10T08:37:37.343197UTC/Nov14quota
+period, noreset. Fresh fullinventory/quota/pinneddependencies/allofficialcursors,
+paidFalse and enoughpublic+hiddenquota before GPU. No researchGPUduringofficial
+scoring; observe SAMEacceptedversion/receipt after timeout, neverduplicate.
+Hidden inference reads actualtesttext/models only; no labels/cachedpredictions.
 
-Original period and quota refresh in results/span_019/span_plan.json, fixed48hour
-span,source60minute deadline. Publiccap18000two-T4seconds:initial3600,one separately
-admittedfollowup14400,max2public/1productionrecipe/1official. The initial source stage admits
-ZERO GPU/fullweights; the separate asset protocol admits CPU acquisition only. Fresh full jobs/quota/pinneddependencies/official cursors
-beforeGPU;paidFalse. No cap/periodreset or duplicate mutation aftertimeout.
-
-Heavyfiles ROOT/runs/span_019;programs/Markdown/aggregates/executedNotebook31in Git.
-Preserve74snapshots,archivedgoals,userdirty07/12andnotebooklink. CLIstatus/evidence,
-queue discoveriesv20,carryunfinished. Spanclosure does not complete rankgoal.
+Heavyfiles ROOT/runs/span_020; programs/Markdown/aggregates/executedNotebook32in
+Git. Preserve78snapshots, archivedgoals,userdirty07/12andnotebooklink. CLItracking,
+queue discoveriesv21, carryunfinished atclosure. Spanclosure does not complete
+persistent rankgoal; only fresh complete officialrank<=19 does.
