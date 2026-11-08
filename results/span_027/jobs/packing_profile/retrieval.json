@@ -1,0 +1,32 @@
+{
+  "files": 23,
+  "artifact_sha256": {
+    "controls/m0.npz": "ddb82facbc2a15439761816e899cf99847723dedba2a5576e7a419ed999a9da7",
+    "controls/m0_reverse.npz": "a6cd5f2d836ae2c9939d29f328b0bec6925e91497c68cdde877d20ccb82d5c8c",
+    "controls/m3.npz": "fe2c40d27489313d7b3659a04bc442e5a104b0f2620e15276bf1b58f73329959",
+    "hardware.json": "1077a9368c5bc1b1c0d77a34201b0419d17e8fb9d1e682c1113fc5b701683c34",
+    "packing_profile/engineering_stop.json": "54dad874bef89eaf1432c89b2a8751dedfa821a367b6f426cf1dc841b8a92b3a",
+    "packing_profile/m0_checkpoint.json": "053699c6ab61a2a2cbbecd2bf3a40955f6e4a0a3f2abed5f50e27ed7e027e1a8",
+    "packing_profile/m0_checks.json": "b8002f701cd78c62b5810a42292420207d2ef006d84eebd94253895c0fb26d40",
+    "packing_profile/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "packing_profile/m0_long.npz": "bd144573a495f9bd8a5d6437d277b5e99937ce0b01ed105c83ed5e5aa2fb15eb",
+    "packing_profile/m0_summary.json": "36201a86f655e457c693b1d3f732d90250e81cf6e2c0f68710c268620f783785",
+    "packing_profile/m0_test.npz": "416b6e64ac23c1afd1264cee6ce68fdaa9bef07d830334fff85c96e6ba8f66b0",
+    "packing_profile/m0_uniform.npz": "10fd52590df070adaf24f89f4fcbc1e6d939bc20f15f829d5d1620c7e10181a1",
+    "packing_profile/m0_warmup.npz": "b2ab0390fb760214ed1d2c638d48ec3ac7fb09e0b03114219abea0f74dc6d720",
+    "packing_profile/m3_checkpoint.json": "5b8acbde594a45028d140e5e90dc9fedc56fae2c6bd6025cee90e7e5b09c2b2f",
+    "packing_profile/m3_checks.json": "2b83cfe26e527d10f6cf253bc233a487ab43c370a5fb2d8599a0f58ebc8bb55b",
+    "packing_profile/m3_control.npz": "fdb118f2a621d60fb11865f9e5f9fcebde4ad2b2d633d82a432542cf1f4bf72f",
+    "packing_profile/m3_summary.json": "c795d6c2749468a36cbf9f5d541a0b7d11a40fb3b3dad1252c647b520d7010aa",
+    "packing_profile/m3_warmup.npz": "b947bf6868e318ae32bfbfc28aff8eecb89037de4a44017ea13f80ff78c1af21",
+    "packing_profile/profile_complete.json": "2e82e5f4dd9c312a082738e27d50bdb4c584847211c7a199279015dc4510c02a",
+    "packing_profile/runtime_spec.json": "ad9717e9f348bd9e4a42332b92fa247e44247e5d644b696f7869cb392a2c1ecb",
+    "packing_spec.json": "7c2e4ade039b661ed00ca55d858b089d557b4c7c1f31fa5286999d54dc22eae7",
+    "session_summary.json": "95b3ee0d859472cabf57dcd2417a600c5e526a56e88cf5a1bc9dc1168381ce83",
+    "worker_console.log": "6aafd77c51d7fa5de87abfbaf3686a434ca5e39080d03c352c9d4b30fe561e89"
+  },
+  "final_checkpoint": -1,
+  "new_gpu_executions": 0,
+  "signed_urls_persisted": false,
+  "retrieved_at": "2026-11-08T20:53:25.406100+00:00"
+}

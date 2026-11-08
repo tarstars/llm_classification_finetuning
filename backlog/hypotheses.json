@@ -6891,7 +6891,7 @@
       ],
       "id": "H73",
       "rank": 91,
-      "status": "planned",
+      "status": "deferred",
       "introduced_in": 27,
       "discovered_during": 26,
       "derived_from": [
@@ -6904,6 +6904,14 @@
           "note": "CompletedH72pilot adds evidence but worsens localB/tie behavior; historical review confirms current strong50/50expert weights were not ablated by olderweak H37/H43or temperature-onlyH59. QueueONEfixed60/40rule forfuture, no computation/current-spanchange.",
           "evidence": [
             "docs/SPAN_026_EXPERT_WEIGHT_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T20:58:19+00:00",
+          "status": "deferred",
+          "note": "Required H74 identical-prediction/runtime prerequisite failed. No60/40probability, CPUqualityreplay, qualification or official was computed. Carry forward only; a new successful engineering prerequisite and bounded contract are required.",
+          "evidence": [
+            "docs/SPAN_027_RESULTS.md"
           ]
         }
       ]
@@ -6956,7 +6964,7 @@
       ],
       "id": "H74",
       "rank": 92,
-      "status": "running",
+      "status": "done",
       "introduced_in": 27,
       "discovered_during": 26,
       "derived_from": [
@@ -6993,6 +7001,77 @@
           "note": "GPU profile accepted once as arseniytrushin/llm-preference-span027-native-packing/1; controller session42856 PID1269591 RUNNING. Exact remote source verified 2026-11-08T20:36:03UTC, offline. Fresh complete official board remains23/310,0.82987; H73 still depends on the terminal engineering audit.",
           "evidence": [
             "results/span_027/jobs/packing_profile/source_verification.json"
+          ]
+        },
+        {
+          "at": "2026-11-08T20:58:19+00:00",
+          "status": "done",
+          "note": "Frozen audit74733 exit0 independently replayed failed Llama control: maxabs0.000352919>0.00001. Source/input/checkpoint/memory pass, worker controlled stop complete=false. Saved Gemma uniform also drifts(max0.000491977); no quality, complete runtime, route, CSV or official. One accepted version1107.563s,23verified artifacts; no retry or tolerance relaxation.",
+          "evidence": [
+            "docs/SPAN_027_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "prerequisite",
+      "title": "Overlap CPU preparation with the unchanged native 8192-token GPU stream",
+      "priority": "P1",
+      "gain": null,
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.02,
+        0.1
+      ],
+      "risk": "medium",
+      "claim": "One bounded CPU producer thread may hide preparation latency while preserving the exact original native microbatches and probabilities; no speedup or score gain is measured.",
+      "basis": "H74 larger packing failed strict raw controls despite exact inputs; the native original8192 loop prepares CPU batches synchronously before GPU work. H72 original-path projection32668.060s exceeds32400, so fixed expert weights still need actual headroom.",
+      "first_test": "In a separately selected v28, inspect/time native CPU preparation within300CPU seconds and prove FIFO prefetched versus synchronous batch80/8192 microbatch boundaries, tensor streams, positions and IDs exact on all fixed cohorts. Queue depth2, one CPU producer, CUDA only on consumer; rehearse full-queue failure/teardown. Then one<=3600s actual three-role engineering profile with unchanged original4kinputs/route/T1/fp16/sharding/kernels/full80warm/control/uniform512/long64/test, all raw controls<=1e-5. No fitting or quality replay.",
+      "acceptance": "Exact source/checkpoint/ID/token/microbatch/probability/route/mixture/CSV controls and bothT4memory<=95%; actual end-to-end25k projection<32400 using20pctmargin,600reserve and retained worse cold/fullwarm/other. Report timing overlap without double counting; CPU proof alone is not speed or deployment evidence. Only a successful prerequisite can revive H73 under a new contract.",
+      "stop": "No v27 execution or 10240retry. Stop on thread/source/order/token/numerical/memory/runtime failure or caps. No queue/thread/cap grid, fallback, new weights, tolerance/margin relaxation, faster-node retry, resource reset or GPU while official pending. Fresh quota/deadline/source admission before any GPU.",
+      "risk_reason": "Token preparation may be too small to save enough wall time; CPU contention, unsafe tensor ownership or producer shutdown can harm stability. Unchanged inputs do not by themselves prove numerical identity.",
+      "mitigation": "Preserve exact old microbatch groups, a single producer and deterministic FIFO with bounded queue; exercise propagation/teardown before GPU. Independently check all old raw controls and full measured projection; preserve H74 failure.",
+      "rationale": "Tests a distinct path to runtime headroom while keeping the incumbent arithmetic and avoiding the observed larger-packing numerical drift. Resource and quality claims remain conditional.",
+      "revision": "Queued from completed H74 failure only; no prefetch implementation, timing experiment or GPU has been run. Preserve the failed10240recipe and defer H73 until a new prerequisite actually passes.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H60",
+        "H72",
+        "H74"
+      ],
+      "evidence": [
+        "docs/SPAN_027_PREFETCH_DISCOVERY.md",
+        "docs/SPAN_027_RESULTS.md",
+        "results/span_027/failure_description.json"
+      ],
+      "id": "E18",
+      "rank": 93,
+      "status": "planned",
+      "introduced_in": 28,
+      "discovered_during": 27,
+      "derived_from": [
+        "H74"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T20:58:49+00:00",
+          "status": "planned",
+          "note": "Observed packing-induced probability drift rejects10240identity path. Queue one original8192CPU-prefetch prerequisite with unchanged microbatches/strict controls; speedup unmeasured, no v27execution.",
+          "evidence": [
+            "docs/SPAN_027_PREFETCH_DISCOVERY.md"
           ]
         }
       ]
@@ -7046,7 +7125,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 27,
+  "active_version": 28,
   "versions": [
     {
       "number": 1,
@@ -9016,7 +9095,7 @@
     },
     {
       "number": 27,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -9075,10 +9154,69 @@
       "carried_from": 26,
       "start_sha256": "918fd5b2c91c4a14a919cbd8882da793829fb9df2e66a2b375153fd7fdd0b26c",
       "start_markdown_sha256": "c3e1906f5ac582f0477ef8fc367597fa1bed5e8734b41ef35a1da5444591de67",
-      "start_sealed_at": "2026-11-08T19:49:33+00:00"
+      "start_sealed_at": "2026-11-08T19:49:33+00:00",
+      "final_sha256": "eb789c21e3abba95644e5f83c51b8f7105f7f2cc5aaa8c77c2a273678bb865fa",
+      "final_markdown_sha256": "752036f9a9b9636e0eb50769b111277097ec1a346247e730ca53a0fa27155da2",
+      "final_sealed_at": "2026-11-08T21:00:08+00:00",
+      "closed_at": "2026-11-08T21:00:08+00:00",
+      "closing_note": "Seal v27: native10240packing failed strict raw identity(maxLlama0.000352919/Guniform0.000491977), controlled COMPLETE with23verified artifacts/1107.563s; no quality or official, H73deferred uncomputed. Preserve106snapshots/user notebooks, carry38unfinished and E18original8192CPU-prefetch discovery. Rankgoal remains active at23rd; next execution requires new bounded contract.",
+      "closing_evidence": [
+        "docs/SPAN_027_RESULTS.md"
+      ]
     },
     {
       "number": 28,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "E18"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 27,
+      "start_sha256": "e6ee7501c883d14a864e6996840f55b38c5698209b05be814e1e77660bad2800",
+      "start_markdown_sha256": "b3b725398e08b574525f4a3d71d9c7531be3c7f7eb55bad2e86ec025d77e055f",
+      "start_sealed_at": "2026-11-08T21:00:08+00:00"
+    },
+    {
+      "number": 29,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

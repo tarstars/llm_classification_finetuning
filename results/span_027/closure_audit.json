@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-08T21:00:13.473587+00:00",
+  "passed": true,
+  "sealed_version": 27,
+  "goal_achieved_by_span": false,
+  "engineering_gate_passed": false,
+  "official_submissions": 0,
+  "public_gpu_charged_seconds": 1107.563000000002,
+  "artifact_files_verified": 23,
+  "historical_snapshots_preserved": 106,
+  "snapshot_files_after_transition": 110,
+  "carried_tasks": 38,
+  "new_discoveries": [
+    "E18"
+  ],
+  "notebook_sha256": "d6744f95679a79bc9636ff3899f349f1117a77481d281a45845f31545d83452a",
+  "goal_archive_sha256": "1e9d4f57c070440db868bef2dd42e4d10905c9893f8ae3ece2742eac734737d6",
+  "failure_description_sha256": "fa8b8664590e6990a46ec0a63f539188c3f153f8ed74464b3d74ece6afb29648"
+}

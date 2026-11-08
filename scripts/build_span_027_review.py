@@ -50,7 +50,22 @@ if decision.exists():
  if 'guard_failure' in result:display(result['guard_failure'])
  if 'runtime' in result:display(result['runtime'])
 else:print('GPU probability identity, memory and runtime qualification are pending.')
-print('Structural batching results do not establish a new competition score.')''')])
+print('Structural batching results do not establish a new competition score.')'''),
+        nbf.v4.new_code_cell('''description=PUB/'failure_description.json'
+if description.exists():
+ d=json.loads(description.read_text())
+ display(pd.DataFrame([{'cohort':k,**{f:v[f] for f in ['rows','max_abs','mean_abs','rows_above_original_tolerance','argmax_changes']}} for k,v in d['cohorts'].items()]))
+ print(d['interpretation'])
+ print('No target labels read; no quality measured; no new GPU execution.')
+if decision.exists() and not result['engineering_gate_passed']:
+ print('H74 failed. H73 deferred without computing the fixed 60/40 mixture. No new official submission.')
+state=job/'controller_state.json'
+if state.exists():print('Controller terminal evidence:',json.loads(state.read_text()))
+inventory=PUB/'terminal_inventory.json'
+if inventory.exists():
+ inv=json.loads(inventory.read_text());print('Nonterminal owned jobs:',len(inv['nonterminal_jobs']));print('Quota:',inv['quota'])
+board=PUB/'final_leaderboard.json'
+if board.exists():print('Complete official board:',json.loads(board.read_text()))''')])
     nb.metadata['kernelspec']=dict(display_name='Python 3',language='python',name='python3')
     nb=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     assert all(c.execution_count is not None and not any(o.output_type=='error' for o in c.get('outputs',[])) for c in nb.cells if c.cell_type=='code')

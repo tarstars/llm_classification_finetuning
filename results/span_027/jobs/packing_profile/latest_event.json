@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-08T20:53:25.411937+00:00",
+  "stage": "packing_profile",
+  "event": "complete",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span027-native-packing/1",
+  "charged_seconds": 1107.563000000002,
+  "files": 23
+}

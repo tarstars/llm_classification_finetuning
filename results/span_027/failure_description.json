@@ -1,0 +1,136 @@
+{
+  "at": "2026-11-08T20:55:22.089719+00:00",
+  "cohorts": {
+    "m0_control": {
+      "rows": 256,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "row_max_quantiles": {
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "rows_above_original_tolerance": 0,
+      "argmax_changes": 0
+    },
+    "m0_long": {
+      "rows": 64,
+      "max_abs": 7.215142250061035e-05,
+      "mean_abs": 2.480344846844673e-06,
+      "row_max_quantiles": {
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 8.851289749145526e-07,
+        "p95": 3.513023257255533e-05,
+        "p99": 6.505429744720457e-05,
+        "max": 7.215142250061035e-05
+      },
+      "rows_above_original_tolerance": 4,
+      "argmax_changes": 0
+    },
+    "m0_test": {
+      "rows": 3,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "row_max_quantiles": {
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "rows_above_original_tolerance": 0,
+      "argmax_changes": 0
+    },
+    "m0_uniform": {
+      "rows": 512,
+      "max_abs": 0.0004919767379760742,
+      "mean_abs": 3.2561777819258473e-06,
+      "row_max_quantiles": {
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.00015554368495941144,
+        "max": 0.0004919767379760742
+      },
+      "rows_above_original_tolerance": 14,
+      "argmax_changes": 0
+    },
+    "m0_warmup": {
+      "rows": 80,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "row_max_quantiles": {
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "rows_above_original_tolerance": 0,
+      "argmax_changes": 0
+    },
+    "m3_control": {
+      "rows": 256,
+      "max_abs": 0.0003529191017150879,
+      "mean_abs": 4.740596826498707e-06,
+      "row_max_quantiles": {
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.00022687315940856924,
+        "max": 0.0003529191017150879
+      },
+      "rows_above_original_tolerance": 12,
+      "argmax_changes": 0
+    },
+    "m3_warmup": {
+      "rows": 80,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "row_max_quantiles": {
+        "min": 0.0,
+        "p50": 0.0,
+        "p90": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "max": 0.0
+      },
+      "rows_above_original_tolerance": 0,
+      "argmax_changes": 0
+    }
+  },
+  "labels_read": false,
+  "quality_measured": false,
+  "new_gpu_executions": 0,
+  "engineering_gate_passed": false,
+  "official_submission_eligible": false,
+  "elapsed_cpu_seconds": 0.006588152842596173,
+  "cpu_cap_seconds": 60,
+  "input_sha256": {
+    "runs/span_027/jobs/packing_profile/output/packing_profile/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "runs/span_027/jobs/packing_profile/output/packing_profile/m0_long.npz": "bd144573a495f9bd8a5d6437d277b5e99937ce0b01ed105c83ed5e5aa2fb15eb",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m0_long.npz": "f0cdc3f38df3a8091fda4147865922b371167961af0a3979ffac48f82d57cfc1",
+    "runs/span_027/jobs/packing_profile/output/packing_profile/m0_test.npz": "416b6e64ac23c1afd1264cee6ce68fdaa9bef07d830334fff85c96e6ba8f66b0",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m0_test.npz": "416b6e64ac23c1afd1264cee6ce68fdaa9bef07d830334fff85c96e6ba8f66b0",
+    "runs/span_027/jobs/packing_profile/output/packing_profile/m0_uniform.npz": "10fd52590df070adaf24f89f4fcbc1e6d939bc20f15f829d5d1620c7e10181a1",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m0_uniform.npz": "07267d576085aa72d975f2f287d7ec034fffd22317f2048f4c6e5c4ad371069e",
+    "runs/span_027/jobs/packing_profile/output/packing_profile/m0_warmup.npz": "b2ab0390fb760214ed1d2c638d48ec3ac7fb09e0b03114219abea0f74dc6d720",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m0_warmup.npz": "b2ab0390fb760214ed1d2c638d48ec3ac7fb09e0b03114219abea0f74dc6d720",
+    "runs/span_027/jobs/packing_profile/output/packing_profile/m3_control.npz": "fdb118f2a621d60fb11865f9e5f9fcebde4ad2b2d633d82a432542cf1f4bf72f",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m3_control.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "runs/span_027/jobs/packing_profile/output/packing_profile/m3_warmup.npz": "b947bf6868e318ae32bfbfc28aff8eecb89037de4a44017ea13f80ff78c1af21",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m3_warmup.npz": "b947bf6868e318ae32bfbfc28aff8eecb89037de4a44017ea13f80ff78c1af21"
+  },
+  "script_sha256": "77bcf9adfa7cd7b24659c8861b53e2bf65cb84615678281503e60d8ef789ca43",
+  "original_audit_sha256": "51ced9af98f3e9d612434c16859a14ccf44bba21ba58ee24f39a966c3fcaabb0",
+  "interpretation": "Probability drift is observed. Its cause and quality effect are unmeasured; unchanged argmax does not establish equivalent log loss."
+}
