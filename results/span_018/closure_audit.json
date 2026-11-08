@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-08T08:31:17.224137+00:00",
+  "passed": true,
+  "sealed_version": 18,
+  "goal_achieved_by_span": false,
+  "public_gpu_seconds": 0,
+  "new_parameter_fits": 0,
+  "official_submissions": 0,
+  "teacher_information_gate_passed": false,
+  "prior_snapshots_preserved": 70,
+  "snapshot_files_after_transition": 74,
+  "carried_tasks": 37,
+  "successor_members": 38,
+  "new_discoveries": [
+    "H65"
+  ],
+  "notebook_sha256": "e49039c44a9f3e8c27d6defc082186dbe19f62d650de933f14d3bf762171ef98",
+  "goal_archive_sha256": "8ae4a7520f0137d4be06b6ea0aa29311ed33c83e9ee8814840cf47db8653f1fb",
+  "leaderboard": {
+    "observed_at": "2026-11-08T08:28:36.892960+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 23,
+    "teams": 310,
+    "score": 0.82987,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82702,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-07T20:07:11.890Z"
+  }
+}

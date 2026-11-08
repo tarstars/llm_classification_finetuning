@@ -5930,7 +5930,7 @@
       ],
       "id": "H64",
       "rank": 82,
-      "status": "running",
+      "status": "done",
       "introduced_in": 18,
       "discovered_during": 17,
       "derived_from": [
@@ -5951,6 +5951,77 @@
           "note": "Preparing one fixed hybrid teacher lookup per docs/SPAN_018_PLAN.md, preserving actual H60on-route and full4only off-route. Threshold>.001uniform512, no grid/fitting; failed gate stops before feature inference. Conditional later source/head/IDs/prototype protocol must be frozen separately before GPU.",
           "evidence": [
             "docs/SPAN_018_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T08:16:39+00:00",
+          "status": "done",
+          "note": "One fixed teacher fails: uniform512loss.653246948 versus actualH60.652988249, reduction-.00025870CI[-.00266273,.00216893], below predeclared>.001. All on-route83rows unchanged, both base references maxdiff0/IDs/lengths/hashes/route/mixture pass. No alternate teacher, feature source audit, head training, GPU or submission. Stop early and retain.82987; report preserves overlap/uncertainty and unmeasured surrogate.",
+          "evidence": [
+            "docs/SPAN_018_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Audit and test the accessible BlackPearl-family GPTQ three-class mirror",
+      "priority": "P1",
+      "gain": [
+        -0.005,
+        0.012
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        6
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        1,
+        4
+      ],
+      "cpu_wall_hours": [
+        0.2,
+        1
+      ],
+      "risk": "high",
+      "claim": "A second competition-trained paired three-class classifier may improve H60 within its deployment budget by replacing one expert, without relying on inaccessible Kaggle artifacts.",
+      "basis": "H64 equal-four-order teacher failed its strict gate. A newly found public ungated mirror has pinned GPTQ8 Gemma2 classifier shards, score.weight and explicit A/B/tie native inference instructions; quality and exact original-author lineage are unverified.",
+      "first_test": "Bounded pinned metadata/card/tensor-header/native loading audit, no weight or GPU admission from metadata alone. Resolve head shape, pooling/EOS/padding, GPTQ backend and resource fit; freeze one mirror recipe and one ensemble before any quality inference. Preserve original artifact and run native-versus-production controls before scoring.",
+      "acceptance": "A complete fixed candidate must improve the predeclared matched quality comparison with uncertainty and exposure limits, preserve canonical probabilities within1e-5, pass actual512/twoT4/fullwarmup profiling and conservative25k runtime<9h with20pct margin/alloverhead/600sreserve; only then one frozen official candidate. Rank<=19 on fresh complete board is the global objective.",
+      "stop": "Stop for inaccessible pinned files, unusable/nonfinite head or unsupported native execution, failed numerical/memory/runtime controls, or failed frozen quality gate; no private dataset retry, format/temperature/weight grid, hidden prediction cache or automatic resubmission.",
+      "risk_reason": "Mirror attribution is not authenticated author lineage; unspecified derivative license, training overlap, GPTQ backend compatibility, EOS-as-pad pooling and compute pressure can invalidate naive use or apparent gains.",
+      "mitigation": "Pin all files/LFS hashes, document applicable base terms and unresolved provenance, use the mirror declared recipe explicitly, keep original rows descriptive, test later votes without claiming domain equivalence, and freeze calibration/mixture before quality lookup. No public redistribution of weights.",
+      "rationale": "Seek a materially different trained classifier after coverage widening, scalar reward conversion and cached-order teacher gave insufficient evidence. This is a newly available artifact, not a rerun of H55.",
+      "revision": "New discovery after H64 early stop; gain range is subjective and can be negative. No measured quality, runtime or promotion is claimed.",
+      "depends_on": [
+        "E00",
+        "H55",
+        "H64"
+      ],
+      "evidence": [
+        "docs/SPAN_018_CHECKPOINT_DISCOVERY.md",
+        "results/span_018/next_candidate_discovery.json"
+      ],
+      "id": "H65",
+      "rank": 83,
+      "status": "planned",
+      "introduced_in": 19,
+      "discovered_during": 18,
+      "derived_from": [
+        "H64"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T08:30:02+00:00",
+          "status": "planned",
+          "note": "Found a distinct accessible final-family GPTQ mirror after the cached teacher gate failed; audit its declared native recipe before any new inference.",
+          "evidence": [
+            "docs/SPAN_018_CHECKPOINT_DISCOVERY.md"
           ]
         }
       ]
@@ -6004,7 +6075,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 18,
+  "active_version": 19,
   "versions": [
     {
       "number": 1,
@@ -7362,7 +7433,7 @@
     },
     {
       "number": 18,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -7418,10 +7489,68 @@
       "carried_from": 17,
       "start_sha256": "1bf24e702726dae8b42632104aba7b5f555e2100938ccd4d7354fc2d96c496d0",
       "start_markdown_sha256": "6b6b6d4efef1f93098c5078d77473f0bc2cd131e6a9e05be316122ba857def41",
-      "start_sealed_at": "2026-11-08T07:52:14+00:00"
+      "start_sealed_at": "2026-11-08T07:52:14+00:00",
+      "final_sha256": "054078ad5c224e2e02fc13d07c178c5fc4008e286aa596480848685831fe14d9",
+      "final_markdown_sha256": "8d9d0df2aa4cfb47aca2e5387ec014caf12b44af16b1acbaf6b29971b87dd216",
+      "final_sealed_at": "2026-11-08T08:31:03+00:00",
+      "closed_at": "2026-11-08T08:31:03+00:00",
+      "closing_note": "H64 fixed teacher failed strict>0.001 gate; no feature work, GPU or official. Preserve all37unfinished tasks and add the newly accessible classifier mirror as H65.",
+      "closing_evidence": [
+        "docs/SPAN_018_RESULTS.md"
+      ]
     },
     {
       "number": 19,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H65"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 18,
+      "start_sha256": "0cd8551d7539316baea6b792166a7b31436983c849b53543485c70ce70d72a9c",
+      "start_markdown_sha256": "f2e4534730bfb31147ed7bf9cdaa352ff66b23c8ddafbd9ac38226ff32266d48",
+      "start_sealed_at": "2026-11-08T08:31:03+00:00"
+    },
+    {
+      "number": 20,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

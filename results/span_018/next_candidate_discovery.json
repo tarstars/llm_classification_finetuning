@@ -1,0 +1,93 @@
+{
+  "at": "2026-11-08T08:28:58.940282+00:00",
+  "kind": "read_only_next_span_planning",
+  "repository": "wath5/kgl_lmsys_pref_classif",
+  "revision": "cd24909db06583ecf00e65b6919c6cc1531c9885",
+  "public": true,
+  "gated": false,
+  "card": "https://huggingface.co/wath5/kgl_lmsys_pref_classif",
+  "architectures": [
+    "Gemma2ForSequenceClassificationV1"
+  ],
+  "num_labels": 3,
+  "head_shard": "model-00003-of-00003.safetensors",
+  "declared_tensor_bytes": 10361028608,
+  "weight_files": [
+    {
+      "rfilename": "model-00001-of-00003.safetensors",
+      "size": 4977835176,
+      "blobId": "6d4c1eb300d5742d0bff70c7eb193bf5864672e1",
+      "lfs": {
+        "sha256": "012cfe4344b17127076787b368af5885bb9a18ff0568257f0029d326a1e77c12",
+        "size": 4977835176,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00002-of-00003.safetensors",
+      "size": 4999878040,
+      "blobId": "40031185add6c993bbae5f66b510dc42887d2dd6",
+      "lfs": {
+        "sha256": "23f868d126be9fb922fe9c09f6ed5c48a36e053c55dddff4a549037ed7046fd7",
+        "size": 4999878040,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00003-of-00003.safetensors",
+      "size": 383467824,
+      "blobId": "bfc9656b9cdedd2b2cd06eee86bac9b73202fd71",
+      "lfs": {
+        "sha256": "31f38d03fcc9a7195795bd34653b5650d804f1716968a49643815c37ed70d824",
+        "size": 383467824,
+        "pointerSize": 134
+      }
+    }
+  ],
+  "config_parent": "/kaggle/input/v7-dpo-16bit-01234-8bit-all/v7_dpo_16bit_01234_8bit_all",
+  "pad_token_id": 1,
+  "eos_token_id": 1,
+  "quantization": {
+    "batch_size": 1,
+    "bits": 8,
+    "block_name_to_quantize": null,
+    "cache_block_outputs": true,
+    "damp_percent": 0.1,
+    "desc_act": false,
+    "exllama_config": {
+      "version": 1
+    },
+    "group_size": 128,
+    "max_input_length": null,
+    "model_seqlen": null,
+    "module_name_preceding_first_block": null,
+    "modules_in_block_to_quantize": null,
+    "pad_token_id": null,
+    "quant_method": "gptq",
+    "sym": true,
+    "tokenizer": null,
+    "true_sequential": true,
+    "use_cuda_fp16": false,
+    "use_exllama": true
+  },
+  "card_declares_author": "@sayoulala (Yang Zhou)",
+  "card_links_author_repository": "https://github.com/shyoulala/LMSYS_BlackPearl",
+  "native_card_context": 2000,
+  "native_card_output_order": [
+    "winner_model_a",
+    "winner_model_b",
+    "tie"
+  ],
+  "card_is_mirror_instructions_not_independent_authentication": true,
+  "exact_final_author_lineage_unverified": true,
+  "declared_license": null,
+  "inference_measured": false,
+  "quality_measured": false,
+  "full_weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "small_files_sha256": {
+    "runs/span_018/next_candidate_discovery/config.json": "78d4ba2bec989ebf70a10cf2a1ac16d98a2e9062ad92a90bae1809444104ce61",
+    "runs/span_018/next_candidate_discovery/metadata.json": "f4f1027af590224851321e63b825a370d6ac388f077b5713e409037b9972c41a",
+    "runs/span_018/next_candidate_discovery/model.safetensors.index.json": "2ee47c63a7e499ee199a9e1c75c9d84750acba84fbc18612952c3e2a24301da6"
+  }
+}
