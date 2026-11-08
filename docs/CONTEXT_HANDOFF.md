@@ -207,3 +207,33 @@ Final followup source/bundle/rehearsals and executedNotebook31 were pushed in
 a0804a4; verify_sources confirms exactcommittedHEAD. Preservationchecks passed for
 the original initialpilotbundle and both userdirtynotebooks07/12. Notebook31 was
 then refreshed again with READY/CPUpreparation facts. Rankgoal stillACTIVE.
+
+## Nov8 11:43UTC: actual native speed fails; H66queued, not admitted
+
+Existing controller36909 remainsLIVE; actualversion native-classifier/1 RUNNING.
+Live mirror native12row numerical controls PASSED; warmup80=42.2312s,
+control256=153.4703s,uniform512=298.5762s,long64=124.7767s,test3=8.4994s.
+These are real two-replica WALLtimes; never divide by2again. Retained m0has since
+loaded/completedwarmup; latest11:47telemetry was control160rows/85.91s.
+
+results/span_019/runtime_live_observation.json records the mathematical runtime
+lowerbound using mandatory parentretained rate:34184.30038s=9.49564h, ALREADYover
+32400s even before all startup/warmup/other costs. The current recipe cannot pass
+the declared runtimegate. Do NOTadmit classifier_followup or read human quality
+votes. Let existing initialpilot finish its remainingcontrols, retrieve outputs
+and run formal engineeringauditor; preserve any other actualfailures as well.
+No extra GPUjob, modelchange or official submission has occurred.
+
+Queued H66forv20 using CLI, evidence docs/SPAN_019_BATCHING_DISCOVERY.md. It is
+ONEprospective12288padded-token/max32-row candidate for the SAMEcheckpoint/math/
+format/ensemble, conditional on terminalmemory headroom. It differs from H63's
+weak rewardexpert. Direct gain[0,0], no measured speedup or quality. Defer ifmemory
+does not support it, no fallbackgrid. Recompute allmirrorcohorts atnewshape and
+report old/new shape differences, retain native<=1e-5onmatchedpackets and fixed
+qualitygates. Proposed onepublic<=5400s, same originaldeadline/quotaperiod and
+cumulative H65+H66<=18000s/twoacceptedpublicversions. Notselected/admitted yet.
+
+Notebook31 builder refreshed to distinguish initialCPUchecks from liveGPUevidence
+and show runtimefailure. It executes5codecells/zeroerrors. Finish finalreport/
+notebook/closure onlyafterpilotterminal/finalartifactaudit. Activev19/H65running;
+v20draft[H66]. Currentrankgoal ACTIVE, best0.82987/rank23unchanged.

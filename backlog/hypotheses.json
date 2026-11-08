@@ -6101,6 +6101,76 @@
           "evidence": [
             "results/span_019/jobs/classifier_pilot/push.json"
           ]
+        },
+        {
+          "at": "2026-11-08T11:43:18+00:00",
+          "status": "running",
+          "note": "Actual mirror512 live profile298.576s. With mandatory retained parent rate and20%margin+600reserve, hidden runtime LOWER BOUND34184.30s(9.496h), already over32400 before startup/warmups. Current backend cannot advance; complete ongoing pilot controls and terminal audit. No quality votes or new GPU admission.",
+          "evidence": [
+            "results/span_019/runtime_live_observation.json"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "One larger native paired-classifier batch to fit nine-hour inference",
+      "priority": "P1",
+      "gain": [
+        0,
+        0
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        2
+      ],
+      "pilot_gpu_wall_hours": [
+        0.5,
+        1.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "One12288-token/max32-row native batch may enable the unchanged H65classifier ensemble to meet nine-hour inference; direct quality gain is zero and checkpoint usefulness remains unmeasured.",
+      "basis": "Actual mirror512 took298.576158465s. With retained parent274.595901349s/512,20%margin and600reserve, runtime lower bound34184.30038s exceeds32400 before startup. Native12row controls passed live; terminal artifact/memory audit pending.",
+      "first_test": "After H65terminal audit, inspect actual long/control/uniform peak memory and conservative static/dynamic footprint. If practical headroom supports it, freeze ONE12288padded-token/max32-row candidate with original checkpoint/math/template/pooling/replicas/T1. One public version completes native matched-packet/repeated controls, actual512/full80warmup, retained canonical controls and fixed original512/later1024quality inputs. Recompute every mirror cohort; record old/new shape differences.",
+      "acceptance": "Native source/head/ID/token/class/repetition/matched-packet rawlogit/probability<=1e-5; both T4s; verified CSV/canonicalcontrols. Conservative25k runtime<32400 with20%margin/allcold/warm/other/600reserve. Originaluniform loss reduction>.001 versus actualH60; later1024 reduction>=0 and seed42/2000paired-group95lower>-.01. Only then one frozen official; actual rank<=19 proves goal.",
+      "stop": "Defer without GPU if memory headroom does not support this single shape. Stop on OOM, source/numerical/control failure, infeasible full runtime or either fixed quality gate failure. No second batch/context/mixture/temperature/quantization grid and no automatic retry.",
+      "risk_reason": "Peak dynamic allocation and speedup are not measured for the larger shape; FP16 batch changes may alter probabilities. H65quality is unmeasured and may fail training-overlapping or domain-shift checks even if speed improves.",
+      "mitigation": "Require actual terminal memory audit, conservative footprint estimate with512MiBCUDA reserve, one candidate, fresh matched quality at new shape, preserve all failures. Reuse immutable private assets. Carry olddeadline/quota and count H65plus this run under18000publicseconds/twoacceptedpublicversions; one new public<=5400s. No researchGPUwhileofficialpending.",
+      "rationale": "Conditional engineering enabler for the currently accessible paired classifier. A measured runtime shortfall motivates one bounded test; no claimed quality gain or inherited reward-model usefulness.",
+      "revision": "Initial v20proposal during H65pilot; no v20execution or GPUadmission. Resolve final memory and runtime from terminal artifacts before selection.",
+      "depends_on": [
+        "E00",
+        "H65"
+      ],
+      "evidence": [
+        "docs/SPAN_019_BATCHING_DISCOVERY.md",
+        "results/span_019/runtime_live_observation.json"
+      ],
+      "id": "H66",
+      "rank": 84,
+      "status": "planned",
+      "introduced_in": 20,
+      "discovered_during": 19,
+      "derived_from": [
+        "H65"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T11:46:43+00:00",
+          "status": "planned",
+          "note": "Live full512profile proves current native backend cannot meet9h; queue exactly one memory-conditional larger batch, no quality claim or current-span expansion.",
+          "evidence": [
+            "docs/SPAN_019_BATCHING_DISCOVERY.md"
+          ]
         }
       ]
     }
@@ -7640,7 +7710,9 @@
     {
       "number": 20,
       "state": "draft",
-      "item_ids": [],
+      "item_ids": [
+        "H66"
+      ],
       "focus_ids": [],
       "history": []
     }

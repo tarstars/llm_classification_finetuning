@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-08T11:43:18.589979+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span019-native-classifier/1",
+  "service_status": "RUNNING",
+  "observation_source": "sanitized live worker event; terminal artifact verification pending",
+  "mirror_profile_rows": 512,
+  "mirror_profile_seconds": 298.57615846500005,
+  "mirror_parallel_seconds_per_row": 0.5831565595019532,
+  "retained_required_parent_seconds_per_row": 0.5363201198222656,
+  "hidden_rows": 25000,
+  "margin": 1.2,
+  "reserve_seconds": 600,
+  "lower_bound_seconds": 34184.30037972656,
+  "lower_bound_hours": 9.49563899436849,
+  "hidden_cap_seconds": 32400,
+  "runtime_gate_can_pass_under_current_recipe": false,
+  "nonnegative_setup_cold_warmup_and_other_costs_omitted": true,
+  "final_engineering_audit_pending": true,
+  "quality_evaluated": false,
+  "new_gpu_executions": 0,
+  "current_job_unchanged": true,
+  "source_sha256": {
+    "live_progress": "d8e4990ae69aed525db087b699087bc0170f4e432b3575cdf05f216726459c50",
+    "parent_runtime_reference": "7b39c7c9a1107d8e842656cf5a90931bd3db81be4e89e80d8572a2531e0a0c2a"
+  },
+  "mirror_live_event": {
+    "stage": "mirror_cohort_complete",
+    "rows": 512,
+    "seconds": 298.57615846500005,
+    "cohort": "uniform"
+  },
+  "live_progress_observed_at": "2026-11-08T11:44:52.983881+00:00"
+}

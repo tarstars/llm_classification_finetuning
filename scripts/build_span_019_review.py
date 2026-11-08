@@ -11,10 +11,19 @@ REPO = Path(__file__).resolve().parents[1]
 def main():
     registry = json.loads((REPO/'backlog/hypotheses.json').read_text())
     assert registry['active_version'] == 19, 'Preserve the historical notebook after closure'
+    pub=REPO/'results/span_019'
+    if (pub/'engineering_qualification.json').exists():
+        gate=json.loads((pub/'engineering_qualification.json').read_text())
+        stage=('FINAL engineering result: runtime gate '+('passed' if gate['engineering_gate_passed'] else 'FAILED')+
+            '. Quality has not been evaluated.')
+    elif (pub/'runtime_live_observation.json').exists():
+        stage='INTERIM live runtime result: the nine-hour lower bound fails; terminal controls/audit pending. Quality has not been evaluated.'
+    else:
+        stage='INTERIM source and offline asset results. Quality and GPU runtime are unmeasured.'
     nb = nbf.v4.new_notebook(cells=[
         nbf.v4.new_markdown_cell('''# V19: accessible paired-classifier mirror
 
-**INTERIM source and offline asset results. Quality and GPU runtime are unmeasured.**
+**'''+stage+'''**
 Retain official 0.82987 / rank 23; the rank ≤19 goal remains active. This notebook
 records the pinned mirror, verified head, input semantics, native matrix-layout
 correction and available asset receipts. It does not estimate a competition score.
@@ -40,7 +49,7 @@ display(pd.DataFrame(c['synthetic_input_checks']))
 display(pd.DataFrame(c['synthetic_native_GPTQ_arithmetic']))
 print('Preserved first failure: ordinary-layout synthetic projection max difference',failure['linear_max_abs'])
 print('Weights were bit-identical:',failure['max_abs_weight']==0)
-print('Correct native-layout synthetic projections match exactly; whole-model GPU probabilities unmeasured.')
+print('Correct native-layout synthetic projections match exactly. Whole-model GPU inference is a separate stage below.')
 fixtures=['Empty','Short','Newline','Specials','Long Q','Long A','Long B','Long A + pad']
 rows=c['synthetic_input_checks'];x=list(range(len(rows)))
 fig,ax=plt.subplots(figsize=(10,3.5))
@@ -64,7 +73,7 @@ if (PUB/'worker_cpu_validation.json').exists():
  print('Tiny saved-model tests:',checks['native_test_count'],'; pipeline tests:',checks['pipeline_test_count'])
  print('CPU runtime:',checks['runtime'])
  print('Selected production backend:',checks['production_backend'])
- print('Real GPU fit/speed verified:',checks['production_backend_memory_speed_verified'])
+print('Real GPU fit/speed verified at the earlier CPU preparation stage:',checks['production_backend_memory_speed_verified'])
 for filename in ['weight_acquisition.json','dense_expansion.json']:
  if (PUB/filename).exists():
   r=read(filename)
@@ -72,7 +81,7 @@ for filename in ['weight_acquisition.json','dense_expansion.json']:
     'head_bytes_identical','runtime_native_layout_required','new_gpu_executions','quality_measured','gpu_admitted'] if k in r})
  else: print(filename,'not complete at this notebook snapshot')
 print('No training or new quantization. Offline source/asset checks do not admit a GPU or official submission.')
-print('Native whole-model controls, fixed quality comparison, actual512/fullwarmup runtime and official trial remain pending.')'''),
+print('Separate GPU engineering evidence appears below when available; no quality conclusion follows from CPU checks.')'''),
         nbf.v4.new_code_cell('''for name in ['asset_upload.json','upload_live_observation.json']:
  if (PUB/name).exists():
   r=read(name)
@@ -88,6 +97,27 @@ if (PUB/'classifier_followup_cell_rehearsals.json').exists():
  print('Followup notebook local checks passed:',r['passed'])
  print('These are CPU orchestration checks; real model GPU exercised:',r['real_model_gpu_exercised'])
 print('The separate followup is conditional on the initial engineering/runtime gate; no new score is available.')'''),
+        nbf.v4.new_code_cell('''if (PUB/'engineering_qualification.json').exists():
+ e=read('engineering_qualification.json');r=e['runtime']
+ print('Terminal engineering checks passed:',e['engineering_checks_passed'])
+ print('Native numerical controls:',e['native_controls'])
+ print('Retained canonical probability max difference:',e['retained_canonical_probability_max_abs'])
+ print('Conservative hidden runtime hours:',r['projected_hidden_seconds']/3600)
+ print('Runtime gate passed:',e['engineering_gate_passed'])
+ print('Human quality votes read:',e['human_votes_read'])
+ display(pd.DataFrame([{'expert':'Retained Gemma','seconds_per_row':r['retained_seconds_per_row']},
+  {'expert':'Mirror, both replicas wall time','seconds_per_row':r['mirror_parallel_seconds_per_row']}]))
+ fig,ax=plt.subplots(figsize=(7,3))
+ ax.barh(['Nine-hour limit','Conservative candidate'],[9,r['projected_hidden_seconds']/3600],color=['gray','tab:orange'])
+ ax.set_xlabel('Elapsed hours for 25,000 rows');fig.tight_layout();plt.show()
+elif (PUB/'runtime_live_observation.json').exists():
+ r=read('runtime_live_observation.json')
+ print('LIVE worker mirror profile:',r['mirror_profile_rows'],'rows in',r['mirror_profile_seconds'],'seconds')
+ print('Hidden runtime LOWER BOUND hours:',r['lower_bound_hours'],'; startup/warmup/other costs omitted')
+ print('Terminal artifact/canonical/memory audit pending:',r['final_engineering_audit_pending'])
+ print('The lower bound already exceeds nine hours; this backend cannot advance to the quality followup.')
+else: print('No GPU timing evidence at this snapshot.')
+print('Official best remains0.82987/rank23. No new competition score or honest model-quality estimate.')'''),
     ])
     nb.metadata['kernelspec'] = dict(display_name='Python 3',language='python',name='python3')
     result = NotebookClient(nb,timeout=120,kernel_name='python3',
