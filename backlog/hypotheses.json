@@ -6077,6 +6077,14 @@
           "evidence": [
             "docs/SPAN_019_SOURCE_RESULTS.md"
           ]
+        },
+        {
+          "at": "2026-11-08T11:16:19+00:00",
+          "status": "running",
+          "note": "Private native upload remains live in exec5983; fixed comparator routes prepared without votes (175 later,42control). Separate followup pipeline/serialized notebook passes public-hidden routing, CSV and worker success/failure/watchdog checks; no GPU admitted yet.",
+          "evidence": [
+            "results/span_019/classifier_followup_cell_rehearsals.json"
+          ]
         }
       ]
     }

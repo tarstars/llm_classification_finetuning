@@ -73,6 +73,21 @@ for filename in ['weight_acquisition.json','dense_expansion.json']:
  else: print(filename,'not complete at this notebook snapshot')
 print('No training or new quantization. Offline source/asset checks do not admit a GPU or official submission.')
 print('Native whole-model controls, fixed quality comparison, actual512/fullwarmup runtime and official trial remain pending.')'''),
+        nbf.v4.new_code_cell('''for name in ['asset_upload.json','upload_live_observation.json']:
+ if (PUB/name).exists():
+  r=read(name)
+  print(name,{k:r[k] for k in ['at','dataset','ready','status','process_exists','last_observed_open_file',
+    'last_observed_file_read_position_bytes','file_total_bytes','service_ready_unproven'] if k in r})
+if (PUB/'quality_preparation.json').exists():
+ q=read('quality_preparation.json')
+ display(pd.DataFrame([{'cohort':name,'total_rows':r['rows'],'routed_rows':r['selected_rows'],
+  'routed_work_fraction':r['work_fraction']} for name,r in q['routes'].items()]))
+ print('Comparator routes frozen from verified old predictions; winner labels used:',q['uses_winner_labels'])
+if (PUB/'classifier_followup_cell_rehearsals.json').exists():
+ r=read('classifier_followup_cell_rehearsals.json')
+ print('Followup notebook local checks passed:',r['passed'])
+ print('These are CPU orchestration checks; real model GPU exercised:',r['real_model_gpu_exercised'])
+print('The separate followup is conditional on the initial engineering/runtime gate; no new score is available.')'''),
     ])
     nb.metadata['kernelspec'] = dict(display_name='Python 3',language='python',name='python3')
     result = NotebookClient(nb,timeout=120,kernel_name='python3',

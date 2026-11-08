@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "worker": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.02243661880493164,
+        "exit_code": 0,
+        "role": "classifier_followup"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.021460294723510742,
+        "exit_code": 7,
+        "role": "classifier_followup"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.20134401321411133,
+        "exit_code": -15,
+        "role": "classifier_followup"
+      }
+    }
+  ],
+  "mode_checks": [
+    {
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    }
+  ],
+  "notebook_startup_passed": true,
+  "actual_pipeline_cpu_tests_passed": true,
+  "test_output": "ARENA_EVENT {\"stage\": \"mirror_engineering_complete\", \"complete\": true, \"rows\": 2}\nARENA_EVENT {\"stage\": \"mirror_engineering_complete\", \"complete\": true, \"rows\": 2}\nARENA_EVENT {\"stage\": \"mirror_followup_complete\", \"complete\": true, \"rows\": 4}\ntest_public_routes_and_hidden_csv_without_accessing_source_or_labels (test_span019_followup.FollowupTests.test_public_routes_and_hidden_csv_without_accessing_source_or_labels) ... ok\ntest_source_hash_rejected_before_inference (test_span019_followup.FollowupTests.test_source_hash_rejected_before_inference) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.087s\n\nOK\n\ntest_passes_through_original_logits_and_profile (test_span019_checked_infer.RepeatedLogitTests.test_passes_through_original_logits_and_profile) ... ok\ntest_rejects_a_common_logit_shift_even_if_softmax_would_match (test_span019_checked_infer.RepeatedLogitTests.test_rejects_a_common_logit_shift_even_if_softmax_would_match) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n",
+  "real_model_gpu_exercised": false,
+  "new_gpu_executions": 0
+}

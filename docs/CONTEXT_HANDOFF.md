@@ -148,3 +148,36 @@ A failed/incomplete read does NOTmean ownteam vanished or the goal succeeded.
 Current model/workerbundle sources remain frozen from320fabf; no GPU/pushintent
 or newscore. Notebook31 refreshed and important preparation pushed. Source
 observer/liveupload observation are the current new bookkeeping changes.
+
+## Nov8 followup preparation during the same upload
+
+At11:08UTC a fresh first page confirms rank23/0.82987 and leader0.82702.
+Two attempted full reads rejected replayed pages; they did not prove a new team
+count or goal success. Latest complete board remains10:49UTC/311teams.
+The preceding user-status turn did not advance model quality; this continuation
+made actual preparation progress and confirmed the same live upload handle5983.
+At11:14UTC PID3843170 remained alive, second shard read position3962798080/4999878040.
+No response/READY receipt; never start another upload. Poll5983 then actionverify.
+
+Quality methods committed/pushed ine17b7ab. Actual CPU preparation completed:
+results/span_019/quality_preparation.json freezes source175/control42reverse rows
+from hash-verified old G/Loutputs, no votes. Additional separate followup sources:
+span019_followup.py, span019_checked_infer.py; build/run/audit_span_019_followup.py.
+The builder derives the initial notebook without changing its frozen source.
+Public followup repeats initial engineering, then mirror source1024 and actual
+retained reverse Gemma on frozen routes. Hidden mode calls original test-only
+pipeline before touching any source text/routes. Repeated raw-logit guard adds
+the explicit<=1e-5check alongside initial reference/probability checks; no math
+change. Two pipeline/public-hidden tests and two raw-logit guard tests pass.
+Actual serialized followup worker success/failure/watchdog, notebookstartup and
+branch rehearsals pass. Final rebuild/commit must match currentfiles before any
+followup admission. Audit script is syntaxchecked, not realGPU-qualified yet.
+
+run_span_019_followup.py separately admits the one<=14400s followup ONLYafter
+engineering_qualification.json passes; freshinventory/quota/private pinnedinputs/
+fullterminalofficialhistory remain mandatory. No followup/public GPU launch yet.
+After COMPLETE, verify_experiment_source.py classifier_followup --span19, then
+audit_span_019_followup.py checks actual assets/IDs/head/tokens/canonicalcontrols/
+full512/80runtime before local votes and fixedgates. Cached source G/Linputs are
+hashverified; sourceH60reverse is actual, neverimputed. No official controller has
+been implemented for this candidate yet; only implement/admit after fullqualif.
