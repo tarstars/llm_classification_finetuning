@@ -40,6 +40,9 @@ Use the worse per-row extra-pass time from the pilot64probe, all357changed rows,
 qualification4uniform and63long rows. Add the worse whole80row new-mode warmup
 and whole57477-row selector timing. Preserve20%steady-work margin and600sreserve;
 never divide already parallel wall time by GPU count. Total must be<32400s.
+Parent artifacts are checked against their committed retrieval receipt; pilot
+artifacts and the exact pilot specification are hashed again before either the
+qualification audit or official decision uses their runtime/control references.
 
 Only then record descriptive class/loss diagnostics and freeze one deployment
 decision for the same accepted notebook version. No positive local-gain threshold

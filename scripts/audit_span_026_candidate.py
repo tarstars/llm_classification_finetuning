@@ -57,6 +57,12 @@ def main():
                 assert int(a['lengths'].max())<=s['max_position_embeddings']
                 memory[role_name].extend(c['peak_allocated_bytes'][g]/totals[g] for g in range(2))
     parent=ROOT/'runs/span_013/jobs/gemma_order/output/order_completion'
+    parent_receipt=read_json(REPO/'results/span_013/jobs/gemma_order/retrieval.json')
+    for n,h in parent_receipt['artifact_sha256'].items():assert sha256(parent.parent/n)==h
+    pilot_audit=read_json(pub/'pilot_audit.json');pilot_job=root/'jobs/context_pilot'
+    assert sha256(pilot_job/'retrieval.json')==pilot_audit['retrieval_sha256']
+    for n,h in read_json(pilot_job/'retrieval.json')['artifact_sha256'].items():assert sha256(pilot_job/'output'/n)==h
+    assert sha256(root/'pilot_spec.json')==read_json(pub/'pilot_preparation.json')['spec_sha256']
     identities={};replay={}
     for name in ['control','uniform','long','test']:
         a=np.load(out/('m0_'+name+'.npz'));b=np.load(out/('m3_'+name+'.npz'));ids=a['ids']

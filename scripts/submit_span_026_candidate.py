@@ -43,6 +43,11 @@ def candidate(root,pub):
     check_gate(gate,pilot,bundle)
     assert gate['pilot_audit_sha256']==bundle['pilot_audit_sha256']==sha256(pub/'pilot_audit.json')
     roles=['m0','m3','m0_reverse'];parent=ROOT/'runs/span_013/jobs/gemma_order/output/order_completion'
+    for n,h in read_json(REPO/'results/span_013/jobs/gemma_order/retrieval.json')['artifact_sha256'].items():assert sha256(parent.parent/n)==h
+    pilot_job=root/'jobs/context_pilot'
+    assert sha256(pilot_job/'retrieval.json')==pilot['retrieval_sha256']
+    for n,h in read_json(pilot_job/'retrieval.json')['artifact_sha256'].items():assert sha256(pilot_job/'output'/n)==h
+    assert sha256(root/'pilot_spec.json')==read_json(pub/'pilot_preparation.json')['spec_sha256']
     pilot_dir=root/'jobs/context_pilot/output/context_audit';spec=read_json(root/'pilot_spec.json')
     parent_roles={r:read_json(parent/(r+'_summary.json')) for r in roles}
     current_roles={r:read_json(out/(r+'_summary.json')) for r in roles}
