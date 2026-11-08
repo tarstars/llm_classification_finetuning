@@ -38,12 +38,12 @@ recipe, cross-fitting, primary later-vote loss, uncertainty/information gates,
 calibration overhead and resource limits. The exact serialized worker and offline
 runtime/assets must be prepared and rehearsed before weight/GPU admission.
 The exact serialized worker now passes success/failure/watchdog and real Jupyter
-startup checks. Four additional CPU tests execute its actual orchestrator to CSV
+startup checks. Five additional CPU tests execute its actual orchestrator to CSV
 and final bookkeeping in public/hidden/information-only modes, and reject failed children. The
 hidden test has no competition train.csv. No fake output is a quality estimate.
 Thirty immutable asset files are declared:16.380GBincluding four pinned wheels
 and the known external calibration data. Full weight acquisition and the single
-private dataset upload are separate steps; weight acquisition is now running.
+private dataset upload are separate steps; all33files/16.38GB are now hash-verified and the private upload is running.
 No GPU admission follows automatically. Existing private datasets total93.2MB. Unrelated names are redacted
 from the storage preflight. Notebook28contains the executed preparation results.
 Source-stage acceptance is recorded in results/span_016/source_audit.json.
@@ -53,3 +53,9 @@ reward output, keeps all1024quality groups while deferring target-runtime profil
 to the separately admitted follow-up. The first version cannot be submitted
 officially. Reward symlinks/runtime live in /tmp on Kaggle to keep heavy weights
 out of captured notebook outputs. Recipe, thresholds and resource caps stay fixed.
+
+Validation routing is now isolated by outer fold: one training-only calibrator
+supplies every routing score for that fold's complete cohort, and only its held-out
+predictions enter the estimate. A regression test verifies independence from other
+folds' models. The baseline route and deployed recipe are unchanged. All ten CPU
+checks and the refreshed serialized-worker rehearsals pass before any GPU output.

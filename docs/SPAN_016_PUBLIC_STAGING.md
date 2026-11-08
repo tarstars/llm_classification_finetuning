@@ -41,3 +41,14 @@ conservative<32400second hidden-runtime gates before one official trial. No extr
 GPU version, budget, recipe, threshold relaxation or automatic retry is authorized.
 An engineering failure retains its service status and requires a distinct explicit
 follow-up admission; an observation timeout never permits a duplicate mutation.
+
+For each outer validation fold, compute all cohort probability-dependent routing
+scores with that fold's training-only calibrator, then retain its held-out rows.
+This keeps a held-out label outside its route through other rows' calibrators.
+The frozen baseline uses its unchanged cohort route; both arms share the same
+full reverse-Gemma cache. Save every fold route and its work fraction. The union
+of held-out selected rows describes cross-validation rather than one deployed
+cohort budget. Deployment uses one full-data-trained calibrator and the same
+10%work/20%row rule. A regression test changes another fold's model and verifies
+that the held-out fold's predictions and route remain unchanged. No reward output
+or GPU result was seen before this validation correction.

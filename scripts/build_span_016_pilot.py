@@ -136,7 +136,7 @@ env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLA
     assert tested.returncode == 0, tested.stdout + tested.stderr
     atomic_json(pub / (role + '_cell_rehearsals.json'), dict(passed=True, checks=checks,
         notebook_startup_passed=True, mode_checks=mode_checks, actual_pipeline_cpu_tests_passed=True,
-        actual_pipeline_tests=4, new_gpu_executions=0))
+        actual_pipeline_tests=5, new_gpu_executions=0))
     source_names = ['GOAL.md', 'docs/SPAN_016_PLAN.md', 'docs/SPAN_016_PILOT_PROTOCOL.md',
         'docs/SPAN_016_PUBLIC_STAGING.md',
         'scripts/build_span_016_pilot.py', 'src/arena/notebook_worker.py', *files.values(),

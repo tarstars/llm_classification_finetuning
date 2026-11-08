@@ -27,6 +27,28 @@ def mixture(gemma, reward, indices, reverse):
     return result
 
 
+def outer_fold_mixture(ids, gemma, differences, lengths, reverse, folds):
+    """Keep each held-out label outside every probability used by its route."""
+    result = np.full_like(gemma, np.nan, dtype=float)
+    filled = np.zeros(len(ids), dtype=int)
+    selected_validation, records = [], []
+    for fold in folds:
+        calibrator = TieCalibration()
+        calibrator.theta = np.asarray(fold['theta'], dtype=float)
+        probabilities = calibrator.predict_proba(differences)
+        indices, _, work = route_indices(ids, gemma, probabilities, lengths)
+        predictions = mixture(gemma, probabilities, indices, reverse[indices])
+        validation = np.asarray(fold['validation_indices'], dtype=int)
+        result[validation] = predictions[validation]
+        filled[validation] += 1
+        selected_validation.extend(np.intersect1d(indices, validation).tolist())
+        records.append(dict(fold=fold['fold'], selected_indices=indices.tolist(),
+            selected_work_fraction=float(work[indices].sum() / work.sum())))
+    assert np.all(filled == 1)
+    validate_probabilities(result, len(ids))
+    return result, np.sort(np.asarray(selected_validation, dtype=int)), records
+
+
 def orchestrate(args, launch=subprocess.run):
     started = time.monotonic()
     raw, out, reward_assets = Path(args.raw), Path(args.out), Path(args.reward_assets)
@@ -113,10 +135,12 @@ def orchestrate(args, launch=subprocess.run):
         assert all(np.array_equal(v['ids'], source.id) for v in [a, b, reverse])
         old, _, _ = route_indices(source.id.to_numpy(), a['probabilities'], b['probabilities'][:, [1, 0, 2]],
             np.c_[a['lengths'], b['lengths']])
-        new, _, _ = route_indices(source.id.to_numpy(), a['probabilities'], crossfitted,
-            np.c_[a['lengths'], reward_source['lengths'].sum(axis=1)])
         baseline = complete_gemma_order(a['probabilities'], b['probabilities'], old, reverse['probabilities'][old])
-        candidate = mixture(a['probabilities'], crossfitted, new, reverse['probabilities'][new])
+        candidate, new, fold_routes = outer_fold_mixture(source.id.to_numpy(), a['probabilities'],
+            differences, np.c_[a['lengths'], reward_source['lengths'].sum(axis=1)],
+            reverse['probabilities'], folds)
+        save(out / 'quality_routing.json', dict(mode='outer_training_model_for_whole_cohort',
+            folds=fold_routes, candidate_route_is_validation_union=True))
         np.savez_compressed(out / 'quality_comparison.npz', ids=source.id.to_numpy(),
             baseline=baseline, candidate=candidate, crossfitted_reward=crossfitted,
             baseline_route=old, candidate_route=new)

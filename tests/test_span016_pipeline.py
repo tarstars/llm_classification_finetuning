@@ -9,10 +9,24 @@ import numpy as np
 import pandas as pd
 
 from arena.span010_order import digest
-from arena.span016_pipeline import orchestrate
+from arena.span016_pipeline import orchestrate, outer_fold_mixture
 
 
 class PipelineBookkeepingTests(unittest.TestCase):
+    def test_validation_route_is_isolated_from_other_folds_models(self):
+        n = 20
+        ids = np.arange(n)
+        gemma = np.tile([.7, .15, .15], (n, 1))
+        reverse = np.tile([.3, .2, .5], (n, 1))
+        d, lengths = np.linspace(-3, 3, n), np.full((n, 2), 64)
+        folds = [dict(fold=0, theta=[.5, 0., .1], validation_indices=list(range(10))),
+            dict(fold=1, theta=[.1, 0., .1], validation_indices=list(range(10, n)))]
+        first, _, routes = outer_fold_mixture(ids, gemma, d, lengths, reverse, folds)
+        self.assertGreater(len(routes[0]['selected_indices']), 0)
+        folds[1]['theta'] = [10., 20., 10.]
+        changed, _, _ = outer_fold_mixture(ids, gemma, d, lengths, reverse, folds)
+        np.testing.assert_array_equal(first[:10], changed[:10])
+
     def prepare(self, root, qualify):
         raw, assets = root / 'raw', root / 'assets'
         raw.mkdir()

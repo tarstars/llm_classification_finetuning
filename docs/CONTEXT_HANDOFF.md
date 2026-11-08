@@ -1,6 +1,6 @@
 # Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
 
-Snapshot2026-11-08T04:28UTC. Read PROJECT_POLICY.md and current GOAL.md, then
+Snapshot2026-11-08T04:48UTC. Read PROJECT_POLICY.md and current GOAL.md, then
 verify live state. Persistent goal "move above20th place" means rank<=19 for
 team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
 Do not create another goal or mark complete from a span closure.
@@ -56,22 +56,25 @@ hidden labels. Only reward expert replaces Llama; equal total expert weights.
 
 Source-only audit15.98MB; full-weight acquisition is running as described below. Native synthetic rendering passes both
 local5.22.1and isolated pinned4.52.3runtime; first BatchEncodingAPI failure retained,
-explicit return_dict=False fixes it. Five mapping tests plus four actual pipeline
-bookkeeping tests pass (nine total). Serialized worker success/failure/watchdog/Jupyter and
+explicit return_dict=False fixes it. Five mapping tests plus five actual pipeline
+bookkeeping tests pass (ten total). Serialized worker success/failure/watchdog/Jupyter and
 public/hidden branches pass; no competition train.csvin hidden CPU test. Notebook28
 is executed interim3cells/0errors and may refresh while v16active. Generated real
 GPU notebook ROOT/runs/span_016/notebooks/reward_pilot; role reward_pilot. Its
 bundle/source/profile/manifest hashes must stay frozen before accepted GPU work.
 
-Preparation/source freeze dddfecfis PUSHED. Full-weight acquisition is NOW
-RUNNING via unified session17682: scripts/stage_span_016_assets.py prepare.
-04:27UTC exact poll confirms live: ALL8Bshards/15.136GB are SHA-verified;
-0.6Bsingle1.192GBfile is downloading. No upload intent or GPU version yet. Do not
-restart while live. Observe same handle; .part bytes are useful read-only progress.
-After completion, upload ONCE with intent/receipt and verify private datasetv1. Manifest30files/16.380GB, actual
-weights16.329GB, four modern wheels, source.parquet+known external labels.npz.
-Flat private asset arseniytrushin/llm-span016-reward-assets/1; model prefixes
-rm8b__/rm06__. No full weights until exact serialized rehearsal passed (now passed).
+Preparation/source freeze dddfecfis PUSHED; final information-stage source
+0d8ea4dis PUSHED. Weight acquisition17682is TERMINAL exit0: all16.329GBweight
+hashes verified; whole33file package16,380,017,198bytes. Receipt
+results/span_016/asset_preparation.json. No need/reason to rerun prepare.
+Private dataset upload is NOW RUNNING via unified session95273:
+scripts/stage_span_016_assets.py upload. Observe this exact handle; NEVER repeat
+upload if its intent exists. It creates arseniytrushin/llm-span016-reward-assets/1,
+private=True. The original prepared payload is flat, with rm8b__/rm06__model
+prefixes, four pinned wheels, source.parquet+known external labels.npz, component
+attribution/Apache license. After terminal success, run the SAME program verify;
+if processing is pending, poll the same dataset/version. No GPU is launched by
+upload. Fresh full jobs/quota/dependencies/receipt cursors remain mandatory.
 Before first GPU, source/bundle was refreshed for required null/missing-turn
 telemetry, unchanged model recipe. New run_span_016_pilot.py validates full cursor
 receipt history and all five pinned datasets via the existing controller. It must
@@ -87,8 +90,7 @@ pooling control aligns reference to the actual output device for Accelerate hook
 No GPU auditor/official controller for v16has been implemented yet; do not reuse
 v13mutation programs. Implement exact accepted-source/raw-control/OOF/calibration/
 runtime/CSV audits while the actual pilot is running. No new quality result yet.
-Current owned private datasets total93.2MB; unrelated names redacted. No upload
-intent or GPU receipt yet. If download interrupts, reconcile exact .part; accepted
+Current owned private datasets total93.2MB; unrelated names redacted. Upload intent must be reconciled; no GPU receipt yet. If download interrupts, reconcile exact .part; accepted
 upload timeouts require observation of the same dataset, never repeat mutation.
 H62row-ceiling remains planned/P2; no extra current-span coverage variants.
 
@@ -131,3 +133,13 @@ Heavy files underROOT; programs/Markdown/aggregates/notebooks in Git. Never walk
 HOME,~/prj, Arc/FUSE or troll_farm. No subagents. Preserve user-dirty notebooks07/12,
 never stage/reset. Notebook symlink resolves to repo/notebooks. Commit/push explicit
 relevant paths. Last goal turn made actual source-audit progress; rank goal ACTIVE.
+
+Pre-GPU validation correction: span016_pipeline.outer_fold_mixture uses each
+outer-training calibrator for ALL cohort routing probabilities, then retains only
+that fold's held-out predictions. This removes indirect label influence through
+other folds' models in the global budget route. Baseline H60global cohort route
+unchanged; source full reverse-Gemma cache common to both arms. quality_routing.json
+records each fold's indices/work; candidate_route is the held-out selection union,
+not a single deployed work budget. New regression test proves other folds' theta
+cannot affect a held-out fold. Ten total CPU checks; all before any actual reward
+output. Bundle/source was rebuilt and rehearsed, awaiting milestone publication.

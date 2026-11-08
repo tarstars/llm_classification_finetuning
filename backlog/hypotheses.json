@@ -4989,6 +4989,14 @@
           "evidence": [
             "docs/SPAN_016_PUBLIC_STAGING.md"
           ]
+        },
+        {
+          "at": "2026-11-08T05:02:06+00:00",
+          "status": "running",
+          "note": "All33assetfiles/16.38GB are verified and one private upload is live with a durable intent. Before any GPU/reward output, isolated each outer-fold route from other folds calibration models; ten CPU checks and exact serialized-worker rehearsals pass. No quality or rank improvement claimed.",
+          "evidence": [
+            "docs/SPAN_016_PROGRESS.md"
+          ]
         }
       ]
     },

@@ -229,6 +229,7 @@ A post-trained preference reward model may complement or replace a joint classif
 - 2026-11-08T02:59:18+00:00 — running: Starting bounded pinned-source/offline-feasibility audit under docs/SPAN_016_PLAN.md; no model weights, rewards or GPU admitted. Evidence: [docs/SPAN_016_PLAN.md](docs/SPAN_016_PLAN.md)
 - 2026-11-08T03:18:42+00:00 — running: Source stage passed without weights/GPU. Froze1024fresh Arena groups after both pinned reward publications, excluding2048inspected groups. Native rendering and five calibration tests pass; exact worker/offline runtime still required before admission. Evidence: [docs/SPAN_016_PROGRESS.md](docs/SPAN_016_PROGRESS.md)
 - 2026-11-08T04:29:18+00:00 — running: Before any reward output/GPU, separated the full1024quality information stage from later512target-runtime qualification; fixed recipe/gates/caps unchanged. Nine CPU tests and serialized public/hidden/watchdog rehearsals pass. Weight staging is live; first version is explicitly ineligible for official submission. Evidence: [docs/SPAN_016_PUBLIC_STAGING.md](docs/SPAN_016_PUBLIC_STAGING.md)
+- 2026-11-08T05:02:06+00:00 — running: All33assetfiles/16.38GB are verified and one private upload is live with a durable intent. Before any GPU/reward output, isolated each outer-fold route from other folds calibration models; ten CPU checks and exact serialized-worker rehearsals pass. No quality or rank improvement claimed. Evidence: [docs/SPAN_016_PROGRESS.md](docs/SPAN_016_PROGRESS.md)
 
 ### H02
 
