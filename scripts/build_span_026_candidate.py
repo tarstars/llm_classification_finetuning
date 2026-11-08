@@ -105,7 +105,8 @@ env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLA
         'results/span_026/span_plan.json','results/span_026/pilot_audit.json','results/span_026/candidate_preparation.json',
         'src/arena/span026_qualification.py','src/arena/notebook_worker.py','src/arena/kaggle_control.py',
         'scripts/prepare_span_026_candidate.py','scripts/build_span_026_candidate.py','scripts/run_span_026_candidate.py',
-        'scripts/audit_span_026_candidate.py','tests/test_span026_candidate.py']
+        'scripts/audit_span_026_candidate.py','scripts/submit_span_026_candidate.py',
+        'tests/test_span026_candidate.py','tests/test_span026_submission.py']
     atomic_json(pub/(role+'_bundle.json'),dict(role=role,source_sha256={n:sha256(REPO/n) for n in sources},
         notebook_sha256=sha256(folder/'job.ipynb'),metadata_sha256=sha256(folder/'kernel-metadata.json'),
         public_cap_seconds=3600,hidden_cap_seconds=32400,pilot_audit_sha256=sha256(pub/'pilot_audit.json'),
