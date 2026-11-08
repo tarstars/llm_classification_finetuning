@@ -6648,6 +6648,22 @@
           "evidence": [
             "results/span_025/identical_pilot_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-08T15:24:08+00:00",
+          "status": "running",
+          "note": "Frozenpilot accepted once as arseniytrushin/llm-preference-span025-identical-audit/1 at15:23UTC, QUEUED; controller27732/PID392536live. Fresh fullinventory noactivejobs,7officialreceipts terminal, fourpinnedpublicdatasetsv1; quota87895.611sfree/reserved0/paidFalse. Information-only1800scap, no official; verifyacceptedsource then monitor sameversion.",
+          "evidence": [
+            "results/span_025/jobs/identical_pilot/push.json"
+          ]
+        },
+        {
+          "at": "2026-11-08T15:41:11+00:00",
+          "status": "running",
+          "note": "Acceptedsource verified against exactcells/image/offline4publicdatasets. Samev1worker finished bothroles/275pairs, reported774.814s; service stillRUNNING at15:40UTC, so no terminal/artifact/control/label audit yet. Controller27732 remains live; observe sameversion, no rerun.",
+          "evidence": [
+            "results/span_025/jobs/identical_pilot/progress.json"
+          ]
         }
       ]
     }

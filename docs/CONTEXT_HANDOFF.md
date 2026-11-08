@@ -1,6 +1,6 @@
 # Active rank goal; v24 stopped, v25 identical-pair preparation passed
 
-Snapshot Nov8 2026,15:11UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot Nov8 2026,15:46UTC. Read PROJECT_POLICY.md, GOAL.md,
 SPAN_025_PLAN.md and SPAN_025_PROGRESS.md. Persistent goal team17244411rank<=19
 on fresh complete officialboard after legitimateinference. ACTIVE/unachieved;
 no budget. No subagents. Never walk HOME/~/prj/Arc/FUSE/troll_farm.
@@ -13,7 +13,16 @@ reject/retry SAMEcursor on replay, neverdedup. No officialsincev13.
 
 ## Current v25/H71
 
-V25active,38members,focus[H71],H71running=preparation, not liveGPU.
+V25active,38members,focus[H71],H71RUNNING realGPU pilot /1.
+Accepted15:23UTC; RUNNING15:24UTC. Controller27732/PID392536live.
+SourceverificationPASSED, unchanged pinnedimage/offlinefourpublicv1datasets.
+Next observe SAMEversion untilterminal; never rerunbuilder/push/prepare.
+Then run frozen scripts/audit_span_025_pilot.py after allretrievedartifacts.
+Worker information_complete reported774.814s, both275rowpasses done.
+Service stillRUNNING at15:46UTC. Outputcatalog42files includes
+session_summary.json and information_complete.json; metadataonlyobserved,
+no predictions/labels retrieved/auditedyet. WAITsamecontroller/version.
+No qualityquery or official yet. Notebook37has executedprogresscells.
 V26draftempty.89registeredtasks,98snapshots;37unfinishedcarried. Preserveall.
 One identical-only published rule [.06,.06,.88], allotherrowsretainH60.
 No emptypatterns/fittedconstants/normalization/grid. All275rawA==rawBIDs frozen
@@ -36,7 +45,7 @@ Command was PYTHONPATH=/tmp/llm_span019_runtime .venv/bin/python
 scripts/prepare_span_025.py. DO NOT rerun; originalcohort/result alreadyexist.
 This is CPUtokenproof, not realGPUruntime qualification.
 
-NEXT: build/rehearse one information-onlyworker using unchanged H60engine
+Frozen information-onlyworker uses unchanged H60engine
 src/arena/span010_order.py (samehashinspan013bundle), not a new backend.
 Existing infer_role supports --role m0/m3 and --cohorts warmup,control,uniform;
 map uniform to all275identicalIDs, warmup first80canonicalcontrolIDs. Onepilot
@@ -44,10 +53,10 @@ map uniform to all275identicalIDs, warmup first80canonicalcontrolIDs. Onepilot
 tokens/devices/memory/artifacthashes. No modelweightsacquisition. Freeze/push
 worker, cohort, scoringmethod beforeGPU/labels. Tinyactualnotebook success/
 failure/watchdog/Jupyterstartup rehearsals; freshfullquota/jobs/receipts/deps.
-Pilotbuilder/controller/qualityauditor nowexist and CPUrehearsalspass.
-Sources/bundle mustbepushed beforefresh admission. No acceptedpilotyet.
-Controller: scripts/run_span_025_pilot.py (preparealreadydone; NEVERrepeat
---prepare). Builderalreadydone. Qualityauditor frozenbeforeoutputs.
+Pilotbuilder/controller/qualityauditor frozen in52b4596 andpushed;
+CPUmocks andactualfinalcell/Jupyterstartup rehearsals pass. Pilotaccepted /1.
+Controller: scripts/run_span_025_pilot.py isLIVE(session27732). NEVERrepeat
+--prepare/build/push. Qualityauditor frozenbeforeoutputs; notrunyet.
 Quotaanchor20104.389used/87895.611free/reserved0/paidFalse, deadlineunchanged.
 
 Primary populationweighted lowerboundgain>.0005 and positivepairedpromptgroup95
@@ -84,7 +93,7 @@ Do notrepeatsourcecalls/downloadweights; H55prior403neverretry.
 
 ## Retained runtime and resources
 
-No liveGPUjob. Latest exactterminal inventoryafterH66:68ownednotebooks,
+Historical pre-H71 terminal inventoryafterH66:68ownednotebooks,
 7officialreceiptsterminal, used20104.389s/reserved0/free87895.611s=24.42h,
 paidFalse,refreshNov14. Historical; refreshbefore separatelyadmittedGPU.
 OriginalNov10 08:37:37.343197UTCdeadline/quotaanchor weren'treset.
@@ -116,5 +125,6 @@ observationtimeout NEVER means repeatupload/push/submission. ObserveSAMEhandle.
 Preserveuserdirty notebooks07_error_poster.ipynb and12_backlog_v1_span.ipynb;
 hashes results/span_025/preservation.json, bytewiseunchanged. Neverstage/reset.
 ~/notebooks/llm_classification_finetuning linkcorrect. Heavyarrays stayDB;
-code/MD/aggregate/executednotebooksGit. Latest priorpublication aff9109frozeH70; currentH70result/H71preparation are
-beingpublished next. Goalturnmade actualprogress; no genuineblocker.
+code/MD/aggregate/executednotebooksGit. 52b4596 frozeH71worker/auditor beforeGPU;
+7934025publishedH70closure/H71CPUpreparation. Verifycurrentgitlog.
+Goalturnmade actualprogress; no genuineblocker.

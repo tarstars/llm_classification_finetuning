@@ -1,0 +1,8 @@
+{
+  "stage": "monitoring",
+  "at": "2026-11-08T15:46:58.822730+00:00",
+  "pid": 392536,
+  "role": "identical_pilot",
+  "status": "RUNNING",
+  "kernel_version": "arseniytrushin/llm-preference-span025-identical-audit/1"
+}

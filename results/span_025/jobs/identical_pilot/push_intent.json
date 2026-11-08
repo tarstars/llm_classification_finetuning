@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T15:23:15.102395+00:00",
+  "kernel": "arseniytrushin/llm-preference-span025-identical-audit",
+  "quota_before": {
+    "used_seconds": 20104.389,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 87895.611
+  },
+  "max_session_seconds": 1800,
+  "notebook_sha256": "00d5f5f996249e893ae73f519c75df8a3abdbbcc134f351e8db7ed81ae31208d",
+  "metadata_sha256": "7ae3e4f38fe92c96435f6878a482ce2cdaa97ead724973ce17e49e76c8ffa43e"
+}

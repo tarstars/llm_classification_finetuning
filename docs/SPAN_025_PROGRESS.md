@@ -47,3 +47,7 @@ and dataset checks. The resource plan records87,895.611free seconds, zero
 reserved and paid scaling off, with the inherited deadline unchanged. Publish
 the bundle, then run fresh full admission before the single1800s pilot. No
 candidate labels or probabilities have been read; no GPU is admitted yet.
+
+The exact pilot was accepted at15:23UTC as `arseniytrushin/llm-preference-span025-identical-audit/1`; RUNNING at15:24UTC. Full admission found no other active jobs, all7official receipts terminal, fourpublic dependencies pinnedv1, reserved0/paidFalse. Accepted notebook cells and offline settings independently verified; image/machine/private/GPU/dataset fields match. Controller session27732/PID392536observes this one version. No official submission; quality remains unmeasured until terminal artifact/control audit.
+
+Both model passes finished; the worker reported information_complete after774.814s. At15:43:56UTC the output catalog already listed42files, including session_summary.json and all predictions. The service still reportsRUNNING at15:46UTC. This is not a failed execution or permission to launch a replacement. The controller remains live on the sameversion; terminal retrieval/control/quality auditing remains pending.
