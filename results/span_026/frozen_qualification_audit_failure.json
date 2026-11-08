@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-08T19:38:56.557958+00:00",
+  "passed": false,
+  "original_script_sha256": "107f235944ebc859e95d3b6674665b74b94a6c23051ae36072ddad8320e712fe",
+  "execution_session": 43888,
+  "exit_code": 1,
+  "failed_check": "bitwise derived JS-disagreement metadata",
+  "cohort": "control",
+  "rows": 256,
+  "mismatched_elements": 173,
+  "max_abs_difference": 2.7755575615628914e-17,
+  "route_indices_exact_at_failure": true,
+  "targets_read": false,
+  "original_source_preserved": true,
+  "matching_numpy126_replay_same_max_abs": true,
+  "decision": "retain_runtime_rejection"
+}

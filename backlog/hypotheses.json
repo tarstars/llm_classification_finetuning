@@ -6726,7 +6726,7 @@
       ],
       "id": "H72",
       "rank": 90,
-      "status": "running",
+      "status": "done",
       "introduced_in": 26,
       "discovered_during": 25,
       "derived_from": [
@@ -6828,6 +6828,14 @@
           "evidence": [
             "docs/SPAN_026_RUNTIME_REJECTION.md"
           ]
+        },
+        {
+          "at": "2026-11-08T19:49:33+00:00",
+          "status": "done",
+          "note": "BothacceptedjobsCOMPLETE/terminal70441+69187,73selectedartifactsverified, all12rawcontrolsdiff0/routes/mixtures/CSV/memorypass. OriginalfrozenterminalauditorfailedderivedJS2.78e-17bitwisecheck; source/failurepreserved, separate rejected-onlyH60-tolerance replay verifiesoutputs withraw1e-5unchanged, no targetlabels/officialauthority. Finalprojection34007.680s9h26m48>32400; parent32668.060already>9h. STOP/noofficial/norescue. Charge7903.763/10800s,22.0hfree,71ownedallterminal/noofficialpending. Freshrank23/310,.82987unchanged. Report/notebookcomplete; H73fixedweight+H74packingprerequisitequeuedfutureonly.",
+          "evidence": [
+            "docs/SPAN_026_RESULTS.md"
+          ]
         }
       ]
     },
@@ -6859,25 +6867,27 @@
       "risk": "high",
       "claim": "One predeclared60pctGemma/40pctLlama prior may improve the retained equal-expert mixture without another model pass; no gain is measured.",
       "basis": "H72adds text but worsens both local routing-state losses and shifts B/tie probabilities. H60strong ensemble retains50/50weights; H59testedonlytemperature, while H37/H43usedolderweak components. H61/H62order expansion and H64teacher paths already have preserved outcomes.",
-      "first_test": "After activation/selection and H72terminal outcome, freeze the legitimate best official incumbent and ONE60/40weight rule. Preserve its inputs/context, original H60route, T1 and kernels; split Gemmaweight equally across its orientations on-route(.3/.3/.4), off-route(.6/.4). One matched-cache descriptive comparison with seed42/2000group/class diagnostics, disclose originaltrainingoverlap and inspected later-domain limits. No fitting/grid. Prospectively freeze overall-.005gross-regression guard, actual all-role raw-control/route/CSV/runtime qualification and one official outcome before GPU.",
+      "first_test": "After H74passes andv27focus/contract isselected, After activation/selection and H72terminal outcome, freeze the legitimate best official incumbent and ONE60/40weight rule. Preserve its inputs/context, original H60route, T1 and kernels; split Gemmaweight equally across its orientations on-route(.3/.3/.4), off-route(.6/.4). One matched-cache descriptive comparison with seed42/2000group/class diagnostics, disclose originaltrainingoverlap and inspected later-domain limits. No fitting/grid. Prospectively freeze overall-.005gross-regression guard, actual all-role raw-control/route/CSV/runtime qualification and one official outcome before GPU.",
       "acceptance": "One frozen60/40candidate qualifies with exact source/IDs/tokens/checkpoints, <=1e-5rawcontrols, unchanged original route, actual hidden text inference, no prediction lookup and conservative<32400s including20pctmargin/allcold-fullwarm-other/600reserve. One legitimate official result measures target benefit; rank<=19 remains the goal, no local or later-domain score forecast.",
       "stop": "Do not run during v26 or while an official is pending, or after rankgoal achieved. No new weight/temperature/route/context candidates, source downloads, leaderboard fitting, margin relaxation or retry of failed historical experiments. Stop on fixed gross-regression/source/numerical/runtime/cap failure. Select explicit inherited quota/deadline and <=3600s public/oneversion/oneofficial contract before execution.",
-      "risk_reason": "Equal weights may already balance answer-order/model biases;60/40canworsen calibration and hidden preferences. Original votes overlap training; later votes previously failed transfer. Perturbation is fixed by design, not supported as an optimal weight.",
+      "risk_reason": "Equal weights may already balance answer-order/model biases;60/40canworsen calibration and hidden preferences. Original votes overlap training; later votes previously failed transfer. Perturbation is fixed by design, not supported as an optimal weight. Actual current4kbackbone also exceeds9h, so H74mustprovide measured headroom before this task canrun.",
       "mitigation": "Preserve the exact incumbent path and source, no extra inference or learned calibration; freeze one rule before replay and all outcomes before official. Report classes/paired uncertainty and interpretation limits; retain best existing official if the candidate loses.",
       "rationale": "Revisits an untested part of the CURRENTstrong ensemble with negligible inference overhead while respecting stopped order/source branches. It is a separate future task, not a rescue change to H72.",
-      "revision": "Queued from H72completedpilot and historical-scope review only; no60/40probabilities/quality inspected. Future comparator includes H72context only if its frozen official trial becomes the incumbent without achieving the goal.",
+      "revision": "Queued from H72completedpilot and historical-scope review only; no60/40probabilities/quality inspected. Future comparator includes H72context only if its frozen official trial becomes the incumbent without achieving the goal. After terminalH72runtime: parentalone32668.060s>9h. H74native10240packing is now an explicit engineering prerequisite; preserve exactrawoutputs and usequalifiednewpacking unchanged in H73. No60/40replayor10240execution occurred before this amendment.",
       "depends_on": [
         "E00",
         "E14",
         "H60",
         "H59",
         "E17",
-        "H72"
+        "H72",
+        "H74"
       ],
       "evidence": [
         "docs/SPAN_026_EXPERT_WEIGHT_DISCOVERY.md",
         "docs/SPAN_026_PILOT_RESULTS.md",
-        "docs/SPAN_011_RESULTS.md"
+        "docs/SPAN_011_RESULTS.md",
+        "docs/SPAN_026_PACKING_DISCOVERY.md"
       ],
       "id": "H73",
       "rank": 91,
@@ -6894,6 +6904,71 @@
           "note": "CompletedH72pilot adds evidence but worsens localB/tie behavior; historical review confirms current strong50/50expert weights were not ablated by olderweak H37/H43or temperature-onlyH59. QueueONEfixed60/40rule forfuture, no computation/current-spanchange.",
           "evidence": [
             "docs/SPAN_026_EXPERT_WEIGHT_DISCOVERY.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Qualify one larger native varlen packing cap with identical predictions",
+      "priority": "P1",
+      "gain": [
+        0,
+        0
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.02,
+        0.2
+      ],
+      "risk": "medium",
+      "claim": "Native10240token varlen packing may provide measured runtime headroom while preserving H60raw probabilities and inputs; packing itself claims no score gain.",
+      "basis": "H72completedqualification is numericallyexact but its4kparent projection32668.060s exceeds32400 before6kextra work. Currentnativepacking8192 has peakallocatedmemorynear70pct. H73postprocess-only weights cannot claim feasibility from olderfasterruns. This differs from stoppedmirror/padded-batchH66.",
+      "first_test": "In separatelyselectedv27, freezeONE10240sum-token cap with unchanged individual4kinputs/route/T1/equalexpertweights/sharding/fp16/kernels/batch80/num_workers0. Label-blind nativecollator/length audit first, then one<=3600sactual2T4fullprofile with earlycanonical256G/256L/42reverse <=1e-5 controls, exacttokens/IDs/checkpoints and<=95pctmemory. Actual512uniform/64long/all80warm/cold/other/visibleCSV before deploymentheadroom claim; no alternativepacking or quantization.",
+      "acceptance": "Alloriginalrawcontrols <=1e-5, route/mixture/input identity andactualbothT4memorypass; complete new-packing three-role runtime<32400 with20pctmargin/worsecold-fullwarm-other/600reserve. Report old8192comparator and actualnewthroughput; latercandidate usesworse matchingnew-packingpilot/currenttimes. No independentCV or scoregain claim from engineering equivalence.",
+      "stop": "No currentv26execution or researchGPUwhileofficialpending. Stop on source/token/raw/numerical/OOM/runtime/cap failure; no grid/fallback/faster-node retries or marginrelaxation. Iffailed,deferdependentH73withactualevidence; packingaloneisnotanofficialscorecandidate. Freeze actualremainingquota, <=3600spilot and inheritedNov10deadline beforeexecution.",
+      "risk_reason": "Largerpacking may not improve compute-bound throughput, can OOM or change GEMM numerical outputs. Session speed varies. Sum-token packing must not increase individual model positions or silently reorder examples.",
+      "mitigation": "One fixednative10240cap, exactcollator/inputproof and allraw/source/routecontrols beforepromotion, worstactualnew-mode timing across requiredprofiles, retainallfailures andoldmeasurements. Never borrow H66backend claims or relabel roundoff as modelidentity.",
+      "rationale": "Direct prerequisite for deploying a new quality change under the actual9h constraint; no added model source or training. Current70pctmemory is only a feasibility reason to profile.",
+      "revision": "QueuedonlyafterH72terminalfullprojection34007.680s/parent32668.060s and exactcontrols. No10240packing computation/GPU/quality inspected; v27activation/focus/contract required.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H60",
+        "H72"
+      ],
+      "evidence": [
+        "docs/SPAN_026_PACKING_DISCOVERY.md",
+        "docs/SPAN_026_RESULTS.md",
+        "results/span_026/candidate_qualification_replay.json"
+      ],
+      "id": "H74",
+      "rank": 92,
+      "status": "planned",
+      "introduced_in": 27,
+      "discovered_during": 26,
+      "derived_from": [
+        "H72"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T19:47:09+00:00",
+          "status": "planned",
+          "note": "Actualfullqual4kparent32668.060sexceeds9hdespiteexactrawcontrols. QueueONE10240nativepackingengineeringprerequisite forH73, withunchangedinputs/model/T1/route, strictcontrols andactualruntime; no new computation/current-spanchange.",
+          "evidence": [
+            "docs/SPAN_026_PACKING_DISCOVERY.md"
           ]
         }
       ]
@@ -6947,7 +7022,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 26,
+  "active_version": 27,
   "versions": [
     {
       "number": 1,
@@ -8849,7 +8924,7 @@
     },
     {
       "number": 26,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -8905,14 +8980,83 @@
       "carried_from": 25,
       "start_sha256": "ab438c3260a0f4f6ec2b1daa5c55dfe2c67fb0766172a7c7c7588b22fd168598",
       "start_markdown_sha256": "79044f31b613920aaf88476735997991e570f322e46c1c0a54265c767a7b1378",
-      "start_sealed_at": "2026-11-08T16:08:05+00:00"
+      "start_sealed_at": "2026-11-08T16:08:05+00:00",
+      "final_sha256": "c57d8213c38ba4117263e2844f214732844649be6d19376ae7d5dedafee72807",
+      "final_markdown_sha256": "f12f272ffa31d36d8af1fe15c7260fa36eec3ef1da21cd67a61a4ec690422bb1",
+      "final_sealed_at": "2026-11-08T19:49:33+00:00",
+      "closed_at": "2026-11-08T19:49:33+00:00",
+      "closing_note": "SealH72negative: localqualityworsens; completedactualfullruntime9h26m48fails9hdespiteexactrawoutputs.73artifacts/7903.763GPUspreserved; zeroofficials, rank23unchanged. Carry37unfinishedandnewH73weightprior/H74nativepackingprerequisite into27; nofutureexecutionuntilboundedfocus/contract.",
+      "closing_evidence": [
+        "docs/SPAN_026_RESULTS.md"
+      ]
     },
     {
       "number": 27,
-      "state": "draft",
+      "state": "active",
       "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "H74"
+      ],
+      "focus_ids": [
+        "H74",
         "H73"
       ],
+      "history": [
+        {
+          "at": "2026-11-08T19:55:35+00:00",
+          "note": "Persistent rank<=19goal continues after H72rejection. Actualparent32668sover9h requiresONE10240nativepackingengineeringprerequisite H74; onlyifpasses, H73fixed60/40prior withnoextramodelpass. Newboundedcontract docs/SPAN_027_PLAN.md preservesdeadline/quota/strictcontrols; no variants scored yet.",
+          "focus_ids": [
+            "H74",
+            "H73"
+          ]
+        }
+      ],
+      "carried_from": 26,
+      "start_sha256": "918fd5b2c91c4a14a919cbd8882da793829fb9df2e66a2b375153fd7fdd0b26c",
+      "start_markdown_sha256": "c3e1906f5ac582f0477ef8fc367597fa1bed5e8734b41ef35a1da5444591de67",
+      "start_sealed_at": "2026-11-08T19:49:33+00:00"
+    },
+    {
+      "number": 28,
+      "state": "draft",
+      "item_ids": [],
       "focus_ids": [],
       "history": []
     }

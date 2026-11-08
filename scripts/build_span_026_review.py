@@ -59,7 +59,7 @@ display(pd.DataFrame([{'stage':'Retained H60 projection','hours':30912.486027251
 print('Early screen passed:',early['early_engineering_passed'],'; headroom seconds:',early['headroom_seconds'])
 print('Observation:',early['observed_at'],'; independently audited:',early['independent_terminal_artifact_audit_complete'])
 print('This observation is not full qualification or a score estimate.')
-for filename in ['pilot_audit.json','candidate_qualification.json']:
+for filename in ['pilot_audit.json','candidate_qualification_replay.json']:
  path=PUB/filename
  if path.exists():
   result=json.loads(path.read_text())
@@ -69,6 +69,8 @@ for filename in ['pilot_audit.json','candidate_qualification.json']:
    'gross_regression_guard_passed','runtime_gate_passed','memory_guard_passed',
    'original_training_overlap','independent_cv','hidden_score_forecast','official_submission_eligible']})
   if 'slice_metrics' in result:display(pd.DataFrame(result['slice_metrics']).T)
+  if 'runtime' in result:print('Actual qualification projection hours:',result['runtime']['projection_seconds']/3600)
+  if 'validation_replay' in result:print('Original frozen validator failed derived-JS bitwise equality; rejected-only replay preserves raw1e-5controls and exact routes.')
  else:print(filename,': pending')
 floor_path=PUB/'qualification_runtime_floor_replay.json'
 if floor_path.exists():
@@ -76,7 +78,17 @@ if floor_path.exists():
  print('QUALIFICATION RUNTIME FLOOR: candidate rejected for official deployment')
  print('Minimum projected hours:',floor['minimum_projection_seconds']/3600,'; cap:',floor['hidden_limit_seconds']/3600)
  print('Frozen-function replay passed:',floor['passed'],'; target labels used:',floor['uses_targets'])
- print('Unknown measurements enter only nonnegative maxima. This is a floor, not full terminal qualification.')''')])
+ print('Unknown measurements enter only nonnegative maxima. This is a floor, not full terminal qualification.')
+charges=[]
+for role in ['context_pilot','context_qualification']:
+ path=PUB/'jobs'/role/'controller_state.json'
+ if path.exists():
+  state=json.loads(path.read_text())
+  if state['stage']=='complete':charges.append({'role':role,'charged_seconds':state['charged_seconds']})
+if charges:display(pd.DataFrame(charges))
+board_path=PUB/'final_leaderboard.json'
+if board_path.exists():
+ board=json.loads(board_path.read_text());print('Latest verified rank:',board['rank'],'/',board['teams'],'; retained official:',board['score'],'; checked:',board['observed_at'])''')])
     nb.metadata['kernelspec']=dict(display_name='Python 3',language='python',name='python3')
     executed=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     code=[c for c in executed.cells if c.cell_type=='code']

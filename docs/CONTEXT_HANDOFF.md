@@ -1,170 +1,130 @@
-# H72 rejected by runtime floor; capped qualification still finishing
+# V26 closed negative; v27 packing prerequisite and fixed expert prior
 
-Current snapshot Nov8 2026,19:18UTC. Persistent goal team17244411 rank<=19
-remains ACTIVE/unachieved. Fresh complete board18:19:24UTC:23/312,.82987,
-19th/20th.82915,leader.82692. results/span_026/midpilot_leaderboard.json.
-No new official since H60receipt58103553/source span013-gemma-order/1.
+Snapshot Nov8 2026,19:54UTC. Read PROJECT_POLICY.md, GOAL.md and
+SPAN_027_PLAN.md. Persistent tool goal: move above20th place, concretely own
+team17244411rank<=19 on a fresh complete official board after legitimate
+inference. ACTIVE/unachieved. Fresh full board19:43:55UTC:23/310,.82987;
+19th/20th.82915,leader.82692. results/span_026/final_leaderboard.json.
+Best legitimate H60receipt58103553, span013-gemma-order/1. No H72official.
 
-URGENT CURRENTDECISION: NO H72official. QualificationGuniform512=290.599418s
-givesfixedruntimeLOWERBOUND32930.01554s (9h8m50)>32400. Independentfrozenhelper
-replay90738exit0matchesmanualcalculationexactly; unknownfuturemeasurementscan
-onlyincreasebound. No labels/fit/newvariant/marginrelaxation. Evidence
-results/span_026/qualification_runtime_lower_bound.json and
-qualification_runtime_floor_replay.json; scriptverify_span_026_runtime_floor.py
-anddocs/SPAN_026_RUNTIME_REJECTION.md. Syntheticunknownmeasurements=0areONLY
-mathematicalfloors, not actual elapsed-session or completedqualification.
+## Current v27
 
-Existingqualification69187/PID964156 stillRUNNING; donotkilllocalobserver or
-re-push. SDKcancelneedskernelSessionId, butexactownedstatus/metadata exposeonly
-notebookid143477335/version1. No guessedcancelrequests. Livecancelmetadata
-16953exit0savedprivately. Onebadreadusedbare1label/404; correctedv1read succeeded.
-There is no safe identifiedcanceltarget inthisAPI;3600sservicecap/3480sowned
-workerwatchdogremains. AwaitSAMErunterminal/artifactretrieval, runfrozenaudit
-foractual engineering output ifCOMPLETE, then close H72negative/noofficial,
-writefinalreport/notebook/archiveGOALV26/closurepreservation andadvancetov27.
-Persistent rankgoalcontinues; H73futureweightprior isplanned, notrun/readyyet.
-Selectanexplicitboundedv27goal beforeanyH73replay/GPU.
+Backlogv27active,focus[H74,H73],bothPLANNED/unexecuted. H73depends on H74.
+V28draftempty.92registeredtasks,106historicalsnapshotfiles;37carried+2new=
+39activev27items. New bounded GOAL.md/PLAN selected; no v27code,CPUreplay or
+GPU yet. Do not infer success from plans/tests/closure. Next prepare H74's
+exact nativecollator/input-stream CPUproof, then freeze actualGPUworker/scoring
+and rehearse before admission. H73cannotrun until H74passes.
 
-H72informationpilot arseniytrushin/llm-preference-span026-context-audit/1
-COMPLETE18:42:19UTC. Controller70441/PID659163 TERMINALexit0;32artifacts SHA
-verified, source/image/privateoffline/fourpublicv1datasets verified. Worker
-5440.383s, actualcharge5461.312/7200s. Quota81630.797free,reservation0,paidFalse,
-sameNov14anchor. All3canonicalcontrols EXACT(maxdiff0):256G/256L/42reverse;
-all357IDs/native tokens/checkpoints/positions verified. Frozenaudit57319exit0,
-results/span_026/pilot_audit.json. DO NOT rerun the first comparison or pilot.
+H74: ONEsum-tokenpacking10240 versus8192 in native author three-role engine.
+Individual4kconversation inputs, old H60route10pctwork/20pctrows, equalexpert
+weights/T1, sharding/fp16/kernels/batch80/zero workers stay unchanged. CPU<=600s
+label-blind actualnativecollator inspection/simulation, exact concatenated stream/
+row order/positions and packing proxies on frozen lengths/IDs. Assets module
+ROOT/runs/span_009/research/lmsys-modules-0805/data/collators.py. Old native
+engine src/arena/span010_order.py; H72'sengine copiedsameforward withhooks.
+Do not modify old frozen files. Full known CPUtoken references in
+ROOT/runs/span_026/candidate_spec.json; sameoldwarm/control/uniform/long/test
+and routedreverse inputs. CPUdata audit is not GPU/runtime admission.
 
-Local diagnostic is NEGATIVE: offloss.884017->.897547, on.880353->.884853.
-Bclassworsens,tieimproves. Weightedmin gain-.000234356,group95[-.000317813,
--.000152574],upper+.000122367. Originaltrainingoverlap/noCV/nohiddenforecast.
-Prospectivepre-GPUamendment explicitly uses fixed-.005gross-regressionguard,
-which PASSES; no positive-localgain requirement or retrospectivegrid. Decision:
-prepare ONEactualfullqualification, thenonlyifallengineeringgatespassonefrozen
-actualofficial. Reportdocs/SPAN_026_PILOT_RESULTS.md; Notebook38beingupdated.
+Then one<=3600sactual2T4engineering job with earlyraw/token/source/memoryguards,
+full512uniform/64long/control/test and80warm perrole; <=1e-5rawgoldencontrols,
+exactroute/mixture/ID/token/checkpoint/position, <=95pctallocatedmemory. One
+10240variant, no quantization/grid/fallback/retry. ActualNEWpacking throughput
+measures intendedspeedup; old8192is comparator rather than impossiblefloor.
+Keepworse prior/currentcold/fullwarm/other overhead,20pctsteady margin/600reserve,
+project25k<32400. Latercandidateusesworse matching10240pilot/current timings.
 
-Earlyengineering independentlyreplayedPASSED:32051.569sprojection,348.431sbelow
-32400; allocatedprobeGPUfractions69.08%/57.18%. Whole57477selector121.8369s.
-Matched357pass times Gold902.739,G6k1202.205,Llama678.250,Grev907.274seconds.
-This earlyscreen is NOT fullqualification. Actual3-role qualification still
-mustpassworseparent/pilot/currentcold+warm+uniform, worst6krate(full/probe/small
-cohorts), whole6kwarm andfullselector,20pctmargin/600reserve, total<32400s.
+Only after H74passes, H73ONEfixed60pctGemma/40pctLlama prior, no6kextra.
+Original H60incumbent stays comparator (H72failed/noofficial). Offroute .6G+.4L;
+onroute .3G+.3alignedGrev+.4alignedL. Keepold JS/work route basedoriginalraw
+outputs/lengths. CPU<=300sonecacheddescriptivecomparison(seed42/2000groups,
+classes); originaltrainingoverlap, noCV/nohiddenforecast. Fixedgrossstopuniform
+512gain<-.005, not positive-gainpromotion. No weight/T/route fitting or grid.
+Ifpasses, one<=3600sactualfullqualification, then one frozenofficialonlyafter
+allengineeringchecks and committed/pusheddecision. IfH74fails,deferH73withproof.
 
-Auditedpilotresults/report/Notebook38publishedb73c707. Candidatebuilder77285
-TERMINALexit0; actualfinalcell success/failure/watchdog, standaloneimports,
-public+hiddenhash/flagmode branches andJupyterstartup ALLPASS. Bundle/rehearsals
-results/span_026/context_qualification_*.json. Generatednotebook under
-ROOT/runs/span_026/notebooks/context_qualification. Frozen214c61cpushedBEFOREGPU.
-Qualificationaccepted18:53:11UTC andRUNNING18:54:09:
-arseniytrushin/llm-preference-span026-context-candidate/1. Controllerunifiedsession
-69187/PID964156. Sourceverifier51910TERMINALexit0 at18:53:47; acceptedcells/
-image/privateoffline/twoT4/fourpublicv1datasets verified. Followupcap3600s.
-ThisisSECONDandLASTacceptedpublicversioninphase. Noofficialhasbeensubmitted.
-NEXTpollSAME69187/version, neverre-push aftertimeout. After COMPLETE/retrieval,
-run audit_span_026_candidate.py ONCE forfinalactualrejection. Runtimefloor
-alreadyprohibitsdeployment; do NOTprepare/submitadecision forthisvariant.
-Freshcompleteinventory/quota/receipts/dependencies
-beforeeach GPU/official. Initial7200+follow3600<=10800publics,max2acceptedversions,
-oneofficial, inheritedNov10 08:37:37.343197UTCdeadline/Nov14anchor. No reset,
-newweights/training/externaltextservice/GPUwhileofficialpending/rescuegrid.
+Capsjointv27public<=7200s/max2acceptedversions/oneofficial<=32400s. Inherit
+Nov10 08:37:37.343197UTCdeadline andNov14quotaanchor, no resets. Latestfull
+inventory71owned/allterminal/noofficialpending; quota79188.346sfree(22h),
+reserved0,paidFalse,used28811.654. V26public7903.763s remains recorded. Refresh
+fullinventory/quota/history/pinned4publicv1datasets beforeeachGPU; ensurefull
+remainingpublic+officialallowance anddeadline. NoGPUwhileofficialpending,
+newweights/training/externaltextservice. Sourcefreeze/push andactualserialized
+cell/import/mode/success/failure/watchdog/Jupyterrehearsals BEFORE GPU. Durable
+mutationintent; timeoutmeans observeSAMEhandle/version/receipt, neverduplicate.
 
-Preparedqualification code/protocol docs/SPAN_026_QUALIFICATION.md, source
-0cbd087/fb4eee3;18focusedtests pass. Referencehashchecks87b985a: parent36artifacts
-verifiedagainstcommittedreceipt; pilotreceipt/publichashsame as pilot_audit,
-allitsinputhashesverifiedagainbeforequalification/official. Nativeengine reused
-through3explicitcohorthooks, noforwardchange. OldH60route/weights unchanged;
-6k replacesGoriginalonlyontruncatedrows. Hiddenneedsnotrain/publicprediction
-cache. CPUcandidatepreparation3590TERMINALexit0,total626.6422/1200s. Heavy
-candidate_spec SHA414cdbb0f35ff979e6a8c3a6f6d2f2ef92ea25b57673b691400e5830ce976da7,
-hidden_asset_spec SHA851144d920dbdda37a815a196922daf197fbc00af223db2458aa8e37475055de.
-Do NOTreprepare. Extra3control/4uniform/63long/0visibletestrows. TWOaccepted
-H72versions now; qualificationlive, officialnotadmitted.
+## V26 terminal evidence; never restart
 
-H73queued forv27(planningonly): onefixed60pctGemma/40pctLlama expertprior on
-thethenincumbent's unchangedinputs/route/T1, noaddedforwardpass. OlderH37/H43
-wereweakmodels;H59temperature-only;H61/H62alreadytestedbroaderordercoverage,
-do notduplicate/reopen. docs/SPAN_026_EXPERT_WEIGHT_DISCOVERY.md states no60/40
-predictions/loss/GPUscomputed. Notselected/currentspanunchanged; futureseparate
-boundedcontract required after H72outcome. V27draftnow[H73],91registeredtasks.
+H72contextpilot span026-context-audit/1 COMPLETE18:42:19UTC. Controller70441/
+PID659163 TERMINALexit0;32artifactsverified; actualcharge5461.312s/7200.
+Qualification span026-context-candidate/1 COMPLETE19:34:40UTC. Controller69187/
+PID964156 TERMINALexit0;41artifactsverified; charge2442.451s/3600. Total7903.763s
+/10800,2versions,zeroofficial. No live v26process to waiton. Finalinventory66737
+andboard71263alsoTERMINALexit0. docs/SPAN_026_RESULTS.md andNotebook38final.
 
-OriginalCPUcoverage/native selector alreadyDONE; DO NOTrerun.357/57477changed,
-8.985%fullGworkproxy,22newBvisible, retainedBchars64.52->88.60%; controlsandall
-oldlengthsexact. OriginalCPUcontract archived/anchored278b9dc. GOAL/planremain
-frozenbecausepilotbundle verifies them; executionstatuscomesfromregistry/live
-receipts/thissnapshot. V26focus[H72],v27draft[H73],91tasks/102snapshotfiles,
-37unfinishedcarried. No subagents. PROJECT_POLICY.md/GOAL.md govern. Preserve
-userdirty07_error_poster.ipynb and12_backlog_v1_span.ipynb bytewise; hashes in
-results/span_026/preservation.json. Neverstage/reset them. All102snapshotsfixed.
-Notebooklinkcorrect. HeavyROOT=~/database/llm_classification_finetuning;
-workspacecwd ~/prj/llm_classification_finetuning. Scopeeverysearchtothisproject/
-exactartifactpaths; NEVERwalkHOME/~/prj/Arc/FUSE/troll_farm.
+Pilotoriginal-vote diagnostic NEGATIVE: offloss.884017->.897547,on.880353->
+.884853;Bclassworsens,tieimproves. Weightedmin gain-.000234356,group95
+[-.000317813,-.000152574],upper+.000122367. Originaltrainingoverlap/noCV/
+nohiddenforecast. Prospectivepre-GPU-.005grossguardpassed, allowingoneactual
+qualification. No retrospectivereopeningH71oroldstoppedroutes.
 
-Main/GitHubtarstars/llm_classification_finetuning. .venv/bin/python,usual
-PYTHONPATH=src:scripts; nativeCPU uses installtarget/tmp/llm_span019_runtime
-(4.42.3/.19.1), NOTavenvbin. DB/Git/network/Jupytersockets needescalation.
-api_client authenticatesonnetwork evenintrospection. Observationtimeout NEVER
-meansnewupload/push/submission; useexistingintent/version/receipt/handle.
-Goalcompletion requiresactualrank<=19freshcompleteboard; span/testsarenotit.
+Finalactualprojection34007.680s(9h26m48)>32400; backbonealone32668.060s.
+G512290.5994s,L512213.4539s,routedG51232.8085s. Currentnew6k-rate4.9375s/row,
+fullnewwarm297.747s,selector121.837s. Earlyscreen32051.569swasnotfinalqualification.
+All12canonicalrawcohort checks exact(maxdiff0); everytoken/checkpoint/ID,
+originalroute/mixture/unchangedrow/CSVandmemorypass. Noofficialeligible.
 
-The dated details below are historical and superseded by this current snapshot.
+Originalfrozenaudit43888exit1 onoverstrict bitwise JSmetadata:2.78e-17maxdiff,
+173/256values;IDs/probabilitiesexact. NumPy1.26replicatestinyCPUmathdifference.
+Originalsource andfailure preserved(frozen_qualification_audit_failure.json).
+Rejected-onlycompanion replay74917exit0 usesH60derived-JSrtol1e-12/atol1e-14,
+raw1e-5/exactroutes unchanged. candidate_qualification_replay.json verifies
+actualoutputs andruntimeFAIL; itcannotauthorizeofficial. Noqualificationlabels
+read. Originalcandidate_qualification.json DOESNOTEXIST. NevercallsubmitH72.
 
-## V25/H71 terminal negative; NEVERrestart
+Earlyfloor32930.016s independentlyreplayed90738exit0 by
+verify_span_026_runtime_floor.py; syntheticunknownmeasurementswereONLYlower
+bounds, not actualsessiondata. Originalhelperstillimmutable. SDKcancelrequires
+kernelSessionIdnotexposedbyownedstatus/metadata (notebookid143477335isNOTsafe
+canceltarget); no guessedcancelrequest. Onebareversion1read404wascorrectedto
+v1read; no mutation/re-push. Existingcapsremained untilnormalCOMPLETE.
 
-Exactsource arseniytrushin/llm-preference-span025-identical-audit/1 COMPLETE at
-15:53:18UTC. Controller27732/PID392536 TERMINALexit0.15selectedartifacts SHA
-verified. Acceptedcells/image/private/offline4publicv1datasets verified. Both256
-canonicalcontrols reproduce H60RAWprobabilities EXACTLY(maxdiff0), all275IDs/
-lengths/tokens/checkpoints pass. Workerexit0,789.687s including setup; inference
-774.814s; actualKagglecharge803.502s/1800cap. Outputfilesappearedearly butservice
-statuslagged; it wasnotrestarted. Source/scoring frozen52b4596beforeoutputs.
+AllnativeCPUcoverage/selector/preparersDONE,doNOTrepeat: sourceCPU626.6422/1200s.
+357/57477changed,8.985pctwholeextraGworkproxy,22firstBvisible,Bchars64.52->88.60pct,
+alloriginalcachedlength/controltokens exact. CPUcontractarchives anchored278b9dc
+atSPAN_026_CPU_GOAL.md/CPU_PLAN.md. NativeprepPYTHONPATH=/tmp/llm_span019_runtime
+(installtarget, NOTvenvbin;transformers4.42.3/tokenizers.19.1). Pilotfrozen28bf186,
+qualification214c61c. ExactamendedGOAL archivedGOAL_V26.md(SHAea6f1290...);
+newGOALv27meanshistoricalauditmustusearchives/git, notcurrentGOALhash.
 
-Fixedidenticalrule [.06,.06,.88] loss.391508 vsH60off/on.311360/.310603.
-Weightedgainbounds[-.00039647,-.00037409], lowergainpaired95[-.00066280,
--.00017682]. ALLthreeclassesnegative; labels12A/15B/248Tie. STOP, no constant
-grid/followup/official. Originaltrainingoverlap, NOTCV/scoreforecast. Report
-SPAN_025_RESULTS.md, finalexecutedNotebook37, information_audit.json, closure
-PASSED. ArchivesGOAL_V25.md;98oldsnapshotsprotected/102aftertransition.
+V26closure46535firstfailedonlybecause itsnewchecker lookedforevidencein top-
+levelregistryinstead ofclosinghistory; fixedchecker correctly reads actualdone
+history. Closure41621/83568passes:73artifacts,102oldsnapshots preserved/106after
+transition,37unfinishedcarried,newH73/H74,Notebook38executed. No historical
+snapshot was edited. Newsourceclosureverifier is audit_span_026_closure.py.
+V26final/startv27snapshots are immutable. Currentpublicationthroughd281be3;
+finalV26closure/newV27contract stillbeingstaged/pushed inthisturn.
 
-Postrunquota20907.891used,87092.109free(24.19h),reserved0,paidFalse,refreshNov14.
-Historical; refreshbeforefutureGPU. No officialpending. H72CPUstageaddszer GPU.
+## Prior evidence and workspace rules
 
-## Retained context and prior stopped branches
+H60officialrecipe4k/8192/T1/equalexperts/Gorig+alignedLLswapped plusGrevonly
+onfixed10pctwork/20pctrowroute improved.83053->.82987. H61expandedroute/H62
+broadercoverage/H64teacher testsalreadydone andstopped; do notduplicate. H37/H43
+wereolderweakcomponents; H59currentstrongensembletemperature-onlyT1.316trial
+failedofficial.84797, so retainT1. H73weightswerenotfit orreplayed yet.
+H66paddedmirrorbackendOOM/runtimefailed; H74nativeauthorvarlen isdistinct.
+H69onlyretainedpublicm0/m3finals; otherstrongcheckpoints unavailable. H55/third-
+placebase403/401sources nottoretry. No furthermodelsource/downloadwork selected.
+H70/H71fixedstructuralheuristics andconditionalmirrorswerenegative; preserve.
 
-H60recipe T1/8192packing/4096context/equalexpertweights; Gemmaoriginal andaligned
-Llamaswapped, plusGemmareverse on10%work/20%row JS-per-workroute. Strictcanonical
-controls and30912.486sconservative9hprojection. Actualofficialimproved.83053 to
-.82987/rank23. Fullqualifacts ROOT/runs/span_013/jobs/gemma_order/output/order_completion.
-Engine src/arena/span010_order.py, wrapper span013_pipeline.py, mixture span013_order.py.
-
-H71CPUprep failurespreserved: missingm3tokenizer(downloadedonce9,084,673bytes,
-actualH60hash); modernTransformers5.22.1/Tokenizers.23.3m3tokenmismatch. Pinned
-/tmp/llm_span019_runtime(installtarget, NOTvenv/bin/python) givesEXACTnative
-controltokens. H72mustusepinnedPYTHONPATH. This localCPUproofisnotGPUruntime.
-
-V24H70wholepublishedempty/identicalrule worsened512loss .652988->.657378 onone
-emptyAtrueTie; zeroidenticalcases in512. V22H68conditionalmirror .654043vs.652988,
-stop. V21H67fixedreplacement .812266vs.652988; mirror globallyweaker bothchannels.
-V20H66ERROR/OOM later1024source, missingactualreversebaseline, fullruntime9.14h
-FAIL;31partialartifactshashverified. NEVERretry/re-push/submit recoveredCSV.
-V23sourceaudit onlyretainedtascjm0/m3final; no inventedm1/m2. Thirdplaceadapter
-publicbutheadlessbaseHF401/noKagglebase; stop. Fourthplaceoriginalweights unresolved.
-No moresourcecalls/mirrors/weightdownloads. H55prior403neverretry. Reports21..25
-andallarchives preserveevidence. H59latervotecalibrationofficial.84797failed
-transfer; E17transportreportSPAN_017_RESULTS.md. Do notfitofficialtemperatures.
-
-## Workspace/publication
-
-Cwd /home/tarstars/prj/llm_classification_finetuning, main, GitHubtarstars/same.
-ROOT=/home/tarstars/database/llm_classification_finetuning. .venv/bin/python,
-PYTHONPATH=src:scripts ordinarily; nativeCPUtokenaudit adds/tmp/llm_span019_runtime.
-DBwrites/Git/network/Jupytersockets requireescalation. api_client()authenticates
-onnetwork evenintrospection; sandboxDNSisnotoutage. Elevatedprocessesmaynotshow
-sandboxps. Externalmutations have durableintents; observationtimeoutNEVERmeans
-reupload/re-push/resubmit. ObserveSAME livehandle/version/receipt.
-
-Userdirty07_error_poster.ipynb and12_backlog_v1_span.ipynb MUSTstaybytewise;
-hashes results/span_025/preservation.json (H26willcopypreservation). Neverstage/
-reset. ~/notebooks/llm_classification_finetuning linkcorrect. HeavyarraysDB,
-code/MD/aggregates/executednotebooksGit. Priorpublished5b0d0bcacceptedH71;
-278b9dcpublishedH71negative/H72CPUmethod. 0f5e5f8publishedcoverage/prospectiveamendment/selectorcode;
-1fd64d2publishedselectorproof. Native37086/selector17484/preparer6461TERMINALexit0.
-Builder68066TERMINALexit0. Allnewpilotmethodfilesfrozen28bf186BEFOREGPU.
-Goalturnmade actualnewnegativequalityevidence andnewinformationplan, no blocker.
+Cwd ~/prj/llm_classification_finetuning,main,GitHubtarstars/same. Heavy
+ROOT=~/database/llm_classification_finetuning; code/MD/aggregate/notebooksGit.
+.venv/bin/python,usuallyPYTHONPATH=src:scripts. DB/Git/network/Jupytersockets
+needescalation;api_clientauthenticates evenintrospection. No subagents. NEVER
+walkHOME/~/prj/Arc/FUSE/troll_farm. Scopeexactproject/artifact/package paths.
+Userdirty07_error_poster.ipynb and12_backlog_v1_span.ipynb MUSTstaybytewise,
+neverstage/reset. Hashesresults/span_026/preservation.json; newv27mustcapture
+106snapshots andsameuserhashes. Notebooklink ~/notebooks/llm_classification_finetuning
+correct. No sendingmessages to others. PrimaryrankgoalACTIVE; no budget/blocked
+condition. Currentturnmade actualnegativequality/runtime evidence andclosedv26.

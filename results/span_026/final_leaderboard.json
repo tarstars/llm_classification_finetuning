@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-11-08T19:43:55.230601+00:00",
+  "complete": true,
+  "team_id": 17244411,
+  "rank": 23,
+  "teams": 310,
+  "score": 0.82987,
+  "rank19_score": 0.82915,
+  "rank20_score": 0.82915,
+  "leader_score": 0.82692,
+  "target_achieved": false,
+  "latest_team_submission_date": "2026-11-07T20:07:11.890Z",
+  "pagination": {
+    "complete": true,
+    "pages": 4,
+    "rejected_pages": []
+  },
+  "source_sha256": {
+    "scripts/observe_leaderboard.py": "42831e74ff03295144dbbd3067bc9c8d7e4f066136ad889557e5c9895694e18c",
+    "src/arena/leaderboard.py": "e0e563000c6f34875e401c810f885da9b9928bd6a7f865bff3913571b2381789"
+  }
+}

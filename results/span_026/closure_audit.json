@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-08T19:55:37.382401+00:00",
+  "passed": true,
+  "sealed_version": 26,
+  "goal_achieved_by_span": false,
+  "public_gpu_charged_seconds": {
+    "context_pilot": 5461.312000000002,
+    "context_qualification": 2442.4509999999973
+  },
+  "total_public_gpu_charged_seconds": 7903.762999999999,
+  "artifact_files_verified": {
+    "context_pilot": 32,
+    "context_qualification": 41
+  },
+  "official_submissions": 0,
+  "runtime_gate_passed": false,
+  "actual_projection_seconds": 34007.6800456593,
+  "historical_snapshots_preserved": 102,
+  "snapshot_files_after_transition": 106,
+  "carried_tasks": 37,
+  "new_discoveries": [
+    "H73",
+    "H74"
+  ],
+  "original_frozen_audit_passed": false,
+  "rejected_only_replay_complete": true,
+  "notebook_sha256": "2f183e408bbfd6fe4b1400e5105d43fadf10890f022d473767ebc6a160d17791",
+  "goal_archive_sha256": "ea6f1290149f2b710c05782a5a276ec2a2f3792656d2351f8ca15aa66c772f44"
+}
