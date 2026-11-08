@@ -522,6 +522,7 @@ A globally weaker mirror may add complementary A/B information on a small short 
 
 - 2026-11-08T14:13:06+00:00 — planned: Fixedreplacementfails; queue onezeroGPUsmallconditional-correction hypothesis with exactH60tie/offroute preservation. Mirror globallyweaker, currentdataalreadyinspected; no strongranking/transferclaim. Evidence: [docs/SPAN_021_DIRECTIONAL_DISCOVERY.md](docs/SPAN_021_DIRECTIONAL_DISCOVERY.md)
 - 2026-11-08T14:18:09+00:00 — running: Preparing one<=300sCPU-only fixed-route/weight method under docs/SPAN_022_PLAN.md. No conditional candidate result, inference or extraGPU yet. Data alreadyinspected; fullsourcequality remains unavailable. Evidence: [docs/SPAN_022_PLAN.md](docs/SPAN_022_PLAN.md)
+- 2026-11-08T14:29:05+00:00 — running: FixedCPUrule implemented;4meaningfultests pass for exacttie/offroute/ABmass,512tokeneligibility,5%row/workcaps,stableIDordering andzeroABfallback.86snapshots/usernotebooks preserved. One.25conditionalweight, no grid; freeze methodbeforeevaluation. No candidatequality/GPU yet. Evidence: [tests/test_span022_conditional.py](tests/test_span022_conditional.py)
 
 ### H22
 

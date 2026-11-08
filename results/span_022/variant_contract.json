@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-08T14:28:34.917456+00:00",
+  "candidate_variants": 1,
+  "conditional_mirror_weight": 0.25,
+  "maximum_native_tokens": 512,
+  "row_fraction": 0.05,
+  "token_work_fraction": 0.05,
+  "original_rows": 512,
+  "primary_minimum_loss_reduction": 0.001,
+  "bootstrap_seed": 42,
+  "bootstrap_resamples": 2000,
+  "cpu_elapsed_seconds_cap": 300,
+  "new_gpu_executions": 0,
+  "new_inference_executions": 0,
+  "external_api_calls": 0,
+  "original_previously_inspected": true,
+  "original_training_overlap": true,
+  "source_sha256": {
+    "GOAL.md": "e52897a79f2ba9fd1e60b58ac10350d1a113a07ef508088293ab1114a0947508",
+    "docs/SPAN_022_PLAN.md": "bdd5a59581669095f782d80b6422d274eded0c5ea2c8bceb9539d0b1f4f6b4e3"
+  }
+}
