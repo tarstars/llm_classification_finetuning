@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-08T14:56:00.113749+00:00",
+  "passed": true,
+  "sealed_version": 23,
+  "goal_achieved_by_span": false,
+  "historical_snapshots_preserved": 90,
+  "snapshot_files_after_transition": 94,
+  "carried_tasks": 37,
+  "new_discoveries": [
+    "H70"
+  ],
+  "new_gpu_executions": 0,
+  "official_submissions": 0,
+  "notebook_sha256": "3f4db5c4d204450090f8feaae48d5854623df4858e58d7ec485a4f6e3de313ea",
+  "goal_archive_sha256": "0a63eec3e9baa013e3bd4894745f517d46bcf6e42400a10df0d2a65cd8a92461"
+}

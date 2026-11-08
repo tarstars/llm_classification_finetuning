@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-08T14:51:20.526133+00:00",
+  "decision": "no_qualifying_new_checkpoint_in_audited_sources",
+  "exhaustive_public_model_search": false,
+  "new_classifier_ready": false,
+  "tascj_additional_final_checkpoint_found": false,
+  "third_base_http_status": 401,
+  "third_public_kaggle_base_matches": 0,
+  "fourth_exact_checkpoint_search_matches": 0,
+  "actual_runtime_equals_repository_reference": false,
+  "source_archive_bytes": 407902,
+  "source_archive_sha256": {
+    "github_observations.json": "c0c2bf72e87e7da1852b21b64ee5befee3668ebc011ace5cffaa84cca2beb179",
+    "github_related.json": "fb03cad09b3bb2baec75f9ac7a77d06613a3598b0ca95ea5864bdc33e1ed4fc7",
+    "hf_classifier_search.json": "255c164751ba22038257330acc3521dd6d0adf00c5df432e1ee0891a98da3804",
+    "hf_gemma_classifiers.json": "14e63d1576627523b8d2ecac3a7a6bd90cb83d7952eeb09e6f0a7122c5ac2cad",
+    "lmsys-r-gemma-m205-21000-lb8741/README.md": "9babb87c62242787c5cda197637fedf5b424f17ef84e1ae10ff01e0b58ccfc8e",
+    "lmsys-r-gemma-m205-21000-lb8741/adapter_config.json": "25d9394f10f498ab42aec0dd935ce193761d9111dddf19d77ef0497463f6ae7a",
+    "tascj_datasets.json": "d3415ddee68ada396463c26993e64043cf3bde6592e640d77757083bb9557238",
+    "third_notebook_source.json": "255c39c74317f6e132168343b971a21e88420716355d31724ad274097ca44585",
+    "utils-lmsys-v10/r_gemma/lmsys_dataset.py": "c54b1ac96d1e76127735e1d8f2d6e0e49887b40e738d7b60a5077001dc619cff",
+    "utils-lmsys-v10/r_gemma/lmsys_loader.py": "beb5eaad9275a53420a4f8980df0efe17d3ce876d876dc22742ec4faf8155ae3",
+    "utils-lmsys-v10/r_gemma/lmsys_model.py": "ad36bd5492d0a007bcb10ec6a8344499f52f3cb4f602b2ab2e0f04b40bed0d61"
+  },
+  "elapsed_audit_seconds": 772.513583,
+  "cap_seconds": 3600,
+  "cap_bytes": 52428800,
+  "weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "external_text_inference": 0,
+  "official_submissions": 0,
+  "hidden_prediction_outputs_used": false,
+  "next_discovery": "Published fixed empty/identical-answer postprocessing, untested against H60",
+  "source_references": {
+    "tascj": "83cd93d50b9283c18711e8c63e4e1c6399c7b9ce",
+    "third": "4007b8dfdb4c19899252962ff7f690e5f7038c86",
+    "fourth": "f4d2a3fbd0497e28673010787612d3dac04e7668"
+  }
+}

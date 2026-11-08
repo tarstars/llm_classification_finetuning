@@ -1,0 +1,79 @@
+{
+  "at": "2026-11-08T14:41:57.489376+00:00",
+  "complete_author_listing": true,
+  "listing_pages": 1,
+  "author_datasets": [
+    "tascj0/aes2-checkpoints",
+    "tascj0/aes2-checkpoints-1",
+    "tascj0/aes2-checkpoints-3",
+    "tascj0/aes2-checkpoints-5",
+    "tascj0/hubmap-2023-checkpoints",
+    "tascj0/hubmap-2023-configs",
+    "tascj0/hubmap-2023-modules",
+    "tascj0/knee-convnext-t-256",
+    "tascj0/knee-models-common",
+    "tascj0/knee-models-convnext-t",
+    "tascj0/knee-models-convnext-t-6-channel",
+    "tascj0/knee-models-mambaout",
+    "tascj0/knee-models-mambaout-6-channel",
+    "tascj0/knee-models-maxxvit",
+    "tascj0/lmsys-checkpoints-0-0805",
+    "tascj0/lmsys-checkpoints-3-0805",
+    "tascj0/lmsys-modules-0805",
+    "tascj0/lmsys-packages",
+    "tascj0/rsna-2026-knee-agent-labels",
+    "tascj0/vasculature-packages"
+  ],
+  "third_notebook_metadata": {
+    "id": 63463043,
+    "ref": "conjuring92/lmsys-3rd-place-submission",
+    "title": "[LMSYS] 3rd-place-submission",
+    "author": "Raja Biswas",
+    "slug": "lmsys-3rd-place-submission",
+    "lastRunTime": "2026-11-05T14:41:57.031Z",
+    "language": "python",
+    "kernelType": "notebook",
+    "isPrivate": false,
+    "enableGpu": true,
+    "enableInternet": false,
+    "categoryIds": [
+      "gpu"
+    ],
+    "datasetDataSources": [
+      "",
+      "",
+      "conjuring92/lmsys-r-gemma-m205-21000-lb8741",
+      "shonenkov/omegaconf",
+      "conjuring92/utils-lmsys-v10"
+    ],
+    "kernelDataSources": [
+      "conjuring92/lmsys-packages-for-inference-source",
+      "",
+      ""
+    ],
+    "competitionDataSources": [
+      "lmsys-chatbot-arena"
+    ],
+    "totalVotes": 51,
+    "modelDataSources": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "enableTpu": false,
+    "currentVersionNumber": 5,
+    "dockerImage": "gcr.io/kaggle-private-byod/python@sha256:e3f9bf91d1b7b36bf77554565d27c5733585fbe5e2b7f0832e068824e7accc3c",
+    "machineShape": "NvidiaTeslaT4"
+  },
+  "fetched_source_file_bytes": 140344,
+  "source_files_sha256": {
+    "tascj_datasets.json": "d3415ddee68ada396463c26993e64043cf3bde6592e640d77757083bb9557238",
+    "github_observations.json": "c0c2bf72e87e7da1852b21b64ee5befee3668ebc011ace5cffaa84cca2beb179",
+    "third_notebook_source.json": "255c39c74317f6e132168343b971a21e88420716355d31724ad274097ca44585"
+  },
+  "weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "external_text_inference": 0,
+  "official_submissions": 0
+}

@@ -1,0 +1,357 @@
+{
+  "at": "2026-11-08T14:43:37.855194+00:00",
+  "listings": {
+    "third_author": [
+      {
+        "id": 5410847,
+        "ref": "conjuring92/lmsys-mix-v110",
+        "subtitle": "",
+        "creatorName": "Raja Biswas",
+        "creatorUrl": "conjuring92",
+        "totalBytes": 498568988,
+        "url": "https://www.kaggle.com/datasets/conjuring92/lmsys-mix-v110",
+        "lastUpdated": "2024-07-18T14:22:39.893Z",
+        "downloadCount": 46,
+        "licenseName": "Unknown",
+        "ownerName": "Raja Biswas",
+        "ownerRef": "conjuring92",
+        "title": "lmsys-mix-v110",
+        "viewCount": 213,
+        "currentVersionNumber": 1,
+        "usabilityRating": 0.3125,
+        "tags": [
+          {
+            "ref": "music",
+            "name": "music",
+            "description": "With all the music data out there, it's hard to believe someone hasn't trained robots to perform on stage yet. Or have they?",
+            "fullPath": "subject > arts and entertainment > music",
+            "competitionCount": 3,
+            "datasetCount": 21315,
+            "scriptCount": 16842,
+            "totalCount": 38160
+          }
+        ],
+        "thumbnailImageUrl": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-24.png-2125251/dataset-thumbnail.png"
+      },
+      {
+        "id": 5488918,
+        "ref": "conjuring92/lmsys-mix-v205",
+        "subtitle": "",
+        "creatorName": "Raja Biswas",
+        "creatorUrl": "conjuring92",
+        "totalBytes": 938271116,
+        "url": "https://www.kaggle.com/datasets/conjuring92/lmsys-mix-v205",
+        "lastUpdated": "2024-08-03T11:44:26.370Z",
+        "downloadCount": 34,
+        "licenseName": "Unknown",
+        "ownerName": "Raja Biswas",
+        "ownerRef": "conjuring92",
+        "title": "lmsys-mix-v205",
+        "viewCount": 250,
+        "currentVersionNumber": 2,
+        "usabilityRating": 0.3125,
+        "tags": [
+          {
+            "ref": "music",
+            "name": "music",
+            "description": "With all the music data out there, it's hard to believe someone hasn't trained robots to perform on stage yet. Or have they?",
+            "fullPath": "subject > arts and entertainment > music",
+            "competitionCount": 3,
+            "datasetCount": 21315,
+            "scriptCount": 16842,
+            "totalCount": 38160
+          }
+        ],
+        "thumbnailImageUrl": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-19.png-2125251/dataset-thumbnail.png"
+      },
+      {
+        "id": 5538915,
+        "ref": "conjuring92/lmsys-pl-mix",
+        "subtitle": "",
+        "creatorName": "Raja Biswas",
+        "creatorUrl": "conjuring92",
+        "totalBytes": 629405076,
+        "url": "https://www.kaggle.com/datasets/conjuring92/lmsys-pl-mix",
+        "lastUpdated": "2024-08-13T14:48:10.410Z",
+        "downloadCount": 12,
+        "licenseName": "Unknown",
+        "ownerName": "Raja Biswas",
+        "ownerRef": "conjuring92",
+        "title": "lmsys-pl-mix",
+        "viewCount": 193,
+        "currentVersionNumber": 1,
+        "usabilityRating": 0.29411766,
+        "tags": [
+          {
+            "ref": "music",
+            "name": "music",
+            "description": "With all the music data out there, it's hard to believe someone hasn't trained robots to perform on stage yet. Or have they?",
+            "fullPath": "subject > arts and entertainment > music",
+            "competitionCount": 3,
+            "datasetCount": 21315,
+            "scriptCount": 16842,
+            "totalCount": 38160
+          }
+        ],
+        "thumbnailImageUrl": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-97.png-2125251/dataset-thumbnail.png"
+      },
+      {
+        "id": 5492841,
+        "ref": "conjuring92/lmsys-r-gemma-m205-21000-lb8741",
+        "subtitle": "",
+        "creatorName": "Raja Biswas",
+        "creatorUrl": "conjuring92",
+        "totalBytes": 207266025,
+        "url": "https://www.kaggle.com/datasets/conjuring92/lmsys-r-gemma-m205-21000-lb8741",
+        "lastUpdated": "2024-08-04T08:50:34.570Z",
+        "downloadCount": 21,
+        "licenseName": "CC0: Public Domain",
+        "ownerName": "Raja Biswas",
+        "ownerRef": "conjuring92",
+        "kernelCount": 1,
+        "title": "lmsys_r_gemma_m205_21000_lb8741",
+        "viewCount": 248,
+        "currentVersionNumber": 1,
+        "usabilityRating": 0.3125,
+        "thumbnailImageUrl": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-52.png-2125251/dataset-thumbnail.png"
+      },
+      {
+        "id": 5377307,
+        "ref": "conjuring92/utils-lmsys-v10",
+        "subtitle": "",
+        "creatorName": "Raja Biswas",
+        "creatorUrl": "conjuring92",
+        "totalBytes": 57129,
+        "url": "https://www.kaggle.com/datasets/conjuring92/utils-lmsys-v10",
+        "lastUpdated": "2024-07-15T06:27:02.293Z",
+        "downloadCount": 20,
+        "licenseName": "Unknown",
+        "ownerName": "Raja Biswas",
+        "ownerRef": "conjuring92",
+        "kernelCount": 1,
+        "title": "utils_lmsys_v10",
+        "viewCount": 223,
+        "currentVersionNumber": 3,
+        "usabilityRating": 0.0625,
+        "thumbnailImageUrl": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-15.png-2125251/dataset-thumbnail.png"
+      }
+    ],
+    "fourth_checkpoint": []
+  },
+  "inventories": {
+    "conjuring92/lmsys-r-gemma-m205-21000-lb8741": {
+      "datasetFiles": [
+        {
+          "name": "README.md",
+          "creationDate": "2024-08-04T08:50:37.270Z",
+          "totalBytes": 126
+        },
+        {
+          "name": "adapter_config.json",
+          "creationDate": "2024-08-04T08:50:37.186Z",
+          "totalBytes": 808
+        },
+        {
+          "name": "adapter_model.safetensors",
+          "creationDate": "2024-08-04T08:50:45.759Z",
+          "totalBytes": 216172880
+        },
+        {
+          "name": "special_tokens_map.json",
+          "creationDate": "2024-08-04T08:50:37.245Z",
+          "totalBytes": 636
+        },
+        {
+          "name": "tokenizer.json",
+          "creationDate": "2024-08-04T08:50:37.771Z",
+          "totalBytes": 17518525
+        },
+        {
+          "name": "tokenizer.model",
+          "creationDate": "2024-08-04T08:50:37.399Z",
+          "totalBytes": 4241003
+        },
+        {
+          "name": "tokenizer_config.json",
+          "creationDate": "2024-08-04T08:50:37.100Z",
+          "totalBytes": 40663
+        }
+      ]
+    },
+    "conjuring92/utils-lmsys-v10": {
+      "datasetFiles": [
+        {
+          "name": "data.py",
+          "creationDate": "2024-07-15T06:27:03.723Z",
+          "totalBytes": 5055
+        },
+        {
+          "name": "r_gemma/lmsys_dataset.py",
+          "creationDate": "2024-07-15T06:27:03.714Z",
+          "totalBytes": 4888
+        },
+        {
+          "name": "r_gemma/lmsys_loader.py",
+          "creationDate": "2024-07-15T06:27:03.714Z",
+          "totalBytes": 2069
+        },
+        {
+          "name": "r_gemma/lmsys_model.py",
+          "creationDate": "2024-07-15T06:27:03.708Z",
+          "totalBytes": 3000
+        },
+        {
+          "name": "r_gemma/lmsys_optimizer.py",
+          "creationDate": "2024-07-15T06:27:03.709Z",
+          "totalBytes": 3626
+        },
+        {
+          "name": "r_llama/lmsys_dataset.py",
+          "creationDate": "2024-07-15T06:27:03.723Z",
+          "totalBytes": 4441
+        },
+        {
+          "name": "r_llama/lmsys_dataset_v0.py",
+          "creationDate": "2024-07-15T06:27:03.797Z",
+          "totalBytes": 4867
+        },
+        {
+          "name": "r_llama/lmsys_loader.py",
+          "creationDate": "2024-07-15T06:27:03.709Z",
+          "totalBytes": 2050
+        },
+        {
+          "name": "r_llama/lmsys_model.py",
+          "creationDate": "2024-07-15T06:27:03.723Z",
+          "totalBytes": 4635
+        },
+        {
+          "name": "r_llama/lmsys_optimizer.py",
+          "creationDate": "2024-07-15T06:27:03.709Z",
+          "totalBytes": 3292
+        },
+        {
+          "name": "r_llama_pl/lmsys_dataset.py",
+          "creationDate": "2024-07-15T06:27:03.760Z",
+          "totalBytes": 4325
+        },
+        {
+          "name": "r_llama_pl/lmsys_loader.py",
+          "creationDate": "2024-07-15T06:27:03.714Z",
+          "totalBytes": 2069
+        },
+        {
+          "name": "r_llama_pl/lmsys_model.py",
+          "creationDate": "2024-07-15T06:27:03.746Z",
+          "totalBytes": 5261
+        },
+        {
+          "name": "r_llama_pl/lmsys_optimizer.py",
+          "creationDate": "2024-07-15T06:27:03.744Z",
+          "totalBytes": 3618
+        },
+        {
+          "name": "r_prometheus/lmsys_dataset.py",
+          "creationDate": "2024-07-15T06:27:03.769Z",
+          "totalBytes": 5016
+        },
+        {
+          "name": "r_prometheus/lmsys_loader.py",
+          "creationDate": "2024-07-15T06:27:03.755Z",
+          "totalBytes": 2628
+        },
+        {
+          "name": "r_prometheus/lmsys_optimizer.py",
+          "creationDate": "2024-07-15T06:27:03.763Z",
+          "totalBytes": 2732
+        },
+        {
+          "name": "r_qwen/lmsys_dataset.py",
+          "creationDate": "2024-07-15T06:27:03.770Z",
+          "totalBytes": 4325
+        },
+        {
+          "name": "r_qwen/lmsys_loader.py",
+          "creationDate": "2024-07-15T06:27:03.764Z",
+          "totalBytes": 2050
+        },
+        {
+          "name": "r_qwen/lmsys_model.py",
+          "creationDate": "2024-07-15T06:27:03.806Z",
+          "totalBytes": 2772
+        },
+        {
+          "name": "r_qwen/lmsys_optimizer.py",
+          "creationDate": "2024-07-15T06:27:03.759Z",
+          "totalBytes": 3463
+        },
+        {
+          "name": "train_r_gemma.py",
+          "creationDate": "2024-07-15T06:27:03.769Z",
+          "totalBytes": 17624
+        },
+        {
+          "name": "train_r_llama.py",
+          "creationDate": "2024-07-15T06:27:03.792Z",
+          "totalBytes": 17830
+        },
+        {
+          "name": "train_r_llama_full.py",
+          "creationDate": "2024-07-15T06:27:03.780Z",
+          "totalBytes": 15742
+        },
+        {
+          "name": "train_r_llama_pl.py",
+          "creationDate": "2024-07-15T06:27:03.771Z",
+          "totalBytes": 17548
+        },
+        {
+          "name": "train_r_prometheus.py",
+          "creationDate": "2024-07-15T06:27:03.779Z",
+          "totalBytes": 11164
+        },
+        {
+          "name": "train_r_qwen.py",
+          "creationDate": "2024-07-15T06:27:03.795Z",
+          "totalBytes": 17924
+        },
+        {
+          "name": "utils/constants.py",
+          "creationDate": "2024-07-15T06:27:03.797Z",
+          "totalBytes": 1787
+        },
+        {
+          "name": "utils/metric_utils.py",
+          "creationDate": "2024-07-15T06:27:03.812Z",
+          "totalBytes": 1193
+        },
+        {
+          "name": "utils/train_utils.py",
+          "creationDate": "2024-07-15T06:27:03.819Z",
+          "totalBytes": 7574
+        },
+        {
+          "name": "vllm_generate.py",
+          "creationDate": "2024-07-15T06:27:03.810Z",
+          "totalBytes": 4353
+        }
+      ]
+    }
+  },
+  "errors": {
+    "rbiswasfc/lmsys-r-gemma-s1-mix110-merged-headless": {
+      "http_status": 401,
+      "decision": "stop_source"
+    }
+  },
+  "archive_bytes": 263861,
+  "archive_sha256": {
+    "tascj_datasets.json": "d3415ddee68ada396463c26993e64043cf3bde6592e640d77757083bb9557238",
+    "github_observations.json": "c0c2bf72e87e7da1852b21b64ee5befee3668ebc011ace5cffaa84cca2beb179",
+    "github_related.json": "fb03cad09b3bb2baec75f9ac7a77d06613a3598b0ca95ea5864bdc33e1ed4fc7",
+    "third_notebook_source.json": "255c39c74317f6e132168343b971a21e88420716355d31724ad274097ca44585"
+  },
+  "weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "official_submissions": 0
+}

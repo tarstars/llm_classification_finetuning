@@ -1,30 +1,23 @@
-# Move above 20th place: v22 bounded conditional CPU test
+# Move above 20th place: v24 published structural-rule screen
 
-Persistent objective: team 17244411 at rank <=19 on a fresh complete official
-leaderboard after legitimate inference. ACTIVE, unachieved; best H60 0.82987,
-latest complete observation rank23/312. Preserve docs/GOAL_V21.md and results.
-Select H68 only; execute docs/SPAN_022_PLAN.md.
+Persistent objective: team17244411 rank<=19 on a fresh complete official board
+following legitimate inference. ACTIVE/unachieved; best0.82987, rank23/312.
+Select H70only under docs/SPAN_024_PLAN.md; preserve docs/GOAL_V23.md.
 
-ONE prospective correction: keep all H60 tie probabilities exactly and every
-off-route probability exactly. Eligible mirror input length <=512. Rank H60
-A/B mass * entropy(conditional A/B) / input length, with stable ID tie breaking;
-cap 5% of rows and 5% of total native token work. No labels or mirror predictions
-enter routing. On route preserve A/B mass, conditional mixture .75 H60 + .25
-mirror; zero A/B mass gives uniform conditional. No fitting or alternative grid.
+One exact published rule from pinned fourth-place historical inference: rawemptyA
+[.04,.88,.08], then rawemptyB[.88,.04,.08], then rawA==rawB[.06,.06,.88].
+Empty strings exactly [null],[],[ ],[  ],[""],["",""]; no normalization,
+fittedconstants or grids. Preserve known different-encoding bothempty asymmetry
+and every unaffected H60probability. Commit source before reading metrics.
 
-Use complete original uniform512 H66 outputs consistently; freeze the method
-before evaluation. Original loss reduction must exceed .001; seed42/2000 paired
-prompt-group bootstrap, class behavior and exact tie/off-route/probability guards.
-Stop this correction on failure. Passing remains exploratory/inconclusive:
-original data already inspected and training-overlapping, later probabilities/
-reverse baseline missing. No honest CV, hidden-score forecast or eligibility.
+First count fulloriginal rawtext coverage without labels; save it before target
+access. Replay verified original512 H60cache once, seed42/2000pairedpromptgroups,
+class/affectedcategory behavior. Required lossreduction>.0005, CPUcap300s.
+Stop on gate/invariant failure, no alternative rule. Data overlaps checkpoint
+training; sparsecoverage limits information, noCV or hidden-scoreforecast.
 
-CPU cap300 seconds; zero new inference/GPU/external experiment calls/official.
-Publication of code/results is authorized. No weight conversion/upload, resource
-period reset or reopening of the rejected fixed replacement backend. Any real
-joint runtime/memory/source-completion experiment needs a separate bounded plan.
-
-Per-row artifacts ROOT/runs/span_022; code/aggregates/report/executed notebook34
-in Git. Preserve86 snapshots, archived goals, user-dirty07/12 and notebook link.
-CLI tracking; discoveries to v23, unfinished carry at closure. Span completion
-never substitutes for the actual rank goal.
+Zero newinference/GPU/weights/externaltextservice/official. A positive result only
+supports a separately bounded actualqualification proposal. Heavy artifacts
+ROOT/runs/span_024; report/aggregate/executednotebook36 inGit. Preserve94snapshots,
+usernotebooks07/12/archivedgoals/link. CLItracking; nextdraft discoveries and
+unfinishedcarry. Gitpublication authorized; span completion is not rankgoal.

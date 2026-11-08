@@ -6364,7 +6364,7 @@
       ],
       "id": "H68",
       "rank": 86,
-      "status": "running",
+      "status": "done",
       "introduced_in": 22,
       "discovered_during": 21,
       "derived_from": [
@@ -6393,6 +6393,164 @@
           "note": "FixedCPUrule implemented;4meaningfultests pass for exacttie/offroute/ABmass,512tokeneligibility,5%row/workcaps,stableIDordering andzeroABfallback.86snapshots/usernotebooks preserved. One.25conditionalweight, no grid; freeze methodbeforeevaluation. No candidatequality/GPU yet.",
           "evidence": [
             "tests/test_span022_conditional.py"
+          ]
+        },
+        {
+          "at": "2026-11-08T14:36:36+00:00",
+          "status": "done",
+          "note": "Single frozen .25conditional correction failed: originalloss .652988 to .654043, reduction-.001055 pairedgroup95[-.002035,-.000127]; exacttie/offroute/mass guards pass. CPU.092s, zeroGPU/inference/official; stop without rescuegrid. Report and executednotebook34 preserve trainingoverlap limits.",
+          "evidence": [
+            "docs/SPAN_022_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Audit different public trained classifiers before further inference",
+      "priority": "P1",
+      "gain": [
+        0,
+        0
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        1
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0,
+        0.1
+      ],
+      "risk": "medium",
+      "claim": "A bounded source audit may identify a genuinely different traceable trained classifier with a plausible runtime path; this metadata stage does not measure quality.",
+      "basis": "H67 fixed mirror replacement worsened loss by .159278 and H68 conditional correction by .001055. Both stopped; retained author checkpoint listing currently documents only m0/m3, leaving other releases unverified.",
+      "first_test": "At most60minutes/50MiB total metadata and code: inspect cached pinned tascj training/inference sources, authenticated public author dataset listings and primary linked classifier sources. No weights, GPU, external text inference or official. Record exact revisions, training/head provenance, formatting/classes/terms and runtime implications. Missing checkpoint numbers do not establish model existence.",
+      "acceptance": "Either nominate a traceable different source with training/head/input/class/terms evidence and a bounded separately frozen engineering/quality proposal, or document no qualifying source. No score claim or GPU admission from metadata alone.",
+      "stop": "Stop each403/gated/unavailable source without bypass or mirrors. Preserve H55 prior403 and do not retry it. Stop at60min/50MiB; no weights, predictions, GPU, official or rescue grid on failedM.",
+      "risk_reason": "Other model numbers may not exist, checkpoints can be inaccessible or untrained at the head, public validation overlaps training, and another large expert may exceed ninehours.",
+      "mitigation": "Use primary author sources and pinned revisions; audit actual release and semantics before spending compute. Keep source facts distinct from strength/runtime hypotheses and require a separate actual pilot.",
+      "rationale": "Seek new supervised information rather than tuning a globally weaker rejected mirror. Source inspection is cheap relative to another failed native backend.",
+      "revision": "Initialv23proposal after measuredH68failure; no new source query or inference yet.",
+      "depends_on": [
+        "E00",
+        "H68"
+      ],
+      "evidence": [
+        "docs/SPAN_022_RESULTS.md",
+        "results/span_022/conditional_screen.json",
+        "docs/SPAN_009_PUBLIC_MODEL_PROTOCOL.md"
+      ],
+      "id": "H69",
+      "rank": 87,
+      "status": "done",
+      "introduced_in": 23,
+      "discovered_during": 22,
+      "derived_from": [
+        "H68"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T14:36:36+00:00",
+          "status": "planned",
+          "note": "Rejectedmirror gives no useful signal; seek different traceable public trainedclassifier with bounded metadata-only audit before weights or GPU.",
+          "evidence": [
+            "docs/SPAN_022_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T14:38:28+00:00",
+          "status": "running",
+          "note": "Start bounded primary-source audit under docs/SPAN_023_PLAN.md;60min/50MiBmetadata/code, zero weights/GPU/inference/official. H68 stopped; verify complete authorrelease listing and actual trainedhead provenance before newcompute.",
+          "evidence": [
+            "docs/SPAN_023_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T14:53:04+00:00",
+          "status": "done",
+          "note": "Boundedsourceaudit complete in773s,407902archivedbytes, zero weights/GPU/official. Onlyretainedtascj m0/m3 public; thirdplaceadapterbase401/noexactKagglematch; fourthplaceweightlineageunresolved. Stop sourcepaths; queue exact published empty/identical rule as different zeroGPUlead.",
+          "evidence": [
+            "docs/SPAN_023_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Replay the published empty/identical-answer rule against retained H60",
+      "priority": "P2",
+      "gain": [
+        -0.002,
+        0.002
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.25,
+        0.75
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0.25,
+        0.75
+      ],
+      "cpu_wall_hours": [
+        0,
+        0.1
+      ],
+      "risk": "high",
+      "claim": "A fixed published structural override may improve rare empty/identical cases at negligible deployment CPUcost; current H60 may already handle them better.",
+      "basis": "Pinned fourth-place historical inference applies exact raw-string emptiness and identity rules; sourceaudit found no qualifying newcheckpoint. Current H60performance on these cases has not been measured.",
+      "first_test": "Freeze one exact source rule before evaluation. Empty rawstrings [null],[],[ ],[  ],[\"\"],[\"\",\"\"] give [.04,.88,.08] forAempty then [.88,.04,.08] forBempty; final exact rawA==rawB override [.06,.06,.88]. Keep allother H60probabilities exact. Count fulloriginal training coverage without labels, then one replay on original512 with verified H60cache, paired promptgroup95/seed42/2000, class and affectedcase diagnostics. No normalization, fittedconstants, grids or newinference.",
+      "acceptance": "Correct exactmatching/precedence, simplex and offroute guards; original512lossreduction>.0005 to justify separately bounded actualqualification. Report numberaffected and wide uncertainty; sparse or positive trainingoverlapping result is notCV or a hidden-scoreforecast. A future official needs frozen engineering/runtime/source qualification.",
+      "stop": "Stop this fixedcandidate if invariants fail or originalgain<=.0005. No new GPU,weights,inference,official or alternativepatterns/probabilities in this CPUspan. Do not declare publishednumbers optimal or independent.",
+      "risk_reason": "Rarecases may be absent from512; training-overlapping currentmodel may already outperform heuristic; stringmatching misses semanticemptiness, and public constants may transferpoorly.",
+      "mitigation": "Exact pinned sourcebehavior, count coverage first without targets, preserve no-effect and negative outcomes; no silently broadenedpatterns or datafit. Treat sourceinferenceclaim separately from actual H60performance.",
+      "rationale": "Uses a concrete primary-source mechanism without another weakmodel or expensive backend. Different from oldH36learned residuals on weakQLoRA and from rejectedmirrorcorrection.",
+      "revision": "Newv24proposal from sourceinspection only; no H60structuralmetric observed.",
+      "depends_on": [
+        "E00",
+        "H69",
+        "H60"
+      ],
+      "evidence": [
+        "docs/SPAN_023_RESULTS.md",
+        "results/span_023/source_audit.json"
+      ],
+      "id": "H70",
+      "rank": 88,
+      "status": "running",
+      "introduced_in": 24,
+      "discovered_during": 23,
+      "derived_from": [
+        "H69"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T14:53:05+00:00",
+          "status": "planned",
+          "note": "Pinned fourthplacecode provides exact no-fit empty/identicalrule; measure against H60before any newGPU. No currentcandidatequality observed.",
+          "evidence": [
+            "docs/SPAN_023_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T14:56:00+00:00",
+          "status": "running",
+          "note": "One exactsource rule implemented before metrics;3tests pass for publishedconstants, knownboth-empty precedenceasymmetry, no normalization, exactunaffected probabilities and rawinput rejection.94snapshots preserved; freeze/push before one CPUoriginal512screen, no GPU.",
+          "evidence": [
+            "docs/SPAN_024_PLAN.md"
           ]
         }
       ]
@@ -6446,7 +6604,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 22,
+  "active_version": 24,
   "versions": [
     {
       "number": 1,
@@ -8076,7 +8234,7 @@
     },
     {
       "number": 22,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -8132,10 +8290,146 @@
       "carried_from": 21,
       "start_sha256": "21b410ab8aa8946cfc4a3ffd7e9e457adf50618aff278077d84c4af9d0a1d073",
       "start_markdown_sha256": "5c2e561271cd3587dc6b2ea0e81f5616b0efe536b54ec49653f371705abbecc3",
-      "start_sealed_at": "2026-11-08T14:18:08+00:00"
+      "start_sealed_at": "2026-11-08T14:18:08+00:00",
+      "final_sha256": "3ebbb6021e2da251fb4bb07f73223a9e9f885289f0977fe5633bfea995fa6c97",
+      "final_markdown_sha256": "3eb6643ec0881f446a18a46d43272fca7ceca1119fd876bcf91da4889fa310a8",
+      "final_sealed_at": "2026-11-08T14:36:46+00:00",
+      "closed_at": "2026-11-08T14:36:46+00:00",
+      "closing_note": "H68failed fixedconditionalcorrection; no newGPU/official. Preserve stoppedrecipe and all37unfinishedtasks; activate H69source-onlyaudit under persistent rankgoal.",
+      "closing_evidence": [
+        "docs/SPAN_022_RESULTS.md"
+      ]
     },
     {
       "number": 23,
+      "state": "closed",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H69"
+      ],
+      "focus_ids": [
+        "H69"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T14:36:46+00:00",
+          "note": "Persistent rank<=19goal continues; select bounded60min/50MiBsource audit only, no weights/GPU. Both mirrorqualityattempts stopped.",
+          "focus_ids": [
+            "H69"
+          ]
+        }
+      ],
+      "carried_from": 22,
+      "start_sha256": "387124204a2ccc5a80beb08086c18a4a619f48cfc9160b0bd3bf1382a03ec66a",
+      "start_markdown_sha256": "9c436e5c7d69d9f5e0cf204c9f2f39017370360c744fed85cd31d482ed727d13",
+      "start_sealed_at": "2026-11-08T14:36:46+00:00",
+      "final_sha256": "d9248fb6b186a735d32bff47b05f40899529ee51a3ee6647cf6feb9549343e51",
+      "final_markdown_sha256": "c4d8646825ba8d32015d3f5f8fe4a4abb27345002e70743c6521fc2fdb183ba3",
+      "final_sealed_at": "2026-11-08T14:53:05+00:00",
+      "closed_at": "2026-11-08T14:53:05+00:00",
+      "closing_note": "H69sourceaudit found no qualifying different checkpoint; preserve accessfailures, carry37unfinished and select cheap published-rule test under continuing rankgoal.",
+      "closing_evidence": [
+        "docs/SPAN_023_RESULTS.md"
+      ]
+    },
+    {
+      "number": 24,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H70"
+      ],
+      "focus_ids": [
+        "H70"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T14:53:05+00:00",
+          "note": "Select one exactpublished-rule CPUreplay after sourceaudit; no weight/grid/GPU/official. Actualrankgoal remains unachieved.",
+          "focus_ids": [
+            "H70"
+          ]
+        }
+      ],
+      "carried_from": 23,
+      "start_sha256": "189bd8de6bbb48bd704b46e98ef934325d20c0c49eb4c0808f55a081cb9ced20",
+      "start_markdown_sha256": "13b3a8bbfb762095eba07b0672172d439ec0841dfe7b2e426e1d1c3473150fb3",
+      "start_sealed_at": "2026-11-08T14:53:05+00:00"
+    },
+    {
+      "number": 25,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

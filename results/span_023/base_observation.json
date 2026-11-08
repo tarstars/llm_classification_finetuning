@@ -1,0 +1,751 @@
+{
+  "at": "2026-11-08T14:45:22.985275+00:00",
+  "model_search": {
+    "base": {},
+    "author": {
+      "models": [
+        {
+          "id": 406204,
+          "ref": "conjuring92/mdc_qwen14b_merged",
+          "title": "mdc_qwen14b_merged",
+          "author": "Raja Biswas",
+          "slug": "mdc_qwen14b_merged",
+          "instances": [
+            {
+              "id": 387131,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_qwen14b_merged/Transformers/default/14/download",
+              "versionId": 567600,
+              "versionNumber": 14,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_qwen14b_merged/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 29556062526
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_qwen14b_merged",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-09-08T17:12:56.883Z"
+        },
+        {
+          "id": 434719,
+          "ref": "conjuring92/mdc_filter_qwen2b",
+          "title": "mdc_filter_qwen2b",
+          "author": "Raja Biswas",
+          "slug": "mdc_filter_qwen2b",
+          "instances": [
+            {
+              "id": 417016,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_filter_qwen2b/Transformers/default/1/download",
+              "versionId": 536836,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_filter_qwen2b/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 3103347383
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_filter_qwen2b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-24T11:12:33.581Z"
+        },
+        {
+          "id": 439068,
+          "ref": "conjuring92/mdc_qwen_7b_merged",
+          "title": "mdc_qwen_7b_merged",
+          "author": "Raja Biswas",
+          "slug": "mdc_qwen_7b_merged",
+          "instances": [
+            {
+              "id": 421454,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_qwen_7b_merged/Transformers/default/1/download",
+              "versionId": 552549,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_qwen_7b_merged/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 15247180291
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_qwen_7b_merged",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-30T16:04:03.124Z"
+        },
+        {
+          "id": 439116,
+          "ref": "conjuring92/mdc_qwen_8b_merged",
+          "title": "mdc_qwen_8b_merged",
+          "author": "Raja Biswas",
+          "slug": "mdc_qwen_8b_merged",
+          "instances": [
+            {
+              "id": 421508,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_qwen_8b_merged/Transformers/default/1/download",
+              "versionId": 552627,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_qwen_8b_merged/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 16397433984
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_qwen_8b_merged",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-30T17:20:17.773Z"
+        },
+        {
+          "id": 439626,
+          "ref": "conjuring92/mdc_qwen_72b_warmup_lora",
+          "title": "mdc_qwen_72b_warmup_lora",
+          "author": "Raja Biswas",
+          "slug": "mdc_qwen_72b_warmup_lora",
+          "instances": [
+            {
+              "id": 422039,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_qwen_72b_warmup_lora/Transformers/default/1/download",
+              "versionId": 553739,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_qwen_72b_warmup_lora/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 1700312947
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_qwen_72b_warmup_lora",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-31T17:02:40.938Z"
+        },
+        {
+          "id": 442579,
+          "ref": "conjuring92/mdc_cls_qwen_72b_awq",
+          "title": "mdc_cls_qwen_72b_awq",
+          "author": "Raja Biswas",
+          "slug": "mdc_cls_qwen_72b_awq",
+          "instances": [
+            {
+              "id": 425111,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_cls_qwen_72b_awq/Transformers/default/3/download",
+              "versionId": 571048,
+              "versionNumber": 3,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_cls_qwen_72b_awq/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 42852406186
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_cls_qwen_72b_awq",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-09-09T08:07:16.334Z"
+        },
+        {
+          "id": 423411,
+          "ref": "conjuring92/mdc_binary_qwen7b",
+          "title": "mdc_binary_qwen7b",
+          "author": "Raja Biswas",
+          "slug": "mdc_binary_qwen7b",
+          "description": "# Model Summary\n\nProvide a brief overview of the model including details about its architecture, how it can be used, characteristics of the model, training data, and evaluation results.\n\n## Usage\n\nHow can this model be used? You should provide a code snippet that demonstrates how to load and/or fine-tune your model, and you should define the shape of both the inputs and the outputs.  Are there known and preventable failures to be aware of?\n\n## System\n\nIs this a standalone model or part of a system? What are the input requirements? What are the downstream dependencies when using the model outputs?\n\n## Implementation requirements\n\nWhat hardware and software were used for training the model? Describe the compute requirements for training and inference (e.g., # of chips, training time, total computation, measured performance, energy consumption).\n\n# Model Characteristics\n\n## Model initialization\n\nWas the model trained from scratch or fine-tuned from a pre-trained model?\n\n## Model stats\n\nWhat’s the size of the model? Provide information about size, weights, layers, and latency.\n\n## Other details\n\nIs the model pruned? Is it quantized? Describe any techniques to preserve differential privacy.\n\n# Data Overview\n\nProvide more details about the data used to train this model.\n\n## Training data\n\nDescribe the data that was used to train the model. How was it collected? What pre-processing was done?\n\n## Demographic groups\n\nDescribe any demographic data or attributes that suggest demographic groups\n\n## Evaluation data\n\nWhat was the train / test / dev split? Are there notable differences between training and test data?\n\n# Evaluation Results\n\n## Summary\n\nSummarize and link to evaluation results for this analysis.\n\n## Subgroup evaluation results\n\nDid you do any subgroup analysis? Describe the results and any assumptions about disaggregating data. Are there any known and preventable failures about this model?\n\n## Fairness \n\nHow did you define fairness? What metrics and baselines did you use? What were the results of your analysis?\n\n## Usage limitations\n\nAre there sensitive use cases? What factors might limit model performance and what conditions should be satisfied to use this model? \n\n## Ethics\n\nWhat ethical factors did the model developers consider? Were any risks identified? What mitigations or remediates were undertaken?",
+          "instances": [
+            {
+              "id": 405509,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_binary_qwen7b/Transformers/default/1/download",
+              "versionId": 512288,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_binary_qwen7b/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 15247180291
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_binary_qwen7b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-08T08:03:13.139Z"
+        },
+        {
+          "id": 423560,
+          "ref": "conjuring92/mdc_binary_qwen4b",
+          "title": "mdc_binary_qwen4b",
+          "author": "Raja Biswas",
+          "slug": "mdc_binary_qwen4b",
+          "instances": [
+            {
+              "id": 405654,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_binary_qwen4b/Transformers/default/1/download",
+              "versionId": 512451,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_binary_qwen4b/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 8060898786
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_binary_qwen4b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-08T11:40:54.991Z"
+        },
+        {
+          "id": 423591,
+          "ref": "conjuring92/mdc_binary_qwen2b",
+          "title": "mdc_binary_qwen2b",
+          "author": "Raja Biswas",
+          "slug": "mdc_binary_qwen2b",
+          "instances": [
+            {
+              "id": 405688,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_binary_qwen2b/Transformers/default/4/download",
+              "versionId": 530595,
+              "versionNumber": 4,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_binary_qwen2b/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 3103347383
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_binary_qwen2b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-21T16:36:47.796Z"
+        },
+        {
+          "id": 427376,
+          "ref": "conjuring92/mdc_cls_qwen3_4b",
+          "title": "mdc_cls_qwen3_4b",
+          "author": "Raja Biswas",
+          "slug": "mdc_cls_qwen3_4b",
+          "instances": [
+            {
+              "id": 409528,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_cls_qwen3_4b/Transformers/default/2/download",
+              "versionId": 522638,
+              "versionNumber": 2,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_cls_qwen3_4b/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 10714031617
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_cls_qwen3_4b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-15T17:18:51.173Z"
+        },
+        {
+          "id": 428130,
+          "ref": "conjuring92/mdc_cls_qwen_32b_awq",
+          "title": "mdc_cls_qwen_32b_awq",
+          "author": "Raja Biswas",
+          "slug": "mdc_cls_qwen_32b_awq",
+          "instances": [
+            {
+              "id": 410285,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_cls_qwen_32b_awq/Transformers/default/3/download",
+              "versionId": 558523,
+              "versionNumber": 3,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_cls_qwen_32b_awq/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 19345012155
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_cls_qwen_32b_awq",
+          "voteCount": 2,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-09-03T20:04:31.324Z"
+        },
+        {
+          "id": 429806,
+          "ref": "conjuring92/mdc_doi_fixer",
+          "title": "mdc_doi_fixer",
+          "author": "Raja Biswas",
+          "slug": "mdc_doi_fixer",
+          "description": "fixes DOI ID spanning multiple lines",
+          "instances": [
+            {
+              "id": 412013,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/mdc_doi_fixer/Transformers/default/2/download",
+              "versionId": 527670,
+              "versionNumber": 2,
+              "url": "https://www.kaggle.com/models/conjuring92/mdc_doi_fixer/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 3103347255
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/mdc_doi_fixer",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-08-18T20:37:49.669Z"
+        },
+        {
+          "id": 232870,
+          "ref": "conjuring92/wsdm-gemma9b-merged-16bit",
+          "title": "wsdm-gemma9b-merged-16bit",
+          "author": "Raja Biswas",
+          "slug": "wsdm-gemma9b-merged-16bit",
+          "instances": [
+            {
+              "id": 211180,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/wsdm-gemma9b-merged-16bit/Transformers/default/2/download",
+              "versionId": 248172,
+              "versionNumber": 2,
+              "url": "https://www.kaggle.com/models/conjuring92/wsdm-gemma9b-merged-16bit/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 18522158215
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/wsdm-gemma9b-merged-16bit",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-02-02T13:28:51.689Z"
+        },
+        {
+          "id": 233306,
+          "ref": "conjuring92/wsdm-qwen14b-cv669-feb2-16bit",
+          "title": "wsdm-qwen14b-cv669-feb2-16bit",
+          "author": "Raja Biswas",
+          "slug": "wsdm-qwen14b-cv669-feb2-16bit",
+          "instances": [
+            {
+              "id": 211625,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/wsdm-qwen14b-cv669-feb2-16bit/Transformers/default/1/download",
+              "versionId": 247602,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/wsdm-qwen14b-cv669-feb2-16bit/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 27998936247
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/wsdm-qwen14b-cv669-feb2-16bit",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-02-01T20:22:12.327Z"
+        },
+        {
+          "id": 189110,
+          "ref": "conjuring92/eedi-context-qwen-awq",
+          "title": "eedi-context-qwen-awq",
+          "author": "Raja Biswas",
+          "slug": "eedi-context-qwen-awq",
+          "instances": [
+            {
+              "id": 166804,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-context-qwen-awq/Transformers/default/4/download",
+              "versionId": 196045,
+              "versionNumber": 4,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-context-qwen-awq/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 42852404302
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-context-qwen-awq",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-12T09:20:46.122Z"
+        },
+        {
+          "id": 176386,
+          "ref": "conjuring92/eedi-ranker-32b-cv655-nov24-custom-awq",
+          "title": "eedi-ranker-32b-cv655-nov24-custom-awq",
+          "author": "Raja Biswas",
+          "slug": "eedi-ranker-32b-cv655-nov24-custom-awq",
+          "instances": [
+            {
+              "id": 153926,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-ranker-32b-cv655-nov24-custom-awq/Transformers/default/1/download",
+              "versionId": 180631,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-ranker-32b-cv655-nov24-custom-awq/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 19954495402
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-ranker-32b-cv655-nov24-custom-awq",
+          "voteCount": 2,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-11-27T15:04:21.419Z"
+        },
+        {
+          "id": 182502,
+          "ref": "conjuring92/eedi-cot-7b-base-dec4",
+          "title": "eedi-cot-7b-base-dec4",
+          "author": "Raja Biswas",
+          "slug": "eedi-cot-7b-base-dec4",
+          "instances": [
+            {
+              "id": 160135,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-cot-7b-base-dec4/Transformers/default/1/download",
+              "versionId": 187838,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-cot-7b-base-dec4/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 15247179624
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-cot-7b-base-dec4",
+          "voteCount": 1,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-04T07:57:54.889Z"
+        },
+        {
+          "id": 183185,
+          "ref": "conjuring92/eedi-ranker-14b-643-dec5-4bit-ff",
+          "title": "eedi-ranker-14b-643-dec5-4bit-ff",
+          "author": "Raja Biswas",
+          "slug": "eedi-ranker-14b-643-dec5-4bit-ff",
+          "instances": [
+            {
+              "id": 160796,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-ranker-14b-643-dec5-4bit-ff/Transformers/default/1/download",
+              "versionId": 188610,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-ranker-14b-643-dec5-4bit-ff/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 8391302164
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-ranker-14b-643-dec5-4bit-ff",
+          "voteCount": 1,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-05T00:36:08.741Z"
+        },
+        {
+          "id": 183906,
+          "ref": "conjuring92/eedi-cot-32b-dec6-awq",
+          "title": "eedi-cot-32b-dec6-awq",
+          "author": "Raja Biswas",
+          "slug": "eedi-cot-32b-dec6-awq",
+          "instances": [
+            {
+              "id": 161545,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-cot-32b-dec6-awq/Transformers/default/2/download",
+              "versionId": 193998,
+              "versionNumber": 2,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-cot-32b-dec6-awq/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 19954495431
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-cot-32b-dec6-awq",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-09T18:09:06.938Z"
+        },
+        {
+          "id": 183907,
+          "ref": "conjuring92/eedi-oracle-14b-dec6-cv607-awq",
+          "title": "eedi-oracle-14b-dec6-cv607-awq",
+          "author": "Raja Biswas",
+          "slug": "eedi-oracle-14b-dec6-cv607-awq",
+          "description": "# Model Summary\n\nProvide a brief overview of the model including details about its architecture, how it can be used, characteristics of the model, training data, and evaluation results.\n\n## Usage\n\nHow can this model be used? You should provide a code snippet that demonstrates how to load and/or fine-tune your model, and you should define the shape of both the inputs and the outputs.  Are there known and preventable failures to be aware of?\n\n## System\n\nIs this a standalone model or part of a system? What are the input requirements? What are the downstream dependencies when using the model outputs?\n\n## Implementation requirements\n\nWhat hardware and software were used for training the model? Describe the compute requirements for training and inference (e.g., # of chips, training time, total computation, measured performance, energy consumption).\n\n# Model Characteristics\n\n## Model initialization\n\nWas the model trained from scratch or fine-tuned from a pre-trained model?\n\n## Model stats\n\nWhat’s the size of the model? Provide information about size, weights, layers, and latency.\n\n## Other details\n\nIs the model pruned? Is it quantized? Describe any techniques to preserve differential privacy.\n\n# Data Overview\n\nProvide more details about the data used to train this model.\n\n## Training data\n\nDescribe the data that was used to train the model. How was it collected? What pre-processing was done?\n\n## Demographic groups\n\nDescribe any demographic data or attributes that suggest demographic groups\n\n## Evaluation data\n\nWhat was the train / test / dev split? Are there notable differences between training and test data?\n\n# Evaluation Results\n\n## Summary\n\nSummarize and link to evaluation results for this analysis.\n\n## Subgroup evaluation results\n\nDid you do any subgroup analysis? Describe the results and any assumptions about disaggregating data. Are there any known and preventable failures about this model?\n\n## Fairness \n\nHow did you define fairness? What metrics and baselines did you use? What were the results of your analysis?\n\n## Usage limitations\n\nAre there sensitive use cases? What factors might limit model performance and what conditions should be satisfied to use this model? \n\n## Ethics\n\nWhat ethical factors did the model developers consider? Were any risks identified? What mitigations or remediates were undertaken?",
+          "instances": [
+            {
+              "id": 161544,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-oracle-14b-dec6-cv607-awq/Transformers/default/1/download",
+              "versionId": 189475,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-oracle-14b-dec6-cv607-awq/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 10254201190
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-oracle-14b-dec6-cv607-awq",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-05T16:23:07.658Z"
+        },
+        {
+          "id": 183919,
+          "ref": "conjuring92/eedi-cot-14b-dec6-awq",
+          "title": "eedi-cot-14b-dec6-awq",
+          "author": "Raja Biswas",
+          "slug": "eedi-cot-14b-dec6-awq",
+          "instances": [
+            {
+              "id": 161818,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-cot-14b-dec6-awq/Transformers/default/1/download",
+              "versionId": 189794,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-cot-14b-dec6-awq/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 10254201187
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-cot-14b-dec6-awq",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-06T00:28:56.598Z"
+        },
+        {
+          "id": 184989,
+          "ref": "conjuring92/eedi-oracle-14b-dec7-cv646-awq-ff",
+          "title": "eedi-oracle-14b-dec7-cv646-awq-ff",
+          "author": "Raja Biswas",
+          "slug": "eedi-oracle-14b-dec7-cv646-awq-ff",
+          "instances": [
+            {
+              "id": 162643,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-oracle-14b-dec7-cv646-awq-ff/Transformers/default/1/download",
+              "versionId": 190807,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-oracle-14b-dec7-cv646-awq-ff/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 10254201196
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-oracle-14b-dec7-cv646-awq-ff",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-06T17:29:40.465Z"
+        },
+        {
+          "id": 185622,
+          "ref": "conjuring92/eedi-tutor-72b-cv661-dec7-awq",
+          "title": "eedi-tutor-72b-cv661-dec7-awq",
+          "author": "Raja Biswas",
+          "slug": "eedi-tutor-72b-cv661-dec7-awq",
+          "instances": [
+            {
+              "id": 163276,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-tutor-72b-cv661-dec7-awq/Transformers/default/2/download",
+              "versionId": 194295,
+              "versionNumber": 2,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-tutor-72b-cv661-dec7-awq/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 42852404295
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-tutor-72b-cv661-dec7-awq",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-10T19:44:44.450Z"
+        },
+        {
+          "id": 185687,
+          "ref": "conjuring92/eedi-oracle-32b-cv663-dec7-awq-ff",
+          "title": "eedi-oracle-32b-cv663-dec7-awq-ff",
+          "author": "Raja Biswas",
+          "slug": "eedi-oracle-32b-cv663-dec7-awq-ff",
+          "instances": [
+            {
+              "id": 163332,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/eedi-oracle-32b-cv663-dec7-awq-ff/Transformers/default/1/download",
+              "versionId": 191622,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/eedi-oracle-32b-cv663-dec7-awq-ff/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 19954495441
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/eedi-oracle-32b-cv663-dec7-awq-ff",
+          "voteCount": 1,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2024-12-07T14:15:06.170Z"
+        },
+        {
+          "id": 229569,
+          "ref": "conjuring92/wsdm-gemma9b-cv698-16bit-jan27",
+          "title": "wsdm-gemma9b-cv698-16bit-jan27",
+          "author": "Raja Biswas",
+          "slug": "wsdm-gemma9b-cv698-16bit-jan27",
+          "instances": [
+            {
+              "id": 207865,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/wsdm-gemma9b-cv698-16bit-jan27/Transformers/default/4/download",
+              "versionId": 245338,
+              "versionNumber": 4,
+              "url": "https://www.kaggle.com/models/conjuring92/wsdm-gemma9b-cv698-16bit-jan27/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 18522158145
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/wsdm-gemma9b-cv698-16bit-jan27",
+          "voteCount": 1,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-01-30T01:00:52.266Z"
+        },
+        {
+          "id": 231844,
+          "ref": "conjuring92/wsdm-qwen14b-16bit-drm",
+          "title": "wsdm-qwen14b-16bit-drm",
+          "author": "Raja Biswas",
+          "slug": "wsdm-qwen14b-16bit-drm",
+          "instances": [
+            {
+              "id": 210159,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/wsdm-qwen14b-16bit-drm/Transformers/default/1/download",
+              "versionId": 245946,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/wsdm-qwen14b-16bit-drm/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 27998936247
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/wsdm-qwen14b-16bit-drm",
+          "voteCount": 1,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2025-01-30T16:30:29.648Z"
+        },
+        {
+          "id": 619063,
+          "ref": "conjuring92/dpc_byt5_b2_ns",
+          "title": "dpc_byt5_b2_ns",
+          "author": "Raja Biswas",
+          "slug": "dpc_byt5_b2_ns",
+          "instances": [
+            {
+              "id": 607085,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/dpc_byt5_b2_ns/Transformers/default/1/download",
+              "versionId": 796966,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/dpc_byt5_b2_ns/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 4912828084
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/dpc_byt5_b2_ns",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2026-03-21T18:34:55.577Z"
+        },
+        {
+          "id": 617861,
+          "ref": "conjuring92/dpc_byt5_xl",
+          "title": "dpc_byt5_xl",
+          "author": "Raja Biswas",
+          "slug": "dpc_byt5_xl",
+          "instances": [
+            {
+              "id": 605859,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/dpc_byt5_xl/Transformers/default/5/download",
+              "versionId": 799410,
+              "versionNumber": 5,
+              "url": "https://www.kaggle.com/models/conjuring92/dpc_byt5_xl/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 14951346063
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/dpc_byt5_xl",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2026-03-23T07:15:33.629Z"
+        },
+        {
+          "id": 620081,
+          "ref": "conjuring92/dpc_a05_14k_soup",
+          "title": "dpc_a05_14k_soup",
+          "author": "Raja Biswas",
+          "slug": "dpc_a05_14k_soup",
+          "instances": [
+            {
+              "id": 608180,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/dpc_a05_14k_soup/Transformers/default/1/download",
+              "versionId": 798528,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/conjuring92/dpc_a05_14k_soup/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 4913836180
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/dpc_a05_14k_soup",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2026-03-22T19:03:13.607Z"
+        },
+        {
+          "id": 619139,
+          "ref": "conjuring92/dpc_qwen8b_rm",
+          "title": "dpc_qwen8b_rm",
+          "author": "Raja Biswas",
+          "slug": "dpc_qwen8b_rm",
+          "description": "# Model Summary\n\nProvide a brief overview of the model including details about its architecture, how it can be used, characteristics of the model, training data, and evaluation results.\n\n## Usage\n\nHow can this model be used? You should provide a code snippet that demonstrates how to load and/or fine-tune your model, and you should define the shape of both the inputs and the outputs.  Are there known and preventable failures to be aware of?\n\n## System\n\nIs this a standalone model or part of a system? What are the input requirements? What are the downstream dependencies when using the model outputs?\n\n## Implementation requirements\n\nWhat hardware and software were used for training the model? Describe the compute requirements for training and inference (e.g., # of chips, training time, total computation, measured performance, energy consumption).\n\n# Model Characteristics\n\n## Model initialization\n\nWas the model trained from scratch or fine-tuned from a pre-trained model?\n\n## Model stats\n\nWhat’s the size of the model? Provide information about size, weights, layers, and latency.\n\n## Other details\n\nIs the model pruned? Is it quantized? Describe any techniques to preserve differential privacy.\n\n# Data Overview\n\nProvide more details about the data used to train this model.\n\n## Training data\n\nDescribe the data that was used to train the model. How was it collected? What pre-processing was done?\n\n## Demographic groups\n\nDescribe any demographic data or attributes that suggest demographic groups\n\n## Evaluation data\n\nWhat was the train / test / dev split? Are there notable differences between training and test data?\n\n# Evaluation Results\n\n## Summary\n\nSummarize and link to evaluation results for this analysis.\n\n## Subgroup evaluation results\n\nDid you do any subgroup analysis? Describe the results and any assumptions about disaggregating data. Are there any known and preventable failures about this model?\n\n## Fairness \n\nHow did you define fairness? What metrics and baselines did you use? What were the results of your analysis?\n\n## Usage limitations\n\nAre there sensitive use cases? What factors might limit model performance and what conditions should be satisfied to use this model? \n\n## Ethics\n\nWhat ethical factors did the model developers consider? Were any risks identified? What mitigations or remediates were undertaken?",
+          "instances": [
+            {
+              "id": 607175,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/conjuring92/dpc_qwen8b_rm/Transformers/default/3/download",
+              "versionId": 799727,
+              "versionNumber": 3,
+              "url": "https://www.kaggle.com/models/conjuring92/dpc_qwen8b_rm/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 16397433899
+            }
+          ],
+          "url": "https://www.kaggle.com/models/conjuring92/dpc_qwen8b_rm",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2125251-kg.jpg",
+          "updateTime": "2026-03-23T10:37:48.969Z"
+        }
+      ],
+      "totalResults": 30
+    }
+  },
+  "archive_bytes": 274752,
+  "archive_sha256": {
+    "tascj_datasets.json": "d3415ddee68ada396463c26993e64043cf3bde6592e640d77757083bb9557238",
+    "github_observations.json": "c0c2bf72e87e7da1852b21b64ee5befee3668ebc011ace5cffaa84cca2beb179",
+    "github_related.json": "fb03cad09b3bb2baec75f9ac7a77d06613a3598b0ca95ea5864bdc33e1ed4fc7",
+    "third_notebook_source.json": "255c39c74317f6e132168343b971a21e88420716355d31724ad274097ca44585",
+    "lmsys-r-gemma-m205-21000-lb8741/adapter_config.json": "25d9394f10f498ab42aec0dd935ce193761d9111dddf19d77ef0497463f6ae7a",
+    "lmsys-r-gemma-m205-21000-lb8741/README.md": "9babb87c62242787c5cda197637fedf5b424f17ef84e1ae10ff01e0b58ccfc8e",
+    "utils-lmsys-v10/r_gemma/lmsys_model.py": "ad36bd5492d0a007bcb10ec6a8344499f52f3cb4f602b2ab2e0f04b40bed0d61",
+    "utils-lmsys-v10/r_gemma/lmsys_dataset.py": "c54b1ac96d1e76127735e1d8f2d6e0e49887b40e738d7b60a5077001dc619cff",
+    "utils-lmsys-v10/r_gemma/lmsys_loader.py": "beb5eaad9275a53420a4f8980df0efe17d3ce876d876dc22742ec4faf8155ae3"
+  },
+  "weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "official_submissions": 0,
+  "inaccessible_hf_base_retried": false
+}

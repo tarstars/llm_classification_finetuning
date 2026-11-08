@@ -1,0 +1,112 @@
+{
+  "at": "2026-11-08T14:29:22.099227+00:00",
+  "complete_original_screen": true,
+  "rows": 512,
+  "candidate_variants": 1,
+  "conditional_mirror_weight": 0.25,
+  "temperature": 1,
+  "budget": {
+    "row_cap": 25,
+    "token_budget": 16950.850000000002,
+    "used_tokens": 2391.0,
+    "eligible_rows": 229,
+    "selected_rows": 25
+  },
+  "maximum_eligible_tokens": 512,
+  "comparison": {
+    "baseline": {
+      "log_loss": 0.65298824928548,
+      "accuracy": 0.751953125,
+      "brier": 0.36541205754981965,
+      "class_log_loss": {
+        "winner_model_a": 0.5501857326915675,
+        "winner_model_b": 0.5457106174501591,
+        "winner_tie": 0.833848133534661
+      },
+      "class_recall": {
+        "winner_model_a": 0.8402366863905325,
+        "winner_model_b": 0.8258064516129032,
+        "winner_tie": 0.6117021276595744
+      },
+      "mean_probabilities": [
+        0.34907375562079324,
+        0.3395895045164252,
+        0.3113367388887127
+      ]
+    },
+    "candidate": {
+      "log_loss": 0.6540430853876984,
+      "accuracy": 0.751953125,
+      "brier": 0.3660350487841147,
+      "class_log_loss": {
+        "winner_model_a": 0.5513174927865401,
+        "winner_model_b": 0.5479609956971618,
+        "winner_tie": 0.833848133534661
+      },
+      "class_recall": {
+        "winner_model_a": 0.8402366863905325,
+        "winner_model_b": 0.8258064516129032,
+        "winner_tie": 0.6117021276595744
+      },
+      "mean_probabilities": [
+        0.3490364625521965,
+        0.3396267975850219,
+        0.3113367388887127
+      ]
+    },
+    "loss_reduction": -0.0010548361022183462,
+    "paired_group95": [
+      -0.002035341889710561,
+      -0.0001269630926192671
+    ],
+    "bootstrap_seed": 42,
+    "bootstrap_resamples": 2000,
+    "class_loss_reduction": {
+      "winner_model_a": -0.0011317600949726256,
+      "winner_model_b": -0.0022503782470027064,
+      "winner_tie": 0.0
+    }
+  },
+  "original_information_gate_passed": false,
+  "decision": "stop_conditional_correction",
+  "full_quality_gate_passed": false,
+  "official_submission_eligible": false,
+  "tie_probabilities_exact": true,
+  "offroute_predictions_exact": true,
+  "ab_mass_preserved": true,
+  "all_true_tie_loss_differences_zero": true,
+  "routing_uses_labels": false,
+  "routing_uses_mirror_predictions": false,
+  "original_training_overlap": true,
+  "previously_inspected_data": true,
+  "independent_competition_cv": false,
+  "hidden_score_forecast": false,
+  "later_comparison_complete": false,
+  "later_prediction_rows_available": 0,
+  "fitted_parameters": 0,
+  "new_gpu_executions": 0,
+  "new_inference_executions": 0,
+  "network_calls": 0,
+  "elapsed_cpu_seconds": 0.09179609292186797,
+  "source_sha256": {
+    "GOAL.md": "e52897a79f2ba9fd1e60b58ac10350d1a113a07ef508088293ab1114a0947508",
+    "docs/SPAN_022_PLAN.md": "bdd5a59581669095f782d80b6422d274eded0c5ea2c8bceb9539d0b1f4f6b4e3",
+    "scripts/screen_span_022.py": "d2dfd35089c864421bd4afb7b6f572ace78d4c8a1243ffae2ea625c544f451d1",
+    "src/arena/span022_conditional.py": "9463d8ff1420ec486703e6520cbf40312f2125dae8a447a46b25f590d50b6202",
+    "tests/test_span022_conditional.py": "c8ceedfe341f8425cd4168fbca7863cf21fd2c5f6cd506d18b14725348be89a5",
+    "src/arena/span019_quality.py": "cef2f99167601522d06cde1a455c8790dfd0b0f69bb2be8e2a24d328a4a54ce8",
+    "results/span_021/futility_screen.json": "8c95f0009ea18444eb1cb60b998275bbc693bb268bfab024f97fb0e9a1422c20",
+    "results/span_021/closure_audit.json": "d51bb93b3a749016c1946a95f3cbe2bec458bd77001532e32c83e49de32e77f4",
+    "scripts/prepare_span_022.py": "d116747e6712b75426745fcf553cb0550a1b9f28d89db80b687918ab4212cf33",
+    "results/span_022/preservation.json": "e803f92ddc7f038f239d4c18af852e507ad43c107c6c5d54b98dfc0a8fece6eb",
+    "results/span_022/variant_contract.json": "4f50e0a72d836f39a98282d21eb2c94a7ac330504303d6a1b63219f8ba9d65b1"
+  },
+  "input_sha256": {
+    "runs/span_021/original_uniform_analysis.npz": "97ca69f43fd3884903f6e287efba5ed9d8b92525a0409d9229cfd06adbf7c78e",
+    "runs/span_020/jobs/batch_candidate/output/mirror_experiment/mirror_uniform.npz": "a4b1202b121cd19e0dca7e3b11b5d7a138ca9b0eb81e8998f40d7c3121a95f55"
+  },
+  "output_sha256": {
+    "runs/span_022/route.json": "e84add854ba9385e979adee0d2a2a9b89a5945cbfe61665b039cbbae5280a59e",
+    "runs/span_022/conditional_uniform_analysis.npz": "b530ffa6d51d289ea981ab75f1fc4bca4a2b31721db10974b4656189efcabb85"
+  }
+}
