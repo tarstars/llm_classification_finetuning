@@ -1,0 +1,144 @@
+{
+  "at": "2026-11-08T13:47:58.700945+00:00",
+  "complete_original_screen": true,
+  "rows": 512,
+  "unique_prompt_groups": 512,
+  "primary_candidate_weights": [
+    0.5,
+    0.5
+  ],
+  "temperature": 1,
+  "candidate_variants": 1,
+  "fitted_parameters": 0,
+  "comparison": {
+    "baseline": {
+      "log_loss": 0.65298824928548,
+      "accuracy": 0.751953125,
+      "brier": 0.36541205754981965,
+      "class_log_loss": {
+        "winner_model_a": 0.5501857326915675,
+        "winner_model_b": 0.5457106174501591,
+        "winner_tie": 0.833848133534661
+      },
+      "class_recall": {
+        "winner_model_a": 0.8402366863905325,
+        "winner_model_b": 0.8258064516129032,
+        "winner_tie": 0.6117021276595744
+      },
+      "mean_probabilities": [
+        0.34907375562079324,
+        0.3395895045164252,
+        0.3113367388887127
+      ]
+    },
+    "candidate": {
+      "log_loss": 0.8122657536392666,
+      "accuracy": 0.673828125,
+      "brier": 0.4636913659158393,
+      "class_log_loss": {
+        "winner_model_a": 0.6367752059642167,
+        "winner_model_b": 0.5771727562745432,
+        "winner_tie": 1.16384722783403
+      },
+      "class_recall": {
+        "winner_model_a": 0.8224852071005917,
+        "winner_model_b": 0.8580645161290322,
+        "winner_tie": 0.3882978723404255
+      },
+      "mean_probabilities": [
+        0.3677705934981077,
+        0.38852170259201557,
+        0.24370770409950637
+      ]
+    },
+    "loss_reduction": -0.15927750435378643,
+    "paired_group95": [
+      -0.17662719201876498,
+      -0.13918161523872338
+    ],
+    "bootstrap_seed": 42,
+    "bootstrap_resamples": 2000,
+    "class_loss_reduction": {
+      "winner_model_a": -0.08658947327264932,
+      "winner_model_b": -0.031462138824384166,
+      "winner_tie": -0.329999094299369
+    }
+  },
+  "descriptive_experts": {
+    "Gemma": {
+      "log_loss": 0.7128778652327318,
+      "accuracy": 0.728515625,
+      "brier": 0.4070339292306011,
+      "class_log_loss": {
+        "winner_model_a": 0.6147821832322069,
+        "winner_model_b": 0.6060267170669073,
+        "winner_tie": 0.8891549834443889
+      },
+      "class_recall": {
+        "winner_model_a": 0.8106508875739645,
+        "winner_model_b": 0.8193548387096774,
+        "winner_tie": 0.5797872340425532
+      },
+      "mean_probabilities": [
+        0.34579547374096364,
+        0.34221971351371394,
+        0.31198481359751895
+      ]
+    },
+    "Mirror": {
+      "log_loss": 0.987016840877732,
+      "accuracy": 0.568359375,
+      "brier": 0.569826879834552,
+      "class_log_loss": {
+        "winner_model_a": 0.6918299678827231,
+        "winner_model_b": 0.5805380167857069,
+        "winner_tie": 1.5874998157203941
+      },
+      "class_recall": {
+        "winner_model_a": 0.7928994082840237,
+        "winner_model_b": 0.9096774193548387,
+        "winner_tie": 0.0851063829787234
+      },
+      "mean_probabilities": [
+        0.38974571325525176,
+        0.4348236916703172,
+        0.1754305946014938
+      ]
+    }
+  },
+  "original_information_gate_passed": false,
+  "decision": "stop_fixed_replacement",
+  "full_quality_gate_passed": false,
+  "later_comparison_complete": false,
+  "later_prediction_rows_available": 0,
+  "later_reverse_complete": false,
+  "official_submission_eligible": false,
+  "original_training_overlap": true,
+  "independent_competition_cv": false,
+  "hidden_score_forecast": false,
+  "new_gpu_executions": 0,
+  "new_inference_executions": 0,
+  "network_calls": 0,
+  "elapsed_cpu_seconds": 1.0162127828225493,
+  "source_sha256": {
+    "GOAL.md": "be3383cd7755813f637e17479c1c9358d4447aceb28f4047950c23879637f381",
+    "docs/SPAN_021_PLAN.md": "2296bef1eec98f4e6badafb39b7e72d1e4ec42e91d00c672f225bf2f94ce9c70",
+    "scripts/screen_span_021.py": "69cafc87ca28728b4124d61989c7c49aef7dd6a38d36ec010e8ada6bd3fa23f6",
+    "src/arena/span019_quality.py": "cef2f99167601522d06cde1a455c8790dfd0b0f69bb2be8e2a24d328a4a54ce8",
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "results/span_020/closure_audit.json": "634bac0354f96cffd81ac49ecf02b6074f70f36802b8a1352c4e6b5ee9ecc841",
+    "results/span_020/partial_engineering_audit.json": "2c68116e7cc9926222da86b1a7e5c3ded94964c5879c2cbbfa00ff59a1ede447",
+    "results/span_020/evaluation_selection.json": "bb51468990d9177b4f9e3ce19d2f4ac00a8e808d8790dc79e96c4016159a226a",
+    "results/span_020/batch_shape_drift.json": "95f79e104517bb9a95e28a635a687d32f0d67f4c39c84d415dc891261ac1bdf1"
+  },
+  "input_original_csv_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+  "output_sha256": {
+    "runs/span_021/original_uniform_analysis.npz": "97ca69f43fd3884903f6e287efba5ed9d8b92525a0409d9229cfd06adbf7c78e"
+  },
+  "model_output_sha256": {
+    "runs/span_020/jobs/batch_candidate/output/mirror_experiment/m0_uniform.npz": "07267d576085aa72d975f2f287d7ec034fffd22317f2048f4c6e5c4ad371069e",
+    "runs/span_020/jobs/batch_candidate/output/mirror_experiment/mirror_uniform.npz": "a4b1202b121cd19e0dca7e3b11b5d7a138ca9b0eb81e8998f40d7c3121a95f55",
+    "runs/span_020/jobs/batch_candidate/output/mirror_experiment/ensemble_uniform.npz": "a7fd851c6756ec7f6f1fa499d3df5307a9911d7a9fa8fb2ad516e53fd5f5da79"
+  },
+  "baseline_sha256": "e12a7e6d55d553bfca42832d3b00c7e6ff5812309d15651266cbba1d78197cde"
+}

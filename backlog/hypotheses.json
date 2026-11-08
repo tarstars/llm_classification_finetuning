@@ -6284,7 +6284,7 @@
       ],
       "id": "H67",
       "rank": 85,
-      "status": "running",
+      "status": "done",
       "introduced_in": 21,
       "discovered_during": 20,
       "derived_from": [
@@ -6305,6 +6305,86 @@
           "note": "Preparing <=300sCPU-only single fixed-candidate original512futility method. H66ERROR and sourcecoverage absence verified; no new vote read, prediction, inference or external APIcall yet.",
           "evidence": [
             "docs/SPAN_021_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T14:18:08+00:00",
+          "status": "done",
+          "note": "FrozenCPU-only512screen completed1.016s: replacement.812266 vsH60.652988, lossreduction-.159278CI[-.176627,-.139182], required>.001fails. Stopfixedreplacementbackend; latercoverageunknown,no imputation/GPU/official. Notebook33/report/classdecompositioncomplete. H68queuedasdifferentboundedCPUconditionalhypothesis, not stronger-modelclaim.",
+          "evidence": [
+            "docs/SPAN_021_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Tie-preserving conditional correction on a small short-text route (CPU screen)",
+      "priority": "P2",
+      "gain": [
+        0,
+        0
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.25,
+        0.75
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.01,
+        0.1
+      ],
+      "risk": "high",
+      "claim": "A globally weaker mirror may add complementary A/B information on a small short uncertain route while keeping all H60tie probabilities and off-route predictions exactly unchanged. Test one fixed correction before any GPUwork.",
+      "basis": "H67fixed replacement loss.812266 versus H60.652988, reduction-.159278CI[-.176627,-.139182]; tie lossdamage.3300. Mirror conditionalABloss.476631 versus H60.296081is also worse, so no claim of stronger global ranking. Complementarity on cheap uncertain cases remains an untested hypothesis.",
+      "first_test": "CPUonly<=300s, originaluniform512. Route eligible nativeMlength<=512, rank H60ABmass*binaryentropy(H60ABconditional)/length, stableIDtie-break, caps5%rows/5%totalnative tokenwork. Labels and Mprobabilities excluded from routing. Onroute preserve H60tie/ABmass, use .75H60ABconditional+.25MABconditional; zeroABmass supplies uniformconditional. Offroute exactbaseline. ONEvariant, no fitting/grid; sameH66Moutputs.",
+      "acceptance": "Exact tie/offroute invariants and valid3classsimplex; originaluniform loss reduction>.001, seed42/2000paired-groupinterval/classbehavior. Passing gives only exploratory original information; latercoverage absent and fullqualityunknown, no productioneligibility. Any deployment needs a separatelybounded actualjoint512/fullwarmup/native/memory/runtime/latercomparison.",
+      "stop": "Stop on invariant/source/hash/ID/metric failure or originalgain<=.001. No alternative weights/thresholds/routes/budgets. No GPU, inference, externalAPI, official, sourceimputation or claim of honestCV. Do not reopen the rejected equal-weight replacement backend.",
+      "risk_reason": "Hypothesis is posthoc on inspected training-overlapping512rows; selectedroute<=25rows has highvariance. Mirror is globally weaker on both tie and direction, so correction can worsen even these rows and transferpoorly. Runtime/memory feasibility of an eventual thirdexpert is unmeasured.",
+      "mitigation": "Freeze one heuristicweight/label-free routing rule before evaluation; exacttie/offroute guards, pairedgroups, explicitinspection/exposurelimits. ZeroGPUstage; onepositiveoriginalresult never qualifiesdeployment. Recompute routedshapes and complete actualsourcebaseline in any futureboundedGPUproposal.",
+      "rationale": "Different hypothesis from replacingLlama: retain provenH60and ask only whether a weak thirdsignal complements a few uncertain shortcases without hurting tielikelihood. PureCPUcost is low; no presumed scoregain or fasterbackendwork.",
+      "revision": "Initialv22proposal from measuredH67class/decomposition failures. Unselected/draft, no codeexecuted or furtherGPUadmitted.",
+      "depends_on": [
+        "E00",
+        "H67"
+      ],
+      "evidence": [
+        "docs/SPAN_021_RESULTS.md",
+        "docs/SPAN_021_DIRECTIONAL_DISCOVERY.md",
+        "results/span_021/futility_screen.json",
+        "results/span_021/descriptive_decomposition.json"
+      ],
+      "id": "H68",
+      "rank": 86,
+      "status": "running",
+      "introduced_in": 22,
+      "discovered_during": 21,
+      "derived_from": [
+        "H67"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T14:13:06+00:00",
+          "status": "planned",
+          "note": "Fixedreplacementfails; queue onezeroGPUsmallconditional-correction hypothesis with exactH60tie/offroute preservation. Mirror globallyweaker, currentdataalreadyinspected; no strongranking/transferclaim.",
+          "evidence": [
+            "docs/SPAN_021_DIRECTIONAL_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T14:18:09+00:00",
+          "status": "running",
+          "note": "Preparing one<=300sCPU-only fixed-route/weight method under docs/SPAN_022_PLAN.md. No conditional candidate result, inference or extraGPU yet. Data alreadyinspected; fullsourcequality remains unavailable.",
+          "evidence": [
+            "docs/SPAN_022_PLAN.md"
           ]
         }
       ]
@@ -6358,7 +6438,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 21,
+  "active_version": 22,
   "versions": [
     {
       "number": 1,
@@ -7920,7 +8000,7 @@
     },
     {
       "number": 21,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -7976,10 +8056,78 @@
       "carried_from": 20,
       "start_sha256": "a7da4d6e46e6fc896259cd0521dc0cccc947fc5dedf45a342f89e2e80bd640fe",
       "start_markdown_sha256": "f11c44f01a4b1c6498ee6254e68d85018348edea4e2ae118b9e4a506501c40e2",
-      "start_sealed_at": "2026-11-08T13:38:56+00:00"
+      "start_sealed_at": "2026-11-08T13:38:56+00:00",
+      "final_sha256": "e7b7009046f08f2c9a8b1921d3835981a0c2c4b3d7241d4ab08c707f8160c5e5",
+      "final_markdown_sha256": "0cc1b10306d9c20a4664bed9977f6916cf1daee7c99dc7af241a837608fc1268",
+      "final_sealed_at": "2026-11-08T14:18:08+00:00",
+      "closed_at": "2026-11-08T14:18:08+00:00",
+      "closing_note": "Seal originalfutilitynegative/noCV result; no newGPU/network/official. Preservemissinglaterdata andfailedH66. Carry37unfinished tasks plusoneH68CPUconditionalcorrectionproposal; rankgoal remainsactive.",
+      "closing_evidence": [
+        "docs/SPAN_021_RESULTS.md"
+      ]
     },
     {
       "number": 22,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H68"
+      ],
+      "focus_ids": [
+        "H68"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T14:18:08+00:00",
+          "note": "Persistent rankgoal continues. Test one low-cost conditional-complementarity hypothesis; mirror globallyweaker, keep provenH60tie/offroute unchanged, no GPU or forecast.",
+          "focus_ids": [
+            "H68"
+          ]
+        }
+      ],
+      "carried_from": 21,
+      "start_sha256": "21b410ab8aa8946cfc4a3ffd7e9e457adf50618aff278077d84c4af9d0a1d073",
+      "start_markdown_sha256": "5c2e561271cd3587dc6b2ea0e81f5616b0efe536b54ec49653f371705abbecc3",
+      "start_sealed_at": "2026-11-08T14:18:08+00:00"
+    },
+    {
+      "number": 23,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

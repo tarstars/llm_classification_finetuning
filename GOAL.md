@@ -1,27 +1,30 @@
-# Move above 20th place: v21 CPU futility screen
+# Move above 20th place: v22 bounded conditional CPU test
 
-The persistent objective remains team 17244411 at rank 19 or better on a fresh
-complete official leaderboard after legitimate inference. ACTIVE, unachieved;
-best 0.82987, rank 23. Preserve archived v20 and docs/SPAN_020_RESULTS.md.
-Select H67 only; follow docs/SPAN_021_PLAN.md.
+Persistent objective: team 17244411 at rank <=19 on a fresh complete official
+leaderboard after legitimate inference. ACTIVE, unachieved; best H60 0.82987,
+latest complete observation rank23/312. Preserve docs/GOAL_V21.md and results.
+Select H68 only; execute docs/SPAN_022_PLAN.md.
 
-Use only verified complete original H66 outputs and actual H60 baseline.
-ONE fixed candidate: 0.5 Gemma original + 0.5 mirror original, temperature 1.
-No fitting or weight/temperature/route/class-map grid. Freeze method before votes.
-Primary: original uniform 512, loss reduction >0.001, seed 42/2,000 paired
-prompt-group bootstrap; report accuracy, Brier and class behavior. Use H66's
-shape consistently; do not mix old mirror outputs. Original votes overlap training.
+ONE prospective correction: keep all H60 tie probabilities exactly and every
+off-route probability exactly. Eligible mirror input length <=512. Rank H60
+A/B mass * entropy(conditional A/B) / input length, with stable ID tie breaking;
+cap 5% of rows and 5% of total native token work. No labels or mirror predictions
+enter routing. On route preserve A/B mass, conditional mixture .75 H60 + .25
+mirror; zero A/B mass gives uniform conditional. No fitting or alternative grid.
 
-Failure of the original required gate rejects this fixed replacement. Passing
-leaves full quality INCONCLUSIVE: later 1,024 mirror predictions and actual
-reverse baseline are missing after CUDA OOM. No imputation, honest-CV claim,
-hidden-score forecast or production eligibility. A later completion/backend
-experiment needs a separate bounded proposal. Preserve H66 ERROR/runtime failure.
+Use complete original uniform512 H66 outputs consistently; freeze the method
+before evaluation. Original loss reduction must exceed .001; seed42/2000 paired
+prompt-group bootstrap, class behavior and exact tie/off-route/probability guards.
+Stop this correction on failure. Passing remains exploratory/inconclusive:
+original data already inspected and training-overlapping, later probabilities/
+reverse baseline missing. No honest CV, hidden-score forecast or eligibility.
 
-CPU experiment cap 300 seconds; zero inference, GPU, network or official calls.
-Publishing code/results remains authorized. No weight conversion or upload.
-Retain original resource accounting/deadline; no quota or period reset.
-Heavy per-row outputs ROOT/runs/span_021; aggregate results, report, programs and
-executed notebook 33 in Git. Preserve 82 snapshots, archived goals, user notebooks
-07/12 and the notebooks link. CLI tracking; queue discoveries for v22 and carry
-unfinished tasks at closure. Span closure does not achieve the rank objective.
+CPU cap300 seconds; zero new inference/GPU/external experiment calls/official.
+Publication of code/results is authorized. No weight conversion/upload, resource
+period reset or reopening of the rejected fixed replacement backend. Any real
+joint runtime/memory/source-completion experiment needs a separate bounded plan.
+
+Per-row artifacts ROOT/runs/span_022; code/aggregates/report/executed notebook34
+in Git. Preserve86 snapshots, archived goals, user-dirty07/12 and notebook link.
+CLI tracking; discoveries to v23, unfinished carry at closure. Span completion
+never substitutes for the actual rank goal.

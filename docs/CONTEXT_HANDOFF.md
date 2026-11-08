@@ -1,153 +1,145 @@
-# Active rank goal; v20 sealed ERROR, v21 CPU screen ready to freeze
+# Active rank goal; v21 rejected replacement, v22 CPU conditional test selected
 
-Snapshot November 8, 2026, about 13:40 UTC. Read PROJECT_POLICY.md, GOAL.md and
-[SPAN_021_PLAN.md](SPAN_021_PLAN.md). Verify current files/service state before
-acting. No subagents. Never walk HOME, ~/prj, Arc/FUSE mounts or troll_farm;
-search this named project or exact artifact directories only.
+Snapshot Nov8 2026,14:18UTC. Read PROJECT_POLICY.md, GOAL.md,
+[SPAN_022_PLAN.md](SPAN_022_PLAN.md). Persistent objective: team17244411rank<=19
+on a fresh complete official board after legitimate inference. ACTIVE/unachieved,
+no token budget. Do not reset/complete it from a span/report/test. No subagents.
+Never walk HOME/~/prj/Arc/FUSE/troll_farm; namedproject/exactartifact paths only.
 
-The persistent objective is team 17244411 at rank <=19 on a fresh complete
-Kaggle board after legitimate inference. ACTIVE/unachieved, no token budget.
-Do not reset/complete it because a span, report, CPU screen or test finishes.
-A span boundary does not end this cross-span goal.
-
-## Current best and active task
-
-Best official receipt 58103553, COMPLETE 0.82987, source
+Best official58103553 COMPLETE0.82987, source
 arseniytrushin/llm-preference-span013-gemma-order/1. Latest COMPLETE board
-2026-11-08T13:23:45UTC: 23/312, rank19/20 cutoff .82915, leader .82702, goal False.
-results/span_020/final_leaderboard.json. No new official in v19 or v20.
-Observer rejects replayed/overlapping/backward pages and retries SAME cursor;
-never silently deduplicate. scripts/observe_leaderboard.py is the robust reader.
+13:23:45UTC:23/312,rank19/20cutoff.82915,leader.82702,goalFalse. Receipt
+results/span_020/final_leaderboard.json. No official in v19/v20/v21. Use robust
+observe_leaderboard.py (reject/retry samecursor on replay; never deduplicate).
+Only fresh actual rank<=19 after legitimate inference proves goal completion.
 
-V20/H66 DONE/SEALED after declared OOM/runtime stop. docs/SPAN_020_RESULTS.md,
-docs/GOAL_V20.md, results/span_020/closure_audit.json PASSED. Final notebook32:
-2 executed code cells, zero errors; explicit service ERROR and missing source.
-All prior78 snapshots preserved;82 now exist.37 unfinished tasks carried.
-V21 active,38 members, focus[H67], H67 running = preparing CPU method only.
-V22 draft empty. NO v21 votes read or results yet. No GPU/network/inference in
-this experiment; Git publication remains authorized.
+## Current active v22/H68
 
-## H67: next executable action
+V21/H67 DONE/SEALED, closure_audit.json PASSED. Report docs/SPAN_021_RESULTS.md,
+archived docs/GOAL_V21.md; Notebook33 has2executed code cells/zeroerrors.
+All prior82snapshot files preserved;86 now exist.37unfinished tasks carried.
+V22active,38members,focus[H68],H68running=preparing CPUmethod only. V23draftempty.
+NO H68code/result yet. This experiment gets<=300CPUseconds, zero inference/GPU/
+externalAPI/official/weightconversion. Git publication is authorized. See protocol.
 
-scripts/screen_span_021.py is WRITTEN and syntax checked, not run. It requires
-its method/GOAL/plan/evidence sources committed at HEAD before reading votes.
-Commit/push current closure + method changes, then run once, elevated because
-it writes a per-row file under ROOT/runs/span_021. Use PYTHONPATH=src:scripts.
-No GPU or external API needed. <=300 CPU elapsed seconds, one fixed candidate:
-.5 retained Gemma original + .5 native mirror original, T1, H66shape consistently.
-Compare complete original uniform512 to actual cached H60. Seed42/2000paired
-prompt-group bootstrap, logloss/accuracy/Brier/class behavior. Standalone G/M
-metrics are descriptive, not another candidate or weight search. No fitting.
+H68 is a DIFFERENT small conditional correction, not retrying failedreplacement:
+- Use verified H60 baseline probabilities and H66mirror/lengths on original512.
+- Eligible nativeMinput length<=512; score H60ABmass*entropy(H60ABconditional)/L.
+  StableIDtie-break; caps5%rows AND5%totalnative tokenwork. No labels or Mprobs
+  enter routing. Original512 thus<=25routed rows.
+- Preserve H60tie probabilities EXACTLY everywhere and everyoffroute probability.
+  Onroute preserve baseline A/Bmass, conditionalmix.75H60+.25M. ZeroABmass ->
+  uniformconditional. One fixed heuristic, not fitted; no otherweights/grid.
+- Originalgain>.001,seed42/2000paired-prompt-group bootstrap/classbehavior and
+  exacttie/offroute/simplex/sourceguards. Freeze source/IDs/budget before test.
+- Any positive originalresult is exploratory/inconclusive: labels alreadyseen/
+  trainingoverlap, laterM1024/reversebaseline absent. No hidden-scoreforecast or
+  eligibility. A realjoint512/fullwarmup/native/memory/runtime/later-completion
+  experiment needs a separate bounded proposal. No morefullreplacementbackend.
+- If correctionfails, stop it; do not try morealphas/routes/lengthcaps. Seek
+  genuinely different evidence/information rather than a rescue grid.
 
-Required original reduction >.001. If it fails, reject this fixed replacement
-without more backend compute. If it passes, full quality remains INCONCLUSIVE:
-later1024mirror probabilities and actual H60source reverse175are missing.
-Do not impute them, call it honest CV/hidden-score forecast or make H66eligible.
-Original labels overlap training; training of mirror head is not authenticated.
-The current method writes aggregate results/span_021/futility_screen.json and
-heavy per-row ROOT/runs/span_021/original_uniform_analysis.npz (Unicode groups,
-no object pickle). Any data completion/backend needs a separate bounded proposal.
+Nextaction: implement/test oneCPUrule, freeze/commit/push before evaluation, run
+once without GPU/network. Publish report/aggregate/notebook34. Newdiscoveriesv23;
+carryunfinished atclosure. Rankgoal is unchanged and not achieved.
 
-After actual screen, write report and execute notebook33, record task/evidence
-with backlog CLI, queue evidence-grounded discoveries for v22 and close/carry as
-policy requires. Goal remains active unless actual fresh official rank proves it.
-No source vote read is needed for H67. Original CSV is hash-pinned before labels.
+## Actual H67information (first mirror quality query)
 
-## What happened in H66
+Method frozen/pushed8502623 before votes. scripts/screen_span_021.py completed
+in1.016CPUelapsed seconds; no GPU/inference/network/fitting/official.512original
+rows and fixed.5Gemma+.5mirror,T1vsactualcachedH60. Source/IDs/cachehashes and
+originaldata inputs verified first. results/span_021/futility_screen.json:
+H60loss.6529882493/75.195%accuracy/Brier.3654121; fixedreplacementloss.8122657536/
+67.383%/Brier.4636914. Lossreduction-.1592775044,pairedgroup95[-.1766271920,
+-.1391816152]. Required>.001FAIL: stop_fixed_replacement. Latergate unmeasured,
+not imputed. Trainingoverlap; NOTcompetitionCV or predictionof hidden score.
 
-One version arseniytrushin/llm-preference-span020-batch-candidate/1. Accepted
-12:30UTC, RUNNING12:41:36, ERROR13:15:20. Controller64026/PID4140906 is TERMINAL
-exit1; do NOTpoll/restart/re-push it. Source verification61585 and build87470,
-prepare39064 all TERMINAL success; do not repeat prepare. Exact accepted notebook
-matches source and has internet disabled. Pinned Python3.10.13/Torch2.1.2/
-Transformers4.42.3/two15GiBT4. One prospective12288padded-token/max32-row shape.
-All31 retrieved artifact hashes verified by audit_span_020_partial.py.
+Descriptive standalone: Gammaloss.712878,Mirror.987017; tie recall H60.61170,
+candidate.38830,Mirror.08511. Mirror meantieprob.17543vs H60.31134/observed.36719.
+Candidateclasslossdamage A+.08659,B+.03146,Tie+.3300. Not a speed-only issue.
+Posthoc decomposition reconstructs same total: tie/nonTie loss H60.465624,
+Mirror.685399; conditionalABloss H60.296081,Mirror.476631; conditionalABaccuracy
+H60.87963,Mirror.85185. Mirror is globallyweaker on BOTHcomponents; rawBrecall
+is not evidence of better conditionalranking. H68onlyasks about complementarity
+on a small uncertainroute, no assumedgain/stronger-model claim.
 
-Complete original control256/uniform512/long64/test3 inference passed source,
-head/ID/token/native/repeated/canonical checks. Native/parallel logits/probs,
-repeated rawlogits/probs and retained canonical control probabilities maxdiff0.
-Mirror warmup80=53.2942s, control256=136.4944s, uniform512=267.8156s,
-long64=122.1044s. H65uniform298.5762 ->1.11486xthroughput, short of required~1.156.
-Current Guniform262.7231s, but required worst H65parent276.1072s remains.
-Full conservative projection32892.4793s=9.14h with20%margin/allcold/warm/other/
-600reserve. Runtime gate failed independently of later OOM. Do not relax margin,
-replace parent with faster current or divide already-parallel mirror time by2.
+Heavy originalanalysis ROOT/runs/span_021/original_uniform_analysis.npz contains
+ids,labels,Unicodegroups,baseline,candidate,gemma,mirror,paired_loss_reduction;
+hash in primaryresult. Source lengths ROOT/runs/span_020/jobs/batch_candidate/
+output/mirror_experiment/mirror_uniform.npz (sameIDs; hash in H67model_output_sha256).
+Use H66shape consistently; no borrowing H65mirror outputs. H67baseline path
+ROOT/runs/span_013/jobs/gemma_order/output/order_completion/ensemble_uniform.npz.
 
-CUDA OOM during source1024 tail: requested654.00MiB/free650.81MiB, CUDA-visible
-14.56GiB, allocated12.27GiB/reserved-unused1.52GiB. Memory pressure/fragmentation
-is plausible, not a proved single cause/fix. Original cohorts peakallocated
-~13.28GiB/reserved~14.29GiB. Earlier13.6743GiBestimate+.5GiBreserve was not fit
-proof. No allocator/batch fallback ran. Source partial logits existed only in RAM:
-NO mirror_source.npz was saved, NO reverse comparator ran, no partial quality can
-be fabricated from row-progress counters. Full recipe remains incomplete.
+## H66/V20actual failure, do not retry
 
-Recovered public CSV is NOTeligible. Prepared submit_span_020_candidate.py was
-CPU tested (2 tests/6 negative cases), committed55f3172, NEVERcalled for an actual
-decision/submission. It requires complete eligibility; H66 cannot meet it.
+Source arseniytrushin/llm-preference-span020-batch-candidate/1 accepted12:30UTC,
+RUNNING12:41:36,ERROR13:15:20. Controller64026/PID4140906 TERMINALexit1;
+sourceverification61585,build87470,prepare39064 TERMINALsuccess. Neverrestart/
+re-push.31retrieved artifacts SHAverified. Originalnative/parallel logits/probs,
+repeated logits/probs,retained canonicalcontrol maxdiff0. Sourceacceptedidentical,
+internetdisabled. Py3.10.13/Torch2.1.2/Transformers4.42.3/two15GiBT4.
 
-Old/new shape probability drift was measured without votes: max .0016383 on
-uniform, .0032548 on long; same-packet controls0 do not imply across-shape identity.
-results/span_020/batch_shape_drift.json + analyze_span_020_shape_drift.py.
-Use ONLY H66mirror outputs in H67; no mixing with old H65numeric recipe.
+One12288padded-token/max32row variant: warmup80=53.2942s,control256=136.4944s,
+uniform512=267.8156s,long64=122.1044s. H65uniform298.5762 ->1.11486xthroughput.
+Current G262.7231s but mandatoryworstH65parent276.1072stillapplies. Fullconservative
+25kprojection32892.4793s=9.14h,20%margin/allcold/warm/other/600reserve. RuntimeFAIL.
+Already-parallel mirror elapsed time is NEVERdivided by2again.
 
-Charge2012.100 two-T4seconds=33.535min. H65+H66 cumulative3717.806seconds and2
-accepted public versions, no official. Final inventory68 notebooks/no active;
-quota20104.389used/87895.611free(24.42h),reserved0,paidFalse,refreshNov14;
-all7official receipts terminal. Historical observation, refresh fully before
-any separately admitted futureGPU. Original deadlineNov10 08:37:37.343197UTC and
-quota anchor were preserved. H67 adds zero GPU; do not silently reset budgets.
+CUDA OOMsource-tail:654MiBrequested/free650.81MiB,CUDAvisible14.56GiB,
+allocated12.27GiB/reservedunused1.52GiB. Memorypressure/fragmentation plausible,
+no proved singlecause/fix. Originalpeakallocated~13.28GiB/reserved~14.29GiB.
+No mirror_source.npz saved; NO actualsource175reverse or reversecontrol42ran.
+Progresscounters are not recoverablepredictions. Fullrecipe incomplete. Preserve
+ERROR; no allocation/batchfallback. RecoveredvisibleCSV is NOTeligible.
 
-## Assets and native semantics remain fixed
+Partialaudit results/span_020/partial_engineering_audit.json; closure_audit.json
+PASSED. Notebook32finalERROR,2executedcells/zeroerrors. Old/newshape probabilities
+differ max.001638uniform/.003255long; samepacketcontrols0do not imply acrossshape
+identity. batch_shape_drift.json records it. No H66vote read; H67was a newCPU
+futility contract afterclosure. Prepared submit_span_020_candidate.py CPUtested
+2tests/6negativecases, NEVERusedforactualdecision/API/official; cannotqualifyH66.
 
-HF wath5/kgl_lmsys_pref_classif, revision
-cd24909db06583ecf00e65b6919c6cc1531c9885, distinct from H55earlier403parent.
-42layers/1347keys/294GPTQprojections, finite3x3584F16head. Mirror attribution is
-not authenticated original training/run lineage or a winning-score claim. No
-derivative license declared; Gemma terms/nativeMIT attribution retained.
-Three original GPTQ8shards acquired/SHA256verified,10361181040filebytes.
-Acquisition35176 and upload5983 TERMINAL exit0. NEVERrestart/reupload.
-Private arseniytrushin/llm-span019-native-classifier/1 READY and every remote
-payloadhash verified. Original/uploaded files ROOT/runs/span_019/assets.
+ChargeH662012.100two-T4s/33.535min, H65+H66 cumulative3717.806s/twoacceptedversions.
+Terminal68notebooks/noactive,7officialterminal,quota20104.389used/87895.611free
+(24.42h),reserved0,paidFalse,refreshNov14. Historical, refreshbefore any futureGPU.
+Inherited Nov10 08:37:37.343197UTC deadline and quotaanchor were not reset.
+H67/H68addzeroGPU. Any laterGPUneeds a new explicit bounded contract/accounting;
+never spend during officialpending or duplicate mutations after observationtimeout.
 
-Formatter fourspaces, JSONturns joinednewline/null->empty; BOS,trunc2000 thenEOS,
-max2001tokens. Effectivepad0 overrides configpad1: usage Readme.md line107 does
+## Fixed source/assets and numerical semantics
+
+HF wath5/kgl_lmsys_pref_classif revisioncd24909db06583ecf00e65b6919c6cc1531c9885.
+Distinct from H55earlier403parent.42layers/1347keys/294GPTQprojections,finite3x3584
+F16linearhead. Attributed author-run/headtraining NOTauthenticated, no derivative
+license declared; Gemma terms/nativeMITattribution retained. ThreeoriginalGPTQ8
+shards10361181040filebytes verified. Acquisition35176/upload5983 TERMINALexit0;
+NEVERrestart/reupload. Private arseniytrushin/llm-span019-native-classifier/1READY,
+allremoteassetbytes verified. Heavy originals ROOT/runs/span_019/assets.
+
+Fourspaceformatter; JSONturns joinednewline/null->empty; BOS/trunc2000thenEOS,
+max2001. Effectivepad0overrides configpad1; usageReadme.md line107explicitly sets
 model.config.pad_token_id=tokenizer.pad_token_id (rechecked before H67votes).
-Leftpadding, original absoluteRoPEoffset/pool, including literalpad0 preserved.
-Native official AutoGPTQ0.7.1Torchfallback, queryscalar224/softcap50/eagerdecoder,
-simple linearhead, two replicas. Unused compiled GPTQextension warning is expected.
-Do not reuse tascj decoder unchanged: MLPhead/no-softcap path differs.
+Leftpadding/original absoluteRoPEoffset/pool incl literalpad0preserved. Native
+AutoGPTQ0.7.1Torchfallback/eagerdecoder/queryscalar224/softcap50/simplelinearhead.
+Do not substitute retainedtascj MLPhead/no-softcapdecoder. UnusedCUDAextension
+warning is not PyTorchCUDAfailure. Optionaldenseconverter/splitdecoder tinyCPU
+saved-model tests pass, but no GPUfit/speed; DO NOTexpand/upload now. Fixed
+replacementfailed; its backendwork stops. H68is a new smallconditionalinfo test.
 
-Optional dense converter/split decoder exists and tiny CPU saved-checkpoint
-originalquantized/dense/split test passes. First ordinary-layout failure .015625
-and corrected native-layout0 are preserved. NEVERclaim real denseGPU fit/speed.
-Do NOTexpand/upload weights now. Only useful CPU information would motivate a
-new separately bounded source-completion/backend proposal. New allocator/resume
-work also requires its own scope; failed H66 is never silently retried.
+## Workspace/publication/safety
 
-## Paths, provenance and worktree
-
-Cwd /home/tarstars/prj/llm_classification_finetuning, main, GitHub tarstars/same.
+Cwd /home/tarstars/prj/llm_classification_finetuning,main,GitHub tarstars/same.
 ROOT=/home/tarstars/database/llm_classification_finetuning. .venv/bin/python,
-PYTHONPATH=src:scripts. DBwrites/network/Git/Jupyter sockets need escalation;
-sandboxDNS/socket failure is not service outage. api_client() itself authenticates
-over network; inspect elevated processes in same elevated namespace.
+PYTHONPATH=src:scripts. DBwrites/Git/network/Jupytersockets need escalation.
+api_client() network-authenticates even for introspection; sandboxDNS/socket
+failure is not service outage. Elevatedprocesses may be invisible to sandboxps.
+LocalpinnedCPU /tmp/llm_span019_runtime is NOTrealGPUruntime; default.venvworks
+for H67/H68numpy/data analysis. No externaltextservice or hiddenpredictioncache.
 
-Original H60 baseline: ROOT/runs/span_013/jobs/gemma_order/output/order_completion.
-H66 outputs: ROOT/runs/span_020/jobs/batch_candidate/output/mirror_experiment.
-Original512/control/long/test IDs in results/span_020/evaluation_selection.json.
-Later source G/Lcaches remain in ROOT/runs/span_016/jobs/reward_pilot/output/
-reward_experiment/{m0,m3}_long.npz, but later MIRROR and actual reverse175 missing.
-No imputation. H60 offroute .5G+.5alignedL; onroute .25G+.25alignedGreverse+.5L.
-
-Last pushed de57d54 before v20closure/H67method. Current closure, snapshots,
-report, final32, newGOAL/plan/screen script need publication. Verify gitlog/status.
-Preserve user-dirty notebooks/07_error_poster.ipynb and12_backlog_v1_span.ipynb
-bytewise; hashes in results/span_020/preservation.json. Never stage/reset them.
-Notebooklink ~/notebooks/llm_classification_finetuning already correct. Heavy
-per-row artifacts stayDB; only programs/MD/aggregates/executednotebooks in Git.
-
-Local pinned CPUruntime /tmp/llm_span019_runtime: Transformers4.42.3,NumPy1.26.4,
-pandas2.2.3,pyarrow15.0.2,tokenizers0.19.1,HFhub0.24.7. LocalPy3.11/Torch2.15CPU
-is NOTthe realGPUruntime. Native source ROOT/runs/span_019/source_audit/native/
-qlinear_cuda_v0.7.1.py. Goalturn made real progress, no external blocker;
-objective still unmet. Next action: freeze/commit/push method, run H67CPU screen.
+Lastpushed8502623frozeH67method. Current H67result/decomposition/report/Notebook33/
+closure,86snapshots,Goalarchive21/newGoal22/plan and H68queue needpublication.
+Verifygitlog/status. Preserve userdirty notebooks07_error_poster.ipynb and
+12_backlog_v1_span.ipynb bytewise; hashes results/span_020/preservation.json.
+Neverstage/reset them. ~/notebooks/llm_classification_finetuning link correct.
+Heavy perrowpredictions stayDB; code/MD/aggregates/executednotebooksGit.
+Goalturn made actual progress, no blocker. Next singleCPUrule remains untested.
