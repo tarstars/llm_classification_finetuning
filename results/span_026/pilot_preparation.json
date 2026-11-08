@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-08T16:56:16.872625+00:00",
+  "prepared": true,
+  "uses_targets": false,
+  "changed_rows": 357,
+  "probe_rows": 64,
+  "probe_includes_maximum_sequence": true,
+  "roles": [
+    "m0",
+    "m3",
+    "m0_reverse"
+  ],
+  "native_control_tokens_exact": true,
+  "elapsed_cpu_seconds": 39.77244968689047,
+  "aggregate_cpu_source_seconds": 609.4453807068057,
+  "spec_sha256": "52a244e62f3c0e6ada43672cb513572bc2da7c4dbdf5869b878ba4fe3ef4439c",
+  "control_sha256": {
+    "m0.npz": "ddb82facbc2a15439761816e899cf99847723dedba2a5576e7a419ed999a9da7",
+    "m0_reverse.npz": "a6cd5f2d836ae2c9939d29f328b0bec6925e91497c68cdde877d20ccb82d5c8c",
+    "m3.npz": "fe2c40d27489313d7b3659a04bc442e5a104b0f2620e15276bf1b58f73329959"
+  },
+  "new_gpu_executions": 0,
+  "gpu_admitted": false,
+  "model_quality_measured": false
+}

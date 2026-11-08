@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-08T16:59:33.906206+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "job_seconds_caps": {
+    "context_pilot": 7200,
+    "context_qualification": 3600
+  }
+}

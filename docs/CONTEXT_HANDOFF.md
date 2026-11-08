@@ -1,14 +1,15 @@
 # Active rank goal; v25 negative, v26 context-coverage audit selected
 
-Snapshot Nov8 2026,16:45UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot Nov8 2026,17:10UTC. Read PROJECT_POLICY.md, GOAL.md,
 SPAN_026_PLAN.md. Persistent objective team17244411rank<=19 on a fresh complete
 board after legitimateinference. ACTIVE/unachieved, no tokenbudget. No subagents.
 Never walk HOME/~/prj/Arc/FUSE/troll_farm; scope namedproject/exactartifactpaths.
 
 Best official58103553 COMPLETE.82987, source
 arseniytrushin/llm-preference-span013-gemma-order/1. Fresh COMPLETE board
-16:08:15UTC:23/312,rank19/20cutoff.82915,leader.82692,goalFalse.
-results/span_025/final_leaderboard.json. Use observe_leaderboard.py; reject/retry
+17:04:31UTC:23/312,rank19/20cutoff.82915,leader.82692,goalFalse.
+results/span_026/latest_leaderboard.json. Useraskedposition; reportedlive23/312,
+.00072lossgapto19th. Use observe_leaderboard.py; reject/retry
 SAMEcursor on replay, neverdedup. No new officialsincev13.
 
 ## Current v26/H72
@@ -19,7 +20,7 @@ select one4k/6kextraGemma-original evidence variant, not another structuralrule.
 
 Actualretainedauthor ProcessorPAB concatenates question/A/B perturn then truncates
 bodyprefixat4096tokens; judge/chat framing follows. OldH24JointTokenizer256token
-questioncap DOES NOT apply. No current4k/6kcoverage/qualityresult yet. Proposed
+questioncap DOES NOT apply. CPUcoveragecomplete; no GPUqualityresult yet. Proposed
 extra6144Gemmapass onlyon trulychanged/truncatedrows, retaining OLDH60route,
 Llama and Goldreverse outputs/weights. Extra cost is fullnewpass, not+2048only.
 
@@ -47,11 +48,25 @@ MLinference/GPU. FiveCPUtests pass fornativebodyspans/textonlyselector/
 fullpass+warm+selector+worstparentruntimeandnodivisionby2GPU. prefix_mask in
 src/arena/span026_runtime.py, helperbody nativeformat inspan026_context.py.
 
-NEXT build actualEARLYengineeringpilot beforelargerdiagnosticquality. NO H72GPU
-worker/controller/builder/resourceplan yet; nothinglive towaiton. Reusequalified
-H60compute enginewith explicitnative6144inputbudget onlyforextraGorigcohort;
-allold4kcontrols/inference unchanged. Consider sameGemmaprocessforold/newcohorts
-toavoid anunnecessaryreload inproduction. Measureextra80rowwarm+64rowsteadyprobe,
+PilotreferencespreparedONCE: results/span_026/pilot_preparation.json,609.445CPU
+secondsaggregate/1200. Heavy pilot_spec.json SHA52a244e62f3c0e6ada43672cb513572bc2da7c4dbdf5869b878ba4fe3ef4439c;
+controls/{m0,m3,m0_reverse}.npz, exactnativecontroltokens. All357changedIDs,
+probe64(seed45randomplusmaxlength),warm80sortedchanged. DO NOTreprepare.
+ResourceplanpreparedONCE at16:59:33UTC; quota87092.109free, noreservation,
+7200initial+3600followup/10800phase/32400hidden. DO NOTreset.
+
+Actualworker/controller/builder/postaudit nowprepared. Nativeengineonlyadds
+cohortbudget/positionguard/30sprogress/callbacks; same4koldforward/packing.
+OldandnewGemmacohorts useSAMEloadedprocess. All11focusedtests pass; builder
+actualfinalcell success/failure/watchdog, standaloneimports andJupyterstartup
+pass. Sourcebundle/rehearsals inresults/span_026/context_pilot_*.json. Generated
+notebook inROOT/runs/span_026/notebooks/context_pilot. NO GPUadmittedyet atthis
+snapshot. NEXTfreeze/pushsources, runcontrollerONCEwithfreshfulladmission,
+trackreturnedhandle. Neverre-pushaftertimeout; observeexistingintent/version.
+Thenverify_experiment_source.py context_pilot --span26. Afterterminalretrieval,
+runfrozenaudit_span_026_pilot.py: replayengineeringindependently beforelabels.
+
+Measureextra80rowwarm+64rowsteadyprobe,
 actualfulltextselectorCPUcost, oldGolduniform512/controls256. Runtimehelper
 span026_runtime.projection keepsworseparent/currentGtiming, chargesFULLextra
 Gpasswalltime*prevalence*25k*1.2, wholefull57477CPUselector, extra6kwarmup and
@@ -129,6 +144,7 @@ Userdirty07_error_poster.ipynb and12_backlog_v1_span.ipynb MUSTstaybytewise;
 hashes results/span_025/preservation.json (H26willcopypreservation). Neverstage/
 reset. ~/notebooks/llm_classification_finetuning linkcorrect. HeavyarraysDB,
 code/MD/aggregates/executednotebooksGit. Priorpublished5b0d0bcacceptedH71;
-278b9dcpublishedH71negative/H72CPUmethod. 0f5e5f8publishedcoverage/prospectiveamendment/selectorcode; currentselectorproof
-result/lateststate beingpublished next. Native37086/selector17484TERMINALexit0.
+278b9dcpublishedH71negative/H72CPUmethod. 0f5e5f8publishedcoverage/prospectiveamendment/selectorcode;
+1fd64d2publishedselectorproof. Native37086/selector17484/preparer6461TERMINALexit0.
+Builder68066TERMINALexit0. AllnewpilotmethodfilesbeingfrozenBEFOREGPU.
 Goalturnmade actualnewnegativequalityevidence andnewinformationplan, no blocker.

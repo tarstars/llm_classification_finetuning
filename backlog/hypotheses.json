@@ -6764,6 +6764,14 @@
           "evidence": [
             "results/span_026/selector_audit.json"
           ]
+        },
+        {
+          "at": "2026-11-08T17:06:28+00:00",
+          "status": "running",
+          "note": "Frozen label-free pilot references cover all357changed rows plus64probe/80warm cohorts; aggregateCPU609.45/1200s. Nativeoldtoken controls exact for Gemma,Llama androutedreverse. Worker preserves old4kengine and changesonly originalGemma to6k, independentlyreplays engineeringstop before labels. All11focusedtests andactualgeneratedcell/import/Jupyterrehearsals pass. Sourceprepared; nextfreshadmission andonebounded7200sGPUversion; nogpupredictionsyet.",
+          "evidence": [
+            "docs/SPAN_026_GPU_PROTOCOL.md"
+          ]
         }
       ]
     }
