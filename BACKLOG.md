@@ -228,6 +228,7 @@ A second competition-trained paired three-class classifier may improve H60 withi
 - 2026-11-08T08:35:07+00:00 — running: Preparing v19 immutable source-audit contract for public HF mirror cd24909db06583ecf00e65b6919c6cc1531c9885; no GPU or quality outputs yet.
 - 2026-11-08T08:50:57+00:00 — running: Pinned source audit passed1347keys/42layers/finite3x3584head; card overrides pad1to0. Freeze single equal-Gemma replacement and quality IDs/gates. Prospectively separate CPU asset acquisition after native-math checks from mandatory GPU-worker rehearsals; original period/caps unchanged, zero quality outputs. Evidence: [docs/SPAN_019_ASSET_PROTOCOL.md](docs/SPAN_019_ASSET_PROTOCOL.md)
 - 2026-11-08T08:57:52+00:00 — running: Source audit and eight native input/pool checks pass; preserve failed ordinary-layout projection0.015625. Native layout restores all three seeded synthetic projections exactly0. Fixed evaluation IDs saved without reading votes. Begin pinned CPU-only asset acquisition; real model probabilities, quality and runtime remain unmeasured. Evidence: [docs/SPAN_019_SOURCE_RESULTS.md](docs/SPAN_019_SOURCE_RESULTS.md)
+- 2026-11-08T09:02:25+00:00 — running: Native input/math audit and interim Notebook31 executed. CPU-only pinned weight acquisition confirmed live in exec35176at09:01:56UTC;742391808bytes received from first shard. No quality/model logits/GPU/official yet; do not restart the live read. Evidence: [docs/SPAN_019_SOURCE_RESULTS.md](docs/SPAN_019_SOURCE_RESULTS.md)
 
 ### H02
 

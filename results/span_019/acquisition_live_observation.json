@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-08T09:01:56.151671+00:00",
+  "local_acquisition_exec_session": 35176,
+  "last_live_handle_observed": true,
+  "files": [
+    {
+      "file": "model-00001-of-00003.safetensors.part",
+      "bytes": 742391808
+    }
+  ],
+  "quality_measured": false,
+  "new_gpu_executions": 0
+}

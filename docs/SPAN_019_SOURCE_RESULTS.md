@@ -41,3 +41,10 @@ GPTQ8levels and classifier head; originally floating modules keep their layout.
 All heavy files remain under ROOT/runs/span_019. The source checkpoint's model
 card and applicable Gemma terms remain attached; no separate derivative license
 or independently authenticated mirror lineage is claimed.
+
+Executed interim notebook: notebooks/31_classifier_mirror_audit.ipynb, two code
+cells and zero errors. At09:01:56UTC, the acquisition's live exec handle35176was
+still running, with742,391,808bytes of the first shard received. The committed
+acquisition_live_observation.json is a dated observation, not completion evidence.
+No GPU quota has been consumed by these source/asset stages. H65 remains running;
+native whole-model controls, quality comparison and deployment runtime are pending.
