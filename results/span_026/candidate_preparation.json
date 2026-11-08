@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-08T17:20:50.991463+00:00",
+  "prepared": true,
+  "uses_targets": false,
+  "public_prediction_cache_embedded": false,
+  "elapsed_cpu_seconds": 17.196773738134652,
+  "aggregate_cpu_source_seconds": 626.6421544449404,
+  "spec_sha256": "414cdbb0f35ff979e6a8c3a6f6d2f2ef92ea25b57673b691400e5830ce976da7",
+  "hidden_spec_sha256": "851144d920dbdda37a815a196922daf197fbc00af223db2458aa8e37475055de",
+  "parent_token_references_exact": true,
+  "changed_by_cohort": {
+    "control": 3,
+    "uniform": 4,
+    "long": 63,
+    "test": 0
+  },
+  "new_gpu_executions": 0,
+  "qualification_admitted": false
+}

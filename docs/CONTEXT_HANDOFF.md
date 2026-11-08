@@ -1,6 +1,6 @@
 # Active rank goal; v25 negative, v26 context-coverage audit selected
 
-Snapshot Nov8 2026,17:12UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot Nov8 2026,17:26UTC. Read PROJECT_POLICY.md, GOAL.md,
 SPAN_026_PLAN.md. Persistent objective team17244411rank<=19 on a fresh complete
 board after legitimateinference. ACTIVE/unachieved, no tokenbudget. No subagents.
 Never walk HOME/~/prj/Arc/FUSE/troll_farm; scope namedproject/exactartifactpaths.
@@ -68,6 +68,26 @@ cells/image/privateoffline/twoT4settingsverified17:11:33UTC. NEXTobserveSAME
 controller/version, neverre-pushaftertimeout. Sourceverifier23438TERMINALexit0.
 Initial7200scap, noqualitymeasuredyet. Afterterminalretrieval,
 runfrozenaudit_span_026_pilot.py: replayengineeringindependently beforelabels.
+
+LiveGPUstage: selector121.8369s,exact357IDs; m0warm80=59.5459s,
+control256=134.1034s andadvancedtocurrentuniform512=264.1297s (old274.5959).
+Current6kwarm/probestillpending. Readprogress/events; observerSSEmaytimeout,
+notexecutionfailure. Manualobserver19239TERMINALexit0capturedrealcontrolprogress.
+
+Whilepilotlive, actualqualificationprogramsprepared, NOTadmitted/builtyet:
+src/arena/span026_candidate.py/candidate_engine.py/qualification.py,
+scripts/prepare/build/run/audit_span_026_candidate.py,
+docs/SPAN_026_QUALIFICATION.md. Candidateadaptsfrozennativeengine'sthreehooks,
+keepsoldroute/weights, replacesGoriginalonlyontruncations. Hiddenneedsnotrainor
+publicpredictioncache. All15focusedtests passincludinghiddenroutepreservation
+andconservativeruntime. Preparation3590TERMINALexit0,17.1968sCPU,total626.6422/1200.
+candidate_preparation.json; heavycandidate_spec SHA414cdbb0f35ff979e6a8c3a6f6d2f2ef92ea25b57673b691400e5830ce976da7,
+hidden_asset_spec SHA851144d920dbdda37a815a196922daf197fbc00af223db2458aa8e37475055de.
+Exactoldtokenreferences allroles; extra3control/4uniform/63long/0test rows.
+DO NOTreprepare. Builderrequiresfrozenpilot_audit engineering+grossguard first.
+Actualnewqualificationcap3600/publictotal10800/max2versions; stillonlyoneaccepted.
+Fullqualificationusesworseperroleparent/pilot/currentcold+warm+uniform,20pctmargin/
+600reserve, worstextra-throughputincludingactualsmallcohort, fullnewwarm+selector.
 
 Measureextra80rowwarm+64rowsteadyprobe,
 actualfulltextselectorCPUcost, oldGolduniform512/controls256. Runtimehelper

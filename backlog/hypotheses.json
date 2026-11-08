@@ -6780,6 +6780,14 @@
           "evidence": [
             "results/span_026/jobs/context_pilot/source_verification.json"
           ]
+        },
+        {
+          "at": "2026-11-08T17:26:23+00:00",
+          "status": "running",
+          "note": "Livepilot reproduced357IDs onKaggle(selector121.84s), passedcanonicalcontrol tocontinue and measuredoldGemma512in264.13s. Pending6kengineeringprobe. PreparedactualH60+extra-context qualification code withnoGPUpush: nativeforwardreused, oldroutefixed, hiddenneedsnotrain/cache. CPUreferencesexact including63longchanged/4uniform/3control, total626.64/1200s; all15focusedtests pass. Qualificationbuilder/admissionremain gatedonterminalpilot+fixedguard.",
+          "evidence": [
+            "docs/SPAN_026_QUALIFICATION.md"
+          ]
         }
       ]
     }
