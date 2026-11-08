@@ -1,40 +1,36 @@
-# Move above20th place: v15 earlier BlackPearl source audit
+# Move above20th place: v16 frozen modern preference rewards
 
 Persistent objective: team17244411 at rank<=19 on a fresh complete official Kaggle
-leaderboard after legitimate inference/scoring. Current best0.82987/rank23/312;
-rank19cutoff0.82915 at2026-11-08T02:33UTC. V13positive and v14CPU-futility results
-are sealed. The global goal remains active; a source audit is not goal completion.
+leaderboard after legitimate inference. Best0.82987/rank23/312, rank19cutoff0.82915
+at2026-11-08T02:54UTC. V15 stopped before GPU on exact-source uncertainty. The
+global goal remains active. Execute docs/SPAN_016_PLAN.md, focus H56 only.
 
-Execute docs/SPAN_015_PLAN.md, focus H55 only. Revise its old rank30 stopping guard
-prospectively to the user's continuing rank<=19objective. Audit the one accessible
-earlier public checkpoint sayoulala/merge-gemma-model-step1/1. It is not the final
-winning merge; preserve the separate final-dataset403. No source quality is known.
+Prospectively replace H56's old rank30guard with the continuing rank<=19objective.
+Audit the already named Skywork Reward V2 Qwen3 heads at their pinned revisions,
+8B main/0.6B cheap control, native conversation rendering/scalar head, training
+overlap limits, license, offline source, dependency and two-T4 feasibility.
+Source-only stage<=60minutes/50MiB; no GPU or full weights from that stage alone.
 
-Before GPU, resolve author training/label mapping, native serialization/tokenizer/
-pooling, license/lineage, immutable offline availability, distinctness and credible
-runtime fit. Bound this source audit to60minutes and50MB of small source/config/
-index evidence; no full weights until provenance and the actual pilot contract are
-resolved. Stop before GPU if unsupported or the complementarity case is weak.
+After a supported audit, freeze the exact pilot,1024label-free selected row IDs,
+prompt-group cross-fitting and one symmetric3parameter tie map before rewards.
+One fixed replacement recipe only: equal Gemma expert/current order rule and
+cross-fitted8B reward expert;0.6B is a diagnostic, not another submitted recipe.
+No mixture/temperature/route/label grid or leaderboard parameter fitting. Record
+local training-overlap limits; no claim that baseline fusion is independent CV.
+Predeclare useful incremental information/uncertainty and source/ID/token/native/
+numeric/CSV/two-T4 gates before outputs. Measure conservative25kcost<32400s with
+20%margin/allcold/fullwarmup/other overhead/600sreserve and owned watchdog.
 
-If the audit passes, freeze one checkpoint-replacement recipe and full pilot source
-before predictions: replace the Gemma component/native format, keep the Llama
-component and fixed total expert weights/T1/10%work/20%row rule. Require useful
-incremental information over H60 on fixed cohorts, explicit training-overlap limits,
-source/label/ID/token/numerical/CSV/two-T4 checks and measured conservative<32400s
-with20%margin/allstartup/fullwarmup/other overhead/600sreserve. No random head,
-label-permutation fitting, checkpoint/weight/T/route grid or leaderboard tuning.
+Free public ceiling18000elapsed two-T4seconds: initial<=3600s, one separately
+admitted follow-up<=14400s; max2public versions/one production recipe/one official.
+Audit alone admits no GPU. Preserve original quota refresh and48hour deadline;
+fresh full quota/jobs/dependencies/submission cursors immediately before GPU.
+Stop on source, weak information, numerical or runtime failure. No paid scaling,
+researchGPU while official pending, external text inference or hidden targets.
+Never restart accepted work solely because observation expires.
 
-Prospective free public ceiling7200s: initial<=3600s and at most one separately
-admitted engineering follow-up<=3600s, max2public versions/one quality recipe/one
-official candidate. Source audit alone admits no GPU. Fix original quota period
-and48hour deadline before preparation; fresh full jobs/quota/pinned dependencies/
-pending receipts before GPU. No paid scaling, external text inference, researchGPU
-while official pending, hidden cache or target lookup. Never restart accepted work
-solely because observation times out. No retroactive expansion of old spans.
-
-Heavy files under database/llm_classification_finetuning/runs/span_015. Programs,
-aggregates, report and executed notebook27 in Git; publish important milestones.
-Preserve58historical snapshots, user notebooks07/12, old goals and notebook link.
-Queue discoveries in v16; H56/H62 and other tasks remain unselected. Resolve H55
-with actual evidence and carry unfinished work. Keep the rank goal active if this
-span cannot produce an actual rank<=19outcome.
+Heavy files under database/llm_classification_finetuning/runs/span_016. Programs,
+reports, aggregate results and executed notebook28 in Git. Preserve62historical
+snapshots, user notebooks07/12, all archived goals and the notebook link. Queue
+discoveries in v17; H62/other tasks remain unselected. Resolve H56with evidence,
+carry unfinished work and publish milestones. Span completion is not rank success.

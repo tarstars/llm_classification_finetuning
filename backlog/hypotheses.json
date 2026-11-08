@@ -4934,13 +4934,13 @@
       "risk": "high",
       "claim": "A post-trained preference reward model may complement or replace a joint classifier more cheaply than training shared utilities from scratch; real Kaggle gain is unmeasured.",
       "basis": "Official Skywork Reward V2 paper/cards describe26Mpreference training and ungated0.6B/8BQwen3 scalar heads. This revisits H10 feasibility, not evidence of superiority.",
-      "first_test": "After H54 terminates and v10 activates, audit provenance/offline availability; predeclare one1024row cohort, two size arms max, one symmetric3parameter tie mapping, nested group calibration and matched runtime/retention diagnostics. No weights or GPU in current planning.",
+      "first_test": "V16 audit the pinned8Bmain/0.6Bcontrol reward sources and offline feasibility before any weights/GPU. After a supported audit, freeze one1024row label-free cohort, prompt-group cross-fitting and symmetric3parameter tie mapping, exact useful-signal/runtime/source gates and one equal-Gemma/reward replacement recipe before outputs.",
       "acceptance": "A practical log-loss improvement with paired uncertainty on the cleanest admissible comparison, explicit overlap limits, and measured<=9h frozen deployment; known-overlap local fusion cannot prove generalization. Official score/rank remains outcome evidence.",
-      "stop": "Do not run if rank30 is achieved or current official receipt is pending. Initial<=1twoT4hour, separately admitted follow-up<=4hours; stop on poor information or runtime failure. No leaderboard weight fitting or automatic budget expansion.",
+      "stop": "Continuing user goal is rank<=19, superseding the historical rank30guard prospectively. No GPU while any official receipt is pending. Initial<=3600two-T4seconds, separately admitted follow-up<=14400; max2public versions/one production recipe/one official. Stop on source, weak information, numerical or runtime failure; no leaderboard weight fitting or automatic budget expansion.",
       "risk_reason": "Binary scalar rewards do not directly model ties/both-bad votes, can miss pair interactions, may overlap training data and can exceed runtime if added to the whole ensemble.",
       "mitigation": "Keep joint baseline; omit unidentified absolute reward offset; enforce A/B symmetry; fit calibrators in folds, audit overlap, use0.6B only as a cheap control and8B as main arm; measure replacement versus addition cost.",
       "rationale": "A skipped old architecture becomes testable with released preference-trained heads and a small calibrator, rather than another weak generic prompt experiment.",
-      "revision": "V9 planning-only follow-up for v10, with exact official source-card/config revisions; no model-quality result yet.",
+      "revision": "V16 selected under ongoing rank<=19goal after H55source audit stopped before GPU. Earlier rank30guard served a completed older objective; current user goal authorizes this prospectively revised bounded test. Source audit is not GPU admission; no model quality measured yet.",
       "depends_on": [
         "E00",
         "E14",
@@ -4951,7 +4951,7 @@
       ],
       "id": "H56",
       "rank": 72,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 10,
       "discovered_during": 9,
       "derived_from": [
@@ -4964,6 +4964,14 @@
           "note": "Released modern scalar reward heads make the skipped shared-utility idea cheaper to test. Queue two bounded size arms and one symmetric tie calibrator for v10; no new v9 GPU or pending-submission changes.",
           "evidence": [
             "docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T02:59:18+00:00",
+          "status": "running",
+          "note": "Starting bounded pinned-source/offline-feasibility audit under docs/SPAN_016_PLAN.md; no model weights, rewards or GPU admitted.",
+          "evidence": [
+            "docs/SPAN_016_PLAN.md"
           ]
         }
       ]
@@ -6988,8 +6996,18 @@
         "E17",
         "H62"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H56"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T02:59:17+00:00",
+          "note": "Select frozen modern preference heads after exact earlier BlackPearl provenance audit stopped; prospectively align old rank30guard with active rank<=19goal, source stage only before admission.",
+          "focus_ids": [
+            "H56"
+          ]
+        }
+      ],
       "carried_from": 15,
       "start_sha256": "65b5ed52c9070d9abbba314f8b24ad02b9211c143c43ea67baf06bf2d82c14eb",
       "start_markdown_sha256": "81a5dac85e9e88e4714529967be394b58e909b748cee603f3115b7cd3926f743",

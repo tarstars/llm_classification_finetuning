@@ -1,6 +1,6 @@
 # Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
 
-Snapshot2026-11-08T02:56UTC. Read PROJECT_POLICY.md and current GOAL.md, then
+Snapshot2026-11-08T03:01UTC. Read PROJECT_POLICY.md and current GOAL.md, then
 verify live state. Persistent goal "move above20th place" means rank<=19 for
 team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
 Do not create another goal or mark complete from a span closure.
@@ -30,15 +30,18 @@ exact goal docs/GOAL_V15.md. Notebook27FINAL:2executed cells/0errors; builder
 refuses after closure. scripts/audit_span_015_closure.py PASSED:10small files,
 58prior snapshots, user notebooks and39carryovers. Final snapshots capture
 pretransition active state; live registry proves closure. V15final/v16start add
-four snapshots:62historical files now. Closure milestone is being published.
+four snapshots:62historical files now. Closure9dfb891is pushed.
 
 Fresh full v15terminal inventory:65owned notebooks, all jobs/receipts terminal.
 Quota used12894.122s/reserved0/free95105.878s=26.42h, refreshNov14, paid off;
 v15delta0. Recheck full quota/jobs/dependencies/receipt cursors before actualGPU.
-Activev16has39unfinished members, no focus/preparation yet; v17draft empty.
-Prefer H56modern reward-head source audit next. Revise its old rank30guard
-prospectively under ongoing rank<=19goal before selection/execution. Read
-docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md and its pinned source planning JSON.
+Activev16has39members; focus H56only, source audit RUNNING, no GPU admitted.
+GOAL.md/docs/SPAN_016_PLAN.md prospectively revise its old rank30guard under the
+continuing rank<=19objective. Preparation fixes a new48hour period/60minute small
+source audit/50MiB; no weights or GPU before supported source audit and exact
+pilot contract.8Bmain/0.6Bcontrol, one symmetric3parameter map, one replacement
+recipe, initial3600s/followup14400s separately admitted, max2public/1official.
+Read docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md and its pinned source planning JSON.
 H62row-ceiling remains planned/P2; no extra current-span coverage variants.
 
 ## Sealed model evidence
