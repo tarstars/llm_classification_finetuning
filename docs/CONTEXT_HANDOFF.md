@@ -1,4 +1,4 @@
-# V29 fixed60/40prior stopped; v30 prospective40/60queued
+# V30 fixed Llama-heavy CPU guard passes; actual qualification next
 
 Snapshot 2026-11-08T22:21:49.241590+00:00. Read PROJECT_POLICY.md and verify current files/live state.
 Persistent goal ownteam17244411rank<=19 on fresh complete officialboard after
@@ -21,7 +21,7 @@ pairedgroup95[.005310860,.009989657]; weightgainvs50/50+.008863732. Control
 cumulativelytested: old60/40failed, new40/60sequentiallyselected. Original
 trainingoverlap/noCV/nohiddenforecast; do NOT translate localgain toofficial.
 HeavyROOT/runs/span_030/fixed_prior_analysis.npz, aggregatequality_replay.json.
-CPUsource/result hashes frozen; src/span030_mixture.py exactprior must stay.
+CPUsource/result hashes frozen; src/arena/span030_mixture.py exactprior must stay.
 Two mixtureunit tests pass. Preservation captures118snapshots/sameuserfiles.
 Report docs/SPAN_030_CPU_RESULTS.md and executedNotebook42(80799exit0).
 
@@ -50,38 +50,6 @@ Prepare officialsubmission controller from existing successful span013pattern;
 no submit before actualqualification result, committed decision and freshquota/
 receipts/dependencies. No newqualityvariants, extraGPUengineeringrun, retry or
 faster-node rescue; H73staysdeferred. No GPUwhileofficialpending.
-
-H76ONEprospective normalized40pctGemma-original/60pctalignedLlama-swapped,
-T1,twoexpert,no route/reverse. 40/60CPUcomparison now complete above. It was queued
-from failedH75weightablation and is sequentiallyselected on biased original
-cohorts; not an independent test, fitted optimum or hiddenforecast. Preserve
-both prior histories. Current contract froze/pushed before CPUreplay and
-explicitly report cumulative60/40then40/60attempts; no additionalweightgrid.
-
-One<=300sCPUmatched control256/uniform512/long64replay against historical2expert
-50/50official0.83053 and actual H60incumbent. Separate removal/weight/total,
-seed42/2000prompt groups/classes; originaltrainingoverlap/noCV/nohiddenforecast.
-Same fixed uniformgainvsH60<-.005grossstop; no positive-localgain requirement.
-If passes, ONE<=3600sactual offline2T4two-role qualification, strictoldraw<=1e-5,
-exact source/checkpoint/ID/token/positions/hostbatches/original8192microgroups,
-full80warm/cohorts/actualCSV andeachT4memory<=95pct. Use worse matching E18/
-currentbase-role rates, retainedworsecold/fullwarm/other,20pctmargin/600reserve,
-<32400. Old2role30766.762s is screenONLY. Onefrozenofficialafterallgates,
-committed/pusheddecision/freshfulladmission; actualhiddentextinference, no cached
-predictions/IDlookup. No further weights from leaderboardfeedback.
-
-Methods/templates: frozen src/arena/span029_mixture.py and
-scripts/replay_span_029_prior.py for CPU, with span019_quality.compare and
-parse_turns/prompt_groups. NEWfiles for v30/.4,.6; do NOT modify old methods.
-CPUreplay validates E18source with GOAL mapped toGOAL_V28, retrieval42hashes,
-then targetlabels. Newpreservation mustcapture118snapshots and sameuser07/12.
-Oldnative GPUforward/checks/driver/runtime and builder/controller/auditor are
-span028*.py: actual8192prefetch equality proved, but3role runtimeFAIL. New
-2role qualifier/official needs newsource/modes/spec/preparation/runtimehelper,
-no reverse/route. Stage CpuPrefetch standalone, preserve model forward and
-allstrictcontrols. Rehearse actualserializedcells/imports/public+hiddenbranches/
-worker failure/watchdog/Jupyter beforeGPU. Freeze/push sources BEFOREadmission.
-Observe exactaccepted handles; neverduplicate mutation afterobservationtimeout.
 
 ## V29 terminal evidence
 
