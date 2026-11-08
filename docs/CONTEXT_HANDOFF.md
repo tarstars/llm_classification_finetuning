@@ -8,9 +8,9 @@ span013-gemma-order/1. No newofficial since H60; no live ownjobs now.
 
 ## Immediate next action
 
-V29SEALED/published6030aa3. Activev30focus[H76],H76RUNNING=officialdecision/admission preparation; publicqualificationPASSED.39activeitems=38carried+H76,V31draftempty,
+V29SEALED/published6030aa3. Activev30focus[H76],H76RUNNING=officialevaluationpending; publicqualificationPASSED.39activeitems=38carried+H76,V31draftempty,
 95registeredtasks,118immutable snapshotfiles. GOAL.md/docs/SPAN_030_PLAN.md
-selected/pushedc0b01e6 BEFORE40/60quality. PublicqualificationCOMPLETE/passed below; noofficialYET.
+selected/pushedc0b01e6 BEFORE40/60quality. PublicqualificationPASSED; officialreceipt58143104PENDING below.
 
 H76CPUreplay11860TERMINALexit0,1.7475s/300. One normalized.4G+.6alignedL,
 T1,noroute/reverse. UniformH60.6529882483->candidate.6453783692, gain+.007609879,
@@ -67,19 +67,24 @@ CurrentuniformG242.072s,L174.864s; conservativeprojection retains SLOWERE18
 rates293.909/213.176, cold293.433/fullwarm105.487/other55.849/20pctmargin/
 600reserve =>30766.762s(8h32m47)<32400. Eligible ONE frozenofficial only.
 
-preparedecision6023TERMINALexit0 created deployment_decision.json. Publish
-qualification+decision+report Notebook42 BEFOREactualsubmit. Qualificationreport
-SPAN_030_QUALIFICATION.md; Notebook42rerendered27499exit0. H76stillRUNNING,
-no officialintent/receiptYET. NEXTcommit/pushcurrent concrete evidence/decision,
-then runONCE .venv/bin/python scripts/submit_span_030_candidate.py withescalation.
-Freshfulladmissionnormally2-3min beforeONEAPIwrite; recordunifiedhandle/PID/ref.
-Observe SAMEintent/receipt, neverreinvoke mutation aftertimeout. --observe-only
-is readonly reconciliation ofexistingintent/history; no publicorotherGPUwhile
-pending. A COMPLETEpublickernel is NOT a completedofficial. APIreceipthistory
-is authoritative forofficialstatus. OnCOMPLETEcontroller savesresult androbust
-freshcompleteboard. Actualrank<=19 (and evidence/report/preservation) required
-before completingpersistentgoal; otherwise keepgoalactive. No furtherweights
-fromleaderboardfeedback, no extra publicversion/faster-node rescue.
+preparedecision6023exit0, qualification+decision+Notebook42published464850b
+BEFORE official. Freshcompleteofficialadmission PASSED. Officialcontroller
+unified9665 CONFIRMEDLIVE, accepted ONEAPIrequest receipt58143104 at23:11:45UTC
+Nov8, exactarseniytrushin/llm-preference-span030-llama-prior/1. LatestAPIread
+23:12:32UTC PENDING, scoreblank. Durableintent/admission/receipt under
+ROOT/runs/span_030/official/candidate and results/span_030/official_*.json.
+No furtherGPU, weightchoices or submissionmutation while pending.
+
+NEXTobserve SAME9665/receipt58143104. Poll authoritative history; publickernel
+COMPLETE is NOT hidden-evaluationcompletion. If unifiedhandle missing, inspect
+remote same receipt; --observe-only controller can resume read-only observation/
+reconcile existingintent, NEVERsubmitagain. Sourcecontroller makesonewrite and
+thenread-onlyfullypaginated history. OnCOMPLETE it savesofficial_result and
+robustcompleteofficial_leaderboard via observe_leaderboard.py. Need freshfull
+board ownrank<=19 plus realoutcome/provenance/report/preservation before
+completingpersistentgoal. Otherwise report actualresult, keepgoalactive, no
+furtherweightsfromLBfeedback. Alloriginalcaps/deadline/quota remainunchanged.
+H76stillRUNNING; no spanclosure or goalcompletion while receiptpending.
 
 ## V29 terminal evidence
 

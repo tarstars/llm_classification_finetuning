@@ -7318,6 +7318,14 @@
           "evidence": [
             "docs/SPAN_030_QUALIFICATION.md"
           ]
+        },
+        {
+          "at": "2026-11-08T23:15:09+00:00",
+          "status": "running",
+          "note": "Concretequalification/decision published464850b BEFOREofficialadmission. Freshcompleteadmission passed; ONEAPIrequest acceptedreceipt58143104 at23:11:45UTC for exactspan030-llama-prior/1. Officialcontroller9665 live, latestreadPENDING23:12:32UTC; no score yet. Observe SAMEreceipt/intent, no furtherGPUorweightswhilepending. Goalrank<=19 remains unachieved.",
+          "evidence": [
+            "results/span_030/official_receipt.json"
+          ]
         }
       ]
     }

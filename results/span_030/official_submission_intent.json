@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-08T23:11:43.029432+00:00",
+  "role": "weight_qualification",
+  "reference": "arseniytrushin/llm-preference-span030-llama-prior",
+  "version": 1,
+  "exact": "arseniytrushin/llm-preference-span030-llama-prior/1",
+  "notebook_sha256": "d8233a126c950d10b373117f5101cce1b4d625350335d8ee2c57b49999b90399",
+  "quota_before": {
+    "used_seconds": 32965.55,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 75034.45
+  },
+  "hidden_seconds_cap": 32400,
+  "message": "Span030 H76 fixed 40/60 two-expert prior T1",
+  "prior_submission_refs": [
+    "58103553",
+    "58091536",
+    "58068582",
+    "57979825",
+    "57909397",
+    "57883867",
+    "57866428"
+  ],
+  "decision_sha256": "15645319432ad2459ceb72f2b0e651aab98e7055de0d850f831ea23c925dd732",
+  "controller_sha256": "d80e9de7193ab0de4073fb4c765a70150065354ae5edb50e6bbd9c96580b00b0"
+}
