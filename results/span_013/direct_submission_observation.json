@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-07T23:56:52.792559+00:00",
+  "ref": 58103553,
+  "status": "SubmissionStatus.PENDING",
+  "public_score": "",
+  "private_score": "",
+  "date": "2026-11-07 20:07:11.890000",
+  "file_name": "submission.csv",
+  "total_bytes": 0,
+  "has_reported_error": false,
+  "response_fields": [
+    "date",
+    "description",
+    "fileName",
+    "ref",
+    "submittedBy",
+    "submittedByRef",
+    "teamName",
+    "totalBytes",
+    "url"
+  ],
+  "endpoint": "GetSubmission, exact accepted receipt"
+}

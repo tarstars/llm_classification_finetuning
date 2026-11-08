@@ -112,6 +112,8 @@ if path.exists():
   print('Official execution ended without a score:',result['status'])
  else:print('Official scoring pending; no new official score yet.')
 else:print('No official submission yet.')
+if (PUB/'official_state.json').exists():
+ print('Latest official observation (UTC):',read('official_state.json')['at'])
 boards=[read(name) for name in ['official_leaderboard.json','final_leaderboard.json','leaderboard_status.json'] if (PUB/name).exists()]
 if boards:display(pd.DataFrame([max(boards,key=lambda board:board['observed_at'])]))
 print('Goal completion requires rank<=19on a fresh complete official leaderboard, plus completed reporting.')''')])
