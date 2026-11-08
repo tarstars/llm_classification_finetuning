@@ -5,7 +5,7 @@
       "name": "success",
       "passed": true,
       "summary": {
-        "seconds": 0.02706599235534668,
+        "seconds": 0.029250144958496094,
         "exit_code": 0,
         "role": "reward_pilot"
       }
@@ -14,7 +14,7 @@
       "name": "failure",
       "passed": true,
       "summary": {
-        "seconds": 0.02836751937866211,
+        "seconds": 0.024149417877197266,
         "exit_code": 7,
         "role": "reward_pilot"
       }
@@ -23,7 +23,7 @@
       "name": "watchdog",
       "passed": true,
       "summary": {
-        "seconds": 0.20204997062683105,
+        "seconds": 0.20191168785095215,
         "exit_code": -15,
         "role": "reward_pilot"
       }

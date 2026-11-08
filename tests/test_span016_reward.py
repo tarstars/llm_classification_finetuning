@@ -3,6 +3,7 @@ import unittest
 import numpy as np
 
 from arena.span016_reward import TieCalibration, conversation, crossfit, design, objective
+from arena.span016_infer import history_counts
 
 
 class RewardMappingTests(unittest.TestCase):
@@ -11,6 +12,11 @@ class RewardMappingTests(unittest.TestCase):
         self.assertEqual([m['content'] for m in conversation(row, 'a')], ['q1', 'a1', 'q2', ''])
         self.assertEqual([m['content'] for m in conversation(row, 'b')], ['q1', 'b1', 'q2', ''])
         self.assertEqual([m['role'] for m in conversation(row, 'a')], ['user', 'assistant', 'user', 'assistant'])
+        counts = history_counts(row)
+        self.assertEqual(counts['mismatched_turn_rows'], 1)
+        self.assertEqual(counts['multiturn_rows'], 1)
+        self.assertEqual(counts['missing_assistant_turns_in_pairs'], 1)
+        self.assertEqual(counts['null_messages_in_rendered_pairs'], 1)
 
     def test_swap_and_equal_rewards(self):
         model = TieCalibration()

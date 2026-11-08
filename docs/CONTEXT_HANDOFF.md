@@ -1,6 +1,6 @@
 # Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
 
-Snapshot2026-11-08T03:36UTC. Read PROJECT_POLICY.md and current GOAL.md, then
+Snapshot2026-11-08T03:49UTC. Read PROJECT_POLICY.md and current GOAL.md, then
 verify live state. Persistent goal "move above20th place" means rank<=19 for
 team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
 Do not create another goal or mark complete from a span closure.
@@ -63,12 +63,18 @@ is executed interim3cells/0errors and may refresh while v16active. Generated rea
 GPU notebook ROOT/runs/span_016/notebooks/reward_pilot; role reward_pilot. Its
 bundle/source/profile/manifest hashes must stay frozen before accepted GPU work.
 
-Next: commit/push preparation and scripts/stage_span_016_assets.py, then run
-that program prepare (acquire/hash frozen weights under ROOT), upload ONCE with
-intent/receipt, verify private datasetversion1. Manifest30files/16.380GB, actual
+Preparation/source freeze dddfecfis PUSHED. Full-weight acquisition is NOW
+RUNNING via unified session17682: scripts/stage_span_016_assets.py prepare.
+03:48UTC exact poll confirms live; first4.902GBshard .part has3.644GB. Do not
+restart while live. Observe same handle; .part bytes are useful read-only progress.
+After completion, upload ONCE with intent/receipt and verify private datasetv1. Manifest30files/16.380GB, actual
 weights16.329GB, four modern wheels, source.parquet+known external labels.npz.
 Flat private asset arseniytrushin/llm-span016-reward-assets/1; model prefixes
 rm8b__/rm06__. No full weights until exact serialized rehearsal passed (now passed).
+Before first GPU, source/bundle was refreshed for required null/missing-turn
+telemetry, unchanged model recipe. New run_span_016_pilot.py validates full cursor
+receipt history and all five pinned datasets via the existing controller. It must
+be committed before use; no admission/launch until asset_upload.jsonready.
 Current owned private datasets total93.2MB; unrelated names redacted. No upload
 intent or GPU receipt yet. If download interrupts, reconcile exact .part; accepted
 upload timeouts require observation of the same dataset, never repeat mutation.

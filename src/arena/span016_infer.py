@@ -20,6 +20,17 @@ def save(path, value):
     temporary.replace(path)
 
 
+def history_counts(row):
+    p, a, b = [json.loads(row[k]) for k in ['prompt', 'response_a', 'response_b']]
+    if not all(isinstance(x, list) for x in [p, a, b]):
+        raise ValueError('Expected conversation arrays')
+    return dict(multiturn_rows=int(max(map(len, [p, a, b])) > 1),
+        mismatched_turn_rows=int(len({len(p), len(a), len(b)}) > 1),
+        null_messages_in_rendered_pairs=2 * sum(x is None for x in p) + sum(x is None for x in a + b),
+        missing_user_turns_in_pairs=sum(max(0, len(x) - len(p)) for x in [a, b]),
+        missing_assistant_turns_in_pairs=sum(max(0, len(p) - len(x)) for x in [a, b]))
+
+
 def main():
     parser = argparse.ArgumentParser()
     for name in ['model', 'out', 'cohorts', 'size']:
@@ -61,8 +72,10 @@ def main():
         frame = pd.read_parquet(out / (name + '.parquet'))
         assert set(frame.columns) == {'id', 'prompt', 'response_a', 'response_b'}
         begin = time.monotonic()
-        sequences, metadata = [], []
+        sequences, metadata, history = [], [], {}
         for row in frame.to_dict('records'):
+            for key, value in history_counts(row).items():
+                history[key] = history.get(key, 0) + value
             for side in ['a', 'b']:
                 tokens, details = encode_conversation(tokenizer, conversation(row, side))
                 sequences.append(tokens)
@@ -112,6 +125,7 @@ def main():
         summary['cohorts'][name] = dict(rows=len(frame), seconds=time.monotonic() - begin,
             retained_tokens=int(lengths.sum()), original_tokens=int(original.sum()),
             truncated_sequences=int((original > lengths).sum()),
+            history_counts=history,
             input_token_hash=hashlib.sha256(hashes.tobytes()).hexdigest(),
             peak_allocated_bytes=[torch.cuda.max_memory_allocated(g) for g in used])
         save(out / ('reward_' + args.size + '_summary.json'), summary)
