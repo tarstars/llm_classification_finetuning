@@ -123,3 +123,10 @@ A large simple marginal-class mismatch is not supported by these observations;
 conditional transport remains uncertain. No model outputs informed this check,
 and no recipe or quality gate changed. See class_prior_audit.json and Notebook28,
 refreshed with3executed cells/0errors.
+
+06:12UTC: a25second bounded exact-version stream confirms Gemma has scored400
+quality rows in245.84seconds; no streamed traceback. New
+scripts/observe_span_016_pilot.py keeps aggregate native size/sequence and legacy
+row/batch counters, fresh exact-version status, observer timeout type and raw
+private snapshots separately. An idle ConnectionError limits observation and does
+not change the job's RUNNING status. No GPU/source/recipe change or new version.

@@ -5043,6 +5043,14 @@
           "evidence": [
             "results/span_016/class_prior_audit.json"
           ]
+        },
+        {
+          "at": "2026-11-08T06:13:51+00:00",
+          "status": "running",
+          "note": "Same exact v1 remains RUNNING. New bounded read-only observer confirms Gemma quality progress400/1024rows in245.8s, no streamed traceback; short8s snapshots lagged. Both reward passes completed earlier. Observer keeps full size/row/sequence counters, fresh exact-version status and timeout type separate from job failure, with raw logs only in database. No GPU restart, extra version or quality claim.",
+          "evidence": [
+            "results/span_016/pilot_live_observation.json"
+          ]
         }
       ]
     },

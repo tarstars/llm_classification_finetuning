@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-08T06:12:37.676999+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
+  "status": "RUNNING",
+  "stream_events": 81,
+  "observation_limited_by": "ConnectionError",
+  "tracebacks_in_stream": 0,
+  "latest_stage": {
+    "stage": "inference_progress",
+    "role": "m0",
+    "cohort": "long",
+    "batch": 4,
+    "rows": 400,
+    "seconds": 245.8391687159999
+  },
+  "latest_worker_cohorts": [
+    {
+      "stage": "reward_progress",
+      "size": "8B",
+      "cohort": "warmup",
+      "completed_sequences": 2,
+      "total_sequences": 160,
+      "seconds": 1.0942031810000117
+    },
+    {
+      "stage": "reward_progress",
+      "size": "8B",
+      "cohort": "long",
+      "completed_sequences": 1794,
+      "total_sequences": 2048,
+      "seconds": 456.14628369999997
+    },
+    {
+      "stage": "reward_progress",
+      "size": "8B",
+      "cohort": "test",
+      "completed_sequences": 2,
+      "total_sequences": 6,
+      "seconds": 0.14405875900001774
+    },
+    {
+      "stage": "reward_progress",
+      "size": "0.6B",
+      "cohort": "warmup",
+      "completed_sequences": 2,
+      "total_sequences": 160,
+      "seconds": 0.6381431820000216
+    },
+    {
+      "stage": "reward_progress",
+      "size": "0.6B",
+      "cohort": "long",
+      "completed_sequences": 1794,
+      "total_sequences": 2048,
+      "seconds": 61.97060003699994
+    },
+    {
+      "stage": "model_loading",
+      "role": "m0"
+    },
+    {
+      "stage": "cohort_complete",
+      "role": "m0",
+      "cohort": "warmup",
+      "rows": 80,
+      "seconds": 51.24107185999992
+    },
+    {
+      "stage": "cohort_complete",
+      "role": "m0",
+      "cohort": "control",
+      "rows": 256,
+      "seconds": 154.23407217499994
+    },
+    {
+      "stage": "inference_progress",
+      "role": "m0",
+      "cohort": "long",
+      "batch": 4,
+      "rows": 400,
+      "seconds": 245.8391687159999
+    }
+  ],
+  "quality_audited": false,
+  "target_runtime_profiled": false,
+  "new_gpu_executions": 0
+}
