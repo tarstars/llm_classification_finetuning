@@ -1,34 +1,39 @@
-# Move above20th place: v17sealed, v18selection pending
+# Move above20th place: v18missing-order approximation
 
 Persistent objective: team17244411at rank<=19on a fresh complete official Kaggle
-leaderboard after legitimate inference. ACTIVE/unachieved. Last verified
-2026-11-08T07:48:37.423907+00:00: rank23/310,best0.82987,rank19cutoff0.82915.
+leaderboard after legitimate inference. ACTIVE/unachieved. Retain best0.82987,
+last rank23; rank19cutoff0.82915. V17is sealed; exact contractdocs/GOAL_V17.md,
+actual resultsdocs/SPAN_017_RESULTS.md. Execute docs/SPAN_018_PLAN.md, H64only.
 
-V17closed E17andH62with zeroGPU/submission spend. E17audited3840cached rows,
-no parameter fitting; source confidence/coverage/exposure and the conditional
-score-normalization identity do not support treating later votes as target CV.
-H62fixed15pct-work/30pct-row replay selected120/512rows but reduced loss by
--.00006055versus H60, failing the frozen>.0005gate. No actual qualification or
-official attempt. Retain H60. See docs/SPAN_017_RESULTS.md and exact archived
-contract docs/GOAL_V17.md; Notebook29is final/executed.
+First, one fixed cached teacher preserves actual H60on-route and uses the equal
+four-orientation mean only off-route, T1/8192/context4096. Same original control/
+uniform512/long/test IDs, sources and group bootstrap(seed42/2000). Strict uniform
+loss reduction>.001before feature inference. Original votes trained the models:
+descriptive information, not independent teacher advantage/CV or scoreforecast.
+No teacher/route/weight/temperature grid; stop without GPU if the gate fails.
 
-Active backlog v18has38members, no focus/running work. NewH64proposes a small
-head predicting missing answer-order outputs of the retained experts. Its first
-unobserved CPU check freezes one teacher: H60on-route/full4mean off-route,
-uniform512descriptive gain strictly>.001before feature GPU. Teacher usefulness,
-independent human-vote advantage, state capture, surrogate quality and runtime
-are all unproven. It does not override H15's deferred provenance limits. Select
-an explicit bounded focus/contract before executing v18; do not infer that a
-newly queued task is admitted. H63remains conditional/P3/unselected.
+A pass permits only a bounded30minute/50MiBsource audit. Freeze state schema,
+one small head, training/group-held-out IDs and objective, numerical/quality
+criteria and actual serialized rehearsals BEFORE new features/GPU. Intended head
+predicts centered teacher logit residuals from existing retained expert states;
+no human labels in its training and no extra large deployment pass. Retain
+H15's unresolved provenance/independent-advantage limits. Teacher approximation
+alone does not prove better human predictions; fresh confirmation as needed.
 
-Fresh terminal inventory66owned/zeroactive;7official receipts terminal. Free
-91613.417GPU seconds, reserved0/paidFalse, refreshNov14. Recheck full jobs/quota/
-pinned dependencies/submission cursors before GPU. No research while official
-scoring is pending; no hidden labels/caches, external text service or duplicate
-accepted mutations. Frozen quality/numerical/source/runtime gates and actual
-fresh rank determine advancement. No leaderboard parameter fitting.
+Strict native/base canonical1e-5/source/head/ID/token/class/route/CSV/twoT4checks,
+actual512/full80warmup profiling, conservative25k<32400s with20pctmargin/all
+feature/head/worst comparable parent-current cold/warmup/other costs/600reserve.
+Only then one frozen official candidate; retain H60if worse. No research while
+officialpending. Actual fresh leaderboard rank defines goal completion.
 
-Preserve70historical snapshot files, archived goals, user notebooks07/12and the
-existing notebook link. Heavy data under database/llm_classification_finetuning;
-programs/Markdown/aggregates/executed notebooks in Git. Queue discoveries in v19,
-carry unfinished work, publish milestones. Span closure is not goal completion.
+Original period 2026-11-08T08:09:29.533477+00:00 through 2026-11-10T08:09:29.533513+00:00; quota refresh
+2026-11-14 00:00:00. Free public cap18000two-T4seconds, initial3600,
+one separately admitted followup14400,max2public/1productionrecipe/1official.
+FirstCPUcap600s. The cached gate/source audit admit NO GPU. Fresh full quota/
+jobs/pinned dependencies/official cursors before admission, paidFalse. No hidden
+targets/caches/external service or duplicate mutation on observation timeout.
+
+Heavy files under database/llm_classification_finetuning/runs/span_018; source,
+Markdown/aggregates/executedNotebook30in Git. Preserve70historical snapshots,
+all archived goals, user notebooks07/12and notebook link. Queue discoveries in
+v19, carry unfinished work. Globalrankgoal remains active across span closure.

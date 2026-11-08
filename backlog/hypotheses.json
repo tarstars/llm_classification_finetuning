@@ -5930,7 +5930,7 @@
       ],
       "id": "H64",
       "rank": 82,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 18,
       "discovered_during": 17,
       "derived_from": [
@@ -5943,6 +5943,14 @@
           "note": "Broader actual coverage failed; queue one distinct conditional function-distillation hypothesis. It begins with a fixed unobserved CPU teacher gate and does not claim independent teacher advantage or admit v17GPU work.",
           "evidence": [
             "docs/SPAN_017_DISTILLATION_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T08:09:15+00:00",
+          "status": "running",
+          "note": "Preparing one fixed hybrid teacher lookup per docs/SPAN_018_PLAN.md, preserving actual H60on-route and full4only off-route. Threshold>.001uniform512, no grid/fitting; failed gate stops before feature inference. Conditional later source/head/IDs/prototype protocol must be frozen separately before GPU.",
+          "evidence": [
+            "docs/SPAN_018_PLAN.md"
           ]
         }
       ]
@@ -7395,8 +7403,18 @@
         "H63",
         "H64"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H64"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T08:09:15+00:00",
+          "note": "Continuing rank<=19goal: select only the queued missing-orientation approximation hypothesis. Its fixed cached teacher must first beat actual H60by>.001; no GPU admitted by that lookup. Preserve H15provenance limits and all source/runtime/confirmation requirements. Other tasks remain unselected.",
+          "focus_ids": [
+            "H64"
+          ]
+        }
+      ],
       "carried_from": 17,
       "start_sha256": "1bf24e702726dae8b42632104aba7b5f555e2100938ccd4d7354fc2d96c496d0",
       "start_markdown_sha256": "6b6b6d4efef1f93098c5078d77473f0bc2cd131e6a9e05be316122ba857def41",

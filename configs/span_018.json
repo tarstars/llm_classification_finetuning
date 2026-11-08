@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-08T08:09:29.533477+00:00",
+  "deadline": "2026-11-10T08:09:29.533513+00:00",
+  "job_seconds_caps": {
+    "distillation_pilot": 3600,
+    "distillation_followup": 14400
+  }
+}
