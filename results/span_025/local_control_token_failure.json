@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-08T15:07:47.030888+00:00",
+  "role": "m3",
+  "stage": "canonical_control_token_identity",
+  "expected": "159305f636305c46bc4cea9da26c6f8080050392c2fa6b0c33662a48d303019a",
+  "observed": "13de260985f8da1379ebbe2114c134d200419f6eb77eaa5512e0bad37fd1bb4e",
+  "transformers": "5.22.1",
+  "tokenizers": "0.23.3",
+  "tokenizer_file_matches_H60": true,
+  "uses_targets": false,
+  "new_gpu_executions": 0,
+  "decision": "stop_before_gpu_and_check_exact_native_tokenizer_runtime"
+}

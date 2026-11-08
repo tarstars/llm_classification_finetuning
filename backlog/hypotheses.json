@@ -6530,7 +6530,7 @@
       ],
       "id": "H70",
       "rank": 88,
-      "status": "running",
+      "status": "done",
       "introduced_in": 24,
       "discovered_during": 23,
       "derived_from": [
@@ -6551,6 +6551,94 @@
           "note": "One exactsource rule implemented before metrics;3tests pass for publishedconstants, knownboth-empty precedenceasymmetry, no normalization, exactunaffected probabilities and rawinput rejection.94snapshots preserved; freeze/push before one CPUoriginal512screen, no GPU.",
           "evidence": [
             "docs/SPAN_024_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T15:01:17+00:00",
+          "status": "done",
+          "note": "Exactpublishedfullrule failed: original512 .652988->.657378, reduction-.004390CI[-.013169,0], onlyoneemptyAtrueTie affected. All275fulltrainidenticalpairs absent from sample; theirquality unmeasured. CPU.616s, zeroGPU/official; stop complete rule and preserve sparsecoverage.",
+          "evidence": [
+            "docs/SPAN_024_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Measure the uncached identical-answer stratum with fixed experts and routing bounds",
+      "priority": "P1",
+      "gain": [
+        -0.002,
+        0.003
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        2
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0.5
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0.6667
+      ],
+      "cpu_wall_hours": [
+        0,
+        0.2
+      ],
+      "risk": "high",
+      "claim": "The275exactidentical raw-answer pairs absent from the original512cache may support a fixed published identical-only tie rule; currentquality is whollyunmeasured.",
+      "basis": "H70fullrule fails on oneemptyAtrueTie; original512contains zeroidenticalpairs, while originalfulltrainhas275(0.478pct). No identicalbranch qualitywasobserved. Publishedsource supplies [.06,.06,.88] without projectfitting.",
+      "first_test": "Freeze all275IDs withoutlabels and unchanged H60expert/source semantics. Test sameinput/swaptokenidentity and conservative on/offroute loglossbounds before any output. One<=1800sGPUinformationpilot using retainedweights, all275cases plus canonical256controls/full80warmup, exact IDs/tokens/checkpoints, strict1e-5controls, telemetry and hashes. Compute originalpopulationweighted conservative gain using maximum trueclassprobability of offroute .5G+.5L versus onroute .25G+.25swapG+.5L; no globalroute guessing. No new head orweights.",
+      "acceptance": "Originalweighted lowerbound pointgain>.0005 and positive pairedpromptgroup95lower bound justify actualfullH60+identicalonly qualification. At most one<=2400sfollowup, measured conservative<9h using unchanged20pctmargin/allcold-warm-other/600reserve and worstretainedparent. One frozenofficial onlyafter allactualsource/ID/token/swap/CSV/memory/runtime checks; actualrank<=19 remains outcome.",
+      "stop": "BeforeGPU require documented swapidentity, source, controls, freshfullquota/jobs/receipts and boundedworker rehearsals. Initial1800s+followup2400s<=4200publictwoT4seconds, max2acceptedversions/oneofficial, inheritedNov10deadline/quotaanchor unchanged. Stop on poorinformation, numerical/source/memory/runtime failure; no otherconstants/normalization/variants, no timeoutduplicate mutation. Any hiddenexecution uses realinference only.",
+      "risk_reason": "Originalvotes overlap publicweights training; samplecontains noidenticalcases, published.88tieprobability may be inferior, and algebraicroutebounds require fixed expertoutputs rather than universalbatchnumericclaims.",
+      "mitigation": "Treat originalquality as futility/exploration, explicitly bound only twoalgebraicoutcomes atfixedprobabilities. Verifytokens and actualmatchedcontrols; retain allfailures. No substitution for missingprobabilities or independentCV. Separate informationpilot from actualfullsourcequalification.",
+      "rationale": "Resolve an actual uncoveredstratum without anothermodel or global57477rowinference: identicalinputs give two simple H60routingoutcomes, so perrowbounds avoid guessing theglobalroute. No rescuegrid on failedfullrule.",
+      "revision": "Newv25proposal from H70coveragegap, not positivequality. All275rowIDs/tokenprofiles/modeloutputs/labels remain unqueried atproposal.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H60",
+        "H70"
+      ],
+      "evidence": [
+        "docs/SPAN_024_RESULTS.md",
+        "results/span_024/structural_screen.json"
+      ],
+      "id": "H71",
+      "rank": 89,
+      "status": "running",
+      "introduced_in": 25,
+      "discovered_during": 24,
+      "derived_from": [
+        "H70"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T15:01:17+00:00",
+          "status": "planned",
+          "note": "Coveragegap:275identicalpairs, zero in512cache. Queue targeted sameinput/routingbound audit with retainedweights; no measuredidenticalgain or GPUadmissionyet.",
+          "evidence": [
+            "docs/SPAN_024_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T15:04:19+00:00",
+          "status": "running",
+          "note": "Start source/token/bound preparation under docs/SPAN_025_PLAN.md. ThreeCPUbound tests pass; freeze275raw-identicalIDs and exact original/swappedtokens withoutlabels. No GPU, weights, quality result or officialadmission.",
+          "evidence": [
+            "docs/SPAN_025_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T15:11:26+00:00",
+          "status": "running",
+          "note": "Frozen275IDs preserved through CPUpreparation. Staged missing9.08MBretainedm3tokenizer with actualH60hash; currentTransformers5.22.1/Tokenizers.23.3controlmismatch preserved. Pinned4.42.3/.19.1 gives exact256controlfingerprints for bothmodels and original/swappedtokens identical for all275. Means365/356tokens,max3474/3338. Threebounds tests pass. No candidatequality/labels/GPUadmission; next build/rehearse informationworker.",
+          "evidence": [
+            "results/span_025/cohort_audit.json"
           ]
         }
       ]
@@ -6604,7 +6692,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 24,
+  "active_version": 25,
   "versions": [
     {
       "number": 1,
@@ -8370,7 +8458,7 @@
     },
     {
       "number": 24,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -8426,10 +8514,78 @@
       "carried_from": 23,
       "start_sha256": "189bd8de6bbb48bd704b46e98ef934325d20c0c49eb4c0808f55a081cb9ced20",
       "start_markdown_sha256": "13b3a8bbfb762095eba07b0672172d439ec0841dfe7b2e426e1d1c3473150fb3",
-      "start_sealed_at": "2026-11-08T14:53:05+00:00"
+      "start_sealed_at": "2026-11-08T14:53:05+00:00",
+      "final_sha256": "126834e847180c3a19e4b16c7a7542565e5d2c7d07e6a0333d874e2bbb689bf0",
+      "final_markdown_sha256": "904bf78e28e12e261f6d7be8e2b0704714fe9bc82773ce83b53ef826fb291582",
+      "final_sealed_at": "2026-11-08T15:01:18+00:00",
+      "closed_at": "2026-11-08T15:01:18+00:00",
+      "closing_note": "H70failed onecompletepublishedrule; preserve unmeasuredidenticalbranch and carry37unfinished. H71targets uncachedstratum under continuing rankgoal.",
+      "closing_evidence": [
+        "docs/SPAN_024_RESULTS.md"
+      ]
     },
     {
       "number": 25,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H71"
+      ],
+      "focus_ids": [
+        "H71"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T15:01:18+00:00",
+          "note": "Select targetedidenticalstratum source/token/bound preparation, then only explicitly admitted fixedpilot; no newweights or constants. Persistent rankgoal remains active.",
+          "focus_ids": [
+            "H71"
+          ]
+        }
+      ],
+      "carried_from": 24,
+      "start_sha256": "99f7e4bea5f756f5007632e0d4fb0fa8cb0c1d5057a1ced66ad654b3d62ed884",
+      "start_markdown_sha256": "8a6c121cc0032aae230a887389e7b76a3e5f9d2cd6e1fddd86d20bb79ff3d92a",
+      "start_sealed_at": "2026-11-08T15:01:18+00:00"
+    },
+    {
+      "number": 26,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

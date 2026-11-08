@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-08T15:06:14.915428+00:00",
+  "source": "tascj0/lmsys-checkpoints-3-0805/1",
+  "file": "tokenizer.json",
+  "bytes": 9084673,
+  "sha256": "047b18a87bd706a56ed77744bca837d7dec549b0d1076aee1cf269293bccf125",
+  "matches_actual_H60": true,
+  "weights_downloaded": false,
+  "compressed_archive_sha256": "0b0743ebe85a45c721f9f499b339e8ca235310bd18f540d74238a9c0898a9177",
+  "archive_unwrapped_locally": true
+}

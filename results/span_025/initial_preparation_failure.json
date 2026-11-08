@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-08T15:05:38.187609+00:00",
+  "stage": "local_tokenizer_availability",
+  "terminal": true,
+  "error": "FileNotFoundError: retained m3 tokenizer.json was never staged locally",
+  "labels_read": false,
+  "new_gpu_executions": 0,
+  "cohort_manifest_preserved": true
+}

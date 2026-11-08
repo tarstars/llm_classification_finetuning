@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-08T15:08:09.602820+00:00",
+  "preparation_passed": true,
+  "gpu_admitted": false,
+  "uses_targets": false,
+  "rows": 275,
+  "full_original_rows": 57477,
+  "prevalence": 0.004784522504654036,
+  "roles": {
+    "m0": {
+      "control_token_ids_sha256": "4015e2ba9056bdc0b48938ed155b367669bd99bd29f9c6ecc83972ea260d0b84",
+      "control_identity": true,
+      "identical_token_ids_sha256": "94e0d39b80f1085ade895f259717ef49adeff3ae6cefb68ee8e6db656d386a21",
+      "all_swapped_tokens_identical": true,
+      "rows": 275,
+      "mean_tokens": 365.29818181818183,
+      "max_tokens": 3474,
+      "tokenizer_sha256": "7da53ca29fb16f6b2489482fc0bc6a394162cdab14d12764a1755ebc583fea79",
+      "checkpoint_record_sha256": "053699c6ab61a2a2cbbecd2bf3a40955f6e4a0a3f2abed5f50e27ed7e027e1a8"
+    },
+    "m3": {
+      "control_token_ids_sha256": "159305f636305c46bc4cea9da26c6f8080050392c2fa6b0c33662a48d303019a",
+      "control_identity": true,
+      "identical_token_ids_sha256": "ece8ee03e587d58e75acf371e00488469c8208fff426c9ac2c1d76d4595f4343",
+      "all_swapped_tokens_identical": true,
+      "rows": 275,
+      "mean_tokens": 356.2909090909091,
+      "max_tokens": 3338,
+      "tokenizer_sha256": "047b18a87bd706a56ed77744bca837d7dec549b0d1076aee1cf269293bccf125",
+      "checkpoint_record_sha256": "5b8acbde594a45028d140e5e90dc9fedc56fae2c6bd6025cee90e7e5b09c2b2f"
+    }
+  },
+  "elapsed_cpu_seconds": 7.602241793880239,
+  "processor_sha256": "cc2376291ff5e499f0738a204848d3f1c75b9bf4399d32678d0696fa334078b7",
+  "input_sha256": {
+    "raw/train.csv": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2"
+  },
+  "output_sha256": {
+    "runs/span_025/cohort_manifest.json": "5cdf7b733064941637fae340d0f7a8675cc0000d1ba850f3e8caf61e011722de",
+    "runs/span_025/identical_lengths.npz": "f38dc9a7ae5402afa25d95f5547bfb020da16fde91aaeb2ccf1ed857433aa00f"
+  },
+  "fixed_probabilities": [
+    0.06,
+    0.06,
+    0.88
+  ],
+  "new_gpu_executions": 0,
+  "new_inference_executions": 0,
+  "candidate_quality_measured": false,
+  "official_submission_eligible": false
+}
