@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-08T21:26:03.255401+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span028-native-cpu-prefetch/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "notebook_sha256": "d154e36238f55806f90b34351134356f41c832bb5850210a11ea6fd135ab0e25",
+  "source_sha256": "ef54dab88bdcde7e717d004cb28a0d176b1dd63c0180d6ece2e999675cb9e8dd"
+}

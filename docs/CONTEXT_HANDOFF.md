@@ -11,7 +11,7 @@ leader0.82692. Best H60receipt58103553/span013-gemma-order/1. No new official.
 V27SEALED/published d58c8e5. V28active focus[E18,H73], E18RUNNING=GPUsource
 preparation, H73DEFERRED/uncomputed. V29draftempty;93tasks/110snapshotfiles.
 New GOAL.md/docs/SPAN_028_PLAN.md selected and CPUmethod pushed a0c78a6.
-Old GOAL exact archive docs/GOAL_V27.md. No live jobs and no v28GPUadmitted.
+Old GOAL exact archive docs/GOAL_V27.md. One accepted v28GPUjob live below.
 
 E18CPUproof59216TERMINALexit0:31.847s/300. ALL15actualnativecohorts exact
 host tensors, tokens/order/positions/original8192microbatch boundaries, oneCPU
@@ -30,7 +30,7 @@ because the runner was absent; tests were converted to standard unittest.
 Notebook40executed92921TERMINALexit0 via build_span_028_review.py; CPUtable,
 test evidence and pending GPU limits explicit. docs/SPAN_028_CPU_PROOF.md.
 
-GPUengine/checks/driver/runtime source PREPARED (span028*.py), not admitted.
+GPUengine/checks/driver/runtime source FROZEN (span028*.py), one profile admitted.
 Engine copies nativeH60forward, original8192groups and batch80; wraps DataLoader
 in CpuPrefetch context, hashes full host tensors and per-batch microseq lengths,
 records queue/preparation and forward-launch/transfer/hostcopy wall timings.
@@ -53,17 +53,21 @@ standalone imports, rerunguard public/hidden rejection and JupyterstartupPASS.
 prefetch_profile_bundle.json freezes27sourcefiles plus notebook/settings hashes.
 Notebook40rerendered28059TERMINALexit0 with actualpreparation/rehearsals.
 
-NEXTfreeze/push all currentnewcode/results/bundle, then launch ONCE
-.venv/bin/python scripts/run_span_028_profile.py with escalation for freshfull
-admission (inventory normally2-3min). No v28pushintent/acceptedhandle existsYET.
-Record returned unifiedhandle; observe same handle/version, neverrelaunch after
-observation timeout. Roleprefetch_profile/private slugspan028-native-prefetch.
-After accepted, verify_experiment_source.py prefetch_profile --span28 read-only.
-Then observe SAME job throughterminal/retrieval and audit_span_028_profile.py
-ONCE. Early guards stop before latermodels; terminal audit checks every oldraw
+GPUmethod frozen/pushed87866b4 BEFORE admission. Fresh inventory/receipt/
+quota/dependencies passed; accepted ONCE21:25:10UTC. Canonical returned identity
+arseniytrushin/llm-preference-span028-native-cpu-prefetch/1 differs from requested
+native-prefetch slug because title normalized; observe returned ref, NEVERfix
+byrepushing. Controller74124/PID1425436 confirmedRUNNING21:26:06UTC. Exact
+accepted source verified21:26:03UTC: cells/private/offline/T4/image match, four
+publicv1datasets refreshed. No other v28GPU or official exists.
+
+NEXTobserve SAME74124/version throughterminal/retrieval, then
+scripts/audit_span_028_profile.py ONCE (requires COMPLETE and sourceproof).
+Early guards stop before latermodels; terminal auditor checks every oldraw
 cohort<=1e-5 and all source/host tensors/boundaries/route/mixture/CSV/memory,
 actualnewmode fullprojection<32400. No grid/numerical relaxation/faster-node
-retry. If engineering fails, preserve result and deferH73; no resumption.
+retry. If engineering fails, preserve and deferH73; no resumption. If passes,
+close E18withreport and only then start fixedH73CPUreplay under currentcontract.
 
 H73live v28explicitly replaces failedH74 prerequisite with E18. It stays deferred
 until E18actually passes; oldv27snapshots/failed10240contract remain immutable.

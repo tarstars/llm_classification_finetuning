@@ -7106,6 +7106,14 @@
           "evidence": [
             "results/span_028/prefetch_profile_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-08T21:27:26+00:00",
+          "status": "running",
+          "note": "Fresh full admission passed; source87866b4 pushed before one GPU launch. Kaggle canonical accepted identity arseniytrushin/llm-preference-span028-native-cpu-prefetch/1 (title-normalized from requested slug); do not repush. Controller74124/PID1425436 RUNNING21:26:06UTC. Remote source cells/private/offline/T4/image verified21:26:03UTC; four publicv1datasets current. H73 remains deferred pending terminal engineering audit.",
+          "evidence": [
+            "results/span_028/jobs/prefetch_profile/source_verification.json"
+          ]
         }
       ]
     }

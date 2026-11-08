@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T21:25:06.930152+00:00",
+  "kernel": "arseniytrushin/llm-preference-span028-native-prefetch",
+  "quota_before": {
+    "used_seconds": 29919.217,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 78080.783
+  },
+  "max_session_seconds": 3600,
+  "notebook_sha256": "d154e36238f55806f90b34351134356f41c832bb5850210a11ea6fd135ab0e25",
+  "metadata_sha256": "d2600bbda2a5bab1196332c274467c0bfafe0450ebcd0ab74bedc4ebbdcd8d81"
+}
