@@ -22,7 +22,7 @@ results/span_019/closure_audit.json PASSED after transition. Final Notebook31has
 4executed code cells/zeroerrors, explicitly finalengineering/runtimeFAIL.
 78historical snapshot files now exist, all prior74preserved.37unfinished items
 carried. V20active,38members, focus[H66], H66running=pre-GPUpreparation only;
-v21draftempty. V20source notebook/config/worker are now BUILT and CPUrehearsed;
+v21draft[H67]. V20source notebook/config/worker are BUILT and CPUrehearsed;
 V20oneversion ACCEPTED/RUNNING; no newuploads, official or quality outputs in v20.
 Notebook ROOT/runs/span_020/notebooks/batch_candidate/job.ipynb; bundle and actual
 serialized rehearsals in results/span_020/batch_candidate_{bundle,cell_rehearsals}.json.
@@ -39,7 +39,13 @@ After COMPLETE/retrieval, audit_span_020_candidate.py performs fullchecks/drift/
 runtime BEFORE locallyreadingvotes. Do not run auditor during queued/running.
 Larger-shape native/repeated controls passed before other inference. Live80warmup
 53.2942s (slower thanH65),control256136.4944s (faster than153.4703s). Full512
-profile stillpending at12:50UTC; do not infer qualification from short-prefix timing.
+profile completed267.8156s; measured throughput ratio1.11486x versusH65. With
+required parent276.1072s/512, runtime LOWERBOUND32470.4753s=9.01958h before all
+startup/warmup/tokenization/othercosts. Currentruntimegate cannotpass; actualG
+profile262.7231s is faster but mandatoryworstparent rate stillapplies. Evidence
+results/span_020/runtime_live_observation.json. Do NOTrelaxmargin/use fasterparent
+or submit. Existingjob stillfinishes long/source1024/actualreverse/canonical
+artifacts; poll64026. No votes read. Formal terminalaudit stillrequired.
 Prepared scripts/submit_span_020_candidate.py plus twoCPUtests/sixnegativecases;
 validation results/span_020/submission_controller_cpu_validation.json. No official
 APIcall/decision made. It checks actualthresholds/native/source/runtime/canonical
@@ -48,6 +54,13 @@ duplicate submission. ONLYif fullcandidate_qualification.json is eligible, run
 its --prepare-decision, commit/push that exactdecision/results, then run once.
 --observe-only resumes SAMEreceipt/intent. Fullrobustboard read follows terminal
 official; model must separately verify goal completion before update_goal.
+H67queuedforv21: ONECPU-only<=300sscreen of the samefixed.5G+.5M/T1candidate
+afterH66terminalaudit/closure, using its completeverified512/later1024caches and
+actualH60reverse175. Samequalitygates/bootstrap; no fitting/newmixture/GPU/network/
+official or productioneligibility. Reporttrainingoverlap/laterinspectedlimits.
+Onlyif useful would another bounded backend proposal be justified; old optional
+native-equivalent dense conversion andstage1/stage2alreadyCPUtested, not GPUtested.
+docs/SPAN_020_INFORMATION_DISCOVERY.md documents this conditionaldiscovery.
 
 ## H65 actual completed source/assets/native GPU execution
 

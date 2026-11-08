@@ -6211,6 +6211,76 @@
           "evidence": [
             "results/span_020/submission_controller_cpu_validation.json"
           ]
+        },
+        {
+          "at": "2026-11-08T13:07:53+00:00",
+          "status": "running",
+          "note": "Full512mirror267.816s=1.11486xthroughput vsH65, but requiredparent276.107s yields runtimeLOWERBOUND32470.475s>32400before startup/warm/token/other. Retainedcurrent262.723s cannotreplaceworstparent. No official/quality vote read; finish currentsource/reverse/artifactaudit. H67queuedCPUonlyafterclosure.",
+          "evidence": [
+            "results/span_020/runtime_live_observation.json"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "CPU-only usefulness screen for the fixed mirror replacement",
+      "priority": "P1",
+      "gain": [
+        0,
+        0
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.25,
+        0.75
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "cpu_wall_hours": [
+        0.01,
+        0.1
+      ],
+      "risk": "medium",
+      "claim": "Complete cached H66predictions can determine whether the unchanged equal-weight mirror replacement merits further backend engineering, without another GPUexecution.",
+      "basis": "H66actual mirror512267.8156s yields9.0196h lowerbound with required parent rate/margin/reserve, before startup. Native larger-batch controls pass; complete quality remains unmeasured under its engineering-first stop. Original job is finishing source inputs and actual comparator reverse predictions.",
+      "first_test": "Only after H66terminal source/hash/numerical/canonical audit and spanclosure, use all fixed originaluniform512/later1024outputs and actual H60source175reverse predictions. Evaluate ONE.5Gemma+.5mirror/T1candidate. All mirror cohorts from sameH66shape. No inference, parameterfit, new mixture or imputation. CPUcap300s, no network/GPU/official.",
+      "acceptance": "Originaluniform loss reduction>.001 versus actualH60 AND later1024reduction>=0 with seed42/2000paired-prompt-group95lower>-.01. Report accuracy/Brier/classloss and exposure limits. A positive screen only motivates a separately bounded backend proposal; H66remains runtime-ineligible.",
+      "stop": "Stop on missing/corrupt/source-mismatched artifacts, incomplete comparator or either fixed quality failure. No newdata/weight/temperature/route/class-map grid. Negative result stops further compute for this fixed replacement; never claim honest CV or submission eligibility from this CPU screen.",
+      "risk_reason": "Original votes overlap checkpointtraining; later votes were previously inspected and shift in domain. Passing is not an independent competition-score estimate. Native logits or an attributed model card alone do not prove predictive usefulness.",
+      "mitigation": "Freeze single candidate/gates before votes. Verify exactIDs/classmapping/cachehashes/actualreverse/completed source. Use pairedgroup intervals and label exposure honestly. ZeroGPU/official; preserve failed H66engineering status and all historical snapshots.",
+      "rationale": "Information-first continuation after measured runtime failure: avoid optimizing an unmeasured preference predictor. Existing optional native-equivalent split-dense path merits a proposal only if this fixed candidate is useful.",
+      "revision": "Initial v21discovery during H66; queued only. No vote read, new inference, weight conversion, resource-period reset or current-span scope expansion.",
+      "depends_on": [
+        "E00",
+        "H66"
+      ],
+      "evidence": [
+        "docs/SPAN_020_INFORMATION_DISCOVERY.md",
+        "results/span_020/runtime_live_observation.json"
+      ],
+      "id": "H67",
+      "rank": 85,
+      "status": "planned",
+      "introduced_in": 21,
+      "discovered_during": 20,
+      "derived_from": [
+        "H66"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T13:04:17+00:00",
+          "status": "planned",
+          "note": "Actual512speedup1.11486xstillfails runtime lowerbound; queue zeroGPU fixed-candidate usefulness screen onlyafterterminalaudit/closure, before further backend work.",
+          "evidence": [
+            "docs/SPAN_020_INFORMATION_DISCOVERY.md"
+          ]
         }
       ]
     }
@@ -7818,7 +7888,9 @@
     {
       "number": 21,
       "state": "draft",
-      "item_ids": [],
+      "item_ids": [
+        "H67"
+      ],
       "focus_ids": [],
       "history": []
     }

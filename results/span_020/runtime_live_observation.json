@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-08T13:03:09.374143+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1",
+  "service_status": "RUNNING",
+  "mirror_live_event": {
+    "stage": "mirror_cohort_complete",
+    "rows": 512,
+    "seconds": 267.8156185330001,
+    "cohort": "uniform"
+  },
+  "live_progress_observed_at": "2026-11-08T13:02:19.999463+00:00",
+  "mirror_profile_seconds": 267.8156185330001,
+  "mirror_profile_rows": 512,
+  "prior_mirror_profile_seconds": 298.57615846500005,
+  "measured_mirror_throughput_ratio": 1.1148571547114967,
+  "mandatory_retained_parent_profile_seconds": 276.1071602950001,
+  "hidden_rows": 25000,
+  "margin": 1.2,
+  "reserve_seconds": 600,
+  "lower_bound_seconds": 32470.475321953138,
+  "lower_bound_hours": 9.019576478320316,
+  "startup_warmup_tokenization_and_other_costs_omitted": true,
+  "hidden_cap_seconds": 32400,
+  "current_runtime_gate_can_pass": false,
+  "terminal_artifact_audit_pending": true,
+  "quality_evaluated": false,
+  "official_submission_eligible": false,
+  "new_gpu_executions": 0,
+  "parent_runtime_reference_sha256": "9d44910b8cacb1cca11ec252ac40ca4af7cb9eaf6a84c50de80af20603075167"
+}

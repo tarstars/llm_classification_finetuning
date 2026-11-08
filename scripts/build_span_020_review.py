@@ -17,6 +17,8 @@ def main():
         decision=json.loads((pub/'candidate_qualification.json').read_text())
         stage=('Fixed candidate evaluated; qualification is '+str(decision['official_submission_eligible'])
             if decision['quality_evaluated'] else 'Engineering stop before reading quality votes.')
+    elif (pub/'runtime_live_observation.json').exists():
+        stage='INTERIM: complete mirror profile improves, but the declared runtime lower bound fails; terminal artifact audit and quality remain pending.'
     nb=nbf.v4.new_notebook(cells=[nbf.v4.new_markdown_cell(
         '# V20: one larger native classifier batch\n\n**'+stage+'**\n\n'
         'One12288padded-token/max32-row configuration; unchanged checkpoint, native decoder/head, '
@@ -51,6 +53,12 @@ for name in ['status.json','controller_state.json','progress.json','source_verif
   print(name,r)'''),
         nbf.v4.new_code_cell('''if not (PUB/'candidate_qualification.json').exists():
  print('No full qualification or model quality result at this snapshot.')
+ if (PUB/'runtime_live_observation.json').exists():
+  r=read('runtime_live_observation.json')
+  print('Actual mirror512seconds:',r['mirror_profile_seconds'])
+  print('Throughput ratio versus H65:',r['measured_mirror_throughput_ratio'])
+  print('Declared hidden runtime lower bound hours:',r['lower_bound_hours'])
+  print('Startup/warmup/tokenization/other costs omitted:',r['startup_warmup_tokenization_and_other_costs_omitted'])
 else:
  d=read('candidate_qualification.json');r=d['runtime']
  print('Engineering checks passed:',d['engineering_checks_passed'])
