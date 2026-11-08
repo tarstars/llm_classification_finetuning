@@ -8,14 +8,22 @@ leader0.82692. Best H60receipt58103553/span013-gemma-order/1. No new official.
 
 ## Current state and immediate next action
 
-V27 is SEALED. Active backlogv28, no focus selected yet;39active items=
+V27 is SEALED. Active backlogv28, focus[E18,H73] selected;39active items=
 38carried+newE18. V29draftempty.93registeredtasks/110immutable snapshotfiles.
-GOAL.md still contains the closed v27contract; exact archive docs/GOAL_V27.md.
-Next publish v27closure, then select a NEW bounded v28contract before execution.
-Suggested focus E18 then conditionalH73, keeping the original deadline and quota.
+V27closure published d58c8e5; exact archive docs/GOAL_V27.md.
+New GOAL.md/docs/SPAN_028_PLAN.md select E18 then conditionalH73, same original
+deadline/quota; E18RUNNING=CPUsourcepreparation, H73DEFERRED. No v28GPU.
+New bounded CPU FIFOcomponent/tests ready: seven unittest casesPASS0.104s,
+including source/consumer failures, fullqueue close and device-tensor rejection.
+Nextfreeze/pushCPUmethod, then run ONCE timeout300s env
+PYTHONPATH=/tmp/llm_span019_runtime .venv/bin/python scripts/audit_span_028_cpu.py
+withescalation. It creates preservation110snapshots and all15actualnative
+8192synchronous/prefetched tensor/boundary/position/token proofs plus local
+preparation timings; no GPUprobability/speed/qualityclaim. Recordhandle; never
+overwrite proof/preservation outputs or silently restart a failed partial proof.
 E18 is original8192CPU thread prefetch, not a10240retry or numerical relaxation.
-H73 is DEFERRED and uncomputed; its failedH74prerequisite must be explicitly
-replaced by successfulE18 in the future live task/contract, preserving history.
+H73 is DEFERRED and uncomputed; live v28task explicitly replaces failedH74
+with E18 as the required successful prerequisite. Immutable old snapshots remain.
 Do not execute the old10240H73design or mark its failed prerequisite successful.
 
 H74 accepted ONCE arseniytrushin/llm-preference-span027-native-packing/1.

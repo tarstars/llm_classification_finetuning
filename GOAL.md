@@ -1,36 +1,42 @@
-# Move above 20th place: v27 measured packing headroom and one expert prior
+# Move above 20th place: v28 unchanged native stream with CPU prefetch
 
-Persistent objective team17244411rank<=19 on a fresh complete officialboard
-following legitimateinference. ACTIVE/unachieved; retain H60.82987/rank23.
-V26H72closednegative; archive docs/GOAL_V26.md and its exact artifacts/failure.
-Select H74then conditional H73 under docs/SPAN_027_PLAN.md. No other execution.
+Persistent objective: own team17244411 rank<=19 on a fresh complete official
+leaderboard after legitimate inference. Active, unachieved; retain H60 at
+0.82987/rank23. V27 closed H74 at its numerical stop; preserve GOAL_V27 and all
+failed outputs. Select E18, then conditional H73 under SPAN_028_PLAN.md.
 
-H74: ONE native packing cap10240 instead of8192, keeping original4kinputs,
-old10pct-work/20pct-rowH60route, equalexpertweights/T1/fp16/kernels/sharding/
-batch80/zero workers. First<=600slabel-free nativecollator/input-order/token-
-stream/position/packing audit; then one<=3600sactualthree-role engineering
-profile with strict <=1e-5rawcontrols, exactsource/IDs/tokens/routes/mixtures,
-bothT4and<=95pctmemory. Derived JSmetadata alone usesH60roundofftolerance;
-routeIDs/probabilitycontrols remainstrict. No grid/fallback/newweights/quant.
+E18 changes only CPU preparation scheduling: one producer thread, FIFO queue2,
+original8192sum-token packing and exact old batch80 microbatches. Keep native4k
+inputs, original route, equal expert totals/T1, fp16/kernels/sharding and zero
+worker processes. CPU<=300s for source inspection/timing and all15frozen cohort
+stream/boundary/position proofs; rehearse queue-full failure/teardown. All CUDA
+stays on the consumer. One<=3600sactual three-role engineering profile must pass
+old raw controls<=1e-5 on every cohort, exact sources/IDs/tokens/microbatch groups/
+routes/mixtures/CSV, bothT4memory<=95%, and a conservative25kprojection<32400s.
+Use actual new-mode throughput, worse cold/fullwarm/other,20%margin/600reserve;
+include upfront or overlapping CPU time once in measured end-to-end costs.
+No grid, numerical change, packing retry, fallback or faster-node retry.
 
-Ifengineeringpasses, H73maytestONEfixed60pctGemma/40pctLlama prior ontheSAME
-qualifiedpacking, no6kextra: offroute .6G+.4L; onroute .3G+.3Grev+.4L.
-Keepoldroute/otherinputs/T1. One<=300sdescriptivematched-cachecomparison,
-seed42/2000pairedgroups/classes; originaltrainingoverlap/noCV/nohiddenforecast.
-Fixedpredeclaredgross-regressionstop uniformgain<-.005; no parameterfit or
-positive-localgain requirement. Ifeligible, one<=3600sactualfullqualification
-usingworse10240pilot/currenttimings andallcold/fullwarm/other/20pctmargin/
-600reserve; conservative<32400s. Thenonefrozenofficialmeasuresactualoutcome.
+Only after E18passes, H73 may test its still-uncomputed one fixed prior:
+60%Gemma/40%Llama, split Gemma equally between orientations on the old route.
+Use qualified8192prefetch unchanged, no6kextra. One<=300sdescriptive matched
+cached replay, seed42/2000prompt groups/classes, originaltrainingoverlap/noCV/
+nohiddenforecast. Fixed gross stop uniform512gain<-.005; no fitting/grid or
+positive-localgain requirement. Then one<=3600sactualfull qualification with
+worse matchingprefetch pilot/current timings and all runtime/source/raw controls.
+One frozen official only after passing gates and committed/pushed decision.
+If E18fails, defer H73 with evidence; do not revive failed10240packing.
 
-Public<=7200twoT4seconds/max2acceptedversions/oneofficial. InheritNov10
-08:37:37.343197UTCdeadline andNov14quota; previouschargesremainrecorded.
-Freshcompletequota/jobs/receipts/deps/sourceavailability beforeeveryGPU. No
-paidcompute/newweights/training/externaltextservice orGPUwhileofficialpending.
-Freeze/pushsource andactualserializedcell/import/mode/watchdog/Jupyterrehearsals
-BEFOREGPU; preservefailures, no timeoutduplicatemutation. IfH74fails,deferH73
-withactualevidence. Neverrelax margins orsubstituteunmeasuredruntimeforevidence.
+Public<=7200twoT4seconds/max2acceptedversions/oneofficial<=32400s. Inherit
+2026-11-10T08:37:37.343197UTCdeadline and Nov14quota anchor. Prior v27public
+1107.563s and all earlier weekly charges remain accounted. Last full inventory:
+78080.783sfree, zero reservation/paid scaling. Fresh complete inventory/quota/
+receipts/publicv1dependencies before each GPU; no GPUwhileofficialpending.
+No newweights/training/externaltextservice. Freeze/pushsource and actualserialized
+cell/import/mode/success/failure/watchdog/Jupyterrehearsals before admission.
+Observe same accepted handles after timeouts; never duplicate a mutation.
 
-Preserve106snapshots/user07+12notebooks/link andallarchives. HeavyfilesDB,
-aggregate/code/MD/executedNotebook39Git. CLItracking,newdiscoveriesv28,
-unfinishedcarry. Stoponlyafteractualverifiedrank<=19forgoalcompletion;
-engineering/CPU/spanclosurearenotthatoutcome.
+Preserve110historical snapshots/user07+12notebooks/link/all failed controls.
+Heavy filesDB; code/aggregate/MD/executedNotebook40Git. CLIhistory, discoveries
+v29, unfinishedcarry at closure. A span or passing engineering gate does not
+complete the rank goal; verify actual rank<=19 before completing it.

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "tests": 7,
+  "runner": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_cpu_prefetch.py -v",
+  "observed_test_seconds": 0.104,
+  "source_sha256": {
+    "src/arena/cpu_prefetch.py": "da7502af819a86c421717f68d40c4a9892cad60bc2f49279247805697be30c35",
+    "tests/test_cpu_prefetch.py": "54fab79e57894f8b0761518ab65e48335c7622cf8e9b55e2fc630774b6cbdcc5"
+  }
+}
