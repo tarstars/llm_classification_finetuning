@@ -92,3 +92,20 @@ accepted-source comparison passed at05:43:50UTC (same cells/image/dependencies,
 internet disabled). Controller session85217 observes this same version and will
 retrieve terminal outputs. No new model quality is claimed. Notebook28now shows
 the actual accepted status/source proof alongside the preparation evidence.
+
+05:56UTC: actual8Bnative scoring is progressing (latest retrieved1794/2048
+quality sequences,456.1seconds). Batches are sorted short-first, so this is not a
+full-cohort/target-runtime estimate. The independently verified source reaches
+these events only after native/repeated scalar controls pass. Full artifacts still
+require audit. results/span_016/reward_live_observation.json preserves aggregate
+events without raw text. The information auditor now also verifies exact prepared
+Gemma lengths/bin quotas and reports per-class accuracy and fixed-bin loss.
+
+Prepared arena.span016_runtime.projection for possible later qualification:
+it refuses information-only/failed/partial-target runs and accounts for actual512
+Gemma/reward/routed-reverse work, all production startup/full80warmups, the known
+1024calibration inference pass, residual session/fit overhead,20%per-row margin
+and600second reserve. Three focused tests cover calibration/startup accounting,
+public-only comparator costs, invalid/partial runs and the9hour boundary. This
+pure accounting preparation admits no GPU or official trial; no target512runtime
+has been measured by the current information-only version.

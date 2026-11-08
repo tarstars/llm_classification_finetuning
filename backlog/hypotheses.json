@@ -5027,6 +5027,14 @@
           "evidence": [
             "results/span_016/reward_pilot_source_verification.json"
           ]
+        },
+        {
+          "at": "2026-11-08T05:57:19+00:00",
+          "status": "running",
+          "note": "Verified live v1 now executes the8B native reward pass (latest SSE1794/2048quality sequences,456.1s; sorted short-first, not a complete target-runtime estimate). Added independent exact cohort-length/bin verification and per-class/length diagnostics to the information auditor. Prepared runtime accounting that refuses information-only results, requires actual512target passes and includes known1024-row calibration inference/startup/overhead/20pct per-row margin/600s reserve;3 focused accounting tests pass. No candidate-quality or runtime qualification yet.",
+          "evidence": [
+            "results/span_016/reward_live_observation.json"
+          ]
         }
       ]
     },

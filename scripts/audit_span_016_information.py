@@ -39,6 +39,7 @@ def metrics(y, probabilities):
     ll = losses(y, probabilities)
     return dict(log_loss=float(ll.mean()), accuracy=float((probabilities.argmax(1) == y).mean()),
         class_log_loss={CLASSES[k]: float(ll[y == k].mean()) for k in range(3)},
+        class_accuracy={CLASSES[k]: float((probabilities.argmax(1)[y == k] == k).mean()) for k in range(3)},
         mean_class_probabilities=probabilities.mean(0).tolist())
 
 
@@ -130,6 +131,14 @@ def main():
     assert len(ids) == len(set(groups)) == 1024
     a, b, reverse = [np.load(out / (name + '_long.npz')) for name in ['m0', 'm3', 'm0_reverse']]
     reward = np.load(out / 'reward_8B_long.npz')
+    cohort_manifest = read_json(pub / 'matched_cohort_manifest.json')
+    for name in ['source.parquet', 'labels.npz', 'mapping.parquet']:
+        assert sha256(root / 'cohort_matched' / name) == cohort_manifest['artifact_sha256'][name]
+    mapping = pd.read_parquet(root / 'cohort_matched/mapping.parquet')
+    assert np.array_equal(mapping.id, ids)
+    np.testing.assert_array_equal(a['lengths'], mapping.prepared_tokens)
+    np.testing.assert_array_equal(np.bincount(mapping.length_bin, minlength=8),
+        cohort_manifest['selected_bin_counts'])
     token_receipt = read_json(pub / 'matched_token_reference.json')
     expected_token_path = root / 'token_audit_matched/expected_long.npz'
     assert sha256(expected_token_path) == token_receipt['artifact_sha256']['expected_long.npz']
@@ -175,6 +184,15 @@ def main():
     interval = paired_interval(delta, groups)
     gate = delta.mean() >= .005 and interval[0] > -.005
     strong = delta.mean() >= .005 and interval[0] > 0
+    by_length = []
+    bins = cohort_manifest['bins']
+    for index, (left, right) in enumerate(zip(bins, bins[1:])):
+        take = mapping.length_bin.to_numpy() == index
+        assert take.any()
+        by_length.append(dict(gemma_token_interval=[left, right], rows=int(take.sum()),
+            baseline_log_loss=float(losses(y, baseline)[take].mean()),
+            replacement_log_loss=float(losses(y, candidate)[take].mean()),
+            loss_reduction=float(delta[take].mean()), descriptive_only=True))
     csv = pd.read_csv(job / 'output/submission.csv')
     test = pd.read_csv(ROOT / 'raw/test.csv', usecols=['id'])
     assert csv.columns.tolist() == ['id', *CLASSES] and np.array_equal(csv.id, test.id)
@@ -189,6 +207,7 @@ def main():
         information_gate_passed=bool(gate), stronger_quality_gate_passed=bool(strong),
         independent_competition_cv=False, out_of_time_source=True,
         class_loss_reduction={CLASSES[k]: float(delta[y == k].mean()) for k in range(3)},
+        length_behavior=by_length, exact_selected_gemma_lengths_verified=True,
         official_submission_eligible=False, target_runtime_profiled=False,
         decision='Prepare separately admitted target-runtime/confirmation follow-up' if gate else 'Stop H56 without official submission; retain H60',
         public_session_seconds=session['seconds'], native_inference=native,

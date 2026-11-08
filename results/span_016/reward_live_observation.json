@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-08T05:57:19.315102+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
+  "status": {
+    "status": "RUNNING",
+    "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
+    "observed_at": "2026-11-08T05:56:36.317905+00:00"
+  },
+  "reward_progress": [
+    {
+      "stage": "reward_progress",
+      "size": "8B",
+      "cohort": "warmup",
+      "completed_sequences": 2,
+      "total_sequences": 160,
+      "seconds": 1.0942031810000117
+    },
+    {
+      "stage": "reward_progress",
+      "size": "8B",
+      "cohort": "long",
+      "completed_sequences": 1794,
+      "total_sequences": 2048,
+      "seconds": 456.14628369999997
+    }
+  ],
+  "quality_audited": false,
+  "target_runtime_profiled": false,
+  "source": "exact-version read-only SSE log snapshots"
+}
