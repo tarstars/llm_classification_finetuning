@@ -42,8 +42,7 @@ public<=3600/max1acceptedversion/official<=32400. No resource resets.
 
 Builder55856TERMINALexit0. Actualserializedstaging/pipeline/finalworker tested
 public3andhidden101rows withCPUengine stand-in; hiddennoTrain/noControls and
-newactualIDs. Imports/modeflags/failure/watchdog/Jupyterstartup allPASS. Actual
-GPU/model execution stillunmeasured for H76. weight_qualification_bundle.json
+newactualIDs. Imports/modeflags/failure/watchdog/Jupyterstartup allPASS. AtbuildtimeGPU/model execution wasunmeasured; lateractualqualification passed below. weight_qualification_bundle.json
 freezes fullsource+settings, notebook supports actualhiddenbranch. Notebook42
 rerendered29100exit0 withsource/testevidence andpendingqualificationstatus.
 
@@ -74,6 +73,19 @@ Nov8, exactarseniytrushin/llm-preference-span030-llama-prior/1. LatestAPIread
 23:12:32UTC PENDING, scoreblank. Durableintent/admission/receipt under
 ROOT/runs/span_030/official/candidate and results/span_030/official_*.json.
 No furtherGPU, weightchoices or submissionmutation while pending.
+
+Outcome audit prepared whilepending: scripts/audit_span_030_outcome.py with
+src/arena/official_outcome.py. Six syntheticgates PASS; rejects pending/stale/
+incomplete/wrongreceipt/wrongteam/wrongbestscore/rank20 claims. Actualterminal
+audit NOTRUN, preparation record outcome_audit_preparation.json. Aftercontroller
+9665TERMINAL, run thisauditorONCE withescalation. It directlyrereads sameofficial
+receipt, allfrozenprovenance/preservation, freshfullinventory and freshCOMPLETE
+board afterreceiptobservation; writes outcome_audit.json. No mutation. If pending
+or externalcleanup blocks proof, keepwaiting samehandle, neverresubmit.
+Sourcehelperassess roundsboarddisplayonly(5.1e-6), no modeltolerance changes.
+Need actualvalidoutcome, finalreport/executedNotebook42, H76CLIclosure/span
+preservation/commitpush before markinggoalcomplete. Ifauditgoalfalse, goal
+staysactive and no moreweights fromleaderboardfeedback.
 
 NEXTobserve SAME9665/receipt58143104. Poll authoritative history; publickernel
 COMPLETE is NOT hidden-evaluationcompletion. If unifiedhandle missing, inspect

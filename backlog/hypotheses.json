@@ -7326,6 +7326,14 @@
           "evidence": [
             "results/span_030/official_receipt.json"
           ]
+        },
+        {
+          "at": "2026-11-08T23:25:47+00:00",
+          "status": "running",
+          "note": "Receipt58143104 remains authoritativelyPENDING through livecontroller9665. Prepared read-only terminal outcome audit: freshsame receipt, fullboard after receipt observation, knownbestscore/actualrank<=19, frozen source/qualification/intent/resource/preservation checks.6synthetic outcome-gate tests PASS includingpending/stale/incomplete/mismatchedreceipt/rank20 rejection; no actualterminalaudit run or goalclaim. No newGPU/modelvariant.",
+          "evidence": [
+            "results/span_030/outcome_audit_preparation.json"
+          ]
         }
       ]
     }

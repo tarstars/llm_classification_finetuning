@@ -1,0 +1,13 @@
+{
+  "prepared": true,
+  "tests_passed": 6,
+  "observed_test_seconds": 0.001,
+  "terminal_receipt_required": true,
+  "actual_terminal_audit_executed": false,
+  "goal_achieved": false,
+  "source_sha256": {
+    "scripts/audit_span_030_outcome.py": "d3e633e8d00e4ae6718cec2000ed811980605aecf5b95b8637c1b14132162dd2",
+    "src/arena/official_outcome.py": "291dca6ba3634aa1c91cf83208f04f2507ce76fddb961ab344e7d1e96373b022",
+    "tests/test_official_outcome.py": "7f664480653d91642b1faed04519dbb905ea2f8a55e505e720deb53f8bb8285a"
+  }
+}
