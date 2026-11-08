@@ -4831,19 +4831,19 @@
     {
       "kind": "hypothesis",
       "title": "Assess the accessible earlier BlackPearl classifier as a conditional ensemble complement",
-      "priority": "P3",
+      "priority": "P1",
       "gain": [
-        0,
+        -0.01,
         0.015
       ],
       "estimate_confidence": "low",
       "engineering_hours": [
         0.5,
-        2
+        3
       ],
       "pilot_gpu_wall_hours": [
-        0.1,
-        0.5
+        0.25,
+        1
       ],
       "followup_gpu_wall_hours": [
         0,
@@ -4854,15 +4854,15 @@
         0.2
       ],
       "risk": "high",
-      "claim": "An accessible earlier author classifier might offer complementary preferences if the frozen tascj submission remains short of rank30; no advantage is established.",
+      "claim": "An earlier native three-class author checkpoint may complement the retained Llama expert if the current0.82987/rank23model remains short of rank19; no advantage is established.",
       "basis": "Read-only H54 audit resolves public COMPLETE parent sayoulala/merge-gemma-model-step1/1 with a full three-class42layer classifier, distinct from inaccessible final winning weights.",
-      "first_test": "After H54 outcome and v10 activation, first resolve checkpoint training/label provenance, license, input packing and size/runtime. Stop before GPU if likely redundant or unsupported; only then predeclare one bounded complementary-model pilot with fresh resources.",
+      "first_test": "In selected v15, first resolve the one public parent checkpoint training/label/license/native-format/offline lineage and credible distinctness/runtime within60minutes/50MB small evidence. No GPU or weights until the source audit and exact prospective pilot contract pass.",
       "acceptance": "Traceable deployable source plus independent outcome evidence under the rank goal; overlapping local rows cannot establish a gain. Accessibility alone does not admit a submission.",
-      "stop": "No new GPU while current official run is pending; no automatic selection. Stop if provenance/label mapping is unresolved, if no credible complementarity/runtime case exists, or if rank30 is already achieved. Preserve original final-model403.",
+      "stop": "No researchGPU while an official receipt is pending; stop if rank<=19is achieved, provenance/label mapping/native format is unresolved or no credible complementary/runtime case exists. Preserve final-model403; no checkpoint/label/weight/T/route grid.",
       "risk_reason": "Earlier checkpoint may be weaker or redundant; original-train overlap contaminates local quality and runtime/quantization may be costly.",
       "mitigation": "Treat as low-priority conditional discovery, distinguish earlier from final winner, audit before compute, require fresh caps and record negative findings.",
-      "rationale": "Records a concrete alternative source rather than repeatedly querying an unavailable final dataset; expected gain remains uncertain and small.",
-      "revision": "Discovered through public author outputs during H54 official wait; not executed or admitted in v9.",
+      "rationale": "After the coverage-only successor failed its incremental information gate, inspect a native preference-trained checkpoint before more routing churn or a scalar reward-model calibration.",
+      "revision": "Discovered through public author outputs during H54 official wait; not executed or admitted in v9. V15 prospectively revises the old rank30 guard under the explicit persistent user rank<=19goal, still unmet at23rd despite H60 improvement. H61 coverage futility motivates source audit first. Historical v14 snapshots preserve old wording; no model output has been inspected. Planning gains now include regression risk.",
       "depends_on": [
         "E00",
         "E14",
@@ -4873,7 +4873,7 @@
       ],
       "id": "H55",
       "rank": 71,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 10,
       "discovered_during": 9,
       "derived_from": [
@@ -4886,6 +4886,14 @@
           "note": "Exact public author parent retains an earlier3class model; this is not final winning merge. Conditional low-priority next-span provenance/complementarity study only, no new GPU or submission.",
           "evidence": [
             "docs/SPAN_009_ALTERNATE_SOURCE_AUDIT.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T02:42:05+00:00",
+          "status": "running",
+          "note": "Starting bounded v15source/provenance/native-format/label-map/feasibility audit of one known public earlier BlackPearl checkpoint. Limit60minutes/50MB small evidence, no full weights or GPU; preserve final-model403. New goal/plan predeclares conditional public7200s ceiling but admits no compute.",
+          "evidence": [
+            "docs/SPAN_015_PLAN.md"
           ]
         }
       ]
@@ -6903,8 +6911,18 @@
         "E17",
         "H62"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H55"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T02:42:05+00:00",
+          "note": "V13 improved to23rd but v14coverage increment failed its gate. Under the persistent rank<=19 goal, prospectively revise the earlier rank30 guard and select one native3class earlier-checkpoint source audit; no GPU until provenance/native format/label map and a concrete bounded pilot are frozen.",
+          "focus_ids": [
+            "H55"
+          ]
+        }
+      ],
       "carried_from": 14,
       "start_sha256": "30ff4cafea9d60d8a7021f093fafafab6e8dadd65d1a91e5aea7c8a19d91bae9",
       "start_markdown_sha256": "3fe99d3127b75969537edeea91a559005597809949a02c22e389b133be1f6c96",
