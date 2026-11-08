@@ -1,6 +1,6 @@
-# Active rank goal; v16 sealed after a watchdog-limited reward pilot
+# Active rank goal; v17 E17transport and H62row-ceiling test
 
-Snapshot 2026-11-08T07:03:19.168169+00:00. Read PROJECT_POLICY.md and GOAL.md, then verify live state.
+Snapshot 2026-11-08T07:25:19.223599+00:00. Read PROJECT_POLICY.md and GOAL.md, then verify live state.
 Persistent tool objective is "move above20th place in leaderboard": rank<=19for
 team17244411 on a fresh complete official board. ACTIVE/unachieved, no budget.
 Do not create another goal or mark complete from a span/local-result closure.
@@ -17,12 +17,26 @@ never restart or resubmit them. This includes v16controller85217, exit1after
 preserving ERROR and retrieving31artifacts. No live observer or upload remains.
 
 V16SEALED, focusH56done; docs/SPAN_016_RESULTS.md and docs/GOAL_V16.md authoritative.
-Activev17has39members (38carried plus newH63), focus[]/no work selected. V18draft
-empty. H63is P3conditional native batch engineering, not admitted; current head
-usefulness is insufficient. H62remains P2unselected one15pct-work/30pct-row CPU
-replay; no30pct-row result exists. Select/publish a bounded next-span plan before
-execution, preserving the same global rank goal. Do not invent a successful
-source/quality/runtime result or reset its old limits by rerunning H56.
+Activev17has39members, focus[E17,H62], both RUNNINGpreparation. V18draftempty.
+Read docs/SPAN_017_PLAN.md/GOAL.md. Originalperiod2026-11-08T07:12:45.821320UTC
+through2026-11-10T07:12:45.821365UTC, refreshNov14. Publiccap6000initial2400/
+one separatelyadmittedfollowup3600,max2public/1productionrecipe/1official.
+E17CPU<=900s/1engineeringhour,no fitting/GPU; compare cached original-overlap
+controls/uniform versus v11learning/confirmation and v16matchedsource, fixedT1/
+oldT1.316151867only. Fixed score-normalizer identity diagnostic uses historical
+.83053/.84797, assuming same base probabilities/scored subset; no new fitting.
+H62one15pct-work/30pct-row replay versus matched10pct/20pctH60, existingH61
+15pct/20pctcontrol. Uniform512incrementSTRICTLY>.0005before GPU; descriptive
+training-overlap evidence, not CV/scoreforecast. Actual qualification only after
+this gate and E17report. Strict1e-5canonical/source/token/CSV/twoT4/full80warmup,
+conservative9h with20pctmargin/worst comparable H60/current/alloverhead/600reserve.
+No30pct-row result exists yet; publish exact sources/plan before CPU. Scripts
+prepare_span_017.py/replay_span_017_route.py/analyze_span_017_transport.py and
+arena.span017_transport are prepared;3temperature-identity tests pass.
+H63P3and other tasks remain unselected. Preserve66snapshots/usernotebooks/link.
+Quota-only preparation done, zeroGPU admitted; fresh full inventory/dependencies/
+official cursors before GPU. Newactualresults go results/span_017, heavy under
+ROOT/runs/span_017, Notebook29planned. Globalrankgoal unchanged.
 
 ## V16 actual result
 

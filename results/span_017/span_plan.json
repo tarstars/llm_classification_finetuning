@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-11-08T07:12:45.821323+00:00",
+  "deadline": "2026-11-10T07:12:45.821365+00:00",
+  "initial_quota": {
+    "used_seconds": 16386.583,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 91613.417
+  },
+  "quota_used_at_start": 16386.583,
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "target_rank_maximum": 19,
+  "gpu_session_seconds_cap": 6000,
+  "public_version_limit": 2,
+  "production_recipe_limit": 1,
+  "official_candidate_limit": 1,
+  "initial_public_cap_seconds": 2400,
+  "followup_public_cap_seconds": 3600,
+  "hidden_cap_seconds": 32400,
+  "cpu_seconds_caps": {
+    "E17": 900,
+    "H62": 720
+  },
+  "focus_ids": [
+    "E17",
+    "H62"
+  ],
+  "parent_official_receipt": 58103553,
+  "parent_official_score": 0.82987,
+  "work_fraction": 0.15,
+  "row_fraction": 0.3,
+  "parent_work_fraction": 0.1,
+  "parent_row_fraction": 0.2,
+  "diagnostic_work_fraction": 0.15,
+  "diagnostic_row_fraction": 0.2,
+  "incremental_information_gain_minimum": 0.0005,
+  "temperature": 1,
+  "packing_tokens": 8192,
+  "context_tokens": 4096,
+  "warmup_rows": 80,
+  "raw_probability_tolerance": 1e-05,
+  "E17_fitting_allowed": false,
+  "E17_existing_temperature": 1.3161518671742531
+}

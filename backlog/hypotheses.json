@@ -5505,7 +5505,7 @@
       ],
       "id": "E17",
       "rank": 77,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 12,
       "discovered_during": 11,
       "derived_from": [
@@ -5518,6 +5518,14 @@
           "note": "Untouched later-vote gain did not transfer: official0.84797 versus best0.83053; queue bounded CPU transport/exposure diagnosis, no refit or GPU.",
           "evidence": [
             "docs/SPAN_011_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T07:12:33+00:00",
+          "status": "running",
+          "note": "Preparing the cached no-fit transport audit under docs/SPAN_017_PLAN.md;15CPUminutes/1engineeringhour, fixed existingT1andT1.316151867 recipe only, no GPU or parameter fitting.",
+          "evidence": [
+            "docs/SPAN_017_PLAN.md"
           ]
         }
       ]
@@ -5755,7 +5763,7 @@
       ],
       "id": "H62",
       "rank": 80,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 15,
       "discovered_during": 14,
       "derived_from": [
@@ -5769,6 +5777,14 @@
           "note": "The fixed20pct-row ceiling used only12.7138pct of the15pct work budget. Record one conditional future row-ceiling hypothesis, with selection-bias/diminishing-return risk and no extra current-span test; prioritize model-diversity audits.",
           "evidence": [
             "docs/SPAN_014_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T07:12:33+00:00",
+          "status": "running",
+          "note": "Preparing one prospective15pct-work/30pct-row cached replay versus matchedH60(10pct/20pct)with existingH61(15pct/20pct)diagnostic. Freeze inherited uniform512increment>.0005before output. Conditional public qualification only after gate and E17report; unchanged weights/T1/8192/context4096 and runtime controls.",
+          "evidence": [
+            "docs/SPAN_017_PLAN.md"
           ]
         }
       ]
@@ -7226,8 +7242,20 @@
         "H62",
         "H63"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "E17",
+        "H62"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T07:12:32+00:00",
+          "note": "Under the continuing rank<=19goal select bounded CPU transport diagnosis and the prequeued fixed15pct-work/30pct-row route test. New-model diversity auditH56did not qualify. H62only admits actual qualification after the unchanged>.0005incremental gate; no new grid. H63and all other items remain unselected.",
+          "focus_ids": [
+            "E17",
+            "H62"
+          ]
+        }
+      ],
       "carried_from": 16,
       "start_sha256": "6c744b7955f519b98c0409aa3812e7d9c164fac3d0dc4ffe4a3ce6396f7ce1eb",
       "start_markdown_sha256": "1fee10729a9d35ebcf71b95e410c75988d09fc1c9e61b2a102e91f41fe3ece41",
