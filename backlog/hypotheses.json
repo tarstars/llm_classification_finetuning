@@ -6610,7 +6610,7 @@
       ],
       "id": "H71",
       "rank": 89,
-      "status": "running",
+      "status": "done",
       "introduced_in": 25,
       "discovered_during": 24,
       "derived_from": [
@@ -6664,6 +6664,87 @@
           "evidence": [
             "results/span_025/jobs/identical_pilot/progress.json"
           ]
+        },
+        {
+          "at": "2026-11-08T16:05:41+00:00",
+          "status": "done",
+          "note": "Exactv1COMPLETE,15artifactsverified, both256canonicalcontrols0diff. All275identicalpairs: fixedruleloss.391508vsH60off/on.311360/.310603; weightedgainbounds[-.00039647,-.00037409], paired95lowergain[-.00066280,-.00017682]. Stopwithoutfollowup/official. Charge803.502s, workerexit0; originaltrainingoverlap preserved inreport/notebook37.",
+          "evidence": [
+            "docs/SPAN_025_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Retain extra conversation evidence with one bounded Gemma context extension",
+      "priority": "P1",
+      "gain": [
+        -0.004,
+        0.004
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        2
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.35
+      ],
+      "risk": "high",
+      "claim": "A6144token original-order Gemma pass on actually truncated inputs may add useful missing B/later-turn evidence while preserving H60routing and other components; no gain or runtime is measured.",
+      "basis": "H71rejects anotherconstant: all275identicalcases are alreadybetter underH60(.311vs.392). Actual retainedauthorProcessorPABconcatenates question/A/B then truncates conversation prefixat4096, unlike oldH24JointTokenizerquestioncap. Fulloriginallengthaudit reports362nearcaprows asproxy, not exactcoverage. Revisits H23/H24mechanisms on currentpublicexperts ratherthan claimingoldLoRAablationtransfer.",
+      "first_test": "First<=1200CPUelapsedseconds, native4.42.3/.19.1processor/tokenizer: exact4096versus6144inputcomparison on alloriginalrows withoutlabels, oldcachedlength/controlhash checks, changedIDs/coverage/token-work/positionlimit, seed44sample<=384changedrows pluscanonicalcontrols. ONEcontextvariant6144. Advance onlyif>=64changedrows, <=1pctofrows and addednativeworkproxy<=15pctoforiginalGproxy. Then freeze actualGPUworker/scoring/cohort beforeanyoutputs/labels. Initial<=7200twoT4seconds, with earlynative6k memory/runtimeprobe beforelargerquality; no GPUadmissionfromCPUsourcealone.",
+      "acceptance": "AtfixedoldGemmaoriginal/reverse, extendedGemmaoriginal and alignedLlamaswapped outputs, retain oldH60route: offcandidate=.5G6k+.5L; oncandidate=.25G6k+.25alignedGrev+.5L. Comparebothmatched parentoutcomes and conservativeminimumgain, fulloriginalprevalenceweighting andseed42/2000pairedgroups. Requireweightedlowergain>.0005 andpositive95lowerbound. Onlythen one<=3600s actualfullqualification withcanonical1e-5controls/tokens/sources/memory/CSV and conservative<9h(20pctmargin/allcold-warm-other/600reserve/worstparent), thenonefrozenofficial.",
+      "stop": "CPUstopon coverage/work/source/hash/positionlimitfailure; no alternativecontext/route/weightgrid. GPUonlyaftercompletepreparedcontract/freshfullinventory/quota/receipts/deps and actualcellrehearsals. Initial7200+followup3600<=10800publicseconds,max2versions/oneofficial; inheritedNov10deadline/Nov14quota. Stopearlyif6kmemory/9hengineeringfails, orquality/numerical/sourcefails. No newweights/training/externaltextservice orGPUwhileofficialpending; no timeoutduplicatemutation.",
+      "risk_reason": "Fewcasesaffected; extraGPUmodelreload/workmayexceedH60headroom. Classifiertrainedat4kmaynotbenefitfrom6k; newtokens canhurt. Originalvotes overlaptraining and boundsareconditionalonfixedexpertoutputs, not universalbatchnumerics.",
+      "mitigation": "Exactlabelblindcoverage first, currentnativecontroltokens, onefixed6kbudget and unchangedparentroute/expertweights. Earlyrealengineeringstop beforelargequalitycost; matchedcontrolreplay and explicittrainingoverlap/noCV/nohiddenforecast. Do notreuseobsolete256questioncap or arbitrarychangedcohortparentroute.",
+      "rationale": "Seek newtextinformation aftercalibration/weakmirror/structuralheuristicfailures. Extendsanexistingstrongexpert onrarecases insteadofanotherweakmodel; affordabilityandquality remainunknown.",
+      "revision": "Newv26proposal afterH71negative; H23/H24remainunexecutedcarryovers with theirhistoricalscope. No4k/6kcoveragecomparison ornewGPUyet.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H60",
+        "H71"
+      ],
+      "evidence": [
+        "docs/SPAN_025_RESULTS.md",
+        "results/span_025/information_audit.json",
+        "results/span_009/full_pab_length_audit.json"
+      ],
+      "id": "H72",
+      "rank": 90,
+      "status": "running",
+      "introduced_in": 26,
+      "discovered_during": 25,
+      "derived_from": [
+        "H71"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T16:05:41+00:00",
+          "status": "planned",
+          "note": "Currentstrongmodel beatsfixedidenticalrule. ActualpublicPABprefixtruncation canomitB/laterturns; queueone4k/6kcoverage-first experiment, linked to oldH23/H24 without changing their historicalscope.",
+          "evidence": [
+            "docs/SPAN_025_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T16:14:26+00:00",
+          "status": "running",
+          "note": "Start one bounded native4k/6kinputaudit under docs/SPAN_026_PLAN.md. ActualauthorPABis sequentialprefixtruncation, notold256questioncap; twoformat/spanCPUtests pass. Freeze method beforefull57477rowlabel-freecoverage. CPU<=1200s, no GPUadmission/quality/labels yet.",
+          "evidence": [
+            "docs/SPAN_026_PLAN.md"
+          ]
         }
       ]
     }
@@ -6716,7 +6797,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 25,
+  "active_version": 26,
   "versions": [
     {
       "number": 1,
@@ -8550,7 +8631,7 @@
     },
     {
       "number": 25,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -8606,10 +8687,78 @@
       "carried_from": 24,
       "start_sha256": "99f7e4bea5f756f5007632e0d4fb0fa8cb0c1d5057a1ced66ad654b3d62ed884",
       "start_markdown_sha256": "8a6c121cc0032aae230a887389e7b76a3e5f9d2cd6e1fddd86d20bb79ff3d92a",
-      "start_sealed_at": "2026-11-08T15:01:18+00:00"
+      "start_sealed_at": "2026-11-08T15:01:18+00:00",
+      "final_sha256": "586a9a3b110c48d55a1cded061320d24099b205d1cc791f889ed69a1445c653e",
+      "final_markdown_sha256": "8939b052ddb50ea9a6fa9752e65cc6d10e17c09c1042b6b7e622341c6239bbb7",
+      "final_sealed_at": "2026-11-08T16:08:05+00:00",
+      "closed_at": "2026-11-08T16:08:05+00:00",
+      "closing_note": "H71fixedidentical-onlyrule fails after actualcompleteGPUcontrol/qualityaudit; no followup/official. Carry37unfinished plus H72newtext-evidence hypothesis under persistent rankgoal.",
+      "closing_evidence": [
+        "docs/SPAN_025_RESULTS.md"
+      ]
     },
     {
       "number": 26,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H72"
+      ],
+      "focus_ids": [
+        "H72"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T16:08:05+00:00",
+          "note": "Select exactretained4k/6kcoverage-first experiment, not oldJointTokenizerquestioncap. CPUmethod/sourceaudit before any conditionalGPU; H71stopped. Persistent rankgoal unchanged.",
+          "focus_ids": [
+            "H72"
+          ]
+        }
+      ],
+      "carried_from": 25,
+      "start_sha256": "ab438c3260a0f4f6ec2b1daa5c55dfe2c67fb0766172a7c7c7588b22fd168598",
+      "start_markdown_sha256": "79044f31b613920aaf88476735997991e570f322e46c1c0a54265c767a7b1378",
+      "start_sealed_at": "2026-11-08T16:08:05+00:00"
+    },
+    {
+      "number": 27,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

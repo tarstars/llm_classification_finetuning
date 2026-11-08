@@ -1,0 +1,74 @@
+{
+  "at": "2026-11-08T15:55:13.331914+00:00",
+  "engineering_controls_passed": true,
+  "complete_identical_rows": 275,
+  "controls": {
+    "m0": {
+      "rows": 256,
+      "max_abs_probability_difference": 0.0
+    },
+    "m3": {
+      "rows": 256,
+      "max_abs_probability_difference": 0.0
+    }
+  },
+  "fixed_probabilities": [
+    0.06,
+    0.06,
+    0.88
+  ],
+  "full_original_rows": 57477,
+  "prevalence": 0.004784522504654036,
+  "weighted_lower_gain": -0.0003964724645422274,
+  "weighted_upper_gain": -0.00037408944476808394,
+  "weighted_lower_gain_paired_group95": [
+    -0.0006627957893867751,
+    -0.00017681713573236844
+  ],
+  "bootstrap_seed": 42,
+  "bootstrap_resamples": 2000,
+  "class_counts": [
+    12,
+    15,
+    248
+  ],
+  "candidate_identical_log_loss": 0.39150823813444524,
+  "offroute_identical_log_loss": 0.31135996471617444,
+  "onroute_identical_log_loss": 0.3106034684202477,
+  "class_weighted_lower_gain": {
+    "winner_model_a": -8.790507563416171e-05,
+    "winner_model_b": -0.00012420802047154102,
+    "winner_tie": -0.00018435936843652466
+  },
+  "algebraic_bound_at_fixed_expert_outputs": true,
+  "universal_batch_numerical_bound": false,
+  "original_training_overlap": true,
+  "independent_cv": false,
+  "hidden_score_forecast": false,
+  "information_gate_passed": false,
+  "official_submission_eligible": false,
+  "decision": "stop_identical_only_rule",
+  "source_sha256": {
+    "GOAL.md": "7ed8a3f2b8282888a31cd73d1e19558400aa71d48095fcb5f0f306658fcc666c",
+    "docs/SPAN_025_PLAN.md": "eae2c5cd330a02c102a78afef7430af730dfa466e445c421c370626bcac5c6ac",
+    "configs/span_025.json": "5b644e2c3fd2a9db30a950a85ebd80a151527c740c1cada519cbbb9fe5ac6cbf",
+    "results/span_025/span_plan.json": "3a1a42775b4eb18bbc7dbeb5f07d9235acff34c6222a1b3984b3673c9f44b0c3",
+    "results/span_025/cohort_audit.json": "141c911152ed8fa57f8f2bf9e2a113670ce58c429770511e853349ff7af20074",
+    "src/arena/span025_pilot.py": "e11745800969a1aade029becb82dc0e52892776aaa05bb1beebcf4a05b757a08",
+    "src/arena/span025_identical.py": "056a333c94436aa7be5d73df6058c73b2f286e2336178f30495c481194b6cf21",
+    "src/arena/span010_order.py": "7bb9dc38ed6161eb0fc20a9b65703d44ac2bd900d2337502dc9f1a81c4c18e3e",
+    "src/arena/span019_quality.py": "cef2f99167601522d06cde1a455c8790dfd0b0f69bb2be8e2a24d328a4a54ce8",
+    "src/arena/notebook_worker.py": "2c49e8edd28b2dabe70a21bbca9c8598458b78fcf6c7c3939cef7aeabd81bb13",
+    "src/arena/kaggle_control.py": "23f8e4d09c17647a42d5771e32400d4816e5230a4dee18a631dcd394380d1793",
+    "scripts/build_span_025_pilot.py": "3bc269665a05555c8dfc79d22eb8de620912a5db331c70a973965d46cfb6e267",
+    "scripts/run_span_025_pilot.py": "bbe6613c5cf6aeac8fdbf0cbb11c8d5041ff6b05e422eb49ebfc3d8efbcb257d",
+    "scripts/audit_span_025_pilot.py": "de4c6a17878506bfa07cfa1f5ccadb9bdebf7aff4ccada5a28ef7b2ef1245fb6",
+    "tests/test_span025_identical.py": "06b67bc2ecee3daf6b77eb06d1e554cd86a6dc4b42e97881f169b185ce26576b",
+    "tests/test_span025_pilot.py": "314520c9bb72a05c30c1eebddfed7a62d94b26525787dae5c54b9a1ce8175b2f"
+  },
+  "retrieval_sha256": "589b65e431858cb17ce986c2559b09d5121cdc546bd17a81df74699c15c37958",
+  "accepted_metadata_checked": true,
+  "accepted_metadata_sha256": "42f36166f2f94e8cf802f90bc44619ccc7394eac0b904b77d3df421d7d7be4e2",
+  "analysis_sha256": "34d29d1265b2eeddcc08658a8863012567356385dbc1befd96cbb472fe819f4c",
+  "measured_inference_seconds": 774.814107835
+}

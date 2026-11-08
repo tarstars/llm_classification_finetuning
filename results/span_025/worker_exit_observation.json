@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-08T15:51:09.226407+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span025-identical-audit/1",
+  "worker_summary": {
+    "seconds": 789.6868121623993,
+    "exit_code": 0,
+    "role": "identical_pilot"
+  },
+  "worker_summary_sha256": "8ed0bd493c32b8ed5d60a1e3e9d4b9dab7ebc7a80b30e46443bfb2662a8c4f71",
+  "service_terminal_observed": false,
+  "labels_read": false,
+  "probabilities_read": false,
+  "new_gpu_executions": 0
+}

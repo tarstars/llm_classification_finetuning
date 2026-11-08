@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-08T16:14:26.572188+00:00",
+  "passed": true,
+  "sealed_version": 25,
+  "goal_achieved_by_span": false,
+  "historical_snapshots_preserved": 98,
+  "snapshot_files_after_transition": 102,
+  "carried_tasks": 37,
+  "new_discoveries": [
+    "H72"
+  ],
+  "accepted_public_versions": 1,
+  "public_gpu_seconds": 803.5020000000004,
+  "official_submissions": 0,
+  "weighted_gain_bounds": [
+    -0.0003964724645422274,
+    -0.00037408944476808394
+  ],
+  "notebook_sha256": "4644fba494c33986a8596624c5962894716063281fe2ef38abe347b1093825fa",
+  "goal_archive_sha256": "7ed8a3f2b8282888a31cd73d1e19558400aa71d48095fcb5f0f306658fcc666c"
+}

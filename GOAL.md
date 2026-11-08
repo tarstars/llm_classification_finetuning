@@ -1,27 +1,30 @@
-# Move above 20th place: v25 uncached identical-pair audit
+# Move above 20th place: v26 retained-expert context evidence
 
-Persistent goal team17244411rank<=19 on a fresh complete officialboard after
-legitimateinference. ACTIVE/unachieved; best.82987/rank23. Select H71only under
-docs/SPAN_025_PLAN.md; preserve docs/GOAL_V24.md and stoppedH70fullrule.
+Persistent objective team17244411rank<=19 on a fresh complete officialboard
+following legitimateinference. ACTIVE/unachieved; retain H60.82987. SelectH72
+only under docs/SPAN_026_PLAN.md. Archivev25 in docs/GOAL_V25.md; H71stopped.
 
-Measure all275uncached exact rawA==rawB pairs, fixed published[.06,.06,.88]
-identical-onlyrule, everyotherrow H60. No emptypatterns or probabilitygrid.
-FreezeIDs/processor/checkpoints and verify swapinputidentity before labels/GPU.
-CPUtest conservative bounds over H60on/offroute atfixed expertoutputs.
+One4k/6kvariant: original-order Gemma extra6144conversation-token pass onexactly
+changed/truncated inputs. Retain oldH60route/othercomponents/weights, replace
+onlyGoldoriginal component. No length/routing/weight grid or newweights/training.
 
-One<=1800s informationpilot with retainedexperts, canonical256controls and
-full80warmups; strict1e-5/source/ID/token/device/memory/completeartifactchecks.
-Originalweightedlowerboundgain>.0005 pluspositive pairedpromptgroup95lower
-bound supports one<=2400s actualfullqualification. Totalpublicphase<=4200s,
-max2acceptedversions/onequalifiedofficial. Same H60route/T1/weights/8192/context;
-conservative<9h including20pctmargin/allcold-warm-other/600reserve/worstparent.
-Originaldata overlaps training; no independentCV or hidden-scoreforecast.
+First<=1200slabel-free CPUactualnativeinputaudit all57477rows, exactretained
+processor/tokenizers/runtime, oldlength/controlhashes, changedIDs/fingerprints/
+fieldprefixcoverage/work/modelpositions. Advanceonly64..1%changedrows andextra
+FULLpassworkproxy<=15%originalGwork; not a runtime/qualityclaim. Freeze seed44
+sample<=384changedIDs and allGPU/scoringcode beforeprobabilities/labels.
 
-Fresh complete quota/jobs/receipts/dependencies before GPU. No officialpending
-research, no weights/conversion/training/externaltextservice. Keep Nov10
-08:37:37.343197UTCdeadline/Nov14quota anchor. Stop failedgates, preserveERROR;
-neverduplicate mutationafter observationtimeout. Realtestinference only.
+ConditionalGPUonlyafterseparatefreshadmission/rehearsals: initial<=7200twoT4s,
+early6kmemory/9hprobe beforelargequality. Fixed parent/candidate on/offoutcomes
+andconservativeminimumgain, originalprevalenceweighted, seed42/2000groups:
+requiredgain>.0005andpositive95lowerbound. Trainingoverlap, noCV/hiddenforecast.
+Onlypassingpermits one<=3600sactualfullqualification, conservative<9husing20pct
+margin/allcold-fullwarm-other/600reserve/worstparent, thenonefrozenofficial.
 
-HeavyROOT/runs/span_025, report/aggregate/executednotebook37 inGit. Preserve98
-snapshots/user07/12/link/archivedgoals. CLItracking, nextdraftdiscoveries and
-unfinishedcarry. Gitpublicationauthorized; spanclosure isn't rankcompletion.
+Totalpublicphase<=10800s/max2versions/oneofficial. No newGPUwhileofficialpending,
+noexternaltextservice, timeoutduplicate mutationor failed-gate rescuegrid.
+KeepNov10 08:37:37.343197UTCdeadline/Nov14quota. CPUauditdoesnotadmitGPU.
+
+HeavyROOT/runs/span_026; report/aggregate/executednotebook38 inGit. Preserve102
+snapshots/user07/12/archives/link. CLItracking, nextdraftdiscoveries andunfinished
+carry. Publishsourcebeforemeasurement. Spanclosure isn't rankcompletion.
