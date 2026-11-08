@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T16:32:06.550382+00:00",
+  "source_reference_commit": "278b9dc",
+  "cpu_audit_sha256": "c75a5a9573a29f4a90c78e7f9c1daecf8d752f8dd0c2c44e64f58ddf3fd5d75f",
+  "original_goal_sha256": "43282d67d597fbcd61f69c4df8a2a9163f24af7f8636feb5a30039f0414a9991",
+  "original_plan_sha256": "4f28ef1f404de557ca4249dc46748741f62430fcf498dd1566a0be2d69e6bf17",
+  "before_any_H72_model_predictions": true,
+  "before_H72_target_query": true,
+  "context_variant_changed": false,
+  "resource_caps_changed": false,
+  "cpu_gates_changed": false,
+  "new_fixed_gross_regression_stop": -0.005,
+  "new_official_candidate_limit": 1,
+  "gpu_admitted": false
+}

@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-08T16:26:18.998715+00:00",
+  "complete": true,
+  "uses_targets": false,
+  "rows": 57477,
+  "changed_rows": 357,
+  "changed_fraction": 0.006211180124223602,
+  "near_cap_proxy_rows": 362,
+  "changed_rows_missed_by_near_cap_proxy": 0,
+  "exact_original_lengths_reproduced": true,
+  "canonical_control_tokens_exact": true,
+  "old_input_stream_sha256": "d8a7718d3ea2a28ed13a922e8dcd44359aff29aa930df5763c4d7e104528aea3",
+  "new_input_stream_sha256": "131b2883780b92e0ba7f8c8a89490fde7e37fb33f0d4bf18b1caa33ee864d324",
+  "parent_conversation_tokens": 4096,
+  "candidate_conversation_tokens": 6144,
+  "model_position_limit": 8192,
+  "original_mean_tokens": 926.5732553891122,
+  "candidate_changed_mean_tokens": 5406.728291316526,
+  "candidate_max_tokens": 6378,
+  "original_work_proxy": 57794268.1171875,
+  "extra_full_pass_work_proxy": 5193067.240234375,
+  "extra_work_fraction_of_original_gemma": 0.08985436461803732,
+  "counts_full_extra_pass_not_only_increment": true,
+  "changed_character_coverage": {
+    "total_prompt": 1494906,
+    "old_prompt": 1259640,
+    "new_prompt": 1405435,
+    "total_response_a": 3589207,
+    "old_response_a": 2612452,
+    "new_response_a": 3263975,
+    "total_response_b": 3660492,
+    "old_response_b": 2361760,
+    "new_response_b": 3243265,
+    "old_B_absent": 25,
+    "new_B_absent": 3,
+    "newly_visible_B": 22
+  },
+  "field_coverage_measures_semantic_usefulness": false,
+  "cpu_feasibility_passed": true,
+  "decision": "prepare_fixed_engineering_pilot",
+  "gpu_admitted": false,
+  "new_gpu_executions": 0,
+  "new_inference_executions": 0,
+  "quality_measured": false,
+  "elapsed_cpu_seconds": 539.3484105048701,
+  "runtime": {
+    "transformers": "4.42.3",
+    "tokenizers": "0.19.1"
+  },
+  "source_sha256": {
+    "GOAL.md": "43282d67d597fbcd61f69c4df8a2a9163f24af7f8636feb5a30039f0414a9991",
+    "docs/SPAN_026_PLAN.md": "4f28ef1f404de557ca4249dc46748741f62430fcf498dd1566a0be2d69e6bf17",
+    "scripts/audit_span_026_context.py": "acc875b194a4343448fdec97758d3bf130def123d89e030de80946e57907c8f3",
+    "src/arena/span026_context.py": "b6688adf47b78e6f9159759089c2ce86357a424cceef1ba4846ba7f16b113b7e",
+    "tests/test_span026_context.py": "e8e348a8fad911108c57e0e00d4aa8853372ca0564350cf38274c097bf6e3787"
+  },
+  "processor_sha256": "cc2376291ff5e499f0738a204848d3f1c75b9bf4399d32678d0696fa334078b7",
+  "tokenizer_sha256": "7da53ca29fb16f6b2489482fc0bc6a394162cdab14d12764a1755ebc583fea79",
+  "input_sha256": {
+    "raw/train.csv": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+    "runs/span_009/analysis/full_pab_lengths.npz": "ccb5ed19914939a6708c4f615ba04646a41bbe834e040d492a2e015d2f6968db"
+  },
+  "output_sha256": {
+    "runs/span_026/context_coverage.npz": "8a334f309b4b5c890878dbe264c6f664cb0b78a404ba3bfb320d9354adcd397b",
+    "runs/span_026/changed_field_coverage.json": "c6614e3f1fb358c64189b0693434c0d0dbdea343cfecf8a830e3282d27c1cb19",
+    "runs/span_026/candidate_cohort_manifest.json": "1843920c27a890c86a83bf455e64406c6d448a40a0fc5f06981ca2bf36a1839b"
+  }
+}

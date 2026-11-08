@@ -35,16 +35,20 @@ Goldoriginal, alignedGoldreverse, G6koriginal and alignedLlama. For fixed output
     candidate_on = .25G6k + .25Goldreverse + .5L
 
 Use minimum per-row gain over the two outcomes, original changed-row prevalence
-weighting, seed42/2000pairedpromptgroups and class/retention diagnostics. Require
-weighted lower gain>0.0005and positive95%lowerbound. Original training overlap
-and fixed-output numerical-bound limitations remain; noCV/hidden-scoreforecast.
+weighting, seed42/2000pairedpromptgroups and class/retention diagnostics. Before
+any GPUoutput, the prospective evaluation rule is amended in
+SPAN_026_EVALUATION_AMENDMENT.md: local original-data loss is descriptive, with
+a fixed gross-regression stop if conservative point gain is below-0.005. It is
+not an independent promotion metric. Original training overlap and fixed-output
+numerical-bound limitations remain; noCV/hidden-scoreforecast. The initial
+CPUcontract/goal are preserved separately and anchored at278b9dc.
 
 GPUis conditional, not admitted by this plan/CPUresult alone. Initial pilot
 <=7200two-T4seconds, with an early real6kmemory/throughput probe and conservative
 9hprojection before a larger quality cohort. Stop early on memory/runtime/source
 failure. Canonical1e-5oldrecipe controls, exact newtoken fingerprints, pinned
 offline sources/devices and complete artifact/terminal checks are mandatory.
-Only a passing information gate permits one<=3600second full H60+extra-context
+Passing engineering and the fixed gross-regression guard permits one<=3600second full H60+extra-context
 qualification, using worse retained/current runtime,20%margin, allcold/fullwarm/
 other overhead and600sreserve, total<32400s. Then at most one frozenofficial.
 

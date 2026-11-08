@@ -6702,14 +6702,14 @@
       ],
       "risk": "high",
       "claim": "A6144token original-order Gemma pass on actually truncated inputs may add useful missing B/later-turn evidence while preserving H60routing and other components; no gain or runtime is measured.",
-      "basis": "H71rejects anotherconstant: all275identicalcases are alreadybetter underH60(.311vs.392). Actual retainedauthorProcessorPABconcatenates question/A/B then truncates conversation prefixat4096, unlike oldH24JointTokenizerquestioncap. Fulloriginallengthaudit reports362nearcaprows asproxy, not exactcoverage. Revisits H23/H24mechanisms on currentpublicexperts ratherthan claimingoldLoRAablationtransfer.",
+      "basis": "H71rejects anotherconstant: all275identicalcases are alreadybetter underH60(.311vs.392). Actual retainedauthorProcessorPABconcatenates question/A/B then truncates conversation prefixat4096, unlike oldH24JointTokenizerquestioncap. Fulloriginallengthaudit reports362nearcaprows asproxy, not exactcoverage. Revisits H23/H24mechanisms on currentpublicexperts ratherthan claimingoldLoRAablationtransfer. ExactnativeCPUauditnow357changedrows(.621pct),22newlyvisibleB, changedBcharretention64.52->88.60pct, wholeextraGworkproxy8.985pct. This is onlyinputcoverage, no quality/GPUpredictions.",
       "first_test": "First<=1200CPUelapsedseconds, native4.42.3/.19.1processor/tokenizer: exact4096versus6144inputcomparison on alloriginalrows withoutlabels, oldcachedlength/controlhash checks, changedIDs/coverage/token-work/positionlimit, seed44sample<=384changedrows pluscanonicalcontrols. ONEcontextvariant6144. Advance onlyif>=64changedrows, <=1pctofrows and addednativeworkproxy<=15pctoforiginalGproxy. Then freeze actualGPUworker/scoring/cohort beforeanyoutputs/labels. Initial<=7200twoT4seconds, with earlynative6k memory/runtimeprobe beforelargerquality; no GPUadmissionfromCPUsourcealone.",
-      "acceptance": "AtfixedoldGemmaoriginal/reverse, extendedGemmaoriginal and alignedLlamaswapped outputs, retain oldH60route: offcandidate=.5G6k+.5L; oncandidate=.25G6k+.25alignedGrev+.5L. Comparebothmatched parentoutcomes and conservativeminimumgain, fulloriginalprevalenceweighting andseed42/2000pairedgroups. Requireweightedlowergain>.0005 andpositive95lowerbound. Onlythen one<=3600s actualfullqualification withcanonical1e-5controls/tokens/sources/memory/CSV and conservative<9h(20pctmargin/allcold-warm-other/600reserve/worstparent), thenonefrozenofficial.",
-      "stop": "CPUstopon coverage/work/source/hash/positionlimitfailure; no alternativecontext/route/weightgrid. GPUonlyaftercompletepreparedcontract/freshfullinventory/quota/receipts/deps and actualcellrehearsals. Initial7200+followup3600<=10800publicseconds,max2versions/oneofficial; inheritedNov10deadline/Nov14quota. Stopearlyif6kmemory/9hengineeringfails, orquality/numerical/sourcefails. No newweights/training/externaltextservice orGPUwhileofficialpending; no timeoutduplicatemutation.",
+      "acceptance": "Preserve fixed6144candidate/oldH60route. Matched four-output conservative on/offgain, prevalenceweights andseed42/2000pairedgroups are descriptive onoriginaltraining-overlap. Prospectivepre-GPUamendment: stopgrossregression ifweightedconservativepointgain<-.005. Engineering/source/numerical/memory/runtime gates remainstrict. One<=3600sactualfullqualification andonefrozenofficial maymeasuretargetbenefit; officialrank<=19 is outcome, no LBparameterfitting.",
+      "stop": "CPUstopon coverage/work/source/hash/positionlimitfailure; no alternativecontext/route/weightgrid. GPUonlyaftercompletepreparedcontract/freshfullinventory/quota/receipts/deps and actualcellrehearsals. Initial7200+followup3600<=10800publicseconds,max2versions/oneofficial; inheritedNov10deadline/Nov14quota. Stopearlyif6kmemory/9hengineeringfails, orgross-regression(<-.005)/numerical/sourcefails. No newweights/training/externaltextservice orGPUwhileofficialpending; no timeoutduplicatemutation.",
       "risk_reason": "Fewcasesaffected; extraGPUmodelreload/workmayexceedH60headroom. Classifiertrainedat4kmaynotbenefitfrom6k; newtokens canhurt. Originalvotes overlaptraining and boundsareconditionalonfixedexpertoutputs, not universalbatchnumerics.",
       "mitigation": "Exactlabelblindcoverage first, currentnativecontroltokens, onefixed6kbudget and unchangedparentroute/expertweights. Earlyrealengineeringstop beforelargequalitycost; matchedcontrolreplay and explicittrainingoverlap/noCV/nohiddenforecast. Do notreuseobsolete256questioncap or arbitrarychangedcohortparentroute.",
       "rationale": "Seek newtextinformation aftercalibration/weakmirror/structuralheuristicfailures. Extendsanexistingstrongexpert onrarecases insteadofanotherweakmodel; affordabilityandquality remainunknown.",
-      "revision": "Newv26proposal afterH71negative; H23/H24remainunexecutedcarryovers with theirhistoricalscope. No4k/6kcoveragecomparison ornewGPUyet.",
+      "revision": "V26prospectiveamendment afterlabel-freecoverage, beforeanyH72GPUprediction/targetlabel. Replace independent-positive-gain fiction onpubliccheckpointtrainingvotes withdescriptivemetrics/fixed-.005gross-regressionguard plusoneactualfrozenofficialoutcome. Candidate,CPUgates,controls,resourcecaps unchanged. InitialCPUgoal/plan preserved andanchored278b9dc; closedH71stopunchanged.",
       "depends_on": [
         "E00",
         "E14",
@@ -6719,7 +6719,10 @@
       "evidence": [
         "docs/SPAN_025_RESULTS.md",
         "results/span_025/information_audit.json",
-        "results/span_009/full_pab_length_audit.json"
+        "results/span_009/full_pab_length_audit.json",
+        "docs/SPAN_026_COVERAGE.md",
+        "docs/SPAN_026_EVALUATION_AMENDMENT.md",
+        "results/span_026/coverage_audit.json"
       ],
       "id": "H72",
       "rank": 90,
@@ -6744,6 +6747,14 @@
           "note": "Start one bounded native4k/6kinputaudit under docs/SPAN_026_PLAN.md. ActualauthorPABis sequentialprefixtruncation, notold256questioncap; twoformat/spanCPUtests pass. Freeze method beforefull57477rowlabel-freecoverage. CPU<=1200s, no GPUadmission/quality/labels yet.",
           "evidence": [
             "docs/SPAN_026_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T16:32:06+00:00",
+          "status": "running",
+          "note": "CPUcoveragecomplete539.35s:357/57477changed(.621pct), nativeoldlength/controlhashesexact,6kmax6378<8192. Bcharcoverage64.52->88.60pct,22newlyvisibleB; fullnewpasswork8.985pctG. CPUgatespass, noGPUadmission. BeforeanyH72prediction/label, archive278b9dcCPUcontract and prospectivelyamend evaluation todescriptivetraining-loss/-.005gross-regressionguard plusonequalifiedofficialoutcome; samevariant/caps/controls.",
+          "evidence": [
+            "docs/SPAN_026_EVALUATION_AMENDMENT.md"
           ]
         }
       ]

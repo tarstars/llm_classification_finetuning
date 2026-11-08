@@ -1,6 +1,6 @@
 # Active rank goal; v25 negative, v26 context-coverage audit selected
 
-Snapshot Nov8 2026,16:14UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot Nov8 2026,16:35UTC. Read PROJECT_POLICY.md, GOAL.md,
 SPAN_026_PLAN.md. Persistent objective team17244411rank<=19 on a fresh complete
 board after legitimateinference. ACTIVE/unachieved, no tokenbudget. No subagents.
 Never walk HOME/~/prj/Arc/FUSE/troll_farm; scope namedproject/exactartifactpaths.
@@ -23,35 +23,54 @@ questioncap DOES NOT apply. No current4k/6kcoverage/qualityresult yet. Proposed
 extra6144Gemmapass onlyon trulychanged/truncatedrows, retaining OLDH60route,
 Llama and Goldreverse outputs/weights. Extra cost is fullnewpass, not+2048only.
 
-NEXT: freeze/push then run once:
-PYTHONPATH=/tmp/llm_span019_runtime .venv/bin/python scripts/audit_span_026_context.py
-Bound1200CPUelapsedseconds, no labels/weights/inference/GPU/servicecalls. Exact
-native4.42.3/Tokenizers.19.1 required. Compare actual4096/6144nativeinputtokens on
-all57477originalrows, oldcachedID/lengthchecks, canonical256controlfingerprint,
-changedIDs/tokenhashes, fieldprefixchars and FULLextra-passwork. TwoCPUtests pass.
-Existingoldfullaudit237s suggests aboutdoublework; not newmeasuredtime.
-NativeGemmaassets alreadylocal. Rawperrow/datafilesstayROOT/runs/span_026.
-Method requirescommitbeforeexecution; no coverage_audit.jsonyet. Do not rerun
-H71prepare/pilot; theyareterminal andstopped.
+ExactnativeCPUcoverage DONE,539.35s/1200cap: all57477oldlengths match,
+control256tokenfingerprint exact;357changed(.621%),meannew5406.73,max6378<8192.
+WholeextraGpassworkproxy8.985%oldGwork. ChangedBcharcoverage64.52->88.60%,
+22pairs getfirstBtext. AllCPUfeasibilitygatesPASSED; NO GPUadmission/qualityyet.
+Heavy context_coverage.npz/changed_field_coverage.json/candidate_cohort_manifest.json
+underROOT/runs/span_026; all357changedIDsselected(seed44max384,sortedIDs).
+coverage_audit.json/sourceproof frozen278b9dc. Notebook38executedwithchart.
 
-ProspectiveCPUgates:64<=changedrows<=1%original, wholeextraGpassworkproxy<=15%
-oldGemmawork and inputpositionswithinmodelcap. This is only feasibility; NO GPU
-admission. Ifpasses, freeze seed44<=384changedIDs plus actualGPU/scoring/controls
-before labels/outputs. Fourmatched outputs Gold,alignedGoldreverse,G6k,Llama.
-Parentoff=.5Gold+.5L, candidateoff=.5G6k+.5L; parenton=.25Gold+.25Grev+.5L,
-candidateon=.25G6k+.25Grev+.5L. Conservativeminperrowgain, originalprevalence
-weighting, seed42/2000pairedgroups, >.0005andpositive95lowerbound. Originaldata
-trainingoverlap persists; no CV/hiddenforecast/universalbatchboundclaims.
+BeforeANYH72GPUoutputs/targetlabels, a PROSPECTIVEevaluationamendment replaces
+positiveoriginaltraining-gainpromotion with DESCRIPTIVE localmetrics andfixed
+-.005gross-regressionguard. Actualonequalifiedfrozenofficial is outcome. Same
+6144variant/oldroute/weights/CPUgates/resourcecaps. KeepclosedH71stopunchanged.
+Read SPAN_026_EVALUATION_AMENDMENT.md; initialCPUgoal/plan archived as
+SPAN_026_CPU_GOAL.md/CPU_PLAN.md with exactsourcehashes anchored278b9dc.
+Do NOTcompare CPUsourcehashes forGOAL/currentplan againstamendedtext; usearchives
+orGit278b9dc. OtherCPUmethodfilesunchanged. Registryacceptance/revisionrecords it.
 
-ConditionalGPUinitial<=7200s withEARLY6kmemory/9hprobe beforelargerquality;
-followup<=3600s onlyafterpassingquality. Totalphase<=10800twoT4s/max2versions/
-onequalifiedofficial. Actualfullqualification<32400s with20%margin/allcold-full
-warm-other/600reserve/WORSTretained-currentparent beforeofficial. No GPUsource/
-controller yet forH72. Nativepipelinebackendmustkeepstrict1e-5canonicalcontrols.
-Inherit Nov10 08:37:37.343197UTCdeadline/Nov14quotaanchor. Freshfullinventory/
-quota/receipts/deps andactualnotebookworkerrehearsals before anyGPU. No newmodel
-weights/training/externaltextservice or GPUwhileofficialpending. No length/route/
-weight rescuegrid after failedgate.
+NEXT: afterpublishing, run once thelabel-freedeployableselectorproof:
+PYTHONPATH=/tmp/llm_span019_runtime .venv/bin/python scripts/verify_span_026_selector.py
+No selector_audit.jsonyet. Test bodytokenlength>4096matchesactualnative4k/6kchanged
+mask onALL57477rows. SourceCPUcapisAGGREGATE539.35+newelapsed<1200, notreset.
+No labels/MLinference/GPU. FiveCPUtests pass fornativebodyspans/textonlyselector/
+fullpass+warm+selector+worstparentruntimeandnodivisionby2GPU. prefix_mask in
+src/arena/span026_runtime.py, helperbody nativeformat inspan026_context.py.
+
+Then build actualEARLYengineeringpilot beforelargerdiagnosticquality. NO H72GPU
+worker/controller/builder/resourceplan yet; nothinglive towaiton. Reusequalified
+H60compute enginewith explicitnative6144inputbudget onlyforextraGorigcohort;
+allold4kcontrols/inference unchanged. Consider sameGemmaprocessforold/newcohorts
+toavoid anunnecessaryreload inproduction. Measureextra80rowwarm+64rowsteadyprobe,
+actualfulltextselectorCPUcost, oldGolduniform512/controls256. Runtimehelper
+span026_runtime.projection keepsworseparent/currentGtiming, chargesFULLextra
+Gpasswalltime*prevalence*25k*1.2, wholefull57477CPUselector, extra6kwarmup and
+anyparentstartupslowdown. NEVERdividealreadyparallel2T4walltimeby2.
+H60parentprojection30912.486 includesalloldcold/warm/other/600reserve; Golduniform
+274.5959s, H65worse276.1072s reference mustbekept. ParentG4klong64=169.7398s.
+Earlyscreenisnotfullqualification; actualcurrentallmodelspassbeforeofficial.
+
+Fourmatched diagnosticoutputs Gold,alignedGoldreverse,G6k,Llama onchanged357.
+Parentoff=.5Gold+.5L,candidateoff=.5G6k+.5L; parenton=.25Gold+.25Grev+.5L,
+candidateon=.25G6k+.25Grev+.5L. Minperrowgain/prevalence/seed42group2000descriptive;
+stopifweightedpointgain<-.005. Originaltrainingoverlap/noCV/hiddenforecast.
+Initial<=7200twoT4s, early6kmemory/9hprobe beforelargequality; follow<=3600s,
+phase<=10800/max2versions/onequalifiedofficial. Actualfullprojection<32400s
+with20%margin/allcold-fullwarm-other/600reserve/WORSTparent. Inherit Nov10
+08:37:37.343197UTCdeadline/Nov14quotaanchor. Freshfullquota/jobs/receipts/deps,
+actualnotebookcell/Jupyter rehearsals andsourcefreeze/push BEFORE anyGPU. No new
+weights/training/externaltextservice, GPUwhileofficialpending or rescuegrid.
 
 ## V25/H71 terminal negative; NEVERrestart
 
@@ -111,5 +130,6 @@ Userdirty07_error_poster.ipynb and12_backlog_v1_span.ipynb MUSTstaybytewise;
 hashes results/span_025/preservation.json (H26willcopypreservation). Neverstage/
 reset. ~/notebooks/llm_classification_finetuning linkcorrect. HeavyarraysDB,
 code/MD/aggregates/executednotebooksGit. Priorpublished5b0d0bcacceptedH71;
-currentH71finalreport/closure+H72frozenCPUmethod needcommit/pushbeforeaudit.
+278b9dcpublishedH71negative/H72CPUmethod. Currentcoverage/amendment/selectorproof
+code needcommit/pushbeforeselector. NativeCPUsession37086TERMINALexit0.
 Goalturnmade actualnewnegativequalityevidence andnewinformationplan, no blocker.

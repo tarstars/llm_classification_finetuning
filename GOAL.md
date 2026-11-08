@@ -17,8 +17,11 @@ sample<=384changedIDs and allGPU/scoringcode beforeprobabilities/labels.
 ConditionalGPUonlyafterseparatefreshadmission/rehearsals: initial<=7200twoT4s,
 early6kmemory/9hprobe beforelargequality. Fixed parent/candidate on/offoutcomes
 andconservativeminimumgain, originalprevalenceweighted, seed42/2000groups:
-requiredgain>.0005andpositive95lowerbound. Trainingoverlap, noCV/hiddenforecast.
-Onlypassingpermits one<=3600sactualfullqualification, conservative<9husing20pct
+descriptivemetrics; pre-GPUamendment SPAN_026_EVALUATION_AMENDMENT.md sets a
+fixedgross-regressionstop atweightedconservativegain<-0.005. Originalvotes
+overlaptraining; no independentpromotion/CV/hiddenforecast. OriginalCPUcontract
+archived/anchored278b9dc. Engineering+guard permits one<=3600sfullqualification,
+conservative<9husing20pct
 margin/allcold-fullwarm-other/600reserve/worstparent, thenonefrozenofficial.
 
 Totalpublicphase<=10800s/max2versions/oneofficial. No newGPUwhileofficialpending,
