@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-08T23:07:28.433117+00:00",
+  "submit": true,
+  "role": "weight_qualification",
+  "kernel_version": "arseniytrushin/llm-preference-span030-llama-prior/1",
+  "expert_weights": [
+    0.4,
+    0.6
+  ],
+  "temperature": 1,
+  "row_normalization": true,
+  "reverse_pass": false,
+  "route": false,
+  "packing_tokens": 8192,
+  "cpu_prefetch": true,
+  "independent_local_quality": false,
+  "sequentially_selected": true,
+  "cumulative_priors": [
+    [
+      0.6,
+      0.4
+    ],
+    [
+      0.4,
+      0.6
+    ]
+  ],
+  "interpretation": "Original-training-overlapping local screen; one official result measures transfer, no hidden forecast.",
+  "projection_seconds": 30766.76152526094,
+  "evidence_sha256": {
+    "candidate_qualification.json": "c74e5f00c91043286454e7b2820bfb9757067fee471bee8191dbea22e08a8823",
+    "quality_replay.json": "da3e221d058a3f9578d1c380ef0579e44014168af166e933e684eefcfe7f9894",
+    "weight_qualification_bundle.json": "42e33758eb18b403f3b77376d2cc42f48d5bf39a7431da42635d3a969229441c",
+    "weight_qualification_cell_rehearsals.json": "906b5cbc82aedab43e37a0a9d3925165c2f270b1a8110365463c7f287d990c77"
+  }
+}

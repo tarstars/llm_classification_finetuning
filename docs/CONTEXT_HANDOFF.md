@@ -8,10 +8,9 @@ span013-gemma-order/1. No newofficial since H60; no live ownjobs now.
 
 ## Immediate next action
 
-V29SEALED/published6030aa3. Activev30focus[H76],H76RUNNING=actualGPU
-qualification SOURCEPREPARATION.39activeitems=38carried+H76,V31draftempty,
+V29SEALED/published6030aa3. Activev30focus[H76],H76RUNNING=officialdecision/admission preparation; publicqualificationPASSED.39activeitems=38carried+H76,V31draftempty,
 95registeredtasks,118immutable snapshotfiles. GOAL.md/docs/SPAN_030_PLAN.md
-selected/pushedc0b01e6 BEFORE40/60quality. OneacceptedGPUqualificationlive below; noofficialYET.
+selected/pushedc0b01e6 BEFORE40/60quality. PublicqualificationCOMPLETE/passed below; noofficialYET.
 
 H76CPUreplay11860TERMINALexit0,1.7475s/300. One normalized.4G+.6alignedL,
 T1,noroute/reverse. UniformH60.6529882483->candidate.6453783692, gain+.007609879,
@@ -57,24 +56,30 @@ caps required. Durableintent, ONEAPIwrite, uncertainreplyreconcilesread-only
 historysameuniqueMESSAGE/notinpriorrefs, NEVERresubmits. Observe acceptedreceipt
 throughterminal and robustfullboard via observe_leaderboard.py. NoGPUwhilepending.
 
-GPUmethod frozen/pushedcb73c41 BEFORE freshfulladmission. Accepted ONCE
-arseniytrushin/llm-preference-span030-llama-prior/1, RUNNING22:43:31UTC.
-Controllerunified13316/PID1651883 live. Exactsource verified44671exit0 at
-22:44:37UTC:cells/id/private/offline/T4/image match; fourpublicv1deps refreshed,
-all7officialsCOMPLETE beforelaunch. No v30official or otherGPU exists.
+GPUmethodfrozencb73c41,acceptedidentity/sourcepublished73d575c. Exactsource
+arseniytrushin/llm-preference-span030-llama-prior/1. Publiccontroller13316/
+PID1651883 TERMINALexit0, COMPLETE23:05:41UTC.29artifacts retrievedverified,
+actualcharge1308.076s/3600; source/private/offline/T4/image match. DoNOTrestart
+orreaudit/reprepare. Independentaudit51049TERMINALexit0 PASSED: all10canonical
+rawcohorts EXACT0, source/checkpoints/hosttensors/microgroups/tokens/positions/
+actualCSV/mixtures/memory pass. Mixderivedroundoffactual0. Peak70.123%/56.841%.
+CurrentuniformG242.072s,L174.864s; conservativeprojection retains SLOWERE18
+rates293.909/213.176, cold293.433/fullwarm105.487/other55.849/20pctmargin/
+600reserve =>30766.762s(8h32m47)<32400. Eligible ONE frozenofficial only.
 
-NEXTobserve SAME13316/version throughterminal/retrieval; then run
-scripts/audit_span_030_candidate.py ONCE. It checks all10oldraw cohorts,
-source/hostgroups/tokens/positions/CSV/memory and actualworse-matchingE18/current
-2roleprojection. Anyfailure stops H76, no retry/thirdrole/faster-node rescue.
-Ifeligible, scripts/submit_span_030_candidate.py --prepare-decision creates
-concretedecision; commit/pushqualification+decision and source before actual
-submit. Then runsubmit_span_030_candidate.py ONCE (freshfullofficialadmission
-normally2-3min). Recordreturnedhandle/receipt; observe SAME aftertimeout,
-neverduplicate mutation. --observe-only reconcilesexistingintent/history only.
-Hiddenactualtextinference source is sameacceptedversion; no public goldreads.
-No more weights from leaderboardfeedback. Need actualfreshcompleteofficial
-rank<=19 plus reporting/preservation audit before completingpersistentgoal.
+preparedecision6023TERMINALexit0 created deployment_decision.json. Publish
+qualification+decision+report Notebook42 BEFOREactualsubmit. Qualificationreport
+SPAN_030_QUALIFICATION.md; Notebook42rerendered27499exit0. H76stillRUNNING,
+no officialintent/receiptYET. NEXTcommit/pushcurrent concrete evidence/decision,
+then runONCE .venv/bin/python scripts/submit_span_030_candidate.py withescalation.
+Freshfulladmissionnormally2-3min beforeONEAPIwrite; recordunifiedhandle/PID/ref.
+Observe SAMEintent/receipt, neverreinvoke mutation aftertimeout. --observe-only
+is readonly reconciliation ofexistingintent/history; no publicorotherGPUwhile
+pending. A COMPLETEpublickernel is NOT a completedofficial. APIreceipthistory
+is authoritative forofficialstatus. OnCOMPLETEcontroller savesresult androbust
+freshcompleteboard. Actualrank<=19 (and evidence/report/preservation) required
+before completingpersistentgoal; otherwise keepgoalactive. No furtherweights
+fromleaderboardfeedback, no extra publicversion/faster-node rescue.
 
 ## V29 terminal evidence
 

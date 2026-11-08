@@ -7310,6 +7310,14 @@
           "evidence": [
             "results/span_030/jobs/weight_qualification/source_verification.json"
           ]
+        },
+        {
+          "at": "2026-11-08T23:07:28+00:00",
+          "status": "running",
+          "note": "Actualqualification13316/PID1651883 TERMINALexit0, COMPLETE23:05:41UTC,29artifacts,1308.076s charged. Frozen audit51049exit0 PASSES: all10oldrawcohorts exact0; source/hostgroups/token/position/mixture/CSV/memory pass. Conservative30766.762s<32400 retains slowerE18rates293.909/213.176. Eligibleoneofficial; prepareconcretedecision, publishresult/decision before freshfulladmission and ONEsubmit. Noofficialyet; goalunachieved.",
+          "evidence": [
+            "docs/SPAN_030_QUALIFICATION.md"
+          ]
         }
       ]
     }
