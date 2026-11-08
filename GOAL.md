@@ -14,8 +14,10 @@ Document mirror attribution, missing derivative license and unresolved original
 run lineage; do not invent authentication or claim another artifact's score.
 No private403dataset retry or silent substitution of H55's earlier parent.
 
-Before weights/GPU publish source result and one exact backend/input/ensemble,
-quality IDs/groups/gates and serialized worker rehearsals. Intended single fixed
+Follow docs/SPAN_019_ASSET_PROTOCOL.md for the prospective split of asset and
+GPU admission. Before weights publish source result, one exact input/ensemble,
+quality IDs/groups/gates and synthetic native arithmetic controls. Before GPU
+publish the exact backend/worker and actual serialized worker rehearsals. Intended single fixed
 replacement ensemble, equal weights/T1, retained partner selected once before
 outputs; no format/weight/temperature/route grid. Original labels overlap training;
 later votes are domain-shift robustness evidence, not competitionCV. No hidden
@@ -28,8 +30,8 @@ No researchGPU during official scoring; fresh complete board proves goal success
 
 Original period and quota refresh in results/span_019/span_plan.json, fixed48hour
 span,source60minute deadline. Publiccap18000two-T4seconds:initial3600,one separately
-admittedfollowup14400,max2public/1productionrecipe/1official. Source stage admits
-ZERO GPU/fullweights. Fresh full jobs/quota/pinneddependencies/official cursors
+admittedfollowup14400,max2public/1productionrecipe/1official. The initial source stage admits
+ZERO GPU/fullweights; the separate asset protocol admits CPU acquisition only. Fresh full jobs/quota/pinneddependencies/official cursors
 beforeGPU;paidFalse. No cap/periodreset or duplicate mutation aftertimeout.
 
 Heavyfiles ROOT/runs/span_019;programs/Markdown/aggregates/executedNotebook31in Git.

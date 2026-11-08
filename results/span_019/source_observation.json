@@ -1,0 +1,143 @@
+{
+  "at": "2026-11-08T08:39:05.225452+00:00",
+  "repository": "wath5/kgl_lmsys_pref_classif",
+  "revision": "cd24909db06583ecf00e65b6919c6cc1531c9885",
+  "structural_source_checks_passed": true,
+  "tensor_keys": 1347,
+  "classifier_head_shape": [
+    3,
+    3584
+  ],
+  "classifier_head_dtype": "F16",
+  "classifier_head_finite": true,
+  "classifier_head_row_L2": [
+    1.1528451815910232,
+    1.1516789010047424,
+    1.150730391829944
+  ],
+  "classifier_head_training_authenticated": false,
+  "exact_author_run_lineage_verified": false,
+  "declared_checkpoint_license": null,
+  "config_parent": "/kaggle/input/v7-dpo-16bit-01234-8bit-all/v7_dpo_16bit_01234_8bit_all",
+  "native_card_max_length": 2000,
+  "pad_token_id": 1,
+  "eos_token_id": 1,
+  "quantization": {
+    "batch_size": 1,
+    "bits": 8,
+    "block_name_to_quantize": null,
+    "cache_block_outputs": true,
+    "damp_percent": 0.1,
+    "desc_act": false,
+    "exllama_config": {
+      "version": 1
+    },
+    "group_size": 128,
+    "max_input_length": null,
+    "model_seqlen": null,
+    "module_name_preceding_first_block": null,
+    "modules_in_block_to_quantize": null,
+    "pad_token_id": null,
+    "quant_method": "gptq",
+    "sym": true,
+    "tokenizer": null,
+    "true_sequential": true,
+    "use_cuda_fp16": false,
+    "use_exllama": true
+  },
+  "quantization_calibration_text_rows": 128,
+  "declared_tensor_bytes": 10361028608,
+  "weight_files": [
+    {
+      "name": "model-00001-of-00003.safetensors",
+      "bytes": 4977835176,
+      "sha256": "012cfe4344b17127076787b368af5885bb9a18ff0568257f0029d326a1e77c12"
+    },
+    {
+      "name": "model-00002-of-00003.safetensors",
+      "bytes": 4999878040,
+      "sha256": "23f868d126be9fb922fe9c09f6ed5c48a36e053c55dddff4a549037ed7046fd7"
+    },
+    {
+      "name": "model-00003-of-00003.safetensors",
+      "bytes": 383467824,
+      "sha256": "31f38d03fcc9a7195795bd34653b5650d804f1716968a49643815c37ed70d824"
+    }
+  ],
+  "partial_weight_reads": [
+    {
+      "file": "model-00001-of-00003.safetensors",
+      "start": 0,
+      "end": 7,
+      "bytes": 8
+    },
+    {
+      "file": "model-00001-of-00003.safetensors",
+      "start": 8,
+      "end": 56487,
+      "bytes": 56480
+    },
+    {
+      "file": "model-00002-of-00003.safetensors",
+      "start": 0,
+      "end": 7,
+      "bytes": 8
+    },
+    {
+      "file": "model-00002-of-00003.safetensors",
+      "start": 8,
+      "end": 89495,
+      "bytes": 89488
+    },
+    {
+      "file": "model-00003-of-00003.safetensors",
+      "start": 0,
+      "end": 7,
+      "bytes": 8
+    },
+    {
+      "file": "model-00003-of-00003.safetensors",
+      "start": 8,
+      "end": 6447,
+      "bytes": 6440
+    },
+    {
+      "file": "model-00003-of-00003.safetensors",
+      "start": 383446320,
+      "end": 383467823,
+      "bytes": 21504
+    }
+  ],
+  "source_bytes_stored": 22430531,
+  "elapsed_seconds": 34.41101799393073,
+  "source_files_sha256": {
+    "metadata.json": "9ca12350a308c8429427a4891c88ce3df7721aa60c5e7ce4323fac4ff96665c9",
+    "README.md": "b57a0b73ba4daeb62a2b0031a90f0a10fc175b409e4389192d611c372f43b445",
+    "Readme.md": "ff696276d512615f4a5f6ab45082d43aa28062c4f1d185387d55ceda3910c4c3",
+    "config.json": "78d4ba2bec989ebf70a10cf2a1ac16d98a2e9062ad92a90bae1809444104ce61",
+    "model.safetensors.index.json": "2ee47c63a7e499ee199a9e1c75c9d84750acba84fbc18612952c3e2a24301da6",
+    "tokenizer.json": "7da53ca29fb16f6b2489482fc0bc6a394162cdab14d12764a1755ebc583fea79",
+    "tokenizer.model": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+    "tokenizer_config.json": "7b245d1616447259c1e8773088085475ec1a7192df47f70b6b4dcad0bb1d3f7b",
+    "special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+    "headers/model-00001-of-00003.safetensors.json": "93a24a4af199dc939434fc0ff3bb47703252e49ad43c8a81930967548ffcd1f9",
+    "headers/model-00002-of-00003.safetensors.json": "c6457c9732703e962231d99183202195e24d7582e691ca5e784dbdf3b506ccb8",
+    "headers/model-00003-of-00003.safetensors.json": "88956685cc896f348397c1cb1d6b13d77c311d0cb1160e6d239b55a98df7550c",
+    "score.weight.f16": "d7f55e588b030cb0feabef6e7372ed4542b812aa58ecbf7625fdcca81f484554",
+    "native/qlinear_cuda_v0.7.1.py": "5a6a483784adc7d9ee55e62f6dc4fdaf3a642f56796d2a6b8afea0b2364d751d",
+    "native/quantizer_gptq_v4.42.3.py": "656350636585ea6cd457e4b0620d4f648334919dc92726067b7805da665c679f"
+  },
+  "source_sha256": {
+    "GOAL.md": "c913f25d0008262d8a76e3d9d9525776ec667228fbf949a076e665907cbd4071",
+    "docs/SPAN_019_PLAN.md": "ea43fc231eabb1d0293621ef8277594fb84db5ef8772985ceff7992a0cf09ee7",
+    "results/span_019/span_plan.json": "d702362a3da26b86c5f04e204d03ee079cbc2a8173087b3316bf99a7aa1b0467",
+    "scripts/gather_span_019_source.py": "faf2638ed14b691965dcce7553fc2ae9ad13a3be6779396c8226491b00d417fb",
+    "src/arena/remote_tensor.py": "88fefec3c1b8d1343a45f55b333df7fdbfecd7f97d1a07a8ffe0bcb7015ad55d"
+  },
+  "full_weights_downloaded": false,
+  "model_inference_executed": false,
+  "new_gpu_executions": 0,
+  "quality_measured": false,
+  "gpu_admitted": false,
+  "decision": "Pinned source/head available; inspect declared native execution and freeze follow-up before any weights or GPU."
+}

@@ -6029,6 +6029,14 @@
           "status": "running",
           "note": "Preparing v19 immutable source-audit contract for public HF mirror cd24909db06583ecf00e65b6919c6cc1531c9885; no GPU or quality outputs yet.",
           "evidence": []
+        },
+        {
+          "at": "2026-11-08T08:50:57+00:00",
+          "status": "running",
+          "note": "Pinned source audit passed1347keys/42layers/finite3x3584head; card overrides pad1to0. Freeze single equal-Gemma replacement and quality IDs/gates. Prospectively separate CPU asset acquisition after native-math checks from mandatory GPU-worker rehearsals; original period/caps unchanged, zero quality outputs.",
+          "evidence": [
+            "docs/SPAN_019_ASSET_PROTOCOL.md"
+          ]
         }
       ]
     }

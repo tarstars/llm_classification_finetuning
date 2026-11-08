@@ -226,6 +226,7 @@ A second competition-trained paired three-class classifier may improve H60 withi
 
 - 2026-11-08T08:30:02+00:00 — planned: Found a distinct accessible final-family GPTQ mirror after the cached teacher gate failed; audit its declared native recipe before any new inference. Evidence: [docs/SPAN_018_CHECKPOINT_DISCOVERY.md](docs/SPAN_018_CHECKPOINT_DISCOVERY.md)
 - 2026-11-08T08:35:07+00:00 — running: Preparing v19 immutable source-audit contract for public HF mirror cd24909db06583ecf00e65b6919c6cc1531c9885; no GPU or quality outputs yet.
+- 2026-11-08T08:50:57+00:00 — running: Pinned source audit passed1347keys/42layers/finite3x3584head; card overrides pad1to0. Freeze single equal-Gemma replacement and quality IDs/gates. Prospectively separate CPU asset acquisition after native-math checks from mandatory GPU-worker rehearsals; original period/caps unchanged, zero quality outputs. Evidence: [docs/SPAN_019_ASSET_PROTOCOL.md](docs/SPAN_019_ASSET_PROTOCOL.md)
 
 ### H02
 
