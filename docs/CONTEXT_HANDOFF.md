@@ -1,6 +1,6 @@
 # V26 closed negative; v27 packing prerequisite and fixed expert prior
 
-Snapshot 2026-11-08T20:30:47.642699+00:00. Read PROJECT_POLICY.md, GOAL.md and
+Snapshot 2026-11-08T20:36:50+00:00. Read PROJECT_POLICY.md, GOAL.md and
 SPAN_027_PLAN.md. Persistent tool goal: move above20th place, concretely own
 team17244411rank<=19 on a fresh complete official board after legitimate
 inference. ACTIVE/unachieved. Fresh full board19:43:55UTC:23/310,.82987;
@@ -9,8 +9,8 @@ Best legitimate H60receipt58103553, span013-gemma-order/1. No H72official.
 
 ## Current v27
 
-Backlogv27active,focus[H74,H73],H74RUNNING=CPUsourcepreparation,H73PLANNED.
-H73depends on H74; no10240execution/GPU or60/40probability has been computed.
+Backlogv27active,focus[H74,H73],H74RUNNING=GPUprofile,H73PLANNED.
+H73depends on H74; no60/40probability has been computed.
 V28draftempty.92registeredtasks,106historicalsnapshotfiles;37carried+2new=
 39activev27items. New bounded GOAL.md/PLAN selected/pushed53a3a37.
 H74CPUproof60049TERMINALexit0:15.527s/600, all57477savedGemmalengths,
@@ -31,14 +31,18 @@ success/failure/watchdog, information-rerunguards andJupyterstartupALLPASS.
 notebooks/39_native_packing.ipynb executed36309TERMINALexit0, chartstoredDB.
 CPU/GPUreports docs/SPAN_027_CPU_PROOF.md andSPAN_027_GPU_PROTOCOL.md.
 
-NOv27GPUadmittedyet. NEXTfreeze/pushallnewmethod/code/results/bundle (currently
-uncommitted), then run scripts/run_span_027_profile.py ONCEwithescalation for
-freshfulladmission. Recordreturnedunifiedhandle; fullinventorynormally2-3min
-beforepush, noearlystatefilemeansstillinventorynotstopped. Neverduplicate.
-Afteraccepted, verify_experiment_source.py packing_profile --span27. Observe
-SAMEhandle/version. Controls andmemoryarecheckedaftereachcohort; failedguard
-writesengineering_stop beforecleanstop, no latermodels. OOM/sourceerrorsstay
-errors. AfterCOMPLETE/retrieval runaudit_span_027_profile.py ONCE; no labels.
+H74GPUadmittedONCE20:34:18UTC after source/method publication bbdc42c.
+Accepted arseniytrushin/llm-preference-span027-native-packing/1; unified
+controller42856/PID1269591 live20:36UTC, remoteRUNNING. Observe SAME handle/
+version, neverrelaunch. Accepted source independently verified20:36:03UTC,
+remote cells exact/private/offline/T4/image/four public-v1dependencies match.
+results/span_027/jobs/packing_profile/source_verification.json and
+profile_admission.json. Latest complete board20:36:03UTC still23/310,.82987,
+19th/20th.82915,leader.82692; latest_leaderboard.json. No newofficial.
+
+NEXTobserve42856 throughterminal/retrieval, then audit_span_027_profile.py
+ONCE; no labels. Controls/memory arecheckedaftereachcohort; failedguard writes
+engineering_stop beforecleanstop, no latermodels. OOM/sourceerrorsstayerrors.
 Ifengineeringpasses, closeH74withreportandthenstartH73CPU. Iffails,deferH73
 withactualevidence; no packing/numerical/marginrescuegrid.
 

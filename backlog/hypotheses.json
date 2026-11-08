@@ -6986,6 +6986,14 @@
           "evidence": [
             "docs/SPAN_027_CPU_PROOF.md"
           ]
+        },
+        {
+          "at": "2026-11-08T20:36:23+00:00",
+          "status": "running",
+          "note": "GPU profile accepted once as arseniytrushin/llm-preference-span027-native-packing/1; controller session42856 PID1269591 RUNNING. Exact remote source verified 2026-11-08T20:36:03UTC, offline. Fresh complete official board remains23/310,0.82987; H73 still depends on the terminal engineering audit.",
+          "evidence": [
+            "results/span_027/jobs/packing_profile/source_verification.json"
+          ]
         }
       ]
     }
