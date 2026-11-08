@@ -7090,6 +7090,14 @@
           "evidence": [
             "docs/SPAN_028_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-08T21:14:20+00:00",
+          "status": "running",
+          "note": "Frozen CPUmethod a0c78a6: controller59216 TERMINALexit0,31.847s/300, all15actualnativecohorts exact host tensors/token streams/IDs/positions/original8192microbatch boundaries.110snapshots/user files preserved.7FIFO/teardown tests+6profile guard/route/CSV/runtime tests pass; GPUengine source prepared but no GPU/cell rehearsals/admission yet. H73 remains deferred/uncomputed.",
+          "evidence": [
+            "docs/SPAN_028_CPU_PROOF.md"
+          ]
         }
       ]
     }

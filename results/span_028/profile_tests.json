@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "tests": 6,
+  "runner": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_span028_profile.py -v",
+  "observed_test_seconds": 0.133,
+  "source_sha256": {
+    "src/arena/span028_checks.py": "3a685a55eb37d053caa7305ab8a56f07117b43e345b69933fef77fb70e680c48",
+    "src/arena/span028_profile.py": "b1c230566ae94202a68491585b23b5f697acfe7340e4334ea6fd7de4cac70df8",
+    "src/arena/span028_runtime.py": "409fe4da2f5fb19c70a2738fdbce88467ace244eec117d6e35e6b79ac2443ac8",
+    "tests/test_span028_profile.py": "ab3c42f6988f87bb930c9f9a15d5888420d351ad261a660a1bdb6640566bb047"
+  },
+  "actual_gpu_engine_executed": false
+}

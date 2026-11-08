@@ -1,0 +1,279 @@
+{
+  "at": "2026-11-08T21:09:44.660641+00:00",
+  "passed": true,
+  "labels_read": false,
+  "quality_measured": false,
+  "gpu_probability_identity_measured": false,
+  "gpu_speedup_measured": false,
+  "new_gpu_executions": 0,
+  "packing_tokens": 8192,
+  "queue_depth": 2,
+  "producer_threads": 1,
+  "cpu_cap_seconds": 300,
+  "elapsed_cpu_seconds": 31.847062963061035,
+  "actual_native_cohorts": {
+    "m0": {
+      "warmup": {
+        "rows": 80,
+        "micro_batches": 9,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "2310cdd39ed2797d9af8325e310e59ee1ac51ca20082050aba1ebc49ac0ae5d5",
+        "host_tensor_sha256": "0b12262096be6e3a3fc4a570583a333f7b8956f618950c0d41bfddcfbe90382d",
+        "local_synchronous_preparation_seconds": 0.44733449001796544,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 0.27016622107475996,
+          "producer_queue_wait_seconds": 1.971190795302391e-05,
+          "consumer_queue_wait_seconds": 0.2704139919951558
+        }
+      },
+      "control": {
+        "rows": 256,
+        "micro_batches": 33,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "4015e2ba9056bdc0b48938ed155b367669bd99bd29f9c6ecc83972ea260d0b84",
+        "host_tensor_sha256": "20084f681cedd60e5fb1ea07e546708a1019b0986b21a30216b82e74d5a06d46",
+        "local_synchronous_preparation_seconds": 1.088361494941637,
+        "local_prefetch_metrics": {
+          "prepared_batches": 4,
+          "preparation_seconds": 1.3609247810672969,
+          "producer_queue_wait_seconds": 6.292387843132019e-05,
+          "consumer_queue_wait_seconds": 1.3410136331804097
+        }
+      },
+      "uniform": {
+        "rows": 512,
+        "micro_batches": 67,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "8f6eeb69e3c4a8193140ea3d6d596af5edc27a93f9d4a72091ea1f66f4be6f50",
+        "host_tensor_sha256": "ba24dbf9c36115dab8a1d7bdc17a3a5ec187e199bebc2ece780774dde1e0c694",
+        "local_synchronous_preparation_seconds": 2.4682550677098334,
+        "local_prefetch_metrics": {
+          "prepared_batches": 7,
+          "preparation_seconds": 3.2889457419514656,
+          "producer_queue_wait_seconds": 0.00011161412112414837,
+          "consumer_queue_wait_seconds": 3.246947028208524
+        }
+      },
+      "long": {
+        "rows": 64,
+        "micro_batches": 63,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "d608e39edf4ee1625ab606373b97b0cb0192cfb18a1c3206fa86eb28a5fe6edc",
+        "host_tensor_sha256": "b2629873a1335b4467716e9696ecf7bd02beb494fae4812d3c9c3c5ba6a1d7d0",
+        "local_synchronous_preparation_seconds": 2.043293999740854,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 2.0745411538518965,
+          "producer_queue_wait_seconds": 1.4162855222821236e-05,
+          "consumer_queue_wait_seconds": 2.074880117783323
+        }
+      },
+      "test": {
+        "rows": 3,
+        "micro_batches": 1,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "996f7403e8e8d9b1fb96dfbb92b743bb02a4d7883892aa372021cd11e4787cfc",
+        "host_tensor_sha256": "80f530fea7859891487aa663160bf5bc51af5a10e84ed85f9197981055fe1adc",
+        "local_synchronous_preparation_seconds": 0.022969527868553996,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 0.033017425099387765,
+          "producer_queue_wait_seconds": 2.5095883756875992e-05,
+          "consumer_queue_wait_seconds": 0.033206742722541094
+        }
+      }
+    },
+    "m3": {
+      "warmup": {
+        "rows": 80,
+        "micro_batches": 9,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "c1441f13c64a03cf0055e15680ad0eb00b3936762084850d3f5b8df5a3ca1c76",
+        "host_tensor_sha256": "b615102ab0bbbc8c9543ef0dba5a65d7c1bb081edf88a450f89cf438366bb61c",
+        "local_synchronous_preparation_seconds": 0.30446572694927454,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 0.37317921919748187,
+          "producer_queue_wait_seconds": 1.071183942258358e-05,
+          "consumer_queue_wait_seconds": 0.3733677950222045
+        }
+      },
+      "control": {
+        "rows": 256,
+        "micro_batches": 33,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "159305f636305c46bc4cea9da26c6f8080050392c2fa6b0c33662a48d303019a",
+        "host_tensor_sha256": "4c57aa797ae933daf435243986b8e90589f9e885b1a17bf945ec8f6964da753f",
+        "local_synchronous_preparation_seconds": 1.0825739356223494,
+        "local_prefetch_metrics": {
+          "prepared_batches": 4,
+          "preparation_seconds": 1.2259454599115998,
+          "producer_queue_wait_seconds": 6.595905870199203e-05,
+          "consumer_queue_wait_seconds": 1.2019736079964787
+        }
+      },
+      "uniform": {
+        "rows": 512,
+        "micro_batches": 65,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "e9b8f367f489125fd0cae8395fe0112b8a4ac93a4a48818cea9ff960ccb4edaf",
+        "host_tensor_sha256": "1178fb8774105bfc18ae0bbf1d5cf552900290023f157096e839ef017bd41141",
+        "local_synchronous_preparation_seconds": 2.2908812151290476,
+        "local_prefetch_metrics": {
+          "prepared_batches": 7,
+          "preparation_seconds": 2.2707471472676843,
+          "producer_queue_wait_seconds": 8.639064617455006e-05,
+          "consumer_queue_wait_seconds": 2.2455145567655563
+        }
+      },
+      "long": {
+        "rows": 64,
+        "micro_batches": 63,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "6e0f08197545d18acf3a90444912d308d30fd94c1446cde57d3751a2f2363b63",
+        "host_tensor_sha256": "7540d31a66af1831bc4c0214e2ef7a77dd0ac3c5b3912616bf0cd6311049673e",
+        "local_synchronous_preparation_seconds": 1.9532351321540773,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 1.9083941981662065,
+          "producer_queue_wait_seconds": 1.0838964954018593e-05,
+          "consumer_queue_wait_seconds": 1.9087014510296285
+        }
+      },
+      "test": {
+        "rows": 3,
+        "micro_batches": 1,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "e5fd6d2547a78633b8231a60155bb7f6aa3260a0213e13979b24a42be7ab73eb",
+        "host_tensor_sha256": "6ae69a733931cc6fab6232d1c7a57afb2913034173bd2cda81cbb99d83213f84",
+        "local_synchronous_preparation_seconds": 0.029614731902256608,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 0.02899817004799843,
+          "producer_queue_wait_seconds": 2.619088627398014e-05,
+          "consumer_queue_wait_seconds": 0.02922817412763834
+        }
+      }
+    },
+    "m0_reverse": {
+      "warmup": {
+        "rows": 80,
+        "micro_batches": 9,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "5e68385602aded43a3050065363d5e23fb7bd06e2b1cd0cf9c79b8e31b3db0b3",
+        "host_tensor_sha256": "f494efb42ee0cc0c499194d469e2c5a712e69f7bf44a652d14ef04314c5fc6c5",
+        "local_synchronous_preparation_seconds": 0.2836853601038456,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 0.32224159594625235,
+          "producer_queue_wait_seconds": 1.1269934475421906e-05,
+          "consumer_queue_wait_seconds": 0.3224777178838849
+        }
+      },
+      "routed_control": {
+        "rows": 42,
+        "micro_batches": 4,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "33330f136636476773134f18defd35c4362744a06012f80d03e88f5d3262d1b9",
+        "host_tensor_sha256": "336381cdcce2ca84f963065a4439a52de1caefbd347abf5b9b3c1aa29b46a872",
+        "local_synchronous_preparation_seconds": 0.1810300019569695,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 0.14377565402537584,
+          "producer_queue_wait_seconds": 1.2508127838373184e-05,
+          "consumer_queue_wait_seconds": 0.14356983080506325
+        }
+      },
+      "routed_uniform": {
+        "rows": 83,
+        "micro_batches": 8,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "f1c3e4fd8bd682861bdcae224d2e9eb55117e92031a11ca2650a49130b72e307",
+        "host_tensor_sha256": "98579eb86bbdc46597d65a762da3a1f7e9c2db44d15a23c959ad6e284033bc95",
+        "local_synchronous_preparation_seconds": 0.27290975488722324,
+        "local_prefetch_metrics": {
+          "prepared_batches": 2,
+          "preparation_seconds": 0.20824201311916113,
+          "producer_queue_wait_seconds": 2.2088875994086266e-05,
+          "consumer_queue_wait_seconds": 0.20275716832838953
+        }
+      },
+      "routed_long": {
+        "rows": 6,
+        "micro_batches": 5,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "fde011050e5ec5d8f29abe148d5e57e7d309026badbffd189981414fbe35b207",
+        "host_tensor_sha256": "0deebc29633eecd48e2d7db517c892916c2bb61911a61000a391a8afe9ac7bc5",
+        "local_synchronous_preparation_seconds": 0.23664321191608906,
+        "local_prefetch_metrics": {
+          "prepared_batches": 1,
+          "preparation_seconds": 0.22215118329040706,
+          "producer_queue_wait_seconds": 1.3854121789336205e-05,
+          "consumer_queue_wait_seconds": 0.22167832986451685
+        }
+      },
+      "routed_test": {
+        "rows": 0,
+        "micro_batches": 0,
+        "exact_host_batches": true,
+        "exact_row_order": true,
+        "exact_positions": true,
+        "token_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "host_tensor_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "local_synchronous_preparation_seconds": 5.0034839659929276e-05,
+        "local_prefetch_metrics": {
+          "prepared_batches": 0,
+          "preparation_seconds": 9.773997589945793e-05,
+          "producer_queue_wait_seconds": 1.4569144695997238e-05,
+          "consumer_queue_wait_seconds": 0.0002772919833660126
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "GOAL.md": "cc271db0797788677194610efa6d21b04e1d57733906350fec0371398fa3a02b",
+    "docs/SPAN_028_PLAN.md": "a416fed11002c0a00fadfff45e5efb0482436fee25b359ac9179dc4dce121eea",
+    "scripts/audit_span_028_cpu.py": "511208e90491f68c626d2e66a2045598c20cc88c3ca966eb315d84b5b94f4476",
+    "src/arena/cpu_prefetch.py": "da7502af819a86c421717f68d40c4a9892cad60bc2f49279247805697be30c35",
+    "tests/test_cpu_prefetch.py": "54fab79e57894f8b0761518ab65e48335c7622cf8e9b55e2fc630774b6cbdcc5"
+  },
+  "native_source_sha256": {
+    "runs/span_009/research/lmsys-modules-0805/data/collators.py": "437ecaa754f212e9fbe0167b1ef5ab56ff357fc50d5d1f97044b9886d141e4aa",
+    "runs/span_009/research/lmsys-modules-0805/data/dataset.py": "cc43ecc3d5d73f9bda29d17c0129ac300e64512d14a33b24037bc550d9758f62",
+    "runs/span_009/research/lmsys-modules-0805/data/processors.py": "cc2376291ff5e499f0738a204848d3f1c75b9bf4399d32678d0696fa334078b7"
+  },
+  "token_reference_sha256": "7c2e4ade039b661ed00ca55d858b089d557b4c7c1f31fa5286999d54dc22eae7",
+  "output_sha256": {
+    "runs/span_028/cpu_batch_references.json": "64f5f1c5b4c46d29de3f13aab6da77f516193925e4f3d55a7a6a4c195fea21f5"
+  },
+  "preservation_sha256": "c3f90c39bbe86fd613ee2ffc8e551b0428ae5ba5c22a87de881bbf9fcb0984e8"
+}

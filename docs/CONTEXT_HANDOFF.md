@@ -1,6 +1,6 @@
 # V27 closed at numerical guard; v28 CPU-prefetch prerequisite queued
 
-Snapshot 2026-11-08 21:00 UTC (November9 Moscow). Read PROJECT_POLICY.md and
+Snapshot 2026-11-08 21:15 UTC (November9 Moscow). Read PROJECT_POLICY.md and
 verify live state before acting. Persistent goal: own team17244411 rank<=19
 on a fresh complete official board after legitimate inference. ACTIVE and
 unachieved. Latest complete board20:55:30UTC:23/310,0.82987;19th/20th0.82915,
@@ -8,23 +8,58 @@ leader0.82692. Best H60receipt58103553/span013-gemma-order/1. No new official.
 
 ## Current state and immediate next action
 
-V27 is SEALED. Active backlogv28, focus[E18,H73] selected;39active items=
-38carried+newE18. V29draftempty.93registeredtasks/110immutable snapshotfiles.
-V27closure published d58c8e5; exact archive docs/GOAL_V27.md.
-New GOAL.md/docs/SPAN_028_PLAN.md select E18 then conditionalH73, same original
-deadline/quota; E18RUNNING=CPUsourcepreparation, H73DEFERRED. No v28GPU.
-New bounded CPU FIFOcomponent/tests ready: seven unittest casesPASS0.104s,
-including source/consumer failures, fullqueue close and device-tensor rejection.
-Nextfreeze/pushCPUmethod, then run ONCE timeout300s env
-PYTHONPATH=/tmp/llm_span019_runtime .venv/bin/python scripts/audit_span_028_cpu.py
-withescalation. It creates preservation110snapshots and all15actualnative
-8192synchronous/prefetched tensor/boundary/position/token proofs plus local
-preparation timings; no GPUprobability/speed/qualityclaim. Recordhandle; never
-overwrite proof/preservation outputs or silently restart a failed partial proof.
-E18 is original8192CPU thread prefetch, not a10240retry or numerical relaxation.
-H73 is DEFERRED and uncomputed; live v28task explicitly replaces failedH74
-with E18 as the required successful prerequisite. Immutable old snapshots remain.
-Do not execute the old10240H73design or mark its failed prerequisite successful.
+V27SEALED/published d58c8e5. V28active focus[E18,H73], E18RUNNING=GPUsource
+preparation, H73DEFERRED/uncomputed. V29draftempty;93tasks/110snapshotfiles.
+New GOAL.md/docs/SPAN_028_PLAN.md selected and CPUmethod pushed a0c78a6.
+Old GOAL exact archive docs/GOAL_V27.md. No live jobs and no v28GPUadmitted.
+
+E18CPUproof59216TERMINALexit0:31.847s/300. ALL15actualnativecohorts exact
+host tensors, tokens/order/positions/original8192microbatch boundaries, oneCPU
+producer/FIFOqueue2; no labels/modelweights/GPU/speed/quality measured. Native
+local prep uniform G2.468s/L2.291s/reverse83rows0.273s is NOT Kaggleforecast.
+Proof/results/preservation under results/span_028; heavy exact references at
+ROOT/runs/span_028/cpu_batch_references.json. Neverrerun/overwrite audit or
+preservation. CPUsource hashes freeze cpu_prefetch.py, its tests, auditor,
+GOAL andPLAN; keep those unchanged absent a documented new concern.
+
+Seven standard unittest FIFO/producer/consumer/fullqueue/hostonly/finalizer
+checks pass; six profiletests pass including changedboundaries/unjoinedproducer,
+rawfailurepreservation/earlystop/route+CSV/worseruntime. profile_tests.json.
+No pytest installed; use unittest. One initial pytest invocation failed only
+because the runner was absent; tests were converted to standard unittest.
+Notebook40executed92921TERMINALexit0 via build_span_028_review.py; CPUtable,
+test evidence and pending GPU limits explicit. docs/SPAN_028_CPU_PROOF.md.
+
+GPUengine/checks/driver/runtime source PREPARED (span028*.py), not admitted.
+Engine copies nativeH60forward, original8192groups and batch80; wraps DataLoader
+in CpuPrefetch context, hashes full host tensors and per-batch microseq lengths,
+records queue/preparation and forward-launch/transfer/hostcopy wall timings.
+Actual end-to-end elapsed alone enters projection, no overlap doublecount.
+Strictoldraw<=1e-5 and all80warmups retained. All new source can be reviewed/
+finished before its GPUfreeze; only CPUproof source list is already frozen.
+
+NEXTfinish new v28profile preparer, runtime reference/resourceplan, builder,
+controller and independent terminal auditor (NONEEXISTYET). Reuse existing
+span027infrastructure as frozen templates WITHOUT modifying historical files.
+Role prefetch_profile, newprivate slugspan028-native-prefetch. Spec should copy
+unchanged old frames/checkpoint/token controls, set packing8192 and embed CPU
+batch_references groups+host_tensor_sha256 perrole/cohort. Stage cpu_prefetch.py
+as standalone module in notebook. Early guards plus terminal all-cohort oldgold
+comparison, exact nativegroups/hosthash/route/mixture/CSV/source/twoT4memory,
+worse cold/fullwarm/other and20pctmargin/600reserve,<32400. Use actualnewmode
+rates (synchronous8192 is comparator), laterH73takesworse pilot/current rates.
+Rehearse actualserializedcells/imports/mode/worker/watchdog/Jupyter BEFOREGPU,
+freeze/push full source, fresh full admission and one<=3600s profile only.
+No admission before all is concrete. No v28pushintent/acceptedhandle exists.
+If any experiment guard fails, preserve and stop, defer H73; no rescuegrid.
+
+H73live v28explicitly replaces failedH74 prerequisite with E18. It stays deferred
+until E18actually passes; oldv27snapshots/failed10240contract remain immutable.
+Then only fixed uncomputed60/40prior on qualifiedoriginal8192prefetch, no6kextra,
+one<=300sCPUdescriptive replay(seed42/2000groups), fixed-.005grossguard, then
+one<=3600sactualfullqualification/onefrozenofficial ifeligible. No fitting/grid.
+Wholev28public<=7200s/twoacceptedversions andofficial<=32400, originaldeadline/
+quota anchor. No newweights/training/externaltextservice or GPUwhileofficialpending.
 
 H74 accepted ONCE arseniytrushin/llm-preference-span027-native-packing/1.
 Controller42856/PID1269591 TERMINALexit0; COMPLETE20:53:17UTC, retrieval23files,

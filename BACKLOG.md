@@ -227,6 +227,7 @@ One bounded CPU producer thread may hide preparation latency while preserving th
 
 - 2026-11-08T20:58:49+00:00 — planned: Observed packing-induced probability drift rejects10240identity path. Queue one original8192CPU-prefetch prerequisite with unchanged microbatches/strict controls; speedup unmeasured, no v27execution. Evidence: [docs/SPAN_027_PREFETCH_DISCOVERY.md](docs/SPAN_027_PREFETCH_DISCOVERY.md)
 - 2026-11-08T21:03:58+00:00 — running: V28boundedfocus selected. Starting source-only CPU preparation and FIFO/error/teardown tests; no native proof/timing or GPU yet. Freeze method and preserve110snapshots/usernotebooks before bounded native proof. Evidence: [docs/SPAN_028_PLAN.md](docs/SPAN_028_PLAN.md)
+- 2026-11-08T21:14:20+00:00 — running: Frozen CPUmethod a0c78a6: controller59216 TERMINALexit0,31.847s/300, all15actualnativecohorts exact host tensors/token streams/IDs/positions/original8192microbatch boundaries.110snapshots/user files preserved.7FIFO/teardown tests+6profile guard/route/CSV/runtime tests pass; GPUengine source prepared but no GPU/cell rehearsals/admission yet. H73 remains deferred/uncomputed. Evidence: [docs/SPAN_028_CPU_PROOF.md](docs/SPAN_028_CPU_PROOF.md)
 
 ### H02
 
