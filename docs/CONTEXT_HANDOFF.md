@@ -1,6 +1,6 @@
-# V27 closed at numerical guard; v28 CPU-prefetch prerequisite queued
+# V28 native CPU-prefetch profile ready for admission
 
-Snapshot 2026-11-08 21:15 UTC (November9 Moscow). Read PROJECT_POLICY.md and
+Snapshot 2026-11-08 21:22 UTC (November9 Moscow). Read PROJECT_POLICY.md and
 verify live state before acting. Persistent goal: own team17244411 rank<=19
 on a fresh complete official board after legitimate inference. ACTIVE and
 unachieved. Latest complete board20:55:30UTC:23/310,0.82987;19th/20th0.82915,
@@ -38,20 +38,32 @@ Actual end-to-end elapsed alone enters projection, no overlap doublecount.
 Strictoldraw<=1e-5 and all80warmups retained. All new source can be reviewed/
 finished before its GPUfreeze; only CPUproof source list is already frozen.
 
-NEXTfinish new v28profile preparer, runtime reference/resourceplan, builder,
-controller and independent terminal auditor (NONEEXISTYET). Reuse existing
-span027infrastructure as frozen templates WITHOUT modifying historical files.
-Role prefetch_profile, newprivate slugspan028-native-prefetch. Spec should copy
-unchanged old frames/checkpoint/token controls, set packing8192 and embed CPU
-batch_references groups+host_tensor_sha256 perrole/cohort. Stage cpu_prefetch.py
-as standalone module in notebook. Early guards plus terminal all-cohort oldgold
-comparison, exact nativegroups/hosthash/route/mixture/CSV/source/twoT4memory,
-worse cold/fullwarm/other and20pctmargin/600reserve,<32400. Use actualnewmode
-rates (synchronous8192 is comparator), laterH73takesworse pilot/current rates.
-Rehearse actualserializedcells/imports/mode/worker/watchdog/Jupyter BEFOREGPU,
-freeze/push full source, fresh full admission and one<=3600s profile only.
-No admission before all is concrete. No v28pushintent/acceptedhandle exists.
-If any experiment guard fails, preserve and stop, defer H73; no rescuegrid.
+V28GPUprofile source/preparer/controller/builder/independent auditor now ready.
+prepare_span_028_profile.py DONE ONCE (0.064s), spec/controls/nativebatch refs
+saved. run_span_028_profile.py --prepare77908TERMINALexit0: immutable plan has
+29919.217used/78080.783free, same Nov14anchor and originalNov10deadline.
+Original8192microbatch/token references and full hosthashes embedded in spec;
+native collator/processor/dataset hashes pinned. Runtime retains worse historic
+cold/fullwarm/other and uses actualnewprefetch throughput,20pctmargin/600reserve.
+
+Actual forward-loop CPUrehearsal(1test) passed, maintaining output order and
+consumer-only simulatedGPUcalls; not real model/hardware. Total14focused tests.
+Builder44053TERMINALexit0: actualserialized success/failure/watchdog cells,
+standalone imports, rerunguard public/hidden rejection and JupyterstartupPASS.
+prefetch_profile_bundle.json freezes27sourcefiles plus notebook/settings hashes.
+Notebook40rerendered28059TERMINALexit0 with actualpreparation/rehearsals.
+
+NEXTfreeze/push all currentnewcode/results/bundle, then launch ONCE
+.venv/bin/python scripts/run_span_028_profile.py with escalation for freshfull
+admission (inventory normally2-3min). No v28pushintent/acceptedhandle existsYET.
+Record returned unifiedhandle; observe same handle/version, neverrelaunch after
+observation timeout. Roleprefetch_profile/private slugspan028-native-prefetch.
+After accepted, verify_experiment_source.py prefetch_profile --span28 read-only.
+Then observe SAME job throughterminal/retrieval and audit_span_028_profile.py
+ONCE. Early guards stop before latermodels; terminal audit checks every oldraw
+cohort<=1e-5 and all source/host tensors/boundaries/route/mixture/CSV/memory,
+actualnewmode fullprojection<32400. No grid/numerical relaxation/faster-node
+retry. If engineering fails, preserve result and deferH73; no resumption.
 
 H73live v28explicitly replaces failedH74 prerequisite with E18. It stays deferred
 until E18actually passes; oldv27snapshots/failed10240contract remain immutable.
@@ -78,7 +90,7 @@ H74DONEnegative; H73DEFERREDwithout60/40probabilities or GPU. E18 queued from
 actual failure, with original8192exactmicrobatches/FIFO CPU producer queue2,
 CUDA only on consumer, no fork, exactinput/order/positions proof and teardown
 rehearsals, then one strict all-role actual profile. Speedup unmeasured. See
-SPAN_027_PREFETCH_DISCOVERY.md. No prefetch code/timing/GPU has been run.
+SPAN_027_PREFETCH_DISCOVERY.md. At v27closure no prefetch code/timing/GPU had been run; v28CPU evidence is above.
 
 Reports: docs/SPAN_027_RESULTS.md, results/span_027/profile_audit.json and
 failure_description.json. Final executed Notebook39 includes drift table and

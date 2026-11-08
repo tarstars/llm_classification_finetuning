@@ -7098,6 +7098,14 @@
           "evidence": [
             "docs/SPAN_028_CPU_PROOF.md"
           ]
+        },
+        {
+          "at": "2026-11-08T21:21:53+00:00",
+          "status": "running",
+          "note": "GPUprofile preparation and immutable resourceplan complete: used29919.217/free78080.783s, sameNov10deadline/Nov14anchor,7200public/32400official envelope. Native-loop CPU rehearsal passes(14focusedtests total). Builder44053 TERMINALexit0: exactserialized success/failure/watchdog, imports, information-rerun guard and Jupyterstartup pass. Source/runtime/hosthash/boundary auditor prepared; nextfreeze/push before fresh full admission. No v28GPUyet; H73deferred.",
+          "evidence": [
+            "results/span_028/prefetch_profile_cell_rehearsals.json"
+          ]
         }
       ]
     }

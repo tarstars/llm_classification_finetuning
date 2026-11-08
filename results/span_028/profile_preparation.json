@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-08T21:17:47.295478+00:00",
+  "prepared": true,
+  "uses_targets": false,
+  "profile_spec_sha256": "bac94456464db1a0f953e37cf153d6deb1cddc1a395a77aea3b8c43ea2c97d93",
+  "canonical_control_sha256": {
+    "m0.npz": "ddb82facbc2a15439761816e899cf99847723dedba2a5576e7a419ed999a9da7",
+    "m0_reverse.npz": "a6cd5f2d836ae2c9939d29f328b0bec6925e91497c68cdde877d20ccb82d5c8c",
+    "m3.npz": "fe2c40d27489313d7b3659a04bc442e5a104b0f2620e15276bf1b58f73329959"
+  },
+  "cpu_audit_sha256": "b95e7a6172da938a0f37b58de56bba772066678af894e33c5390f26bcf01f7d5",
+  "cpu_batch_reference_sha256": "64f5f1c5b4c46d29de3f13aab6da77f516193925e4f3d55a7a6a4c195fea21f5",
+  "packing_tokens": 8192,
+  "conversation_tokens": 4096,
+  "queue_depth": 2,
+  "producer_threads": 1,
+  "elapsed_cpu_seconds": 0.06400751206092536,
+  "new_gpu_executions": 0
+}

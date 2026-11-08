@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "tests": 1,
+  "observed_test_seconds": 0.025,
+  "scope": "Actual forward-loop source with real CPU tensors and fake device operations; not a real GPU or model quality test",
+  "source_sha256": {
+    "src/arena/span028_engine.py": "71f4658a0062e7644f27570a9288ab71bdd62c24f4c95eda5d026325771414f1",
+    "src/arena/cpu_prefetch.py": "da7502af819a86c421717f68d40c4a9892cad60bc2f49279247805697be30c35",
+    "tests/test_span028_forward_rehearsal.py": "f812d93b8056a5d53f07cbfe2e15976a16accfd34768b94ad7507bee6b39a348"
+  }
+}

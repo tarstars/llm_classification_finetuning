@@ -30,13 +30,15 @@ print('CPU proof elapsed:',proof['elapsed_cpu_seconds'],'seconds; cap:',proof['c
 print('Packing:',proof['packing_tokens'],'; producer threads:',proof['producer_threads'],'; queue:',proof['queue_depth'])
 print('No labels, GPU inference, probability identity, speedup or quality measured.')
 print('Preparation times are laptop measurements during an audit, not expected Kaggle savings.')
-for name in ['prefetch_tests.json','profile_tests.json']:
+for name in ['prefetch_tests.json','profile_tests.json','forward_loop_rehearsal.json','prefetch_profile_cell_rehearsals.json']:
  path=PUB/name
  if path.exists():print(name,json.loads(path.read_text()))
 decision=PUB/'profile_audit.json'
 if decision.exists():
  result=json.loads(decision.read_text());print('Engineering decision:',result)
-else:print('GPU source/cell rehearsals, admission, inference and engineering audit still pending.')
+else:print('GPU inference and its terminal engineering audit are pending. Preparation evidence above does not admit H73.')
+status=PUB/'jobs/prefetch_profile/status.json'
+if status.exists():print('Last observed exact GPU job:',json.loads(status.read_text()))
 print('H73 fixed60/40prior remains deferred until the engineering prerequisite passes.')''')])
     nb.metadata['kernelspec'] = dict(display_name='Python 3', language='python', name='python3')
     executed = NotebookClient(nb, timeout=120, kernel_name='python3',

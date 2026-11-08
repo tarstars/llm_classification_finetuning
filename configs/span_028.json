@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-08T21:18:13.518904+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "job_seconds_caps": {
+    "prefetch_profile": 3600,
+    "weight_qualification": 3600
+  }
+}
