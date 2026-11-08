@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-11-08T22:30:59.212949+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "initial_quota": {
+    "used_seconds": 31657.474,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 76342.526
+  },
+  "quota_used_at_start": 31657.474,
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "gpu_session_seconds_cap": 3600,
+  "public_version_limit": 1,
+  "official_candidate_limit": 1,
+  "initial_public_cap_seconds": 3600,
+  "hidden_cap_seconds": 32400,
+  "packing_tokens": 8192,
+  "conversation_tokens": 4096,
+  "raw_probability_tolerance": 1e-05,
+  "recipe": "normalized(.4 Gemma original + .6 aligned Llama swapped), no route/reverse, T1",
+  "parent_profile_public_charged_seconds": 1738.2569999999978,
+  "prior_weekly_used_seconds": 31657.474
+}

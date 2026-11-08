@@ -1,6 +1,6 @@
 # V30 fixed Llama-heavy CPU guard passes; actual qualification next
 
-Snapshot 2026-11-08T22:21:49.241590+00:00. Read PROJECT_POLICY.md and verify current files/live state.
+Snapshot 2026-11-08T22:40:09.299719+00:00. Read PROJECT_POLICY.md and verify current files/live state.
 Persistent goal ownteam17244411rank<=19 on fresh complete officialboard after
 legitimateinference. ACTIVE/unachieved. Latestcompleteboard22:12:37UTCNov8:
 23/310,0.82987;19th/20th0.82915,leader0.82692. BestH60receipt58103553,
@@ -11,8 +11,7 @@ span013-gemma-order/1. No newofficial since H60; no live ownjobs now.
 V29SEALED/published6030aa3. Activev30focus[H76],H76RUNNING=actualGPU
 qualification SOURCEPREPARATION.39activeitems=38carried+H76,V31draftempty,
 95registeredtasks,118immutable snapshotfiles. GOAL.md/docs/SPAN_030_PLAN.md
-selected/pushedc0b01e6 BEFORE40/60quality. No activeGPU/official; no GPU
-qualification source/controller/builder/spec/resourceplan EXISTS YET in v30.
+selected/pushedc0b01e6 BEFORE40/60quality. No activeGPU/officialYET; qualification and official-ready source now prepared below.
 
 H76CPUreplay11860TERMINALexit0,1.7475s/300. One normalized.4G+.6alignedL,
 T1,noroute/reverse. UniformH60.6529882483->candidate.6453783692, gain+.007609879,
@@ -25,31 +24,49 @@ CPUsource/result hashes frozen; src/arena/span030_mixture.py exactprior must sta
 Two mixtureunit tests pass. Preservation captures118snapshots/sameuserfiles.
 Report docs/SPAN_030_CPU_RESULTS.md and executedNotebook42(80799exit0).
 
-NEXTbuild one actual TWO-ROLE candidate qualification and official-ready mode.
-Use frozen span028engine/CpuPrefetch as templates in NEWspan030files, never
-modify oldsource or frozenCPUmethod. Roles onlym0,m3; originalnativeforward,
-4k/8192/batch80/queue2/fp16/kernels/sharding. Newafter_cohort hooks for public
-qualification: alloldcanonicalraw<=1e-5, CPUhosttensor/microgroup/token/checkpoint/
-position/memory/ID controls. Hiddenmode must run actualtesttext and sameforward,
-validate ownactualtestIDs/positions/source/memory, and NEVERread publicprediction
-caches ortrainlabels. Two-role driver outputs normalized .4G+.6alignedL via the
-unchanged span030_mixture.py; no router/reverse. Publicframesold80warm/control/
-uniform512/long64/visible3; hiddenfull80warmfromactualtest. Source/checkpoints
-pinnedpublicassets. Raw/control fixtures only publicmode, no hiddenlookup.
+H76actualcandidate sources PREPARED: span030_engine copies unchanged E18
+8192forward/CpuPrefetch, rolesm0/m3 only, checkpointassertbeforemodel load;
+span030_pipeline publicqualification/hidden actualtextinfer, no route/reverse;
+span030_checks publicstrictgold/hostgroups vs hiddenactualframeIDs and source/
+position/memory withoutgold. Hidden specminimal4keys, no publiccontrol cache.
+span030_runtime retains worse matching E18/current two-role rates + worse
+cold/full80warm/other,20pctmargin/600reserve,<32400. Derived mixture replay
+rtol1e-12/atol1e-14 andCSVatol1e-12 are roundoff only; raw<=1e-5 unchanged.
 
-Newruntimehelper: twoactualroles, worse MATCHING E18/current per-roleuniform
-rates, retained worse cold/full80warm/other,20pctmargin/600reserve,<32400.
-E18baseratesG293.909022817,L213.175659101; old2rolescreen30766.761525 only.
-One<=3600sactualqualification/MAXONEacceptedversion then ONEfrozenofficial
-<=32400onlyafteraudit/allgates/source+decisioncommittedpushed and freshfull
-admission. Need serializednotebook import/public+hidden branches/actual final
-success-failure/watchdog/Jupyterrehearsals and sourcefreeze BEFOREGPU. Metadata
-id/title should resolve same slug (avoid prior normalization warning), but always
-observe returnedexactidentity. Durable intent and no duplicate mutation.
-Prepare officialsubmission controller from existing successful span013pattern;
-no submit before actualqualification result, committed decision and freshquota/
-receipts/dependencies. No newqualityvariants, extraGPUengineeringrun, retry or
-faster-node rescue; H73staysdeferred. No GPUwhileofficialpending.
+Seven targetedtests pass .136s: mixture, realforwardloop CPUstub, public+hidden
+actualdriver, earlyguardstop, hiddennoGold, runtimefloors/nooverlapdoublecount.
+Candidate_tests.json captures sourcehashes. prepare_span_030_candidate.py
+executedONCEexit0(.0447s): qualification_spec/hidden_spec/2canonicalcontrols and
+runtime refs saved; neveroverwrite. run_span_030_candidate.py --prepare47206
+TERMINALexit0:31657.474used/76342.526free,Nov14anchor,originalNov10deadline,
+public<=3600/max1acceptedversion/official<=32400. No resource resets.
+
+Builder55856TERMINALexit0. Actualserializedstaging/pipeline/finalworker tested
+public3andhidden101rows withCPUengine stand-in; hiddennoTrain/noControls and
+newactualIDs. Imports/modeflags/failure/watchdog/Jupyterstartup allPASS. Actual
+GPU/model execution stillunmeasured for H76. weight_qualification_bundle.json
+freezes fullsource+settings, notebook supports actualhiddenbranch. Notebook42
+rerendered29100exit0 withsource/testevidence andpendingqualificationstatus.
+
+Independent auditor scripts/audit_span_030_candidate.py ready; onCOMPLETE
+verifieseveryoldrawcohort/source/hostgroups/tokens/CSV/memory, actualruntime,
+then onlyifpass allowsoneofficial. scripts/submit_span_030_candidate.py ready:
+preparedecisionlocalonlyafterqual; mustcommit/pushdecision+result beforeactual
+submission. Freshcompleteownedinventory/quota/receipts/publicv1deps and retained
+caps required. Durableintent, ONEAPIwrite, uncertainreplyreconcilesread-only
+historysameuniqueMESSAGE/notinpriorrefs, NEVERresubmits. Observe acceptedreceipt
+throughterminal and robustfullboard via observe_leaderboard.py. NoGPUwhilepending.
+
+NEXTfreeze/push allnewsource/results/bundle, then run ONCE
+.venv/bin/python scripts/run_span_030_candidate.py withescalation (freshfull
+inventorynormally2-3min). Record returnedunifiedhandle/PID/exactversion; no
+v30pushintent oracceptedversion existsYET. Afteraccepted run
+verify_experiment_source.py weight_qualification --span30 read-only. Observe
+SAMEhandle/version throughterminal/retrieval then auditor ONCE. Stop atany
+qualificationgate failure; no retry, thirdrole or faster-node rescue. Ifpasses,
+prepare/publishconcretedecision and submitONCE afterfreshfulladmission. Source
+metadata id/title matchllm-preference-span030-llama-prior; alwaysuse returnedref.
+Do NOT rerun frozenCPUreplay/preparers; H73staysdeferred andno moreweights.
 
 ## V29 terminal evidence
 

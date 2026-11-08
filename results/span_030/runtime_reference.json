@@ -1,0 +1,66 @@
+{
+  "at": "2026-11-08T22:28:27.158144+00:00",
+  "uses_targets": false,
+  "overhead_floor": {
+    "cold_by_role": {
+      "m0": 119.23438397500001,
+      "m3": 174.19820250799967,
+      "m0_reverse": 114.55043601000034
+    },
+    "warm_by_role": {
+      "m0": 59.54591524799997,
+      "m3": 45.94095688299967,
+      "m0_reverse": 52.86799434800014
+    },
+    "other_seconds": 55.848985514120784
+  },
+  "retained8192_uniform_seconds": [
+    {
+      "m0": 274.595901349,
+      "m3": 201.2409069129999,
+      "m0_reverse": 31.781841260999954
+    },
+    {
+      "m0": 290.599418366,
+      "m3": 213.45389028299996,
+      "m0_reverse": 32.80850909599985
+    }
+  ],
+  "old8192throughput_is_comparator_not_new_mode_floor": true,
+  "database_reference_sha256": {
+    "runs/span_013/jobs/gemma_order/output/order_completion/m0_summary.json": "dfcbf2312726d9c03a28207733a99a6ee8a9d334224fb17cc551d90b1c316431",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m3_summary.json": "7fef5c1d697923dc96d64d4688aa436e1181b8c97fd54e5642890e4b6d7f1715",
+    "runs/span_013/jobs/gemma_order/output/order_completion/m0_reverse_summary.json": "42bee932df843ec93c85a2b75936c0962014df9fbcfd485f68223aa9d0e4a492",
+    "runs/span_026/jobs/context_pilot/output/context_audit/m0_summary.json": "bdfa959b70deafc5d21f505299e3f278c7e6db1c77f4dd3c79270d1db7f8b51d",
+    "runs/span_026/jobs/context_pilot/output/context_audit/m3_summary.json": "a1184a9c38e30eb6bcb6e6f71eb743dde64ecf09de0c77edc0201170bcbacf59",
+    "runs/span_026/jobs/context_pilot/output/context_audit/m0_reverse_summary.json": "1c4d9f8dfc3ccc3c73b3c7f680d235e5a383bfc53d12d0cb82efa8c59ad98533",
+    "runs/span_026/jobs/context_qualification/output/context_candidate/m0_summary.json": "dc144837defecd47f6a6982974187bab2875556c954e516e20495a2c62791908",
+    "runs/span_026/jobs/context_qualification/output/context_candidate/m3_summary.json": "972944116a18f74c4fa95d8e0beda46c93c2072bf7c587cedbe9406aef8b0608",
+    "runs/span_026/jobs/context_qualification/output/context_candidate/m0_reverse_summary.json": "2c9e9d4a76c5326ca24be4ab08a390d61ea1622d3362b3eb8f14c133fba913f0",
+    "runs/span_026/jobs/context_pilot/output/session_summary.json": "02ab52c535f1e25cbea59db5e400823a906b838ca4149ee2f35513e888624854",
+    "runs/span_026/jobs/context_pilot/output/context_audit/runtime_spec.json": "3627e70b3c73e1128a3da59cf9fa4d9ddb9c8115e3cafab649a488c8279b9b30",
+    "runs/span_026/jobs/context_qualification/output/session_summary.json": "36276f4bb78748032d2648fdce71aeb12ea4455ff284d9add59316ac18792de0",
+    "runs/span_026/jobs/context_qualification/output/context_candidate/qualification.json": "aa1200916526489c702f89a40e242c4406a06c75a5600414e0a2aa1ddf043038"
+  },
+  "project_reference_sha256": {
+    "results/span_013/gemma_order_qualification.json": "925ab812dd16be5aeab1b5c649c773d82722050a73e43d6a672c914ffd68e700"
+  },
+  "elapsed_cpu_seconds": 0.0021569780074059963,
+  "execution_mode": "cpu_prefetch",
+  "packing_tokens": 8192,
+  "synchronous_throughput_is_comparator_not_new_mode_floor": true,
+  "inherited_reference_sha256": "30159a3c27ed30acb1286ed593b3d1a450c36ee5102f50c530954404913e0392",
+  "parent_summary_sha256": {
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m0_summary.json": "4dfc153bb1a58eb2cec2100ed974fd069b8f245c4c75e38118c35e47add8ded8",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m3_summary.json": "e1f782185f88319b9bac29d3e037f6563ff0d2ddef48f4be458ca29daf18d232"
+  },
+  "parent_summary_paths": {
+    "m0": "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m0_summary.json",
+    "m3": "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m3_summary.json"
+  },
+  "quality_recipe": "normalized(.4 Gemma original + .6 aligned Llama swapped)",
+  "roles": [
+    "m0",
+    "m3"
+  ]
+}

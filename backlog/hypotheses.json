@@ -7294,6 +7294,14 @@
           "evidence": [
             "docs/SPAN_030_CPU_RESULTS.md"
           ]
+        },
+        {
+          "at": "2026-11-08T22:38:45+00:00",
+          "status": "running",
+          "note": "Actual2rolepublic+hidden pipeline/engine/checks/runtime, independentqualification auditor and one-shotofficialcontroller prepared.7targetedtests pass including actualforwardloop CPUrehearsal. CandidatepreparationdoneONCE, quota47206exit0:31657.474used/76342.526free,sameNov14anchor/Nov10deadline,3600public+32400official. Builder55856exit0: serializedpublic3/hidden101actualpipeline+CSV/finalcell withCPUstand-ins, hiddennoTrain/noControls, imports/modes/failure/watchdog/Jupyter allPASS. Nextfreeze/pushsource thenfreshfulladmission; no v30GPUyet.",
+          "evidence": [
+            "results/span_030/weight_qualification_cell_rehearsals.json"
+          ]
         }
       ]
     }

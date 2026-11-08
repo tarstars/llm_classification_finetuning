@@ -43,7 +43,22 @@ for name in ['resource_close.json','final_leaderboard.json']:
  p=PUB/name
  if p.exists():print(name,json.loads(p.read_text()))
 print('Sequentially selected after failed60/40prior; cumulative trials:',r['cumulative_twoexpert_priors_tested'])
-print('H76CPUguard passes; actualGPUqualification/official remain unperformed. No hidden-score forecast.')''')])
+for name in ['candidate_tests.json','weight_qualification_cell_rehearsals.json']:
+ p=PUB/name
+ if p.exists():
+  v=json.loads(p.read_text());print(name,{k:v[k] for k in v if k not in ['source_sha256','rehearsals']})
+qualification=PUB/'candidate_qualification.json'
+if qualification.exists():
+ q=json.loads(qualification.read_text());print('Actual qualification:',q['decision'],'; official eligible:',q['official_submission_eligible'])
+ if 'runtime' in q:display(pd.DataFrame([q['runtime']]))
+else:
+ status=PUB/'jobs/weight_qualification/status.json'
+ print('Qualification status:',json.loads(status.read_text()) if status.exists() else 'Not yet admitted')
+official=PUB/'official_result.json'
+if official.exists():print('Official receipt outcome:',json.loads(official.read_text()))
+board=PUB/'official_leaderboard.json'
+if board.exists():print('Fresh complete official board:',json.loads(board.read_text()))
+print('The rank goal requires a completed official result and fresh complete leaderboard verification.')''')])
     nb.metadata['kernelspec']=dict(display_name='Python 3',language='python',name='python3')
     nb=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     assert all(c.execution_count is not None and not any(o.output_type=='error' for o in c.get('outputs',[])) for c in nb.cells if c.cell_type=='code')

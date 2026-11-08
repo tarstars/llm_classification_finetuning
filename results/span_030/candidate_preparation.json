@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-08T22:28:27.160365+00:00",
+  "prepared": true,
+  "qualification_spec_sha256": "97028dab31e61e6321d6ee14896cb31807802efd19de513f9db17b0cbfa93f84",
+  "hidden_spec_sha256": "6a31bb152b86e19d3f4b8fe158f40b05aafbe07ab85a00ce718c1c88b9103b2b",
+  "canonical_control_sha256": {
+    "m0.npz": "ddb82facbc2a15439761816e899cf99847723dedba2a5576e7a419ed999a9da7",
+    "m3.npz": "fe2c40d27489313d7b3659a04bc442e5a104b0f2620e15276bf1b58f73329959"
+  },
+  "quality_replay_sha256": "da3e221d058a3f9578d1c380ef0579e44014168af166e933e684eefcfe7f9894",
+  "mixture_sha256": "d31c3c8cff577b4e26cf051fb1fd2728eb2010be78cfb5fbdc4a3531c2a68dfa",
+  "elapsed_cpu_seconds": 0.044742963975295424,
+  "new_gpu_executions": 0
+}

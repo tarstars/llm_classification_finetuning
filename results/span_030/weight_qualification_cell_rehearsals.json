@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "mode_flag",
+      "flag": "",
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "name": "mode_flag",
+      "flag": "false",
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "name": "mode_flag",
+      "flag": "0",
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "name": "mode_flag",
+      "flag": "true",
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "name": "mode_flag",
+      "flag": "1",
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "name": "mode_flag",
+      "flag": " TRUE ",
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "name": "actual_staging_pipeline_final_cell",
+      "hidden": false,
+      "rows": 3,
+      "passed": true,
+      "fake_engine": true,
+      "session": {
+        "seconds": 1.3806569576263428,
+        "exit_code": 0,
+        "role": "weight_qualification"
+      }
+    },
+    {
+      "name": "actual_staging_pipeline_final_cell",
+      "hidden": true,
+      "rows": 101,
+      "passed": true,
+      "fake_engine": true,
+      "session": {
+        "seconds": 0.7389709949493408,
+        "exit_code": 0,
+        "role": "weight_qualification"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "session": {
+        "seconds": 0.011759519577026367,
+        "exit_code": 7,
+        "role": "weight_qualification"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "session": {
+        "seconds": 0.200836181640625,
+        "exit_code": -15,
+        "role": "weight_qualification"
+      }
+    }
+  ],
+  "standalone_imports_passed": true,
+  "actual_serialized_public_hidden_pipeline_passed": true,
+  "public_gold_not_materialized_hidden": true,
+  "notebook_engine_startup_passed": true,
+  "new_gpu_executions": 0
+}
