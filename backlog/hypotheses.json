@@ -5564,7 +5564,7 @@
       ],
       "id": "H61",
       "rank": 79,
-      "status": "running",
+      "status": "done",
       "introduced_in": 14,
       "discovered_during": 13,
       "derived_from": [
@@ -5586,6 +5586,79 @@
           "note": "Starting the fixed matched cached replay under docs/SPAN_014_PLAN.md. Incremental uniform loss reduction must exceed0.0005 over the10pct comparator. No expanded-route result has been inspected, no GPU admitted; all other tasks remain unselected.",
           "evidence": [
             "docs/SPAN_014_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T02:32:47+00:00",
+          "status": "done",
+          "note": "One predeclared matched-cache replay gives uniform incremental gain0.0002801, below0.0005; group interval includes zero. Stop without GPU or submission; retain official0.82987/rank23. Row cap binds at102/512rows and12.7138pct work; preserve unmatched-reference maxdiff0.00004993 as diagnostic, not a canonical control. Executed notebook26 and report record the result.",
+          "evidence": [
+            "docs/SPAN_014_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Conditionally remove the binding row ceiling at fixed15pct Gemma work",
+      "priority": "P2",
+      "gain": [
+        -0.002,
+        0.002
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        0.5,
+        1.5
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        0.75
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.2
+      ],
+      "risk": "high",
+      "claim": "A fixed30pct row ceiling at the same15pct-work budget could use coverage that H61 did not reach; benefit over the current official10pct model is unmeasured.",
+      "basis": "H61 selected102/512rows at its20pct row ceiling while using only12.7138pct work. Its incremental0.0002801 gain failed the0.0005 information gate; no broader-row rule was tested.",
+      "first_test": "In a separately selected future span, predeclare exactly15pct work/30pct rows with unchanged JS/work order, Gemma mixture/T1/8192/context/source. Compare consistently matched predictions against both H61 and the official10pct parent, with an incremental useful-signal gate fixed before lookup; only then consider actual controlled runtime.",
+      "acceptance": "Actual controlled source/ID/token/swap/CSV/two-T4 prediction pipeline with strict canonical1e-5 controls and conservative<32400s including20pct margin/all overhead/600s reserve, followed by one frozen official outcome; training-overlapping gains are not CV.",
+      "stop": "No extra v14 replay, GPU or threshold relaxation. No row/work grid or leaderboard fitting; stop on insufficient information or source/numerical/runtime failure. Prefer substantive model-diversity audits before another long coverage-only official trial.",
+      "risk_reason": "Repeatedly inspected training-overlapping cohorts invite selection bias; more rows can add noise and overhead even at fixed work, and the likely marginal gain may be too small for rank19.",
+      "mitigation": "Keep this low-priority conditional, freeze one row ceiling before observation, preserve the failed H61 gate and compare to the actual best. Require measured deployment cost and official outcome, not a linear forecast.",
+      "rationale": "Records the observed constraint binding without changing H61 after its stop rule; it does not automatically authorize another coverage search.",
+      "revision": "Discovered after the one fixed H61 replay;30pct-row quality and runtime remain unmeasured. Queue only, not selected or executed.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "E16",
+        "H60",
+        "H61"
+      ],
+      "evidence": [
+        "docs/SPAN_014_RESULTS.md"
+      ],
+      "id": "H62",
+      "rank": 80,
+      "status": "planned",
+      "introduced_in": 15,
+      "discovered_during": 14,
+      "derived_from": [
+        "H61",
+        "H60"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T02:32:47+00:00",
+          "status": "planned",
+          "note": "The fixed20pct-row ceiling used only12.7138pct of the15pct work budget. Record one conditional future row-ceiling hypothesis, with selection-bias/diminishing-return risk and no extra current-span test; prioritize model-diversity audits.",
+          "evidence": [
+            "docs/SPAN_014_RESULTS.md"
           ]
         }
       ]
@@ -5639,7 +5712,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 14,
+  "active_version": 15,
   "versions": [
     {
       "number": 1,
@@ -6717,7 +6790,7 @@
     },
     {
       "number": 14,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -6775,10 +6848,70 @@
       "carried_from": 13,
       "start_sha256": "441c253892b66e11dcb5e2902f68bbecc9450edf9ab26b727cf10b2fb1a20e6b",
       "start_markdown_sha256": "c71e3e39bdf5bd6ae7d8afb331f1856f93de0bdc0053d6944f33aeea3e1fff8f",
-      "start_sealed_at": "2026-11-08T02:14:00+00:00"
+      "start_sealed_at": "2026-11-08T02:14:00+00:00",
+      "final_sha256": "f2782829a0e1de60848df5cdc60bab4312e508ca05b247855af58b68599d1f5e",
+      "final_markdown_sha256": "cc9056895d3c2f72373ea1593d8b6b0104de5cb2cf6a5ae6cf6d95f802c0578c",
+      "final_sealed_at": "2026-11-08T02:38:02+00:00",
+      "closed_at": "2026-11-08T02:38:02+00:00",
+      "closing_note": "V14 stops after its one fixed CPU replay: incremental0.0002801 below0.0005, uncertainty includes zero. No GPU/submission; retain official0.82987/rank23. Preserve54 prior snapshots and final notebook26; carry39 unfinished tasks plus low-priority H62 row-cap discovery to v15. Global rank<=19 goal remains active.",
+      "closing_evidence": [
+        "docs/SPAN_014_RESULTS.md"
+      ]
     },
     {
       "number": 15,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H55",
+        "H56",
+        "E17",
+        "H62"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 14,
+      "start_sha256": "30ff4cafea9d60d8a7021f093fafafab6e8dadd65d1a91e5aea7c8a19d91bae9",
+      "start_markdown_sha256": "3fe99d3127b75969537edeea91a559005597809949a02c22e389b133be1f6c96",
+      "start_sealed_at": "2026-11-08T02:38:02+00:00"
+    },
+    {
+      "number": 16,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

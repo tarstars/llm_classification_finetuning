@@ -21,7 +21,8 @@ and [docs/GOAL_V7.md](docs/GOAL_V7.md),
 [docs/GOAL_V10.md](docs/GOAL_V10.md),
 [docs/GOAL_V11.md](docs/GOAL_V11.md),
 and [docs/GOAL_V12.md](docs/GOAL_V12.md),
-and [docs/GOAL_V13.md](docs/GOAL_V13.md).
+and [docs/GOAL_V13.md](docs/GOAL_V13.md),
+and [docs/GOAL_V14.md](docs/GOAL_V14.md).
 A completed goal file does not authorize
 executing its successor backlog; select a new bounded goal first.
 

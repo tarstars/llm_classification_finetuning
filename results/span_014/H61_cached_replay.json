@@ -1,0 +1,146 @@
+{
+  "at": "2026-11-08T02:24:50.242778+00:00",
+  "information_gate_passed": false,
+  "incremental_information_gain_minimum": 0.0005,
+  "coverage": {
+    "control": {
+      "rows": 256,
+      "parent_selected_rows": 42,
+      "candidate_selected_rows": 51,
+      "common_selected_rows": 42,
+      "added_rows": 9,
+      "dropped_rows": 0,
+      "parent_work_fraction": 0.09949411201819536,
+      "candidate_work_fraction": 0.12164329265938441,
+      "parent_common_cache_max_abs_vs_actual_deployed": 0.0,
+      "parent_numeric_reference_is_matched": false,
+      "independent": false,
+      "parent_common_cache_log_loss": 0.5982343958068677,
+      "candidate_log_loss": 0.5984073164773567,
+      "incremental_loss_reduction": -0.00017292067048905703,
+      "descriptive_paired_group95": [
+        -0.0007718610629718643,
+        0.00024958979671219403
+      ],
+      "unrouted_log_loss": 0.5994288921356201,
+      "candidate_total_gain_vs_unrouted": 0.0010215309911597065,
+      "actual_deployed_parent_log_loss": 0.5982343958068677,
+      "class_incremental_loss_reduction": {
+        "winner_model_a": 0.000291253551568874,
+        "winner_model_b": -0.0008017333925966728,
+        "winner_tie": 0.0
+      }
+    },
+    "uniform": {
+      "rows": 512,
+      "parent_selected_rows": 83,
+      "candidate_selected_rows": 102,
+      "common_selected_rows": 83,
+      "added_rows": 19,
+      "dropped_rows": 0,
+      "parent_work_fraction": 0.09980524132228646,
+      "candidate_work_fraction": 0.12713820464103692,
+      "parent_common_cache_max_abs_vs_actual_deployed": 4.992634057998657e-05,
+      "parent_numeric_reference_is_matched": false,
+      "independent": false,
+      "parent_common_cache_log_loss": 0.652988160395198,
+      "candidate_log_loss": 0.6527081051290601,
+      "incremental_loss_reduction": 0.00028005526613800603,
+      "descriptive_paired_group95": [
+        -1.0669435010211777e-05,
+        0.0006301520029379355
+      ],
+      "unrouted_log_loss": 0.6542420983314514,
+      "candidate_total_gain_vs_unrouted": 0.001533996818542288,
+      "actual_deployed_parent_log_loss": 0.65298824928548,
+      "class_incremental_loss_reduction": {
+        "winner_model_a": 0.00012897890327304544,
+        "winner_model_b": 0.0005635695699930134,
+        "winner_tie": 0.0001821147779819006
+      }
+    },
+    "long": {
+      "rows": 64,
+      "parent_selected_rows": 6,
+      "candidate_selected_rows": 9,
+      "common_selected_rows": 6,
+      "added_rows": 3,
+      "dropped_rows": 0,
+      "parent_work_fraction": 0.089095825394392,
+      "candidate_work_fraction": 0.13620918197114654,
+      "parent_common_cache_max_abs_vs_actual_deployed": 0.0,
+      "parent_numeric_reference_is_matched": false,
+      "independent": false,
+      "parent_common_cache_log_loss": 0.8964843998172233,
+      "candidate_log_loss": 0.8961401281361655,
+      "incremental_loss_reduction": 0.0003442716810577104,
+      "descriptive_paired_group95": [
+        -0.0015464931771799056,
+        0.0028850893537187942
+      ],
+      "unrouted_log_loss": 0.8965277671813965,
+      "candidate_total_gain_vs_unrouted": 0.0003876639581098383,
+      "actual_deployed_parent_log_loss": 0.8964843998172233,
+      "class_incremental_loss_reduction": {
+        "winner_model_a": 0.002126239928298725,
+        "winner_model_b": -0.0009897556333951397,
+        "winner_tie": 0.0
+      }
+    },
+    "test": {
+      "rows": 3,
+      "parent_selected_rows": 0,
+      "candidate_selected_rows": 0,
+      "common_selected_rows": 0,
+      "added_rows": 0,
+      "dropped_rows": 0,
+      "parent_work_fraction": 0.0,
+      "candidate_work_fraction": 0.0,
+      "parent_common_cache_max_abs_vs_actual_deployed": 0.0,
+      "parent_numeric_reference_is_matched": false,
+      "independent": false
+    }
+  },
+  "quality_variants_tested": 1,
+  "work_fraction": 0.15,
+  "parent_work_fraction": 0.1,
+  "row_fraction": 0.2,
+  "temperature": 1,
+  "independent_local_quality": false,
+  "original_votes_seen_in_checkpoint_training": true,
+  "comparison": "Both route arms use identical full reverse-Gemma cached probabilities; actual H60 is diagnostic only",
+  "source_sha256": {
+    "GOAL.md": "37ef4b7cf740acd3ffe6ab7bb5f674774048fd2551efa47a255b0f2404fbe7b4",
+    "docs/SPAN_014_PLAN.md": "270a842b76dd65ec86d891cfd82b8575293b578849c09d619cf89c635fc9b76e",
+    "results/span_014/span_plan.json": "6358c1d893f8fdcca2d35dbd526d74b624829359f898ff01c57c5a505a61c397",
+    "scripts/replay_span_014_route.py": "ea7395bdb50dac234fc98427d06142a8968abca3dc65f91e3574e5db165ad6ad",
+    "src/arena/span010_order.py": "7bb9dc38ed6161eb0fc20a9b65703d44ac2bd900d2337502dc9f1a81c4c18e3e",
+    "src/arena/span013_order.py": "26dad45892c106042e6f9f8b2c1f0e02c9e1a2ff62441134de789ac9809a0b87",
+    "scripts/audit_span_010_order.py": "0a0faa90b77b6d01f9ac47dc82d93a211327d50361a3b0c723bff43f9e65044e"
+  },
+  "cache_sha256": {
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_control.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_reverse_control.npz": "02e6fc7d4c8bdd1e0a84d2f783d0b46110b9ded8c3d59e9862180cb148ef92a7",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_013/jobs/gemma_order/output/order_completion/ensemble_control.npz": "c3c4c63153121a0407546c4356ef7eef8ad973710998ae733ba60f19270bc2bd",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/routing_control.npz": "bbc9adc2fff390d345c97ed41ab96d00c36c4ddf7326fb422144f38f616bc3eb",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_uniform.npz": "07267d576085aa72d975f2f287d7ec034fffd22317f2048f4c6e5c4ad371069e",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_uniform.npz": "c378c1b89b86603a3d72e8839397399c1803360ee9af6fa52fdda3a36baf74a3",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_reverse_uniform.npz": "1bb3f0919e111703548e0f47aa07830decf2376a633f755a453aeb8535ffa97c",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_013/jobs/gemma_order/output/order_completion/ensemble_uniform.npz": "e12a7e6d55d553bfca42832d3b00c7e6ff5812309d15651266cbba1d78197cde",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/routing_uniform.npz": "3d21ff6b5e10392b1383aa71055485634f9a82b3bc7bbd0d8db69340ccb911e2",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_long.npz": "f0cdc3f38df3a8091fda4147865922b371167961af0a3979ffac48f82d57cfc1",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_long.npz": "843ed1ff1ed8f505503869276d86dbafbf2b07975f628f038bc49ed2b74eb3cb",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_reverse_long.npz": "f831ab660c953181c1ce7c86b6a412b30422bd9ef63ff00a7fba9474420cabc1",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_013/jobs/gemma_order/output/order_completion/ensemble_long.npz": "7bcc930cc89a2564a89ee603c82e0b20320aab6d89f8d1061752e64aa7a47c2e",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/routing_long.npz": "f21e62bf151ea6bf078ea97f904a3df4ca7f5d3eeb6c6514da48edfeec70c270",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_test.npz": "416b6e64ac23c1afd1264cee6ce68fdaa9bef07d830334fff85c96e6ba8f66b0",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m3_test.npz": "61330b55152f24cc19f6f6416f8cf4aec2dbd3949d88c4d99402ffe42f3faeb5",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/m0_reverse_test.npz": "3c89dd4ac50fd4f7cff9cf890b0f7ed5ea716a89ab99a1ccb234e448f2c0812c",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_013/jobs/gemma_order/output/order_completion/ensemble_test.npz": "3f0a4f5f8d182daf8c09ea3ae37d40293dfccebe383f65a792c3044cf0f7724f",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_010/jobs/order_pilot/output/order_completion/routing_test.npz": "ad1f886bf33ba763d585714b06bf5fc1e247bfa8b5cacd30af18f29da7b42281"
+  },
+  "elapsed_cpu_seconds": 0.9095300550106913,
+  "new_gpu_executions": 0,
+  "decision": "Stop H61 without GPU; retain official0.82987"
+}

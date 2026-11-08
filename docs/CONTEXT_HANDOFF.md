@@ -1,66 +1,73 @@
-# Active goal: above20th place; v13 improves to rank23, v14 available
+# Active goal: above20th place; best0.82987/rank23, v14 stopped before GPU
 
-Snapshot2026-11-08T02:14UTC. Read PROJECT_POLICY.md, GOAL.md,
-docs/SPAN_013_RESULTS.md and docs/SPAN_013_RUNTIME_HEADROOM.md. Persistent objective
-is actual rank<=19 for team17244411 on a fresh fully paginated official leaderboard.
-Goal remains ACTIVE/unachieved. Previous long turns were verified waits on the
-same accepted job; this turn obtained its actual result and sealed v13.
+Snapshot2026-11-08T02:38UTC. Read PROJECT_POLICY.md, GOAL.md,
+docs/SPAN_013_RESULTS.md and docs/SPAN_014_RESULTS.md. Persistent objective is
+actual rank<=19 for team17244411 on a fresh fully paginated official leaderboard.
+Goal ACTIVE/unachieved. Last turns were verified waits followed by an actual
+positive official result and a bounded successor CPU futility check.
 
-## Authoritative current result
+## Authoritative state
 
-Official58103553 COMPLETE at02:08UTC, score0.82987, improving0.83053by0.00066.
-Fresh02:11:08UTC complete leaderboard: rank23/312, rank19/20cutoff0.82915,
-leader0.82702. Numerical gap0.00072; actual rank, not score alone, defines success.
-New best source arseniytrushin/llm-preference-span013-gemma-order/1. The old best
-58068582/source span009public-ensemble/4 at0.83053is historical. Own-trained0.95481
-is older still. Do not overwrite the actual positive result or call the goal done.
+Best official58103553 COMPLETE0.82987, source
+arseniytrushin/llm-preference-span013-gemma-order/1. It improves0.83053by0.00066,
+moving30th to23rd. Fresh02:33:29UTC board:23/312, rank19/20cutoff0.82915,
+leader0.82702. Numeric gap0.00072, actual rank defines success. All observers and
+GPU jobs are terminal; no pending receipt. Do not restart old sources/controllers.
+Public82852, official82882and read-loop819all terminal exit0.
 
-Both v13controllers are TERMINAL: public82852exit0, official82882exit0. Bounded
-readers810/812/819are finished; no live GPU/observer or pending official receipt.
-Do not re-push/rebuild/resubmit accepted historical sources. Terminal full inventory
-has65owned notebooks, no active jobs/reservations, all7official receipts terminal,
-paid off. Used12894.122s/free95105.878s (26.42h), refreshNov14. Public charge and
-observed total quota delta are both1671.483s; this trial adds no further weekly
-charge in that observation. Refresh at each actual admission.
+V14 SEALED, H61done. Its ONE fixed15%work/20%row replay versus10%, with identical
+full reverse-Gemma cache for both arms, gives uniform increment0.0002800553,
+CI[-0.0000106694,0.000630152], below frozen>0.0005gate. Stop, do not lower gate or
+try another v14route. Controls worsen-0.0001729; long gains0.0003443. All original
+votes overlap checkpoint training; this is weak/inconclusive information, not CV.
+No v14GPU, submission, weight download or external inference. Phase quota delta0;
+free95105.878s/26.42h, reserved0, used12894.122s, refreshNov14, paid off. Fresh
+full inventory has65owned notebooks/all7receipts terminal. Recheck before GPU.
 
-## Next action: select H61 under a prospective v14contract
+The20%row cap binds at102/512uniform rows and only12.7138%work. H62is queued for
+v15as a low-priority fixed15%work/30%row successor, NOT tested or selected. It
+records the constraint binding with diminishing-return/selection-bias risk;
+consider stronger-model diversity before another coverage-only official trial.
+Common-cache10% versus actual deployed H60maxrawdiff4.99e-5on uniform is an
+UNMATCHED-cohort diagnostic (meanloss~8.9e-8), not a failed or passed canonical
+identity control. Both ablation arms use the same full cached probabilities.
 
-Backlogv14 ACTIVE has40members:39unfinished carryovers plus H61new. No focus or
-new preparation yet; v15draft empty. H60done. H61condition is now met: actual
-H60official improvement short of rank19. Select H61only with a fresh bounded
-GOAL/plan before any expanded-route replay or GPU. The persistent outcome goal
-authorizes subsequent bounded spans; do not create another goal or complete from
-span closure. Other carried tasks remain unselected.
+Notebook26 FINAL:3executed code cells,2figures,0errors, clear no-GPU gate stop.
+Builder refuses after closure. Exact goal docs/GOAL_V14.md; closure verifier
+scripts/audit_span_014_closure.py PASSED, checking20cache hashes/frozenGit754e523
+source map,54prior snapshot/user-notebook hashes and sealed membership. V14final/
+v15start add4snapshots, now58. Notebook25/source13evidence remain immutable.
 
-H61proposes exactly one15%work/20%row Gemma-only order route, unchanged JS/work
-ordering/stable IDs, mixture .25Gemma-original+.25aligned-Gemma-swapped+
-.5aligned-Llama-swapped, T1/8192packing/context4096/fp16/author image. Off-route
-original equal ensemble. No route grid, weight/T or leaderboard parameter search.
-Compare against the current10%route best, not merely the old un-routed ensemble.
-Predeclare an incremental information/futility gate before inspecting this rule;
-no expanded-route replay, GPU or quality result has occurred yet. Original votes
-overlap checkpoint training; group intervals are descriptive, not independent CV.
+## Next bounded selection
 
-Use old v10full reverse Gemma cache for a consistently matched cached comparison
-of10%versus15%routes, rather than pooling old routed and full-cohort outputs as
-numerically identical. Record unmatched-cohort numerical differences separately.
-Cache ROOT/runs/span_010/jobs/order_pilot/output/order_completion; fixed IDs
-results/span_010/profile_selection.json. Canonical deployed10%route controls are
-also in ROOT/runs/span_013/jobs/gemma_order/output/order_completion, all0difference
-from v10. New route changes microbatch composition: preserve strict1e-5canonical
-controls with the old route, and evaluate actual new predictions consistently.
+Activev15has40members:39unfinished carryovers plus H62. No focus/preparation yet;
+v16draft empty. The persistent rank goal authorizes choosing another bounded span;
+do not create a new goal or claim success from closure. Next suggested focus is
+H55source/provenance/serialization/label-map audit of the accessible earlier
+BlackPearl classifier, before any GPU. H56modern reward heads are another planned
+option; its scalar-to-three-class mapping/provenance/runtime require independent
+audit. H55/H56old stop-at-rank30clauses served an older goal; prospectively revise
+and explain them under the explicit continuing rank<=19objective before execution.
+Do not silently launch their old proposals or treat accessibility as quality proof.
 
-A clean implementation can keep the original span010infer_role unchanged and put
-reverse inference in a separate known child directory: existing allowed names
-control/uniform/long/test hold canonical old routed subsets; routed_*hold new15%
-subsets. Both sets share one loaded reverse Gemma process/full80row warmup.
-Base outputs stay in the parent directory. Hidden mode has only actual test/
-routed_test and no canonical train cohort. This is a prospective design, not code
-or a completed qualification. Require actual3pass source/checkpoint/ID/token/
-swap/CSV/twoT4/numerical controls plus conservative25kprojection<32400s,20%margin,
-all observed cold/fullwarmup/other overhead and600sreserve. The linear8.845h
-headroom forecast is not measured runtime. Owned watchdog and actual serialized
-success/failure/watchdog/public-hidden/startup rehearsals remain mandatory.
+Read docs/SPAN_009_ALTERNATE_SOURCE_AUDIT.md and
+results/span_009/blackpearl_parent_availability.json. Exact public COMPLETE parent
+sayoulala/merge-gemma-model-step1/1 has an earlier merged42layer/3label Gemma2,
+not final winning five-fold/DPO weights. Final sayoulala/v7-dpo-16bit-01234-8bit-all
+remains403; do not retry it without changed access. Small source/config/index
+cache is ROOT/runs/span_009/research/sayoulala__merge-gemma-model-step1. The905in a
+filename is not a verified score. Resolve training/labels/license/native input
+format and credible distinctness/runtime before a bounded pilot; stop before GPU
+if unsupported. H55is currently planned/unselected, no weight download or model
+quality measurement has occurred. H56official cards/pinned revisions and bounded
+proposal are in docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md. Other tasks unselected.
+
+New v15GOAL/plan/focus and original quota/deadline/caps must precede experiment
+execution. Keep no researchGPU while official pending, free Kaggle only, source/
+ID/token/numerical/CSV/device controls, conservative<32400swith20%margin/allstartup/
+warmup/other overhead/600sreserve and owned watchdog. No leaderboard weight/T
+fitting, hidden cache/target lookup or extra current-span variants. Heavy files
+stay under database; executed notebook27will report the next selected span.
 
 ## Sealed v13 evidence
 
