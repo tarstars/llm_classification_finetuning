@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-08T22:12:28.907873+00:00",
+  "quota": {
+    "used_seconds": 31657.474,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 76342.526
+  },
+  "all_official_terminal": true,
+  "official_receipts": 7,
+  "new_span_gpu_executions": 0,
+  "inherited_full_inventory_sha256": "0242bf47de2569d3126a36b9988a68f6888af9fd82f5ff753c0ddd89acdf6dd0",
+  "fresh_full_inventory": false
+}

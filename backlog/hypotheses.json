@@ -7182,7 +7182,7 @@
       ],
       "id": "H75",
       "rank": 94,
-      "status": "running",
+      "status": "done",
       "introduced_in": 29,
       "discovered_during": 28,
       "derived_from": [
@@ -7203,6 +7203,80 @@
           "note": "V29bounded contract selected. Preparing fixed-mixture source and<=300s descriptive replay before any60/40quality or GPU. Preserve114snapshots/user notebooks and freeze/push method before labels; no grid or hiddenforecast.",
           "evidence": [
             "docs/SPAN_029_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T22:11:20+00:00",
+          "status": "done",
+          "note": "Frozen1be23ab fixed60/40replay46143 exit0,1.411CPU s/300. UniformH60.652988->candidate.663895,gain-.010907,group95[-.013916,-.007869],fails predeclared-.005guard. Removal-.001254,weightablation-.009653. Originaltrainingoverlap/noCV/nohiddenforecast; no2ndvariant, GPU, qualification or official. Preserve114snapshots/usernotebooks.",
+          "evidence": [
+            "docs/SPAN_029_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Test one prospective 40/60 Llama-heavy two-expert prior",
+      "priority": "P1",
+      "gain": [
+        -0.006,
+        0.006
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        9
+      ],
+      "cpu_wall_hours": [
+        0.01,
+        0.1
+      ],
+      "risk": "high",
+      "claim": "One fixed40pctGemma/60pctLlama prior may improve the two-expert baseline; the opposite60/40prior failed locally, but no opposite-prior quality or hidden benefit is measured.",
+      "basis": "H75uniform weight ablation worsens loss by.009653 versus50/50; removing reverse contributes only.001254. Its fixed grossguard stopped GPU. E18exact base outputs support a two-role feasibility screen30766.762s with unchanged margins. The new direction is sequentially selected on original-training-overlapping data, not independent evidence or an optimum.",
+      "first_test": "In separately selected v30, freeze ONE normalized .4Gold+.6alignedLlama,T1,no route/reverse, before new probability computation. One<=300sCPUmatched control256/uniform512/long64 comparison versus50/50and actualH60; separate removal/weight effects, seed42/2000prompt groups/classes. Disclose cumulative60/40and40/60attempts, originaltrainingoverlap/noCV/nohiddenforecast. Fixed uniformgainvsH60<-.005grossstop. Then at most one<=3600sactual2rolequalification and one frozen official if all gates pass.",
+      "acceptance": "Exact source/checkpoint/IDs/tokens/positions/hostbatches/original8192microbatches, oldraw<=1e-5, actualCSV and eachT4memory<=95pct. Actual fullqualification<32400 using worse matching E18/current prefetched base-role rates, retained worstcold/full80warm/other,20pctmargin/600reserve. One legitimate hidden-inference official measures target transfer; goal needs actualfreshcomplete rank<=19.",
+      "stop": "No v29execution, no H75threshold change or retry, no continuous fit/additionalweight/temperature/route grid, newweights/training/service, faster-node retry, margin/deadline/quota reset, or GPUwhileofficialpending. Stop at gross/source/numerical/memory/runtime/cap failure. No further weight choices from its leaderboard feedback; retain best legitimate official and every failed local result.",
+      "risk_reason": "Secant loss increase for60/40does not establish a helpful derivative at50/50 or hidden benefit for40/60. Originaltrainingexposure can favor one expert locally without transferring. A second sequential prior increases selection bias; feasibility screen is not actualqualification.",
+      "mitigation": "Freeze one new fixed hypothesis before computing it, preserve both candidate histories, report descriptive intervals and noCV/hiddenforecast, use exact matched comparators and one actual qualification/official trial. No post-result parameter variants or gate relaxation.",
+      "rationale": "Uses the first directly measured weight-ablation failure to motivate one bounded opposing prior on an independently feasible two-role design. Avoids further three-role runtime rescues and requires actual official measurement rather than claiming local transfer.",
+      "revision": "Queued only after fixedH75grossguardfailure; no40/60probabilities, calibration fit or GPU computed. H75done negative/H73deferred remain unchanged. Gain range relative to two-expert50/50is unmeasured, not a hidden forecast or H60gain.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H60",
+        "E18",
+        "H75"
+      ],
+      "evidence": [
+        "docs/SPAN_029_LLAMA_PRIOR_DISCOVERY.md",
+        "docs/SPAN_029_RESULTS.md",
+        "results/span_029/quality_replay.json"
+      ],
+      "id": "H76",
+      "rank": 95,
+      "status": "planned",
+      "introduced_in": 30,
+      "discovered_during": 29,
+      "derived_from": [
+        "H75"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T22:12:19+00:00",
+          "status": "planned",
+          "note": "H75 fixed Gemma-heavy prior failed at grossguard; weight component dominates removal loss. Queue ONEprospective40/60two-expert prior with explicit sequential-selection/originaltrainingoverlap limits and own frozen replay/actualqualification/official; no current newweights computation.",
+          "evidence": [
+            "docs/SPAN_029_LLAMA_PRIOR_DISCOVERY.md"
           ]
         }
       ]
@@ -7256,7 +7330,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 29,
+  "active_version": 30,
   "versions": [
     {
       "number": 1,
@@ -9368,7 +9442,7 @@
     },
     {
       "number": 29,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -9425,10 +9499,69 @@
       "carried_from": 28,
       "start_sha256": "ca4942e3846c85b974022c1c690e9eb8063eda63ddfbd347279484b41fe066a3",
       "start_markdown_sha256": "f8d4cdedd13bd4ddd82430aefe94e6a2b826aa15cf50552aee50db6fce9221c2",
-      "start_sealed_at": "2026-11-08T22:02:36+00:00"
+      "start_sealed_at": "2026-11-08T22:02:36+00:00",
+      "final_sha256": "028bfe59c10ce77eea26083caf95b14a2b12e6e85792bac74ae245a5fef3af7b",
+      "final_markdown_sha256": "c9211dc087815f0199c201f9fcf26e822982160aa89981108ef74f396c33da79",
+      "final_sealed_at": "2026-11-08T22:14:13+00:00",
+      "closed_at": "2026-11-08T22:14:13+00:00",
+      "closing_note": "SealH75fixed60/40atpredeclaredgrossstop: uniformgain-.010907 vsH60,weightcomponent-.009653,1.411CPU s, zeroGPU/official.114snapshots/user files preserved. Carry38unfinished plusH76oneprospective40/60prior with sequential-selection/overlap limits into30; rankgoal active, newboundedcontract before any further candidate.",
+      "closing_evidence": [
+        "docs/SPAN_029_RESULTS.md"
+      ]
     },
     {
       "number": 30,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "H76"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 29,
+      "start_sha256": "98bdff4fbc4ebcc780c745e3073f7f7205910f1bb1fedac76dbc40ae1f5a71cf",
+      "start_markdown_sha256": "12e0d8fb9039e889b70e61b34eb02597b3ad2d6db7b43b3e07f3e38049c9be01",
+      "start_sealed_at": "2026-11-08T22:14:13+00:00"
+    },
+    {
+      "number": 31,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

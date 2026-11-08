@@ -1,37 +1,73 @@
-# V28 closed at runtime gate; v29 fixed two-expert prior queued
+# V29 fixed60/40prior stopped; v30 prospective40/60queued
 
-Snapshot 2026-11-08T22:03:36.496955+00:00. Read PROJECT_POLICY.md and verify live state before acting.
-Persistent goal team17244411 rank<=19 on fresh complete official board after
-legitimate inference. ACTIVE/unachieved. Latest complete board21:57:35UTC
-Nov8:23/310,0.82987;19th/20th0.82915,leader0.82692. BestH60receipt58103553,
-span013-gemma-order/1. No official since H60.
+Snapshot 2026-11-08T22:15:24.888008+00:00. Read PROJECT_POLICY.md and verify current files/live state.
+Persistent goal ownteam17244411rank<=19 on fresh complete officialboard after
+legitimateinference. ACTIVE/unachieved. Latestcompleteboard22:12:37UTCNov8:
+23/310,0.82987;19th/20th0.82915,leader0.82692. BestH60receipt58103553,
+span013-gemma-order/1. No newofficial since H60; no live ownjobs now.
 
 ## Immediate next action
 
-V28SEALED/published d05f9d9; activev29focus[H75],H75RUNNING=CPUmethod
-preparation,39active items=38carried+H75.
-V30draftempty.94registeredtasks,114immutable snapshot files. CurrentGOAL.md
-now v29boundedcontract docs/SPAN_029_PLAN.md; exactoldarchive GOAL_V28.
-Only H75selected. CPUmixture unit tests2PASS; no60/40quality/GPUyet.
-NEXTfreeze/push source then runONCE timeout300s .venv/bin/python
-scripts/replay_span_029_prior.py withescalation. It validatesoldartifacts/source,
-captures114snapshot/userfile preservation, then reads labels for one fixed
-variant; source/grouping/comparators/grossguard are frozen before anyquality.
-Recordhandle; do not overwrite replay/preservation. Do not revive H73three-role.
+V29SEALED; activev30/no focus selected yet,39active items=38carried+H76.
+V31draftempty.95registeredtasks,118immutable snapshot files. GOAL.md still
+closedv29; exactarchive docs/GOAL_V29.md. NEXTpublishclosure, then selectNEW
+bounded v30focusH76 before any new computation. H73three-role stays deferred.
 
-H75queued only, no60/40probability computed. ONEtwo-expert .6Gemma-original+
-.4alignedLlama-swapped candidate, no reverse/route/T change. Baseline2expert
-50/50has actualofficial0.83053(receipt58068582); incumbentH60withreverse0.82987.
-CPU<=300sdescriptive matchedcache control256/uniform512/long64, compare BOTH
-50/50and H60, separate removal and weight ablation, seed42/2000prompt groups/
-classes, originaltrainingoverlap/noCV/nohiddenforecast. FixeduniformgainvsH60
-<-.005grossstop; no positive-localgain requirement or fitting/grid. Then at
-most ONE<=3600sactual2rolequalification; full80warm, strictoldraw<=1e-5/source/
-host tensors/boundaries/CSV/memory, actualhiddeninference no predictionlookup.
-Use worse matching E18/current base-role rates and retained worsecold/fullwarm/
-other,20pctmargin/600reserve,<32400. Onefrozenofficialonlyafterallgates/committed
-pusheddecision/freshfulladmission. No further weights from leaderboardfeedback.
-Select explicitcontract beforeexecution. H73 staysdeferred, whollyuncomputed.
+H76ONEprospective normalized40pctGemma-original/60pctalignedLlama-swapped,
+T1,twoexpert,no route/reverse. No40/60probability computedYET. It was queued
+from failedH75weightablation and is sequentiallyselected on biased original
+cohorts; not an independent test, fitted optimum or hiddenforecast. Preserve
+both prior histories. New contract should freeze/push before CPUreplay and
+explicitly report cumulative60/40then40/60attempts; no additionalweightgrid.
+
+One<=300sCPUmatched control256/uniform512/long64replay against historical2expert
+50/50official0.83053 and actual H60incumbent. Separate removal/weight/total,
+seed42/2000prompt groups/classes; originaltrainingoverlap/noCV/nohiddenforecast.
+Same fixed uniformgainvsH60<-.005grossstop; no positive-localgain requirement.
+If passes, ONE<=3600sactual offline2T4two-role qualification, strictoldraw<=1e-5,
+exact source/checkpoint/ID/token/positions/hostbatches/original8192microgroups,
+full80warm/cohorts/actualCSV andeachT4memory<=95pct. Use worse matching E18/
+currentbase-role rates, retainedworsecold/fullwarm/other,20pctmargin/600reserve,
+<32400. Old2role30766.762s is screenONLY. Onefrozenofficialafterallgates,
+committed/pusheddecision/freshfulladmission; actualhiddentextinference, no cached
+predictions/IDlookup. No further weights from leaderboardfeedback.
+
+Methods/templates: frozen src/arena/span029_mixture.py and
+scripts/replay_span_029_prior.py for CPU, with span019_quality.compare and
+parse_turns/prompt_groups. NEWfiles for v30/.4,.6; do NOT modify old methods.
+CPUreplay validates E18source with GOAL mapped toGOAL_V28, retrieval42hashes,
+then targetlabels. Newpreservation mustcapture118snapshots and sameuser07/12.
+Oldnative GPUforward/checks/driver/runtime and builder/controller/auditor are
+span028*.py: actual8192prefetch equality proved, but3role runtimeFAIL. New
+2role qualifier/official needs newsource/modes/spec/preparation/runtimehelper,
+no reverse/route. Stage CpuPrefetch standalone, preserve model forward and
+allstrictcontrols. Rehearse actualserializedcells/imports/public+hiddenbranches/
+worker failure/watchdog/Jupyter beforeGPU. Freeze/push sources BEFOREadmission.
+Observe exactaccepted handles; neverduplicate mutation afterobservationtimeout.
+
+## V29 terminal evidence
+
+H75DONEnegative. Frozenmethod1be23ab pushed before labels. CPU46143TERMINAL
+exit0,1.410851s/300; one normalized.6G+.4alignedL candidate, nofit/grid.
+Uniform H60.6529882483,2expert50/50.6542421014,candidate60/40.6638949855;
+gainvsH60-.0109067372,pairedgroup95[-.013916376,-.007868833], FAIL fixed-.005.
+Removalgain-.0012538531, weightablation-.0096528841. Controlgain-.01055843;
+longgain-.00079203. Originaltrainingoverlap/noCV/nohiddenforecast; noGPU,
+qualification or official. H73stilldeferred/uncomputed. Do not relaxH75guard.
+
+Raw/label/group/probability analysis isROOT/runs/span_029/fixed_prior_analysis.npz;
+aggregate results/span_029/quality_replay.json with hashes/metrics. Finalexecuted
+Notebook41with gainCIplot andclassdiagnostics, figure underDB. Two mixtureunit
+tests passed. Closure67164TERMINALexit0 PASS:114oldsnapshots/userfiles/link
+preserved,118aftertransition,38carried+H76. audit_span_029_closure.py independently
+replayedlosses and zeroGPU/official records; old GOAL mapsGOAL_V29. Reports
+SPAN_029_RESULTS.md andLLAMA_PRIOR_DISCOVERY.md. No preparer/replay rerun.
+
+Freshresources22:12UTC: weeklyused31657.474/free76342.526s(21.21h),reserved0,
+paidFalse,sameNov14anchor,7officialsCOMPLETE. No new fullinventory inCPU-only
+v29: inherited fullv28inventory hash explicitly recorded, zeroGPUintents/jobs;
+refresh fullinventory beforeanynewGPU. Original absolute deadline unchanged:
+2026-11-10T08:37:37.343197UTC. Preserve all earliercharges, no periodreset.
 
 ## V28 terminal facts: do not restart
 
