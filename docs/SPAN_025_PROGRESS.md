@@ -38,3 +38,12 @@ active; last complete board23/312, official best0.82987.
 [Plan](SPAN_025_PLAN.md) · [cohort/token audit](../results/span_025/cohort_audit.json) ·
 [preserved local mismatch](../results/span_025/local_control_token_failure.json) ·
 [tokenizer staging](../results/span_025/tokenizer_staging.json).
+
+The information worker is now built using the exact retained H60engine hash.
+Five CPU checks pass; the actual notebook final cell passes success, failure and
+owned-process watchdog rehearsals, plus Jupyter startup. The frozen source also
+contains the complete post-run control/quality auditor, including accepted image
+and dataset checks. The resource plan records87,895.611free seconds, zero
+reserved and paid scaling off, with the inherited deadline unchanged. Publish
+the bundle, then run fresh full admission before the single1800s pilot. No
+candidate labels or probabilities have been read; no GPU is admitted yet.

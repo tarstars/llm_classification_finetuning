@@ -44,7 +44,11 @@ map uniform to all275identicalIDs, warmup first80canonicalcontrolIDs. Onepilot
 tokens/devices/memory/artifacthashes. No modelweightsacquisition. Freeze/push
 worker, cohort, scoringmethod beforeGPU/labels. Tinyactualnotebook success/
 failure/watchdog/Jupyterstartup rehearsals; freshfullquota/jobs/receipts/deps.
-No pilotbuilder/controller/qualityauditor existsyet; nothinglive towaiton.
+Pilotbuilder/controller/qualityauditor nowexist and CPUrehearsalspass.
+Sources/bundle mustbepushed beforefresh admission. No acceptedpilotyet.
+Controller: scripts/run_span_025_pilot.py (preparealreadydone; NEVERrepeat
+--prepare). Builderalreadydone. Qualityauditor frozenbeforeoutputs.
+Quotaanchor20104.389used/87895.611free/reserved0/paidFalse, deadlineunchanged.
 
 Primary populationweighted lowerboundgain>.0005 and positivepairedpromptgroup95
 lowerbound (seed42/2000) permits one<=2400sfullH60+identicalonly qualification.

@@ -6640,6 +6640,14 @@
           "evidence": [
             "results/span_025/cohort_audit.json"
           ]
+        },
+        {
+          "at": "2026-11-08T15:20:28+00:00",
+          "status": "running",
+          "note": "Informationworker now reuses exactH60inferenceengine. FiveCPUchecks pass, including label-free orchestration and reorderedoutput rejection; actual finalcell success/failure/watchdog and Jupyterstartup pass. Frozenpilot1800s,totalphase4200s, inheriteddeadline. Quota20104.389used/87895.611free/reserved0/paidFalse. Preparing sourcepublication before actual freshfull admission; no GPU or qualityquery yet.",
+          "evidence": [
+            "results/span_025/identical_pilot_cell_rehearsals.json"
+          ]
         }
       ]
     }

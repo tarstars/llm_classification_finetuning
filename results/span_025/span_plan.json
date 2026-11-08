@@ -1,0 +1,27 @@
+{
+  "started_at": "2026-11-08T15:17:39.103019+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "initial_quota": {
+    "used_seconds": 20104.389,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 87895.611
+  },
+  "quota_used_at_start": 20104.389,
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "gpu_session_seconds_cap": 4200,
+  "public_version_limit": 2,
+  "official_candidate_limit": 1,
+  "initial_public_cap_seconds": 1800,
+  "followup_public_cap_seconds": 2400,
+  "hidden_cap_seconds": 32400,
+  "raw_probability_tolerance": 1e-05,
+  "original_minimum_lower_gain": 0.0005,
+  "bootstrap_seed": 42,
+  "bootstrap_resamples": 2000,
+  "target_rank_maximum": 19,
+  "parent_official_receipt": 58103553,
+  "parent_official_score": 0.82987
+}

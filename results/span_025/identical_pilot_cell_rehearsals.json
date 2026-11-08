@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.01802802085876465,
+        "exit_code": 0,
+        "role": "identical_pilot"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.01716446876525879,
+        "exit_code": 7,
+        "role": "identical_pilot"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.2010493278503418,
+        "exit_code": -15,
+        "role": "identical_pilot"
+      }
+    }
+  ],
+  "notebook_engine_startup_passed": true,
+  "new_gpu_executions": 0
+}

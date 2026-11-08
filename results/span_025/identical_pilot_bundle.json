@@ -1,0 +1,28 @@
+{
+  "role": "identical_pilot",
+  "source_sha256": {
+    "GOAL.md": "7ed8a3f2b8282888a31cd73d1e19558400aa71d48095fcb5f0f306658fcc666c",
+    "docs/SPAN_025_PLAN.md": "eae2c5cd330a02c102a78afef7430af730dfa466e445c421c370626bcac5c6ac",
+    "configs/span_025.json": "5b644e2c3fd2a9db30a950a85ebd80a151527c740c1cada519cbbb9fe5ac6cbf",
+    "results/span_025/span_plan.json": "3a1a42775b4eb18bbc7dbeb5f07d9235acff34c6222a1b3984b3673c9f44b0c3",
+    "results/span_025/cohort_audit.json": "141c911152ed8fa57f8f2bf9e2a113670ce58c429770511e853349ff7af20074",
+    "src/arena/span025_pilot.py": "e11745800969a1aade029becb82dc0e52892776aaa05bb1beebcf4a05b757a08",
+    "src/arena/span025_identical.py": "056a333c94436aa7be5d73df6058c73b2f286e2336178f30495c481194b6cf21",
+    "src/arena/span010_order.py": "7bb9dc38ed6161eb0fc20a9b65703d44ac2bd900d2337502dc9f1a81c4c18e3e",
+    "src/arena/span019_quality.py": "cef2f99167601522d06cde1a455c8790dfd0b0f69bb2be8e2a24d328a4a54ce8",
+    "src/arena/notebook_worker.py": "2c49e8edd28b2dabe70a21bbca9c8598458b78fcf6c7c3939cef7aeabd81bb13",
+    "src/arena/kaggle_control.py": "23f8e4d09c17647a42d5771e32400d4816e5230a4dee18a631dcd394380d1793",
+    "scripts/build_span_025_pilot.py": "3bc269665a05555c8dfc79d22eb8de620912a5db331c70a973965d46cfb6e267",
+    "scripts/run_span_025_pilot.py": "bbe6613c5cf6aeac8fdbf0cbb11c8d5041ff6b05e422eb49ebfc3d8efbcb257d",
+    "scripts/audit_span_025_pilot.py": "de4c6a17878506bfa07cfa1f5ccadb9bdebf7aff4ccada5a28ef7b2ef1245fb6",
+    "tests/test_span025_identical.py": "06b67bc2ecee3daf6b77eb06d1e554cd86a6dc4b42e97881f169b185ce26576b",
+    "tests/test_span025_pilot.py": "314520c9bb72a05c30c1eebddfed7a62d94b26525787dae5c54b9a1ce8175b2f"
+  },
+  "notebook_sha256": "00d5f5f996249e893ae73f519c75df8a3abdbbcc134f351e8db7ed81ae31208d",
+  "metadata_sha256": "7ae3e4f38fe92c96435f6878a482ce2cdaa97ead724973ce17e49e76c8ffa43e",
+  "public_cap_seconds": 1800,
+  "information_only": true,
+  "official_submission_eligible": false,
+  "cohort_manifest_sha256": "5cdf7b733064941637fae340d0f7a8675cc0000d1ba850f3e8caf61e011722de",
+  "parent_engine_identical": true
+}

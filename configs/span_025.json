@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-08T15:17:39.103019+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "job_seconds_caps": {
+    "identical_pilot": 1800,
+    "identical_qualification": 2400
+  }
+}
