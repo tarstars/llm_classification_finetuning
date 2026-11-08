@@ -227,6 +227,7 @@ One fixed40pctGemma/60pctLlama prior may improve the two-expert baseline; the op
 
 - 2026-11-08T22:12:19+00:00 — planned: H75 fixed Gemma-heavy prior failed at grossguard; weight component dominates removal loss. Queue ONEprospective40/60two-expert prior with explicit sequential-selection/originaltrainingoverlap limits and own frozen replay/actualqualification/official; no current newweights computation. Evidence: [docs/SPAN_029_LLAMA_PRIOR_DISCOVERY.md](docs/SPAN_029_LLAMA_PRIOR_DISCOVERY.md)
 - 2026-11-08T22:16:43+00:00 — running: V30contract selected; preparing ONE40/60source before newquality. Original60/40failure preserved; fixedprotocol explicitly discloses sequential selection on biased cohorts. NoGPUor newprobabilityyet,118snapshotpreservation to be captured by boundedreplay. Evidence: [docs/SPAN_030_PLAN.md](docs/SPAN_030_PLAN.md)
+- 2026-11-08T22:20:29+00:00 — running: Frozenc0b01e6 replay11860 TERMINALexit0,1.7475CPU s/300. Fixed40/60uniform H60.652988->.645378,gain+.007610,group95[.005311,.009990],grossguardPASS. Weightgainvs50/50+.008864; longgain+.000106 CIcrosses0. Sequentialsecondprior/originaltrainingoverlap/noCV/nohiddenforecast.118snapshots/userfiles preserved. Nextactual2rolequalification sourceprep; noGPU/officialyet. Evidence: [docs/SPAN_030_CPU_RESULTS.md](docs/SPAN_030_CPU_RESULTS.md)
 
 ### H02
 

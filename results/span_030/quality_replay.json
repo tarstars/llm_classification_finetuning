@@ -1,0 +1,578 @@
+{
+  "at": "2026-11-08T22:17:38.431230+00:00",
+  "complete": true,
+  "quality_variants_tested": 1,
+  "expert_weights": [
+    0.4,
+    0.6
+  ],
+  "sequentially_selected_on_inspected_original_cohorts": true,
+  "cumulative_twoexpert_priors_tested": [
+    [
+      0.6,
+      0.4
+    ],
+    [
+      0.4,
+      0.6
+    ]
+  ],
+  "previous_trial_sha256": "2fb29698c188e940345bb78b463c42591c3d30826d766b44be3b25399398ce96",
+  "temperature": 1,
+  "reverse_pass": false,
+  "route": false,
+  "row_normalization": true,
+  "cohorts": {
+    "control": {
+      "rows": 256,
+      "prompt_groups": 256,
+      "class_counts": [
+        93,
+        89,
+        74
+      ],
+      "removal": {
+        "baseline": {
+          "log_loss": 0.5982343940292596,
+          "accuracy": 0.7734375,
+          "brier": 0.3280723073018695,
+          "class_log_loss": {
+            "winner_model_a": 0.5294670463842267,
+            "winner_model_b": 0.5311656465704889,
+            "winner_tie": 0.7653219866619438
+          },
+          "class_recall": {
+            "winner_model_a": 0.8387096774193549,
+            "winner_model_b": 0.8426966292134831,
+            "winner_tie": 0.6081081081081081
+          },
+          "mean_probabilities": [
+            0.357133766127409,
+            0.35177395391674754,
+            0.2910922799558435
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.5994288448974071,
+          "accuracy": 0.7734375,
+          "brier": 0.3290831455038577,
+          "class_log_loss": {
+            "winner_model_a": 0.5322201645641009,
+            "winner_model_b": 0.5318856362909657,
+            "winner_tie": 0.7651282075591739
+          },
+          "class_recall": {
+            "winner_model_a": 0.8387096774193549,
+            "winner_model_b": 0.8426966292134831,
+            "winner_tie": 0.6081081081081081
+          },
+          "mean_probabilities": [
+            0.35672835704298506,
+            0.3519001690225903,
+            0.2913714739344243
+          ]
+        },
+        "loss_reduction": -0.0011944508681474729,
+        "paired_group95": [
+          -0.003168872856106835,
+          0.0010081557280413565
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": -0.0027531181798743027,
+          "winner_model_b": -0.0007199897204767082,
+          "winner_tie": 0.00019377910277005575
+        }
+      },
+      "weight_ablation": {
+        "baseline": {
+          "log_loss": 0.5994288448974071,
+          "accuracy": 0.7734375,
+          "brier": 0.3290831455038577,
+          "class_log_loss": {
+            "winner_model_a": 0.5322201645641009,
+            "winner_model_b": 0.5318856362909657,
+            "winner_tie": 0.7651282075591739
+          },
+          "class_recall": {
+            "winner_model_a": 0.8387096774193549,
+            "winner_model_b": 0.8426966292134831,
+            "winner_tie": 0.6081081081081081
+          },
+          "mean_probabilities": [
+            0.35672835704298506,
+            0.3519001690225903,
+            0.2913714739344243
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.5909005379337475,
+          "accuracy": 0.765625,
+          "brier": 0.32261386714788115,
+          "class_log_loss": {
+            "winner_model_a": 0.5215283645563497,
+            "winner_model_b": 0.5248410070617149,
+            "winner_tie": 0.7575344618757599
+          },
+          "class_recall": {
+            "winner_model_a": 0.8172043010752689,
+            "winner_model_b": 0.8539325842696629,
+            "winner_tie": 0.5945945945945946
+          },
+          "mean_probabilities": [
+            0.35797339451164223,
+            0.3514976216765075,
+            0.29052898381185044
+          ]
+        },
+        "loss_reduction": 0.008528306963659471,
+        "paired_group95": [
+          0.005191408838568887,
+          0.011933560521755777
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": 0.010691800007751294,
+          "winner_model_b": 0.007044629229250826,
+          "winner_tie": 0.007593745683413924
+        }
+      },
+      "versus_incumbent": {
+        "baseline": {
+          "log_loss": 0.5982343940292596,
+          "accuracy": 0.7734375,
+          "brier": 0.3280723073018695,
+          "class_log_loss": {
+            "winner_model_a": 0.5294670463842267,
+            "winner_model_b": 0.5311656465704889,
+            "winner_tie": 0.7653219866619438
+          },
+          "class_recall": {
+            "winner_model_a": 0.8387096774193549,
+            "winner_model_b": 0.8426966292134831,
+            "winner_tie": 0.6081081081081081
+          },
+          "mean_probabilities": [
+            0.357133766127409,
+            0.35177395391674754,
+            0.2910922799558435
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.5909005379337475,
+          "accuracy": 0.765625,
+          "brier": 0.32261386714788115,
+          "class_log_loss": {
+            "winner_model_a": 0.5215283645563497,
+            "winner_model_b": 0.5248410070617149,
+            "winner_tie": 0.7575344618757599
+          },
+          "class_recall": {
+            "winner_model_a": 0.8172043010752689,
+            "winner_model_b": 0.8539325842696629,
+            "winner_tie": 0.5945945945945946
+          },
+          "mean_probabilities": [
+            0.35797339451164223,
+            0.3514976216765075,
+            0.29052898381185044
+          ]
+        },
+        "loss_reduction": 0.007333856095511998,
+        "paired_group95": [
+          0.004055813104111599,
+          0.010338476298195034
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": 0.007938681827876994,
+          "winner_model_b": 0.006324639508774118,
+          "winner_tie": 0.00778752478618398
+        }
+      }
+    },
+    "uniform": {
+      "rows": 512,
+      "prompt_groups": 512,
+      "class_counts": [
+        169,
+        155,
+        188
+      ],
+      "removal": {
+        "baseline": {
+          "log_loss": 0.6529882483114107,
+          "accuracy": 0.751953125,
+          "brier": 0.36541205713551383,
+          "class_log_loss": {
+            "winner_model_a": 0.5501857361247855,
+            "winner_model_b": 0.5457106139186432,
+            "winner_tie": 0.833848130707254
+          },
+          "class_recall": {
+            "winner_model_a": 0.8402366863905325,
+            "winner_model_b": 0.8258064516129032,
+            "winner_tie": 0.6117021276595744
+          },
+          "mean_probabilities": [
+            0.34907375531366974,
+            0.33958950533038545,
+            0.31133673935594575
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.6542421013977675,
+          "accuracy": 0.75,
+          "brier": 0.36629593757498347,
+          "class_log_loss": {
+            "winner_model_a": 0.552341797489955,
+            "winner_model_b": 0.5459375204626964,
+            "winner_tie": 0.8351376407879606
+          },
+          "class_recall": {
+            "winner_model_a": 0.834319526627219,
+            "winner_model_b": 0.8258064516129032,
+            "winner_tie": 0.6117021276595744
+          },
+          "mean_probabilities": [
+            0.3489100072360131,
+            0.3397793468088741,
+            0.3113106459551136
+          ]
+        },
+        "loss_reduction": -0.001253853086356892,
+        "paired_group95": [
+          -0.0026196356821061454,
+          3.863175595763102e-05
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": -0.0021560613651694944,
+          "winner_model_b": -0.0002269065440533266,
+          "winner_tie": -0.0012895100807064817
+        }
+      },
+      "weight_ablation": {
+        "baseline": {
+          "log_loss": 0.6542421013977675,
+          "accuracy": 0.75,
+          "brier": 0.36629593757498347,
+          "class_log_loss": {
+            "winner_model_a": 0.552341797489955,
+            "winner_model_b": 0.5459375204626964,
+            "winner_tie": 0.8351376407879606
+          },
+          "class_recall": {
+            "winner_model_a": 0.834319526627219,
+            "winner_model_b": 0.8258064516129032,
+            "winner_tie": 0.6117021276595744
+          },
+          "mean_probabilities": [
+            0.3489100072360131,
+            0.3397793468088741,
+            0.3113106459551136
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.6453783692370797,
+          "accuracy": 0.751953125,
+          "brier": 0.360236007671531,
+          "class_log_loss": {
+            "winner_model_a": 0.5424318925013718,
+            "winner_model_b": 0.5366432187964834,
+            "winner_tie": 0.8275693420382875
+          },
+          "class_recall": {
+            "winner_model_a": 0.8402366863905325,
+            "winner_model_b": 0.8258064516129032,
+            "winner_tie": 0.6117021276595744
+          },
+          "mean_probabilities": [
+            0.34953291400506786,
+            0.33929127355541977,
+            0.31117581243951214
+          ]
+        },
+        "loss_reduction": 0.00886373216068773,
+        "paired_group95": [
+          0.006504061398425764,
+          0.011047201006704251
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": 0.009909904988583127,
+          "winner_model_b": 0.009294301666213058,
+          "winner_tie": 0.007568298749673113
+        }
+      },
+      "versus_incumbent": {
+        "baseline": {
+          "log_loss": 0.6529882483114107,
+          "accuracy": 0.751953125,
+          "brier": 0.36541205713551383,
+          "class_log_loss": {
+            "winner_model_a": 0.5501857361247855,
+            "winner_model_b": 0.5457106139186432,
+            "winner_tie": 0.833848130707254
+          },
+          "class_recall": {
+            "winner_model_a": 0.8402366863905325,
+            "winner_model_b": 0.8258064516129032,
+            "winner_tie": 0.6117021276595744
+          },
+          "mean_probabilities": [
+            0.34907375531366974,
+            0.33958950533038545,
+            0.31133673935594575
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.6453783692370797,
+          "accuracy": 0.751953125,
+          "brier": 0.360236007671531,
+          "class_log_loss": {
+            "winner_model_a": 0.5424318925013718,
+            "winner_model_b": 0.5366432187964834,
+            "winner_tie": 0.8275693420382875
+          },
+          "class_recall": {
+            "winner_model_a": 0.8402366863905325,
+            "winner_model_b": 0.8258064516129032,
+            "winner_tie": 0.6117021276595744
+          },
+          "mean_probabilities": [
+            0.34953291400506786,
+            0.33929127355541977,
+            0.31117581243951214
+          ]
+        },
+        "loss_reduction": 0.007609879074330838,
+        "paired_group95": [
+          0.005310859671734901,
+          0.009989657007124788
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": 0.007753843623413634,
+          "winner_model_b": 0.00906739512215973,
+          "winner_tie": 0.006278788668966631
+        }
+      }
+    },
+    "long": {
+      "rows": 64,
+      "prompt_groups": 64,
+      "class_counts": [
+        22,
+        25,
+        17
+      ],
+      "removal": {
+        "baseline": {
+          "log_loss": 0.8964844002537803,
+          "accuracy": 0.609375,
+          "brier": 0.521610538501676,
+          "class_log_loss": {
+            "winner_model_a": 0.732105017536638,
+            "winner_model_b": 0.876142023095115,
+            "winner_tie": 1.139125920768119
+          },
+          "class_recall": {
+            "winner_model_a": 0.8181818181818182,
+            "winner_model_b": 0.64,
+            "winner_tie": 0.29411764705882354
+          },
+          "mean_probabilities": [
+            0.36977101040360966,
+            0.353976459652792,
+            0.27625252994359845
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.8965277891974578,
+          "accuracy": 0.609375,
+          "brier": 0.5217037318397707,
+          "class_log_loss": {
+            "winner_model_a": 0.7359506883680609,
+            "winner_model_b": 0.8728689080832904,
+            "winner_tie": 1.139125921321041
+          },
+          "class_recall": {
+            "winner_model_a": 0.8181818181818182,
+            "winner_model_b": 0.64,
+            "winner_tie": 0.29411764705882354
+          },
+          "mean_probabilities": [
+            0.36910922872631946,
+            0.3550346394352862,
+            0.2758561318383944
+          ]
+        },
+        "loss_reduction": -4.338894367756675e-05,
+        "paired_group95": [
+          -0.0030334555032629296,
+          0.003323991711088335
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": -0.0038456708314228176,
+          "winner_model_b": 0.0032731150118244256,
+          "winner_tie": -5.529219369941362e-10
+        }
+      },
+      "weight_ablation": {
+        "baseline": {
+          "log_loss": 0.8965277891974578,
+          "accuracy": 0.609375,
+          "brier": 0.5217037318397707,
+          "class_log_loss": {
+            "winner_model_a": 0.7359506883680609,
+            "winner_model_b": 0.8728689080832904,
+            "winner_tie": 1.139125921321041
+          },
+          "class_recall": {
+            "winner_model_a": 0.8181818181818182,
+            "winner_model_b": 0.64,
+            "winner_tie": 0.29411764705882354
+          },
+          "mean_probabilities": [
+            0.36910922872631946,
+            0.3550346394352862,
+            0.2758561318383944
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.8963779433106533,
+          "accuracy": 0.609375,
+          "brier": 0.5215001909444493,
+          "class_log_loss": {
+            "winner_model_a": 0.7308366029684614,
+            "winner_model_b": 0.8698854893605508,
+            "winner_tie": 1.1495674042683461
+          },
+          "class_recall": {
+            "winner_model_a": 0.8181818181818182,
+            "winner_model_b": 0.64,
+            "winner_tie": 0.29411764705882354
+          },
+          "mean_probabilities": [
+            0.3707157690166403,
+            0.35506457305798583,
+            0.2742196579253737
+          ]
+        },
+        "loss_reduction": 0.00014984588680456382,
+        "paired_group95": [
+          -0.0056395278901101185,
+          0.00595940297555612
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": 0.005114085399599574,
+          "winner_model_b": 0.0029834187227396392,
+          "winner_tie": -0.010441482947305266
+        }
+      },
+      "versus_incumbent": {
+        "baseline": {
+          "log_loss": 0.8964844002537803,
+          "accuracy": 0.609375,
+          "brier": 0.521610538501676,
+          "class_log_loss": {
+            "winner_model_a": 0.732105017536638,
+            "winner_model_b": 0.876142023095115,
+            "winner_tie": 1.139125920768119
+          },
+          "class_recall": {
+            "winner_model_a": 0.8181818181818182,
+            "winner_model_b": 0.64,
+            "winner_tie": 0.29411764705882354
+          },
+          "mean_probabilities": [
+            0.36977101040360966,
+            0.353976459652792,
+            0.27625252994359845
+          ]
+        },
+        "candidate": {
+          "log_loss": 0.8963779433106533,
+          "accuracy": 0.609375,
+          "brier": 0.5215001909444493,
+          "class_log_loss": {
+            "winner_model_a": 0.7308366029684614,
+            "winner_model_b": 0.8698854893605508,
+            "winner_tie": 1.1495674042683461
+          },
+          "class_recall": {
+            "winner_model_a": 0.8181818181818182,
+            "winner_model_b": 0.64,
+            "winner_tie": 0.29411764705882354
+          },
+          "mean_probabilities": [
+            0.3707157690166403,
+            0.35506457305798583,
+            0.2742196579253737
+          ]
+        },
+        "loss_reduction": 0.00010645694312699707,
+        "paired_group95": [
+          -0.00494911965529478,
+          0.005132327149408755
+        ],
+        "bootstrap_seed": 42,
+        "bootstrap_resamples": 2000,
+        "class_loss_reduction": {
+          "winner_model_a": 0.0012684145681767561,
+          "winner_model_b": 0.006256533734564065,
+          "winner_tie": -0.010441483500227203
+        }
+      }
+    }
+  },
+  "uniform_gain_vs_incumbent": 0.007609879074330838,
+  "fixed_gross_regression_threshold": -0.005,
+  "gross_regression_guard_passed": true,
+  "local_positive_gain_required": false,
+  "original_training_overlap": true,
+  "independent_cv": false,
+  "hidden_score_forecast": false,
+  "labels_read": true,
+  "new_gpu_executions": 0,
+  "official_submission_eligible": false,
+  "decision": "prepare_actual_two_role_qualification",
+  "elapsed_cpu_seconds": 1.7475047810003161,
+  "cpu_cap_seconds": 300,
+  "source_sha256": {
+    "GOAL.md": "3b6f99cb2332ba6562a29c0c00b77b9f5b89f8e3c44089110aca7d2bbcbd6f6b",
+    "docs/SPAN_030_PLAN.md": "e4f9c3fa6f34c3599e7f4452a5c1c66ad0747c037469bf3cf2dcd3f8d82c7e3d",
+    "scripts/replay_span_030_prior.py": "7922cce29c5ba3fa6e9ddfbb28bf71427d55b8881da7589c537686798e76cc3b",
+    "src/arena/span030_mixture.py": "d31c3c8cff577b4e26cf051fb1fd2728eb2010be78cfb5fbdc4a3531c2a68dfa",
+    "src/arena/span019_quality.py": "cef2f99167601522d06cde1a455c8790dfd0b0f69bb2be8e2a24d328a4a54ce8",
+    "src/arena/data.py": "52c898c47350aee156b16058809154420843ceb706e54fff2a201b3dcd04e896",
+    "src/arena/span010_order.py": "7bb9dc38ed6161eb0fc20a9b65703d44ac2bd900d2337502dc9f1a81c4c18e3e",
+    "tests/test_span030_mixture.py": "879977415d5a5b7c41cafc974bc069b426f9527f808c9a6067efc76c418aa99f"
+  },
+  "cached_input_sha256": {
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m3_control.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/ensemble_control.npz": "c3c4c63153121a0407546c4356ef7eef8ad973710998ae733ba60f19270bc2bd",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m0_uniform.npz": "07267d576085aa72d975f2f287d7ec034fffd22317f2048f4c6e5c4ad371069e",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m3_uniform.npz": "c378c1b89b86603a3d72e8839397399c1803360ee9af6fa52fdda3a36baf74a3",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/ensemble_uniform.npz": "e12a7e6d55d553bfca42832d3b00c7e6ff5812309d15651266cbba1d78197cde",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m0_long.npz": "f0cdc3f38df3a8091fda4147865922b371167961af0a3979ffac48f82d57cfc1",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m3_long.npz": "843ed1ff1ed8f505503869276d86dbafbf2b07975f628f038bc49ed2b74eb3cb",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/ensemble_long.npz": "7bcc930cc89a2564a89ee603c82e0b20320aab6d89f8d1061752e64aa7a47c2e"
+  },
+  "train_csv_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+  "parent_audit_sha256": "d0491bc5e474f455f1ef5d4b45cbc21f3a421554d96a4dd635c0160d6682da14",
+  "analysis_sha256": "148b99fbcf3e359e9e1baa44c04b5bf9628ef1211b622716c6072131cf1942fb",
+  "preservation_sha256": "d82d8cc5325f378f3c79af8c17071d8ad60adfbcc5e8b5d839113c778dd96a41"
+}

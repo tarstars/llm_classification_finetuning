@@ -1,6 +1,6 @@
 # V29 fixed60/40prior stopped; v30 prospective40/60queued
 
-Snapshot 2026-11-08T22:15:24.888008+00:00. Read PROJECT_POLICY.md and verify current files/live state.
+Snapshot 2026-11-08T22:21:49.241590+00:00. Read PROJECT_POLICY.md and verify current files/live state.
 Persistent goal ownteam17244411rank<=19 on fresh complete officialboard after
 legitimateinference. ACTIVE/unachieved. Latestcompleteboard22:12:37UTCNov8:
 23/310,0.82987;19th/20th0.82915,leader0.82692. BestH60receipt58103553,
@@ -8,21 +8,54 @@ span013-gemma-order/1. No newofficial since H60; no live ownjobs now.
 
 ## Immediate next action
 
-V29SEALED/published6030aa3; activev30focus[H76],H76RUNNING=CPUmethod
-preparation,39active items=38carried+H76.
-V31draftempty.95registeredtasks,118immutable snapshot files. GOAL.md still
-now v30boundedcontract docs/SPAN_030_PLAN.md; exactoldarchiveGOAL_V29.
-Two newmixturetestsPASS. NEXTfreeze/pushnewmethod then runONCE timeout300s
-.venv/bin/python scripts/replay_span_030_prior.py withescalation. No40/60
-probabilitycomputedYET. Recordhandle; do notoverwrite replay/preservation.
-H73three-role staysdeferred. NewCPUmethodexplicitly records sequentialselection
-and cumulative60/40then40/60trials; no otherweightvariant allowed.
+V29SEALED/published6030aa3. Activev30focus[H76],H76RUNNING=actualGPU
+qualification SOURCEPREPARATION.39activeitems=38carried+H76,V31draftempty,
+95registeredtasks,118immutable snapshotfiles. GOAL.md/docs/SPAN_030_PLAN.md
+selected/pushedc0b01e6 BEFORE40/60quality. No activeGPU/official; no GPU
+qualification source/controller/builder/spec/resourceplan EXISTS YET in v30.
+
+H76CPUreplay11860TERMINALexit0,1.7475s/300. One normalized.4G+.6alignedL,
+T1,noroute/reverse. UniformH60.6529882483->candidate.6453783692, gain+.007609879,
+pairedgroup95[.005310860,.009989657]; weightgainvs50/50+.008863732. Control
++.007333856; long+.000106457 CIcrosses0. Fixed-.005grossguardPASS. Two priors
+cumulativelytested: old60/40failed, new40/60sequentiallyselected. Original
+trainingoverlap/noCV/nohiddenforecast; do NOT translate localgain toofficial.
+HeavyROOT/runs/span_030/fixed_prior_analysis.npz, aggregatequality_replay.json.
+CPUsource/result hashes frozen; src/span030_mixture.py exactprior must stay.
+Two mixtureunit tests pass. Preservation captures118snapshots/sameuserfiles.
+Report docs/SPAN_030_CPU_RESULTS.md and executedNotebook42(80799exit0).
+
+NEXTbuild one actual TWO-ROLE candidate qualification and official-ready mode.
+Use frozen span028engine/CpuPrefetch as templates in NEWspan030files, never
+modify oldsource or frozenCPUmethod. Roles onlym0,m3; originalnativeforward,
+4k/8192/batch80/queue2/fp16/kernels/sharding. Newafter_cohort hooks for public
+qualification: alloldcanonicalraw<=1e-5, CPUhosttensor/microgroup/token/checkpoint/
+position/memory/ID controls. Hiddenmode must run actualtesttext and sameforward,
+validate ownactualtestIDs/positions/source/memory, and NEVERread publicprediction
+caches ortrainlabels. Two-role driver outputs normalized .4G+.6alignedL via the
+unchanged span030_mixture.py; no router/reverse. Publicframesold80warm/control/
+uniform512/long64/visible3; hiddenfull80warmfromactualtest. Source/checkpoints
+pinnedpublicassets. Raw/control fixtures only publicmode, no hiddenlookup.
+
+Newruntimehelper: twoactualroles, worse MATCHING E18/current per-roleuniform
+rates, retained worse cold/full80warm/other,20pctmargin/600reserve,<32400.
+E18baseratesG293.909022817,L213.175659101; old2rolescreen30766.761525 only.
+One<=3600sactualqualification/MAXONEacceptedversion then ONEfrozenofficial
+<=32400onlyafteraudit/allgates/source+decisioncommittedpushed and freshfull
+admission. Need serializednotebook import/public+hidden branches/actual final
+success-failure/watchdog/Jupyterrehearsals and sourcefreeze BEFOREGPU. Metadata
+id/title should resolve same slug (avoid prior normalization warning), but always
+observe returnedexactidentity. Durable intent and no duplicate mutation.
+Prepare officialsubmission controller from existing successful span013pattern;
+no submit before actualqualification result, committed decision and freshquota/
+receipts/dependencies. No newqualityvariants, extraGPUengineeringrun, retry or
+faster-node rescue; H73staysdeferred. No GPUwhileofficialpending.
 
 H76ONEprospective normalized40pctGemma-original/60pctalignedLlama-swapped,
-T1,twoexpert,no route/reverse. No40/60probability computedYET. It was queued
+T1,twoexpert,no route/reverse. 40/60CPUcomparison now complete above. It was queued
 from failedH75weightablation and is sequentiallyselected on biased original
 cohorts; not an independent test, fitted optimum or hiddenforecast. Preserve
-both prior histories. New contract should freeze/push before CPUreplay and
+both prior histories. Current contract froze/pushed before CPUreplay and
 explicitly report cumulative60/40then40/60attempts; no additionalweightgrid.
 
 One<=300sCPUmatched control256/uniform512/long64replay against historical2expert

@@ -7286,6 +7286,14 @@
           "evidence": [
             "docs/SPAN_030_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-08T22:20:29+00:00",
+          "status": "running",
+          "note": "Frozenc0b01e6 replay11860 TERMINALexit0,1.7475CPU s/300. Fixed40/60uniform H60.652988->.645378,gain+.007610,group95[.005311,.009990],grossguardPASS. Weightgainvs50/50+.008864; longgain+.000106 CIcrosses0. Sequentialsecondprior/originaltrainingoverlap/noCV/nohiddenforecast.118snapshots/userfiles preserved. Nextactual2rolequalification sourceprep; noGPU/officialyet.",
+          "evidence": [
+            "docs/SPAN_030_CPU_RESULTS.md"
+          ]
         }
       ]
     }
