@@ -71,3 +71,8 @@ immutable large model asset has now been accepted by Kaggle, statusOk. No GPU or
 new quality result yet. The matched-file override passed its actual serialized
 CPU wiring check. Native CPU token hashes will be compared against both real
 reward models, and an independent information auditor is prepared.
+
+2026-11-08T05:38UTC: both private assets now verify ready at pinned version1,
+including the new1.96MBmatched inputs. Source/bundle27c32ee is pushed. The next
+action is the one information-only GPU pilot after its fresh full admission.
+No accepted GPU version or new model-quality result exists at this milestone.

@@ -1,6 +1,6 @@
 # Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
 
-Snapshot2026-11-08T05:36UTC. Read PROJECT_POLICY.md and current GOAL.md, then
+Snapshot2026-11-08T05:38UTC. Read PROJECT_POLICY.md and current GOAL.md, then
 verify live state. Persistent goal "move above20th place" means rank<=19 for
 team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
 Do not create another goal or mark complete from a span closure.
@@ -69,8 +69,8 @@ hashes verified; whole33file package16,380,017,198bytes. Receipt
 results/span_016/asset_preparation.json. No need/reason to rerun prepare.
 Private model upload95273is TERMINAL exit0/statusOk. Receipt
 results/span_016/model_upload_receipt.json and ROOT/runs/span_016/assets/upload_response.json.
-NEVER repeat upload. Run scripts/stage_span_016_assets.py verify against
-arseniytrushin/llm-span016-reward-assets/1; if processing, observe the same asset.
+NEVER repeat upload. Verification PASSED: private, ready, pinned first version
+arseniytrushin/llm-span016-reward-assets/1.
 No GPU receipt yet. All33files/16.38GB have verified local hashes; original
 model/runtime asset remains immutable, including its now-unused initial cohort.
 
@@ -86,9 +86,9 @@ token_reference.json and token_audit remain preserved, unused. Same chronology,
 model recipe, caps and gates; matching lengths does not remove domain shift.
 
 New1,960,051byte private input override prepared under matched_assets/upload,
-arseniytrushin/llm-span016-lengthmatched-inputs/1, NOT UPLOADED at this snapshot.
-After publishing source, run scripts/stage_span_016_inputs.py upload ONCE then
-verify. Large upload is terminal, so no overlapping mutation. Notebook links ONLY
+arseniytrushin/llm-span016-lengthmatched-inputs/1, uploaded ONCE and verified READY.
+Both asset_upload.json and matched_input_upload.json are ready/private/hashbound.
+No repeated upload. Prepared source/bundle27c32ee is pushed. Notebook links ONLY
 matched inputs; verifies original30asset entries plus2override hashes; SIXpinned
 datasets. Actual serialized CPU override, success/failure/watchdog/Jupyter and
 pipeline checks pass. Notebook28threeexecutedcells/0errors. Bundle rebuilt.

@@ -5005,6 +5005,12 @@
           "evidence": [
             "docs/SPAN_016_COHORT_REFINEMENT.md"
           ]
+        },
+        {
+          "at": "2026-11-08T05:38:28+00:00",
+          "status": "running",
+          "note": "Both frozen private Kaggle datasets are ready at v1: verified model assets16.38GB and lengthmatched input override1.96MB. Source/bundle27c32ee pushed. Proceeding to the one information-only pilot after fresh full quota, job, dependency and official-receipt admission checks; no GPU quality claim or official submission.",
+          "evidence": []
         }
       ]
     },
