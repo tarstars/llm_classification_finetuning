@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-08T12:32:56.503066+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "notebook_sha256": "954395768999aeb17c3f6ea0ca75cbc2f08f97d1c5882958cef3a97003c1bafe",
+  "source_sha256": "ef54dab88bdcde7e717d004cb28a0d176b1dd63c0180d6ece2e999675cb9e8dd"
+}

@@ -6195,6 +6195,14 @@
           "evidence": [
             "results/span_020/batch_candidate_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-08T12:34:39+00:00",
+          "status": "running",
+          "note": "One90mincapped version accepted12:30UTC as arseniytrushin/llm-preference-span020-batch-candidate/1; QUEUED, controller64026/PID4140906live. Remote source identical/internetdisabled verified12:32:56. Fresh67owned/noactive,24.97GPUhfree,paidFalse,all7officialterminal and5pinneddatasets checked. No new score/quality.",
+          "evidence": [
+            "results/span_020/jobs/batch_candidate/source_verification.json"
+          ]
         }
       ]
     }

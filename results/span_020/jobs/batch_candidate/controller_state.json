@@ -1,0 +1,8 @@
+{
+  "stage": "monitoring",
+  "at": "2026-11-08T12:36:40.944549+00:00",
+  "pid": 4140906,
+  "role": "batch_candidate",
+  "status": "QUEUED",
+  "kernel_version": "arseniytrushin/llm-preference-span020-batch-candidate/1"
+}

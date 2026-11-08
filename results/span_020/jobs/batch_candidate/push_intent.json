@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T12:29:57.494200+00:00",
+  "kernel": "arseniytrushin/llm-preference-span020-batch-candidate",
+  "quota_before": {
+    "used_seconds": 18092.289,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 89907.711
+  },
+  "max_session_seconds": 5400,
+  "notebook_sha256": "954395768999aeb17c3f6ea0ca75cbc2f08f97d1c5882958cef3a97003c1bafe",
+  "metadata_sha256": "1135576ee1c5a93b87b1e2735e830b3ae82b95b72650c9456a2e83942f9359a2"
+}

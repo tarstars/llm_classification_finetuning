@@ -23,9 +23,20 @@ results/span_019/closure_audit.json PASSED after transition. Final Notebook31has
 78historical snapshot files now exist, all prior74preserved.37unfinished items
 carried. V20active,38members, focus[H66], H66running=pre-GPUpreparation only;
 v21draftempty. V20source notebook/config/worker are now BUILT and CPUrehearsed;
-no v20GPUadmission yet. No newuploads, official or quality outputs in v20.
+V20oneversion ACCEPTED/QUEUED; no newuploads, official or quality outputs in v20.
 Notebook ROOT/runs/span_020/notebooks/batch_candidate/job.ipynb; bundle and actual
 serialized rehearsals in results/span_020/batch_candidate_{bundle,cell_rehearsals}.json.
+Controller exec64026/PID4140906 is LIVE; actualacceptedsource
+arseniytrushin/llm-preference-span020-batch-candidate/1, accepted12:30UTC,
+stillQUEUED at12:33:26UTC. Poll SAME64026; never push another version.
+Sourceverification61585 TERMINALexit0 at12:32:56UTC: remote cells match,
+internetdisabled, notebookSHA954395768999aeb17c3f6ea0ca75cbc2f08f97d1c5882958cef3a97003c1bafe.
+Freshadmission67owned/noactive,quota89907.711free,paidFalse,7officialterminal;
+all5datasetversions/privacy verified. Bundle/source frozen and pushed5950115.
+Prepare39064/build87470 TERMINALsuccess; do NOTrerun prepare. Notebook32interim
+created with2executedcells/zeroerrors; reviewbuilder excludedfromfrozencandidate.
+After COMPLETE/retrieval, audit_span_020_candidate.py performs fullchecks/drift/
+runtime BEFORE locallyreadingvotes. Do not run auditor during queued/running.
 
 ## H65 actual completed source/assets/native GPU execution
 
