@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-08T22:43:28.247741+00:00",
+  "admitted": true,
+  "all_official_terminal": true,
+  "official_receipts": 7,
+  "public_cap_seconds": 3600,
+  "phase_cap_seconds": 3600,
+  "dependencies": {
+    "at": "2026-11-08T22:43:28.246825+00:00",
+    "datasets": [
+      {
+        "source": "tascj0/lmsys-checkpoints-0-0805/1",
+        "public": true,
+        "current_version": 1
+      },
+      {
+        "source": "tascj0/lmsys-checkpoints-3-0805/1",
+        "public": true,
+        "current_version": 1
+      },
+      {
+        "source": "tascj0/lmsys-modules-0805/1",
+        "public": true,
+        "current_version": 1
+      },
+      {
+        "source": "tascj0/lmsys-packages/1",
+        "public": true,
+        "current_version": 1
+      }
+    ]
+  },
+  "expert_weights": [
+    0.4,
+    0.6
+  ],
+  "official_submission_eligible": false
+}

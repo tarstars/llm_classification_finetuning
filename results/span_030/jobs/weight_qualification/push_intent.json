@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T22:43:28.274082+00:00",
+  "kernel": "arseniytrushin/llm-preference-span030-llama-prior",
+  "quota_before": {
+    "used_seconds": 31657.474,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 76342.526
+  },
+  "max_session_seconds": 3600,
+  "notebook_sha256": "d8233a126c950d10b373117f5101cce1b4d625350335d8ee2c57b49999b90399",
+  "metadata_sha256": "6ad96602e88fa5acce1bfb78405501f273ea877fcf7f3b759ad9ee294c7158c1"
+}

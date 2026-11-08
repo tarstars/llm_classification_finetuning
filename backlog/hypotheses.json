@@ -7302,6 +7302,14 @@
           "evidence": [
             "results/span_030/weight_qualification_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-08T22:45:34+00:00",
+          "status": "running",
+          "note": "FrozenGPUmethod cb73c41 published beforefreshcompleteadmission. AcceptedONCE arseniytrushin/llm-preference-span030-llama-prior/1; controller13316/PID1651883 RUNNING22:43:31UTC. Sourceverified22:44:37 exactcells/private/offline/T4/image/id, four publicv1assets fresh, all7officials terminal beforelaunch. Noofficialyet; observe SAMEversion then auditonce, no duplicatepush or retry.",
+          "evidence": [
+            "results/span_030/jobs/weight_qualification/source_verification.json"
+          ]
         }
       ]
     }

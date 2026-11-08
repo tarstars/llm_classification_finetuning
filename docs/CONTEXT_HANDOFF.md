@@ -11,7 +11,7 @@ span013-gemma-order/1. No newofficial since H60; no live ownjobs now.
 V29SEALED/published6030aa3. Activev30focus[H76],H76RUNNING=actualGPU
 qualification SOURCEPREPARATION.39activeitems=38carried+H76,V31draftempty,
 95registeredtasks,118immutable snapshotfiles. GOAL.md/docs/SPAN_030_PLAN.md
-selected/pushedc0b01e6 BEFORE40/60quality. No activeGPU/officialYET; qualification and official-ready source now prepared below.
+selected/pushedc0b01e6 BEFORE40/60quality. OneacceptedGPUqualificationlive below; noofficialYET.
 
 H76CPUreplay11860TERMINALexit0,1.7475s/300. One normalized.4G+.6alignedL,
 T1,noroute/reverse. UniformH60.6529882483->candidate.6453783692, gain+.007609879,
@@ -57,16 +57,24 @@ caps required. Durableintent, ONEAPIwrite, uncertainreplyreconcilesread-only
 historysameuniqueMESSAGE/notinpriorrefs, NEVERresubmits. Observe acceptedreceipt
 throughterminal and robustfullboard via observe_leaderboard.py. NoGPUwhilepending.
 
-NEXTfreeze/push allnewsource/results/bundle, then run ONCE
-.venv/bin/python scripts/run_span_030_candidate.py withescalation (freshfull
-inventorynormally2-3min). Record returnedunifiedhandle/PID/exactversion; no
-v30pushintent oracceptedversion existsYET. Afteraccepted run
-verify_experiment_source.py weight_qualification --span30 read-only. Observe
-SAMEhandle/version throughterminal/retrieval then auditor ONCE. Stop atany
-qualificationgate failure; no retry, thirdrole or faster-node rescue. Ifpasses,
-prepare/publishconcretedecision and submitONCE afterfreshfulladmission. Source
-metadata id/title matchllm-preference-span030-llama-prior; alwaysuse returnedref.
-Do NOT rerun frozenCPUreplay/preparers; H73staysdeferred andno moreweights.
+GPUmethod frozen/pushedcb73c41 BEFORE freshfulladmission. Accepted ONCE
+arseniytrushin/llm-preference-span030-llama-prior/1, RUNNING22:43:31UTC.
+Controllerunified13316/PID1651883 live. Exactsource verified44671exit0 at
+22:44:37UTC:cells/id/private/offline/T4/image match; fourpublicv1deps refreshed,
+all7officialsCOMPLETE beforelaunch. No v30official or otherGPU exists.
+
+NEXTobserve SAME13316/version throughterminal/retrieval; then run
+scripts/audit_span_030_candidate.py ONCE. It checks all10oldraw cohorts,
+source/hostgroups/tokens/positions/CSV/memory and actualworse-matchingE18/current
+2roleprojection. Anyfailure stops H76, no retry/thirdrole/faster-node rescue.
+Ifeligible, scripts/submit_span_030_candidate.py --prepare-decision creates
+concretedecision; commit/pushqualification+decision and source before actual
+submit. Then runsubmit_span_030_candidate.py ONCE (freshfullofficialadmission
+normally2-3min). Recordreturnedhandle/receipt; observe SAME aftertimeout,
+neverduplicate mutation. --observe-only reconcilesexistingintent/history only.
+Hiddenactualtextinference source is sameacceptedversion; no public goldreads.
+No more weights from leaderboardfeedback. Need actualfreshcompleteofficial
+rank<=19 plus reporting/preservation audit before completingpersistentgoal.
 
 ## V29 terminal evidence
 

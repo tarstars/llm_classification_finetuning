@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-08T22:44:37.606119+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span030-llama-prior/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "notebook_sha256": "d8233a126c950d10b373117f5101cce1b4d625350335d8ee2c57b49999b90399",
+  "source_sha256": "ef54dab88bdcde7e717d004cb28a0d176b1dd63c0180d6ece2e999675cb9e8dd"
+}
