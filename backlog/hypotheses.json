@@ -6812,6 +6812,14 @@
           "evidence": [
             "results/span_026/context_qualification_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-08T18:56:01+00:00",
+          "status": "running",
+          "note": "Singlefullqualificationaccepted18:53:11UTC andRUNNING18:54:09: arseniytrushin/llm-preference-span026-context-candidate/1. Frozen214c61cpushedBEFOREGPU; exactacceptedcells/image/privateoffline/twoT4/fourpublicv1datasets verified18:53:47. Controller69187/PID964156; observeSAMEhandle/version, neverre-push. Followupcap3600s/max2acceptedphaseversionsnowused; actualpilotcharge5461.312s. Noofficialyet; engineering/CSV/routing/memory/runtimeeligibilitypending.",
+          "evidence": [
+            "results/span_026/jobs/context_qualification/source_verification.json"
+          ]
         }
       ]
     }

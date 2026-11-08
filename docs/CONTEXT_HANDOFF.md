@@ -1,6 +1,6 @@
-# H72 pilot complete; full qualification next
+# H72 pilot complete; full qualification running
 
-Current snapshot Nov8 2026,18:49UTC. Persistent goal team17244411 rank<=19
+Current snapshot Nov8 2026,18:56UTC. Persistent goal team17244411 rank<=19
 remains ACTIVE/unachieved. Fresh complete board18:19:24UTC:23/312,.82987,
 19th/20th.82915,leader.82692. results/span_026/midpilot_leaderboard.json.
 No new official since H60receipt58103553/source span013-gemma-order/1.
@@ -32,11 +32,13 @@ Auditedpilotresults/report/Notebook38publishedb73c707. Candidatebuilder77285
 TERMINALexit0; actualfinalcell success/failure/watchdog, standaloneimports,
 public+hiddenhash/flagmode branches andJupyterstartup ALLPASS. Bundle/rehearsals
 results/span_026/context_qualification_*.json. Generatednotebook under
-ROOT/runs/span_026/notebooks/context_qualification; notadmittedyet.
-NEXTfreeze/push itsbundle BEFORE running scripts/run_span_026_candidate.py ONCE. Recordreturned
-handle; no duplicatepush aftertimeout. Verifyacceptedsource using
-scripts/verify_experiment_source.py context_qualification --span 26. ObserveSAME
-controller/version. After COMPLETE/retrieval, run audit_span_026_candidate.py
+ROOT/runs/span_026/notebooks/context_qualification. Frozen214c61cpushedBEFOREGPU.
+Qualificationaccepted18:53:11UTC andRUNNING18:54:09:
+arseniytrushin/llm-preference-span026-context-candidate/1. Controllerunifiedsession
+69187/PID964156. Sourceverifier51910TERMINALexit0 at18:53:47; acceptedcells/
+image/privateoffline/twoT4/fourpublicv1datasets verified. Followupcap3600s.
+ThisisSECONDandLASTacceptedpublicversioninphase. Noofficialhasbeensubmitted.
+NEXTpollSAME69187/version, neverre-push aftertimeout. After COMPLETE/retrieval, run audit_span_026_candidate.py
 ONCE. Ifeligible, submit_span_026_candidate.py --prepare-decision, commit/push
 thatconcretedecision, then submit_span_026_candidate.py ONCE. --observe-only
 resumessameacceptedreceipt. Freshcompleteinventory/quota/receipts/dependencies
@@ -53,8 +55,8 @@ through3explicitcohorthooks, noforwardchange. OldH60route/weights unchanged;
 cache. CPUcandidatepreparation3590TERMINALexit0,total626.6422/1200s. Heavy
 candidate_spec SHA414cdbb0f35ff979e6a8c3a6f6d2f2ef92ea25b57673b691400e5830ce976da7,
 hidden_asset_spec SHA851144d920dbdda37a815a196922daf197fbc00af223db2458aa8e37475055de.
-Do NOTreprepare. Extra3control/4uniform/63long/0visibletestrows. OnlyONEaccepted
-H72version sofar; neitherqualificationnorofficialadmitted.
+Do NOTreprepare. Extra3control/4uniform/63long/0visibletestrows. TWOaccepted
+H72versions now; qualificationlive, officialnotadmitted.
 
 OriginalCPUcoverage/native selector alreadyDONE; DO NOTrerun.357/57477changed,
 8.985%fullGworkproxy,22newBvisible, retainedBchars64.52->88.60%; controlsandall
