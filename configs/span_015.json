@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-08T02:43:38.738712+00:00",
+  "deadline": "2026-11-10T02:43:38.738727+00:00",
+  "job_seconds_caps": {
+    "blackpearl_pilot": 3600,
+    "blackpearl_followup": 3600
+  }
+}

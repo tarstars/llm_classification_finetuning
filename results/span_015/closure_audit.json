@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-08T02:55:32.611489+00:00",
+  "passed": true,
+  "sealed_version": 15,
+  "goal_achieved_by_span": false,
+  "decision": "Stop before GPU: exact earlier checkpoint provenance, class/head restoration and native format remain unsupported. Retain H60 official0.82987.",
+  "new_gpu_executions": 0,
+  "official_submissions": 0,
+  "small_artifacts_verified": 10,
+  "prior_snapshots_preserved": 58,
+  "notebook_code_cells": 2,
+  "notebook_errors": 0,
+  "notebook_sha256": "16e87fc180d3cff7022925f78b9dd0086412ec6606fa9508534e44d3ce26cabe",
+  "goal_archive_sha256": "b8d376cf4564e314c292e3217e35ed54d0b39328990fec06810ad17377d293f4",
+  "successor_members": 39,
+  "leaderboard": {
+    "observed_at": "2026-11-08T02:54:13.197636+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 23,
+    "teams": 312,
+    "score": 0.82987,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82702,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-07T20:07:11.890Z"
+  }
+}

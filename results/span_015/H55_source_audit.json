@@ -1,0 +1,79 @@
+{
+  "task": "H55",
+  "at": "2026-11-08T02:52:38.651393+00:00",
+  "audit_complete": true,
+  "source": "sayoulala/merge-gemma-model-step1/1",
+  "author_repository": "https://github.com/shyoulala/LMSYS_BlackPearl",
+  "author_commit": "05ac9b917a99aac43bfe0dbcb30e6e83a38688be",
+  "gates": [
+    {
+      "requirement": "Immutable earlier parent availability",
+      "resolved": true,
+      "evidence": "COMPLETE; exact source/config/index hashes match the v9 observation."
+    },
+    {
+      "requirement": "Classifier architecture and head presence",
+      "resolved": true,
+      "evidence": "42-layer Gemma2ForSequenceClassification; three labels; score.weight in shard4."
+    },
+    {
+      "requirement": "Exact checkpoint training and overlap",
+      "resolved": false,
+      "evidence": "Original adapter metadata403; no manifest links this earlier artifact to a fold/run. Family code uses competition supervision."
+    },
+    {
+      "requirement": "Exact class order and restored trained head",
+      "resolved": false,
+      "evidence": "Family code maps A/B/tie to0/1/2 and trains/saves score; merge discards strict=False load diagnostics. Exact adapter keys/run unavailable."
+    },
+    {
+      "requirement": "Exact native input and pooling contract",
+      "resolved": false,
+      "evidence": "Final family inference uses word caps, balanced truncation and appendedEOS; training slices1100tokens/padEOS, parent config pad0. No exact earlier inference reference."
+    },
+    {
+      "requirement": "License and complete lineage",
+      "resolved": false,
+      "evidence": "Repository has no top-level license; training file carries Apache header. Base Gemma terms do not establish permission/lineage of the inaccessible adapter."
+    },
+    {
+      "requirement": "Complementarity and measured deployment fit",
+      "resolved": false,
+      "evidence": "Earlier18.48GB bf16 checkpoint has no verified score or runtime. No outputs measured;905filename is not a quality estimate."
+    }
+  ],
+  "source_audit_passed": false,
+  "gpu_admitted": false,
+  "quality_measured": false,
+  "independent_local_quality": false,
+  "quality_variants_tested": 0,
+  "new_gpu_executions": 0,
+  "official_submissions": 0,
+  "full_weights_downloaded": false,
+  "small_files_bytes": 140665,
+  "family_training_saves_trained_score_head": true,
+  "exact_head_restore_verified": false,
+  "random_head_demonstrated": false,
+  "exact_label_map_verified": false,
+  "checkpoint_declared_weight_bytes": 18483433472,
+  "parent_pad_token_id": 0,
+  "final_family_context": 2000,
+  "decision": "Stop before GPU: exact earlier checkpoint provenance, class/head restoration and native format remain unsupported. Retain H60 official0.82987.",
+  "artifact_sha256": {
+    "author/src__merge_lora.py": "556ed572d9f97d1b5978b8b0acaddffa00082f9788e49c69a702b039841e0611",
+    "author/src__train_ce_model_nice_memory_grad_gemma2_double_16bit.py": "27a4cf77e6256128fdbf2096d4394517a74078feb996b5103acac8215fc9008a",
+    "author/src__predict_test.py": "dd6ede10620dbe8d78445d2ec78b07b2e06dcbf4d5b8756116af797d7854b343",
+    "author/src__run_fintune_16bit_distill.sh": "8ce8586c49dad8ed62c116dc1e6fd5fb06dabe6f311226009d8503d80806df70",
+    "parent/merge-gemma-model-step1.ipynb": "6fecd385d6e94a290c03ced98d37fe9166a9040037b3e2a60671eb7df96c1c1c",
+    "parent/special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+    "parent/config.json": "495654440bf70a9ec11b0fdf75e1b32fdb68ab6f186efb80ab0117b7e33acdff",
+    "parent/tokenizer_config.json": "ee86abd85a5ddbbf0801ba60c8589953adf81f950fe140f31c2285f750dc8264",
+    "parent/model.safetensors.index.json": "5de82368792498ade3a7d1ff9c6707e9ca39f6d81f0c503721bf74992edc1d9c",
+    "parent/kernel-metadata.json": "0b2edc099a9da54f5b8efb7ac39c7e4b06a710164331a9f29b2d8b5b0b19fad1"
+  },
+  "earlier_preprocessing_sha256": "e2ece47498696668a5656894c7750d3911c3fc1ffe9e39870b7a2cbbd39641d2",
+  "source_sha256": {
+    "scripts/audit_span_015_source.py": "b9b1dc1e58b3572adefd6f9a58bf226158a0f864d9d21ca1642d4778fd6a0e37",
+    "scripts/gather_span_015_source.py": "84077db95538b62cdc32c0dbe97c37c6a39529bd6661c593fa5c06644cc9af6b"
+  }
+}
