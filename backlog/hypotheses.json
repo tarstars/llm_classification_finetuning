@@ -6756,6 +6756,14 @@
           "evidence": [
             "docs/SPAN_026_EVALUATION_AMENDMENT.md"
           ]
+        },
+        {
+          "at": "2026-11-08T16:48:06+00:00",
+          "status": "running",
+          "note": "Deployable text-onlyselector verifiedonall57477rows: exact357selected, falsepositives0/falsenegatives0.30.32s; aggregateCPU569.67/1200cap. FiveCPUtests pass forbody/spans/selector/conservativewholepass+warm+selector+worstparentaccounting. Next nativeGPUearlymemory/runtimeprobe; no worker/controller/admission or qualityquery yet.",
+          "evidence": [
+            "results/span_026/selector_audit.json"
+          ]
         }
       ]
     }

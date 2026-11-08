@@ -14,6 +14,11 @@ fieldprefixcoverage/work/modelpositions. Advanceonly64..1%changedrows andextra
 FULLpassworkproxy<=15%originalGwork; not a runtime/qualityclaim. Freeze seed44
 sample<=384changedIDs and allGPU/scoringcode beforeprobabilities/labels.
 
+CPUstage nowcomplete:357changedrows,8.985%fullnewpassworkproxy, allgatespass.
+Deployableselector matchesall57477nativecomparisons exactly; sourceCPUtotal
+569.67/1200seconds. SeeSPAN_026_COVERAGE.md; do notreruncompletedsourceaudits.
+NoGPUis admitted yet; next build/rehearse/qualifytheactualearly6kprobe.
+
 ConditionalGPUonlyafterseparatefreshadmission/rehearsals: initial<=7200twoT4s,
 early6kmemory/9hprobe beforelargequality. Fixed parent/candidate on/offoutcomes
 andconservativeminimumgain, originalprevalenceweighted, seed42/2000groups:

@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-08T16:41:39.906273+00:00",
+  "rows": 57477,
+  "uses_targets": false,
+  "selector_matches_all_native_changed_inputs": true,
+  "actual_selected_rows": 357,
+  "native_changed_rows": 357,
+  "false_positive_rows": 0,
+  "false_negative_rows": 0,
+  "elapsed_cpu_seconds": 30.32452051504515,
+  "aggregate_cpu_source_seconds": 569.6729310199153,
+  "cpu_cap_seconds": 1200,
+  "new_gpu_executions": 0,
+  "new_inference_executions": 0,
+  "gpu_admitted": false,
+  "source_sha256": {
+    "scripts/verify_span_026_selector.py": "10c0997343695591859ee7d28a75f83343d289f2ac8959a7ab37fea5bcd41c10",
+    "src/arena/span026_runtime.py": "c48a13bd0204ec0fd25d775bec8abe866c21809133ff36df69ab4756163e7f1b"
+  },
+  "decision": "prepare_actual_engineering_pilot"
+}

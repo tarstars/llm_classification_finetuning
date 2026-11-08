@@ -41,3 +41,12 @@ qualification before larger diagnostic scoring or a possible one-official trial.
 [Aggregate audit](../results/span_026/coverage_audit.json) ·
 [initial plan](SPAN_026_CPU_PLAN.md) · [current plan](SPAN_026_PLAN.md) ·
 [notebook38](../notebooks/38_context_coverage.ipynb).
+
+The deployable text-only selector was independently checked against every native
+4k/6kcomparison. Tokenizing the exact raw conversation body up to4097tokens
+selects the same357rows, with **zero false positives and zero misses**. Its
+30.32CPUseconds bring the aggregate source phase to569.67seconds, below the
+original1200cap. No new model inference or GPU admission occurred. The actual
+Kaggle selector cost still needs measurement for the runtime forecast.
+
+[Selector proof](../results/span_026/selector_audit.json).

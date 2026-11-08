@@ -1,6 +1,6 @@
 # Active rank goal; v25 negative, v26 context-coverage audit selected
 
-Snapshot Nov8 2026,16:35UTC. Read PROJECT_POLICY.md, GOAL.md,
+Snapshot Nov8 2026,16:45UTC. Read PROJECT_POLICY.md, GOAL.md,
 SPAN_026_PLAN.md. Persistent objective team17244411rank<=19 on a fresh complete
 board after legitimateinference. ACTIVE/unachieved, no tokenbudget. No subagents.
 Never walk HOME/~/prj/Arc/FUSE/troll_farm; scope namedproject/exactartifactpaths.
@@ -40,15 +40,14 @@ SPAN_026_CPU_GOAL.md/CPU_PLAN.md with exactsourcehashes anchored278b9dc.
 Do NOTcompare CPUsourcehashes forGOAL/currentplan againstamendedtext; usearchives
 orGit278b9dc. OtherCPUmethodfilesunchanged. Registryacceptance/revisionrecords it.
 
-NEXT: afterpublishing, run once thelabel-freedeployableselectorproof:
-PYTHONPATH=/tmp/llm_span019_runtime .venv/bin/python scripts/verify_span_026_selector.py
-No selector_audit.jsonyet. Test bodytokenlength>4096matchesactualnative4k/6kchanged
-mask onALL57477rows. SourceCPUcapisAGGREGATE539.35+newelapsed<1200, notreset.
-No labels/MLinference/GPU. FiveCPUtests pass fornativebodyspans/textonlyselector/
+Selectorproof DONE:17484TERMINALexit0. All57477rowsmatchnativechangedmask,
+357selected,0falsepositives/0misses.30.3245s; AGGREGATEsourceCPU569.6729/1200s.
+selector_audit.json exists; DO NOT rerun eithercompletedCPUaudit. No labels/
+MLinference/GPU. FiveCPUtests pass fornativebodyspans/textonlyselector/
 fullpass+warm+selector+worstparentruntimeandnodivisionby2GPU. prefix_mask in
 src/arena/span026_runtime.py, helperbody nativeformat inspan026_context.py.
 
-Then build actualEARLYengineeringpilot beforelargerdiagnosticquality. NO H72GPU
+NEXT build actualEARLYengineeringpilot beforelargerdiagnosticquality. NO H72GPU
 worker/controller/builder/resourceplan yet; nothinglive towaiton. Reusequalified
 H60compute enginewith explicitnative6144inputbudget onlyforextraGorigcohort;
 allold4kcontrols/inference unchanged. Consider sameGemmaprocessforold/newcohorts
@@ -130,6 +129,6 @@ Userdirty07_error_poster.ipynb and12_backlog_v1_span.ipynb MUSTstaybytewise;
 hashes results/span_025/preservation.json (H26willcopypreservation). Neverstage/
 reset. ~/notebooks/llm_classification_finetuning linkcorrect. HeavyarraysDB,
 code/MD/aggregates/executednotebooksGit. Priorpublished5b0d0bcacceptedH71;
-278b9dcpublishedH71negative/H72CPUmethod. Currentcoverage/amendment/selectorproof
-code needcommit/pushbeforeselector. NativeCPUsession37086TERMINALexit0.
+278b9dcpublishedH71negative/H72CPUmethod. 0f5e5f8publishedcoverage/prospectiveamendment/selectorcode; currentselectorproof
+result/lateststate beingpublished next. Native37086/selector17484TERMINALexit0.
 Goalturnmade actualnewnegativequalityevidence andnewinformationplan, no blocker.

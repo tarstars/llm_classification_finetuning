@@ -5,7 +5,8 @@ H71's fixed identical rule failed and stops. Old H23/H24remain historical
 carryovers: their earlier tokenizer/training claims are not current-model facts.
 Actual retained ProcessorPAB truncates the concatenated conversation prefix to
 4096tokens before adding the unchanged judge/chat framing. It can omit B-tail
-or later turns. No4k/6kcoverage or quality comparison has been made yet.
+or later turns. Coverage was unmeasured at selection; the completed label-free
+audit is in SPAN_026_COVERAGE.md. Model quality remains unmeasured.
 
 First perform one label-free CPUaudit, <=1200elapsed seconds, with the exact
 native Transformers4.42.3/Tokenizers0.19.1and retained Gemma assets/processor.
