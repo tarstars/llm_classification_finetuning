@@ -1,43 +1,42 @@
-# Move above 20th place: v29 fixed two-expert prior
+# Move above 20th place: v30 prospective Llama-heavy prior
 
-Persistent objective: team17244411rank<=19 on a fresh complete officialboard
-following legitimateinference. Active/unachieved; H60best0.82987/rank23.
-V28E18closed with exact probabilities but32973.468sruntimeFAIL. Preserve its
-archive/failure and deferred H73. Select ONLY H75 under SPAN_029_PLAN.md.
+Persistent objective ownteam17244411rank<=19 on fresh complete officialboard
+following legitimateinference. ACTIVE/unachieved; bestH60.82987/rank23. V29H75
+fixed60/40faileditsgrossguard; archive GOAL_V29 and everyfailedresult. Select
+ONLYH76 under SPAN_030_PLAN.md. H73three-role remainsdeferred.
 
-One fixed candidate: .6Gemma-original+.4alignedLlama-swapped, normalize rows,
-T1; no reverse pass or routing. Keep native4kinputs/original8192microbatches,
-CPUproducer/FIFOqueue2/batch80/zero workers/fp16/kernels/sharding. Historical
-2expert50/50official0.83053 is weight-ablation comparator; H60is incumbent.
-Two actual base roles screen30766.762s, not qualification or quality evidence.
+ONEnew candidate normalized(.4Gemma-original+.6alignedLlama-swapped),T1,
+twoexperts,no reverse/route. Native4kinputs/original8192microgroups/CPUproducer/
+FIFOqueue2/batch80/zero workers/fp16/kernels/sharding unchanged.50/50baseline
+actualofficial.83053 andH60incumbent are fixedcomparators. This secondprior
+was sequentiallyselected from failedGemma-heavy localresults, not untouched
+validation or optimum. No40/60probability computed before this contract.
 
-First freeze/push source before one<=300sCPUmatched-cache descriptive replay
-on fixed control256/uniform512/long64. Report removal and weight comparisons
-separately against both comparators, seed42/2000prompt-group intervals/classes.
-Originaltrainingoverlap/noCV/nohiddenforecast. One qualityvariant only; no
-fitting/grid. Fixed prospective uniformgainvsH60<-.005grossstop; positive local
-improvement is not required. No earlier60/40quality has been computed.
+Freeze/push before one<=300sCPUmatched control256/uniform512/long64replay.
+Separate removal/weight/total comparisons,seed42/2000prompt groups/classes,
+originaltrainingoverlap/noCV/nohiddenforecast. Report cumulative60/40then40/60
+trials. Onecurrentvariant, no continuousfit/additionalweight/T/routegrid. Same
+prospectivegrossstop uniformgainvsH60<-.005; positive localgain not required.
 
-If guard passes, ONE<=3600s actualoffline2T4 two-rolequalification with full80
-warmups/allcohorts/visibleCSV. Strict oldraw<=1e-5 and exact source/checkpoint/
-IDs/tokens/positions/host tensors/microbatch controls, <=95pcteachGPUmemory.
-Use worse matching E18/current base-role end-to-end rates and retained worse
-cold/fullwarm/other,20pctmargin/600reserve; require25kprojection<32400. No
-three-role retry or faster-node rescue. If qualified, ONEfrozenofficial<=32400s
-only after committed/pusheddecision and fresh fulladmission; actualhidden text
-inference, no cachedprediction/training-IDlookup. Retain best if candidate loses.
-No further weight choices from its leaderboard feedback.
+If guardpasses, ONE<=3600sactualprivate/offline2T4two-rolequalification, full80
+warm/allcohorts/visibleCSV, strictoldraw<=1e-5 and exact source/checkpoint/IDs/
+tokens/positions/hosttensors/originalmicrogroups,eachGPUmemory<=95pct. Use
+worse matching E18/current base-role rates andretainedworsecold/fullwarm/other,
+20pctmargin/600reserve,<32400sfor25k. Old30766.762sscreenisNOTqualification.
+Then ONEfrozenofficial<=32400sonlyafterallgates/committed-pusheddecision/fresh
+fulladmission,actualhiddentextinference,no cachedpredictions orIDlookupfeatures.
+No furtherweightsfromitsleaderboardfeedback; retainbestifcandidate loses.
 
 Public<=3600twoT4seconds/max1acceptedversion/oneofficial. Inherit original
-2026-11-10T08:37:37.343197UTCdeadline, Nov14anchor and all priorcharges.
-Latestfree76342.526s/used31657.474,reserved0,paidFalse; refresh complete quota/
-ownedjobs/officialreceipts/fourpublicv1datasets before eachGPU. Ensure remaining
-public+fullofficialallowance fits time/quota. No GPUwhileofficialpending/new
-weights/training/externaltextservice, no cap/margin/periodreset. Actualserialized
-cells/imports/public+hidden branches/success/failure/watchdog/Jupyter rehearsals
-and frozen/pushedsource beforeGPU. Observe acceptedhandles aftertimeouts;
-neverduplicate mutation.
+2026-11-10T08:37:37.343197UTCdeadline/Nov14anchor/allcharges, no reset. Latest
+used31657.474/free76342.526s,reserved0/paidFalse. Freshcompleteownedinventory/
+quota/officialreceipts/fourpublicv1datasets beforeeachGPU, full3600+32400
+allowance within time/quota. No GPUwhileofficialpending/newweights/training/
+externaltextservice, faster-node retry, numerical/margin/cap relaxation or
+ambiguous-mutation retry. Freeze/push actualserializednotebooksource after
+imports/public-hiddenmodes/finalsuccess-failure/watchdog/Jupyterrehearsals.
+Observe SAME acceptedhandle/version/receipt aftertimeouts.
 
-Preserve114snapshots/user07+12notebooks/link/alloldcontrols. HeavyfilesDB;
-code/MD/aggregate/executedNotebook41Git. CLIhistory/discoveriesv30/unfinished
-carry. A gate/span is not goalcompletion; verify actualfreshcomplete rank<=19.
+Preserve118snapshots/user07+12notebooks/link/allarchivesandfailures. HeavyDB,
+code/MD/aggregate/executedNotebook42Git, CLIhistory/discoveriesv31/unfinished
+carry. Only actualfreshcompleteofficialrank<=19 completes persistentgoal.

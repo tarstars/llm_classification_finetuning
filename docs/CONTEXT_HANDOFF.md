@@ -8,10 +8,15 @@ span013-gemma-order/1. No newofficial since H60; no live ownjobs now.
 
 ## Immediate next action
 
-V29SEALED; activev30/no focus selected yet,39active items=38carried+H76.
+V29SEALED/published6030aa3; activev30focus[H76],H76RUNNING=CPUmethod
+preparation,39active items=38carried+H76.
 V31draftempty.95registeredtasks,118immutable snapshot files. GOAL.md still
-closedv29; exactarchive docs/GOAL_V29.md. NEXTpublishclosure, then selectNEW
-bounded v30focusH76 before any new computation. H73three-role stays deferred.
+now v30boundedcontract docs/SPAN_030_PLAN.md; exactoldarchiveGOAL_V29.
+Two newmixturetestsPASS. NEXTfreeze/pushnewmethod then runONCE timeout300s
+.venv/bin/python scripts/replay_span_030_prior.py withescalation. No40/60
+probabilitycomputedYET. Recordhandle; do notoverwrite replay/preservation.
+H73three-role staysdeferred. NewCPUmethodexplicitly records sequentialselection
+and cumulative60/40then40/60trials; no otherweightvariant allowed.
 
 H76ONEprospective normalized40pctGemma-original/60pctalignedLlama-swapped,
 T1,twoexpert,no route/reverse. No40/60probability computedYET. It was queued

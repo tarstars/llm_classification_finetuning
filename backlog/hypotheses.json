@@ -7264,7 +7264,7 @@
       ],
       "id": "H76",
       "rank": 95,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 30,
       "discovered_during": 29,
       "derived_from": [
@@ -7277,6 +7277,14 @@
           "note": "H75 fixed Gemma-heavy prior failed at grossguard; weight component dominates removal loss. Queue ONEprospective40/60two-expert prior with explicit sequential-selection/originaltrainingoverlap limits and own frozen replay/actualqualification/official; no current newweights computation.",
           "evidence": [
             "docs/SPAN_029_LLAMA_PRIOR_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T22:16:43+00:00",
+          "status": "running",
+          "note": "V30contract selected; preparing ONE40/60source before newquality. Original60/40failure preserved; fixedprotocol explicitly discloses sequential selection on biased cohorts. NoGPUor newprobabilityyet,118snapshotpreservation to be captured by boundedreplay.",
+          "evidence": [
+            "docs/SPAN_030_PLAN.md"
           ]
         }
       ]
@@ -9553,8 +9561,18 @@
         "H73",
         "H76"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H76"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T22:16:43+00:00",
+          "note": "Persistentgoal selects one prospective40/60two-expert follow-up after fixed60/40grossfailure. NewSPAN_030_PLAN freezes sequential-selection/overlap disclosures, comparators,onecandidate,unchangedgrossguard,oneactualqualification/official and inheritedcaps/deadline/quota before new probabilities.",
+          "focus_ids": [
+            "H76"
+          ]
+        }
+      ],
       "carried_from": 29,
       "start_sha256": "98bdff4fbc4ebcc780c745e3073f7f7205910f1bb1fedac76dbc40ae1f5a71cf",
       "start_markdown_sha256": "12e0d8fb9039e889b70e61b34eb02597b3ad2d6db7b43b3e07f3e38049c9be01",
