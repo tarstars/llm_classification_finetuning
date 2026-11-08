@@ -17,6 +17,16 @@ whole-model-versus-production probability controls remain mandatory before quali
 The native fallback uses F16 scales and (unpackedI16weight-(unpackedzero+1)) before
 F16 multiplication. Exact expansion introduces no new quantization or fitting.
 
+The first synthetic C-contiguousLinear projection failed: maximum output
+difference0.015625despite bit-identical expanded weights. Reproducing the native
+input-by-output contiguous matrix layout gives exactly identical synthetic
+outputs. Preserve results/span_019/native_cpu_attempt_1.json and the original
+a9efd33program; this is a storage-layout correction before any model quality
+outputs, not a relaxed tolerance. Apply native_layout_torch after loading only
+expanded quantized projections, keeping the originally floating-point head
+unchanged. Repeat the same three seeded controls under the unchanged1e-5gate;
+whole-model GPU probability agreement remains unmeasured and mandatory.
+
 After these checks, acquire exactly the three pinned original shards, total
 10,361,181,040file bytes, under ROOT/runs/span_019/assets/gptq_origin. Verify their
 published SHA256 and sizes. Then permit CPU-only streaming expansion to dense F16,

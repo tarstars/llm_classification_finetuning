@@ -14,7 +14,7 @@ REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / 'src'))
 from arena.data import ROOT
 from arena.experiment import atomic_json, read_json, sha256, utc_now, verify_sources
-from arena.gptq8 import dense_weight
+from arena.gptq8 import dense_weight, native_layout_torch
 from arena.span019_input import encode, flatten_turns, native_pool_index, render
 
 
@@ -72,10 +72,11 @@ def main():
         x = torch.from_numpy(rng.normal(size=(128,128)).astype(np.float16))
         with torch.no_grad():
             reference = native(x)
-            converted = torch.nn.functional.linear(x, torch.from_numpy(dense_weight(qweight,qzeros,scales,g_idx)))
+            weight = native_layout_torch(torch.from_numpy(dense_weight(qweight,qzeros,scales,g_idx)))
+            converted = torch.nn.functional.linear(x, weight)
         difference = float((reference-converted).abs().max())
         assert difference <= 1e-5
-        arithmetic.append(dict(seed=seed, max_abs=difference, passed=True))
+        arithmetic.append(dict(seed=seed, max_abs=difference, weight_stride=list(weight.stride()), passed=True))
     # Freeze complete IDs from existing selections. No human labels are read.
     selection = read_json(REPO / 'results/span_016/profile_selection.json')
     later_path = ROOT / 'runs/span_016/cohort_matched/source.parquet'

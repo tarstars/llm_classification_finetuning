@@ -6,6 +6,17 @@ controls are still required before using a converted checkpoint for inference.
 import numpy as np
 
 
+def native_layout_torch(weight):
+    """Keep the native input-by-output matrix contiguous for F16 GEMM arithmetic.
+
+    Use after loading an expanded quantized projection, before inference. Leave
+    originally floating-point modules (including the classifier head) unchanged.
+    """
+    if weight.ndim != 2:
+        raise ValueError('Expected a projection matrix')
+    return weight.t().contiguous().t()
+
+
 def dense_weight(qweight, qzeros, scales, g_idx):
     qweight, qzeros, scales, g_idx = map(np.asarray, (qweight, qzeros, scales, g_idx))
     if qweight.dtype != np.int32 or qzeros.dtype != np.int32 or scales.dtype != np.float16:

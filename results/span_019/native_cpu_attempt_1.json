@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T08:52:56.357203+00:00",
+  "source_sha256": "5a6a483784adc7d9ee55e62f6dc4fdaf3a642f56796d2a6b8afea0b2364d751d",
+  "prototype_source_sha256": "b750c301412130c7398c54b1226ad7924e20ae5b6e1cb3f5f21f5b96eafa566b",
+  "first_attempt_preserved": true,
+  "synthetic_only": true,
+  "human_votes_read": false,
+  "new_gpu_executions": 0,
+  "native_weight_dtype": "torch.float16",
+  "converted_weight_dtype": "torch.float16",
+  "max_abs_weight": 0.0,
+  "linear_max_abs": 0.015625,
+  "same_layout_matmul_max_abs": 0.0,
+  "linear_control_passed": false
+}
