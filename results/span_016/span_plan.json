@@ -1,0 +1,39 @@
+{
+  "started_at": "2026-11-08T03:00:42.391548+00:00",
+  "deadline": "2026-11-10T03:00:42.391548+00:00",
+  "initial_quota": {
+    "used_seconds": 12894.122,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 95105.878
+  },
+  "quota_used_at_start": 12894.122,
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "gpu_session_seconds_cap": 18000,
+  "public_version_limit": 2,
+  "production_recipe_limit": 1,
+  "official_candidate_limit": 1,
+  "source_audit_deadline": "2026-11-08T04:00:42.391548+00:00",
+  "source_audit_bytes_cap": 52428800,
+  "source_audit_admits_gpu": false,
+  "target_rank_maximum": 19,
+  "parent_official_receipt": 58103553,
+  "parent_official_score": 0.82987,
+  "hidden_cap_seconds": 32400,
+  "raw_probability_tolerance": 1e-05,
+  "calibration_parameters": 3,
+  "pilot_rows": 1024,
+  "seed": 42,
+  "models": {
+    "8B": {
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659"
+    },
+    "0.6B": {
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886"
+    }
+  }
+}

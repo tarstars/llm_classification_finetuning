@@ -1,0 +1,26 @@
+{
+  "role": "reward_pilot",
+  "source_sha256": {
+    "GOAL.md": "debc9f72ab17d4ff2f781897b0f4ed3ede6b02184cca71f2d9f976b0bc4f2e17",
+    "docs/SPAN_016_PLAN.md": "264a1eabd8bfb3a3231c032d6ec8961e0d4c22e2808c7933f75d59a4af2906c8",
+    "docs/SPAN_016_PILOT_PROTOCOL.md": "b40c9e44bdcb54bc7e0355a862d11efd354b61e3fe7ce49e7cca4c7dc00850b7",
+    "scripts/build_span_016_pilot.py": "64b8cc75affbba8c75b15e0c34e634e92f5b8568c49d2ff5625b5b286533660a",
+    "src/arena/notebook_worker.py": "2c49e8edd28b2dabe70a21bbca9c8598458b78fcf6c7c3939cef7aeabd81bb13",
+    "src/arena/span016_pipeline.py": "ec9e0779d498e10456cb0055f474b986f3e554af241d481b657afda354e411e4",
+    "src/arena/span016_infer.py": "aa16dbbb7aee5ab487dc2add15ed8635da0efc6b6f7eedf6f00d2b8f0c0101b8",
+    "src/arena/span016_reward.py": "a0cc5f7b25179673fe0fb34a3b9d84463de017f1cb5b89f779011d097dc59108",
+    "src/arena/span010_order.py": "7bb9dc38ed6161eb0fc20a9b65703d44ac2bd900d2337502dc9f1a81c4c18e3e",
+    "src/arena/span013_order.py": "26dad45892c106042e6f9f8b2c1f0e02c9e1a2ff62441134de789ac9809a0b87",
+    "tests/test_span016_pipeline.py": "8e818286aa4287e504ecdbae2eafc22ee60dc3de05f58f5e1e05e0823e9c9d43",
+    "tests/test_span016_reward.py": "f1b5976d9e372e88763e2ae001612c9f74eb5eaabecb2b37075a68a8c260e6ea",
+    "results/span_016/asset_manifest.json": "401b05987eab244bc311a2d5031c30558a7d21becb52b89febacfb0e52f2fdf6",
+    "results/span_016/cohort_manifest.json": "918a4f410048acb3c9cf8a5ede958d202bbf436569f5c5498034819a9f7089a2"
+  },
+  "notebook_sha256": "42e13f87d67acf1e3f5fc66de56f1a9be24b65901613ea74dd63a062525fcb9b",
+  "metadata_sha256": "738168ad983bfb2574c812acfab55e468d04407e81210dd052e297f0fbf85e85",
+  "public_cap_seconds": 3600,
+  "hidden_cap_seconds": 32400,
+  "internet_enabled": false,
+  "public_profile_selection_sha256": "567f68f641b59c6925cd7b0421c774dee24c5758f12dc7a1b14ca4478b996cd9",
+  "asset_manifest_sha256": "401b05987eab244bc311a2d5031c30558a7d21becb52b89febacfb0e52f2fdf6"
+}

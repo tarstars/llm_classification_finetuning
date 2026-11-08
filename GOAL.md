@@ -11,12 +11,14 @@ Audit the already named Skywork Reward V2 Qwen3 heads at their pinned revisions,
 overlap limits, license, offline source, dependency and two-T4 feasibility.
 Source-only stage<=60minutes/50MiB; no GPU or full weights from that stage alone.
 
-After a supported audit, freeze the exact pilot,1024label-free selected row IDs,
+After a supported audit, freeze the exact pilot,1024label-free selected row IDs
+from later Arena votes strictly after the pinned reward publication, excluding
+previously inspected v11groups; no new model outputs have been seen. Freeze
 prompt-group cross-fitting and one symmetric3parameter tie map before rewards.
 One fixed replacement recipe only: equal Gemma expert/current order rule and
 cross-fitted8B reward expert;0.6B is a diagnostic, not another submitted recipe.
 No mixture/temperature/route/label grid or leaderboard parameter fitting. Record
-local training-overlap limits; no claim that baseline fusion is independent CV.
+source/domain limits; later votes are out-of-time evidence, not competition CV.
 Predeclare useful incremental information/uncertainty and source/ID/token/native/
 numeric/CSV/two-T4 gates before outputs. Measure conservative25kcost<32400s with
 20%margin/allcold/fullwarmup/other overhead/600sreserve and owned watchdog.

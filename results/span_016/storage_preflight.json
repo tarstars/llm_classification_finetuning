@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-08T03:31:34.003848+00:00",
+  "complete": true,
+  "quota_fields": [
+    "quotaRefreshTime",
+    "gpuQuota",
+    "tpuQuota"
+  ],
+  "dataset_count": 22,
+  "private_dataset_count": 22,
+  "total_private_dataset_bytes": 93178876,
+  "project_datasets": [
+    {
+      "ref": "arseniytrushin/llm-span011-confirmation-inputs",
+      "totalBytes": 1720766,
+      "isPrivate": true,
+      "currentVersionNumber": 1
+    },
+    {
+      "ref": "arseniytrushin/llm-span011-learning-inputs",
+      "totalBytes": 1680289,
+      "isPrivate": true,
+      "currentVersionNumber": 1
+    }
+  ],
+  "unrelated_private_names_redacted": true
+}

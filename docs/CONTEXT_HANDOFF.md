@@ -1,6 +1,6 @@
 # Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
 
-Snapshot2026-11-08T03:01UTC. Read PROJECT_POLICY.md and current GOAL.md, then
+Snapshot2026-11-08T03:36UTC. Read PROJECT_POLICY.md and current GOAL.md, then
 verify live state. Persistent goal "move above20th place" means rank<=19 for
 team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
 Do not create another goal or mark complete from a span closure.
@@ -35,13 +35,43 @@ four snapshots:62historical files now. Closure9dfb891is pushed.
 Fresh full v15terminal inventory:65owned notebooks, all jobs/receipts terminal.
 Quota used12894.122s/reserved0/free95105.878s=26.42h, refreshNov14, paid off;
 v15delta0. Recheck full quota/jobs/dependencies/receipt cursors before actualGPU.
-Activev16has39members; focus H56only, source audit RUNNING, no GPU admitted.
+Activev16has39members; focus H56RUNNING, source stage PASSED, no GPU admitted.
 GOAL.md/docs/SPAN_016_PLAN.md prospectively revise its old rank30guard under the
 continuing rank<=19objective. Preparation fixes a new48hour period/60minute small
 source audit/50MiB; no weights or GPU before supported source audit and exact
 pilot contract.8Bmain/0.6Bcontrol, one symmetric3parameter map, one replacement
 recipe, initial3600s/followup14400s separately admitted, max2public/1official.
-Read docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md and its pinned source planning JSON.
+Read docs/SPAN_016_PROGRESS.md and docs/SPAN_016_PILOT_PROTOCOL.md. HF pinned
+models publish no later than2025-07-06T18:16:33UTC. Froze1024fresh later-vote
+groups from11215eligible/10730after excluding2048inspected v11groups, seed42hash;
+actual datesJuly6 18:25throughJuly24 22:58. Durable IDs precede target queries.
+Primary quality is later-vote cross-fitted replacement versus H60, not original
+competition training overlap. Domain transport remains uncertain. Pilot gate
+gain>=.005/pairedlower>-.005; stronger official/confirmation gate>=.005/lower>0.
+One3parameter symmetric tie map, fixed5outer/3inner diagnostic folds, no grid.
+Common full reverse-Gemma cache for matched external comparison; actual routed
+uniform512pipeline separately measures deployment. Include1024reward calibration
+inference overhead in hidden runtime; known external votes are training, not
+hidden labels. Only reward expert replaces Llama; equal total expert weights.
+
+Sourcefiles15.98MB, no full weights yet. Native synthetic rendering passes both
+local5.22.1and isolated pinned4.52.3runtime; first BatchEncodingAPI failure retained,
+explicit return_dict=False fixes it. Five mapping tests plus three actual pipeline
+bookkeeping tests pass. Serialized worker success/failure/watchdog/Jupyter and
+public/hidden branches pass; no competition train.csvin hidden CPU test. Notebook28
+is executed interim3cells/0errors and may refresh while v16active. Generated real
+GPU notebook ROOT/runs/span_016/notebooks/reward_pilot; role reward_pilot. Its
+bundle/source/profile/manifest hashes must stay frozen before accepted GPU work.
+
+Next: commit/push preparation and scripts/stage_span_016_assets.py, then run
+that program prepare (acquire/hash frozen weights under ROOT), upload ONCE with
+intent/receipt, verify private datasetversion1. Manifest30files/16.380GB, actual
+weights16.329GB, four modern wheels, source.parquet+known external labels.npz.
+Flat private asset arseniytrushin/llm-span016-reward-assets/1; model prefixes
+rm8b__/rm06__. No full weights until exact serialized rehearsal passed (now passed).
+Current owned private datasets total93.2MB; unrelated names redacted. No upload
+intent or GPU receipt yet. If download interrupts, reconcile exact .part; accepted
+upload timeouts require observation of the same dataset, never repeat mutation.
 H62row-ceiling remains planned/P2; no extra current-span coverage variants.
 
 ## Sealed model evidence

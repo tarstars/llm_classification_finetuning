@@ -4973,6 +4973,14 @@
           "evidence": [
             "docs/SPAN_016_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-08T03:18:42+00:00",
+          "status": "running",
+          "note": "Source stage passed without weights/GPU. Froze1024fresh Arena groups after both pinned reward publications, excluding2048inspected groups. Native rendering and five calibration tests pass; exact worker/offline runtime still required before admission.",
+          "evidence": [
+            "docs/SPAN_016_PROGRESS.md"
+          ]
         }
       ]
     },

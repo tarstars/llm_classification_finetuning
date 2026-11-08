@@ -1,0 +1,338 @@
+{
+  "at": "2026-11-08T03:27:05.180119+00:00",
+  "dataset": "arseniytrushin/llm-span016-reward-assets/1",
+  "private": true,
+  "entries": [
+    {
+      "filename": "rm8b__README.md",
+      "model": "8B",
+      "model_filename": "README.md",
+      "bytes": 15775,
+      "sha256": "84d596cf10098030e47a99a2aba5388643b15d91f015bb60e47891e3e114bd67",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/README.md"
+    },
+    {
+      "filename": "rm8b__config.json",
+      "model": "8B",
+      "model_filename": "config.json",
+      "bytes": 848,
+      "sha256": "9b98949ef09d00c7f75be85844d62130954375628c7a3362c9ca94b44bd285ec",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/config.json"
+    },
+    {
+      "filename": "rm8b__tokenizer_config.json",
+      "model": "8B",
+      "model_filename": "tokenizer_config.json",
+      "bytes": 5405,
+      "sha256": "d3e08cbc53421cc90a07d40da21fbac9a912f5ffa3f08263afd04f06105b0e6f",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/tokenizer_config.json"
+    },
+    {
+      "filename": "rm8b__special_tokens_map.json",
+      "model": "8B",
+      "model_filename": "special_tokens_map.json",
+      "bytes": 500,
+      "sha256": "45dfef44807b97f5a7f20148bc9d55e593fbf6890393b1f8b7367fb36a2b853d",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/special_tokens_map.json"
+    },
+    {
+      "filename": "rm8b__chat_template.jinja",
+      "model": "8B",
+      "model_filename": "chat_template.jinja",
+      "bytes": 4168,
+      "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/chat_template.jinja"
+    },
+    {
+      "filename": "rm8b__added_tokens.json",
+      "model": "8B",
+      "model_filename": "added_tokens.json",
+      "bytes": 707,
+      "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/added_tokens.json"
+    },
+    {
+      "filename": "rm8b__merges.txt",
+      "model": "8B",
+      "model_filename": "merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/merges.txt"
+    },
+    {
+      "filename": "rm8b__vocab.json",
+      "model": "8B",
+      "model_filename": "vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/vocab.json"
+    },
+    {
+      "filename": "rm8b__tokenizer.json",
+      "model": "8B",
+      "model_filename": "tokenizer.json",
+      "bytes": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/tokenizer.json"
+    },
+    {
+      "filename": "rm8b__model-00001-of-00004.safetensors",
+      "model": "8B",
+      "model_filename": "model-00001-of-00004.safetensors",
+      "bytes": 4902257696,
+      "sha256": "fe54f1141f7deb128b84e72d01cc2c603d1b1764643b0e2c5b8be8b4450ebd6b",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": true,
+      "cached_source": null
+    },
+    {
+      "filename": "rm8b__model-00002-of-00004.safetensors",
+      "model": "8B",
+      "model_filename": "model-00002-of-00004.safetensors",
+      "bytes": 4915960368,
+      "sha256": "6b88b9cab1a275efabff061e7b09502cfa802a4c72d6d3aa2abd996fbf90d7a9",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": true,
+      "cached_source": null
+    },
+    {
+      "filename": "rm8b__model-00003-of-00004.safetensors",
+      "model": "8B",
+      "model_filename": "model-00003-of-00004.safetensors",
+      "bytes": 4983068496,
+      "sha256": "7d6d5ef28fffa1d34350454bb74242969dd96118e74ac273f883d7825818f08c",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": true,
+      "cached_source": null
+    },
+    {
+      "filename": "rm8b__model-00004-of-00004.safetensors",
+      "model": "8B",
+      "model_filename": "model-00004-of-00004.safetensors",
+      "bytes": 335578704,
+      "sha256": "4b96921e39bec3d0273ae8bca40fe12ddecd4877272bb491f4e7eb13afd35400",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": true,
+      "cached_source": null
+    },
+    {
+      "filename": "rm8b__model.safetensors.index.json",
+      "model": "8B",
+      "model_filename": "model.safetensors.index.json",
+      "bytes": 32876,
+      "sha256": "45cb6e42132a89ec71bc66fa629a3808446dbb243c09047c94a554fe1f2d6e94",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/model.safetensors.index.json"
+    },
+    {
+      "filename": "rm06__README.md",
+      "model": "0.6B",
+      "model_filename": "README.md",
+      "bytes": 19017,
+      "sha256": "607a29e7fefde587b6adfdcc825a9cafe4670e8dc690070b849eef4d54ef73d7",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/0.6B/README.md"
+    },
+    {
+      "filename": "rm06__config.json",
+      "model": "0.6B",
+      "model_filename": "config.json",
+      "bytes": 846,
+      "sha256": "7102434fa8ad9f5d2e6b89d92ae811c945f7a17a6a9361a4229ddc2e804a2e64",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/0.6B/config.json"
+    },
+    {
+      "filename": "rm06__tokenizer_config.json",
+      "model": "0.6B",
+      "model_filename": "tokenizer_config.json",
+      "bytes": 5405,
+      "sha256": "d3e08cbc53421cc90a07d40da21fbac9a912f5ffa3f08263afd04f06105b0e6f",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/0.6B/tokenizer_config.json"
+    },
+    {
+      "filename": "rm06__special_tokens_map.json",
+      "model": "0.6B",
+      "model_filename": "special_tokens_map.json",
+      "bytes": 500,
+      "sha256": "45dfef44807b97f5a7f20148bc9d55e593fbf6890393b1f8b7367fb36a2b853d",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/0.6B/special_tokens_map.json"
+    },
+    {
+      "filename": "rm06__chat_template.jinja",
+      "model": "0.6B",
+      "model_filename": "chat_template.jinja",
+      "bytes": 4168,
+      "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/0.6B/chat_template.jinja"
+    },
+    {
+      "filename": "rm06__added_tokens.json",
+      "model": "0.6B",
+      "model_filename": "added_tokens.json",
+      "bytes": 707,
+      "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/added_tokens.json"
+    },
+    {
+      "filename": "rm06__merges.txt",
+      "model": "0.6B",
+      "model_filename": "merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/merges.txt"
+    },
+    {
+      "filename": "rm06__vocab.json",
+      "model": "0.6B",
+      "model_filename": "vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/vocab.json"
+    },
+    {
+      "filename": "rm06__tokenizer.json",
+      "model": "0.6B",
+      "model_filename": "tokenizer.json",
+      "bytes": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": false,
+      "cached_source": "runs/span_016/source_audit/8B/tokenizer.json"
+    },
+    {
+      "filename": "rm06__model.safetensors",
+      "model": "0.6B",
+      "model_filename": "model.safetensors",
+      "bytes": 1192137232,
+      "sha256": "3d69b6b2547da609fabfe9fe21bf7f860bf7ceb5e0bb0a06fcf45005b7076988",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "is_weight": true,
+      "cached_source": null
+    },
+    {
+      "filename": "transformers-4.52.3-py3-none-any.whl",
+      "bytes": 10460322,
+      "sha256": "cd04059da50e7cf2a617ce3143ba8beffbf119f8c25a0717c3454fd9d0f19609",
+      "cached_source": "runs/span_016/runtime_wheels/transformers-4.52.3-py3-none-any.whl",
+      "is_weight": false,
+      "wheel": true,
+      "package": "transformers",
+      "version": "4.52.3"
+    },
+    {
+      "filename": "huggingface_hub-0.31.4-py3-none-any.whl",
+      "bytes": 489319,
+      "sha256": "4f70704760296cc69b612916056e9845f5490a33782b924fc531767967acc15d",
+      "cached_source": "runs/span_016/runtime_wheels/huggingface_hub-0.31.4-py3-none-any.whl",
+      "is_weight": false,
+      "wheel": true,
+      "package": "huggingface-hub",
+      "version": "0.31.4"
+    },
+    {
+      "filename": "tokenizers-0.21.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 3038874,
+      "sha256": "2dd9a0061e403546f7377df940e866c3e678d7d4e9643d0461ea442b4f89e61a",
+      "cached_source": "runs/span_016/runtime_wheels/tokenizers-0.21.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "is_weight": false,
+      "wheel": true,
+      "package": "tokenizers",
+      "version": "0.21.1"
+    },
+    {
+      "filename": "safetensors-0.5.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 471642,
+      "sha256": "cead1fa41fc54b1e61089fa57452e8834f798cb1dc7a09ba3524f1eb08e0317a",
+      "cached_source": "runs/span_016/runtime_wheels/safetensors-0.5.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "is_weight": false,
+      "wheel": true,
+      "package": "safetensors",
+      "version": "0.5.3"
+    },
+    {
+      "filename": "source.parquet",
+      "bytes": 4648228,
+      "sha256": "e5a154cc2d3dd37389e0fad161778702579b4fd3b4057ec920e7dd14e2c25850",
+      "cached_source": "runs/span_016/cohort/source.parquet",
+      "is_weight": false,
+      "calibration": true
+    },
+    {
+      "filename": "labels.npz",
+      "bytes": 60109,
+      "sha256": "d0a5667327cee6f3c17df3ad929522bacb78dfa0fe8cc2e118ab2b1d4bbb83f1",
+      "cached_source": "runs/span_016/cohort/labels.npz",
+      "is_weight": false,
+      "calibration": true
+    }
+  ],
+  "total_bytes": 16380004592,
+  "versions": {
+    "transformers": "4.52.3",
+    "huggingface-hub": "0.31.4",
+    "tokenizers": "0.21.1",
+    "safetensors": "0.5.3"
+  },
+  "full_weights_downloaded": false,
+  "gpu_admitted": false,
+  "new_gpu_executions": 0,
+  "source_sha256": "2e385b34263373079ec7d0c431da2d8396135d6eb69acee70bdccd23722696c5"
+}

@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-08T03:17:50.401620+00:00",
+  "source_stage_passed": true,
+  "gpu_admitted": false,
+  "full_weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "native_template_validated": true,
+  "offline_assets_ready": false,
+  "offline_path": "Stage one private Kaggle dataset from pinned HF blobs after exact worker rehearsal; verify complete hashes before GPU.",
+  "staged_weight_bytes": 16329002496,
+  "source_files_bytes": 15976962,
+  "remaining_requirements": [
+    "Finish and rehearse exact worker before any full weights",
+    "Pin and validate Transformers4.52.3 runtime wheels",
+    "Acquire/hash immutable assets and pin private Kaggle version",
+    "Fresh complete resources/jobs/receipts and GPU admission",
+    "Actual source/numeric/native/runtime/information gates before official trial"
+  ],
+  "out_of_time_source": true,
+  "independent_competition_cv": false,
+  "source_model_cutoff": "2025-07-06T18:16:33+00:00",
+  "quality_timestamp_range": [
+    "2025-07-06T18:25:14.592965+00:00",
+    "2025-07-24T22:58:55.828572+00:00"
+  ],
+  "quality_rows": 1024,
+  "training_overlap_limit": "Selected votes postdate published checkpoints and exclude prior inspected groups; texts can preexist votes and domain transport is not established.",
+  "native_validation_transformers": "5.22.1",
+  "quality_measured": false,
+  "evidence_sha256": {
+    "source_observation.json": "79bedb12f0237dd755e32f1ffa01dcb55866769c53a33190c1b1c3387ddc6617",
+    "tokenizer_validation.json": "5dacb747c7bcb24a2e85b47fef9663790910cac0920009b8d8e19be8dcc6a7f8",
+    "cohort_manifest.json": "918a4f410048acb3c9cf8a5ede958d202bbf436569f5c5498034819a9f7089a2"
+  },
+  "source_sha256": {
+    "scripts/audit_span_016_source.py": "2ce69af25f37782a3f38d5a020665ba3e80c0e19549bafa087227df14da9a50c",
+    "src/arena/span016_reward.py": "a0cc5f7b25179673fe0fb34a3b9d84463de017f1cb5b89f779011d097dc59108",
+    "docs/SPAN_016_PILOT_PROTOCOL.md": "b40c9e44bdcb54bc7e0355a862d11efd354b61e3fe7ce49e7cca4c7dc00850b7"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "stage": "synthetic_CPU_native_rendering",
+  "passed": false,
+  "gpu_executions": 0,
+  "model_weights_downloaded": false,
+  "local_transformers": "5.22.1",
+  "error": "apply_chat_template default returned BatchEncoding, not a token list; IndexError before any validation output.",
+  "source_sha256": {
+    "src/arena/span016_reward.py": "057b593019ff820eaf19ab312e9aa2274567b22d6e6c9b65fd168e168aa703bc",
+    "scripts/prepare_span_016_tokenizer.py": "9e07f45dbbe1155ac1b96fbed7f8942dc2e4deffe4e659fcb87e7b13ebad3454"
+  },
+  "next_action": "Request return_dict=False explicitly and verify existing small-file hashes before resuming validation."
+}

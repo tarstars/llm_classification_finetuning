@@ -1,0 +1,34 @@
+{
+  "at": "2026-11-08T03:13:55.883970+00:00",
+  "rows": 1024,
+  "source_dataset": "lmarena-ai/arena-human-preference-140k",
+  "source_revision": "6322995ab34d7c2693e3f47dd13fa5caa0789a74",
+  "source_license": "cc-by-4.0",
+  "source_database_sha256": "7a211e3084c2988699c34e0e2c933ae8747e39762c1bafd19c728cfde105832b",
+  "selection_sha256": "94f267dd7327b5780903170cf0632ae0f97590865e26d9c5ef0c450957949d7e",
+  "selection_uses_targets": false,
+  "targets_read_after_durable_selection": true,
+  "post_publication_cutoff": "2025-07-06T18:16:33+00:00",
+  "timestamp_range": [
+    "2025-07-06T18:25:14.592965+00:00",
+    "2025-07-24T22:58:55.828572+00:00"
+  ],
+  "eligible_post_publication_groups": 11215,
+  "available_after_exclusions": 10730,
+  "previously_inspected_groups_excluded": 2048,
+  "selected_unique_groups": 1024,
+  "independent_competition_cv": false,
+  "out_of_time_source": true,
+  "artifact_sha256": {
+    "selection.json": "94f267dd7327b5780903170cf0632ae0f97590865e26d9c5ef0c450957949d7e",
+    "source.parquet": "e5a154cc2d3dd37389e0fad161778702579b4fd3b4057ec920e7dd14e2c25850",
+    "mapping.parquet": "6e560761e724781c1e115dd42a4a31cc851724fe5a00875c225d99bf43d2ed7b",
+    "labels.npz": "d0a5667327cee6f3c17df3ad929522bacb78dfa0fe8cc2e118ab2b1d4bbb83f1"
+  },
+  "previous_mapping_sha256": {
+    "learning_mapping.parquet": "73c8652d6b3f62200f72474242b5d607beeddf15ff3102f03b2e73b33cac788b",
+    "confirmation_mapping.parquet": "c6a938bcfba6903cb96ea2ce12fbafd785f699c325d47567fb0964c1a73540eb"
+  },
+  "source_sha256": "0dea9b3913411132ad99cfce551e82cc3d4ab38ab9ff4efea996003e3f9ae2ff",
+  "new_gpu_executions": 0
+}

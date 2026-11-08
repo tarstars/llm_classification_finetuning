@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-11-08T03:00:42.391548+00:00",
+  "deadline": "2026-11-10T03:00:42.391548+00:00",
+  "job_seconds_caps": {
+    "reward_pilot": 3600,
+    "reward_followup": 14400
+  }
+}

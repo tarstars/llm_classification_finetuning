@@ -1,0 +1,170 @@
+{
+  "at": "2026-11-08T03:02:10.720593+00:00",
+  "models": [
+    {
+      "size": "8B",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-8B",
+      "revision": "6f19fdefb933293d4898bdb59a96f7223d998659",
+      "immutable_checks": {
+        "README.md": true,
+        "config.json": true
+      },
+      "license": "apache-2.0",
+      "gated": false,
+      "config": {
+        "architectures": [
+          "Qwen3ForSequenceClassification"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 4096,
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "initializer_range": 0.02,
+        "intermediate_size": 12288,
+        "label2id": {
+          "LABEL_0": 0
+        },
+        "max_position_embeddings": 40960,
+        "max_window_layers": 36,
+        "model_type": "qwen3",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 36,
+        "num_key_value_heads": 8,
+        "pad_token_id": 151654,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": false,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.52.3",
+        "use_cache": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "weights": [
+        {
+          "name": "model-00001-of-00004.safetensors",
+          "bytes": 4902257696,
+          "lfs_sha256": "fe54f1141f7deb128b84e72d01cc2c603d1b1764643b0e2c5b8be8b4450ebd6b"
+        },
+        {
+          "name": "model-00002-of-00004.safetensors",
+          "bytes": 4915960368,
+          "lfs_sha256": "6b88b9cab1a275efabff061e7b09502cfa802a4c72d6d3aa2abd996fbf90d7a9"
+        },
+        {
+          "name": "model-00003-of-00004.safetensors",
+          "bytes": 4983068496,
+          "lfs_sha256": "7d6d5ef28fffa1d34350454bb74242969dd96118e74ac273f883d7825818f08c"
+        },
+        {
+          "name": "model-00004-of-00004.safetensors",
+          "bytes": 335578704,
+          "lfs_sha256": "4b96921e39bec3d0273ae8bca40fe12ddecd4877272bb491f4e7eb13afd35400"
+        }
+      ],
+      "total_weight_bytes": 15136865264
+    },
+    {
+      "size": "0.6B",
+      "repository": "Skywork/Skywork-Reward-V2-Qwen3-0.6B",
+      "revision": "8c14a4e9e6321deaf572544339b16b8d6bbe8886",
+      "immutable_checks": {
+        "README.md": true,
+        "config.json": true
+      },
+      "license": "apache-2.0",
+      "gated": false,
+      "config": {
+        "architectures": [
+          "Qwen3ForSequenceClassification"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "head_dim": 128,
+        "hidden_act": "silu",
+        "hidden_size": 1024,
+        "id2label": {
+          "0": "LABEL_0"
+        },
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "label2id": {
+          "LABEL_0": 0
+        },
+        "max_position_embeddings": 40960,
+        "max_window_layers": 28,
+        "model_type": "qwen3",
+        "num_attention_heads": 16,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 8,
+        "pad_token_id": 151654,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 1000000,
+        "sliding_window": null,
+        "tie_word_embeddings": true,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.52.3",
+        "use_cache": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "weights": [
+        {
+          "name": "model.safetensors",
+          "bytes": 1192137232,
+          "lfs_sha256": "3d69b6b2547da609fabfe9fe21bf7f860bf7ceb5e0bb0a06fcf45005b7076988"
+        }
+      ],
+      "total_weight_bytes": 1192137232
+    }
+  ],
+  "kaggle_searches": [
+    {
+      "query": "Skywork-Reward-V2-Qwen3-8B",
+      "model_results": [],
+      "dataset_results": [],
+      "exhaustive": true
+    },
+    {
+      "query": "Skywork-Reward-V2-Qwen3-0.6B",
+      "model_results": [],
+      "dataset_results": [],
+      "exhaustive": true
+    }
+  ],
+  "small_files_bytes": 104915,
+  "source_files_sha256": {
+    "Skywork-Reward-V2-Qwen3-8B_kaggle_models.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "Skywork-Reward-V2-Qwen3-8B_kaggle_datasets.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "Skywork-Reward-V2-Qwen3-0.6B_kaggle_models.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "Skywork-Reward-V2-Qwen3-0.6B_kaggle_datasets.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "0.6B/README.md": "607a29e7fefde587b6adfdcc825a9cafe4670e8dc690070b849eef4d54ef73d7",
+    "0.6B/metadata.json": "e0cc49a465fc71437e867ea4b4f1fb43540e6c57bc7d727cbdcb73e86d9edfff",
+    "0.6B/special_tokens_map.json": "45dfef44807b97f5a7f20148bc9d55e593fbf6890393b1f8b7367fb36a2b853d",
+    "0.6B/config.json": "7102434fa8ad9f5d2e6b89d92ae811c945f7a17a6a9361a4229ddc2e804a2e64",
+    "0.6B/tokenizer_config.json": "d3e08cbc53421cc90a07d40da21fbac9a912f5ffa3f08263afd04f06105b0e6f",
+    "0.6B/chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "8B/README.md": "84d596cf10098030e47a99a2aba5388643b15d91f015bb60e47891e3e114bd67",
+    "8B/metadata.json": "e240ef0bff505b38abd0ffec0077242f946c430ce4c2aa981bd401601d0d4ce4",
+    "8B/special_tokens_map.json": "45dfef44807b97f5a7f20148bc9d55e593fbf6890393b1f8b7367fb36a2b853d",
+    "8B/config.json": "9b98949ef09d00c7f75be85844d62130954375628c7a3362c9ca94b44bd285ec",
+    "8B/tokenizer_config.json": "d3e08cbc53421cc90a07d40da21fbac9a912f5ffa3f08263afd04f06105b0e6f",
+    "8B/model.safetensors.index.json": "45cb6e42132a89ec71bc66fa629a3808446dbb243c09047c94a554fe1f2d6e94",
+    "8B/chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+  },
+  "full_weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "gpu_admitted": false,
+  "source_sha256": "e7923604e5859b4e30e87fe469e30c3cbfb4e79414e847d5febf0b9cb392c4ad"
+}

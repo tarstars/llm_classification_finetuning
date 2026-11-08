@@ -1,0 +1,361 @@
+{
+  "at": "2026-11-08T03:15:12.736612+00:00",
+  "searches": [
+    {
+      "kind": "models",
+      "rows": [
+        {
+          "id": 397392,
+          "ref": "mistral-ai/devstral-small-2507",
+          "title": "Devstral Small 2507",
+          "subtitle": "Devstral: introducing the best open-source model for coding agents",
+          "author": "Mistral AI",
+          "slug": "devstral-small-2507",
+          "description": "# Devstral Small 1.1\n\nDevstral is an agentic LLM for software engineering tasks built under a collaboration between [Mistral AI](https://mistral.ai/) and [All Hands AI](https://www.all-hands.dev/) 🙌. Devstral excels at using tools to explore codebases, editing multiple files and power software engineering agents. The model achieves remarkable performance on SWE-bench which positionates it as the #1 open source model on this [benchmark](#benchmark-results). \n\nIt is finetuned from [Mistral-Small-3.1](https://www.kaggle.com/models/mistral-ai/mistral-small-24b), therefore it has a long context window of up to 128k tokens. As a coding agent, Devstral is text-only and before fine-tuning from `Mistral-Small-3.1` the vision encoder was removed.\n\nFor enterprises requiring specialized capabilities (increased context, domain-specific knowledge, etc.), we will release commercial models beyond what Mistral AI contributes to the community.\n\nLearn more about Devstral in our [blog post](https://mistral.ai/news/devstral-2507).\n\n**Updates compared to [`Devstral Small 1.0`](https://www.kaggle.com/models/mistral-ai/devstral-small-2505):**\n- Improved performance, please refer to the [benchmark results](#benchmark-results).\n- `Devstral Small 1.1` is still great when paired with OpenHands. This new version also generalizes better to other prompts and coding environments. \n- Supports [Mistral's function calling format](https://mistralai.github.io/mistral-common/usage/tools/).\n\n\n## Key Features:\n- **Agentic coding**: Devstral is designed to excel at agentic coding tasks, making it a great choice for software engineering agents.\n- **lightweight**: with its compact size of just 24 billion parameters, Devstral is light enough to run on a single RTX 4090 or a Mac with 32GB RAM, making it an appropriate model for local deployment and on-device use.\n- **Apache 2.0 License**: Open license allowing usage and modification for both commercial and non-commercial purposes.\n- **Context Window**: A 128k context window.\n- **Tokenizer**: Utilizes a Tekken tokenizer with a 131k vocabulary size.\n\n\n## Benchmark Results\n\n### SWE-Bench\n\nDevstral Small 1.1 achieves a score of **53.6%** on SWE-Bench Verified, outperforming Devstral Small 1.0 by +6,8% and the second best state of the art model by +11.4%.\n\n| Model              | Agentic Scaffold   | SWE-Bench Verified (%) |\n|--------------------|--------------------|------------------------|\n| Devstral Small 1.1 | OpenHands Scaffold | **53.6**               |\n| Devstral Small 1.0 | OpenHands Scaffold | *46.8*                 |\n| GPT-4.1-mini       | OpenAI Scaffold    | 23.6                   |\n| Claude 3.5 Haiku   | Anthropic Scaffold | 40.6                   |\n| SWE-smith-LM 32B   | SWE-agent Scaffold | 40.2                   |\n| Skywork SWE        | OpenHands Scaffold | 38.0                   |\n| DeepSWE            | R2E-Gym   Scaffold | 42.2                   |\n\n\n When evaluated under the same test scaffold (OpenHands, provided by All Hands AI 🙌), Devstral exceeds far larger models such as Deepseek-V3-0324 and Qwen3 232B-A22B.\n\n![SWE Benchmark](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F3452640%2Fb50784d672cb283b6ba95ca96639e531%2Fswe_benchmark.png?generation=1752161674686900&alt=media)",
+          "instances": [
+            {
+              "id": 376746,
+              "slug": "devstral-small-2507",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "fineTunable": true,
+              "overview": "Devstral is an agentic LLM for software engineering tasks built under a collaboration between Mistral AI and All Hands AI 🙌.",
+              "usage": "## Requirement \n\nKagglehub to download the model.\n\n```bash\npip install kagglehub\npip install mistral-common --upgrade\n```\n## Quickstart\n\n```python\nimport torch\n\nfrom mistral_common.protocol.instruct.messages import (\n    UserMessage,\n)\nfrom mistral_common.protocol.instruct.request import ChatCompletionRequest\nfrom mistral_common.tokens.tokenizers.mistral import MistralTokenizer\nfrom mistral_common.tokens.tokenizers.tekken import SpecialTokenPolicy\nfrom transformers import AutoModelForCausalLM, AutoTokenizer\n\n# Load Mistral tokenizer\n\nimport kagglehub\nmodel_name = kagglehub.model_download('mistral-ai/devstral-small-2507/Transformers/devstral-small-2507/1')\n\nmodel = AutoModelForCausalLM.from_pretrained(\n    model_name,\n    torch_dtype=\"auto\",\n    #torch_dtype=torch.float16, # Use float16 for faster computation\n    device_map=\"auto\"\n    #load_in_8bit=True # This is the most important for reducing memory and speeding up inference\n\n)\ntokenizer = MistralTokenizer.from_file(f'{model_name}/tekken.json')\n\n# Tokenize a list of messages\ntokenized = tokenizer.encode_chat_completion(\n    ChatCompletionRequest(\n        messages=[\n            UserMessage(content=\"Write me a function that computes fibonacci in Python.\"),\n        ],\n    )\n)\n\noutput = model.generate(\n    input_ids=torch.tensor([tokenized.tokens]),\n    max_new_tokens=1000,\n)[0]\n\ndecoded_output = tokenizer.decode(output[len(tokenized.tokens):])\nprint(decoded_output)\n```",
+              "downloadUrl": "/models/mistral-ai/devstral-small-2507/Transformers/devstral-small-2507/1/download",
+              "versionId": 466985,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/mistral-ai/devstral-small-2507/Transformers/devstral-small-2507",
+              "licenseName": "Apache 2.0"
+            },
+            {
+              "id": 376761,
+              "slug": "devstral-small-2507",
+              "framework": "MODEL_FRAMEWORK_GGUF",
+              "fineTunable": true,
+              "downloadUrl": "/models/mistral-ai/devstral-small-2507/Gguf/devstral-small-2507/1/download",
+              "versionId": 467006,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/mistral-ai/devstral-small-2507/Gguf/devstral-small-2507",
+              "licenseName": "Apache 2.0"
+            }
+          ],
+          "tags": [
+            {
+              "ref": "text",
+              "name": "text",
+              "fullPath": "data type > text",
+              "competitionCount": 209,
+              "datasetCount": 11683,
+              "scriptCount": 5150,
+              "totalCount": 17042
+            },
+            {
+              "ref": "english",
+              "name": "english",
+              "description": "",
+              "fullPath": "language > english",
+              "competitionCount": 32,
+              "datasetCount": 6007,
+              "scriptCount": 1636,
+              "totalCount": 7675
+            }
+          ],
+          "provenanceSources": "* https://docs.mistral.ai/",
+          "url": "https://www.kaggle.com/models/mistral-ai/devstral-small-2507",
+          "voteCount": 29,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-organizations/3875/thumbnail.jpg",
+          "updateTime": "2025-07-10T15:42:53.642Z"
+        },
+        {
+          "id": 168255,
+          "ref": "shelterw/skywork",
+          "title": "Skywork",
+          "author": "ShelterW",
+          "slug": "skywork",
+          "instances": [
+            {
+              "id": 194625,
+              "slug": "skywork-reward-gemma-2-27b-v0.2",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/shelterw/skywork/Transformers/skywork-reward-gemma-2-27b-v0.2/1/download",
+              "versionId": 228251,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/shelterw/skywork/Transformers/skywork-reward-gemma-2-27b-v0.2",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 54472067420
+            },
+            {
+              "id": 145682,
+              "slug": "skywork-reward-llama-3.1-8b-v0.2",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/shelterw/skywork/Transformers/skywork-reward-llama-3.1-8b-v0.2/1/download",
+              "versionId": 171182,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/shelterw/skywork/Transformers/skywork-reward-llama-3.1-8b-v0.2",
+              "licenseName": "Apache 2.0",
+              "modelInstanceType": "MODEL_INSTANCE_TYPE_BASE_MODEL",
+              "totalUncompressedBytes": 15019234679
+            }
+          ],
+          "url": "https://www.kaggle.com/models/shelterw/skywork",
+          "voteCount": 1,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/14681920-kg.jpg?t=2024-11-16-01-59-24",
+          "updateTime": "2025-01-13T07:39:09.523Z"
+        },
+        {
+          "id": 211700,
+          "ref": "riteshbhalerao/skywork",
+          "title": "Skywork-o1-Open-PRM",
+          "author": "Ritesh Bhalerao",
+          "slug": "skywork",
+          "description": "# Model from : Skywork AI on HF",
+          "instances": [
+            {
+              "id": 189698,
+              "slug": "skywork-o1-open-prm-qwen-2.5-7b",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "overview": "Model from : Skywork/Skywork-o1-Open-PRM-Qwen-2.5-7B",
+              "downloadUrl": "/models/riteshbhalerao/skywork/Transformers/skywork-o1-open-prm-qwen-2.5-7b/1/download",
+              "versionId": 222391,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/riteshbhalerao/skywork/Transformers/skywork-o1-open-prm-qwen-2.5-7b",
+              "licenseName": "Apache 2.0",
+              "modelInstanceType": "MODEL_INSTANCE_TYPE_EXTERNAL_VARIANT",
+              "externalBaseModelUrl": "https://huggingface.co/Skywork/Skywork-o1-Open-PRM-Qwen-2.5-7B",
+              "totalUncompressedBytes": 15242899035
+            }
+          ],
+          "url": "https://www.kaggle.com/models/riteshbhalerao/skywork",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/16019635-kg.jpg?t=2023-11-10-14-29-38",
+          "updateTime": "2025-01-08T06:34:26.377Z"
+        },
+        {
+          "id": 214708,
+          "ref": "riteshbhalerao/skywork-llama-o1",
+          "title": "skywork-llama-o1",
+          "author": "Ritesh Bhalerao",
+          "slug": "skywork-llama-o1",
+          "instances": [
+            {
+              "id": 192755,
+              "slug": "skywork-o1-open-llama-3.1-8b",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "downloadUrl": "/models/riteshbhalerao/skywork-llama-o1/Transformers/skywork-o1-open-llama-3.1-8b/1/download",
+              "versionId": 226003,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/riteshbhalerao/skywork-llama-o1/Transformers/skywork-o1-open-llama-3.1-8b",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 16069743277
+            }
+          ],
+          "url": "https://www.kaggle.com/models/riteshbhalerao/skywork-llama-o1",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/16019635-kg.jpg?t=2023-11-10-14-29-38",
+          "updateTime": "2025-01-11T05:15:02.852Z"
+        },
+        {
+          "id": 206968,
+          "ref": "vineetgupta2023/skywork-o1-prm-inference",
+          "title": "skywork-o1-prm-inference",
+          "author": "Vineet Gupta",
+          "slug": "skywork-o1-prm-inference",
+          "instances": [
+            {
+              "id": 184822,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_OTHER",
+              "fineTunable": true,
+              "downloadUrl": "/models/vineetgupta2023/skywork-o1-prm-inference/Other/default/1/download",
+              "versionId": 216775,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/vineetgupta2023/skywork-o1-prm-inference/Other/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 67414
+            }
+          ],
+          "url": "https://www.kaggle.com/models/vineetgupta2023/skywork-o1-prm-inference",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17014873-kg.jpg?t=2024-06-13-09-29-49",
+          "updateTime": "2025-01-02T08:05:28.590Z"
+        },
+        {
+          "id": 206111,
+          "ref": "quincyqiang/skywork-reward-llama-3.1-8b-v0.2",
+          "title": "Skywork-Reward-Llama-3.1-8B-v0.2",
+          "author": "yanqiangmiffy",
+          "slug": "skywork-reward-llama-3.1-8b-v0.2",
+          "instances": [
+            {
+              "id": 183930,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "fineTunable": true,
+              "downloadUrl": "/models/quincyqiang/skywork-reward-llama-3.1-8b-v0.2/Transformers/default/1/download",
+              "versionId": 215742,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/quincyqiang/skywork-reward-llama-3.1-8b-v0.2/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 15019656056
+            }
+          ],
+          "url": "https://www.kaggle.com/models/quincyqiang/skywork-reward-llama-3.1-8b-v0.2",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/999843-kg.jpg",
+          "updateTime": "2025-01-01T01:50:58.856Z"
+        },
+        {
+          "id": 206628,
+          "ref": "vineetgupta2023/skywork-o1-open-llama-3.1-8b",
+          "title": "Skywork-o1-Open-Llama-3.1-8B",
+          "author": "Vineet Gupta",
+          "slug": "skywork-o1-open-llama-3.1-8b",
+          "instances": [
+            {
+              "id": 184469,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "fineTunable": true,
+              "downloadUrl": "/models/vineetgupta2023/skywork-o1-open-llama-3.1-8b/Transformers/default/1/download",
+              "versionId": 216372,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/vineetgupta2023/skywork-o1-open-llama-3.1-8b/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 16069743277
+            }
+          ],
+          "url": "https://www.kaggle.com/models/vineetgupta2023/skywork-o1-open-llama-3.1-8b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17014873-kg.jpg?t=2024-06-13-09-29-49",
+          "updateTime": "2025-01-01T18:11:56.059Z"
+        },
+        {
+          "id": 206568,
+          "ref": "vineetgupta2023/skywork-o1-open-prm-qwen-2.5-7b",
+          "title": "Skywork-o1-Open-PRM-Qwen-2.5-7B",
+          "author": "Vineet Gupta",
+          "slug": "skywork-o1-open-prm-qwen-2.5-7b",
+          "instances": [
+            {
+              "id": 184407,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "fineTunable": true,
+              "downloadUrl": "/models/vineetgupta2023/skywork-o1-open-prm-qwen-2.5-7b/Transformers/default/1/download",
+              "versionId": 216299,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/vineetgupta2023/skywork-o1-open-prm-qwen-2.5-7b/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 15242899035
+            }
+          ],
+          "url": "https://www.kaggle.com/models/vineetgupta2023/skywork-o1-open-prm-qwen-2.5-7b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17014873-kg.jpg?t=2024-06-13-09-29-49",
+          "updateTime": "2025-01-01T16:28:16.742Z"
+        },
+        {
+          "id": 208515,
+          "ref": "vineetgupta2023/skywork-o1-open-prm-qwen-2.5-1.5b",
+          "title": "Skywork-o1-Open-PRM-Qwen-2.5-1.5B",
+          "author": "Vineet Gupta",
+          "slug": "skywork-o1-open-prm-qwen-2.5-1.5b",
+          "instances": [
+            {
+              "id": 186400,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "fineTunable": true,
+              "downloadUrl": "/models/vineetgupta2023/skywork-o1-open-prm-qwen-2.5-1.5b/Transformers/default/2/download",
+              "versionId": 218775,
+              "versionNumber": 2,
+              "url": "https://www.kaggle.com/models/vineetgupta2023/skywork-o1-open-prm-qwen-2.5-1.5b/Transformers/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 3099089243
+            }
+          ],
+          "url": "https://www.kaggle.com/models/vineetgupta2023/skywork-o1-open-prm-qwen-2.5-1.5b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/17014873-kg.jpg?t=2024-06-13-09-29-49",
+          "updateTime": "2025-01-04T12:49:00.766Z"
+        },
+        {
+          "id": 199595,
+          "ref": "quincyqiang/skywork-o1-open-prm-qwen-2.5-1.5b",
+          "title": "Skywork-o1-Open-PRM-Qwen-2.5-1.5B",
+          "author": "yanqiangmiffy",
+          "slug": "skywork-o1-open-prm-qwen-2.5-1.5b",
+          "instances": [
+            {
+              "id": 177289,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_PY_TORCH",
+              "fineTunable": true,
+              "downloadUrl": "/models/quincyqiang/skywork-o1-open-prm-qwen-2.5-1.5b/PyTorch/default/1/download",
+              "versionId": 207954,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/quincyqiang/skywork-o1-open-prm-qwen-2.5-1.5b/PyTorch/default",
+              "licenseName": "Apache 2.0",
+              "totalUncompressedBytes": 3099546202
+            }
+          ],
+          "url": "https://www.kaggle.com/models/quincyqiang/skywork-o1-open-prm-qwen-2.5-1.5b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/999843-kg.jpg",
+          "updateTime": "2024-12-23T16:03:00.276Z"
+        },
+        {
+          "id": 629988,
+          "ref": "mirzamilanfarabi/nvidia-gpt-oss-puzzle-88b",
+          "title": "nvidia-gpt-oss-puzzle-88B",
+          "author": "Mirza Milan Farabi",
+          "slug": "nvidia-gpt-oss-puzzle-88b",
+          "description": "---\nlibrary_name: transformers\nlicense: other\nlicense_name: nvidia-open-model-license\nlicense_link: >-\n  https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/\npipeline_tag: text-generation\nlanguage:\n  - en\ntags:\n  - nvidia\n  - gpt-oss\n  - puzzle\n  - mixture-of-experts\n  - reasoning\n  - pytorch\n  - transformers\n  - vllm\n---\n\n# gpt-oss-puzzle-88B\n\n# Model Overview\n\n### Description\ngpt-oss-puzzle-88B is a deployment-optimized large language model developed by NVIDIA, derived from [OpenAI's gpt-oss-120b](https://huggingface.co/openai/gpt-oss-120b).  \nThe model is produced using Puzzle, a post-training neural architecture search (NAS) framework, with the goal of significantly improving inference efficiency for reasoning-heavy workloads while maintaining or improving accuracy across reasoning budgets.  \n\nThe model is specifically optimized for long-context and short-context serving on NVIDIA H100-class hardware, where reasoning models are often bottlenecked by KV-cache bandwidth and memory capacity rather than raw compute.\n\nCompared to its parent, gpt-oss-puzzle-88B:\n- Reduces total parameters to ~88B (≈73% of the parent),\n- Achieves 1.63× throughput improvement in long-context (64K/64K) scenarios on an 8×H100 node,\n- Achieves 1.22× throughput improvement in short-context (4K/4K) scenarios,\n- Delivers up to 2.82× throughput improvement on a single H100 GPU,\n- Matches or slightly exceeds parent accuracy across reasoning efforts.\n\n**Parameter count note.** Hugging Face Hub may automatically show this model as ~91B parameters. We refer to it as 88B because the automatic count includes additional MXFP4 quantization scale tensors for the MoE experts, which are typically not counted as model parameters.\n\n\nThis model is ready for commercial use.\n\n![Accuracy vs Relative Request Rate](fig1.png)\n![Accuracy Retention and Throughput Speedup](fig2.png)\n\n### License/Terms of Use\n\nGoverning Terms: Use of this model is governed by the [NVIDIA Open Model License](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license)).\n\n### Deployment Geography\nGlobal\n\n### Use Case\ngpt-oss-puzzle-88B is a general purpose reasoning and chat model. This model is intended for production deployment, cost-efficient reasoning, and long-context inference workloads.\n\n### Release Date\nMarch 26, 2026 via [Hugging Face](https://huggingface.co/nvidia/gpt-oss-puzzle-88B)\n\n## References(s)\n* [\\[2411.19146\\] Puzzle: Distillation-Based NAS for Inference-Optimized LLMs](https://arxiv.org/abs/2411.19146)  \n* [\\[2508.10925\\] gpt-oss-120b & gpt-oss-20b Model Card](https://arxiv.org/abs/2508.10925)  \n* [\\[2602.11937\\] Extending Puzzle for Mixture-of-Experts Reasoning Models with Application to GPT-OSS Acceleration](https://arxiv.org/abs/2602.11937)\n\n## Model Architecture\n- **Architecture Type:** Mixture-of-Experts Decoder-only Transformer\n\n- **Network Architecture:** Modified [gpt-oss](https://huggingface.co/openai/gpt-oss-120b) architecture with varying number of experts per layer, and a modified global/window attention pattern across layers.\n\n- **Number of model parameters:** 88B\n\n### Key Architectural Optimizations\nThis model was created using Puzzle, a post-training NAS framework that constructs a heterogeneous architecture under explicit deployment constraints:\n\n- Heterogeneous MoE Expert Pruning  \n  Each MoE layer retains a different number of experts, determined via activation-based importance scoring. Early layers retain more experts; later layers are more aggressively pruned.\n\n- Selective Window Attention  \n  A subset of global attention layers is replaced with window attention (8K window), reducing KV-cache footprint by ~40% in long-context scenarios while preserving long-range reasoning.\n\n- RoPE Scaling Adjustment  \n  The YaRN RoPE scaling factor was increased to improve stability at 128K context length.\n\n## Training and Optimization Procedure\n\n### Knowledge Distillation\n\nAfter Puzzle architecture selection, the model underwent knowledge distillation:\n\n- Total Tokens: 84B\n- Sequence Length: 128K\n- MoE Experts & Router: Frozen\n- Framework: Megatron-LM\n\nThis phase restores inter-block compatibility and recovers quality lost during blockwise substitution.\n\n### Reinforcement Learning:\n\nA post-distillation reinforcement learning (RL) phase was applied to improve reasoning accuracy while controlling generation length:\n\n- Multi-environment RL (math, coding, reasoning)\n- MoE experts and router frozen\n- Two complementary policies trained:\n  - High-effort-focused (max accuracy)\n  - Mixed-effort (length-regularized)\n- Final model obtained via checkpoint weight averaging\n\nThis preserves high reasoning accuracy while maintaining a stable effort length ratio, ensuring predictable cost-quality trade-offs.\n\n### Quantization:\n\n- MoE Weights: MXFP4 (inherited from gpt-oss-120B)\n- KV Cache: FP8 with calibrated KV scales\n- Effect:  \n  - ~2× KV-cache token capacity  \n  - Faster attention kernels  \n  - Preserved accuracy vs unscaled FP8 KV-cache\n\n## Reasoning Effort Control:\nThe model supports three reasoning effort modes:\n\n- Low: Fast, concise responses\n- Medium: Balanced accuracy and verbosity\n- High: Deep, multi-step reasoning\n\nEffort reliably controls generation length and accuracy, enabling cost-aware deployment.\n\n## Input\n\n- **Input Type(s):** Text\n\n- **Input Format(s):** String  \n    \n- **Input Parameters:** One-Dimensional (1D): Sequences  \n    \n- **Other Properties Related to Input:** Context length is 128k tokens.\n\n## Output\n\n- **Output Type(s):** Text  \n    \n- **Output Format:** String  \n    \n- **Output Parameters:** One-Dimensional (1D): Sequences  \n    \n- **Other Properties Related to Output:** Context length is 128k tokens.\n\nOur AI models are designed and optimized to run on NVIDIA GPU-accelerated systems. By leveraging NVIDIA’s hardware (e.g. GPU cores) and software frameworks (e.g., CUDA libraries), the model achieves faster training and inference times compared to CPU-only solutions. \n\n## Software Integration\n**Runtime Engine(s):** \n* vLLM (See instructions [below](#vllm))\n\n**Supported Hardware Microarchitecture Compatibility:**\n* NVIDIA B200\n* NVIDIA H100-80GB\n\n**Preferred/Supported Operating System(s):**\n* Linux\n\nThe integration of foundation and fine-tuned models into AI systems requires additional testing using use-case-specific data to ensure safe and effective deployment. Following the V-model methodology, iterative testing and validation at both unit and system levels are essential to mitigate risks, meet technical and functional requirements, and ensure compliance with safety and ethical standards before deployment.\n\n## Model Version\n- v1.0\n\n## Training and Evaluation Datasets\n\n### Dataset Overview\n**Total Number of Datasets:** 7  \n**Time period for data collection:** 2013 to May 1, 2025  \n\nFor the KD stage data, the prompts from [nvidia/Llama-Nemotron-Post-Training-Dataset](https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset) were used to generate responses from the parent model (gpt-oss-120b) to create full KD training examples. For each prompt, we generated responses under high and medium reasoning-effort settings.\n\nFor the RL stage data, we used a subset of the [NeMo Gym collection](https://huggingface.co/collections/nvidia/nemo-gym) which includes RL verifiable data.\n\n# Public Datasets\n- [nvidia/Llama-Nemotron-Post-Training-Dataset](https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset)\n- [nvidia/Nemotron-RL-coding-competitive_coding](https://huggingface.co/datasets/nvidia/Nemotron-RL-coding-competitive_coding)\n- [nvidia/Nemotron-RL-instruction_following](https://huggingface.co/datasets/nvidia/Nemotron-RL-instruction_following)\n- [BytedTsinghua-SIA/DAPO-Math-17k](https://huggingface.co/datasets/BytedTsinghua-SIA/DAPO-Math-17k)\n- [Skywork/Skywork-OR1-RL-Data](https://huggingface.co/datasets/Skywork/Skywork-OR1-RL-Data)\n- [nvidia/Nemotron-RL-knowledge-mcqa](https://huggingface.co/datasets/nvidia/Nemotron-RL-knowledge-mcqa)\n- [nvidia/Nemotron-RL-instruction_following-structured_outputs](https://huggingface.co/datasets/nvidia/Nemotron-RL-instruction_following-structured_outputs)\n\n## Training Dataset\n\n**Data Modality**: Text\n\n**Text Training Data Size**: 1 Billion to 10 Trillion Tokens\n\n**Data Collection Method by dataset**: Automated/Synthetic/Human\n\n**Labeling Method by dataset**: Not Applicable\n\n**Properties**:\nThe training data is text-only and spans a broad range of task categories. The knowledge distillation stage used the Llama-Nemotron-Post-Training-Dataset, a large-scale collection covering mathematics, code, science, instruction following, general chat, and safety. The reinforcement learning stage used datasets spanning several domains: competitive programming problems with unit tests (Nemotron-RL-coding-competitive_coding, Skywork-OR1-RL-Data), diverse verifiable mathematical reasoning problems (DAPO-Math-17k, Skywork-OR1-RL-Data), multi-domain multiple-choice question answering across fields such as physics, biology, chemistry, mathematics, computer science, engineering, humanities, law, and others (Nemotron-RL-knowledge-mcqa), easily verifiable instruction-following tasks with diverse format and linguistic constraints (Nemotron-RL-instruction_following), and structured output generation requiring adherence to JSON schemas (Nemotron-RL-instruction_following-structured_outputs). No personal data was used for training.\n\n\n## Evaluation Dataset\n\n**Data Collection Method by dataset:** Hybrid: Human, Synthetic\n\n**Labeling Method by dataset:** Hybrid: Automated, Human, Synthetic\n\n| Benchmark | Description |\n|-----------|-------------|\n| [**MMLU-Pro**](https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro) | MMLU-Pro dataset is a more robust and challenging massive multi-task understanding dataset tailored to more rigorously benchmark large language models' capabilities. |\n| [**GPQA-Diamond**](https://huggingface.co/datasets/Idavidrein/gpqa) | The GPQA (Graduate-Level Google-Proof Q&A) benchmark is a challenging dataset of 448 multiple-choice questions in biology, physics, and chemistry. |\n| [**HLE**](https://huggingface.co/datasets/cais/hle) | Humanity's Last Exam (HLE) is a multi-modal benchmark at the frontier of human knowledge, designed to be the final closed-ended academic benchmark of its kind with broad subject coverage. Humanity's Last Exam consists of 3,000 questions across dozens of subjects, including mathematics, humanities, and the natural sciences. HLE is developed globally by subject-matter experts and consists of multiple-choice and short-answer questions suitable for automated grading. |\n| [**AA-LCR**](https://huggingface.co/datasets/ArtificialAnalysis/AA-LCR) | A challenging benchmark measuring language models' ability to extract, reason about, and synthesize information from long-form documents ranging from 10k to 100k tokens (measured using the cl100k_base tokenizer). |\n| [**AIME25**](https://huggingface.co/datasets/math-ai/aime25) | American Invitational Mathematics Examination (AIME) 2025 questions |\n| [**IFBench**](https://huggingface.co/datasets/allenai/IFBench_test) | IFBench is a new, challenging benchmark for precise instruction following. |\n| [**SciCode**](https://huggingface.co/datasets/SciCode1/SciCode) | SciCode is a challenging benchmark designed to evaluate the capabilities of LLMs in generating code for solving realistic scientific research problems. |\n| [**RULER 128K**](https://huggingface.co/datasets/GAIR/ruler-128k) | RULER generates synthetic examples to evaluate long-context language models with configurable sequence length and task complexity. Used with context length of 128K tokens. |\n\n\n# Inference\n**Acceleration Engine**: vLLM\n**Test Hardware:**  \n- 1× NVIDIA H100-80GB  \n- 8× NVIDIA H100-80GB  \n- 8× NVIDIA B200  \n\n## Quick Start\n\nThe gpt-oss-puzzle-88B model can be used with standard inference stacks such as Hugging Face Transformers and vLLM.  \nIt is especially optimized for NVIDIA H100 GPUs and supports long-context inference up to 128K tokens.\n\n### Transformers\nWe recommend using Transformers ≥ 4.57.3.\n\n```python\nfrom transformers import pipeline\n\nmodel_id = \"nvidia/gpt-oss-puzzle-88B\"\n\npipe = pipeline(\n    \"text-generation\",\n    model=model_id,\n    trust_remote_code=True,\n    dtype=\"auto\",\n    device_map=\"auto\",\n)\n\nmessages = [\n    {\"role\": \"user\", \"content\": \"Explain quantum mechanics clearly and concisely.\"},\n]\n\ngeneration_config = GenerationConfig.from_pretrained(model_id)\ngeneration_config.max_new_tokens = 256\n\noutputs = pipe(\n    messages,\n    generation_config=generation_config,\n)\nprint(outputs[0][\"generated_text\"][-1])\n```\n\n### vLLM\n\n#### Serving\n\nStart the server with a single command:\n\n```bash\ndocker run --gpus all -p 8000:8000 \\\n  --entrypoint bash \\\n  vllm/vllm-openai:v0.17.1 \\\n  -c \"\n    apt-get update && apt-get install -y git &&\n    VLLM_USE_PRECOMPILED=1 pip install --no-build-isolation 'git+https://github.com/vllm-project/vllm.git@refs/pull/38135/head' &&\n    pip install flashinfer-cubin==0.6.6 flashinfer-jit-cache==0.6.6 --extra-index-url https://flashinfer.ai/whl/cu\\$(echo \\$CUDA_VERSION | cut -d. -f1,2 | tr -d '.') &&\n    export PYTORCH_ALLOC_CONF=expandable_segments:True &&\n    vllm serve nvidia/gpt-oss-puzzle-88B \\\n      -tp 1 \\\n      --trust-remote-code \\\n      --kv-cache-dtype fp8 \\\n      --max-num-batched-tokens 8192 \\\n      --stream-interval 20 \\\n      --gpu-memory-utilization 0.95 \\\n      --max-num-seqs 8 \\\n      --max-cudagraph-capture-size 8 \\\n      --max-model-len 131072\n  \"\n```\n\n> **Notes:**\n> - On Blackwell (B200), add `-e VLLM_USE_FLASHINFER_MOE_MXFP4_MXFP8=1` to the `docker run` command.\n> - Remove `--kv-cache-dtype fp8` for BF16 KV-cache instead of FP8.\n> - Increase `-tp` if you need larger batch sizes or longer sequences.\n> - Expert parallelism is supported via `--enable-expert-parallel`, but we recommend TP.\n\n#### Inference with Reasoning Effort Control\n\nThe model supports three reasoning effort levels (`low`, `medium`, `high`). For example:\n\n```python\nfrom openai import OpenAI\n\nclient = OpenAI(base_url=\"http://localhost:8000/v1\", api_key=\"unused\")\n\n# High effort — deep, multi-step reasoning\nresponse = client.chat.completions.create(\n    model=\"nvidia/gpt-oss-puzzle-88B\",\n    messages=[{\"role\": \"user\", \"content\": \"Write a haiku about neural network pruning\"}],\n    reasoning_effort=\"high\",\n)\nprint(response.choices[0].message.content)\n\n# Low effort — fast, concise responses\nresponse = client.chat.completions.create(\n    model=\"nvidia/gpt-oss-puzzle-88B\",\n    messages=[{\"role\": \"user\", \"content\": \"What is the capital of France?\"}],\n    reasoning_effort=\"low\",\n)\nprint(response.choices[0].message.content)\n```\n\n## Ethical Considerations\nNVIDIA believes Trustworthy AI is a shared responsibility and we have established policies and practices to enable development for a wide array of AI applications.  When downloaded or used in accordance with our terms of service, developers should work with their internal model team to ensure this model meets requirements for the relevant industry and use case and addresses unforeseen product misuse. \n\nFor more detailed information on ethical considerations for this model, please see the [Bias, Explainability, Safety & Security, and Privacy Subcards](https://huggingface.co/nvidia/gpt-oss-puzzle-88B).\n\nPlease report model quality, risk, security vulnerabilities or NVIDIA AI Concerns [here](https://www.nvidia.com/en-us/support/submit-security-vulnerability/).",
+          "instances": [
+            {
+              "id": 618206,
+              "slug": "default",
+              "framework": "MODEL_FRAMEWORK_TRANSFORMERS",
+              "fineTunable": true,
+              "downloadUrl": "/models/mirzamilanfarabi/nvidia-gpt-oss-puzzle-88b/Transformers/default/1/download",
+              "versionId": 813735,
+              "versionNumber": 1,
+              "url": "https://www.kaggle.com/models/mirzamilanfarabi/nvidia-gpt-oss-puzzle-88b/Transformers/default",
+              "licenseName": "Other (specified in description)",
+              "modelInstanceType": "MODEL_INSTANCE_TYPE_BASE_MODEL",
+              "totalUncompressedBytes": 50022337805
+            }
+          ],
+          "url": "https://www.kaggle.com/models/mirzamilanfarabi/nvidia-gpt-oss-puzzle-88b",
+          "voteCount": 0,
+          "authorImageUrl": "https://storage.googleapis.com/kaggle-avatars/thumbnails/6082718-kg.jpg?t=2024-08-29-19-07-04",
+          "updateTime": "2026-03-31T19:20:30.891Z"
+        }
+      ]
+    },
+    {
+      "kind": "datasets",
+      "rows": [
+        {
+          "id": 6171097,
+          "ref": "mayanorner/skywork-reward-llama-3-1",
+          "subtitle": "",
+          "creatorName": "Maayan Orner",
+          "creatorUrl": "mayanorner",
+          "totalBytes": 4255808715,
+          "url": "https://www.kaggle.com/datasets/mayanorner/skywork-reward-llama-3-1",
+          "lastUpdated": "2024-11-26T16:43:37.907Z",
+          "downloadCount": 2,
+          "licenseName": "Unknown",
+          "ownerName": "Maayan Orner",
+          "ownerRef": "mayanorner",
+          "title": "Skywork-Reward-Llama-3.1",
+          "viewCount": 134,
+          "currentVersionNumber": 1,
+          "usabilityRating": 0.1875,
+          "thumbnailImageUrl": "https://storage.googleapis.com/kaggle-datasets-images/new-version-temp-images/default-backgrounds-3.png-1361385/dataset-thumbnail.png"
+        }
+      ]
+    }
+  ],
+  "new_gpu_executions": 0
+}

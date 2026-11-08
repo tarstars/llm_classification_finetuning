@@ -21,6 +21,15 @@ immutable offline deployment path or credible memory/runtime fit exists.
 
 ## Conditional prospective pilot
 
+Source inspection found11215eligible cached prompt/session representatives after
+2025-07-06T18:16:33UTC, the later of the two pinned model-revision publication
+timestamps. Before any reward outputs, refine the sample to1024such later-vote
+groups, excluding all previously inspected v11groups, selected by a seed42hash.
+This prospectively avoids original competition supervision. It is out-of-time
+source evidence, not competition CV; domain transport remains uncertain. Keep
+the original competition512uniform rows as a label-free runtime/retention cohort,
+not the primary quality population. No extra model recipe or size arm is added.
+
 Before model outputs, commit exact1024-row label-free seed42sample, group IDs,
 native multi-turn construction, truncation/retention, padding/pooling and scalar
 orientation. Use raw scalar logits, never replace the head or sigmoid rewards.
@@ -36,8 +45,10 @@ probabilities, keep equal total expert weights and the current Gemma-only10%work
 20%row order rule,T1,8192packing for the unchanged Gemma component. The0.6B
 standalone diagnostic cannot be promoted as a second recipe or used to reject8B.
 Compare identical cohorts to current H60and report class behavior/paired grouped
-uncertainty. Baseline training overlap and unknown reward-pretraining overlap
-preclude an independent generalization claim from these original training rows.
+uncertainty. Verify both checkpoint chronologies against the actual selected vote
+timestamps. Published-before-vote chronology excludes those later votes from
+checkpoint training; it does not establish that texts never existed earlier or
+that newer model/user populations represent the competition's hidden distribution.
 
 The detailed pilot contract and executable worker must precede weight acquisition/
 predictions; source stage does not waive this gate. Rehearse actual serialized

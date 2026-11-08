@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-08T03:19:22.198181+00:00",
+  "passed": true,
+  "transformers": "4.52.3",
+  "tokenizers": "0.21.1",
+  "huggingface_hub": "0.31.4",
+  "safetensors": "0.5.3",
+  "native_rendering": [
+    {
+      "side": "a",
+      "passed": true,
+      "original_tokens": 37,
+      "retained_tokens": 37,
+      "truncated": false,
+      "token_ids_sha256": "b665b2acc7bf5da5aecea03b4e41a59210ad3ce782757b16b24f79ff00349ff9"
+    },
+    {
+      "side": "b",
+      "passed": true,
+      "original_tokens": 34,
+      "retained_tokens": 34,
+      "truncated": false,
+      "token_ids_sha256": "2ec1ff3c2ad91ed57ee58584a4bf7dc82c1ed28b698e4a074891dfe49648d1e9"
+    }
+  ],
+  "model_weights_downloaded": false,
+  "new_gpu_executions": 0
+}

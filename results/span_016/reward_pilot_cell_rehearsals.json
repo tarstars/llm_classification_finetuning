@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.02706599235534668,
+        "exit_code": 0,
+        "role": "reward_pilot"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.02836751937866211,
+        "exit_code": 7,
+        "role": "reward_pilot"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.20204997062683105,
+        "exit_code": -15,
+        "role": "reward_pilot"
+      }
+    }
+  ],
+  "notebook_startup_passed": true,
+  "mode_checks": [
+    {
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    }
+  ],
+  "actual_pipeline_cpu_tests_passed": true,
+  "actual_pipeline_tests": 3,
+  "new_gpu_executions": 0
+}
