@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.03032827377319336,
+        "exit_code": 0,
+        "role": "context_qualification"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.030765771865844727,
+        "exit_code": 7,
+        "role": "context_qualification"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.2012019157409668,
+        "exit_code": -15,
+        "role": "context_qualification"
+      }
+    }
+  ],
+  "mode_checks": [
+    {
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    }
+  ],
+  "standalone_imports_passed": true,
+  "notebook_engine_startup_passed": true,
+  "new_gpu_executions": 0
+}

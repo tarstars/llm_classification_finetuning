@@ -1,6 +1,6 @@
 # H72 pilot complete; full qualification next
 
-Current snapshot Nov8 2026,18:45UTC. Persistent goal team17244411 rank<=19
+Current snapshot Nov8 2026,18:49UTC. Persistent goal team17244411 rank<=19
 remains ACTIVE/unachieved. Fresh complete board18:19:24UTC:23/312,.82987,
 19th/20th.82915,leader.82692. results/span_026/midpilot_leaderboard.json.
 No new official since H60receipt58103553/source span013-gemma-order/1.
@@ -28,10 +28,12 @@ This earlyscreen is NOT fullqualification. Actual3-role qualification still
 mustpassworseparent/pilot/currentcold+warm+uniform, worst6krate(full/probe/small
 cohorts), whole6kwarm andfullselector,20pctmargin/600reserve, total<32400s.
 
-NEXT commit/push auditedpilotresults/report/executednotebook, then execute
-scripts/build_span_026_candidate.py (NOTRUNyet). It requirespassedaudit and
-preparesactualnotebook/cell+mode+import+Jupyterrehearsals. Review/freeze/push its
-bundle BEFORE running scripts/run_span_026_candidate.py ONCE. Recordreturned
+Auditedpilotresults/report/Notebook38publishedb73c707. Candidatebuilder77285
+TERMINALexit0; actualfinalcell success/failure/watchdog, standaloneimports,
+public+hiddenhash/flagmode branches andJupyterstartup ALLPASS. Bundle/rehearsals
+results/span_026/context_qualification_*.json. Generatednotebook under
+ROOT/runs/span_026/notebooks/context_qualification; notadmittedyet.
+NEXTfreeze/push itsbundle BEFORE running scripts/run_span_026_candidate.py ONCE. Recordreturned
 handle; no duplicatepush aftertimeout. Verifyacceptedsource using
 scripts/verify_experiment_source.py context_qualification --span 26. ObserveSAME
 controller/version. After COMPLETE/retrieval, run audit_span_026_candidate.py

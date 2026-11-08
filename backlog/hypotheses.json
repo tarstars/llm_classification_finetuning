@@ -6804,6 +6804,14 @@
           "evidence": [
             "docs/SPAN_026_PILOT_RESULTS.md"
           ]
+        },
+        {
+          "at": "2026-11-08T18:50:16+00:00",
+          "status": "running",
+          "note": "Auditednegative-localpilotreport/notebookpublishedb73c707 underprospectiveguard. Actualcandidatebuilder77285TERMINALexit0: finalcellsuccess/failure/watchdog, exactstandaloneimports, public/hiddenhash+flagbranches andJupyterstartupALLPASS. Frozencontext_qualificationbundle generated; one3600spublicqualificationnextaftercommit/pushandfreshadmission. Same6144variant/oldroute/weights; noofficialdecisionyet.",
+          "evidence": [
+            "results/span_026/context_qualification_cell_rehearsals.json"
+          ]
         }
       ]
     }
