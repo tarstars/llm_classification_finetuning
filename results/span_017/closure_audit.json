@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-08T07:52:16.610984+00:00",
+  "passed": true,
+  "sealed_version": 17,
+  "goal_achieved_by_span": false,
+  "public_gpu_seconds": 0,
+  "public_gpu_versions": 0,
+  "official_submissions": 0,
+  "new_parameter_fits": 0,
+  "E17_rows": 3840,
+  "H62_information_gate_passed": false,
+  "prior_snapshots_preserved": 66,
+  "snapshot_files_after_transition": 70,
+  "notebook_code_cells": 3,
+  "notebook_errors": 0,
+  "notebook_sha256": "3a9d92a3d32f248698dbdeb3c32a8814d6a6aa9e4db711c4d9e3d1f77aa17bd0",
+  "goal_archive_sha256": "f57c3b9100019e5dfb193a4fd6d5dbf8e2fdb2a03a7cace65535284bc36e6c79",
+  "carried_tasks": 37,
+  "successor_members": 38,
+  "new_discoveries": [
+    "H64"
+  ],
+  "leaderboard": {
+    "observed_at": "2026-11-08T07:48:37.423907+00:00",
+    "complete": true,
+    "team_id": 17244411,
+    "rank": 23,
+    "teams": 310,
+    "score": 0.82987,
+    "rank19_score": 0.82915,
+    "rank20_score": 0.82915,
+    "leader_score": 0.82702,
+    "target_achieved": false,
+    "latest_team_submission_date": "2026-11-07T20:07:11.890Z"
+  }
+}

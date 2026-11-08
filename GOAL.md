@@ -1,39 +1,34 @@
-# Move above20th place: v17transport diagnosis and fixed row-ceiling test
+# Move above20th place: v17sealed, v18selection pending
 
-Persistent objective: team17244411 at rank<=19on a fresh complete official Kaggle
-leaderboard after legitimate inference. ACTIVE/unachieved. Best0.82987/rank23;
-rank19cutoff0.82915at the current preparation. V16is sealed; its exact contract
-is docs/GOAL_V16.md and its actual incomplete result is docs/SPAN_016_RESULTS.md.
+Persistent objective: team17244411at rank<=19on a fresh complete official Kaggle
+leaderboard after legitimate inference. ACTIVE/unachieved. Last verified
+2026-11-08T07:48:37.423907+00:00: rank23/310,best0.82987,rank19cutoff0.82915.
 
-Execute docs/SPAN_017_PLAN.md, focus E17andH62only. E17compares cached original
-training-overlapping predictions with later-vote groups; existingT1and the one
-historicalT1.3161518671742531only, no fitting/new variants/GPU. Stop within15CPU
-minutes/1engineeringhour and state exposure/domain limits without causal claims.
+V17closed E17andH62with zeroGPU/submission spend. E17audited3840cached rows,
+no parameter fitting; source confidence/coverage/exposure and the conditional
+score-normalization identity do not support treating later votes as target CV.
+H62fixed15pct-work/30pct-row replay selected120/512rows but reduced loss by
+-.00006055versus H60, failing the frozen>.0005gate. No actual qualification or
+official attempt. Retain H60. See docs/SPAN_017_RESULTS.md and exact archived
+contract docs/GOAL_V17.md; Notebook29is final/executed.
 
-H62changes only15pct-work routing's row cap20to30pct, fixed JS/work order,
-Gemma/Llama mixture/T1/8192packing/context4096/native source. One matched-cache
-comparison versus actual-best H60(10pct/20pct); existingH61(15pct/20pct)is a
-control. Strict uniform512increment>.0005before any GPU; stop if it fails.
-Original labels overlap checkpoint training: descriptive information, not CV or
-a score forecast. No new route/temperature/weight/grid after looking.
+Active backlog v18has38members, no focus/running work. NewH64proposes a small
+head predicting missing answer-order outputs of the retained experts. Its first
+unobserved CPU check freezes one teacher: H60on-route/full4mean off-route,
+uniform512descriptive gain strictly>.001before feature GPU. Teacher usefulness,
+independent human-vote advantage, state capture, surrogate quality and runtime
+are all unproven. It does not override H15's deferred provenance limits. Select
+an explicit bounded focus/contract before executing v18; do not infer that a
+newly queued task is admitted. H63remains conditional/P3/unselected.
 
-Only after that gate and E17report may actual controlled qualification proceed.
-Strict canonical1e-5/source/ID/token/head/class/route/CSV/two-T4and full80warmup
-checks; actual incremental gate and conservative25kcost<32400s with20pctmargin,
-worst comparable H60/current timings/allcold/warmup/other/600reserve. Hidden
-mode performs actual inference with no train labels or public prediction cache.
-At most one frozen official candidate, retain H60if worse; no researchGPU while
-scoring is pending. Actual fresh leaderboard rank defines completion.
+Fresh terminal inventory66owned/zeroactive;7official receipts terminal. Free
+91613.417GPU seconds, reserved0/paidFalse, refreshNov14. Recheck full jobs/quota/
+pinned dependencies/submission cursors before GPU. No research while official
+scoring is pending; no hidden labels/caches, external text service or duplicate
+accepted mutations. Frozen quality/numerical/source/runtime gates and actual
+fresh rank determine advancement. No leaderboard parameter fitting.
 
-Original period 2026-11-08T07:12:45.821323+00:00 through 2026-11-10T07:12:45.821365+00:00; quota refresh
-2026-11-14 00:00:00. Free public cap6000two-T4seconds, initial2400,
-one separately admitted engineering follow-up3600; max2public versions/1recipe/
-1official. Fresh complete quota/jobs/dependencies/submission cursors before GPU,
-no paid scaling or duplicate mutation on observation timeout. CPU caps E17=900s,
-H62=720s. H63and all other tasks stay unselected; queue discoveries in v18.
-
-Heavy files under database/llm_classification_finetuning/runs/span_017; source,
-Markdown/aggregate metrics/executed Notebook29in Git. Preserve66historical
-snapshots, all archived goals, user notebooks07/12and existing notebook link.
-Close with actual evidence and carry unfinished work; span closure does not
-complete the persistent rank<=19goal.
+Preserve70historical snapshot files, archived goals, user notebooks07/12and the
+existing notebook link. Heavy data under database/llm_classification_finetuning;
+programs/Markdown/aggregates/executed notebooks in Git. Queue discoveries in v19,
+carry unfinished work, publish milestones. Span closure is not goal completion.

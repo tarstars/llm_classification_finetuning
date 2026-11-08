@@ -1,5 +1,6 @@
 """Verify failed-service preservation, actual diagnostics and sealed-v16 carryover."""
 from pathlib import Path
+import argparse
 import json
 import math
 import sys
@@ -13,6 +14,8 @@ from arena.experiment import atomic_json,read_json,sha256,utc_now
 
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--verify-only',action='store_true')
+    args=parser.parse_args()
     pub,root = REPO/'results/span_016',ROOT/'runs/span_016'
     old = read_json(pub/'preservation.json')
     assert len(old['snapshot_sha256']) == 62
@@ -70,7 +73,9 @@ def main():
     successor = read_json(REPO/'backlog/versions/v17.start.json')
     start = next(v for v in successor['versions'] if v['number'] == 17)
     assert len(carry) == 38 and set(start['item_ids']) == carry|{'H63'}
-    assert len(list((REPO/'backlog/versions').glob('*.json'))) + len(list((REPO/'backlog/versions').glob('*.md'))) == 66
+    # Later spans add snapshots; their existence must not invalidate this sealed
+    # span. The62original hashes above and four transition files remain required.
+    assert len(list((REPO/'backlog/versions').glob('*.json'))) + len(list((REPO/'backlog/versions').glob('*.md'))) >= 66
     path = REPO/'notebooks/28_modern_reward_expert.ipynb'
     notebook = nbformat.read(path,4)
     code = [c for c in notebook.cells if c.cell_type == 'code']
@@ -86,7 +91,8 @@ def main():
         notebook_code_cells=3,notebook_errors=0,notebook_sha256=sha256(path),
         goal_archive_sha256=sha256(REPO/'docs/GOAL_V16.md'),carried_tasks=38,successor_members=39,
         new_discoveries=['H63'],leaderboard=board)
-    atomic_json(pub/'closure_audit.json',result)
+    if not args.verify_only:
+        atomic_json(pub/'closure_audit.json',result)
     print(json.dumps(result,indent=2))
 
 

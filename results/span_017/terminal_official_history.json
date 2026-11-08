@@ -1,0 +1,61 @@
+{
+  "complete": true,
+  "receipts": [
+    {
+      "ref": 58103553,
+      "status": "SubmissionStatus.COMPLETE",
+      "public_score": "0.82987",
+      "private_score": "",
+      "date": "2026-11-07 20:07:11.890000",
+      "description": "Span013 frozen Gemma-only order averaging; original route, equal expert totals, T1"
+    },
+    {
+      "ref": 58091536,
+      "status": "SubmissionStatus.COMPLETE",
+      "public_score": "0.84797",
+      "private_score": "",
+      "date": "2026-11-07 12:22:35.177000",
+      "description": "Span011 frozen independent later-vote shared temperature; unchanged equal two-expert inference"
+    },
+    {
+      "ref": 58068582,
+      "status": "SubmissionStatus.COMPLETE",
+      "public_score": "0.83053",
+      "private_score": "",
+      "date": "2026-11-06 20:28:37.697000",
+      "description": "Span009 frozen public tascj Gemma2/Llama3 equal ensemble; no local-quality claim"
+    },
+    {
+      "ref": 57979825,
+      "status": "SubmissionStatus.COMPLETE",
+      "public_score": "0.95481",
+      "private_score": "",
+      "date": "2026-11-04 09:31:36.027000",
+      "description": "Span003 frozen H03 step1438; T0.9441963863; no refit"
+    },
+    {
+      "ref": 57909397,
+      "status": "SubmissionStatus.COMPLETE",
+      "public_score": "0.98653",
+      "private_score": "",
+      "date": "2026-11-02 13:06:49.887000",
+      "description": "Attempt 003: frozen prompted Gemma judge, no fine-tuning or classifier blend"
+    },
+    {
+      "ref": 57883867,
+      "status": "SubmissionStatus.COMPLETE",
+      "public_score": "0.97025",
+      "private_score": "",
+      "date": "2026-11-01 21:08:39.737000",
+      "description": "Attempt 002: joint preference classifier (prediction)"
+    },
+    {
+      "ref": 57866428,
+      "status": "SubmissionStatus.COMPLETE",
+      "public_score": "1.00897",
+      "private_score": "",
+      "date": "2026-11-01 08:55:33.660000",
+      "description": "Attempt 001: offline TF-IDF, GRU and structural preference ensemble; grouped development selection"
+    }
+  ]
+}

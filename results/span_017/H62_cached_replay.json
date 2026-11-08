@@ -1,0 +1,182 @@
+{
+  "at": "2026-11-08T07:26:47.222087+00:00",
+  "information_gate_passed": false,
+  "coverage": {
+    "control": {
+      "rows": 256,
+      "parent_selected_rows": 42,
+      "H61_selected_rows": 51,
+      "candidate_selected_rows": 63,
+      "common_selected_rows": 42,
+      "added_rows": 21,
+      "dropped_rows": 0,
+      "added_rows_vs_H61": 12,
+      "parent_work_fraction": 0.09949411201819536,
+      "H61_work_fraction": 0.12164329265938441,
+      "candidate_work_fraction": 0.14956680941143718,
+      "parent_common_cache_max_abs_vs_actual_deployed": 0.0,
+      "parent_numeric_reference_is_matched": false,
+      "independent": false,
+      "parent_common_cache_log_loss": 0.5982343958068677,
+      "H61_log_loss": 0.5984073164773567,
+      "candidate_log_loss": 0.5986903239920748,
+      "incremental_loss_reduction": -0.0004559281852072444,
+      "descriptive_paired_group95": [
+        -0.001612178222632057,
+        0.0005033409789800037
+      ],
+      "incremental_loss_reduction_vs_H61": -0.0002830075147181873,
+      "descriptive_group95_vs_H61": [
+        -0.0013277986679830073,
+        0.0005606633875357106
+      ],
+      "actual_deployed_parent_log_loss": 0.5982343958068677,
+      "class_incremental_loss_reduction": {
+        "winner_model_a": -0.0006734282478557904,
+        "winner_model_b": -0.0017911042256426016,
+        "winner_tie": 0.001423236320536831
+      },
+      "unrouted_log_loss": 0.5994288921356201
+    },
+    "uniform": {
+      "rows": 512,
+      "parent_selected_rows": 83,
+      "H61_selected_rows": 102,
+      "candidate_selected_rows": 120,
+      "common_selected_rows": 83,
+      "added_rows": 37,
+      "dropped_rows": 0,
+      "added_rows_vs_H61": 18,
+      "parent_work_fraction": 0.09980524132228646,
+      "H61_work_fraction": 0.12713820464103692,
+      "candidate_work_fraction": 0.14967527990069196,
+      "parent_common_cache_max_abs_vs_actual_deployed": 4.992634057998657e-05,
+      "parent_numeric_reference_is_matched": false,
+      "independent": false,
+      "parent_common_cache_log_loss": 0.652988160395198,
+      "H61_log_loss": 0.6527081051290601,
+      "candidate_log_loss": 0.6530487084499355,
+      "incremental_loss_reduction": -6.054805473744746e-05,
+      "descriptive_paired_group95": [
+        -0.0007257646026064092,
+        0.0005930949698717841
+      ],
+      "incremental_loss_reduction_vs_H61": -0.00034060332087545346,
+      "descriptive_group95_vs_H61": [
+        -0.0009216050825424811,
+        0.0002203347979263078
+      ],
+      "actual_deployed_parent_log_loss": 0.65298824928548,
+      "class_incremental_loss_reduction": {
+        "winner_model_a": 0.00011786603114907757,
+        "winner_model_b": -0.000656175657302391,
+        "winner_tie": 0.00027014501910693295
+      },
+      "unrouted_log_loss": 0.6542420983314514
+    },
+    "long": {
+      "rows": 64,
+      "parent_selected_rows": 6,
+      "H61_selected_rows": 9,
+      "candidate_selected_rows": 9,
+      "common_selected_rows": 6,
+      "added_rows": 3,
+      "dropped_rows": 0,
+      "added_rows_vs_H61": 0,
+      "parent_work_fraction": 0.089095825394392,
+      "H61_work_fraction": 0.13620918197114654,
+      "candidate_work_fraction": 0.13620918197114654,
+      "parent_common_cache_max_abs_vs_actual_deployed": 0.0,
+      "parent_numeric_reference_is_matched": false,
+      "independent": false,
+      "parent_common_cache_log_loss": 0.8964843998172233,
+      "H61_log_loss": 0.8961401281361655,
+      "candidate_log_loss": 0.8961401281361655,
+      "incremental_loss_reduction": 0.0003442716810577104,
+      "descriptive_paired_group95": [
+        -0.0015464931771799056,
+        0.0028850893537187942
+      ],
+      "incremental_loss_reduction_vs_H61": 0.0,
+      "descriptive_group95_vs_H61": [
+        0.0,
+        0.0
+      ],
+      "actual_deployed_parent_log_loss": 0.8964843998172233,
+      "class_incremental_loss_reduction": {
+        "winner_model_a": 0.002126239928298725,
+        "winner_model_b": -0.0009897556333951397,
+        "winner_tie": 0.0
+      },
+      "unrouted_log_loss": 0.8965277671813965
+    },
+    "test": {
+      "rows": 3,
+      "parent_selected_rows": 0,
+      "H61_selected_rows": 0,
+      "candidate_selected_rows": 0,
+      "common_selected_rows": 0,
+      "added_rows": 0,
+      "dropped_rows": 0,
+      "added_rows_vs_H61": 0,
+      "parent_work_fraction": 0.0,
+      "H61_work_fraction": 0.0,
+      "candidate_work_fraction": 0.0,
+      "parent_common_cache_max_abs_vs_actual_deployed": 0.0,
+      "parent_numeric_reference_is_matched": false,
+      "independent": false
+    }
+  },
+  "incremental_information_gain_minimum": 0.0005,
+  "work_fraction": 0.15,
+  "row_fraction": 0.3,
+  "parent_work_fraction": 0.1,
+  "parent_row_fraction": 0.2,
+  "H61_control_work_fraction": 0.15,
+  "H61_control_row_fraction": 0.2,
+  "quality_variants_tested": 1,
+  "temperature": 1,
+  "independent_local_quality": false,
+  "original_votes_seen_in_checkpoint_training": true,
+  "new_gpu_executions": 0,
+  "comparison": "One new rule; H60/H61controls and candidate share the same full reverse cache. Actual deployed H60is a separate unmatched-batch diagnostic.",
+  "source_sha256": {
+    "GOAL.md": "f57c3b9100019e5dfb193a4fd6d5dbf8e2fdb2a03a7cace65535284bc36e6c79",
+    "docs/SPAN_017_PLAN.md": "b59af66b20f48563c3fcce47109549e2f84a390be033aa27c9a06d923f77acf8",
+    "results/span_017/span_plan.json": "dfb14ef441bc60edda565a0dfeaf751a172f38c3d02f8f80dbb4f2e0e136e5fe",
+    "scripts/replay_span_017_route.py": "8bae9a5bd4af5c75dc518822b4cdf3ba461e0f6dc7a0bb0d20c76bc204b1d349",
+    "src/arena/span010_order.py": "7bb9dc38ed6161eb0fc20a9b65703d44ac2bd900d2337502dc9f1a81c4c18e3e",
+    "src/arena/span013_order.py": "26dad45892c106042e6f9f8b2c1f0e02c9e1a2ff62441134de789ac9809a0b87",
+    "scripts/audit_span_010_order.py": "0a0faa90b77b6d01f9ac47dc82d93a211327d50361a3b0c723bff43f9e65044e"
+  },
+  "cache_sha256": {
+    "runs/span_010/jobs/order_pilot/output/order_completion/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m3_control.npz": "a00ed5c27d8746ec921376f94444a292bb8363ae2f847122d03f40522e9b4437",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m0_reverse_control.npz": "02e6fc7d4c8bdd1e0a84d2f783d0b46110b9ded8c3d59e9862180cb148ef92a7",
+    "runs/span_013/jobs/gemma_order/output/order_completion/ensemble_control.npz": "c3c4c63153121a0407546c4356ef7eef8ad973710998ae733ba60f19270bc2bd",
+    "runs/span_010/jobs/order_pilot/output/order_completion/routing_control.npz": "bbc9adc2fff390d345c97ed41ab96d00c36c4ddf7326fb422144f38f616bc3eb",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m0_uniform.npz": "07267d576085aa72d975f2f287d7ec034fffd22317f2048f4c6e5c4ad371069e",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m3_uniform.npz": "c378c1b89b86603a3d72e8839397399c1803360ee9af6fa52fdda3a36baf74a3",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m0_reverse_uniform.npz": "1bb3f0919e111703548e0f47aa07830decf2376a633f755a453aeb8535ffa97c",
+    "runs/span_013/jobs/gemma_order/output/order_completion/ensemble_uniform.npz": "e12a7e6d55d553bfca42832d3b00c7e6ff5812309d15651266cbba1d78197cde",
+    "runs/span_010/jobs/order_pilot/output/order_completion/routing_uniform.npz": "3d21ff6b5e10392b1383aa71055485634f9a82b3bc7bbd0d8db69340ccb911e2",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m0_long.npz": "f0cdc3f38df3a8091fda4147865922b371167961af0a3979ffac48f82d57cfc1",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m3_long.npz": "843ed1ff1ed8f505503869276d86dbafbf2b07975f628f038bc49ed2b74eb3cb",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m0_reverse_long.npz": "f831ab660c953181c1ce7c86b6a412b30422bd9ef63ff00a7fba9474420cabc1",
+    "runs/span_013/jobs/gemma_order/output/order_completion/ensemble_long.npz": "7bcc930cc89a2564a89ee603c82e0b20320aab6d89f8d1061752e64aa7a47c2e",
+    "runs/span_010/jobs/order_pilot/output/order_completion/routing_long.npz": "f21e62bf151ea6bf078ea97f904a3df4ca7f5d3eeb6c6514da48edfeec70c270",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m0_test.npz": "416b6e64ac23c1afd1264cee6ce68fdaa9bef07d830334fff85c96e6ba8f66b0",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m3_test.npz": "61330b55152f24cc19f6f6416f8cf4aec2dbd3949d88c4d99402ffe42f3faeb5",
+    "runs/span_010/jobs/order_pilot/output/order_completion/m0_reverse_test.npz": "3c89dd4ac50fd4f7cff9cf890b0f7ed5ea716a89ab99a1ccb234e448f2c0812c",
+    "runs/span_013/jobs/gemma_order/output/order_completion/ensemble_test.npz": "3f0a4f5f8d182daf8c09ea3ae37d40293dfccebe383f65a792c3044cf0f7724f",
+    "runs/span_010/jobs/order_pilot/output/order_completion/routing_test.npz": "ad1f886bf33ba763d585714b06bf5fc1e247bfa8b5cacd30af18f29da7b42281"
+  },
+  "output_sha256": {
+    "runs/span_017/cached_route/control.npz": "a54337fa3bd75205d66d2353b302bf25bf328dfa7d1c5abf296a01e32a1c01b5",
+    "runs/span_017/cached_route/uniform.npz": "0a34cbe55b2070d77fa0ed4847a722cb8d1786c8a7cd2e490abd681f034fa3d8",
+    "runs/span_017/cached_route/long.npz": "6e9ca6a77c36aabfdd92bc0f23c6b9c002fe1cfac1e70ed98bbdf19c13bfaf56",
+    "runs/span_017/cached_route/test.npz": "d552ad656e45a181d3b88019aca09349c254fc63ea66af6a27b789f8c009815a"
+  },
+  "elapsed_cpu_seconds": 0.5095465299673378,
+  "decision": "Stop H62without GPU; retain0.82987"
+}

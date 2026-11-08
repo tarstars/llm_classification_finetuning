@@ -5505,7 +5505,7 @@
       ],
       "id": "E17",
       "rank": 77,
-      "status": "running",
+      "status": "done",
       "introduced_in": 12,
       "discovered_during": 11,
       "derived_from": [
@@ -5526,6 +5526,14 @@
           "note": "Preparing the cached no-fit transport audit under docs/SPAN_017_PLAN.md;15CPUminutes/1engineeringhour, fixed existingT1andT1.316151867 recipe only, no GPU or parameter fitting.",
           "evidence": [
             "docs/SPAN_017_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T07:52:14+00:00",
+          "status": "done",
+          "note": "Completed cached3840-row CPU-only transport audit in23.15s, no fitting/GPU. Exact prepared token fingerprints reproduce; lengths match but confidence/entropy/exposure differ. Historical official losses imply normalization term.216941under explicit same-base/subset and rounding assumptions, versus later.2394; no hidden labels or unique cause recovered. Report and executedNotebook29state target-evidence requirements and prohibit official-feedback calibration.",
+          "evidence": [
+            "docs/SPAN_017_RESULTS.md"
           ]
         }
       ]
@@ -5763,7 +5771,7 @@
       ],
       "id": "H62",
       "rank": 80,
-      "status": "running",
+      "status": "done",
       "introduced_in": 15,
       "discovered_during": 14,
       "derived_from": [
@@ -5785,6 +5793,14 @@
           "note": "Preparing one prospective15pct-work/30pct-row cached replay versus matchedH60(10pct/20pct)with existingH61(15pct/20pct)diagnostic. Freeze inherited uniform512increment>.0005before output. Conditional public qualification only after gate and E17report; unchanged weights/T1/8192/context4096 and runtime controls.",
           "evidence": [
             "docs/SPAN_017_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-08T07:52:14+00:00",
+          "status": "done",
+          "note": "One fixed15pct-work/30pct-row replay selects120/512rows using14.9675pctwork. Increment vs matchedH60is-.00006055CI[-.00072576,+.00059309], below frozen>.0005gate; vsH61-.00034060. No GPU/qualification/submission, no new ceiling grid. Preserve training-overlap and unmatched-batch limits; retain0.82987. H64future function-distillation hypothesis queued, unselected.",
+          "evidence": [
+            "docs/SPAN_017_RESULTS.md"
           ]
         }
       ]
@@ -5863,6 +5879,73 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Distill missing answer-order predictions into a cheap head on retained expert states",
+      "priority": "P2",
+      "gain": [
+        -0.003,
+        0.004
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        6
+      ],
+      "pilot_gpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        4
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        1
+      ],
+      "risk": "high",
+      "claim": "A small head trained on deterministic teacher outputs may approximate expensive missing orientations using states already computed by the retained experts, adding diversity within the nine-hour limit.",
+      "basis": "H62broader Gemma coverage gives uniform reduction-.00006055and fails its gate. E17finds calibration-transport/exposure limits. V10routed four-orientation inference failed runtime; full public orientation caches exist, but a fixed full4teacher advantage over H60and a learnable surrogate are unmeasured.",
+      "first_test": "CPU first: freeze one teacher preserving H60on-route and using full4orientation mean only off-route; matched cached uniform512gain must exceed.001before feature GPU. No teacher grid. If useful, source-audit pooled-state capture for identical raw/base outputs and pipeline overlap, then one small fixed head predicts centered teacher logit residuals using only teacher outputs, group-held-out approximation testing and no human labels for training. Freeze IDs/features/head/selection budget before inference.",
+      "acceptance": "Teacher passes the prospective useful-signal check with all overlap limits disclosed. Out-of-group teacher-function approximation beats identity; human-vote evidence/fresh confirmation as appropriate supports the one frozen candidate. Original/base canonical controls<1e-5, no additional large deployment forward pass, actual512/full80warmup/cold/other profiling and conservative25k<32400s with20pctmargin/600reserve, then at most one fixed official outcome.",
+      "stop": "Stop before GPU if fixed teacher signal is insufficient; stop on unlearnable/overfit surrogate, changed native outputs, feature-copy slowdown or infeasible9hruntime. No head/teacher/temperature/route grid, no winner-label training for this head, hidden cache, external teacher API or leaderboard fitting.",
+      "risk_reason": "Teacher states may not encode the missing orientation predictably; high dimensional small-sample fitting can overfit. Public checkpoints saw original votes, so teacher-function validation does not prove independent human-vote advantage. GPU feature copies may destroy two-stage overlap.",
+      "mitigation": "Separate teacher-function targets from human labels and keep their claims distinct. Preserve H15deferred provenance limits, use group-held-out teacher targets and independent confirmation as needed, frozen one-head design, strict numerical controls and actual runtime. Include all feature-generation and optional expansion costs in a separately admitted bounded span.",
+      "rationale": "Targets expensive inference rather than another marginal coverage increase or transferred human-vote calibration. Gain range is subjective; no teacher, student or score gain is measured.",
+      "revision": "Queued from completed v17CPU findings only. No current-span execution or automatic follow-up; first cached teacher gate remains unobserved.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "E16",
+        "H60",
+        "H62",
+        "E17"
+      ],
+      "evidence": [
+        "docs/SPAN_017_DISTILLATION_DISCOVERY.md",
+        "docs/SPAN_017_RESULTS.md",
+        "docs/SPAN_010_RESULTS.md"
+      ],
+      "id": "H64",
+      "rank": 82,
+      "status": "planned",
+      "introduced_in": 18,
+      "discovered_during": 17,
+      "derived_from": [
+        "H62"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T07:44:14+00:00",
+          "status": "planned",
+          "note": "Broader actual coverage failed; queue one distinct conditional function-distillation hypothesis. It begins with a fixed unobserved CPU teacher gate and does not claim independent teacher advantage or admit v17GPU work.",
+          "evidence": [
+            "docs/SPAN_017_DISTILLATION_DISCOVERY.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -5913,7 +5996,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 17,
+  "active_version": 18,
   "versions": [
     {
       "number": 1,
@@ -7200,7 +7283,7 @@
     },
     {
       "number": 17,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -7259,10 +7342,68 @@
       "carried_from": 16,
       "start_sha256": "6c744b7955f519b98c0409aa3812e7d9c164fac3d0dc4ffe4a3ce6396f7ce1eb",
       "start_markdown_sha256": "1fee10729a9d35ebcf71b95e410c75988d09fc1c9e61b2a102e91f41fe3ece41",
-      "start_sealed_at": "2026-11-08T07:00:23+00:00"
+      "start_sealed_at": "2026-11-08T07:00:23+00:00",
+      "final_sha256": "e142aa959f1677e858b9aa1a0cf42dfbaa34b783d09ecee67e267fa7f26dd2fb",
+      "final_markdown_sha256": "a4abf990faf53dae19083f04c805738c5923b349689f93a6c1ee09bfbcfff4d9",
+      "final_sealed_at": "2026-11-08T07:52:14+00:00",
+      "closed_at": "2026-11-08T07:52:14+00:00",
+      "closing_note": "V17completed E17transport diagnostics and negativeH62cached gate with zeroGPU/official spend. Retain0.82987/rank23; carry37unfinished items plus newH64into v18. Global rank<=19goal remains ACTIVE; no successor focus yet.",
+      "closing_evidence": [
+        "docs/SPAN_017_RESULTS.md"
+      ]
     },
     {
       "number": 18,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H64"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 17,
+      "start_sha256": "1bf24e702726dae8b42632104aba7b5f555e2100938ccd4d7354fc2d96c496d0",
+      "start_markdown_sha256": "6b6b6d4efef1f93098c5078d77473f0bc2cd131e6a9e05be316122ba857def41",
+      "start_sealed_at": "2026-11-08T07:52:14+00:00"
+    },
+    {
+      "number": 19,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],
