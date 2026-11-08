@@ -1,6 +1,6 @@
 # H72 pilot complete; full qualification running
 
-Current snapshot Nov8 2026,18:56UTC. Persistent goal team17244411 rank<=19
+Current snapshot Nov8 2026,19:05UTC. Persistent goal team17244411 rank<=19
 remains ACTIVE/unachieved. Fresh complete board18:19:24UTC:23/312,.82987,
 19th/20th.82915,leader.82692. results/span_026/midpilot_leaderboard.json.
 No new official since H60receipt58103553/source span013-gemma-order/1.
@@ -58,11 +58,18 @@ hidden_asset_spec SHA851144d920dbdda37a815a196922daf197fbc00af223db2458aa8e37475
 Do NOTreprepare. Extra3control/4uniform/63long/0visibletestrows. TWOaccepted
 H72versions now; qualificationlive, officialnotadmitted.
 
+H73queued forv27(planningonly): onefixed60pctGemma/40pctLlama expertprior on
+thethenincumbent's unchangedinputs/route/T1, noaddedforwardpass. OlderH37/H43
+wereweakmodels;H59temperature-only;H61/H62alreadytestedbroaderordercoverage,
+do notduplicate/reopen. docs/SPAN_026_EXPERT_WEIGHT_DISCOVERY.md states no60/40
+predictions/loss/GPUscomputed. Notselected/currentspanunchanged; futureseparate
+boundedcontract required after H72outcome. V27draftnow[H73],91registeredtasks.
+
 OriginalCPUcoverage/native selector alreadyDONE; DO NOTrerun.357/57477changed,
 8.985%fullGworkproxy,22newBvisible, retainedBchars64.52->88.60%; controlsandall
 oldlengthsexact. OriginalCPUcontract archived/anchored278b9dc. GOAL/planremain
 frozenbecausepilotbundle verifies them; executionstatuscomesfromregistry/live
-receipts/thissnapshot. V26focus[H72],v27draftempty,90tasks/102snapshotfiles,
+receipts/thissnapshot. V26focus[H72],v27draft[H73],91tasks/102snapshotfiles,
 37unfinishedcarried. No subagents. PROJECT_POLICY.md/GOAL.md govern. Preserve
 userdirty07_error_poster.ipynb and12_backlog_v1_span.ipynb bytewise; hashes in
 results/span_026/preservation.json. Neverstage/reset them. All102snapshotsfixed.
