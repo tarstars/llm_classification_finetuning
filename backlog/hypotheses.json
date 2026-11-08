@@ -6061,6 +6061,14 @@
           "evidence": [
             "docs/SPAN_019_GPU_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-08T10:34:54+00:00",
+          "status": "running",
+          "note": "All three pinned shards verified09:49UTC; private native asset manifest prepared16files/10.383GB. Token banks and actual serialized worker/public-hidden/CSV/failure rehearsals complete. Initial native2replica engineering pilot is prepared; no GPU, votes or newscore yet.",
+          "evidence": [
+            "docs/SPAN_019_SOURCE_RESULTS.md"
+          ]
         }
       ]
     }

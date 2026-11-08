@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-08T09:47:07.603556+00:00",
+  "at": "2026-11-08T10:27:45.251922+00:00",
   "passed": true,
   "validation_method": "Observed successful targeted unittest runs",
   "native_test_count": 3,
@@ -30,7 +30,7 @@
   "production_backend_memory_speed_verified": false,
   "quality_measured": false,
   "source_sha256": {
-    "src/arena/span019_model.py": "2b96169a630d7dff0f7a24e8af2288e3eb956b1213084aea62ec8aaf7d6dc0f3",
+    "src/arena/span019_model.py": "e07c8071f0622de29435956dc36ed49b44c9a56eb1c58609dd9de477f20132a4",
     "src/arena/span019_batch.py": "1e050b0e1366023c3a938e70781899b7a49255705abb0c5f1af9edb28b22d520",
     "src/arena/span019_infer.py": "ed95788880161ab212f8135b5c05f84acd9c1cfdf2df1ba43d55f9dfd4664206",
     "src/arena/span019_pipeline.py": "ae4b28ff1ea4980a20d1b1882bf2a4eb2f5998913ed48eaf60c8506f0cc11a75",
@@ -39,5 +39,6 @@
   },
   "production_worker_coverage": "syntax compilation only; real GPU dispatch, memory and throughput untested",
   "native_core_coverage": "actual saved tiny quantized/dense model and split execution; input batching",
-  "pipeline_coverage": "actual orchestration with CPU fixture children, CSV and failure propagation"
+  "pipeline_coverage": "actual orchestration with CPU fixture children, CSV and failure propagation",
+  "optional_compiled_GPTQ_extensions_not_imported": true
 }

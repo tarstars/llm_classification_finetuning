@@ -6,6 +6,7 @@ attention. It must not inherit the retained expert's MLP head or attention path.
 # Split-forward structure adapted from Transformers4.42.3 Gemma2Model:
 # Copyright2024GoogleInc./HuggingFaceInc.;ApacheLicense2.0.
 import importlib.util
+import sys
 import types
 
 import torch
@@ -70,7 +71,17 @@ def native_quantized_class(source_path):
     """Use the pinned official GPTQ8 fallback, without an Optimum conversion."""
     spec = importlib.util.spec_from_file_location('span019_pinned_qlinear', source_path)
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    # The chosen backend is the source's Torch fallback. Do not load optional
+    # compiled extensions (which have their own Torch/CUDA ABI) merely to disable
+    # them afterwards. Restore the import table before model construction.
+    optional = ['autogptq_cuda_64', 'autogptq_cuda_256']
+    previous = {name: sys.modules[name] for name in optional if name in sys.modules}
+    try:
+        for name in optional: sys.modules[name] = None
+        spec.loader.exec_module(module)
+    finally:
+        for name in optional: sys.modules.pop(name, None)
+        sys.modules.update(previous)
 
     class NativeQuantizedMirror(MirrorClassifier):
         def __init__(self, config):

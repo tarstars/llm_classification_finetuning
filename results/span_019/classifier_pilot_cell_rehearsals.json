@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "test_file": "test_span019_pipeline.py",
+      "passed": true,
+      "output": "ARENA_EVENT {\"stage\": \"mirror_engineering_complete\", \"complete\": true, \"rows\": 3}\nARENA_EVENT {\"stage\": \"mirror_engineering_complete\", \"complete\": true, \"rows\": 3}\ntest_child_failure_cannot_produce_success_or_submission (test_span019_pipeline.PipelineTests.test_child_failure_cannot_produce_success_or_submission) ... ok\ntest_public_and_hidden_through_csv_without_training_data_in_hidden (test_span019_pipeline.PipelineTests.test_public_and_hidden_through_csv_without_training_data_in_hidden) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.209s\n\nOK\n"
+    },
+    {
+      "test_file": "test_span019_native_model.py",
+      "passed": true,
+      "output": "test_original_quantized_dense_and_split_with_actual_saved_tiny_model (test_span019_native_model.CompleteNativeModelTests.test_original_quantized_dense_and_split_with_actual_saved_tiny_model) ... CUDA extension not installed.\nok\ntest_padded_budget_and_complete_index_coverage (test_span019_native_model.NativeBatchTests.test_padded_budget_and_complete_index_coverage) ... ok\ntest_padding_masks_literal_pad_and_preserves_original_positions_and_pool (test_span019_native_model.NativeBatchTests.test_padding_masks_literal_pad_and_preserves_original_positions_and_pool) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.176s\n\nOK\n"
+    }
+  ],
+  "worker": [
+    {
+      "name": "success",
+      "passed": true,
+      "summary": {
+        "seconds": 0.02314019203186035,
+        "exit_code": 0,
+        "role": "classifier_pilot"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "summary": {
+        "seconds": 0.032242536544799805,
+        "exit_code": 7,
+        "role": "classifier_pilot"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "summary": {
+        "seconds": 0.2014789581298828,
+        "exit_code": -15,
+        "role": "classifier_pilot"
+      }
+    }
+  ],
+  "mode_checks": [
+    {
+      "hidden": false,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    },
+    {
+      "hidden": true,
+      "passed": true
+    }
+  ],
+  "notebook_startup_passed": true,
+  "actual_pipeline_cpu_tests_passed": true,
+  "real_model_gpu_exercised": false,
+  "new_gpu_executions": 0
+}

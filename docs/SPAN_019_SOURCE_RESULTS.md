@@ -48,3 +48,18 @@ still running, with742,391,808bytes of the first shard received. The committed
 acquisition_live_observation.json is a dated observation, not completion evidence.
 No GPU quota has been consumed by these source/asset stages. H65 remains running;
 native whole-model controls, quality comparison and deployment runtime are pending.
+
+At09:49:06UTC all three original shards completed with their pinned SHA256,
+total10,361,181,040bytes. The native private asset package has16files/10.383GB;
+hard links avoid duplicating its heavy files. The selected prospective GPUbackend
+is two native replicas, one perT4, as specified in SPAN_019_GPU_PROTOCOL.md.
+No dense conversion is needed for this selected deployment. The optional CPU
+converter and its preserved layout failure/correction remain reproducible evidence.
+
+Actual saved tiny original-GPTQ/dense/split tests and public/hidden orchestration
+tests pass (5tests); two runtime-formula tests also pass. The real serialized
+worker passed success/failure/watchdog, notebook startup and public/hidden branch
+rehearsals. These do not establish real model GPUfit, agreement or quality.
+Before GPU, the exact token/position/pool fingerprints were recorded for all
+fixed cohorts. Uniform512mean662.14tokens; later1024mean685.23; all64long stress
+rows reach2001tokens. No winner labels were read. There is still no new score.

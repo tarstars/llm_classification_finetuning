@@ -69,9 +69,18 @@ def main():
             assert read_json(pub/'classifier_pilot_cell_rehearsals.json')['passed']
             assert not (folder/'upload_intent.json').exists(),'Reconcile the original upload, never duplicate it'
             for name,digest in manifest['upload_sha256'].items():assert sha256(upload/name)==digest
+            api=api_client()  # Authentication is read-only; finish it before mutation intent.
             write_intent(folder/'upload_intent.json',dict(at=utc_now(),dataset=ref,private=True,
                 asset_manifest_sha256=sha256(pub/'asset_manifest.json')))
-            response=api_client().dataset_create_new(str(upload),public=False,quiet=True,convert_to_csv=False,dir_mode='skip')
+            try:
+                response=api.dataset_create_new(str(upload),public=False,quiet=True,convert_to_csv=False,dir_mode='skip')
+            except Exception as error:
+                # A transfer error can carry a signed URL. Retain only safe facts,
+                # and reconcile this intent rather than repeating dataset creation.
+                code=getattr(getattr(error,'response',None),'status_code',None)
+                atomic_json(folder/'upload_observation_failure.json',dict(at=utc_now(),error_type=type(error).__name__,
+                    http_status=code,mutation_ambiguous=True,do_not_repeat=True))
+                raise SystemExit('Private upload observation failed; original intent retained. Observe the same dataset.') from None
             result={k:getattr(response,k) for k in ['ref','url','status','error'] if hasattr(response,k)}
             atomic_json(folder/'upload_response.json',result)
             assert not result.get('error');print(json.dumps(result));return

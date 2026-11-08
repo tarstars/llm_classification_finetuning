@@ -54,6 +54,17 @@ assert c['passed'] and not c['real_model_logits_compared'] and not s['quality_me
 print('Fixed evaluation counts:',{k:len(selection[k]) for k in ['control_ids','uniform_ids','long_ids','later_ids']})
 print('Targets used for selection:',selection['uses_targets_for_selection'])
 print('Original votes overlap checkpoint training; later cohort previously inspected and differs in domain.')
+if (PUB/'token_reference.json').exists():
+ tokens=read('token_reference.json')
+ display(pd.DataFrame([{'cohort':name,**r} for name,r in tokens['cohorts'].items()])[
+  ['cohort','rows','mean_tokens','max_tokens','seconds']])
+ print('Token/absolute-position/pool fingerprints fixed before GPU inference; no winner labels read.')
+if (PUB/'worker_cpu_validation.json').exists():
+ checks=read('worker_cpu_validation.json')
+ print('Tiny saved-model tests:',checks['native_test_count'],'; pipeline tests:',checks['pipeline_test_count'])
+ print('CPU runtime:',checks['runtime'])
+ print('Selected production backend:',checks['production_backend'])
+ print('Real GPU fit/speed verified:',checks['production_backend_memory_speed_verified'])
 for filename in ['weight_acquisition.json','dense_expansion.json']:
  if (PUB/filename).exists():
   r=read(filename)

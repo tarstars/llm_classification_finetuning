@@ -42,7 +42,7 @@ GPU_INFO=subprocess.check_output(['nvidia-smi','--query-gpu=name,memory.total','
 assert len(GPU_INFO)==2 and all('T4' in name for name in GPU_INFO)
 (WORK/'hardware.json').write_text(json.dumps(dict(gpus=GPU_INFO,python=sys.version)))
 ASSETS=WORK/'assets';ASSETS.mkdir(exist_ok=True)
-for slug in ['lmsys-checkpoints-0-0805','lmsys-checkpoints-3-0805','lmsys-modules-0805','lmsys-packages']:
+for slug in ['lmsys-checkpoints-0-0805','lmsys-modules-0805','lmsys-packages']:
  source=next(p for p in [Path('/kaggle/input')/slug,Path('/kaggle/input/datasets/tascj0')/slug] if p.exists())
  (ASSETS/slug).symlink_to(source,target_is_directory=True)
 shutil.copytree(ASSETS/'lmsys-modules-0805',WORK/'human_pref')
@@ -81,7 +81,7 @@ env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLA
     metadata=dict(id='arseniytrushin/llm-preference-span019-classifier-pilot',
         title='LLM Preference Span019 Native Classifier',code_file='job.ipynb',language='python',
         kernel_type='notebook',is_private=True,enable_gpu=True,enable_tpu=False,enable_internet=False,
-        dataset_sources=['tascj0/'+s+'/1' for s in ['lmsys-checkpoints-0-0805','lmsys-checkpoints-3-0805',
+        dataset_sources=['tascj0/'+s+'/1' for s in ['lmsys-checkpoints-0-0805',
             'lmsys-modules-0805','lmsys-packages']]+[manifest['dataset']],model_sources=[],kernel_sources=[],
         competition_sources=['llm-classification-finetuning'],
         docker_image='gcr.io/kaggle-private-byod/python@sha256:e3f9bf91d1b7b36bf77554565d27c5733585fbe5e2b7f0832e068824e7accc3c',
@@ -131,9 +131,11 @@ env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLA
         real_model_gpu_exercised=False,new_gpu_executions=0))
     names=['GOAL.md','docs/SPAN_019_PLAN.md','docs/SPAN_019_ASSET_PROTOCOL.md','docs/SPAN_019_GPU_PROTOCOL.md',
         'configs/span_019.json','results/span_019/span_plan.json','results/span_019/asset_manifest.json',
+        'results/span_019/token_reference.json','results/span_019/parent_runtime_reference.json',
         'results/span_019/evaluation_selection.json','results/span_019/worker_cpu_validation.json',
         'src/arena/notebook_worker.py','src/arena/kaggle_control.py','scripts/build_span_019_pilot.py',
         'scripts/run_span_019_pilot.py',*['src/arena/'+m+'.py' for m in modules],
+        'scripts/audit_span_019_engineering.py','src/arena/span019_runtime.py',
         'tests/test_span019_pipeline.py','tests/test_span019_native_model.py']
     atomic_json(pub/(role+'_bundle.json'),dict(role=role,source_sha256={n:sha256(REPO/n) for n in names},
         notebook_sha256=sha256(folder/'job.ipynb'),metadata_sha256=sha256(folder/'kernel-metadata.json'),

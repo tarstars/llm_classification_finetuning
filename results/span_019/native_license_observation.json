@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-08T09:48:41.254930+00:00",
+  "source": "https://raw.githubusercontent.com/AutoGPTQ/AutoGPTQ/v0.7.1/LICENSE",
+  "bytes": 1075,
+  "sha256": "359b7e32bf71947820366cbdcb7351cde35253b2aeab2516fbf75f8fd4efde2a",
+  "local_path": "runs/span_019/native_licenses/AutoGPTQ_LICENSE.txt",
+  "model_checkpoint_derivative_license_not_declared": true
+}
