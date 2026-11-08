@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-08T05:43:18.356918+00:00",
+  "admitted": true,
+  "dependencies": [
+    {
+      "source": "tascj0/lmsys-checkpoints-0-0805/1",
+      "private": false,
+      "version": 1
+    },
+    {
+      "source": "tascj0/lmsys-checkpoints-3-0805/1",
+      "private": false,
+      "version": 1
+    },
+    {
+      "source": "tascj0/lmsys-modules-0805/1",
+      "private": false,
+      "version": 1
+    },
+    {
+      "source": "tascj0/lmsys-packages/1",
+      "private": false,
+      "version": 1
+    },
+    {
+      "source": "arseniytrushin/llm-span016-reward-assets/1",
+      "private": true,
+      "version": 1
+    },
+    {
+      "source": "arseniytrushin/llm-span016-lengthmatched-inputs/1",
+      "private": true,
+      "version": 1
+    }
+  ],
+  "all_official_receipts": 7,
+  "pending_official_receipts": [],
+  "controller_sha256": "63d8ba579fb5c2edaaa0b687c17c96e5da275572cbbd16adec940d432f2a1b99",
+  "bundle_sha256": "c9d2e7f2c6c19ce9efbd1c1afc99f073341f2938f3dcbfe89f4920f8f26b822e",
+  "public_seconds_cap": 3600,
+  "phase_seconds_cap": 18000,
+  "quality_recipes": 1
+}

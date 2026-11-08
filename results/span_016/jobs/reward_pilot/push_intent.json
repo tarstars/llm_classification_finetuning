@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-08T05:43:18.369351+00:00",
+  "kernel": "arseniytrushin/llm-preference-span016-reward-pilot",
+  "quota_before": {
+    "used_seconds": 12894.122,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 95105.878
+  },
+  "max_session_seconds": 3600,
+  "notebook_sha256": "d79b46412d528844b377b4173a104038499da82b599127f4b4297d7a0defa18b",
+  "metadata_sha256": "bed76ad574a795fd44d3f0a67cbd3d9bdc0dfb5efe05a59ed1a88a9a3d73f6aa"
+}

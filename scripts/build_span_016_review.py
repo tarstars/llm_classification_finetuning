@@ -53,10 +53,18 @@ print('Swap symmetry, gradients and held-out-group isolation were tested on CPU.
         nbf.v4.new_code_cell('''rehearsal=read('reward_pilot_cell_rehearsals.json')
 print('Actual serialized worker rehearsals passed:',rehearsal['passed'])
 print('Actual pipeline CPU bookkeeping tests:',rehearsal['actual_pipeline_tests'])
-for name in ['asset_preparation.json','asset_upload.json','matched_input_upload.json','H56_information.json']:
+for name in ['asset_preparation.json','asset_upload.json','matched_input_upload.json',
+ 'jobs/reward_pilot/status.json','reward_pilot_source_verification.json']:
  if (PUB/name).exists():
   print(name);display(pd.DataFrame([read(name)]))
  else:print(name,': pending; no corresponding result is claimed')
+if (PUB/'H56_information.json').exists():
+ info=read('H56_information.json')
+ display(pd.DataFrame([{'model':name,'log_loss':m['log_loss'],'accuracy':m['accuracy'],
+  **m['class_log_loss']} for name,m in info['models'].items()]))
+ display(pd.DataFrame([{k:info[k] for k in ['loss_reduction','paired_group95',
+  'information_gate_passed','stronger_quality_gate_passed','official_submission_eligible','decision']}]))
+else:print('H56_information.json: pending; actual model quality has not been audited.')
 print('A source/CPU check is not a GPU quality estimate or a leaderboard improvement.')''')])
     nb.metadata.update(kernelspec=dict(display_name='Python 3', language='python', name='python3'))
     result = NotebookClient(nb, timeout=120, kernel_name='python3',

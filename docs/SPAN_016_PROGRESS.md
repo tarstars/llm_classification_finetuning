@@ -83,3 +83,12 @@ request and honors numeric Retry-After with bounded retries; it still checks eve
 owned job and rejects unresolved recent jobs. Four focused regression tests pass.
 results/span_016/admission_rate_limit.json preserves the failure. No GPU recipe,
 source bundle, quality gate or compute cap changed. Only preflight is retried.
+
+05:43UTC: the paced full preflight passed65owned notebooks, zeroactive jobs,
+all7official receipts terminal, all6datasets pinned, and95105.878free GPU seconds
+with paid scaling off. Accepted exact pilot
+arseniytrushin/llm-preference-span016-reward-pilot/1 is QUEUED. The independent
+accepted-source comparison passed at05:43:50UTC (same cells/image/dependencies,
+internet disabled). Controller session85217 observes this same version and will
+retrieve terminal outputs. No new model quality is claimed. Notebook28now shows
+the actual accepted status/source proof alongside the preparation evidence.
