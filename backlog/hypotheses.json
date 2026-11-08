@@ -6085,6 +6085,22 @@
           "evidence": [
             "results/span_019/classifier_followup_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-08T11:25:23+00:00",
+          "status": "running",
+          "note": "Original upload exec5983 exited0; Kaggle READY/private/version1 verified11:24:43UTC. Started original classifier_pilot controller exec36909; it must finish fresh full admission before its single push, engineering cap3600s. Followup remains conditional.",
+          "evidence": [
+            "results/span_019/asset_upload.json"
+          ]
+        },
+        {
+          "at": "2026-11-08T11:28:47+00:00",
+          "status": "running",
+          "note": "READY/private v1 assets verified. One pilot accepted11:27UTC as arseniytrushin/llm-preference-span019-native-classifier/1, QUEUED; controller exec36909/PID3983353 live. Fresh full66notebook inventory: zeroactive; quota91613.417s free, paidFalse;7official receipts terminal. No followup or official.",
+          "evidence": [
+            "results/span_019/jobs/classifier_pilot/push.json"
+          ]
         }
       ]
     }

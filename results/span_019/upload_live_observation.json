@@ -1,16 +1,15 @@
 {
-  "at": "2026-11-08T11:14:25.721963+00:00",
+  "at": "2026-11-08T11:25:23.069909+00:00",
   "exec_session": 5983,
   "pid": 3843170,
-  "process_exists": true,
+  "process_exists": false,
+  "exec_terminal_exit_code": 0,
   "dataset": "arseniytrushin/llm-span019-native-classifier/1",
-  "file_offsets_are_not_server_completion_evidence": true,
-  "new_gpu_executions": 0,
-  "process_state": "State:\tS (sleeping)",
-  "last_observed_open_file": "model-00002-of-00003.safetensors",
-  "last_observed_file_read_position_bytes": 3962798080,
-  "file_total_bytes": 4999878040,
   "upload_intent_exists": true,
-  "upload_response_exists": false,
-  "service_ready_unproven": true
+  "upload_response_exists": true,
+  "service_ready_verified": true,
+  "private_verified": true,
+  "asset_upload_receipt": "results/span_019/asset_upload.json",
+  "upload_repeated": false,
+  "new_gpu_executions": 0
 }

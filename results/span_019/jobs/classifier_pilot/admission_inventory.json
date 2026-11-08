@@ -1,0 +1,284 @@
+{
+  "observed_at": "2026-11-08T11:27:14.812844+00:00",
+  "quota": {
+    "used_seconds": 16386.583,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 91613.417
+  },
+  "owned_notebook_count": 66,
+  "jobs": [
+    {
+      "kernel": "arseniytrushin/llm-preference-span016-reward-pilot",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span013-gemma-order",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span012-packing-profile",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span011-confirmation-calibration",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span011-learning-calibration",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span010-packed-order-completion",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span010-order-completion",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span009-public-ensemble",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span008-context-promotion",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span008-context-completion",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span008-serial-cascade",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span007-judge-stability",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-007-context",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-007-continuation",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-006-confirmation",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-004-native-repeatability-retry",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-004-native-repeatability",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-003-native-profile-retry",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-003-classifier-predict",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-003-native-profile",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-003-classifier-smoke",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-extra",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-consistent",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-recovery",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-exposure",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-judge-expansion",
+      "status": "ERROR"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-002-exposure-probe",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-001-joint-pilots",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-span-001-frozen-reward-pilot",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-predict-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-dev-003-ctx1024",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-dev-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-profile-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-binary-probe-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-judge-probe-003",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-training-error-poster-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-4b-eda-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-4b-predict-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-4b-confirm-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-4b-train-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-8b-pilot-002-batch4",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-qwen3-8b-pilot-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-gpu-probe-002",
+      "status": "COMPLETE"
+    },
+    {
+      "kernel": "arseniytrushin/llm-preference-offline-attempt-001",
+      "status": "COMPLETE"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "a62fed9152a8ed364848bda2018f60a5d121c5724d932888a58f25a7573f1f2c"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "02ab9fac0e1c9fd2335e1fea1707e7939519fe90602d85a1c98efa9cdbc29104"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "c6d5e22326870e4c35ca03e44cb9910d9d52a9ddbfdb865813eacd408b5557a2"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "f1ad46a96996424a5308a767ccb49fed0a6c6dd056e811ec7d2d0105547b15ad"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "3377dc141187a7737835448d40dac3cd98ef1fce87e5d8b9b3b398f7fb855d8c"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "6a2d8b0ad65352acb7ada871d5eed240f9541ebffe98cf57a65b707985150bf9"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "04dc312d6c56e55ec65a643198dda1952047b2e8f3fdcf398d1abee8bbb23412"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "9d5415cb73632eb8b2c25e5c2b48c2538507ca62ffcdbe72207f657d6529cfac"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "512ee752a5b326c7f4e976dab36edc70f47153e0b15869ae9ec5926e7212ffb9"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "e609250e0a87c0fbf473be49f01042067ac715f29048525fedfda0282eafb8fe"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "b9a1fe20f57584b40ae5f586f0f5845bbe58a7b0903e04d3f83f026b98af5931"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "7d51dbada254b4c962ca4cdc42572dfe8a4819eba823080b9f8bade8e63e1906"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "ff592e5b47d21e26319f62e6795ae9f4323b06282a1f34c3bb51bf44bde10499"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "091b5e07e5c041820eeeb33efb18d8397bd1dee5cd8f0ac88f4ca83cd4e9e21d"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "38c922f5fa8444de0315dbcbac7f386f5f0cc891bf6afb68ca1b1fe1c6483d64"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "fb5ad61b7ab6254fcb2d03c227816d8b81896b43e2a4d6462ccd5cb1cafd810b"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "c640496981ae363c1b4dbac99b58b34e5592b881d6c87484ca6dec2fcddf6e47"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "70979552a193ea4069d23ea7c3b80f4356ed5f1ccaad050cff31d87e08fd2412"
+    },
+    {
+      "status": "COMPLETE",
+      "kernel_sha256": "79e6205ed41a5cc5b2b2af8fd2062e555907f3b878b769095733fa66a17f9cc3"
+    }
+  ],
+  "nonterminal_jobs": [],
+  "unobserved_old_notebooks": [
+    {
+      "kernel_sha256": "1be3866170da769ae28a502772222b186570c2d8dfb4f499e2e012c6433a8d35",
+      "http_status": 404,
+      "last_run_time": "2025-12-17 11:20:26.657000"
+    },
+    {
+      "kernel_sha256": "dd8b751a3d26416f67f344973a27e1b84ee9f8935088d4f2f4393df7e438b540",
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:52:45.893000"
+    },
+    {
+      "kernel_sha256": "69e91610ce0dfb93b7d44619ee6995b228e83dc71446d5384e0a7b2b44861f55",
+      "http_status": 404,
+      "last_run_time": "2022-04-20 10:24:42.037000"
+    }
+  ]
+}

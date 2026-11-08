@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-08T11:27:20.804609+00:00",
+  "admitted": true,
+  "dependencies": [
+    {
+      "source": "tascj0/lmsys-checkpoints-0-0805/1",
+      "private": false,
+      "version": 1
+    },
+    {
+      "source": "tascj0/lmsys-modules-0805/1",
+      "private": false,
+      "version": 1
+    },
+    {
+      "source": "tascj0/lmsys-packages/1",
+      "private": false,
+      "version": 1
+    },
+    {
+      "source": "arseniytrushin/llm-span019-native-classifier/1",
+      "private": true,
+      "version": 1
+    }
+  ],
+  "official_receipts": 7,
+  "all_official_terminal": true,
+  "public_cap_seconds": 3600,
+  "phase_cap_seconds": 18000,
+  "official_submission_eligible": false,
+  "notebook_bundle_sha256": "a805e692e017939e162bc12a3f8826280b7243c00c40917aceb843eed4a69b22"
+}

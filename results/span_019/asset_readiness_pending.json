@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-08T11:24:00.323057+00:00",
+  "dataset": "arseniytrushin/llm-span019-native-classifier/1",
+  "status": {
+    "status": "ready",
+    "current_version_number": 1
+  },
+  "read_only": true,
+  "upload_repeated": false
+}

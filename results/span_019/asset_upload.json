@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-08T11:24:43.459748+00:00",
+  "dataset": "arseniytrushin/llm-span019-native-classifier/1",
+  "ready": true,
+  "status": "ready",
+  "private_verified": true,
+  "original_local_weight_hashes_verified": true,
+  "remote_file_hashes_to_be_verified_by_gpu_setup": true,
+  "asset_manifest_sha256": "02bec36f3dc5d8263142e648d8b4350ab687973dc64c4ca206e8c29cb0f9d7a4",
+  "new_gpu_executions": 0
+}

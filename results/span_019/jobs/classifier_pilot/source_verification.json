@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "observed_at": "2026-11-08T11:28:19.983825+00:00",
+  "kernel_version": "arseniytrushin/llm-preference-span019-native-classifier/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "notebook_sha256": "305b1d241c9bec91e55abdfe14354a39cf0c6238cee9519eb87f6b18cac00e6b",
+  "source_sha256": "ef54dab88bdcde7e717d004cb28a0d176b1dd63c0180d6ece2e999675cb9e8dd"
+}

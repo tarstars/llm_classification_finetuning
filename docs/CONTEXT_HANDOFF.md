@@ -1,4 +1,4 @@
-# Active rank goal; v19 native classifier pilot prepared
+# Active rank goal; v19 native classifier pilot RUNNING
 
 Snapshot Nov8 2026,10:10UTC; verify actual live state. Read PROJECT_POLICY.md,
 GOAL.md, docs/SPAN_019_GPU_PROTOCOL.md. Persistent objective: team17244411rank<=19
@@ -181,3 +181,29 @@ audit_span_019_followup.py checks actual assets/IDs/head/tokens/canonicalcontrol
 full512/80runtime before local votes and fixedgates. Cached source G/Linputs are
 hashverified; sourceH60reverse is actual, neverimputed. No official controller has
 been implemented for this candidate yet; only implement/admit after fullqualif.
+
+## Nov8 11:27UTC: upload COMPLETE; pilot ACCEPTED/QUEUED
+
+Upload5983 exited0 with acceptedresponse. NEVERrepeat the upload. Readiness first
+returned a transient403, then statusREADY and private/exactversion1 were verified
+at11:24:43UTC in results/span_019/asset_upload.json. Original payloadhashes remain
+fixed; GPUsetup must verify everyremoteassetfile. upload_live_observation.json
+now records terminal upload/verifiedREADY, superseding earlier liveoffsets.
+
+Initial controller exec36909/PID3983353 is LIVE. Its freshfullinventory at11:27:14UTC
+observed66ownednotebooks, noactivejobs, quota16386.583used/91613.417free(25.45h),
+paidFalse; all7official receipts terminal and datasetversions/privacy verified.
+ONEpush accepted at11:27UTC; actual canonical source from response is
+arseniytrushin/llm-preference-span019-native-classifier/1 (QUEUED), not the intended
+metadata slug endingclassifier-pilot. Kaggle resolved the title into that actual
+slug; always use the acceptedresponse, never re-push the requestedalias.
+Poll SAME36909 and results/span_019/jobs/classifier_pilot state/status.
+Sourceverification exec28702 exited0 at11:28:19UTC; actualacceptedcells MATCH and
+internetdisabled verified in jobs/classifier_pilot/source_verification.json.
+At11:28:22UTC actualacceptedversion is RUNNING. Engineeringauditor ONLYafter COMPLETE/retrieval.
+No followup/official/newqualityscore yet; no other GPUadmission whilepilotactive.
+
+Final followup source/bundle/rehearsals and executedNotebook31 were pushed in
+a0804a4; verify_sources confirms exactcommittedHEAD. Preservationchecks passed for
+the original initialpilotbundle and both userdirtynotebooks07/12. Notebook31 was
+then refreshed again with READY/CPUpreparation facts. Rankgoal stillACTIVE.
