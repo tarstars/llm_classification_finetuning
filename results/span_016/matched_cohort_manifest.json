@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-08T05:21:43.475002+00:00",
+  "rows": 1024,
+  "uses_targets_for_selection": false,
+  "targets_read_after_durable_selection": true,
+  "original_cohort_preserved": true,
+  "original_cohort_manifest_sha256": "918a4f410048acb3c9cf8a5ede958d202bbf436569f5c5498034819a9f7089a2",
+  "post_publication_cutoff": "2025-07-06T18:16:33+00:00",
+  "timestamp_range": [
+    "2025-07-06T18:51:18.949840+00:00",
+    "2025-07-24T23:45:51.625432+00:00"
+  ],
+  "excluded_groups": 3072,
+  "available_groups": 9706,
+  "groups_tokenized": 4528,
+  "bins": [
+    0,
+    512,
+    768,
+    1024,
+    1536,
+    2048,
+    3072,
+    4096,
+    4500
+  ],
+  "selected_bin_counts": [
+    244,
+    248,
+    219,
+    207,
+    55,
+    33,
+    11,
+    7
+  ],
+  "cpu_gpu_token_identity": true,
+  "processor_sha256": "cc2376291ff5e499f0738a204848d3f1c75b9bf4399d32678d0696fa334078b7",
+  "tokenizer_sha256": "7da53ca29fb16f6b2489482fc0bc6a394162cdab14d12764a1755ebc583fea79",
+  "artifact_sha256": {
+    "selection.json": "f7a5912e5cac8efd011a732509e151a5ef352b603fc6bfe6296f8bc6009d4666",
+    "source.parquet": "433046c49aaee5dfed471d6b6a230282cdef6176f2d2e6cc0858a1e4d382a319",
+    "labels.npz": "847086c0e02b8a0502e8ac263ac86ae9e38464a5e203caeeda17eb3495c7b2c7",
+    "mapping.parquet": "72bdde7ce427120305d5268429caa6848b9437880ba229ccca9780a41ba9b074"
+  },
+  "out_of_time_source": true,
+  "independent_competition_cv": false,
+  "elapsed_cpu_seconds": 35.69565314007923,
+  "source_sha256": "cdabc1f48bf5679dd922c6b56fe8d8920459777fcd81499308a376892e20a200",
+  "new_gpu_executions": 0
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-08T05:24:28.358451+00:00",
+  "rows": 1024,
+  "mean_pair_tokens": 739.095703125,
+  "mean_original_pair_tokens": 798.830078125,
+  "truncated_sequences": 21,
+  "retained_token_fraction": 0.9252226767171718,
+  "source_to_target_reward_work_ratio": 0.9769911367338877,
+  "transformer_version": "4.52.3",
+  "uses_targets": false,
+  "actual_reward_gpu_speed_measured": false,
+  "artifact_sha256": {
+    "expected_long.npz": "ad3e7a93f779d2390c3e0f0856496e4fbf3da543244cc55c75ea625272a1d191"
+  },
+  "elapsed_cpu_seconds": 1.912065691081807,
+  "initial_reference_preserved": true,
+  "source_sha256": "b55d87f8e5b1629b5ed73f4f1c5d8315ad3840b3c4ad95349c1b5e114993ccb7",
+  "new_gpu_executions": 0
+}

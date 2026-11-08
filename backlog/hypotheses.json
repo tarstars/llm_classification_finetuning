@@ -4997,6 +4997,14 @@
           "evidence": [
             "docs/SPAN_016_PROGRESS.md"
           ]
+        },
+        {
+          "at": "2026-11-08T05:32:09+00:00",
+          "status": "running",
+          "note": "Measured2.36xsource/target token-work mismatch before any GPU/reward output; preserved unused cohort and selected1024new post-release groups into existing competition length quotas, now0.977xwork. Large private model upload accepted;1.96MBinput override prepared. Final serialized override/pipeline rehearsals pass; no model quality claimed.",
+          "evidence": [
+            "docs/SPAN_016_COHORT_REFINEMENT.md"
+          ]
         }
       ]
     },

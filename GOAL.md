@@ -13,7 +13,10 @@ Source-only stage<=60minutes/50MiB; no GPU or full weights from that stage alone
 
 After a supported audit, freeze the exact pilot,1024label-free selected row IDs
 from later Arena votes strictly after the pinned reward publication, excluding
-previously inspected v11groups; no new model outputs have been seen. Freeze
+previously inspected v11groups; no new model outputs have been seen. Apply
+docs/SPAN_016_COHORT_REFINEMENT.md: preserve the first unused sample and use
+cohort_matched with its separate private input override. Its pre-existing
+competition PAB length quotas were fixed before votes. Freeze
 prompt-group cross-fitting and one symmetric3parameter tie map before rewards.
 One fixed replacement recipe only: equal Gemma expert/current order rule and
 cross-fitted8B reward expert;0.6B is a diagnostic, not another submitted recipe.

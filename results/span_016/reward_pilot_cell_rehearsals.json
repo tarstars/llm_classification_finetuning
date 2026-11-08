@@ -5,7 +5,7 @@
       "name": "success",
       "passed": true,
       "summary": {
-        "seconds": 0.03147482872009277,
+        "seconds": 0.03222227096557617,
         "exit_code": 0,
         "role": "reward_pilot"
       }
@@ -14,7 +14,7 @@
       "name": "failure",
       "passed": true,
       "summary": {
-        "seconds": 0.02745532989501953,
+        "seconds": 0.03849625587463379,
         "exit_code": 7,
         "role": "reward_pilot"
       }
@@ -23,7 +23,7 @@
       "name": "watchdog",
       "passed": true,
       "summary": {
-        "seconds": 0.20174622535705566,
+        "seconds": 0.20247912406921387,
         "exit_code": -15,
         "role": "reward_pilot"
       }
@@ -45,6 +45,7 @@
     }
   ],
   "actual_pipeline_cpu_tests_passed": true,
+  "actual_matched_input_override_passed": true,
   "actual_pipeline_tests": 5,
   "new_gpu_executions": 0
 }

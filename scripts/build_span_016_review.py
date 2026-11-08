@@ -37,11 +37,15 @@ display(pd.DataFrame([{'size':m['size'],'repository':m['repository'],'revision':
  'scalar_outputs':len(m['config']['id2label'])} for m in q['models']]))
 print('Source stage passed:',audit['source_stage_passed'])
 print('Source-stage GPU admission:',audit['gpu_admitted'])'''),
-        nbf.v4.new_code_cell('''cohort=read('cohort_manifest.json')
-display(pd.DataFrame([{k:cohort[k] for k in ['rows','selected_unique_groups',
- 'eligible_post_publication_groups','available_after_exclusions',
- 'previously_inspected_groups_excluded','post_publication_cutoff','timestamp_range']}]))
-assert cohort['targets_read_after_durable_selection'] and not cohort['selection_uses_targets']
+        nbf.v4.new_code_cell('''cohort=read('matched_cohort_manifest.json') if (PUB/'matched_cohort_manifest.json').exists() else read('cohort_manifest.json')
+display(pd.DataFrame([{k:cohort.get(k) for k in ['rows','available_groups','excluded_groups',
+ 'post_publication_cutoff','timestamp_range','selected_bin_counts']}]))
+assert cohort['targets_read_after_durable_selection'] and not cohort.get('uses_targets_for_selection',cohort.get('selection_uses_targets',False))
+if (PUB/'matched_token_reference.json').exists():
+ initial=read('token_reference.json');matched=read('matched_token_reference.json')
+ display(pd.DataFrame([{'population':'initial unused source','tokens_per_pair':initial['cohorts']['long']['mean_pair_tokens'],'work_ratio':initial['source_to_target_reward_work_ratio']},
+ {'population':'actual matched source','tokens_per_pair':matched['mean_pair_tokens'],'work_ratio':matched['source_to_target_reward_work_ratio']},
+ {'population':'competition runtime512','tokens_per_pair':initial['cohorts']['uniform']['mean_pair_tokens'],'work_ratio':1.}]))
 native=read('pinned_runtime_cpu_validation.json')
 display(pd.DataFrame([{k:native[k] for k in ['passed','transformers','tokenizers','huggingface_hub','safetensors']}]))
 print('Native rendering matches the card; prefix truncation retains final EOS/newline.')
@@ -49,7 +53,7 @@ print('Swap symmetry, gradients and held-out-group isolation were tested on CPU.
         nbf.v4.new_code_cell('''rehearsal=read('reward_pilot_cell_rehearsals.json')
 print('Actual serialized worker rehearsals passed:',rehearsal['passed'])
 print('Actual pipeline CPU bookkeeping tests:',rehearsal['actual_pipeline_tests'])
-for name in ['asset_preparation.json','asset_upload.json','H56_qualification.json']:
+for name in ['asset_preparation.json','asset_upload.json','matched_input_upload.json','H56_information.json']:
  if (PUB/name).exists():
   print(name);display(pd.DataFrame([read(name)]))
  else:print(name,': pending; no corresponding result is claimed')

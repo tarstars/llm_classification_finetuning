@@ -21,6 +21,14 @@ immutable offline deployment path or credible memory/runtime fit exists.
 
 ## Conditional prospective pilot
 
+Before any GPU/reward output, the measured native-token audit found the first
+unused source sample2.36times longer than the competition runtime cohort.
+docs/SPAN_016_COHORT_REFINEMENT.md prospectively replaces only that sample with
+1024fresh post-publication groups matching the pre-existing original PAB length
+quotas. The original sample/references and ongoing model upload are preserved;
+one small private input override supplies the actual cohort. Its reward work ratio
+is0.977, measured on CPU. Checkpoints, recipe, thresholds and GPU caps do not change.
+
 Source inspection found11215eligible cached prompt/session representatives after
 2025-07-06T18:16:33UTC, the later of the two pinned model-revision publication
 timestamps. Before any reward outputs, refine the sample to1024such later-vote

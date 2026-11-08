@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-08T05:25:21.845979+00:00",
+  "dataset": "arseniytrushin/llm-span016-lengthmatched-inputs/1",
+  "private": true,
+  "entries": [
+    {
+      "filename": "source.parquet",
+      "sha256": "433046c49aaee5dfed471d6b6a230282cdef6176f2d2e6cc0858a1e4d382a319",
+      "bytes": 1899952
+    },
+    {
+      "filename": "labels.npz",
+      "sha256": "847086c0e02b8a0502e8ac263ac86ae9e38464a5e203caeeda17eb3495c7b2c7",
+      "bytes": 60099
+    }
+  ],
+  "cohort_manifest_sha256": "39bf5ab224c511c2cddc1e4c8057f1a923fc299fa4d5051e23439af2d1c545ff",
+  "upload_sha256": {
+    "dataset-metadata.json": "9d892b8c9454144ad4d338e5f2de8a8f1a27c3870054177b628106519f083027",
+    "README.md": "7726f6fc46d8f0ad40b8b253ad5d0d45d3b4c6cc835ddb78927719ac2734c5f3",
+    "labels.npz": "847086c0e02b8a0502e8ac263ac86ae9e38464a5e203caeeda17eb3495c7b2c7",
+    "source.parquet": "433046c49aaee5dfed471d6b6a230282cdef6176f2d2e6cc0858a1e4d382a319"
+  },
+  "new_gpu_executions": 0
+}

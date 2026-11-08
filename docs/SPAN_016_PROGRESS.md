@@ -59,3 +59,15 @@ supplies every routing score for that fold's complete cohort, and only its held-
 predictions enter the estimate. A regression test verifies independence from other
 folds' models. The baseline route and deployed recipe are unchanged. All ten CPU
 checks and the refreshed serialized-worker rehearsals pass before any GPU output.
+
+The first label-free token audit measured2.36xmore reward-token work in the unused
+later-vote sample than in the original512competition rows. Before GPU or reward
+outputs, a preserved prospective refinement selects1024new groups into the
+pre-existing Gemma PAB length quotas; all3072earlier groups are excluded.
+The replacement now averages739.1versus756.5reward tokens per pair (ratio0.977),
+while preserving chronology. See SPAN_016_COHORT_REFINEMENT.md. The initial cohort
+and references are unchanged. Only a1.96MBprivate input override is added; the
+immutable large model asset has now been accepted by Kaggle, statusOk. No GPU or
+new quality result yet. The matched-file override passed its actual serialized
+CPU wiring check. Native CPU token hashes will be compared against both real
+reward models, and an independent information auditor is prepared.

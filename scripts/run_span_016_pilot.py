@@ -30,6 +30,9 @@ def main():
         asset = read_json(pub / 'asset_upload.json')
         assert asset['ready'] and asset['private_verified'] and asset['all_weight_hashes_verified']
         assert asset['asset_manifest_sha256'] == sha256(pub / 'asset_manifest.json')
+        inputs = read_json(pub / 'matched_input_upload.json')
+        assert inputs['ready'] and inputs['private_verified']
+        assert inputs['input_manifest_sha256'] == sha256(pub / 'matched_input_manifest.json')
         assert read_json(pub / 'asset_preparation.json')['all_expected_weight_hashes_verified']
         assert len(list((root / 'jobs').glob('*/push.json'))) < 2
         verify_sources(REPO, {'scripts/run_span_016_pilot.py': sha256(Path(__file__)),
@@ -39,6 +42,7 @@ def main():
         sources = ['tascj0/' + s + '/1' for s in ['lmsys-checkpoints-0-0805',
             'lmsys-checkpoints-3-0805', 'lmsys-modules-0805', 'lmsys-packages']]
         sources.append(asset['dataset'])
+        sources.append(inputs['dataset'])
         dependencies = []
         for reference in sources:
             owner, slug, version = reference.split('/')

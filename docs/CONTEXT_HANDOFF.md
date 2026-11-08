@@ -1,6 +1,6 @@
 # Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
 
-Snapshot2026-11-08T04:48UTC. Read PROJECT_POLICY.md and current GOAL.md, then
+Snapshot2026-11-08T05:36UTC. Read PROJECT_POLICY.md and current GOAL.md, then
 verify live state. Persistent goal "move above20th place" means rank<=19 for
 team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
 Do not create another goal or mark complete from a span closure.
@@ -9,7 +9,7 @@ Do not create another goal or mark complete from a span closure.
 
 Official best58103553 COMPLETE0.82987, source
 arseniytrushin/llm-preference-span013-gemma-order/1. Improvement0.00066from0.83053,
-moving30th to23rd. Fresh04:25:19UTC board:23/312, rank19/20cutoff0.82915,
+moving30th to23rd. Fresh05:34:58UTC board:23/312, rank19/20cutoff0.82915,
 leader0.82702; gap0.00072. Actual rank defines success. No GPU, pending receipt or
 live observer. All old public/official jobs/controllers are terminal: never
 restart or resubmit. All seven official receipts are terminal.
@@ -67,31 +67,49 @@ Preparation/source freeze dddfecfis PUSHED; final information-stage source
 0d8ea4dis PUSHED. Weight acquisition17682is TERMINAL exit0: all16.329GBweight
 hashes verified; whole33file package16,380,017,198bytes. Receipt
 results/span_016/asset_preparation.json. No need/reason to rerun prepare.
-Private dataset upload is NOW RUNNING via unified session95273:
-scripts/stage_span_016_assets.py upload. Observe this exact handle; NEVER repeat
-upload if its intent exists. It creates arseniytrushin/llm-span016-reward-assets/1,
-private=True. The original prepared payload is flat, with rm8b__/rm06__model
-prefixes, four pinned wheels, source.parquet+known external labels.npz, component
-attribution/Apache license. After terminal success, run the SAME program verify;
-if processing is pending, poll the same dataset/version. No GPU is launched by
-upload. Fresh full jobs/quota/dependencies/receipt cursors remain mandatory.
-Before first GPU, source/bundle was refreshed for required null/missing-turn
-telemetry, unchanged model recipe. New run_span_016_pilot.py validates full cursor
-receipt history and all five pinned datasets via the existing controller. It must
-be committed before use; no admission/launch until asset_upload.jsonready.
-IMPORTANT: docs/SPAN_016_PUBLIC_STAGING.md prospectively separates the first
-information-only session (FULL1024quality groups retained) from target-runtime
-qualification. Its bundle explicitly official_submission_eligible=False. Even
-strong quality cannot permit a first-version official submission: the one
-separately admitted follow-up must profile original512target rows and pass all
-remaining gates. New worker/test/bundle changes are being published. Model links
-and modern runtime live in /tmp on Kaggle, avoiding heavy output captures. Native
-pooling control aligns reference to the actual output device for Accelerate hooks.
-No GPU auditor/official controller for v16has been implemented yet; do not reuse
-v13mutation programs. Implement exact accepted-source/raw-control/OOF/calibration/
-runtime/CSV audits while the actual pilot is running. No new quality result yet.
-Current owned private datasets total93.2MB; unrelated names redacted. Upload intent must be reconciled; no GPU receipt yet. If download interrupts, reconcile exact .part; accepted
-upload timeouts require observation of the same dataset, never repeat mutation.
+Private model upload95273is TERMINAL exit0/statusOk. Receipt
+results/span_016/model_upload_receipt.json and ROOT/runs/span_016/assets/upload_response.json.
+NEVER repeat upload. Run scripts/stage_span_016_assets.py verify against
+arseniytrushin/llm-span016-reward-assets/1; if processing, observe the same asset.
+No GPU receipt yet. All33files/16.38GB have verified local hashes; original
+model/runtime asset remains immutable, including its now-unused initial cohort.
+
+Prospective refinement BEFORE any GPU/model output: initial1024groups had2.36014x
+competition reward-token work. Preserve them UNUSED and select1024NEWgroups into
+pre-existing v11GemmaPAB length quotas. See docs/SPAN_016_COHORT_REFINEMENT.md and
+results/span_016/matched_cohort_manifest.json. Exclude3072prior groups;9706eligible;
+seed42hash; exact CPU/GPUprocessor identity; durableIDs before votes. Mean native
+pair tokens739.0957vscompetition756.502, ratio.976991;21/2048sequencestruncated.
+Actual labels/data ROOT/runs/span_016/cohort_matched; native CPU reference
+ROOT/runs/span_016/token_audit_matched/expected_long.npz. Initial cohort,
+token_reference.json and token_audit remain preserved, unused. Same chronology,
+model recipe, caps and gates; matching lengths does not remove domain shift.
+
+New1,960,051byte private input override prepared under matched_assets/upload,
+arseniytrushin/llm-span016-lengthmatched-inputs/1, NOT UPLOADED at this snapshot.
+After publishing source, run scripts/stage_span_016_inputs.py upload ONCE then
+verify. Large upload is terminal, so no overlapping mutation. Notebook links ONLY
+matched inputs; verifies original30asset entries plus2override hashes; SIXpinned
+datasets. Actual serialized CPU override, success/failure/watchdog/Jupyter and
+pipeline checks pass. Notebook28threeexecutedcells/0errors. Bundle rebuilt.
+No new GPUversion, recipe, resourcecap or model-quality comparison was added.
+
+Fresh full quota/jobs/dependencies/submission cursors remain mandatory. The actual
+run_span_016_pilot.py performs them via the existing controller. No admission
+until asset_upload.json AND matched_input_upload.json are ready/private/hashbound.
+Publish prepared source/bundle first. Free quota last verified95105.878s, paidFalse,
+reserved0, refreshNov14; source deadline complete, overall deadlineNov10 03:00:42UTC.
+Initial public cap3600s, one separately admitted follow-up14400s, phase18000s.
+
+First version is INFORMATION ONLY / official_submission_eligible=False. Full1024
+quality groups retained; target512runtime profiling deferred to follow-up. Reward
+symlinks/modern runtime live in /tmp on Kaggle to avoid heavy output captures.
+Native scalar pooling aligns references to the actual output device for Accelerate.
+scripts/audit_span_016_information.py now implements accepted-source/raw-control/
+OOF/calibration/native-token/CSV audits: --source-only after acceptance, full after
+COMPLETE/retrieval. No v16official controller yet; do not reuse v13mutation code.
+No reward-GPU quality result yet. Prior private storage93.2MB precedes new16.38GB
+asset; unrelated names redacted. Never repeat accepted/ambiguous mutations.
 H62row-ceiling remains planned/P2; no extra current-span coverage variants.
 
 ## Sealed model evidence
