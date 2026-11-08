@@ -49,7 +49,13 @@ if (PUB/'matched_token_reference.json').exists():
 native=read('pinned_runtime_cpu_validation.json')
 display(pd.DataFrame([{k:native[k] for k in ['passed','transformers','tokenizers','huggingface_hub','safetensors']}]))
 print('Native rendering matches the card; prefix truncation retains final EOS/newline.')
-print('Swap symmetry, gradients and held-out-group isolation were tested on CPU.')'''),
+print('Swap symmetry, gradients and held-out-group isolation were tested on CPU.')
+if (PUB/'class_prior_audit.json').exists():
+ prior=read('class_prior_audit.json')
+ display(pd.DataFrame({'class':prior['classes'],
+  'competition_fraction':prior['original_class_priors'],
+  'later_vote_fraction':prior['later_vote_class_priors']}))
+ print('Class-frequency diagnostic only; the frozen recipe and quality gates are unchanged.')'''),
         nbf.v4.new_code_cell('''rehearsal=read('reward_pilot_cell_rehearsals.json')
 print('Actual serialized worker rehearsals passed:',rehearsal['passed'])
 print('Actual pipeline CPU bookkeeping tests:',rehearsal['actual_pipeline_tests'])

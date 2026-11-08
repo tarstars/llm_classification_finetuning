@@ -109,3 +109,17 @@ and600second reserve. Three focused tests cover calibration/startup accounting,
 public-only comparator costs, invalid/partial runs and the9hour boundary. This
 pure accounting preparation admits no GPU or official trial; no target512runtime
 has been measured by the current information-only version.
+
+06:04UTC: both native reward passes have finished and the exact worker advanced
+to Gemma model loading. Native8Bscored the1024quality pairs plus3visible test rows;
+its full-data calibration/outer-fold cross-fitting precedes the0.6Bdiagnostic in
+the frozen worker. Full artifact/paired-quality audit is still pending. A longer
+bounded SSE observation confirmed progression; its idle ConnectionError is an
+observation timeout, not a job failure. Controller85217remains live.
+
+The known-label-only population diagnostic finds A/B/tie proportions37.01/33.79/
+29.20%in the1024source groups versus34.91/34.19/30.90%in57477competition rows.
+A large simple marginal-class mismatch is not supported by these observations;
+conditional transport remains uncertain. No model outputs informed this check,
+and no recipe or quality gate changed. See class_prior_audit.json and Notebook28,
+refreshed with3executed cells/0errors.

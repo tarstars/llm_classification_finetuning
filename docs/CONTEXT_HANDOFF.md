@@ -1,6 +1,6 @@
 # Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
 
-Snapshot2026-11-08T05:45UTC. Read PROJECT_POLICY.md and current GOAL.md, then
+Snapshot2026-11-08T06:04UTC. Read PROJECT_POLICY.md and current GOAL.md, then
 verify live state. Persistent goal "move above20th place" means rank<=19 for
 team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
 Do not create another goal or mark complete from a span closure.
@@ -11,7 +11,7 @@ Official best58103553 COMPLETE0.82987, source
 arseniytrushin/llm-preference-span013-gemma-order/1. Improvement0.00066from0.83053,
 moving30th to23rd. Fresh05:34:58UTC board:23/312, rank19/20cutoff0.82915,
 leader0.82702; gap0.00072. Actual rank defines success. NEWv16pilot accepted,
-RUNNING at05:45UTC. All OLDpublic/official jobs/controllers are terminal: never
+RUNNING at06:03UTC. Both reward passes completed; Gemma loading. All OLDpublic/official jobs/controllers are terminal: never
 restart or resubmit. All seven official receipts are terminal.
 
 V15 SEALED, H55done. Exact earlier parent sayoulala/merge-gemma-model-step1/1 is
@@ -178,3 +178,28 @@ records each fold's indices/work; candidate_route is the held-out selection unio
 not a single deployed work budget. New regression test proves other folds' theta
 cannot affect a held-out fold. Ten total CPU checks; all before any actual reward
 output. Bundle/source was rebuilt and rehearsed, awaiting milestone publication.
+
+Latest v16actual progress06:04UTC: native8Bscored all1024quality pairs and visible3
+test rows, then calibration/cross-fitting completed; native0.6Bdiagnostic also
+completed. The exact accepted worker has advanced to model_loading rolem0(Gemma).
+No full paired quality result yet. First reward markers saved in
+results/span_016/reward_live_observation.json. All artifacts require terminal
+retrieval/full audit. Do not infer a target512runtime from sorted partial passes.
+
+Independent auditor now checks hashes of actualmatched source/labels/mapping,
+exact prepared Gemma lengths and fixed8bin quotas, per-class accuracy and per-bin
+loss diagnostics. Native/token/canonical/refit/route/CSV gates unchanged.
+New arena.span016_runtime.projection requires ACTUAL512target passes and a
+successful full session; rejects information-only. Charges productioncold/full80
+warmups, calibration1024reward inference and fit/other overhead,20%per-row margin
+and600reserve. Three focused tests pass. Pure preparation, not admission or
+actual runtime evidence. Commitbd8c721is pushed; original GPUsource unchanged.
+
+Class-frequency diagnostic results/span_016/class_prior_audit.json uses onlyknown
+labels, no model outputs. Competition57477: A34.91%,B34.19%,tie30.90%; source1024:
+A37.01%,B33.79%,tie29.20%. Simple large marginal-label mismatch is not supported;
+conditional/model/user/domain transport is unresolved. No recipe/gate changed.
+Notebook28now includes that descriptive comparison; executed3cells/0errors.
+A separate35second read-only SSE snapshot completed, observer49547terminal;
+ROOT/runs/span_016/observations/long_log_snapshot.json. Its ConnectionError is
+bounded idle-log timeout, NOT job failure. Main controller85217remains live.

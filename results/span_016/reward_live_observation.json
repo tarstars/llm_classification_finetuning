@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-08T05:57:19.315102+00:00",
+  "at": "2026-11-08T06:04:29.528355+00:00",
   "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
   "status": {
     "status": "RUNNING",
     "kernel_version": "arseniytrushin/llm-preference-span016-reward-pilot/1",
-    "observed_at": "2026-11-08T05:56:36.317905+00:00"
+    "observed_at": "2026-11-08T06:04:00.301546+00:00"
   },
   "reward_progress": [
     {
@@ -22,8 +22,36 @@
       "completed_sequences": 1794,
       "total_sequences": 2048,
       "seconds": 456.14628369999997
+    },
+    {
+      "stage": "reward_progress",
+      "size": "8B",
+      "cohort": "test",
+      "completed_sequences": 2,
+      "total_sequences": 6,
+      "seconds": 0.14405875900001774
+    },
+    {
+      "stage": "reward_progress",
+      "size": "0.6B",
+      "cohort": "warmup",
+      "completed_sequences": 2,
+      "total_sequences": 160,
+      "seconds": 0.6381431820000216
+    },
+    {
+      "stage": "reward_progress",
+      "size": "0.6B",
+      "cohort": "long",
+      "completed_sequences": 1794,
+      "total_sequences": 2048,
+      "seconds": 61.97060003699994
     }
   ],
+  "latest_stage": {
+    "stage": "model_loading",
+    "role": "m0"
+  },
   "quality_audited": false,
   "target_runtime_profiled": false,
   "source": "exact-version read-only SSE log snapshots"

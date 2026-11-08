@@ -5035,6 +5035,14 @@
           "evidence": [
             "results/span_016/reward_live_observation.json"
           ]
+        },
+        {
+          "at": "2026-11-08T06:04:29+00:00",
+          "status": "running",
+          "note": "Actual accepted v1 completed8B scoring/calibration and0.6B diagnostic, now model_loading m0(Gemma). Main controller85217remains RUNNING; no full paired quality result yet. Known-label population audit finds source ties29.20pct versus competition30.90pct (source1024 versus original57477), not a large simple class-prior shift; recipe/gates unchanged. Notebook28includes this descriptive comparison;3cells/0errors. Full terminal artifact/native/numeric/OOF/route/quality audit remains required.",
+          "evidence": [
+            "results/span_016/class_prior_audit.json"
+          ]
         }
       ]
     },
