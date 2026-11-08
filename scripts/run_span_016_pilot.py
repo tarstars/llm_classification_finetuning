@@ -36,6 +36,7 @@ def main():
         assert read_json(pub / 'asset_preparation.json')['all_expected_weight_hashes_verified']
         assert len(list((root / 'jobs').glob('*/push.json'))) < 2
         verify_sources(REPO, {'scripts/run_span_016_pilot.py': sha256(Path(__file__)),
+            'src/arena/span004_support.py': sha256(REPO / 'src/arena/span004_support.py'),
             'src/arena/kaggle_control.py': sha256(REPO / 'src/arena/kaggle_control.py')})
         api = api_client()
         from kagglesdk.datasets.types.dataset_api_service import ApiGetDatasetRequest

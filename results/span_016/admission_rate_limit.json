@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-08T05:40:56.132647+00:00",
+  "stage": "preflight_inventory",
+  "http_status": 429,
+  "remote_gpu_created": false,
+  "push_intent_created": false,
+  "decision": "Pace every owned-job read and use bounded read-only Retry-After backoff; retain complete inventory and all existing admission gates",
+  "regression_tests_passed": 4
+}

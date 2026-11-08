@@ -76,3 +76,10 @@ reward models, and an independent information auditor is prepared.
 including the new1.96MBmatched inputs. Source/bundle27c32ee is pushed. The next
 action is the one information-only GPU pilot after its fresh full admission.
 No accepted GPU version or new model-quality result exists at this milestone.
+
+The first admission stopped before push intent or GPU allocation: Kaggle429on the
+full owned-notebook inventory. The shared read-only helper now paces every status
+request and honors numeric Retry-After with bounded retries; it still checks every
+owned job and rejects unresolved recent jobs. Four focused regression tests pass.
+results/span_016/admission_rate_limit.json preserves the failure. No GPU recipe,
+source bundle, quality gate or compute cap changed. Only preflight is retried.

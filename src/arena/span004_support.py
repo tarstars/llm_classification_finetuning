@@ -1,5 +1,4 @@
 """Bounded read-only Kaggle observations for the v4 span; mutations are not retried."""
-from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
 import os
@@ -48,7 +47,23 @@ def read_call(call):
             code = getattr(getattr(error, 'response', None), 'status_code', None)
             if code in {400, 401, 403, 404} or attempt == 2:
                 raise
-            time.sleep(3 * (attempt + 1))
+            delay = 3 * (attempt + 1)
+            if code == 429:
+                delay = 30 * (attempt + 1)
+                header = getattr(error.response, 'headers', {}).get('Retry-After')
+                if header:
+                    try:
+                        delay = max(delay, float(header))
+                    except ValueError:
+                        pass
+                if delay > 300:
+                    raise
+            # Keep retry waits interruptible in short intervals. Only read calls
+            # use this helper; accepted/ambiguous mutations are never retried.
+            while delay > 0:
+                interval = min(delay, 30)
+                time.sleep(interval)
+                delay -= interval
 
 
 def quota(api):
@@ -76,8 +91,12 @@ def inventory(api, start):
             assert code == 404 and date and date[:10] < start[:10], 'Unresolved recent notebook observation'
             return {'kernel_sha256': hashlib.sha256(item.ref.encode()).hexdigest(),
                     'http_status': code, 'last_run_time': date}
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        observations = list(pool.map(observe, owned))
+    observations = []
+    for item in owned:
+        # Full inventories can exceed sixty status requests. Avoid bursts that
+        # triggered429before the H56 admission; still observe every owned job.
+        time.sleep(1.1)
+        observations.append(observe(item))
     return {'observed_at': datetime.now(timezone.utc).isoformat(), 'quota': quota(api),
             'owned_notebook_count': len(owned),
             'jobs': [row for row in observations if 'status' in row],
