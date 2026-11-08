@@ -6037,6 +6037,14 @@
           "evidence": [
             "docs/SPAN_019_ASSET_PROTOCOL.md"
           ]
+        },
+        {
+          "at": "2026-11-08T08:57:52+00:00",
+          "status": "running",
+          "note": "Source audit and eight native input/pool checks pass; preserve failed ordinary-layout projection0.015625. Native layout restores all three seeded synthetic projections exactly0. Fixed evaluation IDs saved without reading votes. Begin pinned CPU-only asset acquisition; real model probabilities, quality and runtime remain unmeasured.",
+          "evidence": [
+            "docs/SPAN_019_SOURCE_RESULTS.md"
+          ]
         }
       ]
     }

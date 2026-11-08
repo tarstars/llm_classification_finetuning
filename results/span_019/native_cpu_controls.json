@@ -1,0 +1,109 @@
+{
+  "at": "2026-11-08T08:57:00.145531+00:00",
+  "passed": true,
+  "source_sha256": {
+    "scripts/check_span_019_native.py": "48c5c2887feb40554446a81d4b4cfc1b3478552e19873d36ac773f21e1703446",
+    "src/arena/gptq8.py": "82261ce91d407fc4f5350bc78f854655beb13294182186d3b24b0c8eaf0fe1f2",
+    "src/arena/span019_input.py": "2cec9a9ccbcf5c91a8d139b65cbb43ccab937c7e94ab777b920c431d02e42085",
+    "docs/SPAN_019_ASSET_PROTOCOL.md": "250c33a9e9bf7f2808dc5bf964e9c78aa6ace405e95717543674f9fbb251710e"
+  },
+  "synthetic_input_checks": [
+    {
+      "tokens": 29,
+      "padded_tokens": 2000,
+      "offset": 1971,
+      "pool_index": 28,
+      "identical": true
+    },
+    {
+      "tokens": 32,
+      "padded_tokens": 2000,
+      "offset": 1968,
+      "pool_index": 31,
+      "identical": true
+    },
+    {
+      "tokens": 35,
+      "padded_tokens": 2000,
+      "offset": 1965,
+      "pool_index": 34,
+      "identical": true
+    },
+    {
+      "tokens": 35,
+      "padded_tokens": 2000,
+      "offset": 1965,
+      "pool_index": 34,
+      "identical": true
+    },
+    {
+      "tokens": 2001,
+      "padded_tokens": 2001,
+      "offset": 0,
+      "pool_index": 2000,
+      "identical": true
+    },
+    {
+      "tokens": 2001,
+      "padded_tokens": 2001,
+      "offset": 0,
+      "pool_index": 2000,
+      "identical": true
+    },
+    {
+      "tokens": 2001,
+      "padded_tokens": 2001,
+      "offset": 0,
+      "pool_index": 2000,
+      "identical": true
+    },
+    {
+      "tokens": 2001,
+      "padded_tokens": 2001,
+      "offset": 0,
+      "pool_index": 16,
+      "identical": true
+    }
+  ],
+  "synthetic_native_GPTQ_arithmetic": [
+    {
+      "seed": 42,
+      "max_abs": 0.0,
+      "weight_stride": [
+        1,
+        128
+      ],
+      "passed": true
+    },
+    {
+      "seed": 43,
+      "max_abs": 0.0,
+      "weight_stride": [
+        1,
+        128
+      ],
+      "passed": true
+    },
+    {
+      "seed": 44,
+      "max_abs": 0.0,
+      "weight_stride": [
+        1,
+        128
+      ],
+      "passed": true
+    }
+  ],
+  "real_model_logits_compared": false,
+  "config_pad_token_id": 1,
+  "effective_native_pad_token_id": 0,
+  "eos_token_id": 1,
+  "padding_side": "left",
+  "maximum_input_tokens": 2001,
+  "full_weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "human_votes_read": false,
+  "quality_measured": false,
+  "selection_sha256": "bb51468990d9177b4f9e3ce19d2f4ac00a8e808d8790dc79e96c4016159a226a",
+  "gpu_admitted": false
+}
