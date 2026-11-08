@@ -13,6 +13,7 @@ One bounded CPU producer prepares the next batch while the consumer runs the
 original model. Packing remains8192 and individual conversation cap4096.
 CPU proofs measure batch identity, not GPU equivalence, speed or score.
 [Plan](../docs/SPAN_028_PLAN.md) · [CPU proof](../docs/SPAN_028_CPU_PROOF.md) ·
+[Final result](../docs/SPAN_028_RESULTS.md) ·
 [Preserved packing failure](../docs/SPAN_027_RESULTS.md).'''),
         nbf.v4.new_code_cell('''from pathlib import Path
 import json
@@ -35,11 +36,23 @@ for name in ['prefetch_tests.json','profile_tests.json','forward_loop_rehearsal.
  if path.exists():print(name,json.loads(path.read_text()))
 decision=PUB/'profile_audit.json'
 if decision.exists():
- result=json.loads(decision.read_text());print('Engineering decision:',result)
+ result=json.loads(decision.read_text());print('Engineering decision:',result['decision'])
+ print('All raw cohorts max probability difference:',max(result.get('canonical_max_abs',{'unknown':float('nan')}).values()))
+ print('Qualified:',result['engineering_gate_passed'],'; official eligible:',result['official_submission_eligible'])
+ if 'runtime' in result:display(pd.DataFrame([result['runtime']]))
+ if 'peak_memory_fractions' in result:display(pd.DataFrame([result['peak_memory_fractions']]))
 else:print('GPU inference and its terminal engineering audit are pending. Preparation evidence above does not admit H73.')
+description=PUB/'runtime_description.json'
+if description.exists():
+ d=json.loads(description.read_text());display(pd.DataFrame(d['measured_uniform_timings']).T)
+ print('Separate two-role feasibility screen (not qualification):',d['two_role_feasibility'])
+inventory=PUB/'terminal_inventory.json'
+if inventory.exists():print('Terminal inventory/quota:',{k:v for k,v in json.loads(inventory.read_text()).items() if k in ['observed_at','owned_notebook_count','quota','nonterminal_jobs']})
+board=PUB/'final_leaderboard.json'
+if board.exists():print('Complete closing leaderboard:',json.loads(board.read_text()))
 status=PUB/'jobs/prefetch_profile/status.json'
 if status.exists():print('Last observed exact GPU job:',json.loads(status.read_text()))
-print('H73 fixed60/40prior remains deferred until the engineering prerequisite passes.')''')])
+print('H73 three-role60/40prior remains deferred. If engineering failed, no replay or official is admitted; the distinct two-role proposal requires its own future contract and qualification.')''')])
     nb.metadata['kernelspec'] = dict(display_name='Python 3', language='python', name='python3')
     executed = NotebookClient(nb, timeout=120, kernel_name='python3',
                               resources={'metadata': {'path': str(REPO)}}).execute()

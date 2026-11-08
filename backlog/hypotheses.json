@@ -6922,6 +6922,14 @@
           "evidence": [
             "docs/SPAN_028_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-08T21:59:50+00:00",
+          "status": "deferred",
+          "note": "E18 preserved exact predictions but failed full three-role conservative runtime9h9m33. Remain uncomputed/deferred under v28contract: no60/40replay/qualification/official. Future two-expert proposal is a distinct task with historical50/50comparator and its own actual qualification.",
+          "evidence": [
+            "docs/SPAN_028_RESULTS.md"
+          ]
         }
       ]
     },
@@ -7068,7 +7076,7 @@
       ],
       "id": "E18",
       "rank": 93,
-      "status": "running",
+      "status": "done",
       "introduced_in": 28,
       "discovered_during": 27,
       "derived_from": [
@@ -7113,6 +7121,80 @@
           "note": "Fresh full admission passed; source87866b4 pushed before one GPU launch. Kaggle canonical accepted identity arseniytrushin/llm-preference-span028-native-cpu-prefetch/1 (title-normalized from requested slug); do not repush. Controller74124/PID1425436 RUNNING21:26:06UTC. Remote source cells/private/offline/T4/image verified21:26:03UTC; four publicv1datasets current. H73 remains deferred pending terminal engineering audit.",
           "evidence": [
             "results/span_028/jobs/prefetch_profile/source_verification.json"
+          ]
+        },
+        {
+          "at": "2026-11-08T21:59:50+00:00",
+          "status": "done",
+          "note": "Complete exact8192prefetch engineering profile:74124/PID1425436 TERMINALexit0,42artifacts verified,1738.257s charged. All15old raw cohorts exact0difference; host tensors/groups/route/mixture/CSV/memory pass. Frozen audit independent:32973.468s>32400; runtimeFAIL, no labels/quality/official. No retry or margin relaxation. Two actual base roles screen30766.762s only, not qualification.",
+          "evidence": [
+            "docs/SPAN_028_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Test a fixed 60/40 prior on the deployable two-expert baseline",
+      "priority": "P1",
+      "gain": [
+        -0.004,
+        0.004
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        1
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        9
+      ],
+      "cpu_wall_hours": [
+        0.01,
+        0.1
+      ],
+      "risk": "high",
+      "claim": "The predeclared60pctGemma/40pctLlama prior may improve the actual two-expert50/50baseline without a reverse pass; its target quality is unmeasured.",
+      "basis": "E18 reproduced every H60raw cohort exactly but its3role32973.468s projection fails9h. Both actually measured base roles alone project30766.762s with unchanged margins/startup floors. Their historical50/50official is0.83053; routed H60is0.82987. The same fixed60/40prior was proposed before inspecting any such candidate quality.",
+      "first_test": "After v29activation/focus and a bounded inherited contract, freeze ONEtwo-expert .6Gold+.4alignedLlama candidate with no route/reverse/T change. CPU<=300s matched control256/uniform512/long64 replay against both historical50/50and H60, report removal and weight ablations separately, seed42/2000prompt groups/classes, originaltrainingoverlap/noCV/nohiddenforecast. Fixed grossstop uniformgainvsH60<-.005. Then at most one<=3600s actual2T4full two-role qualification and one frozen official if all gates pass.",
+      "acceptance": "No candidate fitting/grid. Exact source/checkpoints/IDs/tokens/positions/host batches, oldraw<=1e-5, actualvisibleCSV andbothT4memory<=95pct. Actualqualification conservatively<32400s usingworse E18/current matchingprefetch base-role rates, retained worsecold/full80warm/other,20pctmargin/600reserve. One actualhidden-inference official measures target quality; goal requires fresh complete officialrank<=19, not a CPUgain or screen.",
+      "stop": "No v28execution, no3role retry, reverse/route/weight/temperature grid, newweights/training/textservice, faster-node retry or margin/deadline/quota reset. Stop on fixed gross/source/numerical/memory/runtime/cap failure, no official if qualification fails. Keep all old failed controls and best legitimate official; no follow-upweight fitting to its leaderboard outcome.",
+      "risk_reason": "Removing routedGemma can lose the known mirror benefit;60/40canworsen calibration or hidden preference loss. Original labels overlap checkpoint training.30766.762s is only a measured feasibility calculation and current-node variation may invalidate a new candidate.",
+      "mitigation": "Use actualhistorical2expert50/50baseline as the single-weight ablation comparator and H60as incumbent, expose the removal loss separately. Preserve inputs/8192prefetch arithmetic, requalify actualcandidate with worse matchingrates, and freeze one official decision. Do not claim old H73 prerequisite passed.",
+      "rationale": "Moves directly to one new quality trial on an independently feasible two-role design rather than further three-role performance rescues. Negligible postprocessing cost and no new model source.",
+      "revision": "Queued only after E18terminal independent runtime failure; neither2expert nor3role60/40probabilities computed in v28. H73staysdeferred; this distinct task has a previously submitted50/50comparator and its own qualification. Gainrange is relative to that0.83053baseline, not a measured improvement over H60.",
+      "depends_on": [
+        "E00",
+        "E14",
+        "H60",
+        "E18"
+      ],
+      "evidence": [
+        "docs/SPAN_028_TWO_EXPERT_DISCOVERY.md",
+        "docs/SPAN_028_RESULTS.md",
+        "results/span_028/runtime_description.json",
+        "docs/SPAN_009_RESULTS.md"
+      ],
+      "id": "H75",
+      "rank": 94,
+      "status": "planned",
+      "introduced_in": 29,
+      "discovered_during": 28,
+      "derived_from": [
+        "E18"
+      ],
+      "history": [
+        {
+          "at": "2026-11-08T22:00:51+00:00",
+          "status": "planned",
+          "note": "Completed exact3roleprefetch profile fails32973.468s; two ACTUALLY measured base roles project30766.762s with unchanged margins. Queue one distinct fixed60/40two-expert qualitytrial with actual50/50official comparator and own full qualification; no current quality computation or 3role rescue.",
+          "evidence": [
+            "docs/SPAN_028_TWO_EXPERT_DISCOVERY.md"
           ]
         }
       ]
@@ -7166,7 +7248,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 28,
+  "active_version": 29,
   "versions": [
     {
       "number": 1,
@@ -9207,7 +9289,7 @@
     },
     {
       "number": 28,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -9266,10 +9348,69 @@
       "carried_from": 27,
       "start_sha256": "e6ee7501c883d14a864e6996840f55b38c5698209b05be814e1e77660bad2800",
       "start_markdown_sha256": "b3b725398e08b574525f4a3d71d9c7531be3c7f7eb55bad2e86ec025d77e055f",
-      "start_sealed_at": "2026-11-08T21:00:08+00:00"
+      "start_sealed_at": "2026-11-08T21:00:08+00:00",
+      "final_sha256": "5aeab25d7107474a7a3f6f8c8bb631834ae6b69c5fac6ba5eab6fabd3c189077",
+      "final_markdown_sha256": "877b68779f66c32dddddb466eee00940f455e6b923d683bcb34b1736024e656a",
+      "final_sealed_at": "2026-11-08T22:02:36+00:00",
+      "closed_at": "2026-11-08T22:02:36+00:00",
+      "closing_note": "Seal exact-but-infeasible E18: all15rawcohorts exact,42verified artifacts,1738.257s; conservative32973.468s fails9h, noquality/official. H73deferreduncomputed. Preserve110snapshots/usernotebooks; carry38unfinished and newH75fixed60/40two-expert proposal with actualbaseline and ownqualification. Rankgoal still23rd; newboundedcontract required before nextexecution.",
+      "closing_evidence": [
+        "docs/SPAN_028_RESULTS.md"
+      ]
     },
     {
       "number": 29,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "H75"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 28,
+      "start_sha256": "ca4942e3846c85b974022c1c690e9eb8063eda63ddfbd347279484b41fe066a3",
+      "start_markdown_sha256": "f8d4cdedd13bd4ddd82430aefe94e6a2b826aa15cf50552aee50db6fce9221c2",
+      "start_sealed_at": "2026-11-08T22:02:36+00:00"
+    },
+    {
+      "number": 30,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "at": "2026-11-08T21:54:56.502227+00:00",
+  "pid": 1425436,
+  "role": "prefetch_profile",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span028-native-cpu-prefetch/1",
+  "charged_seconds": 1738.2569999999978,
+  "files": 42
+}

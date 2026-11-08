@@ -1,0 +1,5 @@
+{"at": "2026-11-08T21:25:06.936925+00:00", "stage": "prefetch_profile", "event": "pushing_one_version"}
+{"at": "2026-11-08T21:25:10.441922+00:00", "stage": "prefetch_profile", "event": "remote_status", "status": "QUEUED", "kernel_version": "arseniytrushin/llm-preference-span028-native-cpu-prefetch/1"}
+{"at": "2026-11-08T21:26:06.497280+00:00", "stage": "prefetch_profile", "event": "remote_status", "status": "RUNNING", "kernel_version": "arseniytrushin/llm-preference-span028-native-cpu-prefetch/1"}
+{"at": "2026-11-08T21:54:43.451457+00:00", "stage": "prefetch_profile", "event": "remote_status", "status": "COMPLETE", "kernel_version": "arseniytrushin/llm-preference-span028-native-cpu-prefetch/1"}
+{"at": "2026-11-08T21:54:56.505537+00:00", "stage": "prefetch_profile", "event": "complete", "status": "COMPLETE", "kernel_version": "arseniytrushin/llm-preference-span028-native-cpu-prefetch/1", "charged_seconds": 1738.2569999999978, "files": 42}

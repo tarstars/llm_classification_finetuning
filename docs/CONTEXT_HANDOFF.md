@@ -1,122 +1,85 @@
-# V28 native CPU-prefetch profile ready for admission
+# V28 closed at runtime gate; v29 fixed two-expert prior queued
 
-Snapshot 2026-11-08 21:22 UTC (November9 Moscow). Read PROJECT_POLICY.md and
-verify live state before acting. Persistent goal: own team17244411 rank<=19
-on a fresh complete official board after legitimate inference. ACTIVE and
-unachieved. Latest complete board20:55:30UTC:23/310,0.82987;19th/20th0.82915,
-leader0.82692. Best H60receipt58103553/span013-gemma-order/1. No new official.
+Snapshot 2026-11-08T22:03:36.496955+00:00. Read PROJECT_POLICY.md and verify live state before acting.
+Persistent goal team17244411 rank<=19 on fresh complete official board after
+legitimate inference. ACTIVE/unachieved. Latest complete board21:57:35UTC
+Nov8:23/310,0.82987;19th/20th0.82915,leader0.82692. BestH60receipt58103553,
+span013-gemma-order/1. No official since H60.
 
-## Current state and immediate next action
+## Immediate next action
 
-V27SEALED/published d58c8e5. V28active focus[E18,H73], E18RUNNING=GPUsource
-preparation, H73DEFERRED/uncomputed. V29draftempty;93tasks/110snapshotfiles.
-New GOAL.md/docs/SPAN_028_PLAN.md selected and CPUmethod pushed a0c78a6.
-Old GOAL exact archive docs/GOAL_V27.md. One accepted v28GPUjob live below.
+V28SEALED; activev29/no focus selected yet,39active items=38carried+H75.
+V30draftempty.94registeredtasks,114immutable snapshot files. CurrentGOAL.md
+still closedv28; exactarchive docs/GOAL_V28.md. NEXTpublishclosure, then select
+NEWbounded v29focusH75 before any new execution. Do not revive H73three-role.
 
-E18CPUproof59216TERMINALexit0:31.847s/300. ALL15actualnativecohorts exact
-host tensors, tokens/order/positions/original8192microbatch boundaries, oneCPU
-producer/FIFOqueue2; no labels/modelweights/GPU/speed/quality measured. Native
-local prep uniform G2.468s/L2.291s/reverse83rows0.273s is NOT Kaggleforecast.
-Proof/results/preservation under results/span_028; heavy exact references at
-ROOT/runs/span_028/cpu_batch_references.json. Neverrerun/overwrite audit or
-preservation. CPUsource hashes freeze cpu_prefetch.py, its tests, auditor,
-GOAL andPLAN; keep those unchanged absent a documented new concern.
+H75queued only, no60/40probability computed. ONEtwo-expert .6Gemma-original+
+.4alignedLlama-swapped candidate, no reverse/route/T change. Baseline2expert
+50/50has actualofficial0.83053(receipt58068582); incumbentH60withreverse0.82987.
+CPU<=300sdescriptive matchedcache control256/uniform512/long64, compare BOTH
+50/50and H60, separate removal and weight ablation, seed42/2000prompt groups/
+classes, originaltrainingoverlap/noCV/nohiddenforecast. FixeduniformgainvsH60
+<-.005grossstop; no positive-localgain requirement or fitting/grid. Then at
+most ONE<=3600sactual2rolequalification; full80warm, strictoldraw<=1e-5/source/
+host tensors/boundaries/CSV/memory, actualhiddeninference no predictionlookup.
+Use worse matching E18/current base-role rates and retained worsecold/fullwarm/
+other,20pctmargin/600reserve,<32400. Onefrozenofficialonlyafterallgates/committed
+pusheddecision/freshfulladmission. No further weights from leaderboardfeedback.
+Select explicitcontract beforeexecution. H73 staysdeferred, whollyuncomputed.
 
-Seven standard unittest FIFO/producer/consumer/fullqueue/hostonly/finalizer
-checks pass; six profiletests pass including changedboundaries/unjoinedproducer,
-rawfailurepreservation/earlystop/route+CSV/worseruntime. profile_tests.json.
-No pytest installed; use unittest. One initial pytest invocation failed only
-because the runner was absent; tests were converted to standard unittest.
-Notebook40executed92921TERMINALexit0 via build_span_028_review.py; CPUtable,
-test evidence and pending GPU limits explicit. docs/SPAN_028_CPU_PROOF.md.
+## V28 terminal facts: do not restart
 
-GPUengine/checks/driver/runtime source FROZEN (span028*.py), one profile admitted.
-Engine copies nativeH60forward, original8192groups and batch80; wraps DataLoader
-in CpuPrefetch context, hashes full host tensors and per-batch microseq lengths,
-records queue/preparation and forward-launch/transfer/hostcopy wall timings.
-Actual end-to-end elapsed alone enters projection, no overlap doublecount.
-Strictoldraw<=1e-5 and all80warmups retained. All new source can be reviewed/
-finished before its GPUfreeze; only CPUproof source list is already frozen.
+E18DONEnegative(runtime), H73DEFERRED. Exact acceptedprivate/offline2T4source
+arseniytrushin/llm-preference-span028-native-cpu-prefetch/1. Canonicalreturnedslug
+normalizedfromrequestednative-prefetch because title; no secondpush. Source
+frozen87866b4, acceptedidentity/sourceverified+d266de8. Controller74124/
+PID1425436 TERMINALexit0. COMPLETE21:54:43UTC,42artifactsretrieved+hashverified,
+actualcharge1738.257s/3600. Independent frozen auditexit0: ALL15canonicalraw
+cohorts EXACT(maxdiff0), source/IDs/tokens/hosttensors/original8192microbatch
+boundaries/positions/route/mixture/actualCSV/memory pass. Peak70.123%/56.841%/
+69.928%. No labels/quality/official measured. Raw sources and failures immutable.
 
-V28GPUprofile source/preparer/controller/builder/independent auditor now ready.
-prepare_span_028_profile.py DONE ONCE (0.064s), spec/controls/nativebatch refs
-saved. run_span_028_profile.py --prepare77908TERMINALexit0: immutable plan has
-29919.217used/78080.783free, same Nov14anchor and originalNov10deadline.
-Original8192microbatch/token references and full hosthashes embedded in spec;
-native collator/processor/dataset hashes pinned. Runtime retains worse historic
-cold/fullwarm/other and uses actualnewprefetch throughput,20pctmargin/600reserve.
+Actualuniform G512293.909s,L512213.176s,Grev83/51234.804s. Conservative25k
+projection32973.468s(9h9m33)>32400; steady31751.281,cold407.983,fullwarm158.355,
+other55.849,reserve600,margin1.2. No causal speedup/slowdown claim: no same-node
+synchronous comparator. CPUproducer preparations4.499/4.587/.420s, consumer
+queuewaits.601/.664/.391s, mostwallinforward/transfers/hostcopy. Do NOT add
+these overlapping timings again. No faster-node retry or margin relaxation.
 
-Actual forward-loop CPUrehearsal(1test) passed, maintaining output order and
-consumer-only simulatedGPUcalls; not real model/hardware. Total14focused tests.
-Builder44053TERMINALexit0: actualserialized success/failure/watchdog cells,
-standalone imports, rerunguard public/hidden rejection and JupyterstartupPASS.
-prefetch_profile_bundle.json freezes27sourcefiles plus notebook/settings hashes.
-Notebook40rerendered28059TERMINALexit0 with actualpreparation/rehearsals.
+Actual2MEASUREDbase roles alone screen30766.762s(8h32m47): steady29711.993,
+cold293.433,fullwarm105.487,other55.849,reserve600. This removes reverse pass;
+no synthetic faster timings, but NOT candidate qualification or quality result.
+This is H75evidence only. scripts/analyze_span_028_runtime.py executedONCE;
+runtime_description.json recordsinput/source hashes, no labels/newGPU.
 
-GPUmethod frozen/pushed87866b4 BEFORE admission. Fresh inventory/receipt/
-quota/dependencies passed; accepted ONCE21:25:10UTC. Canonical returned identity
-arseniytrushin/llm-preference-span028-native-cpu-prefetch/1 differs from requested
-native-prefetch slug because title normalized; observe returned ref, NEVERfix
-byrepushing. Controller74124/PID1425436 confirmedRUNNING21:26:06UTC. Exact
-accepted source verified21:26:03UTC: cells/private/offline/T4/image match, four
-publicv1datasets refreshed. No other v28GPU or official exists.
+V28reports SPAN_028_RESULTS.md/TWO_EXPERT_DISCOVERY.md and finalNotebook40.
+Closure89657TERMINALexit0 PASS:110old snapshots/user07+12notebooks/link preserved,
+114aftertransition,38carried+H75. audit_span_028_closure.py maps oldGOAL to
+GOAL_V28 for futurechecking. Currentold sources/CPUproof/preparations/bundle
+remainfrozen. Do NOT rerun audit/preparers or overwrite outputs.
 
-NEXTobserve SAME74124/version throughterminal/retrieval, then
-scripts/audit_span_028_profile.py ONCE (requires COMPLETE and sourceproof).
-Early guards stop before latermodels; terminal auditor checks every oldraw
-cohort<=1e-5 and all source/host tensors/boundaries/route/mixture/CSV/memory,
-actualnewmode fullprojection<32400. No grid/numerical relaxation/faster-node
-retry. If engineering fails, preserve and deferH73; no resumption. If passes,
-close E18withreport and only then start fixedH73CPUreplay under currentcontract.
+Latest complete inventory9721TERMINALexit0: no livejobs, all7officials COMPLETE.
+Weeklyused31657.474/free76342.526s(21.21h),reserved0/paidFalse, sameNov14anchor.
+Originalabsolute deadline2026-11-10T08:37:37.343197UTC. V28public1738.257s and
+V27public1107.563s remaincharged; neverresetanyperiod/accounting. Refresh full
+admission before newGPU. No GPUwhileofficialpending/newweights/training/service.
 
-H73live v28explicitly replaces failedH74 prerequisite with E18. It stays deferred
-until E18actually passes; oldv27snapshots/failed10240contract remain immutable.
-Then only fixed uncomputed60/40prior on qualifiedoriginal8192prefetch, no6kextra,
-one<=300sCPUdescriptive replay(seed42/2000groups), fixed-.005grossguard, then
-one<=3600sactualfullqualification/onefrozenofficial ifeligible. No fitting/grid.
-Wholev28public<=7200s/twoacceptedversions andofficial<=32400, originaldeadline/
-quota anchor. No newweights/training/externaltextservice or GPUwhileofficialpending.
+E18CPUproof59216exit0,31.847s/300, all15nativeoriginal8192prefetchhostbatches
+exact. Sourcea0c78a6, resultf1c9629. 7FIFO/teardown +6profileguards +1actual-loop
+CPUrehearsal=14focusedtests pass; allserializedcells/imports/mode/worker/watchdog/
+Jupyterpassed44053 beforeGPU. CPU/nativeenv PYTHONPATH=/tmp/llm_span019_runtime
+with .venv/bin/python (installtarget, NOTvenv), Transformers4.42.3/tokenizers.19.1.
+Moderndefaultenvtokenizationdiffers. No pytest: use standard unittest.
 
-H74 accepted ONCE arseniytrushin/llm-preference-span027-native-packing/1.
-Controller42856/PID1269591 TERMINALexit0; COMPLETE20:53:17UTC, retrieval23files,
-actualcharge1107.563s/3600. Worker controlledstop complete=false at Llama256
-canonicalrawcontrol: maxabs0.000352919>fixed0.00001. Inputs/IDs/token hashes/
-checkpoint/memory pass (Llama58.15%/51.24%). Do NOT restart/retry/rescue.
-Frozen terminal audit74733TERMINALexit0 independently replayed failure.
-Separate label-free description found Gemmauniform512max0.000491977(14rows>
-tolerance), Gemmalong64max0.0000721514(4rows); Llamacontrol12rows>.00001.
-No argmax changes in checked outputs; that does not establish equal log loss.
-No labels, quality, fullruntime/route/mixture/CSV or official outcome measured.
-Gemmauniform271.272s/512, long174.518s/64; Llamauniform/reverse not executed.
-No qualified projection. Tolerance, packing and margins were not relaxed.
+## Prior stopped branch
 
-H74DONEnegative; H73DEFERREDwithout60/40probabilities or GPU. E18 queued from
-actual failure, with original8192exactmicrobatches/FIFO CPU producer queue2,
-CUDA only on consumer, no fork, exactinput/order/positions proof and teardown
-rehearsals, then one strict all-role actual profile. Speedup unmeasured. See
-SPAN_027_PREFETCH_DISCOVERY.md. At v27closure no prefetch code/timing/GPU had been run; v28CPU evidence is above.
-
-Reports: docs/SPAN_027_RESULTS.md, results/span_027/profile_audit.json and
-failure_description.json. Final executed Notebook39 includes drift table and
-terminal quota/board. Closure53656TERMINALexit0 passed:106old snapshots/user
-07+12notebooks/link preserved,110aftertransition,38carried+E18. New checker
-scripts/audit_span_027_closure.py maps old GOAL to GOAL_V27 for future verification.
-All old v27source/bundle/CPU/preparation files remain frozen. Do NOT rerun them.
-
-Latest full inventory95368TERMINALexit0:72owned, no live jobs, all7officials
-COMPLETE. Weekly used29919.217/free78080.783s(21.69h),reserved0,paidFalse,
-sameNov14anchor. Original absolute deadline2026-11-10T08:37:37.343197UTC.
-V27oneversion/1107.563s remains charged; no resource resets. Preserve all prior
-charges. Fresh fulladmission before next GPU. No GPUwhileofficialpending.
-
-CPUproof15.527s:57477saved Gemmalengths,53,256,651tokensunchanged;7368->5903
-microbatches(-19.883%),individualmax4330unchanged. Fullpopulationpayloadwas
-synthetic; all15actualnativecohorttokenstreams separatelyexact. That structural
-result did not predict exact GPUprobabilities. Frozenmethod2809d62, GPUbbdc42c,
-admission/source/boardfc1a12b. Profileprep/runtime_ref/resourceplan/builder done
-ONCE; don't overwrite. NativeCPU env PYTHONPATH=/tmp/llm_span019_runtime with
-.venv/bin/python (not a venv), Transformers4.42.3/tokenizers.19.1. Modernlocal
-Transformers changes tokenization; use pinned native env for source proofs.
+V27H74native10240packing failed rawidentity despiteexactinputstreams: Llama
+controlmax.000352919; Gemmauniformmax.000491977, long.0000721514. Noargmax
+changes but not equivalentlogloss. 42856/PID1269591 terminal,1107.563s,23files;
+noquality/fullruntime/official. H73deferred without60/40computation. V27CPUproof
+15.527s,57477savedlengths53,256,651tokensunchanged,7368->5903microbatches,
+syntheticfullpopulationpayload +15actualnativecohortstreams. Structural batching
+was not GPUequivalence. ExactarchiveGOAL_V27 and finalNotebook39 preserved.
 
 ## V26 terminal evidence; never restart
 

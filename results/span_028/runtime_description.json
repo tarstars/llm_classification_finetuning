@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-08T21:58:51.074441+00:00",
+  "measured_uniform_timings": {
+    "m0": {
+      "rows": 512,
+      "cohort_wall_seconds": 293.90902281700005,
+      "preparation_seconds": 4.498640533000071,
+      "producer_queue_wait_seconds": 227.28669954800012,
+      "consumer_queue_wait_seconds": 0.6008959910001295,
+      "forward_launch_transfer_hostcopy_wall_seconds": 293.25423287699994
+    },
+    "m3": {
+      "rows": 512,
+      "cohort_wall_seconds": 213.17565910100006,
+      "preparation_seconds": 4.587405984999805,
+      "producer_queue_wait_seconds": 162.38615334600013,
+      "consumer_queue_wait_seconds": 0.6635700839999572,
+      "forward_launch_transfer_hostcopy_wall_seconds": 212.45308253199937
+    },
+    "m0_reverse": {
+      "rows": 83,
+      "cohort_wall_seconds": 34.80385241099998,
+      "preparation_seconds": 0.4203318020001916,
+      "producer_queue_wait_seconds": 7.159800020417606e-05,
+      "consumer_queue_wait_seconds": 0.39090975999988586,
+      "forward_launch_transfer_hostcopy_wall_seconds": 34.40605246200016
+    }
+  },
+  "labels_read": false,
+  "quality_measured": false,
+  "new_gpu_executions": 0,
+  "original_three_role_projection_seconds": 32973.46818282597,
+  "original_runtime_failure_preserved": true,
+  "cpu_overlap_not_added_to_wall_time": true,
+  "same_session_synchronous_comparator_measured": false,
+  "two_role_feasibility": {
+    "roles": [
+      "m0",
+      "m3"
+    ],
+    "steady_seconds": 29711.99308113282,
+    "cold_seconds": 293.4325864829997,
+    "full_warmup_seconds": 105.48687213099964,
+    "other_seconds": 55.848985514120784,
+    "margin": 1.2,
+    "reserve_seconds": 600,
+    "projection_seconds": 30766.76152526094,
+    "candidate_qualified": false,
+    "quality_measured": false,
+    "official_submission_eligible": false,
+    "interpretation": "Uses both actually measured base roles and retained startup floors; no reverse pass or hypothetical faster timing. A new two-role candidate still needs actual qualification."
+  },
+  "elapsed_cpu_seconds": 0.0006964949425309896,
+  "source_sha256": "dcf8822f3a60ed33e52e4c792f865d9f6915255135ebf520550c5bc5409cc736",
+  "audit_sha256": "d0491bc5e474f455f1ef5d4b45cbc21f3a421554d96a4dd635c0160d6682da14",
+  "input_sha256": {
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m0_summary.json": "4dfc153bb1a58eb2cec2100ed974fd069b8f245c4c75e38118c35e47add8ded8",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m3_summary.json": "e1f782185f88319b9bac29d3e037f6563ff0d2ddef48f4be458ca29daf18d232",
+    "runs/span_028/jobs/prefetch_profile/output/prefetch_profile/m0_reverse_summary.json": "4028a2998a39b48d7a4554b8e2243a3ba7f73a560185229ed3b5e72ee2643b1d"
+  }
+}
