@@ -9,10 +9,14 @@ Best legitimate H60receipt58103553, span013-gemma-order/1. No H72official.
 
 ## Current v27
 
-Backlogv27active,focus[H74,H73],bothPLANNED/unexecuted. H73depends on H74.
+Backlogv27active,focus[H74,H73],H74RUNNING=CPUsourcepreparation,H73PLANNED.
+H73depends on H74; no10240execution/GPU or60/40probability has been computed.
 V28draftempty.92registeredtasks,106historicalsnapshotfiles;37carried+2new=
-39activev27items. New bounded GOAL.md/PLAN selected; no v27code,CPUreplay or
-GPU yet. Do not infer success from plans/tests/closure. Next prepare H74's
+39activev27items. New bounded GOAL.md/PLAN selected/pushed53a3a37. Nativecollator
+inspected: sortFalse/world_size1/groupinguseslengthsonly/position_idsresetperseq.
+results/span_027/preservation.jsoncaptures106snapshots+sameuserhashes; source
+inspectionjsonrecords modulehash/oldCPUtokenref. No fullproof/worker/GPUyet.
+Do not infer success from plans/tests/closure. Next prepare H74's
 exact nativecollator/input-stream CPUproof, then freeze actualGPUworker/scoring
 and rehearse before admission. H73cannotrun until H74passes.
 
@@ -104,7 +108,7 @@ history. Closure41621/83568passes:73artifacts,102oldsnapshots preserved/106after
 transition,37unfinishedcarried,newH73/H74,Notebook38executed. No historical
 snapshot was edited. Newsourceclosureverifier is audit_span_026_closure.py.
 V26final/startv27snapshots are immutable. Currentpublicationthroughd281be3;
-finalV26closure/newV27contract stillbeingstaged/pushed inthisturn.
+finalV26closure/newV27contract published53a3a37. H74sourceinspection beingpublished.
 
 ## Prior evidence and workspace rules
 

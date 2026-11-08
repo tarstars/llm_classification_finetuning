@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-08T20:03:09.358656+00:00",
+  "inspection_only": true,
+  "uses_targets": false,
+  "original_packing_tokens": 8192,
+  "candidate_packing_tokens": 10240,
+  "batch_rows": 80,
+  "native_collator_sha256": "437ecaa754f212e9fbe0167b1ef5ab56ff357fc50d5d1f97044b9886d141e4aa",
+  "native_collator_path": "runs/span_009/research/lmsys-modules-0805/data/collators.py",
+  "sort_samples_default": false,
+  "world_size": 1,
+  "position_ids_reset_per_sequence": true,
+  "packing_groups_use_lengths_only": true,
+  "no_10240_execution_yet": true,
+  "actual_stream_and_order_proof_complete": false,
+  "gpu_admitted": false,
+  "new_gpu_executions": 0,
+  "token_reference_spec_sha256": "414cdbb0f35ff979e6a8c3a6f6d2f2ef92ea25b57673b691400e5830ce976da7",
+  "goal_sha256": "1e9d4f57c070440db868bef2dd42e4d10905c9893f8ae3ece2742eac734737d6",
+  "plan_sha256": "ebf7bc69c1271d4cc7b031cf37017b7c1162f318e69de35c63ccf9fa58f4eac1",
+  "elapsed_cpu_seconds": 0.02835089899599552
+}

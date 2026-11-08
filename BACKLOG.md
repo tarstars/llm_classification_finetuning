@@ -6,7 +6,7 @@ Version **27**, active; **39** tasks. Focus for this span: H74, H73.
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **25**, ready **0**, running **0**, done **0**, rejected **0**, deferred **12**.
+Hypothesis status: planned **24**, ready **0**, running **1**, done **0**, rejected **0**, deferred **12**.
 
 Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
 
@@ -65,7 +65,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 48 | [H44](#h44) | P1 / deferred | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43, E04, E05 |
 | 68 | [H53](#h53) | P1 / planned | Test the binding temperature ceiling in the stable10%judge cascade | -0.002…+0.006 | high | 0.5…2 | 0…0 | 0.3…1.5 | E00, E05, H52 |
-| 92 | [H74](#h74) | P1 / planned | Qualify one larger native varlen packing cap with identical predictions | +0…+0 | medium | 1…3 | 0…1 | 0…0 | E00, E14, H60, H72 |
+| 92 | [H74](#h74) | P1 / running | Qualify one larger native varlen packing cap with identical predictions | +0…+0 | medium | 1…3 | 0…1 | 0…0 | E00, E14, H60, H72 |
 | 6 | [H02](#h02) | P2 / deferred | Larger supervised classifier | -0.015…+0.035 | high | 6…16 | 1…3 | 16…36 | E00 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
@@ -199,7 +199,7 @@ A restrictive judge-temperature bound may prevent adequate confidence shrinkage 
 
 ### H74
 
-**Qualify one larger native varlen packing cap with identical predictions** — P1, planned, risk medium.
+**Qualify one larger native varlen packing cap with identical predictions** — P1, running, risk medium.
 
 Native10240token varlen packing may provide measured runtime headroom while preserving H60raw probabilities and inputs; packing itself claims no score gain.
 
@@ -226,6 +226,7 @@ Native10240token varlen packing may provide measured runtime headroom while pres
 **References:** [docs/SPAN_026_PACKING_DISCOVERY.md](docs/SPAN_026_PACKING_DISCOVERY.md); [docs/SPAN_026_RESULTS.md](docs/SPAN_026_RESULTS.md); [results/span_026/candidate_qualification_replay.json](results/span_026/candidate_qualification_replay.json)
 
 - 2026-11-08T19:47:09+00:00 — planned: Actualfullqual4kparent32668.060sexceeds9hdespiteexactrawcontrols. QueueONE10240nativepackingengineeringprerequisite forH73, withunchangedinputs/model/T1/route, strictcontrols andactualruntime; no new computation/current-spanchange. Evidence: [docs/SPAN_026_PACKING_DISCOVERY.md](docs/SPAN_026_PACKING_DISCOVERY.md)
+- 2026-11-08T20:03:09+00:00 — running: V27boundedgoal selected/published53a3a37, H74prerequisitesdone. StartingCPU-onlysourcepreparation, no10240execution/GPUyet. Exactnativecollators.pyinspected: sortFalse/world1/length-onlygrouping/per-sequencepositionreset. Capture106snapshot/usernotebookhashes andfrozenoldnativeCPUtokenrefs; nextfreezeandrunactualstream/order/packingproofwithin600s beforeGPUworkeradmission. Evidence: [results/span_027/source_inspection.json](results/span_027/source_inspection.json)
 
 ### H02
 
