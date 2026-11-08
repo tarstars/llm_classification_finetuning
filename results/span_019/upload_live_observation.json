@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-08T10:55:09.358539+00:00",
+  "exec_session": 5983,
+  "pid": 3843170,
+  "last_live_handle_confirmed": true,
+  "dataset": "arseniytrushin/llm-span019-native-classifier/1",
+  "private_requested": true,
+  "upload_intent_exists": true,
+  "upload_response_exists": false,
+  "service_ready_unproven": true,
+  "last_observed_open_file": "model-00001-of-00003.safetensors",
+  "last_observed_file_read_position_bytes": 3982557184,
+  "file_total_bytes": 4977835176,
+  "file_offsets_are_not_server_completion_evidence": true,
+  "new_gpu_executions": 0
+}

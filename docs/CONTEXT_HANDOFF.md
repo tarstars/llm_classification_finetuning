@@ -6,7 +6,7 @@ on a fresh complete official board after legitimate inference. ACTIVE/unachieved
 no token budget. Do not reset/complete from source/CPU/span success. No subagents.
 
 Best official58103553 COMPLETE0.82987, source
-arseniytrushin/llm-preference-span013-gemma-order/1. LAST board08:28:36UTC:23/310,
+arseniytrushin/llm-preference-span013-gemma-order/1. Fresh coherent10:49:16UTC board:23/311,
 rank19/20cutoff.82915,leader.82702. Last7receipts terminal,66ownednotebookszeroactive,
 quota used16386.583s/free91613.417s(25.45h),refreshNov14. HISTORICAL observations;
 refresh before GPU. No new GPUjob/official yet in v19.
@@ -77,8 +77,11 @@ Private asset package PREPARED:ROOT/runs/span_019/assets/upload,16payloadfiles/
 fixes every byte/headSHA. Datasetplanned arseniytrushin/llm-span019-native-classifier/1,
 privateonly,no extra archive/dense copy. Includesoriginalquantcalibrationtexts in
 config but no votes/modelidentities/predictions. Native MITlicense provenance in
-native_license_observation.json. Upload NOTstarted at this snapshot; verify actual
-intent/state beforeacting. Authenticating beforeintent is read-only; uploaderrors
+native_license_observation.json. Upload STARTEDonce; active execsession5983/hostPID3843170. Intent recorded
+10:36:13UTC; response not yet returned. At10:49read offset3.982GB/4.978GB in
+firstshard. Poll SAMEhandle; do NOTstart anotherupload. /proc process inspection
+needs the same escalated scope as the process (sandboxed ps can miss it).
+File read offsets are NOTserver-ready evidence. Verify actual state beforeacting. Authenticating beforeintent is read-only; uploaderrors
 are sanitized and leave ambiguousintent which must be observed,neverrepeated.
 
 Actual notebook built ROOT/runs/span_019/notebooks/classifier_pilot/job.ipynb;
@@ -88,7 +91,8 @@ public/hidden branches and5actualCPUtests allpassed. Bundle includes runtime
 projection/auditor and frozen tokenref/manifest. Commit/push exact currentfiles
 BEFOREupload/GPU; verify_sources requires currentHEAD. No pushintent/remote jobyet.
 
-1. `scripts/stage_span_019_assets.py upload` ONCEwith DB/networkescalation after
+1. Upload is already INFLIGHT in5983; do NOTrepeat. The original command was
+   `scripts/stage_span_019_assets.py upload` with DB/networkescalation after
    committing manifests/bundle/rehearsals. Writes assets/upload_intent.json.
    Poll sameexec handle; a long transfer/observationtimeout never permits duplicate
    dataset creation. Then actionverify (read-only) untilREADY/private/v1. Do not
@@ -127,3 +131,20 @@ Earlier retained recipe/results:docs/SPAN_017_RESULTS.md and archived GOAL_V17.m
 H60official.82987/8.5868h conservative, priorT1.316.84797worse, no refit. H61/H62
 coverage widening failed; H55earlier source stop; H56rewardpilotfailedwatchdog with
 weak/incompletequality, no resubmit. H63batchingP3unselected. Preserve allnegatives.
+
+
+## Leaderboard observation correction during the upload
+
+Kaggle cursor queries intermittently replayed the entire first/second page,
+causing the strict historical helper's duplicate-own-team assertion. Do not
+rewrite old helpers/receipts. New src/arena/leaderboard.py and
+scripts/observe_leaderboard.py retry the SAMErequestedcursor and reject every
+replayed/overlapping/backward page, never silentlydeduplicate. Two meaningful
+unitcasespass. Actual10:49:16UTCfullread:4acceptedpages,2rejectedreplays,
+23/311,score.82987,cutoff.82915,leader.82702,goalFalse. Receipt latest_leaderboard.json.
+Use this robust observer for future goal verification/new official controller.
+A failed/incomplete read does NOTmean ownteam vanished or the goal succeeded.
+
+Current model/workerbundle sources remain frozen from320fabf; no GPU/pushintent
+or newscore. Notebook31 refreshed and important preparation pushed. Source
+observer/liveupload observation are the current new bookkeeping changes.

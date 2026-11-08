@@ -6069,6 +6069,14 @@
           "evidence": [
             "docs/SPAN_019_SOURCE_RESULTS.md"
           ]
+        },
+        {
+          "at": "2026-11-08T10:55:09+00:00",
+          "status": "running",
+          "note": "Native asset upload began once10:36UTC, live exec5983; no response/READY yet. Coherent official10:49board23/311 after rejecting replayed cursor pages. Add read-only cursor recovery with2tests; leave initial model/workerbundle unchanged and noGPU/newscore.",
+          "evidence": [
+            "docs/SPAN_019_SOURCE_RESULTS.md"
+          ]
         }
       ]
     }
