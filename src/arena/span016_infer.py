@@ -100,6 +100,7 @@ def main():
                     positions = torch.arange(batch['input_ids'].shape[1], device='cuda:0')
                     last = ((batch['input_ids'] != tokenizer.pad_token_id) * positions).max(-1).values
                     reference = logits[torch.arange(len(indices), device=logits.device), last.to(logits.device)].float().reshape(-1)
+                    reference = reference.to(values.device)
                     difference = float((values - reference).abs().max())
                     assert difference < 1e-5, 'Native scalar pooling mismatch'
                     repeated = model(**batch, use_cache=False).logits.float().reshape(-1)

@@ -86,6 +86,20 @@ class PipelineBookkeepingTests(unittest.TestCase):
             self.assertFalse(any('--role' in c and c[c.index('--role') + 1] == 'm3' for c in calls))
             self.assertTrue((root / 'submission.csv').exists())
 
+    def test_information_stage_keeps_full_quality_cohort_and_defers_runtime(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            args, calls = self.prepare(root, True), []
+            args.information_only = True
+            orchestrate(args, launch=self.fake_launcher(calls))
+            out = root / 'output'
+            self.assertEqual(np.load(out / 'quality_comparison.npz')['candidate'].shape, (1024, 3))
+            result = json.loads((out / 'completion.json').read_text())
+            self.assertTrue(result['information_only'])
+            self.assertFalse(result['runtime_target_profiled'])
+            self.assertFalse((out / 'candidate_uniform.npz').exists())
+            self.assertTrue((root / 'submission.csv').exists())
+
     def test_failed_worker_cannot_create_completion_or_submission(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

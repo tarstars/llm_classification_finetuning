@@ -23,6 +23,8 @@ def main():
         assert next(v for v in registry['versions'] if v['number'] == 16)['focus_ids'] == ['H56']
         assert next(i for i in registry['items'] if i['id'] == 'H56')['status'] == 'running'
         assert role == 'reward_pilot'
+        bundle = read_json(pub / 'reward_pilot_bundle.json')
+        assert bundle['public_stage'] == 'information_only' and not bundle['official_submission_eligible']
         assert read_json(pub / 'source_audit.json')['source_stage_passed']
         assert read_json(pub / 'reward_pilot_cell_rehearsals.json')['passed']
         asset = read_json(pub / 'asset_upload.json')

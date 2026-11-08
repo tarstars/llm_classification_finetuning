@@ -4981,6 +4981,14 @@
           "evidence": [
             "docs/SPAN_016_PROGRESS.md"
           ]
+        },
+        {
+          "at": "2026-11-08T04:29:18+00:00",
+          "status": "running",
+          "note": "Before any reward output/GPU, separated the full1024quality information stage from later512target-runtime qualification; fixed recipe/gates/caps unchanged. Nine CPU tests and serialized public/hidden/watchdog rehearsals pass. Weight staging is live; first version is explicitly ineligible for official submission.",
+          "evidence": [
+            "docs/SPAN_016_PUBLIC_STAGING.md"
+          ]
         }
       ]
     },

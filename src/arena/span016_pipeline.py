@@ -45,7 +45,8 @@ def orchestrate(args, launch=subprocess.run):
         assert digest(raw / 'train.csv') == selected['train_csv_sha256']
         train = pd.read_csv(raw / 'train.csv', usecols=['id', *TEXT]).set_index('id', drop=False)
         frames['control'] = train.loc[selected['control_ids']].reset_index(drop=True)
-        frames['uniform'] = train.loc[selected['uniform_ids']].reset_index(drop=True)
+        if not getattr(args, 'information_only', False):
+            frames['uniform'] = train.loc[selected['uniform_ids']].reset_index(drop=True)
     warmup = frames['control'].iloc[:80] if args.qualify else test.iloc[:80]
     warmup.to_parquet(out / 'warmup.parquet', index=False)
     for name, frame in frames.items():
@@ -57,7 +58,7 @@ def orchestrate(args, launch=subprocess.run):
     infer = here / ('span016_infer.py' if __package__ else 'reward_inference.py')
     modern_env = os.environ.copy()
     modern_env['PYTHONPATH'] = args.modern_runtime + os.pathsep + str(here)
-    reward_names = ['warmup', 'long'] + (['control', 'uniform'] if args.qualify else []) + ['test']
+    reward_names = ['warmup', 'long'] + (['uniform'] if 'uniform' in frames else []) + ['test']
     launch([sys.executable, str(infer), '--model', str(reward_assets / '8B'),
         '--out', str(out), '--cohorts', ','.join(reward_names), '--size', '8B'], check=True, env=modern_env)
     reward_source = np.load(out / 'reward_8B_long.npz')
@@ -79,11 +80,11 @@ def orchestrate(args, launch=subprocess.run):
     def execute(role, names):
         launch([sys.executable, str(frozen), '--role', role, '--raw', str(raw),
             '--assets', args.assets, '--out', str(out), '--cohorts', ','.join(['warmup', *names])], check=True)
-    gemma_names = ['control', 'uniform', 'long', 'test'] if args.qualify else ['test']
+    gemma_names = [n for n in ['control', 'uniform', 'long', 'test'] if n in frames] if args.qualify else ['test']
     execute('m0', gemma_names)
     if args.qualify:
-        execute('m3', ['control', 'uniform', 'long', 'test'])
-    candidate_names = ['uniform', 'test'] if args.qualify else ['test']
+        execute('m3', ['control', 'long'])
+    candidate_names = (['uniform'] if 'uniform' in frames else []) + ['test']
     routing, reward_probs = {}, {}
     for name in candidate_names:
         a = np.load(out / ('m0_' + name + '.npz'))
@@ -135,6 +136,8 @@ def orchestrate(args, launch=subprocess.run):
             validate_probabilities(reloaded[CLASSES].to_numpy(), len(test))
     save(out / 'completion.json', dict(complete=True, qualify=args.qualify, test_rows=len(test),
         actual_hidden_inference=True, hidden_votes_used=False, calibration_rows=1024,
+        runtime_target_profiled=args.qualify and 'uniform' in frames,
+        information_only=bool(getattr(args, 'information_only', False)),
         calibration_seconds=calibration_seconds, elapsed_seconds=time.monotonic() - started,
         cohort_aliases={'long': 'fresh_post_publication_quality_1024'}, uses_public_prediction_cache=False))
     for path in out.glob('*.parquet'):
@@ -148,4 +151,5 @@ if __name__ == '__main__':
     for name in ['raw', 'assets', 'reward-assets', 'modern-runtime', 'out', 'selection']:
         parser.add_argument('--' + name, required=True)
     parser.add_argument('--qualify', action='store_true')
+    parser.add_argument('--information-only', action='store_true')
     orchestrate(parser.parse_args())

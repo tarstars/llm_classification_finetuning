@@ -228,6 +228,7 @@ A post-trained preference reward model may complement or replace a joint classif
 - 2026-11-07T00:37:54+00:00 — planned: Released modern scalar reward heads make the skipped shared-utility idea cheaper to test. Queue two bounded size arms and one symmetric tie calibrator for v10; no new v9 GPU or pending-submission changes. Evidence: [docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md](docs/SPAN_009_REWARD_MODEL_FOLLOWUP.md)
 - 2026-11-08T02:59:18+00:00 — running: Starting bounded pinned-source/offline-feasibility audit under docs/SPAN_016_PLAN.md; no model weights, rewards or GPU admitted. Evidence: [docs/SPAN_016_PLAN.md](docs/SPAN_016_PLAN.md)
 - 2026-11-08T03:18:42+00:00 — running: Source stage passed without weights/GPU. Froze1024fresh Arena groups after both pinned reward publications, excluding2048inspected groups. Native rendering and five calibration tests pass; exact worker/offline runtime still required before admission. Evidence: [docs/SPAN_016_PROGRESS.md](docs/SPAN_016_PROGRESS.md)
+- 2026-11-08T04:29:18+00:00 — running: Before any reward output/GPU, separated the full1024quality information stage from later512target-runtime qualification; fixed recipe/gates/caps unchanged. Nine CPU tests and serialized public/hidden/watchdog rehearsals pass. Weight staging is live; first version is explicitly ineligible for official submission. Evidence: [docs/SPAN_016_PUBLIC_STAGING.md](docs/SPAN_016_PUBLIC_STAGING.md)
 
 ### H02
 

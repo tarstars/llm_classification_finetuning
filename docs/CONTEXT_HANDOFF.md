@@ -1,6 +1,6 @@
 # Active goal: rank<=19; best0.82987/rank23; v15 stopped before GPU
 
-Snapshot2026-11-08T03:49UTC. Read PROJECT_POLICY.md and current GOAL.md, then
+Snapshot2026-11-08T04:28UTC. Read PROJECT_POLICY.md and current GOAL.md, then
 verify live state. Persistent goal "move above20th place" means rank<=19 for
 team17244411 on a fresh complete official board. Goal ACTIVE/unachieved.
 Do not create another goal or mark complete from a span closure.
@@ -9,7 +9,7 @@ Do not create another goal or mark complete from a span closure.
 
 Official best58103553 COMPLETE0.82987, source
 arseniytrushin/llm-preference-span013-gemma-order/1. Improvement0.00066from0.83053,
-moving30th to23rd. Fresh02:54:13UTC board:23/312, rank19/20cutoff0.82915,
+moving30th to23rd. Fresh04:25:19UTC board:23/312, rank19/20cutoff0.82915,
 leader0.82702; gap0.00072. Actual rank defines success. No GPU, pending receipt or
 live observer. All old public/official jobs/controllers are terminal: never
 restart or resubmit. All seven official receipts are terminal.
@@ -54,10 +54,10 @@ uniform512pipeline separately measures deployment. Include1024reward calibration
 inference overhead in hidden runtime; known external votes are training, not
 hidden labels. Only reward expert replaces Llama; equal total expert weights.
 
-Sourcefiles15.98MB, no full weights yet. Native synthetic rendering passes both
+Source-only audit15.98MB; full-weight acquisition is running as described below. Native synthetic rendering passes both
 local5.22.1and isolated pinned4.52.3runtime; first BatchEncodingAPI failure retained,
-explicit return_dict=False fixes it. Five mapping tests plus three actual pipeline
-bookkeeping tests pass. Serialized worker success/failure/watchdog/Jupyter and
+explicit return_dict=False fixes it. Five mapping tests plus four actual pipeline
+bookkeeping tests pass (nine total). Serialized worker success/failure/watchdog/Jupyter and
 public/hidden branches pass; no competition train.csvin hidden CPU test. Notebook28
 is executed interim3cells/0errors and may refresh while v16active. Generated real
 GPU notebook ROOT/runs/span_016/notebooks/reward_pilot; role reward_pilot. Its
@@ -65,7 +65,8 @@ bundle/source/profile/manifest hashes must stay frozen before accepted GPU work.
 
 Preparation/source freeze dddfecfis PUSHED. Full-weight acquisition is NOW
 RUNNING via unified session17682: scripts/stage_span_016_assets.py prepare.
-03:48UTC exact poll confirms live; first4.902GBshard .part has3.644GB. Do not
+04:27UTC exact poll confirms live: ALL8Bshards/15.136GB are SHA-verified;
+0.6Bsingle1.192GBfile is downloading. No upload intent or GPU version yet. Do not
 restart while live. Observe same handle; .part bytes are useful read-only progress.
 After completion, upload ONCE with intent/receipt and verify private datasetv1. Manifest30files/16.380GB, actual
 weights16.329GB, four modern wheels, source.parquet+known external labels.npz.
@@ -75,6 +76,17 @@ Before first GPU, source/bundle was refreshed for required null/missing-turn
 telemetry, unchanged model recipe. New run_span_016_pilot.py validates full cursor
 receipt history and all five pinned datasets via the existing controller. It must
 be committed before use; no admission/launch until asset_upload.jsonready.
+IMPORTANT: docs/SPAN_016_PUBLIC_STAGING.md prospectively separates the first
+information-only session (FULL1024quality groups retained) from target-runtime
+qualification. Its bundle explicitly official_submission_eligible=False. Even
+strong quality cannot permit a first-version official submission: the one
+separately admitted follow-up must profile original512target rows and pass all
+remaining gates. New worker/test/bundle changes are being published. Model links
+and modern runtime live in /tmp on Kaggle, avoiding heavy output captures. Native
+pooling control aligns reference to the actual output device for Accelerate hooks.
+No GPU auditor/official controller for v16has been implemented yet; do not reuse
+v13mutation programs. Implement exact accepted-source/raw-control/OOF/calibration/
+runtime/CSV audits while the actual pilot is running. No new quality result yet.
 Current owned private datasets total93.2MB; unrelated names redacted. No upload
 intent or GPU receipt yet. If download interrupts, reconcile exact .part; accepted
 upload timeouts require observation of the same dataset, never repeat mutation.

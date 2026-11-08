@@ -1,7 +1,7 @@
 # H56 progress: supported reward sources and a fresh chronological cohort
 
 Source preparation supports a bounded pilot; **no model quality has been measured
-and no GPU or full weights are admitted yet**. Actual best remains0.82987/rank23.
+and no GPU is admitted yet**. Actual best remains0.82987/rank23.
 
 Both pinned official Skywork Qwen3 reward repositories are ungated/Apache2.0,
 declare one scalar head and have immutable full weight manifests. Their total
@@ -26,7 +26,7 @@ Transformers default returning BatchEncoding; explicit return_dict=False fixes
 the API mismatch. Its failure receipt is retained. Initial validation used5.22.1;
 separate native rendering also passes with pinned4.52.3/0.21.1tokenizers/
 0.31.4hub/0.5.3safetensors in an isolated runtime.
-Only15.98MBof small source/tokenizer files were downloaded; no model weights.
+The source-only stage downloaded15.98MBof source/tokenizer files, without model weights.
 
 The three-parameter calibration has five passing tests: multi-turn/null handling,
 swap symmetry/equal rewards, analytic gradients, held-out-group isolation and
@@ -38,12 +38,18 @@ recipe, cross-fitting, primary later-vote loss, uncertainty/information gates,
 calibration overhead and resource limits. The exact serialized worker and offline
 runtime/assets must be prepared and rehearsed before weight/GPU admission.
 The exact serialized worker now passes success/failure/watchdog and real Jupyter
-startup checks. Three additional CPU tests execute its actual orchestrator to CSV
-and final bookkeeping in public/hidden modes, and reject failed children. The
+startup checks. Four additional CPU tests execute its actual orchestrator to CSV
+and final bookkeeping in public/hidden/information-only modes, and reject failed children. The
 hidden test has no competition train.csv. No fake output is a quality estimate.
 Thirty immutable asset files are declared:16.380GBincluding four pinned wheels
 and the known external calibration data. Full weight acquisition and the single
-private dataset upload are separate next steps; no GPU admission follows
-automatically. Existing private datasets total93.2MB. Unrelated names are redacted
+private dataset upload are separate steps; weight acquisition is now running.
+No GPU admission follows automatically. Existing private datasets total93.2MB. Unrelated names are redacted
 from the storage preflight. Notebook28contains the executed preparation results.
 Source-stage acceptance is recorded in results/span_016/source_audit.json.
+
+[Public staging addendum](SPAN_016_PUBLIC_STAGING.md), frozen before any GPU or
+reward output, keeps all1024quality groups while deferring target-runtime profiling
+to the separately admitted follow-up. The first version cannot be submitted
+officially. Reward symlinks/runtime live in /tmp on Kaggle to keep heavy weights
+out of captured notebook outputs. Recipe, thresholds and resource caps stay fixed.

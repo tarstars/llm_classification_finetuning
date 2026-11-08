@@ -58,7 +58,7 @@ def digest(path):
     with path.open('rb') as stream:
         for chunk in iter(lambda:stream.read(8*1024*1024),b''):h.update(chunk)
     return h.hexdigest()
-REWARD=ASSETS/'reward';REWARD.mkdir()
+REWARD=Path('/tmp/span016-reward-assets');REWARD.mkdir()
 for size in ['8B','0.6B']:(REWARD/size).mkdir()
 verified={{}}
 for item in EXPECTED:
@@ -75,7 +75,7 @@ subprocess.run([sys.executable,'-m','pip','install','--no-index','--no-deps','--
         setup += f"(WORK/{destination!r}).write_text({(REPO/source).read_text()!r})\n"
     setup += f"(WORK/'profile_selection.json').write_text({json.dumps(profile)!r})\n"
     setup += '''os.chdir(WORK)
-command=[sys.executable,'-u',str(WORK/'reward_pipeline.py'),'--raw',str(RAW),'--assets',str(ASSETS),'--reward-assets',str(REWARD),'--modern-runtime',str(MODERN),'--out',str(WORK/'reward_experiment'),'--selection',str(WORK/'profile_selection.json')]+([] if IS_RERUN else ['--qualify'])
+command=[sys.executable,'-u',str(WORK/'reward_pipeline.py'),'--raw',str(RAW),'--assets',str(ASSETS),'--reward-assets',str(REWARD),'--modern-runtime',str(MODERN),'--out',str(WORK/'reward_experiment'),'--selection',str(WORK/'profile_selection.json')]+([] if IS_RERUN else ['--qualify','--information-only'])
 env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='2',TOKENIZERS_PARALLELISM='false',HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',PYTHONUNBUFFERED='1')
 '''
     nb = nbf.v4.new_notebook(cells=[nbf.v4.new_markdown_cell(
@@ -125,6 +125,7 @@ env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLA
             MODERN=Path('/tmp/modern'), STARTED=0, sys=sys)
         exec(compile(mode, 'actual-serialized-branch', 'exec'), scope)
         assert scope['IS_RERUN'] == expected and ('--qualify' in scope['command']) != expected
+        assert ('--information-only' in scope['command']) != expected
         assert scope['DEADLINE'] == (32400 if expected else 3600)-120
         mode_checks.append(dict(hidden=expected, passed=True))
     # Exercise the actual orchestrator through CSV/final bookkeeping, including
@@ -135,8 +136,9 @@ env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLA
     assert tested.returncode == 0, tested.stdout + tested.stderr
     atomic_json(pub / (role + '_cell_rehearsals.json'), dict(passed=True, checks=checks,
         notebook_startup_passed=True, mode_checks=mode_checks, actual_pipeline_cpu_tests_passed=True,
-        actual_pipeline_tests=3, new_gpu_executions=0))
+        actual_pipeline_tests=4, new_gpu_executions=0))
     source_names = ['GOAL.md', 'docs/SPAN_016_PLAN.md', 'docs/SPAN_016_PILOT_PROTOCOL.md',
+        'docs/SPAN_016_PUBLIC_STAGING.md',
         'scripts/build_span_016_pilot.py', 'src/arena/notebook_worker.py', *files.values(),
         'tests/test_span016_pipeline.py', 'tests/test_span016_reward.py',
         'results/span_016/asset_manifest.json', 'results/span_016/cohort_manifest.json']
@@ -144,6 +146,7 @@ env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLA
         source_sha256={n: sha256(REPO/n) for n in source_names},
         notebook_sha256=sha256(folder/'job.ipynb'), metadata_sha256=sha256(folder/'kernel-metadata.json'),
         public_cap_seconds=3600, hidden_cap_seconds=32400, internet_enabled=False,
+        public_stage='information_only', official_submission_eligible=False,
         public_profile_selection_sha256=sha256(pub/'profile_selection.json'),
         asset_manifest_sha256=sha256(pub/'asset_manifest.json')))
     print(folder)
