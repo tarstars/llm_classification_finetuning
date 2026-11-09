@@ -1,6 +1,6 @@
 # V30 closed negative; v31 H02 source preparation
 
-Snapshot 2026-11-09 05:46 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
+Snapshot 2026-11-09 06:16 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
 current files and live service state before acting. Persistent goal is our own
 team 17244411 at rank <=19 on a fresh complete official leaderboard after
 legitimate inference. ACTIVE, UNACHIEVED, no token budget. Be economical with
@@ -50,18 +50,33 @@ Fresh selection-only readiness66683 TERMINALexit0: exactQwen3-4B/8Bversion1
 available,8officials terminal,no livejobs,same32965.550used/75034.450free.
 results/span_031/span_plan.json allocates one5400s2T4version/noofficial,
 retaining originaldeadline/anchor/charges and32400free for laterqualification.
-New design deliberately extends the never-run v8 pilot to4096train/1024dev,
-128accepted updates/globalbatch32,192nominalcyclecap,warmup16/LR1e-4,
+Initial128-update/4096train/1024dev draft0202a9d was stopped BEFOREGPU on
+historical-runtime planning evidence; exactinitialplan/goal/inputs preserved.
+Actualprotocolrevision2 restores original1024train/512dev,
+32accepted updates/globalbatch32,48nominalcyclecap,warmup4/LR1e-4,
 sameNF4/fp16/rank16QLoRA/1024packing. Botharmsfresh, sameinputs and actual
 accepted rowmultiset/tokens required; rawgain>=.005 and group95lower>0,
 finiteweights/T4/peak<=95pct and measured25k runtime screen<32400 needed for
 separately budgeted follow-up. No shortpilot official forecast or H60winclaim.
 No newGPU/model load/quality yet. Existing unrun v8 source must remain frozen.
-New scripts/prepare_span_031_size.py selects IDs before newtargetreads, retains
-and extends oldsamples, verifiesraw/cache/group provenance and122snapshots,
-and writes compressed selectedCSV only underheavyROOT/runs/span_031. Execute
-ONCE onlyafter committing method/source; thenbuild and rehearse actualoffline
-notebook/controller/auditor, freeze/push beforefresh fulladmission and launch.
+Expandedpreparation90034 TERMINALexit0,3.655CPU s:4096/1024rows, promptgroups
+3985/987 disjoint,originalraw/cache/labels match,122snapshots/userfiles/link
+preserved. results/span_031/preparation.json is SUPERSEDED input preparation,
+not actual32-update inputs or a training result. Neverrerun/overwrite it.
+CPUbudgetscreen uses old4B5913.436s/256cycles ->128cycle reference2956.718s
+> firstarm1980s training window; no causal speed or8Bthroughputclaim.
+See docs/SPAN_031_EXPOSURE_REVISION.md, protocol_revision.json,initial_span_plan.
+Deadline/start/quota/cap unchanged; archivedinitialGOAL/PLAN andGit0202 preserve
+originaldraft. Newworker/session src/arena/span031_size*.py retains proven
+training/control path and adds actualGPUtotalmemory. Newbuilder/controller/
+auditor/sourceverifier are written, syntaxcompiled; newCPUTrainer test20596
+TERMINALexit0,PASS(.110s). NEXTcommit/push correctedsources then execute prepare_span_031_pilot.py
+ONCE toseal separate activepilot_ids/pilot_rows andpilot_preparation.json;
+thenexecute build_span_031_size.py ONCE (Jupyter/DB escalation), inspectactual
+staging/Trainer/finalsuccess-failure/watchdog/Jupyterrehearsals, freeze/push
+result/bundle beforefresh fulladmission andone run_span_031_size.py. Verify
+accepted exactsource withverify_span_031_source.py whilemonitoring SAMEhandle.
+Independent audit_span_031_size.py runsONCE afterterminal retrieval. NoGPUyet.
 Oldv8runcontroller must not be reused because its budgets/focus are closed.
 Do not call the goal complete for span closure,
 engineering, or local gains. No current external blocker; do not mark blocked

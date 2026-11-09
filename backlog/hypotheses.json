@@ -214,6 +214,14 @@
           "evidence": [
             "docs/SPAN_031_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-09T06:10:57+00:00",
+          "status": "running",
+          "note": "Pre-GPU timing correction: old4B continuation5913.436s/256cycles gives128cycle reference2956.718s beyond first-arm1980s training window. No newquality/GPU. Preserve0202a9d128-update draft/expanded3.655s input preparation, restore originalunrun32updates/1024train/512dev/48cyclecap/warmup4 under same5400s allocation/deadline/anchor/charges and rawgate. Seal separate active pilot inputs; newworkers preserve provencontrol and add memorytotal telemetry.",
+          "evidence": [
+            "docs/SPAN_031_EXPOSURE_REVISION.md"
+          ]
         }
       ],
       "introduced_in": 1,

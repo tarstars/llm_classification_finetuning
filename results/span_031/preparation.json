@@ -1,0 +1,37 @@
+{
+  "prepared": true,
+  "at": "2026-11-09T06:04:32.496099+00:00",
+  "sample_rows": {
+    "train": 4096,
+    "dev": 1024
+  },
+  "prompt_groups": {
+    "train": 3985,
+    "dev": 987
+  },
+  "prompt_groups_disjoint": true,
+  "targets_read_after_ids_sealed": true,
+  "confirmation_targets_used": false,
+  "raw_selected_rows_verified": true,
+  "sample_ids_sha256": "def61e06e4f118531070cc5c3c44a808d2b8f1537bc4933dcbdf28f7f9df6357",
+  "old_sample_ids_sha256": "7ca4870471df7e9b942d240b53371bd943915a7a11bcbaf7d56f5f2fcea317d0",
+  "input_artifacts": {
+    "train.parquet": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/train.parquet",
+      "sha256": "1d7528b40272ced4b147124a36f0e5d20d91ff3777699c6341f936eaac461e1a"
+    },
+    "dev.parquet": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/dev.parquet",
+      "sha256": "b213de8045ded5c05f1e96ee27f19b5b7a384bb5423debfdf2a80d997ec14e51"
+    }
+  },
+  "train_csv_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+  "compressed_csv_sha256": "3ac2dd3743a61d878dd51d15901fd9743ca48c2b2b5683cb18c44eecb0baa622",
+  "csv_bytes": 16134723,
+  "compressed_csv_bytes": 5166940,
+  "base_config_sha256": "957f9c97f79f7eb4a6b155301b51dde8fafcf553f04ee33eab43d249d23afab9",
+  "parent_sources_sha256": "004434c79caa453cc4772c08215bcce1ac1ef1454773a7de42b2fcadbaba9a09",
+  "preservation_sha256": "a5d8ff56070a3685bbc3a4b43d6d8c7294b468c1c91d817c43e1b8406c9be697",
+  "elapsed_cpu_seconds": 3.654994163895026,
+  "new_gpu_executions": 0
+}

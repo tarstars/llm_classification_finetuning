@@ -9,26 +9,28 @@ whose fitting excludes the development groups. Unknown base-model pretraining
 exposure cannot be ruled out, and the historical development split has been
 inspected by prior experiments. This is exploratory validation, not untouched CV.
 
-H02's v8 notebook was never launched. Preserve it and its 32-update/1024-train/
-512-dev preparation. The new v31 design deliberately deepens that unrun pilot
-to **128 accepted updates, 4096 training pairs, and 1024 development pairs**.
-This gives learning more time than a nearly unfitted classification head while
-retaining one **5400-second two-T4 session**, two sequential arms, and no retry.
-An incomplete budget-limited arm is an incomplete result, not a smaller success.
+H02's v8 notebook was never launched. Preserve its preparation. The initial
+v31 enlargement was stopped before GPU on a historical-runtime planning screen;
+its exact source and inputs remain archived. See
+[the exposure revision](SPAN_031_EXPOSURE_REVISION.md). The actual experiment
+uses **32 accepted updates, 1024 training pairs, and 512 development pairs**,
+one **5400-second two-T4 session**, two sequential arms, and no retry.
+This limited pilot measures fit, throughput and early learning. An incomplete
+budget-limited arm remains incomplete; no full-training quality follows.
 
 Use pinned `qwen-lm/qwen-3/transformers/{4b,8b}/1`, both freshly verified
 available, and a new three-class head and rank16/alpha32 QLoRA adapter for
 each. Retain the proven v8 training implementation and packing, NF4/fp16,
 1024-token joint input, A/B augmentation, global batch32, AdamW, learning rate
-0.0001, initial AMP scale128 and cosine schedule. Warmup16 preserves the old
-warmup fraction. Nominal cycles cap192 allows recorded AMP skips; scheduler
+0.0001, initial AMP scale128 and cosine schedule. Warmup4 preserves the old
+warmup fraction. Nominal cycles cap48 allows recorded AMP skips; scheduler
 and stopping use actual accepted updates. Per-device batches/accumulation are
 4/4 for 4B and 2/8 for 8B across two DDP ranks. These numerical recipes differ;
 parameter count alone is not isolated from architecture or pretraining.
 
-Before loading new targets for training, select IDs deterministically from the
-existing train/dev partitions, retaining the old unrun sample IDs and extending
-them with seed20261206. Verify disjoint canonical prompt groups and original
+Before loading new targets for training, select the exact original unrun v8 sample IDs from the existing train/dev
+partitions. Keep the superseded expanded sample/CSV intact; seal separate
+active pilot IDs and CSV, using seed20261206 for training. Verify disjoint canonical prompt groups and original
 data/split hashes. Embed only the selected rows in the offline notebook. Never
 attach confirmation votes or use IDs/model identities as predictive features.
 Both arms receive identical packed arrays; reconstruct token hashes and each
@@ -38,14 +40,14 @@ early development-based stopping, loss-driven schedule choice, or learning-rate
 search is permitted. Preserve all intermediate telemetry and failures.
 
 The primary comparison is raw log loss on the mean of original and aligned
-swapped probabilities, on the same fixed 1024 development rows. Report paired
+swapped probabilities, on the same fixed 512 development rows. Report paired
 prompt-group bootstrap95 intervals (2000 replicates, seed20261207), accuracy,
 balanced accuracy, macro F1, Brier, class behavior, answer-order diagnostics,
 training curves, accepted exposure, memory, and measured time for both arms.
 The fixed grouped temperature cross-fit from v8 is a secondary diagnostic;
 it cannot replace a failed raw comparison or select a different candidate.
 
-Continuation is justified only if both arms finish all128 accepted updates,
+Continuation is justified only if both arms finish all32 accepted updates,
 packing and actual accepted row/token exposure match, both T4 devices and
 finite adapter tensors pass, each device peak allocation stays below95%,
 and raw 8B loss improves over fresh 4B by at least0.005 with group95 lower

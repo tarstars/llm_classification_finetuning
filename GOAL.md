@@ -6,9 +6,10 @@ unachieved: bestH60 .82987,rank23/309 on Nov9 05:42UTC. H76official .83140 was
 negative; preserve docs/GOAL_V30.md and no further weights/T/routes from its
 leaderboard feedback. Select ONLY carriedH02 under docs/SPAN_031_PLAN.md.
 
-Revise the previously unrun v8 pilot explicitly: one freshQwen3-4B versus8B
-comparison,4096training/1024development pairs,128accepted updates each,
-1024-token packing,globalbatch32,NF4/fp16/rank16QLoRA,LR1e-4,warmup16.
+Use the original previously unrun v8 exposure after the pre-GPU timing correction
+in docs/SPAN_031_EXPOSURE_REVISION.md: one freshQwen3-4B versus8B
+comparison,1024training/512development pairs,32accepted updates each,
+1024-token packing,globalbatch32,NF4/fp16/rank16QLoRA,LR1e-4,warmup4.
 One<=5400sprivate/offline2T4notebook version, no retry/othermodel/fulltraining/
 officialsubmission in this span. Preserve the original unrun32-update design.
 FixedIDs retain and extend its samples; verify source/split/prompt-group
@@ -16,7 +17,7 @@ exclusion before target attachment. No confirmation votes. Development has
 been historically inspected, and base pretraining exposure is unknown.
 
 Same packed inputs and actual accepted row multiset/tokens must match;
-nominalcycles<=192 and botharms must finish128accepted updates. Log both
+nominalcycles<=48 and botharms must finish32accepted updates. Log both
 ranks,AMP/scheduler/curves/memory/time/order/classmetrics. Raw paired group95
 loss gain>=.005 with lowerbound>0,finite tensors/bothT4/peak<=95pct and a
 conservative measured25k both-order runtime screen<32400 are required to

@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-09T06:08:46.553466+00:00",
+  "revision": 2,
+  "reason": "Pre-GPU runtime risk in unexecuted 128-update draft; preserve 5400-second allocation",
+  "historical_training_seconds": 5913.4362790000005,
+  "historical_nominal_cycles": 256,
+  "reference_seconds_per_cycle": 23.099360464843752,
+  "projected_4b_128_training_seconds": 2956.7181395000002,
+  "initial_4b_training_window_seconds": 1980,
+  "historical_summary_sha256": "853804b4cf259db0b22eb44c039146924ca8f852b30a2b3f167ec4ed2d40603a",
+  "historical_summary_path": "/home/tarstars/database/llm_classification_finetuning/runs/span_007/jobs/continuation/output/continuation/summary.json",
+  "causal_throughput_benchmark": false,
+  "larger_model_throughput_measured": false,
+  "new_quality_observations": 0,
+  "new_gpu_executions": 0,
+  "superseded_input_preparation_sha256": "a0597d66049eba45ed5e90680be7d18692fa42cb0b9ac347b0c28ed45ee81527",
+  "initial_span_plan_sha256": "0b9873502f75a4e606967d10f5a53e736f73ea7cc10ca0eebde2c2db91bb8a58",
+  "original_deadline_unchanged": true,
+  "quota_anchor_unchanged": true,
+  "quota_start_unchanged": true,
+  "public_cap_unchanged": true
+}

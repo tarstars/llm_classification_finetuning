@@ -19,5 +19,8 @@
   "parent_span": 30,
   "parent_official_receipt": "58143104",
   "parent_best_score": 0.82987,
-  "recipe": "Fresh Qwen3 4B/8B QLoRA, 4096 training pairs, 1024 development pairs, 128 accepted updates each; no official in this span"
+  "recipe": "Fresh Qwen3 4B/8B QLoRA, 1024 training pairs, 512 development pairs, 32 accepted updates each; no official in this span",
+  "initial_recipe": "Fresh Qwen3 4B/8B QLoRA, 4096 training pairs, 1024 development pairs, 128 accepted updates each; no official in this span",
+  "protocol_revision": 2,
+  "initial_span_plan_sha256": "0b9873502f75a4e606967d10f5a53e736f73ea7cc10ca0eebde2c2db91bb8a58"
 }
