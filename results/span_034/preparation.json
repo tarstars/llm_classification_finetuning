@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-09T09:04:17.285139+00:00",
+  "task": "H78",
+  "rows": 1024,
+  "targets_loaded": false,
+  "old_service_status": "ERROR",
+  "old_source_controls_verified": true,
+  "complete_current_H60": false,
+  "artifacts": {
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_016/cohort_matched/selection.json": "f7a5912e5cac8efd011a732509e151a5ef352b603fc6bfe6296f8bc6009d4666",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_016/cohort_matched/source.parquet": "433046c49aaee5dfed471d6b6a230282cdef6176f2d2e6cc0858a1e4d382a319",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_016/cohort_matched/labels.npz": "847086c0e02b8a0502e8ac263ac86ae9e38464a5e203caeeda17eb3495c7b2c7",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_016/cohort_matched/mapping.parquet": "72bdde7ce427120305d5268429caa6848b9437880ba229ccca9780a41ba9b074",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_016/jobs/reward_pilot/output/reward_experiment/m0_long.npz": "5ee96960305822c9a4bcb1b4138d9531a28750a3ff06da61df025b6aff1d795b",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_016/jobs/reward_pilot/output/reward_experiment/m3_long.npz": "009df3046863cb319f5d23fcc64f6e3639a85fa75b05ec69d77ac970f0025ecf",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_016/jobs/reward_pilot/output/reward_experiment/reward_0.6B_long.npz": "c1a57e2cb49795e96aae8932d71eb4d57c7112851387f0d52c1ee9ae966da079"
+  },
+  "inputs_sha256": "8d7ca14e6ec797b9c3869535bf82bec6459d79ad8090524b63b3c0a18bb865a1",
+  "source_sha256": {
+    "GOAL.md": "40df6c06c4b0d118b93d8dac7582e6658e9246aa0facdc565154cf59e384678c",
+    "docs/SPAN_034_PLAN.md": "38ae8d588060a1d8366e8ead8509603506afcc836a34bf682266cd980fc86f60",
+    "configs/span_034.json": "46e977a014d69cf6f016b70db5f2518f49773d9ea97528f14d15e7fa5bda2c4a",
+    "src/arena/span034_residual.py": "5ebfa54397f4a8de49923fb199900b29f59390bc73081e98deb3f0be3398f203",
+    "scripts/prepare_span_034_residual.py": "e3bdd03afd246795ca0b1fcdf14f10a78fdc2d5100538cb13754fe4cfa70e303",
+    "scripts/analyze_span_034_residual.py": "0b53f1e9b4981c2285e8875e043c8a8726322e798f23da19b058bdac138d3ede",
+    "tests/test_span034_residual.py": "72ea1c4dfd84b5e309b85413db85f393ffaf468643bea225887d52d63d3b7cc7",
+    "src/arena/span_heads.py": "51804cf906c433e0c0609f989020a5750130d6f5c91c79130a617aca4c32b8dc",
+    "src/arena/span011_calibration.py": "7d4f6d55237da9e1250e8a9457b6f01324daf0190fa0f16fc6290c02695c030c"
+  },
+  "elapsed_seconds": 0.12001693015918136,
+  "peak_rss_gib": 0.9912452697753906
+}

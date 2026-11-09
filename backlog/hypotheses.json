@@ -7559,7 +7559,7 @@
       ],
       "id": "H78",
       "rank": 97,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 34,
       "discovered_during": 33,
       "derived_from": [
@@ -7572,6 +7572,14 @@
           "note": "Frozen actorgrammar coverage24/27 is inadequate; stop lexical branch without anotherregex. Queue a different single learned0.6Breward offset using alreadycomplete matched1024arrays and measured100.35s inference; complementarity unmeasured, no v33fit or transfer claim.",
           "evidence": [
             "docs/SPAN_033_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T09:01:17+00:00",
+          "status": "running",
+          "note": "V34 preparing one cheap0.6Breward conditional scalar residual on complete1024matched source rows. CPUonly, fixed baselineT1/tie channel, grouped nested5/3lambda[.01,.1,1], nonnegativealpha[0,10], usefulgain>=.001/group95lower>0. PreserveERROR/missingH60reverse/unknownreward exposure; no newtargetload until method/inputmanifest published.",
+          "evidence": [
+            "docs/SPAN_034_PLAN.md"
           ]
         }
       ]
@@ -10117,8 +10125,18 @@
         "H73",
         "H78"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H78"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T09:01:17+00:00",
+          "note": "V34CPUonly: one nonnegative0.6Breward difference offset on conditional A/B odds of the complete1024-row strong twoexpertT1baseline, tie channel fixed. Fold-local RMS/nestedgroup5outer3inner lambda[.01,.1,1]; matched allrows, no imputed reverse/subset/size search. Positive paired information before any later currentH60transfer/qualification.",
+          "focus_ids": [
+            "H78"
+          ]
+        }
+      ],
       "carried_from": 33,
       "start_sha256": "201acc180e200f8e796c04402a9d6e62ad3b95e1e6b86ef92abe7caa03937388",
       "start_markdown_sha256": "1d8dd111784c0d35d5bbe906e2755d04c05f722dc37555546ce2c722ebaf294b",

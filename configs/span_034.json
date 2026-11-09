@@ -1,0 +1,17 @@
+{
+  "span": 34,
+  "seed": 20261212,
+  "bootstrap_seed": 20261213,
+  "lambda_grid": [0.01, 0.1, 1.0],
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "bootstrap_group_replicates": 2000,
+  "advancement_min_gain": 0.001,
+  "coefficient_bounds": [0.0, 10.0],
+  "preparation_seconds_cap": 300,
+  "analysis_seconds_cap": 1200,
+  "rss_guard_gib": 6,
+  "gpu_session_seconds_cap": 0,
+  "maximum_official_submissions": 0,
+  "deadline": "2026-11-10T08:37:37.343197+00:00"
+}
