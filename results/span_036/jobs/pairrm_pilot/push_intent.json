@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-09T13:01:50.567447+00:00",
+  "kernel": "arseniytrushin/llm-preference-span036-pairrm-pilot",
+  "quota_before": {
+    "used_seconds": 37989.734,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 70010.266
+  },
+  "max_session_seconds": 2700,
+  "notebook_sha256": "fc85d633c4d68a1abebbc9cf4570bfef1620cda5fc598a63c107aba6a399f493",
+  "metadata_sha256": "501211637aa20818f82dc0f0dcd55be51203af35f1a595f0168b53c37f99026b"
+}

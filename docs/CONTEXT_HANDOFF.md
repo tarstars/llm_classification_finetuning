@@ -1,6 +1,6 @@
 # V35 closed; v36 joint-comparator audit next
 
-Snapshot 2026-11-09T12:36UTC. Read PROJECT_POLICY.md; verify live service state.
+Snapshot 2026-11-09T13:03UTC. Read PROJECT_POLICY.md; verify live service state.
 Persistent goal is team17244411rank<=19after legitimate inference on a fresh
 complete official board. ACTIVE/unachieved. Latest12:26UTCboard23/309,best.82987,
 rank19/20.82915,leader.82674. Be economical; no subagents without authorization.
@@ -26,6 +26,19 @@ passed, memory69.91/58.26percent. Latestfullownedcatalog76allterminal;
 0reserved/paidFalse, originalNov14anchor. Preserve32400freeforqualifiedofficial.
 Original absolute deadline2026-11-10T08:37:37.343197UTCneverresets.
 
+V36 LIVE HANDLE: controller28093,PID4028073,exact acceptedONCE
+arseniytrushin/llm-preference-span036-pairrm-pilot/1,accepted13:01:50UTC.
+LatestserviceQUEUED; no restart/repush/secondpilot. Sourceverifier80645TERMINALexit0
+at13:02:30UTC:exactcells/private/offline/T4/image/privateassetv1PASS. NotebookSHA
+fc85d633c4d68a1abebbc9cf4570bfef1620cda5fc598a63c107aba6a399f493.
+Method/bundle publishedd61e30cBEFOREacceptance. Do not edit bundledsources/
+GOAL/PLAN/config. Newqualitystillunmeasured. NextpollSAME28093; after actual
+COMPLETE/retrieval, runanalyze_span_036_pairrm.py ONCE. It checksallguardsfirst.
+A sourcegain is not incumbent gain; no official follows automatically. Fresh
+admission covered77ownednotebooks with0nonterminal and8terminalofficials,
+quotaUNCHANGED37989.734used/70010.266free/0reserved/paidFalse. Public2700s
+informationcap,5400stotal,32400freeofficialreserve; originaldeadlineunchanged.
+
 Backlog v36focus[H79] RUNNING;35carried+newH79=36active,98registered,
 142immutable snapshots. Sourcegate passed: PairRM5b880cc73776ac75a835b3e0bd5169bcb5be013b,
 code33204d2712944b6b17996f7c079e74cd963ccc7c, baseconfig64a8c8eab3e352a784c658aef62be1662607476f.
@@ -45,8 +58,7 @@ freshHFpublic/CCBY4proof resolvedreview, no workaround. Evidence
 results/span_036/upload_public_source_proof.json. Realserializedtwoprocess/final/
 failure/watchdog/Jupyterrehearsals pass with explicitfakeCPUforwards; phase/row
 progress enabled. Finalbuildersealed19370bytepayload. Bundle
-results/span_036/pairrm_pilot_bundle.json. NoacceptedGPUyet: publishexactprograms
-andbundle, then run_span_036_pilot.py once withfreshadmission and verifyexactsource. Never send
+results/span_036/pairrm_pilot_bundle.json. GPUaccepted/sourceverifiedasabove; do not rerun completedadmission/sourceverification. Never send
 competitiontext online; public pinned local/offline weights are authorized.
 
 

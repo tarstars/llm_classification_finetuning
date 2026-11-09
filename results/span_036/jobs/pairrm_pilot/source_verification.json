@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-09T13:02:30.593047+00:00",
+  "passed": true,
+  "kernel_version": "arseniytrushin/llm-preference-span036-pairrm-pilot/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "private": true,
+  "gpu_enabled": true,
+  "image_pin_exact": true,
+  "dependencies": [
+    {
+      "source": "arseniytrushin/llm-span036-pairrm-inputs/1",
+      "current_version": 1,
+      "private": true
+    }
+  ],
+  "notebook_sha256": "fc85d633c4d68a1abebbc9cf4570bfef1620cda5fc598a63c107aba6a399f493",
+  "metadata_sha256": "501211637aa20818f82dc0f0dcd55be51203af35f1a595f0168b53c37f99026b",
+  "source_sha256": "43496dbd1c45a40f9e2ac890264bdb465980d6b262cff17a02136208d037af89"
+}

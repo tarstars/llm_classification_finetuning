@@ -7719,6 +7719,14 @@
           "evidence": [
             "results/span_036/pairrm_pilot_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-09T13:04:17+00:00",
+          "status": "running",
+          "note": "Published d61e30c before ONE accepted offline two-T4 pairrm-pilot/1 at13:01:50UTC. Exact accepted cells/settings/image/private v1dependency source verification passed13:02:30UTC. Controller28093/PID4028073 LIVE, serviceQUEUED; fresh complete77owned catalog and8officials terminal, quota70010.266sfree unchanged. Follow same version; no new quality or official, no restart.",
+          "evidence": [
+            "results/span_036/jobs/pairrm_pilot/source_verification.json"
+          ]
         }
       ]
     }
