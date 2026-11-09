@@ -1,7 +1,9 @@
 {
-  "at": "2026-11-09T09:58:18.680252+00:00",
+  "at": "2026-11-09T12:04:57.136310+00:00",
   "stage": "recent_pilot",
-  "event": "remote_status",
-  "status": "QUEUED",
-  "kernel_version": "arseniytrushin/llm-preference-span035-recent-pilot/1"
+  "event": "complete",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span035-recent-pilot/1",
+  "charged_seconds": 1338.6699999999983,
+  "files": 14
 }

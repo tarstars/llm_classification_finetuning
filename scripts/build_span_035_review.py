@@ -54,12 +54,23 @@ else:
   print('Changed-group gain:',r['conditional_changed_group_gain'])
   print('Fixed-prevalence population information:',r['population_information_gain'])
   print('The interval is conditional on affected prompt groups, not unconditional population sampling.')
+  classes=[]
+  for name in ['baseline','candidate']:
+   for i,label in enumerate(['A','B','tie']):classes.append(dict(model=name,label=label,loss=r[name+'_metrics']['class_loss'][i],recall=r[name+'_metrics']['class_recall'][i]))
+  display(pd.DataFrame(classes))
   print('Full incumbent-H60 gain established:',r['incumbent_full_gain_established'])
   print('GPU charge/recent inference seconds/memory fractions:',r['charged_gpu_seconds'],r['recent_inference_seconds'],r['peak_memory_fractions'])
- print('Official submission eligible from information pilot:',r['official_submission_eligible'])''')])
+ print('Official submission eligible from information pilot:',r['official_submission_eligible'])
+for name in ['resource_close.json','final_leaderboard.json']:
+ path=PUB/name
+ if path.exists():print(name,json.loads(path.read_text()))''')])
     nb.metadata['kernelspec'] = dict(name='python3', display_name='Python 3', language='python')
     nb = NotebookClient(nb, timeout=120, kernel_name='python3', resources={'metadata': {'path': str(REPO)}}).execute()
     assert all(c.execution_count is not None and not any(o.output_type == 'error' for o in c.get('outputs', [])) for c in nb.cells if c.cell_type == 'code')
+    import hashlib
+    for name in ['H27_results','resource_close']:
+        p=REPO/'results/span_035'/(name+'.json')
+        if p.exists():nb.metadata['span035_'+name+'_sha256']=hashlib.sha256(p.read_bytes()).hexdigest()
     path = REPO / 'notebooks/47_recent_turn_retention.ipynb'
     nbf.write(nb, path); print(path)
 

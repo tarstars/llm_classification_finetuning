@@ -1,0 +1,23 @@
+{
+  "files": 14,
+  "artifact_sha256": {
+    "controls/m0.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "hardware.json": "deb7ecf682fd0b90a71bafd976c4263346882b1c7395313aec5af1429b0ca453",
+    "pilot_spec.json": "ca02ff2876305e4445b9a0af7a66f3324df1b6fe55be0713a91064187d161c17",
+    "recent_audit/m0_checkpoint.json": "053699c6ab61a2a2cbbecd2bf3a40955f6e4a0a3f2abed5f50e27ed7e027e1a8",
+    "recent_audit/m0_checks.json": "7ed1b95965d8a9a20f002a38d991ca72ea67f88878418ab4b24c4fbb45c9d150",
+    "recent_audit/m0_control.npz": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+    "recent_audit/m0_recent.npz": "abb3bbfac79ad7eb609bfdf8a1f3da18f83bd33a37573a3edbb49257fd972da7",
+    "recent_audit/m0_recent_warmup.npz": "6757ceab1665473e35924dcba88c8b41f029de183722b5dbfd6a3991e9b36118",
+    "recent_audit/m0_summary.json": "abd69654d3a772ade63c9bf9c9eecb912406529c0e9e8275efb6e54ae5914318",
+    "recent_audit/m0_warmup.npz": "b2ab0390fb760214ed1d2c638d48ec3ac7fb09e0b03114219abea0f74dc6d720",
+    "recent_audit/pilot_complete.json": "2c30663142f306cdc46fa1e6de4d9c91821a6efa6e8094b1733b0378f3cebaee",
+    "recent_audit/runtime_spec.json": "1c86ab8b1477da54867453301ff124affa4f7559bf06a0c7244e940b0a0d30c0",
+    "session_summary.json": "15684d5e5e35ce7312ad6f42d92af418f9b3a9011bf27eeaffdec6cb766716cd",
+    "worker_console.log": "f1ae0d91c986955353955f8b43e5a3cb6709bac05ca34dd0f59cabc87971b557"
+  },
+  "final_checkpoint": -1,
+  "new_gpu_executions": 0,
+  "signed_urls_persisted": false,
+  "retrieved_at": "2026-11-09T12:04:57.101921+00:00"
+}

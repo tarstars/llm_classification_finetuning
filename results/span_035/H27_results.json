@@ -1,0 +1,306 @@
+{
+  "task": "H27",
+  "service_status": "COMPLETE",
+  "complete": true,
+  "quality_measured": true,
+  "charged_gpu_seconds": 1338.6699999999983,
+  "official_submission_eligible": false,
+  "new_official_submissions": 0,
+  "at": "2026-11-09T12:06:05.962885+00:00",
+  "rows": 312,
+  "baseline_metrics": {
+    "rows": 312,
+    "log_loss": 0.874040467653684,
+    "accuracy": 0.6121794871794872,
+    "macro_f1": 0.5883530666583824,
+    "brier": 0.5130005842583768,
+    "class_counts": [
+      114,
+      104,
+      94
+    ],
+    "class_loss": [
+      0.7988021524157843,
+      0.7561601750372694,
+      1.0957076843475957
+    ],
+    "class_recall": [
+      0.7105263157894737,
+      0.7596153846153846,
+      0.32978723404255317
+    ],
+    "tie_precision": 0.6458333333333334,
+    "mean_predictive_entropy": 0.9695452190788892,
+    "mean_class_probability": [
+      0.3576761637986698,
+      0.3559128672295926,
+      0.2864109689717376
+    ],
+    "predicted_class_fraction": [
+      0.42948717948717946,
+      0.4166666666666667,
+      0.15384615384615385
+    ],
+    "tie_auc": 0.7387761077493656,
+    "confusion_matrix": [
+      [
+        81,
+        25,
+        8
+      ],
+      [
+        16,
+        79,
+        9
+      ],
+      [
+        37,
+        26,
+        31
+      ]
+    ]
+  },
+  "candidate_metrics": {
+    "rows": 312,
+    "log_loss": 0.862473103397592,
+    "accuracy": 0.6474358974358975,
+    "macro_f1": 0.6270647653000595,
+    "brier": 0.5036802873502058,
+    "class_counts": [
+      114,
+      104,
+      94
+    ],
+    "class_loss": [
+      0.8189462488929398,
+      0.7390571589410408,
+      1.0518062910253754
+    ],
+    "class_recall": [
+      0.7192982456140351,
+      0.8076923076923077,
+      0.3829787234042553
+    ],
+    "tie_precision": 0.6101694915254238,
+    "mean_predictive_entropy": 0.970654178562086,
+    "mean_class_probability": [
+      0.3507198353618232,
+      0.3512140767176966,
+      0.2980660879204802
+    ],
+    "predicted_class_fraction": [
+      0.40384615384615385,
+      0.40705128205128205,
+      0.1891025641025641
+    ],
+    "tie_auc": 0.7455592426312708,
+    "confusion_matrix": [
+      [
+        82,
+        17,
+        15
+      ],
+      [
+        12,
+        84,
+        8
+      ],
+      [
+        32,
+        26,
+        36
+      ]
+    ]
+  },
+  "prior_metrics": {
+    "rows": 312,
+    "log_loss": 1.0961072710497068,
+    "accuracy": 0.36538461538461536,
+    "macro_f1": 0.1784037558685446,
+    "brier": 0.6650116921234125,
+    "class_counts": [
+      114,
+      104,
+      94
+    ],
+    "class_loss": [
+      1.0524818039499908,
+      1.0731906478665219,
+      1.174369314245652
+    ],
+    "class_recall": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "tie_precision": 0.0,
+    "mean_predictive_entropy": 1.0972274095648864,
+    "mean_class_probability": [
+      0.349070349026859,
+      0.3419158421224322,
+      0.3090138088507113
+    ],
+    "predicted_class_fraction": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "tie_auc": 0.5,
+    "confusion_matrix": [
+      [
+        114,
+        0,
+        0
+      ],
+      [
+        104,
+        0,
+        0
+      ],
+      [
+        94,
+        0,
+        0
+      ]
+    ]
+  },
+  "hard_majority_metrics": {
+    "rows": 312,
+    "log_loss": 17.535071092801537,
+    "accuracy": 0.36538461538461536,
+    "macro_f1": 0.1784037558685446,
+    "brier": 1.2692307692269615,
+    "class_counts": [
+      114,
+      104,
+      94
+    ],
+    "class_loss": [
+      1.999955756561757e-12,
+      27.631021115928547,
+      27.63102111592854
+    ],
+    "class_recall": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "tie_precision": 0.0,
+    "mean_predictive_entropy": 5.726222003291326e-11,
+    "mean_class_probability": [
+      0.999999999998005,
+      9.999999999979983e-13,
+      9.999999999979983e-13
+    ],
+    "predicted_class_fraction": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "tie_auc": 0.5,
+    "confusion_matrix": [
+      [
+        114,
+        0,
+        0
+      ],
+      [
+        104,
+        0,
+        0
+      ],
+      [
+        94,
+        0,
+        0
+      ]
+    ]
+  },
+  "conditional_changed_group_gain": {
+    "gain": 0.011567364256092245,
+    "interval_95": [
+      -0.009977906671801737,
+      0.034360917588608965
+    ],
+    "groups": 312,
+    "rows": 312,
+    "replicates": 2000
+  },
+  "population_information_gain": {
+    "gain": 6.279064056754494e-05,
+    "interval_95": [
+      -5.416265430697744e-05,
+      0.00018651993471555575
+    ],
+    "fixed_changed_fraction": 0.00542825825982567,
+    "interval_scope": "Conditional affected-prompt resampling at fixed original population prevalence; not unconditional population sampling"
+  },
+  "incumbent_on_changed_metrics": {
+    "rows": 312,
+    "log_loss": 0.8716493351495737,
+    "accuracy": 0.6314102564102564,
+    "macro_f1": 0.6068104241661716,
+    "brier": 0.511455248747088,
+    "class_counts": [
+      114,
+      104,
+      94
+    ],
+    "class_loss": [
+      0.7960260509354838,
+      0.7528230896825518,
+      1.0948300152450683
+    ],
+    "class_recall": [
+      0.7368421052631579,
+      0.7788461538461539,
+      0.3404255319148936
+    ],
+    "tie_precision": 0.6666666666666666,
+    "mean_predictive_entropy": 0.970252747554322,
+    "mean_class_probability": [
+      0.3581761187434815,
+      0.3554122872964116,
+      0.286411593960107
+    ],
+    "predicted_class_fraction": [
+      0.42948717948717946,
+      0.4166666666666667,
+      0.15384615384615385
+    ],
+    "tie_auc": 0.7390689049385125,
+    "confusion_matrix": [
+      [
+        84,
+        23,
+        7
+      ],
+      [
+        14,
+        81,
+        9
+      ],
+      [
+        36,
+        26,
+        32
+      ]
+    ]
+  },
+  "incumbent_full_gain_established": false,
+  "comparison": "Two-pass new-policy versus unchanged two-pass; current H60 mirror is separate",
+  "source_votes_overlap_checkpoint_training": true,
+  "independent_competition_cv": false,
+  "parameters_fitted": false,
+  "qualification_justified": false,
+  "decision": "stop_retention_information_gate",
+  "peak_memory_fractions": [
+    0.6991043558010286,
+    0.5825654661611906
+  ],
+  "recent_inference_seconds": 745.998726226,
+  "source_sha256": "5926513b7fbbc41006734f9a093e3acd43c7f4d1f54fcb1c1d227f994ebc3756",
+  "elapsed_cpu_seconds": 2.4574483989272267,
+  "peak_rss_gib": 0.9912452697753906,
+  "quality_sha256": "c036fa058c781169b6443be8c43674c8f6934137701026c505ed6c311dd646bb"
+}

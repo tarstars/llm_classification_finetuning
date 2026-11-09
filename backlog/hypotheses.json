@@ -1751,7 +1751,7 @@
       "title": "Salient extractive retention",
       "priority": "P2",
       "rank": 28,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.002,
         0.002
@@ -1821,6 +1821,14 @@
           "note": "Frozen4eb440d published beforeONE accepted SaveKernel09:58:18UTC: exactarseniytrushin/llm-preference-span035-recent-pilot/1, controller17546LIVE/QUEUED, freshfulladmission/all8officialsterminal. Source77036exit0 at09:59 verifies exactcells/private/offline/image/GPU and fourpublicdatasets uniquelyv1. NotebookSHAaff55734...; no qualityyet. Observe samehandle, no retry or bundledsource change.",
           "evidence": [
             "results/span_035/jobs/recent_pilot/source_verification.json"
+          ]
+        },
+        {
+          "at": "2026-11-09T12:28:51+00:00",
+          "status": "done",
+          "note": "One source-verified native-control-exact pilot COMPLETE:312changed rows, loss .874040 to .862473, conditional gain .011567 but fixed prevalence gain .00006279,95percent[-.00005416,.00018652] fails .0015 and positive-lower gate. Charge1338.67s; no qualification or official. Notebook47 executed; terminal resource history recorded.",
+          "evidence": [
+            "docs/SPAN_035_RESULTS.md"
           ]
         }
       ],
@@ -7624,6 +7632,71 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Audit and screen a small joint pairwise comparator for complementary winner information",
+      "priority": "P2",
+      "gain": [
+        -0.003,
+        0.004
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0.5
+      ],
+      "followup_gpu_wall_hours": [
+        0.5,
+        1
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "A pretrained joint bidirectional comparator may add winner information to the strong ensemble beyond independent scalar reward differences.",
+      "basis": "V35 retention affects only312/57477rows and fails the .0015 population information gate. H78 scalar utility residual is negative. Authors describe publicly available PairRM as a .4B joint comparator with 2048context and Arena-inclusive preference training; actual artifact/native semantics and complementarity remain unverified.",
+      "first_test": "Audit pinned public source/weights/native input and score semantics, training exposure, offline dependencies and runtime before downloading weights or launching GPU. If feasible, predeclare one matched broad-cohort pilot and grouped nested residual evaluation, preserving tie probability and swap equivariance. Keep the source audit and quality stages distinct; no online endpoint receives competition text.",
+      "acceptance": "Exact public source/native provenance and feasible measured runtime, then a frozen useful paired group gain with positive lower bound versus unchanged strong baseline. Require separate matched-current-incumbent transfer and full-runtime qualification before an official. Source overlap is not independent competition CV.",
+      "stop": "Stop on unavailable or unclear provenance/native semantics, infeasible runtime, or failed predeclared information gate. No size/family/prompt/grid rescue, target-feedback weight tuning or unqualified official.",
+      "risk_reason": "Short context may lose answer information; Arena exposure and inspected source cohorts bias apparent quality. Binary preferences omit ties. A small comparator may duplicate the strong ensemble or have no useful residual.",
+      "mitigation": "Pin public revisions/files and native path, record overlap/truncation, fit only within prompt-group folds, retain exact zero and tie/swap controls, report baselines/classes/paired intervals and test current-incumbent transfer separately.",
+      "rationale": "Different joint-comparison architecture with broad coverage; a bounded provenance and feasibility prerequisite precedes all new compute. Gain range is subjective and can be negative.",
+      "revision": "New hypothesis for v36 only. Preserve completed H27/H78 and their stops; do not reopen those recipes or infer quality from model-card benchmarks.",
+      "depends_on": [
+        "E00",
+        "H27",
+        "H78"
+      ],
+      "evidence": [
+        "docs/PAIRRM_DISCOVERY.md",
+        "docs/SPAN_035_RESULTS.md",
+        "docs/SPAN_034_RESULTS.md"
+      ],
+      "id": "H79",
+      "rank": 98,
+      "status": "planned",
+      "introduced_in": 36,
+      "discovered_during": 35,
+      "derived_from": [
+        "H27",
+        "H78"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T12:29:15+00:00",
+          "status": "planned",
+          "note": "V35 rare-input gain fails; queue a distinct public joint-comparator source audit and bounded broad-coverage information screen, preserving failed scalar and retention branches.",
+          "evidence": [
+            "docs/PAIRRM_DISCOVERY.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -7674,7 +7747,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 35,
+  "active_version": 36,
   "versions": [
     {
       "number": 1,
@@ -10193,7 +10266,7 @@
     },
     {
       "number": 35,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H05",
         "H06",
@@ -10247,10 +10320,66 @@
       "carried_from": 34,
       "start_sha256": "252e06d798710ea962f32d0033ba09b9ec7dfd9039498a86f17c424c1d85228c",
       "start_markdown_sha256": "844a00982de09fb388e28d6f023fb558b4a9a79c75589ddb560456c24b878e37",
-      "start_sealed_at": "2026-11-09T09:10:19+00:00"
+      "start_sealed_at": "2026-11-09T09:10:19+00:00",
+      "final_sha256": "25d05e33f6fdae692bc9c8640bc24ed4966fe4425d42c363981014d569a187d6",
+      "final_markdown_sha256": "369043ed7015e1a11572410742504f78e65173dc0cdc2962a915fcdc0043e7d5",
+      "final_sealed_at": "2026-11-09T12:29:15+00:00",
+      "closed_at": "2026-11-09T12:29:15+00:00",
+      "closing_note": "H27 completed one1338.67s pilot; rare-slice population gain .00006279 fails the information gate, so no qualification or official. Preserve all historical files; carry35unfinished tasks and activate newH79 joint-comparator audit.",
+      "closing_evidence": [
+        "docs/SPAN_035_RESULTS.md"
+      ]
     },
     {
       "number": 36,
+      "state": "active",
+      "item_ids": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "H79"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 35,
+      "start_sha256": "ef127b1570203e4306973f699489dde80f944938ca13eb177be6134ec880ef6e",
+      "start_markdown_sha256": "1e20bcf10bf1491c21779372012b771444ffe7a13f0a5437ce15aecd282bd920",
+      "start_sealed_at": "2026-11-09T12:29:15+00:00"
+    },
+    {
+      "number": 37,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],
