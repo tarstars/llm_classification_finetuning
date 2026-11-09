@@ -254,6 +254,14 @@
           "evidence": [
             "results/span_031/inventory_source_amendment.json"
           ]
+        },
+        {
+          "at": "2026-11-09T07:27:32+00:00",
+          "status": "running",
+          "note": "Inventoryresolver e806e43 published; freshcomplete75entry admission passed incl knownnorundraft. ONEcompactSaveKernel accepted07:14:42UTC exactarseniytrushin/llm-preference-span031-size-compact/1, controller1748 LIVE/RUNNING07:18. Initialread-only sourceverifier2423 failed because exportdrops kernel/datasetversion suffixes; frozen script preserved. Independent49482exit0 proves exactcells/private/offline/GPU/modelrefs and bothparentlatest=1/privateassetcurrent=1, so strictversionidentitypasses by directevidence. 4Btraining telemetry live; no devquality or8Bfit yet.",
+          "evidence": [
+            "results/span_031/jobs/size_pilot_compact/source_verification.json"
+          ]
         }
       ],
       "introduced_in": 1,

@@ -1,214 +1,148 @@
-# V31 H02 input transport repair; no accepted GPU run
+# V31 H02 pilot RUNNING; source verified
 
-Snapshot 2026-11-09 07:10 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
-current files and live service state before acting. Persistent goal is our own
-team 17244411 at rank <=19 on a fresh complete official leaderboard after
-legitimate inference. ACTIVE, UNACHIEVED, no token budget. Be economical with
-tokens. No subagents unless the user or applicable instructions authorize them.
+Snapshot 2026-11-09 07:40 UTC. Read PROJECT_POLICY.md and GOAL.md;
+verify live state and current files before acting. Persistent goal: own team
+17244411 at rank<=19 on a fresh complete official board after legitimate
+inference. ACTIVE/unachieved, no token budget. User requests economical tokens.
+No subagents without explicit authorization. Do not invent idle experiments.
 
-## Current authoritative outcome
+## Immediate live work
 
-H76 official receipt **58143104** COMPLETE, public score **0.83140**, private
-score blank. Exact source arseniytrushin/llm-preference-span030-llama-prior/1.
-Controller session9665 is TERMINAL exit0; never poll or resubmit it as live.
-The fixed normalized .4Gemma-original+.6alignedLlama-swapped candidate loses
-to historical two-expert50/50 .83053 and H60 .82987. Retain **H60 .82987**,
-receipt58103553, source arseniytrushin/llm-preference-span013-gemma-order/1.
-Fresh complete four-page board Nov9 **05:42:01UTC: 23/309**,19th/20th .82915,
-leader .82674. Target unachieved. No more expert weights, temperature, or route
-choices from H76 leaderboard feedback. V31 now selects carried H02, below.
+Activev31focus[H02],95registered tasks,38carried,122immutable snapshots;
+v32draftempty. H02 compares fresh Qwen3-4B/8B classifiers, sequentially,
+1024train/512dev,32accepted updates each,globalbatch32,max48nominalcycles,
+1024tokens,NF4/fp16/rank16QLoRA/LR1e-4/warmup4. One5400s private/offline2T4
+version, NOofficial/fulltraining/newmodel/numericalretry in this span.
+Frozen contract GOAL.md/docs/SPAN_031_PLAN.md. Data/packing/actual accepted
+rowmultiset/tokens mustmatch; rawgain>=.005 and group95lower>0, finiteweights,
+bothT4/peak<=95pct, conservative25kboth-order runtime<32400 required to justify
+a separately budgeted follow-up. No small-pilot forecast of beating H60.
 
-Independent terminal audit **48766 TERMINAL exit0**, results/span_030/
-outcome_audit.json evidence_validTrue/goal_achievedFalse. It reread the actual
-receipt before a fresh complete board, verified accepted inference source,
-all29 qualification artifacts, one public/one official submission, unchanged
-budgets and quota anchor,118 historical snapshots, user notebooks and link.
-All official receipts terminal; no owned GPU job pending. Actual hidden GPU
-runtime is not exposed. Approx6h27 receipt-to-terminal observation includes
-possible queue/polling. Weekly quota increased only by public1308.076s.
+**Unifiedcontroller1748 CONFIRMEDLIVE/RUNNING**: exact
+**arseniytrushin/llm-preference-span031-size-compact/1**, acceptedONCE
+Nov9 07:14:42UTC; RUNNING07:18. Pub/rootjobs/size_pilot_compact/push.json holds
+receipt. Observe SAME1748/version; never call another SaveKernel or restart
+because a polling/log timeout occurs. No other experiment while this runs.
+Controller performs retrieval on terminal, preserves failed status/artifacts.
 
-V30 H76 DONE/negative through CLI, span SEALED. Exact contract preserved in
-**docs/GOAL_V30.md**. **V31 active,38carried tasks, focus[H02]; v32 draft empty.**
-95registered tasks,122 snapshot files. New GOAL.md describes bounded H02 work
-and preserves original persistent objective/deadline/resources. H73 remains
-deferred. No follow-up hypothesis was queued from the negative weight result.
+Latest observed telemetry07:27UTC:4Barmnominalcycle12, reportedloss1.25610;
+cycle10ledger accepted10/skipped0, rank0accepted160rows/97544tokens,
+peakallocated6.639GB. These are training diagnostics, not development or
+contest estimates.8Bfit/quality unmeasured until its arm finishes. Generic
+controller polls45s and reads SSElogs about120s. Read compactprogress.json
+for useful stats, but only actualwrite_stdin/liveAPI proves a running handle.
 
-Final report docs/SPAN_030_RESULTS.md; final executed Notebook42
-notebooks/42_llama_heavy_prior.ipynb, render **2573 TERMINAL exit0**. It displays
-official comparator table, actual rank, CPU/descriptive/class diagnostics,
-qualification/runtime and actual audited outcome. Metadata links outcome audit
-hash/receipt. Notebook SHA1cca2b920b821a8f454dc1bcd7c4dc6161d8ea1875da36330b14c0e13606cec7.
-Closure audit scripts/audit_span_030_closure.py executedONCE exit0, PASSED,
-results/span_030/closure_audit.json:118old snapshots/userfiles preserved,
-122aftertransition,38carried,actualGOALarchive/notebook/report/outcome hashes.
-Do not rerun/rewrite completed audits or historical snapshots.
+Source verification COMPLETE: originalverifier2423exit1 on kernel_sources
+because pullmetadata strips parent/datasetversion suffixes. No source change.
+Independent **49482TERMINALexit0**: exactcells/private/offline/GPU/modelrefs;
+bothparentlatestversions1 and privateinputcurrentversion1 directlyqueried,
+so omitted suffixes uniquelyresolve torequired1. Source proof saved under
+results/span_031/jobs/size_pilot_compact/source_verification.json. Extra script
+scripts/verify_span_031_export.py and docs/SPAN_031_SOURCE_EXPORT.md preserve
+method and original failure. DO NOT rerun either completed source verifier.
 
-## Next action and limits
+NEXT monitor SAME1748 throughterminal. Onlythen run
+**scripts/audit_span_031_compact.py ONCE** with DB/network escalation as needed,
+not the base size auditor. It verifies all retrieved hashes, frozen sources,
+finite adapters, bothrank exposure/AMP/scheduler/tokens/IDs/packing, hardware,
+rawpaired development quality/secondarytemperatureCV/classes/order/runtime.
+Outputs results/span_031/H02_results.json; per-row analysis stays heavy
+ROOT/runs/span_031/size_comparison.npz. Incomplete/mismatched exposure is
+inconclusive, not a causal negative size result or smaller success. No
+post-result gate/AMP/LR/recipe change. Accepted service failures stay failed.
 
-V31 selects ONLY H02 under docs/SPAN_031_PLAN.md, source preparation RUNNING.
-Fresh selection-only readiness66683 TERMINALexit0: exactQwen3-4B/8Bversion1
-available,8officials terminal,no livejobs,same32965.550used/75034.450free.
-results/span_031/span_plan.json allocates one5400s2T4version/noofficial,
-retaining originaldeadline/anchor/charges and32400free for laterqualification.
-Initial128-update/4096train/1024dev draft0202a9d was stopped BEFOREGPU on
-historical-runtime planning evidence; exactinitialplan/goal/inputs preserved.
-Actualprotocolrevision2 restores original1024train/512dev,
-32accepted updates/globalbatch32,48nominalcyclecap,warmup4/LR1e-4,
-sameNF4/fp16/rank16QLoRA/1024packing. Botharmsfresh, sameinputs and actual
-accepted rowmultiset/tokens required; rawgain>=.005 and group95lower>0,
-finiteweights/T4/peak<=95pct and measured25k runtime screen<32400 needed for
-separately budgeted follow-up. No shortpilot official forecast or H60winclaim.
-No newGPU/model load/quality yet. Existing unrun v8 source must remain frozen.
-Expandedpreparation90034 TERMINALexit0,3.655CPU s:4096/1024rows, promptgroups
-3985/987 disjoint,originalraw/cache/labels match,122snapshots/userfiles/link
-preserved. results/span_031/preparation.json is SUPERSEDED input preparation,
-not actual32-update inputs or a training result. Neverrerun/overwrite it.
-CPUbudgetscreen uses old4B5913.436s/256cycles ->128cycle reference2956.718s
-> firstarm1980s training window; no causal speed or8Bthroughputclaim.
-See docs/SPAN_031_EXPOSURE_REVISION.md, protocol_revision.json,initial_span_plan.
-Deadline/start/quota/cap unchanged; archivedinitialGOAL/PLAN andGit0202 preserve
-originaldraft. Newworker/session src/arena/span031_size*.py retains proven
-training/control path and adds actualGPUtotalmemory. Newbuilder/controller/
-auditor/sourceverifier are frozen under77d5bc6; newCPUTrainer20596
-TERMINALexit0,PASS(.110s). Activeprepare11935TERMINALexit0: pilot_ids exactly
-original1024/512IDs, compressedCSV1.563MB; old expandedinputs preserved.
-Builder29536TERMINALexit0: actualserializedstaging/imports/realCPUTrainer/
-finalbookkeeping/failure/watchdog/Jupyter allPASS. Newsize_pilot_bundle.json
-andcell_rehearsals.json freeze actualnotebook/source/settings. DO NOT rerun
-preparers/builder after this accepted build; noGPU/model load/quality yet.
-Embedded buildpublished d0142c9. First controller82267 TERMINALexit1 on
-SaveKernelHTTP400 at06:23:58UTC. NOacceptedpush.json or GPU execution.
-Read-onlyreconciliation56441exit0: originalref404/noownedmatch/quotaunchanged
-32965.55used,reserved0. results/span_031/save_reconciliation.json. DoNOTrerun
-oldcontroller or deleteintent; oldcontroller_state pushing is stale, notlive.
-SDKsource2179346bytes; reportedKaggle1MBsource limit is plausiblecause,
-actual400body notretained. New docs/SPAN_031_TRANSPORT.md and compact paths
-preserve same MLrecipe/datahashes/5400totalcap/deadline/atmost1acceptedversion.
-OriginalGOALhash preserved in docs/SPAN_031_EMBEDDED_GOAL.md. No source-retry
-for an accepted/uncertainjob: compactadmission must freshlyprove oldmissing
-and zeroGPucharge before its ONE save; furthererrors are captured, not retried.
-Privateasset upload7318 TERMINALexit0 acceptedONCE, verify16440exit0 confirms
-arseniytrushin/llm-span031-size-inputs/1 private/version1/ready at06:40UTC.
-Onlysame frozen1536rows as pilot_rows.gzipbin, SHA929741bb...; no confirmation
-orhiddenvotes. Assetmanifest/response/ready recorded underresults/span_031;
-ROOT/runs/span_031/input_asset preserves uploadintent/response, NEVERreupload.
-Compactbuilder21126 TERMINALexit0: realstaging/CPUTrainer/final/failure/
-watchdog/JupyterPASS. ActualSDKsource95916bytes (file96537) <900000 versus
-old2179346; source_size_gate.json passes with exactinputSHA unchanged.
-New compactbundle/rehearsals freeze actualsource/privateasset. DO NOT rerun
-builder orassetverify afterthisfreeze (readyfilehash inbundle). Reviewer
-build_span_031_review.py updatedcompactstatus/baselines; initialNotebook43
-preview56527TERMINALexit0, not a GPUqualityresult.
-Actualcompactbuild/asset evidence published5e8b855. Compactcontroller47887
-TERMINALexit1 in readonlyinventory beforeANYcompactintent/save: primaryprofile
-hasone ref-less[Private Notebook]2010stub. Same explicitownerfilter didnotfix.
-AlternateofficialSDK YourWorkcatalog returns75canonicalownedrefs, preserves
-all74profilevalidrefs and uniquelyrecovers originalrejectedsize-pilot Notebook.
-Runstatus404(no runs); private draftsource403(unneeded,do nottryagain). The
-oldkernel_existsFalse inference was too broad: draftobjectexists,no run/charge.
-identity recovery90041TERMINALexit0, inventory_identity_recovery.json includes
-zeroreservation/unchangedquota32965.55 at07:02UTC. StillNOacceptedGPUversion.
-Scoped src/arena/span031_inventory.py resolves thatentry withoutdroppingit,
-checkscomplete75/75coverage/owner/cursors/knownstub and directnorun404 before
-lettingexistinginventoryobserveeveryotherjob. Unknowncases refuseadmission.
-4focused resolverboundarytestsPASS(.001s). Sharedspan004_support unchanged.
-Currentrun_span_031_compact.py adds scopedinventoryadapter and corrects
-'kernelmissing' to 'no run'. Oldcompactbundle is preserved as
-size_pilot_compact_bundle.before_inventory_fix.json. AmendmentexecutedONCE,
-inventory_source_amendment.json: onlyadmission-source/docs changed; actualGPU
-NotebookSHA96d9bb.../metadata/data/model/config/rules/cap remainEXACTunchanged.
-DO NOT rerunamender,builder,preparers,assetupload/verify afterfreeze.
-NEXTpublishamendedcontroller/helper/tests/bundle proof, then resume SAME
-run_span_031_compact.py. This is a readonlypreflightretry: no compactintent
-exists, no SaveKernel wascalled by47887. Freshcompleteinventory/dependencies/
-oldrejectedrun404/zerocharge precedeitsONEcompactsave. Observeactualnewunified
-handle/acceptedpush; verifywith verify_span_031_compact_source.py ONCE. NoGPUyet.
-Use audit_span_031_compact.py ONCE afterterminalretrieval, neveroldbaseauditor.
-Need finalreport/executedNotebook43/CLIclosure/preservation/commitpush before
-v31seal; onlyactualownrank<=19 cancompletepersistentgoal (noofficialhere).
-Oldv8runcontroller must not be reused because its budgets/focus are closed.
-Do not call the goal complete for span closure,
-engineering, or local gains. No current external blocker; do not mark blocked
-merely because prior experiments failed or research is difficult.
+Reviewrenderer scripts/build_span_031_review.py, executed
+notebooks/43_fresh_size_pilot.ipynb (latest53627TERMINALexit0) shows actual
+status/source/telemetry; no auditedqualityyet. Rerender after audit with actual
+results, both trainingcurves/classes/order/cost and training-only prior/hard
+majority baselines (hardprobabilityclip1e-12). Then resultreport, CLIclosure,
+actualresourceclose/freshcompleteboard/preservation/goalarchive/commitpush,
+carryunfinished/versionadvance. No closure/audit/report of outcomes existsyet.
+Only actualownrank<=19 plus required deliverables completes persistentgoal.
 
-Read carried tasks and actual evidence. **H02 larger-model pilot** was prepared
-but never run: docs/SPAN_008_H02.md, results/span_008/size_pilot_bundle.json.
-Pinned Qwen3-8B exact transformer version1, fixed1024train/512dev, two sequential
-fresh4B/8B arms,32accepted updates/globalbatch32, one5400sreserve. It was deferred
-because H51 consumed the mutually exclusive v8 reserve. Actual8B memory,
-throughput and learning unmeasured; old readiness is NOT fresh admission.
-The v31pilot is an explicitly revised first execution, not a v8retry or budget
-reset. Actual8B memory/throughput/quality remain unmeasured until it runs.
+## Frozen source, input and admission history
 
-H17 audited/purged synthetic public data54,926provisional pairs, but no human tie
-targets/mixed training. H15 deferred: exact source audit shows original-vote
-training exposure; no independently proven teacher advantage. H44 fixed20pct
-judge route remains infeasible; H53 wider temperature ceiling concerns a much
-weaker historical cascade. These are possibilities to reassess, not selected work.
+Currentcompactbundle results/span_031/size_pilot_compact_bundle.json has
+inventory_admission_revision1. GPU NotebookSHA
+96d9bbd9cc92ca07352fd4b2a3e4d70009016546946ddf91acf0d4d3a8815e78,
+metadataSHA49e2fa7fe41900cc88219aa25b63d1f52a65a8ce9b4abbb28928a8407e731c22.
+DoNOTedit any bundledsource/config/GOAL/PLAN while job runs. Handoff/review/new
+reports are outside bundle. Shared span004_support remainsunchanged.
+Method/build published beforeacceptedGPU:0202a9d initialdesign,
+77d5bc6 corrected32source,d0142c9 embeddedbuild,f1ffc0d transport,
+5e8b855 compactactualbuild,e806e43 inventoryadmissionfix. Allpushed.
 
-**Original absolute deadline:2026-11-10T08:37:37.343197UTC**. Keep original
-November14 quota anchor and all charges. Latest quota32965.550used/
-75034.450free seconds, reserved0,paidFalse. These observations do NOT allocate
-new compute. Fresh full owned-job inventory/quota/model availability, actual
-memory/throughput and end-to-end submission cap must pass before new GPU.
-No external text-service authorization beyond the earlier Eliza embeddings.
-No ambiguous mutation retry: observe SAME handle/version/receipt after timeout.
+Privateasset **arseniytrushin/llm-span031-size-inputs/1** uploadedONCE7318exit0,
+verifiedprivate/version1/ready16440exit0. Same compressed selectedCSV SHA
+929741bb0ef8bfeb620b9d4116ea459de96eb7e7b74d652a94e5e21d4a5aef2c.
+Binarysuffix pilot_rows.gzipbin prevents automaticextraction. Contains only
+1024train/512dev originalrows/votes, no confirmation/hiddenvotes/identities/
+predictions. Originalcompetitionterms/privateonly. Raw/cache/group integrity
+and122snapshots/userfiles/link verified. Activepreparer11935exit0 seals exact
+oldunrun v8sampleIDs. Neverrerun preparers, builders, assetupload or overwrite
+frozen readyfile. Reviewmetadata is not GPU numerical qualification.
 
-## H76 preserved evidence and limits
+Initial128-update/4096train/1024dev draft0202a9d was stoppedBEFOREGPU on
+historicaltiming screen, not on newquality. Initial4B128projection2956.718s
+exceeds firstarm1980s trainingwindow. No causalnode/8Bspeedclaim. Exactinitial
+PLAN/GOAL, initialspanplan and expandedinputpreparation90034exit0/3.655s
+remainpreserved. Actualprotocolrevision2 restores original32/1024/512/48/4
+withoutresettingstart/quota/deadline/cap. Do not claim128updates executed.
 
-One fixed40/60candidate, native4kinputs/original8192microgroups/batch80,
-CPUproducer/FIFOqueue2/zero workers/fp16/kernels/sharding,T1,no reverse/route.
-CPU method c0b01e6 preceded probabilities. Replay11860exit0,1.7475s/300:
-uniform H60 .6529882483 -> .6453783692, gain+.007609879,
-pairedgroup95[.005310860,.009989657]; weightgainvs50/50+.008863732.
-These are original-training-overlapping, previously inspected cohorts,
-sequentially selected after failed60/40. No independent CV/hidden forecast.
-Official regression demonstrates local gain failed to transfer; it does not
-identify training exposure or distribution shift as the sole cause.
+Originalembeddedcontroller82267exit1 SaveKernelHTTP400 at06:23:58; original
+intent/source/admission preserved. SDKsource2179346bytes; reported1MBlimit
+plausiblecause, originalresponsebodyunknown. Compactsource95916bytes<900000,
+sameML/data and all actualstaging/CPUTrainer/final/failure/watchdog/Jupyter
+checks pass21126exit0. No acceptedGPU/charge from the embedded attempt.
 
-Publicqualification13316/PID1651883 TERMINAL exit0, COMPLETE Nov8 23:05:41UTC,
-1308.076s/3600,29artifacts. Audit51049exit0:10rawcontrols EXACT0, source/
-checkpoints/hostgroups/tokens/positions/mixture/CSV/memory/twoT4 pass. Peak
-.701233/.568409. Conservative projection30766.762s<32400 retains slower E18
-Gemma/Llama rates293.909/213.176, cold293.433,fullwarm105.487,other55.849,
-20pctmargin+600reserve. Actual new uniform242.072/174.864 did not replace
-slower matching rates. Sourcecb73c41; accepted source73d575c; decision/results
-published464850b BEFORE one official. No retry/new source or relaxed tolerance.
+Firstcompactadmission47887exit1 BEFOREcompactintent/mutation because profile
+list had1redacted[Private Notebook]2010stub with nohandle. Completealternate
+YourWorkcatalog75refs preserves74profilevalidrefs and uniquelyrecovers the
+originalrejectednotebook. Run404(no runs), private draftsource403(notneeded,
+do nottryagain). Earlierkernel_existsFalse inference was too broad: draft
+exists, no run. Scoped span031_inventory resolves ratherthan dropsit, verifies
+coverage/owner/cursor/knownstub/norun, then observesall75entries.4boundarytests
+pass. Originalbundle backed up before_inventory_fix; amendment executedONCE,
+onlyadmissioncode/docs changed, numericalNotebook/data/config/metadata EXACT.
+Liveadmissionproof inventory_admission_resolution.json records all75/no drop.
+DoNOTretry originalcontroller, amender or failedoriginalsourceverifier.
 
-## Older stopped branches: do not repeat
+## Resources and incumbent
 
-V29H75fixed60/40:CPU1.411s,uniformgain-.0109067,CI[-.0139164,-.0078688],
-failed fixed-.005grossguard; noGPU/official. docs/SPAN_029_RESULTS.md/Notebook41.
-V28E18original8192CPU-prefetch:all15rawexact0, but3role projection32973.468>
-32400,1738.257spublic,noofficial. Two-role screen motivated H75/H76 only.
-V27H74packing10240 failed strict raw identity despite exact token/host streams:
-Llama control .000352919, Gemma uniform .000491977; no argmax flips is not
-log-loss identity.1107.563s public,no quality/fullruntime/official.
-V26H72context:quality negative and runtime34007.680>32400,7903.763spublic,
-noofficial. Preserve failed bitwise JS audit and explicit roundoff replay;
-raw tolerance was never relaxed. H59temperatureofficial .84797 loses to T1.
-Prior model availability403/401 and stopped routing/runtime failures stay failed.
-Consult archived span reports/GOAL files for exact contracts before reuse.
+Original absolute deadline **2026-11-10T08:37:37.343197UTC**, November14quota
+anchor/allcharges unchanged. V31initialused32965.550/free75034.450s before
+launch, reserved0/paidFalse; currentrunning reservation/use must be freshly
+queried when needed. Cap5400s total, atmostONEacceptedGPUversion acrossall
+transport attempts, noofficial. Preserve32400free allowance for a possible
+later independentlyqualifiedofficial. Neverresetbudget/deadline/weeklyanchor.
 
-## Workspace and tools
+Bestlegitimate H60 **.82987**, receipt58103553,
+arseniytrushin/llm-preference-span013-gemma-order/1. Lastcompleteboard Nov9
+05:42UTC **23/309**,19th/20th.82915,leader.82674. V30H76official58143104
+COMPLETE.83140 loses to H60 and50/50.83053. V30sealed/17bd72apushed, exact
+GOAL_V30 preserved, outcome48766exit0/closureauditpass/Notebook42final.
+Localtraining-overlapping40/60gain+.007610 didnottransfer. DoNOT select more
+expertweights/T/routes from thatleaderboardfeedback. No private score exposed.
 
-Repo /home/tarstars/prj/llm_classification_finetuning, branchmain,
-GitHub tarstars/llm_classification_finetuning. Heavy ROOT=
-/home/tarstars/database/llm_classification_finetuning. Use .venv/bin/python,
-usually PYTHONPATH=src:scripts. Native tokenizer environment when required:
-PYTHONPATH=/tmp/llm_span019_runtime, Transformers4.42.3/tokenizers.19.1;
-modern default tokenization differs. unittest available; pytest absent.
-Network/DB/Jupyter sockets/Git writes require escalation, already authorized.
+Do not repeat earlierstoppedroutes/packing/context/model403/401 failures.
+V29fixed60/40grossguardfailed,noGPU;v28three-role32973>32400 despiteexactraw;
+v27packing10240failedrawidentity;v26contextquality/runtimefailed;H59T1.316
+failedofficial. ArchivedGOAL/spanreports retain exactevidence. No phantomlive
+oldcontrollers, no audit/preparer reruns or historicalsnapshot edits.
 
-Preserve user-dirty notebooks/07_error_poster.ipynb and12_backlog_v1_span.ipynb
-bytewise; hashes in results/span_030/preservation.json. Never stage/reset them.
-~/notebooks/llm_classification_finetuning resolves to this repo's notebooks.
-Never walk HOME,~/prj,Arc/FUSE mounts or troll_farm; scope named directories.
-Git source and MD/aggregate/executed notebooks; heavy files only in ROOT.
+## Workspace
 
-functions.wait ONLY after functions.exec returns Script running with cell ID.
-Unified shell sessions use tools.write_stdin. Poll confirmed live actual handles,
-not state/lock files alone. Keep individual waits under60s and commentary timely.
-A live remote evaluation is a verified wait, not blocked. No speculative idle
-work/repeated tests or commits of unchanged pending state. Update_goal complete
-requires actual ownrank<=19 plus all required reporting/preservation/publication.
+Repo /home/tarstars/prj/llm_classification_finetuning, branchmain, GitHub
+ tarstars/llm_classification_finetuning. ROOT=
+/home/tarstars/database/llm_classification_finetuning. .venv/bin/python,
+usually PYTHONPATH=src:scripts. Nativeoldertokenizer env only when required:
+PYTHONPATH=/tmp/llm_span019_runtime (4.42.3/.19.1); not for current QwenTrainer.
+Network/DB/Jupytersockets/Gitwrites need escalation, already authorized.
+HeavyfilesROOT, source/MD/aggregate/executednotebooksGit. unittest, no pytest.
+Preserve user-dirty notebooks07_error_poster and12_backlog_v1_span bytewise;
+hashes results/span_031/preservation.json. Neverstage/resetthem. Notebooklink
+~/notebooks/llm_classification_finetuning is correct. Neverwalk HOME,~/prj,
+Arc/FUSE or troll_farm; scope named project/artifact/package directories only.
+functions.wait ONLY after exec yields Script runningwith cellID; unifiedshell
+handles use write_stdin. Keep individualwaits<60s/commentarytimely. A specific
+livejob is a verifiedwait, not blocked. Goalremainsactive/unachieved.

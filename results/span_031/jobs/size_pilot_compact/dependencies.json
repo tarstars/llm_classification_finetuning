@@ -1,0 +1,29 @@
+{
+  "observed_at": "2026-11-09T07:14:34.747705+00:00",
+  "parents": [
+    {
+      "source": "arseniytrushin/llm-preference-qwen3-4b-train-002/1",
+      "status": "COMPLETE",
+      "output_files": 54
+    },
+    {
+      "source": "arseniytrushin/llm-preference-span-002-exposure/1",
+      "status": "COMPLETE",
+      "output_files": 82
+    }
+  ],
+  "models": [
+    {
+      "source": "qwen-lm/qwen-3/transformers/4b/1",
+      "available": true,
+      "model_instance_id": 301514,
+      "model_version_id": 363134
+    },
+    {
+      "source": "qwen-lm/qwen-3/transformers/8b/1",
+      "available": true,
+      "model_instance_id": 301517,
+      "model_version_id": 363139
+    }
+  ]
+}

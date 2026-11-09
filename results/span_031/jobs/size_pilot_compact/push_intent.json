@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-09T07:14:42.908820+00:00",
+  "kernel": "arseniytrushin/llm-preference-span031-size-compact",
+  "quota_before": {
+    "used_seconds": 32965.55,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 75034.45
+  },
+  "max_session_seconds": 5400,
+  "notebook_sha256": "96d9bbd9cc92ca07352fd4b2a3e4d70009016546946ddf91acf0d4d3a8815e78",
+  "metadata_sha256": "49e2fa7fe41900cc88219aa25b63d1f52a65a8ce9b4abbb28928a8407e731c22"
+}

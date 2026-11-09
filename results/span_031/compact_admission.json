@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-09T07:14:42.882488+00:00",
+  "admitted": true,
+  "rejected_original_has_no_run": true,
+  "accepted_versions_before": 0,
+  "all_official_terminal": true,
+  "official_receipts": 8,
+  "public_cap_seconds": 5400,
+  "private_asset_ready": true,
+  "official_submissions_allowed": 0,
+  "accepted_updates_per_arm": 32
+}
