@@ -1,0 +1,23 @@
+{
+  "started_at": "2026-11-09T05:57:08.844828+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "initial_quota": {
+    "used_seconds": 32965.55,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 75034.45
+  },
+  "quota_used_at_start": 32965.55,
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "gpu_session_seconds_cap": 5400,
+  "public_version_limit": 1,
+  "official_candidate_limit": 0,
+  "prior_weekly_used_seconds": 32965.55,
+  "inherited_original_deadline": "2026-11-10T08:37:37.343197+00:00",
+  "parent_span": 30,
+  "parent_official_receipt": "58143104",
+  "parent_best_score": 0.82987,
+  "recipe": "Fresh Qwen3 4B/8B QLoRA, 4096 training pairs, 1024 development pairs, 128 accepted updates each; no official in this span"
+}

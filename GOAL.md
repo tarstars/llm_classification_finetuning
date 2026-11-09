@@ -1,28 +1,38 @@
-# Move above 20th place: v31 selection pending
+# Move above 20th place: v31 fresh larger-classifier pilot
 
-The persistent objective is our own team 17244411 at rank 19 or better on a
-fresh complete official leaderboard after legitimate inference. It remains
-active and unachieved: the November 9 05:42 UTC board has us 23rd of 309,
-best score 0.82987. V30 H76 completed at 0.83140 and failed to improve the
-incumbent. Preserve the exact contract in docs/GOAL_V30.md and all negative
-results. Do not select further ensemble weights from its leaderboard feedback.
+The persistent objective remains our own team17244411 at rank<=19 on a fresh
+complete official leaderboard after legitimate inference. It is ACTIVE and
+unachieved: bestH60 .82987,rank23/309 on Nov9 05:42UTC. H76official .83140 was
+negative; preserve docs/GOAL_V30.md and no further weights/T/routes from its
+leaderboard feedback. Select ONLY carriedH02 under docs/SPAN_031_PLAN.md.
 
-V31 carries 38 unfinished tasks; no focus or new execution is selected yet.
-Before further compute, select bounded work using PROJECT_POLICY.md, write
-and publish its concrete contract, and verify fresh model availability, full
-owned-job inventory, quota, time, memory, and submission feasibility. The
-earlier H02 larger-model pilot was prepared but never run; reassess its value
-against the strong current incumbent and the exposed validation limitations.
-No preparer, closed experiment, or accepted submission may be silently retried.
+Revise the previously unrun v8 pilot explicitly: one freshQwen3-4B versus8B
+comparison,4096training/1024development pairs,128accepted updates each,
+1024-token packing,globalbatch32,NF4/fp16/rank16QLoRA,LR1e-4,warmup16.
+One<=5400sprivate/offline2T4notebook version, no retry/othermodel/fulltraining/
+officialsubmission in this span. Preserve the original unrun32-update design.
+FixedIDs retain and extend its samples; verify source/split/prompt-group
+exclusion before target attachment. No confirmation votes. Development has
+been historically inspected, and base pretraining exposure is unknown.
 
-Keep the original November 10 08:37:37.343197 UTC deadline, November 14 quota
-anchor, and all accumulated charges. Latest used/free seconds are
-32965.550/75034.450, with no reservation or paid scaling. These are observations,
-not a fresh resource budget. A successor contract must fit all remaining work.
-No live GPU job or pending official remains after the v30 terminal audit.
+Same packed inputs and actual accepted row multiset/tokens must match;
+nominalcycles<=192 and botharms must finish128accepted updates. Log both
+ranks,AMP/scheduler/curves/memory/time/order/classmetrics. Raw paired group95
+loss gain>=.005 with lowerbound>0,finite tensors/bothT4/peak<=95pct and a
+conservative measured25k both-order runtime screen<32400 are required to
+justify a separately budgeted follow-up. Secondary groupedtemperatureCV
+cannot rescue a failed rawgate. No claim that a short pilot beatsH60 or
+estimates an official score. Incomplete exposure is an incomplete result.
 
-Preserve historical snapshots, archived goals, user notebooks 07 and 12, and
-the notebook link. Keep heavy files under ~/database. Track work through the
-backlog CLI and save executed notebooks, reports, programs, and aggregate
-evidence in Git; commit and push important results. A completed span or a local
-metric gain does not complete the persistent leaderboard objective.
+Freeze/publish source and serialized notebook after actual CPU Trainer,
+imports/fullstaging/finalsuccess-failure/watchdog/Jupyterrehearsals, then fresh
+full owned-job/official/model/parent/quota admission before GPU. Observe SAME
+accepted handle/version after timeouts, never repeat ambiguous mutations.
+
+Inherit original2026-11-10T08:37:37.343197UTCdeadline/Nov14anchor/allcharges.
+Latest32965.550used/75034.450free,reserved0/paidFalse; allocate only5400new
+session-seconds without resetting accounting; preserve32400free for a possible
+later independently qualified official. No liveGPU/official beforeselection.
+Preserve122snapshots/archivedgoals/user07+12notebooks/link. HeavyDB, code/MD/
+aggregate/executedNotebook43Git. CLIhistory,discoveriesv32,unfinishedcarry,
+finalreport andcommitpush. Span closure or localgain does not complete goal.

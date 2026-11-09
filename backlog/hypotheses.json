@@ -151,7 +151,7 @@
       "title": "Larger supervised classifier",
       "priority": "P2",
       "rank": 6,
-      "status": "deferred",
+      "status": "running",
       "gain": [
         -0.015,
         0.035
@@ -205,6 +205,14 @@
           "note": "Exact8Binstance and fixed1024train/512dev32accepted-update pilot prepared and CPU control rehearsed. H51won the fixed priority, so the mutually exclusive5400sreserve funds context confirmation; no8BGPUrun or full training performed.",
           "evidence": [
             "docs/SPAN_008_H02.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T05:57:09+00:00",
+          "status": "running",
+          "note": "V31H02 source/data preparation begins under SPAN_031_PLAN. Own fresh arms exclude dev fitting groups; prior development inspection and unknown pretraining remain disclosed. Selection-only fresh inventory66683exit0: both exactQwen3versions available,8officials terminal,no livejobs,32965.55used/75034.45free. No newmodel loaded or GPU launched.",
+          "evidence": [
+            "docs/SPAN_031_PLAN.md"
           ]
         }
       ],
@@ -9693,8 +9701,18 @@
         "H63",
         "H73"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H02"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T05:57:09+00:00",
+          "note": "Select the never-run larger-model pilot under newSPAN_031_PLAN after H76official regression. Deepen unrun32-update pilot to fixed128updates/4096train/1024dev within one5400s2T4version, no official. Fresh4B8Bpinned availability passes; preserve originaldeadline/anchor/charges and originalv8preparation.",
+          "focus_ids": [
+            "H02"
+          ]
+        }
+      ],
       "carried_from": 30,
       "start_sha256": "5053946fe4de61993360990bf3ed31954600d88f2eaaa23fd3db0fac0f806ef8",
       "start_markdown_sha256": "901f6499501a01468b17e21969ba13a53189dc67af2e7d180104897b5b89eab1",

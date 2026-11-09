@@ -1,0 +1,66 @@
+{
+  "span": 31,
+  "started_at": "2026-11-09T05:57:08.844828+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "seed": 20261206,
+  "bootstrap_seed": 20261207,
+  "gpu_session_seconds_cap": 5400,
+  "hidden_submission_seconds_cap": 25200,
+  "maximum_official_submissions": 0,
+  "job_seconds_caps": {
+    "size_pilot": 5400
+  },
+  "cpu_stage_seconds_caps": {
+    "preparation": 300,
+    "analysis": 600
+  },
+  "numerical_threads": 2,
+  "rss_guard_gib": 6,
+  "development_practical_gain": 0.001,
+  "confirmation_practical_gain": 0.001,
+  "bootstrap_group_replicates": 2000,
+  "outer_group_folds": 5,
+  "inner_group_folds": 3,
+  "calibration_group_folds": 5,
+  "temperature_bounds": [
+    0.5,
+    3.0
+  ],
+  "classifier_temperature_bounds": [
+    0.5,
+    3.0
+  ],
+  "judge_temperature_bounds": [
+    0.5,
+    3.0
+  ],
+  "tie_intercept_bounds": [
+    -1.0,
+    1.0
+  ],
+  "judge_cache_rows": 2048,
+  "judge_profile_rows": 128,
+  "classifier_profile_rows": 128,
+  "raw_identity_limits": {
+    "mean": 0.002,
+    "maximum": 0.03
+  },
+  "repeatability_limits": {
+    "mean": 0.001,
+    "maximum": 0.01
+  },
+  "hidden_rows_assumption": 25000,
+  "runtime_margin": 1.2,
+  "runtime_reserve_seconds": 600,
+  "per_job_seconds_cap": 25200,
+  "size_pilot_accepted_updates": 128,
+  "size_pilot_train_rows": 4096,
+  "size_pilot_dev_rows": 1024,
+  "size_pilot_nominal_cycles_cap": 192,
+  "size_pilot_initial_amp_scale": 128.0,
+  "size_pilot_learning_rate": 0.0001,
+  "size_pilot_warmup_updates": 16,
+  "advancement_min_gain": 0.005,
+  "advancement_group95_lower": 0,
+  "hidden_runtime_screen_cap_seconds": 32400
+}

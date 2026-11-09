@@ -1,4 +1,4 @@
-# V30 closed negative; v31 selection pending
+# V30 closed negative; v31 H02 source preparation
 
 Snapshot 2026-11-09 05:46 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
 current files and live service state before acting. Persistent goal is our own
@@ -16,7 +16,7 @@ to historical two-expert50/50 .83053 and H60 .82987. Retain **H60 .82987**,
 receipt58103553, source arseniytrushin/llm-preference-span013-gemma-order/1.
 Fresh complete four-page board Nov9 **05:42:01UTC: 23/309**,19th/20th .82915,
 leader .82674. Target unachieved. No more expert weights, temperature, or route
-choices from H76 leaderboard feedback. No new model work has been selected.
+choices from H76 leaderboard feedback. V31 now selects carried H02, below.
 
 Independent terminal audit **48766 TERMINAL exit0**, results/span_030/
 outcome_audit.json evidence_validTrue/goal_achievedFalse. It reread the actual
@@ -28,8 +28,8 @@ runtime is not exposed. Approx6h27 receipt-to-terminal observation includes
 possible queue/polling. Weekly quota increased only by public1308.076s.
 
 V30 H76 DONE/negative through CLI, span SEALED. Exact contract preserved in
-**docs/GOAL_V30.md**. **V31 active,38carried tasks, no focus; v32 draft empty.**
-95registered tasks,122 snapshot files. New GOAL.md describes selection pending
+**docs/GOAL_V30.md**. **V31 active,38carried tasks, focus[H02]; v32 draft empty.**
+95registered tasks,122 snapshot files. New GOAL.md describes bounded H02 work
 and preserves original persistent objective/deadline/resources. H73 remains
 deferred. No follow-up hypothesis was queued from the negative weight result.
 
@@ -45,10 +45,25 @@ Do not rerun/rewrite completed audits or historical snapshots.
 
 ## Next action and limits
 
-Select evidence-grounded bounded v31 work before executing it. The persistent
-leaderboard goal authorizes continued work, but a completed span contract does
-not select a successor focus. Use backlog CLI and publish a concrete new
-contract before compute. Do not call the goal complete for span closure,
+V31 selects ONLY H02 under docs/SPAN_031_PLAN.md, source preparation RUNNING.
+Fresh selection-only readiness66683 TERMINALexit0: exactQwen3-4B/8Bversion1
+available,8officials terminal,no livejobs,same32965.550used/75034.450free.
+results/span_031/span_plan.json allocates one5400s2T4version/noofficial,
+retaining originaldeadline/anchor/charges and32400free for laterqualification.
+New design deliberately extends the never-run v8 pilot to4096train/1024dev,
+128accepted updates/globalbatch32,192nominalcyclecap,warmup16/LR1e-4,
+sameNF4/fp16/rank16QLoRA/1024packing. Botharmsfresh, sameinputs and actual
+accepted rowmultiset/tokens required; rawgain>=.005 and group95lower>0,
+finiteweights/T4/peak<=95pct and measured25k runtime screen<32400 needed for
+separately budgeted follow-up. No shortpilot official forecast or H60winclaim.
+No newGPU/model load/quality yet. Existing unrun v8 source must remain frozen.
+New scripts/prepare_span_031_size.py selects IDs before newtargetreads, retains
+and extends oldsamples, verifiesraw/cache/group provenance and122snapshots,
+and writes compressed selectedCSV only underheavyROOT/runs/span_031. Execute
+ONCE onlyafter committing method/source; thenbuild and rehearse actualoffline
+notebook/controller/auditor, freeze/push beforefresh fulladmission and launch.
+Oldv8runcontroller must not be reused because its budgets/focus are closed.
+Do not call the goal complete for span closure,
 engineering, or local gains. No current external blocker; do not mark blocked
 merely because prior experiments failed or research is difficult.
 
@@ -58,8 +73,8 @@ Pinned Qwen3-8B exact transformer version1, fixed1024train/512dev, two sequentia
 fresh4B/8B arms,32accepted updates/globalbatch32, one5400sreserve. It was deferred
 because H51 consumed the mutually exclusive v8 reserve. Actual8B memory,
 throughput and learning unmeasured; old readiness is NOT fresh admission.
-Reassess whether it can improve the much stronger current H60 incumbent before
-spending GPU. Do not silently replay old v8 orchestration or reset its budgets.
+The v31pilot is an explicitly revised first execution, not a v8retry or budget
+reset. Actual8B memory/throughput/quality remain unmeasured until it runs.
 
 H17 audited/purged synthetic public data54,926provisional pairs, but no human tie
 targets/mixed training. H15 deferred: exact source audit shows original-vote
