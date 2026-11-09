@@ -7910,6 +7910,14 @@
           "evidence": [
             "results/span_039/H81_corrected_results.json"
           ]
+        },
+        {
+          "at": "2026-11-09T16:42:26+00:00",
+          "status": "running",
+          "note": "Measured report and executedNotebook51 complete, standaloneplot saved; original/corrected/result-resource hashes verified. Zero GPU/official and fresh16:39board24/309/quotaunchanged. Exactname supportgap is distinct from failed compositegate; no quality or sourceinvalidity claim. User-requested Fablehigh review still unrun because service rejected model and reviewer choice is pending; no new experiment/closure.",
+          "evidence": [
+            "docs/SPAN_039_RESULTS.md"
+          ]
         }
       ]
     }

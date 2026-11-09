@@ -24,6 +24,16 @@ src/arena/span039_population_math.py and scripts/correct_span_039_statistics.py.
 Do not close v39 or select new experiments before handling the requested review.
 No numerical quality/official follows from this audit. Preserve all prior stops.
 
+Current audit deliverables are now complete: docs/SPAN_039_RESULTS.md,
+executed notebooks/51_validation_population.ipynb and standalone
+results/span_039/population_covariates.png. First-result hash and notebook result/
+resource stamps verified. Read-only resource observer98285 TERMINALexit0 and
+notebook76318 TERMINALexit0. Fresh16:39UTCboard24/309,.82987,cutoff.82915;
+quota unchanged38277.944used/69722.056free,reserved0,8officials terminal. No GPU,
+new model trial, version closure or experiment selection followed. The requested
+independent critique cannot proceed without the pending model choice; do not
+retry unsupported Fable or fabricate review findings. H81/v39remains running.
+
 The older orientation below is historical; current files and this steering override it.
 
 # V38 closed; v39 validation-population audit next
