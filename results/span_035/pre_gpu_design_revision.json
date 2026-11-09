@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-09T09:35:22.195568+00:00",
+  "revision": 2,
+  "quality_measured": false,
+  "new_gpu_executions": 0,
+  "initial_proposal": {
+    "GOAL.md": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_035/initial_proposal/GOAL.md",
+      "sha256": "c630e715602d6d4f1a781ab01846ca423f700edc5bfe12b8d75810929888f45c"
+    },
+    "docs/SPAN_035_PLAN.md": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_035/initial_proposal/SPAN_035_PLAN.md",
+      "sha256": "49672d1034298c67928567eb62313c9939ebd3ed06fdeea2f1430acd1e894617"
+    },
+    "configs/span_035.json": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_035/initial_proposal/span_035.json",
+      "sha256": "80bb5d23b8ba700e8d22bb520c90cdca40692cfa1a34f120eacbd432fc338fd5"
+    }
+  },
+  "native_input_proof_preserved": true,
+  "preparation_sha256": "4232a1be8a7b5d3876756a0eaa5adc5968f4a5604d1d1d0d7eb5d12e0f0e5240",
+  "reason": "Inherited matching three-role prefetch runtime floor32973.468 exceeds32400; two-role floor30766.762 is feasible. Freeze a two-pass candidate before target or GPU access; compare retention to unchanged two-pass baseline and incumbent separately.",
+  "two_role_official_baseline": 0.83053,
+  "incumbent": 0.82987,
+  "observed_rank19_cutoff": 0.82915,
+  "minimum_source_information_gain": 0.0015,
+  "no_transfer_coefficient_claim": true
+}

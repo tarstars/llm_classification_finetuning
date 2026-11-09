@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-09T09:39:02.725878+00:00",
+  "revision": 2,
+  "quality_measured": false,
+  "new_gpu_executions": 0,
+  "original_revision_sha256": "41d920a9ffe3ea626e7d52ace59f15c08a0ac902e5fc10753d2187e90ffdf4f8",
+  "native_preparation_sha256": "4232a1be8a7b5d3876756a0eaa5adc5968f4a5604d1d1d0d7eb5d12e0f0e5240",
+  "binding_sources": {
+    "GOAL.md": "462dd2bd55ea8b80827643b1c3a14f4f817ad82538a6ff81aab445d9b178fafb",
+    "docs/SPAN_035_PLAN.md": "f452153415cc55449eb7acd9855eb23bb61e5efeb6b7ec470f89f0e21b07bf27",
+    "docs/SPAN_035_RUNTIME_REVISION.md": "9110163eacbc4d9ec05d5839895c2862e4200040f368b57d4212a14daaad20ac",
+    "configs/span_035.json": "e60c4e45c61f13a2bb426281fd083dc18944fa9993919b2376b7d8bf1a163773"
+  },
+  "initial_proposal": {
+    "GOAL.md": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_035/initial_proposal/GOAL.md",
+      "sha256": "c630e715602d6d4f1a781ab01846ca423f700edc5bfe12b8d75810929888f45c"
+    },
+    "docs/SPAN_035_PLAN.md": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_035/initial_proposal/SPAN_035_PLAN.md",
+      "sha256": "49672d1034298c67928567eb62313c9939ebd3ed06fdeea2f1430acd1e894617"
+    },
+    "configs/span_035.json": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_035/initial_proposal/span_035.json",
+      "sha256": "80bb5d23b8ba700e8d22bb520c90cdca40692cfa1a34f120eacbd432fc338fd5"
+    }
+  },
+  "candidate": "two_pass_equal_new_gemma_native_llama_T1",
+  "source_min_gain": 0.0015,
+  "no_runtime_floor_relaxation": true
+}

@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-09T09:29:11.484259+00:00",
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "quota_used_at_start": 36651.064,
+  "initial_quota_refresh_time": "2026-11-14 00:00:00",
+  "last_verified_quota": {
+    "used_seconds": 36651.064,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 71348.936
+  },
+  "gpu_session_seconds_cap": 9000,
+  "public_version_limit": 2,
+  "official_candidate_limit": 1,
+  "hidden_cap_seconds": 32400,
+  "parent_span": 34
+}

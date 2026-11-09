@@ -1,74 +1,90 @@
-# V34 sealed: reward residual unqualified; rank goal active
+# V35 H27 pilot ready; publish then admit exactly once
 
-Snapshot2026-11-09 09:13UTC. Read PROJECT_POLICY.md and verify current state.
-Persistent goal: team17244411 at rank<=19 after legitimate inference on a fresh
-complete board. Active, unachieved, no token budget. Be economical with tokens;
-no subagents without explicit authorization. Never walk HOME, ~/prj, Arc/FUSE
-mounts or troll_farm. Scope searches to this named project or a named artifact.
+Snapshot 2026-11-09T09:55:30.467757+00:00. Read PROJECT_POLICY.md and verify live state.
+Persistent goal: team17244411rank<=19 after legitimate inference on a fresh
+complete board. ACTIVE/unachieved, no token budget. Be economical. No subagents
+without explicit authorization. Never walk HOME/~/prj/Arc/FUSE/troll_farm.
 
-V34H78 completed with a negative information result. Exact method/input/code
-were committed and pushed27e2165 before durable target_access_intent.json.
-Analyzer80455TERMINALexit0: all1024matched source groups, nested5outer/3inner,
-one nonnegative0.6Breward A-minus-B conditional offset, training-only RMS,
-lambda[.01,.1,1], alpha[0,10]. Baseline equal strong expertsT1loss0.997842274
-became0.998783088; gain-0.000940814, group95[-0.002154493,+0.000202977].
-Fails min0.001/positive lower. No final deployment fit, source-H60 transfer,
-GPU or official. Stop this family: no8B/negativecoef/grid/family rescue.
+V35focus[H27] RUNNING. One complete recent-turn extractive policy at native4096
+conversation tokens; retain largest suffix of whole turns fitting BOTH A/B
+orientations, preserving chronology and native kept text. Single/uncut/unaligned/
+oversizedlatest cases unchanged. Native proof54640TERMINALexit0: all357possible
+changed rows plus controls,1119rows total;312actual changes(.5428%), mean full
+input4330to3601tokens, max4322, same selectedindices on swaps, all retained
+inputs equal originalnative formatter on retained source turns. No targets.
+Preparation68.502s; pilot-spec stage27603TERMINALexit0 adds104.691s, aggregate
+173.192s/1200CPUcap, RSS.991GiB. Four meaningful selector tests passed.
 
-Tie channel, zero correction and bitwise swapping are exact. Tie class loss
-unchanged but recall can change when A/B probabilities overtake it. Prior and
-hard-majority baselines fit only outer-training votes. Preparation0.120s,
-analysis0.418s/.991GiB. Three meaningful tests passed. Independent closure
-replayed all saved models, nested groups/lambda selection/scales,50optimizer
-conditions, all metrics/bootstrap, baselines and preservation; auditPASS.
-Results results/span_034/H78_results.json, reportdocs/SPAN_034_RESULTS.md,
-executedNotebook46_cheap_reward_residual.ipynb. Heavy evaluation/fold records
-ROOT/runs/span_034. Do not rerun completed analyzer/auditor/preparer.
+IMPORTANT binding PRE-GPU revision2: original three-passH60-like plan had known
+prefetchfloor32973>32400. Initial GOAL/PLAN/config archived exactly as
+ docs/SPAN_035_INITIAL_GOAL.md, INITIAL_PLAN.md andresults/span_035/initial_config.json
+(and heavyinitial_proposal). Frozen native input proof unchanged. Current binding
+GOAL.md + SPAN_035_PLAN/RUNTIME_REVISION select TWO-PASS equal newG/nativeLlama,
+T1,no router/reverse. Ablation baseline is unchangedtwoexpert0.83053; incumbent
+H60.82987separate. Sourceinformation gate>=.0015populationweighted gain AND
+changed-prompt95lower>0; fixed312/57477prevalence, not unconditionalCI or transfer
+forecast. No newquality results selected thisrevision. Four training-onlyexamples
+show discarded-context risks (earlier code/setup); no policy tuning from them.
 
-Old v16service remainsERROR; complete component caches were verified separately.
-Missing reverse-H60 predictions stayed missing, no716-row subset was used.
-Reward pretraining exposure/source transfer remains unknown; no independent
-competition-CV or official-score claim. No reward follow-up is queued.
+READY heavy root ROOT/runs/span_035, role recent_pilot:
+- pilot_spec.json/controlsm0.npz sealed by pilot_preparation.json.
+- Builder18517TERMINALexit0: actualserializedstaging/imports/pipeline/finalcell
+success andengineeringstop usingfakeforward, failure/watchdog/Jupyter PASS.
+Nativeprefetch forward source EXACT to span030;8192packing unchanged. SDKpayload
+75895bytes<900000. Metadata requests exactauthorimage/offline/private/twoT4/four
+publictascj0datasetsv1 + competition. Informationonly, no hidden/submission path.
+- Local Notebook47executed fromCPUproofs. NoGPU fit/quality follows from rehearsals.
+- Frozen bundle results/span_035/recent_pilot_bundle.json. DO NOT edit bundled
+sources/config/GOAL/PLAN after GPUacceptance. Handoff/review not bundled.
+- Controller scripts/run_span_035_pilot.py (genericrun_job + knownold-draft
+inventoryresolver) is NOT LAUNCHED YET. Publish allsource/build first, then run
+ONCE. It observes fullownedcatalog/quota/dependencies/allofficials before Save.
+- Accepted receipt will be jobs/recent_pilot/push.json. If launched, follow SAME
+handle/version after timeout; neverduplicate ambiguous mutations. Source verifier
+scripts/verify_span_035_pilot.py pulls exactacceptedcells/image/settings and
+proves exportedunversioned publicdatasets uniquelyv1. Run afteractualreceipt.
+- Aftercontrollerterminal/retrieval ONLY run scripts/audit_span_035_pilot.py ONCE.
+It checks frozen source/artifacts/controls/versions/tokens/memory before FIRST
+newqualitytargets, compares all312newG to SHAverified oldv26G/Larrays, and writes
+H27_results.json (heavy pilot_quality.npz). Candidate is twoexpert; oldH60mirror
+onlychangedrow diagnostics, not fullincumbentbenefit. No parameter fitting.
+- If informationfails, stop H27/noqualification/official. Ifpasses, prepare ONE
+actual fulltwo-passqualification before anyofficial: existing canonicalcontrols
+<=1e-5, CPUtokens, bothT4/memory<=95%, CSV; keep timingfloors293.909023/213.175659s
+per512 and worseactualrates/allcold-fullwarm-preprocessing-other/20%/600reserve;
+require<32400. Only then onefrozenlegitimateofficial permitted. Qualification and
+official programs do NOTexist yet; don'tclaimthosephases complete.
 
-V33H77 earlier stopped on24/27label-free coverage<32each; no newblind audit/
-labels/fit. Notebook45executed; closureauditPASS; commit5d613af pushed.
-V34nowsealedviaCLI, exactGOAL_V34archived/policy-linked. V35active with97tasks,
-36unfinished carrieditems,138immutable snapshots, nofocus or newdiscovery.
-GOAL.md stillclosedv34contract. Select a new bounded contract under continuing
-rank goal before successor work. Many remaining tasks target the older weak
-classifier; do not spend GPU unless a plausible current-ensemble gain path exists.
+Resourcecontract: CPUprep1200/analysis600,2threads/6GiB. PublicGPUtotal9000s,
+atmost2acceptedversions:pilot5400+qualification3600. Oneofficial<=32400s conditional
+onallgates. Preserve32400free until officialadmission consumes it. Original
+absolute deadline2026-11-10T08:37:37.343197UTC andNov14anchor/allcharges remain.
+Lastquota36651.064used/71348.936free,0reserved/paidFalse; lastfull75ownedinventory
+v31at08:22, fresh fulladmission REQUIRED and built into controller. No ownlivejob
+at thissnapshot. Lastcomplete09:08UTCboard23/309,H60.82987,19th/20th.82915,
+leader.82674. All8officials previouslyterminal. BestH60receipt58103553/source
+arseniytrushin/llm-preference-span013-gemma-order/1.
 
-V32H16 earlier stopped at blind detector precision17clear+2ambiguous<20/24;
-its five false-positive categories and originalfloat32assertion failure are
-preserved. No preference residual was ever fitted in v32/v33. See reports and
-executed Notebooks44/45, not a claimed negative quality comparison.
+History: V34H78 cheap0.6Brewardoffset complete/negative, loss.997842to.998783,
+gain-.000940814 group95[-.002154493,.000202977]. NoGPU/official/finalfit.
+Independent50optimizer/nested/metrics/baseline/tie/swap auditPASS, Notebook46,
+reportSPAN_034_RESULTS, pushedf38b99f. V33H77coverage24/27stopped; V32H16blind
+17clear+2ambiguous<20stopped. No further detector/reward family rescue.
+V31fresh8Bloss1.1274vs4B1.0852/runtime33445>32400 stopped. V30official40/60
+.83140worse; no furtherweights/T/routes fromofficialfeedback. V29fixed60/40,
+v28three-role runtime,v27largerpacking identity,v26extra6kquality/runtime,
+H59T1.316official.84797 and403/401/nativeCUDA failures staypreserved.
 
-Fresh complete09:08UTCboard:23/309, bestH60.82987,19th/20th.82915,leader.82674.
-Best receipt58103553,arseniytrushin/llm-preference-span013-gemma-order/1.
-Quota36651.064used/71348.936free seconds,0reserved/paidFalse,Nov14refresh anchor;
-all8officials terminal and lastH02jobCOMPLETE. V32/V33/V34 charge0. Full75owned
-catalog last checkedv31at08:22; fresh full admission required before anyGPU.
-Originaldeadline2026-11-10T08:37:37.343197UTC/allcharges persist. Preserve32400s
-for possible independentlyqualifiedofficial. No own job is live.
-
-Do not revive stopped branches: v31fresh8Bloss1.127433 vs4B1.085232 and runtime
-33445.930>32400; v30official40/60ensemble.83140 loses toH60; v29fixed60/40
-failedlocalguard; v28three-role32973>32400; v27largerpacking rawidentityfailed;
-v26contextnegative/runtime34007; H59T1.316official.84797worse. Do not choose
-more weights/T/routes using official feedback. Preserve403/401/source/nativeCUDA
-failures. Earlier sources, exact goals, receipts and detailed reports remain.
-
-Repo/home/tarstars/prj/llm_classification_finetuning, main, GitHubtarstars/
-llm_classification_finetuning. ROOT=/home/tarstars/database/llm_classification_finetuning.
-Use .venv/bin/python and usuallyPYTHONPATH=src:scripts. Network/database/Jupyter
-sockets/Git writes require escalation; user authorization is established. Heavy
-text/weights/per-row artifactsROOT; code/Markdown/aggregates/executednotebooksGit.
-Preserve user-dirty notebooks07and12 bytewise, never stage/reset. Latest hashes
-results/span_034/preservation.json; preserve all138snapshots/goals/notebook link.
-Explicitly stage only own files, commit and push important results.
-
-Observe the same accepted handle/version after timeouts; observation failure is
-not terminal and must never cause duplicate mutations. functions.wait only after
-an exec explicitly yields a cellID; unified sessions usewrite_stdin. Waits<60s,
-meaningful commentary, no invented idlework or repeated passing tests. Only actual
-rank<=19 plus full completion evidence can finish the persistent goal.
+Backlog97registered,V35focusH27,36carrieditems,138immutable snapshots; v36draft
+empty. Preserve all archived goals and user-dirty notebooks07+12 bytewise,
+neverstage/reset. Hashesresults/span_035/preservation.json; symlinkcorrect.
+HeavyROOT=/home/tarstars/database/llm_classification_finetuning; repo namedproject,
+main, GitHubtarstars/llm_classification_finetuning. .venv/bin/python; usually
+PYTHONPATH=src:scripts. NativeCPUtokenproof uses
+PYTHONPATH=/tmp/llm_span019_runtime:src:scripts (Transformers4.42.3/tokenizers.19.1).
+Network/DB/Jupytersockets/Gitwrites require escalation; authorization established.
+Code/MD/aggregate/executednotebooksGit, heavytext/weights/per-rowartifactsROOT.
+Explicitstageownfiles/commit/push importantresults. functions.wait onlyafterexec
+explicitlyyieldscellID; unifiedsessions usewrite_stdin. Individualwaits<60s,
+meaningfulcommentary. No inventedidlework/repeatedpassingtests/pendingcommits.
+Actualrank<=19 with fullcompletionproof alonecompletespersistentgoal.

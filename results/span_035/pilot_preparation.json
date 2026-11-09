@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-09T09:46:32.299186+00:00",
+  "prepared": true,
+  "uses_targets": false,
+  "rows": 312,
+  "aggregate_cpu_preparation_seconds": 173.19245958002284,
+  "stage_seconds": 104.6906036499422,
+  "spec_sha256": "ca02ff2876305e4445b9a0af7a66f3324df1b6fe55be0713a91064187d161c17",
+  "control_sha256": "e703137214e969605607d3360e9a5d94d0fd02c2dabdd667371540f68ca47859",
+  "new_gpu_executions": 0
+}

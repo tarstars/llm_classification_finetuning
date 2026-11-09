@@ -1749,40 +1749,40 @@
       "id": "H27",
       "kind": "hypothesis",
       "title": "Salient extractive retention",
-      "priority": "P3",
+      "priority": "P2",
       "rank": 28,
-      "status": "planned",
+      "status": "running",
       "gain": [
-        -0.01,
-        0.01
+        -0.002,
+        0.002
       ],
       "estimate_confidence": "low",
       "engineering_hours": [
-        10,
-        24
+        3,
+        8
       ],
       "pilot_gpu_wall_hours": [
         0.5,
-        2
+        1.5
       ],
       "followup_gpu_wall_hours": [
-        10,
-        24
+        1,
+        10
       ],
       "cpu_wall_hours": [
-        0.25,
-        2
+        0.1,
+        0.5
       ],
       "risk": "medium",
       "claim": "A label-free extractive policy may preserve decisive middle spans better than head/tail truncation.",
-      "basis": "Some reviewed errors omit middle content; population benefit is unmeasured.",
-      "first_test": "Freeze a deterministic request/claim/code-span selector using training data only and compare retained content plus matched packing/training.",
+      "basis": "V35target-free planning:315of357native clipped rows aremulti-turn, latest-turn median4012characters. Current strong formatter is alreadyaligned but uses4096prefix. A whole recent-turn span policy may recover final-request evidence; quality is unmeasured and old6kcontext result staysnegative.",
+      "first_test": "Freeze one complete recent-turn suffix extraction at native4096budget; verify all possibleaffected inputs and unchanged branches before one bounded frozen-model pilot. This first stage measures input retention, not a matched-retraining gain. Any later training comparison needs separate funding.",
       "acceptance": "Improve overall and changed-input loss without excessive preprocessing or shorter-input regressions.",
       "stop": "Stop if selection systematically omits counterevidence, definitions or caveats.",
       "risk_reason": "A heuristic can preferentially retain persuasive claims and discard evidence against them.",
       "mitigation": "Audit retained/dropped spans on a representative train sample and keep both candidate budgets symmetric.",
       "rationale": "Cheaper and more auditable than generated compression, but still speculative.",
-      "revision": "Retention policies must be label-independent; selected worst cases cannot define the test set.",
+      "revision": "V35current-comparator revision before newtargets: use COMPLETE TURN as extractive request span. Do not infer a layout bug or train a weak model. Prefix clipping is mostlymulti-turn; earlier broader middle-span claim remains unmeasured. Source-overlapping pilot is only a fixed gross-regression screen before real qualification/one official, not independentCV. Original data-selected policy changes are prohibited after outcomes.",
       "depends_on": [
         "E00"
       ],
@@ -1790,7 +1790,32 @@
         "docs/ERROR_POSTER.md",
         "src/arena/joint_data.py"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-09T09:27:01+00:00",
+          "status": "running",
+          "note": "V35freeze one complete recent-turn extractive span policy for current nativeGemma after label-free315/357multi-turn planning. No layout/traininggain claim; old contextfailure retained. CPUallpossiblechanged/nativeproof first, then only bounded5400pilot/3600qualification and atmost1official if exactgatespass; fourstate grossguard-.001prospective, no leaderboardtuning.",
+          "evidence": [
+            "docs/SPAN_035_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T09:38:58+00:00",
+          "status": "running",
+          "note": "Nativeproof54640exit0 passes1119rows/all357possible:312changes,.5428%population, retainedsuffixmatchesnativeexactly/swappedindicesagree, mean4330to3601tokens,68.50s. Pre-GPUtimingrevision (no newtargets/preds): three-rolefloor32973>32400; archiveinitialproposal, freeze two-pass50/50T1newG+nativeLlama. Referenceofficial.83053/incumbent.82987separate; sourcegate>=.0015/positive95 beforequalification. Fixed matchingtwo-rolefloors retained, no budget/deadline reset. Fourexamples show omitted-context risk; no policy tuning.",
+          "evidence": [
+            "docs/SPAN_035_RUNTIME_REVISION.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T09:55:30+00:00",
+          "status": "running",
+          "note": "Pilotbuilder18517exit0: exact nativeprefetchforward preserved; actualserializedstaging/imports/pipeline+guardstop/final/failure/watchdog/Jupyter allPASS. Payload75895bytes. Nativepilotrefs27603exit0, aggregateprep173.192s/1200. Notebook47executed, noGPU/qualityyet. Publish frozenmethod/spec/build then onefresh fulladmission and5400sinfo job; no qualification before>=.0015/positiveCI.",
+          "evidence": [
+            "results/span_035/recent_pilot_cell_rehearsals.json"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -10199,8 +10224,18 @@
         "H63",
         "H73"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H27"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T09:27:00+00:00",
+          "note": "V35select a request-aware extractive span policy for current native4096Gemma: target-freeplanning found315/357clipped rows multi-turn. Freeze complete recent-turn suffix selection, preserving chronology and finalquery/bothanswers, with no token-budget expansion or extra hidden pass. CPUproof before boundedGPU; no new weak-model retraining.",
+          "focus_ids": [
+            "H27"
+          ]
+        }
+      ],
       "carried_from": 34,
       "start_sha256": "252e06d798710ea962f32d0033ba09b9ec7dfd9039498a86f17c424c1d85228c",
       "start_markdown_sha256": "844a00982de09fb388e28d6f023fb558b4a9a79c75589ddb560456c24b878e37",

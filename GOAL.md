@@ -1,24 +1,25 @@
-# Move above 20th place: v34 cheap reward residual
+# Move above 20th place: v35 complete recent-turn extraction
 
-Persistent goal: own team17244411 rank<=19 after legitimate inference on a fresh
-complete official board. Active/unachieved, bestH60.82987/rank23. Select ONLY H78
-under the complete binding contract docs/SPAN_034_PLAN.md. Preserve exact prior
-GOAL_V33 and all stopped detector/model/T/weights/routes branches.
+Persistent goal: own team17244411rank<=19 after legitimate inference on a fresh
+complete official board. Active/unachieved, bestH60.82987/rank23. Select ONLY H27
+under the FULL binding contract docs/SPAN_035_PLAN.md. Prior GOAL_V34 is archived.
 
-One nonnegative coefficient[0,10] multiplies fold-locally RMS-scaled0.6Breward
-A-minus-B differences as a fixed-baseline conditional-logodds offset. Tie channel
-and A+B mass unchanged; exact zero/swap checks. Use ALL1024complete v16source
-rows and equal strong expertsT1, no missing reverse imputation/716subset/8B/family
-search. Nestedgroup5outer/3inner lambda[.01,.1,1],2000paired bootstrap seed20261213.
-Require gain>=.001 and group95lower>0 for useful information; otherwise stop.
-Positive exploratory source evidence only queues separate current-H60 transfer
-and actual runtime/source qualification. Unknown reward pretraining/source shift
-and old serviceERROR remain explicit; no official-score forecast.
+One frozen complete-recent-turn policy replaces originalGemma's clipped multi-
+turn prefix at the same4096conversation budget, only where latest whole turns
+fit both orientations. Preserve native serialization/kepttext/chronology; single,
+uncut/unaligned/oversizedlatest cases unchanged. The pre-GPU revision docs/SPAN_035_RUNTIME_REVISION.md is binding. Candidate
+is equal NEW-Gemma/nativeLlama TWO-PASS T1; no router/reverseGemma. Initial
+three-pass plan is archived because matchingfloor32973>32400. CurrentH60is
+separate incumbent; reference is unchangedtwoexpertbaseline0.83053. Source
+information requires fixed-prevalencegain>=.0015/changed-prompt95lower>0
+before realqualification; no transfer forecast. Keep actual oldtwo-role floors
+293.909023/213.175659s per512rows, worse new rates/alloverhead/20%margin/
+600reserve and<32400. Atmost5400spilot+3600squalification,9000total; ONE
+qualified official32400cap. No extra reverse pass/faster-node/gate rescue.
 
-Publish code/config/input hashes BEFORE target loading/fitting. CPUonly prep300s/
-analysis1200s,2threads/6GiB; noGPU/official/externaltext/modeldownload. Original
-Nov10T08:37:37.343197UTCdeadline/Nov14quota anchor/allcharges remain; last
-36651.064used/71348.936free,0reserved/paidFalse. Preserve32400for laterqualified
-submission,134snapshots/archivedgoals/user07+12/link. HeavyDB, code/MD/aggregate/
-executedNotebook46Git; CLIhistory, actualv35discoveries/carry/closure/commitpush.
-Only actualrank<=19 and full completion proof can finish the persistent goal.
+CPUprep1200s/analysis600s,2threads/6GiB. Originaldeadline2026-11-10T08:37:37.343197UTC,
+Nov14anchor/allcharges retained; last36651.064used/71348.936free/0reserved/paidFalse.
+Fresh fulladmission beforeGPU; reserve32400untilsinglequalifiedofficial usesit.
+Publishmethod/notebook beforelaunch; heavyDB, code/MD/aggregate/executedNotebook47Git.
+CLIhistory,138snapshots/allgoals/user07+12/link, actualv36discoveries/carry/closure/
+commitpush. Span/localgain does not achieve persistent rankgoal.

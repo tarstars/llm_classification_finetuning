@@ -1,0 +1,30 @@
+{
+  "span": 35,
+  "seed": 20261214,
+  "bootstrap_seed": 20261215,
+  "bootstrap_group_replicates": 2000,
+  "conversation_tokens": 4096,
+  "minimum_changed_rows": 128,
+  "maximum_changed_fraction": 0.01,
+  "maximum_input_length_increment": 16,
+  "cpu_preparation_seconds_cap": 1200,
+  "cpu_analysis_seconds_cap": 600,
+  "numerical_threads": 2,
+  "rss_guard_gib": 6,
+  "gpu_session_seconds_cap": 9000,
+  "job_seconds_caps": {
+    "recent_pilot": 5400,
+    "recent_qualification": 3600
+  },
+  "maximum_official_submissions": 1,
+  "hidden_runtime_screen_cap_seconds": 32400,
+  "hidden_rows_assumption": 25000,
+  "runtime_margin": 1.2,
+  "runtime_reserve_seconds": 600,
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "started_at": "2026-11-09T09:29:11.484259+00:00",
+  "protocol_revision": 2,
+  "advancement_min_population_gain": 0.0015,
+  "gemma_uniform_seconds_floor": 293.90902281700005,
+  "llama_uniform_seconds_floor": 213.17565910100006
+}

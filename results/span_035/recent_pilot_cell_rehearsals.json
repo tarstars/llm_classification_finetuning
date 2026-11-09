@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "actual_staging_pipeline_final",
+      "stopped_for_guard": false,
+      "passed": true,
+      "fake_model_forward": true,
+      "session": {
+        "seconds": 1.851560115814209,
+        "exit_code": 0,
+        "role": "recent_pilot"
+      }
+    },
+    {
+      "name": "actual_staging_pipeline_final",
+      "stopped_for_guard": true,
+      "passed": true,
+      "fake_model_forward": true,
+      "session": {
+        "seconds": 1.856546401977539,
+        "exit_code": 0,
+        "role": "recent_pilot"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true,
+      "session": {
+        "seconds": 0.03553962707519531,
+        "exit_code": 7,
+        "role": "recent_pilot"
+      }
+    },
+    {
+      "name": "watchdog",
+      "passed": true,
+      "session": {
+        "seconds": 0.20238256454467773,
+        "exit_code": -15,
+        "role": "recent_pilot"
+      }
+    }
+  ],
+  "actual_serialized_staging_pipeline_final_passed": true,
+  "standalone_imports_passed": true,
+  "mode_guards_passed": true,
+  "notebook_engine_startup_passed": true,
+  "forward_source_unchanged": true,
+  "new_gpu_executions": 0
+}
