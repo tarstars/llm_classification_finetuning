@@ -1,23 +1,19 @@
-# Move above 20th place: v38 arithmetic-evidence reliability gate
+# Move above 20th place: v39 validation-population relevance
 
 Persistent objective: team17244411rank<=19after legitimate inference on a fresh
-complete board. ACTIVE/unachieved; last24/309,.82987. Select ONLY H35under
- docs/SPAN_038_PLAN.md. Prior exact contract docs/GOAL_V37.md is archived.
+complete official board. ACTIVE/unachieved,last24/309,.82987. Select only H81
+under docs/SPAN_039_PLAN.md; exact previous contract docs/GOAL_V38.md archived.
 
-First freeze one constrained numerical-equality parser with exact rational
-arithmetic, conservative decimal rounding and abstention on unsupported/context-
-ambiguous claims. No eval, user code or symbolic assumptions. Label-blind full
-original and later public-source coverage, then32case blind extraction audit.
-Require>=128nonzero original rows and>=128later-source groups, plus31/32reliable
-cases, before any new labels/GPU. No parser tuning on the blind audit sample.
-CPUprep1200s/analysis600s,2threads/6GiB. Publish before census. No weights/GPU
-initially. If gates pass, separately freeze one matched current-incumbent grouped
-information test before labels/GPU; no numerical phase is authorized by coverage.
+Target-blind CPU audit only: full original/singleturn/later representatives,
+existing length-matched1024and originaluniform512. Compare fixed covariates,
+exact model-name support and one capped character-length standardization.
+Model IDs are diagnostics only. No votes/predictions/weights/fitting/GPU/official,
+no parser rescue, source/cohort/model search or old-result replacement. Publish
+before census. CPUprep1200s/analysis600s,2threads/6GiB. Report exposure/selection/
+matching limits; numerical quality work needs a separate prospective contract.
 
-Conditional publicGPU<=5400s/atmost2versions; atmost one qualified official<=32400s.
-Preserve32400free and require fresh full admission. Original deadline
-2026-11-10T08:37:37.343197UTC,Nov14quota anchor/all charges unchanged; last
-38277.944used/69722.056free,0reserved/paidFalse. HeavyDB/code+MD+aggregate+
-executedNotebook50Git. CLIhistory,150snapshots,user07/12/link,report/resources,
-v39discoveries/carry/commitpush. Neither parser reliability nor sourcegain
-achieves the persistent leaderboardgoal.
+Original deadline2026-11-10T08:37:37.343197UTC,Nov14quota anchor/all charges
+persist; last38277.944used/69722.056free,reserved0/paidFalse. Preserve32400free;
+fresh full admission before futureGPU. HeavyDB/code+MD+aggregate+executedNotebook51
+Git. CLIhistory,154snapshots,user07/12/link,report/resources,v40discoveries/carry,
+commit/push. A covariate mismatch is not a score improvement or goal completion.

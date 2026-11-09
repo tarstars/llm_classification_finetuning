@@ -7880,7 +7880,7 @@
       ],
       "id": "H81",
       "rank": 100,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 39,
       "discovered_during": 38,
       "derived_from": [
@@ -7893,6 +7893,14 @@
           "note": "Frozenlabelblind mathcontrast differs73/57477vs1/11215before quality. Queue a bounded validation-population/support audit, not a claim of arithmetic skill or a parser/model rescue. Originalteacher exposure and selection must be separated.",
           "evidence": [
             "docs/VALIDATION_POPULATION_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T16:21:19+00:00",
+          "status": "running",
+          "note": "V39fixed5views, targetblind covariates and diagnostic-only producer IDs, existing native length bins plus one capped char-decile standardization. No votes/predictions, newqualityfit/GPU or old-result rescue. Material support rule frozen before census; original deadline/quota persist.",
+          "evidence": [
+            "docs/SPAN_039_PLAN.md"
           ]
         }
       ]
@@ -10766,8 +10774,18 @@
         "H73",
         "H81"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H81"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T16:21:19+00:00",
+          "note": "Select the source/selection support audit motivated by frozen arithmetic-coverage shift and previous transfer failures, before another model trial. No target/quality/GPU phase authorized.",
+          "focus_ids": [
+            "H81"
+          ]
+        }
+      ],
       "carried_from": 38,
       "start_sha256": "258b9c1dc253288e53e09687c6ce8d530826ac2c771026e1a3a0b2a169448d57",
       "start_markdown_sha256": "a2e551c1b128f07aeaf39d8aa8fe843757a24c420236dcb7a5009ff4ce6e80d8",
