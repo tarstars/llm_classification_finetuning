@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-09T06:23:58.080679+00:00",
+  "kernel": "arseniytrushin/llm-preference-span031-size-pilot",
+  "quota_before": {
+    "used_seconds": 32965.55,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 75034.45
+  },
+  "max_session_seconds": 5400,
+  "notebook_sha256": "806348a772e09f971e41c4aff27066dea7ba497fd74e10c92aad85e325ee907e",
+  "metadata_sha256": "bf1fd2c52f8d36b6145c4751f0c23d030f872ff58e8cbd993c599b40031413cb"
+}

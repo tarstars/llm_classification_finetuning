@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-09T06:34:51.836027+00:00",
+  "dataset": "arseniytrushin/llm-span031-size-inputs/1",
+  "private_requested": true,
+  "rows": 1536,
+  "train_rows": 1024,
+  "development_rows": 512,
+  "confirmation_votes_included": false,
+  "pilot_preparation_sha256": "0027af8a2d06515e658ffa438e4bc9ddf3d5b0cbf165265a0a7fd1b17f1826ce",
+  "input_sha256": "929741bb0ef8bfeb620b9d4116ea459de96eb7e7b74d652a94e5e21d4a5aef2c",
+  "upload_files": {
+    "pilot_rows.gzipbin": "929741bb0ef8bfeb620b9d4116ea459de96eb7e7b74d652a94e5e21d4a5aef2c",
+    "dataset-metadata.json": "0a1aae04209b4480052ea28445060e2d5e0c4590a7635f1a4b8c088ad85c7011",
+    "README.md": "c9e59ce9911157a2db91b374e5fe8b3197b30bb1e403e414c4e3ee4e9840beb9"
+  },
+  "new_gpu_executions": 0
+}

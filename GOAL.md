@@ -37,3 +37,12 @@ later independently qualified official. No liveGPU/official beforeselection.
 Preserve122snapshots/archivedgoals/user07+12notebooks/link. HeavyDB, code/MD/
 aggregate/executedNotebook43Git. CLIhistory,discoveriesv32,unfinishedcarry,
 finalreport andcommitpush. Span closure or localgain does not complete goal.
+
+
+Transport addendum docs/SPAN_031_TRANSPORT.md: initial SaveKernelHTTP400,
+read-onlyproof no accepted run/reservation/charge; preserve rejectedintent and
+allsourcefiles. Repair packaging using the sameSHA-frozen CSV as one private
+Kaggleinputasset and a separate compact controller. Before ONEcompact save,
+freshlyreconcile originalmissing, exactprivateassetversion1ready, source<900kB,
+alloriginalgates/caps/deadline/accounting and atmostONEacceptedGPUversion in
+thisspan. No numerical retry or newqualityvariant. Neverrepeat uncertainwrites.

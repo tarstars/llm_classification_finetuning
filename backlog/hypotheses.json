@@ -230,6 +230,14 @@
           "evidence": [
             "results/span_031/size_pilot_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-09T06:36:28+00:00",
+          "status": "running",
+          "note": "Controller82267TERMINALexit1: sole embedded SaveKernel requestHTTP400 before acceptedreceipt. Read-only56441exit0 reconciles original404/no ownedmatch/no reservation/unchangedquota32965.55; no GPU or quality. SDKsource2179346bytes exceeds reported1MBlimit (causeinferred, responsebody unavailable). Preserveintent/source; prepare sameSHAfrozen1536rows as one privateasset, compactsource<900k, same32updates/5400totalcap/max1acceptedversion. Newguard captures futureHTTPdetail, no blindretry.",
+          "evidence": [
+            "docs/SPAN_031_TRANSPORT.md"
+          ]
         }
       ],
       "introduced_in": 1,

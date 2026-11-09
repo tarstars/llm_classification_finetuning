@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-09T06:23:58.076598+00:00",
+  "admitted": true,
+  "all_official_terminal": true,
+  "official_receipts": 8,
+  "public_cap_seconds": 5400,
+  "official_submissions_allowed": 0,
+  "accepted_updates_per_arm": 32,
+  "protocol_revision": 2
+}
