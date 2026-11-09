@@ -1,0 +1,5 @@
+{"at": "2026-11-09T09:05:59.169976+00:00", "stage": "H78", "event": "fold_complete", "fold": 0, "alpha": 0.0, "penalty": 1.0, "validation_rows": 217}
+{"at": "2026-11-09T09:05:59.192967+00:00", "stage": "H78", "event": "fold_complete", "fold": 1, "alpha": 0.0, "penalty": 1.0, "validation_rows": 197}
+{"at": "2026-11-09T09:05:59.211762+00:00", "stage": "H78", "event": "fold_complete", "fold": 2, "alpha": 0.01684744763262518, "penalty": 1.0, "validation_rows": 208}
+{"at": "2026-11-09T09:05:59.229130+00:00", "stage": "H78", "event": "fold_complete", "fold": 3, "alpha": 0.04269052048957371, "penalty": 0.01, "validation_rows": 214}
+{"at": "2026-11-09T09:05:59.247811+00:00", "stage": "H78", "event": "fold_complete", "fold": 4, "alpha": 0.09880082480131001, "penalty": 0.1, "validation_rows": 188}

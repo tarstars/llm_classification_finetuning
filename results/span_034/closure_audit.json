@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-09T09:10:25.547022+00:00",
+  "passed": true,
+  "sealed_version": 34,
+  "active_version": 35,
+  "optimizer_checks": 50,
+  "nested_group_replay": true,
+  "exact_tie_and_swap": true,
+  "historical_snapshots_preserved": 134,
+  "snapshot_files_after_transition": 138,
+  "carried_tasks": 36,
+  "new_discoveries": [],
+  "goal_achieved": false,
+  "report_sha256": "c4697bd3ae1b35ca1555dfc79315befeccecb2c638c9eb57c481726e4faecabd",
+  "notebook_sha256": "f90850b4e0127ab81b9e2dbb2a62291f6f1cdd60b0695bd44d6986c55796b765",
+  "elapsed_seconds": 0.24505881709046662,
+  "source_sha256": "79bf35f17c16c39982ffb18476eba719f44d2406db2b3ba6f4fe581795423590"
+}

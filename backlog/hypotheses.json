@@ -7559,7 +7559,7 @@
       ],
       "id": "H78",
       "rank": 97,
-      "status": "running",
+      "status": "done",
       "introduced_in": 34,
       "discovered_during": 33,
       "derived_from": [
@@ -7580,6 +7580,14 @@
           "note": "V34 preparing one cheap0.6Breward conditional scalar residual on complete1024matched source rows. CPUonly, fixed baselineT1/tie channel, grouped nested5/3lambda[.01,.1,1], nonnegativealpha[0,10], usefulgain>=.001/group95lower>0. PreserveERROR/missingH60reverse/unknownreward exposure; no newtargetload until method/inputmanifest published.",
           "evidence": [
             "docs/SPAN_034_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T09:10:19+00:00",
+          "status": "done",
+          "note": "V34single published27e2165nestedgroup5/3scalaroffset completed80455exit0 on all1024groups. Baseline.997842274 vs candidate.998783088, gain-.000940814 group95[-.002154493,.000202977] fails>=.001/positive lower. Twofoldsalpha0; exacttie/zero/bitwise swapchecks pass; no finaldeployfit/GPU/official/currentH60transfer. Prior/hard-majority baselines included, Notebook46executed. Stop this family without reward/model/grid rescue.",
+          "evidence": [
+            "docs/SPAN_034_RESULTS.md"
           ]
         }
       ]
@@ -7633,7 +7641,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 34,
+  "active_version": 35,
   "versions": [
     {
       "number": 1,
@@ -10085,7 +10093,7 @@
     },
     {
       "number": 34,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H05",
         "H06",
@@ -10140,10 +10148,66 @@
       "carried_from": 33,
       "start_sha256": "201acc180e200f8e796c04402a9d6e62ad3b95e1e6b86ef92abe7caa03937388",
       "start_markdown_sha256": "1d8dd111784c0d35d5bbe906e2755d04c05f722dc37555546ce2c722ebaf294b",
-      "start_sealed_at": "2026-11-09T08:58:05+00:00"
+      "start_sealed_at": "2026-11-09T08:58:05+00:00",
+      "final_sha256": "00ee823a3d4cb7e00aa148153b104b24d3d9ba5598bb758e4a4dfaeba4e8b287",
+      "final_markdown_sha256": "0be49923d062b1dc34b1ddc97529ea86c977ad43fab623d9fefb22e14c030064",
+      "final_sealed_at": "2026-11-09T09:10:19+00:00",
+      "closed_at": "2026-11-09T09:10:19+00:00",
+      "closing_note": "Seal v34H78 negative nested information screen, noGPU/official and unchangedquota. Source/input publication beforelabels, all1024matched rows, exact tie/swap, no useful gain. Executed Notebook46 and baselines; carry36unfinished without automatic reward follow-up.",
+      "closing_evidence": [
+        "docs/SPAN_034_RESULTS.md"
+      ]
     },
     {
       "number": 35,
+      "state": "active",
+      "item_ids": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 34,
+      "start_sha256": "252e06d798710ea962f32d0033ba09b9ec7dfd9039498a86f17c424c1d85228c",
+      "start_markdown_sha256": "844a00982de09fb388e28d6f023fb558b4a9a79c75589ddb560456c24b878e37",
+      "start_sealed_at": "2026-11-09T09:10:19+00:00"
+    },
+    {
+      "number": 36,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

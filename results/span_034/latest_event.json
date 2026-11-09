@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-09T09:05:59.247811+00:00",
+  "stage": "H78",
+  "event": "fold_complete",
+  "fold": 4,
+  "alpha": 0.09880082480131001,
+  "penalty": 0.1,
+  "validation_rows": 188
+}

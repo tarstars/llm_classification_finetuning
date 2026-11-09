@@ -1,0 +1,7 @@
+{
+  "at": "2026-11-09T09:05:59.136263+00:00",
+  "publication_commit": "27e21655b6277c99baed9044009b9054a627d28e",
+  "preparation_sha256": "34e7d59892c9ff318ce5028d5e97ff4bbc532ae6e1f3198d8ca30531f64d7bec",
+  "variants": 1,
+  "model": "nonnegative_scalar_conditional_offset"
+}
