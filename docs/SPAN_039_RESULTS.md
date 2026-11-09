@@ -88,12 +88,15 @@ are different. This audit does not identify which source better predicts a new
 recipe's leaderboard gain. It neither validates a former failed recipe nor
 licenses a new population, coefficient, model or official-score search.
 
-The user has requested an independent Fable/high critical review before reacting
-to the project's strategy. The actual service rejected model fable for the
-current ChatGPT account. The review has not run; an alternative-model/exact-ID
-question is pending. This report is our measured audit, not a Fable critique or
-a substitute for it. V39remains running pending that review; no version closure
-or new experiment is performed here.
+The requested independent Fable/high review is now complete through Claude Code,
+reported model claude-fable-5-1. The user explicitly approved the private review
+bundle after automatic approval review requested payload authorization.
+[Verbatim review](CLAUDE_CRITICAL_REVIEW_20261109.md) and
+[point-by-point response](CLAUDE_REVIEW_RESPONSE_20261109.md) distinguish supported
+strategic criticisms from unsupported claims. The response corrects current-state
+documents and simplifies future policy; it does not alter this audit's frozen
+rule, failed outcome, resource caps or original data. H81 is finished; v39 has
+not been sealed/advanced. No new numerical-quality phase or official follows.
 
 [Protocol](SPAN_039_PLAN.md) ·
 [Original result](../results/span_039/H81_results.json) ·

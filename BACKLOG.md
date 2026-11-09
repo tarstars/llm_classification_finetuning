@@ -6,25 +6,19 @@ Version **39**, active; **35** tasks. Focus for this span: H81.
 
 Original hypotheses H01–H40 retain their IDs. Follow-ups enter the next version; completed spans have preserved snapshots.
 
-Hypothesis status: planned **20**, ready **0**, running **1**, done **0**, rejected **0**, deferred **12**.
+Hypothesis status: planned **20**, ready **0**, running **0**, done **1**, rejected **0**, deferred **12**.
 
-Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.
+Current official snapshot (2026-11-09 16:39 UTC): **H60 log loss 0.82987, rank24/309**; rank19/20 is0.82915, a0.00072 gap. The rank19 goal is unachieved. This rolling competition is distinct from the 2024 prize competition and its final private leaderboard. See docs/SPAN_013_RESULTS.md and results/span_039/final_leaderboard.json. Rankings and quota are dated observations, not current launch admission.
 
-**All gain ranges are subjective planning ranges, not measured gains, expected values, confidence intervals or guarantees.** They allow regression. They describe incremental overall loss reduction against a matched, calibrated, swap-averaged attempt-002 comparator on identical evaluation rows. For judge-only changes, also report the judge-relative change; it is not automatically a gain over LoRA. Related changes overlap, so their ranges cannot be added. Original November3 ranges were not remeasured for every carryover in completed spans. New work must reassess them against the latest frozen H03 reference and retain historical checkpoint800 controls separately; do not mechanically add or subtract gains across cohorts.
+**Gain ranges are subjective historical planning ranges, not measurements, expected values, confidence intervals or guarantees.** Most original estimates concern an older LoRA comparator. They have not been remeasured against the strong public-checkpoint H60 incumbent; reassess baseline, population, exposure, deployment and cost before selecting an old item. Gains from related changes cannot be added.
 
-Priority combines measured evidence, plausible upside and the cost of getting an informative answer. P1 is the first model-pilot wave after E00; cheap calibration/coverage audits can run on CPU in parallel with that work. Low gain confidence applies to every estimate; qualitative risk describes execution, validity and deployment hazards, not a numeric probability of failure.
+**Resource estimates are planning budgets.** Engineering hours exclude waiting; CPU hours are elapsed local time; GPU hours mean elapsed two-T4 session time, not summed device-hours. Pilot and follow-up are separate and additive; include matched controls, OOF work and retries where required. Refresh actual quota, jobs, model availability and the nine-hour submission limit before GPU launch. Existing per-item 4B training estimates remain historical.
 
-**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.
+Active v39 focuses H81: target-blind validation-population audit. The frozen composite mismatch gate failed; descriptive support/format differences remain documented. No prediction-quality experiment or submission followed. Original teacher predictions overlap training and are not OOF; later-source evaluation has different selection and named-model support. Neither is an established unbiased forecast of hidden competition performance.
 
-Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.
+The registry preserves all stable task IDs, dated status history and immutable version snapshots. Draft follow-ups enter the next version; the goal selects bounded work. Completed tasks can have negative or inconclusive results. Historical progress lives in docs/SPAN_NNN_RESULTS.md and backlog/versions; use current task evidence rather than inherited estimates to make a decision.
 
-Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots.
-
-V3 verified H03 step1438 at official loss0.95481. V4 completed E04:512 fresh native requests on64rows show substantial drift for identical token inputs with either cache setting. H44 was not fitted and is deferred; E05 request-concurrency diagnosis is queued for v5. Old cached blend gains remain exploratory, conditional on their recorded predictions, not verified deployment gains. Best official score is unchanged. A new span needs a selected focus and fresh resources.
-
-V5 completed the source-model experiment on the unchanged5746development rows: known-name strength lowers calibrated LoRA loss0.953701 to0.940456, but the practical nested source selector0.953834 does not improve its comparator. Compact inferred strength alone gives0.001305 conditional gain, selected after inspection and requiring frozen replication. Source TF-IDF accuracy27.08% is a different task metric. ZeroGPU/new submissions; official best remains0.95481. At v5 closure H46 replication and conditional E08 qualification were queued for v6; the v6 outcome follows.
-
-V6 completed frozen compact-strength transfer on5746 historically inspected confirmation rows: calibrated LoRA0.946628, strength0.945753, gain0.000876 CI[-0.000390,0.002173]. Style0.945815 nearly matches strength; the practical minimum and both paired-evidence gates fail. H46 is done without promotion and E08 is deferred, unexecuted; done status is not positive evidence. Source attribution27.98% and strength correlation0.585 leave a direct-strength regression hypothesis for v7. One verified offline2T4 job cost3932.151session-seconds; no new submission, best official0.95481 unchanged. V7 needs a separately selected focus and fresh resource admission.
+Dataset text, caches, per-row predictions and weights stay under ~/database/llm_classification_finetuning. Source, Markdown, aggregate results and executed notebooks are versioned here. This backlog does not establish an irreducible loss floor of1.0, prove target leakage, or guarantee0.8.
 
 Next version: **v40 draft**, in [NEXT.md](backlog/NEXT.md). Use `versions` or `list --version N` to browse preserved spans.
 
@@ -65,7 +59,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 48 | [H44](#h44) | P1 / deferred | Calibrate a routed classifier and judge mixture | -0.01…+0.01 | high | 2…6 | 0…0 | 2…6 | E00, H39, H43, E04, E05 |
 | 68 | [H53](#h53) | P1 / planned | Test the binding temperature ceiling in the stable10%judge cascade | -0.002…+0.006 | high | 0.5…2 | 0…0 | 0.3…1.5 | E00, E05, H52 |
-| 100 | [H81](#h81) | P1 / running | Audit validation population relevance before another model trial | +0…+0 | medium | 1…3 | 0…0 | 0…0.5 | E00, H35 |
+| 100 | [H81](#h81) | P1 / done | Audit validation population relevance before another model trial | +0…+0 | medium | 1…3 | 0…0 | 0…0.5 | E00, H35 |
 | 8 | [H05](#h05) | P2 / planned | Better optimization | -0.01…+0.02 | medium | 4…10 | 2…6 | 10…20 | E00 |
 | 9 | [H06](#h06) | P2 / planned | Response-aware pooling | -0.01…+0.02 | medium | 8…18 | 1…3 | 10…20 | E00 |
 | 10 | [H10](#h10) | P2 / planned | Shared response utilities | -0.02…+0.02 | high | 10…24 | 1…3 | 12…28 | E00 |
@@ -116,6 +110,7 @@ Gain = planning range of **absolute log-loss reduction** (positive helps, negati
 - V4 closure bibliography erratum: one v3 source-list sentence in sealed v4-final/v5-start still says no v4 experiment has run. It was inherited from the activation record; their task outcomes and main framing correctly record completed E04 and deferred H44. Correct the current bibliography, preserve sealed snapshot bytes, and use docs/SPAN_004_COMPLETION.md for the closing interpretation.
 - User planning addition2026-11-05 before any v5 focus/preparation: add E06 source strength/oracle residual diagnostics, E07 text-to-source probabilities, and H45 incremental LoRA integration. Live v5 membership is38; preserve original35-task v5-start and all earlier snapshots. Scientific pilot gates remain required; no experiment or goal activated. See docs/SPAN_005_SOURCE_MODEL_PLAN.md.
 - V5 source integration: preserve the negative primary nested-family result even though a fixed strength family is promising. H46 freezes a separate-cohort replication; E08 needs that actual quality gate before offline qualification. No post-hoc family promotion, new official score, or0.8 guarantee.
+- 2026-11-09 independent-review preparation: correct stale current0.95481/v11 framing to the verified H60 .82987/v39 state. Historical forecasts retain their original comparator and need reassessment. No old task outcome, gate, estimate or immutable snapshot is changed.
 
 ## Evaluation and stopping rules
 
@@ -195,7 +190,7 @@ A restrictive judge-temperature bound may prevent adequate confidence shrinkage 
 
 ### H81
 
-**Audit validation population relevance before another model trial** — P1, running, risk medium.
+**Audit validation population relevance before another model trial** — P1, done, risk medium.
 
 Later-source validation may misrepresent the opportunity for features on the original competition population; diagnose this before interpreting further null results or local gains.
 
@@ -226,6 +221,7 @@ Later-source validation may misrepresent the opportunity for features on the ori
 - 2026-11-09T16:35:06+00:00 — running: Published dd94808 targetblind audit complete:0exactIDoverlap, native lengthTV.001334, but frozen composite mismatch gate fails (only headingSMD>.25). Preserve first result; separate numerical correction fixes constant-column SMD1.414to0 and TVroundoff,4tests pass, no gate/decision/data change. User requests independent Fable-high critique; actual service rejected model for ChatGPT account, reviewer choice pending, no substitute or new experiments. Evidence: [results/span_039/H81_corrected_results.json](results/span_039/H81_corrected_results.json)
 - 2026-11-09T16:42:26+00:00 — running: Measured report and executedNotebook51 complete, standaloneplot saved; original/corrected/result-resource hashes verified. Zero GPU/official and fresh16:39board24/309/quotaunchanged. Exactname supportgap is distinct from failed compositegate; no quality or sourceinvalidity claim. User-requested Fablehigh review still unrun because service rejected model and reviewer choice is pending; no new experiment/closure. Evidence: [docs/SPAN_039_RESULTS.md](docs/SPAN_039_RESULTS.md)
 - 2026-11-09T16:45:24+00:00 — running: Third consecutive review blocker verified: requested Fable/high was rejected, no alternate supplied, no reviewer running/output. Independent audit/report/Notebook51 complete and pushed a695a48; no remaining independent work needed before requested critique. Block audit recorded for persistent-goal status; no new experiment/version closure or completion claim. Evidence: [results/reviews/20261109_review_block_audit.json](results/reviews/20261109_review_block_audit.json)
+- 2026-11-09T17:43:01+00:00 — done: Target-blind audit and executed Notebook51 complete; independent Claude/Fable-high review now actually completed after explicit payload approval. Verbatim critique,17-point response and reproducible counterexamples saved. Corrected stale current state and simplified prospective policy. Frozen composite gate still fails; no quality/GPU/official/version advance or leaderboard-goal completion. Evidence: [docs/CLAUDE_REVIEW_RESPONSE_20261109.md](docs/CLAUDE_REVIEW_RESPONSE_20261109.md)
 
 ### H05
 
@@ -524,6 +520,7 @@ One predeclared60pctGemma/40pctLlama prior may improve the retained equal-expert
 - 2026-11-08T20:58:19+00:00 — deferred: Required H74 identical-prediction/runtime prerequisite failed. No60/40probability, CPUqualityreplay, qualification or official was computed. Carry forward only; a new successful engineering prerequisite and bounded contract are required. Evidence: [docs/SPAN_027_RESULTS.md](docs/SPAN_027_RESULTS.md)
 - 2026-11-08T21:03:58+00:00 — deferred: V28explicit amendment: failedH74(10240) replaced by E18(original8192exact-stream CPU-prefetch). Preserve oldfailure/history. Remain deferred and uncomputed until E18 passes actual engineering; no10240retry or tolerance relaxation. Evidence: [docs/SPAN_028_PLAN.md](docs/SPAN_028_PLAN.md)
 - 2026-11-08T21:59:50+00:00 — deferred: E18 preserved exact predictions but failed full three-role conservative runtime9h9m33. Remain uncomputed/deferred under v28contract: no60/40replay/qualification/official. Future two-expert proposal is a distinct task with historical50/50comparator and its own actual qualification. Evidence: [docs/SPAN_028_RESULTS.md](docs/SPAN_028_RESULTS.md)
+- 2026-11-09T17:43:02+00:00 — deferred: Independent Fable review correctly identifies negligible inference cost of changed constants; future verified qualification reuse is permitted. Its recommended .5/.6/.7 source curve followed by submission regardless is not decision-changing validation and selects another weight partly from official feedback. Keep deferred; no curve, qualification, submission or retrospective runtime pass. New independently justified recipe requires a prospective contract. Evidence: [docs/CLAUDE_REVIEW_RESPONSE_20261109.md](docs/CLAUDE_REVIEW_RESPONSE_20261109.md)
 
 ### H22
 

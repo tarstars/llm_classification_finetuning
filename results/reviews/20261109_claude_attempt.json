@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-09T17:06:08.056840+00:00",
+  "requested_model": "fable",
+  "runner": "claude",
+  "effort": "high",
+  "user_authorized_claude_runner": true,
+  "invocation_started": true,
+  "review_completed": true,
+  "status": "complete",
+  "automatic_approval_rejection": "This sends non-public project code, reports, and aggregate results to an external Claude service; the user authorized running Claude for review but did not explicitly authorize this specific sensitive payload and destination.",
+  "payload": "143 selected source, report, backlog, configuration and aggregate-result files; 831432 bytes",
+  "excluded": [
+    "raw competition text",
+    "datasets",
+    "per-row predictions",
+    "weights",
+    "credentials"
+  ],
+  "prompt_sha256": "4c993526fa4611e947f9104f0385bb1c01ce16c9e9209a43651a9664d97278ce",
+  "manifest_sha256": "d3f23c2de90be98e3df64f239eff066351dd843b0d74c38edc5b82d8a00e9399",
+  "tools": [
+    "Read",
+    "Grep",
+    "Glob"
+  ],
+  "scope": "isolated read-only copy at /tmp/llm_claude_review_20261109",
+  "pending_question": "May the prepared private code/report/aggregate bundle be sent to Claude/Fable for the requested high-effort review?",
+  "no_workaround_attempted": true,
+  "user_explicitly_approved_payload": true,
+  "approval_text": "yes, you can",
+  "observed_model": "claude-fable-5-1",
+  "session_id": "d163db35-9523-467f-ae51-089a6da27995",
+  "exact_effort_argument": "high",
+  "execution_session_id": 90536,
+  "invocation_exit_code": 0,
+  "completed_at": "2026-11-09T17:37:35.809098+00:00",
+  "duration_ms": 442480,
+  "num_turns": 64,
+  "total_cost_usd": 5.007942,
+  "review_path": "docs/CLAUDE_CRITICAL_REVIEW_20261109.md",
+  "review_sha256": "8e021cb95b5cbdabc5ee6a4b040a0e237da85c1c546c19508402c03d8982b368",
+  "events_sha256": "d911e7ab2f4416b42e33ebbb170029a7f2a161d8f793577f16b51e800e52cb21",
+  "permission_denials": [],
+  "raw_transcript_committed": false,
+  "tools_used": [
+    "Glob",
+    "Grep",
+    "Read"
+  ],
+  "read_tool_calls": 63,
+  "reaction_validation": {
+    "mathematical_claim_checks": "passed; scripts/check_claude_review_claims.py",
+    "backlog_unit_tests": 21,
+    "backlog_unit_tests_passed": true,
+    "backlog_check_passed": true,
+    "review_request_manifest_hashes_verified": true,
+    "user_notebooks_preserved": true,
+    "notebook_symlink_preserved": true,
+    "new_gpu_jobs": 0,
+    "new_official_submissions": 0,
+    "historical_task_outcomes_reclassified": false
+  }
+}

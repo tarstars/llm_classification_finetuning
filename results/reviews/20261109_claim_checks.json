@@ -1,0 +1,28 @@
+{
+  "uses_competition_rows": false,
+  "probability_drift_counterexample": {
+    "max_probability_difference": 0.00049,
+    "true_class_loss_increase": 3.912023005428146,
+    "mean_increase_if_one_of_25000_rows": 0.00015648092021712583,
+    "conclusion": "Absolute probability drift alone cannot bound log-loss drift by 1e-4."
+  },
+  "order_averaging_counterexample": {
+    "original_loss": 0.10536051565782628,
+    "reverse_loss": 2.3025850929940455,
+    "averaged_loss": 0.6931471805599453,
+    "conclusion": "Jensen does not guarantee improvement over the original orientation alone."
+  },
+  "conditional_two_expert_convexity": {
+    "lower_bound_at_gemma_weight_0_6": 0.82966,
+    "lower_bound_allowing_score_rounding": 0.8296449999999999,
+    "rank19_cutoff_snapshot": 0.82915,
+    "assumptions": "Identical scored rows, base predictions and postprocessing except mixture weight; losses rounded to five decimals.",
+    "applies_to_H60_three_role_path": false
+  },
+  "arithmetic_prevalence_algebra": {
+    "original_affected_fraction": 0.0012700732466899803,
+    "conditional_gain_needed_for_0_00072_overall": 0.5668964383561644,
+    "conclusion": "Prevalence alone supplies no numerical log-loss ceiling; affected baseline loss is also required. No hidden prevalence or gain is estimated."
+  },
+  "official_uncertainty": "Cannot estimate paired standard error from aggregate leaderboard scores alone."
+}

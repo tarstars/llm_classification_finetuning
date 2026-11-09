@@ -59,6 +59,24 @@ executing its successor backlog; select a new bounded goal first.
 | `deferred` | Waiting for resources or stronger evidence |
 | `rejected` | Ruled out, with a recorded reason and supporting evidence |
 
+**Keep the process proportional to the decision.** A span groups a bounded
+research question, including its controls and follow-ups. Do not create a new
+span, notebook or closure program for each small correction or read-only check.
+Use one concise result report and update an existing notebook when that is enough.
+Preserve the user's versioned backlog and all historical snapshots; dropping
+versioning is not a remedy for excess paperwork. CPU-only documentation changes
+need backlog consistency and relevant artifact checks, not another remote GPU
+inventory or a new experiment. Before GPU admission, refresh live service state.
+
+Every new experiment must explain what decision its result can change. State the
+smallest useful effect relative to the current objective, plausible pilot precision
+and the cost of advancing or stopping. An underpowered positive-CI gate is not a
+universal screening rule. For a feature confined to fraction f of cases, compare
+its conditional effect and affected baseline loss with the overall gain needed;
+prevalence alone is not a log-loss upper bound. Do not treat source-domain
+confidence intervals as uncertainty for a hidden competition score. Aggregate
+leaderboard losses alone do not identify a paired standard error.
+
 1. **Choose actionable work.** Check the backlog before beginning an experiment.
    Complete prerequisites first, then weigh priority, plausible gain, risk and
    engineering/compute cost together. Sorting by gain uses the optimistic endpoint,
@@ -100,6 +118,22 @@ executing its successor backlog; select a new bounded goal first.
    profile before large scoring. Preserve failed numerical-identity checks; if the
    numerical recipe changes, re-evaluate matched cohorts consistently rather than
    pooling incompatible cached outputs.
+   Exact reproduction controls and evaluation of a deliberately changed numerical
+   recipe answer different questions. A new packing/backend recipe requires its
+   own prospective comparison of matched inputs, probability distributions,
+   observed loss changes, memory and end-to-end time; a fixed absolute probability
+   tolerance alone neither proves nor disproves acceptable log-loss behavior.
+   Preserve the old failed reproduction result. Do not reinterpret it as a pass.
+
+   A change only to postprocessing constants can reuse a verified inference
+   qualification when source, inputs, passes, routing and execution path match.
+   Test the changed probability algebra on CPU; do not automatically spend another
+   GPU qualification on unchanged inference. Explain conflicting later runtime
+   evidence rather than discarding it. Past completion demonstrates one feasible
+   execution; the nine-hour limit and device/runtime variation still matter.
+   Account separately for public GPU quota, official-rerun billing and submission
+   runtime. Reserve assumptions need dated billing evidence. Revising a future
+   resource model does not alter an existing span's frozen caps or deadline.
    Distinguish engineering person-hours,
    CPU elapsed hours and elapsed two-T4 session hours. Count pilot and follow-up
    separately, plus controls, OOF prediction generation and retries when required.

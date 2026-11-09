@@ -1,128 +1,75 @@
-# Verified blocker after three goal turns
+# Current state — 2026-11-09 independent review complete
 
-The requested independent Fable/high review remains unperformed. The model was
-actually rejected by the current account, is absent from the supported-model
-cache, no alternate has been chosen, and no review process/output exists.
-All independent H81 report/notebook work is complete and pushed in a695a48.
-The third consecutive audit now meets the blocked threshold; the goal-status
-tool is authoritative. Evidence: results/reviews/20261109_review_block_audit.json.
-Do not retry the same unsupported name, substitute another model silently or
-produce more status-only continuations. Required input: an available reviewer
-choice (Astra/high or Sol/high) or supported exact Fable ID/access. A later user
-resume starts a fresh blocked audit; do not reuse this threshold automatically.
-No experiment, submission, version closure or goal completion is claimed.
+Read PROJECT_POLICY.md; verify live service state before launching any GPU work.
+Scope searches to this project and specifically named artifacts. Never walk HOME,
+~/prj, Arc/FUSE mounts or troll_farm. Preserve user-dirty notebooks07and12; hashes
+in results/span_039/preservation.json. Do not stage/reset them.
 
-# Current steering: independent critical review requested
+## User request handled
 
-The user explicitly asks for Fable at high effort to critically review the work,
-then react to its criticisms. Review brief: docs/CRITICAL_REVIEW_REQUEST_20261109.md.
-Actual read-only codex exec model=fable,effort=high failed with service error:
-"The fable model is not supported when using Codex with a ChatGPT account."
-Exact error and no-substitution receipt: results/reviews/20261109_fable_attempt.json.
-Review38834 TERMINALexit1; no reviewer is running. An async question is pending:
-Astra-high, Sol-high, or exact supported Fable access/ID. Do not pretend the review
-ran or silently substitute. Original rank goal remains ACTIVE, not paused/complete.
+The user requested Fable/high criticism and a substantive response. Codex rejected
+the model name, but the user authorized Claude and then explicitly approved sending
+the prepared private source/report/aggregate bundle. Claude Code ran successfully
+with --model fable --effort high, reporting claude-fable-5-1:442.480s,USD5.007942.
+Only Read/Grep/Glob, isolated143-file bundle; no raw competition text, credentials,
+weights or per-row predictions. Process90536terminalexit0; no reviewer is running.
 
-H81/v39 is RUNNING and its target-blind census54733 TERMINALexit0. Published
-dd94808 before data,30.860s/.991GiB. Result results/span_039/H81_results.json.
-Original64 and later48 exact model IDs have no intersection; matched1024also
-has none. Native length-bin TV .001334. But frozen composite material-mismatch
-rule FAILS: only Markdown headings has post-standardization |SMD|>.25; two needed.
-This does not prove validation invalid or score gains on another population.
-No preference labels, prediction analysis, GPU or new model trial authorized.
+- Verbatim docs/CLAUDE_CRITICAL_REVIEW_20261109.md.
+- Point-by-point docs/CLAUDE_REVIEW_RESPONSE_20261109.md.
+- Actual receipt and bundle manifest results/reviews/20261109_claude_*.json.
+- Executable mathematical checks scripts/check_claude_review_claims.py and result.
 
-First result preserved. A separate H81_corrected_results.json fixes constant-
-column roundoff (single-turn SMD1.414->0) and tiny TV>1roundoff. Four meaningful
-regression tests pass; no data, rule or decision changed. New correction code is
-src/arena/span039_population_math.py and scripts/correct_span_039_statistics.py.
-Do not close v39 or select new experiments before handling the requested review.
-No numerical quality/official follows from this audit. Preserve all prior stops.
+Accept: overlong administrative spans, stale documents, exposure/transfer limits,
+underpowered gates, qualification reuse for unchanged inference, separate quota/
+runtime accounting. Fixed README/backlog framing and simplified future policy.
+Reject: universal probability-drift-to-loss bound, unconditional Jensen benefit,
+invented official SE/success odds, prevalence-only loss ceiling, and using prior
+leaderboard direction to select another weight. Preserve original review verbatim.
+H73 stays deferred; no new weight curve, model trial, submission or queued task.
+Do not turn the review into an automatic new engineering loop.
 
-Current audit deliverables are now complete: docs/SPAN_039_RESULTS.md,
-executed notebooks/51_validation_population.ipynb and standalone
-results/span_039/population_covariates.png. First-result hash and notebook result/
-resource stamps verified. Read-only resource observer98285 TERMINALexit0 and
-notebook76318 TERMINALexit0. Fresh16:39UTCboard24/309,.82987,cutoff.82915;
-quota unchanged38277.944used/69722.056free,reserved0,8officials terminal. No GPU,
-new model trial, version closure or experiment selection followed. The requested
-independent critique cannot proceed without the pending model choice; do not
-retry unsupported Fable or fabricate review findings. H81/v39remains running.
+## Objective, backlog and result
 
-The older orientation below is historical; current files and this steering override it.
+Persistent target: team17244411rank<=19after legitimate inference. Unachieved.
+Last complete official observation2026-11-09T16:39:03UTC:24/309,best.82987,
+rank19/20.82915,leader.82665; results/span_039/final_leaderboard.json. Incumbent
+H60receipt58103553, source arseniytrushin/llm-preference-span013-gemma-order/1.
+The .83053equal two-expert baseline is distinct. Goal service last recorded
+blocked for the former reviewer-selection issue; this review resolved that issue,
+but it did not achieve the ranking target or change service status to complete.
 
-# V38 closed; v39 validation-population audit next
+Active backlogv39focusH81, nowdone;100registered/35members/154historical snapshots.
+Draftv40empty. No version advance or new experiment selected. GOAL.md retains
+its frozen method/caps. Historical snapshots and source results are unchanged.
 
-Snapshot 2026-11-09 14:06 UTC. Read PROJECT_POLICY.md; verify current files and
-live service state. Persistent goal: own team17244411rank<=19after legitimate
-inference on a fresh complete official board. ACTIVE/unachieved. Latest14:02UTC
-board24/309,score.82987,rank19/20cutoff.82915,leader.82665. Be economical. No
-subagents without authorization. Never walk HOME, ~/prj, Arc/FUSE or troll_farm.
+H81target-blind census:57477original/49938singleturn/11215later/1024matched/512profile.
+Original64andlater48exactmodelIDs have zero overlap. Matched native lengthTV.001334.
+Only headings has poststandardization |SMD|>.25; frozen two-covariate composite
+gate FAILS. This is not absence of differences, a transportability test or a
+quality result. Corrected constant-column SMD roundoff separately; first result
+preserved. Four meaningful math tests passed. Report docs/SPAN_039_RESULTS.md,
+executed notebooks/51_validation_population.ipynb, corrected aggregate and plot.
+No labels/predictions/GPU in census; no new quality experiment in this review.
 
-V38 H35 is DONE and sealed. Frozen constrained arithmetic parser was published
-8c6c42d before real text census. Five meaningful arithmetic/safety/rounding/
-abstention/swap tests passed. CPU37487TERMINALexit0: full57477original rows plus
-11215later public prompt representatives, no votes/model fields.22.735s,.991GiB.
-Original247rows with729claims,117outside-tolerance flags,73nonzero A/Bcontrasts.
-Later18rows with75claims,1flag,1nonzero contrast.128per-source gate fails, so no
-32case blind sample, reliability certification, labels, fit, GPU or official.
-Do not widen/tune the parser or call these certified whole-answer errors.
-Report SPAN_038_RESULTS, coverage.json, executedNotebook50are authoritative.
-Independent closure replay checks804numeric claims, all saved counters/features,
-source SHA, resources, source archives and150old->154total snapshots.
+## Resources and prior stops
 
-New H81 is PLANNED in v39: audit validation-population relevance. Coverage rates
-under one parser differ14.2x, but originalmulti-turn/multilingual versus later
-Englishsingle-turn selection, length/format and model generations are confounded.
-This is not evidence modern models have fewer factual errors. Original teacher
-training overlap further confounds quality. First a target-blind CPU covariate/
-support audit, both full sources and existing length-matched cohorts; producer
-identities for diagnostics only, never deployment. No model/GPU/cohort fishing
-or old-result replacement. Only a supported mismatch can justify a separately
-frozen new label/prediction comparison with clear exposure and grouping. Read
- docs/VALIDATION_POPULATION_DISCOVERY.md and backlog show H81. H76's positive
-local/worseofficial result is a prior transfer warning, not a tuning signal.
+Latest resource observation16:39UTC:38277.944sused,69722.056sfree(19.37h),reserved0,
+paidFalse,Nov14anchor. This is dated, not fresh admission. All8officials terminal;
+full77owned catalog last refreshedv36. No new GPU/public version/official here.
+Original deadline2026-11-10T08:37:37.343197UTC and v39reserve32400s persist; future
+budget revisions must distinguish observed official billing from runtime caps.
 
-All handles are TERMINAL: census37487, resource9535, notebook78098. No observer
-or GPU job is live. V37source/metadata handles and v36controller28093/source80645/
-quality34928/resource59311are also terminal; do not poll/restart/rerun them.
-V37H80three-public-candidate compatibility audit failed its source gate,592122
-smallbytes, no weights/labels/GPU. HFarchives lacked standalone configs/lineage;
-HumanBias .pth release not connected to retrieved embedding/CatBoost notebooks;
-Justin local4bitbase/revisionnull/head/order unresolved. No proved compatible
-pair or automatic source rescue. Current Gemma m0MLP and Llama m3cannot be
-averaged. Preserve401/403/unknownlineage and prior v23missing-release findings.
-V37closure pushedb07a9bc.
+Preserve historical stops and limits: H59temperature.84797,H76weights.83140; no
+leaderboard-driven weight/T/route fitting. H61gain.0002801failed its frozen gate.
+H74packing failed reproduction(max~.00049); no measured loss regression. E18
+three-role runtime32973>32400. A future changed numerical recipe needs matched
+consistent evaluation, not retroactive tolerance relaxation. H27recentturns overall
+gain.00006279; H78scalarrewardnegative; H79PairRMall5coefficients0,narrownull;
+H80public compatibilityunproved; H35arithmeticcoveragegatefailed,noerrorscertified;
+H46producerstrengthfailedreplication,E08deferred. Detailed reports are authoritative.
 
-V36H79PairRM: one source/native-verified two-T4 pilot,288.21chargedseconds,
-all5outercoefficients0,loss.997842274unchanged,gain0with degenerate[0,0]prediction
-bootstrap. Raw non-tie59.17%vs65.66%,tie-marginAUC.5256vs.6603. No qualification/
-weight/prompt/margin/family rescue. Full394tensor/native token/control/device/
-memory checks passed; closure cf6a46d. No independentcompetitionCV claim.
-
-Resources unchanged by v37/v38:38277.944sused/69722.056sfree(19.37h),reserved0,
-paidFalse,sameNov14anchor. Eightofficials and lastv36pilot terminal. Full77owned
-catalog last refreshedv36; CPU-only closes did not refresh allnotebooks. Fresh
-fulladmission required for any futureGPU. Preserve32400free for qualifiedofficial.
-Original absolute deadline2026-11-10T08:37:37.343197UTC never resets.
-
-Backlog v39:34carried unfinished+newH81=35active,100registered,154immutable
-snapshots; no focus yet. GOAL.md is the closed v38contract, archived exactly
- docs/GOAL_V38.md. Write/select a bounded H81focus before new work under the
-persistent objective. A span's closure is not the goal. Most old optimization
-forecasts target weaker ownmodels and need a current-strong-baseline design.
-Do not fill time with framework edits, replay passing tests or tune officials.
-
-Previous stops remain: H27recentturns312/57477,sourceweightedgain.00006279fails
-.0015; H78scalarreward,H77/H16coverage,fresh8B/runtime,H76official.83140,
-temperature and packingidentity failures. Current bestH60receipt58103553/source
-llm-preference-span013-gemma-order/1score.82987. Preserve negative/inconclusive
-findings; no hidden-score forecast from overlapping source evaluations.
-
-HeavyROOT=/home/tarstars/database/llm_classification_finetuning; Python
-.venv/bin/python,PYTHONPATH=src:scripts. Native CPU pins use
-PYTHONPATH=/tmp/llm_span019_runtime:src:scripts. Network/DB/Jupyter/Git writes need
-escalation; authorization established. Heavy text/weights/per-rowoutputs inROOT;
-programs/Markdown/aggregates/executednotebooksGit. Preserve user-dirty07+12bytewise
-and unstaged; hashesresults/span_038/preservation.json. Notebook symlinkcorrect.
-Gitmain,GitHubtarstars/llm_classification_finetuning. Publish important results.
-Only actual verifiedrank<=19completes the persistent objective.
+HeavyROOT=/home/tarstars/database/llm_classification_finetuning; .venv/bin/python,
+PYTHONPATH=src:scripts; native CPU pins /tmp/llm_span019_runtime. Notebooks linked
+from ~/notebooks/llm_classification_finetuning. Gitmain/GitHubtarstars repository.
+Network/DB/Git/Jupyter writes need escalation; ordinary project authorization is
+established. Publish important changes and preserve unrelated user edits.

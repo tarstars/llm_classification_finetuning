@@ -8,9 +8,22 @@ Follow the [project policy](PROJECT_POLICY.md) for backlog selection, experiment
 budgets, status updates, evidence, validation and committing results.
 For a new session, start with the [context handoff](docs/CONTEXT_HANDOFF.md).
 
-**Active goal:** move above20th place (rank19 or better). V11 initially focuses
-H59: audit later Arena votes and test one temperature on the unchanged two-expert
-baseline. See [the current contract](GOAL.md) and [v11 plan](docs/SPAN_011_PLAN.md).
+**Current status — verified 2026-11-09 16:39 UTC:** H60 scores **0.82987**,
+placing team17244411 **24th of 309**. Rank19 requires0.82915 at that snapshot;
+the gap is **0.00072 log loss**. These are the rolling competition's official
+scores, not the separate 2024 prize competition's final private leaderboard.
+
+**Active goal:** rank19 or better, still unachieved. Backlog **v39** focuses H81,
+a completed target-blind validation-population audit. The requested
+[Fable/high critical review](docs/CLAUDE_CRITICAL_REVIEW_20261109.md) and
+[point-by-point response](docs/CLAUDE_REVIEW_RESPONSE_20261109.md) are complete.
+H81's composite mismatch gate failed; there was no quality trial or submission.
+See [current contract](GOAL.md),
+[audit results](docs/SPAN_039_RESULTS.md), [executed Notebook51](notebooks/51_validation_population.ipynb),
+and [current handoff](docs/CONTEXT_HANDOFF.md). Quota and rank observations are
+dated; refresh them before a new GPU execution.
+
+Historical milestones below retain their own comparators and dates.
 
 V10 completed two order-completion pilots but neither qualified: conservative
 runtime **9.166 /10.163hours**, with the second also failing the strict numerical
@@ -67,12 +80,11 @@ two-T4 session-hours** and made no submission. See the
 [pipeline theory](docs/PIPELINE_THEORY.md), and
 [review of skipped work](docs/SPAN_007_CARRYOVER_REVIEW.md).
 
-The active backlog is **v11:41tasks**, with **38 unfinished carryovers and three
-new discoveries**: E16 matched performance profiling, H58 one-expert order
-averaging and H59 confidence calibration using later votes. H59 is the initial
-focus; the others remain unselected. V12 is an empty draft. V10 sealed E15/H57
-with no submission. [Its contract](docs/GOAL_V10.md) and all failures are preserved;
-the persistent above20goal continues under the new bounded plan.
+The active backlog is **v39:35tasks**, focusing only H81; **v40** is the next
+draft. Membership/status live in [BACKLOG.md](BACKLOG.md), discoveries in
+[backlog/NEXT.md](backlog/NEXT.md), and previous spans in immutable snapshots.
+The incumbent is H60; forecasts originally made against weaker LoRA models must
+be reassessed before use.
 
 V6's frozen source-strength transfer had an inconclusive gain of
 0.000876 [−0.000390, 0.002173] and made no submission. See
@@ -146,9 +158,8 @@ length, refusals, duplicates and target-derived EDA metadata for leakage.
 
 The [research backlog](BACKLOG.md) starts with 40 hypotheses with estimated log-loss
 gains, risks, engineering/compute budgets, dependencies and test/stop rules.
-The active version is **v11**, with **41 tasks**, initially focusing H59.
-Its three new discoveries retain provenance and bounded tests; unfinished work
-is carried forward. [The next-version view](backlog/NEXT.md) is the empty v12 draft.
+The active version is **v39**, with **35 tasks**, focusing H81.
+[The next-version view](backlog/NEXT.md) is the v40 draft.
 Completed dependencies
 alone do not establish scientific readiness: H44's original 20% route remains
 infeasible. H50 completed context qualification without a submission after its

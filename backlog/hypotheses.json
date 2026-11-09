@@ -7069,6 +7069,14 @@
           "evidence": [
             "docs/SPAN_028_RESULTS.md"
           ]
+        },
+        {
+          "at": "2026-11-09T17:43:02+00:00",
+          "status": "deferred",
+          "note": "Independent Fable review correctly identifies negligible inference cost of changed constants; future verified qualification reuse is permitted. Its recommended .5/.6/.7 source curve followed by submission regardless is not decision-changing validation and selects another weight partly from official feedback. Keep deferred; no curve, qualification, submission or retrospective runtime pass. New independently justified recipe requires a prospective contract.",
+          "evidence": [
+            "docs/CLAUDE_REVIEW_RESPONSE_20261109.md"
+          ]
         }
       ]
     },
@@ -7880,7 +7888,7 @@
       ],
       "id": "H81",
       "rank": 100,
-      "status": "running",
+      "status": "done",
       "introduced_in": 39,
       "discovered_during": 38,
       "derived_from": [
@@ -7926,20 +7934,25 @@
           "evidence": [
             "results/reviews/20261109_review_block_audit.json"
           ]
+        },
+        {
+          "at": "2026-11-09T17:43:01+00:00",
+          "status": "done",
+          "note": "Target-blind audit and executed Notebook51 complete; independent Claude/Fable-high review now actually completed after explicit payload approval. Verbatim critique,17-point response and reproducible counterexamples saved. Corrected stale current state and simplified prospective policy. Frozen composite gate still fails; no quality/GPU/official/version advance or leaderboard-goal completion.",
+          "evidence": [
+            "docs/CLAUDE_REVIEW_RESPONSE_20261109.md"
+          ]
         }
       ]
     }
   ],
   "framing": [
-    "Our best recorded official score is **0.95481**, from frozen submission57979825. Reaching0.8 would require **0.15481** lower log loss (about16.2%). No item or combination here is established to achieve that. The evidence does not establish an irreducible loss floor of1.0 or prove leaderboard gains are target leakage.",
-    "**All gain ranges are subjective planning ranges, not measured gains, expected values, confidence intervals or guarantees.** They allow regression. They describe incremental overall loss reduction against a matched, calibrated, swap-averaged attempt-002 comparator on identical evaluation rows. For judge-only changes, also report the judge-relative change; it is not automatically a gain over LoRA. Related changes overlap, so their ranges cannot be added. Original November3 ranges were not remeasured for every carryover in completed spans. New work must reassess them against the latest frozen H03 reference and retain historical checkpoint800 controls separately; do not mechanically add or subtract gains across cohorts.",
-    "Priority combines measured evidence, plausible upside and the cost of getting an informative answer. P1 is the first model-pilot wave after E00; cheap calibration/coverage audits can run on CPU in parallel with that work. Low gain confidence applies to every estimate; qualitative risk describes execution, validity and deployment hazards, not a numeric probability of failure.",
-    "**Resource estimates are unmeasured planning budgets.** Engineering hours exclude waiting for compute. CPU hours are elapsed on a modest local worker. GPU hours mean elapsed two-T4 session hours (multiply by two for summed T4 device-hours). Pilot and follow-up budgets are separate and additive; they describe one candidate, not an unbounded search. Reuse a matched baseline only when its split, training exposure and postprocessing really match; otherwise add a control run (roughly 6–12 session-hours at the current 4B setup) and any required OOF folds. Nested/OOF retraining can multiply costs. Larger-model/long-context budgets are especially uncertain.",
-    "Follow-ups above nine hours require multiple resumable jobs and enough verified quota; they are not single Kaggle sessions. Refresh the competition runtime rules, remaining quota and actual job status at launch. A projected 25,000 hidden rows was an assumption in attempt 003, not a known test size. No present quota availability is claimed. Dataset text, caches, predictions and models stay under `~/database/llm_classification_finetuning`; only code, aggregate results, notebooks and memory go in Git.",
-    "Backlog v1 began with E00 and forty hypotheses. Its first span focuses on E00 and H01/H09/H04/H11. New discoveries enter the next version; unfinished tasks are carried forward at span closure. Version numbers, span focus and task origins are recorded in the registry and sealed snapshots.",
-    "V3 verified H03 step1438 at official loss0.95481. V4 completed E04:512 fresh native requests on64rows show substantial drift for identical token inputs with either cache setting. H44 was not fitted and is deferred; E05 request-concurrency diagnosis is queued for v5. Old cached blend gains remain exploratory, conditional on their recorded predictions, not verified deployment gains. Best official score is unchanged. A new span needs a selected focus and fresh resources.",
-    "V5 completed the source-model experiment on the unchanged5746development rows: known-name strength lowers calibrated LoRA loss0.953701 to0.940456, but the practical nested source selector0.953834 does not improve its comparator. Compact inferred strength alone gives0.001305 conditional gain, selected after inspection and requiring frozen replication. Source TF-IDF accuracy27.08% is a different task metric. ZeroGPU/new submissions; official best remains0.95481. At v5 closure H46 replication and conditional E08 qualification were queued for v6; the v6 outcome follows.",
-    "V6 completed frozen compact-strength transfer on5746 historically inspected confirmation rows: calibrated LoRA0.946628, strength0.945753, gain0.000876 CI[-0.000390,0.002173]. Style0.945815 nearly matches strength; the practical minimum and both paired-evidence gates fail. H46 is done without promotion and E08 is deferred, unexecuted; done status is not positive evidence. Source attribution27.98% and strength correlation0.585 leave a direct-strength regression hypothesis for v7. One verified offline2T4 job cost3932.151session-seconds; no new submission, best official0.95481 unchanged. V7 needs a separately selected focus and fresh resource admission."
+    "Current official snapshot (2026-11-09 16:39 UTC): **H60 log loss 0.82987, rank24/309**; rank19/20 is0.82915, a0.00072 gap. The rank19 goal is unachieved. This rolling competition is distinct from the 2024 prize competition and its final private leaderboard. See docs/SPAN_013_RESULTS.md and results/span_039/final_leaderboard.json. Rankings and quota are dated observations, not current launch admission.",
+    "**Gain ranges are subjective historical planning ranges, not measurements, expected values, confidence intervals or guarantees.** Most original estimates concern an older LoRA comparator. They have not been remeasured against the strong public-checkpoint H60 incumbent; reassess baseline, population, exposure, deployment and cost before selecting an old item. Gains from related changes cannot be added.",
+    "**Resource estimates are planning budgets.** Engineering hours exclude waiting; CPU hours are elapsed local time; GPU hours mean elapsed two-T4 session time, not summed device-hours. Pilot and follow-up are separate and additive; include matched controls, OOF work and retries where required. Refresh actual quota, jobs, model availability and the nine-hour submission limit before GPU launch. Existing per-item 4B training estimates remain historical.",
+    "Active v39 focuses H81: target-blind validation-population audit. The frozen composite mismatch gate failed; descriptive support/format differences remain documented. No prediction-quality experiment or submission followed. Original teacher predictions overlap training and are not OOF; later-source evaluation has different selection and named-model support. Neither is an established unbiased forecast of hidden competition performance.",
+    "The registry preserves all stable task IDs, dated status history and immutable version snapshots. Draft follow-ups enter the next version; the goal selects bounded work. Completed tasks can have negative or inconclusive results. Historical progress lives in docs/SPAN_NNN_RESULTS.md and backlog/versions; use current task evidence rather than inherited estimates to make a decision.",
+    "Dataset text, caches, per-row predictions and weights stay under ~/database/llm_classification_finetuning. Source, Markdown, aggregate results and executed notebooks are versioned here. This backlog does not establish an irreducible loss floor of1.0, prove target leakage, or guarantee0.8."
   ],
   "revisions": [
     "**H07/H06:** the final causal classification token already sees both retained answers. Bidirectional masking is an architectural experiment, not a fix for missing access to answer B; H07 moves to P4.",
@@ -7956,7 +7969,8 @@
     "V4 E04: disabling prompt reuse alone does not establish stable probabilities; batch/concurrency sensitivity remains untested. H44 is explicitly deferred behind new E05 and a genuinely stable feasible recipe. No v4 blend gain or new official score is claimed; unchanged forecast ranges remain subjective plans.",
     "V4 closure bibliography erratum: one v3 source-list sentence in sealed v4-final/v5-start still says no v4 experiment has run. It was inherited from the activation record; their task outcomes and main framing correctly record completed E04 and deferred H44. Correct the current bibliography, preserve sealed snapshot bytes, and use docs/SPAN_004_COMPLETION.md for the closing interpretation.",
     "User planning addition2026-11-05 before any v5 focus/preparation: add E06 source strength/oracle residual diagnostics, E07 text-to-source probabilities, and H45 incremental LoRA integration. Live v5 membership is38; preserve original35-task v5-start and all earlier snapshots. Scientific pilot gates remain required; no experiment or goal activated. See docs/SPAN_005_SOURCE_MODEL_PLAN.md.",
-    "V5 source integration: preserve the negative primary nested-family result even though a fixed strength family is promising. H46 freezes a separate-cohort replication; E08 needs that actual quality gate before offline qualification. No post-hoc family promotion, new official score, or0.8 guarantee."
+    "V5 source integration: preserve the negative primary nested-family result even though a fixed strength family is promising. H46 freezes a separate-cohort replication; E08 needs that actual quality gate before offline qualification. No post-hoc family promotion, new official score, or0.8 guarantee.",
+    "2026-11-09 independent-review preparation: correct stale current0.95481/v11 framing to the verified H60 .82987/v39 state. Historical forecasts retain their original comparator and need reassessment. No old task outcome, gate, estimate or immutable snapshot is changed."
   ],
   "evaluation": [
     "Keep the exact prompt-grouped split IDs and frozen attempt-002 reference. Existing dev and confirmation were inspected and are exploratory. New grouped inner validation must retrain models without its held-out groups; cached in-sample training predictions cannot stand in for OOF predictions. Nested selection reduces additional tuning bias but cannot retroactively make inspected data untouched.",
