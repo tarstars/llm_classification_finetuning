@@ -1,7 +1,9 @@
 {
-  "at": "2026-11-09T13:03:33.979821+00:00",
+  "at": "2026-11-09T13:08:29.852562+00:00",
   "stage": "pairrm_pilot",
-  "event": "remote_status",
-  "status": "RUNNING",
-  "kernel_version": "arseniytrushin/llm-preference-span036-pairrm-pilot/1"
+  "event": "complete",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span036-pairrm-pilot/1",
+  "charged_seconds": 288.2100000000064,
+  "files": 12
 }

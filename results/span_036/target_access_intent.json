@@ -1,0 +1,7 @@
+{
+  "at": "2026-11-09T13:09:15.353843+00:00",
+  "publication_commit": "2e34a283d58e8beb45e07ff28ee3e09e1bcbf67d",
+  "variants": 1,
+  "feature": "symmetric_joint_pairrm",
+  "targets_after_all_native_guards": true
+}

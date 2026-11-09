@@ -1,8 +1,10 @@
 {
-  "stage": "monitoring",
-  "at": "2026-11-09T13:04:19.347749+00:00",
+  "stage": "complete",
+  "at": "2026-11-09T13:08:29.847179+00:00",
   "pid": 4028073,
   "role": "pairrm_pilot",
-  "status": "RUNNING",
-  "kernel_version": "arseniytrushin/llm-preference-span036-pairrm-pilot/1"
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span036-pairrm-pilot/1",
+  "charged_seconds": 288.2100000000064,
+  "files": 12
 }

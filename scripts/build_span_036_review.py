@@ -40,13 +40,18 @@ else:
  if r.get('quality_measured'):
   display(pd.DataFrame([dict(model=k,**{n:r[k+'_metrics'][n] for n in ['log_loss','accuracy','macro_f1','brier']}) for k in ['baseline','candidate','prior','hard_majority']]))
   print('Paired group gain:',r['raw_paired_gain'])
+  print('Outer coefficients:',[f['model']['alpha'] for f in r['folds']])
+  print('The identical-prediction bootstrap interval does not capture fitting uncertainty.')
  print('Official eligible:',r['official_submission_eligible'])
+for name in ['descriptive_diagnostics.json','resource_close.json','final_leaderboard.json']:
+ p=PUB/name
+ if p.exists():print(name,json.loads(p.read_text()))
 ''')])
     nb.metadata['kernelspec']=dict(name='python3',display_name='Python 3',language='python')
     nb=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     assert all(c.execution_count is not None and not any(o.output_type=='error' for o in c.get('outputs',[])) for c in nb.cells if c.cell_type=='code')
     import hashlib
-    for name in ['preparation','H79_results']:
+    for name in ['preparation','H79_results','resource_close']:
         p=REPO/'results/span_036'/(name+'.json')
         if p.exists():nb.metadata['span036_'+name+'_sha256']=hashlib.sha256(p.read_bytes()).hexdigest()
     nbf.write(nb,REPO/'notebooks/48_joint_comparator.ipynb')

@@ -1,0 +1,21 @@
+{
+  "files": 12,
+  "artifact_sha256": {
+    "hardware.json": "2896c47be7786c4e2b4d457a6760a0e3d3c927073e609270034ec9a9dc6284a1",
+    "pairrm_audit/ab.npz": "10b673c4522feb3a918f0fd8e1bde77e9c5ea456ffa3bff28d5408ea6e082049",
+    "pairrm_audit/ab_console.log": "578bb3f5cb5989bd05e56b300f53fd2a7b8aa4a83b54e9e7ab4a6a0987883b08",
+    "pairrm_audit/ba.npz": "c3ae6b650002d0aa67363b16927e5c3f2f39f8a6abdc50438c03fb704c640d87",
+    "pairrm_audit/ba_console.log": "23a4144cae7f6937bd6e94515bd5b5772bd4010f08d5a8b4413f04c34af3f311",
+    "pairrm_audit/pilot_complete.json": "c089ff79919ce1a60752ce6a9c2621cf0db319c61dc5c038c63cadfcb99465b7",
+    "pairrm_audit/progress_ab.json": "03b6c4675466682362a87be4deffcf1ee96d57fbdf7b53845de4d201765254cb",
+    "pairrm_audit/progress_ba.json": "73d24e198ad43db6bbd9373ca5edc09cd719ba3b4f61f2836e43dee8e52e9bbe",
+    "pairrm_audit/worker_ab.json": "845cf22c08d38e183f7887b9e48dd10ba096aa77063e69e8eba2e5cc5c7406d8",
+    "pairrm_audit/worker_ba.json": "fcf338c3f420cfab1428981428821f06647df19bf799183c37a029876e09ef1c",
+    "session_summary.json": "452f2503b8559efd50ee5975561cceafcf29df9b4763e16b718129e19d7e1db9",
+    "worker_console.log": "d90c70a7ed5c4c6bdba43981c4378a4b91a6cc9ff3b30978b4616e39d90d8410"
+  },
+  "final_checkpoint": -1,
+  "new_gpu_executions": 0,
+  "signed_urls_persisted": false,
+  "retrieved_at": "2026-11-09T13:08:29.801187+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-09T13:17:16.623721+00:00",
+  "passed": true,
+  "accepted_public_versions": 1,
+  "official_submissions": 0,
+  "all_owned_jobs_terminal": true,
+  "public_gpu_charged_seconds": 288.2100000000064,
+  "quota_delta_seconds": 288.2100000000064,
+  "quota": {
+    "used_seconds": 38277.944,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 69722.056
+  },
+  "inventory_sha256": "b0c91651f9fac53eab57f03afd5de582f76279908596d3f5210a201c5b88f55c",
+  "history_sha256": "89121deaebf40ffda622cc8f30674b4f3d8ebf6256c7665954b7987967a2dd78",
+  "leaderboard_sha256": "c884ded31021e5521ef755ba46dee2a4178548d5175def1c0c03285cad261324",
+  "result_sha256": "f278daf19f73322f6165e3f931610962508593831ff2b7c76294e4f22319202e",
+  "public_allocation_seconds": 5400,
+  "public_pilot_cap_seconds": 2700,
+  "qualification_versions": 0,
+  "qualifications_performed": 0,
+  "source_sha256": "4b6f0380a1a9a82b08e301dde5fb33ddbfd3809d7ec2efd7d88d741c205b9460"
+}

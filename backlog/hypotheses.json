@@ -7680,7 +7680,7 @@
       ],
       "id": "H79",
       "rank": 98,
-      "status": "running",
+      "status": "done",
       "introduced_in": 36,
       "discovered_during": 35,
       "derived_from": [
@@ -7726,6 +7726,77 @@
           "note": "Published d61e30c before ONE accepted offline two-T4 pairrm-pilot/1 at13:01:50UTC. Exact accepted cells/settings/image/private v1dependency source verification passed13:02:30UTC. Controller28093/PID4028073 LIVE, serviceQUEUED; fresh complete77owned catalog and8officials terminal, quota70010.266sfree unchanged. Follow same version; no new quality or official, no restart.",
           "evidence": [
             "results/span_036/jobs/pairrm_pilot/source_verification.json"
+          ]
+        },
+        {
+          "at": "2026-11-09T13:22:58+00:00",
+          "status": "done",
+          "note": "Single native/source-verified two-T4 pilot COMPLETE,288.21s. All1024group nested outer coefficients zero; baseline and candidate loss .997842274 identical, gain0/conditional bootstrap[0,0], fails .001/positive lower. Raw non-tie59.17percent vs65.66baseline; tie-margin AUC.5256vs.6603 does not justify rescue. No qualification/official; terminal resources/fresh board24/310 saved. Notebook48executed, preserveERRORparent and no independentCV claim.",
+          "evidence": [
+            "docs/SPAN_036_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Audit compatible public classifier weights before one weight-average experiment",
+      "priority": "P2",
+      "gain": [
+        -0.005,
+        0.005
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        4
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0.75
+      ],
+      "followup_gpu_wall_hours": [
+        0.25,
+        0.75
+      ],
+      "cpu_wall_hours": [
+        0.05,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "A compatible same-base classifier weight average may improve the strong model without an extra production forward pass; first establish whether such public weights exist.",
+      "basis": "H79adds zero conditional information and has weaker raw winner/tie diagnostics. H76probability reweighting was negative. Primary model-soups work motivates a different weight-space mechanism. Current m0Gemma2 and m3Llama are fullFP16states but mutually incompatible; no second same-base classifier is established.",
+      "first_test": "CPU/network source gate only, at most three named primary-source candidates, no weights/GPU/labels. Prove legitimate public availability, exact base/tokenizer/architecture/class-head mappings and attributable lineage. Preserve401/403/unknown-lineage stops. If a compatible pair exists, separately freeze one equal average, streaming state controls and matched native information/uncertainty/runtime protocol before any numerical work.",
+      "acceptance": "First: an actually accessible compatible pair with documented source and head semantics. Later: one prospectively frozen average improves matched strong baseline with useful paired group evidence and separately passes current-incumbent/full-runtime qualification before any official. No leaderboard-score forecast from source diagnostics.",
+      "stop": "Stop without weights/GPU if no compatible pair exists or provenance/mappings/access are unclear. Never average Gemma and Llama, packed quantized tensors or incompatible heads. No access bypass, arbitrary mirrors, coefficient grid or probability-weight rescue.",
+      "risk_reason": "Compatible public checkpoints may not exist. Different training basins, heads/tokenizers or unknown training exposure can make averaging invalid or harmful. Existing source cohorts are inspected and target transfer is uncertain.",
+      "mitigation": "Source gate before downloads; exact revision/config/tokenizer/state/head provenance; one fixed average, consistent matched cohorts under its new numerical recipe and unchanged production pass count. Preserve negative controls and original resource anchors.",
+      "rationale": "Targets the strongest existing classifier at unchanged inference cost instead of adding another weak binary auxiliary. Gain range is subjective; feasibility unproven.",
+      "revision": "New source-feasibility task for v37only. Current Gemma/Llama pair is explicitly ineligible; no extra v36numerical model trial.",
+      "depends_on": [
+        "E00",
+        "H79"
+      ],
+      "evidence": [
+        "docs/WEIGHT_AVERAGING_DISCOVERY.md",
+        "docs/SPAN_036_RESULTS.md",
+        "docs/SPAN_030_RESULTS.md"
+      ],
+      "id": "H80",
+      "rank": 99,
+      "status": "planned",
+      "introduced_in": 37,
+      "discovered_during": 36,
+      "derived_from": [
+        "H79"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T13:22:58+00:00",
+          "status": "planned",
+          "note": "H79zero correction and weak raw/tie diagnostics stop the binary-auxiliary branch. Queue only a distinct same-base public classifier compatibility audit: current Gemma/Llama cannot be averaged; no compatible pair established, no v36weights/GPU.",
+          "evidence": [
+            "docs/WEIGHT_AVERAGING_DISCOVERY.md"
           ]
         }
       ]
@@ -7779,7 +7850,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 36,
+  "active_version": 37,
   "versions": [
     {
       "number": 1,
@@ -10364,7 +10435,7 @@
     },
     {
       "number": 36,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H05",
         "H06",
@@ -10418,10 +10489,66 @@
       "carried_from": 35,
       "start_sha256": "ef127b1570203e4306973f699489dde80f944938ca13eb177be6134ec880ef6e",
       "start_markdown_sha256": "1e20bcf10bf1491c21779372012b771444ffe7a13f0a5437ce15aecd282bd920",
-      "start_sealed_at": "2026-11-09T12:29:15+00:00"
+      "start_sealed_at": "2026-11-09T12:29:15+00:00",
+      "final_sha256": "990372bdbba6a58475ec9acb14e81fc81cdeb55e94147748e905aef466bd6368",
+      "final_markdown_sha256": "9ecdad685f7a2da38ef97313b6aeba378e113527363b286c26b1332ac6091fde",
+      "final_sealed_at": "2026-11-09T13:22:58+00:00",
+      "closed_at": "2026-11-09T13:22:58+00:00",
+      "closing_note": "H79finished with zero useful correction; preserve all outputs and actual288.21s charge, no official. Carry35unfinished tasks plus new H80public same-base weight compatibility source audit; original deadline/quota persist.",
+      "closing_evidence": [
+        "docs/SPAN_036_RESULTS.md"
+      ]
     },
     {
       "number": 37,
+      "state": "active",
+      "item_ids": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "H80"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 36,
+      "start_sha256": "440c8a21cd405921b84597190a2b52bc964f66275965c1b5d3054a86f7daeb10",
+      "start_markdown_sha256": "3a09658f73ba593e370f7d626dcf2076e78a404225e7215eca481b8918ca6d4b",
+      "start_sealed_at": "2026-11-09T13:22:58+00:00"
+    },
+    {
+      "number": 38,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],
