@@ -1,5 +1,7 @@
 """Execute the prospective Llama-heavy prior comparison with descriptive uncertainty."""
 from pathlib import Path
+import json
+import hashlib
 import nbformat as nbf
 from nbclient import NotebookClient
 
@@ -7,13 +9,25 @@ REPO=Path(__file__).resolve().parents[1]
 
 
 def main():
+    pub=REPO/'results/span_030'
+    qualification=pub/'candidate_qualification.json'
+    audit=pub/'outcome_audit.json'
+    if audit.exists():
+        result=json.loads(audit.read_text())
+        stage=f"Official evaluation is terminal ({result['official_status']}); the audited outcome is shown below."
+    elif (pub/'official_receipt.json').exists():
+        stage='GPU qualification passed. Official submission 58143104 has been accepted; its latest recorded status is shown below.'
+    elif qualification.exists():
+        stage='GPU qualification passed; no accepted official receipt is recorded yet.'
+    else:
+        stage='Actual GPU qualification and an official submission have not run.'
     nb=nbf.v4.new_notebook(cells=[nbf.v4.new_markdown_cell('''# V30: fixed 40/60 prior passes the CPU gross guard
 
 One normalized40%Gemma/60%alignedLlama candidate, no reverse pass, no fitting.
-Uniform gain versus H60 passes the fixed−0.005guard. Actual GPU qualification
-and an official submission have not run. Original-training-overlapping, previously inspected
+Uniform gain versus H60 passes the fixed−0.005guard. STAGE_SUMMARY
+Original-training-overlapping, previously inspected
 cohorts: descriptive results only, not independent CV or a hidden-score forecast.
-[Protocol](../docs/SPAN_030_PLAN.md) · [CPU result](../docs/SPAN_030_CPU_RESULTS.md).'''),
+[Protocol](../docs/SPAN_030_PLAN.md) · [CPU result](../docs/SPAN_030_CPU_RESULTS.md).'''.replace('STAGE_SUMMARY',stage)),
         nbf.v4.new_code_cell('''from pathlib import Path
 import json
 import pandas as pd
@@ -56,10 +70,19 @@ else:
  print('Qualification status:',json.loads(status.read_text()) if status.exists() else 'Not yet admitted')
 official=PUB/'official_result.json'
 if official.exists():print('Official receipt outcome:',json.loads(official.read_text()))
-board=PUB/'official_leaderboard.json'
+else:
+ state=PUB/'official_state.json'
+ if state.exists():print('Latest recorded official status:',json.loads(state.read_text()))
+audit=PUB/'outcome_audit.json'
+if audit.exists():print('Verified terminal outcome:',json.loads(audit.read_text()))
+board=PUB/'outcome_leaderboard.json'
+if not board.exists():board=PUB/'official_leaderboard.json'
 if board.exists():print('Fresh complete official board:',json.loads(board.read_text()))
 print('The rank goal requires a completed official result and fresh complete leaderboard verification.')''')])
     nb.metadata['kernelspec']=dict(display_name='Python 3',language='python',name='python3')
+    if audit.exists():
+        nb.metadata['span030_outcome_audit_sha256']=hashlib.sha256(audit.read_bytes()).hexdigest()
+        nb.metadata['span030_official_receipt']=str(result['official_receipt'])
     nb=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     assert all(c.execution_count is not None and not any(o.output_type=='error' for o in c.get('outputs',[])) for c in nb.cells if c.cell_type=='code')
     path=REPO/'notebooks/42_llama_heavy_prior.ipynb';nbf.write(nb,path);print(path)

@@ -87,6 +87,18 @@ Need actualvalidoutcome, finalreport/executedNotebook42, H76CLIclosure/span
 preservation/commitpush before markinggoalcomplete. Ifauditgoalfalse, goal
 staysactive and no moreweights fromleaderboardfeedback.
 
+Additional pending preparation Nov9 01:03UTC: Notebook42 renderer now derives
+its introduction from actual qualification/receipt/outcome files; stale claim
+that noGPU ran is corrected. Executed40923exit0. On terminal rerender it embeds
+outcome-audit hash/receipt and displays auditedboard preferentially. New local
+scripts/audit_span_030_closure.py is PREPARED, NOT actualclosure: run only after
+realoutcomeaudit, finalSPAN_030_RESULTS report, H76done, archiveGOAL_V30 and
+backlogadvance to31. Checks actualreceipt/board outcome, frozenbundle/archive,
+resources,118oldsnapshots/userfiles,38carriedtasks,122posttransitionfiles and
+executednotebook tied toactualaudit. Verified currentpendingstate rejection;
+closure_preparation.json records compilation/executednotebook/preservation,
+not completedterminalaudit or achievedgoal. FrozenGPUbundle unchanged.
+
 NEXTobserve SAME9665/receipt58143104. Poll authoritative history; publickernel
 COMPLETE is NOT hidden-evaluationcompletion. If unifiedhandle missing, inspect
 remote same receipt; --observe-only controller can resume read-only observation/
