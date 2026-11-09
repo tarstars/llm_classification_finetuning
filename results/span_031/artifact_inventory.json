@@ -1,0 +1,20 @@
+{
+  "input_artifacts": {
+    "train.parquet": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/train.parquet",
+      "sha256": "1d7528b40272ced4b147124a36f0e5d20d91ff3777699c6341f936eaac461e1a"
+    },
+    "dev.parquet": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_005/dev.parquet",
+      "sha256": "b213de8045ded5c05f1e96ee27f19b5b7a384bb5423debfdf2a80d997ec14e51"
+    },
+    "training_selection": {
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/attempt_002/model_selection.json",
+      "sha256": "68a097c19cabe454c99925cc41153fd9cfb4b5a35bc3f656b361b21706bd7ca8"
+    },
+    "classifier_manifest": {
+      "path": "/home/tarstars/prj/llm_classification_finetuning/results/span_002/research_candidate.json",
+      "sha256": "2091f699df6f3b17a79f2d23f22827013598748ffe8599f9cafc61b0052fd56c"
+    }
+  }
+}

@@ -222,6 +222,14 @@
           "evidence": [
             "docs/SPAN_031_EXPOSURE_REVISION.md"
           ]
+        },
+        {
+          "at": "2026-11-09T06:20:44+00:00",
+          "status": "running",
+          "note": "Correctedsource77d5bc6 published. Activeinputseal11935exit0: original1024/512IDs exact, expandedinputs preserved, compressedCSV1.563MB,no confirmation. Builder29536TERMINALexit0: actualserializedstaging/realCPUTrainer/imports/finalbookkeeping, failure/watchdog and Jupyterstartup PASS. NewtinyTrainer20596PASS.32-update worker/controller/independentauditor frozenbundle ready; nextpublishbuild thenfreshfulladmission/one5400s2T4launch. NoGPUyet.",
+          "evidence": [
+            "results/span_031/size_pilot_cell_rehearsals.json"
+          ]
         }
       ],
       "introduced_in": 1,

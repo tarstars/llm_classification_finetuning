@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-09T06:17:34.655870+00:00",
+  "prepared": true,
+  "protocol_revision": 2,
+  "sample_rows": {
+    "train": 1024,
+    "dev": 512
+  },
+  "sample_ids_sha256": "7ca4870471df7e9b942d240b53371bd943915a7a11bcbaf7d56f5f2fcea317d0",
+  "compressed_csv_sha256": "929741bb0ef8bfeb620b9d4116ea459de96eb7e7b74d652a94e5e21d4a5aef2c",
+  "compressed_csv_bytes": 1562711,
+  "csv_bytes": 4817925,
+  "expanded_preparation_sha256": "a0597d66049eba45ed5e90680be7d18692fa42cb0b9ac347b0c28ed45ee81527",
+  "expanded_inputs_preserved": true,
+  "prompt_groups_disjoint_inherited": true,
+  "selected_raw_rows_verified_inherited": true,
+  "confirmation_targets_used": false,
+  "new_gpu_executions": 0
+}

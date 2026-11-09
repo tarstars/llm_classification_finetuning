@@ -1,6 +1,6 @@
 # V30 closed negative; v31 H02 source preparation
 
-Snapshot 2026-11-09 06:16 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
+Snapshot 2026-11-09 06:20 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
 current files and live service state before acting. Persistent goal is our own
 team 17244411 at rank <=19 on a fresh complete official leaderboard after
 legitimate inference. ACTIVE, UNACHIEVED, no token budget. Be economical with
@@ -69,14 +69,20 @@ See docs/SPAN_031_EXPOSURE_REVISION.md, protocol_revision.json,initial_span_plan
 Deadline/start/quota/cap unchanged; archivedinitialGOAL/PLAN andGit0202 preserve
 originaldraft. Newworker/session src/arena/span031_size*.py retains proven
 training/control path and adds actualGPUtotalmemory. Newbuilder/controller/
-auditor/sourceverifier are written, syntaxcompiled; newCPUTrainer test20596
-TERMINALexit0,PASS(.110s). NEXTcommit/push correctedsources then execute prepare_span_031_pilot.py
-ONCE toseal separate activepilot_ids/pilot_rows andpilot_preparation.json;
-thenexecute build_span_031_size.py ONCE (Jupyter/DB escalation), inspectactual
-staging/Trainer/finalsuccess-failure/watchdog/Jupyterrehearsals, freeze/push
-result/bundle beforefresh fulladmission andone run_span_031_size.py. Verify
-accepted exactsource withverify_span_031_source.py whilemonitoring SAMEhandle.
-Independent audit_span_031_size.py runsONCE afterterminal retrieval. NoGPUyet.
+auditor/sourceverifier are frozen under77d5bc6; newCPUTrainer20596
+TERMINALexit0,PASS(.110s). Activeprepare11935TERMINALexit0: pilot_ids exactly
+original1024/512IDs, compressedCSV1.563MB; old expandedinputs preserved.
+Builder29536TERMINALexit0: actualserializedstaging/imports/realCPUTrainer/
+finalbookkeeping/failure/watchdog/Jupyter allPASS. Newsize_pilot_bundle.json
+andcell_rehearsals.json freeze actualnotebook/source/settings. DO NOT rerun
+preparers/builder after this accepted build; noGPU/model load/quality yet.
+NEXTpublishbuild/result evidence, then ONE run_span_031_size.py with freshfull
+admission. Unifiedlivehandle fromthatcall mustbe observed, neverduplicated.
+Read acceptedpush.json and runverify_span_031_source.py ONCE for exactsource/
+private/offline/GPU/pinneddependencies whilemonitoring SAMEjob. Independent
+audit_span_031_size.py runsONCE afterterminal retrieval; do notrun whilepending.
+Need actualreport/executedNotebook43/CLIclosure/preservation/commitpush before
+sealingv31; onlyactualownrank<=19 can completepersistentgoal (noofficial here).
 Oldv8runcontroller must not be reused because its budgets/focus are closed.
 Do not call the goal complete for span closure,
 engineering, or local gains. No current external blocker; do not mark blocked
