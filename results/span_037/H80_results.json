@@ -1,0 +1,99 @@
+{
+  "at": "2026-11-09T13:40:34.056379+00:00",
+  "task": "H80",
+  "complete": true,
+  "source_stage_passed": false,
+  "quality_measured": false,
+  "compatible_pair_established": false,
+  "decisions": [
+    {
+      "candidate": "RoschildRui/LMSYS_Gemma2_0728_0905",
+      "public_access": true,
+      "compatible_pair_established": false,
+      "exact_base_established": false,
+      "head_and_class_mapping_established": false,
+      "reason": "HF release provides six weight archives and .gitattributes, no standalone card/config/source. Two relevant same-handle repositories are forks of retained second/third-place code, with no demonstrated link to these archives. No license/initialization/native-head lineage proof."
+    },
+    {
+      "candidate": "kishanvavdara/lmsys-gemma-9b-weightsteam-human-bias",
+      "public_access": true,
+      "compatible_pair_established": false,
+      "exact_base_established": false,
+      "head_and_class_mapping_established": false,
+      "reason": "Release contains two .pth weight files, empty dataset description and unknown dataset license. Retrieved Part1/Part2 author notebooks describe embedding extraction and CatBoost, not a documented loader for the released final-team weights. Their class order does not establish the checkpoint head or merge lineage."
+    },
+    {
+      "candidate": "justin1357/lmsys-gemma2-lora-weights",
+      "public_access": true,
+      "compatible_pair_established": false,
+      "exact_base_established": false,
+      "head_and_class_mapping_established": false,
+      "reason": "Public Apache2 adapter release names ./gemma-2-9b-it-4bit with revision null and saves classifier/score, but README is an unfilled template. Exact base initialization, tensor head layout, native text and class order remain unestablished. Public author notebook listing has no matching LMSYS/Gemma source."
+    }
+  ],
+  "native_reference": {
+    "base": "google/gemma-2-9b-it",
+    "architecture": [
+      "Gemma2ForSequenceClassification"
+    ],
+    "vocabulary": 256000,
+    "head_keys": [
+      "score.1.bias",
+      "score.1.weight",
+      "score.4.bias",
+      "score.4.weight"
+    ],
+    "config_sha256": "e650e2276cee3a23b0439a2970b85b23e96118179f14f636640be40df0f0fbfc",
+    "index_sha256": "462f99063b79b2f10c6361e0f8edb21b3f0e99d378526a595730039268034236"
+  },
+  "small_source_bytes": 592122,
+  "source_files_sha256": {
+    "justin_notebook_listing.json": "a2c0dbf0373b7deee738647d7876b3c1fb67cf0cf6e9fbd608057ff053c42766",
+    "RoschildRui__lmsys-chatbot-arena-solution_metadata.json": "e73b68b561c7b43dc74d92fc55364b07a3fa8cee987e6b7bd6f316fcd258e999",
+    "author_kishanvavdara__gemma-2-9b-part-1.json": "b47c8b77de66c283bb7b8faee6cc8d4ba388197da41c0915a01a0401126d22e8",
+    "RoschildRui__kaggle-lmsys-chatbot-arena_metadata.json": "9629d4e2bd30ff0d1431ae1fcd675eb1ecc27da0cef91c8b463b8d36977c74e8",
+    "hf_classifiers.json": "71dbd62d5400a30349eabcedb9ec041a50dd47c4735f8f0f62ce59dffad41f21",
+    "author_kishanvavdara__gemma-2-9b-part-2.py": "8caf5129b4de466d0ed521832e7ae1cdbbbd5d81f89cfec6da13c89176f1ef93",
+    "RoschildRui__kaggle-lmsys-chatbot-arena_README.md": "e1a61ddaa5210d94d957f1a71c6a0dd60ae1a6eb396dcbb1ec09cf2bf8b6c672",
+    "kaggle_lmsys_gemma.json": "19ca44cd25e9945f73c0c715c5ffe0fb372b8d253929ff9a345a29cc8dc8d471",
+    "hf_lmsys.json": "323c9aff06af6dba5ee12b3ec464df67aa80cfe80364f2c8a0e79ded31f5b4b3",
+    "author_kishanvavdara__gemma-2-9b-part-1.py": "ade5e7ce1e111da7e95ca03c51a6023efb4f6bd50fdd83c6897986f54a39bb2a",
+    "kaggle_gemma2_9b.json": "484d5611db9112b87e28b7eb4aa2d201af42648715a345cac535ac6c56aa2363",
+    "RoschildRui__lmsys-chatbot-arena-solution_README.md": "23f831c704e894402f009dffde956f1e2a9b3f9766127f72e747c661dbdc0e91",
+    "roschild_github_repos.json": "cafacd11d580754027623a27b7ab7fe7a681520692b087dbaf31b1e4e7ecf2ad",
+    "author_kishanvavdara__gemma-2-9b-part-2.json": "50ee34f3ef28c75f63b815115abe381ba08da3493f52c97df821c50a2f74a24c",
+    "RoschildRui__LMSYS_Gemma2_0728_0905/metadata.json": "04bc314309503015fd989aefba082629fc465fe981b3e4810bb2d565f2bd358f",
+    "kishanvavdara__lmsys-gemma-9b-weightsteam-human-bias/file_listing.json": "380dd2d28dc990803a13cc70f53cbb07e62426d4ad6f5e64b133e33b01848a6e",
+    "kishanvavdara__lmsys-gemma-9b-weightsteam-human-bias/metadata.json": "c231ad8320e5d9a77fea6b76d045fabcada1786fcdf5f002fe252e9bc2744922",
+    "justin1357__lmsys-gemma2-lora-weights/file_listing.json": "b21a413890f5b6e00a1824e8ccb352bf0c49520fc10e28556bd0fd7f0d5b909d",
+    "justin1357__lmsys-gemma2-lora-weights/metadata.json": "49de06d1f378cf7176d1f45e570ecc4397561fad77f22194640345073a317058",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2524_label_smo/checkpoint-2524/adapter_config.json": "c995e6ea45833e3d930db7d07b93df7460d7121f10e3b0dc6b944fcfe1f6cb2d",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2524_label_smo/checkpoint-2524/README.md": "0ddec2702ef611e26123cd6fd9c8d035d50a5017aabe7fed5defb74068fb33f1",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2524_label_smo/checkpoint-2524/special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2524_label_smo/checkpoint-2524/tokenizer_config.json": "6a7fc7acc5b2efb647928466faa90566068bf9efd2c6f0dc9edd093d4ffd5031",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2458-score/checkpoint-2458/adapter_config.json": "f53301c8f2e37da24a5eb0e9d487dd542ce09209718e0a0a4d84310272e98c00",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2458-score/checkpoint-2458/README.md": "0ddec2702ef611e26123cd6fd9c8d035d50a5017aabe7fed5defb74068fb33f1",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2458-score/checkpoint-2458/special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2458-score/checkpoint-2458/tokenizer_config.json": "6a7fc7acc5b2efb647928466faa90566068bf9efd2c6f0dc9edd093d4ffd5031",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2458/adapter_config.json": "f3e380b6ecc50d3a32ac5aac0933c70ccba61266c2264490c95feeb55806dfe7",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2458/README.md": "0ddec2702ef611e26123cd6fd9c8d035d50a5017aabe7fed5defb74068fb33f1",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2458/special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+    "justin1357__lmsys-gemma2-lora-weights/checkpoint-2458/tokenizer_config.json": "6a7fc7acc5b2efb647928466faa90566068bf9efd2c6f0dc9edd093d4ffd5031"
+  },
+  "weights_downloaded": false,
+  "task_targets_loaded": false,
+  "new_gpu_executions": 0,
+  "new_official_submissions": 0,
+  "official_submission_eligible": false,
+  "decision": "stop_no_proved_compatible_pair",
+  "scope": "Bounded three-candidate source gate, not an absence proof over all public checkpoints",
+  "method_sha256": {
+    "GOAL.md": "084742f1325b0608c7e659f73edd4b4dc6e4d4f097190bfdb7a36f34ccc6affa",
+    "docs/SPAN_037_PLAN.md": "27145c340fac8d02dfd9df090e54f6b73acbff5474374bc7344b952f0d4d778e",
+    "scripts/discover_span_037_sources.py": "fd435ac5af19996f53ad4e1877a24a86afc9f4532267b8e618b16f841c258028",
+    "scripts/inspect_span_037_candidates.py": "eafa94e298fce14d5d7d7a40efd3f5aaf9f9f227011c20d45a96e27631ff764e",
+    "scripts/trace_span_037_authors.py": "8eb06115f6d9ff41b3bbea1dbcf875a7b17bfaa343267215dcb6b572f72f436c",
+    "scripts/finalize_span_037_sources.py": "e0213b01c25933d99d85dddf30cff2ae7b2a4bc72096e0e9042549c304523597"
+  },
+  "elapsed_analysis_seconds": 0.0026387230027467012
+}

@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-09T13:44:00.793240+00:00",
+  "passed": true,
+  "sealed_version": 37,
+  "active_version": 38,
+  "source_evidence_replayed": true,
+  "quality_measured": false,
+  "zero_new_gpu_and_official": true,
+  "historical_snapshots_preserved": 146,
+  "snapshot_files_after_transition": 150,
+  "carried_tasks": 35,
+  "new_discoveries": [],
+  "goal_achieved": false,
+  "report_sha256": "aaa36eba647734f9c81740e63b14e7afbf380f5e7a8c3a8610798ef6708d672f",
+  "notebook_sha256": "d0bd71ca586687101987de4360dfe45fc229285da4db9936d64f9cbfdce06eac",
+  "source_sha256": "c658ca0f86ef4e77fe0b801b3c0df24d17fa67128cfec2436303ae5ed4276e67"
+}

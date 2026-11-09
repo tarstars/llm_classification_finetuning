@@ -1,0 +1,18 @@
+[
+  {
+    "repo": "RoschildRui/kaggle-lmsys-chatbot-arena",
+    "fork": true,
+    "parent": "tascj/kaggle-lmsys-chatbot-arena",
+    "revision": "83cd93d50b9283c18711e8c63e4e1c6399c7b9ce",
+    "readme_status": 200,
+    "readme": "# LMSYS - Chatbot Arena Human Preference Predictions\n\n[Competition](https://www.kaggle.com/competitions/lmsys-chatbot-arena)\n\n## Requirements\n\n### Hardware\n\nA100 SXM 80G x4\n\n### Software\n\nBase Image\n```\nnvcr.io/nvidia/pytorch:24.04-py3\n```\n\nPackages\n```\ndetectron2==0.6\ntransformers==4.43.3\ndatasets==2.19.0\nflash-attn==2.6.2\noptimi==0.2.1\n```\n\n\n## Training\n\nDirectory structure should be as follows.\n\n```\n├── data\n│   ├── train.csv\n│   └── test.csv\n├── artifacts\n│   ├── dtrainval.csv\n│   ├── lmsys-33k-deduplicated.csv\n│   ├── ...\n│   ├── stage1\n│   ├── ...\n│   └── stage3\n└── src  # this repo\n    ├── configs\n    ├── human_pref\n    └── main.py\n```\n\n1.  `python scripts/prepare_dataset.py` and download 21k external data from  [abdullahmeda](https://www.kaggle.com/datasets/abdullahmeda/lmsys-additional-33k-labelled-conversations)\n2. [stage1](configs/stage1/README.md)\n3. [make pseudo labels](configs/stage1_generate_pseudo_labels/README.md)\n4. [stage2](configs/stage2/README.md)\n4. [stage3](configs/stage3/README.md)\n\n## Inference\n\nReference scripts to convert checkpoints for inference.\n```\npython scripts/prepare_gemma2_for_submission.py\npython scripts/prepare_llama3_for_submission.py\n```\n\n[Kaggle Notebook](https://www.kaggle.com/code/tascj0/lmsys-0805)\n"
+  },
+  {
+    "repo": "RoschildRui/lmsys-chatbot-arena-solution",
+    "fork": true,
+    "parent": "mtenenholtz/lmsys-chatbot-arena-solution",
+    "revision": "b306b92cd07fe3b759d13001602842b273086004",
+    "readme_status": 200,
+    "readme": "# LMSYS 3rd Place Solution\n\n## Setup\n\n- Trained on combination of 2x4090s (AMD Ryzen 9 7950X 16-Core Processor), 4-8x A100s/4090s/H100s on vast.ai and 8xH100s on Lambda\n- Ubuntu 22.04\n- Python (conda) environment specs in `environment.yml`\n\n## Process training data\n\nDownload the competition data into the `data` directory. It's expecting a file called `train.csv` and `test.csv`. Also, create a `preds` and `pseudo` directory under `data`. Then, run `process_data.py`, which will download the additional datasets used for training. You may need to locally authenticate with Hugging Face Hub to do this, using `huggingface-cli login`.\n\n## Getting lmsys-1m paired completions for pseudo labeling\n\nRun `scripts/vllm_generate.py` to generate paired completions for the lmsys-1m dataset.\n\n## Training the model\n\nRun `run_stage_1.sh` to train the first stage models and generate pseudo labels. Then, run `run_stage_2.sh` to train the pseudo labeled models. Note that the second stage (pseudo label) configs assume you are running on 8 GPUs, whereas the first stage models assume you are running on 2 GPUs. If you want to adjust the number of GPUs, adjust the batch size and accum parameters in the configs accordingly so that they are running on an effective batch size of 8. Specifically, these settings:\n\n```\ntraining:\n  batch_size: 4\n  accum: 2\n  max_length: 1800\n```\n\n## Running inference on a new dataset\n\nOne way is to replace the input dataset in our submission notebook. Another way is, in `llm_validate.py`, replace `train.parquet` (which is the processed version of the competition dataset) with your own dataset and run `llm_validate.py`. If you want TTA'd predictions, run it with the `--tta` flag and ensemble the saved files."
+  }
+]

@@ -1,0 +1,198 @@
+{
+  "at": "2026-11-09T13:35:14.451009+00:00",
+  "notebooks": [
+    {
+      "ref": "kishanvavdara/gemma-2-9b-part-1",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/author_kishanvavdara__gemma-2-9b-part-1.json",
+      "sha256": "b47c8b77de66c283bb7b8faee6cc8d4ba388197da41c0915a01a0401126d22e8",
+      "bytes": 7381
+    },
+    {
+      "ref": "kishanvavdara/gemma-2-9b-part-2",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/author_kishanvavdara__gemma-2-9b-part-2.json",
+      "sha256": "50ee34f3ef28c75f63b815115abe381ba08da3493f52c97df821c50a2f74a24c",
+      "bytes": 9355
+    }
+  ],
+  "justin_public_listing_count": 2,
+  "justin_matching": [],
+  "roschild_github_status": 200,
+  "roschild_github_repositories": [
+    {
+      "name": "RoschildRui/acl2026_map",
+      "url": "https://github.com/RoschildRui/acl2026_map",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/ai-torture-chamber",
+      "url": "https://github.com/RoschildRui/ai-torture-chamber",
+      "description": "The AI Torture Chamber: steering small open models into strong valence states and measuring what they say and do. Live at wirehead.agency."
+    },
+    {
+      "name": "RoschildRui/AIgobang_V1",
+      "url": "https://github.com/RoschildRui/AIgobang_V1",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/AlphaGPT",
+      "url": "https://github.com/RoschildRui/AlphaGPT",
+      "description": "使用符号回归在中国股市与加密市场上进行高效因子挖掘。/ By the way, Leverage the novel features and advanced financial mathematics introduced in Uniswap V4 to effectively mitigate just-in-time (JIT) liquidity provision issues."
+    },
+    {
+      "name": "RoschildRui/awesome-prompts",
+      "url": "https://github.com/RoschildRui/awesome-prompts",
+      "description": "Curated list of chatgpt prompts from the top-rated GPTs in the GPTs Store. Prompt Engineering, prompt attack & prompt protect. Advanced Prompt Engineering papers."
+    },
+    {
+      "name": "RoschildRui/CC-Agent",
+      "url": "https://github.com/RoschildRui/CC-Agent",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/citation-assistant",
+      "url": "https://github.com/RoschildRui/citation-assistant",
+      "description": "Claude Code Skill for automated academic citation workflow with Semantic Scholar API"
+    },
+    {
+      "name": "RoschildRui/clash-for-linux-backup",
+      "url": "https://github.com/RoschildRui/clash-for-linux-backup",
+      "description": "基于Clash Core 制作的Clash For Linux备份仓库      A Clash For Linux Backup Warehouse Based on Clash Core"
+    },
+    {
+      "name": "RoschildRui/ConstitutionalHarmlessnessPaper",
+      "url": "https://github.com/RoschildRui/ConstitutionalHarmlessnessPaper",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/cuml",
+      "url": "https://github.com/RoschildRui/cuml",
+      "description": "cuML - RAPIDS Machine Learning Library"
+    },
+    {
+      "name": "RoschildRui/deep-research",
+      "url": "https://github.com/RoschildRui/deep-research",
+      "description": "Use any LLMs (Large Language Models) for Deep Research. Support SSE API and MCP server."
+    },
+    {
+      "name": "RoschildRui/DeepLearning_CV_EXP",
+      "url": "https://github.com/RoschildRui/DeepLearning_CV_EXP",
+      "description": "Deep learning computer vision experiment code and related resources for the second semester of sophomore year"
+    },
+    {
+      "name": "RoschildRui/dsh-purge",
+      "url": "https://github.com/RoschildRui/dsh-purge",
+      "description": "DeepSeek Harness 破甲 (mirror of YuJunZhiXue/dsh-purge) — 上游即将删库，此为本仓库全量镜像：含全部分支/73 个 tag/完整提交历史。原作者署名与二开要求见 README 署名章节。"
+    },
+    {
+      "name": "RoschildRui/external-sort",
+      "url": "https://github.com/RoschildRui/external-sort",
+      "description": "data structure homework3"
+    },
+    {
+      "name": "RoschildRui/Home-Credit---Credit-Risk-Model-Stability",
+      "url": "https://github.com/RoschildRui/Home-Credit---Credit-Risk-Model-Stability",
+      "description": "A model measured against feature stability over time"
+    },
+    {
+      "name": "RoschildRui/html_paper-reading",
+      "url": "https://github.com/RoschildRui/html_paper-reading",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/interesting_project",
+      "url": "https://github.com/RoschildRui/interesting_project",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/kaggle-birdclef24-3rd-place-solution-dieter",
+      "url": "https://github.com/RoschildRui/kaggle-birdclef24-3rd-place-solution-dieter",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/kaggle-lmsys-chatbot-arena",
+      "url": "https://github.com/RoschildRui/kaggle-lmsys-chatbot-arena",
+      "description": "Solution of Kaggle competition: LMSYS - Chatbot Arena Human Preference Predictions"
+    },
+    {
+      "name": "RoschildRui/ljg-skill-xray-paper",
+      "url": "https://github.com/RoschildRui/ljg-skill-xray-paper",
+      "description": "论文X光机 — Claude Code Skill，解构学术论文，提炼餐巾纸公式"
+    },
+    {
+      "name": "RoschildRui/lmsys-chatbot-arena-solution",
+      "url": "https://github.com/RoschildRui/lmsys-chatbot-arena-solution",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/LMSYS_BlackPearl",
+      "url": "https://github.com/RoschildRui/LMSYS_BlackPearl",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/OpenGauss_practice",
+      "url": "https://github.com/RoschildRui/OpenGauss_practice",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/Political-Science",
+      "url": "https://github.com/RoschildRui/Political-Science",
+      "description": "政治 "
+    },
+    {
+      "name": "RoschildRui/prompt_distractor_generation_NAACL",
+      "url": "https://github.com/RoschildRui/prompt_distractor_generation_NAACL",
+      "description": "Official repo for the paper \"Exploring Automated Distractor Generation for Math Multiple-choice Questions via Large Language Models\" at NAACL 2024 Findings."
+    },
+    {
+      "name": "RoschildRui/prompt_recovery",
+      "url": "https://github.com/RoschildRui/prompt_recovery",
+      "description": "Solution for Kaggle's LLM prompt recovery challenge"
+    },
+    {
+      "name": "RoschildRui/reddit_rule_violation_agent_work_flow",
+      "url": "https://github.com/RoschildRui/reddit_rule_violation_agent_work_flow",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/RoschildRui.github.io",
+      "url": "https://github.com/RoschildRui/RoschildRui.github.io",
+      "description": "My Blog / Jekyll Themes / PWA"
+    },
+    {
+      "name": "RoschildRui/santa2024_FirstPlaceSol",
+      "url": "https://github.com/RoschildRui/santa2024_FirstPlaceSol",
+      "description": null
+    },
+    {
+      "name": "RoschildRui/sub2api-custom",
+      "url": "https://github.com/RoschildRui/sub2api-custom",
+      "description": "基于 Sub2API 由多位站长持续维护的独立分支,更加适合中转站长使用，按需同步上游更新，扩展实用功能并发布生产版本。"
+    },
+    {
+      "name": "RoschildRui/system-prompts-and-models-of-ai-tools",
+      "url": "https://github.com/RoschildRui/system-prompts-and-models-of-ai-tools",
+      "description": "FULL Augment Code, Claude Code, Cluely, CodeBuddy, Comet, Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app, Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI, VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0. (And other Open Sourced) System Prompts, Internal Tools & AI Models"
+    },
+    {
+      "name": "RoschildRui/system_prompts_leaks",
+      "url": "https://github.com/RoschildRui/system_prompts_leaks",
+      "description": "Collection of extracted System Prompts from popular chatbots like ChatGPT, Claude & Gemini"
+    },
+    {
+      "name": "RoschildRui/tinyKaggleClaw",
+      "url": "https://github.com/RoschildRui/tinyKaggleClaw",
+      "description": " A local-first multi-agent runtime for ML research. One task in, continuous iteration out, with   leader, researcher, and trainer working through a forum-style runtime board and a separate training   queue"
+    },
+    {
+      "name": "RoschildRui/WSDM-Cup-3rd-place-solution",
+      "url": "https://github.com/RoschildRui/WSDM-Cup-3rd-place-solution",
+      "description": null
+    }
+  ],
+  "github_identity_link_not_established": true,
+  "weights_downloaded": false,
+  "task_targets_loaded": false,
+  "new_gpu_executions": 0,
+  "elapsed_seconds": 5.116943025961518,
+  "source_sha256": "8eb06115f6d9ff41b3bbea1dbcf875a7b17bfaa343267215dcb6b572f72f436c"
+}

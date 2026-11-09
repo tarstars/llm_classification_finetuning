@@ -1,0 +1,426 @@
+{
+  "at": "2026-11-09T13:32:27.774244+00:00",
+  "observations": [
+    {
+      "candidate": "RoschildRui/LMSYS_Gemma2_0728_0905",
+      "service": "hf",
+      "accessible": true,
+      "revision": "a82777dad6a02a76b555c2b448c938519112aecd",
+      "private": false,
+      "gated": "manual",
+      "card_data": null,
+      "listing": [
+        {
+          "name": ".gitattributes",
+          "bytes": 1519,
+          "lfs": null
+        },
+        {
+          "name": "Gemma2_0728_v22_cp2000.zip",
+          "bytes": 327967012,
+          "lfs": {
+            "sha256": "f677ceeef3cd8a00b2b2801408ca522c4a1fc6331738ca2834ed53ef664de282",
+            "size": 327967012,
+            "pointerSize": 134
+          }
+        },
+        {
+          "name": "Gemma2_0728_v23_cp1500.zip",
+          "bytes": 247790156,
+          "lfs": {
+            "sha256": "18763b5445d6e8edea4cf0c8f1821804fa0e9e053ac97304c472a027908e04b1",
+            "size": 247790156,
+            "pointerSize": 134
+          }
+        },
+        {
+          "name": "Gemma2_0728_v23_cp1750.zip",
+          "bytes": 247867527,
+          "lfs": {
+            "sha256": "1132805e335fd3b9017ad3829c09ceffb35de8715b89e5c470183beede765128",
+            "size": 247867527,
+            "pointerSize": 134
+          }
+        },
+        {
+          "name": "Gemma2_0728_v23_cp1900.zip",
+          "bytes": 247771930,
+          "lfs": {
+            "sha256": "2bec8ccdfa2e470e844d51c14f7cce158e391593363e08e0f8659114777aa9e3",
+            "size": 247771930,
+            "pointerSize": 134
+          }
+        },
+        {
+          "name": "Gemma2_0728_v23_cp2000.zip",
+          "bytes": 247823687,
+          "lfs": {
+            "sha256": "fda97a17072d6626b7e838e4d27ae45f81e338d5fc045780a1bad8c621422753",
+            "size": 247823687,
+            "pointerSize": 134
+          }
+        },
+        {
+          "name": "Gemma2_0728_v23_cp2050.zip",
+          "bytes": 247764605,
+          "lfs": {
+            "sha256": "4a71ef653dd39ef5db900743730362143d77e8b065f149c590bb5bb3c7ccf5d8",
+            "size": 247764605,
+            "pointerSize": 134
+          }
+        }
+      ],
+      "files": [],
+      "metadata_sha256": "04bc314309503015fd989aefba082629fc465fe981b3e4810bb2d565f2bd358f"
+    },
+    {
+      "candidate": "kishanvavdara/lmsys-gemma-9b-weightsteam-human-bias",
+      "service": "kaggle",
+      "accessible": true,
+      "version": 1,
+      "private": false,
+      "listing_complete": true,
+      "listing": [
+        {
+          "name": "gemma2_step-11538_epoch2.pth",
+          "creationDate": "2024-08-13T11:56:34.397Z",
+          "totalBytes": 74238529
+        },
+        {
+          "name": "gemma2_step-42321_epoch2_with_ufb.pth",
+          "creationDate": "2024-08-13T11:56:34.030Z",
+          "totalBytes": 74238529
+        }
+      ],
+      "files": [],
+      "metadata_sha256": "c231ad8320e5d9a77fea6b76d045fabcada1786fcdf5f002fe252e9bc2744922"
+    },
+    {
+      "candidate": "justin1357/lmsys-gemma2-lora-weights",
+      "service": "kaggle",
+      "accessible": true,
+      "version": 19,
+      "private": false,
+      "listing_complete": true,
+      "listing": [
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/README.md",
+          "creationDate": "2024-08-05T04:24:41.403Z",
+          "totalBytes": 5094
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/adapter_config.json",
+          "creationDate": "2024-08-05T04:24:45.537Z",
+          "totalBytes": 1046
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/adapter_model.safetensors",
+          "creationDate": "2024-08-05T04:24:52.715Z",
+          "totalBytes": 556086328
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/special_tokens_map.json",
+          "creationDate": "2024-08-05T04:24:45.557Z",
+          "totalBytes": 636
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/tokenizer.json",
+          "creationDate": "2024-08-05T04:24:46.050Z",
+          "totalBytes": 17518965
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/tokenizer.model",
+          "creationDate": "2024-08-05T04:24:45.780Z",
+          "totalBytes": 4241003
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/tokenizer_config.json",
+          "creationDate": "2024-08-05T04:24:45.792Z",
+          "totalBytes": 40634
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/trainer_state.json",
+          "creationDate": "2024-08-05T04:24:45.781Z",
+          "totalBytes": 427033
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/training_args.bin",
+          "creationDate": "2024-08-05T04:24:45.792Z",
+          "totalBytes": 5176
+        },
+        {
+          "name": "checkpoint-2458/README.md",
+          "creationDate": "2024-08-05T04:24:37.205Z",
+          "totalBytes": 5094
+        },
+        {
+          "name": "checkpoint-2458/adapter_config.json",
+          "creationDate": "2024-08-05T04:24:37.395Z",
+          "totalBytes": 1046
+        },
+        {
+          "name": "checkpoint-2458/adapter_model.safetensors",
+          "creationDate": "2024-08-05T04:24:54.080Z",
+          "totalBytes": 479037272
+        },
+        {
+          "name": "checkpoint-2458/rng_state.pth",
+          "creationDate": "2024-08-05T04:24:37.354Z",
+          "totalBytes": 14244
+        },
+        {
+          "name": "checkpoint-2458/scheduler.pt",
+          "creationDate": "2024-08-05T04:24:37.298Z",
+          "totalBytes": 1064
+        },
+        {
+          "name": "checkpoint-2458/special_tokens_map.json",
+          "creationDate": "2024-08-05T04:24:37.448Z",
+          "totalBytes": 636
+        },
+        {
+          "name": "checkpoint-2458/tokenizer.json",
+          "creationDate": "2024-08-05T04:24:37.974Z",
+          "totalBytes": 17518965
+        },
+        {
+          "name": "checkpoint-2458/tokenizer.model",
+          "creationDate": "2024-08-05T04:24:37.548Z",
+          "totalBytes": 4241003
+        },
+        {
+          "name": "checkpoint-2458/tokenizer_config.json",
+          "creationDate": "2024-08-05T04:24:37.437Z",
+          "totalBytes": 40634
+        },
+        {
+          "name": "checkpoint-2458/trainer_state.json",
+          "creationDate": "2024-08-05T04:24:37.297Z",
+          "totalBytes": 426702
+        },
+        {
+          "name": "checkpoint-2458/training_args.bin",
+          "creationDate": "2024-08-05T04:24:37.353Z",
+          "totalBytes": 5176
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/README.md",
+          "creationDate": "2024-08-05T04:24:41.472Z",
+          "totalBytes": 5094
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/adapter_config.json",
+          "creationDate": "2024-08-05T04:24:45.792Z",
+          "totalBytes": 1046
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/adapter_model.safetensors",
+          "creationDate": "2024-08-05T04:24:52.435Z",
+          "totalBytes": 556086328
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/special_tokens_map.json",
+          "creationDate": "2024-08-05T04:24:45.667Z",
+          "totalBytes": 636
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/tokenizer.json",
+          "creationDate": "2024-08-05T04:24:46.159Z",
+          "totalBytes": 17519064
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/tokenizer.model",
+          "creationDate": "2024-08-05T04:24:45.792Z",
+          "totalBytes": 4241003
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/tokenizer_config.json",
+          "creationDate": "2024-08-05T04:24:45.672Z",
+          "totalBytes": 40634
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/trainer_state.json",
+          "creationDate": "2024-08-05T04:24:45.854Z",
+          "totalBytes": 438688
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/training_args.bin",
+          "creationDate": "2024-08-05T04:24:45.888Z",
+          "totalBytes": 5176
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/README.md",
+          "creationDate": "2024-08-05T04:24:41.516Z",
+          "totalBytes": 5094
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/adapter_config.json",
+          "creationDate": "2024-08-05T04:24:45.781Z",
+          "totalBytes": 1046
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/adapter_model.safetensors",
+          "creationDate": "2024-08-05T04:24:52.637Z",
+          "totalBytes": 556086328
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/special_tokens_map.json",
+          "creationDate": "2024-08-05T04:24:45.792Z",
+          "totalBytes": 636
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/tokenizer.json",
+          "creationDate": "2024-08-05T04:24:46.108Z",
+          "totalBytes": 17519064
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/tokenizer.model",
+          "creationDate": "2024-08-05T04:24:45.792Z",
+          "totalBytes": 4241003
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/tokenizer_config.json",
+          "creationDate": "2024-08-05T04:24:45.646Z",
+          "totalBytes": 40634
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/trainer_state.json",
+          "creationDate": "2024-08-05T04:24:45.844Z",
+          "totalBytes": 438445
+        },
+        {
+          "name": "checkpoint-2524_normal/checkpoint-2524/training_args.bin",
+          "creationDate": "2024-08-05T04:24:45.829Z",
+          "totalBytes": 5176
+        },
+        {
+          "name": "checkpoint-2730/README.md",
+          "creationDate": "2024-08-05T04:24:37.475Z",
+          "totalBytes": 5094
+        },
+        {
+          "name": "checkpoint-2730/adapter_config.json",
+          "creationDate": "2024-08-05T04:24:37.433Z",
+          "totalBytes": 1046
+        },
+        {
+          "name": "checkpoint-2730/adapter_model.safetensors",
+          "creationDate": "2024-08-05T04:24:55.228Z",
+          "totalBytes": 556086328
+        },
+        {
+          "name": "checkpoint-2730/special_tokens_map.json",
+          "creationDate": "2024-08-05T04:24:37.234Z",
+          "totalBytes": 636
+        },
+        {
+          "name": "checkpoint-2730/tokenizer.json",
+          "creationDate": "2024-08-05T04:24:37.853Z",
+          "totalBytes": 17519064
+        },
+        {
+          "name": "checkpoint-2730/tokenizer.model",
+          "creationDate": "2024-08-05T04:24:37.579Z",
+          "totalBytes": 4241003
+        },
+        {
+          "name": "checkpoint-2730/tokenizer_config.json",
+          "creationDate": "2024-08-05T04:24:37.297Z",
+          "totalBytes": 40634
+        },
+        {
+          "name": "checkpoint-2730/trainer_state.json",
+          "creationDate": "2024-08-05T04:24:37.372Z",
+          "totalBytes": 474229
+        },
+        {
+          "name": "checkpoint-2730/training_args.bin",
+          "creationDate": "2024-08-05T04:24:37.374Z",
+          "totalBytes": 5176
+        }
+      ],
+      "files": [
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/README.md",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2458-score/checkpoint-2458/README.md",
+          "bytes": 5094,
+          "sha256": "0ddec2702ef611e26123cd6fd9c8d035d50a5017aabe7fed5defb74068fb33f1"
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/adapter_config.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2458-score/checkpoint-2458/adapter_config.json",
+          "bytes": 1046,
+          "sha256": "f53301c8f2e37da24a5eb0e9d487dd542ce09209718e0a0a4d84310272e98c00"
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/special_tokens_map.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2458-score/checkpoint-2458/special_tokens_map.json",
+          "bytes": 636,
+          "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351"
+        },
+        {
+          "name": "checkpoint-2458-score/checkpoint-2458/tokenizer_config.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2458-score/checkpoint-2458/tokenizer_config.json",
+          "bytes": 40634,
+          "sha256": "6a7fc7acc5b2efb647928466faa90566068bf9efd2c6f0dc9edd093d4ffd5031"
+        },
+        {
+          "name": "checkpoint-2458/README.md",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2458/README.md",
+          "bytes": 5094,
+          "sha256": "0ddec2702ef611e26123cd6fd9c8d035d50a5017aabe7fed5defb74068fb33f1"
+        },
+        {
+          "name": "checkpoint-2458/adapter_config.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2458/adapter_config.json",
+          "bytes": 1046,
+          "sha256": "f3e380b6ecc50d3a32ac5aac0933c70ccba61266c2264490c95feeb55806dfe7"
+        },
+        {
+          "name": "checkpoint-2458/special_tokens_map.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2458/special_tokens_map.json",
+          "bytes": 636,
+          "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351"
+        },
+        {
+          "name": "checkpoint-2458/tokenizer_config.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2458/tokenizer_config.json",
+          "bytes": 40634,
+          "sha256": "6a7fc7acc5b2efb647928466faa90566068bf9efd2c6f0dc9edd093d4ffd5031"
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/README.md",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2524_label_smo/checkpoint-2524/README.md",
+          "bytes": 5094,
+          "sha256": "0ddec2702ef611e26123cd6fd9c8d035d50a5017aabe7fed5defb74068fb33f1"
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/adapter_config.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2524_label_smo/checkpoint-2524/adapter_config.json",
+          "bytes": 1046,
+          "sha256": "c995e6ea45833e3d930db7d07b93df7460d7121f10e3b0dc6b944fcfe1f6cb2d"
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/special_tokens_map.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2524_label_smo/checkpoint-2524/special_tokens_map.json",
+          "bytes": 636,
+          "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351"
+        },
+        {
+          "name": "checkpoint-2524_label_smo/checkpoint-2524/tokenizer_config.json",
+          "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_037/source_audit/justin1357__lmsys-gemma2-lora-weights/checkpoint-2524_label_smo/checkpoint-2524/tokenizer_config.json",
+          "bytes": 40634,
+          "sha256": "6a7fc7acc5b2efb647928466faa90566068bf9efd2c6f0dc9edd093d4ffd5031"
+        }
+      ],
+      "metadata_sha256": "49de06d1f378cf7176d1f45e570ecc4397561fad77f22194640345073a317058"
+    }
+  ],
+  "small_bytes": 142230,
+  "elapsed_seconds": 18.742527469992638,
+  "weights_downloaded": false,
+  "task_labels_loaded": false,
+  "new_gpu_executions": 0,
+  "candidates_sha256": "c4891ea71ed0295c2dc00f5c9638a2ac03a23707f7e7490a5aba059f3ebd2b2b",
+  "source_sha256": "eafa94e298fce14d5d7d7a40efd3f5aaf9f9f227011c20d45a96e27631ff764e"
+}

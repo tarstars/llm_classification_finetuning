@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-09T13:30:35.283627+00:00",
+  "frozen_before_candidate_files": true,
+  "candidates": [
+    {
+      "service": "hf",
+      "ref": "RoschildRui/LMSYS_Gemma2_0728_0905",
+      "reason": "Author-named LMSYS Gemma2 release in bounded HFcatalog; compatibility and provenance unverified"
+    },
+    {
+      "service": "kaggle",
+      "ref": "kishanvavdara/lmsys-gemma-9b-weightsteam-human-bias",
+      "reason": "Competition team-named adapter release in bounded Kagglecatalog; provenance and head unverified"
+    },
+    {
+      "service": "kaggle",
+      "ref": "justin1357/lmsys-gemma2-lora-weights",
+      "reason": "Competition Gemma2 adapter release in bounded Kagglecatalog; provenance and head unverified"
+    }
+  ],
+  "discovery_sha256": "5d887ba6c0c37e58898a659b1fb78dd7aaeccef9e8d29752f1fcfb40dbb2f1c1",
+  "weights_downloaded": false,
+  "new_gpu_executions": 0
+}

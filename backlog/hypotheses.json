@@ -7784,7 +7784,7 @@
       ],
       "id": "H80",
       "rank": 99,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 37,
       "discovered_during": 36,
       "derived_from": [
@@ -7797,6 +7797,22 @@
           "note": "H79zero correction and weak raw/tie diagnostics stop the binary-auxiliary branch. Queue only a distinct same-base public classifier compatibility audit: current Gemma/Llama cannot be averaged; no compatible pair established, no v36weights/GPU.",
           "evidence": [
             "docs/WEIGHT_AVERAGING_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T13:27:32+00:00",
+          "status": "running",
+          "note": "Begin bounded public catalog discovery then at most3named new primary-source candidates. No weights, labels, quality variants or GPU; prove exact base/tokenizer/head/lineage/access first. Last board24/310; deadline/quota/reserve unchanged.",
+          "evidence": [
+            "docs/SPAN_037_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T13:43:59+00:00",
+          "status": "done",
+          "note": "Bounded3candidate public source audit complete:592122smallbytes,no weights/labels/GPU/official. NativeGemma MLP head exactpair not proved: HFarchives lack standalone configs/lineage, HumanBias final .pth not tied to retrieved embedding/CatBoostsource, Justin local4bitbase/nullrevision/head/classmapping unresolved. No average or numerical result. Notebook49executed; livequota unchanged and board24/309. Stop unsupportedpair, not all-public-model absence claim.",
+          "evidence": [
+            "docs/SPAN_037_RESULTS.md"
           ]
         }
       ]
@@ -7850,7 +7866,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 37,
+  "active_version": 38,
   "versions": [
     {
       "number": 1,
@@ -10501,7 +10517,7 @@
     },
     {
       "number": 37,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H05",
         "H06",
@@ -10540,15 +10556,80 @@
         "H73",
         "H80"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H80"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T13:27:32+00:00",
+          "note": "Persistent rank objective continues. Select only same-base public classifier compatibility source gate; v23known unavailable/incompatible releases stay stopped, no new weights/GPU until proof and separately frozen numerical contract.",
+          "focus_ids": [
+            "H80"
+          ]
+        }
+      ],
       "carried_from": 36,
       "start_sha256": "440c8a21cd405921b84597190a2b52bc964f66275965c1b5d3054a86f7daeb10",
       "start_markdown_sha256": "3a09658f73ba593e370f7d626dcf2076e78a404225e7215eca481b8918ca6d4b",
-      "start_sealed_at": "2026-11-09T13:22:58+00:00"
+      "start_sealed_at": "2026-11-09T13:22:58+00:00",
+      "final_sha256": "73e94d75ec9b52f4c52a83fdd1f8d2641e6bb5f6ff125b99ba71590084db31c7",
+      "final_markdown_sha256": "d62fbdbd0fc421e25dc575440aa678b865613640190406e20af5158fc183288c",
+      "final_sealed_at": "2026-11-09T13:43:59+00:00",
+      "closed_at": "2026-11-09T13:43:59+00:00",
+      "closing_note": "H80source gate established no compatible public pair within frozen3candidates; no newcompute/official. Preserve evidence and all prior source stops; carry35unfinished tasks to v38without automatic model/source rescue.",
+      "closing_evidence": [
+        "docs/SPAN_037_RESULTS.md"
+      ]
     },
     {
       "number": 38,
+      "state": "active",
+      "item_ids": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 37,
+      "start_sha256": "b0236395dd2c11041b9017b1a60c0e1820131f49142af6b82e5349d76f503599",
+      "start_markdown_sha256": "18118f2636b8865c86f0b7b26d0db90eda6a6a59afea2324f0a453d17dc33379",
+      "start_sealed_at": "2026-11-09T13:43:59+00:00"
+    },
+    {
+      "number": 39,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],
