@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-09T12:48:54.461826+00:00",
+  "all_1024_rows_exact_public_source_subset": true,
+  "source_repository": "lmarena-ai/arena-human-preference-140k",
+  "source_revision": "6322995ab34d7c2693e3f47dd13fa5caa0789a74",
+  "source_url": "https://huggingface.co/datasets/lmarena-ai/arena-human-preference-140k/blob/6322995ab34d7c2693e3f47dd13fa5caa0789a74/README.md",
+  "source_license": "cc-by-4.0",
+  "source_public": true,
+  "source_gated": false,
+  "timestamp_min": "2025-07-06T18:51:18.949840+00:00",
+  "timestamp_max": "2025-07-24T23:45:51.625432+00:00",
+  "payload_fields": [
+    "id",
+    "prompt",
+    "response_a",
+    "response_b"
+  ],
+  "preference_labels_in_upload": false,
+  "model_identities_in_upload": false,
+  "hidden_competition_data_in_upload": false,
+  "source_sha256": "433046c49aaee5dfed471d6b6a230282cdef6176f2d2e6cc0858a1e4d382a319",
+  "weights_public_repository": "https://huggingface.co/llm-blender/PairRM",
+  "weights_license": "MIT",
+  "destination": "Private dataset in user authorized Kaggle competition account",
+  "upload_intent_exists": false,
+  "original_review_reason": "Reviewer misclassified external public later-Arena texts as sensitive competition data; validate exact provenance before retrying same action",
+  "public_primary_source_freshly_verified_at": "2026-11-09T12:49:17.857086+00:00",
+  "public_hf_api_url": "https://huggingface.co/api/datasets/lmarena-ai/arena-human-preference-140k/revision/6322995ab34d7c2693e3f47dd13fa5caa0789a74"
+}

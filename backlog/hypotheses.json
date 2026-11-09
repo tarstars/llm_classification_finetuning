@@ -7703,6 +7703,22 @@
           "evidence": [
             "docs/SPAN_036_PLAN.md"
           ]
+        },
+        {
+          "at": "2026-11-09T12:55:22+00:00",
+          "status": "running",
+          "note": "Published bda3f24 before weights. Exact1.744GB MIT checkpoint SHA verified; all394state tensors and436014081parameters loaded strictly onCPU,3.719GiBRSS/4.01s. All1024native inputs/bothorders verified,max2048/mean702.387. Actual serialized two-process/final/failure/watchdog/Jupyter rehearsals pass with explicitly fake CPU forwards. Private asset upload36960LIVE after source-provenance review resolved; no GPU or quality result yet.",
+          "evidence": [
+            "docs/SPAN_036_INFORMATION_CONTRACT.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T12:59:20+00:00",
+          "status": "running",
+          "note": "Private public-source-only asset v1 READY and private verified. Source-proof resolved initial auto-review rejection; no hidden or competition data uploaded. Full strictCPU checkpoint and realserialized two-worker/final/failure/watchdog/Jupyter rehearsals pass;19,370byte frozen notebook uses phase/row telemetry. Publish final programs/bundle before ONE2700s GPU information pilot; quality unmeasured, no official eligible.",
+          "evidence": [
+            "results/span_036/pairrm_pilot_cell_rehearsals.json"
+          ]
         }
       ]
     }

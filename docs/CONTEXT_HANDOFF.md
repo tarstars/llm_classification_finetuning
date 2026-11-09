@@ -29,18 +29,24 @@ Original absolute deadline2026-11-10T08:37:37.343197UTCneverresets.
 Backlog v36focus[H79] RUNNING;35carried+newH79=36active,98registered,
 142immutable snapshots. Sourcegate passed: PairRM5b880cc73776ac75a835b3e0bd5169bcb5be013b,
 code33204d2712944b6b17996f7c079e74cd963ccc7c, baseconfig64a8c8eab3e352a784c658aef62be1662607476f.
-Read docs/SPAN_036_INFORMATION_CONTRACT.md and currentGOAL/PLAN. No newtargets,
-weights orGPU yet. NativeCPUtokenproof67811exit0onALL1024rows/bothorientations,
+Read docs/SPAN_036_INFORMATION_CONTRACT.md and currentGOAL/PLAN. No newtargets orGPU yet. NativeCPUtokenproof67811exit0onALL1024rows/bothorientations,
 max2048/mean702.387tokens; nativehead tinyCPUrehearsal exactdiff0.
 Sourceauditfirst empty-fileHTTP501 preserved; resumed pinnedfiles, no substitution.
 One fixed joint feature=.5*(nativeAB-nativeBA), literal authoredclass/collator/
-conversationhelper, batch2, twoT4oneorientationeach. Strictcheckpointload pending.
+conversationhelper, batch2, twoT4oneorientationeach. Full checkpoint strictly loaded onCPU:394tensors/436014081parameters,3.719GiB/4.01s.
 Five/threegroupnested conditionalwinneroffset,tiepreserved,lambda[.01,.1,1],
 seed20261216; usefulgain>=.001/positivegroup95lower,bootstrap2000seed20261217.
 Onepilot2700s+onequalification2700s/publictotal5400; noofficialfrompilot.
-Sources/preparation/runtime inresults/span_036, Notebook48executed. Next publish
-exactmethod first, then prepare_span_036_assets.py weights/upload/verify and
-implement/test one actualserializedofflineGPUworker beforeadmission. Never send
+Sources/preparation/runtime inresults/span_036, Notebook48executed. Exactmethod publishedbda3f24beforeweights. Privateasset
+arseniytrushin/llm-span036-pairrm-inputs/1uploadedONCEandREADY/privateverified;
+upload36960TERMINALexit0,verify25554TERMINALexit0. Automaticreview initially
+misclassifiedtexts as sensitivecompetitiondata; exact1024rowpublic-source and
+freshHFpublic/CCBY4proof resolvedreview, no workaround. Evidence
+results/span_036/upload_public_source_proof.json. Realserializedtwoprocess/final/
+failure/watchdog/Jupyterrehearsals pass with explicitfakeCPUforwards; phase/row
+progress enabled. Finalbuildersealed19370bytepayload. Bundle
+results/span_036/pairrm_pilot_bundle.json. NoacceptedGPUyet: publishexactprograms
+andbundle, then run_span_036_pilot.py once withfreshadmission and verifyexactsource. Never send
 competitiontext online; public pinned local/offline weights are authorized.
 
 

@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-09T12:47:42.857362+00:00",
+  "passed": true,
+  "all_state_keys_strict": true,
+  "state_tensors": 394,
+  "parameters": 436014081,
+  "vocabulary_size": 128005,
+  "native_head_shape": true,
+  "weights_sha256": "8c68cc751e7899d045268cf22a0ab158286c0caf6980028e7f3b0132f06243eb",
+  "task_targets_loaded": false,
+  "elapsed_seconds": 4.010987498098984,
+  "peak_rss_gib": 3.719135284423828
+}

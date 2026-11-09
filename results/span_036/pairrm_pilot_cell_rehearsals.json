@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "actual_serialized_staging_two_process_pipeline_final",
+      "passed": true,
+      "fake_cpu_forward": true
+    },
+    {
+      "name": "failure",
+      "passed": true
+    },
+    {
+      "name": "watchdog",
+      "passed": true
+    }
+  ],
+  "notebook_sha256": "fc85d633c4d68a1abebbc9cf4570bfef1620cda5fc598a63c107aba6a399f493",
+  "actual_serialized_staging_pipeline_final_passed": true,
+  "standalone_imports_passed": true,
+  "mode_guards_passed": true,
+  "notebook_engine_startup_passed": true,
+  "new_gpu_executions": 0
+}
