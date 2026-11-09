@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-09T08:40:32.850139+00:00",
+  "task": "H16",
+  "complete": true,
+  "reviewer": "Codex blind text review",
+  "training_only": true,
+  "preference_labels_loaded": false,
+  "audited_positive": 24,
+  "clear_refusals": 17,
+  "ambiguous": 2,
+  "false_positives": 5,
+  "clear_precision": 0.7083333333333334,
+  "optimistic_precision": 0.7916666666666666,
+  "required_true_positives": 20,
+  "detector_gate_passed": false,
+  "coverage_gate_passed": true,
+  "audited_nondetections": 8,
+  "observed_refusals_in_nondetections": 0,
+  "recall_established": false,
+  "input_sha256": "a5813cb7dec474def855db8c368c43d2ae60ae64a9b0820e9776c2c0940874a4",
+  "annotations_sha256": "7fed6af972f3175a6ffa99d075058fec01f5849aca8fd650a0575d938f089aeb",
+  "false_positive_categories": [
+    "Instruction compliance: agrees not to mention the requested subject.",
+    "Physical visibility explanation using generic we, not assistant refusal.",
+    "Quoted fictional dialogue, not an assistant refusing the user.",
+    "Riddle explanation about an abstract moment, not a refusal.",
+    "Answers the language question; subsequent machine-versus-human caveat is self-description."
+  ],
+  "ambiguous_categories": [
+    "Answers a wordplay riddle, then declines an exact numerical interpretation.",
+    "Explains the liar paradox, then says it cannot resolve it; explanatory inability rather than clear refusal."
+  ],
+  "annotation_uncertainty": "One reviewer; ambiguities retained. Even both ambiguous positives counted as correct yield19<20 required. Negative sample does not estimate recall.",
+  "decision": "stop_detector_before_fitting",
+  "new_gpu_executions": 0,
+  "official_submissions": 0,
+  "quality_metrics_measured": false,
+  "next_action": "report_coverage_and_detector_failure_without_fitting_or_recipe_rescue"
+}

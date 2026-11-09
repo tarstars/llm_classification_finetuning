@@ -1,0 +1,19 @@
+{
+  "span": 32,
+  "seed": 20261208,
+  "bootstrap_seed": 20261209,
+  "bootstrap_group_replicates": 2000,
+  "lambda_grid": [0.01, 0.1, 1.0],
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "minimum_affected_per_partition": 32,
+  "minimum_affected_nontie_training": 16,
+  "minimum_detector_true_positives": 20,
+  "confirmation_min_gain": 0.001,
+  "preparation_seconds_cap": 300,
+  "analysis_seconds_cap": 1200,
+  "rss_guard_gib": 6,
+  "gpu_session_seconds_cap": 0,
+  "maximum_official_submissions": 0,
+  "deadline": "2026-11-10T08:37:37.343197+00:00"
+}

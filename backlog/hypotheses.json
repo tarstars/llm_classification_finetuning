@@ -1159,7 +1159,7 @@
       "title": "Refusal appropriateness",
       "priority": "P3",
       "rank": 21,
-      "status": "planned",
+      "status": "done",
       "gain": [
         -0.005,
         0.008
@@ -1197,7 +1197,24 @@
       "evidence": [
         "TARGET_AUDIT.md"
       ],
-      "history": [],
+      "history": [
+        {
+          "at": "2026-11-09T08:35:23+00:00",
+          "status": "running",
+          "note": "V32 preparation under SPAN_032_PLAN: current strong uncalibrated two-expert cached2025 comparator, one conditional-refusal residual with global/style controls. CPUonly noGPU/official. Historical source inspection/domain transfer/currentH60reverse-cache absence disclosed; coverage+blindtrain detector gates precede targets/fitting. No revival of failedglobaltemperature/weights/routes.",
+          "evidence": [
+            "docs/SPAN_032_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T08:44:38+00:00",
+          "status": "done",
+          "note": "V32 fixed detector stopped before preference targets/fitting. Coverage88learning/72confirmation passed; blind train-only24positive/8negative review found17clear refusals,2ambiguous,5false positives. Optimistic19<required20, gatefails. No quality metrics/GPU/official. Float32preparation assertion failure/source preserved; canonicalvalidator correction36794exit0 in3.470s. Report/Notebook44 capture measured limitation; newactor-aware follow-up queued separately.",
+          "evidence": [
+            "docs/SPAN_032_RESULTS.md"
+          ]
+        }
+      ],
       "introduced_in": 1,
       "discovered_during": null,
       "derived_from": []
@@ -7416,6 +7433,68 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Attribute refusal wording to assistant speech before learning a preference correction",
+      "priority": "P2",
+      "gain": [
+        -0.003,
+        0.005
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        2,
+        5
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "cpu_wall_hours": [
+        0.25,
+        1
+      ],
+      "risk": "high",
+      "claim": "A detector that separates assistant refusal from quoted dialogue, compliance and generic inability statements may support a useful request-conditioned residual on the strong ensemble.",
+      "basis": "V32H16 fixed opening regex has adequate88/72source coverage but only17clear refusals and2ambiguous among24blind training-only positives; even optimistic19 fails20required. Five false positives have concrete actor/context errors. No preference residual was fitted, so its quality remains unmeasured.",
+      "first_test": "Freeze one actor-aware detector using only training text and v32failure categories. Exclude the32audited rows and their prompt groups from a new deterministic blind detector audit; retain old detector as control. Measure full cached coverage before labels. Require >=20/24clear positive audit cases and >=32one-sided rows per source partition before the same bounded learning/confirmation residual comparison with global/style controls. No detector grid or preference-label-based detector tuning.",
+      "acceptance": "Detector passes blind validity and coverage gates, then fixed conditional residual improves confirmation loss>=.001 with positive pairedgroup95 versus baseline and positive lower bound versus style, with positive learningcrossfit gain. Positive source information still requires separate matchedH60 transfer and actual offline qualification before official use.",
+      "stop": "Stop if actor attribution remains unreliable, coverage is inadequate, or the planned preference comparison is negative/inconclusive. No same-span detector/sample rescue or automatic GPU/official.",
+      "risk_reason": "Failure categories were observed after the first detector; a revised detector can overfit that small audit. Newer source-domain improvement may not transfer to competition, and old caches lack currentH60reverse route.",
+      "mitigation": "New blind training-only cases excluding old prompt groups; freeze before labels; keep controls/negative history; disclose inspected source and single-reviewer limits; require separate current-pipeline transfer.",
+      "rationale": "Directly addresses an observed descriptor-validity failure before spending GPU or treating every refusal as undesirable. Future gains are subjective, not measured.",
+      "revision": "New discovery from completedv32H16; not a revision or rerun of its failed fixed detector. No v32fitting/GPU/official.",
+      "depends_on": [
+        "E00",
+        "H16"
+      ],
+      "evidence": [
+        "docs/SPAN_032_RESULTS.md",
+        "results/span_032/detector_audit.json"
+      ],
+      "id": "H77",
+      "rank": 96,
+      "status": "planned",
+      "introduced_in": 33,
+      "discovered_during": 32,
+      "derived_from": [
+        "H16"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T08:44:38+00:00",
+          "status": "planned",
+          "note": "Blind train-only detector audit has17clear/2ambiguous/5false positive categories; even optimistic19<20. Queue a distinct actor-aware detector and separately gated residual test, not same-span regex rescue or automaticGPU.",
+          "evidence": [
+            "docs/SPAN_032_RESULTS.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -7466,7 +7545,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 32,
+  "active_version": 33,
   "versions": [
     {
       "number": 1,
@@ -9784,7 +9863,7 @@
     },
     {
       "number": 32,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H05",
         "H06",
@@ -9824,15 +9903,82 @@
         "H63",
         "H73"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H16"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T08:31:41+00:00",
+          "note": "Select H16 for current strong public ensemble: bounded request-conditioned refusal correction, first CPU cached post-checkpoint source screen against matched baseline/global-refusal/style controls, then only conditional separately verified current-H60 transfer. Prior H59 global temperature failure retained; no more expertweights/routes/T tuning or weak-classifier retraining.",
+          "focus_ids": [
+            "H16"
+          ]
+        }
+      ],
       "carried_from": 31,
       "start_sha256": "cb20147f994606142c3f938f041390db2bcfb43cf02f0aef4002c43cbdec5405",
       "start_markdown_sha256": "a577652fa7f756fd698a7c32df6f88e867255c74fa455539f0573a9b5ba77dcf",
-      "start_sealed_at": "2026-11-09T08:23:54+00:00"
+      "start_sealed_at": "2026-11-09T08:23:54+00:00",
+      "final_sha256": "7faf99f8674f39347ad9a38b3b83acb0c2e724ba2709634f9168a445135266f6",
+      "final_markdown_sha256": "70f8c74de24dd97b4d7cf79427763b4bb7606bc62dd8823ca3826796a8c6e45b",
+      "final_sealed_at": "2026-11-09T08:45:03+00:00",
+      "closed_at": "2026-11-09T08:45:03+00:00",
+      "closing_note": "Seal v32H16 at failed blind detector gate before preference labels/fitting; noGPU/official and unchangedquota. Queue H77 actor-attribution follow-up from actual five false-positive categories; carry36unfinished. Executed Notebook44 preserves coverage,17clear+2ambiguous<20threshold, failure and no-quality-estimate limitation.",
+      "closing_evidence": [
+        "docs/SPAN_032_RESULTS.md"
+      ]
     },
     {
       "number": 33,
+      "state": "active",
+      "item_ids": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "H77"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 32,
+      "start_sha256": "f0e1f4f31972b2150cab72b96524b4928e28268bcb6b6ae057e05453dbb378f3",
+      "start_markdown_sha256": "8f054ca7e9fa029eee2f38c70987a34ad6b3e97263c64e6e25c3569e871d46c9",
+      "start_sealed_at": "2026-11-09T08:45:03+00:00"
+    },
+    {
+      "number": 34,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],
