@@ -223,6 +223,7 @@ Later-source validation may misrepresent the opportunity for features on the ori
 
 - 2026-11-09T16:13:44+00:00 — planned: Frozenlabelblind mathcontrast differs73/57477vs1/11215before quality. Queue a bounded validation-population/support audit, not a claim of arithmetic skill or a parser/model rescue. Originalteacher exposure and selection must be separated. Evidence: [docs/VALIDATION_POPULATION_DISCOVERY.md](docs/VALIDATION_POPULATION_DISCOVERY.md)
 - 2026-11-09T16:21:19+00:00 — running: V39fixed5views, targetblind covariates and diagnostic-only producer IDs, existing native length bins plus one capped char-decile standardization. No votes/predictions, newqualityfit/GPU or old-result rescue. Material support rule frozen before census; original deadline/quota persist. Evidence: [docs/SPAN_039_PLAN.md](docs/SPAN_039_PLAN.md)
+- 2026-11-09T16:35:06+00:00 — running: Published dd94808 targetblind audit complete:0exactIDoverlap, native lengthTV.001334, but frozen composite mismatch gate fails (only headingSMD>.25). Preserve first result; separate numerical correction fixes constant-column SMD1.414to0 and TVroundoff,4tests pass, no gate/decision/data change. User requests independent Fable-high critique; actual service rejected model for ChatGPT account, reviewer choice pending, no substitute or new experiments. Evidence: [results/span_039/H81_corrected_results.json](results/span_039/H81_corrected_results.json)
 
 ### H05
 

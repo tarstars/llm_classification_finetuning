@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-09T16:35:06.188141+00:00",
+  "requested_model": "fable",
+  "requested_reasoning_effort": "high",
+  "sandbox": "read-only",
+  "prompt_sha256": "b89c09e86936f37a6c0ce9f9dac31edbe7955f453da3fe0a775621c732361b2c",
+  "review_completed": false,
+  "another_model_substituted": false,
+  "error": "The 'fable' model is not supported when using Codex with a ChatGPT account.",
+  "next_action": "Await user choice of an available reviewer or exact supported Fable model/access."
+}

@@ -1,3 +1,31 @@
+# Current steering: independent critical review requested
+
+The user explicitly asks for Fable at high effort to critically review the work,
+then react to its criticisms. Review brief: docs/CRITICAL_REVIEW_REQUEST_20261109.md.
+Actual read-only codex exec model=fable,effort=high failed with service error:
+"The fable model is not supported when using Codex with a ChatGPT account."
+Exact error and no-substitution receipt: results/reviews/20261109_fable_attempt.json.
+Review38834 TERMINALexit1; no reviewer is running. An async question is pending:
+Astra-high, Sol-high, or exact supported Fable access/ID. Do not pretend the review
+ran or silently substitute. Original rank goal remains ACTIVE, not paused/complete.
+
+H81/v39 is RUNNING and its target-blind census54733 TERMINALexit0. Published
+dd94808 before data,30.860s/.991GiB. Result results/span_039/H81_results.json.
+Original64 and later48 exact model IDs have no intersection; matched1024also
+has none. Native length-bin TV .001334. But frozen composite material-mismatch
+rule FAILS: only Markdown headings has post-standardization |SMD|>.25; two needed.
+This does not prove validation invalid or score gains on another population.
+No preference labels, prediction analysis, GPU or new model trial authorized.
+
+First result preserved. A separate H81_corrected_results.json fixes constant-
+column roundoff (single-turn SMD1.414->0) and tiny TV>1roundoff. Four meaningful
+regression tests pass; no data, rule or decision changed. New correction code is
+src/arena/span039_population_math.py and scripts/correct_span_039_statistics.py.
+Do not close v39 or select new experiments before handling the requested review.
+No numerical quality/official follows from this audit. Preserve all prior stops.
+
+The older orientation below is historical; current files and this steering override it.
+
 # V38 closed; v39 validation-population audit next
 
 Snapshot 2026-11-09 14:06 UTC. Read PROJECT_POLICY.md; verify current files and
