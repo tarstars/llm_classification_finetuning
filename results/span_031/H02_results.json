@@ -1,0 +1,686 @@
+{
+  "task": "H02",
+  "complete": true,
+  "service_status": "COMPLETE",
+  "charged_gpu_seconds": 3685.5139999999956,
+  "arms": {
+    "4b": {
+      "complete": true,
+      "raw_metrics": {
+        "rows": 512,
+        "log_loss": 1.0852316893234757,
+        "accuracy": 0.40625,
+        "macro_f1": 0.40216529291294084,
+        "brier": 0.6570805992258651,
+        "class_counts": [
+          184,
+          173,
+          155
+        ],
+        "class_loss": [
+          1.037448433813146,
+          1.027752139489019,
+          1.2061096321316147
+        ],
+        "class_recall": [
+          0.43478260869565216,
+          0.45664739884393063,
+          0.3161290322580645
+        ],
+        "tie_precision": 0.4188034188034188,
+        "mean_predictive_entropy": 1.0798389688632024,
+        "mean_class_probability": [
+          0.3517269994002552,
+          0.3514578226632424,
+          0.29681517793650264
+        ],
+        "predicted_class_fraction": [
+          0.39453125,
+          0.376953125,
+          0.228515625
+        ],
+        "tie_auc": 0.5741031896629619,
+        "confusion_matrix": [
+          [
+            80,
+            69,
+            35
+          ],
+          [
+            61,
+            79,
+            33
+          ],
+          [
+            61,
+            45,
+            49
+          ]
+        ],
+        "balanced_accuracy": 0.40251967993254906
+      },
+      "accepted_updates": 32,
+      "nominal_cycles": 32,
+      "global_accepted_rows": 1024,
+      "global_accepted_unique_rows": 1024,
+      "global_accepted_tokens": 587238,
+      "per_rank": [
+        {
+          "verified": true,
+          "rank": 0,
+          "cycles": 32,
+          "accepted_updates": 32,
+          "skipped_updates": 0,
+          "first_scheduler_position": 0,
+          "last_scheduler_position": 32,
+          "hardware": {
+            "rank": 0,
+            "device": 0,
+            "name": "Tesla T4",
+            "peak_allocated_bytes": 6639434240,
+            "peak_reserved_bytes": 7224688640,
+            "total_memory_bytes": 15636037632,
+            "peak_memory_fraction": 0.4246238334967957
+          }
+        },
+        {
+          "verified": true,
+          "rank": 1,
+          "cycles": 32,
+          "accepted_updates": 32,
+          "skipped_updates": 0,
+          "first_scheduler_position": 0,
+          "last_scheduler_position": 32,
+          "hardware": {
+            "rank": 1,
+            "device": 1,
+            "name": "Tesla T4",
+            "peak_allocated_bytes": 6639434240,
+            "peak_reserved_bytes": 7516192768,
+            "total_memory_bytes": 15636037632,
+            "peak_memory_fraction": 0.4246238334967957
+          }
+        }
+      ],
+      "training_seconds": 1075.312213081,
+      "prediction_seconds": 359.585202065,
+      "prediction_seconds_per_row": 0.7023148477832031,
+      "model_config_sha256": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+      "adapter_sha256": "e350e82f8d0dff8e1f2de295d0e2757eb1df958e5ab4ba459bf2bdfa99d759a7",
+      "packed_token_hashes": {
+        "train_original": "3a6607d669c395e7179de9a50d6a49c45a1dc67cf9a88d6b6e84c7a1c1ef71e1",
+        "train_swapped": "23be09b2e8ab0fa42ccc651a9cfa468615881fd23ed391cc0b1c883bc0b4062d",
+        "dev_original": "afcc3df2c30ca5be7b6e01b27f2ed374a34bf83d2657b85841feaa19c043a542",
+        "dev_swapped": "2013cd0f06cbe011c96e561ff19708951e8986f0a11d196bb46976b6436fabe5"
+      },
+      "training_curve": [
+        {
+          "step": 5,
+          "accepted_updates": 5,
+          "elapsed_seconds": 162.664758301,
+          "learning_rate": 9.968561049466214e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 5.0
+        },
+        {
+          "step": 10,
+          "accepted_updates": 10,
+          "elapsed_seconds": 332.34807375900004,
+          "learning_rate": 8.90915741234015e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 10.0
+        },
+        {
+          "step": 15,
+          "accepted_updates": 15,
+          "elapsed_seconds": 498.73154182100006,
+          "learning_rate": 6.651395309775837e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 15.0
+        },
+        {
+          "step": 20,
+          "accepted_updates": 20,
+          "elapsed_seconds": 668.737313192,
+          "learning_rate": 3.887395330218429e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 20.0
+        },
+        {
+          "step": 25,
+          "accepted_updates": 25,
+          "elapsed_seconds": 833.4026704959999,
+          "learning_rate": 1.4644660940672627e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 25.0
+        },
+        {
+          "step": 30,
+          "accepted_updates": 30,
+          "elapsed_seconds": 1006.907521224,
+          "learning_rate": 1.2536043909088191e-06,
+          "amp_scale": 128.0,
+          "scheduler_position": 30.0
+        },
+        {
+          "step": 32,
+          "accepted_updates": 32,
+          "elapsed_seconds": 1073.717038834,
+          "learning_rate": 0.0,
+          "amp_scale": 128.0,
+          "scheduler_position": 32.0
+        }
+      ],
+      "loss_curve": [
+        {
+          "step": 1,
+          "elapsed_seconds": 29.378123905000052,
+          "loss": 2.2549664974212646,
+          "grad_norm": 94.20720672607422,
+          "learning_rate": 0.0,
+          "epoch": 0.03125
+        },
+        {
+          "step": 4,
+          "elapsed_seconds": 134.78884124,
+          "loss": 2.242664178212484,
+          "grad_norm": 62.256103515625,
+          "learning_rate": 7.500000000000001e-05,
+          "epoch": 0.125
+        },
+        {
+          "step": 8,
+          "elapsed_seconds": 262.5763924060001,
+          "loss": 1.4666335582733154,
+          "grad_norm": 30.652469635009766,
+          "learning_rate": 9.719416651541839e-05,
+          "epoch": 0.25
+        },
+        {
+          "step": 12,
+          "elapsed_seconds": 394.810575879,
+          "loss": 1.256097674369812,
+          "grad_norm": 28.70723533630371,
+          "learning_rate": 8.535533905932738e-05,
+          "epoch": 0.375
+        },
+        {
+          "step": 16,
+          "elapsed_seconds": 532.6770540790001,
+          "loss": 1.1235032081604004,
+          "grad_norm": 8.194046974182129,
+          "learning_rate": 6.651395309775837e-05,
+          "epoch": 0.5
+        },
+        {
+          "step": 20,
+          "elapsed_seconds": 668.743406683,
+          "loss": 1.165060043334961,
+          "grad_norm": 4.6908769607543945,
+          "learning_rate": 4.4401776194834613e-05,
+          "epoch": 0.625
+        },
+        {
+          "step": 24,
+          "elapsed_seconds": 798.0612441420001,
+          "loss": 1.0992038249969482,
+          "grad_norm": 22.300710678100586,
+          "learning_rate": 2.3398396174233178e-05,
+          "epoch": 0.75
+        },
+        {
+          "step": 28,
+          "elapsed_seconds": 938.938082166,
+          "loss": 1.140882968902588,
+          "grad_norm": 9.821224212646484,
+          "learning_rate": 7.663790038585793e-06,
+          "epoch": 0.875
+        },
+        {
+          "step": 32,
+          "elapsed_seconds": 1073.723779788,
+          "loss": 1.146549105644226,
+          "grad_norm": 19.19303321838379,
+          "learning_rate": 3.143895053378698e-07,
+          "epoch": 1.0
+        },
+        {
+          "step": 32,
+          "elapsed_seconds": 1073.7287836130001,
+          "train_runtime": 1073.8648,
+          "train_samples_per_second": 0.954,
+          "train_steps_per_second": 0.03,
+          "train_loss": 1.3304587677121162,
+          "epoch": 1.0
+        }
+      ],
+      "stopped_for_budget": false,
+      "setup_save_overhead_seconds": 52.185370192000164,
+      "order_diagnostics": {
+        "decision_disagreement": 0.7734375,
+        "mean_probability_l1": 0.29241681208299053,
+        "second_position_advantage": -0.011782090967961107
+      },
+      "temperature_cv_metrics": {
+        "rows": 512,
+        "log_loss": 1.0881906688773078,
+        "accuracy": 0.40625,
+        "macro_f1": 0.40216529291294084,
+        "brier": 0.6589904550743186,
+        "class_counts": [
+          184,
+          173,
+          155
+        ],
+        "class_loss": [
+          1.0465546306363884,
+          1.038033881199868,
+          1.1935981224548964
+        ],
+        "class_recall": [
+          0.43478260869565216,
+          0.45664739884393063,
+          0.3161290322580645
+        ],
+        "tie_precision": 0.4188034188034188,
+        "mean_predictive_entropy": 1.0847029177368852,
+        "mean_class_probability": [
+          0.34892963707364977,
+          0.34876789790050156,
+          0.30230246502584923
+        ],
+        "predicted_class_fraction": [
+          0.39453125,
+          0.376953125,
+          0.228515625
+        ],
+        "tie_auc": 0.5707960603596278,
+        "confusion_matrix": [
+          [
+            80,
+            69,
+            35
+          ],
+          [
+            61,
+            79,
+            33
+          ],
+          [
+            61,
+            45,
+            49
+          ]
+        ]
+      },
+      "fold_temperatures": [
+        0.8881874711261744,
+        1.1891115870521454,
+        1.2737837473005944,
+        1.2711437613680572,
+        1.4194848819327184
+      ],
+      "projection_seconds": 21732.067877726495
+    },
+    "8b": {
+      "complete": true,
+      "raw_metrics": {
+        "rows": 512,
+        "log_loss": 1.127433325661447,
+        "accuracy": 0.353515625,
+        "macro_f1": 0.3529568465318291,
+        "brier": 0.6817271349712257,
+        "class_counts": [
+          184,
+          173,
+          155
+        ],
+        "class_loss": [
+          1.094098985465387,
+          1.059582153661456,
+          1.2427350763199851
+        ],
+        "class_recall": [
+          0.358695652173913,
+          0.35260115606936415,
+          0.34838709677419355
+        ],
+        "tie_precision": 0.31213872832369943,
+        "mean_predictive_entropy": 1.060856930381182,
+        "mean_class_probability": [
+          0.3419224350081587,
+          0.3452263790868265,
+          0.3128511859050138
+        ],
+        "predicted_class_fraction": [
+          0.333984375,
+          0.328125,
+          0.337890625
+        ],
+        "tie_auc": 0.49800307219662054,
+        "confusion_matrix": [
+          [
+            66,
+            51,
+            67
+          ],
+          [
+            60,
+            61,
+            52
+          ],
+          [
+            45,
+            56,
+            54
+          ]
+        ],
+        "balanced_accuracy": 0.3532279683391569
+      },
+      "accepted_updates": 32,
+      "nominal_cycles": 32,
+      "global_accepted_rows": 1024,
+      "global_accepted_unique_rows": 1024,
+      "global_accepted_tokens": 587238,
+      "per_rank": [
+        {
+          "verified": true,
+          "rank": 0,
+          "cycles": 32,
+          "accepted_updates": 32,
+          "skipped_updates": 0,
+          "first_scheduler_position": 0,
+          "last_scheduler_position": 32,
+          "hardware": {
+            "rank": 0,
+            "device": 0,
+            "name": "Tesla T4",
+            "peak_allocated_bytes": 8947613184,
+            "peak_reserved_bytes": 9560915968,
+            "total_memory_bytes": 15636037632,
+            "peak_memory_fraction": 0.5722430064819123
+          }
+        },
+        {
+          "verified": true,
+          "rank": 1,
+          "cycles": 32,
+          "accepted_updates": 32,
+          "skipped_updates": 0,
+          "first_scheduler_position": 0,
+          "last_scheduler_position": 32,
+          "hardware": {
+            "rank": 1,
+            "device": 1,
+            "name": "Tesla T4",
+            "peak_allocated_bytes": 8947601920,
+            "peak_reserved_bytes": 9560915968,
+            "total_memory_bytes": 15636037632,
+            "peak_memory_fraction": 0.5722422860947998
+          }
+        }
+      ],
+      "training_seconds": 1461.094345895,
+      "prediction_seconds": 559.023095427,
+      "prediction_seconds_per_row": 1.0918419832558595,
+      "model_config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+      "adapter_sha256": "57509121fba3237dac432035b73296c614023648f72dc7105bdb45f42e529d3f",
+      "packed_token_hashes": {
+        "train_original": "3a6607d669c395e7179de9a50d6a49c45a1dc67cf9a88d6b6e84c7a1c1ef71e1",
+        "train_swapped": "23be09b2e8ab0fa42ccc651a9cfa468615881fd23ed391cc0b1c883bc0b4062d",
+        "dev_original": "afcc3df2c30ca5be7b6e01b27f2ed374a34bf83d2657b85841feaa19c043a542",
+        "dev_swapped": "2013cd0f06cbe011c96e561ff19708951e8986f0a11d196bb46976b6436fabe5"
+      },
+      "training_curve": [
+        {
+          "step": 5,
+          "accepted_updates": 5,
+          "elapsed_seconds": 223.69043327099985,
+          "learning_rate": 9.968561049466214e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 5.0
+        },
+        {
+          "step": 10,
+          "accepted_updates": 10,
+          "elapsed_seconds": 452.09069829099985,
+          "learning_rate": 8.90915741234015e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 10.0
+        },
+        {
+          "step": 15,
+          "accepted_updates": 15,
+          "elapsed_seconds": 683.7079732689997,
+          "learning_rate": 6.651395309775837e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 15.0
+        },
+        {
+          "step": 20,
+          "accepted_updates": 20,
+          "elapsed_seconds": 903.442568879,
+          "learning_rate": 3.887395330218429e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 20.0
+        },
+        {
+          "step": 25,
+          "accepted_updates": 25,
+          "elapsed_seconds": 1123.4436571640001,
+          "learning_rate": 1.4644660940672627e-05,
+          "amp_scale": 128.0,
+          "scheduler_position": 25.0
+        },
+        {
+          "step": 30,
+          "accepted_updates": 30,
+          "elapsed_seconds": 1362.5788971169998,
+          "learning_rate": 1.2536043909088191e-06,
+          "amp_scale": 128.0,
+          "scheduler_position": 30.0
+        },
+        {
+          "step": 32,
+          "accepted_updates": 32,
+          "elapsed_seconds": 1459.5827306969998,
+          "learning_rate": 0.0,
+          "amp_scale": 128.0,
+          "scheduler_position": 32.0
+        }
+      ],
+      "loss_curve": [
+        {
+          "step": 1,
+          "elapsed_seconds": 47.56126794499983,
+          "loss": 1.6509922742843628,
+          "grad_norm": 79.55331420898438,
+          "learning_rate": 0.0,
+          "epoch": 0.03125
+        },
+        {
+          "step": 4,
+          "elapsed_seconds": 186.82984803,
+          "loss": 2.2416125933329263,
+          "grad_norm": 25.205917358398438,
+          "learning_rate": 7.500000000000001e-05,
+          "epoch": 0.125
+        },
+        {
+          "step": 8,
+          "elapsed_seconds": 358.5824120499999,
+          "loss": 2.369792938232422,
+          "grad_norm": 85.9437026977539,
+          "learning_rate": 9.719416651541839e-05,
+          "epoch": 0.25
+        },
+        {
+          "step": 12,
+          "elapsed_seconds": 538.8121076099999,
+          "loss": 1.4313331842422485,
+          "grad_norm": 52.18930435180664,
+          "learning_rate": 8.535533905932738e-05,
+          "epoch": 0.375
+        },
+        {
+          "step": 16,
+          "elapsed_seconds": 725.5201950129997,
+          "loss": 1.2560011148452759,
+          "grad_norm": 51.65785598754883,
+          "learning_rate": 6.651395309775837e-05,
+          "epoch": 0.5
+        },
+        {
+          "step": 20,
+          "elapsed_seconds": 903.4490683429997,
+          "loss": 1.2596286535263062,
+          "grad_norm": 20.29359245300293,
+          "learning_rate": 4.4401776194834613e-05,
+          "epoch": 0.625
+        },
+        {
+          "step": 24,
+          "elapsed_seconds": 1078.07403284,
+          "loss": 1.1903784275054932,
+          "grad_norm": 32.53812026977539,
+          "learning_rate": 2.3398396174233178e-05,
+          "epoch": 0.75
+        },
+        {
+          "step": 28,
+          "elapsed_seconds": 1268.0998683,
+          "loss": 1.1987481117248535,
+          "grad_norm": 14.233288764953613,
+          "learning_rate": 7.663790038585793e-06,
+          "epoch": 0.875
+        },
+        {
+          "step": 32,
+          "elapsed_seconds": 1459.5891955579998,
+          "loss": 1.1647138595581055,
+          "grad_norm": 24.365478515625,
+          "learning_rate": 3.143895053378698e-07,
+          "epoch": 1.0
+        },
+        {
+          "step": 32,
+          "elapsed_seconds": 1459.594470842,
+          "train_runtime": 1459.9229,
+          "train_samples_per_second": 0.701,
+          "train_steps_per_second": 0.022,
+          "train_loss": 1.4955692254006863,
+          "epoch": 1.0
+        }
+      ],
+      "stopped_for_budget": false,
+      "setup_save_overhead_seconds": 75.55849381799999,
+      "order_diagnostics": {
+        "decision_disagreement": 0.75390625,
+        "mean_probability_l1": 0.5066083346345582,
+        "second_position_advantage": -0.16398748398641808
+      },
+      "temperature_cv_metrics": {
+        "rows": 512,
+        "log_loss": 1.0992652142382968,
+        "accuracy": 0.353515625,
+        "macro_f1": 0.3529568465318291,
+        "brier": 0.6668607797855366,
+        "class_counts": [
+          184,
+          173,
+          155
+        ],
+        "class_loss": [
+          1.0877807490186442,
+          1.0782441960853555,
+          1.1363605545020061
+        ],
+        "class_recall": [
+          0.358695652173913,
+          0.35260115606936415,
+          0.34838709677419355
+        ],
+        "tie_precision": 0.31213872832369943,
+        "mean_predictive_entropy": 1.0938817061559147,
+        "mean_class_probability": [
+          0.33740673535293125,
+          0.33866293955837545,
+          0.3239303250886933
+        ],
+        "predicted_class_fraction": [
+          0.333984375,
+          0.328125,
+          0.337890625
+        ],
+        "tie_auc": 0.49789464172765874,
+        "confusion_matrix": [
+          [
+            66,
+            51,
+            67
+          ],
+          [
+            60,
+            61,
+            52
+          ],
+          [
+            45,
+            56,
+            54
+          ]
+        ]
+      },
+      "fold_temperatures": [
+        2.9999936240453042,
+        2.99999628365662,
+        2.9999937573327005,
+        2.9999958419419936,
+        2.999994323858027
+      ],
+      "projection_seconds": 33445.929690257384
+    }
+  },
+  "quality_comparison_valid": true,
+  "official_submission": false,
+  "confirmation_targets_used": false,
+  "source_sha256": "23eaff3d6c9ce453b2adae5c80ca68b540df296b98274f05f8feabebe2d0362b",
+  "raw_paired_gain": {
+    "gain": -0.04220163633797154,
+    "interval_95": [
+      -0.0677813385464916,
+      -0.01589766167228987
+    ],
+    "groups": 501,
+    "rows": 512,
+    "replicates": 2000
+  },
+  "exposure_note": "Same packed inputs, accepted row multiset and token count",
+  "temperature_cv_diagnostic": {
+    "gain": -0.01107454536098907,
+    "interval_95": [
+      -0.025579360883940062,
+      0.004366888063328089
+    ],
+    "groups": 501,
+    "rows": 512,
+    "replicates": 2000
+  },
+  "primary_comparison": "Raw paired loss, subject to matched exposure; temperature CV is a fixed secondary calibration diagnostic, not an alternative promotion gate",
+  "cpu_seconds": 6.263258889084682,
+  "peak_rss_gib": 1.22357177734375,
+  "checked_at": "2026-11-09T08:20:16.937744+00:00",
+  "comparison_limitations": [
+    "Two pretrained family checkpoints also differ in architecture and potentially pretraining; matched finetuning exposure does not isolate parameter count alone.",
+    "Per-device microbatch and accumulation differ to fit memory; report their numerical recipe and actual accepted exposure.",
+    "Only32accepted updates from fresh classifier heads on1024rows, with512 historically inspected development examples; initial128-update draft stopped before GPU on runtime planning evidence; no full-training or official-score estimate follows."
+  ],
+  "decision": "stop_no_qualified_size_advantage",
+  "raw_quality_gate_passed": false,
+  "memory_guard_passed": true,
+  "runtime_screen_passed": false,
+  "longer_training_justified": false,
+  "official_submission_eligible": false,
+  "protocol_revision": 2,
+  "goal_achieved": false
+}

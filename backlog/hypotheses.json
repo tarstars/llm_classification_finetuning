@@ -151,7 +151,7 @@
       "title": "Larger supervised classifier",
       "priority": "P2",
       "rank": 6,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.015,
         0.035
@@ -261,6 +261,14 @@
           "note": "Inventoryresolver e806e43 published; freshcomplete75entry admission passed incl knownnorundraft. ONEcompactSaveKernel accepted07:14:42UTC exactarseniytrushin/llm-preference-span031-size-compact/1, controller1748 LIVE/RUNNING07:18. Initialread-only sourceverifier2423 failed because exportdrops kernel/datasetversion suffixes; frozen script preserved. Independent49482exit0 proves exactcells/private/offline/GPU/modelrefs and bothparentlatest=1/privateassetcurrent=1, so strictversionidentitypasses by directevidence. 4Btraining telemetry live; no devquality or8Bfit yet.",
           "evidence": [
             "results/span_031/jobs/size_pilot_compact/source_verification.json"
+          ]
+        },
+        {
+          "at": "2026-11-09T08:23:31+00:00",
+          "status": "done",
+          "note": "V31 completed exact compact/1 with independent audit86296exit0: both32accepted/0skips, matched1024unique rows and587238tokens, finite adapters/bothT4/memory pass. Raw4B1.085232 versus8B1.127433; gain-.042202, pairedgroup95[-.067781,-.015898]. 8B25k both-order screen33445.930s fails32400. No full training/official; terminalresource27164exit0 reconciles3685.514scharge/71348.936free/alljobs+8officialsterminal. Notebook43executed; negative early-learning result, not universal size verdict.",
+          "evidence": [
+            "docs/SPAN_031_RESULTS.md"
           ]
         }
       ],
@@ -7458,7 +7466,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 31,
+  "active_version": 32,
   "versions": [
     {
       "number": 1,
@@ -9708,7 +9716,7 @@
     },
     {
       "number": 31,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -9764,10 +9772,67 @@
       "carried_from": 30,
       "start_sha256": "5053946fe4de61993360990bf3ed31954600d88f2eaaa23fd3db0fac0f806ef8",
       "start_markdown_sha256": "901f6499501a01468b17e21969ba13a53189dc67af2e7d180104897b5b89eab1",
-      "start_sealed_at": "2026-11-09T05:45:31+00:00"
+      "start_sealed_at": "2026-11-09T05:45:31+00:00",
+      "final_sha256": "ca586984ee1cfed83e0253117391aea0a656c49b4e2e2b0357d1c0d54728f779",
+      "final_markdown_sha256": "6cd890a1f0f055368e9af16d18b15c7fe22eee81adb2a099185412c7f591a74e",
+      "final_sealed_at": "2026-11-09T08:23:54+00:00",
+      "closed_at": "2026-11-09T08:23:54+00:00",
+      "closing_note": "Seal v31H02 negative matched-exposure capacity pilot: 8B rawloss worse and33445.930s runtime screen fails. One3685.514sGPUrun; no official/fulltraining/retry. Executed Notebook43, terminalinventory/quota/history and preservation retained; carry all unfinished tasks into v32, no duplicate numerical retry queued.",
+      "closing_evidence": [
+        "docs/SPAN_031_RESULTS.md"
+      ]
     },
     {
       "number": 32,
+      "state": "active",
+      "item_ids": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 31,
+      "start_sha256": "cb20147f994606142c3f938f041390db2bcfb43cf02f0aef4002c43cbdec5405",
+      "start_markdown_sha256": "a577652fa7f756fd698a7c32df6f88e867255c74fa455539f0573a9b5ba77dcf",
+      "start_sealed_at": "2026-11-09T08:23:54+00:00"
+    },
+    {
+      "number": 33,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

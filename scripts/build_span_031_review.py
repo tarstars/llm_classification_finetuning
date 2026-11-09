@@ -96,10 +96,17 @@ else:
   fig.tight_layout();(RUN/'figures').mkdir(exist_ok=True)
   fig.savefig(RUN/'figures/size_training.png',dpi=160,bbox_inches='tight');plt.show()
  print('Limitations:',r['comparison_limitations'])
- print('This span performs no official submission; no leaderboard improvement is established.')''')])
+ print('This span performs no official submission; no leaderboard improvement is established.')
+for name in ['resource_close.json','final_leaderboard.json']:
+ p=PUB/name
+ if p.exists():print(name,json.loads(p.read_text()))''')])
     nb.metadata['kernelspec']=dict(name='python3',display_name='Python 3',language='python')
     nb=NotebookClient(nb,timeout=120,kernel_name='python3',resources={'metadata':{'path':str(REPO)}}).execute()
     assert all(c.execution_count is not None and not any(o.output_type=='error' for o in c.get('outputs',[])) for c in nb.cells if c.cell_type=='code')
+    import hashlib
+    for name in ['H02_results.json','resource_close.json']:
+        p=REPO/'results/span_031'/name
+        if p.exists():nb.metadata['span031_'+p.stem+'_sha256']=hashlib.sha256(p.read_bytes()).hexdigest()
     path=REPO/'notebooks/43_fresh_size_pilot.ipynb';nbf.write(nb,path);print(path)
 
 

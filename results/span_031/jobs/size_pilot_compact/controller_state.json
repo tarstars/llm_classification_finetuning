@@ -1,8 +1,10 @@
 {
-  "stage": "monitoring",
-  "at": "2026-11-09T07:41:37.970652+00:00",
+  "stage": "complete",
+  "at": "2026-11-09T08:19:23.962209+00:00",
   "pid": 2999988,
   "role": "size_pilot_compact",
-  "status": "RUNNING",
-  "kernel_version": "arseniytrushin/llm-preference-span031-size-compact/1"
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span031-size-compact/1",
+  "charged_seconds": 3685.5139999999956,
+  "files": 50
 }

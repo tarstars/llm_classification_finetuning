@@ -1,7 +1,9 @@
 {
-  "at": "2026-11-09T07:18:09.066985+00:00",
+  "at": "2026-11-09T08:19:23.965701+00:00",
   "stage": "size_pilot_compact",
-  "event": "remote_status",
-  "status": "RUNNING",
-  "kernel_version": "arseniytrushin/llm-preference-span031-size-compact/1"
+  "event": "complete",
+  "status": "COMPLETE",
+  "kernel_version": "arseniytrushin/llm-preference-span031-size-compact/1",
+  "charged_seconds": 3685.5139999999956,
+  "files": 50
 }
