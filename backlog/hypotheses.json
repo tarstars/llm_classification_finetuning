@@ -7264,7 +7264,7 @@
       ],
       "id": "H76",
       "rank": 95,
-      "status": "running",
+      "status": "done",
       "introduced_in": 30,
       "discovered_during": 29,
       "derived_from": [
@@ -7342,6 +7342,14 @@
           "evidence": [
             "results/span_030/closure_preparation.json"
           ]
+        },
+        {
+          "at": "2026-11-09T05:45:07+00:00",
+          "status": "done",
+          "note": "Official58143104 COMPLETE0.83140; worse than50/50.83053 and H60.82987. Independent terminal audit48766exit0 passes actual source/receipt/resources/preservation and fresh fullboard23/309. Local gain+.007610 did not transfer; retainH60,no furtherweights from leaderboardfeedback. Publiccharge1308.076s; goalrank<=19 remains unachieved.",
+          "evidence": [
+            "docs/SPAN_030_RESULTS.md"
+          ]
         }
       ]
     }
@@ -7394,7 +7402,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 30,
+  "active_version": 31,
   "versions": [
     {
       "number": 1,
@@ -9575,7 +9583,7 @@
     },
     {
       "number": 30,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H02",
         "H05",
@@ -9632,10 +9640,68 @@
       "carried_from": 29,
       "start_sha256": "98bdff4fbc4ebcc780c745e3073f7f7205910f1bb1fedac76dbc40ae1f5a71cf",
       "start_markdown_sha256": "12e0d8fb9039e889b70e61b34eb02597b3ad2d6db7b43b3e07f3e38049c9be01",
-      "start_sealed_at": "2026-11-08T22:14:13+00:00"
+      "start_sealed_at": "2026-11-08T22:14:13+00:00",
+      "final_sha256": "44e3a30164dc846e9476cfae3506b1ecdebbb0097b67d90556718c792f6b943c",
+      "final_markdown_sha256": "aad1ee30f24e307ce39264c01691ab51026336397d6a4e6316139096034b9f5a",
+      "final_sealed_at": "2026-11-09T05:45:31+00:00",
+      "closed_at": "2026-11-09T05:45:31+00:00",
+      "closing_note": "V30H76 completed one qualified frozen official;0.83140 worsens50/50and H60 despite positive training-overlapping CPUgain. RetainH60.82987/rank23, preserve118old snapshots/source/userfiles and exactGOAL_V30, carry38unfinished items. No newweightchosenfromLB,no v31execution or goalcompletion.",
+      "closing_evidence": [
+        "docs/SPAN_030_RESULTS.md"
+      ]
     },
     {
       "number": 31,
+      "state": "active",
+      "item_ids": [
+        "H02",
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H16",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 30,
+      "start_sha256": "5053946fe4de61993360990bf3ed31954600d88f2eaaa23fd3db0fac0f806ef8",
+      "start_markdown_sha256": "901f6499501a01468b17e21969ba13a53189dc67af2e7d180104897b5b89eab1",
+      "start_sealed_at": "2026-11-09T05:45:31+00:00"
+    },
+    {
+      "number": 32,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

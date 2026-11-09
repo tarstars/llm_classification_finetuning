@@ -21,13 +21,14 @@ def main():
         stage='GPU qualification passed; no accepted official receipt is recorded yet.'
     else:
         stage='Actual GPU qualification and an official submission have not run.'
-    nb=nbf.v4.new_notebook(cells=[nbf.v4.new_markdown_cell('''# V30: fixed 40/60 prior passes the CPU gross guard
+    title='V30: fixed 40/60 prior — official evaluation complete' if audit.exists() else 'V30: fixed 40/60 prior passes the CPU gross guard'
+    nb=nbf.v4.new_notebook(cells=[nbf.v4.new_markdown_cell('''# REVIEW_TITLE
 
 One normalized40%Gemma/60%alignedLlama candidate, no reverse pass, no fitting.
 Uniform gain versus H60 passes the fixed−0.005guard. STAGE_SUMMARY
 Original-training-overlapping, previously inspected
 cohorts: descriptive results only, not independent CV or a hidden-score forecast.
-[Protocol](../docs/SPAN_030_PLAN.md) · [CPU result](../docs/SPAN_030_CPU_RESULTS.md).'''.replace('STAGE_SUMMARY',stage)),
+[Protocol](../docs/SPAN_030_PLAN.md) · [CPU result](../docs/SPAN_030_CPU_RESULTS.md).'''.replace('STAGE_SUMMARY',stage).replace('REVIEW_TITLE',title)),
         nbf.v4.new_code_cell('''from pathlib import Path
 import json
 import pandas as pd
@@ -74,7 +75,12 @@ else:
  state=PUB/'official_state.json'
  if state.exists():print('Latest recorded official status:',json.loads(state.read_text()))
 audit=PUB/'outcome_audit.json'
-if audit.exists():print('Verified terminal outcome:',json.loads(audit.read_text()))
+if audit.exists():
+ outcome=json.loads(audit.read_text());print('Verified terminal outcome:',outcome)
+ if outcome['official_status']=='COMPLETE':
+  display(pd.DataFrame([{'official_model':name,'log_loss':score,'candidate_loss_reduction':score-outcome['candidate_score']}
+   for name,score in [('two_expert50',.83053),('H60_incumbent',outcome['incumbent_score']),('H76_fixed40',outcome['candidate_score'])]]))
+  print('Actual rank:',outcome['rank'],'/',outcome['teams'],'; goal achieved:',outcome['goal_achieved'])
 board=PUB/'outcome_leaderboard.json'
 if not board.exists():board=PUB/'official_leaderboard.json'
 if board.exists():print('Fresh complete official board:',json.loads(board.read_text()))

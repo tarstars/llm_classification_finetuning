@@ -1,42 +1,28 @@
-# Move above 20th place: v30 prospective Llama-heavy prior
+# Move above 20th place: v31 selection pending
 
-Persistent objective ownteam17244411rank<=19 on fresh complete officialboard
-following legitimateinference. ACTIVE/unachieved; bestH60.82987/rank23. V29H75
-fixed60/40faileditsgrossguard; archive GOAL_V29 and everyfailedresult. Select
-ONLYH76 under SPAN_030_PLAN.md. H73three-role remainsdeferred.
+The persistent objective is our own team 17244411 at rank 19 or better on a
+fresh complete official leaderboard after legitimate inference. It remains
+active and unachieved: the November 9 05:42 UTC board has us 23rd of 309,
+best score 0.82987. V30 H76 completed at 0.83140 and failed to improve the
+incumbent. Preserve the exact contract in docs/GOAL_V30.md and all negative
+results. Do not select further ensemble weights from its leaderboard feedback.
 
-ONEnew candidate normalized(.4Gemma-original+.6alignedLlama-swapped),T1,
-twoexperts,no reverse/route. Native4kinputs/original8192microgroups/CPUproducer/
-FIFOqueue2/batch80/zero workers/fp16/kernels/sharding unchanged.50/50baseline
-actualofficial.83053 andH60incumbent are fixedcomparators. This secondprior
-was sequentiallyselected from failedGemma-heavy localresults, not untouched
-validation or optimum. No40/60probability computed before this contract.
+V31 carries 38 unfinished tasks; no focus or new execution is selected yet.
+Before further compute, select bounded work using PROJECT_POLICY.md, write
+and publish its concrete contract, and verify fresh model availability, full
+owned-job inventory, quota, time, memory, and submission feasibility. The
+earlier H02 larger-model pilot was prepared but never run; reassess its value
+against the strong current incumbent and the exposed validation limitations.
+No preparer, closed experiment, or accepted submission may be silently retried.
 
-Freeze/push before one<=300sCPUmatched control256/uniform512/long64replay.
-Separate removal/weight/total comparisons,seed42/2000prompt groups/classes,
-originaltrainingoverlap/noCV/nohiddenforecast. Report cumulative60/40then40/60
-trials. Onecurrentvariant, no continuousfit/additionalweight/T/routegrid. Same
-prospectivegrossstop uniformgainvsH60<-.005; positive localgain not required.
+Keep the original November 10 08:37:37.343197 UTC deadline, November 14 quota
+anchor, and all accumulated charges. Latest used/free seconds are
+32965.550/75034.450, with no reservation or paid scaling. These are observations,
+not a fresh resource budget. A successor contract must fit all remaining work.
+No live GPU job or pending official remains after the v30 terminal audit.
 
-If guardpasses, ONE<=3600sactualprivate/offline2T4two-rolequalification, full80
-warm/allcohorts/visibleCSV, strictoldraw<=1e-5 and exact source/checkpoint/IDs/
-tokens/positions/hosttensors/originalmicrogroups,eachGPUmemory<=95pct. Use
-worse matching E18/current base-role rates andretainedworsecold/fullwarm/other,
-20pctmargin/600reserve,<32400sfor25k. Old30766.762sscreenisNOTqualification.
-Then ONEfrozenofficial<=32400sonlyafterallgates/committed-pusheddecision/fresh
-fulladmission,actualhiddentextinference,no cachedpredictions orIDlookupfeatures.
-No furtherweightsfromitsleaderboardfeedback; retainbestifcandidate loses.
-
-Public<=3600twoT4seconds/max1acceptedversion/oneofficial. Inherit original
-2026-11-10T08:37:37.343197UTCdeadline/Nov14anchor/allcharges, no reset. Latest
-used31657.474/free76342.526s,reserved0/paidFalse. Freshcompleteownedinventory/
-quota/officialreceipts/fourpublicv1datasets beforeeachGPU, full3600+32400
-allowance within time/quota. No GPUwhileofficialpending/newweights/training/
-externaltextservice, faster-node retry, numerical/margin/cap relaxation or
-ambiguous-mutation retry. Freeze/push actualserializednotebooksource after
-imports/public-hiddenmodes/finalsuccess-failure/watchdog/Jupyterrehearsals.
-Observe SAME acceptedhandle/version/receipt aftertimeouts.
-
-Preserve118snapshots/user07+12notebooks/link/allarchivesandfailures. HeavyDB,
-code/MD/aggregate/executedNotebook42Git, CLIhistory/discoveriesv31/unfinished
-carry. Only actualfreshcompleteofficialrank<=19 completes persistentgoal.
+Preserve historical snapshots, archived goals, user notebooks 07 and 12, and
+the notebook link. Keep heavy files under ~/database. Track work through the
+backlog CLI and save executed notebooks, reports, programs, and aggregate
+evidence in Git; commit and push important results. A completed span or a local
+metric gain does not complete the persistent leaderboard objective.

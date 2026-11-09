@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-09T05:42:01.553471+00:00",
+  "evidence_valid": true,
+  "official_receipt": "58143104",
+  "official_status": "COMPLETE",
+  "official_terminal": true,
+  "goal_achieved": false,
+  "candidate_score": 0.8314,
+  "incumbent_score": 0.82987,
+  "gain_vs_incumbent": -0.0015300000000000313,
+  "candidate_improved_best": false,
+  "rank": 23,
+  "teams": 309,
+  "leaderboard_best_score": 0.82987,
+  "board_observed_at": "2026-11-09T05:42:01.417490+00:00",
+  "actual_hidden_inference_source_verified": true,
+  "official_observed_at": "2026-11-09T05:39:58.764484+00:00",
+  "official_submissions": 1,
+  "public_gpu_charged_seconds": 1308.0760000000046,
+  "total_quota_delta_seconds": 1308.0760000000046,
+  "historical_snapshots_preserved": 118,
+  "user_notebooks_preserved": true,
+  "receipt_observation_sha256": "60c11b8550e9ff04d0a7326a4b9fde6a638bb75e8de593224de1adf15eabc88f",
+  "qualification_sha256": "c74e5f00c91043286454e7b2820bfb9757067fee471bee8191dbea22e08a8823",
+  "decision_sha256": "15645319432ad2459ceb72f2b0e651aab98e7055de0d850f831ea23c925dd732",
+  "board_sha256": "9325114b4f62eff63a9e8a738d29482818f11f449114017463e20b01b7e2ce58",
+  "source_sha256": {
+    "scripts/audit_span_030_outcome.py": "d3e633e8d00e4ae6718cec2000ed811980605aecf5b95b8637c1b14132162dd2",
+    "src/arena/official_outcome.py": "291dca6ba3634aa1c91cf83208f04f2507ce76fddb961ab344e7d1e96373b022"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-09T05:45:58.117797+00:00",
+  "passed": true,
+  "sealed_version": 30,
+  "goal_achieved_by_span": false,
+  "official_receipt": "58143104",
+  "official_status": "COMPLETE",
+  "rank": 23,
+  "candidate_score": 0.8314,
+  "historical_snapshots_preserved": 118,
+  "snapshot_files_after_transition": 122,
+  "carried_tasks": 38,
+  "new_discoveries": [],
+  "notebook_sha256": "1cca2b920b821a8f454dc1bcd7c4dc6161d8ea1875da36330b14c0e13606cec7",
+  "report_sha256": "50772e3b49e72ccd0a58dcf1fd3c5705919b5efd238b7e7f29a69ccdd288402b",
+  "goal_archive_sha256": "3b6f99cb2332ba6562a29c0c00b77b9f5b89f8e3c44089110aca7d2bbcbd6f6b",
+  "outcome_audit_sha256": "f2a0f946a7cd2255de1d53352d44f22f7c42c4db2512ad8a05f53400f3066b9a",
+  "source_sha256": {
+    "scripts/audit_span_030_closure.py": "62ba6a5b5b43a35e7cf7602e2af8b1e2492eba66517a9e4dfd977f2e84abab6f"
+  }
+}
