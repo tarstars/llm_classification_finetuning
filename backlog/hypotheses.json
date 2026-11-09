@@ -7479,7 +7479,7 @@
       ],
       "id": "H77",
       "rank": 96,
-      "status": "planned",
+      "status": "done",
       "introduced_in": 33,
       "discovered_during": 32,
       "derived_from": [
@@ -7492,6 +7492,86 @@
           "note": "Blind train-only detector audit has17clear/2ambiguous/5false positive categories; even optimistic19<20. Queue a distinct actor-aware detector and separately gated residual test, not same-span regex rescue or automaticGPU.",
           "evidence": [
             "docs/SPAN_032_RESULTS.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T08:50:55+00:00",
+          "status": "running",
+          "note": "V33 begins one frozen opening actor/action detector and conditional residual design, CPUonly/noGPU. Newblind train cases exclude old32IDs and prompt groups; >=20/24clear positives and >=32source coverage gate before labels. Plan and exact descriptor frozen; no detector grid or same-span rescue.",
+          "evidence": [
+            "docs/SPAN_033_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T08:57:08+00:00",
+          "status": "done",
+          "note": "V33firstcoveragepreparation terminalexit0 in.253s/.991GiB: new one-sided24learning/27confirmation versus old88/72, below32each. Stop before newblind audit, preference labels or fitting; no detector widening/extra sample/GPU/official. Boundary/swap tests passed but semantic precision unmeasured. Queue distinct learnedreward residual, not anotherregex rescue.",
+          "evidence": [
+            "docs/SPAN_033_RESULTS.md"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Test a cheap scalar reward residual on the strong classifier ensemble",
+      "priority": "P2",
+      "gain": [
+        -0.004,
+        0.004
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0.5,
+        2
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "high",
+      "claim": "Cached0.6B scalar reward differences may add conditional winner information to the strong two-expert baseline at low inference cost while retaining its tie channel.",
+      "basis": "V33actor grammar has only24/27cached cases and cannot support the planned conditional residual. V16already has complete matching1024-row Gemma/Llama/0.6Breward arrays with checked native/head/token controls. The0.6Breward standalone loss1.052788 is weaker, but measured inference100.35s/1024pairs is cheap. Complementarity as a small residual has not been tested.",
+      "first_test": "Verify source/artifact/ID/finite scalar controls for the complete v16arrays without filling missing reverse outputs. Freeze one nonnegative scalar reward-difference offset to conditional A/B log odds of the uncalibrated equal strong-expert baseline, preserving tie mass and exact swap equivariance. Use prompt-group nested cross-fitting, fold-local reward scaling and a small predeclared ridge grid, keeping zero correction as a comparator. Evaluate all1024matched rows; do not select the716posthocsubset or another model size/family. NoGPU for this initial information screen.",
+      "acceptance": "Predeclared useful positive pairedgroup evidence versus the exact unmodified strong baseline, plus class/order diagnostics and source-overlap disclosure. Positive exploratory signal only queues a separately frozen matched-current-H60 transfer and actual runtime/source qualification. No official-score forecast from source loss.",
+      "stop": "Stop if the single residual adds no useful information, changes tie mass, fails group/source/identity checks, or requires an unqualified full replacement. Do not try8B, change families or relax the gate after results.",
+      "risk_reason": "The0.6Breward was globally weaker. Reward checkpoint exposure to2025votes is unknown, source cohorts were inspected, and v16serviceERROR left reverse-H60 coverage incomplete. Small source gain may fail target transfer.",
+      "mitigation": "Preserve failed service and complete-versus-missing artifacts, use all matched complete rows and fixedT1baseline, fold-local scaling/fitting, positive evidence before newGPU; report unknown reward pretraining/target transfer and require separate current-pipeline validation.",
+      "rationale": "Different learned feature direction after two lexical-detector stops; reuses measured cheap inference and existing arrays before spendingGPU. Gain range is subjective, not observed.",
+      "revision": "New prospective task only: no residual, fitting, model size search or newquality inspection in v33; H56standalone/incomplete replacement result is retained.",
+      "depends_on": [
+        "E00",
+        "H56",
+        "H77"
+      ],
+      "evidence": [
+        "docs/SPAN_033_RESULTS.md",
+        "docs/SPAN_016_RESULTS.md",
+        "results/span_016/H56_partial_diagnostic.json"
+      ],
+      "id": "H78",
+      "rank": 97,
+      "status": "planned",
+      "introduced_in": 34,
+      "discovered_during": 33,
+      "derived_from": [
+        "H77"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T08:57:08+00:00",
+          "status": "planned",
+          "note": "Frozen actorgrammar coverage24/27 is inadequate; stop lexical branch without anotherregex. Queue a different single learned0.6Breward offset using alreadycomplete matched1024arrays and measured100.35s inference; complementarity unmeasured, no v33fit or transfer claim.",
+          "evidence": [
+            "docs/SPAN_033_RESULTS.md"
           ]
         }
       ]
@@ -7545,7 +7625,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 33,
+  "active_version": 34,
   "versions": [
     {
       "number": 1,
@@ -9930,7 +10010,7 @@
     },
     {
       "number": 33,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H05",
         "H06",
@@ -9970,15 +10050,82 @@
         "H73",
         "H77"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H77"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T08:50:53+00:00",
+          "note": "Select new actor-aware detector plus the previously unexecuted conditional residual comparison. Freeze one anchored first-person action-decline rule, retain old detector control, exclude old32audit prompt groups from newblind review; coverage/detector gates before targets. CPUonly, no official/GPU/model/download/temperature/weight/route trial.",
+          "focus_ids": [
+            "H77"
+          ]
+        }
+      ],
       "carried_from": 32,
       "start_sha256": "f0e1f4f31972b2150cab72b96524b4928e28268bcb6b6ae057e05453dbb378f3",
       "start_markdown_sha256": "8f054ca7e9fa029eee2f38c70987a34ad6b3e97263c64e6e25c3569e871d46c9",
-      "start_sealed_at": "2026-11-09T08:45:03+00:00"
+      "start_sealed_at": "2026-11-09T08:45:03+00:00",
+      "final_sha256": "df49e8b4add66d78177bfe9fe1e18a7049f8465eb92f76bf3515cedc677c166f",
+      "final_markdown_sha256": "1dc27f8d466e13690f9bf1019fb249465bc57ef5ad8c84f0171d59ab1c67ab54",
+      "final_sealed_at": "2026-11-09T08:58:05+00:00",
+      "closed_at": "2026-11-09T08:58:05+00:00",
+      "closing_note": "SealH77 on insufficient24/27label-freecoverage, no newaudit/labels/fitting/GPU. QueueH78one cheap learnedreward scalar residual on completev16arrays; carry36unfinished. Preserve130snapshots/archivedgoals/userfiles and Notebook45.",
+      "closing_evidence": [
+        "docs/SPAN_033_RESULTS.md"
+      ]
     },
     {
       "number": 34,
+      "state": "active",
+      "item_ids": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H27",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H35",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "H78"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 33,
+      "start_sha256": "201acc180e200f8e796c04402a9d6e62ad3b95e1e6b86ef92abe7caa03937388",
+      "start_markdown_sha256": "1d8dd111784c0d35d5bbe906e2755d04c05f722dc37555546ce2c722ebaf294b",
+      "start_sealed_at": "2026-11-09T08:58:05+00:00"
+    },
+    {
+      "number": 35,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],

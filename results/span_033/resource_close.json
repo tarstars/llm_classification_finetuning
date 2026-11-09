@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-09T08:56:22.931601+00:00",
+  "passed": true,
+  "quota": {
+    "used_seconds": 36651.064,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 71348.936
+  },
+  "gpu_charge_seconds": 0,
+  "public_versions": 0,
+  "official_submissions": 0,
+  "official_history_complete": true,
+  "all_official_terminal": true,
+  "official_count": 8,
+  "last_pilot_status": "COMPLETE",
+  "full_owned_inventory_refreshed": false,
+  "inventory_limit": "CPU-only span; full owned catalog last verified in v31. Fresh admission required before any future GPU job.",
+  "leaderboard_sha256": "62cc6d05bf8287beb3ad04a121eef3d69c280dd584dd4cb1cb390671fe985faf",
+  "source_sha256": "842bbb2f2889d59cf8267ba9ef2a31bb91b9033a4563230f79480bb15d643ca0"
+}

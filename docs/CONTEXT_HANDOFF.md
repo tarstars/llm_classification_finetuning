@@ -1,97 +1,63 @@
-# V32 sealed; leaderboard goal remains active
+# V33 sealed; next test is H78
 
-Snapshot: 2026-11-09 08:48 UTC. Read PROJECT_POLICY.md and verify live state.
-The persistent goal is team 17244411 at rank 19 or better after legitimate
-inference on a fresh complete official board. It is active and unachieved,
-with no token budget. Spend tokens carefully. No subagents without explicit
-authorization. Never walk HOME, ~/prj, Arc/FUSE mounts or troll_farm.
+Snapshot2026-11-09 09:00UTC. Read PROJECT_POLICY.md and verify current state.
+Persistent goal: team17244411 at rank<=19 after legitimate inference on a fresh
+complete board. Active, unachieved, no token budget. Be economical with tokens;
+no subagents without explicit authorization. Never walk HOME, ~/prj, Arc/FUSE
+mounts or troll_farm. Scope searches to this named project or a named artifact.
 
-## Current decision
+V33H77 stopped at label-free coverage24learning/27confirmation, below32each.
+No new blind audit, preference labels, fit, GPU or official. Source/input hashes
+and IDs verified, old detector control88/72 retained. Two actor-boundary/swap
+unit tests passed; semantic precision was not measured. Preparation0.253s/.991GiB.
+Executed Notebook45 and docs/SPAN_033_RESULTS.md contain the actual stop.
+Closure audit passed. V34 is active with97registered tasks,37active items
+(36carried plusH78),134immutable snapshots, nofocus selected. GOAL.md still the
+closedv33contract; exactGOAL_V33 archived and policy-linked.
 
-V32 selected H16 and stopped before preference targets or fitting. The fixed
-opening-refusal regex had 88/72 one-sided detections in the existing 1024/1024
-post-checkpoint source partitions. A blind training-only text review found
-17 clear refusals, two ambiguous cases and five false positives among 24 positive
-detections. Even the optimistic 19 fails the required 20. Eight nondetections
-had no observed refusal; recall is not established. The detector confuses
-compliance, quoted dialogue, physical explanations and capability description.
-No preference gain or harm was measured. No new GPU, official, external text
-call or model download occurred.
+H78 is a different direction: test one cheap0.6Breward scalar difference as a
+conditional A/B offset on the strong two-expert baseline, keeping tie mass fixed.
+Complete1024matched source arrays exist fromv16. Native/head/token controls
+passed, but serviceERROR and incomplete reverse-H60 coverage must stay explicit.
+Standalone reward was weaker, loss1.052788; residual complementarity is UNTESTED.
+Measured0.6Binference100.35s/1024pairs suggests low cost, not feasibility proof.
+Select and freeze a boundedv34contract before fitting. No8B/family/model-size
+search, no imputed reverse predictions or716-row posthoc subset selection.
+Reward checkpoint pretraining exposure is unknown; source votes were inspected.
+Positive exploratory source gain needs separate current-H60 transfer and actual
+runtime/source qualification. Do not promise an official score from this cache.
 
-Report: docs/SPAN_032_RESULTS.md. Executed notebook:
-notebooks/44_refusal_detector_audit.ipynb. Aggregate preparation, detector audit,
-resource closure and closure audit are in results/span_032. The closure audit
-passed; source, actual annotations, snapshots, user files and notebook were checked.
-Texts, annotations and feature arrays remain under ROOT/runs/span_032.
+V32H16 earlier stopped at blind detector precision17clear+2ambiguous<20/24;
+its five false-positive categories and originalfloat32assertion failure are
+preserved. No preference residual was ever fitted in v32/v33. See reports and
+executed Notebooks44/45, not a claimed negative quality comparison.
 
-The first preparation, session86872, failed on an overly strict float32 row-sum
-assertion (maximum error1.192e-7). Its source and failure remain preserved.
-Using the unchanged original probability validator, session36794 finished in
-3.470s with0.991GiB RSS. First failure elapsed time was not instrumented; do not
-claim an exact aggregate preparation time. Two focused descriptor tests passed.
-There is no fitted residual, confirmation evaluation or new quality-baseline
-measurement: the detector gate stopped the planned comparison first.
+Fresh complete08:56UTCboard:23/309, bestH60.82987,19th/20th.82915,leader.82674.
+Best receipt58103553,arseniytrushin/llm-preference-span013-gemma-order/1.
+Quota36651.064used/71348.936free seconds,0reserved/paidFalse,Nov14refresh anchor;
+all8officials terminal and lastH02jobCOMPLETE. V32/V33 charge0. Full75owned
+catalog last checkedv31at08:22; fresh full admission required before anyGPU.
+Originaldeadline2026-11-10T08:37:37.343197UTC/allcharges persist. Preserve32400s
+for possible independentlyqualifiedofficial. No own job is live.
 
-V32 is sealed. V33 is active with96 registered tasks,37 active items (36carried
-plus new H77),130 immutable snapshot files, and no selected focus. H77 proposes
-one actor-aware detector followed by the same gated residual comparison; its
-new blind audit excludes the old32cases and their prompt groups. Its quality
-is unmeasured. Do not rescue the failed regex inside v32. GOAL.md still contains
-the closed v32 contract; exact docs/GOAL_V32.md is archived and policy-linked.
-Select a new bounded contract before executing v33. The persistent user goal
-authorizes that selection; span closure itself does not achieve the rank goal.
+Do not revive stopped branches: v31fresh8Bloss1.127433 vs4B1.085232 and runtime
+33445.930>32400; v30official40/60ensemble.83140 loses toH60; v29fixed60/40
+failedlocalguard; v28three-role32973>32400; v27largerpacking rawidentityfailed;
+v26contextnegative/runtime34007; H59T1.316official.84797worse. Do not choose
+more weights/T/routes using official feedback. Preserve403/401/source/nativeCUDA
+failures. Earlier sources, exact goals, receipts and detailed reports remain.
 
-## Resources and leaderboard
+Repo/home/tarstars/prj/llm_classification_finetuning, main, GitHubtarstars/
+llm_classification_finetuning. ROOT=/home/tarstars/database/llm_classification_finetuning.
+Use .venv/bin/python and usuallyPYTHONPATH=src:scripts. Network/database/Jupyter
+sockets/Git writes require escalation; user authorization is established. Heavy
+text/weights/per-row artifactsROOT; code/Markdown/aggregates/executednotebooksGit.
+Preserve user-dirty notebooks07and12 bytewise, never stage/reset. Latest hashes
+results/span_033/preservation.json; preserve all134snapshots/goals/notebook link.
+Explicitly stage only own files, commit and push important results.
 
-Fresh complete board08:43UTCNov9:23/309, bestH60=0.82987, rank19/20=0.82915,
-leader=0.82674. Best receipt58103553, source
-arseniytrushin/llm-preference-span013-gemma-order/1.
-Resource observer48780 exited0: quota36651.064s used,71348.936s free,
-zero reserved, paid scaling disabled, November14 refresh anchor. All eight
-official receipts are terminal; prior H02 notebook is COMPLETE. V32 charge is0.
-The full75-owned-notebook catalog was last verified in v31 at08:22UTC; v32 did
-not refresh it. Fresh full admission is required before future GPU work.
-Preserve32400s for a possible independently qualified official. Original absolute
-deadline2026-11-10T08:37:37.343197UTC and all prior charges remain unchanged.
-No own job is live; all sessions named here are terminal. Never restart them.
-
-## Earlier results to preserve
-
-V31 fresh4B/8B compact/1 completed under controller1748, charged3685.514s,
-retrieved50files. Auditor86296 passed matched32accepted/0skipped updates,
-1024unique rows/587238tokens, packing, finite adapters and bothT4 memory.
-Raw loss4B1.085232 vs8B1.127433; gain-0.042202, group95 interval
-[-0.067781,-0.015898]. 8B runtime screen33445.930s exceeds32400s. No qualified
-8B advantage or full training. Report SPAN_031_RESULTS, executed Notebook43,
-closure audit and exact GOAL_V31 are preserved; published commit172804d.
-Original128-update draft stopped before GPU. Embedded SaveKernel400, source
-export/inventory failures and private input asset remain preserved. Do not rerun
-completed preparers, builders, uploads, source verifiers or auditors.
-
-V30 officialH76/58143104 scored0.83140, worse than H60 and baseline50/50=0.83053.
-Local overlapping40/60gain did not transfer. Do not choose more weights,
-temperatures or routes from official feedback. V29 fixed60/40 failed its local
-guard; v28 three-role runtime32973>32400; v27 packing10240 failed raw identity;
-v26 context had negative quality/runtime34007; H59 temperature1.316 worsened
-its official score to0.84797. Preserve prior403/401 access and native CUDA
-failures. Many remaining tasks target the older weak classifier: check their
-applicability before investing compute in them.
-
-## Workspace
-
-Repo /home/tarstars/prj/llm_classification_finetuning, main branch,
-GitHub tarstars/llm_classification_finetuning. Heavy ROOT is
-/home/tarstars/database/llm_classification_finetuning. Use .venv/bin/python,
-usually PYTHONPATH=src:scripts. Network, database/Jupyter sockets and Git writes
-need escalation; user authorization is established. Heavy text/weights/per-row
-artifacts stay in ROOT; code, Markdown, aggregates and executed notebooks go to Git.
-Stage explicit own paths, commit and push. Preserve user-dirty notebooks07 and12
-bytewise; never stage/reset them. Hashes: results/span_032/preservation.json.
-Preserve all130 snapshots, archived goals and the correct notebook symlink.
-
-Observe the same accepted handle/version after timeouts. Observation failure is
-not terminal; never duplicate an ambiguous mutation. functions.wait is only for
-an explicitly yielded exec cell; unified shell sessions use write_stdin. Keep
-individual waits under60s and commentary timely. Do not invent idle work,
-repeat passing tests or commit unchanged pending observations while waiting.
-Only actual rank<=19 with the full completion audit can finish the goal.
+Observe the same accepted handle/version after timeouts; observation failure is
+not terminal and must never cause duplicate mutations. functions.wait only after
+an exec explicitly yields a cellID; unified sessions usewrite_stdin. Waits<60s,
+meaningful commentary, no invented idlework or repeated passing tests. Only actual
+rank<=19 plus full completion evidence can finish the persistent goal.

@@ -1,0 +1,58 @@
+{
+  "at": "2026-11-09T08:51:34.330544+00:00",
+  "task": "H77",
+  "coverage_gate_passed": false,
+  "coverage": {
+    "learning": {
+      "rows": 1024,
+      "one_sided": 24,
+      "old_one_sided": 88,
+      "a_only": 9,
+      "b_only": 15,
+      "both": 8,
+      "neither": 992
+    },
+    "confirmation": {
+      "rows": 1024,
+      "one_sided": 27,
+      "old_one_sided": 72,
+      "a_only": 13,
+      "b_only": 14,
+      "both": 5,
+      "neither": 992
+    }
+  },
+  "features": [
+    "signed_refusal",
+    "refusal_sensitive_keyword",
+    "refusal_factual_keyword",
+    "refusal_capability_keyword",
+    "log_character_difference",
+    "code_fence_difference"
+  ],
+  "targets_loaded": false,
+  "fitting_performed": false,
+  "artifacts": {
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_011/cohort/learning.parquet": "7b63b0b31c0612d7de7a553e55a3bdadd10359190b0262b55235fb31e1b29df1",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_011/cohort/learning_mapping.parquet": "73c8652d6b3f62200f72474242b5d607beeddf15ff3102f03b2e73b33cac788b",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_011/cohort/learning_labels.npz": "91ef3a40fc8ee933d2a405aa740f0820302ea9250e85e360b32d39a2b0988a08",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_011/jobs/calibration_learning/output/calibration/ensemble_learning.npz": "53285eca238b57553445f61423c07f80b4a44175386671c0c10bb54761285cc7",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_033/learning_features.npz": "f78284b1bc08a544bece16e03524b725fc214c9ee6fab3d1141ca9e661e5d7aa",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_011/cohort/confirmation.parquet": "c1cb6e2b9ec53a6ac93b95050b13f38322fb122b5ae1a95a0705c3767086d49a",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_011/cohort/confirmation_mapping.parquet": "c6a938bcfba6903cb96ea2ce12fbafd785f699c325d47567fb0964c1a73540eb",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_011/cohort/confirmation_labels.npz": "2ca01833234446b33d259262291a5710a79689fe069b1d58153bb205c398ff0f",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_011/jobs/calibration_confirmation/output/calibration/ensemble_confirmation.npz": "1f1f8b4f34c91fb935c00ac2b4201ce55580526b47803533ff35491ec689ef93",
+    "/home/tarstars/database/llm_classification_finetuning/runs/span_033/confirmation_features.npz": "c9e0c5715c3f9cdc818f8043001a5fc4a2bbe49ab8759a52298db1d429d629c5"
+  },
+  "source_sha256": {
+    "GOAL.md": "01c41ce0a74cfae03b9a6ce9ca990d3afe244836f6032016690f2bea17202746",
+    "docs/SPAN_032_PLAN.md": "61bc42a4024b3a754808513a24d4c3a3a10b525bed0ff4f392679708db9194c2",
+    "configs/span_033.json": "47a2f1673c78b06162136bd7810f25798caefedaeb01336c10be8a815a534b45",
+    "src/arena/span033_refusal.py": "89f6bab78df9e78a6195872a0b044d57f821895758eb3a299c423f5b0deeaa89",
+    "src/arena/span032_refusal.py": "67eacc1fdb932b8726acc5cfd5a8b1c2849bf38e9e55ad33f06d3cc6e437a84a",
+    "scripts/prepare_span_033_refusal.py": "091b1df056b2b72d1a7e28f18d3653f5aef896fb283dc47ff2ce35c4bff04501"
+  },
+  "cpu_elapsed_seconds": 0.25287873996421695,
+  "peak_rss_gib": 0.9912452697753906,
+  "next_action": "stop_insufficient_cached_coverage"
+}
