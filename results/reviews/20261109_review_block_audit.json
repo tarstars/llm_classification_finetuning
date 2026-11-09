@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-09T16:45:23.825015+00:00",
+  "requested_reviewer": "fable",
+  "requested_effort": "high",
+  "same_blocking_condition": "Requested model rejected by current account; no alternative or supported exact model ID supplied.",
+  "consecutive_goal_turns": 3,
+  "observations": [
+    "User review request: actual model rejection; clarification requested.",
+    "First continuation: same missing reviewer choice; independent H81 report and notebook completed.",
+    "Second continuation: same missing choice revalidated; no reviewer running and independent work complete."
+  ],
+  "review_completed": false,
+  "another_model_substituted": false,
+  "independent_work_complete": true,
+  "goal_achieved": false,
+  "blocked_threshold_met": true,
+  "requested_goal_status": "blocked",
+  "required_input": "Select an available reviewer such as GPT-6-Astra/high, or provide a supported Fable ID/access.",
+  "request_sha256": "b89c09e86936f37a6c0ce9f9dac31edbe7955f453da3fe0a775621c732361b2c"
+}

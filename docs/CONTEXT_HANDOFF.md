@@ -1,3 +1,17 @@
+# Verified blocker after three goal turns
+
+The requested independent Fable/high review remains unperformed. The model was
+actually rejected by the current account, is absent from the supported-model
+cache, no alternate has been chosen, and no review process/output exists.
+All independent H81 report/notebook work is complete and pushed in a695a48.
+The third consecutive audit now meets the blocked threshold; the goal-status
+tool is authoritative. Evidence: results/reviews/20261109_review_block_audit.json.
+Do not retry the same unsupported name, substitute another model silently or
+produce more status-only continuations. Required input: an available reviewer
+choice (Astra/high or Sol/high) or supported exact Fable ID/access. A later user
+resume starts a fresh blocked audit; do not reuse this threshold automatically.
+No experiment, submission, version closure or goal completion is claimed.
+
 # Current steering: independent critical review requested
 
 The user explicitly asks for Fable at high effort to critically review the work,
