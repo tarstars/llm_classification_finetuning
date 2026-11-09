@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-09T12:41:54.057462+00:00",
+  "prepared": true,
+  "rows": 1024,
+  "targets_loaded": false,
+  "native_token_proof_passed": true,
+  "native_input_max": 2048,
+  "mean_tokens": 702.38671875,
+  "baseline_sha256": "f9b1cb8f9a1f2d6a1ff9bd6e20b255f9a7ad2f65a6a4cce8a819ad9be44753f8",
+  "token_spec_sha256": "416f100a3cd4ee94f349d71c26868d92566c758a2f264662158b6ca0b71ad2f4",
+  "small_files_sha256": {
+    "native_ranker.py": "4b7ffa70129df3395dbb73574726d0720508a6a8e1838ac3ea4c5a94726f513d",
+    "native_utils.py": "3924367f95b90a586aeb4b7fa759455c9beff8099c4abf57af49d41347a2f23e",
+    "MODEL_CARD.md": "9d7560bdbbfb4449874743a3855239f0dc785c3f270efb13c257569aad1c8def",
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "added_tokens.json": "9cd68cb73893cc9b306230f0491a63a72abf3de7c915433ddc677827cfc3e876",
+    "tokenizer.json": "6f34151d563784ad1de8ced09c931f60096cc5c06fc8e8b9d40660a0036c725c",
+    "special_tokens_map.json": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+    "token_spec.json": "416f100a3cd4ee94f349d71c26868d92566c758a2f264662158b6ca0b71ad2f4",
+    "tokenizer_config.json": "d3f0671481117ee125fc1d00744bfcfb8f8cbe5d86d221508d90666f5e13b24d",
+    "spm.model": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+    "base_config.json": "ddec8b81d079d218ce9e54fc0af5d1d5937d6d53b5d42e70c1f251a1cebc830d",
+    "source.parquet": "433046c49aaee5dfed471d6b6a230282cdef6176f2d2e6cc0858a1e4d382a319",
+    "ranker_config.json": "4c31287fd990fb6a8cf1cb34430e0d7aaac9904fa38c3fa494a719915b71f70c",
+    "native_collator.py": "fe475574d340fc17d6fc86e7b0384c0016dc6798170c713cfd5e01cb52635c41"
+  },
+  "source_sha256": {
+    "GOAL.md": "92a6f3e52d4d86f996bc1b7cd2c701489697c924eaa353a21af78c3441edc5e3",
+    "docs/SPAN_036_PLAN.md": "941b517c54ecbb7f47d5e86a04dff8339593d0af2524dfd3dbc96fcc4af0fd3e",
+    "docs/SPAN_036_INFORMATION_CONTRACT.md": "508d00f0df297d199834179645e21fb17170f5e5bcd9b9cc42e20bc174c92944",
+    "configs/span_036.json": "141bc554f42d73ef9ca75d8ca768cb13d3fdab3167719444ead988e58a85467b",
+    "src/arena/span036_pairrm.py": "8f1a7f8d5ea131823fa43c1fa554b17a304273da0f270fede0af201fc9191375",
+    "scripts/prepare_span_036_assets.py": "41b94f9445cb4322e465dbc53544554b662fe697fdf9fdc6407b4c71e6112e70",
+    "results/span_036/source_audit.json": "4abf7b8813d7c0c433fc2241effc900691bca1ef439fa7a357e25da342b61e84"
+  },
+  "elapsed_seconds": 18.23606142704375,
+  "runtime": {
+    "transformers": "4.42.3",
+    "tokenizers": "0.19.1"
+  }
+}

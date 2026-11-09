@@ -1,0 +1,481 @@
+{
+  "at": "2026-11-09T12:33:24.656423+00:00",
+  "task": "H79",
+  "stage": "source_retrieval_only",
+  "model": "llm-blender/PairRM",
+  "model_revision": "5b880cc73776ac75a835b3e0bd5169bcb5be013b",
+  "model_created_at": "2023-11-06T07:08:24.000Z",
+  "model_last_modified": "2024-01-22T15:47:01.000Z",
+  "model_card_data": {
+    "license": "mit",
+    "datasets": [
+      "openai/summarize_from_feedback",
+      "openai/webgpt_comparisons",
+      "Dahoas/synthetic-instruct-gptj-pairwise",
+      "Anthropic/hh-rlhf",
+      "lmsys/chatbot_arena_conversations",
+      "openbmb/UltraFeedback"
+    ],
+    "metrics": [
+      "accuracy"
+    ],
+    "tags": [
+      "reward_model",
+      "reward-model",
+      "RLHF",
+      "evaluation",
+      "llm",
+      "instruction",
+      "reranking"
+    ],
+    "language": [
+      "en"
+    ],
+    "pipeline_tag": "text-generation"
+  },
+  "code_revision": "33204d2712944b6b17996f7c079e74cd963ccc7c",
+  "model_files": [
+    {
+      "name": ".gitattributes",
+      "size": 1519,
+      "lfs": null
+    },
+    {
+      "name": "README.md",
+      "size": 13741,
+      "lfs": null
+    },
+    {
+      "name": "added_tokens.json",
+      "size": 130,
+      "lfs": null
+    },
+    {
+      "name": "config.json",
+      "size": 508,
+      "lfs": null
+    },
+    {
+      "name": "model.safetensors",
+      "size": 1744109020,
+      "lfs": {
+        "sha256": "8c68cc751e7899d045268cf22a0ab158286c0caf6980028e7f3b0132f06243eb",
+        "size": 1744109020,
+        "pointerSize": 135
+      }
+    },
+    {
+      "name": "ranker_config.json",
+      "size": 508,
+      "lfs": null
+    },
+    {
+      "name": "special_tokens_map.json",
+      "size": 286,
+      "lfs": null
+    },
+    {
+      "name": "spm.model",
+      "size": 2464616,
+      "lfs": {
+        "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+        "size": 2464616,
+        "pointerSize": 132
+      }
+    },
+    {
+      "name": "tokenizer.json",
+      "size": 8657604,
+      "lfs": null
+    },
+    {
+      "name": "tokenizer_config.json",
+      "size": 2003,
+      "lfs": null
+    },
+    {
+      "name": "training_args.bin",
+      "size": 4792,
+      "lfs": {
+        "sha256": "00c1bd75edeb1e61582b4b8f9a8fe1795e90edf81c95969c472e2afcd5160198",
+        "size": 4792,
+        "pointerSize": 129
+      }
+    }
+  ],
+  "files": [
+    {
+      "url": "https://huggingface.co/api/models/llm-blender/PairRM?blobs=true",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/model_metadata.json",
+      "bytes": 3405,
+      "sha256": "ab707380c9c591888b763ded03b7c94b71b93a898cfe3a5342e034fba0b7a0fe",
+      "resumed": true
+    },
+    {
+      "url": "https://huggingface.co/llm-blender/PairRM/resolve/5b880cc73776ac75a835b3e0bd5169bcb5be013b/README.md",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/model/README.md",
+      "bytes": 13741,
+      "sha256": "9d7560bdbbfb4449874743a3855239f0dc785c3f270efb13c257569aad1c8def",
+      "resumed": true
+    },
+    {
+      "url": "https://huggingface.co/llm-blender/PairRM/resolve/5b880cc73776ac75a835b3e0bd5169bcb5be013b/config.json",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/model/config.json",
+      "bytes": 508,
+      "sha256": "4c31287fd990fb6a8cf1cb34430e0d7aaac9904fa38c3fa494a719915b71f70c",
+      "resumed": true
+    },
+    {
+      "url": "https://huggingface.co/llm-blender/PairRM/resolve/5b880cc73776ac75a835b3e0bd5169bcb5be013b/tokenizer_config.json",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/model/tokenizer_config.json",
+      "bytes": 2003,
+      "sha256": "d3f0671481117ee125fc1d00744bfcfb8f8cbe5d86d221508d90666f5e13b24d",
+      "resumed": true
+    },
+    {
+      "url": "https://huggingface.co/llm-blender/PairRM/resolve/5b880cc73776ac75a835b3e0bd5169bcb5be013b/special_tokens_map.json",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/model/special_tokens_map.json",
+      "bytes": 286,
+      "sha256": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+      "resumed": true
+    },
+    {
+      "url": "https://api.github.com/repos/yuchenlin/LLM-Blender/commits/main",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code_revision.json",
+      "bytes": 4168,
+      "sha256": "381e42468dda08e60a323ac24f32ac05cb75b237d584ece0ebf659113d104782",
+      "resumed": true
+    },
+    {
+      "url": "https://api.github.com/repos/yuchenlin/LLM-Blender/git/trees/33204d2712944b6b17996f7c079e74cd963ccc7c?recursive=1",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code_tree.json",
+      "bytes": 42891,
+      "sha256": "e502297339526fd0e7e21371be84ea63543a4021d917443bb66ad847826f445d",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/LICENSE",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/README.md",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/README.md",
+      "bytes": 17512,
+      "sha256": "871a001b31fd15aa7fb8e7166d58c095fa04fdd81acdbc73dd03414662e55369",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/__init__.py",
+      "bytes": 213,
+      "sha256": "4d2ee43eb8eca40b0414c2146a8728a4a254a0f00496aa078f0ee9ff3bf884ef",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/blender/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/blender/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/blender/blender.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/blender/blender.py",
+      "bytes": 44732,
+      "sha256": "ced61497be2f9de0de27c36d4c9b19b3495198b79a1abc6625e6b7ff7266ce46",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/blender/blender_utils.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/blender/blender_utils.py",
+      "bytes": 12598,
+      "sha256": "3924367f95b90a586aeb4b7fa759455c9beff8099c4abf57af49d41347a2f23e",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/blender/config.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/blender/config.py",
+      "bytes": 335,
+      "sha256": "ca3ea25bef0b65203014d4ef2c5a54bb2430882096877c23915489363bd576c0",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/candidates_generation/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/candidates_generation/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/candidates_generation/engine.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/candidates_generation/engine.py",
+      "bytes": 7054,
+      "sha256": "d35896c9d2afbbf4a607f73fc02dba63d69d42a69758109e59acefae30de2ce5",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/candidates_generation/eval_candidates.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/candidates_generation/eval_candidates.py",
+      "bytes": 10256,
+      "sha256": "8e873e81f643309ac8635dab873db332ceb2f1395bd5baf3a0a98f5455aab1b8",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/candidates_generation/generate_candidates.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/candidates_generation/generate_candidates.py",
+      "bytes": 18844,
+      "sha256": "f532582deee5197768f81ac6851f4cb4145ad950e3f741b347ed326b4e08d557",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/candidates_generation/model_utils.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/candidates_generation/model_utils.py",
+      "bytes": 1698,
+      "sha256": "7edebde7993c6fae7dcdebc1877a3caf3b0891768589875c730e70e49e3d0cd3",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/common/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/common/__init__.py",
+      "bytes": 139,
+      "sha256": "dcb19a3b978438c74cd1411fc98204a9b00e00f19f7eba3a45db117dbd9f41a8",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/common/bart_score.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/common/bart_score.py",
+      "bytes": 4445,
+      "sha256": "ff5d522144569a3856742cf22d75ce9c8c579c9742ed6c9c5d5986d66ba6398f",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/common/evaluation.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/common/evaluation.py",
+      "bytes": 22020,
+      "sha256": "632350e06e8a185224ba3cc6551cdca5ebf51d12a749c9b7efaefb59dd36975f",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/common/utils.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/common/utils.py",
+      "bytes": 6018,
+      "sha256": "72afed699e2ade65344f1e1b7d9f442cd7b40d04a762aa005584575cb1732d15",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/download_dataset/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/download_dataset/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/download_dataset/get_mixinstruct.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/download_dataset/get_mixinstruct.py",
+      "bytes": 10639,
+      "sha256": "98adb13b5b61aa52021ca7cefd945fd3661b8bc672751f273674797303c28c90",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/download_dataset/utils.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/download_dataset/utils.py",
+      "bytes": 948,
+      "sha256": "a11caf65c4a00c40e78fd9da9485791a0b0a8cd3cfb2b66ac64c7659b62631d8",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gen_fuser/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gen_fuser/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gen_fuser/config.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gen_fuser/config.py",
+      "bytes": 998,
+      "sha256": "a1ce8a7e395db975c38b64fc2acdcde9017bd6171f40341191fab7261f9b68ba",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gen_fuser/ds_train.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gen_fuser/ds_train.py",
+      "bytes": 17124,
+      "sha256": "30da6265b510ac1c0ea224da129bf22c07f2a9c9922435f6f217147fca4f3b43",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gen_fuser/fuse_infer.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gen_fuser/fuse_infer.py",
+      "bytes": 5215,
+      "sha256": "346cae4677d63c99456dcd9ee4014991dec8822d60fe4fd6895d037899ecb22f",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gen_fuser/model_utils.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gen_fuser/model_utils.py",
+      "bytes": 3748,
+      "sha256": "1bd2f1fec36ebd4cbee88d4642885b5a0c9a3245bdfeb67d7b6c1c0ddd745f64",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gen_fuser/take_subset.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gen_fuser/take_subset.py",
+      "bytes": 2228,
+      "sha256": "e890c0e4012bdd338239d1d0931ecb65e953a5f4a46faad4f8687d36202927ce",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gen_fuser/test.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gen_fuser/test.py",
+      "bytes": 346,
+      "sha256": "cb08a00c3e0d7dcf9ed721ecc8fff930eb292ddbe13f4996b11ba1e4378f917b",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gpt_eval/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gpt_eval/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gpt_eval/cor_eval.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gpt_eval/cor_eval.py",
+      "bytes": 3800,
+      "sha256": "987484d757513b20b3352c3e16252773d4dbe8c8ba1d5206b01a711c710c523b",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/gpt_eval/utils.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/gpt_eval/utils.py",
+      "bytes": 6872,
+      "sha256": "8928cabee6932298a87648b3e5693e4a2ced0e462e323beddad7b9d120444d37",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/collator.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/collator.py",
+      "bytes": 16766,
+      "sha256": "fe475574d340fc17d6fc86e7b0384c0016dc6798170c713cfd5e01cb52635c41",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/config.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/config.py",
+      "bytes": 2292,
+      "sha256": "fe63e72afd155bf280f2a5459b681a656d78ca26234eb49a350c42a3021d50d1",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/data.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/data.py",
+      "bytes": 4924,
+      "sha256": "b450be3594f1c76325a134cd058c36dd5e91379128103f52974efb2b0f73a957",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/layers.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/layers.py",
+      "bytes": 3440,
+      "sha256": "09d53d29ce6f7a78062faa3a775c74df65a7aeb7674bfd674bef5f5ea5fa2c04",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/loss.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/loss.py",
+      "bytes": 11350,
+      "sha256": "241a527cc9ff8dcd572914afee75e8180a2b486f39366fbbf5d4bfd2e17d8154",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/model_moe.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/model_moe.py",
+      "bytes": 13894,
+      "sha256": "eed01977ad64b33b96f1ec6a61e334d5bed9fe02f3e32f49086ac6d5beab545f",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/model_util.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/model_util.py",
+      "bytes": 6628,
+      "sha256": "f2effa21e04803da7f6a26b476e1df76f29179b4eb71a4276747cd9f5eb97544",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/other_rms/__init__.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/other_rms/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "resumed": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/other_rms/starling_rm.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/other_rms/starling_rm.py",
+      "bytes": 3631,
+      "sha256": "f627155e6be4176376d535c729d51c972c2498dbb89e7b4a7163f60581d1c7e3",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/other_rms/ultra_rm.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/other_rms/ultra_rm.py",
+      "bytes": 4046,
+      "sha256": "7a0bbeeef20ad870d0077100b63b6c45933b7cd2b0be0ad17700d8d012caabfc",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/pairrm.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/pairrm.py",
+      "bytes": 5069,
+      "sha256": "b1b0fecb15640c64c895ebde26a8b7b9fa9ddf9538be15db571a85c20b43d8dc",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/ranker.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/ranker.py",
+      "bytes": 41419,
+      "sha256": "4b7ffa70129df3395dbb73574726d0720508a6a8e1838ac3ea4c5a94726f513d",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/llm_blender/pair_ranker/trainer.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/llm_blender/pair_ranker/trainer.py",
+      "bytes": 6288,
+      "sha256": "3785b97c2643f1bdc02da3715b24f21454ea39b9cc333d42af0a15ae869a865c",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/requirements.txt",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/requirements.txt",
+      "bytes": 7461,
+      "sha256": "f85dfdc76e7fa997c3b989c6a5ad811f0bb9efa92aad21cbc821994692f44ffc",
+      "resumed": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yuchenlin/LLM-Blender/33204d2712944b6b17996f7c079e74cd963ccc7c/setup.py",
+      "path": "/home/tarstars/database/llm_classification_finetuning/runs/span_036/source_audit/code/setup.py",
+      "bytes": 1754,
+      "sha256": "1c4105e11c0527a776df7229ccb83f0813c05f3d2f526f1d863dc2c4a17d1d90",
+      "resumed": false
+    }
+  ],
+  "no_weights_downloaded": true,
+  "task_targets_loaded": false,
+  "no_model_code_executed": true,
+  "elapsed_network_and_cpu_seconds": 9.505895463982597,
+  "method_sha256": {
+    "GOAL.md": "92a6f3e52d4d86f996bc1b7cd2c701489697c924eaa353a21af78c3441edc5e3",
+    "docs/SPAN_036_PLAN.md": "941b517c54ecbb7f47d5e86a04dff8339593d0af2524dfd3dbc96fcc4af0fd3e",
+    "scripts/audit_span_036_sources.py": "1513c936ad60d5b7fad90fa39dfddf82b090a40d70514618f906b320390b1d6f"
+  }
+}

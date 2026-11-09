@@ -7680,7 +7680,7 @@
       ],
       "id": "H79",
       "rank": 98,
-      "status": "planned",
+      "status": "running",
       "introduced_in": 36,
       "discovered_during": 35,
       "derived_from": [
@@ -7694,6 +7694,14 @@
           "note": "V35 rare-input gain fails; queue a distinct public joint-comparator source audit and bounded broad-coverage information screen, preserving failed scalar and retention branches.",
           "evidence": [
             "docs/PAIRRM_DISCOVERY.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T12:32:29+00:00",
+          "status": "running",
+          "note": "Start v36 source gate: pinned public metadata/authors native code only; no weights, preference targets, remote model-code execution or GPU. Numerical addendum precedes later information pilot.",
+          "evidence": [
+            "docs/SPAN_036_PLAN.md"
           ]
         }
       ]
@@ -10371,8 +10379,18 @@
         "H73",
         "H79"
       ],
-      "focus_ids": [],
-      "history": [],
+      "focus_ids": [
+        "H79"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T12:32:29+00:00",
+          "note": "Persistent rank goal continues; select one joint-comparator public source audit and conditional information screen if viable. Preserve deadline/quota and failed branches.",
+          "focus_ids": [
+            "H79"
+          ]
+        }
+      ],
       "carried_from": 35,
       "start_sha256": "ef127b1570203e4306973f699489dde80f944938ca13eb177be6134ec880ef6e",
       "start_markdown_sha256": "1e20bcf10bf1491c21779372012b771444ffe7a13f0a5437ce15aecd282bd920",

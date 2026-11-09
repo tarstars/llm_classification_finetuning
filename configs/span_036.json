@@ -1,0 +1,34 @@
+{
+  "span": 36,
+  "seed": 20261216,
+  "bootstrap_seed": 20261217,
+  "bootstrap_group_replicates": 2000,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "lambda_grid": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "advancement_min_gain": 0.001,
+  "batch_size": 2,
+  "source_maxlength": 1224,
+  "candidate_maxlength": 412,
+  "maximum_native_input_tokens": 2054,
+  "cpu_preparation_seconds_cap": 1200,
+  "cpu_analysis_seconds_cap": 600,
+  "numerical_threads": 2,
+  "rss_guard_gib": 6,
+  "gpu_session_seconds_cap": 5400,
+  "job_seconds_caps": {
+    "pairrm_pilot": 2700,
+    "pairrm_qualification": 2700
+  },
+  "maximum_official_submissions": 1,
+  "hidden_runtime_screen_cap_seconds": 32400,
+  "deadline": "2026-11-10T08:37:37.343197+00:00",
+  "model_revision": "5b880cc73776ac75a835b3e0bd5169bcb5be013b",
+  "code_revision": "33204d2712944b6b17996f7c079e74cd963ccc7c",
+  "base_revision": "64a8c8eab3e352a784c658aef62be1662607476f",
+  "started_at": "2026-11-09T12:32:29+00:00"
+}

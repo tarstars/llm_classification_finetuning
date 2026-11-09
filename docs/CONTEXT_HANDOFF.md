@@ -26,14 +26,23 @@ passed, memory69.91/58.26percent. Latestfullownedcatalog76allterminal;
 0reserved/paidFalse, originalNov14anchor. Preserve32400freeforqualifiedofficial.
 Original absolute deadline2026-11-10T08:37:37.343197UTCneverresets.
 
-Backlog v36formed:35unfinishedcarried + newH79=36activeitems,98registered,
-142immutable snapshots. H79is PLANNED, no focus or v36execution yet. It audits
-one llm-blender/PairRM public joint bidirectional comparator, then only if
-proven feasible freezes a small broad-cohort information screen. Primarysources
-and limits are in docs/PAIRRM_DISCOVERY.md. Actualrevision/nativeformat/score
-semantics/weights/offlinefit unverified; modelcard is not localquality evidence.
-Select boundedH79focus and write v36GOAL/PLAN before execution. No online
-service receives competitiontext; public local/offline weights are authorized.
+Backlog v36focus[H79] RUNNING;35carried+newH79=36active,98registered,
+142immutable snapshots. Sourcegate passed: PairRM5b880cc73776ac75a835b3e0bd5169bcb5be013b,
+code33204d2712944b6b17996f7c079e74cd963ccc7c, baseconfig64a8c8eab3e352a784c658aef62be1662607476f.
+Read docs/SPAN_036_INFORMATION_CONTRACT.md and currentGOAL/PLAN. No newtargets,
+weights orGPU yet. NativeCPUtokenproof67811exit0onALL1024rows/bothorientations,
+max2048/mean702.387tokens; nativehead tinyCPUrehearsal exactdiff0.
+Sourceauditfirst empty-fileHTTP501 preserved; resumed pinnedfiles, no substitution.
+One fixed joint feature=.5*(nativeAB-nativeBA), literal authoredclass/collator/
+conversationhelper, batch2, twoT4oneorientationeach. Strictcheckpointload pending.
+Five/threegroupnested conditionalwinneroffset,tiepreserved,lambda[.01,.1,1],
+seed20261216; usefulgain>=.001/positivegroup95lower,bootstrap2000seed20261217.
+Onepilot2700s+onequalification2700s/publictotal5400; noofficialfrompilot.
+Sources/preparation/runtime inresults/span_036, Notebook48executed. Next publish
+exactmethod first, then prepare_span_036_assets.py weights/upload/verify and
+implement/test one actualserializedofflineGPUworker beforeadmission. Never send
+competitiontext online; public pinned local/offline weights are authorized.
+
 
 Preserve failed previousbranches: H78scalarreward residual negative,
 H77/H16lexicalcoverage failures, fresh8Bweaker/runtimeinfeasible,40/60official

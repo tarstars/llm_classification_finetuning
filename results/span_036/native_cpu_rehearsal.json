@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-09T12:43:00.622017+00:00",
+  "passed": true,
+  "actual_authored_class_tiny_cpu": true,
+  "native_head_sign_and_positions_exact": true,
+  "full_weights_used": false,
+  "task_targets_loaded": false,
+  "random_seed": 20261216,
+  "max_difference": 0.0
+}

@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-09T12:39:40.592396+00:00",
+  "task": "H79",
+  "source_stage_passed": true,
+  "source_retrieval_sha256": "d0fa733190a975be2744ca94fcffa0594948c68a19a9c361f9933a9867f3cb61",
+  "base_config_sha256": "ddec8b81d079d218ce9e54fc0af5d1d5937d6d53b5d42e70c1f251a1cebc830d",
+  "base_metadata_sha256": "e5750aa34845266989843fec167a4c843b5a5ff546549e1cd32d474e9c7199c4",
+  "manual_semantic_review": "Literal native class/collator/conversation helper; positive rawA-minus-B, no tie output, original multi-turn instruction, source1224/candidate412 with unused source budget and native2054bound; paired orientations needed.",
+  "architecture_initialization": "Exact public DebertaV2config, tokenizer vocab resize then strict full PairRM state load; no base weights needed.",
+  "actual_memory_runtime_established": false,
+  "weights_downloaded": false,
+  "new_gpu_executions": 0,
+  "new_quality_targets_loaded": false,
+  "initial_failure": "First retrieval HTTP501 on empty authored __init__.py; resumed exact pinned sources, empty bytes from Git tree size0; no source/weight substitution.",
+  "known_training": "Six author-declared sources include older Chatbot Arena; pinned model lastModified2024-01-22 predates existing post2024cohort; no competition-CV or target-transfer claim.",
+  "next_action": "Publish the frozen information contract and implement token/strict-state/device controls before one pilot."
+}

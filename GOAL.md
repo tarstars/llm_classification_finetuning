@@ -1,25 +1,24 @@
-# Move above 20th place: v35 complete recent-turn extraction
+# Move above 20th place: v36 joint-comparator information screen
 
-Persistent goal: own team17244411rank<=19 after legitimate inference on a fresh
-complete official board. Active/unachieved, bestH60.82987/rank23. Select ONLY H27
-under the FULL binding contract docs/SPAN_035_PLAN.md. Prior GOAL_V34 is archived.
+Persistent objective: team17244411rank<=19after legitimate inference on a fresh
+complete official board. ACTIVE/unachieved; rank23/309,best.82987. Select ONLY
+H79under docs/SPAN_036_PLAN.md. V35is sealed; docs/GOAL_V35.md preserves its
+binding contract. Source availability is not evidence of competition quality.
 
-One frozen complete-recent-turn policy replaces originalGemma's clipped multi-
-turn prefix at the same4096conversation budget, only where latest whole turns
-fit both orientations. Preserve native serialization/kepttext/chronology; single,
-uncut/unaligned/oversizedlatest cases unchanged. The pre-GPU revision docs/SPAN_035_RUNTIME_REVISION.md is binding. Candidate
-is equal NEW-Gemma/nativeLlama TWO-PASS T1; no router/reverseGemma. Initial
-three-pass plan is archived because matchingfloor32973>32400. CurrentH60is
-separate incumbent; reference is unchangedtwoexpertbaseline0.83053. Source
-information requires fixed-prevalencegain>=.0015/changed-prompt95lower>0
-before realqualification; no transfer forecast. Keep actual oldtwo-role floors
-293.909023/213.175659s per512rows, worse new rates/alloverhead/20%margin/
-600reserve and<32400. Atmost5400spilot+3600squalification,9000total; ONE
-qualified official32400cap. No extra reverse pass/faster-node/gate rescue.
+Audit one public llm-blender/PairRM revision and authors native code: input,
+score semantics, training exposure, truncation and offline feasibility. No
+weights/new target access/GPU in source stage. If viable, freeze and publish
+numerical/input/runtime addendum BEFORE any weights/GPU/new quality execution.
+Use existing1024matched post2024rows and unchanged strong baseline, group-local
+nested fitting; preserve ties/swap symmetry, report baselines/paired uncertainty.
+CPUprep1200s/analysis600s,2threads/6GiB. At most one information pilot and one
+qualification version, publicGPUtotal5400s; no family/size/prompt rescue.
 
-CPUprep1200s/analysis600s,2threads/6GiB. Originaldeadline2026-11-10T08:37:37.343197UTC,
-Nov14anchor/allcharges retained; last36651.064used/71348.936free/0reserved/paidFalse.
-Fresh fulladmission beforeGPU; reserve32400untilsinglequalifiedofficial usesit.
-Publishmethod/notebook beforelaunch; heavyDB, code/MD/aggregate/executedNotebook47Git.
-CLIhistory,138snapshots/allgoals/user07+12/link, actualv36discoveries/carry/closure/
-commitpush. Span/localgain does not achieve persistent rankgoal.
+No official authorized by initial stage. Positive predeclared information must
+precede separately frozen matched-current-H60 transfer and actual full-runtime
+qualification, before at most one qualified official<=32400s. Preserve32400free.
+Original deadline2026-11-10T08:37:37.343197UTC,Nov14quotaanchor/allcharges continue;
+last37989.734used/70010.266free/0reserved/paidFalse. Fresh GPUadmission required.
+Publish method/notebook; heavyDB/code+MD+aggregates+executednotebooksGit. CLI
+history,142snapshots/user07+12/link, report/closure/carry/push. Span completion
+or sourcegain does not achieve the persistent leaderboardgoal.
