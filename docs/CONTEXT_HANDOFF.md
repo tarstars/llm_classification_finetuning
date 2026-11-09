@@ -1,76 +1,76 @@
-# V37 closed; v38 awaits a bounded focus
+# V38 closed; v39 validation-population audit next
 
-Snapshot 2026-11-09 13:45 UTC. Read PROJECT_POLICY.md and verify current files
-and service state. Persistent goal: own team17244411rank<=19after legitimate
-inference on a fresh complete official board. ACTIVE/unachieved. Latest complete
-13:41UTCboard24/309,score.82987,rank19/20cutoff.82915,leader.82665. Be economical;
-no subagents without authorization. Never walk HOME, ~/prj, Arc/FUSE or troll_farm.
+Snapshot 2026-11-09 14:06 UTC. Read PROJECT_POLICY.md; verify current files and
+live service state. Persistent goal: own team17244411rank<=19after legitimate
+inference on a fresh complete official board. ACTIVE/unachieved. Latest14:02UTC
+board24/309,score.82987,rank19/20cutoff.82915,leader.82665. Be economical. No
+subagents without authorization. Never walk HOME, ~/prj, Arc/FUSE or troll_farm.
 
-V37 H80 is DONE and sealed. The bounded public compatibility audit inspected
-exactly3new candidate releases, after2HF+2Kaggle catalog queries. All are public
-but no compatible pair is established. No weights, labels, fitting, GPU or
-submission.592122small source bytes preserved. It is not a quality failure or
-a global absence proof. Report docs/SPAN_037_RESULTS.md, aggregate H80_results,
-executed Notebook49, and closure_audit.json are authoritative. Closure independently
-checks all source SHA bytes, frozen candidates, no parameter files, resources,
-executed notebook, user files/link and146old->150total snapshot preservation.
+V38 H35 is DONE and sealed. Frozen constrained arithmetic parser was published
+8c6c42d before real text census. Five meaningful arithmetic/safety/rounding/
+abstention/swap tests passed. CPU37487TERMINALexit0: full57477original rows plus
+11215later public prompt representatives, no votes/model fields.22.735s,.991GiB.
+Original247rows with729claims,117outside-tolerance flags,73nonzero A/Bcontrasts.
+Later18rows with75claims,1flag,1nonzero contrast.128per-source gate fails, so no
+32case blind sample, reliability certification, labels, fit, GPU or official.
+Do not widen/tune the parser or call these certified whole-answer errors.
+Report SPAN_038_RESULTS, coverage.json, executedNotebook50are authoritative.
+Independent closure replay checks804numeric claims, all saved counters/features,
+source SHA, resources, source archives and150old->154total snapshots.
 
-Candidate details:
-- RoschildRui/LMSYS_Gemma2_0728_0905,a82777dad6a02a76b555c2b448c938519112aecd:
-  six archives, no standalone card/config. Same-handle relevant repos are forks
-  of tascj and mtenenholtz; no demonstrated archive-to-training-code/head lineage.
-- kishanvavdara/lmsys-gemma-9b-weightsteam-human-bias: two .pth files, empty
-  description/unknown dataset license. Retrieved Part1/Part2 notebooks concern
-  embeddings+CatBoost, not a documented loader for final team classifier states.
-- justin1357/lmsys-gemma2-lora-weights/v19: Apache2 adapters, local
-  ./gemma-2-9b-it-4bit base/revisionnull, classifier/score modules_to_save, template
-  README. Exact initialization/head/class order/text unproved; no matching author
-  public notebook in bounded listing. Do not infer permutations from labels.
-Current native Gemma m0has MLP score.1/score.4weights+bias,42layers/3584hidden,
-vocab256000; current Llama m3is incompatible. Prior v23already ruled out missing
-retained-author releases and documented third/fourth-place access/lineage stops.
-Do not invent m1/m2releases, bypass401/403or use arbitrary mirrors. No weight
-average or numerical follow-up is authorized by H80; no automatic rescue queued.
+New H81 is PLANNED in v39: audit validation-population relevance. Coverage rates
+under one parser differ14.2x, but originalmulti-turn/multilingual versus later
+Englishsingle-turn selection, length/format and model generations are confounded.
+This is not evidence modern models have fewer factual errors. Original teacher
+training overlap further confounds quality. First a target-blind CPU covariate/
+support audit, both full sources and existing length-matched cohorts; producer
+identities for diagnostics only, never deployment. No model/GPU/cohort fishing
+or old-result replacement. Only a supported mismatch can justify a separately
+frozen new label/prediction comparison with clear exposure and grouping. Read
+ docs/VALIDATION_POPULATION_DISCOVERY.md and backlog show H81. H76's positive
+local/worseofficial result is a prior transfer warning, not a tuning signal.
 
-ALL jobs/handles are terminal. V37 metadata1624/63211/59929/79021and resource
-observer20769terminated; no observer or GPU process is live. V36controller28093,
-sourceverifier80645,quality34928 andresource59311also terminal; don'tpoll/restart.
-V36H79PairRM ran once,288.21chargedseconds, no improvement: all5outer coefficients
-zero, loss.997842274unchanged, gain0and degenerate[0,0]prediction bootstrap.
-Raw non-tie59.17%vs65.66%,tie-marginAUC.5256vs.6603. No qualification/official/
-margin/family rescue. Sources and native full-state/token/control/device/memory
-checks passed. Method/bundle d61e30c preceded GPU, closure cf6a46d pushed.
+All handles are TERMINAL: census37487, resource9535, notebook78098. No observer
+or GPU job is live. V37source/metadata handles and v36controller28093/source80645/
+quality34928/resource59311are also terminal; do not poll/restart/rerun them.
+V37H80three-public-candidate compatibility audit failed its source gate,592122
+smallbytes, no weights/labels/GPU. HFarchives lacked standalone configs/lineage;
+HumanBias .pth release not connected to retrieved embedding/CatBoost notebooks;
+Justin local4bitbase/revisionnull/head/order unresolved. No proved compatible
+pair or automatic source rescue. Current Gemma m0MLP and Llama m3cannot be
+averaged. Preserve401/403/unknownlineage and prior v23missing-release findings.
+V37closure pushedb07a9bc.
 
-V37resource close: quota unchanged38277.944used/69722.056free(19.37h),reserved0,
-paidFalse,sameNov14anchor; newcharge0/publicversions0/officials0. Eightofficial
-receipts and lastv36pilot are terminal. Full owned77catalog was last refreshed
-v36; v37source-only close did not refresh allnotebooks. Fresh full admission
-required before any future GPU. Preserve32400free for a qualifiedofficial.
-Original deadline2026-11-10T08:37:37.343197UTC never resets with spans/queues.
+V36H79PairRM: one source/native-verified two-T4 pilot,288.21chargedseconds,
+all5outercoefficients0,loss.997842274unchanged,gain0with degenerate[0,0]prediction
+bootstrap. Raw non-tie59.17%vs65.66%,tie-marginAUC.5256vs.6603. No qualification/
+weight/prompt/margin/family rescue. Full394tensor/native token/control/device/
+memory checks passed; closure cf6a46d. No independentcompetitionCV claim.
 
-Backlog v38:35carried unfinished tasks,99registered,150immutable snapshots;
-no new discovery/focus yet. GOAL.md is the closed v37contract, exactly archived
-in docs/GOAL_V37.md. Persistent objective continues: select and write a bounded
-next focus before numerical work. Existing H35symbolic math verification is
-unrun and offers an independent factual signal, but requires constrained parsing,
-blind extraction/reliability and coverage evidence before any fit. H05optimization
-and H08quantization remain available only with a justified new matched design;
-most old tasks target weaker ownmodels, so do not assume their forecast gains
-transfer to the strong incumbent. H53targets an older weak judge cascade.
-Do not fill time with framework edits or repeat negative weights/T/routes.
+Resources unchanged by v37/v38:38277.944sused/69722.056sfree(19.37h),reserved0,
+paidFalse,sameNov14anchor. Eightofficials and lastv36pilot terminal. Full77owned
+catalog last refreshedv36; CPU-only closes did not refresh allnotebooks. Fresh
+fulladmission required for any futureGPU. Preserve32400free for qualifiedofficial.
+Original absolute deadline2026-11-10T08:37:37.343197UTC never resets.
 
-Preserve previous stops: H27recentturns affects312/57477and has only.00006279
-fixed-prevalence gain, failing.0015; no retention successor. H78scalarreward,
-H77/H16detector coverage, fresh8B/runtime, H76official.83140and temperature/
-packing identity failures remain. Incumbent H60receipt58103553/source
-llm-preference-span013-gemma-order/1score.82987. No official forecast from
-training-overlapping source CV, and no official-feedback parameter sweeps.
+Backlog v39:34carried unfinished+newH81=35active,100registered,154immutable
+snapshots; no focus yet. GOAL.md is the closed v38contract, archived exactly
+ docs/GOAL_V38.md. Write/select a bounded H81focus before new work under the
+persistent objective. A span's closure is not the goal. Most old optimization
+forecasts target weaker ownmodels and need a current-strong-baseline design.
+Do not fill time with framework edits, replay passing tests or tune officials.
 
-HeavyROOT=/home/tarstars/database/llm_classification_finetuning. Python
-.venv/bin/python,PYTHONPATH=src:scripts; native CPU pins use
+Previous stops remain: H27recentturns312/57477,sourceweightedgain.00006279fails
+.0015; H78scalarreward,H77/H16coverage,fresh8B/runtime,H76official.83140,
+temperature and packingidentity failures. Current bestH60receipt58103553/source
+llm-preference-span013-gemma-order/1score.82987. Preserve negative/inconclusive
+findings; no hidden-score forecast from overlapping source evaluations.
+
+HeavyROOT=/home/tarstars/database/llm_classification_finetuning; Python
+.venv/bin/python,PYTHONPATH=src:scripts. Native CPU pins use
 PYTHONPATH=/tmp/llm_span019_runtime:src:scripts. Network/DB/Jupyter/Git writes need
-escalation; authorization established. Heavy text/weights/per-row outputs inROOT,
-programs/MD/aggregate/executednotebooksGit. User-dirty notebooks07+12must remain
-bytewise unchanged and unstaged; hashesresults/span_037/preservation.json.
-Notebook symlink correct. Gitmain,GitHubtarstars/llm_classification_finetuning.
-Publish important milestones; actualrank<=19alone completes the persistent goal.
+escalation; authorization established. Heavy text/weights/per-rowoutputs inROOT;
+programs/Markdown/aggregates/executednotebooksGit. Preserve user-dirty07+12bytewise
+and unstaged; hashesresults/span_038/preservation.json. Notebook symlinkcorrect.
+Gitmain,GitHubtarstars/llm_classification_finetuning. Publish important results.
+Only actual verifiedrank<=19completes the persistent objective.

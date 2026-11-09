@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-09T14:02:20.743267+00:00",
+  "passed": true,
+  "quota": {
+    "used_seconds": 38277.944,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 69722.056
+  },
+  "gpu_charge_seconds": 0,
+  "public_versions": 0,
+  "official_submissions": 0,
+  "official_history_complete": true,
+  "all_official_terminal": true,
+  "official_count": 8,
+  "last_pilot_status": "COMPLETE",
+  "full_owned_inventory_refreshed": false,
+  "previous_full_inventory_sha256": "b0c91651f9fac53eab57f03afd5de582f76279908596d3f5210a201c5b88f55c",
+  "inventory_limit": "No GPU/job creation in source-only span; full catalog last verified v36. Fresh full admission required before future GPU.",
+  "leaderboard_sha256": "71c472ab826eb65449d0e481a594e3f1a13a450ac6a61c3ee48b3461bc165d2e",
+  "history_sha256": "8729ab76b17630e68c298ba6935b838cadaa1a8f2a74a1c2c8ea3a4bc2da7abf",
+  "result_sha256": "71a8d442c6ec9eae64b33683273d32322af6e93cb75aeb82ae0b8498de54eb6a",
+  "source_sha256": "3fe7a600b3e365bace65852d2280c7e355d0386ee937b1407892f75bf3452c8a"
+}

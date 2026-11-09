@@ -2192,7 +2192,7 @@
       "title": "Symbolic math verification",
       "priority": "P3",
       "rank": 32,
-      "status": "running",
+      "status": "done",
       "gain": [
         -0.008,
         0.008
@@ -2237,6 +2237,14 @@
           "note": "V38firststage freezes constrained rational equality checking, unsupported/context abstention and no eval. Full original/later-source census without targets; coverage128/128 then blind32sample reliability31/32 required before any labels/GPU. No parser tuning on audit sample; population quality unmeasured.",
           "evidence": [
             "docs/SPAN_038_PLAN.md"
+          ]
+        },
+        {
+          "at": "2026-11-09T16:14:53+00:00",
+          "status": "done",
+          "note": "Published8c6c42d five-tests-passed constrained rational parser censused full57477original +11215latergroups without targets,22.735s/.991GiB. Nonzero73/1 fails128/128; no blindsample/reliability claim, preferencefit,GPU or official. Saved804localclaims; feature is evidence not certified whole-answer error. Sourcecoverage differs14.2x, queued H81evaluation-population audit; no parser rescue.",
+          "evidence": [
+            "docs/SPAN_038_RESULTS.md"
           ]
         }
       ],
@@ -7825,6 +7833,69 @@
           ]
         }
       ]
+    },
+    {
+      "kind": "hypothesis",
+      "title": "Audit validation population relevance before another model trial",
+      "priority": "P1",
+      "gain": [
+        0,
+        0
+      ],
+      "estimate_confidence": "low",
+      "engineering_hours": [
+        1,
+        3
+      ],
+      "pilot_gpu_wall_hours": [
+        0,
+        0
+      ],
+      "followup_gpu_wall_hours": [
+        0,
+        0.5
+      ],
+      "cpu_wall_hours": [
+        0.1,
+        0.5
+      ],
+      "risk": "medium",
+      "claim": "Later-source validation may misrepresent the opportunity for features on the original competition population; diagnose this before interpreting further null results or local gains.",
+      "basis": "FrozenH35extractor has nonzero coverage73/57477original rows versus1/11215later representatives, with247versus18rows containing checked claims. Reliability is unproved and covariate selection can explain the difference. H76also had a positive local result but worse official score. LaterEnglishsingleturn2025data differs from original turns/modelvintage; original teacher predictions overlap training.",
+      "first_test": "One CPU-only target-blind source audit: compare turns/lengths/math-request/extraction/context/formatting and available model-generation metadata, both full sources and existing length-matched cohorts. Identities are diagnostic only. Separate selection from domain effects and quantify support/standardized differences. No model weights, preference fitting or GPU. Only a supported mismatch can motivate a separately frozen new quality analysis.",
+      "acceptance": "Document supported covariate/support findings and limits, then justify any future evaluation contract using prospective source/exposure/cohort controls. Neither a coverage contrast nor original in-sample teacher scores establishes hidden-target gain. Preserve all earlier outcomes.",
+      "stop": "Stop after the bounded audit; no cohort fishing for positive former hypotheses, retrospective replacement of failures, parser widening, model-family search or official-feedback tuning. New labels/predictions/fits require an explicit numerical addendum first.",
+      "risk_reason": "Parser coverage is not actual factual-error prevalence. Generation, language, turns, length and source eligibility are confounded. Original public teacher exposure can masquerade as a population effect.",
+      "mitigation": "Labels hidden in initial audit, full source selection provenance, stratify/match only measured covariates, report missing support and exposure separately, identities excluded from deployment, preserve fixed recipes and historical failures.",
+      "rationale": "An evaluation prerequisite with zero direct score-gain estimate; prevents treating a less representative independent source as a universal improvement gate. Initial cost is CPU only.",
+      "revision": "Newv39task from actual label-blind coverage shift; no v38quality fit/GPU or H35parser rescue. Any new population comparison is a new experiment with a separate frozen contract.",
+      "depends_on": [
+        "E00",
+        "H35"
+      ],
+      "evidence": [
+        "docs/VALIDATION_POPULATION_DISCOVERY.md",
+        "docs/SPAN_038_RESULTS.md",
+        "docs/SPAN_030_RESULTS.md"
+      ],
+      "id": "H81",
+      "rank": 100,
+      "status": "planned",
+      "introduced_in": 39,
+      "discovered_during": 38,
+      "derived_from": [
+        "H35"
+      ],
+      "history": [
+        {
+          "at": "2026-11-09T16:13:44+00:00",
+          "status": "planned",
+          "note": "Frozenlabelblind mathcontrast differs73/57477vs1/11215before quality. Queue a bounded validation-population/support audit, not a claim of arithmetic skill or a parser/model rescue. Originalteacher exposure and selection must be separated.",
+          "evidence": [
+            "docs/VALIDATION_POPULATION_DISCOVERY.md"
+          ]
+        }
+      ]
     }
   ],
   "framing": [
@@ -7875,7 +7946,7 @@
     "[V5 results](docs/SPAN_005_RESULTS.md), [source attribution](docs/SPAN_005_E07.md) and [practical preference decision](docs/SPAN_005_H45.md) contain the completed source-model experiment and its primary stopping decision.",
     "[V6 frozen transfer](docs/SPAN_006_H46.md), [conditional E08 deferral](docs/SPAN_006_E08.md) and [v6 results](docs/SPAN_006_RESULTS.md) record the inconclusive gain and failed quality gate; this is inspected-cohort evidence, not untouched validation."
   ],
-  "active_version": 38,
+  "active_version": 39,
   "versions": [
     {
       "number": 1,
@@ -10592,7 +10663,7 @@
     },
     {
       "number": 38,
-      "state": "active",
+      "state": "closed",
       "item_ids": [
         "H05",
         "H06",
@@ -10645,10 +10716,65 @@
       "carried_from": 37,
       "start_sha256": "b0236395dd2c11041b9017b1a60c0e1820131f49142af6b82e5349d76f503599",
       "start_markdown_sha256": "18118f2636b8865c86f0b7b26d0db90eda6a6a59afea2324f0a453d17dc33379",
-      "start_sealed_at": "2026-11-09T13:43:59+00:00"
+      "start_sealed_at": "2026-11-09T13:43:59+00:00",
+      "final_sha256": "da701b2929b19b53ccb76998232f4767dd9389d37ee6b0d64f281b52ae4a9f21",
+      "final_markdown_sha256": "848f6ebe00c2b32a1224bb8694fdb1dac19b6c722360f1b412560a4993c2b42d",
+      "final_sealed_at": "2026-11-09T16:14:54+00:00",
+      "closed_at": "2026-11-09T16:14:54+00:00",
+      "closing_note": "H35coverage fails before reliability/quality, no GPU. Preserve frozen parser/census and all old snapshots; carry34unfinished tasks plus H81validation-population audit to v39. Deadline/quota unchanged.",
+      "closing_evidence": [
+        "docs/SPAN_038_RESULTS.md"
+      ]
     },
     {
       "number": 39,
+      "state": "active",
+      "item_ids": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H10",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H17",
+        "H18",
+        "H19",
+        "H20",
+        "H21",
+        "H22",
+        "H23",
+        "H24",
+        "H25",
+        "H26",
+        "H28",
+        "H29",
+        "H30",
+        "H31",
+        "H32",
+        "H33",
+        "H34",
+        "H38",
+        "H41",
+        "H44",
+        "E08",
+        "E12",
+        "H53",
+        "H63",
+        "H73",
+        "H81"
+      ],
+      "focus_ids": [],
+      "history": [],
+      "carried_from": 38,
+      "start_sha256": "258b9c1dc253288e53e09687c6ce8d530826ac2c771026e1a3a0b2a169448d57",
+      "start_markdown_sha256": "a2e551c1b128f07aeaf39d8aa8fe843757a24c420236dcb7a5009ff4ce6e80d8",
+      "start_sealed_at": "2026-11-09T16:14:54+00:00"
+    },
+    {
+      "number": 40,
       "state": "draft",
       "item_ids": [],
       "focus_ids": [],
