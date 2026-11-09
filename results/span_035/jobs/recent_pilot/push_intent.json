@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-09T09:58:15.700776+00:00",
+  "kernel": "arseniytrushin/llm-preference-span035-recent-pilot",
+  "quota_before": {
+    "used_seconds": 36651.064,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 71348.936
+  },
+  "max_session_seconds": 5400,
+  "notebook_sha256": "aff55734a762c15a313808a6ebd063e3b054d3fae43fe02de024b992a1c7389f",
+  "metadata_sha256": "afaa7aeb71e9777066a0235829d11f7fb54883fbff5149d105faf6edd814e358"
+}

@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-09T09:59:09.472978+00:00",
+  "passed": true,
+  "kernel_version": "arseniytrushin/llm-preference-span035-recent-pilot/1",
+  "remote_cells_match": true,
+  "internet_disabled": true,
+  "private": true,
+  "gpu_enabled": true,
+  "image_pin_exact": true,
+  "dependencies": [
+    {
+      "source": "tascj0/lmsys-checkpoints-0-0805/1",
+      "current_version": 1,
+      "public": true
+    },
+    {
+      "source": "tascj0/lmsys-checkpoints-3-0805/1",
+      "current_version": 1,
+      "public": true
+    },
+    {
+      "source": "tascj0/lmsys-modules-0805/1",
+      "current_version": 1,
+      "public": true
+    },
+    {
+      "source": "tascj0/lmsys-packages/1",
+      "current_version": 1,
+      "public": true
+    }
+  ],
+  "notebook_sha256": "aff55734a762c15a313808a6ebd063e3b054d3fae43fe02de024b992a1c7389f",
+  "metadata_sha256": "afaa7aeb71e9777066a0235829d11f7fb54883fbff5149d105faf6edd814e358",
+  "source_sha256": "4e4f1493b5cfa5695e5d13e3820ff9eb309e97c52d1996ee222d5bedd9a39aec"
+}

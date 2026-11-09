@@ -1,4 +1,4 @@
-# V35 H27 pilot ready; publish then admit exactly once
+# V35 H27 pilot accepted and source verified
 
 Snapshot 2026-11-09T09:55:30.467757+00:00. Read PROJECT_POLICY.md and verify live state.
 Persistent goal: team17244411rank<=19 after legitimate inference on a fresh
@@ -36,13 +36,17 @@ publictascj0datasetsv1 + competition. Informationonly, no hidden/submission path
 - Local Notebook47executed fromCPUproofs. NoGPU fit/quality follows from rehearsals.
 - Frozen bundle results/span_035/recent_pilot_bundle.json. DO NOT edit bundled
 sources/config/GOAL/PLAN after GPUacceptance. Handoff/review not bundled.
-- Controller scripts/run_span_035_pilot.py (genericrun_job + knownold-draft
-inventoryresolver) is NOT LAUNCHED YET. Publish allsource/build first, then run
-ONCE. It observes fullownedcatalog/quota/dependencies/allofficials before Save.
-- Accepted receipt will be jobs/recent_pilot/push.json. If launched, follow SAME
-handle/version after timeout; neverduplicate ambiguous mutations. Source verifier
-scripts/verify_span_035_pilot.py pulls exactacceptedcells/image/settings and
-proves exportedunversioned publicdatasets uniquelyv1. Run afteractualreceipt.
+- Controller17546 is LIVE, PID3480840, exact
+arseniytrushin/llm-preference-span035-recent-pilot/1, accepted ONCE09:58:18UTC.
+Fresh fullowned/admission passed;8officials terminal, publiccap5400/total9000.
+Latest observed statusQUEUED. Follow SAME17546/exactversion, never repush.
+- Source verifier77036TERMINALexit0 at09:59UTC: exactcells/private/offline/GPU/
+image and all fourpublicdatasetv1 dependencies PASS. NotebookSHA
+ aff55734a762c15a313808a6ebd063e3b054d3fae43fe02de024b992a1c7389f.
+Do not rerun completed verifier. Source published4eb440d BEFOREacceptance.
+- No ownofficial submitted. Quality still unmeasured. Monitoring live process
+is a verified wait, not a blocker. Do not invent idle experiments or alter any
+bundled source/config/GOAL/PLAN while it runs.
 - Aftercontrollerterminal/retrieval ONLY run scripts/audit_span_035_pilot.py ONCE.
 It checks frozen source/artifacts/controls/versions/tokens/memory before FIRST
 newqualitytargets, compares all312newG to SHAverified oldv26G/Larrays, and writes
@@ -60,8 +64,8 @@ atmost2acceptedversions:pilot5400+qualification3600. Oneofficial<=32400s conditi
 onallgates. Preserve32400free until officialadmission consumes it. Original
 absolute deadline2026-11-10T08:37:37.343197UTC andNov14anchor/allcharges remain.
 Lastquota36651.064used/71348.936free,0reserved/paidFalse; lastfull75ownedinventory
-v31at08:22, fresh fulladmission REQUIRED and built into controller. No ownlivejob
-at thissnapshot. Lastcomplete09:08UTCboard23/309,H60.82987,19th/20th.82915,
+v31at08:22, fresh fulladmission REQUIRED and built into controller. One ownlivepilot at this snapshot; current quota reservation/use needs fresh
+observation at closure. Lastcomplete09:08UTCboard23/309,H60.82987,19th/20th.82915,
 leader.82674. All8officials previouslyterminal. BestH60receipt58103553/source
 arseniytrushin/llm-preference-span013-gemma-order/1.
 

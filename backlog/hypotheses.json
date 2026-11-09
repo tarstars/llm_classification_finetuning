@@ -1814,6 +1814,14 @@
           "evidence": [
             "results/span_035/recent_pilot_cell_rehearsals.json"
           ]
+        },
+        {
+          "at": "2026-11-09T10:00:41+00:00",
+          "status": "running",
+          "note": "Frozen4eb440d published beforeONE accepted SaveKernel09:58:18UTC: exactarseniytrushin/llm-preference-span035-recent-pilot/1, controller17546LIVE/QUEUED, freshfulladmission/all8officialsterminal. Source77036exit0 at09:59 verifies exactcells/private/offline/image/GPU and fourpublicdatasets uniquelyv1. NotebookSHAaff55734...; no qualityyet. Observe samehandle, no retry or bundledsource change.",
+          "evidence": [
+            "results/span_035/jobs/recent_pilot/source_verification.json"
+          ]
         }
       ],
       "introduced_in": 1,
