@@ -1,6 +1,6 @@
 # V31 H02 input transport repair; no accepted GPU run
 
-Snapshot 2026-11-09 06:36 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
+Snapshot 2026-11-09 06:45 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
 current files and live service state before acting. Persistent goal is our own
 team 17244411 at rank <=19 on a fresh complete official leaderboard after
 legitimate inference. ACTIVE, UNACHIEVED, no token budget. Be economical with
@@ -87,24 +87,26 @@ preserve same MLrecipe/datahashes/5400totalcap/deadline/atmost1acceptedversion.
 OriginalGOALhash preserved in docs/SPAN_031_EMBEDDED_GOAL.md. No source-retry
 for an accepted/uncertainjob: compactadmission must freshlyprove oldmissing
 and zeroGPucharge before its ONE save; furthererrors are captured, not retried.
-Privateassetprepared06:34UTC: ROOT/runs/span_031/input_asset/upload contains
-only frozen1536selectedrows as pilot_rows.gzipbin (exactgzipSHA929741bb...),
-READMEoriginalcompetitionterms/privateonly, metadataotherlicense. Manifest
-results/span_031/input_asset_manifest.json; noassetuploadyet. Sameaccount
-Kaggleinput is implied by competition task; no extraexternaltextservice.
-Newstage_span_031_inputs.py prepare/upload/verify has durableintents, no retry.
-Newbuild_span_031_compact.py reads pinnedprivateasset, guards actualfile and
-SDKnormalizedsource<900000, sameCPU/rehearsalcontrols. Newrun_span_031_compact.py
-reconciles original400, freshassetprivate/version1/ready and zerocharge before
-onepublicsave; captures HTTPmessage withoutheaders/payload. Newauditor and
-sourceverifier paths *_span_031_compact*.py. All syntaxcompiled; noGPUyet.
-NEXTcommit/push preparedtransportsource/manifest, uploadassetONCE, verifySAME
-privateversionready, thenbuildcompactONCE, inspectrehearsals/sourcebytes,
-publishactualasset/build evidence BEFORE one fresh-admitted compactrun. The
-acceptedcontrollerhandle mustbe observed and exactsource verified. DoNOTrun
-oldbase auditor; aftercompactterminalretrieval runaudit_span_031_compact.py
-ONCE. Reviewrenderer build_span_031_review.py exists butnotexecuted; update it
-forcompactstatus and renderNotebook43. Preserve all earlierfailedsource/results.
+Privateasset upload7318 TERMINALexit0 acceptedONCE, verify16440exit0 confirms
+arseniytrushin/llm-span031-size-inputs/1 private/version1/ready at06:40UTC.
+Onlysame frozen1536rows as pilot_rows.gzipbin, SHA929741bb...; no confirmation
+orhiddenvotes. Assetmanifest/response/ready recorded underresults/span_031;
+ROOT/runs/span_031/input_asset preserves uploadintent/response, NEVERreupload.
+Compactbuilder21126 TERMINALexit0: realstaging/CPUTrainer/final/failure/
+watchdog/JupyterPASS. ActualSDKsource95916bytes (file96537) <900000 versus
+old2179346; source_size_gate.json passes with exactinputSHA unchanged.
+New compactbundle/rehearsals freeze actualsource/privateasset. DO NOT rerun
+builder orassetverify afterthisfreeze (readyfilehash inbundle). Reviewer
+build_span_031_review.py updatedcompactstatus/baselines; initialNotebook43
+preview56527TERMINALexit0, not a GPUqualityresult.
+NEXTpublishactualasset/build evidence BEFORE ONE run_span_031_compact.py.
+It fresh-reconciles originalmissing/zerocharge, exactprivateassetready and all
+ownedjobs/official/models/parents/quota/deadline, records safeHTTPdetail ifsave
+fails, neverretries. Observeactualunifiedhandle andacceptedpush.json; verify
+with verify_span_031_compact_source.py ONCE whilemonitoring SAMEjob. NoGPUyet.
+Use audit_span_031_compact.py ONCE afterterminalretrieval, neveroldbaseauditor.
+Need finalreport/executedNotebook43/CLIclosure/preservation/commitpush before
+v31seal; onlyactualownrank<=19 cancompletepersistentgoal (noofficialhere).
 Oldv8runcontroller must not be reused because its budgets/focus are closed.
 Do not call the goal complete for span closure,
 engineering, or local gains. No current external blocker; do not mark blocked

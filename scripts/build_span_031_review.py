@@ -40,8 +40,11 @@ for name in ['protocol_revision.json','pilot_preparation.json','size_pilot_cell_
  p=PUB/name
  if p.exists():
   value=json.loads(p.read_text());print(name,{k:v for k,v in value.items() if k not in ['rehearsals'] and 'sha256' not in k})
+reconciliation=PUB/'save_reconciliation.json'
+if reconciliation.exists():print('Original embedded save reconciliation:',json.loads(reconciliation.read_text()))
+role='size_pilot_compact' if (PUB/'jobs/size_pilot_compact').exists() else 'size_pilot'
 for name in ['push.json','source_verification.json','controller_state.json','progress.json']:
- p=PUB/'jobs/size_pilot'/name
+ p=PUB/'jobs'/role/name
  if p.exists():
   value=json.loads(p.read_text());print(name,value.get('latest',value))
 result=PUB/'H02_results.json'
@@ -78,7 +81,7 @@ else:
    m=metrics(saved['labels'],np.tile(p,(len(saved['labels']),1)))
    base.append(dict(model=name,**{k:m[k] for k in ['log_loss','accuracy','macro_f1','brier']}))
   display(pd.DataFrame(base))
-  print('Baselines use training labels only. Hard-majority log loss uses the metric function probability floor 1e-8.')
+  print('Baselines use training labels only. Hard-majority log loss uses the metric function probability floor 1e-12.')
  complete={name:a for name,a in r['arms'].items() if a.get('complete')}
  if complete:
   fig,axes=plt.subplots(1,2,figsize=(10,3.5))

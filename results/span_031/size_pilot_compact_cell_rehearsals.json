@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "rehearsals": [
+    {
+      "name": "actual_staging_imports_trainer_final",
+      "passed": true,
+      "worker_standin": true,
+      "session": {
+        "seconds": 0.027799606323242188,
+        "exit_code": 0,
+        "role": "size_pilot_compact"
+      }
+    },
+    {
+      "name": "failure",
+      "passed": true
+    },
+    {
+      "name": "watchdog",
+      "passed": true
+    }
+  ],
+  "notebook_engine_startup_passed": true,
+  "actual_serialized_staging_trainer_final_passed": true,
+  "new_gpu_executions": 0
+}

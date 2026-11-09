@@ -238,6 +238,14 @@
           "evidence": [
             "docs/SPAN_031_TRANSPORT.md"
           ]
+        },
+        {
+          "at": "2026-11-09T06:43:52+00:00",
+          "status": "running",
+          "note": "Same-data privateasset upload7318TERMINALexit0 acceptedONCE; verify16440exit0 confirms private/version1/ready. Compactbuilder21126TERMINALexit0 passes actualstaging/realCPUTrainer/final/failure/watchdog/Jupyter. SDKsource95916bytes (old2179346), sameinputSHA929741bb...; source_size_gate passes. NoGPU/quality yet. Publish concreteasset/build thenONEfresh-admittedcompactsave, preserving original400intent and5400totalcap.",
+          "evidence": [
+            "results/span_031/source_size_gate.json"
+          ]
         }
       ],
       "introduced_in": 1,

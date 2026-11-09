@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-09T06:43:52.360976+00:00",
+  "passed": true,
+  "original_sdk_normalized_bytes": 2179346,
+  "compact_sdk_normalized_bytes": 95916,
+  "compact_notebook_bytes": 96537,
+  "local_guard_bytes": 900000,
+  "compact_notebook_sha256": "96d9bbd9cc92ca07352fd4b2a3e4d70009016546946ddf91acf0d4d3a8815e78",
+  "same_input_sha256": "929741bb0ef8bfeb620b9d4116ea459de96eb7e7b74d652a94e5e21d4a5aef2c",
+  "private_asset": "arseniytrushin/llm-span031-size-inputs/1",
+  "new_gpu_executions": 0,
+  "rejection_reason_confirmed": false,
+  "source_size_suspected": true
+}
