@@ -246,6 +246,14 @@
           "evidence": [
             "results/span_031/source_size_gate.json"
           ]
+        },
+        {
+          "at": "2026-11-09T07:10:17+00:00",
+          "status": "running",
+          "note": "Compactcontroller47887TERMINALexit1 in read-only inventory, BEFOREcompactintent/mutation. Primaryprofile had1anonymousprivate2010stub. CompleteYourWorkcatalog75refs preservesall74profile refs and uniquelyrecovers originalrejectedNotebook; run404/noGPU, private source403unneeded. Scopedresolver dropsnorow, verifiescoverage/ownership/cursors thenobserveseveryrun.4boundarytestsPASS. Preservepreflightfailedbundle and recordinventory_source_amendment; numericalNotebookSHA96d9.../metadata/data/config/cap unchanged. NoGPUquality yet.",
+          "evidence": [
+            "results/span_031/inventory_source_amendment.json"
+          ]
         }
       ],
       "introduced_in": 1,

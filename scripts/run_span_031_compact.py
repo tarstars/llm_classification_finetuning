@@ -11,6 +11,7 @@ from arena.data import ROOT
 from arena.experiment import read_json,atomic_json,sha256,utc_now
 from arena.kaggle_control import run_job
 from arena.span004_support import api_client,read_call
+from arena.span031_inventory import inventory_with_resolution
 from submit_span_013_order import submissions,TERMINAL
 
 
@@ -38,7 +39,7 @@ def main():
         assert not (root/'jobs'/role/'push_intent.json').exists()
         assert not list((root/'official').glob('*/submission_intent.json'))
         rejection=read_json(pub/'save_reconciliation.json')
-        assert rejection['save_http_status']==400 and rejection['kernel_exists'] is False and not rejection['matching_owned_refs']
+        assert rejection['save_http_status']==400 and rejection['read_http_status']==404 and not rejection['matching_owned_refs']
         fresh=read_json(pub/'jobs'/role/'admission_inventory.json')
         assert not fresh['nonterminal_jobs'] and fresh['quota']['remaining_seconds']>=5400+32400
         assert abs(fresh['quota']['used_seconds']-plan['quota_used_at_start'])<=.1,'Unexpected GPU charge before accepted pilot'
@@ -57,7 +58,7 @@ def main():
             current=read_call(lambda:client.datasets.dataset_api_client.get_dataset(request))
         status=json.loads(read_call(lambda:api.dataset_status('arseniytrushin/llm-span031-size-inputs',format='json')))
         assert current.is_private and current.current_version_number==status['current_version_number']==1 and status['status']=='ready'
-        atomic_json(pub/'compact_admission.json',dict(at=utc_now(),admitted=True,rejected_original_reconciled_missing=True,
+        atomic_json(pub/'compact_admission.json',dict(at=utc_now(),admitted=True,rejected_original_has_no_run=True,
             accepted_versions_before=0,all_official_terminal=True,official_receipts=len(history),public_cap_seconds=5400,
             private_asset_ready=True,official_submissions_allowed=0,accepted_updates_per_arm=32))
     def observed_api():
@@ -78,7 +79,10 @@ def main():
                 print(record,flush=True);raise
         api.kernels_push=guarded
         return api
-    with patch('arena.kaggle_control.api_client',observed_api):
+    def scoped_inventory(api,start):
+        return inventory_with_resolution(api,start,read_json(pub/'save_reconciliation.json')['kernel'],
+            pub/'inventory_admission_resolution.json')
+    with patch('arena.kaggle_control.api_client',observed_api),patch('arena.kaggle_control.inventory',scoped_inventory):
         run_job(REPO,root,pub,REPO/'configs/span_031_compact.json',role,dry_run=args.dry_run,precondition=precondition)
 
 

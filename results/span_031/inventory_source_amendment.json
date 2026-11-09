@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-09T07:08:39.952150+00:00",
+  "amended": true,
+  "reason": "Read-only admission failed before mutation on a redacted own draft",
+  "previous_bundle_sha256": "0a9881984d407044104977267a9499cb447cdd1e98451b697114e1abec45d20d",
+  "active_bundle_sha256": "69957d8edacce74d096b96955fd3203cbfc7e9b11e3b9924631c725abf7a72b4",
+  "numerical_notebook_unchanged": true,
+  "notebook_sha256": "96d9bbd9cc92ca07352fd4b2a3e4d70009016546946ddf91acf0d4d3a8815e78",
+  "metadata_unchanged": true,
+  "model_data_config_unchanged": true,
+  "accepted_gpu_versions": 0,
+  "new_gpu_executions": 0,
+  "tested_resolver_boundaries": 4,
+  "observed_unittest_exit_code": 0,
+  "source_sha256": {
+    "docs/SPAN_031_TRANSPORT.md": "ecd63d1e38b49c1f1ac63e7a510430450ba1954a3d5ecf2868970a6e7402cb84",
+    "scripts/amend_span_031_inventory.py": "55f626e05f9ef058ccb0b6c73e4ad1b5e1ad2f9c5208c53658e418d64ece4ba6",
+    "scripts/run_span_031_compact.py": "5b4be31399dbe813f734136e4c4c0456228af2dc0320fcdc50f927d6bd32c09d",
+    "src/arena/span031_inventory.py": "a2a21b2a0972e567f270cef036c935bf042278a62d45e621952dc240982a14a5",
+    "tests/test_span031_inventory.py": "cbd4cc3b793c14290c7d256e30f3559e5c57217b705235750b02f217ae4876a1"
+  }
+}

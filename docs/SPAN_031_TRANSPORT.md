@@ -43,3 +43,22 @@ start/quota anchor/deadline and all previous charges. There is no numerical
 retry, parameter search or expanded compute allocation. A further transport
 rejection must be preserved and diagnosed from its captured response; do not
 blindly submit again. No goal completion follows from transport recovery.
+
+The first compact-controller call47887 then stopped during its read-only
+inventory, before any compact save intent or mutation: the profile API returned
+one `[Private Notebook]` row with no reference or ID and a2010placeholder date.
+Explicit owner filtering did not recover it. The separate authenticated
+`Your Work` catalog returned75canonical owned references, preserved all74
+addressable profile references, and uniquely recovered the rejected embedded
+notebook's identifier. Its run endpoint returns404; its private draft source
+endpoint returns403 and is not needed or accessed further. Thus the earlier
+inference that no notebook object existed was too broad: no run was found,
+but a redacted private draft exists. No GPU charge or reservation is present.
+
+The scoped inventory adapter resolves that exact entry through both complete
+catalogs, then checks its run status directly and lets the existing inventory
+check every remaining notebook. It drops no row. Unknown redactions, missing
+references, unequal coverage, pagination, wrong ownership, or an actual run
+prevent admission. Four boundary tests passed. Preserve the earlier compact
+bundle and record a source amendment for this admission-only fix; notebook,
+data, model, configuration, GPU allocation and numerical tests are unchanged.

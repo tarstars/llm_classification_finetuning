@@ -24,7 +24,7 @@
     "scripts/prepare_span_031_size.py": "16c7b14a004088cfeb6bd6f6286584c6858906f3dff19fe2e901378880985fba",
     "scripts/prepare_span_031_pilot.py": "2b2a7acdabf1e60981859aaba8dc5b6d17359dce29797f620603cae10999ba41",
     "scripts/build_span_031_compact.py": "7afb9a85dbafa05ad76347f1cf7d46174a099977e3ab4323d15c5964826571cb",
-    "scripts/run_span_031_compact.py": "6ed78a3fb420d1f907a422fe854108cfd1028de00a58422942984abf9d92d0ca",
+    "scripts/run_span_031_compact.py": "5b4be31399dbe813f734136e4c4c0456228af2dc0320fcdc50f927d6bd32c09d",
     "scripts/audit_span_031_compact.py": "23eaff3d6c9ce453b2adae5c80ca68b540df296b98274f05f8feabebe2d0362b",
     "scripts/verify_span_031_compact_source.py": "47a176b371fbec86876fd28bc14c6243ca2d7d67d24fb502ff6b81c49804c3b1",
     "src/arena/exposure_validation.py": "6533c3df332275d6289c8045e0725dbb21ca14afbbf24e57d9e32d5ec3bbd7c5",
@@ -32,13 +32,18 @@
     "src/arena/span004_support.py": "e58470cb055f03ed5d3f8d2ff76d85a6e0959d4b1b6cd619804db4fe6ec538f4",
     "scripts/submit_span_013_order.py": "3127b6a229364b6712c1d31edad803ea0f5753301bc462804109647141657786",
     "scripts/stage_span_031_inputs.py": "eb1a395cce1c1fe5e2d6a84ffa5a39f87105566c4bfd0eeb92283ffa18d52afd",
-    "docs/SPAN_031_TRANSPORT.md": "122b96fa5758b89c6090c19bd94ebe5f6ae6ccef5113499cb6aec856c6ef7d61",
+    "docs/SPAN_031_TRANSPORT.md": "ecd63d1e38b49c1f1ac63e7a510430450ba1954a3d5ecf2868970a6e7402cb84",
     "results/span_031/input_asset_manifest.json": "504bd1180c51846c1db2a58c4c891ad40e6834c8df9ba648549785642b0e7d97",
-    "results/span_031/input_asset_ready.json": "9851131b8d20f29b1a31e055f9bddaec599e3c9e8917bfdb103ad4924978aacd"
+    "results/span_031/input_asset_ready.json": "9851131b8d20f29b1a31e055f9bddaec599e3c9e8917bfdb103ad4924978aacd",
+    "scripts/amend_span_031_inventory.py": "55f626e05f9ef058ccb0b6c73e4ad1b5e1ad2f9c5208c53658e418d64ece4ba6",
+    "src/arena/span031_inventory.py": "a2a21b2a0972e567f270cef036c935bf042278a62d45e621952dc240982a14a5",
+    "tests/test_span031_inventory.py": "cbd4cc3b793c14290c7d256e30f3559e5c57217b705235750b02f217ae4876a1"
   },
   "notebook_sha256": "96d9bbd9cc92ca07352fd4b2a3e4d70009016546946ddf91acf0d4d3a8815e78",
   "metadata_sha256": "49e2fa7fe41900cc88219aa25b63d1f52a65a8ce9b4abbb28928a8407e731c22",
   "cap_seconds": 5400,
   "internet_enabled": false,
-  "protocol_revision": 2
+  "protocol_revision": 2,
+  "inventory_admission_revision": 1,
+  "previous_bundle_sha256": "0a9881984d407044104977267a9499cb447cdd1e98451b697114e1abec45d20d"
 }

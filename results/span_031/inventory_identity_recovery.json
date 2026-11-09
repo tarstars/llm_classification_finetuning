@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-09T07:02:59.151734+00:00",
+  "profile_count": 75,
+  "profile_addressable": 74,
+  "profile_redacted_count": 1,
+  "owned_search_count": 75,
+  "owned_search_complete": true,
+  "search_all_addressable": true,
+  "existing_references_preserved": true,
+  "recovered_owned_reference": "arseniytrushin/llm-preference-span031-size-pilot",
+  "no_compact_save_intent": true,
+  "metadata_http_status": 403,
+  "run_http_status": 404,
+  "quota": {
+    "used_seconds": 32965.55,
+    "reserved_seconds": 0.0,
+    "allowed_seconds": 108000.0,
+    "refresh_time": "2026-11-14 00:00:00",
+    "paid_scaling": false,
+    "remaining_seconds": 75034.45
+  }
+}

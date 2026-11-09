@@ -1,6 +1,6 @@
 # V31 H02 input transport repair; no accepted GPU run
 
-Snapshot 2026-11-09 06:45 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
+Snapshot 2026-11-09 07:10 UTC. Read PROJECT_POLICY.md and GOAL.md, and verify
 current files and live service state before acting. Persistent goal is our own
 team 17244411 at rank <=19 on a fresh complete official leaderboard after
 legitimate inference. ACTIVE, UNACHIEVED, no token budget. Be economical with
@@ -99,11 +99,30 @@ New compactbundle/rehearsals freeze actualsource/privateasset. DO NOT rerun
 builder orassetverify afterthisfreeze (readyfilehash inbundle). Reviewer
 build_span_031_review.py updatedcompactstatus/baselines; initialNotebook43
 preview56527TERMINALexit0, not a GPUqualityresult.
-NEXTpublishactualasset/build evidence BEFORE ONE run_span_031_compact.py.
-It fresh-reconciles originalmissing/zerocharge, exactprivateassetready and all
-ownedjobs/official/models/parents/quota/deadline, records safeHTTPdetail ifsave
-fails, neverretries. Observeactualunifiedhandle andacceptedpush.json; verify
-with verify_span_031_compact_source.py ONCE whilemonitoring SAMEjob. NoGPUyet.
+Actualcompactbuild/asset evidence published5e8b855. Compactcontroller47887
+TERMINALexit1 in readonlyinventory beforeANYcompactintent/save: primaryprofile
+hasone ref-less[Private Notebook]2010stub. Same explicitownerfilter didnotfix.
+AlternateofficialSDK YourWorkcatalog returns75canonicalownedrefs, preserves
+all74profilevalidrefs and uniquelyrecovers originalrejectedsize-pilot Notebook.
+Runstatus404(no runs); private draftsource403(unneeded,do nottryagain). The
+oldkernel_existsFalse inference was too broad: draftobjectexists,no run/charge.
+identity recovery90041TERMINALexit0, inventory_identity_recovery.json includes
+zeroreservation/unchangedquota32965.55 at07:02UTC. StillNOacceptedGPUversion.
+Scoped src/arena/span031_inventory.py resolves thatentry withoutdroppingit,
+checkscomplete75/75coverage/owner/cursors/knownstub and directnorun404 before
+lettingexistinginventoryobserveeveryotherjob. Unknowncases refuseadmission.
+4focused resolverboundarytestsPASS(.001s). Sharedspan004_support unchanged.
+Currentrun_span_031_compact.py adds scopedinventoryadapter and corrects
+'kernelmissing' to 'no run'. Oldcompactbundle is preserved as
+size_pilot_compact_bundle.before_inventory_fix.json. AmendmentexecutedONCE,
+inventory_source_amendment.json: onlyadmission-source/docs changed; actualGPU
+NotebookSHA96d9bb.../metadata/data/model/config/rules/cap remainEXACTunchanged.
+DO NOT rerunamender,builder,preparers,assetupload/verify afterfreeze.
+NEXTpublishamendedcontroller/helper/tests/bundle proof, then resume SAME
+run_span_031_compact.py. This is a readonlypreflightretry: no compactintent
+exists, no SaveKernel wascalled by47887. Freshcompleteinventory/dependencies/
+oldrejectedrun404/zerocharge precedeitsONEcompactsave. Observeactualnewunified
+handle/acceptedpush; verifywith verify_span_031_compact_source.py ONCE. NoGPUyet.
 Use audit_span_031_compact.py ONCE afterterminalretrieval, neveroldbaseauditor.
 Need finalreport/executedNotebook43/CLIclosure/preservation/commitpush before
 v31seal; onlyactualownrank<=19 cancompletepersistentgoal (noofficialhere).
